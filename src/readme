@@ -1,0 +1,36 @@
++------------------------------------------------------------------------------+
+|  Open SSRF Software Library                                                  |
++------------------------------------------------------------------------------+
+
+About:
+
+This is a verbatim compilation of the Standard Spectrum Resource Format (SSRF)
+version 3.0 into Java. The specification is defined in MCEB Pub 8 Version 3.0 
+as of 2012-04-26.
+
+Compilation:
+
+The SSRF XSD requires certain bindings to successfully compile.
+
+XSD compilation is not case sensitive and the SSRF XSD includes a name clash 
+between the the "Remarks" complex type and the "remarks" attribute and fails 
+to compile. In this implementation the internal 'remarks' attribute field is 
+renamed to "attributeRemarks" enable compilation.
+
+SSRF includes a very large number of enumerated values. See for example the varius
+TListXX instances. The maximum number of allowed enumerated members is raised to 2048.
+
+The software was compiled using the enclosed binding file and the following 
+command-line statement (on Linux):
+
+  % xjc -b binding-ssrf.xml  ssrf.xsd
+
+Refer to the docs directory of this project for more details.
+
+License:
+
+This software is provided AS-IS under the MIT license; reuse is permitted within 
+proprietary software provided all copies of the licensed software include a copy 
+of the MIT License terms. Such proprietary software retains its proprietary nature 
+even though it incorporates software under the MIT License.
+
