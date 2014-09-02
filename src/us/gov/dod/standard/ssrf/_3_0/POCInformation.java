@@ -23,6 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 

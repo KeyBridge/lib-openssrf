@@ -23,6 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TLat;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
+import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
 import java.math.BigInteger;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;

@@ -23,6 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUS3;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
+import us.gov.dod.standard.ssrf._3_0.datatype.TD;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;

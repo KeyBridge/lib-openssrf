@@ -23,6 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
+import us.gov.dod.standard.ssrf._3_0.datatype.TEmsDes;
+import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

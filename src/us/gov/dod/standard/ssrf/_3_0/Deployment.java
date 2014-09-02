@@ -23,6 +23,8 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;

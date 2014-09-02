@@ -23,6 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS70;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS11;
+import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS80;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
+import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCSG;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;

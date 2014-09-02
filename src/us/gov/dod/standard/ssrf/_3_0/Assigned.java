@@ -23,6 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN2;
+import us.gov.dod.standard.ssrf._3_0.datatype.TNetNumber;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN1;
+import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUS10;
+import us.gov.dod.standard.ssrf._3_0.datatype.TNavAidChnl;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;

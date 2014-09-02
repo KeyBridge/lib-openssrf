@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 

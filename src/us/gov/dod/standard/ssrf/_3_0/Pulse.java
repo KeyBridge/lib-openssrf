@@ -23,6 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.Tmicrosecs;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN9_3;
+import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
+import us.gov.dod.standard.ssrf._3_0.datatype.TPercent;
+import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN10;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN8_4;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

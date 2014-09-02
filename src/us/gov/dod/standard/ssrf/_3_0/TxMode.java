@@ -23,6 +23,25 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.Tmicrosecs;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
+import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TPercent;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUS_DBW;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUS_DBWHz;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN18_6;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN8;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCFO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN12_3;
+import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN5;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;

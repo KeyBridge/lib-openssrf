@@ -23,6 +23,8 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TLat;
+import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 

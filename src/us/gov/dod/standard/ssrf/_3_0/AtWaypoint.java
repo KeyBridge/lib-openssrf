@@ -23,6 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TDT;
+import us.gov.dod.standard.ssrf._3_0.datatype.TUN6;
+import us.gov.dod.standard.ssrf._3_0.datatype.TSpeed;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 

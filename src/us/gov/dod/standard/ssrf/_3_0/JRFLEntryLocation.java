@@ -23,6 +23,8 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
+import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 

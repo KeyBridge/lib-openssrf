@@ -23,6 +23,8 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.enumerated.ListCCL;
+import us.gov.dod.standard.ssrf._3_0.enumerated.ListCAO;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;

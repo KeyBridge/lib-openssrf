@@ -23,6 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
+import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
+import us.gov.dod.standard.ssrf._3_0.datatype.TS12;
+import us.gov.dod.standard.ssrf._3_0.datatype.TD;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 

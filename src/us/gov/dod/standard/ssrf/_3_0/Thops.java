@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.enumerated.ListCCL;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
