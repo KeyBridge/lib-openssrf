@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfMonth;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDT;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMinSec;
-import us.gov.dod.standard.ssrf._3_0.datatype.TYears;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfWeek;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMonths;
-import us.gov.dod.standard.ssrf._3_0.datatype.THours;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -78,33 +74,43 @@ import javax.xml.bind.annotation.*;
   "duration",
   "jrflEntry"
 })
-public class JRFL
-  extends Common {
+public class JRFL extends Common {
 
-  @XmlElementRef(name = "EffectiveDateTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDT> effectiveDateTime;
-  @XmlElementRef(name = "ExpirationDateTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDT> expirationDateTime;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
-  @XmlElementRef(name = "Seconds", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> seconds;
-  @XmlElementRef(name = "Minutes", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> minutes;
-  @XmlElementRef(name = "Hours", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<THours> hours;
-  @XmlElementRef(name = "DaysOfMonth", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfMonth> daysOfMonth;
-  @XmlElementRef(name = "Months", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMonths> months;
-  @XmlElementRef(name = "DaysOfWeek", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfWeek> daysOfWeek;
-  @XmlElementRef(name = "Years", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TYears> years;
-  @XmlElementRef(name = "Duration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> duration;
+  @XmlElement(name = "EffectiveDateTime", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar effectiveDateTime;
+  @XmlElement(name = "ExpirationDateTime", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar expirationDateTime;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
+  @XmlElement(name = "Seconds", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString seconds;
+  @XmlElement(name = "Minutes", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString minutes;
+  @XmlElement(name = "Hours", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
+  private TString hours;
+  @XmlElement(name = "DaysOfMonth", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  private TString daysOfMonth;
+  @XmlElement(name = "Months", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
+  private TString months;
+  @XmlElement(name = "DaysOfWeek", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  private TString daysOfWeek;
+  @XmlElement(name = "Years", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
+  private TString years;
+  @XmlElement(name = "Duration", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger duration;
   @XmlElement(name = "JRFLEntry", required = true)
-  protected List<JRFLEntry> jrflEntry;
+  private List<JRFLEntry> jrflEntry;
 
   /**
    * Gets the value of the effectiveDateTime property.
@@ -113,7 +119,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public JAXBElement<TDT> getEffectiveDateTime() {
+  public TCalendar getEffectiveDateTime() {
     return effectiveDateTime;
   }
 
@@ -124,8 +130,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public void setEffectiveDateTime(JAXBElement<TDT> value) {
+  public void setEffectiveDateTime(TCalendar value) {
     this.effectiveDateTime = value;
+  }
+
+  public boolean isSetEffectiveDateTime() {
+    return (this.effectiveDateTime != null);
   }
 
   /**
@@ -135,7 +145,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public JAXBElement<TDT> getExpirationDateTime() {
+  public TCalendar getExpirationDateTime() {
     return expirationDateTime;
   }
 
@@ -146,8 +156,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public void setExpirationDateTime(JAXBElement<TDT> value) {
+  public void setExpirationDateTime(TCalendar value) {
     this.expirationDateTime = value;
+  }
+
+  public boolean isSetExpirationDateTime() {
+    return (this.expirationDateTime != null);
   }
 
   /**
@@ -157,7 +171,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -168,8 +182,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -179,7 +197,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getSeconds() {
+  public TString getSeconds() {
     return seconds;
   }
 
@@ -190,8 +208,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setSeconds(JAXBElement<TMinSec> value) {
+  public void setSeconds(TString value) {
     this.seconds = value;
+  }
+
+  public boolean isSetSeconds() {
+    return (this.seconds != null);
   }
 
   /**
@@ -201,7 +223,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getMinutes() {
+  public TString getMinutes() {
     return minutes;
   }
 
@@ -212,8 +234,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setMinutes(JAXBElement<TMinSec> value) {
+  public void setMinutes(TString value) {
     this.minutes = value;
+  }
+
+  public boolean isSetMinutes() {
+    return (this.minutes != null);
   }
 
   /**
@@ -223,7 +249,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public JAXBElement<THours> getHours() {
+  public TString getHours() {
     return hours;
   }
 
@@ -234,8 +260,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public void setHours(JAXBElement<THours> value) {
+  public void setHours(TString value) {
     this.hours = value;
+  }
+
+  public boolean isSetHours() {
+    return (this.hours != null);
   }
 
   /**
@@ -245,7 +275,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfMonth> getDaysOfMonth() {
+  public TString getDaysOfMonth() {
     return daysOfMonth;
   }
 
@@ -256,8 +286,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public void setDaysOfMonth(JAXBElement<TDaysOfMonth> value) {
+  public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
+  }
+
+  public boolean isSetDaysOfMonth() {
+    return (this.daysOfMonth != null);
   }
 
   /**
@@ -267,7 +301,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public JAXBElement<TMonths> getMonths() {
+  public TString getMonths() {
     return months;
   }
 
@@ -278,8 +312,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public void setMonths(JAXBElement<TMonths> value) {
+  public void setMonths(TString value) {
     this.months = value;
+  }
+
+  public boolean isSetMonths() {
+    return (this.months != null);
   }
 
   /**
@@ -289,7 +327,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfWeek> getDaysOfWeek() {
+  public TString getDaysOfWeek() {
     return daysOfWeek;
   }
 
@@ -300,8 +338,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public void setDaysOfWeek(JAXBElement<TDaysOfWeek> value) {
+  public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
+  }
+
+  public boolean isSetDaysOfWeek() {
+    return (this.daysOfWeek != null);
   }
 
   /**
@@ -311,7 +353,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public JAXBElement<TYears> getYears() {
+  public TString getYears() {
     return years;
   }
 
@@ -322,8 +364,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public void setYears(JAXBElement<TYears> value) {
+  public void setYears(TString value) {
     this.years = value;
+  }
+
+  public boolean isSetYears() {
+    return (this.years != null);
   }
 
   /**
@@ -333,7 +379,7 @@ public class JRFL
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getDuration() {
+  public TInteger getDuration() {
     return duration;
   }
 
@@ -344,8 +390,12 @@ public class JRFL
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setDuration(JAXBElement<TUN4> value) {
+  public void setDuration(TInteger value) {
     this.duration = value;
+  }
+
+  public boolean isSetDuration() {
+    return (this.duration != null);
   }
 
   /**
@@ -368,12 +418,90 @@ public class JRFL
    * Objects of the following type(s) are allowed in the list {@link JRFLEntry }
    * <p>
    * <p>
+   * @return
    */
   public List<JRFLEntry> getJRFLEntry() {
     if (jrflEntry == null) {
       jrflEntry = new ArrayList<>();
     }
     return this.jrflEntry;
+  }
+
+  public boolean isSetJRFLEntry() {
+    return ((this.jrflEntry != null) && (!this.jrflEntry.isEmpty()));
+  }
+
+  public void unsetJRFLEntry() {
+    this.jrflEntry = null;
+  }
+
+  public JRFL withEffectiveDateTime(Calendar value) {
+    setEffectiveDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public JRFL withExpirationDateTime(Calendar value) {
+    setExpirationDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public JRFL withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public JRFL withSeconds(String value) {
+    setSeconds(new TString(value));
+    return this;
+  }
+
+  public JRFL withMinutes(String value) {
+    setMinutes(new TString(value));
+    return this;
+  }
+
+  public JRFL withHours(String value) {
+    setHours(new TString(value));
+    return this;
+  }
+
+  public JRFL withDaysOfMonth(String value) {
+    setDaysOfMonth(new TString(value));
+    return this;
+  }
+
+  public JRFL withMonths(String value) {
+    setMonths(new TString(value));
+    return this;
+  }
+
+  public JRFL withDaysOfWeek(String value) {
+    setDaysOfWeek(new TString(value));
+    return this;
+  }
+
+  public JRFL withYears(String value) {
+    setYears(new TString(value));
+    return this;
+  }
+
+  public JRFL withDuration(Integer value) {
+    setDuration(new TInteger(value));
+    return this;
+  }
+
+  public JRFL withJRFLEntry(JRFLEntry... values) {
+    if (values != null) {
+      getJRFLEntry().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public JRFL withJRFLEntry(Collection<JRFLEntry> values) {
+    if (values != null) {
+      getJRFLEntry().addAll(values);
+    }
+    return this;
   }
 
 }

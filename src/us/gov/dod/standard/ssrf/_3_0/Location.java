@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -42,23 +42,26 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
- * &lt;complexType name="Location">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview" minOccurs="0"/>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Point" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Point" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Polygon" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Polygon" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Ellipse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Ellipse" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="LocationRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRef" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * <
+ * pre>
+ * &lt;complexType name="Location"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview" minOccurs="0"/>
+ * &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"
+ * minOccurs="0"/> &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Point"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Point" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Polygon"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Polygon" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Ellipse"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Ellipse" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="LocationRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -81,37 +84,44 @@ import javax.xml.bind.annotation.*;
   "ellipse",
   "locationRef"
 })
-public class Location
-  extends Common {
+public class Location extends Common {
 
-  @XmlElementRef(name = "EffectiveDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
+  @XmlElement(name = "EffectiveDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
   @XmlElement(name = "Name", required = true)
-  protected TS100 name;
-  @XmlElementRef(name = "Street", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> street;
-  @XmlElementRef(name = "CityArea", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> cityArea;
-  @XmlElementRef(name = "StateCounty", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> stateCounty;
-  @XmlElementRef(name = "PostCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS15> postCode;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString name;
+  @XmlElement(name = "Street", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString street;
+  @XmlElement(name = "CityArea", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString cityArea;
+  @XmlElement(name = "StateCounty", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString stateCounty;
+  @XmlElement(name = "PostCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  private TString postCode;
   @XmlElement(name = "Country")
-  protected TListCAO country;
+  private TString country;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "Point")
-  protected List<Point> point;
+  private List<Point> point;
   @XmlElement(name = "Polygon")
-  protected List<Polygon> polygon;
+  private List<Polygon> polygon;
   @XmlElement(name = "Ellipse")
-  protected List<Ellipse> ellipse;
+  private List<Ellipse> ellipse;
   @XmlElement(name = "LocationRef", nillable = true)
-  protected List<LocationRef> locationRef;
+  private List<LocationRef> locationRef;
 
   /**
    * Gets the value of the effectiveDate property.
@@ -120,7 +130,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -131,8 +141,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setEffectiveDate(JAXBElement<TD> value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -142,7 +156,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -153,8 +167,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -164,7 +182,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -175,8 +193,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -185,7 +207,7 @@ public class Location
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -195,8 +217,12 @@ public class Location
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setName(TS100 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -206,7 +232,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getStreet() {
+  public TString getStreet() {
     return street;
   }
 
@@ -217,8 +243,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setStreet(JAXBElement<TS255> value) {
+  public void setStreet(TString value) {
     this.street = value;
+  }
+
+  public boolean isSetStreet() {
+    return (this.street != null);
   }
 
   /**
@@ -228,7 +258,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getCityArea() {
+  public TString getCityArea() {
     return cityArea;
   }
 
@@ -239,8 +269,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setCityArea(JAXBElement<TS50> value) {
+  public void setCityArea(TString value) {
     this.cityArea = value;
+  }
+
+  public boolean isSetCityArea() {
+    return (this.cityArea != null);
   }
 
   /**
@@ -250,7 +284,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getStateCounty() {
+  public TString getStateCounty() {
     return stateCounty;
   }
 
@@ -261,8 +295,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setStateCounty(JAXBElement<TS50> value) {
+  public void setStateCounty(TString value) {
     this.stateCounty = value;
+  }
+
+  public boolean isSetStateCounty() {
+    return (this.stateCounty != null);
   }
 
   /**
@@ -272,7 +310,7 @@ public class Location
    *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public JAXBElement<TS15> getPostCode() {
+  public TString getPostCode() {
     return postCode;
   }
 
@@ -283,8 +321,12 @@ public class Location
    *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public void setPostCode(JAXBElement<TS15> value) {
+  public void setPostCode(TString value) {
     this.postCode = value;
+  }
+
+  public boolean isSetPostCode() {
+    return (this.postCode != null);
   }
 
   /**
@@ -293,7 +335,7 @@ public class Location
    * @return possible object is {@link TListCAO }
    * <p>
    */
-  public TListCAO getCountry() {
+  public TString getCountry() {
     return country;
   }
 
@@ -303,8 +345,12 @@ public class Location
    * @param value allowed object is {@link TListCAO }
    * <p>
    */
-  public void setCountry(TListCAO value) {
+  public void setCountry(TString value) {
     this.country = value;
+  }
+
+  public boolean isSetCountry() {
+    return (this.country != null);
   }
 
   /**
@@ -328,12 +374,21 @@ public class Location
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -356,12 +411,21 @@ public class Location
    * Objects of the following type(s) are allowed in the list {@link Point }
    * <p>
    * <p>
+   * @return
    */
   public List<Point> getPoint() {
     if (point == null) {
       point = new ArrayList<>();
     }
     return this.point;
+  }
+
+  public boolean isSetPoint() {
+    return ((this.point != null) && (!this.point.isEmpty()));
+  }
+
+  public void unsetPoint() {
+    this.point = null;
   }
 
   /**
@@ -384,12 +448,21 @@ public class Location
    * Objects of the following type(s) are allowed in the list {@link Polygon }
    * <p>
    * <p>
+   * @return
    */
   public List<Polygon> getPolygon() {
     if (polygon == null) {
       polygon = new ArrayList<>();
     }
     return this.polygon;
+  }
+
+  public boolean isSetPolygon() {
+    return ((this.polygon != null) && (!this.polygon.isEmpty()));
+  }
+
+  public void unsetPolygon() {
+    this.polygon = null;
   }
 
   /**
@@ -412,12 +485,21 @@ public class Location
    * Objects of the following type(s) are allowed in the list {@link Ellipse }
    * <p>
    * <p>
+   * @return
    */
   public List<Ellipse> getEllipse() {
     if (ellipse == null) {
       ellipse = new ArrayList<>();
     }
     return this.ellipse;
+  }
+
+  public boolean isSetEllipse() {
+    return ((this.ellipse != null) && (!this.ellipse.isEmpty()));
+  }
+
+  public void unsetEllipse() {
+    this.ellipse = null;
   }
 
   /**
@@ -441,12 +523,136 @@ public class Location
      * {@link LocationRef }
    * <p>
    * <p>
+   * @return
    */
   public List<LocationRef> getLocationRef() {
     if (locationRef == null) {
       locationRef = new ArrayList<>();
     }
     return this.locationRef;
+  }
+
+  public boolean isSetLocationRef() {
+    return ((this.locationRef != null) && (!this.locationRef.isEmpty()));
+  }
+
+  public void unsetLocationRef() {
+    this.locationRef = null;
+  }
+
+  public Location withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public Location withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Location withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public Location withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public Location withStreet(String value) {
+    setStreet(new TString(value));
+    return this;
+  }
+
+  public Location withCityArea(String value) {
+    setCityArea(new TString(value));
+    return this;
+  }
+
+  public Location withStateCounty(String value) {
+    setStateCounty(new TString(value));
+    return this;
+  }
+
+  public Location withPostCode(String value) {
+    setPostCode(new TString(value));
+    return this;
+  }
+
+  public Location withCountry(ListCAO value) {
+    setCountry(new TString(value.value()));
+    return this;
+  }
+
+  public Location withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Location withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Location withPoint(Point... values) {
+    if (values != null) {
+      getPoint().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Location withPoint(Collection<Point> values) {
+    if (values != null) {
+      getPoint().addAll(values);
+    }
+    return this;
+  }
+
+  public Location withPolygon(Polygon... values) {
+    if (values != null) {
+      getPolygon().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Location withPolygon(Collection<Polygon> values) {
+    if (values != null) {
+      getPolygon().addAll(values);
+    }
+    return this;
+  }
+
+  public Location withEllipse(Ellipse... values) {
+    if (values != null) {
+      getEllipse().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Location withEllipse(Collection<Ellipse> values) {
+    if (values != null) {
+      getEllipse().addAll(values);
+    }
+    return this;
+  }
+
+  public Location withLocationRef(LocationRef... values) {
+    if (values != null) {
+      getLocationRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Location withLocationRef(Collection<LocationRef> values) {
+    if (values != null) {
+      getLocationRef().addAll(values);
+    }
+    return this;
   }
 
 }

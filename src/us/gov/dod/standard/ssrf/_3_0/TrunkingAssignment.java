@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS12;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -38,7 +42,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="TrunkingAssignment">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -67,15 +72,19 @@ import javax.xml.bind.annotation.*;
 public class TrunkingAssignment {
 
   @XmlElement(name = "IsRelinquished", required = true)
-  protected TListCBO isRelinquished;
-  @XmlElementRef(name = "AgencySerialNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS12> agencySerialNum;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "FreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMin;
-  @XmlElementRef(name = "RelinquishmentDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> relinquishmentDate;
+  private TString isRelinquished;
+  @XmlElement(name = "AgencySerialNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  private TString agencySerialNum;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "FreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "RelinquishmentDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar relinquishmentDate;
 
   /**
    * Gets the value of the isRelinquished property.
@@ -83,7 +92,7 @@ public class TrunkingAssignment {
    * @return possible object is {@link TListCBO }
    * <p>
    */
-  public TListCBO getIsRelinquished() {
+  public TString getIsRelinquished() {
     return isRelinquished;
   }
 
@@ -93,8 +102,12 @@ public class TrunkingAssignment {
    * @param value allowed object is {@link TListCBO }
    * <p>
    */
-  public void setIsRelinquished(TListCBO value) {
+  public void setIsRelinquished(TString value) {
     this.isRelinquished = value;
+  }
+
+  public boolean isSetIsRelinquished() {
+    return (this.isRelinquished != null);
   }
 
   /**
@@ -104,7 +117,7 @@ public class TrunkingAssignment {
    *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public JAXBElement<TS12> getAgencySerialNum() {
+  public TString getAgencySerialNum() {
     return agencySerialNum;
   }
 
@@ -115,8 +128,12 @@ public class TrunkingAssignment {
    *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public void setAgencySerialNum(JAXBElement<TS12> value) {
+  public void setAgencySerialNum(TString value) {
     this.agencySerialNum = value;
+  }
+
+  public boolean isSetAgencySerialNum() {
+    return (this.agencySerialNum != null);
   }
 
   /**
@@ -126,7 +143,7 @@ public class TrunkingAssignment {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -137,8 +154,12 @@ public class TrunkingAssignment {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -148,7 +169,7 @@ public class TrunkingAssignment {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -159,8 +180,12 @@ public class TrunkingAssignment {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMin(JAXBElement<TFreqM> value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -170,7 +195,7 @@ public class TrunkingAssignment {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getRelinquishmentDate() {
+  public TCalendar getRelinquishmentDate() {
     return relinquishmentDate;
   }
 
@@ -181,8 +206,37 @@ public class TrunkingAssignment {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setRelinquishmentDate(JAXBElement<TD> value) {
+  public void setRelinquishmentDate(TCalendar value) {
     this.relinquishmentDate = value;
+  }
+
+  public boolean isSetRelinquishmentDate() {
+    return (this.relinquishmentDate != null);
+  }
+
+  public TrunkingAssignment withIsRelinquished(ListCBO value) {
+    setIsRelinquished(new TString(value.value()));
+    return this;
+  }
+
+  public TrunkingAssignment withAgencySerialNum(String value) {
+    setAgencySerialNum(new TString(value));
+    return this;
+  }
+
+  public TrunkingAssignment withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public TrunkingAssignment withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public TrunkingAssignment withRelinquishmentDate(Calendar value) {
+    setRelinquishmentDate(new TCalendar(value));
+    return this;
   }
 
 }

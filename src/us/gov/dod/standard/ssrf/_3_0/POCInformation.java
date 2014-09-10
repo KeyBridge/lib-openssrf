@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -37,7 +40,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="POCInformation">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -62,11 +66,14 @@ import javax.xml.bind.annotation.*;
 public class POCInformation {
 
   @XmlElement(name = "Type", required = true)
-  protected TS25 type;
-  @XmlElementRef(name = "Serial", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> serial;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> description;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString type;
+  @XmlElement(name = "Serial", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString description;
 
   /**
    * Gets the value of the type property.
@@ -74,7 +81,7 @@ public class POCInformation {
    * @return possible object is {@link TS25 }
    * <p>
    */
-  public TS25 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -84,8 +91,12 @@ public class POCInformation {
    * @param value allowed object is {@link TS25 }
    * <p>
    */
-  public void setType(TS25 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -95,7 +106,7 @@ public class POCInformation {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -106,8 +117,12 @@ public class POCInformation {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setSerial(JAXBElement<TSerial> value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
   }
 
   /**
@@ -117,7 +132,7 @@ public class POCInformation {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -128,8 +143,27 @@ public class POCInformation {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TMEMO> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
+  }
+
+  public POCInformation withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public POCInformation withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
+  }
+
+  public POCInformation withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
   }
 
 }

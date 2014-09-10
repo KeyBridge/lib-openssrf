@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSN5_2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN5_2;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -38,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="AntGain">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -64,14 +68,17 @@ import javax.xml.bind.annotation.*;
 })
 public class AntGain {
 
-  @XmlElementRef(name = "Calculated", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> calculated;
+  @XmlElement(name = "Calculated", required = false)
+  private TString calculated;
   @XmlElement(name = "Gain", required = true)
-  protected TSN5_2 gain;
-  @XmlElementRef(name = "Freq", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freq;
-  @XmlElementRef(name = "FrontToBackRatio", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5_2> frontToBackRatio;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSN5_2.class)
+  private TDecimal gain;
+  @XmlElement(name = "Freq", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freq;
+  @XmlElement(name = "FrontToBackRatio", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_2.class)
+  private TDecimal frontToBackRatio;
 
   /**
    * Gets the value of the calculated property.
@@ -80,7 +87,7 @@ public class AntGain {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getCalculated() {
+  public TString getCalculated() {
     return calculated;
   }
 
@@ -91,8 +98,12 @@ public class AntGain {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setCalculated(JAXBElement<TListCBO> value) {
+  public void setCalculated(TString value) {
     this.calculated = value;
+  }
+
+  public boolean isSetCalculated() {
+    return (this.calculated != null);
   }
 
   /**
@@ -101,7 +112,7 @@ public class AntGain {
    * @return possible object is {@link TSN5_2 }
    * <p>
    */
-  public TSN5_2 getGain() {
+  public TDecimal getGain() {
     return gain;
   }
 
@@ -111,8 +122,12 @@ public class AntGain {
    * @param value allowed object is {@link TSN5_2 }
    * <p>
    */
-  public void setGain(TSN5_2 value) {
+  public void setGain(TDecimal value) {
     this.gain = value;
+  }
+
+  public boolean isSetGain() {
+    return (this.gain != null);
   }
 
   /**
@@ -122,7 +137,7 @@ public class AntGain {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreq() {
+  public TDecimal getFreq() {
     return freq;
   }
 
@@ -133,8 +148,12 @@ public class AntGain {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreq(JAXBElement<TFreqM> value) {
+  public void setFreq(TDecimal value) {
     this.freq = value;
+  }
+
+  public boolean isSetFreq() {
+    return (this.freq != null);
   }
 
   /**
@@ -144,7 +163,7 @@ public class AntGain {
    *         {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5_2> getFrontToBackRatio() {
+  public TDecimal getFrontToBackRatio() {
     return frontToBackRatio;
   }
 
@@ -155,8 +174,32 @@ public class AntGain {
    *              {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
    * <p>
    */
-  public void setFrontToBackRatio(JAXBElement<TUN5_2> value) {
+  public void setFrontToBackRatio(TDecimal value) {
     this.frontToBackRatio = value;
+  }
+
+  public boolean isSetFrontToBackRatio() {
+    return (this.frontToBackRatio != null);
+  }
+
+  public AntGain withCalculated(ListCBO value) {
+    setCalculated(new TString(value.value()));
+    return this;
+  }
+
+  public AntGain withGain(Double value) {
+    setGain(new TDecimal(value));
+    return this;
+  }
+
+  public AntGain withFreq(Double value) {
+    setFreq(new TDecimal(value));
+    return this;
+  }
+
+  public AntGain withFrontToBackRatio(Double value) {
+    setFrontToBackRatio(new TDecimal(value));
+    return this;
   }
 
 }

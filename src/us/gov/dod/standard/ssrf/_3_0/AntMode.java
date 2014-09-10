@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,25 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAU;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TScanRate;
-import us.gov.dod.standard.ssrf._3_0.datatype.TElev;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCRD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN7_2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TScanSpeed;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -51,7 +45,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="AntMode">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -120,69 +115,93 @@ import javax.xml.bind.annotation.*;
 public class AntMode {
 
   @XmlElement(name = "ModeID", required = true)
-  protected TS20 modeID;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> description;
-  @XmlElementRef(name = "ModeUse", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAU> modeUse;
-  @XmlElementRef(name = "MotionType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> motionType;
-  @XmlElementRef(name = "SectBlanking", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> sectBlanking;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString modeID;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString description;
+  @XmlElement(name = "ModeUse", required = false)
+  private TString modeUse;
+  @XmlElement(name = "MotionType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString motionType;
+  @XmlElement(name = "SectBlanking", required = false)
+  private TString sectBlanking;
   @XmlElement(name = "PolarisationType")
-  protected TS50 polarisationType;
-  @XmlElementRef(name = "PolarisationAngle", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> polarisationAngle;
-  @XmlElementRef(name = "HorzScanSpeed", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TScanSpeed> horzScanSpeed;
-  @XmlElementRef(name = "HorzScanRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TScanRate> horzScanRate;
-  @XmlElementRef(name = "HorzScanType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> horzScanType;
-  @XmlElementRef(name = "HorzScanSector", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> horzScanSector;
-  @XmlElementRef(name = "VertScanSpeed", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TScanSpeed> vertScanSpeed;
-  @XmlElementRef(name = "VertScanRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TScanRate> vertScanRate;
-  @XmlElementRef(name = "VertScanType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> vertScanType;
-  @XmlElementRef(name = "VertScanAngleMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> vertScanAngleMin;
-  @XmlElementRef(name = "VertScanAngleMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> vertScanAngleMax;
-  @XmlElementRef(name = "RotationDirection", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCRD> rotationDirection;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString polarisationType;
+  @XmlElement(name = "PolarisationAngle", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal polarisationAngle;
+  @XmlElement(name = "HorzScanSpeed", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
+  private TDecimal horzScanSpeed;
+  @XmlElement(name = "HorzScanRate", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterSCANRATE.class)
+  private TInteger horzScanRate;
+  @XmlElement(name = "HorzScanType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString horzScanType;
+  @XmlElement(name = "HorzScanSector", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal horzScanSector;
+  @XmlElement(name = "VertScanSpeed", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
+  private TDecimal vertScanSpeed;
+  @XmlElement(name = "VertScanRate", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterSCANRATE.class)
+  private TInteger vertScanRate;
+  @XmlElement(name = "VertScanType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString vertScanType;
+  @XmlElement(name = "VertScanAngleMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal vertScanAngleMin;
+  @XmlElement(name = "VertScanAngleMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal vertScanAngleMax;
+  @XmlElement(name = "RotationDirection", required = false)
+  private TString rotationDirection;
   @XmlElement(name = "RotationRateMin")
-  protected TUN7_2 rotationRateMin;
-  @XmlElementRef(name = "RotationRateMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN7_2> rotationRateMax;
-  @XmlElementRef(name = "HorzBwMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> horzBwMin;
-  @XmlElementRef(name = "HorzBwMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> horzBwMax;
-  @XmlElementRef(name = "VertBwMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> vertBwMin;
-  @XmlElementRef(name = "VertBwMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> vertBwMax;
-  @XmlElementRef(name = "BeamType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> beamType;
-  @XmlElementRef(name = "MaxPower", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> maxPower;
-  @XmlElementRef(name = "PortIsolation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> portIsolation;
-  @XmlElementRef(name = "ModeName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS40> modeName;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN7_2.class)
+  private TDecimal rotationRateMin;
+  @XmlElement(name = "RotationRateMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN7_2.class)
+  private TDecimal rotationRateMax;
+  @XmlElement(name = "HorzBwMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal horzBwMin;
+  @XmlElement(name = "HorzBwMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal horzBwMax;
+  @XmlElement(name = "VertBwMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal vertBwMin;
+  @XmlElement(name = "VertBwMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal vertBwMax;
+  @XmlElement(name = "BeamType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString beamType;
+  @XmlElement(name = "MaxPower", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal maxPower;
+  @XmlElement(name = "PortIsolation", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal portIsolation;
+  @XmlElement(name = "ModeName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  private TString modeName;
   @XmlElement(name = "AntGain")
-  protected List<AntGain> antGain;
+  private List<AntGain> antGain;
   @XmlElement(name = "AntFreqs")
-  protected List<AntFreqs> antFreqs;
+  private List<AntFreqs> antFreqs;
   @XmlElement(name = "AntPattern")
-  protected List<AntPattern> antPattern;
+  private List<AntPattern> antPattern;
   @XmlElement(name = "AntEfficiency")
-  protected List<AntEfficiency> antEfficiency;
+  private List<AntEfficiency> antEfficiency;
   @XmlElement(name = "VSWR")
-  protected List<VSWR> vswr;
+  private List<VSWR> vswr;
 
   /**
    * Gets the value of the modeID property.
@@ -190,7 +209,7 @@ public class AntMode {
    * @return possible object is {@link TS20 }
    * <p>
    */
-  public TS20 getModeID() {
+  public TString getModeID() {
     return modeID;
   }
 
@@ -200,8 +219,12 @@ public class AntMode {
    * @param value allowed object is {@link TS20 }
    * <p>
    */
-  public void setModeID(TS20 value) {
+  public void setModeID(TString value) {
     this.modeID = value;
+  }
+
+  public boolean isSetModeID() {
+    return (this.modeID != null);
   }
 
   /**
@@ -211,7 +234,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -222,8 +245,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TS100> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -233,7 +260,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAU> getModeUse() {
+  public TString getModeUse() {
     return modeUse;
   }
 
@@ -244,8 +271,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
    * <p>
    */
-  public void setModeUse(JAXBElement<TListCAU> value) {
+  public void setModeUse(TString value) {
     this.modeUse = value;
+  }
+
+  public boolean isSetModeUse() {
+    return (this.modeUse != null);
   }
 
   /**
@@ -255,7 +286,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getMotionType() {
+  public TString getMotionType() {
     return motionType;
   }
 
@@ -266,8 +297,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setMotionType(JAXBElement<TS25> value) {
+  public void setMotionType(TString value) {
     this.motionType = value;
+  }
+
+  public boolean isSetMotionType() {
+    return (this.motionType != null);
   }
 
   /**
@@ -277,7 +312,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getSectBlanking() {
+  public TString getSectBlanking() {
     return sectBlanking;
   }
 
@@ -288,8 +323,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setSectBlanking(JAXBElement<TListCBO> value) {
+  public void setSectBlanking(TString value) {
     this.sectBlanking = value;
+  }
+
+  public boolean isSetSectBlanking() {
+    return (this.sectBlanking != null);
   }
 
   /**
@@ -298,7 +337,7 @@ public class AntMode {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getPolarisationType() {
+  public TString getPolarisationType() {
     return polarisationType;
   }
 
@@ -308,8 +347,12 @@ public class AntMode {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setPolarisationType(TS50 value) {
+  public void setPolarisationType(TString value) {
     this.polarisationType = value;
+  }
+
+  public boolean isSetPolarisationType() {
+    return (this.polarisationType != null);
   }
 
   /**
@@ -319,7 +362,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getPolarisationAngle() {
+  public TDecimal getPolarisationAngle() {
     return polarisationAngle;
   }
 
@@ -330,8 +373,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setPolarisationAngle(JAXBElement<TAz> value) {
+  public void setPolarisationAngle(TDecimal value) {
     this.polarisationAngle = value;
+  }
+
+  public boolean isSetPolarisationAngle() {
+    return (this.polarisationAngle != null);
   }
 
   /**
@@ -341,7 +388,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
    * <p>
    */
-  public JAXBElement<TScanSpeed> getHorzScanSpeed() {
+  public TDecimal getHorzScanSpeed() {
     return horzScanSpeed;
   }
 
@@ -352,8 +399,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
    * <p>
    */
-  public void setHorzScanSpeed(JAXBElement<TScanSpeed> value) {
+  public void setHorzScanSpeed(TDecimal value) {
     this.horzScanSpeed = value;
+  }
+
+  public boolean isSetHorzScanSpeed() {
+    return (this.horzScanSpeed != null);
   }
 
   /**
@@ -363,7 +414,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
    * <p>
    */
-  public JAXBElement<TScanRate> getHorzScanRate() {
+  public TInteger getHorzScanRate() {
     return horzScanRate;
   }
 
@@ -374,8 +425,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
    * <p>
    */
-  public void setHorzScanRate(JAXBElement<TScanRate> value) {
+  public void setHorzScanRate(TInteger value) {
     this.horzScanRate = value;
+  }
+
+  public boolean isSetHorzScanRate() {
+    return (this.horzScanRate != null);
   }
 
   /**
@@ -385,7 +440,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getHorzScanType() {
+  public TString getHorzScanType() {
     return horzScanType;
   }
 
@@ -396,8 +451,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setHorzScanType(JAXBElement<TS50> value) {
+  public void setHorzScanType(TString value) {
     this.horzScanType = value;
+  }
+
+  public boolean isSetHorzScanType() {
+    return (this.horzScanType != null);
   }
 
   /**
@@ -407,7 +466,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getHorzScanSector() {
+  public TDecimal getHorzScanSector() {
     return horzScanSector;
   }
 
@@ -418,8 +477,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setHorzScanSector(JAXBElement<TAz> value) {
+  public void setHorzScanSector(TDecimal value) {
     this.horzScanSector = value;
+  }
+
+  public boolean isSetHorzScanSector() {
+    return (this.horzScanSector != null);
   }
 
   /**
@@ -429,7 +492,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
    * <p>
    */
-  public JAXBElement<TScanSpeed> getVertScanSpeed() {
+  public TDecimal getVertScanSpeed() {
     return vertScanSpeed;
   }
 
@@ -440,8 +503,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
    * <p>
    */
-  public void setVertScanSpeed(JAXBElement<TScanSpeed> value) {
+  public void setVertScanSpeed(TDecimal value) {
     this.vertScanSpeed = value;
+  }
+
+  public boolean isSetVertScanSpeed() {
+    return (this.vertScanSpeed != null);
   }
 
   /**
@@ -451,7 +518,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
    * <p>
    */
-  public JAXBElement<TScanRate> getVertScanRate() {
+  public TInteger getVertScanRate() {
     return vertScanRate;
   }
 
@@ -462,8 +529,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
    * <p>
    */
-  public void setVertScanRate(JAXBElement<TScanRate> value) {
+  public void setVertScanRate(TInteger value) {
     this.vertScanRate = value;
+  }
+
+  public boolean isSetVertScanRate() {
+    return (this.vertScanRate != null);
   }
 
   /**
@@ -473,7 +544,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getVertScanType() {
+  public TString getVertScanType() {
     return vertScanType;
   }
 
@@ -484,8 +555,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setVertScanType(JAXBElement<TS50> value) {
+  public void setVertScanType(TString value) {
     this.vertScanType = value;
+  }
+
+  public boolean isSetVertScanType() {
+    return (this.vertScanType != null);
   }
 
   /**
@@ -495,7 +570,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getVertScanAngleMin() {
+  public TDecimal getVertScanAngleMin() {
     return vertScanAngleMin;
   }
 
@@ -506,8 +581,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setVertScanAngleMin(JAXBElement<TElev> value) {
+  public void setVertScanAngleMin(TDecimal value) {
     this.vertScanAngleMin = value;
+  }
+
+  public boolean isSetVertScanAngleMin() {
+    return (this.vertScanAngleMin != null);
   }
 
   /**
@@ -517,7 +596,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getVertScanAngleMax() {
+  public TDecimal getVertScanAngleMax() {
     return vertScanAngleMax;
   }
 
@@ -528,8 +607,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setVertScanAngleMax(JAXBElement<TElev> value) {
+  public void setVertScanAngleMax(TDecimal value) {
     this.vertScanAngleMax = value;
+  }
+
+  public boolean isSetVertScanAngleMax() {
+    return (this.vertScanAngleMax != null);
   }
 
   /**
@@ -539,7 +622,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TListCRD }{@code >}
    * <p>
    */
-  public JAXBElement<TListCRD> getRotationDirection() {
+  public TString getRotationDirection() {
     return rotationDirection;
   }
 
@@ -550,8 +633,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TListCRD }{@code >}
    * <p>
    */
-  public void setRotationDirection(JAXBElement<TListCRD> value) {
+  public void setRotationDirection(TString value) {
     this.rotationDirection = value;
+  }
+
+  public boolean isSetRotationDirection() {
+    return (this.rotationDirection != null);
   }
 
   /**
@@ -560,7 +647,7 @@ public class AntMode {
    * @return possible object is {@link TUN7_2 }
    * <p>
    */
-  public TUN7_2 getRotationRateMin() {
+  public TDecimal getRotationRateMin() {
     return rotationRateMin;
   }
 
@@ -570,8 +657,12 @@ public class AntMode {
    * @param value allowed object is {@link TUN7_2 }
    * <p>
    */
-  public void setRotationRateMin(TUN7_2 value) {
+  public void setRotationRateMin(TDecimal value) {
     this.rotationRateMin = value;
+  }
+
+  public boolean isSetRotationRateMin() {
+    return (this.rotationRateMin != null);
   }
 
   /**
@@ -581,7 +672,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TUN7_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN7_2> getRotationRateMax() {
+  public TDecimal getRotationRateMax() {
     return rotationRateMax;
   }
 
@@ -592,8 +683,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TUN7_2 }{@code >}
    * <p>
    */
-  public void setRotationRateMax(JAXBElement<TUN7_2> value) {
+  public void setRotationRateMax(TDecimal value) {
     this.rotationRateMax = value;
+  }
+
+  public boolean isSetRotationRateMax() {
+    return (this.rotationRateMax != null);
   }
 
   /**
@@ -603,7 +698,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getHorzBwMin() {
+  public TDecimal getHorzBwMin() {
     return horzBwMin;
   }
 
@@ -614,8 +709,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setHorzBwMin(JAXBElement<TAz> value) {
+  public void setHorzBwMin(TDecimal value) {
     this.horzBwMin = value;
+  }
+
+  public boolean isSetHorzBwMin() {
+    return (this.horzBwMin != null);
   }
 
   /**
@@ -625,7 +724,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getHorzBwMax() {
+  public TDecimal getHorzBwMax() {
     return horzBwMax;
   }
 
@@ -636,8 +735,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setHorzBwMax(JAXBElement<TAz> value) {
+  public void setHorzBwMax(TDecimal value) {
     this.horzBwMax = value;
+  }
+
+  public boolean isSetHorzBwMax() {
+    return (this.horzBwMax != null);
   }
 
   /**
@@ -647,7 +750,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getVertBwMin() {
+  public TDecimal getVertBwMin() {
     return vertBwMin;
   }
 
@@ -658,8 +761,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setVertBwMin(JAXBElement<TAz> value) {
+  public void setVertBwMin(TDecimal value) {
     this.vertBwMin = value;
+  }
+
+  public boolean isSetVertBwMin() {
+    return (this.vertBwMin != null);
   }
 
   /**
@@ -669,7 +776,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getVertBwMax() {
+  public TDecimal getVertBwMax() {
     return vertBwMax;
   }
 
@@ -680,8 +787,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setVertBwMax(JAXBElement<TAz> value) {
+  public void setVertBwMax(TDecimal value) {
     this.vertBwMax = value;
+  }
+
+  public boolean isSetVertBwMax() {
+    return (this.vertBwMax != null);
   }
 
   /**
@@ -691,7 +802,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getBeamType() {
+  public TString getBeamType() {
     return beamType;
   }
 
@@ -702,8 +813,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setBeamType(JAXBElement<TS25> value) {
+  public void setBeamType(TString value) {
     this.beamType = value;
+  }
+
+  public boolean isSetBeamType() {
+    return (this.beamType != null);
   }
 
   /**
@@ -713,7 +828,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getMaxPower() {
+  public TDecimal getMaxPower() {
     return maxPower;
   }
 
@@ -724,8 +839,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setMaxPower(JAXBElement<TdBW> value) {
+  public void setMaxPower(TDecimal value) {
     this.maxPower = value;
+  }
+
+  public boolean isSetMaxPower() {
+    return (this.maxPower != null);
   }
 
   /**
@@ -735,7 +854,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getPortIsolation() {
+  public TDecimal getPortIsolation() {
     return portIsolation;
   }
 
@@ -746,8 +865,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setPortIsolation(JAXBElement<TdB> value) {
+  public void setPortIsolation(TDecimal value) {
     this.portIsolation = value;
+  }
+
+  public boolean isSetPortIsolation() {
+    return (this.portIsolation != null);
   }
 
   /**
@@ -757,7 +880,7 @@ public class AntMode {
    *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public JAXBElement<TS40> getModeName() {
+  public TString getModeName() {
     return modeName;
   }
 
@@ -768,8 +891,12 @@ public class AntMode {
    *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public void setModeName(JAXBElement<TS40> value) {
+  public void setModeName(TString value) {
     this.modeName = value;
+  }
+
+  public boolean isSetModeName() {
+    return (this.modeName != null);
   }
 
   /**
@@ -792,12 +919,21 @@ public class AntMode {
    * Objects of the following type(s) are allowed in the list {@link AntGain }
    * <p>
    * <p>
+   * @return
    */
   public List<AntGain> getAntGain() {
     if (antGain == null) {
       antGain = new ArrayList<>();
     }
     return this.antGain;
+  }
+
+  public boolean isSetAntGain() {
+    return ((this.antGain != null) && (!this.antGain.isEmpty()));
+  }
+
+  public void unsetAntGain() {
+    this.antGain = null;
   }
 
   /**
@@ -820,12 +956,21 @@ public class AntMode {
    * Objects of the following type(s) are allowed in the list {@link AntFreqs }
    * <p>
    * <p>
+   * @return
    */
   public List<AntFreqs> getAntFreqs() {
     if (antFreqs == null) {
       antFreqs = new ArrayList<>();
     }
     return this.antFreqs;
+  }
+
+  public boolean isSetAntFreqs() {
+    return ((this.antFreqs != null) && (!this.antFreqs.isEmpty()));
+  }
+
+  public void unsetAntFreqs() {
+    this.antFreqs = null;
   }
 
   /**
@@ -849,12 +994,21 @@ public class AntMode {
      * {@link AntPattern }
    * <p>
    * <p>
+   * @return
    */
   public List<AntPattern> getAntPattern() {
     if (antPattern == null) {
       antPattern = new ArrayList<>();
     }
     return this.antPattern;
+  }
+
+  public boolean isSetAntPattern() {
+    return ((this.antPattern != null) && (!this.antPattern.isEmpty()));
+  }
+
+  public void unsetAntPattern() {
+    this.antPattern = null;
   }
 
   /**
@@ -878,12 +1032,21 @@ public class AntMode {
      * {@link AntEfficiency }
    * <p>
    * <p>
+   * @return
    */
   public List<AntEfficiency> getAntEfficiency() {
     if (antEfficiency == null) {
       antEfficiency = new ArrayList<>();
     }
     return this.antEfficiency;
+  }
+
+  public boolean isSetAntEfficiency() {
+    return ((this.antEfficiency != null) && (!this.antEfficiency.isEmpty()));
+  }
+
+  public void unsetAntEfficiency() {
+    this.antEfficiency = null;
   }
 
   /**
@@ -906,12 +1069,226 @@ public class AntMode {
    * Objects of the following type(s) are allowed in the list {@link VSWR }
    * <p>
    * <p>
+   * @return
    */
   public List<VSWR> getVSWR() {
     if (vswr == null) {
       vswr = new ArrayList<>();
     }
     return this.vswr;
+  }
+
+  public boolean isSetVSWR() {
+    return ((this.vswr != null) && (!this.vswr.isEmpty()));
+  }
+
+  public void unsetVSWR() {
+    this.vswr = null;
+  }
+
+  public AntMode withModeID(String value) {
+    setModeID(new TString(value));
+    return this;
+  }
+
+  public AntMode withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public AntMode withModeUse(ListCAU value) {
+    setModeUse(new TString(value.value()));
+    return this;
+  }
+
+  public AntMode withMotionType(String value) {
+    setMotionType(new TString(value));
+    return this;
+  }
+
+  public AntMode withSectBlanking(ListCBO value) {
+    setSectBlanking(new TString(value.value()));
+    return this;
+  }
+
+  public AntMode withPolarisationType(String value) {
+    setPolarisationType(new TString(value));
+    return this;
+  }
+
+  public AntMode withPolarisationAngle(Double value) {
+    setPolarisationAngle(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withHorzScanSpeed(Double value) {
+    setHorzScanSpeed(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withHorzScanRate(Integer value) {
+    setHorzScanRate(new TInteger(value));
+    return this;
+  }
+
+  public AntMode withHorzScanType(String value) {
+    setHorzScanType(new TString(value));
+    return this;
+  }
+
+  public AntMode withHorzScanSector(Double value) {
+    setHorzScanSector(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withVertScanSpeed(Double value) {
+    setVertScanSpeed(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withVertScanRate(Integer value) {
+    setVertScanRate(new TInteger(value));
+    return this;
+  }
+
+  public AntMode withVertScanType(String value) {
+    setVertScanType(new TString(value));
+    return this;
+  }
+
+  public AntMode withVertScanAngleMin(Double value) {
+    setVertScanAngleMin(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withVertScanAngleMax(Double value) {
+    setVertScanAngleMax(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withRotationDirection(ListCRD value) {
+    setRotationDirection(new TString(value.value()));
+    return this;
+  }
+
+  public AntMode withRotationRateMin(Double value) {
+    setRotationRateMin(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withRotationRateMax(Double value) {
+    setRotationRateMax(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withHorzBwMin(Double value) {
+    setHorzBwMin(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withHorzBwMax(Double value) {
+    setHorzBwMax(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withVertBwMin(Double value) {
+    setVertBwMin(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withVertBwMax(Double value) {
+    setVertBwMax(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withBeamType(String value) {
+    setBeamType(new TString(value));
+    return this;
+  }
+
+  public AntMode withMaxPower(Double value) {
+    setMaxPower(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withPortIsolation(Double value) {
+    setPortIsolation(new TDecimal(value));
+    return this;
+  }
+
+  public AntMode withModeName(String value) {
+    setModeName(new TString(value));
+    return this;
+  }
+
+  public AntMode withAntGain(AntGain... values) {
+    if (values != null) {
+      getAntGain().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AntMode withAntGain(Collection<AntGain> values) {
+    if (values != null) {
+      getAntGain().addAll(values);
+    }
+    return this;
+  }
+
+  public AntMode withAntFreqs(AntFreqs... values) {
+    if (values != null) {
+      getAntFreqs().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AntMode withAntFreqs(Collection<AntFreqs> values) {
+    if (values != null) {
+      getAntFreqs().addAll(values);
+    }
+    return this;
+  }
+
+  public AntMode withAntPattern(AntPattern... values) {
+    if (values != null) {
+      getAntPattern().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AntMode withAntPattern(Collection<AntPattern> values) {
+    if (values != null) {
+      getAntPattern().addAll(values);
+    }
+    return this;
+  }
+
+  public AntMode withAntEfficiency(AntEfficiency... values) {
+    if (values != null) {
+      getAntEfficiency().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AntMode withAntEfficiency(Collection<AntEfficiency> values) {
+    if (values != null) {
+      getAntEfficiency().addAll(values);
+    }
+    return this;
+  }
+
+  public AntMode withVSWR(VSWR... values) {
+    if (values != null) {
+      getVSWR().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AntMode withVSWR(Collection<VSWR> values) {
+    if (values != null) {
+      getVSWR().addAll(values);
+    }
+    return this;
   }
 
 }

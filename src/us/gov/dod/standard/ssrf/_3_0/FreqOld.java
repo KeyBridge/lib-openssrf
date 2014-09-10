@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,21 +37,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <
  * pre>
- * &lt;complexType name="FreqOld">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnFreqBase">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="FreqOld"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnFreqBase"> &lt;sequence>
+ * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FreqOld")
-public class FreqOld
-  extends AsgnFreqBase {
-
+public class FreqOld extends AsgnFreqBase {
 }

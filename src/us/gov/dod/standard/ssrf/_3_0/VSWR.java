@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN2_1;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -59,10 +63,12 @@ import javax.xml.bind.annotation.*;
 })
 public class VSWR {
 
-  @XmlElementRef(name = "Freq", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freq;
+  @XmlElement(name = "Freq", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freq;
   @XmlElement(name = "Ratio", required = true)
-  protected TUN2_1 ratio;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN2_1.class)
+  private TDecimal ratio;
 
   /**
    * Gets the value of the freq property.
@@ -71,7 +77,7 @@ public class VSWR {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreq() {
+  public TDecimal getFreq() {
     return freq;
   }
 
@@ -82,8 +88,12 @@ public class VSWR {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreq(JAXBElement<TFreqM> value) {
+  public void setFreq(TDecimal value) {
     this.freq = value;
+  }
+
+  public boolean isSetFreq() {
+    return (this.freq != null);
   }
 
   /**
@@ -92,7 +102,7 @@ public class VSWR {
    * @return possible object is {@link TUN2_1 }
    * <p>
    */
-  public TUN2_1 getRatio() {
+  public TDecimal getRatio() {
     return ratio;
   }
 
@@ -102,8 +112,22 @@ public class VSWR {
    * @param value allowed object is {@link TUN2_1 }
    * <p>
    */
-  public void setRatio(TUN2_1 value) {
+  public void setRatio(TDecimal value) {
     this.ratio = value;
+  }
+
+  public boolean isSetRatio() {
+    return (this.ratio != null);
+  }
+
+  public VSWR withFreq(Double value) {
+    setFreq(new TDecimal(value));
+    return this;
+  }
+
+  public VSWR withRatio(Double value) {
+    setRatio(new TDecimal(value));
+    return this;
   }
 
 }

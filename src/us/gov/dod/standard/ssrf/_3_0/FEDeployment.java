@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,20 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfMonth;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMinSec;
-import us.gov.dod.standard.ssrf._3_0.datatype.TYears;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfWeek;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMonths;
-import us.gov.dod.standard.ssrf._3_0.datatype.THours;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -84,37 +82,48 @@ import javax.xml.bind.annotation.*;
   "project",
   "atWaypoint"
 })
-public class FEDeployment
-  extends Common {
+public class FEDeployment extends Common {
 
   @XmlElement(name = "FERef", required = true)
-  protected TSerial feRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString feRef;
   @XmlElement(name = "Type", required = true)
-  protected TS25 type;
-  @XmlElementRef(name = "Num", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6> num;
-  @XmlElementRef(name = "Seconds", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> seconds;
-  @XmlElementRef(name = "Minutes", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> minutes;
-  @XmlElementRef(name = "Hours", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<THours> hours;
-  @XmlElementRef(name = "DaysOfMonth", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfMonth> daysOfMonth;
-  @XmlElementRef(name = "Months", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMonths> months;
-  @XmlElementRef(name = "DaysOfWeek", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfWeek> daysOfWeek;
-  @XmlElementRef(name = "Years", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TYears> years;
-  @XmlElementRef(name = "Duration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> duration;
-  @XmlElementRef(name = "LocationRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> locationRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString type;
+  @XmlElement(name = "Num", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  private TInteger num;
+  @XmlElement(name = "Seconds", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString seconds;
+  @XmlElement(name = "Minutes", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString minutes;
+  @XmlElement(name = "Hours", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
+  private TString hours;
+  @XmlElement(name = "DaysOfMonth", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  private TString daysOfMonth;
+  @XmlElement(name = "Months", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
+  private TString months;
+  @XmlElement(name = "DaysOfWeek", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  private TString daysOfWeek;
+  @XmlElement(name = "Years", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
+  private TString years;
+  @XmlElement(name = "Duration", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger duration;
+  @XmlElement(name = "LocationRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString locationRef;
   @XmlElement(name = "Project")
-  protected List<Project> project;
+  private List<Project> project;
   @XmlElement(name = "AtWaypoint")
-  protected List<AtWaypoint> atWaypoint;
+  private List<AtWaypoint> atWaypoint;
 
   /**
    * Gets the value of the feRef property.
@@ -122,7 +131,7 @@ public class FEDeployment
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getFERef() {
+  public TString getFERef() {
     return feRef;
   }
 
@@ -132,8 +141,12 @@ public class FEDeployment
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setFERef(TSerial value) {
+  public void setFERef(TString value) {
     this.feRef = value;
+  }
+
+  public boolean isSetFERef() {
+    return (this.feRef != null);
   }
 
   /**
@@ -142,7 +155,7 @@ public class FEDeployment
    * @return possible object is {@link TS25 }
    * <p>
    */
-  public TS25 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -152,8 +165,12 @@ public class FEDeployment
    * @param value allowed object is {@link TS25 }
    * <p>
    */
-  public void setType(TS25 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -163,7 +180,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6> getNum() {
+  public TInteger getNum() {
     return num;
   }
 
@@ -174,8 +191,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
    * <p>
    */
-  public void setNum(JAXBElement<TUN6> value) {
+  public void setNum(TInteger value) {
     this.num = value;
+  }
+
+  public boolean isSetNum() {
+    return (this.num != null);
   }
 
   /**
@@ -185,7 +206,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getSeconds() {
+  public TString getSeconds() {
     return seconds;
   }
 
@@ -196,8 +217,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setSeconds(JAXBElement<TMinSec> value) {
+  public void setSeconds(TString value) {
     this.seconds = value;
+  }
+
+  public boolean isSetSeconds() {
+    return (this.seconds != null);
   }
 
   /**
@@ -207,7 +232,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getMinutes() {
+  public TString getMinutes() {
     return minutes;
   }
 
@@ -218,8 +243,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setMinutes(JAXBElement<TMinSec> value) {
+  public void setMinutes(TString value) {
     this.minutes = value;
+  }
+
+  public boolean isSetMinutes() {
+    return (this.minutes != null);
   }
 
   /**
@@ -229,7 +258,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public JAXBElement<THours> getHours() {
+  public TString getHours() {
     return hours;
   }
 
@@ -240,8 +269,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public void setHours(JAXBElement<THours> value) {
+  public void setHours(TString value) {
     this.hours = value;
+  }
+
+  public boolean isSetHours() {
+    return (this.hours != null);
   }
 
   /**
@@ -251,7 +284,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfMonth> getDaysOfMonth() {
+  public TString getDaysOfMonth() {
     return daysOfMonth;
   }
 
@@ -262,8 +295,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public void setDaysOfMonth(JAXBElement<TDaysOfMonth> value) {
+  public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
+  }
+
+  public boolean isSetDaysOfMonth() {
+    return (this.daysOfMonth != null);
   }
 
   /**
@@ -273,7 +310,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public JAXBElement<TMonths> getMonths() {
+  public TString getMonths() {
     return months;
   }
 
@@ -284,8 +321,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public void setMonths(JAXBElement<TMonths> value) {
+  public void setMonths(TString value) {
     this.months = value;
+  }
+
+  public boolean isSetMonths() {
+    return (this.months != null);
   }
 
   /**
@@ -295,7 +336,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfWeek> getDaysOfWeek() {
+  public TString getDaysOfWeek() {
     return daysOfWeek;
   }
 
@@ -306,8 +347,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public void setDaysOfWeek(JAXBElement<TDaysOfWeek> value) {
+  public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
+  }
+
+  public boolean isSetDaysOfWeek() {
+    return (this.daysOfWeek != null);
   }
 
   /**
@@ -317,7 +362,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public JAXBElement<TYears> getYears() {
+  public TString getYears() {
     return years;
   }
 
@@ -328,8 +373,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public void setYears(JAXBElement<TYears> value) {
+  public void setYears(TString value) {
     this.years = value;
+  }
+
+  public boolean isSetYears() {
+    return (this.years != null);
   }
 
   /**
@@ -339,7 +388,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getDuration() {
+  public TInteger getDuration() {
     return duration;
   }
 
@@ -350,8 +399,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setDuration(JAXBElement<TUN4> value) {
+  public void setDuration(TInteger value) {
     this.duration = value;
+  }
+
+  public boolean isSetDuration() {
+    return (this.duration != null);
   }
 
   /**
@@ -361,7 +414,7 @@ public class FEDeployment
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getLocationRef() {
+  public TString getLocationRef() {
     return locationRef;
   }
 
@@ -372,8 +425,12 @@ public class FEDeployment
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setLocationRef(JAXBElement<TSerial> value) {
+  public void setLocationRef(TString value) {
     this.locationRef = value;
+  }
+
+  public boolean isSetLocationRef() {
+    return (this.locationRef != null);
   }
 
   /**
@@ -396,12 +453,21 @@ public class FEDeployment
    * Objects of the following type(s) are allowed in the list {@link Project }
    * <p>
    * <p>
+   * @return
    */
   public List<Project> getProject() {
     if (project == null) {
       project = new ArrayList<>();
     }
     return this.project;
+  }
+
+  public boolean isSetProject() {
+    return ((this.project != null) && (!this.project.isEmpty()));
+  }
+
+  public void unsetProject() {
+    this.project = null;
   }
 
   /**
@@ -425,12 +491,109 @@ public class FEDeployment
      * {@link AtWaypoint }
    * <p>
    * <p>
+   * @return
    */
   public List<AtWaypoint> getAtWaypoint() {
     if (atWaypoint == null) {
       atWaypoint = new ArrayList<>();
     }
     return this.atWaypoint;
+  }
+
+  public boolean isSetAtWaypoint() {
+    return ((this.atWaypoint != null) && (!this.atWaypoint.isEmpty()));
+  }
+
+  public void unsetAtWaypoint() {
+    this.atWaypoint = null;
+  }
+
+  public FEDeployment withFERef(String value) {
+    setFERef(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withNum(Integer value) {
+    setNum(new TInteger(value));
+    return this;
+  }
+
+  public FEDeployment withSeconds(String value) {
+    setSeconds(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withMinutes(String value) {
+    setMinutes(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withHours(String value) {
+    setHours(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withDaysOfMonth(String value) {
+    setDaysOfMonth(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withMonths(String value) {
+    setMonths(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withDaysOfWeek(String value) {
+    setDaysOfWeek(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withYears(String value) {
+    setYears(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withDuration(Integer value) {
+    setDuration(new TInteger(value));
+    return this;
+  }
+
+  public FEDeployment withLocationRef(String value) {
+    setLocationRef(new TString(value));
+    return this;
+  }
+
+  public FEDeployment withProject(Project... values) {
+    if (values != null) {
+      getProject().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public FEDeployment withProject(Collection<Project> values) {
+    if (values != null) {
+      getProject().addAll(values);
+    }
+    return this;
+  }
+
+  public FEDeployment withAtWaypoint(AtWaypoint... values) {
+    if (values != null) {
+      getAtWaypoint().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public FEDeployment withAtWaypoint(Collection<AtWaypoint> values) {
+    if (values != null) {
+      getAtWaypoint().addAll(values);
+    }
+    return this;
   }
 
 }

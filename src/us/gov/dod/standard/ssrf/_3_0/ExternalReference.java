@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCCL;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCSG;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -81,33 +83,40 @@ import javax.xml.bind.annotation.*;
   "isClassified",
   "referencedStage"
 })
-public class ExternalReference
-  extends Common {
+public class ExternalReference extends Common {
 
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> type;
-  @XmlElementRef(name = "Date", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> date;
-  @XmlElementRef(name = "Identifier", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> identifier;
-  @XmlElementRef(name = "AlternateIdentifier", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> alternateIdentifier;
-  @XmlElementRef(name = "Title", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> title;
-  @XmlElementRef(name = "Author", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> author;
-  @XmlElementRef(name = "Organisation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> organisation;
-  @XmlElementRef(name = "DocumentCls", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCCL> documentCls;
-  @XmlElementRef(name = "ResourceLocator", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> resourceLocator;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString type;
+  @XmlElement(name = "Date", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar date;
+  @XmlElement(name = "Identifier", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString identifier;
+  @XmlElement(name = "AlternateIdentifier", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString alternateIdentifier;
+  @XmlElement(name = "Title", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString title;
+  @XmlElement(name = "Author", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString author;
+  @XmlElement(name = "Organisation", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString organisation;
+  @XmlElement(name = "DocumentCls", required = false)
+  private TString documentCls;
+  @XmlElement(name = "ResourceLocator", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString resourceLocator;
   @XmlElement(name = "IsAttached", required = true)
-  protected TListCBO isAttached;
-  @XmlElementRef(name = "IsClassified", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> isClassified;
-  @XmlElementRef(name = "ReferencedStage", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCSG> referencedStage;
+  private TString isAttached;
+  @XmlElement(name = "IsClassified", required = false)
+  private TString isClassified;
+  @XmlElement(name = "ReferencedStage", required = false)
+  private TString referencedStage;
 
   /**
    * Gets the value of the type property.
@@ -116,7 +125,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -127,8 +136,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS50> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -138,7 +151,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDate() {
+  public TCalendar getDate() {
     return date;
   }
 
@@ -149,8 +162,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDate(JAXBElement<TD> value) {
+  public void setDate(TCalendar value) {
     this.date = value;
+  }
+
+  public boolean isSetDate() {
+    return (this.date != null);
   }
 
   /**
@@ -160,7 +177,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getIdentifier() {
+  public TString getIdentifier() {
     return identifier;
   }
 
@@ -171,8 +188,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setIdentifier(JAXBElement<TS50> value) {
+  public void setIdentifier(TString value) {
     this.identifier = value;
+  }
+
+  public boolean isSetIdentifier() {
+    return (this.identifier != null);
   }
 
   /**
@@ -182,7 +203,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getAlternateIdentifier() {
+  public TString getAlternateIdentifier() {
     return alternateIdentifier;
   }
 
@@ -193,8 +214,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setAlternateIdentifier(JAXBElement<TS50> value) {
+  public void setAlternateIdentifier(TString value) {
     this.alternateIdentifier = value;
+  }
+
+  public boolean isSetAlternateIdentifier() {
+    return (this.alternateIdentifier != null);
   }
 
   /**
@@ -204,7 +229,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getTitle() {
+  public TString getTitle() {
     return title;
   }
 
@@ -215,8 +240,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setTitle(JAXBElement<TS255> value) {
+  public void setTitle(TString value) {
     this.title = value;
+  }
+
+  public boolean isSetTitle() {
+    return (this.title != null);
   }
 
   /**
@@ -226,7 +255,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getAuthor() {
+  public TString getAuthor() {
     return author;
   }
 
@@ -237,8 +266,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setAuthor(JAXBElement<TS255> value) {
+  public void setAuthor(TString value) {
     this.author = value;
+  }
+
+  public boolean isSetAuthor() {
+    return (this.author != null);
   }
 
   /**
@@ -248,7 +281,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getOrganisation() {
+  public TString getOrganisation() {
     return organisation;
   }
 
@@ -259,8 +292,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setOrganisation(JAXBElement<TS50> value) {
+  public void setOrganisation(TString value) {
     this.organisation = value;
+  }
+
+  public boolean isSetOrganisation() {
+    return (this.organisation != null);
   }
 
   /**
@@ -270,7 +307,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
    * <p>
    */
-  public JAXBElement<TListCCL> getDocumentCls() {
+  public TString getDocumentCls() {
     return documentCls;
   }
 
@@ -281,8 +318,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
    * <p>
    */
-  public void setDocumentCls(JAXBElement<TListCCL> value) {
+  public void setDocumentCls(TString value) {
     this.documentCls = value;
+  }
+
+  public boolean isSetDocumentCls() {
+    return (this.documentCls != null);
   }
 
   /**
@@ -292,7 +333,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getResourceLocator() {
+  public TString getResourceLocator() {
     return resourceLocator;
   }
 
@@ -303,8 +344,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setResourceLocator(JAXBElement<TS255> value) {
+  public void setResourceLocator(TString value) {
     this.resourceLocator = value;
+  }
+
+  public boolean isSetResourceLocator() {
+    return (this.resourceLocator != null);
   }
 
   /**
@@ -313,7 +358,7 @@ public class ExternalReference
    * @return possible object is {@link TListCBO }
    * <p>
    */
-  public TListCBO getIsAttached() {
+  public TString getIsAttached() {
     return isAttached;
   }
 
@@ -323,8 +368,12 @@ public class ExternalReference
    * @param value allowed object is {@link TListCBO }
    * <p>
    */
-  public void setIsAttached(TListCBO value) {
+  public void setIsAttached(TString value) {
     this.isAttached = value;
+  }
+
+  public boolean isSetIsAttached() {
+    return (this.isAttached != null);
   }
 
   /**
@@ -334,7 +383,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getIsClassified() {
+  public TString getIsClassified() {
     return isClassified;
   }
 
@@ -345,8 +394,12 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setIsClassified(JAXBElement<TListCBO> value) {
+  public void setIsClassified(TString value) {
     this.isClassified = value;
+  }
+
+  public boolean isSetIsClassified() {
+    return (this.isClassified != null);
   }
 
   /**
@@ -356,7 +409,7 @@ public class ExternalReference
    *         {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
    * <p>
    */
-  public JAXBElement<TListCSG> getReferencedStage() {
+  public TString getReferencedStage() {
     return referencedStage;
   }
 
@@ -367,8 +420,72 @@ public class ExternalReference
    *              {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
    * <p>
    */
-  public void setReferencedStage(JAXBElement<TListCSG> value) {
+  public void setReferencedStage(TString value) {
     this.referencedStage = value;
+  }
+
+  public boolean isSetReferencedStage() {
+    return (this.referencedStage != null);
+  }
+
+  public ExternalReference withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  public ExternalReference withIdentifier(String value) {
+    setIdentifier(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withAlternateIdentifier(String value) {
+    setAlternateIdentifier(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withTitle(String value) {
+    setTitle(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withAuthor(String value) {
+    setAuthor(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withOrganisation(String value) {
+    setOrganisation(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withDocumentCls(ListCCL value) {
+    setDocumentCls(new TString(value.value()));
+    return this;
+  }
+
+  public ExternalReference withResourceLocator(String value) {
+    setResourceLocator(new TString(value));
+    return this;
+  }
+
+  public ExternalReference withIsAttached(ListCBO value) {
+    setIsAttached(new TString(value.value()));
+    return this;
+  }
+
+  public ExternalReference withIsClassified(ListCBO value) {
+    setIsClassified(new TString(value.value()));
+    return this;
+  }
+
+  public ExternalReference withReferencedStage(ListCSG value) {
+    setReferencedStage(new TString(value.value()));
+    return this;
   }
 
 }

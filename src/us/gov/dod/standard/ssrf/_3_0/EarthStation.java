@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -65,12 +65,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class EarthStation {
 
-  @XmlElementRef(name = "Name", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> name;
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> type;
-  @XmlElementRef(name = "LocationRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> locationRef;
+  @XmlElement(name = "Name", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString name;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString type;
+  @XmlElement(name = "LocationRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString locationRef;
 
   /**
    * Gets the value of the name property.
@@ -79,7 +82,7 @@ public class EarthStation {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getName() {
+  public TString getName() {
     return name;
   }
 
@@ -90,8 +93,12 @@ public class EarthStation {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setName(JAXBElement<TS50> value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -101,7 +108,7 @@ public class EarthStation {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -112,8 +119,12 @@ public class EarthStation {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS10> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -123,7 +134,7 @@ public class EarthStation {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getLocationRef() {
+  public TString getLocationRef() {
     return locationRef;
   }
 
@@ -134,8 +145,27 @@ public class EarthStation {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setLocationRef(JAXBElement<TSerial> value) {
+  public void setLocationRef(TString value) {
     this.locationRef = value;
+  }
+
+  public boolean isSetLocationRef() {
+    return (this.locationRef != null);
+  }
+
+  public EarthStation withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public EarthStation withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public EarthStation withLocationRef(String value) {
+    setLocationRef(new TString(value));
+    return this;
   }
 
 }

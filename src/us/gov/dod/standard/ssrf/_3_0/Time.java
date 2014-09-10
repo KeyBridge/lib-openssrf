@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -58,14 +59,16 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Time", propOrder = {
   "period",
-  "usageDescription0020"
+  "usageDescription_0020"
 })
 public class Time {
 
-  @XmlElementRef(name = "Period", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> period;
-  @XmlElementRef(name = "UsageDescription ", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> usageDescription0020;
+  @XmlElement(name = "Period", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString period;
+  @XmlElement(name = "UsageDescription ", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString usageDescription_0020;
 
   /**
    * Gets the value of the period property.
@@ -74,7 +77,7 @@ public class Time {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getPeriod() {
+  public TString getPeriod() {
     return period;
   }
 
@@ -85,8 +88,12 @@ public class Time {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setPeriod(JAXBElement<TS50> value) {
+  public void setPeriod(TString value) {
     this.period = value;
+  }
+
+  public boolean isSetPeriod() {
+    return (this.period != null);
   }
 
   /**
@@ -96,8 +103,8 @@ public class Time {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getUsageDescription_0020() {
-    return usageDescription0020;
+  public TString getUsageDescription_0020() {
+    return usageDescription_0020;
   }
 
   /**
@@ -107,8 +114,22 @@ public class Time {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setUsageDescription_0020(JAXBElement<TMEMO> value) {
-    this.usageDescription0020 = value;
+  public void setUsageDescription_0020(TString value) {
+    this.usageDescription_0020 = value;
+  }
+
+  public boolean isSetUsageDescription_0020() {
+    return (this.usageDescription_0020 != null);
+  }
+
+  public Time withPeriod(String value) {
+    setPeriod(new TString(value));
+    return this;
+  }
+
+  public Time withUsageDescription_0020(String value) {
+    setUsageDescription_0020(new TString(value));
+    return this;
   }
 
 }

@@ -47,7 +47,17 @@
     <jxb:bindings node="//xs:complexType//xs:attribute[@name='remarks']">
       <jxb:property name="attributeRemarks"/>
     </jxb:bindings>
-    
   </jxb:bindings>
+  
+
+<!--  XPath to <xs:attributeGroup ref="metadata"/>      //xs:complexType//xs:attributeGroup/@ref -->
+
+ <!--  Do not build enumerated lists. -->
+  <jxb:bindings schemaLocation="domains.xsd">
+<!--  /xs:schema/xs:simpleType[contains(@name, 'UN')] -->
+        <jxb:bindings node="//xs:simpleType[contains(@name, 'UN')]">
+            <jxb:class ref="xsd:decimal"/>
+        </jxb:bindings>
+    </jxb:bindings>
   
 </jxb:bindings>

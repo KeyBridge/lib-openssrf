@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBWHz;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -40,15 +42,11 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <
  * pre>
- * &lt;complexType name="TxAntModeRef">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}RxAntModeRef">
- *       &lt;sequence>
- *         &lt;element name="SpectralPowerDensity" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBWHz" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TxAntModeRef"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}RxAntModeRef"> &lt;sequence>
+ * &lt;element name="SpectralPowerDensity"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBWHz" minOccurs="0"/>
+ * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -57,11 +55,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "TxAntModeRef", propOrder = {
   "spectralPowerDensity"
 })
-public class TxAntModeRef
-  extends RxAntModeRef {
+public class TxAntModeRef extends RxAntModeRef {
 
-  @XmlElementRef(name = "SpectralPowerDensity", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBWHz> spectralPowerDensity;
+  @XmlElement(name = "SpectralPowerDensity", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBWHZ.class)
+  private TDecimal spectralPowerDensity;
 
   /**
    * Gets the value of the spectralPowerDensity property.
@@ -70,7 +68,7 @@ public class TxAntModeRef
    *         {@link JAXBElement }{@code <}{@link TdBWHz }{@code >}
    * <p>
    */
-  public JAXBElement<TdBWHz> getSpectralPowerDensity() {
+  public TDecimal getSpectralPowerDensity() {
     return spectralPowerDensity;
   }
 
@@ -81,8 +79,17 @@ public class TxAntModeRef
    *              {@link JAXBElement }{@code <}{@link TdBWHz }{@code >}
    * <p>
    */
-  public void setSpectralPowerDensity(JAXBElement<TdBWHz> value) {
+  public void setSpectralPowerDensity(TDecimal value) {
     this.spectralPowerDensity = value;
+  }
+
+  public boolean isSetSpectralPowerDensity() {
+    return (this.spectralPowerDensity != null);
+  }
+
+  public TxAntModeRef withSpectralPowerDensity(Double value) {
+    setSpectralPowerDensity(new TDecimal(value));
+    return this;
   }
 
 }

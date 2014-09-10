@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCCL;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS200;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -63,11 +68,13 @@ import javax.xml.bind.annotation.*;
 public class Downgrade {
 
   @XmlElement(name = "Downcls", required = true)
-  protected TListCCL downcls;
+  private TString downcls;
   @XmlElement(name = "Date", required = true)
-  protected TD date;
-  @XmlElementRef(name = "DowngradeInfo", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS200> downgradeInfo;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar date;
+  @XmlElement(name = "DowngradeInfo", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS200.class)
+  private TString downgradeInfo;
 
   /**
    * Gets the value of the downcls property.
@@ -75,7 +82,7 @@ public class Downgrade {
    * @return possible object is {@link TListCCL }
    * <p>
    */
-  public TListCCL getDowncls() {
+  public TString getDowncls() {
     return downcls;
   }
 
@@ -85,8 +92,12 @@ public class Downgrade {
    * @param value allowed object is {@link TListCCL }
    * <p>
    */
-  public void setDowncls(TListCCL value) {
+  public void setDowncls(TString value) {
     this.downcls = value;
+  }
+
+  public boolean isSetDowncls() {
+    return (this.downcls != null);
   }
 
   /**
@@ -95,7 +106,7 @@ public class Downgrade {
    * @return possible object is {@link TD }
    * <p>
    */
-  public TD getDate() {
+  public TCalendar getDate() {
     return date;
   }
 
@@ -105,8 +116,12 @@ public class Downgrade {
    * @param value allowed object is {@link TD }
    * <p>
    */
-  public void setDate(TD value) {
+  public void setDate(TCalendar value) {
     this.date = value;
+  }
+
+  public boolean isSetDate() {
+    return (this.date != null);
   }
 
   /**
@@ -116,7 +131,7 @@ public class Downgrade {
    *         {@link JAXBElement }{@code <}{@link TS200 }{@code >}
    * <p>
    */
-  public JAXBElement<TS200> getDowngradeInfo() {
+  public TString getDowngradeInfo() {
     return downgradeInfo;
   }
 
@@ -127,8 +142,27 @@ public class Downgrade {
    *              {@link JAXBElement }{@code <}{@link TS200 }{@code >}
    * <p>
    */
-  public void setDowngradeInfo(JAXBElement<TS200> value) {
+  public void setDowngradeInfo(TString value) {
     this.downgradeInfo = value;
+  }
+
+  public boolean isSetDowngradeInfo() {
+    return (this.downgradeInfo != null);
+  }
+
+  public Downgrade withDowncls(ListCCL value) {
+    setDowncls(new TString(value.value()));
+    return this;
+  }
+
+  public Downgrade withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  public Downgrade withDowngradeInfo(String value) {
+    setDowngradeInfo(new TString(value));
+    return this;
   }
 
 }

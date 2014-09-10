@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -67,16 +70,20 @@ import javax.xml.bind.annotation.*;
 })
 public class CommentSource {
 
-  @XmlElementRef(name = "Source", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> source;
-  @XmlElementRef(name = "Author", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> author;
-  @XmlElementRef(name = "JobTitle", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> jobTitle;
-  @XmlElementRef(name = "Date", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> date;
+  @XmlElement(name = "Source", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString source;
+  @XmlElement(name = "Author", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString author;
+  @XmlElement(name = "JobTitle", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString jobTitle;
+  @XmlElement(name = "Date", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar date;
   @XmlElement(name = "Comment", nillable = true)
-  protected List<Comment> comment;
+  private List<Comment> comment;
 
   /**
    * Gets the value of the source property.
@@ -85,7 +92,7 @@ public class CommentSource {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getSource() {
+  public TString getSource() {
     return source;
   }
 
@@ -96,8 +103,12 @@ public class CommentSource {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setSource(JAXBElement<TS100> value) {
+  public void setSource(TString value) {
     this.source = value;
+  }
+
+  public boolean isSetSource() {
+    return (this.source != null);
   }
 
   /**
@@ -107,7 +118,7 @@ public class CommentSource {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getAuthor() {
+  public TString getAuthor() {
     return author;
   }
 
@@ -118,8 +129,12 @@ public class CommentSource {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setAuthor(JAXBElement<TS100> value) {
+  public void setAuthor(TString value) {
     this.author = value;
+  }
+
+  public boolean isSetAuthor() {
+    return (this.author != null);
   }
 
   /**
@@ -129,7 +144,7 @@ public class CommentSource {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getJobTitle() {
+  public TString getJobTitle() {
     return jobTitle;
   }
 
@@ -140,8 +155,12 @@ public class CommentSource {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setJobTitle(JAXBElement<TS100> value) {
+  public void setJobTitle(TString value) {
     this.jobTitle = value;
+  }
+
+  public boolean isSetJobTitle() {
+    return (this.jobTitle != null);
   }
 
   /**
@@ -151,7 +170,7 @@ public class CommentSource {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDate() {
+  public TCalendar getDate() {
     return date;
   }
 
@@ -162,8 +181,12 @@ public class CommentSource {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDate(JAXBElement<TD> value) {
+  public void setDate(TCalendar value) {
     this.date = value;
+  }
+
+  public boolean isSetDate() {
+    return (this.date != null);
   }
 
   /**
@@ -186,12 +209,55 @@ public class CommentSource {
    * Objects of the following type(s) are allowed in the list {@link Comment }
    * <p>
    * <p>
+   * @return
    */
   public List<Comment> getComment() {
     if (comment == null) {
       comment = new ArrayList<>();
     }
     return this.comment;
+  }
+
+  public boolean isSetComment() {
+    return ((this.comment != null) && (!this.comment.isEmpty()));
+  }
+
+  public void unsetComment() {
+    this.comment = null;
+  }
+
+  public CommentSource withSource(String value) {
+    setSource(new TString(value));
+    return this;
+  }
+
+  public CommentSource withAuthor(String value) {
+    setAuthor(new TString(value));
+    return this;
+  }
+
+  public CommentSource withJobTitle(String value) {
+    setJobTitle(new TString(value));
+    return this;
+  }
+
+  public CommentSource withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  public CommentSource withComment(Comment... values) {
+    if (values != null) {
+      getComment().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public CommentSource withComment(Collection<Comment> values) {
+    if (values != null) {
+      getComment().addAll(values);
+    }
+    return this;
   }
 
 }

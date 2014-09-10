@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -66,15 +73,19 @@ import javax.xml.bind.annotation.*;
 public class AllotFreq {
 
   @XmlElement(name = "FreqMin", required = true)
-  protected TFreqM freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "PairedFreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> pairedFreqMin;
-  @XmlElementRef(name = "TuningStep", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> tuningStep;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "PairedFreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal pairedFreqMin;
+  @XmlElement(name = "TuningStep", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal tuningStep;
   @XmlElement(name = "LocationRestriction", nillable = true)
-  protected List<LocationRestriction> locationRestriction;
+  private List<LocationRestriction> locationRestriction;
 
   /**
    * Gets the value of the freqMin property.
@@ -82,7 +93,7 @@ public class AllotFreq {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -92,8 +103,12 @@ public class AllotFreq {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -103,7 +118,7 @@ public class AllotFreq {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -114,8 +129,12 @@ public class AllotFreq {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -125,7 +144,7 @@ public class AllotFreq {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getPairedFreqMin() {
+  public TDecimal getPairedFreqMin() {
     return pairedFreqMin;
   }
 
@@ -136,8 +155,12 @@ public class AllotFreq {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setPairedFreqMin(JAXBElement<TFreqM> value) {
+  public void setPairedFreqMin(TDecimal value) {
     this.pairedFreqMin = value;
+  }
+
+  public boolean isSetPairedFreqMin() {
+    return (this.pairedFreqMin != null);
   }
 
   /**
@@ -147,7 +170,7 @@ public class AllotFreq {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getTuningStep() {
+  public TDecimal getTuningStep() {
     return tuningStep;
   }
 
@@ -158,8 +181,12 @@ public class AllotFreq {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setTuningStep(JAXBElement<TFreqM> value) {
+  public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
+  }
+
+  public boolean isSetTuningStep() {
+    return (this.tuningStep != null);
   }
 
   /**
@@ -183,12 +210,55 @@ public class AllotFreq {
      * {@link LocationRestriction }
    * <p>
    * <p>
+   * @return
    */
   public List<LocationRestriction> getLocationRestriction() {
     if (locationRestriction == null) {
       locationRestriction = new ArrayList<>();
     }
     return this.locationRestriction;
+  }
+
+  public boolean isSetLocationRestriction() {
+    return ((this.locationRestriction != null) && (!this.locationRestriction.isEmpty()));
+  }
+
+  public void unsetLocationRestriction() {
+    this.locationRestriction = null;
+  }
+
+  public AllotFreq withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public AllotFreq withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public AllotFreq withPairedFreqMin(Double value) {
+    setPairedFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public AllotFreq withTuningStep(Double value) {
+    setTuningStep(new TDecimal(value));
+    return this;
+  }
+
+  public AllotFreq withLocationRestriction(LocationRestriction... values) {
+    if (values != null) {
+      getLocationRestriction().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AllotFreq withLocationRestriction(Collection<LocationRestriction> values) {
+    if (values != null) {
+      getLocationRestriction().addAll(values);
+    }
+    return this;
   }
 
 }

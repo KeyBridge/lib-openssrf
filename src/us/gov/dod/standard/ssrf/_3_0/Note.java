@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -43,19 +44,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Note">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Administration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO" minOccurs="0"/>
- *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="ExpirationDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="Source" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Note"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Administration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"
+ * minOccurs="0"/> &lt;element name="Description"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="ExpirationDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
+ * &lt;element name="Source" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -70,21 +69,25 @@ import javax.xml.bind.annotation.XmlType;
   "name",
   "source"
 })
-public class Note
-  extends Common {
+public class Note extends Common {
 
-  @XmlElementRef(name = "Administration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAO> administration;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> description;
-  @XmlElementRef(name = "EffectiveDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "Name", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> name;
-  @XmlElementRef(name = "Source", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> source;
+  @XmlElement(name = "Administration", required = false)
+  private TString administration;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString description;
+  @XmlElement(name = "EffectiveDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "Name", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString name;
+  @XmlElement(name = "Source", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString source;
 
   /**
    * Gets the value of the administration property.
@@ -93,7 +96,7 @@ public class Note
    *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAO> getAdministration() {
+  public TString getAdministration() {
     return administration;
   }
 
@@ -104,8 +107,12 @@ public class Note
    *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public void setAdministration(JAXBElement<TListCAO> value) {
+  public void setAdministration(TString value) {
     this.administration = value;
+  }
+
+  public boolean isSetAdministration() {
+    return (this.administration != null);
   }
 
   /**
@@ -115,7 +122,7 @@ public class Note
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -126,8 +133,12 @@ public class Note
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TMEMO> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -137,7 +148,7 @@ public class Note
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -148,8 +159,12 @@ public class Note
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setEffectiveDate(JAXBElement<TD> value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -159,7 +174,7 @@ public class Note
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -170,8 +185,12 @@ public class Note
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -181,7 +200,7 @@ public class Note
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getName() {
+  public TString getName() {
     return name;
   }
 
@@ -192,8 +211,12 @@ public class Note
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setName(JAXBElement<TMEMO> value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -203,7 +226,7 @@ public class Note
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getSource() {
+  public TString getSource() {
     return source;
   }
 
@@ -214,8 +237,42 @@ public class Note
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setSource(JAXBElement<TS100> value) {
+  public void setSource(TString value) {
     this.source = value;
+  }
+
+  public boolean isSetSource() {
+    return (this.source != null);
+  }
+
+  public Note withAdministration(ListCAO value) {
+    setAdministration(new TString(value.value()));
+    return this;
+  }
+
+  public Note withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public Note withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public Note withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Note withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public Note withSource(String value) {
+    setSource(new TString(value));
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,20 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.Tmicrosecs;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9_3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TPercent;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN8_4;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -86,36 +80,51 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Pulse {
 
-  @XmlElementRef(name = "PRRMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9_3> prrMin;
-  @XmlElementRef(name = "PRRMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9_3> prrMax;
-  @XmlElementRef(name = "PDMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> pdMin;
-  @XmlElementRef(name = "PDMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> pdMax;
-  @XmlElementRef(name = "DutyCycleMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TPercent> dutyCycleMin;
-  @XmlElementRef(name = "DutyCycleMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TPercent> dutyCycleMax;
-  @XmlElementRef(name = "AvgPowerMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> avgPowerMin;
-  @XmlElementRef(name = "AvgPowerMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> avgPowerMax;
-  @XmlElementRef(name = "CompRatio", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN8_4> compRatio;
-  @XmlElementRef(name = "CompMethod", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS40> compMethod;
-  @XmlElementRef(name = "RiseTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> riseTime;
-  @XmlElementRef(name = "FallTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> fallTime;
-  @XmlElementRef(name = "JustifyShortRiseTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> justifyShortRiseTime;
-  @XmlElementRef(name = "RadarProcessingGainMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> radarProcessingGainMax;
-  @XmlElementRef(name = "NumSubpulses", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10> numSubpulses;
+  @XmlElement(name = "PRRMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN9_3.class)
+  private TDecimal prrMin;
+  @XmlElement(name = "PRRMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN9_3.class)
+  private TDecimal prrMax;
+  @XmlElement(name = "PDMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal pdMin;
+  @XmlElement(name = "PDMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal pdMax;
+  @XmlElement(name = "DutyCycleMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  private TDecimal dutyCycleMin;
+  @XmlElement(name = "DutyCycleMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  private TDecimal dutyCycleMax;
+  @XmlElement(name = "AvgPowerMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal avgPowerMin;
+  @XmlElement(name = "AvgPowerMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal avgPowerMax;
+  @XmlElement(name = "CompRatio", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN8_4.class)
+  private TDecimal compRatio;
+  @XmlElement(name = "CompMethod", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  private TString compMethod;
+  @XmlElement(name = "RiseTime", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal riseTime;
+  @XmlElement(name = "FallTime", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal fallTime;
+  @XmlElement(name = "JustifyShortRiseTime", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString justifyShortRiseTime;
+  @XmlElement(name = "RadarProcessingGainMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal radarProcessingGainMax;
+  @XmlElement(name = "NumSubpulses", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN10.class)
+  private TInteger numSubpulses;
 
   /**
    * Gets the value of the prrMin property.
@@ -124,7 +133,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9_3> getPRRMin() {
+  public TDecimal getPRRMin() {
     return prrMin;
   }
 
@@ -135,8 +144,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
    * <p>
    */
-  public void setPRRMin(JAXBElement<TUN9_3> value) {
+  public void setPRRMin(TDecimal value) {
     this.prrMin = value;
+  }
+
+  public boolean isSetPRRMin() {
+    return (this.prrMin != null);
   }
 
   /**
@@ -146,7 +159,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9_3> getPRRMax() {
+  public TDecimal getPRRMax() {
     return prrMax;
   }
 
@@ -157,8 +170,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
    * <p>
    */
-  public void setPRRMax(JAXBElement<TUN9_3> value) {
+  public void setPRRMax(TDecimal value) {
     this.prrMax = value;
+  }
+
+  public boolean isSetPRRMax() {
+    return (this.prrMax != null);
   }
 
   /**
@@ -168,7 +185,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getPDMin() {
+  public TDecimal getPDMin() {
     return pdMin;
   }
 
@@ -179,8 +196,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setPDMin(JAXBElement<Tmicrosecs> value) {
+  public void setPDMin(TDecimal value) {
     this.pdMin = value;
+  }
+
+  public boolean isSetPDMin() {
+    return (this.pdMin != null);
   }
 
   /**
@@ -190,7 +211,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getPDMax() {
+  public TDecimal getPDMax() {
     return pdMax;
   }
 
@@ -201,8 +222,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setPDMax(JAXBElement<Tmicrosecs> value) {
+  public void setPDMax(TDecimal value) {
     this.pdMax = value;
+  }
+
+  public boolean isSetPDMax() {
+    return (this.pdMax != null);
   }
 
   /**
@@ -212,7 +237,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public JAXBElement<TPercent> getDutyCycleMin() {
+  public TDecimal getDutyCycleMin() {
     return dutyCycleMin;
   }
 
@@ -223,8 +248,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public void setDutyCycleMin(JAXBElement<TPercent> value) {
+  public void setDutyCycleMin(TDecimal value) {
     this.dutyCycleMin = value;
+  }
+
+  public boolean isSetDutyCycleMin() {
+    return (this.dutyCycleMin != null);
   }
 
   /**
@@ -234,7 +263,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public JAXBElement<TPercent> getDutyCycleMax() {
+  public TDecimal getDutyCycleMax() {
     return dutyCycleMax;
   }
 
@@ -245,8 +274,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public void setDutyCycleMax(JAXBElement<TPercent> value) {
+  public void setDutyCycleMax(TDecimal value) {
     this.dutyCycleMax = value;
+  }
+
+  public boolean isSetDutyCycleMax() {
+    return (this.dutyCycleMax != null);
   }
 
   /**
@@ -256,7 +289,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getAvgPowerMin() {
+  public TDecimal getAvgPowerMin() {
     return avgPowerMin;
   }
 
@@ -267,8 +300,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setAvgPowerMin(JAXBElement<TdBW> value) {
+  public void setAvgPowerMin(TDecimal value) {
     this.avgPowerMin = value;
+  }
+
+  public boolean isSetAvgPowerMin() {
+    return (this.avgPowerMin != null);
   }
 
   /**
@@ -278,7 +315,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getAvgPowerMax() {
+  public TDecimal getAvgPowerMax() {
     return avgPowerMax;
   }
 
@@ -289,8 +326,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setAvgPowerMax(JAXBElement<TdBW> value) {
+  public void setAvgPowerMax(TDecimal value) {
     this.avgPowerMax = value;
+  }
+
+  public boolean isSetAvgPowerMax() {
+    return (this.avgPowerMax != null);
   }
 
   /**
@@ -300,7 +341,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TUN8_4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN8_4> getCompRatio() {
+  public TDecimal getCompRatio() {
     return compRatio;
   }
 
@@ -311,8 +352,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TUN8_4 }{@code >}
    * <p>
    */
-  public void setCompRatio(JAXBElement<TUN8_4> value) {
+  public void setCompRatio(TDecimal value) {
     this.compRatio = value;
+  }
+
+  public boolean isSetCompRatio() {
+    return (this.compRatio != null);
   }
 
   /**
@@ -322,7 +367,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public JAXBElement<TS40> getCompMethod() {
+  public TString getCompMethod() {
     return compMethod;
   }
 
@@ -333,8 +378,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public void setCompMethod(JAXBElement<TS40> value) {
+  public void setCompMethod(TString value) {
     this.compMethod = value;
+  }
+
+  public boolean isSetCompMethod() {
+    return (this.compMethod != null);
   }
 
   /**
@@ -344,7 +393,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getRiseTime() {
+  public TDecimal getRiseTime() {
     return riseTime;
   }
 
@@ -355,8 +404,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setRiseTime(JAXBElement<Tmicrosecs> value) {
+  public void setRiseTime(TDecimal value) {
     this.riseTime = value;
+  }
+
+  public boolean isSetRiseTime() {
+    return (this.riseTime != null);
   }
 
   /**
@@ -366,7 +419,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getFallTime() {
+  public TDecimal getFallTime() {
     return fallTime;
   }
 
@@ -377,8 +430,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setFallTime(JAXBElement<Tmicrosecs> value) {
+  public void setFallTime(TDecimal value) {
     this.fallTime = value;
+  }
+
+  public boolean isSetFallTime() {
+    return (this.fallTime != null);
   }
 
   /**
@@ -388,7 +445,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getJustifyShortRiseTime() {
+  public TString getJustifyShortRiseTime() {
     return justifyShortRiseTime;
   }
 
@@ -399,8 +456,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setJustifyShortRiseTime(JAXBElement<TMEMO> value) {
+  public void setJustifyShortRiseTime(TString value) {
     this.justifyShortRiseTime = value;
+  }
+
+  public boolean isSetJustifyShortRiseTime() {
+    return (this.justifyShortRiseTime != null);
   }
 
   /**
@@ -410,7 +471,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getRadarProcessingGainMax() {
+  public TDecimal getRadarProcessingGainMax() {
     return radarProcessingGainMax;
   }
 
@@ -421,8 +482,12 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setRadarProcessingGainMax(JAXBElement<TdB> value) {
+  public void setRadarProcessingGainMax(TDecimal value) {
     this.radarProcessingGainMax = value;
+  }
+
+  public boolean isSetRadarProcessingGainMax() {
+    return (this.radarProcessingGainMax != null);
   }
 
   /**
@@ -432,7 +497,7 @@ public class Pulse {
    *         {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10> getNumSubpulses() {
+  public TInteger getNumSubpulses() {
     return numSubpulses;
   }
 
@@ -443,8 +508,87 @@ public class Pulse {
    *              {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
    * <p>
    */
-  public void setNumSubpulses(JAXBElement<TUN10> value) {
+  public void setNumSubpulses(TInteger value) {
     this.numSubpulses = value;
+  }
+
+  public boolean isSetNumSubpulses() {
+    return (this.numSubpulses != null);
+  }
+
+  public Pulse withPRRMin(Double value) {
+    setPRRMin(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withPRRMax(Double value) {
+    setPRRMax(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withPDMin(Double value) {
+    setPDMin(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withPDMax(Double value) {
+    setPDMax(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withDutyCycleMin(Double value) {
+    setDutyCycleMin(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withDutyCycleMax(Double value) {
+    setDutyCycleMax(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withAvgPowerMin(Double value) {
+    setAvgPowerMin(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withAvgPowerMax(Double value) {
+    setAvgPowerMax(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withCompRatio(Double value) {
+    setCompRatio(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withCompMethod(String value) {
+    setCompMethod(new TString(value));
+    return this;
+  }
+
+  public Pulse withRiseTime(Double value) {
+    setRiseTime(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withFallTime(Double value) {
+    setFallTime(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withJustifyShortRiseTime(String value) {
+    setJustifyShortRiseTime(new TString(value));
+    return this;
+  }
+
+  public Pulse withRadarProcessingGainMax(Double value) {
+    setRadarProcessingGainMax(new TDecimal(value));
+    return this;
+  }
+
+  public Pulse withNumSubpulses(Integer value) {
+    setNumSubpulses(new TInteger(value));
+    return this;
   }
 
 }

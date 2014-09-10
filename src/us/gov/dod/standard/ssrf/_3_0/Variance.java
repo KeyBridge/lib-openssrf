@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -68,13 +71,16 @@ import javax.xml.bind.annotation.XmlType;
 public class Variance {
 
   @XmlElement(name = "Type", required = true)
-  protected TS10 type;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString type;
   @XmlElement(name = "AllocatedService", required = true)
-  protected TS100 allocatedService;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString allocatedService;
   @XmlElement(name = "Priority", required = true)
-  protected TS10 priority;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString priority;
   @XmlElement(name = "Administration", nillable = true)
-  protected List<Administration> administration;
+  private List<Administration> administration;
 
   /**
    * Gets the value of the type property.
@@ -82,7 +88,7 @@ public class Variance {
    * @return possible object is {@link TS10 }
    * <p>
    */
-  public TS10 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -92,8 +98,12 @@ public class Variance {
    * @param value allowed object is {@link TS10 }
    * <p>
    */
-  public void setType(TS10 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -102,7 +112,7 @@ public class Variance {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getAllocatedService() {
+  public TString getAllocatedService() {
     return allocatedService;
   }
 
@@ -112,8 +122,12 @@ public class Variance {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setAllocatedService(TS100 value) {
+  public void setAllocatedService(TString value) {
     this.allocatedService = value;
+  }
+
+  public boolean isSetAllocatedService() {
+    return (this.allocatedService != null);
   }
 
   /**
@@ -122,7 +136,7 @@ public class Variance {
    * @return possible object is {@link TS10 }
    * <p>
    */
-  public TS10 getPriority() {
+  public TString getPriority() {
     return priority;
   }
 
@@ -132,8 +146,12 @@ public class Variance {
    * @param value allowed object is {@link TS10 }
    * <p>
    */
-  public void setPriority(TS10 value) {
+  public void setPriority(TString value) {
     this.priority = value;
+  }
+
+  public boolean isSetPriority() {
+    return (this.priority != null);
   }
 
   /**
@@ -157,12 +175,50 @@ public class Variance {
      * {@link Administration }
    * <p>
    * <p>
+   * @return
    */
   public List<Administration> getAdministration() {
     if (administration == null) {
       administration = new ArrayList<>();
     }
     return this.administration;
+  }
+
+  public boolean isSetAdministration() {
+    return ((this.administration != null) && (!this.administration.isEmpty()));
+  }
+
+  public void unsetAdministration() {
+    this.administration = null;
+  }
+
+  public Variance withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public Variance withAllocatedService(String value) {
+    setAllocatedService(new TString(value));
+    return this;
+  }
+
+  public Variance withPriority(String value) {
+    setPriority(new TString(value));
+    return this;
+  }
+
+  public Variance withAdministration(Administration... values) {
+    if (values != null) {
+      getAdministration().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Variance withAdministration(Collection<Administration> values) {
+    if (values != null) {
+      getAdministration().addAll(values);
+    }
+    return this;
   }
 
 }

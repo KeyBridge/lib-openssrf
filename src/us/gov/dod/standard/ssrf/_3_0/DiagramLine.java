@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -35,7 +40,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="DiagramLine">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -60,11 +66,14 @@ import javax.xml.bind.annotation.*;
 public class DiagramLine {
 
   @XmlElement(name = "TxEndpointName", required = true)
-  protected TS100 txEndpointName;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString txEndpointName;
   @XmlElement(name = "RxEndpointName", required = true)
-  protected TS100 rxEndpointName;
-  @XmlElementRef(name = "ConfigID", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> configID;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString rxEndpointName;
+  @XmlElement(name = "ConfigID", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString configID;
 
   /**
    * Gets the value of the txEndpointName property.
@@ -72,7 +81,7 @@ public class DiagramLine {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getTxEndpointName() {
+  public TString getTxEndpointName() {
     return txEndpointName;
   }
 
@@ -82,8 +91,12 @@ public class DiagramLine {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setTxEndpointName(TS100 value) {
+  public void setTxEndpointName(TString value) {
     this.txEndpointName = value;
+  }
+
+  public boolean isSetTxEndpointName() {
+    return (this.txEndpointName != null);
   }
 
   /**
@@ -92,7 +105,7 @@ public class DiagramLine {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getRxEndpointName() {
+  public TString getRxEndpointName() {
     return rxEndpointName;
   }
 
@@ -102,8 +115,12 @@ public class DiagramLine {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setRxEndpointName(TS100 value) {
+  public void setRxEndpointName(TString value) {
     this.rxEndpointName = value;
+  }
+
+  public boolean isSetRxEndpointName() {
+    return (this.rxEndpointName != null);
   }
 
   /**
@@ -113,7 +130,7 @@ public class DiagramLine {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getConfigID() {
+  public TString getConfigID() {
     return configID;
   }
 
@@ -124,8 +141,27 @@ public class DiagramLine {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setConfigID(JAXBElement<TS100> value) {
+  public void setConfigID(TString value) {
     this.configID = value;
+  }
+
+  public boolean isSetConfigID() {
+    return (this.configID != null);
+  }
+
+  public DiagramLine withTxEndpointName(String value) {
+    setTxEndpointName(new TString(value));
+    return this;
+  }
+
+  public DiagramLine withRxEndpointName(String value) {
+    setRxEndpointName(new TString(value));
+    return this;
+  }
+
+  public DiagramLine withConfigID(String value) {
+    setConfigID(new TString(value));
+    return this;
   }
 
 }

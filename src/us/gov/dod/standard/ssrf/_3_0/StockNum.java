@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -60,9 +64,11 @@ import javax.xml.bind.annotation.*;
 public class StockNum {
 
   @XmlElement(name = "StockNum", required = true)
-  protected TS50 stockNum;
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> type;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString stockNum;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString type;
 
   /**
    * Gets the value of the stockNum property.
@@ -70,7 +76,7 @@ public class StockNum {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getStockNum() {
+  public TString getStockNum() {
     return stockNum;
   }
 
@@ -80,8 +86,12 @@ public class StockNum {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setStockNum(TS50 value) {
+  public void setStockNum(TString value) {
     this.stockNum = value;
+  }
+
+  public boolean isSetStockNum() {
+    return (this.stockNum != null);
   }
 
   /**
@@ -91,7 +101,7 @@ public class StockNum {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -102,8 +112,22 @@ public class StockNum {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS25> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
+  }
+
+  public StockNum withStockNum(String value) {
+    setStockNum(new TString(value));
+    return this;
+  }
+
+  public StockNum withType(String value) {
+    setType(new TString(value));
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -60,9 +65,10 @@ import javax.xml.bind.annotation.*;
 public class StageLocation {
 
   @XmlElement(name = "LocSatRef", required = true)
-  protected TSerial locSatRef;
-  @XmlElementRef(name = "Excluded", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> excluded;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString locSatRef;
+  @XmlElement(name = "Excluded", required = false)
+  private TString excluded;
 
   /**
    * Gets the value of the locSatRef property.
@@ -70,7 +76,7 @@ public class StageLocation {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getLocSatRef() {
+  public TString getLocSatRef() {
     return locSatRef;
   }
 
@@ -80,8 +86,12 @@ public class StageLocation {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setLocSatRef(TSerial value) {
+  public void setLocSatRef(TString value) {
     this.locSatRef = value;
+  }
+
+  public boolean isSetLocSatRef() {
+    return (this.locSatRef != null);
   }
 
   /**
@@ -91,7 +101,7 @@ public class StageLocation {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getExcluded() {
+  public TString getExcluded() {
     return excluded;
   }
 
@@ -102,8 +112,22 @@ public class StageLocation {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setExcluded(JAXBElement<TListCBO> value) {
+  public void setExcluded(TString value) {
     this.excluded = value;
+  }
+
+  public boolean isSetExcluded() {
+    return (this.excluded != null);
+  }
+
+  public StageLocation withLocSatRef(String value) {
+    setLocSatRef(new TString(value));
+    return this;
+  }
+
+  public StageLocation withExcluded(ListCBO value) {
+    setExcluded(new TString(value.value()));
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -38,7 +44,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Deployment">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -63,11 +70,13 @@ import javax.xml.bind.annotation.*;
 public class Deployment {
 
   @XmlElement(name = "Type", required = true)
-  protected TS50 type;
-  @XmlElementRef(name = "Status", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> status;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString type;
+  @XmlElement(name = "Status", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString status;
   @XmlElement(name = "Installation", nillable = true)
-  protected List<Installation> installation;
+  private List<Installation> installation;
 
   /**
    * Gets the value of the type property.
@@ -75,7 +84,7 @@ public class Deployment {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -85,8 +94,12 @@ public class Deployment {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setType(TS50 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -96,7 +109,7 @@ public class Deployment {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getStatus() {
+  public TString getStatus() {
     return status;
   }
 
@@ -107,8 +120,12 @@ public class Deployment {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setStatus(JAXBElement<TS10> value) {
+  public void setStatus(TString value) {
     this.status = value;
+  }
+
+  public boolean isSetStatus() {
+    return (this.status != null);
   }
 
   /**
@@ -132,12 +149,45 @@ public class Deployment {
      * {@link Installation }
    * <p>
    * <p>
+   * @return
    */
   public List<Installation> getInstallation() {
     if (installation == null) {
       installation = new ArrayList<>();
     }
     return this.installation;
+  }
+
+  public boolean isSetInstallation() {
+    return ((this.installation != null) && (!this.installation.isEmpty()));
+  }
+
+  public void unsetInstallation() {
+    this.installation = null;
+  }
+
+  public Deployment withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public Deployment withStatus(String value) {
+    setStatus(new TString(value));
+    return this;
+  }
+
+  public Deployment withInstallation(Installation... values) {
+    if (values != null) {
+      getInstallation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Deployment withInstallation(Collection<Installation> values) {
+    if (values != null) {
+      getInstallation().addAll(values);
+    }
+    return this;
   }
 
 }

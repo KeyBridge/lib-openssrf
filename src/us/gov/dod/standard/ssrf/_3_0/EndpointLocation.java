@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz180;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -41,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="EndpointLocation">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -69,16 +70,20 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class EndpointLocation {
 
-  @XmlElementRef(name = "AntennaHeight", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> antennaHeight;
-  @XmlElementRef(name = "Excluded", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> excluded;
-  @XmlElementRef(name = "LocSatRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> locSatRef;
-  @XmlElementRef(name = "MinPointAngle", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz180> minPointAngle;
-  @XmlElementRef(name = "SiteElevation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> siteElevation;
+  @XmlElement(name = "AntennaHeight", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal antennaHeight;
+  @XmlElement(name = "Excluded", required = false)
+  private TString excluded;
+  @XmlElement(name = "LocSatRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString locSatRef;
+  @XmlElement(name = "MinPointAngle", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  private TDecimal minPointAngle;
+  @XmlElement(name = "SiteElevation", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal siteElevation;
 
   /**
    * Gets the value of the antennaHeight property.
@@ -87,7 +92,7 @@ public class EndpointLocation {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAntennaHeight() {
+  public TDecimal getAntennaHeight() {
     return antennaHeight;
   }
 
@@ -98,8 +103,12 @@ public class EndpointLocation {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAntennaHeight(JAXBElement<TAltitude> value) {
+  public void setAntennaHeight(TDecimal value) {
     this.antennaHeight = value;
+  }
+
+  public boolean isSetAntennaHeight() {
+    return (this.antennaHeight != null);
   }
 
   /**
@@ -109,7 +118,7 @@ public class EndpointLocation {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getExcluded() {
+  public TString getExcluded() {
     return excluded;
   }
 
@@ -120,8 +129,12 @@ public class EndpointLocation {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setExcluded(JAXBElement<TListCBO> value) {
+  public void setExcluded(TString value) {
     this.excluded = value;
+  }
+
+  public boolean isSetExcluded() {
+    return (this.excluded != null);
   }
 
   /**
@@ -131,7 +144,7 @@ public class EndpointLocation {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getLocSatRef() {
+  public TString getLocSatRef() {
     return locSatRef;
   }
 
@@ -142,8 +155,12 @@ public class EndpointLocation {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setLocSatRef(JAXBElement<TSerial> value) {
+  public void setLocSatRef(TString value) {
     this.locSatRef = value;
+  }
+
+  public boolean isSetLocSatRef() {
+    return (this.locSatRef != null);
   }
 
   /**
@@ -153,7 +170,7 @@ public class EndpointLocation {
    *         {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
    * <p>
    */
-  public JAXBElement<TAz180> getMinPointAngle() {
+  public TDecimal getMinPointAngle() {
     return minPointAngle;
   }
 
@@ -164,8 +181,12 @@ public class EndpointLocation {
    *              {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
    * <p>
    */
-  public void setMinPointAngle(JAXBElement<TAz180> value) {
+  public void setMinPointAngle(TDecimal value) {
     this.minPointAngle = value;
+  }
+
+  public boolean isSetMinPointAngle() {
+    return (this.minPointAngle != null);
   }
 
   /**
@@ -175,7 +196,7 @@ public class EndpointLocation {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getSiteElevation() {
+  public TDecimal getSiteElevation() {
     return siteElevation;
   }
 
@@ -186,8 +207,37 @@ public class EndpointLocation {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setSiteElevation(JAXBElement<TAltitude> value) {
+  public void setSiteElevation(TDecimal value) {
     this.siteElevation = value;
+  }
+
+  public boolean isSetSiteElevation() {
+    return (this.siteElevation != null);
+  }
+
+  public EndpointLocation withAntennaHeight(Double value) {
+    setAntennaHeight(new TDecimal(value));
+    return this;
+  }
+
+  public EndpointLocation withExcluded(ListCBO value) {
+    setExcluded(new TString(value.value()));
+    return this;
+  }
+
+  public EndpointLocation withLocSatRef(String value) {
+    setLocSatRef(new TString(value));
+    return this;
+  }
+
+  public EndpointLocation withMinPointAngle(Double value) {
+    setMinPointAngle(new TDecimal(value));
+    return this;
+  }
+
+  public EndpointLocation withSiteElevation(Double value) {
+    setSiteElevation(new TDecimal(value));
+    return this;
   }
 
 }

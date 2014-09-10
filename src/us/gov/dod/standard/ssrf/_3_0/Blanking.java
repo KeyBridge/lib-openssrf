@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TElev;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -66,14 +67,18 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Blanking {
 
-  @XmlElementRef(name = "AzStart", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> azStart;
-  @XmlElementRef(name = "AzStop", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> azStop;
-  @XmlElementRef(name = "ElevStart", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> elevStart;
-  @XmlElementRef(name = "ElevStop", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> elevStop;
+  @XmlElement(name = "AzStart", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal azStart;
+  @XmlElement(name = "AzStop", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal azStop;
+  @XmlElement(name = "ElevStart", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal elevStart;
+  @XmlElement(name = "ElevStop", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal elevStop;
 
   /**
    * Gets the value of the azStart property.
@@ -82,7 +87,7 @@ public class Blanking {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getAzStart() {
+  public TDecimal getAzStart() {
     return azStart;
   }
 
@@ -93,8 +98,12 @@ public class Blanking {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setAzStart(JAXBElement<TAz> value) {
+  public void setAzStart(TDecimal value) {
     this.azStart = value;
+  }
+
+  public boolean isSetAzStart() {
+    return (this.azStart != null);
   }
 
   /**
@@ -104,7 +113,7 @@ public class Blanking {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getAzStop() {
+  public TDecimal getAzStop() {
     return azStop;
   }
 
@@ -115,8 +124,12 @@ public class Blanking {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setAzStop(JAXBElement<TAz> value) {
+  public void setAzStop(TDecimal value) {
     this.azStop = value;
+  }
+
+  public boolean isSetAzStop() {
+    return (this.azStop != null);
   }
 
   /**
@@ -126,7 +139,7 @@ public class Blanking {
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getElevStart() {
+  public TDecimal getElevStart() {
     return elevStart;
   }
 
@@ -137,8 +150,12 @@ public class Blanking {
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setElevStart(JAXBElement<TElev> value) {
+  public void setElevStart(TDecimal value) {
     this.elevStart = value;
+  }
+
+  public boolean isSetElevStart() {
+    return (this.elevStart != null);
   }
 
   /**
@@ -148,7 +165,7 @@ public class Blanking {
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getElevStop() {
+  public TDecimal getElevStop() {
     return elevStop;
   }
 
@@ -159,8 +176,32 @@ public class Blanking {
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setElevStop(JAXBElement<TElev> value) {
+  public void setElevStop(TDecimal value) {
     this.elevStop = value;
+  }
+
+  public boolean isSetElevStop() {
+    return (this.elevStop != null);
+  }
+
+  public Blanking withAzStart(Double value) {
+    setAzStart(new TDecimal(value));
+    return this;
+  }
+
+  public Blanking withAzStop(Double value) {
+    setAzStop(new TDecimal(value));
+    return this;
+  }
+
+  public Blanking withElevStart(Double value) {
+    setElevStart(new TDecimal(value));
+    return this;
+  }
+
+  public Blanking withElevStop(Double value) {
+    setElevStop(new TDecimal(value));
+    return this;
   }
 
 }

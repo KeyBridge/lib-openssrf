@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -41,12 +43,16 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Address"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
- * minOccurs="0"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"/> &lt;/sequence>
- * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
+ * &lt;complexType name="Address">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
+ *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -62,18 +68,23 @@ import javax.xml.bind.annotation.*;
 })
 public class Address {
 
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> description;
-  @XmlElementRef(name = "Street", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> street;
-  @XmlElementRef(name = "CityArea", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> cityArea;
-  @XmlElementRef(name = "StateCounty", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> stateCounty;
-  @XmlElementRef(name = "PostCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS15> postCode;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString description;
+  @XmlElement(name = "Street", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString street;
+  @XmlElement(name = "CityArea", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString cityArea;
+  @XmlElement(name = "StateCounty", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString stateCounty;
+  @XmlElement(name = "PostCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  private TString postCode;
   @XmlElement(name = "Country", required = true)
-  protected TListCAO country;
+  private TString country;
 
   /**
    * Gets the value of the description property.
@@ -82,7 +93,7 @@ public class Address {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -93,8 +104,12 @@ public class Address {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TS100> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -104,7 +119,7 @@ public class Address {
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getStreet() {
+  public TString getStreet() {
     return street;
   }
 
@@ -115,8 +130,12 @@ public class Address {
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setStreet(JAXBElement<TS255> value) {
+  public void setStreet(TString value) {
     this.street = value;
+  }
+
+  public boolean isSetStreet() {
+    return (this.street != null);
   }
 
   /**
@@ -126,7 +145,7 @@ public class Address {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getCityArea() {
+  public TString getCityArea() {
     return cityArea;
   }
 
@@ -137,8 +156,12 @@ public class Address {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setCityArea(JAXBElement<TS50> value) {
+  public void setCityArea(TString value) {
     this.cityArea = value;
+  }
+
+  public boolean isSetCityArea() {
+    return (this.cityArea != null);
   }
 
   /**
@@ -148,7 +171,7 @@ public class Address {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getStateCounty() {
+  public TString getStateCounty() {
     return stateCounty;
   }
 
@@ -159,8 +182,12 @@ public class Address {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setStateCounty(JAXBElement<TS50> value) {
+  public void setStateCounty(TString value) {
     this.stateCounty = value;
+  }
+
+  public boolean isSetStateCounty() {
+    return (this.stateCounty != null);
   }
 
   /**
@@ -170,7 +197,7 @@ public class Address {
    *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public JAXBElement<TS15> getPostCode() {
+  public TString getPostCode() {
     return postCode;
   }
 
@@ -181,8 +208,12 @@ public class Address {
    *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public void setPostCode(JAXBElement<TS15> value) {
+  public void setPostCode(TString value) {
     this.postCode = value;
+  }
+
+  public boolean isSetPostCode() {
+    return (this.postCode != null);
   }
 
   /**
@@ -191,7 +222,7 @@ public class Address {
    * @return possible object is {@link TListCAO }
    * <p>
    */
-  public TListCAO getCountry() {
+  public TString getCountry() {
     return country;
   }
 
@@ -201,8 +232,42 @@ public class Address {
    * @param value allowed object is {@link TListCAO }
    * <p>
    */
-  public void setCountry(TListCAO value) {
+  public void setCountry(TString value) {
     this.country = value;
+  }
+
+  public boolean isSetCountry() {
+    return (this.country != null);
+  }
+
+  public Address withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public Address withStreet(String value) {
+    setStreet(new TString(value));
+    return this;
+  }
+
+  public Address withCityArea(String value) {
+    setCityArea(new TString(value));
+    return this;
+  }
+
+  public Address withStateCounty(String value) {
+    setStateCounty(new TString(value));
+    return this;
+  }
+
+  public Address withPostCode(String value) {
+    setPostCode(new TString(value));
+    return this;
+  }
+
+  public Address withCountry(ListCAO value) {
+    setCountry(new TString(value.value()));
+    return this;
   }
 
 }

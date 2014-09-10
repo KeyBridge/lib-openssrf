@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS30;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -73,27 +75,32 @@ import javax.xml.bind.annotation.*;
   "telephoneFax",
   "eMail"
 })
-public class Contact
-  extends Common {
+public class Contact extends Common {
 
-  @XmlElementRef(name = "EffectiveDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
-  @XmlElementRef(name = "TitleRank", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> titleRank;
-  @XmlElementRef(name = "FirstName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS30> firstName;
-  @XmlElementRef(name = "LastName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS30> lastName;
+  @XmlElement(name = "EffectiveDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
+  @XmlElement(name = "TitleRank", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString titleRank;
+  @XmlElement(name = "FirstName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString firstName;
+  @XmlElement(name = "LastName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString lastName;
   @XmlElement(name = "Address")
-  protected List<Address> address;
+  private List<Address> address;
   @XmlElement(name = "TelephoneFax")
-  protected List<TelephoneFax> telephoneFax;
+  private List<TelephoneFax> telephoneFax;
   @XmlElement(name = "EMail")
-  protected List<EMail> eMail;
+  private List<EMail> eMail;
 
   /**
    * Gets the value of the effectiveDate property.
@@ -102,7 +109,7 @@ public class Contact
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -113,8 +120,12 @@ public class Contact
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setEffectiveDate(JAXBElement<TD> value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -124,7 +135,7 @@ public class Contact
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -135,8 +146,12 @@ public class Contact
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -146,7 +161,7 @@ public class Contact
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -157,8 +172,12 @@ public class Contact
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -168,7 +187,7 @@ public class Contact
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getTitleRank() {
+  public TString getTitleRank() {
     return titleRank;
   }
 
@@ -179,8 +198,12 @@ public class Contact
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setTitleRank(JAXBElement<TS10> value) {
+  public void setTitleRank(TString value) {
     this.titleRank = value;
+  }
+
+  public boolean isSetTitleRank() {
+    return (this.titleRank != null);
   }
 
   /**
@@ -190,7 +213,7 @@ public class Contact
    *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public JAXBElement<TS30> getFirstName() {
+  public TString getFirstName() {
     return firstName;
   }
 
@@ -201,8 +224,12 @@ public class Contact
    *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public void setFirstName(JAXBElement<TS30> value) {
+  public void setFirstName(TString value) {
     this.firstName = value;
+  }
+
+  public boolean isSetFirstName() {
+    return (this.firstName != null);
   }
 
   /**
@@ -212,7 +239,7 @@ public class Contact
    *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public JAXBElement<TS30> getLastName() {
+  public TString getLastName() {
     return lastName;
   }
 
@@ -223,8 +250,12 @@ public class Contact
    *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public void setLastName(JAXBElement<TS30> value) {
+  public void setLastName(TString value) {
     this.lastName = value;
+  }
+
+  public boolean isSetLastName() {
+    return (this.lastName != null);
   }
 
   /**
@@ -247,12 +278,21 @@ public class Contact
    * Objects of the following type(s) are allowed in the list {@link Address }
    * <p>
    * <p>
+   * @return
    */
   public List<Address> getAddress() {
     if (address == null) {
       address = new ArrayList<>();
     }
     return this.address;
+  }
+
+  public boolean isSetAddress() {
+    return ((this.address != null) && (!this.address.isEmpty()));
+  }
+
+  public void unsetAddress() {
+    this.address = null;
   }
 
   /**
@@ -276,12 +316,21 @@ public class Contact
      * {@link TelephoneFax }
    * <p>
    * <p>
+   * @return
    */
   public List<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
       telephoneFax = new ArrayList<>();
     }
     return this.telephoneFax;
+  }
+
+  public boolean isSetTelephoneFax() {
+    return ((this.telephoneFax != null) && (!this.telephoneFax.isEmpty()));
+  }
+
+  public void unsetTelephoneFax() {
+    this.telephoneFax = null;
   }
 
   /**
@@ -304,12 +353,93 @@ public class Contact
    * Objects of the following type(s) are allowed in the list {@link EMail }
    * <p>
    * <p>
+   * @return
    */
   public List<EMail> getEMail() {
     if (eMail == null) {
       eMail = new ArrayList<>();
     }
     return this.eMail;
+  }
+
+  public boolean isSetEMail() {
+    return ((this.eMail != null) && (!this.eMail.isEmpty()));
+  }
+
+  public void unsetEMail() {
+    this.eMail = null;
+  }
+
+  public Contact withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public Contact withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Contact withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public Contact withTitleRank(String value) {
+    setTitleRank(new TString(value));
+    return this;
+  }
+
+  public Contact withFirstName(String value) {
+    setFirstName(new TString(value));
+    return this;
+  }
+
+  public Contact withLastName(String value) {
+    setLastName(new TString(value));
+    return this;
+  }
+
+  public Contact withAddress(Address... values) {
+    if (values != null) {
+      getAddress().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Contact withAddress(Collection<Address> values) {
+    if (values != null) {
+      getAddress().addAll(values);
+    }
+    return this;
+  }
+
+  public Contact withTelephoneFax(TelephoneFax... values) {
+    if (values != null) {
+      getTelephoneFax().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Contact withTelephoneFax(Collection<TelephoneFax> values) {
+    if (values != null) {
+      getTelephoneFax().addAll(values);
+    }
+    return this;
+  }
+
+  public Contact withEMail(EMail... values) {
+    if (values != null) {
+      getEMail().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Contact withEMail(Collection<EMail> values) {
+    if (values != null) {
+      getEMail().addAll(values);
+    }
+    return this;
   }
 
 }

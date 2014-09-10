@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -59,10 +64,11 @@ import javax.xml.bind.annotation.*;
 })
 public class Manufacturer {
 
-  @XmlElementRef(name = "Country", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAO> country;
+  @XmlElement(name = "Country", required = false)
+  private TString country;
   @XmlElement(name = "Name", required = true)
-  protected TS100 name;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString name;
 
   /**
    * Gets the value of the country property.
@@ -71,7 +77,7 @@ public class Manufacturer {
    *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAO> getCountry() {
+  public TString getCountry() {
     return country;
   }
 
@@ -82,8 +88,12 @@ public class Manufacturer {
    *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public void setCountry(JAXBElement<TListCAO> value) {
+  public void setCountry(TString value) {
     this.country = value;
+  }
+
+  public boolean isSetCountry() {
+    return (this.country != null);
   }
 
   /**
@@ -92,7 +102,7 @@ public class Manufacturer {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -102,8 +112,22 @@ public class Manufacturer {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setName(TS100 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
+  }
+
+  public Manufacturer withCountry(ListCAO value) {
+    setCountry(new TString(value.value()));
+    return this;
+  }
+
+  public Manufacturer withName(String value) {
+    setName(new TString(value));
+    return this;
   }
 
 }

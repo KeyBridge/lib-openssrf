@@ -2,15 +2,25 @@
 |  Open SSRF Software Library                                                  |
 +------------------------------------------------------------------------------+
 History
+  09/08/14 - complete rewrite to use a small number of simple data types
+             move type validation logic into XML date type adapters:
+               all typed date fields are validated on export _and_ import
+               note that this will cause malformed data to ungracefully fail import
+             rewrite fluent programming methods to use simple types for easier access
+             add JaxbUtility class for marshal/unmarshal and validation testing
+  08/08/14 - rebuild software library using JAXB extensions for fluent programming style
+             add section (below) with instructions to build using Maven
   05/15/14 - created
 
 About:
++------------------------------------------------------------------------------+
 
 This is a verbatim compilation of the Standard Spectrum Resource Format (SSRF)
 version 3.0 into Java. The specification is defined in MCEB Pub 8 Version 3.0 
 as of 2012-04-26.
 
-Compilation:
+Compilation (Manual):
++------------------------------------------------------------------------------+
 
 The SSRF XSD requires certain bindings to successfully compile.
 
@@ -29,7 +39,27 @@ command-line statement (on Linux):
 
 Refer to the docs directory of this project for more details.
 
+Compilation (Maven):
++------------------------------------------------------------------------------+
+
+  Maven is an automated build to that, among other things, simplifies dependency
+  handling when organizing and building a project. Maven plugins wrap the JAXB 2.x 
+  XJC compiler and provides the capability to generate Java sources from XML Schemas.
+  The following plugins are used to generate boilerplate code useful in most all 
+  Java object classes:
+    Equals   - allows equality comparison between two objects
+    HashCode - supports Equals
+    ToString - allows printing of object configurations to the console - useful for 
+               development and debugging
+    Fluent   - adds code to support the method chaining programmatic strategy
+
+  Step 1)  Put the schema (*.xsd) and binding (*.xjb) files into the src/main/resources folder.
+  Step 2a) Add the plugin to your build: 
+  Step 2b) Reconfigure the compiler plugin to use at least Java 1.5: 
+  Step 3)  Clean and build the new project using Maven.
+
 License:
++------------------------------------------------------------------------------+
 
 This software is provided AS-IS under the MIT license; reuse is permitted within 
 proprietary software provided all copies of the licensed software include a copy 

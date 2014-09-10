@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TNetNumber;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN1;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TNavAidChnl;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -47,21 +43,22 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Assigned">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Quality" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN1" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Colour" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ITURegistration" minOccurs="0"/>
- *         &lt;element name="NavAidsChannel" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TNavAidChnl" minOccurs="0"/>
- *         &lt;element name="NetNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TNetNumber" minOccurs="0"/>
- *         &lt;element name="ITURegComments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Freq" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="FreqOld" type="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqOld" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Assigned"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Quality" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN1"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Colour"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ITURegistration" minOccurs="0"/>
+ * &lt;element name="NavAidsChannel"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TNavAidChnl" minOccurs="0"/>
+ * &lt;element name="NetNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TNetNumber" minOccurs="0"/>
+ * &lt;element name="ITURegComments"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Freq"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="FreqOld"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqOld" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -83,28 +80,37 @@ import javax.xml.bind.annotation.*;
 })
 public class Assigned {
 
-  @XmlElementRef(name = "Quality", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN1> quality;
-  @XmlElementRef(name = "ColourWord", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> colourWord;
-  @XmlElementRef(name = "ColourNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN2> colourNum;
-  @XmlElementRef(name = "ITURegStatus", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> ituRegStatus;
-  @XmlElementRef(name = "ITURegDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> ituRegDate;
-  @XmlElementRef(name = "ITURegNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS10> ituRegNum;
-  @XmlElementRef(name = "NavAidsChannel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TNavAidChnl> navAidsChannel;
-  @XmlElementRef(name = "NetNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TNetNumber> netNum;
-  @XmlElementRef(name = "ITURegComments", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> ituRegComments;
+  @XmlElement(name = "Quality", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN1.class)
+  private TInteger quality;
+  @XmlElement(name = "ColourWord", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString colourWord;
+  @XmlElement(name = "ColourNum", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN2.class)
+  private TInteger colourNum;
+  @XmlElement(name = "ITURegStatus", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString ituRegStatus;
+  @XmlElement(name = "ITURegDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar ituRegDate;
+  @XmlElement(name = "ITURegNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS10.class)
+  private TString ituRegNum;
+  @XmlElement(name = "NavAidsChannel", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterNAVAIDCHNL.class)
+  private TString navAidsChannel;
+  @XmlElement(name = "NetNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterNETNUMBER.class)
+  private TString netNum;
+  @XmlElement(name = "ITURegComments", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString ituRegComments;
   @XmlElement(name = "Freq")
-  protected List<Freq> freq;
+  private List<Freq> freq;
   @XmlElement(name = "FreqOld", nillable = true)
-  protected List<FreqOld> freqOld;
+  private List<FreqOld> freqOld;
 
   /**
    * Gets the value of the quality property.
@@ -113,7 +119,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN1> getQuality() {
+  public TInteger getQuality() {
     return quality;
   }
 
@@ -124,8 +130,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
    * <p>
    */
-  public void setQuality(JAXBElement<TUN1> value) {
+  public void setQuality(TInteger value) {
     this.quality = value;
+  }
+
+  public boolean isSetQuality() {
+    return (this.quality != null);
   }
 
   /**
@@ -135,7 +145,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getColourWord() {
+  public TString getColourWord() {
     return colourWord;
   }
 
@@ -146,8 +156,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setColourWord(JAXBElement<TS20> value) {
+  public void setColourWord(TString value) {
     this.colourWord = value;
+  }
+
+  public boolean isSetColourWord() {
+    return (this.colourWord != null);
   }
 
   /**
@@ -157,7 +171,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TUN2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN2> getColourNum() {
+  public TInteger getColourNum() {
     return colourNum;
   }
 
@@ -168,8 +182,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TUN2 }{@code >}
    * <p>
    */
-  public void setColourNum(JAXBElement<TUN2> value) {
+  public void setColourNum(TInteger value) {
     this.colourNum = value;
+  }
+
+  public boolean isSetColourNum() {
+    return (this.colourNum != null);
   }
 
   /**
@@ -179,7 +197,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getITURegStatus() {
+  public TString getITURegStatus() {
     return ituRegStatus;
   }
 
@@ -190,8 +208,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setITURegStatus(JAXBElement<TS50> value) {
+  public void setITURegStatus(TString value) {
     this.ituRegStatus = value;
+  }
+
+  public boolean isSetITURegStatus() {
+    return (this.ituRegStatus != null);
   }
 
   /**
@@ -201,7 +223,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getITURegDate() {
+  public TCalendar getITURegDate() {
     return ituRegDate;
   }
 
@@ -212,8 +234,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setITURegDate(JAXBElement<TD> value) {
+  public void setITURegDate(TCalendar value) {
     this.ituRegDate = value;
+  }
+
+  public boolean isSetITURegDate() {
+    return (this.ituRegDate != null);
   }
 
   /**
@@ -223,7 +249,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TUS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TUS10> getITURegNum() {
+  public TString getITURegNum() {
     return ituRegNum;
   }
 
@@ -234,8 +260,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TUS10 }{@code >}
    * <p>
    */
-  public void setITURegNum(JAXBElement<TUS10> value) {
+  public void setITURegNum(TString value) {
     this.ituRegNum = value;
+  }
+
+  public boolean isSetITURegNum() {
+    return (this.ituRegNum != null);
   }
 
   /**
@@ -245,7 +275,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TNavAidChnl }{@code >}
    * <p>
    */
-  public JAXBElement<TNavAidChnl> getNavAidsChannel() {
+  public TString getNavAidsChannel() {
     return navAidsChannel;
   }
 
@@ -256,8 +286,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TNavAidChnl }{@code >}
    * <p>
    */
-  public void setNavAidsChannel(JAXBElement<TNavAidChnl> value) {
+  public void setNavAidsChannel(TString value) {
     this.navAidsChannel = value;
+  }
+
+  public boolean isSetNavAidsChannel() {
+    return (this.navAidsChannel != null);
   }
 
   /**
@@ -267,7 +301,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TNetNumber }{@code >}
    * <p>
    */
-  public JAXBElement<TNetNumber> getNetNum() {
+  public TString getNetNum() {
     return netNum;
   }
 
@@ -278,8 +312,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TNetNumber }{@code >}
    * <p>
    */
-  public void setNetNum(JAXBElement<TNetNumber> value) {
+  public void setNetNum(TString value) {
     this.netNum = value;
+  }
+
+  public boolean isSetNetNum() {
+    return (this.netNum != null);
   }
 
   /**
@@ -289,7 +327,7 @@ public class Assigned {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getITURegComments() {
+  public TString getITURegComments() {
     return ituRegComments;
   }
 
@@ -300,8 +338,12 @@ public class Assigned {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setITURegComments(JAXBElement<TMEMO> value) {
+  public void setITURegComments(TString value) {
     this.ituRegComments = value;
+  }
+
+  public boolean isSetITURegComments() {
+    return (this.ituRegComments != null);
   }
 
   /**
@@ -324,12 +366,21 @@ public class Assigned {
    * Objects of the following type(s) are allowed in the list {@link Freq }
    * <p>
    * <p>
+   * @return
    */
   public List<Freq> getFreq() {
     if (freq == null) {
       freq = new ArrayList<>();
     }
     return this.freq;
+  }
+
+  public boolean isSetFreq() {
+    return ((this.freq != null) && (!this.freq.isEmpty()));
+  }
+
+  public void unsetFreq() {
+    this.freq = null;
   }
 
   /**
@@ -352,12 +403,94 @@ public class Assigned {
    * Objects of the following type(s) are allowed in the list {@link FreqOld }
    * <p>
    * <p>
+   * @return
    */
   public List<FreqOld> getFreqOld() {
     if (freqOld == null) {
       freqOld = new ArrayList<>();
     }
     return this.freqOld;
+  }
+
+  public boolean isSetFreqOld() {
+    return ((this.freqOld != null) && (!this.freqOld.isEmpty()));
+  }
+
+  public void unsetFreqOld() {
+    this.freqOld = null;
+  }
+
+  public Assigned withQuality(Integer value) {
+    setQuality(new TInteger(value));
+    return this;
+  }
+
+  public Assigned withColourWord(String value) {
+    setColourWord(new TString(value));
+    return this;
+  }
+
+  public Assigned withColourNum(Integer value) {
+    setColourNum(new TInteger(value));
+    return this;
+  }
+
+  public Assigned withITURegStatus(String value) {
+    setITURegStatus(new TString(value));
+    return this;
+  }
+
+  public Assigned withITURegDate(Calendar value) {
+    setITURegDate(new TCalendar(value));
+    return this;
+  }
+
+  public Assigned withITURegNum(String value) {
+    setITURegNum(new TString(value));
+    return this;
+  }
+
+  public Assigned withNavAidsChannel(String value) {
+    setNavAidsChannel(new TString(value));
+    return this;
+  }
+
+  public Assigned withNetNum(String value) {
+    setNetNum(new TString(value));
+    return this;
+  }
+
+  public Assigned withITURegComments(String value) {
+    setITURegComments(new TString(value));
+    return this;
+  }
+
+  public Assigned withFreq(Freq... values) {
+    if (values != null) {
+      getFreq().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assigned withFreq(Collection<Freq> values) {
+    if (values != null) {
+      getFreq().addAll(values);
+    }
+    return this;
+  }
+
+  public Assigned withFreqOld(FreqOld... values) {
+    if (values != null) {
+      getFreqOld().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assigned withFreqOld(Collection<FreqOld> values) {
+    if (values != null) {
+      getFreqOld().addAll(values);
+    }
+    return this;
   }
 
 }

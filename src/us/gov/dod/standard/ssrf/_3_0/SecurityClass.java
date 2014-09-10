@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS200;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS30;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -41,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="SecurityClass">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -77,24 +78,31 @@ import javax.xml.bind.annotation.*;
 })
 public class SecurityClass {
 
-  @XmlElementRef(name = "ClsAuthority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS30> clsAuthority;
-  @XmlElementRef(name = "SourceClsDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> sourceClsDate;
-  @XmlElementRef(name = "ClsOrg", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS30> clsOrg;
-  @XmlElementRef(name = "ClsReason", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS15> clsReason;
-  @XmlElementRef(name = "DeclsType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> declsType;
-  @XmlElementRef(name = "DeclsDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> declsDate;
-  @XmlElementRef(name = "DeclsEvent", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS200> declsEvent;
+  @XmlElement(name = "ClsAuthority", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString clsAuthority;
+  @XmlElement(name = "SourceClsDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar sourceClsDate;
+  @XmlElement(name = "ClsOrg", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString clsOrg;
+  @XmlElement(name = "ClsReason", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  private TString clsReason;
+  @XmlElement(name = "DeclsType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString declsType;
+  @XmlElement(name = "DeclsDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar declsDate;
+  @XmlElement(name = "DeclsEvent", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS200.class)
+  private TString declsEvent;
   @XmlElement(name = "Downgrade")
-  protected List<Downgrade> downgrade;
+  private List<Downgrade> downgrade;
   @XmlElement(name = "ClsDerived")
-  protected List<ClsDerived> clsDerived;
+  private List<ClsDerived> clsDerived;
 
   /**
    * Gets the value of the clsAuthority property.
@@ -103,7 +111,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public JAXBElement<TS30> getClsAuthority() {
+  public TString getClsAuthority() {
     return clsAuthority;
   }
 
@@ -114,8 +122,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public void setClsAuthority(JAXBElement<TS30> value) {
+  public void setClsAuthority(TString value) {
     this.clsAuthority = value;
+  }
+
+  public boolean isSetClsAuthority() {
+    return (this.clsAuthority != null);
   }
 
   /**
@@ -125,7 +137,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getSourceClsDate() {
+  public TCalendar getSourceClsDate() {
     return sourceClsDate;
   }
 
@@ -136,8 +148,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setSourceClsDate(JAXBElement<TD> value) {
+  public void setSourceClsDate(TCalendar value) {
     this.sourceClsDate = value;
+  }
+
+  public boolean isSetSourceClsDate() {
+    return (this.sourceClsDate != null);
   }
 
   /**
@@ -147,7 +163,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public JAXBElement<TS30> getClsOrg() {
+  public TString getClsOrg() {
     return clsOrg;
   }
 
@@ -158,8 +174,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public void setClsOrg(JAXBElement<TS30> value) {
+  public void setClsOrg(TString value) {
     this.clsOrg = value;
+  }
+
+  public boolean isSetClsOrg() {
+    return (this.clsOrg != null);
   }
 
   /**
@@ -169,7 +189,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public JAXBElement<TS15> getClsReason() {
+  public TString getClsReason() {
     return clsReason;
   }
 
@@ -180,8 +200,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public void setClsReason(JAXBElement<TS15> value) {
+  public void setClsReason(TString value) {
     this.clsReason = value;
+  }
+
+  public boolean isSetClsReason() {
+    return (this.clsReason != null);
   }
 
   /**
@@ -191,7 +215,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getDeclsType() {
+  public TString getDeclsType() {
     return declsType;
   }
 
@@ -202,8 +226,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setDeclsType(JAXBElement<TS10> value) {
+  public void setDeclsType(TString value) {
     this.declsType = value;
+  }
+
+  public boolean isSetDeclsType() {
+    return (this.declsType != null);
   }
 
   /**
@@ -213,7 +241,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDeclsDate() {
+  public TCalendar getDeclsDate() {
     return declsDate;
   }
 
@@ -224,8 +252,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDeclsDate(JAXBElement<TD> value) {
+  public void setDeclsDate(TCalendar value) {
     this.declsDate = value;
+  }
+
+  public boolean isSetDeclsDate() {
+    return (this.declsDate != null);
   }
 
   /**
@@ -235,7 +267,7 @@ public class SecurityClass {
    *         {@link JAXBElement }{@code <}{@link TS200 }{@code >}
    * <p>
    */
-  public JAXBElement<TS200> getDeclsEvent() {
+  public TString getDeclsEvent() {
     return declsEvent;
   }
 
@@ -246,8 +278,12 @@ public class SecurityClass {
    *              {@link JAXBElement }{@code <}{@link TS200 }{@code >}
    * <p>
    */
-  public void setDeclsEvent(JAXBElement<TS200> value) {
+  public void setDeclsEvent(TString value) {
     this.declsEvent = value;
+  }
+
+  public boolean isSetDeclsEvent() {
+    return (this.declsEvent != null);
   }
 
   /**
@@ -270,12 +306,21 @@ public class SecurityClass {
    * Objects of the following type(s) are allowed in the list {@link Downgrade }
    * <p>
    * <p>
+   * @return
    */
   public List<Downgrade> getDowngrade() {
     if (downgrade == null) {
       downgrade = new ArrayList<>();
     }
     return this.downgrade;
+  }
+
+  public boolean isSetDowngrade() {
+    return ((this.downgrade != null) && (!this.downgrade.isEmpty()));
+  }
+
+  public void unsetDowngrade() {
+    this.downgrade = null;
   }
 
   /**
@@ -299,12 +344,84 @@ public class SecurityClass {
      * {@link ClsDerived }
    * <p>
    * <p>
+   * @return
    */
   public List<ClsDerived> getClsDerived() {
     if (clsDerived == null) {
       clsDerived = new ArrayList<>();
     }
     return this.clsDerived;
+  }
+
+  public boolean isSetClsDerived() {
+    return ((this.clsDerived != null) && (!this.clsDerived.isEmpty()));
+  }
+
+  public void unsetClsDerived() {
+    this.clsDerived = null;
+  }
+
+  public SecurityClass withClsAuthority(String value) {
+    setClsAuthority(new TString(value));
+    return this;
+  }
+
+  public SecurityClass withSourceClsDate(Calendar value) {
+    setSourceClsDate(new TCalendar(value));
+    return this;
+  }
+
+  public SecurityClass withClsOrg(String value) {
+    setClsOrg(new TString(value));
+    return this;
+  }
+
+  public SecurityClass withClsReason(String value) {
+    setClsReason(new TString(value));
+    return this;
+  }
+
+  public SecurityClass withDeclsType(String value) {
+    setDeclsType(new TString(value));
+    return this;
+  }
+
+  public SecurityClass withDeclsDate(Calendar value) {
+    setDeclsDate(new TCalendar(value));
+    return this;
+  }
+
+  public SecurityClass withDeclsEvent(String value) {
+    setDeclsEvent(new TString(value));
+    return this;
+  }
+
+  public SecurityClass withDowngrade(Downgrade... values) {
+    if (values != null) {
+      getDowngrade().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public SecurityClass withDowngrade(Collection<Downgrade> values) {
+    if (values != null) {
+      getDowngrade().addAll(values);
+    }
+    return this;
+  }
+
+  public SecurityClass withClsDerived(ClsDerived... values) {
+    if (values != null) {
+      getClsDerived().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public SecurityClass withClsDerived(Collection<ClsDerived> values) {
+    if (values != null) {
+      getClsDerived().addAll(values);
+    }
+    return this;
   }
 
 }

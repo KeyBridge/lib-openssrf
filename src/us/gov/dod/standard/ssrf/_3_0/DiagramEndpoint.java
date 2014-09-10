@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -72,17 +77,21 @@ import javax.xml.bind.annotation.*;
 public class DiagramEndpoint {
 
   @XmlElement(name = "Name", required = true)
-  protected TS100 name;
-  @XmlElementRef(name = "IconType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> iconType;
-  @XmlElementRef(name = "IconPosLeft", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6> iconPosLeft;
-  @XmlElementRef(name = "IconPosTop", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6> iconPosTop;
-  @XmlElementRef(name = "PointToMultiPoint", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> pointToMultiPoint;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString name;
+  @XmlElement(name = "IconType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString iconType;
+  @XmlElement(name = "IconPosLeft", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  private TInteger iconPosLeft;
+  @XmlElement(name = "IconPosTop", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  private TInteger iconPosTop;
+  @XmlElement(name = "PointToMultiPoint", required = false)
+  private TString pointToMultiPoint;
   @XmlElement(name = "EndpointLocation")
-  protected List<EndpointLocation> endpointLocation;
+  private List<EndpointLocation> endpointLocation;
 
   /**
    * Gets the value of the name property.
@@ -90,7 +99,7 @@ public class DiagramEndpoint {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -100,8 +109,12 @@ public class DiagramEndpoint {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setName(TS100 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -111,7 +124,7 @@ public class DiagramEndpoint {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getIconType() {
+  public TString getIconType() {
     return iconType;
   }
 
@@ -122,8 +135,12 @@ public class DiagramEndpoint {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setIconType(JAXBElement<TS25> value) {
+  public void setIconType(TString value) {
     this.iconType = value;
+  }
+
+  public boolean isSetIconType() {
+    return (this.iconType != null);
   }
 
   /**
@@ -133,7 +150,7 @@ public class DiagramEndpoint {
    *         {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6> getIconPosLeft() {
+  public TInteger getIconPosLeft() {
     return iconPosLeft;
   }
 
@@ -144,8 +161,12 @@ public class DiagramEndpoint {
    *              {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
    * <p>
    */
-  public void setIconPosLeft(JAXBElement<TUN6> value) {
+  public void setIconPosLeft(TInteger value) {
     this.iconPosLeft = value;
+  }
+
+  public boolean isSetIconPosLeft() {
+    return (this.iconPosLeft != null);
   }
 
   /**
@@ -155,7 +176,7 @@ public class DiagramEndpoint {
    *         {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6> getIconPosTop() {
+  public TInteger getIconPosTop() {
     return iconPosTop;
   }
 
@@ -166,8 +187,12 @@ public class DiagramEndpoint {
    *              {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
    * <p>
    */
-  public void setIconPosTop(JAXBElement<TUN6> value) {
+  public void setIconPosTop(TInteger value) {
     this.iconPosTop = value;
+  }
+
+  public boolean isSetIconPosTop() {
+    return (this.iconPosTop != null);
   }
 
   /**
@@ -177,7 +202,7 @@ public class DiagramEndpoint {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getPointToMultiPoint() {
+  public TString getPointToMultiPoint() {
     return pointToMultiPoint;
   }
 
@@ -188,8 +213,12 @@ public class DiagramEndpoint {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setPointToMultiPoint(JAXBElement<TListCBO> value) {
+  public void setPointToMultiPoint(TString value) {
     this.pointToMultiPoint = value;
+  }
+
+  public boolean isSetPointToMultiPoint() {
+    return (this.pointToMultiPoint != null);
   }
 
   /**
@@ -213,12 +242,60 @@ public class DiagramEndpoint {
      * {@link EndpointLocation }
    * <p>
    * <p>
+   * @return
    */
   public List<EndpointLocation> getEndpointLocation() {
     if (endpointLocation == null) {
       endpointLocation = new ArrayList<>();
     }
     return this.endpointLocation;
+  }
+
+  public boolean isSetEndpointLocation() {
+    return ((this.endpointLocation != null) && (!this.endpointLocation.isEmpty()));
+  }
+
+  public void unsetEndpointLocation() {
+    this.endpointLocation = null;
+  }
+
+  public DiagramEndpoint withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public DiagramEndpoint withIconType(String value) {
+    setIconType(new TString(value));
+    return this;
+  }
+
+  public DiagramEndpoint withIconPosLeft(Integer value) {
+    setIconPosLeft(new TInteger(value));
+    return this;
+  }
+
+  public DiagramEndpoint withIconPosTop(Integer value) {
+    setIconPosTop(new TInteger(value));
+    return this;
+  }
+
+  public DiagramEndpoint withPointToMultiPoint(ListCBO value) {
+    setPointToMultiPoint(new TString(value.value()));
+    return this;
+  }
+
+  public DiagramEndpoint withEndpointLocation(EndpointLocation... values) {
+    if (values != null) {
+      getEndpointLocation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public DiagramEndpoint withEndpointLocation(Collection<EndpointLocation> values) {
+    if (values != null) {
+      getEndpointLocation().addAll(values);
+    }
+    return this;
   }
 
 }

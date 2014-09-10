@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCCY;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -41,21 +44,22 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Role">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview" minOccurs="0"/>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="Country" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCY" minOccurs="0"/>
- *         &lt;element name="Address" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Address" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TelephoneFax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TelephoneFax" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="EMail" type="{urn:us:gov:dod:standard:ssrf:3.0.0}EMail" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ContactRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ContactRef" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Role"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview" minOccurs="0"/>
+ * &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
+ * &lt;element name="Country"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCY" minOccurs="0"/>
+ * &lt;element name="Address" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Address"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="TelephoneFax"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TelephoneFax" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="EMail"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}EMail" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="ContactRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ContactRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -73,27 +77,30 @@ import javax.xml.bind.annotation.*;
   "eMail",
   "contactRef"
 })
-public class Role
-  extends Common {
+public class Role extends Common {
 
-  @XmlElementRef(name = "EffectiveDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
+  @XmlElement(name = "EffectiveDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
   @XmlElement(name = "Name", required = true)
-  protected TS50 name;
-  @XmlElementRef(name = "Country", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCCY> country;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString name;
+  @XmlElement(name = "Country", required = false)
+  private TString country;
   @XmlElement(name = "Address")
-  protected List<Address> address;
+  private List<Address> address;
   @XmlElement(name = "TelephoneFax")
-  protected List<TelephoneFax> telephoneFax;
+  private List<TelephoneFax> telephoneFax;
   @XmlElement(name = "EMail")
-  protected List<EMail> eMail;
+  private List<EMail> eMail;
   @XmlElement(name = "ContactRef", nillable = true)
-  protected List<ContactRef> contactRef;
+  private List<ContactRef> contactRef;
 
   /**
    * Gets the value of the effectiveDate property.
@@ -102,7 +109,7 @@ public class Role
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -113,8 +120,12 @@ public class Role
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setEffectiveDate(JAXBElement<TD> value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -124,7 +135,7 @@ public class Role
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -135,8 +146,12 @@ public class Role
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -146,7 +161,7 @@ public class Role
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -157,8 +172,12 @@ public class Role
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -167,7 +186,7 @@ public class Role
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -177,8 +196,12 @@ public class Role
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setName(TS50 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -188,7 +211,7 @@ public class Role
    *         {@link JAXBElement }{@code <}{@link TListCCY }{@code >}
    * <p>
    */
-  public JAXBElement<TListCCY> getCountry() {
+  public TString getCountry() {
     return country;
   }
 
@@ -199,8 +222,12 @@ public class Role
    *              {@link JAXBElement }{@code <}{@link TListCCY }{@code >}
    * <p>
    */
-  public void setCountry(JAXBElement<TListCCY> value) {
+  public void setCountry(TString value) {
     this.country = value;
+  }
+
+  public boolean isSetCountry() {
+    return (this.country != null);
   }
 
   /**
@@ -223,12 +250,21 @@ public class Role
    * Objects of the following type(s) are allowed in the list {@link Address }
    * <p>
    * <p>
+   * @return
    */
   public List<Address> getAddress() {
     if (address == null) {
       address = new ArrayList<>();
     }
     return this.address;
+  }
+
+  public boolean isSetAddress() {
+    return ((this.address != null) && (!this.address.isEmpty()));
+  }
+
+  public void unsetAddress() {
+    this.address = null;
   }
 
   /**
@@ -252,12 +288,21 @@ public class Role
      * {@link TelephoneFax }
    * <p>
    * <p>
+   * @return
    */
   public List<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
       telephoneFax = new ArrayList<>();
     }
     return this.telephoneFax;
+  }
+
+  public boolean isSetTelephoneFax() {
+    return ((this.telephoneFax != null) && (!this.telephoneFax.isEmpty()));
+  }
+
+  public void unsetTelephoneFax() {
+    this.telephoneFax = null;
   }
 
   /**
@@ -280,12 +325,21 @@ public class Role
    * Objects of the following type(s) are allowed in the list {@link EMail }
    * <p>
    * <p>
+   * @return
    */
   public List<EMail> getEMail() {
     if (eMail == null) {
       eMail = new ArrayList<>();
     }
     return this.eMail;
+  }
+
+  public boolean isSetEMail() {
+    return ((this.eMail != null) && (!this.eMail.isEmpty()));
+  }
+
+  public void unsetEMail() {
+    this.eMail = null;
   }
 
   /**
@@ -309,12 +363,102 @@ public class Role
      * {@link ContactRef }
    * <p>
    * <p>
+   * @return
    */
   public List<ContactRef> getContactRef() {
     if (contactRef == null) {
       contactRef = new ArrayList<>();
     }
     return this.contactRef;
+  }
+
+  public boolean isSetContactRef() {
+    return ((this.contactRef != null) && (!this.contactRef.isEmpty()));
+  }
+
+  public void unsetContactRef() {
+    this.contactRef = null;
+  }
+
+  public Role withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public Role withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Role withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public Role withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public Role withCountry(ListCCY value) {
+    setCountry(new TString(value.value()));
+    return this;
+  }
+
+  public Role withAddress(Address... values) {
+    if (values != null) {
+      getAddress().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Role withAddress(Collection<Address> values) {
+    if (values != null) {
+      getAddress().addAll(values);
+    }
+    return this;
+  }
+
+  public Role withTelephoneFax(TelephoneFax... values) {
+    if (values != null) {
+      getTelephoneFax().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Role withTelephoneFax(Collection<TelephoneFax> values) {
+    if (values != null) {
+      getTelephoneFax().addAll(values);
+    }
+    return this;
+  }
+
+  public Role withEMail(EMail... values) {
+    if (values != null) {
+      getEMail().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Role withEMail(Collection<EMail> values) {
+    if (values != null) {
+      getEMail().addAll(values);
+    }
+    return this;
+  }
+
+  public Role withContactRef(ContactRef... values) {
+    if (values != null) {
+      getContactRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Role withContactRef(Collection<ContactRef> values) {
+    if (values != null) {
+      getContactRef().addAll(values);
+    }
+    return this;
   }
 
 }

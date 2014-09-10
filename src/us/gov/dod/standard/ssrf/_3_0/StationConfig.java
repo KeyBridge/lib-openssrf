@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAU;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TElev;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -94,35 +94,48 @@ import javax.xml.bind.annotation.*;
 public class StationConfig {
 
   @XmlElement(name = "Type", required = true)
-  protected TListCAU type;
+  private TString type;
   @XmlElement(name = "ConfigID", required = true)
-  protected TS100 configID;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString configID;
   @XmlElement(name = "StationID", required = true)
-  protected TS100 stationID;
-  @XmlElementRef(name = "EIRPMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> eirpMin;
-  @XmlElementRef(name = "EIRPMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> eirpMax;
-  @XmlElementRef(name = "AntFeedpointHeight", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> antFeedpointHeight;
-  @XmlElementRef(name = "FeedlineLength", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> feedlineLength;
-  @XmlElementRef(name = "FeedlineLoss", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> feedlineLoss;
-  @XmlElementRef(name = "EarthCoverage", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> earthCoverage;
-  @XmlElementRef(name = "PointingAzMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> pointingAzMin;
-  @XmlElementRef(name = "PointingAzMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> pointingAzMax;
-  @XmlElementRef(name = "PointingElevMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> pointingElevMin;
-  @XmlElementRef(name = "PointingElevMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> pointingElevMax;
-  @XmlElementRef(name = "CoordinationNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS15> coordinationNum;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString stationID;
+  @XmlElement(name = "EIRPMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal eirpMin;
+  @XmlElement(name = "EIRPMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal eirpMax;
+  @XmlElement(name = "AntFeedpointHeight", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal antFeedpointHeight;
+  @XmlElement(name = "FeedlineLength", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal feedlineLength;
+  @XmlElement(name = "FeedlineLoss", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal feedlineLoss;
+  @XmlElement(name = "EarthCoverage", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString earthCoverage;
+  @XmlElement(name = "PointingAzMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal pointingAzMin;
+  @XmlElement(name = "PointingAzMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal pointingAzMax;
+  @XmlElement(name = "PointingElevMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal pointingElevMin;
+  @XmlElement(name = "PointingElevMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal pointingElevMax;
+  @XmlElement(name = "CoordinationNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  private TString coordinationNum;
   @XmlElement(name = "Blanking")
-  protected List<Blanking> blanking;
+  private List<Blanking> blanking;
 
   /**
    * Gets the value of the type property.
@@ -130,7 +143,7 @@ public class StationConfig {
    * @return possible object is {@link TListCAU }
    * <p>
    */
-  public TListCAU getType() {
+  public TString getType() {
     return type;
   }
 
@@ -140,8 +153,12 @@ public class StationConfig {
    * @param value allowed object is {@link TListCAU }
    * <p>
    */
-  public void setType(TListCAU value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -150,7 +167,7 @@ public class StationConfig {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getConfigID() {
+  public TString getConfigID() {
     return configID;
   }
 
@@ -160,8 +177,12 @@ public class StationConfig {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setConfigID(TS100 value) {
+  public void setConfigID(TString value) {
     this.configID = value;
+  }
+
+  public boolean isSetConfigID() {
+    return (this.configID != null);
   }
 
   /**
@@ -170,7 +191,7 @@ public class StationConfig {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getStationID() {
+  public TString getStationID() {
     return stationID;
   }
 
@@ -180,8 +201,12 @@ public class StationConfig {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setStationID(TS100 value) {
+  public void setStationID(TString value) {
     this.stationID = value;
+  }
+
+  public boolean isSetStationID() {
+    return (this.stationID != null);
   }
 
   /**
@@ -191,7 +216,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getEIRPMin() {
+  public TDecimal getEIRPMin() {
     return eirpMin;
   }
 
@@ -202,8 +227,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setEIRPMin(JAXBElement<TdBW> value) {
+  public void setEIRPMin(TDecimal value) {
     this.eirpMin = value;
+  }
+
+  public boolean isSetEIRPMin() {
+    return (this.eirpMin != null);
   }
 
   /**
@@ -213,7 +242,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getEIRPMax() {
+  public TDecimal getEIRPMax() {
     return eirpMax;
   }
 
@@ -224,8 +253,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setEIRPMax(JAXBElement<TdBW> value) {
+  public void setEIRPMax(TDecimal value) {
     this.eirpMax = value;
+  }
+
+  public boolean isSetEIRPMax() {
+    return (this.eirpMax != null);
   }
 
   /**
@@ -235,7 +268,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAntFeedpointHeight() {
+  public TDecimal getAntFeedpointHeight() {
     return antFeedpointHeight;
   }
 
@@ -246,8 +279,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAntFeedpointHeight(JAXBElement<TAltitude> value) {
+  public void setAntFeedpointHeight(TDecimal value) {
     this.antFeedpointHeight = value;
+  }
+
+  public boolean isSetAntFeedpointHeight() {
+    return (this.antFeedpointHeight != null);
   }
 
   /**
@@ -257,7 +294,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getFeedlineLength() {
+  public TDecimal getFeedlineLength() {
     return feedlineLength;
   }
 
@@ -268,8 +305,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setFeedlineLength(JAXBElement<TAltitude> value) {
+  public void setFeedlineLength(TDecimal value) {
     this.feedlineLength = value;
+  }
+
+  public boolean isSetFeedlineLength() {
+    return (this.feedlineLength != null);
   }
 
   /**
@@ -279,7 +320,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getFeedlineLoss() {
+  public TDecimal getFeedlineLoss() {
     return feedlineLoss;
   }
 
@@ -290,8 +331,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setFeedlineLoss(JAXBElement<TdB> value) {
+  public void setFeedlineLoss(TDecimal value) {
     this.feedlineLoss = value;
+  }
+
+  public boolean isSetFeedlineLoss() {
+    return (this.feedlineLoss != null);
   }
 
   /**
@@ -301,7 +346,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getEarthCoverage() {
+  public TString getEarthCoverage() {
     return earthCoverage;
   }
 
@@ -312,8 +357,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setEarthCoverage(JAXBElement<TS50> value) {
+  public void setEarthCoverage(TString value) {
     this.earthCoverage = value;
+  }
+
+  public boolean isSetEarthCoverage() {
+    return (this.earthCoverage != null);
   }
 
   /**
@@ -323,7 +372,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getPointingAzMin() {
+  public TDecimal getPointingAzMin() {
     return pointingAzMin;
   }
 
@@ -334,8 +383,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setPointingAzMin(JAXBElement<TAz> value) {
+  public void setPointingAzMin(TDecimal value) {
     this.pointingAzMin = value;
+  }
+
+  public boolean isSetPointingAzMin() {
+    return (this.pointingAzMin != null);
   }
 
   /**
@@ -345,7 +398,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getPointingAzMax() {
+  public TDecimal getPointingAzMax() {
     return pointingAzMax;
   }
 
@@ -356,8 +409,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setPointingAzMax(JAXBElement<TAz> value) {
+  public void setPointingAzMax(TDecimal value) {
     this.pointingAzMax = value;
+  }
+
+  public boolean isSetPointingAzMax() {
+    return (this.pointingAzMax != null);
   }
 
   /**
@@ -367,7 +424,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getPointingElevMin() {
+  public TDecimal getPointingElevMin() {
     return pointingElevMin;
   }
 
@@ -378,8 +435,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setPointingElevMin(JAXBElement<TElev> value) {
+  public void setPointingElevMin(TDecimal value) {
     this.pointingElevMin = value;
+  }
+
+  public boolean isSetPointingElevMin() {
+    return (this.pointingElevMin != null);
   }
 
   /**
@@ -389,7 +450,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getPointingElevMax() {
+  public TDecimal getPointingElevMax() {
     return pointingElevMax;
   }
 
@@ -400,8 +461,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setPointingElevMax(JAXBElement<TElev> value) {
+  public void setPointingElevMax(TDecimal value) {
     this.pointingElevMax = value;
+  }
+
+  public boolean isSetPointingElevMax() {
+    return (this.pointingElevMax != null);
   }
 
   /**
@@ -411,7 +476,7 @@ public class StationConfig {
    *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public JAXBElement<TS15> getCoordinationNum() {
+  public TString getCoordinationNum() {
     return coordinationNum;
   }
 
@@ -422,8 +487,12 @@ public class StationConfig {
    *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public void setCoordinationNum(JAXBElement<TS15> value) {
+  public void setCoordinationNum(TString value) {
     this.coordinationNum = value;
+  }
+
+  public boolean isSetCoordinationNum() {
+    return (this.coordinationNum != null);
   }
 
   /**
@@ -446,12 +515,105 @@ public class StationConfig {
    * Objects of the following type(s) are allowed in the list {@link Blanking }
    * <p>
    * <p>
+   * @return
    */
   public List<Blanking> getBlanking() {
     if (blanking == null) {
       blanking = new ArrayList<>();
     }
     return this.blanking;
+  }
+
+  public boolean isSetBlanking() {
+    return ((this.blanking != null) && (!this.blanking.isEmpty()));
+  }
+
+  public void unsetBlanking() {
+    this.blanking = null;
+  }
+
+  public StationConfig withType(ListCAU value) {
+    setType(new TString(value.value()));
+    return this;
+  }
+
+  public StationConfig withConfigID(String value) {
+    setConfigID(new TString(value));
+    return this;
+  }
+
+  public StationConfig withStationID(String value) {
+    setStationID(new TString(value));
+    return this;
+  }
+
+  public StationConfig withEIRPMin(Double value) {
+    setEIRPMin(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withEIRPMax(Double value) {
+    setEIRPMax(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withAntFeedpointHeight(Double value) {
+    setAntFeedpointHeight(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withFeedlineLength(Double value) {
+    setFeedlineLength(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withFeedlineLoss(Double value) {
+    setFeedlineLoss(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withEarthCoverage(String value) {
+    setEarthCoverage(new TString(value));
+    return this;
+  }
+
+  public StationConfig withPointingAzMin(Double value) {
+    setPointingAzMin(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withPointingAzMax(Double value) {
+    setPointingAzMax(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withPointingElevMin(Double value) {
+    setPointingElevMin(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withPointingElevMax(Double value) {
+    setPointingElevMax(new TDecimal(value));
+    return this;
+  }
+
+  public StationConfig withCoordinationNum(String value) {
+    setCoordinationNum(new TString(value));
+    return this;
+  }
+
+  public StationConfig withBlanking(Blanking... values) {
+    if (values != null) {
+      getBlanking().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public StationConfig withBlanking(Collection<Blanking> values) {
+    if (values != null) {
+      getBlanking().addAll(values);
+    }
+    return this;
   }
 
 }

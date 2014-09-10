@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TLat;
-import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -60,9 +61,11 @@ import javax.xml.bind.annotation.*;
 public class PolygonPoint {
 
   @XmlElement(name = "Lon", required = true)
-  protected TLon lon;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString lon;
   @XmlElement(name = "Lat", required = true)
-  protected TLat lat;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  private TString lat;
   @XmlAttribute(name = "sequence", required = true)
   protected BigInteger sequence;
 
@@ -72,7 +75,7 @@ public class PolygonPoint {
    * @return possible object is {@link TLon }
    * <p>
    */
-  public TLon getLon() {
+  public TString getLon() {
     return lon;
   }
 
@@ -82,8 +85,12 @@ public class PolygonPoint {
    * @param value allowed object is {@link TLon }
    * <p>
    */
-  public void setLon(TLon value) {
+  public void setLon(TString value) {
     this.lon = value;
+  }
+
+  public boolean isSetLon() {
+    return (this.lon != null);
   }
 
   /**
@@ -92,7 +99,7 @@ public class PolygonPoint {
    * @return possible object is {@link TLat }
    * <p>
    */
-  public TLat getLat() {
+  public TString getLat() {
     return lat;
   }
 
@@ -102,8 +109,12 @@ public class PolygonPoint {
    * @param value allowed object is {@link TLat }
    * <p>
    */
-  public void setLat(TLat value) {
+  public void setLat(TString value) {
     this.lat = value;
+  }
+
+  public boolean isSetLat() {
+    return (this.lat != null);
   }
 
   /**
@@ -124,6 +135,25 @@ public class PolygonPoint {
    */
   public void setSequence(BigInteger value) {
     this.sequence = value;
+  }
+
+  public boolean isSetSequence() {
+    return (this.sequence != null);
+  }
+
+  public PolygonPoint withLon(String value) {
+    setLon(new TString(value));
+    return this;
+  }
+
+  public PolygonPoint withLat(String value) {
+    setLat(new TString(value));
+    return this;
+  }
+
+  public PolygonPoint withSequence(BigInteger value) {
+    setSequence(value);
+    return this;
   }
 
 }

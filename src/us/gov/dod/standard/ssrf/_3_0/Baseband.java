@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -39,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Baseband">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -63,12 +65,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Baseband {
 
-  @XmlElementRef(name = "ModFreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> modFreqMin;
-  @XmlElementRef(name = "ModFreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> modFreqMax;
-  @XmlElementRef(name = "SignalType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> signalType;
+  @XmlElement(name = "ModFreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal modFreqMin;
+  @XmlElement(name = "ModFreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal modFreqMax;
+  @XmlElement(name = "SignalType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString signalType;
 
   /**
    * Gets the value of the modFreqMin property.
@@ -77,7 +82,7 @@ public class Baseband {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getModFreqMin() {
+  public TDecimal getModFreqMin() {
     return modFreqMin;
   }
 
@@ -88,8 +93,12 @@ public class Baseband {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setModFreqMin(JAXBElement<TFreqM> value) {
+  public void setModFreqMin(TDecimal value) {
     this.modFreqMin = value;
+  }
+
+  public boolean isSetModFreqMin() {
+    return (this.modFreqMin != null);
   }
 
   /**
@@ -99,7 +108,7 @@ public class Baseband {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getModFreqMax() {
+  public TDecimal getModFreqMax() {
     return modFreqMax;
   }
 
@@ -110,8 +119,12 @@ public class Baseband {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setModFreqMax(JAXBElement<TFreqM> value) {
+  public void setModFreqMax(TDecimal value) {
     this.modFreqMax = value;
+  }
+
+  public boolean isSetModFreqMax() {
+    return (this.modFreqMax != null);
   }
 
   /**
@@ -121,7 +134,7 @@ public class Baseband {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSignalType() {
+  public TString getSignalType() {
     return signalType;
   }
 
@@ -132,8 +145,27 @@ public class Baseband {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSignalType(JAXBElement<TS50> value) {
+  public void setSignalType(TString value) {
     this.signalType = value;
+  }
+
+  public boolean isSetSignalType() {
+    return (this.signalType != null);
+  }
+
+  public Baseband withModFreqMin(Double value) {
+    setModFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public Baseband withModFreqMax(Double value) {
+    setModFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public Baseband withSignalType(String value) {
+    setSignalType(new TString(value));
+    return this;
   }
 
 }

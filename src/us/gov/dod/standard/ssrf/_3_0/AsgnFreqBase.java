@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,12 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAU;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -36,18 +38,15 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
- * &lt;complexType name="AsgnFreqBase">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/>
- *         &lt;element name="RefFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FreqUse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * <
+ * pre>
+ * &lt;complexType name="AsgnFreqBase"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/> &lt;element
+ * name="RefFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="FreqUse"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -63,16 +62,19 @@ import javax.xml.bind.annotation.*;
   FreqOld.class,
   Freq.class
 })
-public class AsgnFreqBase {
+public abstract class AsgnFreqBase {
 
   @XmlElement(name = "FreqMin", required = true)
-  protected TFreqM freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "RefFreq", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> refFreq;
-  @XmlElementRef(name = "FreqUse", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAU> freqUse;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "RefFreq", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal refFreq;
+  @XmlElement(name = "FreqUse", required = false)
+  private TString freqUse;
 
   /**
    * Gets the value of the freqMin property.
@@ -80,7 +82,7 @@ public class AsgnFreqBase {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -90,8 +92,12 @@ public class AsgnFreqBase {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -101,7 +107,7 @@ public class AsgnFreqBase {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -112,8 +118,12 @@ public class AsgnFreqBase {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -123,7 +133,7 @@ public class AsgnFreqBase {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getRefFreq() {
+  public TDecimal getRefFreq() {
     return refFreq;
   }
 
@@ -134,8 +144,12 @@ public class AsgnFreqBase {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setRefFreq(JAXBElement<TFreqM> value) {
+  public void setRefFreq(TDecimal value) {
     this.refFreq = value;
+  }
+
+  public boolean isSetRefFreq() {
+    return (this.refFreq != null);
   }
 
   /**
@@ -145,7 +159,7 @@ public class AsgnFreqBase {
    *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAU> getFreqUse() {
+  public TString getFreqUse() {
     return freqUse;
   }
 
@@ -156,8 +170,32 @@ public class AsgnFreqBase {
    *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
    * <p>
    */
-  public void setFreqUse(JAXBElement<TListCAU> value) {
+  public void setFreqUse(TString value) {
     this.freqUse = value;
+  }
+
+  public boolean isSetFreqUse() {
+    return (this.freqUse != null);
+  }
+
+  public AsgnFreqBase withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public AsgnFreqBase withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public AsgnFreqBase withRefFreq(Double value) {
+    setRefFreq(new TDecimal(value));
+    return this;
+  }
+
+  public AsgnFreqBase withFreqUse(ListCAU value) {
+    setFreqUse(new TString(value.value()));
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS_DBm;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS60;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -44,24 +47,27 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Receiver">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Duplex" minOccurs="0"/>
- *         &lt;element name="PreselectionType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS60" minOccurs="0"/>
- *         &lt;element name="ConductedEmissions" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBm" minOccurs="0"/>
- *         &lt;element name="FCCAcceptanceNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="TSPR" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Nomenclature" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Deployment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Deployment" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Curve" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Curve" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RxMode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxMode" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Receiver"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Duplex" minOccurs="0"/>
+ * &lt;element name="PreselectionType"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS60" minOccurs="0"/> &lt;element
+ * name="ConductedEmissions" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBm"
+ * minOccurs="0"/> &lt;element name="FCCAcceptanceNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="TSPR" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
+ * &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Nomenclature"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Deployment"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Deployment" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Curve"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Curve" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="RxMode"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxMode" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -82,33 +88,38 @@ import javax.xml.bind.annotation.*;
   "curve",
   "rxMode"
 })
-public class Receiver
-  extends Common {
+public class Receiver extends Common {
 
   @XmlElement(name = "Generic", required = true)
-  protected TListCBO generic;
+  private TString generic;
   @XmlElement(name = "DuplexSep")
-  protected TFreqM duplexSep;
-  @XmlElementRef(name = "DuplexSepType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> duplexSepType;
-  @XmlElementRef(name = "PreselectionType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS60> preselectionType;
-  @XmlElementRef(name = "ConductedEmissions", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS_DBm> conductedEmissions;
-  @XmlElementRef(name = "FCCAcceptanceNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> fccAcceptanceNum;
-  @XmlElementRef(name = "TSPR", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> tspr;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal duplexSep;
+  @XmlElement(name = "DuplexSepType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString duplexSepType;
+  @XmlElement(name = "PreselectionType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS60.class)
+  private TString preselectionType;
+  @XmlElement(name = "ConductedEmissions", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBM.class)
+  private TDecimal conductedEmissions;
+  @XmlElement(name = "FCCAcceptanceNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString fccAcceptanceNum;
+  @XmlElement(name = "TSPR", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString tspr;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "Nomenclature")
-  protected List<Nomenclature> nomenclature;
+  private List<Nomenclature> nomenclature;
   @XmlElement(name = "Deployment")
-  protected List<Deployment> deployment;
+  private List<Deployment> deployment;
   @XmlElement(name = "Curve")
-  protected List<Curve> curve;
+  private List<Curve> curve;
   @XmlElement(name = "RxMode")
-  protected List<RxMode> rxMode;
+  private List<RxMode> rxMode;
 
   /**
    * Gets the value of the generic property.
@@ -116,7 +127,7 @@ public class Receiver
    * @return possible object is {@link TListCBO }
    * <p>
    */
-  public TListCBO getGeneric() {
+  public TString getGeneric() {
     return generic;
   }
 
@@ -126,8 +137,12 @@ public class Receiver
    * @param value allowed object is {@link TListCBO }
    * <p>
    */
-  public void setGeneric(TListCBO value) {
+  public void setGeneric(TString value) {
     this.generic = value;
+  }
+
+  public boolean isSetGeneric() {
+    return (this.generic != null);
   }
 
   /**
@@ -136,7 +151,7 @@ public class Receiver
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getDuplexSep() {
+  public TDecimal getDuplexSep() {
     return duplexSep;
   }
 
@@ -146,8 +161,12 @@ public class Receiver
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setDuplexSep(TFreqM value) {
+  public void setDuplexSep(TDecimal value) {
     this.duplexSep = value;
+  }
+
+  public boolean isSetDuplexSep() {
+    return (this.duplexSep != null);
   }
 
   /**
@@ -157,7 +176,7 @@ public class Receiver
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getDuplexSepType() {
+  public TString getDuplexSepType() {
     return duplexSepType;
   }
 
@@ -168,8 +187,12 @@ public class Receiver
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setDuplexSepType(JAXBElement<TS10> value) {
+  public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
+  }
+
+  public boolean isSetDuplexSepType() {
+    return (this.duplexSepType != null);
   }
 
   /**
@@ -179,7 +202,7 @@ public class Receiver
    *         {@link JAXBElement }{@code <}{@link TS60 }{@code >}
    * <p>
    */
-  public JAXBElement<TS60> getPreselectionType() {
+  public TString getPreselectionType() {
     return preselectionType;
   }
 
@@ -190,8 +213,12 @@ public class Receiver
    *              {@link JAXBElement }{@code <}{@link TS60 }{@code >}
    * <p>
    */
-  public void setPreselectionType(JAXBElement<TS60> value) {
+  public void setPreselectionType(TString value) {
     this.preselectionType = value;
+  }
+
+  public boolean isSetPreselectionType() {
+    return (this.preselectionType != null);
   }
 
   /**
@@ -201,7 +228,7 @@ public class Receiver
    *         {@link JAXBElement }{@code <}{@link TUS_DBm }{@code >}
    * <p>
    */
-  public JAXBElement<TUS_DBm> getConductedEmissions() {
+  public TDecimal getConductedEmissions() {
     return conductedEmissions;
   }
 
@@ -212,8 +239,12 @@ public class Receiver
    *              {@link JAXBElement }{@code <}{@link TUS_DBm }{@code >}
    * <p>
    */
-  public void setConductedEmissions(JAXBElement<TUS_DBm> value) {
+  public void setConductedEmissions(TDecimal value) {
     this.conductedEmissions = value;
+  }
+
+  public boolean isSetConductedEmissions() {
+    return (this.conductedEmissions != null);
   }
 
   /**
@@ -223,7 +254,7 @@ public class Receiver
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getFCCAcceptanceNum() {
+  public TString getFCCAcceptanceNum() {
     return fccAcceptanceNum;
   }
 
@@ -234,8 +265,12 @@ public class Receiver
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setFCCAcceptanceNum(JAXBElement<TS50> value) {
+  public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
+  }
+
+  public boolean isSetFCCAcceptanceNum() {
+    return (this.fccAcceptanceNum != null);
   }
 
   /**
@@ -245,7 +280,7 @@ public class Receiver
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getTSPR() {
+  public TString getTSPR() {
     return tspr;
   }
 
@@ -256,8 +291,12 @@ public class Receiver
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setTSPR(JAXBElement<TS10> value) {
+  public void setTSPR(TString value) {
     this.tspr = value;
+  }
+
+  public boolean isSetTSPR() {
+    return (this.tspr != null);
   }
 
   /**
@@ -281,12 +320,21 @@ public class Receiver
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -310,12 +358,21 @@ public class Receiver
      * {@link Nomenclature }
    * <p>
    * <p>
+   * @return
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new ArrayList<>();
     }
     return this.nomenclature;
+  }
+
+  public boolean isSetNomenclature() {
+    return ((this.nomenclature != null) && (!this.nomenclature.isEmpty()));
+  }
+
+  public void unsetNomenclature() {
+    this.nomenclature = null;
   }
 
   /**
@@ -339,12 +396,21 @@ public class Receiver
      * {@link Deployment }
    * <p>
    * <p>
+   * @return
    */
   public List<Deployment> getDeployment() {
     if (deployment == null) {
       deployment = new ArrayList<>();
     }
     return this.deployment;
+  }
+
+  public boolean isSetDeployment() {
+    return ((this.deployment != null) && (!this.deployment.isEmpty()));
+  }
+
+  public void unsetDeployment() {
+    this.deployment = null;
   }
 
   /**
@@ -367,12 +433,21 @@ public class Receiver
    * Objects of the following type(s) are allowed in the list {@link Curve }
    * <p>
    * <p>
+   * @return
    */
   public List<Curve> getCurve() {
     if (curve == null) {
       curve = new ArrayList<>();
     }
     return this.curve;
+  }
+
+  public boolean isSetCurve() {
+    return ((this.curve != null) && (!this.curve.isEmpty()));
+  }
+
+  public void unsetCurve() {
+    this.curve = null;
   }
 
   /**
@@ -395,12 +470,126 @@ public class Receiver
    * Objects of the following type(s) are allowed in the list {@link RxMode }
    * <p>
    * <p>
+   * @return
    */
   public List<RxMode> getRxMode() {
     if (rxMode == null) {
       rxMode = new ArrayList<>();
     }
     return this.rxMode;
+  }
+
+  public boolean isSetRxMode() {
+    return ((this.rxMode != null) && (!this.rxMode.isEmpty()));
+  }
+
+  public void unsetRxMode() {
+    this.rxMode = null;
+  }
+
+  public Receiver withGeneric(ListCBO value) {
+    setGeneric(new TString(value.value()));
+    return this;
+  }
+
+  public Receiver withDuplexSep(Double value) {
+    setDuplexSep(new TDecimal(value));
+    return this;
+  }
+
+  public Receiver withDuplexSepType(String value) {
+    setDuplexSepType(new TString(value));
+    return this;
+  }
+
+  public Receiver withPreselectionType(String value) {
+    setPreselectionType(new TString(value));
+    return this;
+  }
+
+  public Receiver withConductedEmissions(Double value) {
+    setConductedEmissions(new TDecimal(value));
+    return this;
+  }
+
+  public Receiver withFCCAcceptanceNum(String value) {
+    setFCCAcceptanceNum(new TString(value));
+    return this;
+  }
+
+  public Receiver withTSPR(String value) {
+    setTSPR(new TString(value));
+    return this;
+  }
+
+  public Receiver withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Receiver withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Receiver withNomenclature(Nomenclature... values) {
+    if (values != null) {
+      getNomenclature().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Receiver withNomenclature(Collection<Nomenclature> values) {
+    if (values != null) {
+      getNomenclature().addAll(values);
+    }
+    return this;
+  }
+
+  public Receiver withDeployment(Deployment... values) {
+    if (values != null) {
+      getDeployment().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Receiver withDeployment(Collection<Deployment> values) {
+    if (values != null) {
+      getDeployment().addAll(values);
+    }
+    return this;
+  }
+
+  public Receiver withCurve(Curve... values) {
+    if (values != null) {
+      getCurve().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Receiver withCurve(Collection<Curve> values) {
+    if (values != null) {
+      getCurve().addAll(values);
+    }
+    return this;
+  }
+
+  public Receiver withRxMode(RxMode... values) {
+    if (values != null) {
+      getRxMode().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Receiver withRxMode(Collection<RxMode> values) {
+    if (values != null) {
+      getRxMode().addAll(values);
+    }
+    return this;
   }
 
 }

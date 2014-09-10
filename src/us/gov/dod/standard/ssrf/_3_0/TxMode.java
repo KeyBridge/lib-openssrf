@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,30 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.Tmicrosecs;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TPercent;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS_DBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS_DBWHz;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN18_6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN8;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCFO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN12_3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN5;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -140,81 +127,107 @@ import javax.xml.bind.annotation.*;
 public class TxMode {
 
   @XmlElement(name = "ModeID", required = true)
-  protected TS20 modeID;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> description;
-  @XmlElementRef(name = "NecessaryBw", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> necessaryBw;
-  @XmlElementRef(name = "Tunability", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> tunability;
-  @XmlElementRef(name = "TuningMethod", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> tuningMethod;
-  @XmlElementRef(name = "NumSubCarriers", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5> numSubCarriers;
-  @XmlElementRef(name = "NumSideTones", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5> numSideTones;
-  @XmlElementRef(name = "IntermodPct", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TPercent> intermodPct;
-  @XmlElementRef(name = "IntermodEffect", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> intermodEffect;
-  @XmlElementRef(name = "BurstRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN12_3> burstRate;
-  @XmlElementRef(name = "BurstDuration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> burstDuration;
-  @XmlElementRef(name = "BurstNumPulses", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN8> burstNumPulses;
-  @XmlElementRef(name = "BurstOffTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> burstOffTime;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString modeID;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString description;
+  @XmlElement(name = "NecessaryBw", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal necessaryBw;
+  @XmlElement(name = "Tunability", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString tunability;
+  @XmlElement(name = "TuningMethod", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString tuningMethod;
+  @XmlElement(name = "NumSubCarriers", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  private TInteger numSubCarriers;
+  @XmlElement(name = "NumSideTones", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  private TInteger numSideTones;
+  @XmlElement(name = "IntermodPct", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  private TDecimal intermodPct;
+  @XmlElement(name = "IntermodEffect", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString intermodEffect;
+  @XmlElement(name = "BurstRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN12_3.class)
+  private TDecimal burstRate;
+  @XmlElement(name = "BurstDuration", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal burstDuration;
+  @XmlElement(name = "BurstNumPulses", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN8.class)
+  private TInteger burstNumPulses;
+  @XmlElement(name = "BurstOffTime", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal burstOffTime;
   @XmlElement(name = "OccBw")
-  protected TFreqM occBw;
-  @XmlElementRef(name = "OccBwCalculated", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> occBwCalculated;
-  @XmlElementRef(name = "SecondHarmonicLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> secondHarmonicLevel;
-  @XmlElementRef(name = "ThirdHarmonicLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> thirdHarmonicLevel;
-  @XmlElementRef(name = "OtherHarmonicLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> otherHarmonicLevel;
-  @XmlElementRef(name = "SpuriousLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> spuriousLevel;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal occBw;
+  @XmlElement(name = "OccBwCalculated", required = false)
+  private TString occBwCalculated;
+  @XmlElement(name = "SecondHarmonicLevel", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal secondHarmonicLevel;
+  @XmlElement(name = "ThirdHarmonicLevel", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal thirdHarmonicLevel;
+  @XmlElement(name = "OtherHarmonicLevel", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal otherHarmonicLevel;
+  @XmlElement(name = "SpuriousLevel", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal spuriousLevel;
   @XmlElement(name = "FreqTolerance")
-  protected TUN18_6 freqTolerance;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN18_6.class)
+  private TDecimal freqTolerance;
   @XmlElement(name = "FreqToleranceUnit")
-  protected TListCFO freqToleranceUnit;
-  @XmlElementRef(name = "RadarType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> radarType;
-  @XmlElementRef(name = "GpsNBL1Level", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS_DBW> gpsNBL1Level;
-  @XmlElementRef(name = "GpsNBL2Level", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS_DBW> gpsNBL2Level;
-  @XmlElementRef(name = "GpsWBL1Level", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS_DBWHz> gpsWBL1Level;
-  @XmlElementRef(name = "GpsWBL2Level", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS_DBWHz> gpsWBL2Level;
-  @XmlElementRef(name = "ModulationType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> modulationType;
-  @XmlElementRef(name = "ModeName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS40> modeName;
+  private TString freqToleranceUnit;
+  @XmlElement(name = "RadarType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString radarType;
+  @XmlElement(name = "GpsNBL1Level", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
+  private TDecimal gpsNBL1Level;
+  @XmlElement(name = "GpsNBL2Level", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
+  private TDecimal gpsNBL2Level;
+  @XmlElement(name = "GpsWBL1Level", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
+  private TDecimal gpsWBL1Level;
+  @XmlElement(name = "GpsWBL2Level", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
+  private TDecimal gpsWBL2Level;
+  @XmlElement(name = "ModulationType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString modulationType;
+  @XmlElement(name = "ModeName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  private TString modeName;
   @XmlElement(name = "EmsClass", nillable = true)
-  protected List<EmsClass> emsClass;
+  private List<EmsClass> emsClass;
   @XmlElement(name = "Power")
-  protected List<Power> power;
+  private List<Power> power;
   @XmlElement(name = "TxSignalTuning")
-  protected List<TxSignalTuning> txSignalTuning;
+  private List<TxSignalTuning> txSignalTuning;
   @XmlElement(name = "TxModulation")
-  protected List<TxModulation> txModulation;
+  private List<TxModulation> txModulation;
   @XmlElement(name = "Baseband")
-  protected List<Baseband> baseband;
+  private List<Baseband> baseband;
   @XmlElement(name = "Pulse")
-  protected List<Pulse> pulse;
+  private List<Pulse> pulse;
   @XmlElement(name = "SubCarrierFreq", nillable = true)
-  protected List<SubCarrierFreq> subCarrierFreq;
+  private List<SubCarrierFreq> subCarrierFreq;
   @XmlElement(name = "SubCarrierTone", nillable = true)
-  protected List<SubCarrierTone> subCarrierTone;
+  private List<SubCarrierTone> subCarrierTone;
   @XmlElement(name = "SpreadSpectrum")
   protected SpreadSpectrum spreadSpectrum;
   @XmlAttribute(name = "curves")
-  protected List<BigInteger> curves;
+  private List<BigInteger> curves;
 
   /**
    * Gets the value of the modeID property.
@@ -222,7 +235,7 @@ public class TxMode {
    * @return possible object is {@link TS20 }
    * <p>
    */
-  public TS20 getModeID() {
+  public TString getModeID() {
     return modeID;
   }
 
@@ -232,8 +245,12 @@ public class TxMode {
    * @param value allowed object is {@link TS20 }
    * <p>
    */
-  public void setModeID(TS20 value) {
+  public void setModeID(TString value) {
     this.modeID = value;
+  }
+
+  public boolean isSetModeID() {
+    return (this.modeID != null);
   }
 
   /**
@@ -243,7 +260,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -254,8 +271,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TS100> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -265,7 +286,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getNecessaryBw() {
+  public TDecimal getNecessaryBw() {
     return necessaryBw;
   }
 
@@ -276,8 +297,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setNecessaryBw(JAXBElement<TFreqM> value) {
+  public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
+  }
+
+  public boolean isSetNecessaryBw() {
+    return (this.necessaryBw != null);
   }
 
   /**
@@ -287,7 +312,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getTunability() {
+  public TString getTunability() {
     return tunability;
   }
 
@@ -298,8 +323,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setTunability(JAXBElement<TS25> value) {
+  public void setTunability(TString value) {
     this.tunability = value;
+  }
+
+  public boolean isSetTunability() {
+    return (this.tunability != null);
   }
 
   /**
@@ -309,7 +338,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getTuningMethod() {
+  public TString getTuningMethod() {
     return tuningMethod;
   }
 
@@ -320,8 +349,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setTuningMethod(JAXBElement<TS50> value) {
+  public void setTuningMethod(TString value) {
     this.tuningMethod = value;
+  }
+
+  public boolean isSetTuningMethod() {
+    return (this.tuningMethod != null);
   }
 
   /**
@@ -331,7 +364,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5> getNumSubCarriers() {
+  public TInteger getNumSubCarriers() {
     return numSubCarriers;
   }
 
@@ -342,8 +375,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public void setNumSubCarriers(JAXBElement<TUN5> value) {
+  public void setNumSubCarriers(TInteger value) {
     this.numSubCarriers = value;
+  }
+
+  public boolean isSetNumSubCarriers() {
+    return (this.numSubCarriers != null);
   }
 
   /**
@@ -353,7 +390,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5> getNumSideTones() {
+  public TInteger getNumSideTones() {
     return numSideTones;
   }
 
@@ -364,8 +401,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public void setNumSideTones(JAXBElement<TUN5> value) {
+  public void setNumSideTones(TInteger value) {
     this.numSideTones = value;
+  }
+
+  public boolean isSetNumSideTones() {
+    return (this.numSideTones != null);
   }
 
   /**
@@ -375,7 +416,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public JAXBElement<TPercent> getIntermodPct() {
+  public TDecimal getIntermodPct() {
     return intermodPct;
   }
 
@@ -386,8 +427,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public void setIntermodPct(JAXBElement<TPercent> value) {
+  public void setIntermodPct(TDecimal value) {
     this.intermodPct = value;
+  }
+
+  public boolean isSetIntermodPct() {
+    return (this.intermodPct != null);
   }
 
   /**
@@ -397,7 +442,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getIntermodEffect() {
+  public TString getIntermodEffect() {
     return intermodEffect;
   }
 
@@ -408,8 +453,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setIntermodEffect(JAXBElement<TMEMO> value) {
+  public void setIntermodEffect(TString value) {
     this.intermodEffect = value;
+  }
+
+  public boolean isSetIntermodEffect() {
+    return (this.intermodEffect != null);
   }
 
   /**
@@ -419,7 +468,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUN12_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN12_3> getBurstRate() {
+  public TDecimal getBurstRate() {
     return burstRate;
   }
 
@@ -430,8 +479,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUN12_3 }{@code >}
    * <p>
    */
-  public void setBurstRate(JAXBElement<TUN12_3> value) {
+  public void setBurstRate(TDecimal value) {
     this.burstRate = value;
+  }
+
+  public boolean isSetBurstRate() {
+    return (this.burstRate != null);
   }
 
   /**
@@ -441,7 +494,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getBurstDuration() {
+  public TDecimal getBurstDuration() {
     return burstDuration;
   }
 
@@ -452,8 +505,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setBurstDuration(JAXBElement<Tmicrosecs> value) {
+  public void setBurstDuration(TDecimal value) {
     this.burstDuration = value;
+  }
+
+  public boolean isSetBurstDuration() {
+    return (this.burstDuration != null);
   }
 
   /**
@@ -463,7 +520,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN8> getBurstNumPulses() {
+  public TInteger getBurstNumPulses() {
     return burstNumPulses;
   }
 
@@ -474,8 +531,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
    * <p>
    */
-  public void setBurstNumPulses(JAXBElement<TUN8> value) {
+  public void setBurstNumPulses(TInteger value) {
     this.burstNumPulses = value;
+  }
+
+  public boolean isSetBurstNumPulses() {
+    return (this.burstNumPulses != null);
   }
 
   /**
@@ -485,7 +546,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getBurstOffTime() {
+  public TDecimal getBurstOffTime() {
     return burstOffTime;
   }
 
@@ -496,8 +557,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setBurstOffTime(JAXBElement<Tmicrosecs> value) {
+  public void setBurstOffTime(TDecimal value) {
     this.burstOffTime = value;
+  }
+
+  public boolean isSetBurstOffTime() {
+    return (this.burstOffTime != null);
   }
 
   /**
@@ -506,7 +571,7 @@ public class TxMode {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getOccBw() {
+  public TDecimal getOccBw() {
     return occBw;
   }
 
@@ -516,8 +581,12 @@ public class TxMode {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setOccBw(TFreqM value) {
+  public void setOccBw(TDecimal value) {
     this.occBw = value;
+  }
+
+  public boolean isSetOccBw() {
+    return (this.occBw != null);
   }
 
   /**
@@ -527,7 +596,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getOccBwCalculated() {
+  public TString getOccBwCalculated() {
     return occBwCalculated;
   }
 
@@ -538,8 +607,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setOccBwCalculated(JAXBElement<TListCBO> value) {
+  public void setOccBwCalculated(TString value) {
     this.occBwCalculated = value;
+  }
+
+  public boolean isSetOccBwCalculated() {
+    return (this.occBwCalculated != null);
   }
 
   /**
@@ -549,7 +622,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getSecondHarmonicLevel() {
+  public TDecimal getSecondHarmonicLevel() {
     return secondHarmonicLevel;
   }
 
@@ -560,8 +633,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setSecondHarmonicLevel(JAXBElement<TdB> value) {
+  public void setSecondHarmonicLevel(TDecimal value) {
     this.secondHarmonicLevel = value;
+  }
+
+  public boolean isSetSecondHarmonicLevel() {
+    return (this.secondHarmonicLevel != null);
   }
 
   /**
@@ -571,7 +648,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getThirdHarmonicLevel() {
+  public TDecimal getThirdHarmonicLevel() {
     return thirdHarmonicLevel;
   }
 
@@ -582,8 +659,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setThirdHarmonicLevel(JAXBElement<TdB> value) {
+  public void setThirdHarmonicLevel(TDecimal value) {
     this.thirdHarmonicLevel = value;
+  }
+
+  public boolean isSetThirdHarmonicLevel() {
+    return (this.thirdHarmonicLevel != null);
   }
 
   /**
@@ -593,7 +674,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getOtherHarmonicLevel() {
+  public TDecimal getOtherHarmonicLevel() {
     return otherHarmonicLevel;
   }
 
@@ -604,8 +685,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setOtherHarmonicLevel(JAXBElement<TdB> value) {
+  public void setOtherHarmonicLevel(TDecimal value) {
     this.otherHarmonicLevel = value;
+  }
+
+  public boolean isSetOtherHarmonicLevel() {
+    return (this.otherHarmonicLevel != null);
   }
 
   /**
@@ -615,7 +700,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getSpuriousLevel() {
+  public TDecimal getSpuriousLevel() {
     return spuriousLevel;
   }
 
@@ -626,8 +711,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setSpuriousLevel(JAXBElement<TdB> value) {
+  public void setSpuriousLevel(TDecimal value) {
     this.spuriousLevel = value;
+  }
+
+  public boolean isSetSpuriousLevel() {
+    return (this.spuriousLevel != null);
   }
 
   /**
@@ -636,7 +725,7 @@ public class TxMode {
    * @return possible object is {@link TUN18_6 }
    * <p>
    */
-  public TUN18_6 getFreqTolerance() {
+  public TDecimal getFreqTolerance() {
     return freqTolerance;
   }
 
@@ -646,8 +735,12 @@ public class TxMode {
    * @param value allowed object is {@link TUN18_6 }
    * <p>
    */
-  public void setFreqTolerance(TUN18_6 value) {
+  public void setFreqTolerance(TDecimal value) {
     this.freqTolerance = value;
+  }
+
+  public boolean isSetFreqTolerance() {
+    return (this.freqTolerance != null);
   }
 
   /**
@@ -656,7 +749,7 @@ public class TxMode {
    * @return possible object is {@link TListCFO }
    * <p>
    */
-  public TListCFO getFreqToleranceUnit() {
+  public TString getFreqToleranceUnit() {
     return freqToleranceUnit;
   }
 
@@ -666,8 +759,12 @@ public class TxMode {
    * @param value allowed object is {@link TListCFO }
    * <p>
    */
-  public void setFreqToleranceUnit(TListCFO value) {
+  public void setFreqToleranceUnit(TString value) {
     this.freqToleranceUnit = value;
+  }
+
+  public boolean isSetFreqToleranceUnit() {
+    return (this.freqToleranceUnit != null);
   }
 
   /**
@@ -677,7 +774,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getRadarType() {
+  public TString getRadarType() {
     return radarType;
   }
 
@@ -688,8 +785,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setRadarType(JAXBElement<TS25> value) {
+  public void setRadarType(TString value) {
     this.radarType = value;
+  }
+
+  public boolean isSetRadarType() {
+    return (this.radarType != null);
   }
 
   /**
@@ -699,7 +800,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
    * <p>
    */
-  public JAXBElement<TUS_DBW> getGpsNBL1Level() {
+  public TDecimal getGpsNBL1Level() {
     return gpsNBL1Level;
   }
 
@@ -710,8 +811,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
    * <p>
    */
-  public void setGpsNBL1Level(JAXBElement<TUS_DBW> value) {
+  public void setGpsNBL1Level(TDecimal value) {
     this.gpsNBL1Level = value;
+  }
+
+  public boolean isSetGpsNBL1Level() {
+    return (this.gpsNBL1Level != null);
   }
 
   /**
@@ -721,7 +826,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
    * <p>
    */
-  public JAXBElement<TUS_DBW> getGpsNBL2Level() {
+  public TDecimal getGpsNBL2Level() {
     return gpsNBL2Level;
   }
 
@@ -732,8 +837,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
    * <p>
    */
-  public void setGpsNBL2Level(JAXBElement<TUS_DBW> value) {
+  public void setGpsNBL2Level(TDecimal value) {
     this.gpsNBL2Level = value;
+  }
+
+  public boolean isSetGpsNBL2Level() {
+    return (this.gpsNBL2Level != null);
   }
 
   /**
@@ -743,7 +852,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
    * <p>
    */
-  public JAXBElement<TUS_DBWHz> getGpsWBL1Level() {
+  public TDecimal getGpsWBL1Level() {
     return gpsWBL1Level;
   }
 
@@ -754,8 +863,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
    * <p>
    */
-  public void setGpsWBL1Level(JAXBElement<TUS_DBWHz> value) {
+  public void setGpsWBL1Level(TDecimal value) {
     this.gpsWBL1Level = value;
+  }
+
+  public boolean isSetGpsWBL1Level() {
+    return (this.gpsWBL1Level != null);
   }
 
   /**
@@ -765,7 +878,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
    * <p>
    */
-  public JAXBElement<TUS_DBWHz> getGpsWBL2Level() {
+  public TDecimal getGpsWBL2Level() {
     return gpsWBL2Level;
   }
 
@@ -776,8 +889,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
    * <p>
    */
-  public void setGpsWBL2Level(JAXBElement<TUS_DBWHz> value) {
+  public void setGpsWBL2Level(TDecimal value) {
     this.gpsWBL2Level = value;
+  }
+
+  public boolean isSetGpsWBL2Level() {
+    return (this.gpsWBL2Level != null);
   }
 
   /**
@@ -787,7 +904,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getModulationType() {
+  public TString getModulationType() {
     return modulationType;
   }
 
@@ -798,8 +915,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setModulationType(JAXBElement<TS10> value) {
+  public void setModulationType(TString value) {
     this.modulationType = value;
+  }
+
+  public boolean isSetModulationType() {
+    return (this.modulationType != null);
   }
 
   /**
@@ -809,7 +930,7 @@ public class TxMode {
    *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public JAXBElement<TS40> getModeName() {
+  public TString getModeName() {
     return modeName;
   }
 
@@ -820,8 +941,12 @@ public class TxMode {
    *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public void setModeName(JAXBElement<TS40> value) {
+  public void setModeName(TString value) {
     this.modeName = value;
+  }
+
+  public boolean isSetModeName() {
+    return (this.modeName != null);
   }
 
   /**
@@ -844,12 +969,21 @@ public class TxMode {
    * Objects of the following type(s) are allowed in the list {@link EmsClass }
    * <p>
    * <p>
+   * @return
    */
   public List<EmsClass> getEmsClass() {
     if (emsClass == null) {
       emsClass = new ArrayList<>();
     }
     return this.emsClass;
+  }
+
+  public boolean isSetEmsClass() {
+    return ((this.emsClass != null) && (!this.emsClass.isEmpty()));
+  }
+
+  public void unsetEmsClass() {
+    this.emsClass = null;
   }
 
   /**
@@ -872,12 +1006,21 @@ public class TxMode {
    * Objects of the following type(s) are allowed in the list {@link Power }
    * <p>
    * <p>
+   * @return
    */
   public List<Power> getPower() {
     if (power == null) {
       power = new ArrayList<>();
     }
     return this.power;
+  }
+
+  public boolean isSetPower() {
+    return ((this.power != null) && (!this.power.isEmpty()));
+  }
+
+  public void unsetPower() {
+    this.power = null;
   }
 
   /**
@@ -901,12 +1044,21 @@ public class TxMode {
      * {@link TxSignalTuning }
    * <p>
    * <p>
+   * @return
    */
   public List<TxSignalTuning> getTxSignalTuning() {
     if (txSignalTuning == null) {
       txSignalTuning = new ArrayList<>();
     }
     return this.txSignalTuning;
+  }
+
+  public boolean isSetTxSignalTuning() {
+    return ((this.txSignalTuning != null) && (!this.txSignalTuning.isEmpty()));
+  }
+
+  public void unsetTxSignalTuning() {
+    this.txSignalTuning = null;
   }
 
   /**
@@ -930,12 +1082,21 @@ public class TxMode {
      * {@link TxModulation }
    * <p>
    * <p>
+   * @return
    */
   public List<TxModulation> getTxModulation() {
     if (txModulation == null) {
       txModulation = new ArrayList<>();
     }
     return this.txModulation;
+  }
+
+  public boolean isSetTxModulation() {
+    return ((this.txModulation != null) && (!this.txModulation.isEmpty()));
+  }
+
+  public void unsetTxModulation() {
+    this.txModulation = null;
   }
 
   /**
@@ -958,12 +1119,21 @@ public class TxMode {
    * Objects of the following type(s) are allowed in the list {@link Baseband }
    * <p>
    * <p>
+   * @return
    */
   public List<Baseband> getBaseband() {
     if (baseband == null) {
       baseband = new ArrayList<>();
     }
     return this.baseband;
+  }
+
+  public boolean isSetBaseband() {
+    return ((this.baseband != null) && (!this.baseband.isEmpty()));
+  }
+
+  public void unsetBaseband() {
+    this.baseband = null;
   }
 
   /**
@@ -986,12 +1156,21 @@ public class TxMode {
    * Objects of the following type(s) are allowed in the list {@link Pulse }
    * <p>
    * <p>
+   * @return
    */
   public List<Pulse> getPulse() {
     if (pulse == null) {
       pulse = new ArrayList<>();
     }
     return this.pulse;
+  }
+
+  public boolean isSetPulse() {
+    return ((this.pulse != null) && (!this.pulse.isEmpty()));
+  }
+
+  public void unsetPulse() {
+    this.pulse = null;
   }
 
   /**
@@ -1015,12 +1194,21 @@ public class TxMode {
      * {@link SubCarrierFreq }
    * <p>
    * <p>
+   * @return
    */
   public List<SubCarrierFreq> getSubCarrierFreq() {
     if (subCarrierFreq == null) {
       subCarrierFreq = new ArrayList<>();
     }
     return this.subCarrierFreq;
+  }
+
+  public boolean isSetSubCarrierFreq() {
+    return ((this.subCarrierFreq != null) && (!this.subCarrierFreq.isEmpty()));
+  }
+
+  public void unsetSubCarrierFreq() {
+    this.subCarrierFreq = null;
   }
 
   /**
@@ -1044,12 +1232,21 @@ public class TxMode {
      * {@link SubCarrierTone }
    * <p>
    * <p>
+   * @return
    */
   public List<SubCarrierTone> getSubCarrierTone() {
     if (subCarrierTone == null) {
       subCarrierTone = new ArrayList<>();
     }
     return this.subCarrierTone;
+  }
+
+  public boolean isSetSubCarrierTone() {
+    return ((this.subCarrierTone != null) && (!this.subCarrierTone.isEmpty()));
+  }
+
+  public void unsetSubCarrierTone() {
+    this.subCarrierTone = null;
   }
 
   /**
@@ -1070,6 +1267,10 @@ public class TxMode {
    */
   public void setSpreadSpectrum(SpreadSpectrum value) {
     this.spreadSpectrum = value;
+  }
+
+  public boolean isSetSpreadSpectrum() {
+    return (this.spreadSpectrum != null);
   }
 
   /**
@@ -1093,12 +1294,292 @@ public class TxMode {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getCurves() {
     if (curves == null) {
       curves = new ArrayList<>();
     }
     return this.curves;
+  }
+
+  public boolean isSetCurves() {
+    return ((this.curves != null) && (!this.curves.isEmpty()));
+  }
+
+  public void unsetCurves() {
+    this.curves = null;
+  }
+
+  public TxMode withModeID(String value) {
+    setModeID(new TString(value));
+    return this;
+  }
+
+  public TxMode withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public TxMode withNecessaryBw(Double value) {
+    setNecessaryBw(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withTunability(String value) {
+    setTunability(new TString(value));
+    return this;
+  }
+
+  public TxMode withTuningMethod(String value) {
+    setTuningMethod(new TString(value));
+    return this;
+  }
+
+  public TxMode withNumSubCarriers(Integer value) {
+    setNumSubCarriers(new TInteger(value));
+    return this;
+  }
+
+  public TxMode withNumSideTones(Integer value) {
+    setNumSideTones(new TInteger(value));
+    return this;
+  }
+
+  public TxMode withIntermodPct(Double value) {
+    setIntermodPct(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withIntermodEffect(String value) {
+    setIntermodEffect(new TString(value));
+    return this;
+  }
+
+  public TxMode withBurstRate(Double value) {
+    setBurstRate(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withBurstDuration(Double value) {
+    setBurstDuration(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withBurstNumPulses(Integer value) {
+    setBurstNumPulses(new TInteger(value));
+    return this;
+  }
+
+  public TxMode withBurstOffTime(Double value) {
+    setBurstOffTime(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withOccBw(Double value) {
+    setOccBw(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withOccBwCalculated(ListCBO value) {
+    setOccBwCalculated(new TString(value.value()));
+    return this;
+  }
+
+  public TxMode withSecondHarmonicLevel(Double value) {
+    setSecondHarmonicLevel(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withThirdHarmonicLevel(Double value) {
+    setThirdHarmonicLevel(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withOtherHarmonicLevel(Double value) {
+    setOtherHarmonicLevel(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withSpuriousLevel(Double value) {
+    setSpuriousLevel(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withFreqTolerance(Double value) {
+    setFreqTolerance(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withFreqToleranceUnit(ListCFO value) {
+    setFreqToleranceUnit(new TString(value.value()));
+    return this;
+  }
+
+  public TxMode withRadarType(String value) {
+    setRadarType(new TString(value));
+    return this;
+  }
+
+  public TxMode withGpsNBL1Level(Double value) {
+    setGpsNBL1Level(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withGpsNBL2Level(Double value) {
+    setGpsNBL2Level(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withGpsWBL1Level(Double value) {
+    setGpsWBL1Level(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withGpsWBL2Level(Double value) {
+    setGpsWBL2Level(new TDecimal(value));
+    return this;
+  }
+
+  public TxMode withModulationType(String value) {
+    setModulationType(new TString(value));
+    return this;
+  }
+
+  public TxMode withModeName(String value) {
+    setModeName(new TString(value));
+    return this;
+  }
+
+  public TxMode withEmsClass(EmsClass... values) {
+    if (values != null) {
+      getEmsClass().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withEmsClass(Collection<EmsClass> values) {
+    if (values != null) {
+      getEmsClass().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withPower(Power... values) {
+    if (values != null) {
+      getPower().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withPower(Collection<Power> values) {
+    if (values != null) {
+      getPower().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withTxSignalTuning(TxSignalTuning... values) {
+    if (values != null) {
+      getTxSignalTuning().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withTxSignalTuning(Collection<TxSignalTuning> values) {
+    if (values != null) {
+      getTxSignalTuning().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withTxModulation(TxModulation... values) {
+    if (values != null) {
+      getTxModulation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withTxModulation(Collection<TxModulation> values) {
+    if (values != null) {
+      getTxModulation().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withBaseband(Baseband... values) {
+    if (values != null) {
+      getBaseband().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withBaseband(Collection<Baseband> values) {
+    if (values != null) {
+      getBaseband().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withPulse(Pulse... values) {
+    if (values != null) {
+      getPulse().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withPulse(Collection<Pulse> values) {
+    if (values != null) {
+      getPulse().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withSubCarrierFreq(SubCarrierFreq... values) {
+    if (values != null) {
+      getSubCarrierFreq().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withSubCarrierFreq(Collection<SubCarrierFreq> values) {
+    if (values != null) {
+      getSubCarrierFreq().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withSubCarrierTone(SubCarrierTone... values) {
+    if (values != null) {
+      getSubCarrierTone().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withSubCarrierTone(Collection<SubCarrierTone> values) {
+    if (values != null) {
+      getSubCarrierTone().addAll(values);
+    }
+    return this;
+  }
+
+  public TxMode withSpreadSpectrum(SpreadSpectrum value) {
+    setSpreadSpectrum(value);
+    return this;
+  }
+
+  public TxMode withCurves(BigInteger... values) {
+    if (values != null) {
+      getCurves().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxMode withCurves(Collection<BigInteger> values) {
+    if (values != null) {
+      getCurves().addAll(values);
+    }
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,21 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.Tminutes;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TElev;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDistance;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -49,34 +43,44 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Satellite">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="ReviewDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="CallSign" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="OrbitType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="LaunchStatus" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="LaunchLocRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="LaunchDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="GeoNominalLon" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLon" minOccurs="0"/>
- *         &lt;element name="GeoAltitude" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- *         &lt;element name="NonGeoPeriod" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tminutes" minOccurs="0"/>
- *         &lt;element name="NonGeoNumSatellites" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4" minOccurs="0"/>
- *         &lt;element name="NonGeoApogee" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- *         &lt;element name="NonGeoPerigee" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- *         &lt;element name="NonGeoInclination" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev" minOccurs="0"/>
- *         &lt;element name="InternationalDesignator" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="ObjectNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="Administration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="NetworkName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="RFSystemRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RFSystemRef" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="EarthStation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}EarthStation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Identifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Identifier" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ServiceArea" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ServiceArea" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Satellite"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="ReviewDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="CallSign"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/> &lt;element
+ * name="OrbitType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
+ * minOccurs="0"/> &lt;element name="LaunchStatus"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/> &lt;element
+ * name="LaunchLocRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
+ * minOccurs="0"/> &lt;element name="LaunchDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="GeoNominalLon" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLon"
+ * minOccurs="0"/> &lt;element name="GeoAltitude"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
+ * &lt;element name="NonGeoPeriod"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tminutes" minOccurs="0"/>
+ * &lt;element name="NonGeoNumSatellites"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4" minOccurs="0"/> &lt;element
+ * name="NonGeoApogee" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance"
+ * minOccurs="0"/> &lt;element name="NonGeoPerigee"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
+ * &lt;element name="NonGeoInclination"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev" minOccurs="0"/> &lt;element
+ * name="InternationalDesignator"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/> &lt;element
+ * name="ObjectNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
+ * minOccurs="0"/> &lt;element name="Administration"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
+ * name="NetworkName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="RFSystemRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RFSystemRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="EarthStation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}EarthStation" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Identifier"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Identifier" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="ServiceArea"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ServiceArea" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -106,51 +110,67 @@ import javax.xml.bind.annotation.*;
   "identifier",
   "serviceArea"
 })
-public class Satellite
-  extends Common {
+public class Satellite extends Common {
 
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
-  @XmlElementRef(name = "CallSign", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> callSign;
-  @XmlElementRef(name = "OrbitType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> orbitType;
-  @XmlElementRef(name = "LaunchStatus", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> launchStatus;
-  @XmlElementRef(name = "LaunchLocRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> launchLocRef;
-  @XmlElementRef(name = "LaunchDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> launchDate;
-  @XmlElementRef(name = "GeoNominalLon", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TLon> geoNominalLon;
-  @XmlElementRef(name = "GeoAltitude", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDistance> geoAltitude;
-  @XmlElementRef(name = "NonGeoPeriod", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tminutes> nonGeoPeriod;
-  @XmlElementRef(name = "NonGeoNumSatellites", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> nonGeoNumSatellites;
-  @XmlElementRef(name = "NonGeoApogee", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDistance> nonGeoApogee;
-  @XmlElementRef(name = "NonGeoPerigee", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDistance> nonGeoPerigee;
-  @XmlElementRef(name = "NonGeoInclination", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev> nonGeoInclination;
-  @XmlElementRef(name = "InternationalDesignator", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> internationalDesignator;
-  @XmlElementRef(name = "ObjectNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> objectNum;
-  @XmlElementRef(name = "Administration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> administration;
-  @XmlElementRef(name = "NetworkName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> networkName;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
+  @XmlElement(name = "CallSign", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString callSign;
+  @XmlElement(name = "OrbitType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString orbitType;
+  @XmlElement(name = "LaunchStatus", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString launchStatus;
+  @XmlElement(name = "LaunchLocRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString launchLocRef;
+  @XmlElement(name = "LaunchDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar launchDate;
+  @XmlElement(name = "GeoNominalLon", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString geoNominalLon;
+  @XmlElement(name = "GeoAltitude", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal geoAltitude;
+  @XmlElement(name = "NonGeoPeriod", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMINUTES.class)
+  private TDecimal nonGeoPeriod;
+  @XmlElement(name = "NonGeoNumSatellites", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger nonGeoNumSatellites;
+  @XmlElement(name = "NonGeoApogee", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal nonGeoApogee;
+  @XmlElement(name = "NonGeoPerigee", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal nonGeoPerigee;
+  @XmlElement(name = "NonGeoInclination", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  private TDecimal nonGeoInclination;
+  @XmlElement(name = "InternationalDesignator", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString internationalDesignator;
+  @XmlElement(name = "ObjectNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString objectNum;
+  @XmlElement(name = "Administration", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString administration;
+  @XmlElement(name = "NetworkName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString networkName;
   @XmlElement(name = "RFSystemRef", nillable = true)
-  protected List<RFSystemRef> rfSystemRef;
+  private List<RFSystemRef> rfSystemRef;
   @XmlElement(name = "EarthStation")
-  protected List<EarthStation> earthStation;
+  private List<EarthStation> earthStation;
   @XmlElement(name = "Identifier")
-  protected List<Identifier> identifier;
+  private List<Identifier> identifier;
   @XmlElement(name = "ServiceArea", nillable = true)
-  protected List<ServiceArea> serviceArea;
+  private List<ServiceArea> serviceArea;
 
   /**
    * Gets the value of the reviewDate property.
@@ -159,7 +179,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -170,8 +190,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -181,7 +205,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getCallSign() {
+  public TString getCallSign() {
     return callSign;
   }
 
@@ -192,8 +216,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setCallSign(JAXBElement<TS20> value) {
+  public void setCallSign(TString value) {
     this.callSign = value;
+  }
+
+  public boolean isSetCallSign() {
+    return (this.callSign != null);
   }
 
   /**
@@ -203,7 +231,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getOrbitType() {
+  public TString getOrbitType() {
     return orbitType;
   }
 
@@ -214,8 +242,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setOrbitType(JAXBElement<TS25> value) {
+  public void setOrbitType(TString value) {
     this.orbitType = value;
+  }
+
+  public boolean isSetOrbitType() {
+    return (this.orbitType != null);
   }
 
   /**
@@ -225,7 +257,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getLaunchStatus() {
+  public TString getLaunchStatus() {
     return launchStatus;
   }
 
@@ -236,8 +268,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setLaunchStatus(JAXBElement<TS25> value) {
+  public void setLaunchStatus(TString value) {
     this.launchStatus = value;
+  }
+
+  public boolean isSetLaunchStatus() {
+    return (this.launchStatus != null);
   }
 
   /**
@@ -247,7 +283,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getLaunchLocRef() {
+  public TString getLaunchLocRef() {
     return launchLocRef;
   }
 
@@ -258,8 +294,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setLaunchLocRef(JAXBElement<TSerial> value) {
+  public void setLaunchLocRef(TString value) {
     this.launchLocRef = value;
+  }
+
+  public boolean isSetLaunchLocRef() {
+    return (this.launchLocRef != null);
   }
 
   /**
@@ -269,7 +309,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getLaunchDate() {
+  public TCalendar getLaunchDate() {
     return launchDate;
   }
 
@@ -280,8 +320,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setLaunchDate(JAXBElement<TD> value) {
+  public void setLaunchDate(TCalendar value) {
     this.launchDate = value;
+  }
+
+  public boolean isSetLaunchDate() {
+    return (this.launchDate != null);
   }
 
   /**
@@ -291,7 +335,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public JAXBElement<TLon> getGeoNominalLon() {
+  public TString getGeoNominalLon() {
     return geoNominalLon;
   }
 
@@ -302,8 +346,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public void setGeoNominalLon(JAXBElement<TLon> value) {
+  public void setGeoNominalLon(TString value) {
     this.geoNominalLon = value;
+  }
+
+  public boolean isSetGeoNominalLon() {
+    return (this.geoNominalLon != null);
   }
 
   /**
@@ -313,7 +361,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public JAXBElement<TDistance> getGeoAltitude() {
+  public TDecimal getGeoAltitude() {
     return geoAltitude;
   }
 
@@ -324,8 +372,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public void setGeoAltitude(JAXBElement<TDistance> value) {
+  public void setGeoAltitude(TDecimal value) {
     this.geoAltitude = value;
+  }
+
+  public boolean isSetGeoAltitude() {
+    return (this.geoAltitude != null);
   }
 
   /**
@@ -335,7 +387,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link Tminutes }{@code >}
    * <p>
    */
-  public JAXBElement<Tminutes> getNonGeoPeriod() {
+  public TDecimal getNonGeoPeriod() {
     return nonGeoPeriod;
   }
 
@@ -346,8 +398,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link Tminutes }{@code >}
    * <p>
    */
-  public void setNonGeoPeriod(JAXBElement<Tminutes> value) {
+  public void setNonGeoPeriod(TDecimal value) {
     this.nonGeoPeriod = value;
+  }
+
+  public boolean isSetNonGeoPeriod() {
+    return (this.nonGeoPeriod != null);
   }
 
   /**
@@ -357,7 +413,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getNonGeoNumSatellites() {
+  public TInteger getNonGeoNumSatellites() {
     return nonGeoNumSatellites;
   }
 
@@ -368,8 +424,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setNonGeoNumSatellites(JAXBElement<TUN4> value) {
+  public void setNonGeoNumSatellites(TInteger value) {
     this.nonGeoNumSatellites = value;
+  }
+
+  public boolean isSetNonGeoNumSatellites() {
+    return (this.nonGeoNumSatellites != null);
   }
 
   /**
@@ -379,7 +439,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public JAXBElement<TDistance> getNonGeoApogee() {
+  public TDecimal getNonGeoApogee() {
     return nonGeoApogee;
   }
 
@@ -390,8 +450,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public void setNonGeoApogee(JAXBElement<TDistance> value) {
+  public void setNonGeoApogee(TDecimal value) {
     this.nonGeoApogee = value;
+  }
+
+  public boolean isSetNonGeoApogee() {
+    return (this.nonGeoApogee != null);
   }
 
   /**
@@ -401,7 +465,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public JAXBElement<TDistance> getNonGeoPerigee() {
+  public TDecimal getNonGeoPerigee() {
     return nonGeoPerigee;
   }
 
@@ -412,8 +476,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public void setNonGeoPerigee(JAXBElement<TDistance> value) {
+  public void setNonGeoPerigee(TDecimal value) {
     this.nonGeoPerigee = value;
+  }
+
+  public boolean isSetNonGeoPerigee() {
+    return (this.nonGeoPerigee != null);
   }
 
   /**
@@ -423,7 +491,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public JAXBElement<TElev> getNonGeoInclination() {
+  public TDecimal getNonGeoInclination() {
     return nonGeoInclination;
   }
 
@@ -434,8 +502,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
    * <p>
    */
-  public void setNonGeoInclination(JAXBElement<TElev> value) {
+  public void setNonGeoInclination(TDecimal value) {
     this.nonGeoInclination = value;
+  }
+
+  public boolean isSetNonGeoInclination() {
+    return (this.nonGeoInclination != null);
   }
 
   /**
@@ -445,7 +517,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getInternationalDesignator() {
+  public TString getInternationalDesignator() {
     return internationalDesignator;
   }
 
@@ -456,8 +528,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setInternationalDesignator(JAXBElement<TS20> value) {
+  public void setInternationalDesignator(TString value) {
     this.internationalDesignator = value;
+  }
+
+  public boolean isSetInternationalDesignator() {
+    return (this.internationalDesignator != null);
   }
 
   /**
@@ -467,7 +543,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getObjectNum() {
+  public TString getObjectNum() {
     return objectNum;
   }
 
@@ -478,8 +554,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setObjectNum(JAXBElement<TS20> value) {
+  public void setObjectNum(TString value) {
     this.objectNum = value;
+  }
+
+  public boolean isSetObjectNum() {
+    return (this.objectNum != null);
   }
 
   /**
@@ -489,7 +569,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getAdministration() {
+  public TString getAdministration() {
     return administration;
   }
 
@@ -500,8 +580,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setAdministration(JAXBElement<TS100> value) {
+  public void setAdministration(TString value) {
     this.administration = value;
+  }
+
+  public boolean isSetAdministration() {
+    return (this.administration != null);
   }
 
   /**
@@ -511,7 +595,7 @@ public class Satellite
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getNetworkName() {
+  public TString getNetworkName() {
     return networkName;
   }
 
@@ -522,8 +606,12 @@ public class Satellite
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setNetworkName(JAXBElement<TS50> value) {
+  public void setNetworkName(TString value) {
     this.networkName = value;
+  }
+
+  public boolean isSetNetworkName() {
+    return (this.networkName != null);
   }
 
   /**
@@ -547,12 +635,21 @@ public class Satellite
      * {@link RFSystemRef }
    * <p>
    * <p>
+   * @return
    */
   public List<RFSystemRef> getRFSystemRef() {
     if (rfSystemRef == null) {
       rfSystemRef = new ArrayList<>();
     }
     return this.rfSystemRef;
+  }
+
+  public boolean isSetRFSystemRef() {
+    return ((this.rfSystemRef != null) && (!this.rfSystemRef.isEmpty()));
+  }
+
+  public void unsetRFSystemRef() {
+    this.rfSystemRef = null;
   }
 
   /**
@@ -576,12 +673,21 @@ public class Satellite
      * {@link EarthStation }
    * <p>
    * <p>
+   * @return
    */
   public List<EarthStation> getEarthStation() {
     if (earthStation == null) {
       earthStation = new ArrayList<>();
     }
     return this.earthStation;
+  }
+
+  public boolean isSetEarthStation() {
+    return ((this.earthStation != null) && (!this.earthStation.isEmpty()));
+  }
+
+  public void unsetEarthStation() {
+    this.earthStation = null;
   }
 
   /**
@@ -605,12 +711,21 @@ public class Satellite
      * {@link Identifier }
    * <p>
    * <p>
+   * @return
    */
   public List<Identifier> getIdentifier() {
     if (identifier == null) {
       identifier = new ArrayList<>();
     }
     return this.identifier;
+  }
+
+  public boolean isSetIdentifier() {
+    return ((this.identifier != null) && (!this.identifier.isEmpty()));
+  }
+
+  public void unsetIdentifier() {
+    this.identifier = null;
   }
 
   /**
@@ -634,12 +749,162 @@ public class Satellite
      * {@link ServiceArea }
    * <p>
    * <p>
+   * @return
    */
   public List<ServiceArea> getServiceArea() {
     if (serviceArea == null) {
       serviceArea = new ArrayList<>();
     }
     return this.serviceArea;
+  }
+
+  public boolean isSetServiceArea() {
+    return ((this.serviceArea != null) && (!this.serviceArea.isEmpty()));
+  }
+
+  public void unsetServiceArea() {
+    this.serviceArea = null;
+  }
+
+  public Satellite withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public Satellite withCallSign(String value) {
+    setCallSign(new TString(value));
+    return this;
+  }
+
+  public Satellite withOrbitType(String value) {
+    setOrbitType(new TString(value));
+    return this;
+  }
+
+  public Satellite withLaunchStatus(String value) {
+    setLaunchStatus(new TString(value));
+    return this;
+  }
+
+  public Satellite withLaunchLocRef(String value) {
+    setLaunchLocRef(new TString(value));
+    return this;
+  }
+
+  public Satellite withLaunchDate(Calendar value) {
+    setLaunchDate(new TCalendar(value));
+    return this;
+  }
+
+  public Satellite withGeoNominalLon(String value) {
+    setGeoNominalLon(new TString(value));
+    return this;
+  }
+
+  public Satellite withGeoAltitude(Double value) {
+    setGeoAltitude(new TDecimal(value));
+    return this;
+  }
+
+  public Satellite withNonGeoPeriod(Double value) {
+    setNonGeoPeriod(new TDecimal(value));
+    return this;
+  }
+
+  public Satellite withNonGeoNumSatellites(Integer value) {
+    setNonGeoNumSatellites(new TInteger(value));
+    return this;
+  }
+
+  public Satellite withNonGeoApogee(Double value) {
+    setNonGeoApogee(new TDecimal(value));
+    return this;
+  }
+
+  public Satellite withNonGeoPerigee(Double value) {
+    setNonGeoPerigee(new TDecimal(value));
+    return this;
+  }
+
+  public Satellite withNonGeoInclination(Double value) {
+    setNonGeoInclination(new TDecimal(value));
+    return this;
+  }
+
+  public Satellite withInternationalDesignator(String value) {
+    setInternationalDesignator(new TString(value));
+    return this;
+  }
+
+  public Satellite withObjectNum(String value) {
+    setObjectNum(new TString(value));
+    return this;
+  }
+
+  public Satellite withAdministration(String value) {
+    setAdministration(new TString(value));
+    return this;
+  }
+
+  public Satellite withNetworkName(String value) {
+    setNetworkName(new TString(value));
+    return this;
+  }
+
+  public Satellite withRFSystemRef(RFSystemRef... values) {
+    if (values != null) {
+      getRFSystemRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Satellite withRFSystemRef(Collection<RFSystemRef> values) {
+    if (values != null) {
+      getRFSystemRef().addAll(values);
+    }
+    return this;
+  }
+
+  public Satellite withEarthStation(EarthStation... values) {
+    if (values != null) {
+      getEarthStation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Satellite withEarthStation(Collection<EarthStation> values) {
+    if (values != null) {
+      getEarthStation().addAll(values);
+    }
+    return this;
+  }
+
+  public Satellite withIdentifier(Identifier... values) {
+    if (values != null) {
+      getIdentifier().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Satellite withIdentifier(Collection<Identifier> values) {
+    if (values != null) {
+      getIdentifier().addAll(values);
+    }
+    return this;
+  }
+
+  public Satellite withServiceArea(ServiceArea... values) {
+    if (values != null) {
+      getServiceArea().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Satellite withServiceArea(Collection<ServiceArea> values) {
+    if (values != null) {
+      getServiceArea().addAll(values);
+    }
+    return this;
   }
 
 }

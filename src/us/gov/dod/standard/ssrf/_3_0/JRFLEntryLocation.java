@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -36,7 +40,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="JRFLEntryLocation">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -59,9 +64,11 @@ import javax.xml.bind.annotation.*;
 public class JRFLEntryLocation {
 
   @XmlElement(name = "Serial", required = true)
-  protected TSerial serial;
-  @XmlElementRef(name = "AntFeedpointHeight", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> antFeedpointHeight;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
+  @XmlElement(name = "AntFeedpointHeight", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal antFeedpointHeight;
 
   /**
    * Gets the value of the serial property.
@@ -69,7 +76,7 @@ public class JRFLEntryLocation {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -79,8 +86,12 @@ public class JRFLEntryLocation {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
   }
 
   /**
@@ -90,7 +101,7 @@ public class JRFLEntryLocation {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAntFeedpointHeight() {
+  public TDecimal getAntFeedpointHeight() {
     return antFeedpointHeight;
   }
 
@@ -101,8 +112,22 @@ public class JRFLEntryLocation {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAntFeedpointHeight(JAXBElement<TAltitude> value) {
+  public void setAntFeedpointHeight(TDecimal value) {
     this.antFeedpointHeight = value;
+  }
+
+  public boolean isSetAntFeedpointHeight() {
+    return (this.antFeedpointHeight != null);
+  }
+
+  public JRFLEntryLocation withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
+  }
+
+  public JRFLEntryLocation withAntFeedpointHeight(Double value) {
+    setAntFeedpointHeight(new TDecimal(value));
+    return this;
   }
 
 }

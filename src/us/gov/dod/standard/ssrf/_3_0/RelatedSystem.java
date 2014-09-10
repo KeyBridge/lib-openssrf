@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCFR;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -38,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="RelatedSystem">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -61,9 +64,10 @@ import javax.xml.bind.annotation.XmlType;
 public class RelatedSystem {
 
   @XmlElement(name = "Relation", required = true)
-  protected TListCFR relation;
+  private TString relation;
   @XmlElement(name = "Serial", required = true)
-  protected TSerial serial;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
 
   /**
    * Gets the value of the relation property.
@@ -71,7 +75,7 @@ public class RelatedSystem {
    * @return possible object is {@link TListCFR }
    * <p>
    */
-  public TListCFR getRelation() {
+  public TString getRelation() {
     return relation;
   }
 
@@ -81,8 +85,12 @@ public class RelatedSystem {
    * @param value allowed object is {@link TListCFR }
    * <p>
    */
-  public void setRelation(TListCFR value) {
+  public void setRelation(TString value) {
     this.relation = value;
+  }
+
+  public boolean isSetRelation() {
+    return (this.relation != null);
   }
 
   /**
@@ -91,7 +99,7 @@ public class RelatedSystem {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -101,8 +109,22 @@ public class RelatedSystem {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
+  }
+
+  public RelatedSystem withRelation(ListCFR value) {
+    setRelation(new TString(value.value()));
+    return this;
+  }
+
+  public RelatedSystem withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
   }
 
 }

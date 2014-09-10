@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS20;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -38,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Notation">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -61,9 +63,11 @@ import javax.xml.bind.annotation.XmlType;
 public class Notation {
 
   @XmlElement(name = "Code", required = true)
-  protected TUS20 code;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS20.class)
+  private TString code;
   @XmlElement(name = "Type", required = true)
-  protected TS25 type;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString type;
 
   /**
    * Gets the value of the code property.
@@ -71,7 +75,7 @@ public class Notation {
    * @return possible object is {@link TUS20 }
    * <p>
    */
-  public TUS20 getCode() {
+  public TString getCode() {
     return code;
   }
 
@@ -81,8 +85,12 @@ public class Notation {
    * @param value allowed object is {@link TUS20 }
    * <p>
    */
-  public void setCode(TUS20 value) {
+  public void setCode(TString value) {
     this.code = value;
+  }
+
+  public boolean isSetCode() {
+    return (this.code != null);
   }
 
   /**
@@ -91,7 +99,7 @@ public class Notation {
    * @return possible object is {@link TS25 }
    * <p>
    */
-  public TS25 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -101,8 +109,22 @@ public class Notation {
    * @param value allowed object is {@link TS25 }
    * <p>
    */
-  public void setType(TS25 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
+  }
+
+  public Notation withCode(String value) {
+    setCode(new TString(value));
+    return this;
+  }
+
+  public Notation withType(String value) {
+    setType(new TString(value));
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS6;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -37,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="OffTheShelfEquipment">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -58,7 +61,8 @@ import javax.xml.bind.annotation.XmlType;
 public class OffTheShelfEquipment {
 
   @XmlElement(name = "Use", required = true)
-  protected TS6 use;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
+  private TString use;
 
   /**
    * Gets the value of the use property.
@@ -66,7 +70,7 @@ public class OffTheShelfEquipment {
    * @return possible object is {@link TS6 }
    * <p>
    */
-  public TS6 getUse() {
+  public TString getUse() {
     return use;
   }
 
@@ -76,8 +80,17 @@ public class OffTheShelfEquipment {
    * @param value allowed object is {@link TS6 }
    * <p>
    */
-  public void setUse(TS6 value) {
+  public void setUse(TString value) {
     this.use = value;
+  }
+
+  public boolean isSetUse() {
+    return (this.use != null);
+  }
+
+  public OffTheShelfEquipment withUse(String value) {
+    setUse(new TString(value));
+    return this;
   }
 
 }

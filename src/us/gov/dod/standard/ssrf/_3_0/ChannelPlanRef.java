@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.enumerated.ListCCL;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -59,11 +61,11 @@ public class ChannelPlanRef {
   @XmlValue
   protected String value;
   @XmlAttribute(name = "cls", required = true)
-  protected ListCCL cls;
+  private ListCCL cls;
   @XmlAttribute(name = "remarks")
-  protected List<BigInteger> remarks;
+  private List<BigInteger> remarks;
   @XmlAttribute(name = "extReferences")
-  protected List<BigInteger> extReferences;
+  private List<BigInteger> extReferences;
   @XmlAttribute(name = "legacyReleasability")
   protected String legacyReleasability;
   @XmlAttribute(name = "quality")
@@ -93,6 +95,10 @@ public class ChannelPlanRef {
     this.value = value;
   }
 
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
+
   /**
    * Gets the value of the cls property.
    * <p>
@@ -111,6 +117,10 @@ public class ChannelPlanRef {
    */
   public void setCls(ListCCL value) {
     this.cls = value;
+  }
+
+  public boolean isSetCls() {
+    return (this.cls != null);
   }
 
   /**
@@ -134,12 +144,21 @@ public class ChannelPlanRef {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getRemarks() {
     if (remarks == null) {
       remarks = new ArrayList<>();
     }
     return this.remarks;
+  }
+
+  public boolean isSetRemarks() {
+    return ((this.remarks != null) && (!this.remarks.isEmpty()));
+  }
+
+  public void unsetRemarks() {
+    this.remarks = null;
   }
 
   /**
@@ -163,12 +182,21 @@ public class ChannelPlanRef {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getExtReferences() {
     if (extReferences == null) {
       extReferences = new ArrayList<>();
     }
     return this.extReferences;
+  }
+
+  public boolean isSetExtReferences() {
+    return ((this.extReferences != null) && (!this.extReferences.isEmpty()));
+  }
+
+  public void unsetExtReferences() {
+    this.extReferences = null;
   }
 
   /**
@@ -191,6 +219,10 @@ public class ChannelPlanRef {
     this.legacyReleasability = value;
   }
 
+  public boolean isSetLegacyReleasability() {
+    return (this.legacyReleasability != null);
+  }
+
   /**
    * Gets the value of the quality property.
    * <p>
@@ -209,6 +241,10 @@ public class ChannelPlanRef {
    */
   public void setQuality(String value) {
     this.quality = value;
+  }
+
+  public boolean isSetQuality() {
+    return (this.quality != null);
   }
 
   /**
@@ -231,6 +267,10 @@ public class ChannelPlanRef {
     this.recommendedValue = value;
   }
 
+  public boolean isSetRecommendedValue() {
+    return (this.recommendedValue != null);
+  }
+
   /**
    * Gets the value of the availability property.
    * <p>
@@ -249,6 +289,68 @@ public class ChannelPlanRef {
    */
   public void setAvailability(String value) {
     this.availability = value;
+  }
+
+  public boolean isSetAvailability() {
+    return (this.availability != null);
+  }
+
+  public ChannelPlanRef withValue(String value) {
+    setValue(value);
+    return this;
+  }
+
+  public ChannelPlanRef withCls(ListCCL value) {
+    setCls(value);
+    return this;
+  }
+
+  public ChannelPlanRef withRemarks(BigInteger... values) {
+    if (values != null) {
+      getRemarks().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public ChannelPlanRef withRemarks(Collection<BigInteger> values) {
+    if (values != null) {
+      getRemarks().addAll(values);
+    }
+    return this;
+  }
+
+  public ChannelPlanRef withExtReferences(BigInteger... values) {
+    if (values != null) {
+      getExtReferences().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public ChannelPlanRef withExtReferences(Collection<BigInteger> values) {
+    if (values != null) {
+      getExtReferences().addAll(values);
+    }
+    return this;
+  }
+
+  public ChannelPlanRef withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
+    return this;
+  }
+
+  public ChannelPlanRef withQuality(String value) {
+    setQuality(value);
+    return this;
+  }
+
+  public ChannelPlanRef withRecommendedValue(String value) {
+    setRecommendedValue(value);
+    return this;
+  }
+
+  public ChannelPlanRef withAvailability(String value) {
+    setAvailability(value);
+    return this;
   }
 
 }

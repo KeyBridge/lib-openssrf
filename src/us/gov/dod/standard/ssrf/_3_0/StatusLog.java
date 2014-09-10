@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TDT;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS80;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -39,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="StatusLog">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -68,15 +71,20 @@ import javax.xml.bind.annotation.*;
 public class StatusLog {
 
   @XmlElement(name = "DateTime", required = true)
-  protected TDT dateTime;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar dateTime;
   @XmlElement(name = "State", required = true)
-  protected TS50 state;
-  @XmlElementRef(name = "AgencyCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS80> agencyCode;
-  @XmlElementRef(name = "Comment", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> comment;
-  @XmlElementRef(name = "POCRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> pocRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString state;
+  @XmlElement(name = "AgencyCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS80.class)
+  private TString agencyCode;
+  @XmlElement(name = "Comment", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString comment;
+  @XmlElement(name = "POCRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString pocRef;
 
   /**
    * Gets the value of the dateTime property.
@@ -84,7 +92,7 @@ public class StatusLog {
    * @return possible object is {@link TDT }
    * <p>
    */
-  public TDT getDateTime() {
+  public TCalendar getDateTime() {
     return dateTime;
   }
 
@@ -94,8 +102,12 @@ public class StatusLog {
    * @param value allowed object is {@link TDT }
    * <p>
    */
-  public void setDateTime(TDT value) {
+  public void setDateTime(TCalendar value) {
     this.dateTime = value;
+  }
+
+  public boolean isSetDateTime() {
+    return (this.dateTime != null);
   }
 
   /**
@@ -104,7 +116,7 @@ public class StatusLog {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getState() {
+  public TString getState() {
     return state;
   }
 
@@ -114,8 +126,12 @@ public class StatusLog {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setState(TS50 value) {
+  public void setState(TString value) {
     this.state = value;
+  }
+
+  public boolean isSetState() {
+    return (this.state != null);
   }
 
   /**
@@ -125,7 +141,7 @@ public class StatusLog {
    *         {@link JAXBElement }{@code <}{@link TS80 }{@code >}
    * <p>
    */
-  public JAXBElement<TS80> getAgencyCode() {
+  public TString getAgencyCode() {
     return agencyCode;
   }
 
@@ -136,8 +152,12 @@ public class StatusLog {
    *              {@link JAXBElement }{@code <}{@link TS80 }{@code >}
    * <p>
    */
-  public void setAgencyCode(JAXBElement<TS80> value) {
+  public void setAgencyCode(TString value) {
     this.agencyCode = value;
+  }
+
+  public boolean isSetAgencyCode() {
+    return (this.agencyCode != null);
   }
 
   /**
@@ -147,7 +167,7 @@ public class StatusLog {
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getComment() {
+  public TString getComment() {
     return comment;
   }
 
@@ -158,8 +178,12 @@ public class StatusLog {
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setComment(JAXBElement<TS255> value) {
+  public void setComment(TString value) {
     this.comment = value;
+  }
+
+  public boolean isSetComment() {
+    return (this.comment != null);
   }
 
   /**
@@ -169,7 +193,7 @@ public class StatusLog {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getPOCRef() {
+  public TString getPOCRef() {
     return pocRef;
   }
 
@@ -180,8 +204,37 @@ public class StatusLog {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setPOCRef(JAXBElement<TSerial> value) {
+  public void setPOCRef(TString value) {
     this.pocRef = value;
+  }
+
+  public boolean isSetPOCRef() {
+    return (this.pocRef != null);
+  }
+
+  public StatusLog withDateTime(Calendar value) {
+    setDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public StatusLog withState(String value) {
+    setState(new TString(value));
+    return this;
+  }
+
+  public StatusLog withAgencyCode(String value) {
+    setAgencyCode(new TString(value));
+    return this;
+  }
+
+  public StatusLog withComment(String value) {
+    setComment(new TString(value));
+    return this;
+  }
+
+  public StatusLog withPOCRef(String value) {
+    setPOCRef(new TString(value));
+    return this;
   }
 
 }

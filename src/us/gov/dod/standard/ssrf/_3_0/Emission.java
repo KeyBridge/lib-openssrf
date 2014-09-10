@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TEmsDes;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -40,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Emission">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -64,12 +65,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Emission {
 
-  @XmlElementRef(name = "EmsClass", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TEmsDes> emsClass;
-  @XmlElementRef(name = "NecessaryBw", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> necessaryBw;
-  @XmlElementRef(name = "Power", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> power;
+  @XmlElement(name = "EmsClass", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterEMSDES.class)
+  private TString emsClass;
+  @XmlElement(name = "NecessaryBw", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal necessaryBw;
+  @XmlElement(name = "Power", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal power;
 
   /**
    * Gets the value of the emsClass property.
@@ -78,7 +82,7 @@ public class Emission {
    *         {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
    * <p>
    */
-  public JAXBElement<TEmsDes> getEmsClass() {
+  public TString getEmsClass() {
     return emsClass;
   }
 
@@ -89,8 +93,12 @@ public class Emission {
    *              {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
    * <p>
    */
-  public void setEmsClass(JAXBElement<TEmsDes> value) {
+  public void setEmsClass(TString value) {
     this.emsClass = value;
+  }
+
+  public boolean isSetEmsClass() {
+    return (this.emsClass != null);
   }
 
   /**
@@ -100,7 +108,7 @@ public class Emission {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getNecessaryBw() {
+  public TDecimal getNecessaryBw() {
     return necessaryBw;
   }
 
@@ -111,8 +119,12 @@ public class Emission {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setNecessaryBw(JAXBElement<TFreqM> value) {
+  public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
+  }
+
+  public boolean isSetNecessaryBw() {
+    return (this.necessaryBw != null);
   }
 
   /**
@@ -122,7 +134,7 @@ public class Emission {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getPower() {
+  public TDecimal getPower() {
     return power;
   }
 
@@ -133,8 +145,27 @@ public class Emission {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setPower(JAXBElement<TdBW> value) {
+  public void setPower(TDecimal value) {
     this.power = value;
+  }
+
+  public boolean isSetPower() {
+    return (this.power != null);
+  }
+
+  public Emission withEmsClass(String value) {
+    setEmsClass(new TString(value));
+    return this;
+  }
+
+  public Emission withNecessaryBw(Double value) {
+    setNecessaryBw(new TDecimal(value));
+    return this;
+  }
+
+  public Emission withPower(Double value) {
+    setPower(new TDecimal(value));
+    return this;
   }
 
 }

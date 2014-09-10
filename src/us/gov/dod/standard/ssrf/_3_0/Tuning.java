@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN1;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -74,19 +78,24 @@ import javax.xml.bind.annotation.*;
 public class Tuning {
 
   @XmlElement(name = "TuningStep", required = true)
-  protected TFreqM tuningStep;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal tuningStep;
   @XmlElement(name = "NumFreq", required = true)
-  protected TUN4 numFreq;
-  @XmlElementRef(name = "Priority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN1> priority;
-  @XmlElementRef(name = "Exclusive", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> exclusive;
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger numFreq;
+  @XmlElement(name = "Priority", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN1.class)
+  private TInteger priority;
+  @XmlElement(name = "Exclusive", required = false)
+  private TString exclusive;
   @XmlElement(name = "FreqSep")
-  protected TFreqM freqSep;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqSep;
   @XmlElement(name = "FreqSepType")
-  protected TS10 freqSepType;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString freqSepType;
   @XmlElement(name = "RequestedFreq")
-  protected List<AsgnFreqBase> requestedFreq;
+  private List<AsgnFreqBase> requestedFreq;
 
   /**
    * Gets the value of the tuningStep property.
@@ -94,7 +103,7 @@ public class Tuning {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getTuningStep() {
+  public TDecimal getTuningStep() {
     return tuningStep;
   }
 
@@ -104,8 +113,12 @@ public class Tuning {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setTuningStep(TFreqM value) {
+  public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
+  }
+
+  public boolean isSetTuningStep() {
+    return (this.tuningStep != null);
   }
 
   /**
@@ -114,7 +127,7 @@ public class Tuning {
    * @return possible object is {@link TUN4 }
    * <p>
    */
-  public TUN4 getNumFreq() {
+  public TInteger getNumFreq() {
     return numFreq;
   }
 
@@ -124,8 +137,12 @@ public class Tuning {
    * @param value allowed object is {@link TUN4 }
    * <p>
    */
-  public void setNumFreq(TUN4 value) {
+  public void setNumFreq(TInteger value) {
     this.numFreq = value;
+  }
+
+  public boolean isSetNumFreq() {
+    return (this.numFreq != null);
   }
 
   /**
@@ -135,7 +152,7 @@ public class Tuning {
    *         {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN1> getPriority() {
+  public TInteger getPriority() {
     return priority;
   }
 
@@ -146,8 +163,12 @@ public class Tuning {
    *              {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
    * <p>
    */
-  public void setPriority(JAXBElement<TUN1> value) {
+  public void setPriority(TInteger value) {
     this.priority = value;
+  }
+
+  public boolean isSetPriority() {
+    return (this.priority != null);
   }
 
   /**
@@ -157,7 +178,7 @@ public class Tuning {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getExclusive() {
+  public TString getExclusive() {
     return exclusive;
   }
 
@@ -168,8 +189,12 @@ public class Tuning {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setExclusive(JAXBElement<TListCBO> value) {
+  public void setExclusive(TString value) {
     this.exclusive = value;
+  }
+
+  public boolean isSetExclusive() {
+    return (this.exclusive != null);
   }
 
   /**
@@ -178,7 +203,7 @@ public class Tuning {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqSep() {
+  public TDecimal getFreqSep() {
     return freqSep;
   }
 
@@ -188,8 +213,12 @@ public class Tuning {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqSep(TFreqM value) {
+  public void setFreqSep(TDecimal value) {
     this.freqSep = value;
+  }
+
+  public boolean isSetFreqSep() {
+    return (this.freqSep != null);
   }
 
   /**
@@ -198,7 +227,7 @@ public class Tuning {
    * @return possible object is {@link TS10 }
    * <p>
    */
-  public TS10 getFreqSepType() {
+  public TString getFreqSepType() {
     return freqSepType;
   }
 
@@ -208,8 +237,12 @@ public class Tuning {
    * @param value allowed object is {@link TS10 }
    * <p>
    */
-  public void setFreqSepType(TS10 value) {
+  public void setFreqSepType(TString value) {
     this.freqSepType = value;
+  }
+
+  public boolean isSetFreqSepType() {
+    return (this.freqSepType != null);
   }
 
   /**
@@ -233,12 +266,65 @@ public class Tuning {
      * {@link AsgnFreqBase }
    * <p>
    * <p>
+   * @return
    */
   public List<AsgnFreqBase> getRequestedFreq() {
     if (requestedFreq == null) {
       requestedFreq = new ArrayList<>();
     }
     return this.requestedFreq;
+  }
+
+  public boolean isSetRequestedFreq() {
+    return ((this.requestedFreq != null) && (!this.requestedFreq.isEmpty()));
+  }
+
+  public void unsetRequestedFreq() {
+    this.requestedFreq = null;
+  }
+
+  public Tuning withTuningStep(Double value) {
+    setTuningStep(new TDecimal(value));
+    return this;
+  }
+
+  public Tuning withNumFreq(Integer value) {
+    setNumFreq(new TInteger(value));
+    return this;
+  }
+
+  public Tuning withPriority(Integer value) {
+    setPriority(new TInteger(value));
+    return this;
+  }
+
+  public Tuning withExclusive(ListCBO value) {
+    setExclusive(new TString(value.value()));
+    return this;
+  }
+
+  public Tuning withFreqSep(Double value) {
+    setFreqSep(new TDecimal(value));
+    return this;
+  }
+
+  public Tuning withFreqSepType(String value) {
+    setFreqSepType(new TString(value));
+    return this;
+  }
+
+  public Tuning withRequestedFreq(AsgnFreqBase... values) {
+    if (values != null) {
+      getRequestedFreq().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Tuning withRequestedFreq(Collection<AsgnFreqBase> values) {
+    if (values != null) {
+      getRequestedFreq().addAll(values);
+    }
+    return this;
   }
 
 }

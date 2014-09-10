@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS30;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -62,12 +65,15 @@ import javax.xml.bind.annotation.*;
 })
 public class Project {
 
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> type;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString type;
   @XmlElement(name = "Name", required = true)
-  protected TS30 name;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> description;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString name;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString description;
 
   /**
    * Gets the value of the type property.
@@ -76,7 +82,7 @@ public class Project {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -87,8 +93,12 @@ public class Project {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS10> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -97,7 +107,7 @@ public class Project {
    * @return possible object is {@link TS30 }
    * <p>
    */
-  public TS30 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -107,8 +117,12 @@ public class Project {
    * @param value allowed object is {@link TS30 }
    * <p>
    */
-  public void setName(TS30 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -118,7 +132,7 @@ public class Project {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -129,8 +143,27 @@ public class Project {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TMEMO> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
+  }
+
+  public Project withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public Project withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public Project withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
   }
 
 }

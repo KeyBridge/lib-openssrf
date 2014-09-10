@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.Tmicrosecs;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN10_3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN5;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -69,18 +68,24 @@ import javax.xml.bind.annotation.*;
 })
 public class RxModulation {
 
-  @XmlElementRef(name = "DigitalModType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> digitalModType;
-  @XmlElementRef(name = "MaxBitRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10_3> maxBitRate;
-  @XmlElementRef(name = "NumStates", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5> numStates;
-  @XmlElementRef(name = "LineCoding", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> lineCoding;
-  @XmlElementRef(name = "CodeRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10_3> codeRate;
-  @XmlElementRef(name = "CodePeriod", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> codePeriod;
+  @XmlElement(name = "DigitalModType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString digitalModType;
+  @XmlElement(name = "MaxBitRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN10_3.class)
+  private TDecimal maxBitRate;
+  @XmlElement(name = "NumStates", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  private TInteger numStates;
+  @XmlElement(name = "LineCoding", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString lineCoding;
+  @XmlElement(name = "CodeRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN10_3.class)
+  private TDecimal codeRate;
+  @XmlElement(name = "CodePeriod", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal codePeriod;
 
   /**
    * Gets the value of the digitalModType property.
@@ -89,7 +94,7 @@ public class RxModulation {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getDigitalModType() {
+  public TString getDigitalModType() {
     return digitalModType;
   }
 
@@ -100,8 +105,12 @@ public class RxModulation {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setDigitalModType(JAXBElement<TS50> value) {
+  public void setDigitalModType(TString value) {
     this.digitalModType = value;
+  }
+
+  public boolean isSetDigitalModType() {
+    return (this.digitalModType != null);
   }
 
   /**
@@ -111,7 +120,7 @@ public class RxModulation {
    *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10_3> getMaxBitRate() {
+  public TDecimal getMaxBitRate() {
     return maxBitRate;
   }
 
@@ -122,8 +131,12 @@ public class RxModulation {
    *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public void setMaxBitRate(JAXBElement<TUN10_3> value) {
+  public void setMaxBitRate(TDecimal value) {
     this.maxBitRate = value;
+  }
+
+  public boolean isSetMaxBitRate() {
+    return (this.maxBitRate != null);
   }
 
   /**
@@ -133,7 +146,7 @@ public class RxModulation {
    *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5> getNumStates() {
+  public TInteger getNumStates() {
     return numStates;
   }
 
@@ -144,8 +157,12 @@ public class RxModulation {
    *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public void setNumStates(JAXBElement<TUN5> value) {
+  public void setNumStates(TInteger value) {
     this.numStates = value;
+  }
+
+  public boolean isSetNumStates() {
+    return (this.numStates != null);
   }
 
   /**
@@ -155,7 +172,7 @@ public class RxModulation {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getLineCoding() {
+  public TString getLineCoding() {
     return lineCoding;
   }
 
@@ -166,8 +183,12 @@ public class RxModulation {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setLineCoding(JAXBElement<TS50> value) {
+  public void setLineCoding(TString value) {
     this.lineCoding = value;
+  }
+
+  public boolean isSetLineCoding() {
+    return (this.lineCoding != null);
   }
 
   /**
@@ -177,7 +198,7 @@ public class RxModulation {
    *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10_3> getCodeRate() {
+  public TDecimal getCodeRate() {
     return codeRate;
   }
 
@@ -188,8 +209,12 @@ public class RxModulation {
    *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public void setCodeRate(JAXBElement<TUN10_3> value) {
+  public void setCodeRate(TDecimal value) {
     this.codeRate = value;
+  }
+
+  public boolean isSetCodeRate() {
+    return (this.codeRate != null);
   }
 
   /**
@@ -199,7 +224,7 @@ public class RxModulation {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getCodePeriod() {
+  public TDecimal getCodePeriod() {
     return codePeriod;
   }
 
@@ -210,8 +235,42 @@ public class RxModulation {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setCodePeriod(JAXBElement<Tmicrosecs> value) {
+  public void setCodePeriod(TDecimal value) {
     this.codePeriod = value;
+  }
+
+  public boolean isSetCodePeriod() {
+    return (this.codePeriod != null);
+  }
+
+  public RxModulation withDigitalModType(String value) {
+    setDigitalModType(new TString(value));
+    return this;
+  }
+
+  public RxModulation withMaxBitRate(Double value) {
+    setMaxBitRate(new TDecimal(value));
+    return this;
+  }
+
+  public RxModulation withNumStates(Integer value) {
+    setNumStates(new TInteger(value));
+    return this;
+  }
+
+  public RxModulation withLineCoding(String value) {
+    setLineCoding(new TString(value));
+    return this;
+  }
+
+  public RxModulation withCodeRate(Double value) {
+    setCodeRate(new TDecimal(value));
+    return this;
+  }
+
+  public RxModulation withCodePeriod(Double value) {
+    setCodePeriod(new TDecimal(value));
+    return this;
   }
 
 }

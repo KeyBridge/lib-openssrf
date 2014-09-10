@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS11;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -42,29 +42,33 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
- * &lt;complexType name="SSReply">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="SSRequestRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="ReplyingCountry" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"/>
- *         &lt;element name="SupportabilityCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="DateReceivedByCountry" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview" minOccurs="0"/>
- *         &lt;element name="ApprovalSPSNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS11" minOccurs="0"/>
- *         &lt;element name="ERPNumber" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="FASNumber" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="IRACNumber" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="ReplyingAuthority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="CommentSource" type="{urn:us:gov:dod:standard:ssrf:3.0.0}CommentSource" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="StageLocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StageLocation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Configuration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Configuration" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * <
+ * pre>
+ * &lt;complexType name="SSReply"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="SSRequestRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
+ * minOccurs="0"/> &lt;element name="ReplyingCountry"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"/> &lt;element
+ * name="SupportabilityCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
+ * &lt;element name="DateReceivedByCountry"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview"
+ * minOccurs="0"/> &lt;element name="ApprovalSPSNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS11" minOccurs="0"/> &lt;element
+ * name="ERPNumber" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="FASNumber"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="IRACNumber" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="ReplyingAuthority"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
+ * name="CommentSource" type="{urn:us:gov:dod:standard:ssrf:3.0.0}CommentSource"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="StageLocation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StageLocation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Configuration"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Configuration"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/extension>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -87,39 +91,49 @@ import javax.xml.bind.annotation.*;
   "stageLocation",
   "configuration"
 })
-public class SSReply
-  extends Common {
+public class SSReply extends Common {
 
-  @XmlElementRef(name = "SSRequestRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> ssRequestRef;
+  @XmlElement(name = "SSRequestRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString ssRequestRef;
   @XmlElement(name = "ReplyingCountry", required = true)
-  protected TListCAO replyingCountry;
+  private TString replyingCountry;
   @XmlElement(name = "SupportabilityCode", required = true)
-  protected TS50 supportabilityCode;
-  @XmlElementRef(name = "DateReceivedByCountry", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> dateReceivedByCountry;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString supportabilityCode;
+  @XmlElement(name = "DateReceivedByCountry", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar dateReceivedByCountry;
   @XmlElement(name = "EffectiveDate", required = true)
-  protected TD effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
-  @XmlElementRef(name = "ApprovalSPSNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS11> approvalSPSNum;
-  @XmlElementRef(name = "ERPNumber", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> erpNumber;
-  @XmlElementRef(name = "FASNumber", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> fasNumber;
-  @XmlElementRef(name = "IRACNumber", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> iracNumber;
-  @XmlElementRef(name = "ReplyingAuthority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> replyingAuthority;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
+  @XmlElement(name = "ApprovalSPSNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS11.class)
+  private TString approvalSPSNum;
+  @XmlElement(name = "ERPNumber", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString erpNumber;
+  @XmlElement(name = "FASNumber", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString fasNumber;
+  @XmlElement(name = "IRACNumber", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString iracNumber;
+  @XmlElement(name = "ReplyingAuthority", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString replyingAuthority;
   @XmlElement(name = "CommentSource")
-  protected List<CommentSource> commentSource;
+  private List<CommentSource> commentSource;
   @XmlElement(name = "StageLocation")
-  protected List<StageLocation> stageLocation;
+  private List<StageLocation> stageLocation;
   @XmlElement(name = "Configuration")
-  protected List<Configuration> configuration;
+  private List<Configuration> configuration;
 
   /**
    * Gets the value of the ssRequestRef property.
@@ -128,7 +142,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getSSRequestRef() {
+  public TString getSSRequestRef() {
     return ssRequestRef;
   }
 
@@ -139,8 +153,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setSSRequestRef(JAXBElement<TSerial> value) {
+  public void setSSRequestRef(TString value) {
     this.ssRequestRef = value;
+  }
+
+  public boolean isSetSSRequestRef() {
+    return (this.ssRequestRef != null);
   }
 
   /**
@@ -149,7 +167,7 @@ public class SSReply
    * @return possible object is {@link TListCAO }
    * <p>
    */
-  public TListCAO getReplyingCountry() {
+  public TString getReplyingCountry() {
     return replyingCountry;
   }
 
@@ -159,8 +177,12 @@ public class SSReply
    * @param value allowed object is {@link TListCAO }
    * <p>
    */
-  public void setReplyingCountry(TListCAO value) {
+  public void setReplyingCountry(TString value) {
     this.replyingCountry = value;
+  }
+
+  public boolean isSetReplyingCountry() {
+    return (this.replyingCountry != null);
   }
 
   /**
@@ -169,7 +191,7 @@ public class SSReply
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getSupportabilityCode() {
+  public TString getSupportabilityCode() {
     return supportabilityCode;
   }
 
@@ -179,8 +201,12 @@ public class SSReply
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setSupportabilityCode(TS50 value) {
+  public void setSupportabilityCode(TString value) {
     this.supportabilityCode = value;
+  }
+
+  public boolean isSetSupportabilityCode() {
+    return (this.supportabilityCode != null);
   }
 
   /**
@@ -190,7 +216,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDateReceivedByCountry() {
+  public TCalendar getDateReceivedByCountry() {
     return dateReceivedByCountry;
   }
 
@@ -201,8 +227,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDateReceivedByCountry(JAXBElement<TD> value) {
+  public void setDateReceivedByCountry(TCalendar value) {
     this.dateReceivedByCountry = value;
+  }
+
+  public boolean isSetDateReceivedByCountry() {
+    return (this.dateReceivedByCountry != null);
   }
 
   /**
@@ -211,7 +241,7 @@ public class SSReply
    * @return possible object is {@link TD }
    * <p>
    */
-  public TD getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -221,8 +251,12 @@ public class SSReply
    * @param value allowed object is {@link TD }
    * <p>
    */
-  public void setEffectiveDate(TD value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -232,7 +266,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -243,8 +277,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -254,7 +292,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -265,8 +303,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -276,7 +318,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TS11 }{@code >}
    * <p>
    */
-  public JAXBElement<TS11> getApprovalSPSNum() {
+  public TString getApprovalSPSNum() {
     return approvalSPSNum;
   }
 
@@ -287,8 +329,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TS11 }{@code >}
    * <p>
    */
-  public void setApprovalSPSNum(JAXBElement<TS11> value) {
+  public void setApprovalSPSNum(TString value) {
     this.approvalSPSNum = value;
+  }
+
+  public boolean isSetApprovalSPSNum() {
+    return (this.approvalSPSNum != null);
   }
 
   /**
@@ -298,7 +344,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getERPNumber() {
+  public TString getERPNumber() {
     return erpNumber;
   }
 
@@ -309,8 +355,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setERPNumber(JAXBElement<TS50> value) {
+  public void setERPNumber(TString value) {
     this.erpNumber = value;
+  }
+
+  public boolean isSetERPNumber() {
+    return (this.erpNumber != null);
   }
 
   /**
@@ -320,7 +370,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getFASNumber() {
+  public TString getFASNumber() {
     return fasNumber;
   }
 
@@ -331,8 +381,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setFASNumber(JAXBElement<TS50> value) {
+  public void setFASNumber(TString value) {
     this.fasNumber = value;
+  }
+
+  public boolean isSetFASNumber() {
+    return (this.fasNumber != null);
   }
 
   /**
@@ -342,7 +396,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getIRACNumber() {
+  public TString getIRACNumber() {
     return iracNumber;
   }
 
@@ -353,8 +407,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setIRACNumber(JAXBElement<TS50> value) {
+  public void setIRACNumber(TString value) {
     this.iracNumber = value;
+  }
+
+  public boolean isSetIRACNumber() {
+    return (this.iracNumber != null);
   }
 
   /**
@@ -364,7 +422,7 @@ public class SSReply
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getReplyingAuthority() {
+  public TString getReplyingAuthority() {
     return replyingAuthority;
   }
 
@@ -375,8 +433,12 @@ public class SSReply
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setReplyingAuthority(JAXBElement<TS100> value) {
+  public void setReplyingAuthority(TString value) {
     this.replyingAuthority = value;
+  }
+
+  public boolean isSetReplyingAuthority() {
+    return (this.replyingAuthority != null);
   }
 
   /**
@@ -400,12 +462,21 @@ public class SSReply
      * {@link CommentSource }
    * <p>
    * <p>
+   * @return
    */
   public List<CommentSource> getCommentSource() {
     if (commentSource == null) {
       commentSource = new ArrayList<>();
     }
     return this.commentSource;
+  }
+
+  public boolean isSetCommentSource() {
+    return ((this.commentSource != null) && (!this.commentSource.isEmpty()));
+  }
+
+  public void unsetCommentSource() {
+    this.commentSource = null;
   }
 
   /**
@@ -429,12 +500,21 @@ public class SSReply
      * {@link StageLocation }
    * <p>
    * <p>
+   * @return
    */
   public List<StageLocation> getStageLocation() {
     if (stageLocation == null) {
       stageLocation = new ArrayList<>();
     }
     return this.stageLocation;
+  }
+
+  public boolean isSetStageLocation() {
+    return ((this.stageLocation != null) && (!this.stageLocation.isEmpty()));
+  }
+
+  public void unsetStageLocation() {
+    this.stageLocation = null;
   }
 
   /**
@@ -458,12 +538,123 @@ public class SSReply
      * {@link Configuration }
    * <p>
    * <p>
+   * @return
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
       configuration = new ArrayList<>();
     }
     return this.configuration;
+  }
+
+  public boolean isSetConfiguration() {
+    return ((this.configuration != null) && (!this.configuration.isEmpty()));
+  }
+
+  public void unsetConfiguration() {
+    this.configuration = null;
+  }
+
+  public SSReply withSSRequestRef(String value) {
+    setSSRequestRef(new TString(value));
+    return this;
+  }
+
+  public SSReply withReplyingCountry(ListCAO value) {
+    setReplyingCountry(new TString(value.value()));
+    return this;
+  }
+
+  public SSReply withSupportabilityCode(String value) {
+    setSupportabilityCode(new TString(value));
+    return this;
+  }
+
+  public SSReply withDateReceivedByCountry(Calendar value) {
+    setDateReceivedByCountry(new TCalendar(value));
+    return this;
+  }
+
+  public SSReply withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public SSReply withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public SSReply withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public SSReply withApprovalSPSNum(String value) {
+    setApprovalSPSNum(new TString(value));
+    return this;
+  }
+
+  public SSReply withERPNumber(String value) {
+    setERPNumber(new TString(value));
+    return this;
+  }
+
+  public SSReply withFASNumber(String value) {
+    setFASNumber(new TString(value));
+    return this;
+  }
+
+  public SSReply withIRACNumber(String value) {
+    setIRACNumber(new TString(value));
+    return this;
+  }
+
+  public SSReply withReplyingAuthority(String value) {
+    setReplyingAuthority(new TString(value));
+    return this;
+  }
+
+  public SSReply withCommentSource(CommentSource... values) {
+    if (values != null) {
+      getCommentSource().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public SSReply withCommentSource(Collection<CommentSource> values) {
+    if (values != null) {
+      getCommentSource().addAll(values);
+    }
+    return this;
+  }
+
+  public SSReply withStageLocation(StageLocation... values) {
+    if (values != null) {
+      getStageLocation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public SSReply withStageLocation(Collection<StageLocation> values) {
+    if (values != null) {
+      getStageLocation().addAll(values);
+    }
+    return this;
+  }
+
+  public SSReply withConfiguration(Configuration... values) {
+    if (values != null) {
+      getConfiguration().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public SSReply withConfiguration(Collection<Configuration> values) {
+    if (values != null) {
+      getConfiguration().addAll(values);
+    }
+    return this;
   }
 
 }

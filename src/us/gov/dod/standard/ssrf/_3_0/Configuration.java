@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -93,37 +96,45 @@ import javax.xml.bind.annotation.*;
 public class Configuration {
 
   @XmlElement(name = "ConfigID", required = true)
-  protected TS100 configID;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> description;
-  @XmlElementRef(name = "Repeater", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> repeater;
-  @XmlElementRef(name = "NumUsers", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numUsers;
-  @XmlElementRef(name = "EIRPMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> eirpMin;
-  @XmlElementRef(name = "EIRPMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> eirpMax;
-  @XmlElementRef(name = "OOBJustification", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> oobJustification;
-  @XmlElementRef(name = "PowerLimit", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> powerLimit;
-  @XmlElementRef(name = "PowerType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> powerType;
-  @XmlElementRef(name = "SpectrumLink", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> spectrumLink;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString configID;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString description;
+  @XmlElement(name = "Repeater", required = false)
+  private TString repeater;
+  @XmlElement(name = "NumUsers", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numUsers;
+  @XmlElement(name = "EIRPMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal eirpMin;
+  @XmlElement(name = "EIRPMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal eirpMax;
+  @XmlElement(name = "OOBJustification", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString oobJustification;
+  @XmlElement(name = "PowerLimit", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal powerLimit;
+  @XmlElement(name = "PowerType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString powerType;
+  @XmlElement(name = "SpectrumLink", required = false)
+  private TString spectrumLink;
   @XmlElement(name = "Notation")
-  protected List<Notation> notation;
+  private List<Notation> notation;
   @XmlElement(name = "Usage")
-  protected List<Usage> usage;
+  private List<Usage> usage;
   @XmlElement(name = "ConfigFreq")
-  protected List<ConfigFreq> configFreq;
+  private List<ConfigFreq> configFreq;
   @XmlElement(name = "TxRef")
-  protected List<TxRef> txRef;
+  private List<TxRef> txRef;
   @XmlElement(name = "RxRef")
-  protected List<RxRef> rxRef;
+  private List<RxRef> rxRef;
   @XmlElement(name = "ConfigEmission")
-  protected List<ConfigEmission> configEmission;
+  private List<ConfigEmission> configEmission;
 
   /**
    * Gets the value of the configID property.
@@ -131,7 +142,7 @@ public class Configuration {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getConfigID() {
+  public TString getConfigID() {
     return configID;
   }
 
@@ -141,8 +152,12 @@ public class Configuration {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setConfigID(TS100 value) {
+  public void setConfigID(TString value) {
     this.configID = value;
+  }
+
+  public boolean isSetConfigID() {
+    return (this.configID != null);
   }
 
   /**
@@ -152,7 +167,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -163,8 +178,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TS100> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -174,7 +193,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getRepeater() {
+  public TString getRepeater() {
     return repeater;
   }
 
@@ -185,8 +204,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setRepeater(JAXBElement<TListCBO> value) {
+  public void setRepeater(TString value) {
     this.repeater = value;
+  }
+
+  public boolean isSetRepeater() {
+    return (this.repeater != null);
   }
 
   /**
@@ -196,7 +219,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumUsers() {
+  public TInteger getNumUsers() {
     return numUsers;
   }
 
@@ -207,8 +230,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumUsers(JAXBElement<TUN9> value) {
+  public void setNumUsers(TInteger value) {
     this.numUsers = value;
+  }
+
+  public boolean isSetNumUsers() {
+    return (this.numUsers != null);
   }
 
   /**
@@ -218,7 +245,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getEIRPMin() {
+  public TDecimal getEIRPMin() {
     return eirpMin;
   }
 
@@ -229,8 +256,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setEIRPMin(JAXBElement<TdBW> value) {
+  public void setEIRPMin(TDecimal value) {
     this.eirpMin = value;
+  }
+
+  public boolean isSetEIRPMin() {
+    return (this.eirpMin != null);
   }
 
   /**
@@ -240,7 +271,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getEIRPMax() {
+  public TDecimal getEIRPMax() {
     return eirpMax;
   }
 
@@ -251,8 +282,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setEIRPMax(JAXBElement<TdBW> value) {
+  public void setEIRPMax(TDecimal value) {
     this.eirpMax = value;
+  }
+
+  public boolean isSetEIRPMax() {
+    return (this.eirpMax != null);
   }
 
   /**
@@ -262,7 +297,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getOOBJustification() {
+  public TString getOOBJustification() {
     return oobJustification;
   }
 
@@ -273,8 +308,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setOOBJustification(JAXBElement<TMEMO> value) {
+  public void setOOBJustification(TString value) {
     this.oobJustification = value;
+  }
+
+  public boolean isSetOOBJustification() {
+    return (this.oobJustification != null);
   }
 
   /**
@@ -284,7 +323,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getPowerLimit() {
+  public TDecimal getPowerLimit() {
     return powerLimit;
   }
 
@@ -295,8 +334,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setPowerLimit(JAXBElement<TdBW> value) {
+  public void setPowerLimit(TDecimal value) {
     this.powerLimit = value;
+  }
+
+  public boolean isSetPowerLimit() {
+    return (this.powerLimit != null);
   }
 
   /**
@@ -306,7 +349,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getPowerType() {
+  public TString getPowerType() {
     return powerType;
   }
 
@@ -317,8 +360,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setPowerType(JAXBElement<TS10> value) {
+  public void setPowerType(TString value) {
     this.powerType = value;
+  }
+
+  public boolean isSetPowerType() {
+    return (this.powerType != null);
   }
 
   /**
@@ -328,7 +375,7 @@ public class Configuration {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getSpectrumLink() {
+  public TString getSpectrumLink() {
     return spectrumLink;
   }
 
@@ -339,8 +386,12 @@ public class Configuration {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setSpectrumLink(JAXBElement<TListCBO> value) {
+  public void setSpectrumLink(TString value) {
     this.spectrumLink = value;
+  }
+
+  public boolean isSetSpectrumLink() {
+    return (this.spectrumLink != null);
   }
 
   /**
@@ -363,12 +414,21 @@ public class Configuration {
    * Objects of the following type(s) are allowed in the list {@link Notation }
    * <p>
    * <p>
+   * @return
    */
   public List<Notation> getNotation() {
     if (notation == null) {
       notation = new ArrayList<>();
     }
     return this.notation;
+  }
+
+  public boolean isSetNotation() {
+    return ((this.notation != null) && (!this.notation.isEmpty()));
+  }
+
+  public void unsetNotation() {
+    this.notation = null;
   }
 
   /**
@@ -391,12 +451,21 @@ public class Configuration {
    * Objects of the following type(s) are allowed in the list {@link Usage }
    * <p>
    * <p>
+   * @return
    */
   public List<Usage> getUsage() {
     if (usage == null) {
       usage = new ArrayList<>();
     }
     return this.usage;
+  }
+
+  public boolean isSetUsage() {
+    return ((this.usage != null) && (!this.usage.isEmpty()));
+  }
+
+  public void unsetUsage() {
+    this.usage = null;
   }
 
   /**
@@ -420,12 +489,21 @@ public class Configuration {
      * {@link ConfigFreq }
    * <p>
    * <p>
+   * @return
    */
   public List<ConfigFreq> getConfigFreq() {
     if (configFreq == null) {
       configFreq = new ArrayList<>();
     }
     return this.configFreq;
+  }
+
+  public boolean isSetConfigFreq() {
+    return ((this.configFreq != null) && (!this.configFreq.isEmpty()));
+  }
+
+  public void unsetConfigFreq() {
+    this.configFreq = null;
   }
 
   /**
@@ -448,12 +526,21 @@ public class Configuration {
    * Objects of the following type(s) are allowed in the list {@link TxRef }
    * <p>
    * <p>
+   * @return
    */
   public List<TxRef> getTxRef() {
     if (txRef == null) {
       txRef = new ArrayList<>();
     }
     return this.txRef;
+  }
+
+  public boolean isSetTxRef() {
+    return ((this.txRef != null) && (!this.txRef.isEmpty()));
+  }
+
+  public void unsetTxRef() {
+    this.txRef = null;
   }
 
   /**
@@ -476,12 +563,21 @@ public class Configuration {
    * Objects of the following type(s) are allowed in the list {@link RxRef }
    * <p>
    * <p>
+   * @return
    */
   public List<RxRef> getRxRef() {
     if (rxRef == null) {
       rxRef = new ArrayList<>();
     }
     return this.rxRef;
+  }
+
+  public boolean isSetRxRef() {
+    return ((this.rxRef != null) && (!this.rxRef.isEmpty()));
+  }
+
+  public void unsetRxRef() {
+    this.rxRef = null;
   }
 
   /**
@@ -505,12 +601,155 @@ public class Configuration {
      * {@link ConfigEmission }
    * <p>
    * <p>
+   * @return
    */
   public List<ConfigEmission> getConfigEmission() {
     if (configEmission == null) {
       configEmission = new ArrayList<>();
     }
     return this.configEmission;
+  }
+
+  public boolean isSetConfigEmission() {
+    return ((this.configEmission != null) && (!this.configEmission.isEmpty()));
+  }
+
+  public void unsetConfigEmission() {
+    this.configEmission = null;
+  }
+
+  public Configuration withConfigID(String value) {
+    setConfigID(new TString(value));
+    return this;
+  }
+
+  public Configuration withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public Configuration withRepeater(ListCBO value) {
+    setRepeater(new TString(value.value()));
+    return this;
+  }
+
+  public Configuration withNumUsers(Integer value) {
+    setNumUsers(new TInteger(value));
+    return this;
+  }
+
+  public Configuration withEIRPMin(Double value) {
+    setEIRPMin(new TDecimal(value));
+    return this;
+  }
+
+  public Configuration withEIRPMax(Double value) {
+    setEIRPMax(new TDecimal(value));
+    return this;
+  }
+
+  public Configuration withOOBJustification(String value) {
+    setOOBJustification(new TString(value));
+    return this;
+  }
+
+  public Configuration withPowerLimit(Double value) {
+    setPowerLimit(new TDecimal(value));
+    return this;
+  }
+
+  public Configuration withPowerType(String value) {
+    setPowerType(new TString(value));
+    return this;
+  }
+
+  public Configuration withSpectrumLink(ListCBO value) {
+    setSpectrumLink(new TString(value.value()));
+    return this;
+  }
+
+  public Configuration withNotation(Notation... values) {
+    if (values != null) {
+      getNotation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Configuration withNotation(Collection<Notation> values) {
+    if (values != null) {
+      getNotation().addAll(values);
+    }
+    return this;
+  }
+
+  public Configuration withUsage(Usage... values) {
+    if (values != null) {
+      getUsage().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Configuration withUsage(Collection<Usage> values) {
+    if (values != null) {
+      getUsage().addAll(values);
+    }
+    return this;
+  }
+
+  public Configuration withConfigFreq(ConfigFreq... values) {
+    if (values != null) {
+      getConfigFreq().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Configuration withConfigFreq(Collection<ConfigFreq> values) {
+    if (values != null) {
+      getConfigFreq().addAll(values);
+    }
+    return this;
+  }
+
+  public Configuration withTxRef(TxRef... values) {
+    if (values != null) {
+      getTxRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Configuration withTxRef(Collection<TxRef> values) {
+    if (values != null) {
+      getTxRef().addAll(values);
+    }
+    return this;
+  }
+
+  public Configuration withRxRef(RxRef... values) {
+    if (values != null) {
+      getRxRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Configuration withRxRef(Collection<RxRef> values) {
+    if (values != null) {
+      getRxRef().addAll(values);
+    }
+    return this;
+  }
+
+  public Configuration withConfigEmission(ConfigEmission... values) {
+    if (values != null) {
+      getConfigEmission().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Configuration withConfigEmission(Collection<ConfigEmission> values) {
+    if (values != null) {
+      getConfigEmission().addAll(values);
+    }
+    return this;
   }
 
 }

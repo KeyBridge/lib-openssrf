@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -65,11 +69,12 @@ import javax.xml.bind.annotation.XmlType;
 public class TxRef {
 
   @XmlElement(name = "Serial", required = true)
-  protected TSerial serial;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
   @XmlElement(name = "TxModeRef")
-  protected List<TxModeRef> txModeRef;
+  private List<TxModeRef> txModeRef;
   @XmlElement(name = "TxAntModeRef")
-  protected List<TxAntModeRef> txAntModeRef;
+  private List<TxAntModeRef> txAntModeRef;
 
   /**
    * Gets the value of the serial property.
@@ -77,7 +82,7 @@ public class TxRef {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -87,8 +92,12 @@ public class TxRef {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
   }
 
   /**
@@ -111,12 +120,21 @@ public class TxRef {
    * Objects of the following type(s) are allowed in the list {@link TxModeRef }
    * <p>
    * <p>
+   * @return
    */
   public List<TxModeRef> getTxModeRef() {
     if (txModeRef == null) {
       txModeRef = new ArrayList<>();
     }
     return this.txModeRef;
+  }
+
+  public boolean isSetTxModeRef() {
+    return ((this.txModeRef != null) && (!this.txModeRef.isEmpty()));
+  }
+
+  public void unsetTxModeRef() {
+    this.txModeRef = null;
   }
 
   /**
@@ -140,12 +158,54 @@ public class TxRef {
      * {@link TxAntModeRef }
    * <p>
    * <p>
+   * @return
    */
   public List<TxAntModeRef> getTxAntModeRef() {
     if (txAntModeRef == null) {
       txAntModeRef = new ArrayList<>();
     }
     return this.txAntModeRef;
+  }
+
+  public boolean isSetTxAntModeRef() {
+    return ((this.txAntModeRef != null) && (!this.txAntModeRef.isEmpty()));
+  }
+
+  public void unsetTxAntModeRef() {
+    this.txAntModeRef = null;
+  }
+
+  public TxRef withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
+  }
+
+  public TxRef withTxModeRef(TxModeRef... values) {
+    if (values != null) {
+      getTxModeRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxRef withTxModeRef(Collection<TxModeRef> values) {
+    if (values != null) {
+      getTxModeRef().addAll(values);
+    }
+    return this;
+  }
+
+  public TxRef withTxAntModeRef(TxAntModeRef... values) {
+    if (values != null) {
+      getTxAntModeRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public TxRef withTxAntModeRef(Collection<TxAntModeRef> values) {
+    if (values != null) {
+      getTxAntModeRef().addAll(values);
+    }
+    return this;
   }
 
 }

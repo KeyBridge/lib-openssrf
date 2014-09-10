@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -36,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="CaseNum">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -60,12 +66,14 @@ import javax.xml.bind.annotation.*;
 })
 public class CaseNum {
 
-  @XmlElementRef(name = "Country", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAO> country;
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> type;
+  @XmlElement(name = "Country", required = false)
+  private TString country;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString type;
   @XmlElement(name = "Identifier", required = true)
-  protected TS20 identifier;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString identifier;
 
   /**
    * Gets the value of the country property.
@@ -74,7 +82,7 @@ public class CaseNum {
    *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAO> getCountry() {
+  public TString getCountry() {
     return country;
   }
 
@@ -85,8 +93,12 @@ public class CaseNum {
    *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public void setCountry(JAXBElement<TListCAO> value) {
+  public void setCountry(TString value) {
     this.country = value;
+  }
+
+  public boolean isSetCountry() {
+    return (this.country != null);
   }
 
   /**
@@ -96,7 +108,7 @@ public class CaseNum {
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -107,8 +119,12 @@ public class CaseNum {
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS20> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -117,7 +133,7 @@ public class CaseNum {
    * @return possible object is {@link TS20 }
    * <p>
    */
-  public TS20 getIdentifier() {
+  public TString getIdentifier() {
     return identifier;
   }
 
@@ -127,8 +143,27 @@ public class CaseNum {
    * @param value allowed object is {@link TS20 }
    * <p>
    */
-  public void setIdentifier(TS20 value) {
+  public void setIdentifier(TString value) {
     this.identifier = value;
+  }
+
+  public boolean isSetIdentifier() {
+    return (this.identifier != null);
+  }
+
+  public CaseNum withCountry(ListCAO value) {
+    setCountry(new TString(value.value()));
+    return this;
+  }
+
+  public CaseNum withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public CaseNum withIdentifier(String value) {
+    setIdentifier(new TString(value));
+    return this;
   }
 
 }

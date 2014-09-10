@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqOffset;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN3_1;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -42,7 +43,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Curve">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -78,21 +80,27 @@ import javax.xml.bind.annotation.*;
 public class Curve {
 
   @XmlElement(name = "Type", required = true)
-  protected TS25 type;
-  @XmlElementRef(name = "Calculated", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> calculated;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString type;
+  @XmlElement(name = "Calculated", required = false)
+  private TString calculated;
   @XmlElement(name = "FreqFactor", required = true)
-  protected TUN3_1 freqFactor;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN3_1.class)
+  private TDecimal freqFactor;
   @XmlElement(name = "FreqConst", required = true)
-  protected TFreqOffset freqConst;
-  @XmlElementRef(name = "Bw", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> bw;
-  @XmlElementRef(name = "FreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQOFFSET.class)
+  private TDecimal freqConst;
+  @XmlElement(name = "Bw", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal bw;
+  @XmlElement(name = "FreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
   @XmlElement(name = "CurvePoint", required = true)
-  protected List<CurvePoint> curvePoint;
+  private List<CurvePoint> curvePoint;
   @XmlAttribute(name = "idx", required = true)
   protected BigInteger idx;
 
@@ -102,7 +110,7 @@ public class Curve {
    * @return possible object is {@link TS25 }
    * <p>
    */
-  public TS25 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -112,8 +120,12 @@ public class Curve {
    * @param value allowed object is {@link TS25 }
    * <p>
    */
-  public void setType(TS25 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -123,7 +135,7 @@ public class Curve {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getCalculated() {
+  public TString getCalculated() {
     return calculated;
   }
 
@@ -134,8 +146,12 @@ public class Curve {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setCalculated(JAXBElement<TListCBO> value) {
+  public void setCalculated(TString value) {
     this.calculated = value;
+  }
+
+  public boolean isSetCalculated() {
+    return (this.calculated != null);
   }
 
   /**
@@ -144,7 +160,7 @@ public class Curve {
    * @return possible object is {@link TUN3_1 }
    * <p>
    */
-  public TUN3_1 getFreqFactor() {
+  public TDecimal getFreqFactor() {
     return freqFactor;
   }
 
@@ -154,8 +170,12 @@ public class Curve {
    * @param value allowed object is {@link TUN3_1 }
    * <p>
    */
-  public void setFreqFactor(TUN3_1 value) {
+  public void setFreqFactor(TDecimal value) {
     this.freqFactor = value;
+  }
+
+  public boolean isSetFreqFactor() {
+    return (this.freqFactor != null);
   }
 
   /**
@@ -164,7 +184,7 @@ public class Curve {
    * @return possible object is {@link TFreqOffset }
    * <p>
    */
-  public TFreqOffset getFreqConst() {
+  public TDecimal getFreqConst() {
     return freqConst;
   }
 
@@ -174,8 +194,12 @@ public class Curve {
    * @param value allowed object is {@link TFreqOffset }
    * <p>
    */
-  public void setFreqConst(TFreqOffset value) {
+  public void setFreqConst(TDecimal value) {
     this.freqConst = value;
+  }
+
+  public boolean isSetFreqConst() {
+    return (this.freqConst != null);
   }
 
   /**
@@ -185,7 +209,7 @@ public class Curve {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getBw() {
+  public TDecimal getBw() {
     return bw;
   }
 
@@ -196,8 +220,12 @@ public class Curve {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setBw(JAXBElement<TFreqM> value) {
+  public void setBw(TDecimal value) {
     this.bw = value;
+  }
+
+  public boolean isSetBw() {
+    return (this.bw != null);
   }
 
   /**
@@ -207,7 +235,7 @@ public class Curve {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -218,8 +246,12 @@ public class Curve {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMin(JAXBElement<TFreqM> value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -229,7 +261,7 @@ public class Curve {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -240,8 +272,12 @@ public class Curve {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -265,12 +301,21 @@ public class Curve {
      * {@link CurvePoint }
    * <p>
    * <p>
+   * @return
    */
   public List<CurvePoint> getCurvePoint() {
     if (curvePoint == null) {
       curvePoint = new ArrayList<>();
     }
     return this.curvePoint;
+  }
+
+  public boolean isSetCurvePoint() {
+    return ((this.curvePoint != null) && (!this.curvePoint.isEmpty()));
+  }
+
+  public void unsetCurvePoint() {
+    this.curvePoint = null;
   }
 
   /**
@@ -291,6 +336,64 @@ public class Curve {
    */
   public void setIdx(BigInteger value) {
     this.idx = value;
+  }
+
+  public boolean isSetIdx() {
+    return (this.idx != null);
+  }
+
+  public Curve withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public Curve withCalculated(ListCBO value) {
+    setCalculated(new TString(value.value()));
+    return this;
+  }
+
+  public Curve withFreqFactor(Double value) {
+    setFreqFactor(new TDecimal(value));
+    return this;
+  }
+
+  public Curve withFreqConst(Double value) {
+    setFreqConst(new TDecimal(value));
+    return this;
+  }
+
+  public Curve withBw(Double value) {
+    setBw(new TDecimal(value));
+    return this;
+  }
+
+  public Curve withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public Curve withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public Curve withCurvePoint(CurvePoint... values) {
+    if (values != null) {
+      getCurvePoint().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Curve withCurvePoint(Collection<CurvePoint> values) {
+    if (values != null) {
+      getCurvePoint().addAll(values);
+    }
+    return this;
+  }
+
+  public Curve withIdx(BigInteger value) {
+    setIdx(value);
+    return this;
   }
 
 }

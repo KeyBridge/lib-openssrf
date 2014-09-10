@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,35 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMinSec;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS14;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfMonth;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDT;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TYears;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS22;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS_Percent;
-import us.gov.dod.standard.ssrf._3_0.datatype.THours;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS150;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS12;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS60;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS8;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfWeek;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMonths;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -63,63 +44,90 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Assignment">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="UsageType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="DateResponseRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="EffectiveDateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReviewDT"/>
- *         &lt;element name="Period" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame" minOccurs="0"/>
- *         &lt;element name="Processing" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="Emergency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="AssignmentAuthority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="Requirement" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="NumSystems" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
- *         &lt;element name="AgencyActionNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/>
- *         &lt;element name="AgencyComments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/>
- *         &lt;element name="AssignmentDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="COCOMGroup" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS8" minOccurs="0"/>
- *         &lt;element name="ControlRequestNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/>
- *         &lt;element name="CoordinationComments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="DataSource" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS60" minOccurs="0"/>
- *         &lt;element name="FCCFileNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS22" minOccurs="0"/>
- *         &lt;element name="FMSCNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS14" minOccurs="0"/>
- *         &lt;element name="FrequencyActionOfficer" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS3" minOccurs="0"/>
- *         &lt;element name="ListSerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/>
- *         &lt;element name="NATOPooledFrequencyCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="NATOPooledFrequencyNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4" minOccurs="0"/>
- *         &lt;element name="OriginalAssignmentDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="RoutineAgendaItem" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="SupplementaryDetails" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="TypeOfService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="UsageCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/>
- *         &lt;element name="UsageFrequency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="UsagePercentage" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_Percent" minOccurs="0"/>
- *         &lt;element name="UserNetCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS6" minOccurs="0"/>
- *         &lt;element name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SysOfStation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SysOfStation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RelatedRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RelatedRef" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Configuration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Configuration" maxOccurs="unbounded"/>
- *         &lt;element name="Station" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Station" maxOccurs="unbounded"/>
- *         &lt;element name="Link" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Link" maxOccurs="unbounded"/>
- *         &lt;element name="StatusLog" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StatusLog" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AsgnAllotOwner" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnAllotOwner" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="CircuitRemarks" type="{urn:us:gov:dod:standard:ssrf:3.0.0}CircuitRemarks" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="CoordinationData" type="{urn:us:gov:dod:standard:ssrf:3.0.0}CoordinationData" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="DocketNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}DocketNum" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="HostDocketNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}HostDocketNum" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="OffTheShelfEquipment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}OffTheShelfEquipment" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="PreviousAuthorization" type="{urn:us:gov:dod:standard:ssrf:3.0.0}PreviousAuthorization" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RecordNote" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RecordNote" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Assignment"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
+ * &lt;element name="UsageType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
+ * minOccurs="0"/> &lt;element name="DateResponseRequired"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="EffectiveDateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReviewDT"/>
+ * &lt;element name="Period" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame"
+ * minOccurs="0"/> &lt;element name="Processing"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="Emergency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
+ * minOccurs="0"/> &lt;element name="AssignmentAuthority"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="Requirement" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;element name="NumSystems"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/> &lt;element
+ * name="AgencyActionNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12"
+ * minOccurs="0"/> &lt;element name="AgencyComments"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12"
+ * minOccurs="0"/> &lt;element name="AssignmentDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="COCOMGroup" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS8"
+ * minOccurs="0"/> &lt;element name="ControlRequestNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/> &lt;element
+ * name="CoordinationComments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;element name="DataSource"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS60" minOccurs="0"/> &lt;element
+ * name="FCCFileNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS22"
+ * minOccurs="0"/> &lt;element name="FMSCNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS14" minOccurs="0"/> &lt;element
+ * name="FrequencyActionOfficer" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS3"
+ * minOccurs="0"/> &lt;element name="ListSerialNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/> &lt;element
+ * name="NATOPooledFrequencyCode"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/> &lt;element
+ * name="NATOPooledFrequencyNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4"
+ * minOccurs="0"/> &lt;element name="OriginalAssignmentDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="RoutineAgendaItem" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="SupplementaryDetails"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="TypeOfService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="UsageCode"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/> &lt;element
+ * name="UsageFrequency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="UsagePercentage"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_Percent" minOccurs="0"/>
+ * &lt;element name="UserNetCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS6"
+ * minOccurs="0"/> &lt;element name="Project"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SysOfStation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SysOfStation" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="RelatedRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RelatedRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Configuration"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Configuration"
+ * maxOccurs="unbounded"/> &lt;element name="Station"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Station" maxOccurs="unbounded"/>
+ * &lt;element name="Link" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Link"
+ * maxOccurs="unbounded"/> &lt;element name="StatusLog"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StatusLog" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="AsgnAllotOwner"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnAllotOwner"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="CircuitRemarks"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}CircuitRemarks"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="CoordinationData"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}CoordinationData"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="DocketNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}DocketNum" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="HostDocketNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}HostDocketNum"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="OffTheShelfEquipment"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}OffTheShelfEquipment"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element
+ * name="PreviousAuthorization"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}PreviousAuthorization"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="RecordNote"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RecordNote" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -186,125 +194,165 @@ import javax.xml.bind.annotation.*;
   "previousAuthorization",
   "recordNote"
 })
-public class Assignment
-  extends Common {
+public class Assignment extends Common {
 
-  @XmlElementRef(name = "Title", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> title;
-  @XmlElementRef(name = "UsageType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> usageType;
-  @XmlElementRef(name = "DateResponseRequired", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> dateResponseRequired;
+  @XmlElement(name = "Title", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString title;
+  @XmlElement(name = "UsageType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString usageType;
+  @XmlElement(name = "DateResponseRequired", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar dateResponseRequired;
   @XmlElement(name = "EffectiveDateTime", required = true)
-  protected TDT effectiveDateTime;
-  @XmlElementRef(name = "ExpirationDateTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDT> expirationDateTime;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
-  @XmlElementRef(name = "Period", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> period;
-  @XmlElementRef(name = "Seconds", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> seconds;
-  @XmlElementRef(name = "Minutes", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> minutes;
-  @XmlElementRef(name = "Hours", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<THours> hours;
-  @XmlElementRef(name = "DaysOfMonth", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfMonth> daysOfMonth;
-  @XmlElementRef(name = "Months", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMonths> months;
-  @XmlElementRef(name = "DaysOfWeek", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfWeek> daysOfWeek;
-  @XmlElementRef(name = "Years", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TYears> years;
-  @XmlElementRef(name = "Duration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> duration;
-  @XmlElementRef(name = "Processing", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> processing;
-  @XmlElementRef(name = "Emergency", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> emergency;
-  @XmlElementRef(name = "AssignmentAuthority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> assignmentAuthority;
-  @XmlElementRef(name = "Requirement", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> requirement;
-  @XmlElementRef(name = "NumSystems", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numSystems;
-  @XmlElementRef(name = "AgencyActionNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS12> agencyActionNum;
-  @XmlElementRef(name = "AgencyComments", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> agencyComments;
-  @XmlElementRef(name = "AgencySerialNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS12> agencySerialNum;
-  @XmlElementRef(name = "AssignmentDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> assignmentDate;
-  @XmlElementRef(name = "COCOMGroup", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS8> cocomGroup;
-  @XmlElementRef(name = "ControlRequestNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS15> controlRequestNum;
-  @XmlElementRef(name = "CoordinationComments", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> coordinationComments;
-  @XmlElementRef(name = "DataSource", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS60> dataSource;
-  @XmlElementRef(name = "FCCFileNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS22> fccFileNum;
-  @XmlElementRef(name = "FMSCNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS14> fmscNum;
-  @XmlElementRef(name = "FrequencyActionOfficer", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS3> frequencyActionOfficer;
-  @XmlElementRef(name = "ListSerialNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS12> listSerialNum;
-  @XmlElementRef(name = "NATOPooledFrequencyCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> natoPooledFrequencyCode;
-  @XmlElementRef(name = "NATOPooledFrequencyNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> natoPooledFrequencyNum;
-  @XmlElementRef(name = "OriginalAssignmentDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> originalAssignmentDate;
-  @XmlElementRef(name = "RoutineAgendaItem", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> routineAgendaItem;
-  @XmlElementRef(name = "SupplementaryDetails", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> supplementaryDetails;
-  @XmlElementRef(name = "TypeOfService", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> typeOfService;
-  @XmlElementRef(name = "UsageCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS150> usageCode;
-  @XmlElementRef(name = "UsageFrequency", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> usageFrequency;
-  @XmlElementRef(name = "UsagePercentage", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS_Percent> usagePercentage;
-  @XmlElementRef(name = "UserNetCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS6> userNetCode;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar effectiveDateTime;
+  @XmlElement(name = "ExpirationDateTime", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar expirationDateTime;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
+  @XmlElement(name = "Period", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString period;
+  @XmlElement(name = "Seconds", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString seconds;
+  @XmlElement(name = "Minutes", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString minutes;
+  @XmlElement(name = "Hours", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
+  private TString hours;
+  @XmlElement(name = "DaysOfMonth", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  private TString daysOfMonth;
+  @XmlElement(name = "Months", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
+  private TString months;
+  @XmlElement(name = "DaysOfWeek", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  private TString daysOfWeek;
+  @XmlElement(name = "Years", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
+  private TString years;
+  @XmlElement(name = "Duration", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger duration;
+  @XmlElement(name = "Processing", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString processing;
+  @XmlElement(name = "Emergency", required = false)
+  private TString emergency;
+  @XmlElement(name = "AssignmentAuthority", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString assignmentAuthority;
+  @XmlElement(name = "Requirement", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString requirement;
+  @XmlElement(name = "NumSystems", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numSystems;
+  @XmlElement(name = "AgencyActionNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  private TString agencyActionNum;
+  @XmlElement(name = "AgencyComments", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString agencyComments;
+  @XmlElement(name = "AgencySerialNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  private TString agencySerialNum;
+  @XmlElement(name = "AssignmentDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar assignmentDate;
+  @XmlElement(name = "COCOMGroup", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS8.class)
+  private TString cocomGroup;
+  @XmlElement(name = "ControlRequestNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  private TString controlRequestNum;
+  @XmlElement(name = "CoordinationComments", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString coordinationComments;
+  @XmlElement(name = "DataSource", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS60.class)
+  private TString dataSource;
+  @XmlElement(name = "FCCFileNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS22.class)
+  private TString fccFileNum;
+  @XmlElement(name = "FMSCNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS14.class)
+  private TString fmscNum;
+  @XmlElement(name = "FrequencyActionOfficer", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS3.class)
+  private TString frequencyActionOfficer;
+  @XmlElement(name = "ListSerialNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  private TString listSerialNum;
+  @XmlElement(name = "NATOPooledFrequencyCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString natoPooledFrequencyCode;
+  @XmlElement(name = "NATOPooledFrequencyNum", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger natoPooledFrequencyNum;
+  @XmlElement(name = "OriginalAssignmentDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar originalAssignmentDate;
+  @XmlElement(name = "RoutineAgendaItem", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString routineAgendaItem;
+  @XmlElement(name = "SupplementaryDetails", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString supplementaryDetails;
+  @XmlElement(name = "TypeOfService", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString typeOfService;
+  @XmlElement(name = "UsageCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS150.class)
+  private TString usageCode;
+  @XmlElement(name = "UsageFrequency", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString usageFrequency;
+  @XmlElement(name = "UsagePercentage", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUS_PERCENT.class)
+  private TInteger usagePercentage;
+  @XmlElement(name = "UserNetCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
+  private TString userNetCode;
   @XmlElement(name = "Project")
-  protected List<Project> project;
+  private List<Project> project;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "SysOfStation")
-  protected List<SysOfStation> sysOfStation;
+  private List<SysOfStation> sysOfStation;
   @XmlElement(name = "RelatedRef", nillable = true)
-  protected List<RelatedRef> relatedRef;
+  private List<RelatedRef> relatedRef;
   @XmlElement(name = "Configuration", required = true)
-  protected List<Configuration> configuration;
+  private List<Configuration> configuration;
   @XmlElement(name = "Station", required = true)
-  protected List<Station> station;
+  private List<Station> station;
   @XmlElement(name = "Link", required = true)
-  protected List<Link> link;
+  private List<Link> link;
   @XmlElement(name = "StatusLog")
-  protected List<StatusLog> statusLog;
+  private List<StatusLog> statusLog;
   @XmlElement(name = "AsgnAllotOwner")
-  protected List<AsgnAllotOwner> asgnAllotOwner;
+  private List<AsgnAllotOwner> asgnAllotOwner;
   @XmlElement(name = "CircuitRemarks")
-  protected List<CircuitRemarks> circuitRemarks;
+  private List<CircuitRemarks> circuitRemarks;
   @XmlElement(name = "CoordinationData")
-  protected List<CoordinationData> coordinationData;
+  private List<CoordinationData> coordinationData;
   @XmlElement(name = "DocketNum")
-  protected List<DocketNum> docketNum;
+  private List<DocketNum> docketNum;
   @XmlElement(name = "HostDocketNum")
-  protected List<HostDocketNum> hostDocketNum;
+  private List<HostDocketNum> hostDocketNum;
   @XmlElement(name = "OffTheShelfEquipment")
-  protected List<OffTheShelfEquipment> offTheShelfEquipment;
+  private List<OffTheShelfEquipment> offTheShelfEquipment;
   @XmlElement(name = "PreviousAuthorization")
-  protected List<PreviousAuthorization> previousAuthorization;
+  private List<PreviousAuthorization> previousAuthorization;
   @XmlElement(name = "RecordNote")
-  protected List<RecordNote> recordNote;
+  private List<RecordNote> recordNote;
 
   /**
    * Gets the value of the title property.
@@ -313,7 +361,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getTitle() {
+  public TString getTitle() {
     return title;
   }
 
@@ -324,8 +372,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setTitle(JAXBElement<TS100> value) {
+  public void setTitle(TString value) {
     this.title = value;
+  }
+
+  public boolean isSetTitle() {
+    return (this.title != null);
   }
 
   /**
@@ -335,7 +387,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getUsageType() {
+  public TString getUsageType() {
     return usageType;
   }
 
@@ -346,8 +398,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setUsageType(JAXBElement<TS25> value) {
+  public void setUsageType(TString value) {
     this.usageType = value;
+  }
+
+  public boolean isSetUsageType() {
+    return (this.usageType != null);
   }
 
   /**
@@ -357,7 +413,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDateResponseRequired() {
+  public TCalendar getDateResponseRequired() {
     return dateResponseRequired;
   }
 
@@ -368,8 +424,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDateResponseRequired(JAXBElement<TD> value) {
+  public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
+  }
+
+  public boolean isSetDateResponseRequired() {
+    return (this.dateResponseRequired != null);
   }
 
   /**
@@ -378,7 +438,7 @@ public class Assignment
    * @return possible object is {@link TDT }
    * <p>
    */
-  public TDT getEffectiveDateTime() {
+  public TCalendar getEffectiveDateTime() {
     return effectiveDateTime;
   }
 
@@ -388,8 +448,12 @@ public class Assignment
    * @param value allowed object is {@link TDT }
    * <p>
    */
-  public void setEffectiveDateTime(TDT value) {
+  public void setEffectiveDateTime(TCalendar value) {
     this.effectiveDateTime = value;
+  }
+
+  public boolean isSetEffectiveDateTime() {
+    return (this.effectiveDateTime != null);
   }
 
   /**
@@ -399,7 +463,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public JAXBElement<TDT> getExpirationDateTime() {
+  public TCalendar getExpirationDateTime() {
     return expirationDateTime;
   }
 
@@ -410,8 +474,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public void setExpirationDateTime(JAXBElement<TDT> value) {
+  public void setExpirationDateTime(TCalendar value) {
     this.expirationDateTime = value;
+  }
+
+  public boolean isSetExpirationDateTime() {
+    return (this.expirationDateTime != null);
   }
 
   /**
@@ -421,7 +489,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -432,8 +500,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -443,7 +515,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getPeriod() {
+  public TString getPeriod() {
     return period;
   }
 
@@ -454,8 +526,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setPeriod(JAXBElement<TS50> value) {
+  public void setPeriod(TString value) {
     this.period = value;
+  }
+
+  public boolean isSetPeriod() {
+    return (this.period != null);
   }
 
   /**
@@ -465,7 +541,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getSeconds() {
+  public TString getSeconds() {
     return seconds;
   }
 
@@ -476,8 +552,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setSeconds(JAXBElement<TMinSec> value) {
+  public void setSeconds(TString value) {
     this.seconds = value;
+  }
+
+  public boolean isSetSeconds() {
+    return (this.seconds != null);
   }
 
   /**
@@ -487,7 +567,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getMinutes() {
+  public TString getMinutes() {
     return minutes;
   }
 
@@ -498,8 +578,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setMinutes(JAXBElement<TMinSec> value) {
+  public void setMinutes(TString value) {
     this.minutes = value;
+  }
+
+  public boolean isSetMinutes() {
+    return (this.minutes != null);
   }
 
   /**
@@ -509,7 +593,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public JAXBElement<THours> getHours() {
+  public TString getHours() {
     return hours;
   }
 
@@ -520,8 +604,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public void setHours(JAXBElement<THours> value) {
+  public void setHours(TString value) {
     this.hours = value;
+  }
+
+  public boolean isSetHours() {
+    return (this.hours != null);
   }
 
   /**
@@ -531,7 +619,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfMonth> getDaysOfMonth() {
+  public TString getDaysOfMonth() {
     return daysOfMonth;
   }
 
@@ -542,8 +630,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public void setDaysOfMonth(JAXBElement<TDaysOfMonth> value) {
+  public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
+  }
+
+  public boolean isSetDaysOfMonth() {
+    return (this.daysOfMonth != null);
   }
 
   /**
@@ -553,7 +645,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public JAXBElement<TMonths> getMonths() {
+  public TString getMonths() {
     return months;
   }
 
@@ -564,8 +656,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public void setMonths(JAXBElement<TMonths> value) {
+  public void setMonths(TString value) {
     this.months = value;
+  }
+
+  public boolean isSetMonths() {
+    return (this.months != null);
   }
 
   /**
@@ -575,7 +671,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfWeek> getDaysOfWeek() {
+  public TString getDaysOfWeek() {
     return daysOfWeek;
   }
 
@@ -586,8 +682,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public void setDaysOfWeek(JAXBElement<TDaysOfWeek> value) {
+  public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
+  }
+
+  public boolean isSetDaysOfWeek() {
+    return (this.daysOfWeek != null);
   }
 
   /**
@@ -597,7 +697,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public JAXBElement<TYears> getYears() {
+  public TString getYears() {
     return years;
   }
 
@@ -608,8 +708,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public void setYears(JAXBElement<TYears> value) {
+  public void setYears(TString value) {
     this.years = value;
+  }
+
+  public boolean isSetYears() {
+    return (this.years != null);
   }
 
   /**
@@ -619,7 +723,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getDuration() {
+  public TInteger getDuration() {
     return duration;
   }
 
@@ -630,8 +734,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setDuration(JAXBElement<TUN4> value) {
+  public void setDuration(TInteger value) {
     this.duration = value;
+  }
+
+  public boolean isSetDuration() {
+    return (this.duration != null);
   }
 
   /**
@@ -641,7 +749,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getProcessing() {
+  public TString getProcessing() {
     return processing;
   }
 
@@ -652,8 +760,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setProcessing(JAXBElement<TS50> value) {
+  public void setProcessing(TString value) {
     this.processing = value;
+  }
+
+  public boolean isSetProcessing() {
+    return (this.processing != null);
   }
 
   /**
@@ -663,7 +775,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getEmergency() {
+  public TString getEmergency() {
     return emergency;
   }
 
@@ -674,8 +786,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setEmergency(JAXBElement<TListCBO> value) {
+  public void setEmergency(TString value) {
     this.emergency = value;
+  }
+
+  public boolean isSetEmergency() {
+    return (this.emergency != null);
   }
 
   /**
@@ -685,7 +801,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getAssignmentAuthority() {
+  public TString getAssignmentAuthority() {
     return assignmentAuthority;
   }
 
@@ -696,8 +812,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setAssignmentAuthority(JAXBElement<TS50> value) {
+  public void setAssignmentAuthority(TString value) {
     this.assignmentAuthority = value;
+  }
+
+  public boolean isSetAssignmentAuthority() {
+    return (this.assignmentAuthority != null);
   }
 
   /**
@@ -707,7 +827,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getRequirement() {
+  public TString getRequirement() {
     return requirement;
   }
 
@@ -718,8 +838,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setRequirement(JAXBElement<TMEMO> value) {
+  public void setRequirement(TString value) {
     this.requirement = value;
+  }
+
+  public boolean isSetRequirement() {
+    return (this.requirement != null);
   }
 
   /**
@@ -729,7 +853,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumSystems() {
+  public TInteger getNumSystems() {
     return numSystems;
   }
 
@@ -740,8 +864,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumSystems(JAXBElement<TUN9> value) {
+  public void setNumSystems(TInteger value) {
     this.numSystems = value;
+  }
+
+  public boolean isSetNumSystems() {
+    return (this.numSystems != null);
   }
 
   /**
@@ -751,7 +879,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public JAXBElement<TS12> getAgencyActionNum() {
+  public TString getAgencyActionNum() {
     return agencyActionNum;
   }
 
@@ -762,8 +890,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public void setAgencyActionNum(JAXBElement<TS12> value) {
+  public void setAgencyActionNum(TString value) {
     this.agencyActionNum = value;
+  }
+
+  public boolean isSetAgencyActionNum() {
+    return (this.agencyActionNum != null);
   }
 
   /**
@@ -773,7 +905,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getAgencyComments() {
+  public TString getAgencyComments() {
     return agencyComments;
   }
 
@@ -784,8 +916,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setAgencyComments(JAXBElement<TMEMO> value) {
+  public void setAgencyComments(TString value) {
     this.agencyComments = value;
+  }
+
+  public boolean isSetAgencyComments() {
+    return (this.agencyComments != null);
   }
 
   /**
@@ -795,7 +931,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public JAXBElement<TS12> getAgencySerialNum() {
+  public TString getAgencySerialNum() {
     return agencySerialNum;
   }
 
@@ -806,8 +942,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public void setAgencySerialNum(JAXBElement<TS12> value) {
+  public void setAgencySerialNum(TString value) {
     this.agencySerialNum = value;
+  }
+
+  public boolean isSetAgencySerialNum() {
+    return (this.agencySerialNum != null);
   }
 
   /**
@@ -817,7 +957,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getAssignmentDate() {
+  public TCalendar getAssignmentDate() {
     return assignmentDate;
   }
 
@@ -828,8 +968,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setAssignmentDate(JAXBElement<TD> value) {
+  public void setAssignmentDate(TCalendar value) {
     this.assignmentDate = value;
+  }
+
+  public boolean isSetAssignmentDate() {
+    return (this.assignmentDate != null);
   }
 
   /**
@@ -839,7 +983,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS8 }{@code >}
    * <p>
    */
-  public JAXBElement<TS8> getCOCOMGroup() {
+  public TString getCOCOMGroup() {
     return cocomGroup;
   }
 
@@ -850,8 +994,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS8 }{@code >}
    * <p>
    */
-  public void setCOCOMGroup(JAXBElement<TS8> value) {
+  public void setCOCOMGroup(TString value) {
     this.cocomGroup = value;
+  }
+
+  public boolean isSetCOCOMGroup() {
+    return (this.cocomGroup != null);
   }
 
   /**
@@ -861,7 +1009,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public JAXBElement<TS15> getControlRequestNum() {
+  public TString getControlRequestNum() {
     return controlRequestNum;
   }
 
@@ -872,8 +1020,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public void setControlRequestNum(JAXBElement<TS15> value) {
+  public void setControlRequestNum(TString value) {
     this.controlRequestNum = value;
+  }
+
+  public boolean isSetControlRequestNum() {
+    return (this.controlRequestNum != null);
   }
 
   /**
@@ -883,7 +1035,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getCoordinationComments() {
+  public TString getCoordinationComments() {
     return coordinationComments;
   }
 
@@ -894,8 +1046,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setCoordinationComments(JAXBElement<TMEMO> value) {
+  public void setCoordinationComments(TString value) {
     this.coordinationComments = value;
+  }
+
+  public boolean isSetCoordinationComments() {
+    return (this.coordinationComments != null);
   }
 
   /**
@@ -905,7 +1061,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS60 }{@code >}
    * <p>
    */
-  public JAXBElement<TS60> getDataSource() {
+  public TString getDataSource() {
     return dataSource;
   }
 
@@ -916,8 +1072,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS60 }{@code >}
    * <p>
    */
-  public void setDataSource(JAXBElement<TS60> value) {
+  public void setDataSource(TString value) {
     this.dataSource = value;
+  }
+
+  public boolean isSetDataSource() {
+    return (this.dataSource != null);
   }
 
   /**
@@ -927,7 +1087,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS22 }{@code >}
    * <p>
    */
-  public JAXBElement<TS22> getFCCFileNum() {
+  public TString getFCCFileNum() {
     return fccFileNum;
   }
 
@@ -938,8 +1098,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS22 }{@code >}
    * <p>
    */
-  public void setFCCFileNum(JAXBElement<TS22> value) {
+  public void setFCCFileNum(TString value) {
     this.fccFileNum = value;
+  }
+
+  public boolean isSetFCCFileNum() {
+    return (this.fccFileNum != null);
   }
 
   /**
@@ -949,7 +1113,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS14 }{@code >}
    * <p>
    */
-  public JAXBElement<TS14> getFMSCNum() {
+  public TString getFMSCNum() {
     return fmscNum;
   }
 
@@ -960,8 +1124,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS14 }{@code >}
    * <p>
    */
-  public void setFMSCNum(JAXBElement<TS14> value) {
+  public void setFMSCNum(TString value) {
     this.fmscNum = value;
+  }
+
+  public boolean isSetFMSCNum() {
+    return (this.fmscNum != null);
   }
 
   /**
@@ -971,7 +1139,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS3 }{@code >}
    * <p>
    */
-  public JAXBElement<TS3> getFrequencyActionOfficer() {
+  public TString getFrequencyActionOfficer() {
     return frequencyActionOfficer;
   }
 
@@ -982,8 +1150,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS3 }{@code >}
    * <p>
    */
-  public void setFrequencyActionOfficer(JAXBElement<TS3> value) {
+  public void setFrequencyActionOfficer(TString value) {
     this.frequencyActionOfficer = value;
+  }
+
+  public boolean isSetFrequencyActionOfficer() {
+    return (this.frequencyActionOfficer != null);
   }
 
   /**
@@ -993,7 +1165,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public JAXBElement<TS12> getListSerialNum() {
+  public TString getListSerialNum() {
     return listSerialNum;
   }
 
@@ -1004,8 +1176,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public void setListSerialNum(JAXBElement<TS12> value) {
+  public void setListSerialNum(TString value) {
     this.listSerialNum = value;
+  }
+
+  public boolean isSetListSerialNum() {
+    return (this.listSerialNum != null);
   }
 
   /**
@@ -1015,7 +1191,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getNATOPooledFrequencyCode() {
+  public TString getNATOPooledFrequencyCode() {
     return natoPooledFrequencyCode;
   }
 
@@ -1026,8 +1202,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setNATOPooledFrequencyCode(JAXBElement<TS25> value) {
+  public void setNATOPooledFrequencyCode(TString value) {
     this.natoPooledFrequencyCode = value;
+  }
+
+  public boolean isSetNATOPooledFrequencyCode() {
+    return (this.natoPooledFrequencyCode != null);
   }
 
   /**
@@ -1037,7 +1217,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getNATOPooledFrequencyNum() {
+  public TInteger getNATOPooledFrequencyNum() {
     return natoPooledFrequencyNum;
   }
 
@@ -1048,8 +1228,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setNATOPooledFrequencyNum(JAXBElement<TUN4> value) {
+  public void setNATOPooledFrequencyNum(TInteger value) {
     this.natoPooledFrequencyNum = value;
+  }
+
+  public boolean isSetNATOPooledFrequencyNum() {
+    return (this.natoPooledFrequencyNum != null);
   }
 
   /**
@@ -1059,7 +1243,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getOriginalAssignmentDate() {
+  public TCalendar getOriginalAssignmentDate() {
     return originalAssignmentDate;
   }
 
@@ -1070,8 +1254,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setOriginalAssignmentDate(JAXBElement<TD> value) {
+  public void setOriginalAssignmentDate(TCalendar value) {
     this.originalAssignmentDate = value;
+  }
+
+  public boolean isSetOriginalAssignmentDate() {
+    return (this.originalAssignmentDate != null);
   }
 
   /**
@@ -1081,7 +1269,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getRoutineAgendaItem() {
+  public TString getRoutineAgendaItem() {
     return routineAgendaItem;
   }
 
@@ -1092,8 +1280,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setRoutineAgendaItem(JAXBElement<TS50> value) {
+  public void setRoutineAgendaItem(TString value) {
     this.routineAgendaItem = value;
+  }
+
+  public boolean isSetRoutineAgendaItem() {
+    return (this.routineAgendaItem != null);
   }
 
   /**
@@ -1103,7 +1295,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getSupplementaryDetails() {
+  public TString getSupplementaryDetails() {
     return supplementaryDetails;
   }
 
@@ -1114,8 +1306,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setSupplementaryDetails(JAXBElement<TMEMO> value) {
+  public void setSupplementaryDetails(TString value) {
     this.supplementaryDetails = value;
+  }
+
+  public boolean isSetSupplementaryDetails() {
+    return (this.supplementaryDetails != null);
   }
 
   /**
@@ -1125,7 +1321,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getTypeOfService() {
+  public TString getTypeOfService() {
     return typeOfService;
   }
 
@@ -1136,8 +1332,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setTypeOfService(JAXBElement<TS50> value) {
+  public void setTypeOfService(TString value) {
     this.typeOfService = value;
+  }
+
+  public boolean isSetTypeOfService() {
+    return (this.typeOfService != null);
   }
 
   /**
@@ -1147,7 +1347,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS150 }{@code >}
    * <p>
    */
-  public JAXBElement<TS150> getUsageCode() {
+  public TString getUsageCode() {
     return usageCode;
   }
 
@@ -1158,8 +1358,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS150 }{@code >}
    * <p>
    */
-  public void setUsageCode(JAXBElement<TS150> value) {
+  public void setUsageCode(TString value) {
     this.usageCode = value;
+  }
+
+  public boolean isSetUsageCode() {
+    return (this.usageCode != null);
   }
 
   /**
@@ -1169,7 +1373,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getUsageFrequency() {
+  public TString getUsageFrequency() {
     return usageFrequency;
   }
 
@@ -1180,8 +1384,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setUsageFrequency(JAXBElement<TS50> value) {
+  public void setUsageFrequency(TString value) {
     this.usageFrequency = value;
+  }
+
+  public boolean isSetUsageFrequency() {
+    return (this.usageFrequency != null);
   }
 
   /**
@@ -1191,7 +1399,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TUS_Percent }{@code >}
    * <p>
    */
-  public JAXBElement<TUS_Percent> getUsagePercentage() {
+  public TInteger getUsagePercentage() {
     return usagePercentage;
   }
 
@@ -1202,8 +1410,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TUS_Percent }{@code >}
    * <p>
    */
-  public void setUsagePercentage(JAXBElement<TUS_Percent> value) {
+  public void setUsagePercentage(TInteger value) {
     this.usagePercentage = value;
+  }
+
+  public boolean isSetUsagePercentage() {
+    return (this.usagePercentage != null);
   }
 
   /**
@@ -1213,7 +1425,7 @@ public class Assignment
    *         {@link JAXBElement }{@code <}{@link TS6 }{@code >}
    * <p>
    */
-  public JAXBElement<TS6> getUserNetCode() {
+  public TString getUserNetCode() {
     return userNetCode;
   }
 
@@ -1224,8 +1436,12 @@ public class Assignment
    *              {@link JAXBElement }{@code <}{@link TS6 }{@code >}
    * <p>
    */
-  public void setUserNetCode(JAXBElement<TS6> value) {
+  public void setUserNetCode(TString value) {
     this.userNetCode = value;
+  }
+
+  public boolean isSetUserNetCode() {
+    return (this.userNetCode != null);
   }
 
   /**
@@ -1248,12 +1464,21 @@ public class Assignment
    * Objects of the following type(s) are allowed in the list {@link Project }
    * <p>
    * <p>
+   * @return
    */
   public List<Project> getProject() {
     if (project == null) {
       project = new ArrayList<>();
     }
     return this.project;
+  }
+
+  public boolean isSetProject() {
+    return ((this.project != null) && (!this.project.isEmpty()));
+  }
+
+  public void unsetProject() {
+    this.project = null;
   }
 
   /**
@@ -1277,12 +1502,21 @@ public class Assignment
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -1306,12 +1540,21 @@ public class Assignment
      * {@link SysOfStation }
    * <p>
    * <p>
+   * @return
    */
   public List<SysOfStation> getSysOfStation() {
     if (sysOfStation == null) {
       sysOfStation = new ArrayList<>();
     }
     return this.sysOfStation;
+  }
+
+  public boolean isSetSysOfStation() {
+    return ((this.sysOfStation != null) && (!this.sysOfStation.isEmpty()));
+  }
+
+  public void unsetSysOfStation() {
+    this.sysOfStation = null;
   }
 
   /**
@@ -1335,12 +1578,21 @@ public class Assignment
      * {@link RelatedRef }
    * <p>
    * <p>
+   * @return
    */
   public List<RelatedRef> getRelatedRef() {
     if (relatedRef == null) {
       relatedRef = new ArrayList<>();
     }
     return this.relatedRef;
+  }
+
+  public boolean isSetRelatedRef() {
+    return ((this.relatedRef != null) && (!this.relatedRef.isEmpty()));
+  }
+
+  public void unsetRelatedRef() {
+    this.relatedRef = null;
   }
 
   /**
@@ -1364,12 +1616,21 @@ public class Assignment
      * {@link Configuration }
    * <p>
    * <p>
+   * @return
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
       configuration = new ArrayList<>();
     }
     return this.configuration;
+  }
+
+  public boolean isSetConfiguration() {
+    return ((this.configuration != null) && (!this.configuration.isEmpty()));
+  }
+
+  public void unsetConfiguration() {
+    this.configuration = null;
   }
 
   /**
@@ -1392,12 +1653,21 @@ public class Assignment
    * Objects of the following type(s) are allowed in the list {@link Station }
    * <p>
    * <p>
+   * @return
    */
   public List<Station> getStation() {
     if (station == null) {
       station = new ArrayList<>();
     }
     return this.station;
+  }
+
+  public boolean isSetStation() {
+    return ((this.station != null) && (!this.station.isEmpty()));
+  }
+
+  public void unsetStation() {
+    this.station = null;
   }
 
   /**
@@ -1420,12 +1690,21 @@ public class Assignment
    * Objects of the following type(s) are allowed in the list {@link Link }
    * <p>
    * <p>
+   * @return
    */
   public List<Link> getLink() {
     if (link == null) {
       link = new ArrayList<>();
     }
     return this.link;
+  }
+
+  public boolean isSetLink() {
+    return ((this.link != null) && (!this.link.isEmpty()));
+  }
+
+  public void unsetLink() {
+    this.link = null;
   }
 
   /**
@@ -1448,12 +1727,21 @@ public class Assignment
    * Objects of the following type(s) are allowed in the list {@link StatusLog }
    * <p>
    * <p>
+   * @return
    */
   public List<StatusLog> getStatusLog() {
     if (statusLog == null) {
       statusLog = new ArrayList<>();
     }
     return this.statusLog;
+  }
+
+  public boolean isSetStatusLog() {
+    return ((this.statusLog != null) && (!this.statusLog.isEmpty()));
+  }
+
+  public void unsetStatusLog() {
+    this.statusLog = null;
   }
 
   /**
@@ -1477,12 +1765,21 @@ public class Assignment
      * {@link AsgnAllotOwner }
    * <p>
    * <p>
+   * @return
    */
   public List<AsgnAllotOwner> getAsgnAllotOwner() {
     if (asgnAllotOwner == null) {
       asgnAllotOwner = new ArrayList<>();
     }
     return this.asgnAllotOwner;
+  }
+
+  public boolean isSetAsgnAllotOwner() {
+    return ((this.asgnAllotOwner != null) && (!this.asgnAllotOwner.isEmpty()));
+  }
+
+  public void unsetAsgnAllotOwner() {
+    this.asgnAllotOwner = null;
   }
 
   /**
@@ -1506,12 +1803,21 @@ public class Assignment
      * {@link CircuitRemarks }
    * <p>
    * <p>
+   * @return
    */
   public List<CircuitRemarks> getCircuitRemarks() {
     if (circuitRemarks == null) {
       circuitRemarks = new ArrayList<>();
     }
     return this.circuitRemarks;
+  }
+
+  public boolean isSetCircuitRemarks() {
+    return ((this.circuitRemarks != null) && (!this.circuitRemarks.isEmpty()));
+  }
+
+  public void unsetCircuitRemarks() {
+    this.circuitRemarks = null;
   }
 
   /**
@@ -1535,12 +1841,21 @@ public class Assignment
      * {@link CoordinationData }
    * <p>
    * <p>
+   * @return
    */
   public List<CoordinationData> getCoordinationData() {
     if (coordinationData == null) {
       coordinationData = new ArrayList<>();
     }
     return this.coordinationData;
+  }
+
+  public boolean isSetCoordinationData() {
+    return ((this.coordinationData != null) && (!this.coordinationData.isEmpty()));
+  }
+
+  public void unsetCoordinationData() {
+    this.coordinationData = null;
   }
 
   /**
@@ -1563,12 +1878,21 @@ public class Assignment
    * Objects of the following type(s) are allowed in the list {@link DocketNum }
    * <p>
    * <p>
+   * @return
    */
   public List<DocketNum> getDocketNum() {
     if (docketNum == null) {
       docketNum = new ArrayList<>();
     }
     return this.docketNum;
+  }
+
+  public boolean isSetDocketNum() {
+    return ((this.docketNum != null) && (!this.docketNum.isEmpty()));
+  }
+
+  public void unsetDocketNum() {
+    this.docketNum = null;
   }
 
   /**
@@ -1592,12 +1916,21 @@ public class Assignment
      * {@link HostDocketNum }
    * <p>
    * <p>
+   * @return
    */
   public List<HostDocketNum> getHostDocketNum() {
     if (hostDocketNum == null) {
       hostDocketNum = new ArrayList<>();
     }
     return this.hostDocketNum;
+  }
+
+  public boolean isSetHostDocketNum() {
+    return ((this.hostDocketNum != null) && (!this.hostDocketNum.isEmpty()));
+  }
+
+  public void unsetHostDocketNum() {
+    this.hostDocketNum = null;
   }
 
   /**
@@ -1621,12 +1954,21 @@ public class Assignment
      * {@link OffTheShelfEquipment }
    * <p>
    * <p>
+   * @return
    */
   public List<OffTheShelfEquipment> getOffTheShelfEquipment() {
     if (offTheShelfEquipment == null) {
       offTheShelfEquipment = new ArrayList<>();
     }
     return this.offTheShelfEquipment;
+  }
+
+  public boolean isSetOffTheShelfEquipment() {
+    return ((this.offTheShelfEquipment != null) && (!this.offTheShelfEquipment.isEmpty()));
+  }
+
+  public void unsetOffTheShelfEquipment() {
+    this.offTheShelfEquipment = null;
   }
 
   /**
@@ -1650,12 +1992,21 @@ public class Assignment
      * {@link PreviousAuthorization }
    * <p>
    * <p>
+   * @return
    */
   public List<PreviousAuthorization> getPreviousAuthorization() {
     if (previousAuthorization == null) {
       previousAuthorization = new ArrayList<>();
     }
     return this.previousAuthorization;
+  }
+
+  public boolean isSetPreviousAuthorization() {
+    return ((this.previousAuthorization != null) && (!this.previousAuthorization.isEmpty()));
+  }
+
+  public void unsetPreviousAuthorization() {
+    this.previousAuthorization = null;
   }
 
   /**
@@ -1679,12 +2030,455 @@ public class Assignment
      * {@link RecordNote }
    * <p>
    * <p>
+   * @return
    */
   public List<RecordNote> getRecordNote() {
     if (recordNote == null) {
       recordNote = new ArrayList<>();
     }
     return this.recordNote;
+  }
+
+  public boolean isSetRecordNote() {
+    return ((this.recordNote != null) && (!this.recordNote.isEmpty()));
+  }
+
+  public void unsetRecordNote() {
+    this.recordNote = null;
+  }
+
+  public Assignment withTitle(String value) {
+    setTitle(new TString(value));
+    return this;
+  }
+
+  public Assignment withUsageType(String value) {
+    setUsageType(new TString(value));
+    return this;
+  }
+
+  public Assignment withDateResponseRequired(Calendar value) {
+    setDateResponseRequired(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withEffectiveDateTime(Calendar value) {
+    setEffectiveDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withExpirationDateTime(Calendar value) {
+    setExpirationDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withPeriod(String value) {
+    setPeriod(new TString(value));
+    return this;
+  }
+
+  public Assignment withSeconds(String value) {
+    setSeconds(new TString(value));
+    return this;
+  }
+
+  public Assignment withMinutes(String value) {
+    setMinutes(new TString(value));
+    return this;
+  }
+
+  public Assignment withHours(String value) {
+    setHours(new TString(value));
+    return this;
+  }
+
+  public Assignment withDaysOfMonth(String value) {
+    setDaysOfMonth(new TString(value));
+    return this;
+  }
+
+  public Assignment withMonths(String value) {
+    setMonths(new TString(value));
+    return this;
+  }
+
+  public Assignment withDaysOfWeek(String value) {
+    setDaysOfWeek(new TString(value));
+    return this;
+  }
+
+  public Assignment withYears(String value) {
+    setYears(new TString(value));
+    return this;
+  }
+
+  public Assignment withDuration(Integer value) {
+    setDuration(new TInteger(value));
+    return this;
+  }
+
+  public Assignment withProcessing(String value) {
+    setProcessing(new TString(value));
+    return this;
+  }
+
+  public Assignment withEmergency(ListCBO value) {
+    setEmergency(new TString(value.value()));
+    return this;
+  }
+
+  public Assignment withAssignmentAuthority(String value) {
+    setAssignmentAuthority(new TString(value));
+    return this;
+  }
+
+  public Assignment withRequirement(String value) {
+    setRequirement(new TString(value));
+    return this;
+  }
+
+  public Assignment withNumSystems(Integer value) {
+    setNumSystems(new TInteger(value));
+    return this;
+  }
+
+  public Assignment withAgencyActionNum(String value) {
+    setAgencyActionNum(new TString(value));
+    return this;
+  }
+
+  public Assignment withAgencyComments(String value) {
+    setAgencyComments(new TString(value));
+    return this;
+  }
+
+  public Assignment withAgencySerialNum(String value) {
+    setAgencySerialNum(new TString(value));
+    return this;
+  }
+
+  public Assignment withAssignmentDate(Calendar value) {
+    setAssignmentDate(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withCOCOMGroup(String value) {
+    setCOCOMGroup(new TString(value));
+    return this;
+  }
+
+  public Assignment withControlRequestNum(String value) {
+    setControlRequestNum(new TString(value));
+    return this;
+  }
+
+  public Assignment withCoordinationComments(String value) {
+    setCoordinationComments(new TString(value));
+    return this;
+  }
+
+  public Assignment withDataSource(String value) {
+    setDataSource(new TString(value));
+    return this;
+  }
+
+  public Assignment withFCCFileNum(String value) {
+    setFCCFileNum(new TString(value));
+    return this;
+  }
+
+  public Assignment withFMSCNum(String value) {
+    setFMSCNum(new TString(value));
+    return this;
+  }
+
+  public Assignment withFrequencyActionOfficer(String value) {
+    setFrequencyActionOfficer(new TString(value));
+    return this;
+  }
+
+  public Assignment withListSerialNum(String value) {
+    setListSerialNum(new TString(value));
+    return this;
+  }
+
+  public Assignment withNATOPooledFrequencyCode(String value) {
+    setNATOPooledFrequencyCode(new TString(value));
+    return this;
+  }
+
+  public Assignment withNATOPooledFrequencyNum(Integer value) {
+    setNATOPooledFrequencyNum(new TInteger(value));
+    return this;
+  }
+
+  public Assignment withOriginalAssignmentDate(Calendar value) {
+    setOriginalAssignmentDate(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withRoutineAgendaItem(String value) {
+    setRoutineAgendaItem(new TString(value));
+    return this;
+  }
+
+  public Assignment withSupplementaryDetails(String value) {
+    setSupplementaryDetails(new TString(value));
+    return this;
+  }
+
+  public Assignment withTypeOfService(String value) {
+    setTypeOfService(new TString(value));
+    return this;
+  }
+
+  public Assignment withUsageCode(String value) {
+    setUsageCode(new TString(value));
+    return this;
+  }
+
+  public Assignment withUsageFrequency(String value) {
+    setUsageFrequency(new TString(value));
+    return this;
+  }
+
+  public Assignment withUsagePercentage(Integer value) {
+    setUsagePercentage(new TInteger(value));
+    return this;
+  }
+
+  public Assignment withUserNetCode(String value) {
+    setUserNetCode(new TString(value));
+    return this;
+  }
+
+  public Assignment withProject(Project... values) {
+    if (values != null) {
+      getProject().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withProject(Collection<Project> values) {
+    if (values != null) {
+      getProject().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withSysOfStation(SysOfStation... values) {
+    if (values != null) {
+      getSysOfStation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withSysOfStation(Collection<SysOfStation> values) {
+    if (values != null) {
+      getSysOfStation().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withRelatedRef(RelatedRef... values) {
+    if (values != null) {
+      getRelatedRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withRelatedRef(Collection<RelatedRef> values) {
+    if (values != null) {
+      getRelatedRef().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withConfiguration(Configuration... values) {
+    if (values != null) {
+      getConfiguration().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withConfiguration(Collection<Configuration> values) {
+    if (values != null) {
+      getConfiguration().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withStation(Station... values) {
+    if (values != null) {
+      getStation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withStation(Collection<Station> values) {
+    if (values != null) {
+      getStation().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withLink(Link... values) {
+    if (values != null) {
+      getLink().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withLink(Collection<Link> values) {
+    if (values != null) {
+      getLink().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withStatusLog(StatusLog... values) {
+    if (values != null) {
+      getStatusLog().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withStatusLog(Collection<StatusLog> values) {
+    if (values != null) {
+      getStatusLog().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withAsgnAllotOwner(AsgnAllotOwner... values) {
+    if (values != null) {
+      getAsgnAllotOwner().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withAsgnAllotOwner(Collection<AsgnAllotOwner> values) {
+    if (values != null) {
+      getAsgnAllotOwner().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withCircuitRemarks(CircuitRemarks... values) {
+    if (values != null) {
+      getCircuitRemarks().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withCircuitRemarks(Collection<CircuitRemarks> values) {
+    if (values != null) {
+      getCircuitRemarks().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withCoordinationData(CoordinationData... values) {
+    if (values != null) {
+      getCoordinationData().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withCoordinationData(Collection<CoordinationData> values) {
+    if (values != null) {
+      getCoordinationData().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withDocketNum(DocketNum... values) {
+    if (values != null) {
+      getDocketNum().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withDocketNum(Collection<DocketNum> values) {
+    if (values != null) {
+      getDocketNum().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withHostDocketNum(HostDocketNum... values) {
+    if (values != null) {
+      getHostDocketNum().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withHostDocketNum(Collection<HostDocketNum> values) {
+    if (values != null) {
+      getHostDocketNum().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withOffTheShelfEquipment(OffTheShelfEquipment... values) {
+    if (values != null) {
+      getOffTheShelfEquipment().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withOffTheShelfEquipment(Collection<OffTheShelfEquipment> values) {
+    if (values != null) {
+      getOffTheShelfEquipment().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withPreviousAuthorization(PreviousAuthorization... values) {
+    if (values != null) {
+      getPreviousAuthorization().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withPreviousAuthorization(Collection<PreviousAuthorization> values) {
+    if (values != null) {
+      getPreviousAuthorization().addAll(values);
+    }
+    return this;
+  }
+
+  public Assignment withRecordNote(RecordNote... values) {
+    if (values != null) {
+      getRecordNote().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Assignment withRecordNote(Collection<RecordNote> values) {
+    if (values != null) {
+      getRecordNote().addAll(values);
+    }
+    return this;
   }
 
 }

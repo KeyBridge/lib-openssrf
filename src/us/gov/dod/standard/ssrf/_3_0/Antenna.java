@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz180;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN5_2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN6_2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN5;
-import us.gov.dod.standard.ssrf._3_0.datatype.TElev180;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -47,24 +47,25 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Antenna">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- *         &lt;element name="AntType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="PhArrayNumMainBeams" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3" minOccurs="0"/>
- *         &lt;element name="PhArrayNumElements" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Dimension" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Aperture" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Sidelobe" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Nomenclature" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AntHardware" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntHardware" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AntMode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntMode" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Antenna"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
+ * &lt;element name="AntType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
+ * &lt;element name="PhArrayNumMainBeams"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3" minOccurs="0"/> &lt;element
+ * name="PhArrayNumElements" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Dimension"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Aperture"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Sidelobe"
+ * minOccurs="0"/> &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Nomenclature"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="AntHardware"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntHardware" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="AntMode"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntMode" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -94,51 +95,64 @@ import javax.xml.bind.annotation.*;
   "antHardware",
   "antMode"
 })
-public class Antenna
-  extends Common {
+public class Antenna extends Common {
 
   @XmlElement(name = "Generic", required = true)
-  protected TListCBO generic;
+  private TString generic;
   @XmlElement(name = "AntType", required = true)
-  protected TS50 antType;
-  @XmlElementRef(name = "PhArrayNumMainBeams", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN3> phArrayNumMainBeams;
-  @XmlElementRef(name = "PhArrayNumElements", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5> phArrayNumElements;
-  @XmlElementRef(name = "Shape", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> shape;
-  @XmlElementRef(name = "Diameter", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_2> diameter;
-  @XmlElementRef(name = "HorzDimension", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_2> horzDimension;
-  @XmlElementRef(name = "VertDimension", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_2> vertDimension;
-  @XmlElementRef(name = "ApertureDiameter", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_2> apertureDiameter;
-  @XmlElementRef(name = "HorzAperture", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_2> horzAperture;
-  @XmlElementRef(name = "VertAperture", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_2> vertAperture;
-  @XmlElementRef(name = "HorzSidelobeSuppressed", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> horzSidelobeSuppressed;
-  @XmlElementRef(name = "HorzSidelobeAz", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz180> horzSidelobeAz;
-  @XmlElementRef(name = "HorzSidelobeAttenuation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5_2> horzSidelobeAttenuation;
-  @XmlElementRef(name = "VertSidelobeSuppressed", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> vertSidelobeSuppressed;
-  @XmlElementRef(name = "VertSidelobeElev", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TElev180> vertSidelobeElev;
-  @XmlElementRef(name = "VertSidelobeAttenuation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5_2> vertSidelobeAttenuation;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString antType;
+  @XmlElement(name = "PhArrayNumMainBeams", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN3.class)
+  private TInteger phArrayNumMainBeams;
+  @XmlElement(name = "PhArrayNumElements", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  private TInteger phArrayNumElements;
+  @XmlElement(name = "Shape", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString shape;
+  @XmlElement(name = "Diameter", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
+  private TDecimal diameter;
+  @XmlElement(name = "HorzDimension", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
+  private TDecimal horzDimension;
+  @XmlElement(name = "VertDimension", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
+  private TDecimal vertDimension;
+  @XmlElement(name = "ApertureDiameter", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
+  private TDecimal apertureDiameter;
+  @XmlElement(name = "HorzAperture", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
+  private TDecimal horzAperture;
+  @XmlElement(name = "VertAperture", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
+  private TDecimal vertAperture;
+  @XmlElement(name = "HorzSidelobeSuppressed", required = false)
+  private TString horzSidelobeSuppressed;
+  @XmlElement(name = "HorzSidelobeAz", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  private TDecimal horzSidelobeAz;
+  @XmlElement(name = "HorzSidelobeAttenuation", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_2.class)
+  private TDecimal horzSidelobeAttenuation;
+  @XmlElement(name = "VertSidelobeSuppressed", required = false)
+  private TString vertSidelobeSuppressed;
+  @XmlElement(name = "VertSidelobeElev", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV180.class)
+  private TDecimal vertSidelobeElev;
+  @XmlElement(name = "VertSidelobeAttenuation", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_2.class)
+  private TDecimal vertSidelobeAttenuation;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "Nomenclature")
-  protected List<Nomenclature> nomenclature;
+  private List<Nomenclature> nomenclature;
   @XmlElement(name = "AntHardware")
-  protected List<AntHardware> antHardware;
+  private List<AntHardware> antHardware;
   @XmlElement(name = "AntMode")
-  protected List<AntMode> antMode;
+  private List<AntMode> antMode;
 
   /**
    * Gets the value of the generic property.
@@ -146,7 +160,7 @@ public class Antenna
    * @return possible object is {@link TListCBO }
    * <p>
    */
-  public TListCBO getGeneric() {
+  public TString getGeneric() {
     return generic;
   }
 
@@ -156,8 +170,12 @@ public class Antenna
    * @param value allowed object is {@link TListCBO }
    * <p>
    */
-  public void setGeneric(TListCBO value) {
+  public void setGeneric(TString value) {
     this.generic = value;
+  }
+
+  public boolean isSetGeneric() {
+    return (this.generic != null);
   }
 
   /**
@@ -166,7 +184,7 @@ public class Antenna
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getAntType() {
+  public TString getAntType() {
     return antType;
   }
 
@@ -176,8 +194,12 @@ public class Antenna
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setAntType(TS50 value) {
+  public void setAntType(TString value) {
     this.antType = value;
+  }
+
+  public boolean isSetAntType() {
+    return (this.antType != null);
   }
 
   /**
@@ -187,7 +209,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN3> getPhArrayNumMainBeams() {
+  public TInteger getPhArrayNumMainBeams() {
     return phArrayNumMainBeams;
   }
 
@@ -198,8 +220,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
    * <p>
    */
-  public void setPhArrayNumMainBeams(JAXBElement<TUN3> value) {
+  public void setPhArrayNumMainBeams(TInteger value) {
     this.phArrayNumMainBeams = value;
+  }
+
+  public boolean isSetPhArrayNumMainBeams() {
+    return (this.phArrayNumMainBeams != null);
   }
 
   /**
@@ -209,7 +235,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5> getPhArrayNumElements() {
+  public TInteger getPhArrayNumElements() {
     return phArrayNumElements;
   }
 
@@ -220,8 +246,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public void setPhArrayNumElements(JAXBElement<TUN5> value) {
+  public void setPhArrayNumElements(TInteger value) {
     this.phArrayNumElements = value;
+  }
+
+  public boolean isSetPhArrayNumElements() {
+    return (this.phArrayNumElements != null);
   }
 
   /**
@@ -231,7 +261,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getShape() {
+  public TString getShape() {
     return shape;
   }
 
@@ -242,8 +272,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setShape(JAXBElement<TS25> value) {
+  public void setShape(TString value) {
     this.shape = value;
+  }
+
+  public boolean isSetShape() {
+    return (this.shape != null);
   }
 
   /**
@@ -253,7 +287,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_2> getDiameter() {
+  public TDecimal getDiameter() {
     return diameter;
   }
 
@@ -264,8 +298,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public void setDiameter(JAXBElement<TUN6_2> value) {
+  public void setDiameter(TDecimal value) {
     this.diameter = value;
+  }
+
+  public boolean isSetDiameter() {
+    return (this.diameter != null);
   }
 
   /**
@@ -275,7 +313,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_2> getHorzDimension() {
+  public TDecimal getHorzDimension() {
     return horzDimension;
   }
 
@@ -286,8 +324,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public void setHorzDimension(JAXBElement<TUN6_2> value) {
+  public void setHorzDimension(TDecimal value) {
     this.horzDimension = value;
+  }
+
+  public boolean isSetHorzDimension() {
+    return (this.horzDimension != null);
   }
 
   /**
@@ -297,7 +339,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_2> getVertDimension() {
+  public TDecimal getVertDimension() {
     return vertDimension;
   }
 
@@ -308,8 +350,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public void setVertDimension(JAXBElement<TUN6_2> value) {
+  public void setVertDimension(TDecimal value) {
     this.vertDimension = value;
+  }
+
+  public boolean isSetVertDimension() {
+    return (this.vertDimension != null);
   }
 
   /**
@@ -319,7 +365,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_2> getApertureDiameter() {
+  public TDecimal getApertureDiameter() {
     return apertureDiameter;
   }
 
@@ -330,8 +376,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public void setApertureDiameter(JAXBElement<TUN6_2> value) {
+  public void setApertureDiameter(TDecimal value) {
     this.apertureDiameter = value;
+  }
+
+  public boolean isSetApertureDiameter() {
+    return (this.apertureDiameter != null);
   }
 
   /**
@@ -341,7 +391,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_2> getHorzAperture() {
+  public TDecimal getHorzAperture() {
     return horzAperture;
   }
 
@@ -352,8 +402,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public void setHorzAperture(JAXBElement<TUN6_2> value) {
+  public void setHorzAperture(TDecimal value) {
     this.horzAperture = value;
+  }
+
+  public boolean isSetHorzAperture() {
+    return (this.horzAperture != null);
   }
 
   /**
@@ -363,7 +417,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_2> getVertAperture() {
+  public TDecimal getVertAperture() {
     return vertAperture;
   }
 
@@ -374,8 +428,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
    * <p>
    */
-  public void setVertAperture(JAXBElement<TUN6_2> value) {
+  public void setVertAperture(TDecimal value) {
     this.vertAperture = value;
+  }
+
+  public boolean isSetVertAperture() {
+    return (this.vertAperture != null);
   }
 
   /**
@@ -385,7 +443,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getHorzSidelobeSuppressed() {
+  public TString getHorzSidelobeSuppressed() {
     return horzSidelobeSuppressed;
   }
 
@@ -396,8 +454,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setHorzSidelobeSuppressed(JAXBElement<TListCBO> value) {
+  public void setHorzSidelobeSuppressed(TString value) {
     this.horzSidelobeSuppressed = value;
+  }
+
+  public boolean isSetHorzSidelobeSuppressed() {
+    return (this.horzSidelobeSuppressed != null);
   }
 
   /**
@@ -407,7 +469,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
    * <p>
    */
-  public JAXBElement<TAz180> getHorzSidelobeAz() {
+  public TDecimal getHorzSidelobeAz() {
     return horzSidelobeAz;
   }
 
@@ -418,8 +480,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
    * <p>
    */
-  public void setHorzSidelobeAz(JAXBElement<TAz180> value) {
+  public void setHorzSidelobeAz(TDecimal value) {
     this.horzSidelobeAz = value;
+  }
+
+  public boolean isSetHorzSidelobeAz() {
+    return (this.horzSidelobeAz != null);
   }
 
   /**
@@ -429,7 +495,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5_2> getHorzSidelobeAttenuation() {
+  public TDecimal getHorzSidelobeAttenuation() {
     return horzSidelobeAttenuation;
   }
 
@@ -440,8 +506,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
    * <p>
    */
-  public void setHorzSidelobeAttenuation(JAXBElement<TUN5_2> value) {
+  public void setHorzSidelobeAttenuation(TDecimal value) {
     this.horzSidelobeAttenuation = value;
+  }
+
+  public boolean isSetHorzSidelobeAttenuation() {
+    return (this.horzSidelobeAttenuation != null);
   }
 
   /**
@@ -451,7 +521,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getVertSidelobeSuppressed() {
+  public TString getVertSidelobeSuppressed() {
     return vertSidelobeSuppressed;
   }
 
@@ -462,8 +532,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setVertSidelobeSuppressed(JAXBElement<TListCBO> value) {
+  public void setVertSidelobeSuppressed(TString value) {
     this.vertSidelobeSuppressed = value;
+  }
+
+  public boolean isSetVertSidelobeSuppressed() {
+    return (this.vertSidelobeSuppressed != null);
   }
 
   /**
@@ -473,7 +547,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TElev180 }{@code >}
    * <p>
    */
-  public JAXBElement<TElev180> getVertSidelobeElev() {
+  public TDecimal getVertSidelobeElev() {
     return vertSidelobeElev;
   }
 
@@ -484,8 +558,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TElev180 }{@code >}
    * <p>
    */
-  public void setVertSidelobeElev(JAXBElement<TElev180> value) {
+  public void setVertSidelobeElev(TDecimal value) {
     this.vertSidelobeElev = value;
+  }
+
+  public boolean isSetVertSidelobeElev() {
+    return (this.vertSidelobeElev != null);
   }
 
   /**
@@ -495,7 +573,7 @@ public class Antenna
    *         {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5_2> getVertSidelobeAttenuation() {
+  public TDecimal getVertSidelobeAttenuation() {
     return vertSidelobeAttenuation;
   }
 
@@ -506,8 +584,12 @@ public class Antenna
    *              {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
    * <p>
    */
-  public void setVertSidelobeAttenuation(JAXBElement<TUN5_2> value) {
+  public void setVertSidelobeAttenuation(TDecimal value) {
     this.vertSidelobeAttenuation = value;
+  }
+
+  public boolean isSetVertSidelobeAttenuation() {
+    return (this.vertSidelobeAttenuation != null);
   }
 
   /**
@@ -531,12 +613,21 @@ public class Antenna
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -560,12 +651,21 @@ public class Antenna
      * {@link Nomenclature }
    * <p>
    * <p>
+   * @return
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new ArrayList<>();
     }
     return this.nomenclature;
+  }
+
+  public boolean isSetNomenclature() {
+    return ((this.nomenclature != null) && (!this.nomenclature.isEmpty()));
+  }
+
+  public void unsetNomenclature() {
+    this.nomenclature = null;
   }
 
   /**
@@ -589,12 +689,21 @@ public class Antenna
      * {@link AntHardware }
    * <p>
    * <p>
+   * @return
    */
   public List<AntHardware> getAntHardware() {
     if (antHardware == null) {
       antHardware = new ArrayList<>();
     }
     return this.antHardware;
+  }
+
+  public boolean isSetAntHardware() {
+    return ((this.antHardware != null) && (!this.antHardware.isEmpty()));
+  }
+
+  public void unsetAntHardware() {
+    this.antHardware = null;
   }
 
   /**
@@ -617,12 +726,162 @@ public class Antenna
    * Objects of the following type(s) are allowed in the list {@link AntMode }
    * <p>
    * <p>
+   * @return
    */
   public List<AntMode> getAntMode() {
     if (antMode == null) {
       antMode = new ArrayList<>();
     }
     return this.antMode;
+  }
+
+  public boolean isSetAntMode() {
+    return ((this.antMode != null) && (!this.antMode.isEmpty()));
+  }
+
+  public void unsetAntMode() {
+    this.antMode = null;
+  }
+
+  public Antenna withGeneric(ListCBO value) {
+    setGeneric(new TString(value.value()));
+    return this;
+  }
+
+  public Antenna withAntType(String value) {
+    setAntType(new TString(value));
+    return this;
+  }
+
+  public Antenna withPhArrayNumMainBeams(Integer value) {
+    setPhArrayNumMainBeams(new TInteger(value));
+    return this;
+  }
+
+  public Antenna withPhArrayNumElements(Integer value) {
+    setPhArrayNumElements(new TInteger(value));
+    return this;
+  }
+
+  public Antenna withShape(String value) {
+    setShape(new TString(value));
+    return this;
+  }
+
+  public Antenna withDiameter(Double value) {
+    setDiameter(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withHorzDimension(Double value) {
+    setHorzDimension(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withVertDimension(Double value) {
+    setVertDimension(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withApertureDiameter(Double value) {
+    setApertureDiameter(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withHorzAperture(Double value) {
+    setHorzAperture(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withVertAperture(Double value) {
+    setVertAperture(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withHorzSidelobeSuppressed(ListCBO value) {
+    setHorzSidelobeSuppressed(new TString(value.value()));
+    return this;
+  }
+
+  public Antenna withHorzSidelobeAz(Double value) {
+    setHorzSidelobeAz(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withHorzSidelobeAttenuation(Double value) {
+    setHorzSidelobeAttenuation(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withVertSidelobeSuppressed(ListCBO value) {
+    setVertSidelobeSuppressed(new TString(value.value()));
+    return this;
+  }
+
+  public Antenna withVertSidelobeElev(Double value) {
+    setVertSidelobeElev(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withVertSidelobeAttenuation(Double value) {
+    setVertSidelobeAttenuation(new TDecimal(value));
+    return this;
+  }
+
+  public Antenna withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Antenna withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Antenna withNomenclature(Nomenclature... values) {
+    if (values != null) {
+      getNomenclature().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Antenna withNomenclature(Collection<Nomenclature> values) {
+    if (values != null) {
+      getNomenclature().addAll(values);
+    }
+    return this;
+  }
+
+  public Antenna withAntHardware(AntHardware... values) {
+    if (values != null) {
+      getAntHardware().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Antenna withAntHardware(Collection<AntHardware> values) {
+    if (values != null) {
+      getAntHardware().addAll(values);
+    }
+    return this;
+  }
+
+  public Antenna withAntMode(AntMode... values) {
+    if (values != null) {
+      getAntMode().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Antenna withAntMode(Collection<AntMode> values) {
+    if (values != null) {
+      getAntMode().addAll(values);
+    }
+    return this;
   }
 
 }

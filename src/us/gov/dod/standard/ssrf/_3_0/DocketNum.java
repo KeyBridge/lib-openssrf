@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS12;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -59,7 +61,8 @@ import javax.xml.bind.annotation.XmlType;
 public class DocketNum {
 
   @XmlElement(name = "DocketNum", required = true)
-  protected TS12 docketNum;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  private TString docketNum;
 
   /**
    * Gets the value of the docketNum property.
@@ -67,7 +70,7 @@ public class DocketNum {
    * @return possible object is {@link TS12 }
    * <p>
    */
-  public TS12 getDocketNum() {
+  public TString getDocketNum() {
     return docketNum;
   }
 
@@ -77,8 +80,17 @@ public class DocketNum {
    * @param value allowed object is {@link TS12 }
    * <p>
    */
-  public void setDocketNum(TS12 value) {
+  public void setDocketNum(TString value) {
     this.docketNum = value;
+  }
+
+  public boolean isSetDocketNum() {
+    return (this.docketNum != null);
+  }
+
+  public DocketNum withDocketNum(String value) {
+    setDocketNum(new TString(value));
+    return this;
   }
 
 }

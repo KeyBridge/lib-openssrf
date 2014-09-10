@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -63,11 +66,14 @@ import javax.xml.bind.annotation.*;
 public class RelatedSupportability {
 
   @XmlElement(name = "Type", required = true)
-  protected TS10 type;
-  @XmlElementRef(name = "SSRequestRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> ssRequestRef;
-  @XmlElementRef(name = "J12Number", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS15> j12Number;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString type;
+  @XmlElement(name = "SSRequestRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString ssRequestRef;
+  @XmlElement(name = "J12Number", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  private TString j12Number;
 
   /**
    * Gets the value of the type property.
@@ -75,7 +81,7 @@ public class RelatedSupportability {
    * @return possible object is {@link TS10 }
    * <p>
    */
-  public TS10 getType() {
+  public TString getType() {
     return type;
   }
 
@@ -85,8 +91,12 @@ public class RelatedSupportability {
    * @param value allowed object is {@link TS10 }
    * <p>
    */
-  public void setType(TS10 value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -96,7 +106,7 @@ public class RelatedSupportability {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getSSRequestRef() {
+  public TString getSSRequestRef() {
     return ssRequestRef;
   }
 
@@ -107,8 +117,12 @@ public class RelatedSupportability {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setSSRequestRef(JAXBElement<TSerial> value) {
+  public void setSSRequestRef(TString value) {
     this.ssRequestRef = value;
+  }
+
+  public boolean isSetSSRequestRef() {
+    return (this.ssRequestRef != null);
   }
 
   /**
@@ -118,7 +132,7 @@ public class RelatedSupportability {
    *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public JAXBElement<TS15> getJ12Number() {
+  public TString getJ12Number() {
     return j12Number;
   }
 
@@ -129,8 +143,27 @@ public class RelatedSupportability {
    *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
    * <p>
    */
-  public void setJ12Number(JAXBElement<TS15> value) {
+  public void setJ12Number(TString value) {
     this.j12Number = value;
+  }
+
+  public boolean isSetJ12Number() {
+    return (this.j12Number != null);
+  }
+
+  public RelatedSupportability withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public RelatedSupportability withSSRequestRef(String value) {
+    setSSRequestRef(new TString(value));
+    return this;
+  }
+
+  public RelatedSupportability withJ12Number(String value) {
+    setJ12Number(new TString(value));
+    return this;
   }
 
 }

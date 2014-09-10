@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -39,17 +39,13 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RxAntModeRef">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="ModeID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="CouplingLoss" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RxAntModeRef"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
+ * &lt;element name="ModeID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
+ * minOccurs="0"/> &lt;element name="CouplingLoss"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -66,11 +62,14 @@ import javax.xml.bind.annotation.*;
 public class RxAntModeRef {
 
   @XmlElement(name = "Serial", required = true)
-  protected TSerial serial;
-  @XmlElementRef(name = "ModeID", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> modeID;
-  @XmlElementRef(name = "CouplingLoss", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> couplingLoss;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
+  @XmlElement(name = "ModeID", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString modeID;
+  @XmlElement(name = "CouplingLoss", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal couplingLoss;
 
   /**
    * Gets the value of the serial property.
@@ -78,7 +77,7 @@ public class RxAntModeRef {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -88,8 +87,12 @@ public class RxAntModeRef {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
   }
 
   /**
@@ -99,7 +102,7 @@ public class RxAntModeRef {
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getModeID() {
+  public TString getModeID() {
     return modeID;
   }
 
@@ -110,8 +113,12 @@ public class RxAntModeRef {
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setModeID(JAXBElement<TS20> value) {
+  public void setModeID(TString value) {
     this.modeID = value;
+  }
+
+  public boolean isSetModeID() {
+    return (this.modeID != null);
   }
 
   /**
@@ -121,7 +128,7 @@ public class RxAntModeRef {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getCouplingLoss() {
+  public TDecimal getCouplingLoss() {
     return couplingLoss;
   }
 
@@ -132,8 +139,27 @@ public class RxAntModeRef {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setCouplingLoss(JAXBElement<TdB> value) {
+  public void setCouplingLoss(TDecimal value) {
     this.couplingLoss = value;
+  }
+
+  public boolean isSetCouplingLoss() {
+    return (this.couplingLoss != null);
+  }
+
+  public RxAntModeRef withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
+  }
+
+  public RxAntModeRef withModeID(String value) {
+    setModeID(new TString(value));
+    return this;
+  }
+
+  public RxAntModeRef withCouplingLoss(Double value) {
+    setCouplingLoss(new TDecimal(value));
+    return this;
   }
 
 }

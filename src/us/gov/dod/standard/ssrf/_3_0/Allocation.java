@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -80,27 +79,31 @@ import javax.xml.bind.annotation.*;
 public class Allocation {
 
   @XmlElement(name = "AllocatedService", required = true)
-  protected TS100 allocatedService;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString allocatedService;
   @XmlElement(name = "Priority", required = true)
-  protected TS10 priority;
-  @XmlElementRef(name = "EffectiveDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "AllocatedByFootnote", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> allocatedByFootnote;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString priority;
+  @XmlElement(name = "EffectiveDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "AllocatedByFootnote", required = false)
+  private TString allocatedByFootnote;
   @XmlElement(name = "Variance")
-  protected List<Variance> variance;
+  private List<Variance> variance;
   @XmlElement(name = "StnClass", nillable = true)
-  protected List<StnClass> stnClass;
+  private List<StnClass> stnClass;
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  protected List<ChannelPlanRef> channelPlanRef;
+  private List<ChannelPlanRef> channelPlanRef;
   @XmlAttribute(name = "footnotes")
-  protected List<BigInteger> footnotes;
+  private List<BigInteger> footnotes;
   @XmlAttribute(name = "bandApps")
-  protected List<BigInteger> bandApps;
+  private List<BigInteger> bandApps;
   @XmlAttribute(name = "bandUsers")
-  protected List<BigInteger> bandUsers;
+  private List<BigInteger> bandUsers;
 
   /**
    * Gets the value of the allocatedService property.
@@ -108,7 +111,7 @@ public class Allocation {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getAllocatedService() {
+  public TString getAllocatedService() {
     return allocatedService;
   }
 
@@ -118,8 +121,12 @@ public class Allocation {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setAllocatedService(TS100 value) {
+  public void setAllocatedService(TString value) {
     this.allocatedService = value;
+  }
+
+  public boolean isSetAllocatedService() {
+    return (this.allocatedService != null);
   }
 
   /**
@@ -128,7 +135,7 @@ public class Allocation {
    * @return possible object is {@link TS10 }
    * <p>
    */
-  public TS10 getPriority() {
+  public TString getPriority() {
     return priority;
   }
 
@@ -138,8 +145,12 @@ public class Allocation {
    * @param value allowed object is {@link TS10 }
    * <p>
    */
-  public void setPriority(TS10 value) {
+  public void setPriority(TString value) {
     this.priority = value;
+  }
+
+  public boolean isSetPriority() {
+    return (this.priority != null);
   }
 
   /**
@@ -149,7 +160,7 @@ public class Allocation {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -160,8 +171,12 @@ public class Allocation {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setEffectiveDate(JAXBElement<TD> value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -171,7 +186,7 @@ public class Allocation {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -182,8 +197,12 @@ public class Allocation {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -193,7 +212,7 @@ public class Allocation {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getAllocatedByFootnote() {
+  public TString getAllocatedByFootnote() {
     return allocatedByFootnote;
   }
 
@@ -204,8 +223,12 @@ public class Allocation {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setAllocatedByFootnote(JAXBElement<TListCBO> value) {
+  public void setAllocatedByFootnote(TString value) {
     this.allocatedByFootnote = value;
+  }
+
+  public boolean isSetAllocatedByFootnote() {
+    return (this.allocatedByFootnote != null);
   }
 
   /**
@@ -228,12 +251,21 @@ public class Allocation {
    * Objects of the following type(s) are allowed in the list {@link Variance }
    * <p>
    * <p>
+   * @return
    */
   public List<Variance> getVariance() {
     if (variance == null) {
       variance = new ArrayList<>();
     }
     return this.variance;
+  }
+
+  public boolean isSetVariance() {
+    return ((this.variance != null) && (!this.variance.isEmpty()));
+  }
+
+  public void unsetVariance() {
+    this.variance = null;
   }
 
   /**
@@ -256,12 +288,21 @@ public class Allocation {
    * Objects of the following type(s) are allowed in the list {@link StnClass }
    * <p>
    * <p>
+   * @return
    */
   public List<StnClass> getStnClass() {
     if (stnClass == null) {
       stnClass = new ArrayList<>();
     }
     return this.stnClass;
+  }
+
+  public boolean isSetStnClass() {
+    return ((this.stnClass != null) && (!this.stnClass.isEmpty()));
+  }
+
+  public void unsetStnClass() {
+    this.stnClass = null;
   }
 
   /**
@@ -285,12 +326,21 @@ public class Allocation {
      * {@link ChannelPlanRef }
    * <p>
    * <p>
+   * @return
    */
   public List<ChannelPlanRef> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new ArrayList<>();
     }
     return this.channelPlanRef;
+  }
+
+  public boolean isSetChannelPlanRef() {
+    return ((this.channelPlanRef != null) && (!this.channelPlanRef.isEmpty()));
+  }
+
+  public void unsetChannelPlanRef() {
+    this.channelPlanRef = null;
   }
 
   /**
@@ -314,12 +364,21 @@ public class Allocation {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getFootnotes() {
     if (footnotes == null) {
       footnotes = new ArrayList<>();
     }
     return this.footnotes;
+  }
+
+  public boolean isSetFootnotes() {
+    return ((this.footnotes != null) && (!this.footnotes.isEmpty()));
+  }
+
+  public void unsetFootnotes() {
+    this.footnotes = null;
   }
 
   /**
@@ -343,12 +402,21 @@ public class Allocation {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getBandApps() {
     if (bandApps == null) {
       bandApps = new ArrayList<>();
     }
     return this.bandApps;
+  }
+
+  public boolean isSetBandApps() {
+    return ((this.bandApps != null) && (!this.bandApps.isEmpty()));
+  }
+
+  public void unsetBandApps() {
+    this.bandApps = null;
   }
 
   /**
@@ -372,12 +440,130 @@ public class Allocation {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getBandUsers() {
     if (bandUsers == null) {
       bandUsers = new ArrayList<>();
     }
     return this.bandUsers;
+  }
+
+  public boolean isSetBandUsers() {
+    return ((this.bandUsers != null) && (!this.bandUsers.isEmpty()));
+  }
+
+  public void unsetBandUsers() {
+    this.bandUsers = null;
+  }
+
+  public Allocation withAllocatedService(String value) {
+    setAllocatedService(new TString(value));
+    return this;
+  }
+
+  public Allocation withPriority(String value) {
+    setPriority(new TString(value));
+    return this;
+  }
+
+  public Allocation withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public Allocation withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Allocation withAllocatedByFootnote(ListCBO value) {
+    setAllocatedByFootnote(new TString(value.value()));
+    return this;
+  }
+
+  public Allocation withVariance(Variance... values) {
+    if (values != null) {
+      getVariance().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allocation withVariance(Collection<Variance> values) {
+    if (values != null) {
+      getVariance().addAll(values);
+    }
+    return this;
+  }
+
+  public Allocation withStnClass(StnClass... values) {
+    if (values != null) {
+      getStnClass().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allocation withStnClass(Collection<StnClass> values) {
+    if (values != null) {
+      getStnClass().addAll(values);
+    }
+    return this;
+  }
+
+  public Allocation withChannelPlanRef(ChannelPlanRef... values) {
+    if (values != null) {
+      getChannelPlanRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allocation withChannelPlanRef(Collection<ChannelPlanRef> values) {
+    if (values != null) {
+      getChannelPlanRef().addAll(values);
+    }
+    return this;
+  }
+
+  public Allocation withFootnotes(BigInteger... values) {
+    if (values != null) {
+      getFootnotes().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allocation withFootnotes(Collection<BigInteger> values) {
+    if (values != null) {
+      getFootnotes().addAll(values);
+    }
+    return this;
+  }
+
+  public Allocation withBandApps(BigInteger... values) {
+    if (values != null) {
+      getBandApps().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allocation withBandApps(Collection<BigInteger> values) {
+    if (values != null) {
+      getBandApps().addAll(values);
+    }
+    return this;
+  }
+
+  public Allocation withBandUsers(BigInteger... values) {
+    if (values != null) {
+      getBandUsers().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allocation withBandUsers(Collection<BigInteger> values) {
+    if (values != null) {
+      getBandUsers().addAll(values);
+    }
+    return this;
   }
 
 }

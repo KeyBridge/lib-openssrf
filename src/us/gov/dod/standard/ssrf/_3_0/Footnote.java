@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -61,9 +62,11 @@ import javax.xml.bind.annotation.*;
 public class Footnote {
 
   @XmlElement(name = "Identifier", required = true)
-  protected TS255 identifier;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString identifier;
   @XmlElement(name = "Text", required = true)
-  protected TMEMO text;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString text;
   @XmlAttribute(name = "idx", required = true)
   protected BigInteger idx;
 
@@ -73,7 +76,7 @@ public class Footnote {
    * @return possible object is {@link TS255 }
    * <p>
    */
-  public TS255 getIdentifier() {
+  public TString getIdentifier() {
     return identifier;
   }
 
@@ -83,8 +86,12 @@ public class Footnote {
    * @param value allowed object is {@link TS255 }
    * <p>
    */
-  public void setIdentifier(TS255 value) {
+  public void setIdentifier(TString value) {
     this.identifier = value;
+  }
+
+  public boolean isSetIdentifier() {
+    return (this.identifier != null);
   }
 
   /**
@@ -93,7 +100,7 @@ public class Footnote {
    * @return possible object is {@link TMEMO }
    * <p>
    */
-  public TMEMO getText() {
+  public TString getText() {
     return text;
   }
 
@@ -103,8 +110,12 @@ public class Footnote {
    * @param value allowed object is {@link TMEMO }
    * <p>
    */
-  public void setText(TMEMO value) {
+  public void setText(TString value) {
     this.text = value;
+  }
+
+  public boolean isSetText() {
+    return (this.text != null);
   }
 
   /**
@@ -125,6 +136,25 @@ public class Footnote {
    */
   public void setIdx(BigInteger value) {
     this.idx = value;
+  }
+
+  public boolean isSetIdx() {
+    return (this.idx != null);
+  }
+
+  public Footnote withIdentifier(String value) {
+    setIdentifier(new TString(value));
+    return this;
+  }
+
+  public Footnote withText(String value) {
+    setText(new TString(value));
+    return this;
+  }
+
+  public Footnote withIdx(BigInteger value) {
+    setIdx(value);
+    return this;
   }
 
 }

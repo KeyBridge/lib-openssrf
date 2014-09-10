@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -73,17 +74,21 @@ import javax.xml.bind.annotation.*;
 public class CodeList {
 
   @XmlElement(name = "Action", required = true)
-  protected TS25 action;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString action;
   @XmlElement(name = "CodeListCode", required = true)
-  protected TUS3 codeListCode;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS3.class)
+  private TString codeListCode;
   @XmlElement(name = "EffectiveDate", required = true)
-  protected TD effectiveDate;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> description;
-  @XmlElementRef(name = "Origin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAO> origin;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString description;
+  @XmlElement(name = "Origin", required = false)
+  private TString origin;
   @XmlElement(name = "Code")
-  protected List<Code> code;
+  private List<Code> code;
 
   /**
    * Gets the value of the action property.
@@ -91,7 +96,7 @@ public class CodeList {
    * @return possible object is {@link TS25 }
    * <p>
    */
-  public TS25 getAction() {
+  public TString getAction() {
     return action;
   }
 
@@ -101,8 +106,12 @@ public class CodeList {
    * @param value allowed object is {@link TS25 }
    * <p>
    */
-  public void setAction(TS25 value) {
+  public void setAction(TString value) {
     this.action = value;
+  }
+
+  public boolean isSetAction() {
+    return (this.action != null);
   }
 
   /**
@@ -111,7 +120,7 @@ public class CodeList {
    * @return possible object is {@link TUS3 }
    * <p>
    */
-  public TUS3 getCodeListCode() {
+  public TString getCodeListCode() {
     return codeListCode;
   }
 
@@ -121,8 +130,12 @@ public class CodeList {
    * @param value allowed object is {@link TUS3 }
    * <p>
    */
-  public void setCodeListCode(TUS3 value) {
+  public void setCodeListCode(TString value) {
     this.codeListCode = value;
+  }
+
+  public boolean isSetCodeListCode() {
+    return (this.codeListCode != null);
   }
 
   /**
@@ -131,7 +144,7 @@ public class CodeList {
    * @return possible object is {@link TD }
    * <p>
    */
-  public TD getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -141,8 +154,12 @@ public class CodeList {
    * @param value allowed object is {@link TD }
    * <p>
    */
-  public void setEffectiveDate(TD value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -152,7 +169,7 @@ public class CodeList {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -163,8 +180,12 @@ public class CodeList {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TMEMO> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -174,7 +195,7 @@ public class CodeList {
    *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAO> getOrigin() {
+  public TString getOrigin() {
     return origin;
   }
 
@@ -185,8 +206,12 @@ public class CodeList {
    *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public void setOrigin(JAXBElement<TListCAO> value) {
+  public void setOrigin(TString value) {
     this.origin = value;
+  }
+
+  public boolean isSetOrigin() {
+    return (this.origin != null);
   }
 
   /**
@@ -209,12 +234,60 @@ public class CodeList {
    * Objects of the following type(s) are allowed in the list {@link Code }
    * <p>
    * <p>
+   * @return
    */
   public List<Code> getCode() {
     if (code == null) {
       code = new ArrayList<>();
     }
     return this.code;
+  }
+
+  public boolean isSetCode() {
+    return ((this.code != null) && (!this.code.isEmpty()));
+  }
+
+  public void unsetCode() {
+    this.code = null;
+  }
+
+  public CodeList withAction(String value) {
+    setAction(new TString(value));
+    return this;
+  }
+
+  public CodeList withCodeListCode(String value) {
+    setCodeListCode(new TString(value));
+    return this;
+  }
+
+  public CodeList withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public CodeList withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public CodeList withOrigin(ListCAO value) {
+    setOrigin(new TString(value.value()));
+    return this;
+  }
+
+  public CodeList withCode(Code... values) {
+    if (values != null) {
+      getCode().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public CodeList withCode(Collection<Code> values) {
+    if (values != null) {
+      getCode().addAll(values);
+    }
+    return this;
   }
 
 }

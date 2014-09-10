@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,24 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAU;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfMonth;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCPC;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMinSec;
-import us.gov.dod.standard.ssrf._3_0.datatype.TYears;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDaysOfWeek;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMonths;
-import us.gov.dod.standard.ssrf._3_0.datatype.THours;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -102,45 +97,60 @@ import javax.xml.bind.annotation.*;
 public class JRFLEntry {
 
   @XmlElement(name = "ProtectionCode", required = true)
-  protected TListCPC protectionCode;
-  @XmlElementRef(name = "Priority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS2> priority;
+  private TString protectionCode;
+  @XmlElement(name = "Priority", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS2.class)
+  private TString priority;
   @XmlElement(name = "Justification", required = true)
-  protected TS255 justification;
-  @XmlElementRef(name = "ApprovalLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> approvalLevel;
-  @XmlElementRef(name = "Seconds", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> seconds;
-  @XmlElementRef(name = "Minutes", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMinSec> minutes;
-  @XmlElementRef(name = "Hours", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<THours> hours;
-  @XmlElementRef(name = "DaysOfMonth", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfMonth> daysOfMonth;
-  @XmlElementRef(name = "Months", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMonths> months;
-  @XmlElementRef(name = "DaysOfWeek", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDaysOfWeek> daysOfWeek;
-  @XmlElementRef(name = "Years", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TYears> years;
-  @XmlElementRef(name = "Duration", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> duration;
-  @XmlElementRef(name = "AsgnAllotRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> asgnAllotRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString justification;
+  @XmlElement(name = "ApprovalLevel", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString approvalLevel;
+  @XmlElement(name = "Seconds", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString seconds;
+  @XmlElement(name = "Minutes", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  private TString minutes;
+  @XmlElement(name = "Hours", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
+  private TString hours;
+  @XmlElement(name = "DaysOfMonth", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  private TString daysOfMonth;
+  @XmlElement(name = "Months", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
+  private TString months;
+  @XmlElement(name = "DaysOfWeek", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  private TString daysOfWeek;
+  @XmlElement(name = "Years", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
+  private TString years;
+  @XmlElement(name = "Duration", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger duration;
+  @XmlElement(name = "AsgnAllotRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString asgnAllotRef;
   @XmlElement(name = "FreqMin")
-  protected TFreqM freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "Bandwidth", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> bandwidth;
-  @XmlElementRef(name = "FreqUse", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAU> freqUse;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "Bandwidth", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal bandwidth;
+  @XmlElement(name = "FreqUse", required = false)
+  private TString freqUse;
   @XmlElement(name = "Project")
-  protected List<Project> project;
+  private List<Project> project;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "JRFLEntryLocation")
-  protected List<JRFLEntryLocation> jrflEntryLocation;
+  private List<JRFLEntryLocation> jrflEntryLocation;
 
   /**
    * Gets the value of the protectionCode property.
@@ -148,7 +158,7 @@ public class JRFLEntry {
    * @return possible object is {@link TListCPC }
    * <p>
    */
-  public TListCPC getProtectionCode() {
+  public TString getProtectionCode() {
     return protectionCode;
   }
 
@@ -158,8 +168,12 @@ public class JRFLEntry {
    * @param value allowed object is {@link TListCPC }
    * <p>
    */
-  public void setProtectionCode(TListCPC value) {
+  public void setProtectionCode(TString value) {
     this.protectionCode = value;
+  }
+
+  public boolean isSetProtectionCode() {
+    return (this.protectionCode != null);
   }
 
   /**
@@ -169,7 +183,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TUS2 }{@code >}
    * <p>
    */
-  public JAXBElement<TUS2> getPriority() {
+  public TString getPriority() {
     return priority;
   }
 
@@ -180,8 +194,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TUS2 }{@code >}
    * <p>
    */
-  public void setPriority(JAXBElement<TUS2> value) {
+  public void setPriority(TString value) {
     this.priority = value;
+  }
+
+  public boolean isSetPriority() {
+    return (this.priority != null);
   }
 
   /**
@@ -190,7 +208,7 @@ public class JRFLEntry {
    * @return possible object is {@link TS255 }
    * <p>
    */
-  public TS255 getJustification() {
+  public TString getJustification() {
     return justification;
   }
 
@@ -200,8 +218,12 @@ public class JRFLEntry {
    * @param value allowed object is {@link TS255 }
    * <p>
    */
-  public void setJustification(TS255 value) {
+  public void setJustification(TString value) {
     this.justification = value;
+  }
+
+  public boolean isSetJustification() {
+    return (this.justification != null);
   }
 
   /**
@@ -211,7 +233,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getApprovalLevel() {
+  public TString getApprovalLevel() {
     return approvalLevel;
   }
 
@@ -222,8 +244,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setApprovalLevel(JAXBElement<TS10> value) {
+  public void setApprovalLevel(TString value) {
     this.approvalLevel = value;
+  }
+
+  public boolean isSetApprovalLevel() {
+    return (this.approvalLevel != null);
   }
 
   /**
@@ -233,7 +259,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getSeconds() {
+  public TString getSeconds() {
     return seconds;
   }
 
@@ -244,8 +270,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setSeconds(JAXBElement<TMinSec> value) {
+  public void setSeconds(TString value) {
     this.seconds = value;
+  }
+
+  public boolean isSetSeconds() {
+    return (this.seconds != null);
   }
 
   /**
@@ -255,7 +285,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public JAXBElement<TMinSec> getMinutes() {
+  public TString getMinutes() {
     return minutes;
   }
 
@@ -266,8 +296,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
    * <p>
    */
-  public void setMinutes(JAXBElement<TMinSec> value) {
+  public void setMinutes(TString value) {
     this.minutes = value;
+  }
+
+  public boolean isSetMinutes() {
+    return (this.minutes != null);
   }
 
   /**
@@ -277,7 +311,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public JAXBElement<THours> getHours() {
+  public TString getHours() {
     return hours;
   }
 
@@ -288,8 +322,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link THours }{@code >}
    * <p>
    */
-  public void setHours(JAXBElement<THours> value) {
+  public void setHours(TString value) {
     this.hours = value;
+  }
+
+  public boolean isSetHours() {
+    return (this.hours != null);
   }
 
   /**
@@ -299,7 +337,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfMonth> getDaysOfMonth() {
+  public TString getDaysOfMonth() {
     return daysOfMonth;
   }
 
@@ -310,8 +348,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
    * <p>
    */
-  public void setDaysOfMonth(JAXBElement<TDaysOfMonth> value) {
+  public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
+  }
+
+  public boolean isSetDaysOfMonth() {
+    return (this.daysOfMonth != null);
   }
 
   /**
@@ -321,7 +363,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public JAXBElement<TMonths> getMonths() {
+  public TString getMonths() {
     return months;
   }
 
@@ -332,8 +374,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
    * <p>
    */
-  public void setMonths(JAXBElement<TMonths> value) {
+  public void setMonths(TString value) {
     this.months = value;
+  }
+
+  public boolean isSetMonths() {
+    return (this.months != null);
   }
 
   /**
@@ -343,7 +389,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public JAXBElement<TDaysOfWeek> getDaysOfWeek() {
+  public TString getDaysOfWeek() {
     return daysOfWeek;
   }
 
@@ -354,8 +400,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
    * <p>
    */
-  public void setDaysOfWeek(JAXBElement<TDaysOfWeek> value) {
+  public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
+  }
+
+  public boolean isSetDaysOfWeek() {
+    return (this.daysOfWeek != null);
   }
 
   /**
@@ -365,7 +415,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public JAXBElement<TYears> getYears() {
+  public TString getYears() {
     return years;
   }
 
@@ -376,8 +426,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
    * <p>
    */
-  public void setYears(JAXBElement<TYears> value) {
+  public void setYears(TString value) {
     this.years = value;
+  }
+
+  public boolean isSetYears() {
+    return (this.years != null);
   }
 
   /**
@@ -387,7 +441,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getDuration() {
+  public TInteger getDuration() {
     return duration;
   }
 
@@ -398,8 +452,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setDuration(JAXBElement<TUN4> value) {
+  public void setDuration(TInteger value) {
     this.duration = value;
+  }
+
+  public boolean isSetDuration() {
+    return (this.duration != null);
   }
 
   /**
@@ -409,7 +467,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getAsgnAllotRef() {
+  public TString getAsgnAllotRef() {
     return asgnAllotRef;
   }
 
@@ -420,8 +478,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setAsgnAllotRef(JAXBElement<TSerial> value) {
+  public void setAsgnAllotRef(TString value) {
     this.asgnAllotRef = value;
+  }
+
+  public boolean isSetAsgnAllotRef() {
+    return (this.asgnAllotRef != null);
   }
 
   /**
@@ -430,7 +492,7 @@ public class JRFLEntry {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -440,8 +502,12 @@ public class JRFLEntry {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -451,7 +517,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -462,8 +528,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -473,7 +543,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getBandwidth() {
+  public TDecimal getBandwidth() {
     return bandwidth;
   }
 
@@ -484,8 +554,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setBandwidth(JAXBElement<TFreqM> value) {
+  public void setBandwidth(TDecimal value) {
     this.bandwidth = value;
+  }
+
+  public boolean isSetBandwidth() {
+    return (this.bandwidth != null);
   }
 
   /**
@@ -495,7 +569,7 @@ public class JRFLEntry {
    *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAU> getFreqUse() {
+  public TString getFreqUse() {
     return freqUse;
   }
 
@@ -506,8 +580,12 @@ public class JRFLEntry {
    *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
    * <p>
    */
-  public void setFreqUse(JAXBElement<TListCAU> value) {
+  public void setFreqUse(TString value) {
     this.freqUse = value;
+  }
+
+  public boolean isSetFreqUse() {
+    return (this.freqUse != null);
   }
 
   /**
@@ -530,12 +608,21 @@ public class JRFLEntry {
    * Objects of the following type(s) are allowed in the list {@link Project }
    * <p>
    * <p>
+   * @return
    */
   public List<Project> getProject() {
     if (project == null) {
       project = new ArrayList<>();
     }
     return this.project;
+  }
+
+  public boolean isSetProject() {
+    return ((this.project != null) && (!this.project.isEmpty()));
+  }
+
+  public void unsetProject() {
+    this.project = null;
   }
 
   /**
@@ -559,12 +646,21 @@ public class JRFLEntry {
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -588,12 +684,148 @@ public class JRFLEntry {
      * {@link JRFLEntryLocation }
    * <p>
    * <p>
+   * @return
    */
   public List<JRFLEntryLocation> getJRFLEntryLocation() {
     if (jrflEntryLocation == null) {
       jrflEntryLocation = new ArrayList<>();
     }
     return this.jrflEntryLocation;
+  }
+
+  public boolean isSetJRFLEntryLocation() {
+    return ((this.jrflEntryLocation != null) && (!this.jrflEntryLocation.isEmpty()));
+  }
+
+  public void unsetJRFLEntryLocation() {
+    this.jrflEntryLocation = null;
+  }
+
+  public JRFLEntry withProtectionCode(ListCPC value) {
+    setProtectionCode(new TString(value.value()));
+    return this;
+  }
+
+  public JRFLEntry withPriority(String value) {
+    setPriority(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withJustification(String value) {
+    setJustification(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withApprovalLevel(String value) {
+    setApprovalLevel(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withSeconds(String value) {
+    setSeconds(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withMinutes(String value) {
+    setMinutes(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withHours(String value) {
+    setHours(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withDaysOfMonth(String value) {
+    setDaysOfMonth(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withMonths(String value) {
+    setMonths(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withDaysOfWeek(String value) {
+    setDaysOfWeek(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withYears(String value) {
+    setYears(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withDuration(Integer value) {
+    setDuration(new TInteger(value));
+    return this;
+  }
+
+  public JRFLEntry withAsgnAllotRef(String value) {
+    setAsgnAllotRef(new TString(value));
+    return this;
+  }
+
+  public JRFLEntry withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public JRFLEntry withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public JRFLEntry withBandwidth(Double value) {
+    setBandwidth(new TDecimal(value));
+    return this;
+  }
+
+  public JRFLEntry withFreqUse(ListCAU value) {
+    setFreqUse(new TString(value.value()));
+    return this;
+  }
+
+  public JRFLEntry withProject(Project... values) {
+    if (values != null) {
+      getProject().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public JRFLEntry withProject(Collection<Project> values) {
+    if (values != null) {
+      getProject().addAll(values);
+    }
+    return this;
+  }
+
+  public JRFLEntry withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public JRFLEntry withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public JRFLEntry withJRFLEntryLocation(JRFLEntryLocation... values) {
+    if (values != null) {
+      getJRFLEntryLocation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public JRFLEntry withJRFLEntryLocation(Collection<JRFLEntryLocation> values) {
+    if (values != null) {
+      getJRFLEntryLocation().addAll(values);
+    }
+    return this;
   }
 
 }

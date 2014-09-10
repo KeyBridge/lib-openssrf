@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,25 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBm;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TPercent;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN18_6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSN16_15;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN7_1;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCFO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -122,67 +114,90 @@ import javax.xml.bind.annotation.*;
 public class RxMode {
 
   @XmlElement(name = "ModeID", required = true)
-  protected TS20 modeID;
-  @XmlElementRef(name = "Description", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> description;
-  @XmlElementRef(name = "RxType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> rxType;
-  @XmlElementRef(name = "NecessaryBw", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> necessaryBw;
-  @XmlElementRef(name = "Tunability", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> tunability;
-  @XmlElementRef(name = "TuningMethod", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> tuningMethod;
-  @XmlElementRef(name = "IntermodPct", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TPercent> intermodPct;
-  @XmlElementRef(name = "IntermodEffect", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> intermodEffect;
-  @XmlElementRef(name = "SensitivityLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBm> sensitivityLevel;
-  @XmlElementRef(name = "NoiseFigure", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> noiseFigure;
-  @XmlElementRef(name = "NoiseTemp", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN7_1> noiseTemp;
-  @XmlElementRef(name = "SensitivityCriteriaType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> sensitivityCriteriaType;
-  @XmlElementRef(name = "SensitivityCriteriaLevel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSN16_15> sensitivityCriteriaLevel;
-  @XmlElementRef(name = "SensitivityCriteriaText", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> sensitivityCriteriaText;
-  @XmlElementRef(name = "PostDetectionFreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> postDetectionFreqMin;
-  @XmlElementRef(name = "PostDetectionFreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> postDetectionFreqMax;
-  @XmlElementRef(name = "ProcessingGain", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> processingGain;
-  @XmlElementRef(name = "SpuriousRejection", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> spuriousRejection;
-  @XmlElementRef(name = "ImageRejection", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> imageRejection;
-  @XmlElementRef(name = "IntermodRejection", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> intermodRejection;
-  @XmlElementRef(name = "AdjacentChannelSelectivity", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> adjacentChannelSelectivity;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString modeID;
+  @XmlElement(name = "Description", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString description;
+  @XmlElement(name = "RxType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString rxType;
+  @XmlElement(name = "NecessaryBw", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal necessaryBw;
+  @XmlElement(name = "Tunability", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString tunability;
+  @XmlElement(name = "TuningMethod", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString tuningMethod;
+  @XmlElement(name = "IntermodPct", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  private TDecimal intermodPct;
+  @XmlElement(name = "IntermodEffect", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString intermodEffect;
+  @XmlElement(name = "SensitivityLevel", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBM.class)
+  private TDecimal sensitivityLevel;
+  @XmlElement(name = "NoiseFigure", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal noiseFigure;
+  @XmlElement(name = "NoiseTemp", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN7_1.class)
+  private TDecimal noiseTemp;
+  @XmlElement(name = "SensitivityCriteriaType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString sensitivityCriteriaType;
+  @XmlElement(name = "SensitivityCriteriaLevel", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSN16_15.class)
+  private TDecimal sensitivityCriteriaLevel;
+  @XmlElement(name = "SensitivityCriteriaText", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString sensitivityCriteriaText;
+  @XmlElement(name = "PostDetectionFreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal postDetectionFreqMin;
+  @XmlElement(name = "PostDetectionFreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal postDetectionFreqMax;
+  @XmlElement(name = "ProcessingGain", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal processingGain;
+  @XmlElement(name = "SpuriousRejection", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal spuriousRejection;
+  @XmlElement(name = "ImageRejection", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal imageRejection;
+  @XmlElement(name = "IntermodRejection", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal intermodRejection;
+  @XmlElement(name = "AdjacentChannelSelectivity", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal adjacentChannelSelectivity;
   @XmlElement(name = "FreqTolerance")
-  protected TUN18_6 freqTolerance;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN18_6.class)
+  private TDecimal freqTolerance;
   @XmlElement(name = "FreqToleranceUnit")
-  protected TListCFO freqToleranceUnit;
-  @XmlElementRef(name = "ModeName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS40> modeName;
+  private TString freqToleranceUnit;
+  @XmlElement(name = "ModeName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  private TString modeName;
   @XmlElement(name = "EmsClass", nillable = true)
-  protected List<EmsClass> emsClass;
+  private List<EmsClass> emsClass;
   @XmlElement(name = "RxSignalTuning")
-  protected List<RxSignalTuning> rxSignalTuning;
+  private List<RxSignalTuning> rxSignalTuning;
   @XmlElement(name = "RxModulation")
-  protected List<RxModulation> rxModulation;
+  private List<RxModulation> rxModulation;
   @XmlElement(name = "Baseband")
-  protected List<Baseband> baseband;
+  private List<Baseband> baseband;
   @XmlElement(name = "FreqConversion")
-  protected List<FreqConversion> freqConversion;
+  private List<FreqConversion> freqConversion;
   @XmlElement(name = "SpreadSpectrum")
   protected SpreadSpectrum spreadSpectrum;
   @XmlAttribute(name = "curves")
-  protected List<BigInteger> curves;
+  private List<BigInteger> curves;
 
   /**
    * Gets the value of the modeID property.
@@ -190,7 +205,7 @@ public class RxMode {
    * @return possible object is {@link TS20 }
    * <p>
    */
-  public TS20 getModeID() {
+  public TString getModeID() {
     return modeID;
   }
 
@@ -200,8 +215,12 @@ public class RxMode {
    * @param value allowed object is {@link TS20 }
    * <p>
    */
-  public void setModeID(TS20 value) {
+  public void setModeID(TString value) {
     this.modeID = value;
+  }
+
+  public boolean isSetModeID() {
+    return (this.modeID != null);
   }
 
   /**
@@ -211,7 +230,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getDescription() {
+  public TString getDescription() {
     return description;
   }
 
@@ -222,8 +241,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setDescription(JAXBElement<TS100> value) {
+  public void setDescription(TString value) {
     this.description = value;
+  }
+
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
@@ -233,7 +256,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getRxType() {
+  public TString getRxType() {
     return rxType;
   }
 
@@ -244,8 +267,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setRxType(JAXBElement<TS50> value) {
+  public void setRxType(TString value) {
     this.rxType = value;
+  }
+
+  public boolean isSetRxType() {
+    return (this.rxType != null);
   }
 
   /**
@@ -255,7 +282,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getNecessaryBw() {
+  public TDecimal getNecessaryBw() {
     return necessaryBw;
   }
 
@@ -266,8 +293,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setNecessaryBw(JAXBElement<TFreqM> value) {
+  public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
+  }
+
+  public boolean isSetNecessaryBw() {
+    return (this.necessaryBw != null);
   }
 
   /**
@@ -277,7 +308,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getTunability() {
+  public TString getTunability() {
     return tunability;
   }
 
@@ -288,8 +319,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setTunability(JAXBElement<TS25> value) {
+  public void setTunability(TString value) {
     this.tunability = value;
+  }
+
+  public boolean isSetTunability() {
+    return (this.tunability != null);
   }
 
   /**
@@ -299,7 +334,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getTuningMethod() {
+  public TString getTuningMethod() {
     return tuningMethod;
   }
 
@@ -310,8 +345,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setTuningMethod(JAXBElement<TS50> value) {
+  public void setTuningMethod(TString value) {
     this.tuningMethod = value;
+  }
+
+  public boolean isSetTuningMethod() {
+    return (this.tuningMethod != null);
   }
 
   /**
@@ -321,7 +360,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public JAXBElement<TPercent> getIntermodPct() {
+  public TDecimal getIntermodPct() {
     return intermodPct;
   }
 
@@ -332,8 +371,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
    * <p>
    */
-  public void setIntermodPct(JAXBElement<TPercent> value) {
+  public void setIntermodPct(TDecimal value) {
     this.intermodPct = value;
+  }
+
+  public boolean isSetIntermodPct() {
+    return (this.intermodPct != null);
   }
 
   /**
@@ -343,7 +386,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getIntermodEffect() {
+  public TString getIntermodEffect() {
     return intermodEffect;
   }
 
@@ -354,8 +397,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setIntermodEffect(JAXBElement<TMEMO> value) {
+  public void setIntermodEffect(TString value) {
     this.intermodEffect = value;
+  }
+
+  public boolean isSetIntermodEffect() {
+    return (this.intermodEffect != null);
   }
 
   /**
@@ -365,7 +412,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdBm }{@code >}
    * <p>
    */
-  public JAXBElement<TdBm> getSensitivityLevel() {
+  public TDecimal getSensitivityLevel() {
     return sensitivityLevel;
   }
 
@@ -376,8 +423,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdBm }{@code >}
    * <p>
    */
-  public void setSensitivityLevel(JAXBElement<TdBm> value) {
+  public void setSensitivityLevel(TDecimal value) {
     this.sensitivityLevel = value;
+  }
+
+  public boolean isSetSensitivityLevel() {
+    return (this.sensitivityLevel != null);
   }
 
   /**
@@ -387,7 +438,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getNoiseFigure() {
+  public TDecimal getNoiseFigure() {
     return noiseFigure;
   }
 
@@ -398,8 +449,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setNoiseFigure(JAXBElement<TdB> value) {
+  public void setNoiseFigure(TDecimal value) {
     this.noiseFigure = value;
+  }
+
+  public boolean isSetNoiseFigure() {
+    return (this.noiseFigure != null);
   }
 
   /**
@@ -409,7 +464,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TUN7_1 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN7_1> getNoiseTemp() {
+  public TDecimal getNoiseTemp() {
     return noiseTemp;
   }
 
@@ -420,8 +475,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TUN7_1 }{@code >}
    * <p>
    */
-  public void setNoiseTemp(JAXBElement<TUN7_1> value) {
+  public void setNoiseTemp(TDecimal value) {
     this.noiseTemp = value;
+  }
+
+  public boolean isSetNoiseTemp() {
+    return (this.noiseTemp != null);
   }
 
   /**
@@ -431,7 +490,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSensitivityCriteriaType() {
+  public TString getSensitivityCriteriaType() {
     return sensitivityCriteriaType;
   }
 
@@ -442,8 +501,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSensitivityCriteriaType(JAXBElement<TS50> value) {
+  public void setSensitivityCriteriaType(TString value) {
     this.sensitivityCriteriaType = value;
+  }
+
+  public boolean isSetSensitivityCriteriaType() {
+    return (this.sensitivityCriteriaType != null);
   }
 
   /**
@@ -453,7 +516,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TSN16_15 }{@code >}
    * <p>
    */
-  public JAXBElement<TSN16_15> getSensitivityCriteriaLevel() {
+  public TDecimal getSensitivityCriteriaLevel() {
     return sensitivityCriteriaLevel;
   }
 
@@ -464,8 +527,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TSN16_15 }{@code >}
    * <p>
    */
-  public void setSensitivityCriteriaLevel(JAXBElement<TSN16_15> value) {
+  public void setSensitivityCriteriaLevel(TDecimal value) {
     this.sensitivityCriteriaLevel = value;
+  }
+
+  public boolean isSetSensitivityCriteriaLevel() {
+    return (this.sensitivityCriteriaLevel != null);
   }
 
   /**
@@ -475,7 +542,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSensitivityCriteriaText() {
+  public TString getSensitivityCriteriaText() {
     return sensitivityCriteriaText;
   }
 
@@ -486,8 +553,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSensitivityCriteriaText(JAXBElement<TS50> value) {
+  public void setSensitivityCriteriaText(TString value) {
     this.sensitivityCriteriaText = value;
+  }
+
+  public boolean isSetSensitivityCriteriaText() {
+    return (this.sensitivityCriteriaText != null);
   }
 
   /**
@@ -497,7 +568,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getPostDetectionFreqMin() {
+  public TDecimal getPostDetectionFreqMin() {
     return postDetectionFreqMin;
   }
 
@@ -508,8 +579,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setPostDetectionFreqMin(JAXBElement<TFreqM> value) {
+  public void setPostDetectionFreqMin(TDecimal value) {
     this.postDetectionFreqMin = value;
+  }
+
+  public boolean isSetPostDetectionFreqMin() {
+    return (this.postDetectionFreqMin != null);
   }
 
   /**
@@ -519,7 +594,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getPostDetectionFreqMax() {
+  public TDecimal getPostDetectionFreqMax() {
     return postDetectionFreqMax;
   }
 
@@ -530,8 +605,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setPostDetectionFreqMax(JAXBElement<TFreqM> value) {
+  public void setPostDetectionFreqMax(TDecimal value) {
     this.postDetectionFreqMax = value;
+  }
+
+  public boolean isSetPostDetectionFreqMax() {
+    return (this.postDetectionFreqMax != null);
   }
 
   /**
@@ -541,7 +620,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getProcessingGain() {
+  public TDecimal getProcessingGain() {
     return processingGain;
   }
 
@@ -552,8 +631,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setProcessingGain(JAXBElement<TdB> value) {
+  public void setProcessingGain(TDecimal value) {
     this.processingGain = value;
+  }
+
+  public boolean isSetProcessingGain() {
+    return (this.processingGain != null);
   }
 
   /**
@@ -563,7 +646,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getSpuriousRejection() {
+  public TDecimal getSpuriousRejection() {
     return spuriousRejection;
   }
 
@@ -574,8 +657,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setSpuriousRejection(JAXBElement<TdB> value) {
+  public void setSpuriousRejection(TDecimal value) {
     this.spuriousRejection = value;
+  }
+
+  public boolean isSetSpuriousRejection() {
+    return (this.spuriousRejection != null);
   }
 
   /**
@@ -585,7 +672,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getImageRejection() {
+  public TDecimal getImageRejection() {
     return imageRejection;
   }
 
@@ -596,8 +683,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setImageRejection(JAXBElement<TdB> value) {
+  public void setImageRejection(TDecimal value) {
     this.imageRejection = value;
+  }
+
+  public boolean isSetImageRejection() {
+    return (this.imageRejection != null);
   }
 
   /**
@@ -607,7 +698,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getIntermodRejection() {
+  public TDecimal getIntermodRejection() {
     return intermodRejection;
   }
 
@@ -618,8 +709,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setIntermodRejection(JAXBElement<TdB> value) {
+  public void setIntermodRejection(TDecimal value) {
     this.intermodRejection = value;
+  }
+
+  public boolean isSetIntermodRejection() {
+    return (this.intermodRejection != null);
   }
 
   /**
@@ -629,7 +724,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getAdjacentChannelSelectivity() {
+  public TDecimal getAdjacentChannelSelectivity() {
     return adjacentChannelSelectivity;
   }
 
@@ -640,8 +735,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setAdjacentChannelSelectivity(JAXBElement<TdB> value) {
+  public void setAdjacentChannelSelectivity(TDecimal value) {
     this.adjacentChannelSelectivity = value;
+  }
+
+  public boolean isSetAdjacentChannelSelectivity() {
+    return (this.adjacentChannelSelectivity != null);
   }
 
   /**
@@ -650,7 +749,7 @@ public class RxMode {
    * @return possible object is {@link TUN18_6 }
    * <p>
    */
-  public TUN18_6 getFreqTolerance() {
+  public TDecimal getFreqTolerance() {
     return freqTolerance;
   }
 
@@ -660,8 +759,12 @@ public class RxMode {
    * @param value allowed object is {@link TUN18_6 }
    * <p>
    */
-  public void setFreqTolerance(TUN18_6 value) {
+  public void setFreqTolerance(TDecimal value) {
     this.freqTolerance = value;
+  }
+
+  public boolean isSetFreqTolerance() {
+    return (this.freqTolerance != null);
   }
 
   /**
@@ -670,7 +773,7 @@ public class RxMode {
    * @return possible object is {@link TListCFO }
    * <p>
    */
-  public TListCFO getFreqToleranceUnit() {
+  public TString getFreqToleranceUnit() {
     return freqToleranceUnit;
   }
 
@@ -680,8 +783,12 @@ public class RxMode {
    * @param value allowed object is {@link TListCFO }
    * <p>
    */
-  public void setFreqToleranceUnit(TListCFO value) {
+  public void setFreqToleranceUnit(TString value) {
     this.freqToleranceUnit = value;
+  }
+
+  public boolean isSetFreqToleranceUnit() {
+    return (this.freqToleranceUnit != null);
   }
 
   /**
@@ -691,7 +798,7 @@ public class RxMode {
    *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public JAXBElement<TS40> getModeName() {
+  public TString getModeName() {
     return modeName;
   }
 
@@ -702,8 +809,12 @@ public class RxMode {
    *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public void setModeName(JAXBElement<TS40> value) {
+  public void setModeName(TString value) {
     this.modeName = value;
+  }
+
+  public boolean isSetModeName() {
+    return (this.modeName != null);
   }
 
   /**
@@ -726,12 +837,21 @@ public class RxMode {
    * Objects of the following type(s) are allowed in the list {@link EmsClass }
    * <p>
    * <p>
+   * @return
    */
   public List<EmsClass> getEmsClass() {
     if (emsClass == null) {
       emsClass = new ArrayList<>();
     }
     return this.emsClass;
+  }
+
+  public boolean isSetEmsClass() {
+    return ((this.emsClass != null) && (!this.emsClass.isEmpty()));
+  }
+
+  public void unsetEmsClass() {
+    this.emsClass = null;
   }
 
   /**
@@ -755,12 +875,21 @@ public class RxMode {
      * {@link RxSignalTuning }
    * <p>
    * <p>
+   * @return
    */
   public List<RxSignalTuning> getRxSignalTuning() {
     if (rxSignalTuning == null) {
       rxSignalTuning = new ArrayList<>();
     }
     return this.rxSignalTuning;
+  }
+
+  public boolean isSetRxSignalTuning() {
+    return ((this.rxSignalTuning != null) && (!this.rxSignalTuning.isEmpty()));
+  }
+
+  public void unsetRxSignalTuning() {
+    this.rxSignalTuning = null;
   }
 
   /**
@@ -784,12 +913,21 @@ public class RxMode {
      * {@link RxModulation }
    * <p>
    * <p>
+   * @return
    */
   public List<RxModulation> getRxModulation() {
     if (rxModulation == null) {
       rxModulation = new ArrayList<>();
     }
     return this.rxModulation;
+  }
+
+  public boolean isSetRxModulation() {
+    return ((this.rxModulation != null) && (!this.rxModulation.isEmpty()));
+  }
+
+  public void unsetRxModulation() {
+    this.rxModulation = null;
   }
 
   /**
@@ -812,12 +950,21 @@ public class RxMode {
    * Objects of the following type(s) are allowed in the list {@link Baseband }
    * <p>
    * <p>
+   * @return
    */
   public List<Baseband> getBaseband() {
     if (baseband == null) {
       baseband = new ArrayList<>();
     }
     return this.baseband;
+  }
+
+  public boolean isSetBaseband() {
+    return ((this.baseband != null) && (!this.baseband.isEmpty()));
+  }
+
+  public void unsetBaseband() {
+    this.baseband = null;
   }
 
   /**
@@ -841,12 +988,21 @@ public class RxMode {
      * {@link FreqConversion }
    * <p>
    * <p>
+   * @return
    */
   public List<FreqConversion> getFreqConversion() {
     if (freqConversion == null) {
       freqConversion = new ArrayList<>();
     }
     return this.freqConversion;
+  }
+
+  public boolean isSetFreqConversion() {
+    return ((this.freqConversion != null) && (!this.freqConversion.isEmpty()));
+  }
+
+  public void unsetFreqConversion() {
+    this.freqConversion = null;
   }
 
   /**
@@ -867,6 +1023,10 @@ public class RxMode {
    */
   public void setSpreadSpectrum(SpreadSpectrum value) {
     this.spreadSpectrum = value;
+  }
+
+  public boolean isSetSpreadSpectrum() {
+    return (this.spreadSpectrum != null);
   }
 
   /**
@@ -890,12 +1050,230 @@ public class RxMode {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getCurves() {
     if (curves == null) {
       curves = new ArrayList<>();
     }
     return this.curves;
+  }
+
+  public boolean isSetCurves() {
+    return ((this.curves != null) && (!this.curves.isEmpty()));
+  }
+
+  public void unsetCurves() {
+    this.curves = null;
+  }
+
+  public RxMode withModeID(String value) {
+    setModeID(new TString(value));
+    return this;
+  }
+
+  public RxMode withDescription(String value) {
+    setDescription(new TString(value));
+    return this;
+  }
+
+  public RxMode withRxType(String value) {
+    setRxType(new TString(value));
+    return this;
+  }
+
+  public RxMode withNecessaryBw(Double value) {
+    setNecessaryBw(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withTunability(String value) {
+    setTunability(new TString(value));
+    return this;
+  }
+
+  public RxMode withTuningMethod(String value) {
+    setTuningMethod(new TString(value));
+    return this;
+  }
+
+  public RxMode withIntermodPct(Double value) {
+    setIntermodPct(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withIntermodEffect(String value) {
+    setIntermodEffect(new TString(value));
+    return this;
+  }
+
+  public RxMode withSensitivityLevel(Double value) {
+    setSensitivityLevel(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withNoiseFigure(Double value) {
+    setNoiseFigure(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withNoiseTemp(Double value) {
+    setNoiseTemp(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withSensitivityCriteriaType(String value) {
+    setSensitivityCriteriaType(new TString(value));
+    return this;
+  }
+
+  public RxMode withSensitivityCriteriaLevel(Double value) {
+    setSensitivityCriteriaLevel(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withSensitivityCriteriaText(String value) {
+    setSensitivityCriteriaText(new TString(value));
+    return this;
+  }
+
+  public RxMode withPostDetectionFreqMin(Double value) {
+    setPostDetectionFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withPostDetectionFreqMax(Double value) {
+    setPostDetectionFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withProcessingGain(Double value) {
+    setProcessingGain(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withSpuriousRejection(Double value) {
+    setSpuriousRejection(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withImageRejection(Double value) {
+    setImageRejection(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withIntermodRejection(Double value) {
+    setIntermodRejection(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withAdjacentChannelSelectivity(Double value) {
+    setAdjacentChannelSelectivity(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withFreqTolerance(Double value) {
+    setFreqTolerance(new TDecimal(value));
+    return this;
+  }
+
+  public RxMode withFreqToleranceUnit(ListCFO value) {
+    setFreqToleranceUnit(new TString(value.value()));
+    return this;
+  }
+
+  public RxMode withModeName(String value) {
+    setModeName(new TString(value));
+    return this;
+  }
+
+  public RxMode withEmsClass(EmsClass... values) {
+    if (values != null) {
+      getEmsClass().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public RxMode withEmsClass(Collection<EmsClass> values) {
+    if (values != null) {
+      getEmsClass().addAll(values);
+    }
+    return this;
+  }
+
+  public RxMode withRxSignalTuning(RxSignalTuning... values) {
+    if (values != null) {
+      getRxSignalTuning().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public RxMode withRxSignalTuning(Collection<RxSignalTuning> values) {
+    if (values != null) {
+      getRxSignalTuning().addAll(values);
+    }
+    return this;
+  }
+
+  public RxMode withRxModulation(RxModulation... values) {
+    if (values != null) {
+      getRxModulation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public RxMode withRxModulation(Collection<RxModulation> values) {
+    if (values != null) {
+      getRxModulation().addAll(values);
+    }
+    return this;
+  }
+
+  public RxMode withBaseband(Baseband... values) {
+    if (values != null) {
+      getBaseband().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public RxMode withBaseband(Collection<Baseband> values) {
+    if (values != null) {
+      getBaseband().addAll(values);
+    }
+    return this;
+  }
+
+  public RxMode withFreqConversion(FreqConversion... values) {
+    if (values != null) {
+      getFreqConversion().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public RxMode withFreqConversion(Collection<FreqConversion> values) {
+    if (values != null) {
+      getFreqConversion().addAll(values);
+    }
+    return this;
+  }
+
+  public RxMode withSpreadSpectrum(SpreadSpectrum value) {
+    setSpreadSpectrum(value);
+    return this;
+  }
+
+  public RxMode withCurves(BigInteger... values) {
+    if (values != null) {
+      getCurves().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public RxMode withCurves(Collection<BigInteger> values) {
+    if (values != null) {
+      getCurves().addAll(values);
+    }
+    return this;
   }
 
 }

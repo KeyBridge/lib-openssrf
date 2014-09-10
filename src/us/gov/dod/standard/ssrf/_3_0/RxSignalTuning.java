@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN8;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -63,13 +67,17 @@ import javax.xml.bind.annotation.*;
 public class RxSignalTuning {
 
   @XmlElement(name = "FreqMin", required = true)
-  protected TFreqM freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "TuningStep", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> tuningStep;
-  @XmlElementRef(name = "NumPresetChannels", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN8> numPresetChannels;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "TuningStep", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal tuningStep;
+  @XmlElement(name = "NumPresetChannels", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN8.class)
+  private TInteger numPresetChannels;
 
   /**
    * Gets the value of the freqMin property.
@@ -77,7 +85,7 @@ public class RxSignalTuning {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -87,8 +95,12 @@ public class RxSignalTuning {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -98,7 +110,7 @@ public class RxSignalTuning {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -109,8 +121,12 @@ public class RxSignalTuning {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -120,7 +136,7 @@ public class RxSignalTuning {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getTuningStep() {
+  public TDecimal getTuningStep() {
     return tuningStep;
   }
 
@@ -131,8 +147,12 @@ public class RxSignalTuning {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setTuningStep(JAXBElement<TFreqM> value) {
+  public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
+  }
+
+  public boolean isSetTuningStep() {
+    return (this.tuningStep != null);
   }
 
   /**
@@ -142,7 +162,7 @@ public class RxSignalTuning {
    *         {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN8> getNumPresetChannels() {
+  public TInteger getNumPresetChannels() {
     return numPresetChannels;
   }
 
@@ -153,8 +173,32 @@ public class RxSignalTuning {
    *              {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
    * <p>
    */
-  public void setNumPresetChannels(JAXBElement<TUN8> value) {
+  public void setNumPresetChannels(TInteger value) {
     this.numPresetChannels = value;
+  }
+
+  public boolean isSetNumPresetChannels() {
+    return (this.numPresetChannels != null);
+  }
+
+  public RxSignalTuning withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public RxSignalTuning withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public RxSignalTuning withTuningStep(Double value) {
+    setTuningStep(new TDecimal(value));
+    return this;
+  }
+
+  public RxSignalTuning withNumPresetChannels(Integer value) {
+    setNumPresetChannels(new TInteger(value));
+    return this;
   }
 
 }

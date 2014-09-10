@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -60,9 +64,11 @@ import javax.xml.bind.annotation.*;
 public class RecordNote {
 
   @XmlElement(name = "NoteRef", required = true)
-  protected TSerial noteRef;
-  @XmlElementRef(name = "Comments", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> comments;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString noteRef;
+  @XmlElement(name = "Comments", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString comments;
 
   /**
    * Gets the value of the noteRef property.
@@ -70,7 +76,7 @@ public class RecordNote {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getNoteRef() {
+  public TString getNoteRef() {
     return noteRef;
   }
 
@@ -80,8 +86,12 @@ public class RecordNote {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setNoteRef(TSerial value) {
+  public void setNoteRef(TString value) {
     this.noteRef = value;
+  }
+
+  public boolean isSetNoteRef() {
+    return (this.noteRef != null);
   }
 
   /**
@@ -91,7 +101,7 @@ public class RecordNote {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getComments() {
+  public TString getComments() {
     return comments;
   }
 
@@ -102,8 +112,22 @@ public class RecordNote {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setComments(JAXBElement<TMEMO> value) {
+  public void setComments(TString value) {
     this.comments = value;
+  }
+
+  public boolean isSetComments() {
+    return (this.comments != null);
+  }
+
+  public RecordNote withNoteRef(String value) {
+    setNoteRef(new TString(value));
+    return this;
+  }
+
+  public RecordNote withComments(String value) {
+    setComments(new TString(value));
+    return this;
   }
 
 }

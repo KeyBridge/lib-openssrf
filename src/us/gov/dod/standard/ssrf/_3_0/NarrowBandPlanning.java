@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -62,10 +64,12 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class NarrowBandPlanning {
 
-  @XmlElementRef(name = "ChangeDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> changeDate;
-  @XmlElementRef(name = "NBFreq", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> nbFreq;
+  @XmlElement(name = "ChangeDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar changeDate;
+  @XmlElement(name = "NBFreq", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal nbFreq;
 
   /**
    * Gets the value of the changeDate property.
@@ -74,7 +78,7 @@ public class NarrowBandPlanning {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getChangeDate() {
+  public TCalendar getChangeDate() {
     return changeDate;
   }
 
@@ -85,8 +89,12 @@ public class NarrowBandPlanning {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setChangeDate(JAXBElement<TD> value) {
+  public void setChangeDate(TCalendar value) {
     this.changeDate = value;
+  }
+
+  public boolean isSetChangeDate() {
+    return (this.changeDate != null);
   }
 
   /**
@@ -96,7 +104,7 @@ public class NarrowBandPlanning {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getNBFreq() {
+  public TDecimal getNBFreq() {
     return nbFreq;
   }
 
@@ -107,8 +115,22 @@ public class NarrowBandPlanning {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setNBFreq(JAXBElement<TFreqM> value) {
+  public void setNBFreq(TDecimal value) {
     this.nbFreq = value;
+  }
+
+  public boolean isSetNBFreq() {
+    return (this.nbFreq != null);
+  }
+
+  public NarrowBandPlanning withChangeDate(Calendar value) {
+    setChangeDate(new TCalendar(value));
+    return this;
+  }
+
+  public NarrowBandPlanning withNBFreq(Double value) {
+    setNBFreq(new TDecimal(value));
+    return this;
   }
 
 }

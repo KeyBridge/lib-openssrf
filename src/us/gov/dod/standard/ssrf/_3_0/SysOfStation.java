@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS30;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -62,10 +63,12 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SysOfStation {
 
-  @XmlElementRef(name = "SysName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS30> sysName;
-  @XmlElementRef(name = "NumStations", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numStations;
+  @XmlElement(name = "SysName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString sysName;
+  @XmlElement(name = "NumStations", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numStations;
 
   /**
    * Gets the value of the sysName property.
@@ -74,7 +77,7 @@ public class SysOfStation {
    *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public JAXBElement<TS30> getSysName() {
+  public TString getSysName() {
     return sysName;
   }
 
@@ -85,8 +88,12 @@ public class SysOfStation {
    *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
    * <p>
    */
-  public void setSysName(JAXBElement<TS30> value) {
+  public void setSysName(TString value) {
     this.sysName = value;
+  }
+
+  public boolean isSetSysName() {
+    return (this.sysName != null);
   }
 
   /**
@@ -96,7 +103,7 @@ public class SysOfStation {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumStations() {
+  public TInteger getNumStations() {
     return numStations;
   }
 
@@ -107,8 +114,22 @@ public class SysOfStation {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumStations(JAXBElement<TUN9> value) {
+  public void setNumStations(TInteger value) {
     this.numStations = value;
+  }
+
+  public boolean isSetNumStations() {
+    return (this.numStations != null);
+  }
+
+  public SysOfStation withSysName(String value) {
+    setSysName(new TString(value));
+    return this;
+  }
+
+  public SysOfStation withNumStations(Integer value) {
+    setNumStations(new TInteger(value));
+    return this;
   }
 
 }

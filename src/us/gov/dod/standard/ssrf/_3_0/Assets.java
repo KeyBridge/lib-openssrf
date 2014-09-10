@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -36,7 +40,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Assets">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -61,11 +66,14 @@ import javax.xml.bind.annotation.*;
 public class Assets {
 
   @XmlElement(name = "Serial", required = true)
-  protected TSerial serial;
-  @XmlElementRef(name = "Authorised", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> authorised;
-  @XmlElementRef(name = "Available", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> available;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
+  @XmlElement(name = "Authorised", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger authorised;
+  @XmlElement(name = "Available", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger available;
 
   /**
    * Gets the value of the serial property.
@@ -73,7 +81,7 @@ public class Assets {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -83,8 +91,12 @@ public class Assets {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
   }
 
   /**
@@ -94,7 +106,7 @@ public class Assets {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getAuthorised() {
+  public TInteger getAuthorised() {
     return authorised;
   }
 
@@ -105,8 +117,12 @@ public class Assets {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setAuthorised(JAXBElement<TUN9> value) {
+  public void setAuthorised(TInteger value) {
     this.authorised = value;
+  }
+
+  public boolean isSetAuthorised() {
+    return (this.authorised != null);
   }
 
   /**
@@ -116,7 +132,7 @@ public class Assets {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getAvailable() {
+  public TInteger getAvailable() {
     return available;
   }
 
@@ -127,8 +143,27 @@ public class Assets {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setAvailable(JAXBElement<TUN9> value) {
+  public void setAvailable(TInteger value) {
     this.available = value;
+  }
+
+  public boolean isSetAvailable() {
+    return (this.available != null);
+  }
+
+  public Assets withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
+  }
+
+  public Assets withAuthorised(Integer value) {
+    setAuthorised(new TInteger(value));
+    return this;
+  }
+
+  public Assets withAvailable(Integer value) {
+    setAvailable(new TInteger(value));
+    return this;
   }
 
 }

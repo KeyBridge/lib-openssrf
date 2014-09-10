@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TIFNum;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCLO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -71,18 +72,23 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class FreqConversion {
 
-  @XmlElementRef(name = "StageNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TIFNum> stageNum;
-  @XmlElementRef(name = "OscillatorTuning", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCLO> oscillatorTuning;
-  @XmlElementRef(name = "LOFreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> loFreqMin;
-  @XmlElementRef(name = "LOFreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> loFreqMax;
-  @XmlElementRef(name = "IFMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> ifMin;
-  @XmlElementRef(name = "IFMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> ifMax;
+  @XmlElement(name = "StageNum", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterIFNUM.class)
+  private TInteger stageNum;
+  @XmlElement(name = "OscillatorTuning", required = false)
+  private TString oscillatorTuning;
+  @XmlElement(name = "LOFreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal loFreqMin;
+  @XmlElement(name = "LOFreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal loFreqMax;
+  @XmlElement(name = "IFMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal ifMin;
+  @XmlElement(name = "IFMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal ifMax;
 
   /**
    * Gets the value of the stageNum property.
@@ -91,7 +97,7 @@ public class FreqConversion {
    *         {@link JAXBElement }{@code <}{@link TIFNum }{@code >}
    * <p>
    */
-  public JAXBElement<TIFNum> getStageNum() {
+  public TInteger getStageNum() {
     return stageNum;
   }
 
@@ -102,8 +108,12 @@ public class FreqConversion {
    *              {@link JAXBElement }{@code <}{@link TIFNum }{@code >}
    * <p>
    */
-  public void setStageNum(JAXBElement<TIFNum> value) {
+  public void setStageNum(TInteger value) {
     this.stageNum = value;
+  }
+
+  public boolean isSetStageNum() {
+    return (this.stageNum != null);
   }
 
   /**
@@ -113,7 +123,7 @@ public class FreqConversion {
    *         {@link JAXBElement }{@code <}{@link TListCLO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCLO> getOscillatorTuning() {
+  public TString getOscillatorTuning() {
     return oscillatorTuning;
   }
 
@@ -124,8 +134,12 @@ public class FreqConversion {
    *              {@link JAXBElement }{@code <}{@link TListCLO }{@code >}
    * <p>
    */
-  public void setOscillatorTuning(JAXBElement<TListCLO> value) {
+  public void setOscillatorTuning(TString value) {
     this.oscillatorTuning = value;
+  }
+
+  public boolean isSetOscillatorTuning() {
+    return (this.oscillatorTuning != null);
   }
 
   /**
@@ -135,7 +149,7 @@ public class FreqConversion {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getLOFreqMin() {
+  public TDecimal getLOFreqMin() {
     return loFreqMin;
   }
 
@@ -146,8 +160,12 @@ public class FreqConversion {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setLOFreqMin(JAXBElement<TFreqM> value) {
+  public void setLOFreqMin(TDecimal value) {
     this.loFreqMin = value;
+  }
+
+  public boolean isSetLOFreqMin() {
+    return (this.loFreqMin != null);
   }
 
   /**
@@ -157,7 +175,7 @@ public class FreqConversion {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getLOFreqMax() {
+  public TDecimal getLOFreqMax() {
     return loFreqMax;
   }
 
@@ -168,8 +186,12 @@ public class FreqConversion {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setLOFreqMax(JAXBElement<TFreqM> value) {
+  public void setLOFreqMax(TDecimal value) {
     this.loFreqMax = value;
+  }
+
+  public boolean isSetLOFreqMax() {
+    return (this.loFreqMax != null);
   }
 
   /**
@@ -179,7 +201,7 @@ public class FreqConversion {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getIFMin() {
+  public TDecimal getIFMin() {
     return ifMin;
   }
 
@@ -190,8 +212,12 @@ public class FreqConversion {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setIFMin(JAXBElement<TFreqM> value) {
+  public void setIFMin(TDecimal value) {
     this.ifMin = value;
+  }
+
+  public boolean isSetIFMin() {
+    return (this.ifMin != null);
   }
 
   /**
@@ -201,7 +227,7 @@ public class FreqConversion {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getIFMax() {
+  public TDecimal getIFMax() {
     return ifMax;
   }
 
@@ -212,8 +238,42 @@ public class FreqConversion {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setIFMax(JAXBElement<TFreqM> value) {
+  public void setIFMax(TDecimal value) {
     this.ifMax = value;
+  }
+
+  public boolean isSetIFMax() {
+    return (this.ifMax != null);
+  }
+
+  public FreqConversion withStageNum(Integer value) {
+    setStageNum(new TInteger(value));
+    return this;
+  }
+
+  public FreqConversion withOscillatorTuning(ListCLO value) {
+    setOscillatorTuning(new TString(value.value()));
+    return this;
+  }
+
+  public FreqConversion withLOFreqMin(Double value) {
+    setLOFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public FreqConversion withLOFreqMax(Double value) {
+    setLOFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public FreqConversion withIFMin(Double value) {
+    setIFMin(new TDecimal(value));
+    return this;
+  }
+
+  public FreqConversion withIFMax(Double value) {
+    setIFMax(new TDecimal(value));
+    return this;
   }
 
 }

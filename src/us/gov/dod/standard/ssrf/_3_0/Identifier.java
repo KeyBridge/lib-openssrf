@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -36,7 +40,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Identifier">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -58,10 +63,12 @@ import javax.xml.bind.annotation.*;
 })
 public class Identifier {
 
-  @XmlElementRef(name = "Level", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> level;
+  @XmlElement(name = "Level", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString level;
   @XmlElement(name = "Name", required = true)
-  protected TS100 name;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString name;
 
   /**
    * Gets the value of the level property.
@@ -70,7 +77,7 @@ public class Identifier {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getLevel() {
+  public TString getLevel() {
     return level;
   }
 
@@ -81,8 +88,12 @@ public class Identifier {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setLevel(JAXBElement<TS25> value) {
+  public void setLevel(TString value) {
     this.level = value;
+  }
+
+  public boolean isSetLevel() {
+    return (this.level != null);
   }
 
   /**
@@ -91,7 +102,7 @@ public class Identifier {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -101,8 +112,22 @@ public class Identifier {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setName(TS100 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
+  }
+
+  public Identifier withLevel(String value) {
+    setLevel(new TString(value));
+    return this;
+  }
+
+  public Identifier withName(String value) {
+    setName(new TString(value));
+    return this;
   }
 
 }

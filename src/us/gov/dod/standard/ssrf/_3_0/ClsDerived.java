@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS30;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
+import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -64,11 +66,14 @@ import javax.xml.bind.annotation.XmlType;
 public class ClsDerived {
 
   @XmlElement(name = "Date", required = true)
-  protected TD date;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar date;
   @XmlElement(name = "Title", required = true)
-  protected TS30 title;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString title;
   @XmlElement(name = "Org", required = true)
-  protected TS30 org;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  private TString org;
 
   /**
    * Gets the value of the date property.
@@ -76,7 +81,7 @@ public class ClsDerived {
    * @return possible object is {@link TD }
    * <p>
    */
-  public TD getDate() {
+  public TCalendar getDate() {
     return date;
   }
 
@@ -86,8 +91,12 @@ public class ClsDerived {
    * @param value allowed object is {@link TD }
    * <p>
    */
-  public void setDate(TD value) {
+  public void setDate(TCalendar value) {
     this.date = value;
+  }
+
+  public boolean isSetDate() {
+    return (this.date != null);
   }
 
   /**
@@ -96,7 +105,7 @@ public class ClsDerived {
    * @return possible object is {@link TS30 }
    * <p>
    */
-  public TS30 getTitle() {
+  public TString getTitle() {
     return title;
   }
 
@@ -106,8 +115,12 @@ public class ClsDerived {
    * @param value allowed object is {@link TS30 }
    * <p>
    */
-  public void setTitle(TS30 value) {
+  public void setTitle(TString value) {
     this.title = value;
+  }
+
+  public boolean isSetTitle() {
+    return (this.title != null);
   }
 
   /**
@@ -116,7 +129,7 @@ public class ClsDerived {
    * @return possible object is {@link TS30 }
    * <p>
    */
-  public TS30 getOrg() {
+  public TString getOrg() {
     return org;
   }
 
@@ -126,8 +139,27 @@ public class ClsDerived {
    * @param value allowed object is {@link TS30 }
    * <p>
    */
-  public void setOrg(TS30 value) {
+  public void setOrg(TString value) {
     this.org = value;
+  }
+
+  public boolean isSetOrg() {
+    return (this.org != null);
+  }
+
+  public ClsDerived withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  public ClsDerived withTitle(String value) {
+    setTitle(new TString(value));
+    return this;
+  }
+
+  public ClsDerived withOrg(String value) {
+    setOrg(new TString(value));
+    return this;
   }
 
 }

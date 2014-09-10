@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS12;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -66,13 +68,17 @@ import javax.xml.bind.annotation.*;
 public class PairedFreq {
 
   @XmlElement(name = "Freq", required = true)
-  protected TFreqM freq;
-  @XmlElementRef(name = "AssignmentRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> assignmentRef;
-  @XmlElementRef(name = "PairedASN", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS12> pairedASN;
-  @XmlElementRef(name = "PairedType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> pairedType;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freq;
+  @XmlElement(name = "AssignmentRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString assignmentRef;
+  @XmlElement(name = "PairedASN", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS12.class)
+  private TString pairedASN;
+  @XmlElement(name = "PairedType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString pairedType;
 
   /**
    * Gets the value of the freq property.
@@ -80,7 +86,7 @@ public class PairedFreq {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreq() {
+  public TDecimal getFreq() {
     return freq;
   }
 
@@ -90,8 +96,12 @@ public class PairedFreq {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreq(TFreqM value) {
+  public void setFreq(TDecimal value) {
     this.freq = value;
+  }
+
+  public boolean isSetFreq() {
+    return (this.freq != null);
   }
 
   /**
@@ -101,7 +111,7 @@ public class PairedFreq {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getAssignmentRef() {
+  public TString getAssignmentRef() {
     return assignmentRef;
   }
 
@@ -112,8 +122,12 @@ public class PairedFreq {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setAssignmentRef(JAXBElement<TSerial> value) {
+  public void setAssignmentRef(TString value) {
     this.assignmentRef = value;
+  }
+
+  public boolean isSetAssignmentRef() {
+    return (this.assignmentRef != null);
   }
 
   /**
@@ -123,7 +137,7 @@ public class PairedFreq {
    *         {@link JAXBElement }{@code <}{@link TUS12 }{@code >}
    * <p>
    */
-  public JAXBElement<TUS12> getPairedASN() {
+  public TString getPairedASN() {
     return pairedASN;
   }
 
@@ -134,8 +148,12 @@ public class PairedFreq {
    *              {@link JAXBElement }{@code <}{@link TUS12 }{@code >}
    * <p>
    */
-  public void setPairedASN(JAXBElement<TUS12> value) {
+  public void setPairedASN(TString value) {
     this.pairedASN = value;
+  }
+
+  public boolean isSetPairedASN() {
+    return (this.pairedASN != null);
   }
 
   /**
@@ -145,7 +163,7 @@ public class PairedFreq {
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getPairedType() {
+  public TString getPairedType() {
     return pairedType;
   }
 
@@ -156,8 +174,32 @@ public class PairedFreq {
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setPairedType(JAXBElement<TS20> value) {
+  public void setPairedType(TString value) {
     this.pairedType = value;
+  }
+
+  public boolean isSetPairedType() {
+    return (this.pairedType != null);
+  }
+
+  public PairedFreq withFreq(Double value) {
+    setFreq(new TDecimal(value));
+    return this;
+  }
+
+  public PairedFreq withAssignmentRef(String value) {
+    setAssignmentRef(new TString(value));
+    return this;
+  }
+
+  public PairedFreq withPairedASN(String value) {
+    setPairedASN(new TString(value));
+    return this;
+  }
+
+  public PairedFreq withPairedType(String value) {
+    setPairedType(new TString(value));
+    return this;
   }
 
 }

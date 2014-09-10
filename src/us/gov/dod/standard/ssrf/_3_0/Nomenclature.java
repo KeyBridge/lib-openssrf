@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -38,7 +44,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Nomenclature">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -64,14 +71,17 @@ import javax.xml.bind.annotation.*;
 })
 public class Nomenclature {
 
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> type;
-  @XmlElementRef(name = "Level", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> level;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString type;
+  @XmlElement(name = "Level", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString level;
   @XmlElement(name = "Name", required = true)
-  protected TS100 name;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString name;
   @XmlElement(name = "Manufacturer")
-  protected List<Manufacturer> manufacturer;
+  private List<Manufacturer> manufacturer;
 
   /**
    * Gets the value of the type property.
@@ -80,7 +90,7 @@ public class Nomenclature {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -91,8 +101,12 @@ public class Nomenclature {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS25> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -102,7 +116,7 @@ public class Nomenclature {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getLevel() {
+  public TString getLevel() {
     return level;
   }
 
@@ -113,8 +127,12 @@ public class Nomenclature {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setLevel(JAXBElement<TS25> value) {
+  public void setLevel(TString value) {
     this.level = value;
+  }
+
+  public boolean isSetLevel() {
+    return (this.level != null);
   }
 
   /**
@@ -123,7 +141,7 @@ public class Nomenclature {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getName() {
+  public TString getName() {
     return name;
   }
 
@@ -133,8 +151,12 @@ public class Nomenclature {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setName(TS100 value) {
+  public void setName(TString value) {
     this.name = value;
+  }
+
+  public boolean isSetName() {
+    return (this.name != null);
   }
 
   /**
@@ -158,12 +180,50 @@ public class Nomenclature {
      * {@link Manufacturer }
    * <p>
    * <p>
+   * @return
    */
   public List<Manufacturer> getManufacturer() {
     if (manufacturer == null) {
       manufacturer = new ArrayList<>();
     }
     return this.manufacturer;
+  }
+
+  public boolean isSetManufacturer() {
+    return ((this.manufacturer != null) && (!this.manufacturer.isEmpty()));
+  }
+
+  public void unsetManufacturer() {
+    this.manufacturer = null;
+  }
+
+  public Nomenclature withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public Nomenclature withLevel(String value) {
+    setLevel(new TString(value));
+    return this;
+  }
+
+  public Nomenclature withName(String value) {
+    setName(new TString(value));
+    return this;
+  }
+
+  public Nomenclature withManufacturer(Manufacturer... values) {
+    if (values != null) {
+      getManufacturer().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Nomenclature withManufacturer(Collection<Manufacturer> values) {
+    if (values != null) {
+      getManufacturer().addAll(values);
+    }
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDistance;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -72,18 +72,23 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class StationLoc {
 
-  @XmlElementRef(name = "LocationExcluded", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> locationExcluded;
-  @XmlElementRef(name = "LocSatRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> locSatRef;
-  @XmlElementRef(name = "LocationRadius", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDistance> locationRadius;
-  @XmlElementRef(name = "ServiceVolumeLocRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> serviceVolumeLocRef;
-  @XmlElementRef(name = "ServiceVolumeRadius", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDistance> serviceVolumeRadius;
-  @XmlElementRef(name = "ServiceVolumeHeight", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> serviceVolumeHeight;
+  @XmlElement(name = "LocationExcluded", required = false)
+  private TString locationExcluded;
+  @XmlElement(name = "LocSatRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString locSatRef;
+  @XmlElement(name = "LocationRadius", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal locationRadius;
+  @XmlElement(name = "ServiceVolumeLocRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serviceVolumeLocRef;
+  @XmlElement(name = "ServiceVolumeRadius", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal serviceVolumeRadius;
+  @XmlElement(name = "ServiceVolumeHeight", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal serviceVolumeHeight;
 
   /**
    * Gets the value of the locationExcluded property.
@@ -92,7 +97,7 @@ public class StationLoc {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getLocationExcluded() {
+  public TString getLocationExcluded() {
     return locationExcluded;
   }
 
@@ -103,8 +108,12 @@ public class StationLoc {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setLocationExcluded(JAXBElement<TListCBO> value) {
+  public void setLocationExcluded(TString value) {
     this.locationExcluded = value;
+  }
+
+  public boolean isSetLocationExcluded() {
+    return (this.locationExcluded != null);
   }
 
   /**
@@ -114,7 +123,7 @@ public class StationLoc {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getLocSatRef() {
+  public TString getLocSatRef() {
     return locSatRef;
   }
 
@@ -125,8 +134,12 @@ public class StationLoc {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setLocSatRef(JAXBElement<TSerial> value) {
+  public void setLocSatRef(TString value) {
     this.locSatRef = value;
+  }
+
+  public boolean isSetLocSatRef() {
+    return (this.locSatRef != null);
   }
 
   /**
@@ -136,7 +149,7 @@ public class StationLoc {
    *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public JAXBElement<TDistance> getLocationRadius() {
+  public TDecimal getLocationRadius() {
     return locationRadius;
   }
 
@@ -147,8 +160,12 @@ public class StationLoc {
    *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public void setLocationRadius(JAXBElement<TDistance> value) {
+  public void setLocationRadius(TDecimal value) {
     this.locationRadius = value;
+  }
+
+  public boolean isSetLocationRadius() {
+    return (this.locationRadius != null);
   }
 
   /**
@@ -158,7 +175,7 @@ public class StationLoc {
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getServiceVolumeLocRef() {
+  public TString getServiceVolumeLocRef() {
     return serviceVolumeLocRef;
   }
 
@@ -169,8 +186,12 @@ public class StationLoc {
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setServiceVolumeLocRef(JAXBElement<TSerial> value) {
+  public void setServiceVolumeLocRef(TString value) {
     this.serviceVolumeLocRef = value;
+  }
+
+  public boolean isSetServiceVolumeLocRef() {
+    return (this.serviceVolumeLocRef != null);
   }
 
   /**
@@ -180,7 +201,7 @@ public class StationLoc {
    *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public JAXBElement<TDistance> getServiceVolumeRadius() {
+  public TDecimal getServiceVolumeRadius() {
     return serviceVolumeRadius;
   }
 
@@ -191,8 +212,12 @@ public class StationLoc {
    *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
    * <p>
    */
-  public void setServiceVolumeRadius(JAXBElement<TDistance> value) {
+  public void setServiceVolumeRadius(TDecimal value) {
     this.serviceVolumeRadius = value;
+  }
+
+  public boolean isSetServiceVolumeRadius() {
+    return (this.serviceVolumeRadius != null);
   }
 
   /**
@@ -202,7 +227,7 @@ public class StationLoc {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getServiceVolumeHeight() {
+  public TDecimal getServiceVolumeHeight() {
     return serviceVolumeHeight;
   }
 
@@ -213,8 +238,42 @@ public class StationLoc {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setServiceVolumeHeight(JAXBElement<TAltitude> value) {
+  public void setServiceVolumeHeight(TDecimal value) {
     this.serviceVolumeHeight = value;
+  }
+
+  public boolean isSetServiceVolumeHeight() {
+    return (this.serviceVolumeHeight != null);
+  }
+
+  public StationLoc withLocationExcluded(ListCBO value) {
+    setLocationExcluded(new TString(value.value()));
+    return this;
+  }
+
+  public StationLoc withLocSatRef(String value) {
+    setLocSatRef(new TString(value));
+    return this;
+  }
+
+  public StationLoc withLocationRadius(Double value) {
+    setLocationRadius(new TDecimal(value));
+    return this;
+  }
+
+  public StationLoc withServiceVolumeLocRef(String value) {
+    setServiceVolumeLocRef(new TString(value));
+    return this;
+  }
+
+  public StationLoc withServiceVolumeRadius(Double value) {
+    setServiceVolumeRadius(new TDecimal(value));
+    return this;
+  }
+
+  public StationLoc withServiceVolumeHeight(Double value) {
+    setServiceVolumeHeight(new TDecimal(value));
+    return this;
   }
 
 }

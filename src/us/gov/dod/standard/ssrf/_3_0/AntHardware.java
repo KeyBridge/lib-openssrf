@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -40,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="AntHardware">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -66,14 +67,18 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AntHardware {
 
-  @XmlElementRef(name = "FeedType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> feedType;
-  @XmlElementRef(name = "LeadType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> leadType;
-  @XmlElementRef(name = "ConnectorType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> connectorType;
-  @XmlElementRef(name = "FeedOrientation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> feedOrientation;
+  @XmlElement(name = "FeedType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString feedType;
+  @XmlElement(name = "LeadType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString leadType;
+  @XmlElement(name = "ConnectorType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString connectorType;
+  @XmlElement(name = "FeedOrientation", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString feedOrientation;
 
   /**
    * Gets the value of the feedType property.
@@ -82,7 +87,7 @@ public class AntHardware {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getFeedType() {
+  public TString getFeedType() {
     return feedType;
   }
 
@@ -93,8 +98,12 @@ public class AntHardware {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setFeedType(JAXBElement<TS50> value) {
+  public void setFeedType(TString value) {
     this.feedType = value;
+  }
+
+  public boolean isSetFeedType() {
+    return (this.feedType != null);
   }
 
   /**
@@ -104,7 +113,7 @@ public class AntHardware {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getLeadType() {
+  public TString getLeadType() {
     return leadType;
   }
 
@@ -115,8 +124,12 @@ public class AntHardware {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setLeadType(JAXBElement<TS25> value) {
+  public void setLeadType(TString value) {
     this.leadType = value;
+  }
+
+  public boolean isSetLeadType() {
+    return (this.leadType != null);
   }
 
   /**
@@ -126,7 +139,7 @@ public class AntHardware {
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getConnectorType() {
+  public TString getConnectorType() {
     return connectorType;
   }
 
@@ -137,8 +150,12 @@ public class AntHardware {
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setConnectorType(JAXBElement<TS25> value) {
+  public void setConnectorType(TString value) {
     this.connectorType = value;
+  }
+
+  public boolean isSetConnectorType() {
+    return (this.connectorType != null);
   }
 
   /**
@@ -148,7 +165,7 @@ public class AntHardware {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getFeedOrientation() {
+  public TString getFeedOrientation() {
     return feedOrientation;
   }
 
@@ -159,8 +176,32 @@ public class AntHardware {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setFeedOrientation(JAXBElement<TS10> value) {
+  public void setFeedOrientation(TString value) {
     this.feedOrientation = value;
+  }
+
+  public boolean isSetFeedOrientation() {
+    return (this.feedOrientation != null);
+  }
+
+  public AntHardware withFeedType(String value) {
+    setFeedType(new TString(value));
+    return this;
+  }
+
+  public AntHardware withLeadType(String value) {
+    setLeadType(new TString(value));
+    return this;
+  }
+
+  public AntHardware withConnectorType(String value) {
+    setConnectorType(new TString(value));
+    return this;
+  }
+
+  public AntHardware withFeedOrientation(String value) {
+    setFeedOrientation(new TString(value));
+    return this;
   }
 
 }

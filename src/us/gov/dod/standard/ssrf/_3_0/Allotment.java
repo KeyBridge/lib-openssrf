@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -42,25 +43,26 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Allotment">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="UsageType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="DateResponseRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview"/>
- *         &lt;element name="Requirement" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="LocationRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRef" maxOccurs="unbounded"/>
- *         &lt;element name="Emission" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Emission" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AllotFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AllotFreq" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Allotment"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
+ * &lt;element name="UsageType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
+ * minOccurs="0"/> &lt;element name="DateResponseRequired"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview"/>
+ * &lt;element name="Requirement"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="LocationRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRef"
+ * maxOccurs="unbounded"/> &lt;element name="Emission"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Emission" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="AllotFreq"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AllotFreq" maxOccurs="unbounded"/>
+ * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -80,33 +82,39 @@ import javax.xml.bind.annotation.*;
   "emission",
   "allotFreq"
 })
-public class Allotment
-  extends Common {
+public class Allotment extends Common {
 
-  @XmlElementRef(name = "Title", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> title;
-  @XmlElementRef(name = "UsageType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> usageType;
-  @XmlElementRef(name = "DateResponseRequired", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> dateResponseRequired;
+  @XmlElement(name = "Title", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString title;
+  @XmlElement(name = "UsageType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString usageType;
+  @XmlElement(name = "DateResponseRequired", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar dateResponseRequired;
   @XmlElement(name = "EffectiveDate", required = true)
-  protected TD effectiveDate;
-  @XmlElementRef(name = "ExpirationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expirationDate;
-  @XmlElementRef(name = "ReviewDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> reviewDate;
-  @XmlElementRef(name = "Requirement", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> requirement;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar effectiveDate;
+  @XmlElement(name = "ExpirationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expirationDate;
+  @XmlElement(name = "ReviewDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar reviewDate;
+  @XmlElement(name = "Requirement", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString requirement;
   @XmlElement(name = "Project")
-  protected List<Project> project;
+  private List<Project> project;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "LocationRef", required = true, nillable = true)
-  protected List<LocationRef> locationRef;
+  private List<LocationRef> locationRef;
   @XmlElement(name = "Emission")
-  protected List<Emission> emission;
+  private List<Emission> emission;
   @XmlElement(name = "AllotFreq", required = true)
-  protected List<AllotFreq> allotFreq;
+  private List<AllotFreq> allotFreq;
 
   /**
    * Gets the value of the title property.
@@ -115,7 +123,7 @@ public class Allotment
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getTitle() {
+  public TString getTitle() {
     return title;
   }
 
@@ -126,8 +134,12 @@ public class Allotment
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setTitle(JAXBElement<TS100> value) {
+  public void setTitle(TString value) {
     this.title = value;
+  }
+
+  public boolean isSetTitle() {
+    return (this.title != null);
   }
 
   /**
@@ -137,7 +149,7 @@ public class Allotment
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getUsageType() {
+  public TString getUsageType() {
     return usageType;
   }
 
@@ -148,8 +160,12 @@ public class Allotment
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setUsageType(JAXBElement<TS25> value) {
+  public void setUsageType(TString value) {
     this.usageType = value;
+  }
+
+  public boolean isSetUsageType() {
+    return (this.usageType != null);
   }
 
   /**
@@ -159,7 +175,7 @@ public class Allotment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDateResponseRequired() {
+  public TCalendar getDateResponseRequired() {
     return dateResponseRequired;
   }
 
@@ -170,8 +186,12 @@ public class Allotment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDateResponseRequired(JAXBElement<TD> value) {
+  public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
+  }
+
+  public boolean isSetDateResponseRequired() {
+    return (this.dateResponseRequired != null);
   }
 
   /**
@@ -180,7 +200,7 @@ public class Allotment
    * @return possible object is {@link TD }
    * <p>
    */
-  public TD getEffectiveDate() {
+  public TCalendar getEffectiveDate() {
     return effectiveDate;
   }
 
@@ -190,8 +210,12 @@ public class Allotment
    * @param value allowed object is {@link TD }
    * <p>
    */
-  public void setEffectiveDate(TD value) {
+  public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
+  }
+
+  public boolean isSetEffectiveDate() {
+    return (this.effectiveDate != null);
   }
 
   /**
@@ -201,7 +225,7 @@ public class Allotment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpirationDate() {
+  public TCalendar getExpirationDate() {
     return expirationDate;
   }
 
@@ -212,8 +236,12 @@ public class Allotment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpirationDate(JAXBElement<TD> value) {
+  public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
+  }
+
+  public boolean isSetExpirationDate() {
+    return (this.expirationDate != null);
   }
 
   /**
@@ -223,7 +251,7 @@ public class Allotment
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getReviewDate() {
+  public TCalendar getReviewDate() {
     return reviewDate;
   }
 
@@ -234,8 +262,12 @@ public class Allotment
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setReviewDate(JAXBElement<TD> value) {
+  public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
+  }
+
+  public boolean isSetReviewDate() {
+    return (this.reviewDate != null);
   }
 
   /**
@@ -245,7 +277,7 @@ public class Allotment
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getRequirement() {
+  public TString getRequirement() {
     return requirement;
   }
 
@@ -256,8 +288,12 @@ public class Allotment
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setRequirement(JAXBElement<TMEMO> value) {
+  public void setRequirement(TString value) {
     this.requirement = value;
+  }
+
+  public boolean isSetRequirement() {
+    return (this.requirement != null);
   }
 
   /**
@@ -280,12 +316,21 @@ public class Allotment
    * Objects of the following type(s) are allowed in the list {@link Project }
    * <p>
    * <p>
+   * @return
    */
   public List<Project> getProject() {
     if (project == null) {
       project = new ArrayList<>();
     }
     return this.project;
+  }
+
+  public boolean isSetProject() {
+    return ((this.project != null) && (!this.project.isEmpty()));
+  }
+
+  public void unsetProject() {
+    this.project = null;
   }
 
   /**
@@ -309,12 +354,21 @@ public class Allotment
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -338,12 +392,21 @@ public class Allotment
      * {@link LocationRef }
    * <p>
    * <p>
+   * @return
    */
   public List<LocationRef> getLocationRef() {
     if (locationRef == null) {
       locationRef = new ArrayList<>();
     }
     return this.locationRef;
+  }
+
+  public boolean isSetLocationRef() {
+    return ((this.locationRef != null) && (!this.locationRef.isEmpty()));
+  }
+
+  public void unsetLocationRef() {
+    this.locationRef = null;
   }
 
   /**
@@ -366,12 +429,21 @@ public class Allotment
    * Objects of the following type(s) are allowed in the list {@link Emission }
    * <p>
    * <p>
+   * @return
    */
   public List<Emission> getEmission() {
     if (emission == null) {
       emission = new ArrayList<>();
     }
     return this.emission;
+  }
+
+  public boolean isSetEmission() {
+    return ((this.emission != null) && (!this.emission.isEmpty()));
+  }
+
+  public void unsetEmission() {
+    this.emission = null;
   }
 
   /**
@@ -394,12 +466,126 @@ public class Allotment
    * Objects of the following type(s) are allowed in the list {@link AllotFreq }
    * <p>
    * <p>
+   * @return
    */
   public List<AllotFreq> getAllotFreq() {
     if (allotFreq == null) {
       allotFreq = new ArrayList<>();
     }
     return this.allotFreq;
+  }
+
+  public boolean isSetAllotFreq() {
+    return ((this.allotFreq != null) && (!this.allotFreq.isEmpty()));
+  }
+
+  public void unsetAllotFreq() {
+    this.allotFreq = null;
+  }
+
+  public Allotment withTitle(String value) {
+    setTitle(new TString(value));
+    return this;
+  }
+
+  public Allotment withUsageType(String value) {
+    setUsageType(new TString(value));
+    return this;
+  }
+
+  public Allotment withDateResponseRequired(Calendar value) {
+    setDateResponseRequired(new TCalendar(value));
+    return this;
+  }
+
+  public Allotment withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  public Allotment withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Allotment withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  public Allotment withRequirement(String value) {
+    setRequirement(new TString(value));
+    return this;
+  }
+
+  public Allotment withProject(Project... values) {
+    if (values != null) {
+      getProject().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allotment withProject(Collection<Project> values) {
+    if (values != null) {
+      getProject().addAll(values);
+    }
+    return this;
+  }
+
+  public Allotment withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allotment withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Allotment withLocationRef(LocationRef... values) {
+    if (values != null) {
+      getLocationRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allotment withLocationRef(Collection<LocationRef> values) {
+    if (values != null) {
+      getLocationRef().addAll(values);
+    }
+    return this;
+  }
+
+  public Allotment withEmission(Emission... values) {
+    if (values != null) {
+      getEmission().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allotment withEmission(Collection<Emission> values) {
+    if (values != null) {
+      getEmission().addAll(values);
+    }
+    return this;
+  }
+
+  public Allotment withAllotFreq(AllotFreq... values) {
+    if (values != null) {
+      getAllotFreq().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Allotment withAllotFreq(Collection<AllotFreq> values) {
+    if (values != null) {
+      getAllotFreq().addAll(values);
+    }
+    return this;
   }
 
 }

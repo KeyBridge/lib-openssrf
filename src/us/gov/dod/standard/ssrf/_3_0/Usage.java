@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS5;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -65,12 +65,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Usage {
 
-  @XmlElementRef(name = "EqpFnct", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> eqpFnct;
-  @XmlElementRef(name = "StnClass", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS5> stnClass;
-  @XmlElementRef(name = "RadioService", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> radioService;
+  @XmlElement(name = "EqpFnct", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString eqpFnct;
+  @XmlElement(name = "StnClass", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS5.class)
+  private TString stnClass;
+  @XmlElement(name = "RadioService", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString radioService;
 
   /**
    * Gets the value of the eqpFnct property.
@@ -79,7 +82,7 @@ public class Usage {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getEqpFnct() {
+  public TString getEqpFnct() {
     return eqpFnct;
   }
 
@@ -90,8 +93,12 @@ public class Usage {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setEqpFnct(JAXBElement<TS50> value) {
+  public void setEqpFnct(TString value) {
     this.eqpFnct = value;
+  }
+
+  public boolean isSetEqpFnct() {
+    return (this.eqpFnct != null);
   }
 
   /**
@@ -101,7 +108,7 @@ public class Usage {
    *         {@link JAXBElement }{@code <}{@link TS5 }{@code >}
    * <p>
    */
-  public JAXBElement<TS5> getStnClass() {
+  public TString getStnClass() {
     return stnClass;
   }
 
@@ -112,8 +119,12 @@ public class Usage {
    *              {@link JAXBElement }{@code <}{@link TS5 }{@code >}
    * <p>
    */
-  public void setStnClass(JAXBElement<TS5> value) {
+  public void setStnClass(TString value) {
     this.stnClass = value;
+  }
+
+  public boolean isSetStnClass() {
+    return (this.stnClass != null);
   }
 
   /**
@@ -123,7 +134,7 @@ public class Usage {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getRadioService() {
+  public TString getRadioService() {
     return radioService;
   }
 
@@ -134,8 +145,27 @@ public class Usage {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setRadioService(JAXBElement<TS100> value) {
+  public void setRadioService(TString value) {
     this.radioService = value;
+  }
+
+  public boolean isSetRadioService() {
+    return (this.radioService != null);
+  }
+
+  public Usage withEqpFnct(String value) {
+    setEqpFnct(new TString(value));
+    return this;
+  }
+
+  public Usage withStnClass(String value) {
+    setStnClass(new TString(value));
+    return this;
+  }
+
+  public Usage withRadioService(String value) {
+    setRadioService(new TString(value));
+    return this;
   }
 
 }

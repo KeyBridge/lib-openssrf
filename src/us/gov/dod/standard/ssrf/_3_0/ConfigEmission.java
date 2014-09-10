@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TEmsDes;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -64,12 +65,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ConfigEmission {
 
-  @XmlElementRef(name = "EmsClass", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TEmsDes> emsClass;
-  @XmlElementRef(name = "NecessaryBwMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> necessaryBwMax;
-  @XmlElementRef(name = "NecessaryBwMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> necessaryBwMin;
+  @XmlElement(name = "EmsClass", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterEMSDES.class)
+  private TString emsClass;
+  @XmlElement(name = "NecessaryBwMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal necessaryBwMax;
+  @XmlElement(name = "NecessaryBwMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal necessaryBwMin;
 
   /**
    * Gets the value of the emsClass property.
@@ -78,7 +82,7 @@ public class ConfigEmission {
    *         {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
    * <p>
    */
-  public JAXBElement<TEmsDes> getEmsClass() {
+  public TString getEmsClass() {
     return emsClass;
   }
 
@@ -89,8 +93,12 @@ public class ConfigEmission {
    *              {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
    * <p>
    */
-  public void setEmsClass(JAXBElement<TEmsDes> value) {
+  public void setEmsClass(TString value) {
     this.emsClass = value;
+  }
+
+  public boolean isSetEmsClass() {
+    return (this.emsClass != null);
   }
 
   /**
@@ -100,7 +108,7 @@ public class ConfigEmission {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getNecessaryBwMax() {
+  public TDecimal getNecessaryBwMax() {
     return necessaryBwMax;
   }
 
@@ -111,8 +119,12 @@ public class ConfigEmission {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setNecessaryBwMax(JAXBElement<TFreqM> value) {
+  public void setNecessaryBwMax(TDecimal value) {
     this.necessaryBwMax = value;
+  }
+
+  public boolean isSetNecessaryBwMax() {
+    return (this.necessaryBwMax != null);
   }
 
   /**
@@ -122,7 +134,7 @@ public class ConfigEmission {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getNecessaryBwMin() {
+  public TDecimal getNecessaryBwMin() {
     return necessaryBwMin;
   }
 
@@ -133,8 +145,27 @@ public class ConfigEmission {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setNecessaryBwMin(JAXBElement<TFreqM> value) {
+  public void setNecessaryBwMin(TDecimal value) {
     this.necessaryBwMin = value;
+  }
+
+  public boolean isSetNecessaryBwMin() {
+    return (this.necessaryBwMin != null);
+  }
+
+  public ConfigEmission withEmsClass(String value) {
+    setEmsClass(new TString(value));
+    return this;
+  }
+
+  public ConfigEmission withNecessaryBwMax(Double value) {
+    setNecessaryBwMax(new TDecimal(value));
+    return this;
+  }
+
+  public ConfigEmission withNecessaryBwMin(Double value) {
+    setNecessaryBwMin(new TDecimal(value));
+    return this;
   }
 
 }

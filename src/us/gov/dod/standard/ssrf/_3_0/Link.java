@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS24;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS150;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -77,23 +82,27 @@ import javax.xml.bind.annotation.*;
 public class Link {
 
   @XmlElement(name = "LinkID", required = true)
-  protected TS100 linkID;
-  @XmlElementRef(name = "IntermediateFunction", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS150> intermediateFunction;
-  @XmlElementRef(name = "MajorFunction", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS150> majorFunction;
-  @XmlElementRef(name = "LinkName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS24> linkName;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString linkID;
+  @XmlElement(name = "IntermediateFunction", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS150.class)
+  private TString intermediateFunction;
+  @XmlElement(name = "MajorFunction", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS150.class)
+  private TString majorFunction;
+  @XmlElement(name = "LinkName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS24.class)
+  private TString linkName;
   @XmlElement(name = "Tuning")
-  protected List<Tuning> tuning;
+  private List<Tuning> tuning;
   @XmlElement(name = "StationConfig", required = true)
-  protected List<StationConfig> stationConfig;
+  private List<StationConfig> stationConfig;
   @XmlElement(name = "Assigned")
-  protected List<Assigned> assigned;
+  private List<Assigned> assigned;
   @XmlElement(name = "DCSTrunk", nillable = true)
-  protected List<DCSTrunk> dcsTrunk;
+  private List<DCSTrunk> dcsTrunk;
   @XmlElement(name = "DetailedFunction", nillable = true)
-  protected List<DetailedFunction> detailedFunction;
+  private List<DetailedFunction> detailedFunction;
 
   /**
    * Gets the value of the linkID property.
@@ -101,7 +110,7 @@ public class Link {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getLinkID() {
+  public TString getLinkID() {
     return linkID;
   }
 
@@ -111,8 +120,12 @@ public class Link {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setLinkID(TS100 value) {
+  public void setLinkID(TString value) {
     this.linkID = value;
+  }
+
+  public boolean isSetLinkID() {
+    return (this.linkID != null);
   }
 
   /**
@@ -122,7 +135,7 @@ public class Link {
    *         {@link JAXBElement }{@code <}{@link TS150 }{@code >}
    * <p>
    */
-  public JAXBElement<TS150> getIntermediateFunction() {
+  public TString getIntermediateFunction() {
     return intermediateFunction;
   }
 
@@ -133,8 +146,12 @@ public class Link {
    *              {@link JAXBElement }{@code <}{@link TS150 }{@code >}
    * <p>
    */
-  public void setIntermediateFunction(JAXBElement<TS150> value) {
+  public void setIntermediateFunction(TString value) {
     this.intermediateFunction = value;
+  }
+
+  public boolean isSetIntermediateFunction() {
+    return (this.intermediateFunction != null);
   }
 
   /**
@@ -144,7 +161,7 @@ public class Link {
    *         {@link JAXBElement }{@code <}{@link TS150 }{@code >}
    * <p>
    */
-  public JAXBElement<TS150> getMajorFunction() {
+  public TString getMajorFunction() {
     return majorFunction;
   }
 
@@ -155,8 +172,12 @@ public class Link {
    *              {@link JAXBElement }{@code <}{@link TS150 }{@code >}
    * <p>
    */
-  public void setMajorFunction(JAXBElement<TS150> value) {
+  public void setMajorFunction(TString value) {
     this.majorFunction = value;
+  }
+
+  public boolean isSetMajorFunction() {
+    return (this.majorFunction != null);
   }
 
   /**
@@ -166,7 +187,7 @@ public class Link {
    *         {@link JAXBElement }{@code <}{@link TS24 }{@code >}
    * <p>
    */
-  public JAXBElement<TS24> getLinkName() {
+  public TString getLinkName() {
     return linkName;
   }
 
@@ -177,8 +198,12 @@ public class Link {
    *              {@link JAXBElement }{@code <}{@link TS24 }{@code >}
    * <p>
    */
-  public void setLinkName(JAXBElement<TS24> value) {
+  public void setLinkName(TString value) {
     this.linkName = value;
+  }
+
+  public boolean isSetLinkName() {
+    return (this.linkName != null);
   }
 
   /**
@@ -201,12 +226,21 @@ public class Link {
    * Objects of the following type(s) are allowed in the list {@link Tuning }
    * <p>
    * <p>
+   * @return
    */
   public List<Tuning> getTuning() {
     if (tuning == null) {
       tuning = new ArrayList<>();
     }
     return this.tuning;
+  }
+
+  public boolean isSetTuning() {
+    return ((this.tuning != null) && (!this.tuning.isEmpty()));
+  }
+
+  public void unsetTuning() {
+    this.tuning = null;
   }
 
   /**
@@ -230,12 +264,21 @@ public class Link {
      * {@link StationConfig }
    * <p>
    * <p>
+   * @return
    */
   public List<StationConfig> getStationConfig() {
     if (stationConfig == null) {
       stationConfig = new ArrayList<>();
     }
     return this.stationConfig;
+  }
+
+  public boolean isSetStationConfig() {
+    return ((this.stationConfig != null) && (!this.stationConfig.isEmpty()));
+  }
+
+  public void unsetStationConfig() {
+    this.stationConfig = null;
   }
 
   /**
@@ -258,12 +301,21 @@ public class Link {
    * Objects of the following type(s) are allowed in the list {@link Assigned }
    * <p>
    * <p>
+   * @return
    */
   public List<Assigned> getAssigned() {
     if (assigned == null) {
       assigned = new ArrayList<>();
     }
     return this.assigned;
+  }
+
+  public boolean isSetAssigned() {
+    return ((this.assigned != null) && (!this.assigned.isEmpty()));
+  }
+
+  public void unsetAssigned() {
+    this.assigned = null;
   }
 
   /**
@@ -286,12 +338,21 @@ public class Link {
    * Objects of the following type(s) are allowed in the list {@link DCSTrunk }
    * <p>
    * <p>
+   * @return
    */
   public List<DCSTrunk> getDCSTrunk() {
     if (dcsTrunk == null) {
       dcsTrunk = new ArrayList<>();
     }
     return this.dcsTrunk;
+  }
+
+  public boolean isSetDCSTrunk() {
+    return ((this.dcsTrunk != null) && (!this.dcsTrunk.isEmpty()));
+  }
+
+  public void unsetDCSTrunk() {
+    this.dcsTrunk = null;
   }
 
   /**
@@ -315,12 +376,111 @@ public class Link {
      * {@link DetailedFunction }
    * <p>
    * <p>
+   * @return
    */
   public List<DetailedFunction> getDetailedFunction() {
     if (detailedFunction == null) {
       detailedFunction = new ArrayList<>();
     }
     return this.detailedFunction;
+  }
+
+  public boolean isSetDetailedFunction() {
+    return ((this.detailedFunction != null) && (!this.detailedFunction.isEmpty()));
+  }
+
+  public void unsetDetailedFunction() {
+    this.detailedFunction = null;
+  }
+
+  public Link withLinkID(String value) {
+    setLinkID(new TString(value));
+    return this;
+  }
+
+  public Link withIntermediateFunction(String value) {
+    setIntermediateFunction(new TString(value));
+    return this;
+  }
+
+  public Link withMajorFunction(String value) {
+    setMajorFunction(new TString(value));
+    return this;
+  }
+
+  public Link withLinkName(String value) {
+    setLinkName(new TString(value));
+    return this;
+  }
+
+  public Link withTuning(Tuning... values) {
+    if (values != null) {
+      getTuning().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Link withTuning(Collection<Tuning> values) {
+    if (values != null) {
+      getTuning().addAll(values);
+    }
+    return this;
+  }
+
+  public Link withStationConfig(StationConfig... values) {
+    if (values != null) {
+      getStationConfig().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Link withStationConfig(Collection<StationConfig> values) {
+    if (values != null) {
+      getStationConfig().addAll(values);
+    }
+    return this;
+  }
+
+  public Link withAssigned(Assigned... values) {
+    if (values != null) {
+      getAssigned().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Link withAssigned(Collection<Assigned> values) {
+    if (values != null) {
+      getAssigned().addAll(values);
+    }
+    return this;
+  }
+
+  public Link withDCSTrunk(DCSTrunk... values) {
+    if (values != null) {
+      getDCSTrunk().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Link withDCSTrunk(Collection<DCSTrunk> values) {
+    if (values != null) {
+      getDCSTrunk().addAll(values);
+    }
+    return this;
+  }
+
+  public Link withDetailedFunction(DetailedFunction... values) {
+    if (values != null) {
+      getDetailedFunction().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Link withDetailedFunction(Collection<DetailedFunction> values) {
+    if (values != null) {
+      getDetailedFunction().addAll(values);
+    }
+    return this;
   }
 
 }

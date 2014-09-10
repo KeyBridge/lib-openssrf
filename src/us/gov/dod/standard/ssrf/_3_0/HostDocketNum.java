@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS35;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -59,7 +61,8 @@ import javax.xml.bind.annotation.XmlType;
 public class HostDocketNum {
 
   @XmlElement(name = "HostDocketNum", required = true)
-  protected TS35 hostDocketNum;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS35.class)
+  private TString hostDocketNum;
 
   /**
    * Gets the value of the hostDocketNum property.
@@ -67,7 +70,7 @@ public class HostDocketNum {
    * @return possible object is {@link TS35 }
    * <p>
    */
-  public TS35 getHostDocketNum() {
+  public TString getHostDocketNum() {
     return hostDocketNum;
   }
 
@@ -77,8 +80,17 @@ public class HostDocketNum {
    * @param value allowed object is {@link TS35 }
    * <p>
    */
-  public void setHostDocketNum(TS35 value) {
+  public void setHostDocketNum(TString value) {
     this.hostDocketNum = value;
+  }
+
+  public boolean isSetHostDocketNum() {
+    return (this.hostDocketNum != null);
+  }
+
+  public HostDocketNum withHostDocketNum(String value) {
+    setHostDocketNum(new TString(value));
+    return this;
   }
 
 }

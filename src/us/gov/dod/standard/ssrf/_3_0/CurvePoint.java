@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqOffset;
-import us.gov.dod.standard.ssrf._3_0.datatype.TCurvePointLevel;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -62,9 +63,11 @@ import javax.xml.bind.annotation.XmlType;
 public class CurvePoint {
 
   @XmlElement(name = "Offset", required = true)
-  protected TFreqOffset offset;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQOFFSET.class)
+  private TDecimal offset;
   @XmlElement(name = "Level", required = true)
-  protected TCurvePointLevel level;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterCURVEPOINTLEVEL.class)
+  private TDecimal level;
 
   /**
    * Gets the value of the offset property.
@@ -72,7 +75,7 @@ public class CurvePoint {
    * @return possible object is {@link TFreqOffset }
    * <p>
    */
-  public TFreqOffset getOffset() {
+  public TDecimal getOffset() {
     return offset;
   }
 
@@ -82,8 +85,12 @@ public class CurvePoint {
    * @param value allowed object is {@link TFreqOffset }
    * <p>
    */
-  public void setOffset(TFreqOffset value) {
+  public void setOffset(TDecimal value) {
     this.offset = value;
+  }
+
+  public boolean isSetOffset() {
+    return (this.offset != null);
   }
 
   /**
@@ -92,7 +99,7 @@ public class CurvePoint {
    * @return possible object is {@link TCurvePointLevel }
    * <p>
    */
-  public TCurvePointLevel getLevel() {
+  public TDecimal getLevel() {
     return level;
   }
 
@@ -102,8 +109,22 @@ public class CurvePoint {
    * @param value allowed object is {@link TCurvePointLevel }
    * <p>
    */
-  public void setLevel(TCurvePointLevel value) {
+  public void setLevel(TDecimal value) {
     this.level = value;
+  }
+
+  public boolean isSetLevel() {
+    return (this.level != null);
+  }
+
+  public CurvePoint withOffset(Double value) {
+    setOffset(new TDecimal(value));
+    return this;
+  }
+
+  public CurvePoint withLevel(Double value) {
+    setLevel(new TDecimal(value));
+    return this;
   }
 
 }

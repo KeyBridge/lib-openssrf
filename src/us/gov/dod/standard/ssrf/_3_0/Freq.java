@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUS5;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -38,19 +44,18 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
- * &lt;complexType name="Freq">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnFreqBase">
- *       &lt;sequence>
- *         &lt;element name="TAD" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS5" minOccurs="0"/>
- *         &lt;element name="LegacyNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="PairedFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}PairedFreq" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="NarrowBandPlanning" type="{urn:us:gov:dod:standard:ssrf:3.0.0}NarrowBandPlanning" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * <
+ * pre>
+ * &lt;complexType name="Freq"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnFreqBase"> &lt;sequence>
+ * &lt;element name="TAD" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS5"
+ * minOccurs="0"/> &lt;element name="LegacyNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/> &lt;element
+ * name="PairedFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}PairedFreq"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="NarrowBandPlanning"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}NarrowBandPlanning"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/extension>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -62,17 +67,18 @@ import javax.xml.bind.annotation.*;
   "pairedFreq",
   "narrowBandPlanning"
 })
-public class Freq
-  extends AsgnFreqBase {
+public class Freq extends AsgnFreqBase {
 
-  @XmlElementRef(name = "TAD", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUS5> tad;
-  @XmlElementRef(name = "LegacyNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> legacyNum;
+  @XmlElement(name = "TAD", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS5.class)
+  private TString tad;
+  @XmlElement(name = "LegacyNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString legacyNum;
   @XmlElement(name = "PairedFreq")
-  protected List<PairedFreq> pairedFreq;
+  private List<PairedFreq> pairedFreq;
   @XmlElement(name = "NarrowBandPlanning")
-  protected List<NarrowBandPlanning> narrowBandPlanning;
+  private List<NarrowBandPlanning> narrowBandPlanning;
 
   /**
    * Gets the value of the tad property.
@@ -81,7 +87,7 @@ public class Freq
    *         {@link JAXBElement }{@code <}{@link TUS5 }{@code >}
    * <p>
    */
-  public JAXBElement<TUS5> getTAD() {
+  public TString getTAD() {
     return tad;
   }
 
@@ -92,8 +98,12 @@ public class Freq
    *              {@link JAXBElement }{@code <}{@link TUS5 }{@code >}
    * <p>
    */
-  public void setTAD(JAXBElement<TUS5> value) {
+  public void setTAD(TString value) {
     this.tad = value;
+  }
+
+  public boolean isSetTAD() {
+    return (this.tad != null);
   }
 
   /**
@@ -103,7 +113,7 @@ public class Freq
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getLegacyNum() {
+  public TString getLegacyNum() {
     return legacyNum;
   }
 
@@ -114,8 +124,12 @@ public class Freq
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setLegacyNum(JAXBElement<TS20> value) {
+  public void setLegacyNum(TString value) {
     this.legacyNum = value;
+  }
+
+  public boolean isSetLegacyNum() {
+    return (this.legacyNum != null);
   }
 
   /**
@@ -139,12 +153,21 @@ public class Freq
      * {@link PairedFreq }
    * <p>
    * <p>
+   * @return
    */
   public List<PairedFreq> getPairedFreq() {
     if (pairedFreq == null) {
       pairedFreq = new ArrayList<>();
     }
     return this.pairedFreq;
+  }
+
+  public boolean isSetPairedFreq() {
+    return ((this.pairedFreq != null) && (!this.pairedFreq.isEmpty()));
+  }
+
+  public void unsetPairedFreq() {
+    this.pairedFreq = null;
   }
 
   /**
@@ -168,12 +191,59 @@ public class Freq
      * {@link NarrowBandPlanning }
    * <p>
    * <p>
+   * @return
    */
   public List<NarrowBandPlanning> getNarrowBandPlanning() {
     if (narrowBandPlanning == null) {
       narrowBandPlanning = new ArrayList<>();
     }
     return this.narrowBandPlanning;
+  }
+
+  public boolean isSetNarrowBandPlanning() {
+    return ((this.narrowBandPlanning != null) && (!this.narrowBandPlanning.isEmpty()));
+  }
+
+  public void unsetNarrowBandPlanning() {
+    this.narrowBandPlanning = null;
+  }
+
+  public Freq withTAD(String value) {
+    setTAD(new TString(value));
+    return this;
+  }
+
+  public Freq withLegacyNum(String value) {
+    setLegacyNum(new TString(value));
+    return this;
+  }
+
+  public Freq withPairedFreq(PairedFreq... values) {
+    if (values != null) {
+      getPairedFreq().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Freq withPairedFreq(Collection<PairedFreq> values) {
+    if (values != null) {
+      getPairedFreq().addAll(values);
+    }
+    return this;
+  }
+
+  public Freq withNarrowBandPlanning(NarrowBandPlanning... values) {
+    if (values != null) {
+      getNarrowBandPlanning().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Freq withNarrowBandPlanning(Collection<NarrowBandPlanning> values) {
+    if (values != null) {
+      getNarrowBandPlanning().addAll(values);
+    }
+    return this;
   }
 
 }

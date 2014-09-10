@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.enumerated.ListCCL;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -68,11 +70,11 @@ public class EmsClass {
   @XmlAttribute(name = "explainNatureOfSignalX")
   protected String explainNatureOfSignalX;
   @XmlAttribute(name = "cls", required = true)
-  protected ListCCL cls;
+  private ListCCL cls;
   @XmlAttribute(name = "remarks")
-  protected List<BigInteger> remarks;
+  private List<BigInteger> remarks;
   @XmlAttribute(name = "extReferences")
-  protected List<BigInteger> extReferences;
+  private List<BigInteger> extReferences;
   @XmlAttribute(name = "legacyReleasability")
   protected String legacyReleasability;
   @XmlAttribute(name = "quality")
@@ -102,6 +104,10 @@ public class EmsClass {
     this.value = value;
   }
 
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
+
   /**
    * Gets the value of the explainInformationTypeX property.
    * <p>
@@ -120,6 +126,10 @@ public class EmsClass {
    */
   public void setExplainInformationTypeX(String value) {
     this.explainInformationTypeX = value;
+  }
+
+  public boolean isSetExplainInformationTypeX() {
+    return (this.explainInformationTypeX != null);
   }
 
   /**
@@ -142,6 +152,10 @@ public class EmsClass {
     this.explainModulationTypeX = value;
   }
 
+  public boolean isSetExplainModulationTypeX() {
+    return (this.explainModulationTypeX != null);
+  }
+
   /**
    * Gets the value of the explainNatureOfSignalX property.
    * <p>
@@ -162,6 +176,10 @@ public class EmsClass {
     this.explainNatureOfSignalX = value;
   }
 
+  public boolean isSetExplainNatureOfSignalX() {
+    return (this.explainNatureOfSignalX != null);
+  }
+
   /**
    * Gets the value of the cls property.
    * <p>
@@ -180,6 +198,10 @@ public class EmsClass {
    */
   public void setCls(ListCCL value) {
     this.cls = value;
+  }
+
+  public boolean isSetCls() {
+    return (this.cls != null);
   }
 
   /**
@@ -203,12 +225,21 @@ public class EmsClass {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getRemarks() {
     if (remarks == null) {
       remarks = new ArrayList<>();
     }
     return this.remarks;
+  }
+
+  public boolean isSetRemarks() {
+    return ((this.remarks != null) && (!this.remarks.isEmpty()));
+  }
+
+  public void unsetRemarks() {
+    this.remarks = null;
   }
 
   /**
@@ -232,12 +263,21 @@ public class EmsClass {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getExtReferences() {
     if (extReferences == null) {
       extReferences = new ArrayList<>();
     }
     return this.extReferences;
+  }
+
+  public boolean isSetExtReferences() {
+    return ((this.extReferences != null) && (!this.extReferences.isEmpty()));
+  }
+
+  public void unsetExtReferences() {
+    this.extReferences = null;
   }
 
   /**
@@ -260,6 +300,10 @@ public class EmsClass {
     this.legacyReleasability = value;
   }
 
+  public boolean isSetLegacyReleasability() {
+    return (this.legacyReleasability != null);
+  }
+
   /**
    * Gets the value of the quality property.
    * <p>
@@ -278,6 +322,10 @@ public class EmsClass {
    */
   public void setQuality(String value) {
     this.quality = value;
+  }
+
+  public boolean isSetQuality() {
+    return (this.quality != null);
   }
 
   /**
@@ -300,6 +348,10 @@ public class EmsClass {
     this.recommendedValue = value;
   }
 
+  public boolean isSetRecommendedValue() {
+    return (this.recommendedValue != null);
+  }
+
   /**
    * Gets the value of the availability property.
    * <p>
@@ -318,6 +370,83 @@ public class EmsClass {
    */
   public void setAvailability(String value) {
     this.availability = value;
+  }
+
+  public boolean isSetAvailability() {
+    return (this.availability != null);
+  }
+
+  public EmsClass withValue(String value) {
+    setValue(value);
+    return this;
+  }
+
+  public EmsClass withExplainInformationTypeX(String value) {
+    setExplainInformationTypeX(value);
+    return this;
+  }
+
+  public EmsClass withExplainModulationTypeX(String value) {
+    setExplainModulationTypeX(value);
+    return this;
+  }
+
+  public EmsClass withExplainNatureOfSignalX(String value) {
+    setExplainNatureOfSignalX(value);
+    return this;
+  }
+
+  public EmsClass withCls(ListCCL value) {
+    setCls(value);
+    return this;
+  }
+
+  public EmsClass withRemarks(BigInteger... values) {
+    if (values != null) {
+      getRemarks().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public EmsClass withRemarks(Collection<BigInteger> values) {
+    if (values != null) {
+      getRemarks().addAll(values);
+    }
+    return this;
+  }
+
+  public EmsClass withExtReferences(BigInteger... values) {
+    if (values != null) {
+      getExtReferences().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public EmsClass withExtReferences(Collection<BigInteger> values) {
+    if (values != null) {
+      getExtReferences().addAll(values);
+    }
+    return this;
+  }
+
+  public EmsClass withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
+    return this;
+  }
+
+  public EmsClass withQuality(String value) {
+    setQuality(value);
+    return this;
+  }
+
+  public EmsClass withRecommendedValue(String value) {
+    setRecommendedValue(value);
+    return this;
+  }
+
+  public EmsClass withAvailability(String value) {
+    setAvailability(value);
+    return this;
   }
 
 }

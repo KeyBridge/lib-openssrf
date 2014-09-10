@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TLat;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
-import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
 import java.math.BigInteger;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -69,18 +69,23 @@ import javax.xml.bind.annotation.*;
 })
 public class Point {
 
-  @XmlElementRef(name = "Excluded", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> excluded;
+  @XmlElement(name = "Excluded", required = false)
+  private TString excluded;
   @XmlElement(name = "Lon", required = true)
-  protected TLon lon;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString lon;
   @XmlElement(name = "Lat", required = true)
-  protected TLat lat;
-  @XmlElementRef(name = "TerrainElevation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> terrainElevation;
-  @XmlElementRef(name = "AltitudeMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> altitudeMin;
-  @XmlElementRef(name = "AltitudeMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> altitudeMax;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  private TString lat;
+  @XmlElement(name = "TerrainElevation", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal terrainElevation;
+  @XmlElement(name = "AltitudeMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal altitudeMin;
+  @XmlElement(name = "AltitudeMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal altitudeMax;
   @XmlAttribute(name = "idx", required = true)
   protected BigInteger idx;
 
@@ -91,7 +96,7 @@ public class Point {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getExcluded() {
+  public TString getExcluded() {
     return excluded;
   }
 
@@ -102,8 +107,12 @@ public class Point {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setExcluded(JAXBElement<TListCBO> value) {
+  public void setExcluded(TString value) {
     this.excluded = value;
+  }
+
+  public boolean isSetExcluded() {
+    return (this.excluded != null);
   }
 
   /**
@@ -112,7 +121,7 @@ public class Point {
    * @return possible object is {@link TLon }
    * <p>
    */
-  public TLon getLon() {
+  public TString getLon() {
     return lon;
   }
 
@@ -122,8 +131,12 @@ public class Point {
    * @param value allowed object is {@link TLon }
    * <p>
    */
-  public void setLon(TLon value) {
+  public void setLon(TString value) {
     this.lon = value;
+  }
+
+  public boolean isSetLon() {
+    return (this.lon != null);
   }
 
   /**
@@ -132,7 +145,7 @@ public class Point {
    * @return possible object is {@link TLat }
    * <p>
    */
-  public TLat getLat() {
+  public TString getLat() {
     return lat;
   }
 
@@ -142,8 +155,12 @@ public class Point {
    * @param value allowed object is {@link TLat }
    * <p>
    */
-  public void setLat(TLat value) {
+  public void setLat(TString value) {
     this.lat = value;
+  }
+
+  public boolean isSetLat() {
+    return (this.lat != null);
   }
 
   /**
@@ -153,7 +170,7 @@ public class Point {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getTerrainElevation() {
+  public TDecimal getTerrainElevation() {
     return terrainElevation;
   }
 
@@ -164,8 +181,12 @@ public class Point {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setTerrainElevation(JAXBElement<TAltitude> value) {
+  public void setTerrainElevation(TDecimal value) {
     this.terrainElevation = value;
+  }
+
+  public boolean isSetTerrainElevation() {
+    return (this.terrainElevation != null);
   }
 
   /**
@@ -175,7 +196,7 @@ public class Point {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAltitudeMin() {
+  public TDecimal getAltitudeMin() {
     return altitudeMin;
   }
 
@@ -186,8 +207,12 @@ public class Point {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAltitudeMin(JAXBElement<TAltitude> value) {
+  public void setAltitudeMin(TDecimal value) {
     this.altitudeMin = value;
+  }
+
+  public boolean isSetAltitudeMin() {
+    return (this.altitudeMin != null);
   }
 
   /**
@@ -197,7 +222,7 @@ public class Point {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAltitudeMax() {
+  public TDecimal getAltitudeMax() {
     return altitudeMax;
   }
 
@@ -208,8 +233,12 @@ public class Point {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAltitudeMax(JAXBElement<TAltitude> value) {
+  public void setAltitudeMax(TDecimal value) {
     this.altitudeMax = value;
+  }
+
+  public boolean isSetAltitudeMax() {
+    return (this.altitudeMax != null);
   }
 
   /**
@@ -230,6 +259,45 @@ public class Point {
    */
   public void setIdx(BigInteger value) {
     this.idx = value;
+  }
+
+  public boolean isSetIdx() {
+    return (this.idx != null);
+  }
+
+  public Point withExcluded(ListCBO value) {
+    setExcluded(new TString(value.value()));
+    return this;
+  }
+
+  public Point withLon(String value) {
+    setLon(new TString(value));
+    return this;
+  }
+
+  public Point withLat(String value) {
+    setLat(new TString(value));
+    return this;
+  }
+
+  public Point withTerrainElevation(Double value) {
+    setTerrainElevation(new TDecimal(value));
+    return this;
+  }
+
+  public Point withAltitudeMin(Double value) {
+    setAltitudeMin(new TDecimal(value));
+    return this;
+  }
+
+  public Point withAltitudeMax(Double value) {
+    setAltitudeMax(new TDecimal(value));
+    return this;
+  }
+
+  public Point withIdx(BigInteger value) {
+    setIdx(value);
+    return this;
   }
 
 }

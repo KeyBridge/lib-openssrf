@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -39,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="Dataset">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -66,13 +69,16 @@ import javax.xml.bind.annotation.*;
 public class Dataset {
 
   @XmlElement(name = "Serial", required = true)
-  protected TSerial serial;
-  @XmlElementRef(name = "RetireDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> retireDate;
-  @XmlElementRef(name = "Reason", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> reason;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString serial;
+  @XmlElement(name = "RetireDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar retireDate;
+  @XmlElement(name = "Reason", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString reason;
   @XmlElement(name = "MissingRef", nillable = true)
-  protected List<MissingRef> missingRef;
+  private List<MissingRef> missingRef;
 
   /**
    * Gets the value of the serial property.
@@ -80,7 +86,7 @@ public class Dataset {
    * @return possible object is {@link TSerial }
    * <p>
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -90,8 +96,12 @@ public class Dataset {
    * @param value allowed object is {@link TSerial }
    * <p>
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  public boolean isSetSerial() {
+    return (this.serial != null);
   }
 
   /**
@@ -101,7 +111,7 @@ public class Dataset {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getRetireDate() {
+  public TCalendar getRetireDate() {
     return retireDate;
   }
 
@@ -112,8 +122,12 @@ public class Dataset {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setRetireDate(JAXBElement<TD> value) {
+  public void setRetireDate(TCalendar value) {
     this.retireDate = value;
+  }
+
+  public boolean isSetRetireDate() {
+    return (this.retireDate != null);
   }
 
   /**
@@ -123,7 +137,7 @@ public class Dataset {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getReason() {
+  public TString getReason() {
     return reason;
   }
 
@@ -134,8 +148,12 @@ public class Dataset {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setReason(JAXBElement<TMEMO> value) {
+  public void setReason(TString value) {
     this.reason = value;
+  }
+
+  public boolean isSetReason() {
+    return (this.reason != null);
   }
 
   /**
@@ -159,12 +177,50 @@ public class Dataset {
      * {@link MissingRef }
    * <p>
    * <p>
+   * @return
    */
   public List<MissingRef> getMissingRef() {
     if (missingRef == null) {
       missingRef = new ArrayList<>();
     }
     return this.missingRef;
+  }
+
+  public boolean isSetMissingRef() {
+    return ((this.missingRef != null) && (!this.missingRef.isEmpty()));
+  }
+
+  public void unsetMissingRef() {
+    this.missingRef = null;
+  }
+
+  public Dataset withSerial(String value) {
+    setSerial(new TString(value));
+    return this;
+  }
+
+  public Dataset withRetireDate(Calendar value) {
+    setRetireDate(new TCalendar(value));
+    return this;
+  }
+
+  public Dataset withReason(String value) {
+    setReason(new TString(value));
+    return this;
+  }
+
+  public Dataset withMissingRef(MissingRef... values) {
+    if (values != null) {
+      getMissingRef().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Dataset withMissingRef(Collection<MissingRef> values) {
+    if (values != null) {
+      getMissingRef().addAll(values);
+    }
+    return this;
   }
 
 }

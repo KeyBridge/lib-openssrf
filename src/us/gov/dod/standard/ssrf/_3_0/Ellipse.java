@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,15 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TLat;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAltitude;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDistance;
-import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
 import java.math.BigInteger;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -75,22 +73,29 @@ import javax.xml.bind.annotation.*;
 })
 public class Ellipse {
 
-  @XmlElementRef(name = "Excluded", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> excluded;
+  @XmlElement(name = "Excluded", required = false)
+  private TString excluded;
   @XmlElement(name = "Lon", required = true)
-  protected TLon lon;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString lon;
   @XmlElement(name = "Lat", required = true)
-  protected TLat lat;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  private TString lat;
   @XmlElement(name = "SemiMajorAxis", required = true)
-  protected TDistance semiMajorAxis;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal semiMajorAxis;
   @XmlElement(name = "SemiMinorAxis", required = true)
-  protected TDistance semiMinorAxis;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
+  private TDecimal semiMinorAxis;
   @XmlElement(name = "Azimuth", required = true)
-  protected TAz azimuth;
-  @XmlElementRef(name = "AltitudeMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> altitudeMin;
-  @XmlElementRef(name = "AltitudeMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAltitude> altitudeMax;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal azimuth;
+  @XmlElement(name = "AltitudeMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal altitudeMin;
+  @XmlElement(name = "AltitudeMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  private TDecimal altitudeMax;
   @XmlAttribute(name = "idx", required = true)
   protected BigInteger idx;
 
@@ -101,7 +106,7 @@ public class Ellipse {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getExcluded() {
+  public TString getExcluded() {
     return excluded;
   }
 
@@ -112,8 +117,12 @@ public class Ellipse {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setExcluded(JAXBElement<TListCBO> value) {
+  public void setExcluded(TString value) {
     this.excluded = value;
+  }
+
+  public boolean isSetExcluded() {
+    return (this.excluded != null);
   }
 
   /**
@@ -122,7 +131,7 @@ public class Ellipse {
    * @return possible object is {@link TLon }
    * <p>
    */
-  public TLon getLon() {
+  public TString getLon() {
     return lon;
   }
 
@@ -132,8 +141,12 @@ public class Ellipse {
    * @param value allowed object is {@link TLon }
    * <p>
    */
-  public void setLon(TLon value) {
+  public void setLon(TString value) {
     this.lon = value;
+  }
+
+  public boolean isSetLon() {
+    return (this.lon != null);
   }
 
   /**
@@ -142,7 +155,7 @@ public class Ellipse {
    * @return possible object is {@link TLat }
    * <p>
    */
-  public TLat getLat() {
+  public TString getLat() {
     return lat;
   }
 
@@ -152,8 +165,12 @@ public class Ellipse {
    * @param value allowed object is {@link TLat }
    * <p>
    */
-  public void setLat(TLat value) {
+  public void setLat(TString value) {
     this.lat = value;
+  }
+
+  public boolean isSetLat() {
+    return (this.lat != null);
   }
 
   /**
@@ -162,7 +179,7 @@ public class Ellipse {
    * @return possible object is {@link TDistance }
    * <p>
    */
-  public TDistance getSemiMajorAxis() {
+  public TDecimal getSemiMajorAxis() {
     return semiMajorAxis;
   }
 
@@ -172,8 +189,12 @@ public class Ellipse {
    * @param value allowed object is {@link TDistance }
    * <p>
    */
-  public void setSemiMajorAxis(TDistance value) {
+  public void setSemiMajorAxis(TDecimal value) {
     this.semiMajorAxis = value;
+  }
+
+  public boolean isSetSemiMajorAxis() {
+    return (this.semiMajorAxis != null);
   }
 
   /**
@@ -182,7 +203,7 @@ public class Ellipse {
    * @return possible object is {@link TDistance }
    * <p>
    */
-  public TDistance getSemiMinorAxis() {
+  public TDecimal getSemiMinorAxis() {
     return semiMinorAxis;
   }
 
@@ -192,8 +213,12 @@ public class Ellipse {
    * @param value allowed object is {@link TDistance }
    * <p>
    */
-  public void setSemiMinorAxis(TDistance value) {
+  public void setSemiMinorAxis(TDecimal value) {
     this.semiMinorAxis = value;
+  }
+
+  public boolean isSetSemiMinorAxis() {
+    return (this.semiMinorAxis != null);
   }
 
   /**
@@ -202,7 +227,7 @@ public class Ellipse {
    * @return possible object is {@link TAz }
    * <p>
    */
-  public TAz getAzimuth() {
+  public TDecimal getAzimuth() {
     return azimuth;
   }
 
@@ -212,8 +237,12 @@ public class Ellipse {
    * @param value allowed object is {@link TAz }
    * <p>
    */
-  public void setAzimuth(TAz value) {
+  public void setAzimuth(TDecimal value) {
     this.azimuth = value;
+  }
+
+  public boolean isSetAzimuth() {
+    return (this.azimuth != null);
   }
 
   /**
@@ -223,7 +252,7 @@ public class Ellipse {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAltitudeMin() {
+  public TDecimal getAltitudeMin() {
     return altitudeMin;
   }
 
@@ -234,8 +263,12 @@ public class Ellipse {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAltitudeMin(JAXBElement<TAltitude> value) {
+  public void setAltitudeMin(TDecimal value) {
     this.altitudeMin = value;
+  }
+
+  public boolean isSetAltitudeMin() {
+    return (this.altitudeMin != null);
   }
 
   /**
@@ -245,7 +278,7 @@ public class Ellipse {
    *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public JAXBElement<TAltitude> getAltitudeMax() {
+  public TDecimal getAltitudeMax() {
     return altitudeMax;
   }
 
@@ -256,8 +289,12 @@ public class Ellipse {
    *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
    * <p>
    */
-  public void setAltitudeMax(JAXBElement<TAltitude> value) {
+  public void setAltitudeMax(TDecimal value) {
     this.altitudeMax = value;
+  }
+
+  public boolean isSetAltitudeMax() {
+    return (this.altitudeMax != null);
   }
 
   /**
@@ -278,6 +315,55 @@ public class Ellipse {
    */
   public void setIdx(BigInteger value) {
     this.idx = value;
+  }
+
+  public boolean isSetIdx() {
+    return (this.idx != null);
+  }
+
+  public Ellipse withExcluded(ListCBO value) {
+    setExcluded(new TString(value.value()));
+    return this;
+  }
+
+  public Ellipse withLon(String value) {
+    setLon(new TString(value));
+    return this;
+  }
+
+  public Ellipse withLat(String value) {
+    setLat(new TString(value));
+    return this;
+  }
+
+  public Ellipse withSemiMajorAxis(Double value) {
+    setSemiMajorAxis(new TDecimal(value));
+    return this;
+  }
+
+  public Ellipse withSemiMinorAxis(Double value) {
+    setSemiMinorAxis(new TDecimal(value));
+    return this;
+  }
+
+  public Ellipse withAzimuth(Double value) {
+    setAzimuth(new TDecimal(value));
+    return this;
+  }
+
+  public Ellipse withAltitudeMin(Double value) {
+    setAltitudeMin(new TDecimal(value));
+    return this;
+  }
+
+  public Ellipse withAltitudeMax(Double value) {
+    setAltitudeMax(new TDecimal(value));
+    return this;
+  }
+
+  public Ellipse withIdx(BigInteger value) {
+    setIdx(value);
+    return this;
   }
 
 }

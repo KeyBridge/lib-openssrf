@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS18;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -54,15 +58,17 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AsgnAllotOwner", propOrder = {
-  "description0020",
-  "ownerType0020"
+  "description_0020",
+  "ownerType_0020"
 })
 public class AsgnAllotOwner {
 
-  @XmlElementRef(name = "Description ", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS18> description0020;
+  @XmlElement(name = "Description ", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS18.class)
+  private TString description_0020;
   @XmlElement(name = "OwnerType ", required = true)
-  protected TS50 ownerType0020;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString ownerType_0020;
 
   /**
    * Gets the value of the description_0020 property.
@@ -71,8 +77,8 @@ public class AsgnAllotOwner {
    *         {@link JAXBElement }{@code <}{@link TS18 }{@code >}
    * <p>
    */
-  public JAXBElement<TS18> getDescription_0020() {
-    return description0020;
+  public TString getDescription_0020() {
+    return description_0020;
   }
 
   /**
@@ -82,8 +88,12 @@ public class AsgnAllotOwner {
    *              {@link JAXBElement }{@code <}{@link TS18 }{@code >}
    * <p>
    */
-  public void setDescription_0020(JAXBElement<TS18> value) {
-    this.description0020 = value;
+  public void setDescription_0020(TString value) {
+    this.description_0020 = value;
+  }
+
+  public boolean isSetDescription_0020() {
+    return (this.description_0020 != null);
   }
 
   /**
@@ -92,8 +102,8 @@ public class AsgnAllotOwner {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getOwnerType_0020() {
-    return ownerType0020;
+  public TString getOwnerType_0020() {
+    return ownerType_0020;
   }
 
   /**
@@ -102,8 +112,22 @@ public class AsgnAllotOwner {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setOwnerType_0020(TS50 value) {
-    this.ownerType0020 = value;
+  public void setOwnerType_0020(TString value) {
+    this.ownerType_0020 = value;
+  }
+
+  public boolean isSetOwnerType_0020() {
+    return (this.ownerType_0020 != null);
+  }
+
+  public AsgnAllotOwner withDescription_0020(String value) {
+    setDescription_0020(new TString(value));
+    return this;
+  }
+
+  public AsgnAllotOwner withOwnerType_0020(String value) {
+    setOwnerType_0020(new TString(value));
+    return this;
   }
 
 }

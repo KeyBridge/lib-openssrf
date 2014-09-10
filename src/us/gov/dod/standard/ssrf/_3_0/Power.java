@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -67,14 +68,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Power {
 
-  @XmlElementRef(name = "PowerMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> powerMin;
-  @XmlElementRef(name = "PowerMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> powerMax;
-  @XmlElementRef(name = "PowerType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> powerType;
-  @XmlElementRef(name = "Calculated", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> calculated;
+  @XmlElement(name = "PowerMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal powerMin;
+  @XmlElement(name = "PowerMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal powerMax;
+  @XmlElement(name = "PowerType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString powerType;
+  @XmlElement(name = "Calculated", required = false)
+  private TString calculated;
 
   /**
    * Gets the value of the powerMin property.
@@ -83,7 +87,7 @@ public class Power {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getPowerMin() {
+  public TDecimal getPowerMin() {
     return powerMin;
   }
 
@@ -94,8 +98,12 @@ public class Power {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setPowerMin(JAXBElement<TdBW> value) {
+  public void setPowerMin(TDecimal value) {
     this.powerMin = value;
+  }
+
+  public boolean isSetPowerMin() {
+    return (this.powerMin != null);
   }
 
   /**
@@ -105,7 +113,7 @@ public class Power {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getPowerMax() {
+  public TDecimal getPowerMax() {
     return powerMax;
   }
 
@@ -116,8 +124,12 @@ public class Power {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setPowerMax(JAXBElement<TdBW> value) {
+  public void setPowerMax(TDecimal value) {
     this.powerMax = value;
+  }
+
+  public boolean isSetPowerMax() {
+    return (this.powerMax != null);
   }
 
   /**
@@ -127,7 +139,7 @@ public class Power {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getPowerType() {
+  public TString getPowerType() {
     return powerType;
   }
 
@@ -138,8 +150,12 @@ public class Power {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setPowerType(JAXBElement<TS10> value) {
+  public void setPowerType(TString value) {
     this.powerType = value;
+  }
+
+  public boolean isSetPowerType() {
+    return (this.powerType != null);
   }
 
   /**
@@ -149,7 +165,7 @@ public class Power {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getCalculated() {
+  public TString getCalculated() {
     return calculated;
   }
 
@@ -160,8 +176,32 @@ public class Power {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setCalculated(JAXBElement<TListCBO> value) {
+  public void setCalculated(TString value) {
     this.calculated = value;
+  }
+
+  public boolean isSetCalculated() {
+    return (this.calculated != null);
+  }
+
+  public Power withPowerMin(Double value) {
+    setPowerMin(new TDecimal(value));
+    return this;
+  }
+
+  public Power withPowerMax(Double value) {
+    setPowerMax(new TDecimal(value));
+    return this;
+  }
+
+  public Power withPowerType(String value) {
+    setPowerType(new TString(value));
+    return this;
+  }
+
+  public Power withCalculated(ListCBO value) {
+    setCalculated(new TString(value.value()));
+    return this;
   }
 
 }

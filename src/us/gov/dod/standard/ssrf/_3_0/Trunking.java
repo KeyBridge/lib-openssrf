@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS70;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN7;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS1;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS12;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -94,36 +91,49 @@ import javax.xml.bind.annotation.*;
 })
 public class Trunking {
 
-  @XmlElementRef(name = "AdditionalChannelsRationale", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> additionalChannelsRationale;
-  @XmlElementRef(name = "Dispatcher", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS1> dispatcher;
-  @XmlElementRef(name = "DispatcherExplanation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> dispatcherExplanation;
-  @XmlElementRef(name = "EstimatedExpansionCost", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS70> estimatedExpansionCost;
-  @XmlElementRef(name = "ExpansionTargetDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> expansionTargetDate;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "NSEPUse", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> nsepUse;
-  @XmlElementRef(name = "NumFreqsRequired", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10> numFreqsRequired;
-  @XmlElementRef(name = "NumRepeaters", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN7> numRepeaters;
-  @XmlElementRef(name = "NumUsers", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10> numUsers;
-  @XmlElementRef(name = "PreviousSPSDocketNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS12> previousSPSDocketNum;
-  @XmlElementRef(name = "RequestForExpansion", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> requestForExpansion;
-  @XmlElementRef(name = "SeparateSystemJustification", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> separateSystemJustification;
-  @XmlElementRef(name = "FreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMin;
+  @XmlElement(name = "AdditionalChannelsRationale", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString additionalChannelsRationale;
+  @XmlElement(name = "Dispatcher", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS1.class)
+  private TString dispatcher;
+  @XmlElement(name = "DispatcherExplanation", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString dispatcherExplanation;
+  @XmlElement(name = "EstimatedExpansionCost", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS70.class)
+  private TString estimatedExpansionCost;
+  @XmlElement(name = "ExpansionTargetDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar expansionTargetDate;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "NSEPUse", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString nsepUse;
+  @XmlElement(name = "NumFreqsRequired", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN10.class)
+  private TInteger numFreqsRequired;
+  @XmlElement(name = "NumRepeaters", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN7.class)
+  private TInteger numRepeaters;
+  @XmlElement(name = "NumUsers", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN10.class)
+  private TInteger numUsers;
+  @XmlElement(name = "PreviousSPSDocketNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  private TString previousSPSDocketNum;
+  @XmlElement(name = "RequestForExpansion", required = false)
+  private TString requestForExpansion;
+  @XmlElement(name = "SeparateSystemJustification", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString separateSystemJustification;
+  @XmlElement(name = "FreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
   @XmlElement(name = "TrunkingAssignment")
-  protected List<TrunkingAssignment> trunkingAssignment;
+  private List<TrunkingAssignment> trunkingAssignment;
 
   /**
    * Gets the value of the additionalChannelsRationale property.
@@ -132,7 +142,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getAdditionalChannelsRationale() {
+  public TString getAdditionalChannelsRationale() {
     return additionalChannelsRationale;
   }
 
@@ -143,8 +153,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setAdditionalChannelsRationale(JAXBElement<TMEMO> value) {
+  public void setAdditionalChannelsRationale(TString value) {
     this.additionalChannelsRationale = value;
+  }
+
+  public boolean isSetAdditionalChannelsRationale() {
+    return (this.additionalChannelsRationale != null);
   }
 
   /**
@@ -154,7 +168,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TS1 }{@code >}
    * <p>
    */
-  public JAXBElement<TS1> getDispatcher() {
+  public TString getDispatcher() {
     return dispatcher;
   }
 
@@ -165,8 +179,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TS1 }{@code >}
    * <p>
    */
-  public void setDispatcher(JAXBElement<TS1> value) {
+  public void setDispatcher(TString value) {
     this.dispatcher = value;
+  }
+
+  public boolean isSetDispatcher() {
+    return (this.dispatcher != null);
   }
 
   /**
@@ -176,7 +194,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getDispatcherExplanation() {
+  public TString getDispatcherExplanation() {
     return dispatcherExplanation;
   }
 
@@ -187,8 +205,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setDispatcherExplanation(JAXBElement<TMEMO> value) {
+  public void setDispatcherExplanation(TString value) {
     this.dispatcherExplanation = value;
+  }
+
+  public boolean isSetDispatcherExplanation() {
+    return (this.dispatcherExplanation != null);
   }
 
   /**
@@ -198,7 +220,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TS70 }{@code >}
    * <p>
    */
-  public JAXBElement<TS70> getEstimatedExpansionCost() {
+  public TString getEstimatedExpansionCost() {
     return estimatedExpansionCost;
   }
 
@@ -209,8 +231,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TS70 }{@code >}
    * <p>
    */
-  public void setEstimatedExpansionCost(JAXBElement<TS70> value) {
+  public void setEstimatedExpansionCost(TString value) {
     this.estimatedExpansionCost = value;
+  }
+
+  public boolean isSetEstimatedExpansionCost() {
+    return (this.estimatedExpansionCost != null);
   }
 
   /**
@@ -220,7 +246,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getExpansionTargetDate() {
+  public TCalendar getExpansionTargetDate() {
     return expansionTargetDate;
   }
 
@@ -231,8 +257,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setExpansionTargetDate(JAXBElement<TD> value) {
+  public void setExpansionTargetDate(TCalendar value) {
     this.expansionTargetDate = value;
+  }
+
+  public boolean isSetExpansionTargetDate() {
+    return (this.expansionTargetDate != null);
   }
 
   /**
@@ -242,7 +272,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -253,8 +283,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -264,7 +298,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getNSEPUse() {
+  public TString getNSEPUse() {
     return nsepUse;
   }
 
@@ -275,8 +309,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setNSEPUse(JAXBElement<TMEMO> value) {
+  public void setNSEPUse(TString value) {
     this.nsepUse = value;
+  }
+
+  public boolean isSetNSEPUse() {
+    return (this.nsepUse != null);
   }
 
   /**
@@ -286,7 +324,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10> getNumFreqsRequired() {
+  public TInteger getNumFreqsRequired() {
     return numFreqsRequired;
   }
 
@@ -297,8 +335,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
    * <p>
    */
-  public void setNumFreqsRequired(JAXBElement<TUN10> value) {
+  public void setNumFreqsRequired(TInteger value) {
     this.numFreqsRequired = value;
+  }
+
+  public boolean isSetNumFreqsRequired() {
+    return (this.numFreqsRequired != null);
   }
 
   /**
@@ -308,7 +350,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TUN7 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN7> getNumRepeaters() {
+  public TInteger getNumRepeaters() {
     return numRepeaters;
   }
 
@@ -319,8 +361,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TUN7 }{@code >}
    * <p>
    */
-  public void setNumRepeaters(JAXBElement<TUN7> value) {
+  public void setNumRepeaters(TInteger value) {
     this.numRepeaters = value;
+  }
+
+  public boolean isSetNumRepeaters() {
+    return (this.numRepeaters != null);
   }
 
   /**
@@ -330,7 +376,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10> getNumUsers() {
+  public TInteger getNumUsers() {
     return numUsers;
   }
 
@@ -341,8 +387,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
    * <p>
    */
-  public void setNumUsers(JAXBElement<TUN10> value) {
+  public void setNumUsers(TInteger value) {
     this.numUsers = value;
+  }
+
+  public boolean isSetNumUsers() {
+    return (this.numUsers != null);
   }
 
   /**
@@ -352,7 +402,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public JAXBElement<TS12> getPreviousSPSDocketNum() {
+  public TString getPreviousSPSDocketNum() {
     return previousSPSDocketNum;
   }
 
@@ -363,8 +413,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
    * <p>
    */
-  public void setPreviousSPSDocketNum(JAXBElement<TS12> value) {
+  public void setPreviousSPSDocketNum(TString value) {
     this.previousSPSDocketNum = value;
+  }
+
+  public boolean isSetPreviousSPSDocketNum() {
+    return (this.previousSPSDocketNum != null);
   }
 
   /**
@@ -374,7 +428,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getRequestForExpansion() {
+  public TString getRequestForExpansion() {
     return requestForExpansion;
   }
 
@@ -385,8 +439,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setRequestForExpansion(JAXBElement<TListCBO> value) {
+  public void setRequestForExpansion(TString value) {
     this.requestForExpansion = value;
+  }
+
+  public boolean isSetRequestForExpansion() {
+    return (this.requestForExpansion != null);
   }
 
   /**
@@ -396,7 +454,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getSeparateSystemJustification() {
+  public TString getSeparateSystemJustification() {
     return separateSystemJustification;
   }
 
@@ -407,8 +465,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setSeparateSystemJustification(JAXBElement<TMEMO> value) {
+  public void setSeparateSystemJustification(TString value) {
     this.separateSystemJustification = value;
+  }
+
+  public boolean isSetSeparateSystemJustification() {
+    return (this.separateSystemJustification != null);
   }
 
   /**
@@ -418,7 +480,7 @@ public class Trunking {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -429,8 +491,12 @@ public class Trunking {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMin(JAXBElement<TFreqM> value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -454,12 +520,105 @@ public class Trunking {
      * {@link TrunkingAssignment }
    * <p>
    * <p>
+   * @return
    */
   public List<TrunkingAssignment> getTrunkingAssignment() {
     if (trunkingAssignment == null) {
       trunkingAssignment = new ArrayList<>();
     }
     return this.trunkingAssignment;
+  }
+
+  public boolean isSetTrunkingAssignment() {
+    return ((this.trunkingAssignment != null) && (!this.trunkingAssignment.isEmpty()));
+  }
+
+  public void unsetTrunkingAssignment() {
+    this.trunkingAssignment = null;
+  }
+
+  public Trunking withAdditionalChannelsRationale(String value) {
+    setAdditionalChannelsRationale(new TString(value));
+    return this;
+  }
+
+  public Trunking withDispatcher(String value) {
+    setDispatcher(new TString(value));
+    return this;
+  }
+
+  public Trunking withDispatcherExplanation(String value) {
+    setDispatcherExplanation(new TString(value));
+    return this;
+  }
+
+  public Trunking withEstimatedExpansionCost(String value) {
+    setEstimatedExpansionCost(new TString(value));
+    return this;
+  }
+
+  public Trunking withExpansionTargetDate(Calendar value) {
+    setExpansionTargetDate(new TCalendar(value));
+    return this;
+  }
+
+  public Trunking withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public Trunking withNSEPUse(String value) {
+    setNSEPUse(new TString(value));
+    return this;
+  }
+
+  public Trunking withNumFreqsRequired(Integer value) {
+    setNumFreqsRequired(new TInteger(value));
+    return this;
+  }
+
+  public Trunking withNumRepeaters(Integer value) {
+    setNumRepeaters(new TInteger(value));
+    return this;
+  }
+
+  public Trunking withNumUsers(Integer value) {
+    setNumUsers(new TInteger(value));
+    return this;
+  }
+
+  public Trunking withPreviousSPSDocketNum(String value) {
+    setPreviousSPSDocketNum(new TString(value));
+    return this;
+  }
+
+  public Trunking withRequestForExpansion(ListCBO value) {
+    setRequestForExpansion(new TString(value.value()));
+    return this;
+  }
+
+  public Trunking withSeparateSystemJustification(String value) {
+    setSeparateSystemJustification(new TString(value));
+    return this;
+  }
+
+  public Trunking withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public Trunking withTrunkingAssignment(TrunkingAssignment... values) {
+    if (values != null) {
+      getTrunkingAssignment().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Trunking withTrunkingAssignment(Collection<TrunkingAssignment> values) {
+    if (values != null) {
+      getTrunkingAssignment().addAll(values);
+    }
+    return this;
   }
 
 }

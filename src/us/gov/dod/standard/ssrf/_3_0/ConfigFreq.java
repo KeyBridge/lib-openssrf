@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -37,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="ConfigFreq">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -63,13 +68,16 @@ import javax.xml.bind.annotation.*;
 public class ConfigFreq {
 
   @XmlElement(name = "FreqMin", required = true)
-  protected TFreqM freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "InBand", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> inBand;
-  @XmlElementRef(name = "Priority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> priority;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "InBand", required = false)
+  private TString inBand;
+  @XmlElement(name = "Priority", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString priority;
 
   /**
    * Gets the value of the freqMin property.
@@ -77,7 +85,7 @@ public class ConfigFreq {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -87,8 +95,12 @@ public class ConfigFreq {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -98,7 +110,7 @@ public class ConfigFreq {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -109,8 +121,12 @@ public class ConfigFreq {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -120,7 +136,7 @@ public class ConfigFreq {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getInBand() {
+  public TString getInBand() {
     return inBand;
   }
 
@@ -131,8 +147,12 @@ public class ConfigFreq {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setInBand(JAXBElement<TListCBO> value) {
+  public void setInBand(TString value) {
     this.inBand = value;
+  }
+
+  public boolean isSetInBand() {
+    return (this.inBand != null);
   }
 
   /**
@@ -142,7 +162,7 @@ public class ConfigFreq {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getPriority() {
+  public TString getPriority() {
     return priority;
   }
 
@@ -153,8 +173,32 @@ public class ConfigFreq {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setPriority(JAXBElement<TS10> value) {
+  public void setPriority(TString value) {
     this.priority = value;
+  }
+
+  public boolean isSetPriority() {
+    return (this.priority != null);
+  }
+
+  public ConfigFreq withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public ConfigFreq withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public ConfigFreq withInBand(ListCBO value) {
+    setInBand(new TString(value.value()));
+    return this;
+  }
+
+  public ConfigFreq withPriority(String value) {
+    setPriority(new TString(value));
+    return this;
   }
 
 }

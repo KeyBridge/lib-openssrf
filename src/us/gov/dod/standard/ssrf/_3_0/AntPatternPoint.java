@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TSN5_2;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -38,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="AntPatternPoint">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -61,9 +63,11 @@ import javax.xml.bind.annotation.XmlType;
 public class AntPatternPoint {
 
   @XmlElement(name = "Dir", required = true)
-  protected TAz dir;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal dir;
   @XmlElement(name = "Gain", required = true)
-  protected TSN5_2 gain;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSN5_2.class)
+  private TDecimal gain;
 
   /**
    * Gets the value of the dir property.
@@ -71,7 +75,7 @@ public class AntPatternPoint {
    * @return possible object is {@link TAz }
    * <p>
    */
-  public TAz getDir() {
+  public TDecimal getDir() {
     return dir;
   }
 
@@ -81,8 +85,12 @@ public class AntPatternPoint {
    * @param value allowed object is {@link TAz }
    * <p>
    */
-  public void setDir(TAz value) {
+  public void setDir(TDecimal value) {
     this.dir = value;
+  }
+
+  public boolean isSetDir() {
+    return (this.dir != null);
   }
 
   /**
@@ -91,7 +99,7 @@ public class AntPatternPoint {
    * @return possible object is {@link TSN5_2 }
    * <p>
    */
-  public TSN5_2 getGain() {
+  public TDecimal getGain() {
     return gain;
   }
 
@@ -101,8 +109,22 @@ public class AntPatternPoint {
    * @param value allowed object is {@link TSN5_2 }
    * <p>
    */
-  public void setGain(TSN5_2 value) {
+  public void setGain(TDecimal value) {
     this.gain = value;
+  }
+
+  public boolean isSetGain() {
+    return (this.gain != null);
+  }
+
+  public AntPatternPoint withDir(Double value) {
+    setDir(new TDecimal(value));
+    return this;
+  }
+
+  public AntPatternPoint withGain(Double value) {
+    setGain(new TDecimal(value));
+    return this;
   }
 
 }

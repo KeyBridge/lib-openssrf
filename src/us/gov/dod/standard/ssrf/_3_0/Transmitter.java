@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -44,24 +47,26 @@ import javax.xml.bind.annotation.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Transmitter">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Duplex" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Output" minOccurs="0"/>
- *         &lt;element name="Filter" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="FCCAcceptanceNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="TSPR" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Nomenclature" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Deployment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Deployment" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Curve" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Curve" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TxMode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxMode" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="Transmitter"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Duplex" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Output" minOccurs="0"/>
+ * &lt;element name="Filter" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;element name="FCCAcceptanceNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="TSPR" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
+ * &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Nomenclature"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Deployment"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Deployment" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Curve"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Curve" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="TxMode"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxMode" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -83,35 +88,41 @@ import javax.xml.bind.annotation.*;
   "curve",
   "txMode"
 })
-public class Transmitter
-  extends Common {
+public class Transmitter extends Common {
 
   @XmlElement(name = "Generic", required = true)
-  protected TListCBO generic;
+  private TString generic;
   @XmlElement(name = "DuplexSep")
-  protected TFreqM duplexSep;
-  @XmlElementRef(name = "DuplexSepType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> duplexSepType;
-  @XmlElementRef(name = "OutputDeviceType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> outputDeviceType;
-  @XmlElementRef(name = "OutputDevice", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS40> outputDevice;
-  @XmlElementRef(name = "Filter", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> filter;
-  @XmlElementRef(name = "FCCAcceptanceNum", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> fccAcceptanceNum;
-  @XmlElementRef(name = "TSPR", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> tspr;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal duplexSep;
+  @XmlElement(name = "DuplexSepType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString duplexSepType;
+  @XmlElement(name = "OutputDeviceType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString outputDeviceType;
+  @XmlElement(name = "OutputDevice", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  private TString outputDevice;
+  @XmlElement(name = "Filter", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString filter;
+  @XmlElement(name = "FCCAcceptanceNum", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString fccAcceptanceNum;
+  @XmlElement(name = "TSPR", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString tspr;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "Nomenclature")
-  protected List<Nomenclature> nomenclature;
+  private List<Nomenclature> nomenclature;
   @XmlElement(name = "Deployment")
-  protected List<Deployment> deployment;
+  private List<Deployment> deployment;
   @XmlElement(name = "Curve")
-  protected List<Curve> curve;
+  private List<Curve> curve;
   @XmlElement(name = "TxMode")
-  protected List<TxMode> txMode;
+  private List<TxMode> txMode;
 
   /**
    * Gets the value of the generic property.
@@ -119,7 +130,7 @@ public class Transmitter
    * @return possible object is {@link TListCBO }
    * <p>
    */
-  public TListCBO getGeneric() {
+  public TString getGeneric() {
     return generic;
   }
 
@@ -129,8 +140,12 @@ public class Transmitter
    * @param value allowed object is {@link TListCBO }
    * <p>
    */
-  public void setGeneric(TListCBO value) {
+  public void setGeneric(TString value) {
     this.generic = value;
+  }
+
+  public boolean isSetGeneric() {
+    return (this.generic != null);
   }
 
   /**
@@ -139,7 +154,7 @@ public class Transmitter
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getDuplexSep() {
+  public TDecimal getDuplexSep() {
     return duplexSep;
   }
 
@@ -149,8 +164,12 @@ public class Transmitter
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setDuplexSep(TFreqM value) {
+  public void setDuplexSep(TDecimal value) {
     this.duplexSep = value;
+  }
+
+  public boolean isSetDuplexSep() {
+    return (this.duplexSep != null);
   }
 
   /**
@@ -160,7 +179,7 @@ public class Transmitter
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getDuplexSepType() {
+  public TString getDuplexSepType() {
     return duplexSepType;
   }
 
@@ -171,8 +190,12 @@ public class Transmitter
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setDuplexSepType(JAXBElement<TS10> value) {
+  public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
+  }
+
+  public boolean isSetDuplexSepType() {
+    return (this.duplexSepType != null);
   }
 
   /**
@@ -182,7 +205,7 @@ public class Transmitter
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getOutputDeviceType() {
+  public TString getOutputDeviceType() {
     return outputDeviceType;
   }
 
@@ -193,8 +216,12 @@ public class Transmitter
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setOutputDeviceType(JAXBElement<TS50> value) {
+  public void setOutputDeviceType(TString value) {
     this.outputDeviceType = value;
+  }
+
+  public boolean isSetOutputDeviceType() {
+    return (this.outputDeviceType != null);
   }
 
   /**
@@ -204,7 +231,7 @@ public class Transmitter
    *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public JAXBElement<TS40> getOutputDevice() {
+  public TString getOutputDevice() {
     return outputDevice;
   }
 
@@ -215,8 +242,12 @@ public class Transmitter
    *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public void setOutputDevice(JAXBElement<TS40> value) {
+  public void setOutputDevice(TString value) {
     this.outputDevice = value;
+  }
+
+  public boolean isSetOutputDevice() {
+    return (this.outputDevice != null);
   }
 
   /**
@@ -226,7 +257,7 @@ public class Transmitter
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getFilter() {
+  public TString getFilter() {
     return filter;
   }
 
@@ -237,8 +268,12 @@ public class Transmitter
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setFilter(JAXBElement<TMEMO> value) {
+  public void setFilter(TString value) {
     this.filter = value;
+  }
+
+  public boolean isSetFilter() {
+    return (this.filter != null);
   }
 
   /**
@@ -248,7 +283,7 @@ public class Transmitter
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getFCCAcceptanceNum() {
+  public TString getFCCAcceptanceNum() {
     return fccAcceptanceNum;
   }
 
@@ -259,8 +294,12 @@ public class Transmitter
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setFCCAcceptanceNum(JAXBElement<TS50> value) {
+  public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
+  }
+
+  public boolean isSetFCCAcceptanceNum() {
+    return (this.fccAcceptanceNum != null);
   }
 
   /**
@@ -270,7 +309,7 @@ public class Transmitter
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getTSPR() {
+  public TString getTSPR() {
     return tspr;
   }
 
@@ -281,8 +320,12 @@ public class Transmitter
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setTSPR(JAXBElement<TS10> value) {
+  public void setTSPR(TString value) {
     this.tspr = value;
+  }
+
+  public boolean isSetTSPR() {
+    return (this.tspr != null);
   }
 
   /**
@@ -306,12 +349,21 @@ public class Transmitter
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -335,12 +387,21 @@ public class Transmitter
      * {@link Nomenclature }
    * <p>
    * <p>
+   * @return
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new ArrayList<>();
     }
     return this.nomenclature;
+  }
+
+  public boolean isSetNomenclature() {
+    return ((this.nomenclature != null) && (!this.nomenclature.isEmpty()));
+  }
+
+  public void unsetNomenclature() {
+    this.nomenclature = null;
   }
 
   /**
@@ -364,12 +425,21 @@ public class Transmitter
      * {@link Deployment }
    * <p>
    * <p>
+   * @return
    */
   public List<Deployment> getDeployment() {
     if (deployment == null) {
       deployment = new ArrayList<>();
     }
     return this.deployment;
+  }
+
+  public boolean isSetDeployment() {
+    return ((this.deployment != null) && (!this.deployment.isEmpty()));
+  }
+
+  public void unsetDeployment() {
+    this.deployment = null;
   }
 
   /**
@@ -392,12 +462,21 @@ public class Transmitter
    * Objects of the following type(s) are allowed in the list {@link Curve }
    * <p>
    * <p>
+   * @return
    */
   public List<Curve> getCurve() {
     if (curve == null) {
       curve = new ArrayList<>();
     }
     return this.curve;
+  }
+
+  public boolean isSetCurve() {
+    return ((this.curve != null) && (!this.curve.isEmpty()));
+  }
+
+  public void unsetCurve() {
+    this.curve = null;
   }
 
   /**
@@ -420,12 +499,131 @@ public class Transmitter
    * Objects of the following type(s) are allowed in the list {@link TxMode }
    * <p>
    * <p>
+   * @return
    */
   public List<TxMode> getTxMode() {
     if (txMode == null) {
       txMode = new ArrayList<>();
     }
     return this.txMode;
+  }
+
+  public boolean isSetTxMode() {
+    return ((this.txMode != null) && (!this.txMode.isEmpty()));
+  }
+
+  public void unsetTxMode() {
+    this.txMode = null;
+  }
+
+  public Transmitter withGeneric(ListCBO value) {
+    setGeneric(new TString(value.value()));
+    return this;
+  }
+
+  public Transmitter withDuplexSep(Double value) {
+    setDuplexSep(new TDecimal(value));
+    return this;
+  }
+
+  public Transmitter withDuplexSepType(String value) {
+    setDuplexSepType(new TString(value));
+    return this;
+  }
+
+  public Transmitter withOutputDeviceType(String value) {
+    setOutputDeviceType(new TString(value));
+    return this;
+  }
+
+  public Transmitter withOutputDevice(String value) {
+    setOutputDevice(new TString(value));
+    return this;
+  }
+
+  public Transmitter withFilter(String value) {
+    setFilter(new TString(value));
+    return this;
+  }
+
+  public Transmitter withFCCAcceptanceNum(String value) {
+    setFCCAcceptanceNum(new TString(value));
+    return this;
+  }
+
+  public Transmitter withTSPR(String value) {
+    setTSPR(new TString(value));
+    return this;
+  }
+
+  public Transmitter withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Transmitter withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Transmitter withNomenclature(Nomenclature... values) {
+    if (values != null) {
+      getNomenclature().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Transmitter withNomenclature(Collection<Nomenclature> values) {
+    if (values != null) {
+      getNomenclature().addAll(values);
+    }
+    return this;
+  }
+
+  public Transmitter withDeployment(Deployment... values) {
+    if (values != null) {
+      getDeployment().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Transmitter withDeployment(Collection<Deployment> values) {
+    if (values != null) {
+      getDeployment().addAll(values);
+    }
+    return this;
+  }
+
+  public Transmitter withCurve(Curve... values) {
+    if (values != null) {
+      getCurve().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Transmitter withCurve(Collection<Curve> values) {
+    if (values != null) {
+      getCurve().addAll(values);
+    }
+    return this;
+  }
+
+  public Transmitter withTxMode(TxMode... values) {
+    if (values != null) {
+      getTxMode().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Transmitter withTxMode(Collection<TxMode> values) {
+    if (values != null) {
+      getTxMode().addAll(values);
+    }
+    return this;
   }
 
 }

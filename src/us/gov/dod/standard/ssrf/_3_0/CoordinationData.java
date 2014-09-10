@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -60,9 +64,11 @@ import javax.xml.bind.annotation.*;
 public class CoordinationData {
 
   @XmlElement(name = "CoordIndicator", required = true)
-  protected TS50 coordIndicator;
-  @XmlElementRef(name = "HostComments", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> hostComments;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString coordIndicator;
+  @XmlElement(name = "HostComments", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString hostComments;
 
   /**
    * Gets the value of the coordIndicator property.
@@ -70,7 +76,7 @@ public class CoordinationData {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getCoordIndicator() {
+  public TString getCoordIndicator() {
     return coordIndicator;
   }
 
@@ -80,8 +86,12 @@ public class CoordinationData {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setCoordIndicator(TS50 value) {
+  public void setCoordIndicator(TString value) {
     this.coordIndicator = value;
+  }
+
+  public boolean isSetCoordIndicator() {
+    return (this.coordIndicator != null);
   }
 
   /**
@@ -91,7 +101,7 @@ public class CoordinationData {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getHostComments() {
+  public TString getHostComments() {
     return hostComments;
   }
 
@@ -102,8 +112,22 @@ public class CoordinationData {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setHostComments(JAXBElement<TMEMO> value) {
+  public void setHostComments(TString value) {
     this.hostComments = value;
+  }
+
+  public boolean isSetHostComments() {
+    return (this.hostComments != null);
+  }
+
+  public CoordinationData withCoordIndicator(String value) {
+    setCoordIndicator(new TString(value));
+    return this;
+  }
+
+  public CoordinationData withHostComments(String value) {
+    setHostComments(new TString(value));
+    return this;
   }
 
 }

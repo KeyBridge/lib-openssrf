@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS40;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -40,7 +42,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="FreqBand">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -70,17 +73,21 @@ import javax.xml.bind.annotation.*;
 public class FreqBand {
 
   @XmlElement(name = "FreqMin", required = true)
-  protected TFreqM freqMin;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
   @XmlElement(name = "FreqMax", required = true)
-  protected TFreqM freqMax;
-  @XmlElementRef(name = "UseIndicator", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS40> useIndicator;
-  @XmlElementRef(name = "BandNotes", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> bandNotes;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "UseIndicator", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  private TString useIndicator;
+  @XmlElement(name = "BandNotes", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString bandNotes;
   @XmlElement(name = "Allocation")
-  protected List<Allocation> allocation;
+  private List<Allocation> allocation;
   @XmlAttribute(name = "footnotes")
-  protected List<BigInteger> footnotes;
+  private List<BigInteger> footnotes;
 
   /**
    * Gets the value of the freqMin property.
@@ -88,7 +95,7 @@ public class FreqBand {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -98,8 +105,12 @@ public class FreqBand {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -108,7 +119,7 @@ public class FreqBand {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -118,8 +129,12 @@ public class FreqBand {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMax(TFreqM value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -129,7 +144,7 @@ public class FreqBand {
    *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public JAXBElement<TS40> getUseIndicator() {
+  public TString getUseIndicator() {
     return useIndicator;
   }
 
@@ -140,8 +155,12 @@ public class FreqBand {
    *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
    * <p>
    */
-  public void setUseIndicator(JAXBElement<TS40> value) {
+  public void setUseIndicator(TString value) {
     this.useIndicator = value;
+  }
+
+  public boolean isSetUseIndicator() {
+    return (this.useIndicator != null);
   }
 
   /**
@@ -151,7 +170,7 @@ public class FreqBand {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getBandNotes() {
+  public TString getBandNotes() {
     return bandNotes;
   }
 
@@ -162,8 +181,12 @@ public class FreqBand {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setBandNotes(JAXBElement<TMEMO> value) {
+  public void setBandNotes(TString value) {
     this.bandNotes = value;
+  }
+
+  public boolean isSetBandNotes() {
+    return (this.bandNotes != null);
   }
 
   /**
@@ -187,12 +210,21 @@ public class FreqBand {
      * {@link Allocation }
    * <p>
    * <p>
+   * @return
    */
   public List<Allocation> getAllocation() {
     if (allocation == null) {
       allocation = new ArrayList<>();
     }
     return this.allocation;
+  }
+
+  public boolean isSetAllocation() {
+    return ((this.allocation != null) && (!this.allocation.isEmpty()));
+  }
+
+  public void unsetAllocation() {
+    this.allocation = null;
   }
 
   /**
@@ -216,12 +248,69 @@ public class FreqBand {
      * {@link BigInteger }
    * <p>
    * <p>
+   * @return
    */
   public List<BigInteger> getFootnotes() {
     if (footnotes == null) {
       footnotes = new ArrayList<>();
     }
     return this.footnotes;
+  }
+
+  public boolean isSetFootnotes() {
+    return ((this.footnotes != null) && (!this.footnotes.isEmpty()));
+  }
+
+  public void unsetFootnotes() {
+    this.footnotes = null;
+  }
+
+  public FreqBand withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public FreqBand withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public FreqBand withUseIndicator(String value) {
+    setUseIndicator(new TString(value));
+    return this;
+  }
+
+  public FreqBand withBandNotes(String value) {
+    setBandNotes(new TString(value));
+    return this;
+  }
+
+  public FreqBand withAllocation(Allocation... values) {
+    if (values != null) {
+      getAllocation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public FreqBand withAllocation(Collection<Allocation> values) {
+    if (values != null) {
+      getAllocation().addAll(values);
+    }
+    return this;
+  }
+
+  public FreqBand withFootnotes(BigInteger... values) {
+    if (values != null) {
+      getFootnotes().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public FreqBand withFootnotes(Collection<BigInteger> values) {
+    if (values != null) {
+      getFootnotes().addAll(values);
+    }
+    return this;
   }
 
 }

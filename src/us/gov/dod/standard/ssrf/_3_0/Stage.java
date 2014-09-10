@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,14 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TD;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCSG;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -76,21 +78,27 @@ import javax.xml.bind.annotation.*;
 public class Stage {
 
   @XmlElement(name = "Type", required = true)
-  protected TListCSG type;
-  @XmlElementRef(name = "StartDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> startDate;
-  @XmlElementRef(name = "TargetDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> targetDate;
-  @XmlElementRef(name = "DateApprovalRequired", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> dateApprovalRequired;
-  @XmlElementRef(name = "TerminationDate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TD> terminationDate;
-  @XmlElementRef(name = "NumEquip", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numEquip;
-  @XmlElementRef(name = "GeoDescription", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> geoDescription;
+  private TString type;
+  @XmlElement(name = "StartDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar startDate;
+  @XmlElement(name = "TargetDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar targetDate;
+  @XmlElement(name = "DateApprovalRequired", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar dateApprovalRequired;
+  @XmlElement(name = "TerminationDate", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  private TCalendar terminationDate;
+  @XmlElement(name = "NumEquip", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numEquip;
+  @XmlElement(name = "GeoDescription", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString geoDescription;
   @XmlElement(name = "StageLocation")
-  protected List<StageLocation> stageLocation;
+  private List<StageLocation> stageLocation;
 
   /**
    * Gets the value of the type property.
@@ -98,7 +106,7 @@ public class Stage {
    * @return possible object is {@link TListCSG }
    * <p>
    */
-  public TListCSG getType() {
+  public TString getType() {
     return type;
   }
 
@@ -108,8 +116,12 @@ public class Stage {
    * @param value allowed object is {@link TListCSG }
    * <p>
    */
-  public void setType(TListCSG value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -119,7 +131,7 @@ public class Stage {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getStartDate() {
+  public TCalendar getStartDate() {
     return startDate;
   }
 
@@ -130,8 +142,12 @@ public class Stage {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setStartDate(JAXBElement<TD> value) {
+  public void setStartDate(TCalendar value) {
     this.startDate = value;
+  }
+
+  public boolean isSetStartDate() {
+    return (this.startDate != null);
   }
 
   /**
@@ -141,7 +157,7 @@ public class Stage {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getTargetDate() {
+  public TCalendar getTargetDate() {
     return targetDate;
   }
 
@@ -152,8 +168,12 @@ public class Stage {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setTargetDate(JAXBElement<TD> value) {
+  public void setTargetDate(TCalendar value) {
     this.targetDate = value;
+  }
+
+  public boolean isSetTargetDate() {
+    return (this.targetDate != null);
   }
 
   /**
@@ -163,7 +183,7 @@ public class Stage {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getDateApprovalRequired() {
+  public TCalendar getDateApprovalRequired() {
     return dateApprovalRequired;
   }
 
@@ -174,8 +194,12 @@ public class Stage {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setDateApprovalRequired(JAXBElement<TD> value) {
+  public void setDateApprovalRequired(TCalendar value) {
     this.dateApprovalRequired = value;
+  }
+
+  public boolean isSetDateApprovalRequired() {
+    return (this.dateApprovalRequired != null);
   }
 
   /**
@@ -185,7 +209,7 @@ public class Stage {
    *         {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public JAXBElement<TD> getTerminationDate() {
+  public TCalendar getTerminationDate() {
     return terminationDate;
   }
 
@@ -196,8 +220,12 @@ public class Stage {
    *              {@link JAXBElement }{@code <}{@link TD }{@code >}
    * <p>
    */
-  public void setTerminationDate(JAXBElement<TD> value) {
+  public void setTerminationDate(TCalendar value) {
     this.terminationDate = value;
+  }
+
+  public boolean isSetTerminationDate() {
+    return (this.terminationDate != null);
   }
 
   /**
@@ -207,7 +235,7 @@ public class Stage {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumEquip() {
+  public TInteger getNumEquip() {
     return numEquip;
   }
 
@@ -218,8 +246,12 @@ public class Stage {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumEquip(JAXBElement<TUN9> value) {
+  public void setNumEquip(TInteger value) {
     this.numEquip = value;
+  }
+
+  public boolean isSetNumEquip() {
+    return (this.numEquip != null);
   }
 
   /**
@@ -229,7 +261,7 @@ public class Stage {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getGeoDescription() {
+  public TString getGeoDescription() {
     return geoDescription;
   }
 
@@ -240,8 +272,12 @@ public class Stage {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setGeoDescription(JAXBElement<TMEMO> value) {
+  public void setGeoDescription(TString value) {
     this.geoDescription = value;
+  }
+
+  public boolean isSetGeoDescription() {
+    return (this.geoDescription != null);
   }
 
   /**
@@ -265,12 +301,70 @@ public class Stage {
      * {@link StageLocation }
    * <p>
    * <p>
+   * @return
    */
   public List<StageLocation> getStageLocation() {
     if (stageLocation == null) {
       stageLocation = new ArrayList<>();
     }
     return this.stageLocation;
+  }
+
+  public boolean isSetStageLocation() {
+    return ((this.stageLocation != null) && (!this.stageLocation.isEmpty()));
+  }
+
+  public void unsetStageLocation() {
+    this.stageLocation = null;
+  }
+
+  public Stage withType(ListCSG value) {
+    setType(new TString(value.value()));
+    return this;
+  }
+
+  public Stage withStartDate(Calendar value) {
+    setStartDate(new TCalendar(value));
+    return this;
+  }
+
+  public Stage withTargetDate(Calendar value) {
+    setTargetDate(new TCalendar(value));
+    return this;
+  }
+
+  public Stage withDateApprovalRequired(Calendar value) {
+    setDateApprovalRequired(new TCalendar(value));
+    return this;
+  }
+
+  public Stage withTerminationDate(Calendar value) {
+    setTerminationDate(new TCalendar(value));
+    return this;
+  }
+
+  public Stage withNumEquip(Integer value) {
+    setNumEquip(new TInteger(value));
+    return this;
+  }
+
+  public Stage withGeoDescription(String value) {
+    setGeoDescription(new TString(value));
+    return this;
+  }
+
+  public Stage withStageLocation(StageLocation... values) {
+    if (values != null) {
+      getStageLocation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Stage withStageLocation(Collection<StageLocation> values) {
+    if (values != null) {
+      getStageLocation().addAll(values);
+    }
+    return this;
   }
 
 }

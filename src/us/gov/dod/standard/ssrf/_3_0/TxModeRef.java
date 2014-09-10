@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,10 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TdBW;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -36,7 +40,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="TxModeRef">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -59,9 +64,11 @@ import javax.xml.bind.annotation.*;
 public class TxModeRef {
 
   @XmlElement(name = "ModeID", required = true)
-  protected TS20 modeID;
-  @XmlElementRef(name = "PowerLimit", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdBW> powerLimit;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString modeID;
+  @XmlElement(name = "PowerLimit", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  private TDecimal powerLimit;
 
   /**
    * Gets the value of the modeID property.
@@ -69,7 +76,7 @@ public class TxModeRef {
    * @return possible object is {@link TS20 }
    * <p>
    */
-  public TS20 getModeID() {
+  public TString getModeID() {
     return modeID;
   }
 
@@ -79,8 +86,12 @@ public class TxModeRef {
    * @param value allowed object is {@link TS20 }
    * <p>
    */
-  public void setModeID(TS20 value) {
+  public void setModeID(TString value) {
     this.modeID = value;
+  }
+
+  public boolean isSetModeID() {
+    return (this.modeID != null);
   }
 
   /**
@@ -90,7 +101,7 @@ public class TxModeRef {
    *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public JAXBElement<TdBW> getPowerLimit() {
+  public TDecimal getPowerLimit() {
     return powerLimit;
   }
 
@@ -101,8 +112,22 @@ public class TxModeRef {
    *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
    * <p>
    */
-  public void setPowerLimit(JAXBElement<TdBW> value) {
+  public void setPowerLimit(TDecimal value) {
     this.powerLimit = value;
+  }
+
+  public boolean isSetPowerLimit() {
+    return (this.powerLimit != null);
+  }
+
+  public TxModeRef withModeID(String value) {
+    setModeID(new TString(value));
+    return this;
+  }
+
+  public TxModeRef withPowerLimit(Double value) {
+    setPowerLimit(new TDecimal(value));
+    return this;
   }
 
 }

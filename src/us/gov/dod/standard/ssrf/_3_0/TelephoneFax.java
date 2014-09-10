@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCCL;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -67,16 +70,18 @@ import javax.xml.bind.annotation.*;
 })
 public class TelephoneFax {
 
-  @XmlElementRef(name = "Preferred", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> preferred;
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> type;
-  @XmlElementRef(name = "Fax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> fax;
-  @XmlElementRef(name = "MaxCls", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCCL> maxCls;
+  @XmlElement(name = "Preferred", required = false)
+  private TString preferred;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString type;
+  @XmlElement(name = "Fax", required = false)
+  private TString fax;
+  @XmlElement(name = "MaxCls", required = false)
+  private TString maxCls;
   @XmlElement(name = "Number", required = true)
-  protected TS50 number;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString number;
 
   /**
    * Gets the value of the preferred property.
@@ -85,7 +90,7 @@ public class TelephoneFax {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getPreferred() {
+  public TString getPreferred() {
     return preferred;
   }
 
@@ -96,8 +101,12 @@ public class TelephoneFax {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setPreferred(JAXBElement<TListCBO> value) {
+  public void setPreferred(TString value) {
     this.preferred = value;
+  }
+
+  public boolean isSetPreferred() {
+    return (this.preferred != null);
   }
 
   /**
@@ -107,7 +116,7 @@ public class TelephoneFax {
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -118,8 +127,12 @@ public class TelephoneFax {
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS20> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -129,7 +142,7 @@ public class TelephoneFax {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getFax() {
+  public TString getFax() {
     return fax;
   }
 
@@ -140,8 +153,12 @@ public class TelephoneFax {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setFax(JAXBElement<TListCBO> value) {
+  public void setFax(TString value) {
     this.fax = value;
+  }
+
+  public boolean isSetFax() {
+    return (this.fax != null);
   }
 
   /**
@@ -151,7 +168,7 @@ public class TelephoneFax {
    *         {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
    * <p>
    */
-  public JAXBElement<TListCCL> getMaxCls() {
+  public TString getMaxCls() {
     return maxCls;
   }
 
@@ -162,8 +179,12 @@ public class TelephoneFax {
    *              {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
    * <p>
    */
-  public void setMaxCls(JAXBElement<TListCCL> value) {
+  public void setMaxCls(TString value) {
     this.maxCls = value;
+  }
+
+  public boolean isSetMaxCls() {
+    return (this.maxCls != null);
   }
 
   /**
@@ -172,7 +193,7 @@ public class TelephoneFax {
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TS50 getNumber() {
+  public TString getNumber() {
     return number;
   }
 
@@ -182,8 +203,37 @@ public class TelephoneFax {
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setNumber(TS50 value) {
+  public void setNumber(TString value) {
     this.number = value;
+  }
+
+  public boolean isSetNumber() {
+    return (this.number != null);
+  }
+
+  public TelephoneFax withPreferred(ListCBO value) {
+    setPreferred(new TString(value.value()));
+    return this;
+  }
+
+  public TelephoneFax withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public TelephoneFax withFax(ListCBO value) {
+    setFax(new TString(value.value()));
+    return this;
+  }
+
+  public TelephoneFax withMaxCls(ListCCL value) {
+    setMaxCls(new TString(value.value()));
+    return this;
+  }
+
+  public TelephoneFax withNumber(String value) {
+    setNumber(new TString(value));
+    return this;
   }
 
 }

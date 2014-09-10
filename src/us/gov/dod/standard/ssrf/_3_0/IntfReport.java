@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,26 +23,16 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TLat;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSerial;
-import us.gov.dod.standard.ssrf._3_0.datatype.TEmsDes;
-import us.gov.dod.standard.ssrf._3_0.datatype.TLon;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
-import us.gov.dod.standard.ssrf._3_0.datatype.TDT;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCAO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS25;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS255;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN6_1;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -52,7 +42,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="IntfReport">
  *   &lt;complexContent>
  *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
@@ -154,95 +145,132 @@ import javax.xml.bind.annotation.*;
   "satelliteUplinkPolarisation",
   "pocInformation"
 })
-public class IntfReport
-  extends Common {
+public class IntfReport extends Common {
 
-  @XmlElementRef(name = "HelpRequired", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> helpRequired;
-  @XmlElementRef(name = "IntfPeriod", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> intfPeriod;
+  @XmlElement(name = "HelpRequired", required = false)
+  private TString helpRequired;
+  @XmlElement(name = "IntfPeriod", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString intfPeriod;
   @XmlElement(name = "IntfStartDateTime", required = true)
-  protected TDT intfStartDateTime;
-  @XmlElementRef(name = "IntfStopDateTime", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TDT> intfStopDateTime;
-  @XmlElementRef(name = "IntfDescr", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> intfDescr;
-  @XmlElementRef(name = "AffectedEquipment", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> affectedEquipment;
-  @XmlElementRef(name = "SourceFieldStrength", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN6_1> sourceFieldStrength;
-  @XmlElementRef(name = "SourceLon", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TLon> sourceLon;
-  @XmlElementRef(name = "SourceLat", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TLat> sourceLat;
-  @XmlElementRef(name = "SourceAz", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz> sourceAz;
-  @XmlElementRef(name = "SourceLocDescr", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> sourceLocDescr;
-  @XmlElementRef(name = "SourceFreqMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> sourceFreqMin;
-  @XmlElementRef(name = "SourceFreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> sourceFreqMax;
-  @XmlElementRef(name = "SourceEmsClass", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TEmsDes> sourceEmsClass;
-  @XmlElementRef(name = "SourceEmsBw", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> sourceEmsBw;
-  @XmlElementRef(name = "VictimAsgnRef", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSerial> victimAsgnRef;
-  @XmlElementRef(name = "VictimSystem", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> victimSystem;
-  @XmlElementRef(name = "VictimCountry", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCAO> victimCountry;
-  @XmlElementRef(name = "VictimLon", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TLon> victimLon;
-  @XmlElementRef(name = "VictimLat", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TLat> victimLat;
-  @XmlElementRef(name = "VictimLocDescr", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS255> victimLocDescr;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar intfStartDateTime;
+  @XmlElement(name = "IntfStopDateTime", required = false)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar intfStopDateTime;
+  @XmlElement(name = "IntfDescr", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString intfDescr;
+  @XmlElement(name = "AffectedEquipment", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString affectedEquipment;
+  @XmlElement(name = "SourceFieldStrength", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_1.class)
+  private TDecimal sourceFieldStrength;
+  @XmlElement(name = "SourceLon", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString sourceLon;
+  @XmlElement(name = "SourceLat", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  private TString sourceLat;
+  @XmlElement(name = "SourceAz", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  private TDecimal sourceAz;
+  @XmlElement(name = "SourceLocDescr", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString sourceLocDescr;
+  @XmlElement(name = "SourceFreqMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal sourceFreqMin;
+  @XmlElement(name = "SourceFreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal sourceFreqMax;
+  @XmlElement(name = "SourceEmsClass", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterEMSDES.class)
+  private TString sourceEmsClass;
+  @XmlElement(name = "SourceEmsBw", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal sourceEmsBw;
+  @XmlElement(name = "VictimAsgnRef", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private TString victimAsgnRef;
+  @XmlElement(name = "VictimSystem", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString victimSystem;
+  @XmlElement(name = "VictimCountry", required = false)
+  private TString victimCountry;
+  @XmlElement(name = "VictimLon", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString victimLon;
+  @XmlElement(name = "VictimLat", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  private TString victimLat;
+  @XmlElement(name = "VictimLocDescr", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  private TString victimLocDescr;
   @XmlElement(name = "VictimFreqMin", required = true)
-  protected TFreqM victimFreqMin;
-  @XmlElementRef(name = "VictimFreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> victimFreqMax;
-  @XmlElementRef(name = "SatelliteName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satelliteName;
-  @XmlElementRef(name = "SatelliteChannel", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satelliteChannel;
-  @XmlElementRef(name = "SatelliteUplinkFreq", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> satelliteUplinkFreq;
-  @XmlElementRef(name = "PerformanceEffects", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> performanceEffects;
-  @XmlElementRef(name = "Evaluation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS25> evaluation;
-  @XmlElementRef(name = "Solution", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> solution;
-  @XmlElementRef(name = "AffectedCSA", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> affectedCSA;
-  @XmlElementRef(name = "Characteristics", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> characteristics;
-  @XmlElementRef(name = "GPSAffected", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> gpsAffected;
-  @XmlElementRef(name = "LocalEventID", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> localEventID;
-  @XmlElementRef(name = "NetCircuitsAffected", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> netCircuitsAffected;
-  @XmlElementRef(name = "NetsAffected", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> netsAffected;
-  @XmlElementRef(name = "SATCOMPriority", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satcomPriority;
-  @XmlElementRef(name = "SatelliteAffected", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> satelliteAffected;
-  @XmlElementRef(name = "SatelliteDownlinkPolarisation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satelliteDownlinkPolarisation;
-  @XmlElementRef(name = "SatelliteHemisphere", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satelliteHemisphere;
-  @XmlElementRef(name = "SatelliteLongitude", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TLon> satelliteLongitude;
-  @XmlElementRef(name = "SatelliteTransponderID", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satelliteTransponderID;
-  @XmlElementRef(name = "SatelliteUplinkPolarisation", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> satelliteUplinkPolarisation;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal victimFreqMin;
+  @XmlElement(name = "VictimFreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal victimFreqMax;
+  @XmlElement(name = "SatelliteName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satelliteName;
+  @XmlElement(name = "SatelliteChannel", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satelliteChannel;
+  @XmlElement(name = "SatelliteUplinkFreq", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal satelliteUplinkFreq;
+  @XmlElement(name = "PerformanceEffects", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString performanceEffects;
+  @XmlElement(name = "Evaluation", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  private TString evaluation;
+  @XmlElement(name = "Solution", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString solution;
+  @XmlElement(name = "AffectedCSA", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString affectedCSA;
+  @XmlElement(name = "Characteristics", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString characteristics;
+  @XmlElement(name = "GPSAffected", required = false)
+  private TString gpsAffected;
+  @XmlElement(name = "LocalEventID", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString localEventID;
+  @XmlElement(name = "NetCircuitsAffected", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString netCircuitsAffected;
+  @XmlElement(name = "NetsAffected", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString netsAffected;
+  @XmlElement(name = "SATCOMPriority", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satcomPriority;
+  @XmlElement(name = "SatelliteAffected", required = false)
+  private TString satelliteAffected;
+  @XmlElement(name = "SatelliteDownlinkPolarisation", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satelliteDownlinkPolarisation;
+  @XmlElement(name = "SatelliteHemisphere", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satelliteHemisphere;
+  @XmlElement(name = "SatelliteLongitude", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  private TString satelliteLongitude;
+  @XmlElement(name = "SatelliteTransponderID", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satelliteTransponderID;
+  @XmlElement(name = "SatelliteUplinkPolarisation", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString satelliteUplinkPolarisation;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
 
   /**
    * Gets the value of the helpRequired property.
@@ -251,7 +279,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getHelpRequired() {
+  public TString getHelpRequired() {
     return helpRequired;
   }
 
@@ -262,8 +290,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setHelpRequired(JAXBElement<TListCBO> value) {
+  public void setHelpRequired(TString value) {
     this.helpRequired = value;
+  }
+
+  public boolean isSetHelpRequired() {
+    return (this.helpRequired != null);
   }
 
   /**
@@ -273,7 +305,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getIntfPeriod() {
+  public TString getIntfPeriod() {
     return intfPeriod;
   }
 
@@ -284,8 +316,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setIntfPeriod(JAXBElement<TS50> value) {
+  public void setIntfPeriod(TString value) {
     this.intfPeriod = value;
+  }
+
+  public boolean isSetIntfPeriod() {
+    return (this.intfPeriod != null);
   }
 
   /**
@@ -294,7 +330,7 @@ public class IntfReport
    * @return possible object is {@link TDT }
    * <p>
    */
-  public TDT getIntfStartDateTime() {
+  public TCalendar getIntfStartDateTime() {
     return intfStartDateTime;
   }
 
@@ -304,8 +340,12 @@ public class IntfReport
    * @param value allowed object is {@link TDT }
    * <p>
    */
-  public void setIntfStartDateTime(TDT value) {
+  public void setIntfStartDateTime(TCalendar value) {
     this.intfStartDateTime = value;
+  }
+
+  public boolean isSetIntfStartDateTime() {
+    return (this.intfStartDateTime != null);
   }
 
   /**
@@ -315,7 +355,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public JAXBElement<TDT> getIntfStopDateTime() {
+  public TCalendar getIntfStopDateTime() {
     return intfStopDateTime;
   }
 
@@ -326,8 +366,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
    * <p>
    */
-  public void setIntfStopDateTime(JAXBElement<TDT> value) {
+  public void setIntfStopDateTime(TCalendar value) {
     this.intfStopDateTime = value;
+  }
+
+  public boolean isSetIntfStopDateTime() {
+    return (this.intfStopDateTime != null);
   }
 
   /**
@@ -337,7 +381,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getIntfDescr() {
+  public TString getIntfDescr() {
     return intfDescr;
   }
 
@@ -348,8 +392,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setIntfDescr(JAXBElement<TMEMO> value) {
+  public void setIntfDescr(TString value) {
     this.intfDescr = value;
+  }
+
+  public boolean isSetIntfDescr() {
+    return (this.intfDescr != null);
   }
 
   /**
@@ -359,7 +407,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getAffectedEquipment() {
+  public TString getAffectedEquipment() {
     return affectedEquipment;
   }
 
@@ -370,8 +418,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setAffectedEquipment(JAXBElement<TS100> value) {
+  public void setAffectedEquipment(TString value) {
     this.affectedEquipment = value;
+  }
+
+  public boolean isSetAffectedEquipment() {
+    return (this.affectedEquipment != null);
   }
 
   /**
@@ -381,7 +433,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TUN6_1 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN6_1> getSourceFieldStrength() {
+  public TDecimal getSourceFieldStrength() {
     return sourceFieldStrength;
   }
 
@@ -392,8 +444,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TUN6_1 }{@code >}
    * <p>
    */
-  public void setSourceFieldStrength(JAXBElement<TUN6_1> value) {
+  public void setSourceFieldStrength(TDecimal value) {
     this.sourceFieldStrength = value;
+  }
+
+  public boolean isSetSourceFieldStrength() {
+    return (this.sourceFieldStrength != null);
   }
 
   /**
@@ -403,7 +459,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public JAXBElement<TLon> getSourceLon() {
+  public TString getSourceLon() {
     return sourceLon;
   }
 
@@ -414,8 +470,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public void setSourceLon(JAXBElement<TLon> value) {
+  public void setSourceLon(TString value) {
     this.sourceLon = value;
+  }
+
+  public boolean isSetSourceLon() {
+    return (this.sourceLon != null);
   }
 
   /**
@@ -425,7 +485,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TLat }{@code >}
    * <p>
    */
-  public JAXBElement<TLat> getSourceLat() {
+  public TString getSourceLat() {
     return sourceLat;
   }
 
@@ -436,8 +496,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TLat }{@code >}
    * <p>
    */
-  public void setSourceLat(JAXBElement<TLat> value) {
+  public void setSourceLat(TString value) {
     this.sourceLat = value;
+  }
+
+  public boolean isSetSourceLat() {
+    return (this.sourceLat != null);
   }
 
   /**
@@ -447,7 +511,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public JAXBElement<TAz> getSourceAz() {
+  public TDecimal getSourceAz() {
     return sourceAz;
   }
 
@@ -458,8 +522,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
    * <p>
    */
-  public void setSourceAz(JAXBElement<TAz> value) {
+  public void setSourceAz(TDecimal value) {
     this.sourceAz = value;
+  }
+
+  public boolean isSetSourceAz() {
+    return (this.sourceAz != null);
   }
 
   /**
@@ -469,7 +537,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getSourceLocDescr() {
+  public TString getSourceLocDescr() {
     return sourceLocDescr;
   }
 
@@ -480,8 +548,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setSourceLocDescr(JAXBElement<TS255> value) {
+  public void setSourceLocDescr(TString value) {
     this.sourceLocDescr = value;
+  }
+
+  public boolean isSetSourceLocDescr() {
+    return (this.sourceLocDescr != null);
   }
 
   /**
@@ -491,7 +563,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getSourceFreqMin() {
+  public TDecimal getSourceFreqMin() {
     return sourceFreqMin;
   }
 
@@ -502,8 +574,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setSourceFreqMin(JAXBElement<TFreqM> value) {
+  public void setSourceFreqMin(TDecimal value) {
     this.sourceFreqMin = value;
+  }
+
+  public boolean isSetSourceFreqMin() {
+    return (this.sourceFreqMin != null);
   }
 
   /**
@@ -513,7 +589,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getSourceFreqMax() {
+  public TDecimal getSourceFreqMax() {
     return sourceFreqMax;
   }
 
@@ -524,8 +600,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setSourceFreqMax(JAXBElement<TFreqM> value) {
+  public void setSourceFreqMax(TDecimal value) {
     this.sourceFreqMax = value;
+  }
+
+  public boolean isSetSourceFreqMax() {
+    return (this.sourceFreqMax != null);
   }
 
   /**
@@ -535,7 +615,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
    * <p>
    */
-  public JAXBElement<TEmsDes> getSourceEmsClass() {
+  public TString getSourceEmsClass() {
     return sourceEmsClass;
   }
 
@@ -546,8 +626,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
    * <p>
    */
-  public void setSourceEmsClass(JAXBElement<TEmsDes> value) {
+  public void setSourceEmsClass(TString value) {
     this.sourceEmsClass = value;
+  }
+
+  public boolean isSetSourceEmsClass() {
+    return (this.sourceEmsClass != null);
   }
 
   /**
@@ -557,7 +641,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getSourceEmsBw() {
+  public TDecimal getSourceEmsBw() {
     return sourceEmsBw;
   }
 
@@ -568,8 +652,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setSourceEmsBw(JAXBElement<TFreqM> value) {
+  public void setSourceEmsBw(TDecimal value) {
     this.sourceEmsBw = value;
+  }
+
+  public boolean isSetSourceEmsBw() {
+    return (this.sourceEmsBw != null);
   }
 
   /**
@@ -579,7 +667,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public JAXBElement<TSerial> getVictimAsgnRef() {
+  public TString getVictimAsgnRef() {
     return victimAsgnRef;
   }
 
@@ -590,8 +678,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
    * <p>
    */
-  public void setVictimAsgnRef(JAXBElement<TSerial> value) {
+  public void setVictimAsgnRef(TString value) {
     this.victimAsgnRef = value;
+  }
+
+  public boolean isSetVictimAsgnRef() {
+    return (this.victimAsgnRef != null);
   }
 
   /**
@@ -601,7 +693,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getVictimSystem() {
+  public TString getVictimSystem() {
     return victimSystem;
   }
 
@@ -612,8 +704,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setVictimSystem(JAXBElement<TS100> value) {
+  public void setVictimSystem(TString value) {
     this.victimSystem = value;
+  }
+
+  public boolean isSetVictimSystem() {
+    return (this.victimSystem != null);
   }
 
   /**
@@ -623,7 +719,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCAO> getVictimCountry() {
+  public TString getVictimCountry() {
     return victimCountry;
   }
 
@@ -634,8 +730,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
    * <p>
    */
-  public void setVictimCountry(JAXBElement<TListCAO> value) {
+  public void setVictimCountry(TString value) {
     this.victimCountry = value;
+  }
+
+  public boolean isSetVictimCountry() {
+    return (this.victimCountry != null);
   }
 
   /**
@@ -645,7 +745,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public JAXBElement<TLon> getVictimLon() {
+  public TString getVictimLon() {
     return victimLon;
   }
 
@@ -656,8 +756,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public void setVictimLon(JAXBElement<TLon> value) {
+  public void setVictimLon(TString value) {
     this.victimLon = value;
+  }
+
+  public boolean isSetVictimLon() {
+    return (this.victimLon != null);
   }
 
   /**
@@ -667,7 +771,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TLat }{@code >}
    * <p>
    */
-  public JAXBElement<TLat> getVictimLat() {
+  public TString getVictimLat() {
     return victimLat;
   }
 
@@ -678,8 +782,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TLat }{@code >}
    * <p>
    */
-  public void setVictimLat(JAXBElement<TLat> value) {
+  public void setVictimLat(TString value) {
     this.victimLat = value;
+  }
+
+  public boolean isSetVictimLat() {
+    return (this.victimLat != null);
   }
 
   /**
@@ -689,7 +797,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public JAXBElement<TS255> getVictimLocDescr() {
+  public TString getVictimLocDescr() {
     return victimLocDescr;
   }
 
@@ -700,8 +808,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
    * <p>
    */
-  public void setVictimLocDescr(JAXBElement<TS255> value) {
+  public void setVictimLocDescr(TString value) {
     this.victimLocDescr = value;
+  }
+
+  public boolean isSetVictimLocDescr() {
+    return (this.victimLocDescr != null);
   }
 
   /**
@@ -710,7 +822,7 @@ public class IntfReport
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getVictimFreqMin() {
+  public TDecimal getVictimFreqMin() {
     return victimFreqMin;
   }
 
@@ -720,8 +832,12 @@ public class IntfReport
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setVictimFreqMin(TFreqM value) {
+  public void setVictimFreqMin(TDecimal value) {
     this.victimFreqMin = value;
+  }
+
+  public boolean isSetVictimFreqMin() {
+    return (this.victimFreqMin != null);
   }
 
   /**
@@ -731,7 +847,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getVictimFreqMax() {
+  public TDecimal getVictimFreqMax() {
     return victimFreqMax;
   }
 
@@ -742,8 +858,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setVictimFreqMax(JAXBElement<TFreqM> value) {
+  public void setVictimFreqMax(TDecimal value) {
     this.victimFreqMax = value;
+  }
+
+  public boolean isSetVictimFreqMax() {
+    return (this.victimFreqMax != null);
   }
 
   /**
@@ -753,7 +873,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSatelliteName() {
+  public TString getSatelliteName() {
     return satelliteName;
   }
 
@@ -764,8 +884,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSatelliteName(JAXBElement<TS50> value) {
+  public void setSatelliteName(TString value) {
     this.satelliteName = value;
+  }
+
+  public boolean isSetSatelliteName() {
+    return (this.satelliteName != null);
   }
 
   /**
@@ -775,7 +899,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSatelliteChannel() {
+  public TString getSatelliteChannel() {
     return satelliteChannel;
   }
 
@@ -786,8 +910,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSatelliteChannel(JAXBElement<TS50> value) {
+  public void setSatelliteChannel(TString value) {
     this.satelliteChannel = value;
+  }
+
+  public boolean isSetSatelliteChannel() {
+    return (this.satelliteChannel != null);
   }
 
   /**
@@ -797,7 +925,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getSatelliteUplinkFreq() {
+  public TDecimal getSatelliteUplinkFreq() {
     return satelliteUplinkFreq;
   }
 
@@ -808,8 +936,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setSatelliteUplinkFreq(JAXBElement<TFreqM> value) {
+  public void setSatelliteUplinkFreq(TDecimal value) {
     this.satelliteUplinkFreq = value;
+  }
+
+  public boolean isSetSatelliteUplinkFreq() {
+    return (this.satelliteUplinkFreq != null);
   }
 
   /**
@@ -819,7 +951,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getPerformanceEffects() {
+  public TString getPerformanceEffects() {
     return performanceEffects;
   }
 
@@ -830,8 +962,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setPerformanceEffects(JAXBElement<TMEMO> value) {
+  public void setPerformanceEffects(TString value) {
     this.performanceEffects = value;
+  }
+
+  public boolean isSetPerformanceEffects() {
+    return (this.performanceEffects != null);
   }
 
   /**
@@ -841,7 +977,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public JAXBElement<TS25> getEvaluation() {
+  public TString getEvaluation() {
     return evaluation;
   }
 
@@ -852,8 +988,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
    * <p>
    */
-  public void setEvaluation(JAXBElement<TS25> value) {
+  public void setEvaluation(TString value) {
     this.evaluation = value;
+  }
+
+  public boolean isSetEvaluation() {
+    return (this.evaluation != null);
   }
 
   /**
@@ -863,7 +1003,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getSolution() {
+  public TString getSolution() {
     return solution;
   }
 
@@ -874,8 +1014,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setSolution(JAXBElement<TMEMO> value) {
+  public void setSolution(TString value) {
     this.solution = value;
+  }
+
+  public boolean isSetSolution() {
+    return (this.solution != null);
   }
 
   /**
@@ -885,7 +1029,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getAffectedCSA() {
+  public TString getAffectedCSA() {
     return affectedCSA;
   }
 
@@ -896,8 +1040,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setAffectedCSA(JAXBElement<TS20> value) {
+  public void setAffectedCSA(TString value) {
     this.affectedCSA = value;
+  }
+
+  public boolean isSetAffectedCSA() {
+    return (this.affectedCSA != null);
   }
 
   /**
@@ -907,7 +1055,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getCharacteristics() {
+  public TString getCharacteristics() {
     return characteristics;
   }
 
@@ -918,8 +1066,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setCharacteristics(JAXBElement<TS50> value) {
+  public void setCharacteristics(TString value) {
     this.characteristics = value;
+  }
+
+  public boolean isSetCharacteristics() {
+    return (this.characteristics != null);
   }
 
   /**
@@ -929,7 +1081,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getGPSAffected() {
+  public TString getGPSAffected() {
     return gpsAffected;
   }
 
@@ -940,8 +1092,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setGPSAffected(JAXBElement<TListCBO> value) {
+  public void setGPSAffected(TString value) {
     this.gpsAffected = value;
+  }
+
+  public boolean isSetGPSAffected() {
+    return (this.gpsAffected != null);
   }
 
   /**
@@ -951,7 +1107,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getLocalEventID() {
+  public TString getLocalEventID() {
     return localEventID;
   }
 
@@ -962,8 +1118,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setLocalEventID(JAXBElement<TS20> value) {
+  public void setLocalEventID(TString value) {
     this.localEventID = value;
+  }
+
+  public boolean isSetLocalEventID() {
+    return (this.localEventID != null);
   }
 
   /**
@@ -973,7 +1133,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getNetCircuitsAffected() {
+  public TString getNetCircuitsAffected() {
     return netCircuitsAffected;
   }
 
@@ -984,8 +1144,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setNetCircuitsAffected(JAXBElement<TMEMO> value) {
+  public void setNetCircuitsAffected(TString value) {
     this.netCircuitsAffected = value;
+  }
+
+  public boolean isSetNetCircuitsAffected() {
+    return (this.netCircuitsAffected != null);
   }
 
   /**
@@ -995,7 +1159,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getNetsAffected() {
+  public TString getNetsAffected() {
     return netsAffected;
   }
 
@@ -1006,8 +1170,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setNetsAffected(JAXBElement<TMEMO> value) {
+  public void setNetsAffected(TString value) {
     this.netsAffected = value;
+  }
+
+  public boolean isSetNetsAffected() {
+    return (this.netsAffected != null);
   }
 
   /**
@@ -1017,7 +1185,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSATCOMPriority() {
+  public TString getSATCOMPriority() {
     return satcomPriority;
   }
 
@@ -1028,8 +1196,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSATCOMPriority(JAXBElement<TS50> value) {
+  public void setSATCOMPriority(TString value) {
     this.satcomPriority = value;
+  }
+
+  public boolean isSetSATCOMPriority() {
+    return (this.satcomPriority != null);
   }
 
   /**
@@ -1039,7 +1211,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getSatelliteAffected() {
+  public TString getSatelliteAffected() {
     return satelliteAffected;
   }
 
@@ -1050,8 +1222,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setSatelliteAffected(JAXBElement<TListCBO> value) {
+  public void setSatelliteAffected(TString value) {
     this.satelliteAffected = value;
+  }
+
+  public boolean isSetSatelliteAffected() {
+    return (this.satelliteAffected != null);
   }
 
   /**
@@ -1061,7 +1237,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSatelliteDownlinkPolarisation() {
+  public TString getSatelliteDownlinkPolarisation() {
     return satelliteDownlinkPolarisation;
   }
 
@@ -1072,8 +1248,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSatelliteDownlinkPolarisation(JAXBElement<TS50> value) {
+  public void setSatelliteDownlinkPolarisation(TString value) {
     this.satelliteDownlinkPolarisation = value;
+  }
+
+  public boolean isSetSatelliteDownlinkPolarisation() {
+    return (this.satelliteDownlinkPolarisation != null);
   }
 
   /**
@@ -1083,7 +1263,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSatelliteHemisphere() {
+  public TString getSatelliteHemisphere() {
     return satelliteHemisphere;
   }
 
@@ -1094,8 +1274,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSatelliteHemisphere(JAXBElement<TS50> value) {
+  public void setSatelliteHemisphere(TString value) {
     this.satelliteHemisphere = value;
+  }
+
+  public boolean isSetSatelliteHemisphere() {
+    return (this.satelliteHemisphere != null);
   }
 
   /**
@@ -1105,7 +1289,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public JAXBElement<TLon> getSatelliteLongitude() {
+  public TString getSatelliteLongitude() {
     return satelliteLongitude;
   }
 
@@ -1116,8 +1300,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
    * <p>
    */
-  public void setSatelliteLongitude(JAXBElement<TLon> value) {
+  public void setSatelliteLongitude(TString value) {
     this.satelliteLongitude = value;
+  }
+
+  public boolean isSetSatelliteLongitude() {
+    return (this.satelliteLongitude != null);
   }
 
   /**
@@ -1127,7 +1315,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSatelliteTransponderID() {
+  public TString getSatelliteTransponderID() {
     return satelliteTransponderID;
   }
 
@@ -1138,8 +1326,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSatelliteTransponderID(JAXBElement<TS50> value) {
+  public void setSatelliteTransponderID(TString value) {
     this.satelliteTransponderID = value;
+  }
+
+  public boolean isSetSatelliteTransponderID() {
+    return (this.satelliteTransponderID != null);
   }
 
   /**
@@ -1149,7 +1341,7 @@ public class IntfReport
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getSatelliteUplinkPolarisation() {
+  public TString getSatelliteUplinkPolarisation() {
     return satelliteUplinkPolarisation;
   }
 
@@ -1160,8 +1352,12 @@ public class IntfReport
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setSatelliteUplinkPolarisation(JAXBElement<TS50> value) {
+  public void setSatelliteUplinkPolarisation(TString value) {
     this.satelliteUplinkPolarisation = value;
+  }
+
+  public boolean isSetSatelliteUplinkPolarisation() {
+    return (this.satelliteUplinkPolarisation != null);
   }
 
   /**
@@ -1185,12 +1381,245 @@ public class IntfReport
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
+  }
+
+  public IntfReport withHelpRequired(ListCBO value) {
+    setHelpRequired(new TString(value.value()));
+    return this;
+  }
+
+  public IntfReport withIntfPeriod(String value) {
+    setIntfPeriod(new TString(value));
+    return this;
+  }
+
+  public IntfReport withIntfStartDateTime(Calendar value) {
+    setIntfStartDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public IntfReport withIntfStopDateTime(Calendar value) {
+    setIntfStopDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public IntfReport withIntfDescr(String value) {
+    setIntfDescr(new TString(value));
+    return this;
+  }
+
+  public IntfReport withAffectedEquipment(String value) {
+    setAffectedEquipment(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSourceFieldStrength(Double value) {
+    setSourceFieldStrength(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withSourceLon(String value) {
+    setSourceLon(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSourceLat(String value) {
+    setSourceLat(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSourceAz(Double value) {
+    setSourceAz(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withSourceLocDescr(String value) {
+    setSourceLocDescr(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSourceFreqMin(Double value) {
+    setSourceFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withSourceFreqMax(Double value) {
+    setSourceFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withSourceEmsClass(String value) {
+    setSourceEmsClass(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSourceEmsBw(Double value) {
+    setSourceEmsBw(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withVictimAsgnRef(String value) {
+    setVictimAsgnRef(new TString(value));
+    return this;
+  }
+
+  public IntfReport withVictimSystem(String value) {
+    setVictimSystem(new TString(value));
+    return this;
+  }
+
+  public IntfReport withVictimCountry(ListCAO value) {
+    setVictimCountry(new TString(value.value()));
+    return this;
+  }
+
+  public IntfReport withVictimLon(String value) {
+    setVictimLon(new TString(value));
+    return this;
+  }
+
+  public IntfReport withVictimLat(String value) {
+    setVictimLat(new TString(value));
+    return this;
+  }
+
+  public IntfReport withVictimLocDescr(String value) {
+    setVictimLocDescr(new TString(value));
+    return this;
+  }
+
+  public IntfReport withVictimFreqMin(Double value) {
+    setVictimFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withVictimFreqMax(Double value) {
+    setVictimFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteName(String value) {
+    setSatelliteName(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteChannel(String value) {
+    setSatelliteChannel(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteUplinkFreq(Double value) {
+    setSatelliteUplinkFreq(new TDecimal(value));
+    return this;
+  }
+
+  public IntfReport withPerformanceEffects(String value) {
+    setPerformanceEffects(new TString(value));
+    return this;
+  }
+
+  public IntfReport withEvaluation(String value) {
+    setEvaluation(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSolution(String value) {
+    setSolution(new TString(value));
+    return this;
+  }
+
+  public IntfReport withAffectedCSA(String value) {
+    setAffectedCSA(new TString(value));
+    return this;
+  }
+
+  public IntfReport withCharacteristics(String value) {
+    setCharacteristics(new TString(value));
+    return this;
+  }
+
+  public IntfReport withGPSAffected(ListCBO value) {
+    setGPSAffected(new TString(value.value()));
+    return this;
+  }
+
+  public IntfReport withLocalEventID(String value) {
+    setLocalEventID(new TString(value));
+    return this;
+  }
+
+  public IntfReport withNetCircuitsAffected(String value) {
+    setNetCircuitsAffected(new TString(value));
+    return this;
+  }
+
+  public IntfReport withNetsAffected(String value) {
+    setNetsAffected(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSATCOMPriority(String value) {
+    setSATCOMPriority(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteAffected(ListCBO value) {
+    setSatelliteAffected(new TString(value.value()));
+    return this;
+  }
+
+  public IntfReport withSatelliteDownlinkPolarisation(String value) {
+    setSatelliteDownlinkPolarisation(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteHemisphere(String value) {
+    setSatelliteHemisphere(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteLongitude(String value) {
+    setSatelliteLongitude(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteTransponderID(String value) {
+    setSatelliteTransponderID(new TString(value));
+    return this;
+  }
+
+  public IntfReport withSatelliteUplinkPolarisation(String value) {
+    setSatelliteUplinkPolarisation(new TString(value));
+    return this;
+  }
+
+  public IntfReport withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public IntfReport withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
   }
 
 }

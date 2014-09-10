@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TDT;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TSpeed;
+import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -37,7 +41,8 @@ import javax.xml.bind.annotation.*;
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
- * <pre>
+ * <
+ * pre>
  * &lt;complexType name="AtWaypoint">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -62,11 +67,14 @@ import javax.xml.bind.annotation.*;
 public class AtWaypoint {
 
   @XmlElement(name = "WaypointIdx", required = true)
-  protected TUN6 waypointIdx;
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  private TInteger waypointIdx;
   @XmlElement(name = "DateTime", required = true)
-  protected TDT dateTime;
-  @XmlElementRef(name = "Speed", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TSpeed> speed;
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar dateTime;
+  @XmlElement(name = "Speed", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSPEED.class)
+  private TDecimal speed;
 
   /**
    * Gets the value of the waypointIdx property.
@@ -74,7 +82,7 @@ public class AtWaypoint {
    * @return possible object is {@link TUN6 }
    * <p>
    */
-  public TUN6 getWaypointIdx() {
+  public TInteger getWaypointIdx() {
     return waypointIdx;
   }
 
@@ -84,8 +92,12 @@ public class AtWaypoint {
    * @param value allowed object is {@link TUN6 }
    * <p>
    */
-  public void setWaypointIdx(TUN6 value) {
+  public void setWaypointIdx(TInteger value) {
     this.waypointIdx = value;
+  }
+
+  public boolean isSetWaypointIdx() {
+    return (this.waypointIdx != null);
   }
 
   /**
@@ -94,7 +106,7 @@ public class AtWaypoint {
    * @return possible object is {@link TDT }
    * <p>
    */
-  public TDT getDateTime() {
+  public TCalendar getDateTime() {
     return dateTime;
   }
 
@@ -104,8 +116,12 @@ public class AtWaypoint {
    * @param value allowed object is {@link TDT }
    * <p>
    */
-  public void setDateTime(TDT value) {
+  public void setDateTime(TCalendar value) {
     this.dateTime = value;
+  }
+
+  public boolean isSetDateTime() {
+    return (this.dateTime != null);
   }
 
   /**
@@ -115,7 +131,7 @@ public class AtWaypoint {
    *         {@link JAXBElement }{@code <}{@link TSpeed }{@code >}
    * <p>
    */
-  public JAXBElement<TSpeed> getSpeed() {
+  public TDecimal getSpeed() {
     return speed;
   }
 
@@ -126,8 +142,27 @@ public class AtWaypoint {
    *              {@link JAXBElement }{@code <}{@link TSpeed }{@code >}
    * <p>
    */
-  public void setSpeed(JAXBElement<TSpeed> value) {
+  public void setSpeed(TDecimal value) {
     this.speed = value;
+  }
+
+  public boolean isSetSpeed() {
+    return (this.speed != null);
+  }
+
+  public AtWaypoint withWaypointIdx(Integer value) {
+    setWaypointIdx(new TInteger(value));
+    return this;
+  }
+
+  public AtWaypoint withDateTime(Calendar value) {
+    setDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public AtWaypoint withSpeed(Double value) {
+    setSpeed(new TDecimal(value));
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.Tmicrosecs;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN4;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN10_3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9_6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TdB;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN5;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS50;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN12;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMChips;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -94,42 +90,59 @@ import javax.xml.bind.annotation.*;
 })
 public class SpreadSpectrum {
 
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS50> type;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  private TString type;
   @XmlElement(name = "FreqMin")
-  protected TFreqM freqMin;
-  @XmlElementRef(name = "FreqMax", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> freqMax;
-  @XmlElementRef(name = "MaxGain", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TdB> maxGain;
-  @XmlElementRef(name = "PulseFreqDev", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> pulseFreqDev;
-  @XmlElementRef(name = "InfoDataRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10_3> infoDataRate;
-  @XmlElementRef(name = "ChipRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMChips> chipRate;
-  @XmlElementRef(name = "CodeRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN10_3> codeRate;
-  @XmlElementRef(name = "PulseChirpRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9_6> pulseChirpRate;
-  @XmlElementRef(name = "PulseChirpFreqShift", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> pulseChirpFreqShift;
-  @XmlElementRef(name = "PulseChirpDurationMin", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> pulseChirpDurationMin;
-  @XmlElementRef(name = "TimeHopNumSlots", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN5> timeHopNumSlots;
-  @XmlElementRef(name = "TimeHopPulsesPerDwell", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN12> timeHopPulsesPerDwell;
-  @XmlElementRef(name = "HopRate", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Thops> hopRate;
-  @XmlElementRef(name = "HopDwell", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<Tmicrosecs> hopDwell;
-  @XmlElementRef(name = "NumFreqsPerHopset", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> numFreqsPerHopset;
-  @XmlElementRef(name = "NumHopsets", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN4> numHopsets;
-  @XmlElementRef(name = "FreqBlocking", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> freqBlocking;
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMin;
+  @XmlElement(name = "FreqMax", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal freqMax;
+  @XmlElement(name = "MaxGain", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  private TDecimal maxGain;
+  @XmlElement(name = "PulseFreqDev", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal pulseFreqDev;
+  @XmlElement(name = "InfoDataRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN10_3.class)
+  private TDecimal infoDataRate;
+  @XmlElement(name = "ChipRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMCHIPS.class)
+  private TDecimal chipRate;
+  @XmlElement(name = "CodeRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN10_3.class)
+  private TDecimal codeRate;
+  @XmlElement(name = "PulseChirpRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN9_6.class)
+  private TDecimal pulseChirpRate;
+  @XmlElement(name = "PulseChirpFreqShift", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal pulseChirpFreqShift;
+  @XmlElement(name = "PulseChirpDurationMin", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal pulseChirpDurationMin;
+  @XmlElement(name = "TimeHopNumSlots", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  private TInteger timeHopNumSlots;
+  @XmlElement(name = "TimeHopPulsesPerDwell", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN12.class)
+  private TInteger timeHopPulsesPerDwell;
+  @XmlElement(name = "HopRate", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterHOPS.class)
+  private TDecimal hopRate;
+  @XmlElement(name = "HopDwell", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  private TDecimal hopDwell;
+  @XmlElement(name = "NumFreqsPerHopset", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger numFreqsPerHopset;
+  @XmlElement(name = "NumHopsets", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  private TInteger numHopsets;
+  @XmlElement(name = "FreqBlocking", required = false)
+  private TString freqBlocking;
 
   /**
    * Gets the value of the type property.
@@ -138,7 +151,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public JAXBElement<TS50> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -149,8 +162,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS50> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -159,7 +176,7 @@ public class SpreadSpectrum {
    * @return possible object is {@link TFreqM }
    * <p>
    */
-  public TFreqM getFreqMin() {
+  public TDecimal getFreqMin() {
     return freqMin;
   }
 
@@ -169,8 +186,12 @@ public class SpreadSpectrum {
    * @param value allowed object is {@link TFreqM }
    * <p>
    */
-  public void setFreqMin(TFreqM value) {
+  public void setFreqMin(TDecimal value) {
     this.freqMin = value;
+  }
+
+  public boolean isSetFreqMin() {
+    return (this.freqMin != null);
   }
 
   /**
@@ -180,7 +201,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getFreqMax() {
+  public TDecimal getFreqMax() {
     return freqMax;
   }
 
@@ -191,8 +212,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setFreqMax(JAXBElement<TFreqM> value) {
+  public void setFreqMax(TDecimal value) {
     this.freqMax = value;
+  }
+
+  public boolean isSetFreqMax() {
+    return (this.freqMax != null);
   }
 
   /**
@@ -202,7 +227,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public JAXBElement<TdB> getMaxGain() {
+  public TDecimal getMaxGain() {
     return maxGain;
   }
 
@@ -213,8 +238,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
    * <p>
    */
-  public void setMaxGain(JAXBElement<TdB> value) {
+  public void setMaxGain(TDecimal value) {
     this.maxGain = value;
+  }
+
+  public boolean isSetMaxGain() {
+    return (this.maxGain != null);
   }
 
   /**
@@ -224,7 +253,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getPulseFreqDev() {
+  public TDecimal getPulseFreqDev() {
     return pulseFreqDev;
   }
 
@@ -235,8 +264,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setPulseFreqDev(JAXBElement<TFreqM> value) {
+  public void setPulseFreqDev(TDecimal value) {
     this.pulseFreqDev = value;
+  }
+
+  public boolean isSetPulseFreqDev() {
+    return (this.pulseFreqDev != null);
   }
 
   /**
@@ -246,7 +279,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10_3> getInfoDataRate() {
+  public TDecimal getInfoDataRate() {
     return infoDataRate;
   }
 
@@ -257,8 +290,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public void setInfoDataRate(JAXBElement<TUN10_3> value) {
+  public void setInfoDataRate(TDecimal value) {
     this.infoDataRate = value;
+  }
+
+  public boolean isSetInfoDataRate() {
+    return (this.infoDataRate != null);
   }
 
   /**
@@ -268,7 +305,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TMChips }{@code >}
    * <p>
    */
-  public JAXBElement<TMChips> getChipRate() {
+  public TDecimal getChipRate() {
     return chipRate;
   }
 
@@ -279,8 +316,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TMChips }{@code >}
    * <p>
    */
-  public void setChipRate(JAXBElement<TMChips> value) {
+  public void setChipRate(TDecimal value) {
     this.chipRate = value;
+  }
+
+  public boolean isSetChipRate() {
+    return (this.chipRate != null);
   }
 
   /**
@@ -290,7 +331,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN10_3> getCodeRate() {
+  public TDecimal getCodeRate() {
     return codeRate;
   }
 
@@ -301,8 +342,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
    * <p>
    */
-  public void setCodeRate(JAXBElement<TUN10_3> value) {
+  public void setCodeRate(TDecimal value) {
     this.codeRate = value;
+  }
+
+  public boolean isSetCodeRate() {
+    return (this.codeRate != null);
   }
 
   /**
@@ -312,7 +357,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN9_6 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9_6> getPulseChirpRate() {
+  public TDecimal getPulseChirpRate() {
     return pulseChirpRate;
   }
 
@@ -323,8 +368,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN9_6 }{@code >}
    * <p>
    */
-  public void setPulseChirpRate(JAXBElement<TUN9_6> value) {
+  public void setPulseChirpRate(TDecimal value) {
     this.pulseChirpRate = value;
+  }
+
+  public boolean isSetPulseChirpRate() {
+    return (this.pulseChirpRate != null);
   }
 
   /**
@@ -334,7 +383,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getPulseChirpFreqShift() {
+  public TDecimal getPulseChirpFreqShift() {
     return pulseChirpFreqShift;
   }
 
@@ -345,8 +394,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setPulseChirpFreqShift(JAXBElement<TFreqM> value) {
+  public void setPulseChirpFreqShift(TDecimal value) {
     this.pulseChirpFreqShift = value;
+  }
+
+  public boolean isSetPulseChirpFreqShift() {
+    return (this.pulseChirpFreqShift != null);
   }
 
   /**
@@ -356,7 +409,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getPulseChirpDurationMin() {
+  public TDecimal getPulseChirpDurationMin() {
     return pulseChirpDurationMin;
   }
 
@@ -367,8 +420,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setPulseChirpDurationMin(JAXBElement<Tmicrosecs> value) {
+  public void setPulseChirpDurationMin(TDecimal value) {
     this.pulseChirpDurationMin = value;
+  }
+
+  public boolean isSetPulseChirpDurationMin() {
+    return (this.pulseChirpDurationMin != null);
   }
 
   /**
@@ -378,7 +435,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN5> getTimeHopNumSlots() {
+  public TInteger getTimeHopNumSlots() {
     return timeHopNumSlots;
   }
 
@@ -389,8 +446,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
    * <p>
    */
-  public void setTimeHopNumSlots(JAXBElement<TUN5> value) {
+  public void setTimeHopNumSlots(TInteger value) {
     this.timeHopNumSlots = value;
+  }
+
+  public boolean isSetTimeHopNumSlots() {
+    return (this.timeHopNumSlots != null);
   }
 
   /**
@@ -400,7 +461,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN12 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN12> getTimeHopPulsesPerDwell() {
+  public TInteger getTimeHopPulsesPerDwell() {
     return timeHopPulsesPerDwell;
   }
 
@@ -411,8 +472,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN12 }{@code >}
    * <p>
    */
-  public void setTimeHopPulsesPerDwell(JAXBElement<TUN12> value) {
+  public void setTimeHopPulsesPerDwell(TInteger value) {
     this.timeHopPulsesPerDwell = value;
+  }
+
+  public boolean isSetTimeHopPulsesPerDwell() {
+    return (this.timeHopPulsesPerDwell != null);
   }
 
   /**
@@ -422,7 +487,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link Thops }{@code >}
    * <p>
    */
-  public JAXBElement<Thops> getHopRate() {
+  public TDecimal getHopRate() {
     return hopRate;
   }
 
@@ -433,8 +498,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link Thops }{@code >}
    * <p>
    */
-  public void setHopRate(JAXBElement<Thops> value) {
+  public void setHopRate(TDecimal value) {
     this.hopRate = value;
+  }
+
+  public boolean isSetHopRate() {
+    return (this.hopRate != null);
   }
 
   /**
@@ -444,7 +513,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public JAXBElement<Tmicrosecs> getHopDwell() {
+  public TDecimal getHopDwell() {
     return hopDwell;
   }
 
@@ -455,8 +524,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
    * <p>
    */
-  public void setHopDwell(JAXBElement<Tmicrosecs> value) {
+  public void setHopDwell(TDecimal value) {
     this.hopDwell = value;
+  }
+
+  public boolean isSetHopDwell() {
+    return (this.hopDwell != null);
   }
 
   /**
@@ -466,7 +539,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getNumFreqsPerHopset() {
+  public TInteger getNumFreqsPerHopset() {
     return numFreqsPerHopset;
   }
 
@@ -477,8 +550,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setNumFreqsPerHopset(JAXBElement<TUN4> value) {
+  public void setNumFreqsPerHopset(TInteger value) {
     this.numFreqsPerHopset = value;
+  }
+
+  public boolean isSetNumFreqsPerHopset() {
+    return (this.numFreqsPerHopset != null);
   }
 
   /**
@@ -488,7 +565,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN4> getNumHopsets() {
+  public TInteger getNumHopsets() {
     return numHopsets;
   }
 
@@ -499,8 +576,12 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
    * <p>
    */
-  public void setNumHopsets(JAXBElement<TUN4> value) {
+  public void setNumHopsets(TInteger value) {
     this.numHopsets = value;
+  }
+
+  public boolean isSetNumHopsets() {
+    return (this.numHopsets != null);
   }
 
   /**
@@ -510,7 +591,7 @@ public class SpreadSpectrum {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getFreqBlocking() {
+  public TString getFreqBlocking() {
     return freqBlocking;
   }
 
@@ -521,8 +602,102 @@ public class SpreadSpectrum {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setFreqBlocking(JAXBElement<TListCBO> value) {
+  public void setFreqBlocking(TString value) {
     this.freqBlocking = value;
+  }
+
+  public boolean isSetFreqBlocking() {
+    return (this.freqBlocking != null);
+  }
+
+  public SpreadSpectrum withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public SpreadSpectrum withFreqMin(Double value) {
+    setFreqMin(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withFreqMax(Double value) {
+    setFreqMax(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withMaxGain(Double value) {
+    setMaxGain(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withPulseFreqDev(Double value) {
+    setPulseFreqDev(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withInfoDataRate(Double value) {
+    setInfoDataRate(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withChipRate(Double value) {
+    setChipRate(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withCodeRate(Double value) {
+    setCodeRate(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withPulseChirpRate(Double value) {
+    setPulseChirpRate(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withPulseChirpFreqShift(Double value) {
+    setPulseChirpFreqShift(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withPulseChirpDurationMin(Double value) {
+    setPulseChirpDurationMin(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withTimeHopNumSlots(Integer value) {
+    setTimeHopNumSlots(new TInteger(value));
+    return this;
+  }
+
+  public SpreadSpectrum withTimeHopPulsesPerDwell(Integer value) {
+    setTimeHopPulsesPerDwell(new TInteger(value));
+    return this;
+  }
+
+  public SpreadSpectrum withHopRate(Double value) {
+    setHopRate(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withHopDwell(Double value) {
+    setHopDwell(new TDecimal(value));
+    return this;
+  }
+
+  public SpreadSpectrum withNumFreqsPerHopset(Integer value) {
+    setNumFreqsPerHopset(new TInteger(value));
+    return this;
+  }
+
+  public SpreadSpectrum withNumHopsets(Integer value) {
+    setNumHopsets(new TInteger(value));
+    return this;
+  }
+
+  public SpreadSpectrum withFreqBlocking(ListCBO value) {
+    setFreqBlocking(new TString(value.value()));
+    return this;
   }
 
 }

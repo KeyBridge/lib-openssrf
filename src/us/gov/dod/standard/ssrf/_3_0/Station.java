@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,18 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TS100;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN9;
-import us.gov.dod.standard.ssrf._3_0.datatype.TTSDFValue;
-import us.gov.dod.standard.ssrf._3_0.datatype.TFreqM;
-import us.gov.dod.standard.ssrf._3_0.datatype.TMEMO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS6;
-import us.gov.dod.standard.ssrf._3_0.datatype.TUN3;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS18;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS20;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -91,33 +90,45 @@ import javax.xml.bind.annotation.*;
 public class Station {
 
   @XmlElement(name = "StationID", required = true)
-  protected TS100 stationID;
-  @XmlElementRef(name = "CallSign", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS20> callSign;
-  @XmlElementRef(name = "CositeSep", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TFreqM> cositeSep;
-  @XmlElementRef(name = "CositeSepDescription", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TMEMO> cositeSepDescription;
-  @XmlElementRef(name = "NumMobileUnits", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numMobileUnits;
-  @XmlElementRef(name = "NumAreaUnits", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numAreaUnits;
-  @XmlElementRef(name = "NumCositedUnits", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN9> numCositedUnits;
-  @XmlElementRef(name = "TSDF", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TTSDFValue> tsdf;
-  @XmlElementRef(name = "UserCode", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS6> userCode;
-  @XmlElementRef(name = "AntStructureHeight", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TUN3> antStructureHeight;
-  @XmlElementRef(name = "StationName", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS100> stationName;
-  @XmlElementRef(name = "StationControl", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS18> stationControl;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString stationID;
+  @XmlElement(name = "CallSign", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  private TString callSign;
+  @XmlElement(name = "CositeSep", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  private TDecimal cositeSep;
+  @XmlElement(name = "CositeSepDescription", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  private TString cositeSepDescription;
+  @XmlElement(name = "NumMobileUnits", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numMobileUnits;
+  @XmlElement(name = "NumAreaUnits", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numAreaUnits;
+  @XmlElement(name = "NumCositedUnits", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  private TInteger numCositedUnits;
+  @XmlElement(name = "TSDF", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterTSDFVALUE.class)
+  private TString tsdf;
+  @XmlElement(name = "UserCode", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
+  private TString userCode;
+  @XmlElement(name = "AntStructureHeight", required = false)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN3.class)
+  private TInteger antStructureHeight;
+  @XmlElement(name = "StationName", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  private TString stationName;
+  @XmlElement(name = "StationControl", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS18.class)
+  private TString stationControl;
   @XmlElement(name = "POCInformation")
-  protected List<POCInformation> pocInformation;
+  private List<POCInformation> pocInformation;
   @XmlElement(name = "StationLoc", required = true)
-  protected List<StationLoc> stationLoc;
+  private List<StationLoc> stationLoc;
 
   /**
    * Gets the value of the stationID property.
@@ -125,7 +136,7 @@ public class Station {
    * @return possible object is {@link TS100 }
    * <p>
    */
-  public TS100 getStationID() {
+  public TString getStationID() {
     return stationID;
   }
 
@@ -135,8 +146,12 @@ public class Station {
    * @param value allowed object is {@link TS100 }
    * <p>
    */
-  public void setStationID(TS100 value) {
+  public void setStationID(TString value) {
     this.stationID = value;
+  }
+
+  public boolean isSetStationID() {
+    return (this.stationID != null);
   }
 
   /**
@@ -146,7 +161,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public JAXBElement<TS20> getCallSign() {
+  public TString getCallSign() {
     return callSign;
   }
 
@@ -157,8 +172,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
    * <p>
    */
-  public void setCallSign(JAXBElement<TS20> value) {
+  public void setCallSign(TString value) {
     this.callSign = value;
+  }
+
+  public boolean isSetCallSign() {
+    return (this.callSign != null);
   }
 
   /**
@@ -168,7 +187,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public JAXBElement<TFreqM> getCositeSep() {
+  public TDecimal getCositeSep() {
     return cositeSep;
   }
 
@@ -179,8 +198,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
    * <p>
    */
-  public void setCositeSep(JAXBElement<TFreqM> value) {
+  public void setCositeSep(TDecimal value) {
     this.cositeSep = value;
+  }
+
+  public boolean isSetCositeSep() {
+    return (this.cositeSep != null);
   }
 
   /**
@@ -190,7 +213,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public JAXBElement<TMEMO> getCositeSepDescription() {
+  public TString getCositeSepDescription() {
     return cositeSepDescription;
   }
 
@@ -201,8 +224,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
    * <p>
    */
-  public void setCositeSepDescription(JAXBElement<TMEMO> value) {
+  public void setCositeSepDescription(TString value) {
     this.cositeSepDescription = value;
+  }
+
+  public boolean isSetCositeSepDescription() {
+    return (this.cositeSepDescription != null);
   }
 
   /**
@@ -212,7 +239,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumMobileUnits() {
+  public TInteger getNumMobileUnits() {
     return numMobileUnits;
   }
 
@@ -223,8 +250,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumMobileUnits(JAXBElement<TUN9> value) {
+  public void setNumMobileUnits(TInteger value) {
     this.numMobileUnits = value;
+  }
+
+  public boolean isSetNumMobileUnits() {
+    return (this.numMobileUnits != null);
   }
 
   /**
@@ -234,7 +265,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumAreaUnits() {
+  public TInteger getNumAreaUnits() {
     return numAreaUnits;
   }
 
@@ -245,8 +276,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumAreaUnits(JAXBElement<TUN9> value) {
+  public void setNumAreaUnits(TInteger value) {
     this.numAreaUnits = value;
+  }
+
+  public boolean isSetNumAreaUnits() {
+    return (this.numAreaUnits != null);
   }
 
   /**
@@ -256,7 +291,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN9> getNumCositedUnits() {
+  public TInteger getNumCositedUnits() {
     return numCositedUnits;
   }
 
@@ -267,8 +302,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
    * <p>
    */
-  public void setNumCositedUnits(JAXBElement<TUN9> value) {
+  public void setNumCositedUnits(TInteger value) {
     this.numCositedUnits = value;
+  }
+
+  public boolean isSetNumCositedUnits() {
+    return (this.numCositedUnits != null);
   }
 
   /**
@@ -278,7 +317,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TTSDFValue }{@code >}
    * <p>
    */
-  public JAXBElement<TTSDFValue> getTSDF() {
+  public TString getTSDF() {
     return tsdf;
   }
 
@@ -289,8 +328,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TTSDFValue }{@code >}
    * <p>
    */
-  public void setTSDF(JAXBElement<TTSDFValue> value) {
+  public void setTSDF(TString value) {
     this.tsdf = value;
+  }
+
+  public boolean isSetTSDF() {
+    return (this.tsdf != null);
   }
 
   /**
@@ -300,7 +343,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TS6 }{@code >}
    * <p>
    */
-  public JAXBElement<TS6> getUserCode() {
+  public TString getUserCode() {
     return userCode;
   }
 
@@ -311,8 +354,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TS6 }{@code >}
    * <p>
    */
-  public void setUserCode(JAXBElement<TS6> value) {
+  public void setUserCode(TString value) {
     this.userCode = value;
+  }
+
+  public boolean isSetUserCode() {
+    return (this.userCode != null);
   }
 
   /**
@@ -322,7 +369,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
    * <p>
    */
-  public JAXBElement<TUN3> getAntStructureHeight() {
+  public TInteger getAntStructureHeight() {
     return antStructureHeight;
   }
 
@@ -333,8 +380,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
    * <p>
    */
-  public void setAntStructureHeight(JAXBElement<TUN3> value) {
+  public void setAntStructureHeight(TInteger value) {
     this.antStructureHeight = value;
+  }
+
+  public boolean isSetAntStructureHeight() {
+    return (this.antStructureHeight != null);
   }
 
   /**
@@ -344,7 +395,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public JAXBElement<TS100> getStationName() {
+  public TString getStationName() {
     return stationName;
   }
 
@@ -355,8 +406,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
    * <p>
    */
-  public void setStationName(JAXBElement<TS100> value) {
+  public void setStationName(TString value) {
     this.stationName = value;
+  }
+
+  public boolean isSetStationName() {
+    return (this.stationName != null);
   }
 
   /**
@@ -366,7 +421,7 @@ public class Station {
    *         {@link JAXBElement }{@code <}{@link TS18 }{@code >}
    * <p>
    */
-  public JAXBElement<TS18> getStationControl() {
+  public TString getStationControl() {
     return stationControl;
   }
 
@@ -377,8 +432,12 @@ public class Station {
    *              {@link JAXBElement }{@code <}{@link TS18 }{@code >}
    * <p>
    */
-  public void setStationControl(JAXBElement<TS18> value) {
+  public void setStationControl(TString value) {
     this.stationControl = value;
+  }
+
+  public boolean isSetStationControl() {
+    return (this.stationControl != null);
   }
 
   /**
@@ -402,12 +461,21 @@ public class Station {
      * {@link POCInformation }
    * <p>
    * <p>
+   * @return
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new ArrayList<>();
     }
     return this.pocInformation;
+  }
+
+  public boolean isSetPOCInformation() {
+    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
+  }
+
+  public void unsetPOCInformation() {
+    this.pocInformation = null;
   }
 
   /**
@@ -431,12 +499,109 @@ public class Station {
      * {@link StationLoc }
    * <p>
    * <p>
+   * @return
    */
   public List<StationLoc> getStationLoc() {
     if (stationLoc == null) {
       stationLoc = new ArrayList<>();
     }
     return this.stationLoc;
+  }
+
+  public boolean isSetStationLoc() {
+    return ((this.stationLoc != null) && (!this.stationLoc.isEmpty()));
+  }
+
+  public void unsetStationLoc() {
+    this.stationLoc = null;
+  }
+
+  public Station withStationID(String value) {
+    setStationID(new TString(value));
+    return this;
+  }
+
+  public Station withCallSign(String value) {
+    setCallSign(new TString(value));
+    return this;
+  }
+
+  public Station withCositeSep(Double value) {
+    setCositeSep(new TDecimal(value));
+    return this;
+  }
+
+  public Station withCositeSepDescription(String value) {
+    setCositeSepDescription(new TString(value));
+    return this;
+  }
+
+  public Station withNumMobileUnits(Integer value) {
+    setNumMobileUnits(new TInteger(value));
+    return this;
+  }
+
+  public Station withNumAreaUnits(Integer value) {
+    setNumAreaUnits(new TInteger(value));
+    return this;
+  }
+
+  public Station withNumCositedUnits(Integer value) {
+    setNumCositedUnits(new TInteger(value));
+    return this;
+  }
+
+  public Station withTSDF(String value) {
+    setTSDF(new TString(value));
+    return this;
+  }
+
+  public Station withUserCode(String value) {
+    setUserCode(new TString(value));
+    return this;
+  }
+
+  public Station withAntStructureHeight(Integer value) {
+    setAntStructureHeight(new TInteger(value));
+    return this;
+  }
+
+  public Station withStationName(String value) {
+    setStationName(new TString(value));
+    return this;
+  }
+
+  public Station withStationControl(String value) {
+    setStationControl(new TString(value));
+    return this;
+  }
+
+  public Station withPOCInformation(POCInformation... values) {
+    if (values != null) {
+      getPOCInformation().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Station withPOCInformation(Collection<POCInformation> values) {
+    if (values != null) {
+      getPOCInformation().addAll(values);
+    }
+    return this;
+  }
+
+  public Station withStationLoc(StationLoc... values) {
+    if (values != null) {
+      getStationLoc().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public Station withStationLoc(Collection<StationLoc> values) {
+    if (values != null) {
+      getStationLoc().addAll(values);
+    }
+    return this;
   }
 
 }

@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield.
+ * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,13 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.datatype.TAz180;
-import us.gov.dod.standard.ssrf._3_0.datatype.TListCBO;
-import us.gov.dod.standard.ssrf._3_0.datatype.TS10;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.datatype.*;
+import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>
@@ -68,16 +74,19 @@ import javax.xml.bind.annotation.*;
 })
 public class AntPattern {
 
-  @XmlElementRef(name = "Type", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> type;
-  @XmlElementRef(name = "Calculated", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TListCBO> calculated;
-  @XmlElementRef(name = "CutType", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TS10> cutType;
-  @XmlElementRef(name = "CutAngle", namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", type = JAXBElement.class, required = false)
-  protected JAXBElement<TAz180> cutAngle;
+  @XmlElement(name = "Type", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString type;
+  @XmlElement(name = "Calculated", required = false)
+  private TString calculated;
+  @XmlElement(name = "CutType", required = false)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  private TString cutType;
+  @XmlElement(name = "CutAngle", required = false)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  private TDecimal cutAngle;
   @XmlElement(name = "AntPatternPoint", required = true)
-  protected List<AntPatternPoint> antPatternPoint;
+  private List<AntPatternPoint> antPatternPoint;
 
   /**
    * Gets the value of the type property.
@@ -86,7 +95,7 @@ public class AntPattern {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getType() {
+  public TString getType() {
     return type;
   }
 
@@ -97,8 +106,12 @@ public class AntPattern {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setType(JAXBElement<TS10> value) {
+  public void setType(TString value) {
     this.type = value;
+  }
+
+  public boolean isSetType() {
+    return (this.type != null);
   }
 
   /**
@@ -108,7 +121,7 @@ public class AntPattern {
    *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public JAXBElement<TListCBO> getCalculated() {
+  public TString getCalculated() {
     return calculated;
   }
 
@@ -119,8 +132,12 @@ public class AntPattern {
    *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
    * <p>
    */
-  public void setCalculated(JAXBElement<TListCBO> value) {
+  public void setCalculated(TString value) {
     this.calculated = value;
+  }
+
+  public boolean isSetCalculated() {
+    return (this.calculated != null);
   }
 
   /**
@@ -130,7 +147,7 @@ public class AntPattern {
    *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public JAXBElement<TS10> getCutType() {
+  public TString getCutType() {
     return cutType;
   }
 
@@ -141,8 +158,12 @@ public class AntPattern {
    *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
    * <p>
    */
-  public void setCutType(JAXBElement<TS10> value) {
+  public void setCutType(TString value) {
     this.cutType = value;
+  }
+
+  public boolean isSetCutType() {
+    return (this.cutType != null);
   }
 
   /**
@@ -152,7 +173,7 @@ public class AntPattern {
    *         {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
    * <p>
    */
-  public JAXBElement<TAz180> getCutAngle() {
+  public TDecimal getCutAngle() {
     return cutAngle;
   }
 
@@ -163,8 +184,12 @@ public class AntPattern {
    *              {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
    * <p>
    */
-  public void setCutAngle(JAXBElement<TAz180> value) {
+  public void setCutAngle(TDecimal value) {
     this.cutAngle = value;
+  }
+
+  public boolean isSetCutAngle() {
+    return (this.cutAngle != null);
   }
 
   /**
@@ -188,12 +213,55 @@ public class AntPattern {
      * {@link AntPatternPoint }
    * <p>
    * <p>
+   * @return
    */
   public List<AntPatternPoint> getAntPatternPoint() {
     if (antPatternPoint == null) {
       antPatternPoint = new ArrayList<>();
     }
     return this.antPatternPoint;
+  }
+
+  public boolean isSetAntPatternPoint() {
+    return ((this.antPatternPoint != null) && (!this.antPatternPoint.isEmpty()));
+  }
+
+  public void unsetAntPatternPoint() {
+    this.antPatternPoint = null;
+  }
+
+  public AntPattern withType(String value) {
+    setType(new TString(value));
+    return this;
+  }
+
+  public AntPattern withCalculated(ListCBO value) {
+    setCalculated(new TString(value.value()));
+    return this;
+  }
+
+  public AntPattern withCutType(String value) {
+    setCutType(new TString(value));
+    return this;
+  }
+
+  public AntPattern withCutAngle(Double value) {
+    setCutAngle(new TDecimal(value));
+    return this;
+  }
+
+  public AntPattern withAntPatternPoint(AntPatternPoint... values) {
+    if (values != null) {
+      getAntPatternPoint().addAll(Arrays.asList(values));
+    }
+    return this;
+  }
+
+  public AntPattern withAntPatternPoint(Collection<AntPatternPoint> values) {
+    if (values != null) {
+      getAntPatternPoint().addAll(values);
+    }
+    return this;
   }
 
 }
