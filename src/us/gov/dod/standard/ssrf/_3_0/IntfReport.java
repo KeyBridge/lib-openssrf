@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
