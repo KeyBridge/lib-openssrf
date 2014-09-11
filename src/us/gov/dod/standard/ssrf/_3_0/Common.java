@@ -29,8 +29,8 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.Remarks;
 

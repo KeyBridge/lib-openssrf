@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataType;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 
 /**
  * <p>

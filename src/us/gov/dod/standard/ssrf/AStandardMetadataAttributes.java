@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
 
 /**
  * Abstract class representing the SSRF Standard Metadata Attributes complement.

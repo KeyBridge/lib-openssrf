@@ -30,8 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCFR;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFR;
 
 /**
  * <p>

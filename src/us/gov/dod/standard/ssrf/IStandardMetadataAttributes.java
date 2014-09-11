@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf;
 
 import java.math.BigInteger;
 import java.util.List;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
 
 /**
  * Interface class representing the SSRF Standard Metadata Attributes.
