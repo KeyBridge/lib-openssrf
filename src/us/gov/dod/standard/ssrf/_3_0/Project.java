@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -79,7 +79,7 @@ public class Project {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -90,7 +90,7 @@ public class Project {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -104,8 +104,7 @@ public class Project {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is {@link TS30 }
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -114,8 +113,7 @@ public class Project {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is {@link TS30 }
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -129,7 +127,7 @@ public class Project {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -140,7 +138,7 @@ public class Project {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 
 /**
  * <p>
@@ -84,7 +84,7 @@ public class Blanking {
    * Gets the value of the azStart property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAzStart() {
@@ -95,7 +95,7 @@ public class Blanking {
    * Sets the value of the azStart property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *              
    * <p>
    */
   public void setAzStart(TDecimal value) {
@@ -110,7 +110,7 @@ public class Blanking {
    * Gets the value of the azStop property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAzStop() {
@@ -121,7 +121,7 @@ public class Blanking {
    * Sets the value of the azStop property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *              
    * <p>
    */
   public void setAzStop(TDecimal value) {
@@ -136,7 +136,7 @@ public class Blanking {
    * Gets the value of the elevStart property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *         
    * <p>
    */
   public TDecimal getElevStart() {
@@ -147,7 +147,7 @@ public class Blanking {
    * Sets the value of the elevStart property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *              
    * <p>
    */
   public void setElevStart(TDecimal value) {
@@ -162,7 +162,7 @@ public class Blanking {
    * Gets the value of the elevStop property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *         
    * <p>
    */
   public TDecimal getElevStop() {
@@ -173,7 +173,7 @@ public class Blanking {
    * Sets the value of the elevStop property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *              
    * <p>
    */
   public void setElevStop(TDecimal value) {

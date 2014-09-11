@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 
 /**
  * <p>
@@ -94,8 +94,7 @@ public class CodeList {
   /**
    * Gets the value of the action property.
    * <p>
-   * @return possible object is {@link TS25 }
-   * <p>
+   * @return 
    */
   public TString getAction() {
     return action;
@@ -104,8 +103,7 @@ public class CodeList {
   /**
    * Sets the value of the action property.
    * <p>
-   * @param value allowed object is {@link TS25 }
-   * <p>
+   * @param value 
    */
   public void setAction(TString value) {
     this.action = value;
@@ -118,8 +116,7 @@ public class CodeList {
   /**
    * Gets the value of the codeListCode property.
    * <p>
-   * @return possible object is {@link TUS3 }
-   * <p>
+   * @return 
    */
   public TString getCodeListCode() {
     return codeListCode;
@@ -128,8 +125,7 @@ public class CodeList {
   /**
    * Sets the value of the codeListCode property.
    * <p>
-   * @param value allowed object is {@link TUS3 }
-   * <p>
+   * @param value 
    */
   public void setCodeListCode(TString value) {
     this.codeListCode = value;
@@ -142,8 +138,7 @@ public class CodeList {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is {@link TD }
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -152,8 +147,7 @@ public class CodeList {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is {@link TD }
-   * <p>
+   * @param value 
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -167,7 +161,7 @@ public class CodeList {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -178,7 +172,7 @@ public class CodeList {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {
@@ -193,7 +187,7 @@ public class CodeList {
    * Gets the value of the origin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *         
    * <p>
    */
   public TString getOrigin() {
@@ -204,7 +198,7 @@ public class CodeList {
    * Sets the value of the origin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *              
    * <p>
    */
   public void setOrigin(TString value) {
@@ -232,7 +226,7 @@ public class CodeList {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Code }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

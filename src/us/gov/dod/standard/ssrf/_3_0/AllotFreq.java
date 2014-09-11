@@ -23,44 +23,27 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.metadata.LocationRestriction;
 
 /**
- * <p>
  * Java class for AllotFreq complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AllotFreq">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/>
- *         &lt;element name="PairedFreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="TuningStep" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="LocationRestriction" type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRestriction" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * This data element defines a frequency or range of frequencies belonging to
+ * the Allotment. In the case of an allotment for a duplex frequency range, the
+ * pairs of frequencies are derived from FreqMin, FreqMax, TuningStep and
+ * PairedFreqMin as follows: (FreqMin + n * TuningStep, PairedFreqMin + n *
+ * TuningStep) with n varying from 0 until FreqMin + n * TuningStep = FreqMax.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AllotFreq", propOrder = {
@@ -72,26 +55,51 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AllotFreq {
 
+  /**
+   * FreqMin: Enter the nominal frequency or minimum value of the frequency
+   * range.
+   */
   @XmlElement(name = "FreqMin", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
+  /**
+   * FreqMax: Enter the maximum value of the frequencies in the range.
+   */
   @XmlElement(name = "FreqMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
+  /**
+   * PairedFreqMin: Enter the nominal frequency or minimum value of the
+   * frequency range, for the paired frequency or frequency range when the
+   * allotment is for a duplex system.
+   */
   @XmlElement(name = "PairedFreqMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal pairedFreqMin;
+  /**
+   * TuningStep: Enter the tuning increment expressed in MHz (do not insert any
+   * unit).
+   */
   @XmlElement(name = "TuningStep", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal tuningStep;
+
+  /**
+   * This element indicates a Location where the Allotment usage is forbidden.
+   * <p>
+   * Location contains the parameters of a Location used to describe a
+   * geographical location, polygonal or ellipse area, or a set of those. It
+   * inherits attributes and sub-elements from element Common. To be meaningful,
+   * a Location SHOULD contain at least one of the sub-elements Point, Polygon,
+   * Ellipse or LocationRef.
+   */
   @XmlElement(name = "LocationRestriction", nillable = true)
   private List<LocationRestriction> locationRestriction;
 
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -100,8 +108,7 @@ public class AllotFreq {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -114,9 +121,7 @@ public class AllotFreq {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -125,10 +130,7 @@ public class AllotFreq {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
   }
@@ -140,9 +142,7 @@ public class AllotFreq {
   /**
    * Gets the value of the pairedFreqMin property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getPairedFreqMin() {
     return pairedFreqMin;
@@ -151,10 +151,7 @@ public class AllotFreq {
   /**
    * Sets the value of the pairedFreqMin property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setPairedFreqMin(TDecimal value) {
     this.pairedFreqMin = value;
   }
@@ -166,9 +163,7 @@ public class AllotFreq {
   /**
    * Gets the value of the tuningStep property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getTuningStep() {
     return tuningStep;
@@ -177,10 +172,7 @@ public class AllotFreq {
   /**
    * Sets the value of the tuningStep property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
   }
@@ -207,7 +199,7 @@ public class AllotFreq {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link LocationRestriction }
+   * <p>
    * <p>
    * <p>
    * @return

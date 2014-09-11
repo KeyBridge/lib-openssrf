@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
 
 /**
- * Abstract class representing the SSRF Standard Metadata Attributes.
+ * Abstract class representing the SSRF Standard Metadata Attributes complement.
  * <p>
  * Metadata fields are defined in the SSRF XSD as the "metadata" attribute
  * group. These attributes apply to all data items, to all leaf elements
@@ -58,21 +58,12 @@ import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
  * </pre></code>
  * <p>
  * @author Jesse Caulfield <jesse@caulfield.org>
- * @param <T> The class type instance to which the metadata attributes are
- *            associated.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AStandardMetadataAttributes", propOrder = {
   "value"
 })
-public class AStandardMetadataAttributes<T> implements IStandardMetadataAttributes {
-
-  /**
-   * The value to which the metadata attributes are associated. Expected Class
-   * types are String, BigDecimal and BigInteger.
-   */
-  @XmlValue
-  protected T value;
+public abstract class AStandardMetadataAttributes implements IStandardMetadataAttributes {
 
   /**
    * cls (Attribute): The classification of the current data item. This
@@ -137,43 +128,9 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   protected String availability;
 
   /**
-   * Construct a new data type instance with the indicated value.
-   * <p>
-   * @param value the value
-   */
-  public AStandardMetadataAttributes(T value) {
-    this.value = value;
-  }
-
-  /**
-   * Gets the value of the value property.
-   * <p>
-   * @return possible object is {@link String }
-   * <p>
-   */
-  public T getValue() {
-    return value;
-  }
-
-  /**
-   * Sets the value of the value property.
-   * <p>
-   * @param value allowed object is {@link String }
-   * <p>
-   */
-  public void setValue(T value) {
-    this.value = value;
-  }
-
-  public boolean isSetValue() {
-    return (this.value != null);
-  }
-
-  /**
    * Gets the value of the cls property.
    * <p>
-   * @return possible object is {@link ListCCL }
-   * <p>
+   * @return 
    */
   @Override
   public ListCCL getCls() {
@@ -183,8 +140,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Sets the value of the cls property.
    * <p>
-   * @param value allowed object is {@link ListCCL }
-   * <p>
+   * @param value 
    */
   public void setCls(ListCCL value) {
     this.cls = value;
@@ -212,7 +168,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return
@@ -251,7 +207,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return
@@ -275,8 +231,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Gets the value of the legacyReleasability property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   @Override
   public String getLegacyReleasability() {
@@ -286,8 +241,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Sets the value of the legacyReleasability property.
    * <p>
-   * @param value allowed object is {@link String }
-   * <p>
+   * @param value 
    */
   public void setLegacyReleasability(String value) {
     this.legacyReleasability = value;
@@ -300,8 +254,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Gets the value of the quality property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   @Override
   public String getQuality() {
@@ -311,8 +264,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Sets the value of the quality property.
    * <p>
-   * @param value allowed object is {@link String }
-   * <p>
+   * @param value 
    */
   public void setQuality(String value) {
     this.quality = value;
@@ -325,8 +277,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Gets the value of the recommendedValue property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   @Override
   public String getRecommendedValue() {
@@ -336,8 +287,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Sets the value of the recommendedValue property.
    * <p>
-   * @param value allowed object is {@link String }
-   * <p>
+   * @param value 
    */
   public void setRecommendedValue(String value) {
     this.recommendedValue = value;
@@ -350,8 +300,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Gets the value of the availability property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   @Override
   public String getAvailability() {
@@ -361,8 +310,7 @@ public class AStandardMetadataAttributes<T> implements IStandardMetadataAttribut
   /**
    * Sets the value of the availability property.
    * <p>
-   * @param value allowed object is {@link String }
-   * <p>
+   * @param value 
    */
   public void setAvailability(String value) {
     this.availability = value;

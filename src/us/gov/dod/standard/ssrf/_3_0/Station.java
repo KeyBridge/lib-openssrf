@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -37,6 +34,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -135,8 +135,7 @@ public class Station {
   /**
    * Gets the value of the stationID property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getStationID() {
     return stationID;
@@ -145,8 +144,7 @@ public class Station {
   /**
    * Sets the value of the stationID property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setStationID(TString value) {
     this.stationID = value;
@@ -160,7 +158,7 @@ public class Station {
    * Gets the value of the callSign property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getCallSign() {
@@ -171,7 +169,7 @@ public class Station {
    * Sets the value of the callSign property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setCallSign(TString value) {
@@ -186,7 +184,7 @@ public class Station {
    * Gets the value of the cositeSep property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCositeSep() {
@@ -197,7 +195,7 @@ public class Station {
    * Sets the value of the cositeSep property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setCositeSep(TDecimal value) {
@@ -212,7 +210,7 @@ public class Station {
    * Gets the value of the cositeSepDescription property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getCositeSepDescription() {
@@ -223,7 +221,7 @@ public class Station {
    * Sets the value of the cositeSepDescription property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setCositeSepDescription(TString value) {
@@ -238,7 +236,7 @@ public class Station {
    * Gets the value of the numMobileUnits property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumMobileUnits() {
@@ -249,7 +247,7 @@ public class Station {
    * Sets the value of the numMobileUnits property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumMobileUnits(TInteger value) {
@@ -264,7 +262,7 @@ public class Station {
    * Gets the value of the numAreaUnits property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumAreaUnits() {
@@ -275,7 +273,7 @@ public class Station {
    * Sets the value of the numAreaUnits property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumAreaUnits(TInteger value) {
@@ -290,7 +288,7 @@ public class Station {
    * Gets the value of the numCositedUnits property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumCositedUnits() {
@@ -301,7 +299,7 @@ public class Station {
    * Sets the value of the numCositedUnits property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumCositedUnits(TInteger value) {
@@ -316,7 +314,7 @@ public class Station {
    * Gets the value of the tsdf property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TTSDFValue }{@code >}
+   *         
    * <p>
    */
   public TString getTSDF() {
@@ -327,7 +325,7 @@ public class Station {
    * Sets the value of the tsdf property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TTSDFValue }{@code >}
+   *              
    * <p>
    */
   public void setTSDF(TString value) {
@@ -342,7 +340,7 @@ public class Station {
    * Gets the value of the userCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS6 }{@code >}
+   *         
    * <p>
    */
   public TString getUserCode() {
@@ -353,7 +351,7 @@ public class Station {
    * Sets the value of the userCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS6 }{@code >}
+   *              
    * <p>
    */
   public void setUserCode(TString value) {
@@ -368,7 +366,7 @@ public class Station {
    * Gets the value of the antStructureHeight property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
+   *         
    * <p>
    */
   public TInteger getAntStructureHeight() {
@@ -379,7 +377,7 @@ public class Station {
    * Sets the value of the antStructureHeight property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
+   *              
    * <p>
    */
   public void setAntStructureHeight(TInteger value) {
@@ -394,7 +392,7 @@ public class Station {
    * Gets the value of the stationName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getStationName() {
@@ -405,7 +403,7 @@ public class Station {
    * Sets the value of the stationName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setStationName(TString value) {
@@ -420,7 +418,7 @@ public class Station {
    * Gets the value of the stationControl property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS18 }{@code >}
+   *         
    * <p>
    */
   public TString getStationControl() {
@@ -431,7 +429,7 @@ public class Station {
    * Sets the value of the stationControl property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS18 }{@code >}
+   *              
    * <p>
    */
   public void setStationControl(TString value) {
@@ -460,7 +458,7 @@ public class Station {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -498,7 +496,7 @@ public class Station {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link StationLoc }
+     * 
    * <p>
    * <p>
    * @return

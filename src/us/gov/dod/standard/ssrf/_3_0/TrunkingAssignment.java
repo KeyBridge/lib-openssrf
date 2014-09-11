@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -35,6 +31,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -91,8 +91,7 @@ public class TrunkingAssignment {
   /**
    * Gets the value of the isRelinquished property.
    * <p>
-   * @return possible object is {@link TListCBO }
-   * <p>
+   * @return 
    */
   public TString getIsRelinquished() {
     return isRelinquished;
@@ -101,8 +100,7 @@ public class TrunkingAssignment {
   /**
    * Sets the value of the isRelinquished property.
    * <p>
-   * @param value allowed object is {@link TListCBO }
-   * <p>
+   * @param value 
    */
   public void setIsRelinquished(TString value) {
     this.isRelinquished = value;
@@ -116,7 +114,7 @@ public class TrunkingAssignment {
    * Gets the value of the agencySerialNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *         
    * <p>
    */
   public TString getAgencySerialNum() {
@@ -127,7 +125,7 @@ public class TrunkingAssignment {
    * Sets the value of the agencySerialNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *              
    * <p>
    */
   public void setAgencySerialNum(TString value) {
@@ -142,7 +140,7 @@ public class TrunkingAssignment {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -153,7 +151,7 @@ public class TrunkingAssignment {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -168,7 +166,7 @@ public class TrunkingAssignment {
    * Gets the value of the freqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMin() {
@@ -179,7 +177,7 @@ public class TrunkingAssignment {
    * Sets the value of the freqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMin(TDecimal value) {
@@ -194,7 +192,7 @@ public class TrunkingAssignment {
    * Gets the value of the relinquishmentDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getRelinquishmentDate() {
@@ -205,7 +203,7 @@ public class TrunkingAssignment {
    * Sets the value of the relinquishmentDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setRelinquishmentDate(TCalendar value) {

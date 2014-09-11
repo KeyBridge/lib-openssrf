@@ -23,11 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCFO;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,6 +32,12 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCFO;
+import us.gov.dod.standard.ssrf._3_0.metadata.*;
 
 /**
  * <p>
@@ -235,8 +236,7 @@ public class TxMode {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return possible object is {@link TS20 }
-   * <p>
+   * @return 
    */
   public TString getModeID() {
     return modeID;
@@ -245,8 +245,7 @@ public class TxMode {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value allowed object is {@link TS20 }
-   * <p>
+   * @param value 
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -260,7 +259,7 @@ public class TxMode {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -271,7 +270,7 @@ public class TxMode {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {
@@ -286,7 +285,7 @@ public class TxMode {
    * Gets the value of the necessaryBw property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getNecessaryBw() {
@@ -297,7 +296,7 @@ public class TxMode {
    * Sets the value of the necessaryBw property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setNecessaryBw(TDecimal value) {
@@ -312,7 +311,7 @@ public class TxMode {
    * Gets the value of the tunability property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getTunability() {
@@ -323,7 +322,7 @@ public class TxMode {
    * Sets the value of the tunability property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setTunability(TString value) {
@@ -338,7 +337,7 @@ public class TxMode {
    * Gets the value of the tuningMethod property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getTuningMethod() {
@@ -349,7 +348,7 @@ public class TxMode {
    * Sets the value of the tuningMethod property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setTuningMethod(TString value) {
@@ -364,7 +363,7 @@ public class TxMode {
    * Gets the value of the numSubCarriers property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumSubCarriers() {
@@ -375,7 +374,7 @@ public class TxMode {
    * Sets the value of the numSubCarriers property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *              
    * <p>
    */
   public void setNumSubCarriers(TInteger value) {
@@ -390,7 +389,7 @@ public class TxMode {
    * Gets the value of the numSideTones property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumSideTones() {
@@ -401,7 +400,7 @@ public class TxMode {
    * Sets the value of the numSideTones property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *              
    * <p>
    */
   public void setNumSideTones(TInteger value) {
@@ -416,7 +415,7 @@ public class TxMode {
    * Gets the value of the intermodPct property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *         
    * <p>
    */
   public TDecimal getIntermodPct() {
@@ -427,7 +426,7 @@ public class TxMode {
    * Sets the value of the intermodPct property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *              
    * <p>
    */
   public void setIntermodPct(TDecimal value) {
@@ -442,7 +441,7 @@ public class TxMode {
    * Gets the value of the intermodEffect property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getIntermodEffect() {
@@ -453,7 +452,7 @@ public class TxMode {
    * Sets the value of the intermodEffect property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setIntermodEffect(TString value) {
@@ -468,7 +467,7 @@ public class TxMode {
    * Gets the value of the burstRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN12_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getBurstRate() {
@@ -479,7 +478,7 @@ public class TxMode {
    * Sets the value of the burstRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN12_3 }{@code >}
+   *              
    * <p>
    */
   public void setBurstRate(TDecimal value) {
@@ -494,7 +493,7 @@ public class TxMode {
    * Gets the value of the burstDuration property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getBurstDuration() {
@@ -505,7 +504,7 @@ public class TxMode {
    * Sets the value of the burstDuration property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setBurstDuration(TDecimal value) {
@@ -520,7 +519,7 @@ public class TxMode {
    * Gets the value of the burstNumPulses property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
+   *         
    * <p>
    */
   public TInteger getBurstNumPulses() {
@@ -531,7 +530,7 @@ public class TxMode {
    * Sets the value of the burstNumPulses property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
+   *              
    * <p>
    */
   public void setBurstNumPulses(TInteger value) {
@@ -546,7 +545,7 @@ public class TxMode {
    * Gets the value of the burstOffTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getBurstOffTime() {
@@ -557,7 +556,7 @@ public class TxMode {
    * Sets the value of the burstOffTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setBurstOffTime(TDecimal value) {
@@ -571,8 +570,7 @@ public class TxMode {
   /**
    * Gets the value of the occBw property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getOccBw() {
     return occBw;
@@ -581,8 +579,7 @@ public class TxMode {
   /**
    * Sets the value of the occBw property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setOccBw(TDecimal value) {
     this.occBw = value;
@@ -596,7 +593,7 @@ public class TxMode {
    * Gets the value of the occBwCalculated property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getOccBwCalculated() {
@@ -607,7 +604,7 @@ public class TxMode {
    * Sets the value of the occBwCalculated property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setOccBwCalculated(TString value) {
@@ -622,7 +619,7 @@ public class TxMode {
    * Gets the value of the secondHarmonicLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSecondHarmonicLevel() {
@@ -633,7 +630,7 @@ public class TxMode {
    * Sets the value of the secondHarmonicLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setSecondHarmonicLevel(TDecimal value) {
@@ -648,7 +645,7 @@ public class TxMode {
    * Gets the value of the thirdHarmonicLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getThirdHarmonicLevel() {
@@ -659,7 +656,7 @@ public class TxMode {
    * Sets the value of the thirdHarmonicLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setThirdHarmonicLevel(TDecimal value) {
@@ -674,7 +671,7 @@ public class TxMode {
    * Gets the value of the otherHarmonicLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getOtherHarmonicLevel() {
@@ -685,7 +682,7 @@ public class TxMode {
    * Sets the value of the otherHarmonicLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setOtherHarmonicLevel(TDecimal value) {
@@ -700,7 +697,7 @@ public class TxMode {
    * Gets the value of the spuriousLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSpuriousLevel() {
@@ -711,7 +708,7 @@ public class TxMode {
    * Sets the value of the spuriousLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setSpuriousLevel(TDecimal value) {
@@ -725,8 +722,7 @@ public class TxMode {
   /**
    * Gets the value of the freqTolerance property.
    * <p>
-   * @return possible object is {@link TUN18_6 }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqTolerance() {
     return freqTolerance;
@@ -735,8 +731,7 @@ public class TxMode {
   /**
    * Sets the value of the freqTolerance property.
    * <p>
-   * @param value allowed object is {@link TUN18_6 }
-   * <p>
+   * @param value 
    */
   public void setFreqTolerance(TDecimal value) {
     this.freqTolerance = value;
@@ -749,8 +744,7 @@ public class TxMode {
   /**
    * Gets the value of the freqToleranceUnit property.
    * <p>
-   * @return possible object is {@link TListCFO }
-   * <p>
+   * @return 
    */
   public TString getFreqToleranceUnit() {
     return freqToleranceUnit;
@@ -759,8 +753,7 @@ public class TxMode {
   /**
    * Sets the value of the freqToleranceUnit property.
    * <p>
-   * @param value allowed object is {@link TListCFO }
-   * <p>
+   * @param value 
    */
   public void setFreqToleranceUnit(TString value) {
     this.freqToleranceUnit = value;
@@ -774,7 +767,7 @@ public class TxMode {
    * Gets the value of the radarType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getRadarType() {
@@ -785,7 +778,7 @@ public class TxMode {
    * Sets the value of the radarType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setRadarType(TString value) {
@@ -800,7 +793,7 @@ public class TxMode {
    * Gets the value of the gpsNBL1Level property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getGpsNBL1Level() {
@@ -811,7 +804,7 @@ public class TxMode {
    * Sets the value of the gpsNBL1Level property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
+   *              
    * <p>
    */
   public void setGpsNBL1Level(TDecimal value) {
@@ -826,7 +819,7 @@ public class TxMode {
    * Gets the value of the gpsNBL2Level property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getGpsNBL2Level() {
@@ -837,7 +830,7 @@ public class TxMode {
    * Sets the value of the gpsNBL2Level property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS_DBW }{@code >}
+   *              
    * <p>
    */
   public void setGpsNBL2Level(TDecimal value) {
@@ -852,7 +845,7 @@ public class TxMode {
    * Gets the value of the gpsWBL1Level property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getGpsWBL1Level() {
@@ -863,7 +856,7 @@ public class TxMode {
    * Sets the value of the gpsWBL1Level property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
+   *              
    * <p>
    */
   public void setGpsWBL1Level(TDecimal value) {
@@ -878,7 +871,7 @@ public class TxMode {
    * Gets the value of the gpsWBL2Level property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getGpsWBL2Level() {
@@ -889,7 +882,7 @@ public class TxMode {
    * Sets the value of the gpsWBL2Level property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS_DBWHz }{@code >}
+   *              
    * <p>
    */
   public void setGpsWBL2Level(TDecimal value) {
@@ -904,7 +897,7 @@ public class TxMode {
    * Gets the value of the modulationType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getModulationType() {
@@ -915,7 +908,7 @@ public class TxMode {
    * Sets the value of the modulationType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setModulationType(TString value) {
@@ -930,7 +923,7 @@ public class TxMode {
    * Gets the value of the modeName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *         
    * <p>
    */
   public TString getModeName() {
@@ -941,7 +934,7 @@ public class TxMode {
    * Sets the value of the modeName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *              
    * <p>
    */
   public void setModeName(TString value) {
@@ -969,7 +962,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link EmsClass }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1006,7 +999,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Power }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1044,7 +1037,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link TxSignalTuning }
+     * 
    * <p>
    * <p>
    * @return
@@ -1082,7 +1075,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link TxModulation }
+     * 
    * <p>
    * <p>
    * @return
@@ -1119,7 +1112,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Baseband }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1156,7 +1149,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Pulse }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1194,7 +1187,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link SubCarrierFreq }
+     * 
    * <p>
    * <p>
    * @return
@@ -1232,7 +1225,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link SubCarrierTone }
+     * 
    * <p>
    * <p>
    * @return
@@ -1255,8 +1248,7 @@ public class TxMode {
   /**
    * Gets the value of the spreadSpectrum property.
    * <p>
-   * @return possible object is {@link SpreadSpectrum }
-   * <p>
+   * @return 
    */
   public SpreadSpectrum getSpreadSpectrum() {
     return spreadSpectrum;
@@ -1265,8 +1257,7 @@ public class TxMode {
   /**
    * Sets the value of the spreadSpectrum property.
    * <p>
-   * @param value allowed object is {@link SpreadSpectrum }
-   * <p>
+   * @param value 
    */
   public void setSpreadSpectrum(SpreadSpectrum value) {
     this.spreadSpectrum = value;
@@ -1294,7 +1285,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return

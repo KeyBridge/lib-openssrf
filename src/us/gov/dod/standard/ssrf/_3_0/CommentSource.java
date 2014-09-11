@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.Comment;
 
 /**
  * <p>
@@ -90,7 +91,7 @@ public class CommentSource {
    * Gets the value of the source property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getSource() {
@@ -101,7 +102,7 @@ public class CommentSource {
    * Sets the value of the source property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setSource(TString value) {
@@ -116,7 +117,7 @@ public class CommentSource {
    * Gets the value of the author property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getAuthor() {
@@ -127,7 +128,7 @@ public class CommentSource {
    * Sets the value of the author property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setAuthor(TString value) {
@@ -142,7 +143,7 @@ public class CommentSource {
    * Gets the value of the jobTitle property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getJobTitle() {
@@ -153,7 +154,7 @@ public class CommentSource {
    * Sets the value of the jobTitle property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setJobTitle(TString value) {
@@ -168,7 +169,7 @@ public class CommentSource {
    * Gets the value of the date property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDate() {
@@ -179,7 +180,7 @@ public class CommentSource {
    * Sets the value of the date property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDate(TCalendar value) {
@@ -207,7 +208,7 @@ public class CommentSource {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Comment }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

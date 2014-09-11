@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -93,7 +93,7 @@ public class RxModulation {
    * Gets the value of the digitalModType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getDigitalModType() {
@@ -104,7 +104,7 @@ public class RxModulation {
    * Sets the value of the digitalModType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setDigitalModType(TString value) {
@@ -119,7 +119,7 @@ public class RxModulation {
    * Gets the value of the maxBitRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getMaxBitRate() {
@@ -130,7 +130,7 @@ public class RxModulation {
    * Sets the value of the maxBitRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *              
    * <p>
    */
   public void setMaxBitRate(TDecimal value) {
@@ -145,7 +145,7 @@ public class RxModulation {
    * Gets the value of the numStates property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumStates() {
@@ -156,7 +156,7 @@ public class RxModulation {
    * Sets the value of the numStates property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *              
    * <p>
    */
   public void setNumStates(TInteger value) {
@@ -171,7 +171,7 @@ public class RxModulation {
    * Gets the value of the lineCoding property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getLineCoding() {
@@ -182,7 +182,7 @@ public class RxModulation {
    * Sets the value of the lineCoding property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setLineCoding(TString value) {
@@ -197,7 +197,7 @@ public class RxModulation {
    * Gets the value of the codeRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCodeRate() {
@@ -208,7 +208,7 @@ public class RxModulation {
    * Sets the value of the codeRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *              
    * <p>
    */
   public void setCodeRate(TDecimal value) {
@@ -223,7 +223,7 @@ public class RxModulation {
    * Gets the value of the codePeriod property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCodePeriod() {
@@ -234,7 +234,7 @@ public class RxModulation {
    * Sets the value of the codePeriod property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setCodePeriod(TDecimal value) {

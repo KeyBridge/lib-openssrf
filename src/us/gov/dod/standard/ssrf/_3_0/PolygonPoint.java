@@ -23,11 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -72,8 +72,7 @@ public class PolygonPoint {
   /**
    * Gets the value of the lon property.
    * <p>
-   * @return possible object is {@link TLon }
-   * <p>
+   * @return 
    */
   public TString getLon() {
     return lon;
@@ -82,8 +81,7 @@ public class PolygonPoint {
   /**
    * Sets the value of the lon property.
    * <p>
-   * @param value allowed object is {@link TLon }
-   * <p>
+   * @param value 
    */
   public void setLon(TString value) {
     this.lon = value;
@@ -96,8 +94,7 @@ public class PolygonPoint {
   /**
    * Gets the value of the lat property.
    * <p>
-   * @return possible object is {@link TLat }
-   * <p>
+   * @return 
    */
   public TString getLat() {
     return lat;
@@ -106,8 +103,7 @@ public class PolygonPoint {
   /**
    * Sets the value of the lat property.
    * <p>
-   * @param value allowed object is {@link TLat }
-   * <p>
+   * @param value 
    */
   public void setLat(TString value) {
     this.lat = value;
@@ -120,8 +116,7 @@ public class PolygonPoint {
   /**
    * Gets the value of the sequence property.
    * <p>
-   * @return possible object is {@link BigInteger }
-   * <p>
+   * @return 
    */
   public BigInteger getSequence() {
     return sequence;
@@ -130,8 +125,7 @@ public class PolygonPoint {
   /**
    * Sets the value of the sequence property.
    * <p>
-   * @param value allowed object is {@link BigInteger }
-   * <p>
+   * @param value 
    */
   public void setSequence(BigInteger value) {
     this.sequence = value;

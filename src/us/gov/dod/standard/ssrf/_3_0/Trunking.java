@@ -23,11 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -36,6 +31,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -142,7 +142,7 @@ public class Trunking {
    * Gets the value of the additionalChannelsRationale property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getAdditionalChannelsRationale() {
@@ -153,7 +153,7 @@ public class Trunking {
    * Sets the value of the additionalChannelsRationale property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setAdditionalChannelsRationale(TString value) {
@@ -168,7 +168,7 @@ public class Trunking {
    * Gets the value of the dispatcher property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS1 }{@code >}
+   *         
    * <p>
    */
   public TString getDispatcher() {
@@ -179,7 +179,7 @@ public class Trunking {
    * Sets the value of the dispatcher property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS1 }{@code >}
+   *              
    * <p>
    */
   public void setDispatcher(TString value) {
@@ -194,7 +194,7 @@ public class Trunking {
    * Gets the value of the dispatcherExplanation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getDispatcherExplanation() {
@@ -205,7 +205,7 @@ public class Trunking {
    * Sets the value of the dispatcherExplanation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setDispatcherExplanation(TString value) {
@@ -220,7 +220,7 @@ public class Trunking {
    * Gets the value of the estimatedExpansionCost property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS70 }{@code >}
+   *         
    * <p>
    */
   public TString getEstimatedExpansionCost() {
@@ -231,7 +231,7 @@ public class Trunking {
    * Sets the value of the estimatedExpansionCost property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS70 }{@code >}
+   *              
    * <p>
    */
   public void setEstimatedExpansionCost(TString value) {
@@ -246,7 +246,7 @@ public class Trunking {
    * Gets the value of the expansionTargetDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpansionTargetDate() {
@@ -257,7 +257,7 @@ public class Trunking {
    * Sets the value of the expansionTargetDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpansionTargetDate(TCalendar value) {
@@ -272,7 +272,7 @@ public class Trunking {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -283,7 +283,7 @@ public class Trunking {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -298,7 +298,7 @@ public class Trunking {
    * Gets the value of the nsepUse property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getNSEPUse() {
@@ -309,7 +309,7 @@ public class Trunking {
    * Sets the value of the nsepUse property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setNSEPUse(TString value) {
@@ -324,7 +324,7 @@ public class Trunking {
    * Gets the value of the numFreqsRequired property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumFreqsRequired() {
@@ -335,7 +335,7 @@ public class Trunking {
    * Sets the value of the numFreqsRequired property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
+   *              
    * <p>
    */
   public void setNumFreqsRequired(TInteger value) {
@@ -350,7 +350,7 @@ public class Trunking {
    * Gets the value of the numRepeaters property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN7 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumRepeaters() {
@@ -361,7 +361,7 @@ public class Trunking {
    * Sets the value of the numRepeaters property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN7 }{@code >}
+   *              
    * <p>
    */
   public void setNumRepeaters(TInteger value) {
@@ -376,7 +376,7 @@ public class Trunking {
    * Gets the value of the numUsers property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumUsers() {
@@ -387,7 +387,7 @@ public class Trunking {
    * Sets the value of the numUsers property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
+   *              
    * <p>
    */
   public void setNumUsers(TInteger value) {
@@ -402,7 +402,7 @@ public class Trunking {
    * Gets the value of the previousSPSDocketNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *         
    * <p>
    */
   public TString getPreviousSPSDocketNum() {
@@ -413,7 +413,7 @@ public class Trunking {
    * Sets the value of the previousSPSDocketNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *              
    * <p>
    */
   public void setPreviousSPSDocketNum(TString value) {
@@ -428,7 +428,7 @@ public class Trunking {
    * Gets the value of the requestForExpansion property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getRequestForExpansion() {
@@ -439,7 +439,7 @@ public class Trunking {
    * Sets the value of the requestForExpansion property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setRequestForExpansion(TString value) {
@@ -454,7 +454,7 @@ public class Trunking {
    * Gets the value of the separateSystemJustification property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getSeparateSystemJustification() {
@@ -465,7 +465,7 @@ public class Trunking {
    * Sets the value of the separateSystemJustification property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setSeparateSystemJustification(TString value) {
@@ -480,7 +480,7 @@ public class Trunking {
    * Gets the value of the freqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMin() {
@@ -491,7 +491,7 @@ public class Trunking {
    * Sets the value of the freqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMin(TDecimal value) {
@@ -520,7 +520,7 @@ public class Trunking {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link TrunkingAssignment }
+     * 
    * <p>
    * <p>
    * @return

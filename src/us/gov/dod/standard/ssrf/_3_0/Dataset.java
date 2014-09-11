@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.MissingRef;
 
 /**
  * <p>
@@ -84,8 +85,7 @@ public class Dataset {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getSerial() {
     return serial;
@@ -94,8 +94,7 @@ public class Dataset {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -109,7 +108,7 @@ public class Dataset {
    * Gets the value of the retireDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getRetireDate() {
@@ -120,7 +119,7 @@ public class Dataset {
    * Sets the value of the retireDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setRetireDate(TCalendar value) {
@@ -135,7 +134,7 @@ public class Dataset {
    * Gets the value of the reason property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getReason() {
@@ -146,7 +145,7 @@ public class Dataset {
    * Sets the value of the reason property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setReason(TString value) {
@@ -175,7 +174,7 @@ public class Dataset {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link MissingRef }
+     * 
    * <p>
    * <p>
    * @return

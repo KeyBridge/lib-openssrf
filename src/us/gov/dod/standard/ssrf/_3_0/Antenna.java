@@ -23,55 +23,32 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
- * <p>
  * Java class for Antenna complex type.
  * <p>
+ * This dataset is the XML root for all parameters of an Antenna. It inherits
+ * attributes and sub-elements from element Common. It also contains various
+ * technical parameters of the antenna: the type of antenna pattern, the antenna
+ * use, and an indication at as to whether or not sector blanking is possible.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * This element inherits attributes and sub-elements from element Common.
  * <p>
- * <
- * pre>
- * &lt;complexType name="Antenna"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- * &lt;element name="AntType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- * &lt;element name="PhArrayNumMainBeams"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3" minOccurs="0"/> &lt;element
- * name="PhArrayNumElements" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5"
- * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Dimension"
- * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Aperture"
- * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Sidelobe"
- * minOccurs="0"/> &lt;element name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Nomenclature"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="AntHardware"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntHardware" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="AntMode"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntMode" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * [XSL ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "AN".
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Antenna", propOrder = {
@@ -99,68 +76,180 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class Antenna extends Common {
 
+  /**
+   * Generic: Enter "Yes" to indicate that the dataset describes typical
+   * parameters of a waveform or standard signal, or a generic antenna model,
+   * rather than a specific equipment model.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Generic", required = true)
   private TString generic;
+  /**
+   * AntType: Enter the type of antenna.
+   * <p>
+   * Recommend values from Code List CAT
+   */
   @XmlElement(name = "AntType", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString antType;
+  /**
+   * PhArrayNumMainBeams: Enter the number of main beams in the phased array
+   * antenna
+   */
   @XmlElement(name = "PhArrayNumMainBeams", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN3.class)
   private TInteger phArrayNumMainBeams;
+  /**
+   * PhArrayNumElements: Enter the number of antenna elements in the phased
+   * array antenna
+   */
   @XmlElement(name = "PhArrayNumElements", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger phArrayNumElements;
+  /**
+   * Shape: Enter a code used to describe the general shape of the antenna
+   * reflector. Recommend values from Code List CRS
+   */
   @XmlElement(name = "Shape", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString shape;
+  /**
+   * Diameter: Enter the physical diameter of the antenna in metres (without
+   * unit).
+   */
   @XmlElement(name = "Diameter", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
   private TDecimal diameter;
+  /**
+   * HorzDimension: Enter the linear horizontal dimension of the antenna in
+   * metres (without unit).
+   */
   @XmlElement(name = "HorzDimension", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
   private TDecimal horzDimension;
+  /**
+   * VertDimension: Enter the linear vertical dimension of the antenna in metres
+   * (without unit).
+   */
   @XmlElement(name = "VertDimension", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
   private TDecimal vertDimension;
+  /**
+   * ApertureDiameter: Enter the cross-section of an antenna's radiation pattern
+   * in the direction of highest gain in metres (without unit).
+   */
   @XmlElement(name = "ApertureDiameter", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
   private TDecimal apertureDiameter;
+  /**
+   * HorzAperture: Enter the horizontal cross-section of the antenna's radiation
+   * pattern in the direction of highest gain in metres (without unit).
+   */
   @XmlElement(name = "HorzAperture", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
   private TDecimal horzAperture;
+  /**
+   * VertAperture: Enter the vertical cross-section of the antenna's radiation
+   * pattern in the direction of highest gain in metres (without unit).
+   */
   @XmlElement(name = "VertAperture", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN6_2.class)
   private TDecimal vertAperture;
+  /**
+   * HorzSidelobeSuppressed: The Horizontal Sidelobe indicates whether a portion
+   * of the radiation from an antenna outside of the main beam and usually of
+   * much less intensity has been suppressed or eliminated. The suppression or
+   * elimination of unwanted signals or interference takes place by means of
+   * shielding, filtering, grounding, component relocation, or sometimes
+   * redesign of the equipment in use. Enter Y (if the sidelobe is suppressed)
+   * or N (sidelobe not suppressed).
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   * <p>
+   * This group of items describes the worst case sidelobe attenuation (these
+   * values will normally vary between modes, but typically only the worst case
+   * data is available).
+   */
   @XmlElement(name = "HorzSidelobeSuppressed", required = false)
   private TString horzSidelobeSuppressed;
+  /**
+   * HorzSidelobeAz: Enter the direction (in degrees) of the sidelobe in
+   * reference to the direction of maximum gain.
+   */
   @XmlElement(name = "HorzSidelobeAz", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
   private TDecimal horzSidelobeAz;
+  /**
+   * HorzSidelobeAttenuation: Enter the amount of suppression in dB relative to
+   * the main beam gain of the antenna.
+   */
   @XmlElement(name = "HorzSidelobeAttenuation", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_2.class)
   private TDecimal horzSidelobeAttenuation;
+  /**
+   * VertSidelobeSuppressed: The Vertical Sidelobe indicates whether a portion
+   * of the radiation from an antenna outside of the main beam and usually of
+   * much less intensity has been suppressed or eliminated. The suppression or
+   * elimination of unwanted signals or interference takes place by means of
+   * shielding, filtering, grounding, component relocation, or sometimes
+   * redesign of the equipment in use. Enter Y (if the sidelobe is suppressed)
+   * or N (sidelobe not suppressed).
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "VertSidelobeSuppressed", required = false)
   private TString vertSidelobeSuppressed;
+  /**
+   * VertSidelobeElev: The Vertical Sidelobe describes the first sidelobe in the
+   * vertical plane. Enter the clockwise angular difference (in degrees) between
+   * the centre line of the main beam gain and the sidelobe.
+   */
   @XmlElement(name = "VertSidelobeElev", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV180.class)
   private TDecimal vertSidelobeElev;
+  /**
+   * VertSidelobeAttenuation: Enter the attenuation of the sidelobe in dB
+   * relative to the main beam gain.
+   */
   @XmlElement(name = "VertSidelobeAttenuation", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_2.class)
   private TDecimal vertSidelobeAttenuation;
+
+  /**
+   * Data element POC contains a reference to a Contact, Organisation or Role
+   * dataset.
+   */
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+  /**
+   * Data element Nomenclature identifies either the standard military
+   * nomenclature or the commercial model number of an antenna, equipment or
+   * system. Each antenna, equipment or system may have several types of
+   * nomenclature, e.g. both a military nomenclature and a commercial model
+   * number.
+   */
   @XmlElement(name = "Nomenclature")
   private List<Nomenclature> nomenclature;
+  /**
+   * This element contains the physical parameters related to the antenna feed
+   * and lead.
+   */
   @XmlElement(name = "AntHardware")
   private List<AntHardware> antHardware;
+  /**
+   * This element contains the technical characteristics of one antenna mode.
+   */
   @XmlElement(name = "AntMode")
   private List<AntMode> antMode;
 
   /**
    * Gets the value of the generic property.
    * <p>
-   * @return possible object is {@link TListCBO }
-   * <p>
+   * @return
    */
   public TString getGeneric() {
     return generic;
@@ -169,8 +258,7 @@ public class Antenna extends Common {
   /**
    * Sets the value of the generic property.
    * <p>
-   * @param value allowed object is {@link TListCBO }
-   * <p>
+   * @param value
    */
   public void setGeneric(TString value) {
     this.generic = value;
@@ -183,8 +271,7 @@ public class Antenna extends Common {
   /**
    * Gets the value of the antType property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return
    */
   public TString getAntType() {
     return antType;
@@ -193,8 +280,7 @@ public class Antenna extends Common {
   /**
    * Sets the value of the antType property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value
    */
   public void setAntType(TString value) {
     this.antType = value;
@@ -208,7 +294,7 @@ public class Antenna extends Common {
    * Gets the value of the phArrayNumMainBeams property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
+   * <p>
    * <p>
    */
   public TInteger getPhArrayNumMainBeams() {
@@ -219,7 +305,7 @@ public class Antenna extends Common {
    * Sets the value of the phArrayNumMainBeams property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN3 }{@code >}
+   * <p>
    * <p>
    */
   public void setPhArrayNumMainBeams(TInteger value) {
@@ -234,7 +320,7 @@ public class Antenna extends Common {
    * Gets the value of the phArrayNumElements property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   * <p>
    * <p>
    */
   public TInteger getPhArrayNumElements() {
@@ -245,7 +331,7 @@ public class Antenna extends Common {
    * Sets the value of the phArrayNumElements property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   * <p>
    * <p>
    */
   public void setPhArrayNumElements(TInteger value) {
@@ -260,7 +346,7 @@ public class Antenna extends Common {
    * Gets the value of the shape property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public TString getShape() {
@@ -271,7 +357,7 @@ public class Antenna extends Common {
    * Sets the value of the shape property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public void setShape(TString value) {
@@ -286,7 +372,7 @@ public class Antenna extends Common {
    * Gets the value of the diameter property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getDiameter() {
@@ -297,7 +383,7 @@ public class Antenna extends Common {
    * Sets the value of the diameter property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setDiameter(TDecimal value) {
@@ -312,7 +398,7 @@ public class Antenna extends Common {
    * Gets the value of the horzDimension property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzDimension() {
@@ -323,7 +409,7 @@ public class Antenna extends Common {
    * Sets the value of the horzDimension property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzDimension(TDecimal value) {
@@ -338,7 +424,7 @@ public class Antenna extends Common {
    * Gets the value of the vertDimension property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertDimension() {
@@ -349,7 +435,7 @@ public class Antenna extends Common {
    * Sets the value of the vertDimension property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setVertDimension(TDecimal value) {
@@ -364,7 +450,7 @@ public class Antenna extends Common {
    * Gets the value of the apertureDiameter property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getApertureDiameter() {
@@ -375,7 +461,7 @@ public class Antenna extends Common {
    * Sets the value of the apertureDiameter property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setApertureDiameter(TDecimal value) {
@@ -390,7 +476,7 @@ public class Antenna extends Common {
    * Gets the value of the horzAperture property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzAperture() {
@@ -401,7 +487,7 @@ public class Antenna extends Common {
    * Sets the value of the horzAperture property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzAperture(TDecimal value) {
@@ -416,7 +502,7 @@ public class Antenna extends Common {
    * Gets the value of the vertAperture property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertAperture() {
@@ -427,7 +513,7 @@ public class Antenna extends Common {
    * Sets the value of the vertAperture property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setVertAperture(TDecimal value) {
@@ -442,7 +528,7 @@ public class Antenna extends Common {
    * Gets the value of the horzSidelobeSuppressed property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public TString getHorzSidelobeSuppressed() {
@@ -453,7 +539,7 @@ public class Antenna extends Common {
    * Sets the value of the horzSidelobeSuppressed property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzSidelobeSuppressed(TString value) {
@@ -468,7 +554,7 @@ public class Antenna extends Common {
    * Gets the value of the horzSidelobeAz property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzSidelobeAz() {
@@ -479,7 +565,7 @@ public class Antenna extends Common {
    * Sets the value of the horzSidelobeAz property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzSidelobeAz(TDecimal value) {
@@ -494,7 +580,7 @@ public class Antenna extends Common {
    * Gets the value of the horzSidelobeAttenuation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzSidelobeAttenuation() {
@@ -505,7 +591,7 @@ public class Antenna extends Common {
    * Sets the value of the horzSidelobeAttenuation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzSidelobeAttenuation(TDecimal value) {
@@ -520,7 +606,7 @@ public class Antenna extends Common {
    * Gets the value of the vertSidelobeSuppressed property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public TString getVertSidelobeSuppressed() {
@@ -531,7 +617,7 @@ public class Antenna extends Common {
    * Sets the value of the vertSidelobeSuppressed property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public void setVertSidelobeSuppressed(TString value) {
@@ -546,7 +632,7 @@ public class Antenna extends Common {
    * Gets the value of the vertSidelobeElev property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev180 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertSidelobeElev() {
@@ -557,7 +643,7 @@ public class Antenna extends Common {
    * Sets the value of the vertSidelobeElev property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev180 }{@code >}
+   * <p>
    * <p>
    */
   public void setVertSidelobeElev(TDecimal value) {
@@ -572,7 +658,7 @@ public class Antenna extends Common {
    * Gets the value of the vertSidelobeAttenuation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertSidelobeAttenuation() {
@@ -583,7 +669,7 @@ public class Antenna extends Common {
    * Sets the value of the vertSidelobeAttenuation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setVertSidelobeAttenuation(TDecimal value) {
@@ -612,7 +698,7 @@ public class Antenna extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -650,7 +736,7 @@ public class Antenna extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Nomenclature }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -688,7 +774,7 @@ public class Antenna extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link AntHardware }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -725,7 +811,7 @@ public class Antenna extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link AntMode }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -79,7 +79,7 @@ public class EarthStation {
    * Gets the value of the name property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getName() {
@@ -90,7 +90,7 @@ public class EarthStation {
    * Sets the value of the name property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setName(TString value) {
@@ -105,7 +105,7 @@ public class EarthStation {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -116,7 +116,7 @@ public class EarthStation {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -131,7 +131,7 @@ public class EarthStation {
    * Gets the value of the locationRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getLocationRef() {
@@ -142,7 +142,7 @@ public class EarthStation {
    * Sets the value of the locationRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setLocationRef(TString value) {

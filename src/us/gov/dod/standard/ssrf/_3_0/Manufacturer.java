@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 
 /**
  * <p>
@@ -74,7 +74,7 @@ public class Manufacturer {
    * Gets the value of the country property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *         
    * <p>
    */
   public TString getCountry() {
@@ -85,7 +85,7 @@ public class Manufacturer {
    * Sets the value of the country property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *              
    * <p>
    */
   public void setCountry(TString value) {
@@ -99,8 +99,7 @@ public class Manufacturer {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -109,8 +108,7 @@ public class Manufacturer {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;

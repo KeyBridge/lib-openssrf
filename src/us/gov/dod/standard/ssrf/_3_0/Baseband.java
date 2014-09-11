@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -80,7 +80,7 @@ public class Baseband {
    * Gets the value of the modFreqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getModFreqMin() {
@@ -91,7 +91,7 @@ public class Baseband {
    * Sets the value of the modFreqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setModFreqMin(TDecimal value) {
@@ -106,7 +106,7 @@ public class Baseband {
    * Gets the value of the modFreqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getModFreqMax() {
@@ -117,7 +117,7 @@ public class Baseband {
    * Sets the value of the modFreqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setModFreqMax(TDecimal value) {
@@ -132,7 +132,7 @@ public class Baseband {
    * Gets the value of the signalType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSignalType() {
@@ -143,7 +143,7 @@ public class Baseband {
    * Sets the value of the signalType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSignalType(TString value) {

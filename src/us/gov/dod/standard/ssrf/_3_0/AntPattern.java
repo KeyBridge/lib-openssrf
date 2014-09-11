@@ -23,47 +23,32 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
- * <p>
  * Java class for AntPattern complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntPattern">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="Calculated" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="CutType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="CutAngle" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz180" minOccurs="0"/>
- *         &lt;element name="AntPatternPoint" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntPatternPoint" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * Data element AntPattern contains an antenna pattern diagram on a specific
+ * plane. General pattern cuts can be defined by a spherical coordinate system
+ * with the electrical boresite of the antenna oriented in the direction of the
+ * Z-axis. At different values of phi ( # ), pattern cuts can be taken with
+ * theta ( # ) as the dependent variable. These will be great circle cuts
+ * through the main-beam peak. An additional measurement relating the mechanical
+ * and electrical boresite must be made to fully characterize the antenna. Also
+ * the orientation of the antenna to the spherical coordinate system must be
+ * defined. (example: top of the antenna oriented in the +x direction).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntPattern", propOrder = {
@@ -75,17 +60,50 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntPattern {
 
+  /**
+   * Type: Enter the polarisation code for the antenna pattern.
+   * <p>
+   * Recommend values from Code List CAP: <br/>
+   * Azimuth Pattern in the horizontal plane <br/>
+   * Elevation Pattern in the vertical plane
+   */
   @XmlElement(name = "Type", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString type;
+  /**
+   * Calculated: Enter Yes to indicate that the data was calculated, or "No" if
+   * the data is issued from measurement. Leave blank if the origin of the data
+   * is not known.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Calculated", required = false)
   private TString calculated;
+  /**
+   * CutType: These codes indicate the type of the pattern cut. A Theta cut
+   * holds Phi constant while varying Theta. A Phi cut holds Theta constant
+   * while varying Phi, where Theta is the angle off the boresight and Phi is
+   * the rotation angle about the boresight.
+   * <p>
+   * Recommend values from Code List CTP: <br/>
+   * PHI Rotation angle about the boresight <br/>
+   * THETA Angle off the boresight
+   */
   @XmlElement(name = "CutType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString cutType;
+  /**
+   * CutAngle: Enter the angle of the pattern cut. It is the value of Phi for a
+   * Theta cut and the value of Theta for a Phi cut.
+   */
   @XmlElement(name = "CutAngle", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
   private TDecimal cutAngle;
+  /**
+   * Data element AntPatternPoint contains one point of the antenna radiation
+   * pattern, defined by a direction and gain.
+   */
   @XmlElement(name = "AntPatternPoint", required = true)
   private List<AntPatternPoint> antPatternPoint;
 
@@ -93,7 +111,7 @@ public class AntPattern {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   * <p>
    * <p>
    */
   public TString getType() {
@@ -104,7 +122,7 @@ public class AntPattern {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   * <p>
    * <p>
    */
   public void setType(TString value) {
@@ -119,7 +137,7 @@ public class AntPattern {
    * Gets the value of the calculated property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public TString getCalculated() {
@@ -130,7 +148,7 @@ public class AntPattern {
    * Sets the value of the calculated property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public void setCalculated(TString value) {
@@ -145,7 +163,7 @@ public class AntPattern {
    * Gets the value of the cutType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   * <p>
    * <p>
    */
   public TString getCutType() {
@@ -156,7 +174,7 @@ public class AntPattern {
    * Sets the value of the cutType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   * <p>
    * <p>
    */
   public void setCutType(TString value) {
@@ -171,7 +189,7 @@ public class AntPattern {
    * Gets the value of the cutAngle property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getCutAngle() {
@@ -182,7 +200,7 @@ public class AntPattern {
    * Sets the value of the cutAngle property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz180 }{@code >}
+   * <p>
    * <p>
    */
   public void setCutAngle(TDecimal value) {
@@ -211,7 +229,7 @@ public class AntPattern {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link AntPatternPoint }
+   * <p>
    * <p>
    * <p>
    * @return

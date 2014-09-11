@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -74,8 +74,7 @@ public class TxModeRef {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return possible object is {@link TS20 }
-   * <p>
+   * @return 
    */
   public TString getModeID() {
     return modeID;
@@ -84,8 +83,7 @@ public class TxModeRef {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value allowed object is {@link TS20 }
-   * <p>
+   * @param value 
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -99,7 +97,7 @@ public class TxModeRef {
    * Gets the value of the powerLimit property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPowerLimit() {
@@ -110,7 +108,7 @@ public class TxModeRef {
    * Sets the value of the powerLimit property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setPowerLimit(TDecimal value) {

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,6 +33,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.Administration;
 
 /**
  * Java class for Variance complex type.
@@ -82,8 +83,7 @@ public class Variance {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TS10 }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -92,8 +92,7 @@ public class Variance {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TS10 }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -106,8 +105,7 @@ public class Variance {
   /**
    * Gets the value of the allocatedService property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getAllocatedService() {
     return allocatedService;
@@ -116,8 +114,7 @@ public class Variance {
   /**
    * Sets the value of the allocatedService property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setAllocatedService(TString value) {
     this.allocatedService = value;
@@ -130,8 +127,7 @@ public class Variance {
   /**
    * Gets the value of the priority property.
    * <p>
-   * @return possible object is {@link TS10 }
-   * <p>
+   * @return 
    */
   public TString getPriority() {
     return priority;
@@ -140,8 +136,7 @@ public class Variance {
   /**
    * Sets the value of the priority property.
    * <p>
-   * @param value allowed object is {@link TS10 }
-   * <p>
+   * @param value 
    */
   public void setPriority(TString value) {
     this.priority = value;
@@ -169,7 +164,7 @@ public class Variance {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Administration }
+     * 
    * <p>
    * <p>
    * @return

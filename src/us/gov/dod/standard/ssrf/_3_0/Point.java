@@ -23,14 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.math.BigInteger;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -94,7 +94,7 @@ public class Point {
    * Gets the value of the excluded property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getExcluded() {
@@ -105,7 +105,7 @@ public class Point {
    * Sets the value of the excluded property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setExcluded(TString value) {
@@ -119,8 +119,7 @@ public class Point {
   /**
    * Gets the value of the lon property.
    * <p>
-   * @return possible object is {@link TLon }
-   * <p>
+   * @return 
    */
   public TString getLon() {
     return lon;
@@ -129,8 +128,7 @@ public class Point {
   /**
    * Sets the value of the lon property.
    * <p>
-   * @param value allowed object is {@link TLon }
-   * <p>
+   * @param value 
    */
   public void setLon(TString value) {
     this.lon = value;
@@ -143,8 +141,7 @@ public class Point {
   /**
    * Gets the value of the lat property.
    * <p>
-   * @return possible object is {@link TLat }
-   * <p>
+   * @return 
    */
   public TString getLat() {
     return lat;
@@ -153,8 +150,7 @@ public class Point {
   /**
    * Sets the value of the lat property.
    * <p>
-   * @param value allowed object is {@link TLat }
-   * <p>
+   * @param value 
    */
   public void setLat(TString value) {
     this.lat = value;
@@ -168,7 +164,7 @@ public class Point {
    * Gets the value of the terrainElevation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getTerrainElevation() {
@@ -179,7 +175,7 @@ public class Point {
    * Sets the value of the terrainElevation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setTerrainElevation(TDecimal value) {
@@ -194,7 +190,7 @@ public class Point {
    * Gets the value of the altitudeMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAltitudeMin() {
@@ -205,7 +201,7 @@ public class Point {
    * Sets the value of the altitudeMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setAltitudeMin(TDecimal value) {
@@ -220,7 +216,7 @@ public class Point {
    * Gets the value of the altitudeMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAltitudeMax() {
@@ -231,7 +227,7 @@ public class Point {
    * Sets the value of the altitudeMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setAltitudeMax(TDecimal value) {
@@ -245,8 +241,7 @@ public class Point {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return possible object is {@link BigInteger }
-   * <p>
+   * @return 
    */
   public BigInteger getIdx() {
     return idx;
@@ -255,8 +250,7 @@ public class Point {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value allowed object is {@link BigInteger }
-   * <p>
+   * @param value 
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

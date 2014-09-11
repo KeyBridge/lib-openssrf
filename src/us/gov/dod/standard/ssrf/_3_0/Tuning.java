@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -38,6 +34,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -102,8 +102,7 @@ public class Tuning {
   /**
    * Gets the value of the tuningStep property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getTuningStep() {
     return tuningStep;
@@ -112,8 +111,7 @@ public class Tuning {
   /**
    * Sets the value of the tuningStep property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
@@ -126,8 +124,7 @@ public class Tuning {
   /**
    * Gets the value of the numFreq property.
    * <p>
-   * @return possible object is {@link TUN4 }
-   * <p>
+   * @return 
    */
   public TInteger getNumFreq() {
     return numFreq;
@@ -136,8 +133,7 @@ public class Tuning {
   /**
    * Sets the value of the numFreq property.
    * <p>
-   * @param value allowed object is {@link TUN4 }
-   * <p>
+   * @param value 
    */
   public void setNumFreq(TInteger value) {
     this.numFreq = value;
@@ -151,7 +147,7 @@ public class Tuning {
    * Gets the value of the priority property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
+   *         
    * <p>
    */
   public TInteger getPriority() {
@@ -162,7 +158,7 @@ public class Tuning {
    * Sets the value of the priority property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
+   *              
    * <p>
    */
   public void setPriority(TInteger value) {
@@ -177,7 +173,7 @@ public class Tuning {
    * Gets the value of the exclusive property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getExclusive() {
@@ -188,7 +184,7 @@ public class Tuning {
    * Sets the value of the exclusive property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setExclusive(TString value) {
@@ -202,8 +198,7 @@ public class Tuning {
   /**
    * Gets the value of the freqSep property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqSep() {
     return freqSep;
@@ -212,8 +207,7 @@ public class Tuning {
   /**
    * Sets the value of the freqSep property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqSep(TDecimal value) {
     this.freqSep = value;
@@ -226,8 +220,7 @@ public class Tuning {
   /**
    * Gets the value of the freqSepType property.
    * <p>
-   * @return possible object is {@link TS10 }
-   * <p>
+   * @return 
    */
   public TString getFreqSepType() {
     return freqSepType;
@@ -236,8 +229,7 @@ public class Tuning {
   /**
    * Sets the value of the freqSepType property.
    * <p>
-   * @param value allowed object is {@link TS10 }
-   * <p>
+   * @param value 
    */
   public void setFreqSepType(TString value) {
     this.freqSepType = value;
@@ -265,7 +257,7 @@ public class Tuning {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link AsgnFreqBase }
+     * 
    * <p>
    * <p>
    * @return

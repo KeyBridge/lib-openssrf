@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,6 +34,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -87,7 +87,7 @@ public class Nomenclature {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -98,7 +98,7 @@ public class Nomenclature {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -113,7 +113,7 @@ public class Nomenclature {
    * Gets the value of the level property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getLevel() {
@@ -124,7 +124,7 @@ public class Nomenclature {
    * Sets the value of the level property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setLevel(TString value) {
@@ -138,8 +138,7 @@ public class Nomenclature {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -148,8 +147,7 @@ public class Nomenclature {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -177,7 +175,7 @@ public class Nomenclature {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Manufacturer }
+     * 
    * <p>
    * <p>
    * @return

@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 
 /**
  * <p>
@@ -128,7 +129,7 @@ public class Location extends Common {
    * Gets the value of the effectiveDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getEffectiveDate() {
@@ -139,7 +140,7 @@ public class Location extends Common {
    * Sets the value of the effectiveDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setEffectiveDate(TCalendar value) {
@@ -154,7 +155,7 @@ public class Location extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -165,7 +166,7 @@ public class Location extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
@@ -180,7 +181,7 @@ public class Location extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -191,7 +192,7 @@ public class Location extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -205,8 +206,7 @@ public class Location extends Common {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -215,8 +215,7 @@ public class Location extends Common {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -230,7 +229,7 @@ public class Location extends Common {
    * Gets the value of the street property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getStreet() {
@@ -241,7 +240,7 @@ public class Location extends Common {
    * Sets the value of the street property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setStreet(TString value) {
@@ -256,7 +255,7 @@ public class Location extends Common {
    * Gets the value of the cityArea property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getCityArea() {
@@ -267,7 +266,7 @@ public class Location extends Common {
    * Sets the value of the cityArea property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setCityArea(TString value) {
@@ -282,7 +281,7 @@ public class Location extends Common {
    * Gets the value of the stateCounty property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getStateCounty() {
@@ -293,7 +292,7 @@ public class Location extends Common {
    * Sets the value of the stateCounty property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setStateCounty(TString value) {
@@ -308,7 +307,7 @@ public class Location extends Common {
    * Gets the value of the postCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *         
    * <p>
    */
   public TString getPostCode() {
@@ -319,7 +318,7 @@ public class Location extends Common {
    * Sets the value of the postCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *              
    * <p>
    */
   public void setPostCode(TString value) {
@@ -333,8 +332,7 @@ public class Location extends Common {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return possible object is {@link TListCAO }
-   * <p>
+   * @return 
    */
   public TString getCountry() {
     return country;
@@ -343,8 +341,7 @@ public class Location extends Common {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value allowed object is {@link TListCAO }
-   * <p>
+   * @param value 
    */
   public void setCountry(TString value) {
     this.country = value;
@@ -372,7 +369,7 @@ public class Location extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -409,7 +406,7 @@ public class Location extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Point }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -446,7 +443,7 @@ public class Location extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Polygon }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -483,7 +480,7 @@ public class Location extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Ellipse }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -521,7 +518,7 @@ public class Location extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link LocationRef }
+     * 
    * <p>
    * <p>
    * @return

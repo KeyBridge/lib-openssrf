@@ -23,42 +23,28 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
- * <p>
  * Java class for AntGain complex type.
  * <p>
+ * This element indicates the antenna gain, in decibels with reference to an
+ * isotropic source (dBi), in the direction of maximum radiation. It can also
+ * contain the gain measured 180 degrees from the direction of maximum main beam
+ * gain.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntGain">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Calculated" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="Gain" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSN5_2"/>
- *         &lt;element name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FrontToBackRatio" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5_2" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * This element is REQUIRED and repeatable. For a gain included in a range use
+ * two occurrences with no frequencies if the points where these gains occur are
+ * not known. Use several occurrences of Gain, including frequencies, to express
+ * the gain as a function of the frequency.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntGain", propOrder = {
@@ -69,14 +55,39 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntGain {
 
+  /**
+   * Calculated: Enter Yes to indicate that the data was calculated, or "No" if
+   * the data is issued from measurement. Leave blank if the origin of the data
+   * is not known.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Calculated", required = false)
   private TString calculated;
+  /**
+   * Gain: Enter the antenna gain (in dBi - dB with reference to an isotropic
+   * source) in the direction of maximum radiation. For a negative gain (earth
+   * and space stations only), enter a dash before the value of the gain.
+   * <p>
+   * Notes: In order to be able to accommodate legacy data, a value of "-999.99"
+   * MAY be used in attribute gain as a gap filler, but only for legacy data
+   * which do not contain this information. The real value SHOULD always be used
+   * for new datasets and during the review of old datasets.
+   */
   @XmlElement(name = "Gain", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSN5_2.class)
   private TDecimal gain;
+  /**
+   * Freq: Enter the frequency at which the gain is expressed if known.
+   */
   @XmlElement(name = "Freq", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freq;
+  /**
+   * FrontToBackRatio: Enter the front-to-back ratio of the main beam to the
+   * back lobe in dB.
+   */
   @XmlElement(name = "FrontToBackRatio", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_2.class)
   private TDecimal frontToBackRatio;
@@ -84,9 +95,7 @@ public class AntGain {
   /**
    * Gets the value of the calculated property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
-   * <p>
+   * @return
    */
   public TString getCalculated() {
     return calculated;
@@ -95,9 +104,7 @@ public class AntGain {
   /**
    * Sets the value of the calculated property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
-   * <p>
+   * @param value
    */
   public void setCalculated(TString value) {
     this.calculated = value;
@@ -110,8 +117,7 @@ public class AntGain {
   /**
    * Gets the value of the gain property.
    * <p>
-   * @return possible object is {@link TSN5_2 }
-   * <p>
+   * @return
    */
   public TDecimal getGain() {
     return gain;
@@ -120,8 +126,7 @@ public class AntGain {
   /**
    * Sets the value of the gain property.
    * <p>
-   * @param value allowed object is {@link TSN5_2 }
-   * <p>
+   * @param value
    */
   public void setGain(TDecimal value) {
     this.gain = value;
@@ -134,9 +139,7 @@ public class AntGain {
   /**
    * Gets the value of the freq property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getFreq() {
     return freq;
@@ -145,9 +148,7 @@ public class AntGain {
   /**
    * Sets the value of the freq property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @param value
    */
   public void setFreq(TDecimal value) {
     this.freq = value;
@@ -160,9 +161,7 @@ public class AntGain {
   /**
    * Gets the value of the frontToBackRatio property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getFrontToBackRatio() {
     return frontToBackRatio;
@@ -171,9 +170,7 @@ public class AntGain {
   /**
    * Sets the value of the frontToBackRatio property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_2 }{@code >}
-   * <p>
+   * @param value
    */
   public void setFrontToBackRatio(TDecimal value) {
     this.frontToBackRatio = value;

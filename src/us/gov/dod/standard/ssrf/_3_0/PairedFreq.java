@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -84,8 +84,7 @@ public class PairedFreq {
   /**
    * Gets the value of the freq property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreq() {
     return freq;
@@ -94,8 +93,7 @@ public class PairedFreq {
   /**
    * Sets the value of the freq property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreq(TDecimal value) {
     this.freq = value;
@@ -109,7 +107,7 @@ public class PairedFreq {
    * Gets the value of the assignmentRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getAssignmentRef() {
@@ -120,7 +118,7 @@ public class PairedFreq {
    * Sets the value of the assignmentRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setAssignmentRef(TString value) {
@@ -135,7 +133,7 @@ public class PairedFreq {
    * Gets the value of the pairedASN property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS12 }{@code >}
+   *         
    * <p>
    */
   public TString getPairedASN() {
@@ -146,7 +144,7 @@ public class PairedFreq {
    * Sets the value of the pairedASN property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS12 }{@code >}
+   *              
    * <p>
    */
   public void setPairedASN(TString value) {
@@ -161,7 +159,7 @@ public class PairedFreq {
    * Gets the value of the pairedType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getPairedType() {
@@ -172,7 +170,7 @@ public class PairedFreq {
    * Sets the value of the pairedType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setPairedType(TString value) {

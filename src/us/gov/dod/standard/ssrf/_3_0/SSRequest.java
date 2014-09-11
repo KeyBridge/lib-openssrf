@@ -23,11 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -36,6 +31,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
+import us.gov.dod.standard.ssrf._3_0.metadata.HostNation;
 
 /**
  * <p>
@@ -252,8 +253,7 @@ public class SSRequest extends Common {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getTitle() {
     return title;
@@ -262,8 +262,7 @@ public class SSRequest extends Common {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -277,7 +276,7 @@ public class SSRequest extends Common {
    * Gets the value of the currentStage property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
+   *         
    * <p>
    */
   public TString getCurrentStage() {
@@ -288,7 +287,7 @@ public class SSRequest extends Common {
    * Sets the value of the currentStage property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
+   *              
    * <p>
    */
   public void setCurrentStage(TString value) {
@@ -303,7 +302,7 @@ public class SSRequest extends Common {
    * Gets the value of the requirement property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getRequirement() {
@@ -314,7 +313,7 @@ public class SSRequest extends Common {
    * Sets the value of the requirement property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setRequirement(TString value) {
@@ -329,7 +328,7 @@ public class SSRequest extends Common {
    * Gets the value of the emergency property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getEmergency() {
@@ -340,7 +339,7 @@ public class SSRequest extends Common {
    * Sets the value of the emergency property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setEmergency(TString value) {
@@ -355,7 +354,7 @@ public class SSRequest extends Common {
    * Gets the value of the numMobileUnits property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumMobileUnits() {
@@ -366,7 +365,7 @@ public class SSRequest extends Common {
    * Sets the value of the numMobileUnits property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumMobileUnits(TInteger value) {
@@ -381,7 +380,7 @@ public class SSRequest extends Common {
    * Gets the value of the numAreaUnits property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumAreaUnits() {
@@ -392,7 +391,7 @@ public class SSRequest extends Common {
    * Sets the value of the numAreaUnits property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumAreaUnits(TInteger value) {
@@ -407,7 +406,7 @@ public class SSRequest extends Common {
    * Gets the value of the numCositedUnits property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumCositedUnits() {
@@ -418,7 +417,7 @@ public class SSRequest extends Common {
    * Sets the value of the numCositedUnits property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumCositedUnits(TInteger value) {
@@ -433,7 +432,7 @@ public class SSRequest extends Common {
    * Gets the value of the applicationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getApplicationDate() {
@@ -444,7 +443,7 @@ public class SSRequest extends Common {
    * Sets the value of the applicationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setApplicationDate(TCalendar value) {
@@ -459,7 +458,7 @@ public class SSRequest extends Common {
    * Gets the value of the dateResponseRequired property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDateResponseRequired() {
@@ -470,7 +469,7 @@ public class SSRequest extends Common {
    * Sets the value of the dateResponseRequired property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDateResponseRequired(TCalendar value) {
@@ -485,7 +484,7 @@ public class SSRequest extends Common {
    * Gets the value of the replacementInfo property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getReplacementInfo() {
@@ -496,7 +495,7 @@ public class SSRequest extends Common {
    * Sets the value of the replacementInfo property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setReplacementInfo(TString value) {
@@ -511,7 +510,7 @@ public class SSRequest extends Common {
    * Gets the value of the applicationSPSNumber property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS11 }{@code >}
+   *         
    * <p>
    */
   public TString getApplicationSPSNumber() {
@@ -522,7 +521,7 @@ public class SSRequest extends Common {
    * Sets the value of the applicationSPSNumber property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS11 }{@code >}
+   *              
    * <p>
    */
   public void setApplicationSPSNumber(TString value) {
@@ -537,7 +536,7 @@ public class SSRequest extends Common {
    * Gets the value of the coordinationNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *         
    * <p>
    */
   public TString getCoordinationNum() {
@@ -548,7 +547,7 @@ public class SSRequest extends Common {
    * Sets the value of the coordinationNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *              
    * <p>
    */
   public void setCoordinationNum(TString value) {
@@ -563,7 +562,7 @@ public class SSRequest extends Common {
    * Gets the value of the infoTransferRequirement property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getInfoTransferRequirement() {
@@ -574,7 +573,7 @@ public class SSRequest extends Common {
    * Sets the value of the infoTransferRequirement property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setInfoTransferRequirement(TString value) {
@@ -589,7 +588,7 @@ public class SSRequest extends Common {
    * Gets the value of the initialCost property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS70 }{@code >}
+   *         
    * <p>
    */
   public TString getInitialCost() {
@@ -600,7 +599,7 @@ public class SSRequest extends Common {
    * Sets the value of the initialCost property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS70 }{@code >}
+   *              
    * <p>
    */
   public void setInitialCost(TString value) {
@@ -615,7 +614,7 @@ public class SSRequest extends Common {
    * Gets the value of the initialCostDesc property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getInitialCostDesc() {
@@ -626,7 +625,7 @@ public class SSRequest extends Common {
    * Sets the value of the initialCostDesc property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setInitialCostDesc(TString value) {
@@ -641,7 +640,7 @@ public class SSRequest extends Common {
    * Gets the value of the ituWaiver property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getITUWaiver() {
@@ -652,7 +651,7 @@ public class SSRequest extends Common {
    * Sets the value of the ituWaiver property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setITUWaiver(TString value) {
@@ -667,7 +666,7 @@ public class SSRequest extends Common {
    * Gets the value of the ntiaCoordinationRequired property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getNTIACoordinationRequired() {
@@ -678,7 +677,7 @@ public class SSRequest extends Common {
    * Sets the value of the ntiaCoordinationRequired property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setNTIACoordinationRequired(TString value) {
@@ -693,7 +692,7 @@ public class SSRequest extends Common {
    * Gets the value of the ntiaSpaceData property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getNTIASpaceData() {
@@ -704,7 +703,7 @@ public class SSRequest extends Common {
    * Sets the value of the ntiaSpaceData property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setNTIASpaceData(TString value) {
@@ -719,7 +718,7 @@ public class SSRequest extends Common {
    * Gets the value of the operInvIntent property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getOperInvIntent() {
@@ -730,7 +729,7 @@ public class SSRequest extends Common {
    * Sets the value of the operInvIntent property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setOperInvIntent(TString value) {
@@ -745,7 +744,7 @@ public class SSRequest extends Common {
    * Gets the value of the originatingAgency property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS80 }{@code >}
+   *         
    * <p>
    */
   public TString getOriginatingAgency() {
@@ -756,7 +755,7 @@ public class SSRequest extends Common {
    * Sets the value of the originatingAgency property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS80 }{@code >}
+   *              
    * <p>
    */
   public void setOriginatingAgency(TString value) {
@@ -771,7 +770,7 @@ public class SSRequest extends Common {
    * Gets the value of the requestType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getRequestType() {
@@ -782,7 +781,7 @@ public class SSRequest extends Common {
    * Sets the value of the requestType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setRequestType(TString value) {
@@ -797,7 +796,7 @@ public class SSRequest extends Common {
    * Gets the value of the relatedAnalysisAndTestData property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getRelatedAnalysisAndTestData() {
@@ -808,7 +807,7 @@ public class SSRequest extends Common {
    * Sets the value of the relatedAnalysisAndTestData property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setRelatedAnalysisAndTestData(TString value) {
@@ -823,7 +822,7 @@ public class SSRequest extends Common {
    * Gets the value of the sysRelationEssential property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getSysRelationEssential() {
@@ -834,7 +833,7 @@ public class SSRequest extends Common {
    * Sets the value of the sysRelationEssential property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setSysRelationEssential(TString value) {
@@ -849,7 +848,7 @@ public class SSRequest extends Common {
    * Gets the value of the tspr property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getTSPR() {
@@ -860,7 +859,7 @@ public class SSRequest extends Common {
    * Sets the value of the tspr property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setTSPR(TString value) {
@@ -875,7 +874,7 @@ public class SSRequest extends Common {
    * Gets the value of the wartimeUse property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getWartimeUse() {
@@ -886,7 +885,7 @@ public class SSRequest extends Common {
    * Sets the value of the wartimeUse property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setWartimeUse(TString value) {
@@ -914,7 +913,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Project }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -951,7 +950,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Stage }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -989,7 +988,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Nomenclature }
+     * 
    * <p>
    * <p>
    * @return
@@ -1027,7 +1026,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -1065,7 +1064,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RelatedSupportability }
+     * 
    * <p>
    * <p>
    * @return
@@ -1103,7 +1102,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link HostNation }
+     * 
    * <p>
    * <p>
    * @return
@@ -1140,7 +1139,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Time }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1178,7 +1177,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link DiagramEndpoint }
+     * 
    * <p>
    * <p>
    * @return
@@ -1216,7 +1215,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link DiagramLine }
+     * 
    * <p>
    * <p>
    * @return
@@ -1254,7 +1253,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Configuration }
+     * 
    * <p>
    * <p>
    * @return
@@ -1291,7 +1290,7 @@ public class SSRequest extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link StatusLog }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1314,8 +1313,7 @@ public class SSRequest extends Common {
   /**
    * Gets the value of the trunking property.
    * <p>
-   * @return possible object is {@link Trunking }
-   * <p>
+   * @return 
    */
   public Trunking getTrunking() {
     return trunking;
@@ -1324,8 +1322,7 @@ public class SSRequest extends Common {
   /**
    * Sets the value of the trunking property.
    * <p>
-   * @param value allowed object is {@link Trunking }
-   * <p>
+   * @param value 
    */
   public void setTrunking(Trunking value) {
     this.trunking = value;

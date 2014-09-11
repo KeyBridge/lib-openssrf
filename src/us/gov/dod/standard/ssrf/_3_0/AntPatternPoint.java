@@ -23,37 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 
 /**
- * <p>
  * Java class for AntPatternPoint complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntPatternPoint">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Dir" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz"/>
- *         &lt;element name="Gain" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSN5_2"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * Data element AntPatternPoint contains one point of the antenna radiation
+ * pattern, defined by a direction and gain.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntPatternPoint", propOrder = {
@@ -62,9 +44,17 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntPatternPoint {
 
+  /**
+   * Dir: Enter the direction in degrees in reference to the pointing angle of
+   * the antenna set to zero.
+   */
   @XmlElement(name = "Dir", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal dir;
+  /**
+   * Gain: Enter the amount of dB gain for the direction relative to the main
+   * beam gain.
+   */
   @XmlElement(name = "Gain", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSN5_2.class)
   private TDecimal gain;
@@ -72,8 +62,7 @@ public class AntPatternPoint {
   /**
    * Gets the value of the dir property.
    * <p>
-   * @return possible object is {@link TAz }
-   * <p>
+   * @return
    */
   public TDecimal getDir() {
     return dir;
@@ -82,8 +71,7 @@ public class AntPatternPoint {
   /**
    * Sets the value of the dir property.
    * <p>
-   * @param value allowed object is {@link TAz }
-   * <p>
+   * @param value
    */
   public void setDir(TDecimal value) {
     this.dir = value;
@@ -96,8 +84,7 @@ public class AntPatternPoint {
   /**
    * Gets the value of the gain property.
    * <p>
-   * @return possible object is {@link TSN5_2 }
-   * <p>
+   * @return
    */
   public TDecimal getGain() {
     return gain;
@@ -106,8 +93,7 @@ public class AntPatternPoint {
   /**
    * Sets the value of the gain property.
    * <p>
-   * @param value allowed object is {@link TSN5_2 }
-   * <p>
+   * @param value
    */
   public void setGain(TDecimal value) {
     this.gain = value;

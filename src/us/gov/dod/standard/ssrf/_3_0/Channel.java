@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,6 +34,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.ChannelFreq;
 
 /**
  * <p>
@@ -82,7 +83,7 @@ public class Channel {
    * Gets the value of the name property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getName() {
@@ -93,7 +94,7 @@ public class Channel {
    * Sets the value of the name property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setName(TString value) {
@@ -108,7 +109,7 @@ public class Channel {
    * Gets the value of the user property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getUser() {
@@ -119,7 +120,7 @@ public class Channel {
    * Sets the value of the user property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setUser(TString value) {
@@ -148,7 +149,7 @@ public class Channel {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ChannelFreq }
+     * 
    * <p>
    * <p>
    * @return

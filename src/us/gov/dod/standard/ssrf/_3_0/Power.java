@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -33,6 +30,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -85,7 +85,7 @@ public class Power {
    * Gets the value of the powerMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPowerMin() {
@@ -96,7 +96,7 @@ public class Power {
    * Sets the value of the powerMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setPowerMin(TDecimal value) {
@@ -111,7 +111,7 @@ public class Power {
    * Gets the value of the powerMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPowerMax() {
@@ -122,7 +122,7 @@ public class Power {
    * Sets the value of the powerMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setPowerMax(TDecimal value) {
@@ -137,7 +137,7 @@ public class Power {
    * Gets the value of the powerType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getPowerType() {
@@ -148,7 +148,7 @@ public class Power {
    * Sets the value of the powerType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setPowerType(TString value) {
@@ -163,7 +163,7 @@ public class Power {
    * Gets the value of the calculated property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getCalculated() {
@@ -174,7 +174,7 @@ public class Power {
    * Sets the value of the calculated property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setCalculated(TString value) {

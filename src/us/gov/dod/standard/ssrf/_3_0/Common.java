@@ -23,19 +23,23 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.ExtReferenceRef;
+import us.gov.dod.standard.ssrf._3_0.metadata.Remarks;
 
 /**
- * This is an abstract element used as a basis for all datasets.
+ * This is an abstract element used as a basis for all core datasets.
  * <p>
- * Java class for Common complex type.
+ * Common includes all SSRF Standard Metadata Attributes plus a "Initial" and
+ * "LastChange" group of parameters and several other external reference and
+ * remark configurations.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
@@ -75,7 +79,7 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
   Contact.class,
   TOA.class
 })
-public abstract class Common extends AStandardMetadataAttributes<TString> {
+public abstract class Common extends AStandardMetadataAttributes {
 
   /**
    * Serial: The attribute serial is composed of four parts separated by colons
@@ -207,15 +211,10 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
   @XmlElement(name = "Remarks", nillable = true)
   protected List<Remarks> remarks;
 
-  public Common() {
-    super(null);
-  }
-
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getSerial() {
     return serial;
@@ -224,8 +223,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -238,8 +236,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
   /**
    * Gets the value of the entryDateTime property.
    * <p>
-   * @return possible object is {@link TDT }
-   * <p>
+   * @return 
    */
   public TCalendar getEntryDateTime() {
     return entryDateTime;
@@ -248,8 +245,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
   /**
    * Sets the value of the entryDateTime property.
    * <p>
-   * @param value allowed object is {@link TDT }
-   * <p>
+   * @param value 
    */
   public void setEntryDateTime(TCalendar value) {
     this.entryDateTime = value;
@@ -263,7 +259,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Gets the value of the entryBy property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getEntryBy() {
@@ -274,7 +270,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Sets the value of the entryBy property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setEntryBy(TString value) {
@@ -289,7 +285,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Gets the value of the owner property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getOwner() {
@@ -300,7 +296,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Sets the value of the owner property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setOwner(TString value) {
@@ -315,7 +311,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Gets the value of the lastChangeDateTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *         
    * <p>
    */
   public TCalendar getLastChangeDateTime() {
@@ -326,7 +322,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Sets the value of the lastChangeDateTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *              
    * <p>
    */
   public void setLastChangeDateTime(TCalendar value) {
@@ -341,7 +337,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Gets the value of the lastChangeBy property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getLastChangeBy() {
@@ -352,7 +348,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Sets the value of the lastChangeBy property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setLastChangeBy(TString value) {
@@ -367,7 +363,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Gets the value of the state property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getState() {
@@ -378,7 +374,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * Sets the value of the state property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setState(TString value) {
@@ -392,8 +388,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
   /**
    * Gets the value of the securityClass property.
    * <p>
-   * @return possible object is {@link SecurityClass }
-   * <p>
+   * @return 
    */
   public SecurityClass getSecurityClass() {
     return securityClass;
@@ -402,8 +397,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
   /**
    * Sets the value of the securityClass property.
    * <p>
-   * @param value allowed object is {@link SecurityClass }
-   * <p>
+   * @param value 
    */
   public void setSecurityClass(SecurityClass value) {
     this.securityClass = value;
@@ -430,7 +424,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link CaseNum }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -468,7 +462,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ExtReferenceRef }
+     * 
    * <p>
    * <p>
    * @return
@@ -505,7 +499,7 @@ public abstract class Common extends AStandardMetadataAttributes<TString> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Remarks }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -67,8 +67,7 @@ public class HostDocketNum {
   /**
    * Gets the value of the hostDocketNum property.
    * <p>
-   * @return possible object is {@link TS35 }
-   * <p>
+   * @return 
    */
   public TString getHostDocketNum() {
     return hostDocketNum;
@@ -77,8 +76,7 @@ public class HostDocketNum {
   /**
    * Sets the value of the hostDocketNum property.
    * <p>
-   * @param value allowed object is {@link TS35 }
-   * <p>
+   * @param value 
    */
   public void setHostDocketNum(TString value) {
     this.hostDocketNum = value;

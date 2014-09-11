@@ -23,41 +23,23 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 
 /**
- * <p>
  * Java class for AntFreqs complex type.
  * <p>
+ * This element contains the antenna's designed tuning range, or the discrete
+ * operating frequency.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntFreqs">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/>
- *         &lt;element name="Bandwidth" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FreqUse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * Sub-element of AntMode
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntFreqs", propOrder = {
@@ -68,23 +50,40 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntFreqs {
 
+  /**
+   * FreqMin: Enter the nominal frequency or minimum value of the frequency
+   * range.
+   */
   @XmlElement(name = "FreqMin", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
+  /**
+   * FreqMax: Enter the maximum value of the frequencies in the range.
+   */
   @XmlElement(name = "FreqMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
+  /**
+   * Bandwidth: As an alternative to FreqMin/FreqMax, enter the total operating
+   * bandwidth of the Antenna centered around FreqMin.
+   */
   @XmlElement(name = "Bandwidth", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal bandwidth;
+  /**
+   * FreqUse: Indicate if the frequency range is used for transmit, receive or
+   * both transmit and receive.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CAU: Code Transmit Only Receive Only Transmit-Receive
+   */
   @XmlElement(name = "FreqUse", required = false)
   private TString freqUse;
 
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -93,8 +92,7 @@ public class AntFreqs {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -107,9 +105,7 @@ public class AntFreqs {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -118,10 +114,7 @@ public class AntFreqs {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
   }
@@ -133,9 +126,7 @@ public class AntFreqs {
   /**
    * Gets the value of the bandwidth property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getBandwidth() {
     return bandwidth;
@@ -144,10 +135,7 @@ public class AntFreqs {
   /**
    * Sets the value of the bandwidth property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setBandwidth(TDecimal value) {
     this.bandwidth = value;
   }
@@ -159,9 +147,7 @@ public class AntFreqs {
   /**
    * Gets the value of the freqUse property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
-   * <p>
+   * @return
    */
   public TString getFreqUse() {
     return freqUse;
@@ -170,10 +156,7 @@ public class AntFreqs {
   /**
    * Sets the value of the freqUse property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setFreqUse(TString value) {
     this.freqUse = value;
   }

@@ -23,48 +23,22 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.math.BigInteger;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.ChannelPlanRef;
+import us.gov.dod.standard.ssrf._3_0.metadata.StnClass;
 
 /**
+ * This element contains the allocation of a specific frequency band to a
+ * specific radiocommunication service.
  * <p>
  * Java class for Allocation complex type.
- * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="Allocation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="AllocatedService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="Priority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"/>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="ExpirationDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="AllocatedByFootnote" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="Variance" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Variance" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="StnClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StnClass" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ChannelPlanRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ChannelPlanRef" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="footnotes" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- *       &lt;attribute name="bandApps" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- *       &lt;attribute name="bandUsers" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Allocation", propOrder = {
@@ -79,38 +53,97 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class Allocation {
 
+  /**
+   * AllocatedService: Enter a radiocommunication service recognized by an
+   * administration that is allocated to this frequency band (e.g., "Fixed
+   * Service").
+   * <p>
+   * Recommend values from Code List CSN.
+   */
   @XmlElement(name = "AllocatedService", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString allocatedService;
+  /**
+   * Priority: Indicate if this service is a primary or secondary use of this
+   * band. ("Permitted" SHOULD only be used if the priority is unknown.)
+   * <p>
+   * Recommend values from Code List CPS
+   */
   @XmlElement(name = "Priority", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString priority;
+  /**
+   * EffectiveDate: This data element indicates the date/time by which the
+   * dataset is to be operational or effective, formatted as yyyy-mm-dd
+   * (year-month-day).
+   */
   @XmlElement(name = "EffectiveDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
+  /**
+   * ExpirationDate: Enter the date at which the dataset will expire, formatted
+   * as yyyy-mm-dd (year-month-day). The Expiration date should be less than
+   * five years from current date.
+   */
   @XmlElement(name = "ExpirationDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
+  /**
+   * AllocatedByFootnote: Enter "Yes" if this service is allocated to this
+   * frequency band by footnote (i.e., the only indication this service is
+   * allowed in this band is a footnote). Additional restrictions might exist in
+   * the footnote(s).
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "AllocatedByFootnote", required = false)
   private TString allocatedByFootnote;
+  /**
+   * This element indicates if the local allocation deviates from an upper level
+   * allocation (e.g. a national allocation not aligned with the ITU RR).
+   */
   @XmlElement(name = "Variance")
   private List<Variance> variance;
+  /**
+   * This element contains the station class associated with the frequency
+   * usage.
+   * <p>
+   * Allowable Station Class values are defined by the appropriate
+   * Administration. This data item MUST use one of the codes from Code List USC
+   */
   @XmlElement(name = "StnClass", nillable = true)
   private List<StnClass> stnClass;
+  /**
+   * This element refers to a ChannelPlan, which inherits attributes and
+   * sub-elements from element Common and describes a channel plan.
+   */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
   private List<ChannelPlanRef> channelPlanRef;
+
+  /**
+   * footnotes (Attribute): Enter the list of footnote indices referring to a
+   * Footnote index applicable to the current frequency band.
+   */
   @XmlAttribute(name = "footnotes")
   private List<BigInteger> footnotes;
+  /**
+   * bandApps (Attribute): Enter the list of Band Application indices referring
+   * to a BandApplication index applicable to the current frequency band.
+   */
   @XmlAttribute(name = "bandApps")
   private List<BigInteger> bandApps;
+  /**
+   * bandUsers (Attribute): Enter the list of Band User indices referring to a
+   * BandUser index applicable to the current frequency band.
+   */
   @XmlAttribute(name = "bandUsers")
   private List<BigInteger> bandUsers;
 
   /**
    * Gets the value of the allocatedService property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return
    */
   public TString getAllocatedService() {
     return allocatedService;
@@ -119,8 +152,7 @@ public class Allocation {
   /**
    * Sets the value of the allocatedService property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value
    */
   public void setAllocatedService(TString value) {
     this.allocatedService = value;
@@ -133,8 +165,7 @@ public class Allocation {
   /**
    * Gets the value of the priority property.
    * <p>
-   * @return possible object is {@link TS10 }
-   * <p>
+   * @return
    */
   public TString getPriority() {
     return priority;
@@ -143,8 +174,7 @@ public class Allocation {
   /**
    * Sets the value of the priority property.
    * <p>
-   * @param value allowed object is {@link TS10 }
-   * <p>
+   * @param value
    */
   public void setPriority(TString value) {
     this.priority = value;
@@ -157,9 +187,7 @@ public class Allocation {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -168,10 +196,7 @@ public class Allocation {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
   }
@@ -183,9 +208,7 @@ public class Allocation {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -194,10 +217,7 @@ public class Allocation {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
   }
@@ -209,9 +229,7 @@ public class Allocation {
   /**
    * Gets the value of the allocatedByFootnote property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
-   * <p>
+   * @return
    */
   public TString getAllocatedByFootnote() {
     return allocatedByFootnote;
@@ -220,10 +238,7 @@ public class Allocation {
   /**
    * Sets the value of the allocatedByFootnote property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setAllocatedByFootnote(TString value) {
     this.allocatedByFootnote = value;
   }
@@ -249,7 +264,7 @@ public class Allocation {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Variance }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -286,7 +301,7 @@ public class Allocation {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link StnClass }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -324,7 +339,7 @@ public class Allocation {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ChannelPlanRef }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -362,7 +377,7 @@ public class Allocation {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -400,7 +415,7 @@ public class Allocation {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -438,7 +453,7 @@ public class Allocation {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+   * <p>
    * <p>
    * <p>
    * @return

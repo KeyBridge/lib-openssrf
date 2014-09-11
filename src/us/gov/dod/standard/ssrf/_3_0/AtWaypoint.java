@@ -23,42 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import java.util.Calendar;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
 
 /**
- * <p>
  * Java class for AtWaypoint complex type.
- * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AtWaypoint">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="WaypointIdx" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6"/>
- *         &lt;element name="DateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/>
- *         &lt;element name="Speed" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSpeed" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AtWaypoint", propOrder = {
@@ -67,7 +44,9 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
   "speed"
 })
 public class AtWaypoint {
-
+  /**
+   *
+   */
   @XmlElement(name = "WaypointIdx", required = true)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger waypointIdx;
@@ -81,8 +60,7 @@ public class AtWaypoint {
   /**
    * Gets the value of the waypointIdx property.
    * <p>
-   * @return possible object is {@link TUN6 }
-   * <p>
+   * @return
    */
   public TInteger getWaypointIdx() {
     return waypointIdx;
@@ -91,8 +69,7 @@ public class AtWaypoint {
   /**
    * Sets the value of the waypointIdx property.
    * <p>
-   * @param value allowed object is {@link TUN6 }
-   * <p>
+   * @param value
    */
   public void setWaypointIdx(TInteger value) {
     this.waypointIdx = value;
@@ -105,8 +82,7 @@ public class AtWaypoint {
   /**
    * Gets the value of the dateTime property.
    * <p>
-   * @return possible object is {@link TDT }
-   * <p>
+   * @return
    */
   public TCalendar getDateTime() {
     return dateTime;
@@ -115,8 +91,7 @@ public class AtWaypoint {
   /**
    * Sets the value of the dateTime property.
    * <p>
-   * @param value allowed object is {@link TDT }
-   * <p>
+   * @param value
    */
   public void setDateTime(TCalendar value) {
     this.dateTime = value;
@@ -130,7 +105,7 @@ public class AtWaypoint {
    * Gets the value of the speed property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSpeed }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getSpeed() {
@@ -141,7 +116,7 @@ public class AtWaypoint {
    * Sets the value of the speed property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSpeed }{@code >}
+   * <p>
    * <p>
    */
   public void setSpeed(TDecimal value) {

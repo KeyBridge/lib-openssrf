@@ -23,11 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCPC;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -39,6 +34,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCPC;
 
 /**
  * <p>
@@ -158,8 +158,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the protectionCode property.
    * <p>
-   * @return possible object is {@link TListCPC }
-   * <p>
+   * @return 
    */
   public TString getProtectionCode() {
     return protectionCode;
@@ -168,8 +167,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the protectionCode property.
    * <p>
-   * @param value allowed object is {@link TListCPC }
-   * <p>
+   * @param value 
    */
   public void setProtectionCode(TString value) {
     this.protectionCode = value;
@@ -183,7 +181,7 @@ public class JRFLEntry {
    * Gets the value of the priority property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS2 }{@code >}
+   *         
    * <p>
    */
   public TString getPriority() {
@@ -194,7 +192,7 @@ public class JRFLEntry {
    * Sets the value of the priority property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS2 }{@code >}
+   *              
    * <p>
    */
   public void setPriority(TString value) {
@@ -208,8 +206,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the justification property.
    * <p>
-   * @return possible object is {@link TS255 }
-   * <p>
+   * @return 
    */
   public TString getJustification() {
     return justification;
@@ -218,8 +215,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the justification property.
    * <p>
-   * @param value allowed object is {@link TS255 }
-   * <p>
+   * @param value 
    */
   public void setJustification(TString value) {
     this.justification = value;
@@ -233,7 +229,7 @@ public class JRFLEntry {
    * Gets the value of the approvalLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getApprovalLevel() {
@@ -244,7 +240,7 @@ public class JRFLEntry {
    * Sets the value of the approvalLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setApprovalLevel(TString value) {
@@ -259,7 +255,7 @@ public class JRFLEntry {
    * Gets the value of the seconds property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *         
    * <p>
    */
   public TString getSeconds() {
@@ -270,7 +266,7 @@ public class JRFLEntry {
    * Sets the value of the seconds property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *              
    * <p>
    */
   public void setSeconds(TString value) {
@@ -285,7 +281,7 @@ public class JRFLEntry {
    * Gets the value of the minutes property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *         
    * <p>
    */
   public TString getMinutes() {
@@ -296,7 +292,7 @@ public class JRFLEntry {
    * Sets the value of the minutes property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *              
    * <p>
    */
   public void setMinutes(TString value) {
@@ -311,7 +307,7 @@ public class JRFLEntry {
    * Gets the value of the hours property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link THours }{@code >}
+   *         
    * <p>
    */
   public TString getHours() {
@@ -322,7 +318,7 @@ public class JRFLEntry {
    * Sets the value of the hours property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link THours }{@code >}
+   *              
    * <p>
    */
   public void setHours(TString value) {
@@ -337,7 +333,7 @@ public class JRFLEntry {
    * Gets the value of the daysOfMonth property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
+   *         
    * <p>
    */
   public TString getDaysOfMonth() {
@@ -348,7 +344,7 @@ public class JRFLEntry {
    * Sets the value of the daysOfMonth property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
+   *              
    * <p>
    */
   public void setDaysOfMonth(TString value) {
@@ -363,7 +359,7 @@ public class JRFLEntry {
    * Gets the value of the months property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
+   *         
    * <p>
    */
   public TString getMonths() {
@@ -374,7 +370,7 @@ public class JRFLEntry {
    * Sets the value of the months property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
+   *              
    * <p>
    */
   public void setMonths(TString value) {
@@ -389,7 +385,7 @@ public class JRFLEntry {
    * Gets the value of the daysOfWeek property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
+   *         
    * <p>
    */
   public TString getDaysOfWeek() {
@@ -400,7 +396,7 @@ public class JRFLEntry {
    * Sets the value of the daysOfWeek property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
+   *              
    * <p>
    */
   public void setDaysOfWeek(TString value) {
@@ -415,7 +411,7 @@ public class JRFLEntry {
    * Gets the value of the years property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
+   *         
    * <p>
    */
   public TString getYears() {
@@ -426,7 +422,7 @@ public class JRFLEntry {
    * Sets the value of the years property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
+   *              
    * <p>
    */
   public void setYears(TString value) {
@@ -441,7 +437,7 @@ public class JRFLEntry {
    * Gets the value of the duration property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *         
    * <p>
    */
   public TInteger getDuration() {
@@ -452,7 +448,7 @@ public class JRFLEntry {
    * Sets the value of the duration property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *              
    * <p>
    */
   public void setDuration(TInteger value) {
@@ -467,7 +463,7 @@ public class JRFLEntry {
    * Gets the value of the asgnAllotRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getAsgnAllotRef() {
@@ -478,7 +474,7 @@ public class JRFLEntry {
    * Sets the value of the asgnAllotRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setAsgnAllotRef(TString value) {
@@ -492,8 +488,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -502,8 +497,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -517,7 +511,7 @@ public class JRFLEntry {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -528,7 +522,7 @@ public class JRFLEntry {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -543,7 +537,7 @@ public class JRFLEntry {
    * Gets the value of the bandwidth property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getBandwidth() {
@@ -554,7 +548,7 @@ public class JRFLEntry {
    * Sets the value of the bandwidth property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setBandwidth(TDecimal value) {
@@ -569,7 +563,7 @@ public class JRFLEntry {
    * Gets the value of the freqUse property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
+   *         
    * <p>
    */
   public TString getFreqUse() {
@@ -580,7 +574,7 @@ public class JRFLEntry {
    * Sets the value of the freqUse property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
+   *              
    * <p>
    */
   public void setFreqUse(TString value) {
@@ -608,7 +602,7 @@ public class JRFLEntry {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Project }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -646,7 +640,7 @@ public class JRFLEntry {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -684,7 +678,7 @@ public class JRFLEntry {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link JRFLEntryLocation }
+     * 
    * <p>
    * <p>
    * @return

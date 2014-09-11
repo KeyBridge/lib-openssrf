@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -34,6 +30,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -150,7 +150,7 @@ public class SpreadSpectrum {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -161,7 +161,7 @@ public class SpreadSpectrum {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -175,8 +175,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -185,8 +184,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -200,7 +198,7 @@ public class SpreadSpectrum {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -211,7 +209,7 @@ public class SpreadSpectrum {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -226,7 +224,7 @@ public class SpreadSpectrum {
    * Gets the value of the maxGain property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getMaxGain() {
@@ -237,7 +235,7 @@ public class SpreadSpectrum {
    * Sets the value of the maxGain property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setMaxGain(TDecimal value) {
@@ -252,7 +250,7 @@ public class SpreadSpectrum {
    * Gets the value of the pulseFreqDev property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPulseFreqDev() {
@@ -263,7 +261,7 @@ public class SpreadSpectrum {
    * Sets the value of the pulseFreqDev property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setPulseFreqDev(TDecimal value) {
@@ -278,7 +276,7 @@ public class SpreadSpectrum {
    * Gets the value of the infoDataRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getInfoDataRate() {
@@ -289,7 +287,7 @@ public class SpreadSpectrum {
    * Sets the value of the infoDataRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *              
    * <p>
    */
   public void setInfoDataRate(TDecimal value) {
@@ -304,7 +302,7 @@ public class SpreadSpectrum {
    * Gets the value of the chipRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMChips }{@code >}
+   *         
    * <p>
    */
   public TDecimal getChipRate() {
@@ -315,7 +313,7 @@ public class SpreadSpectrum {
    * Sets the value of the chipRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMChips }{@code >}
+   *              
    * <p>
    */
   public void setChipRate(TDecimal value) {
@@ -330,7 +328,7 @@ public class SpreadSpectrum {
    * Gets the value of the codeRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCodeRate() {
@@ -341,7 +339,7 @@ public class SpreadSpectrum {
    * Sets the value of the codeRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10_3 }{@code >}
+   *              
    * <p>
    */
   public void setCodeRate(TDecimal value) {
@@ -356,7 +354,7 @@ public class SpreadSpectrum {
    * Gets the value of the pulseChirpRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9_6 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPulseChirpRate() {
@@ -367,7 +365,7 @@ public class SpreadSpectrum {
    * Sets the value of the pulseChirpRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9_6 }{@code >}
+   *              
    * <p>
    */
   public void setPulseChirpRate(TDecimal value) {
@@ -382,7 +380,7 @@ public class SpreadSpectrum {
    * Gets the value of the pulseChirpFreqShift property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPulseChirpFreqShift() {
@@ -393,7 +391,7 @@ public class SpreadSpectrum {
    * Sets the value of the pulseChirpFreqShift property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setPulseChirpFreqShift(TDecimal value) {
@@ -408,7 +406,7 @@ public class SpreadSpectrum {
    * Gets the value of the pulseChirpDurationMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPulseChirpDurationMin() {
@@ -419,7 +417,7 @@ public class SpreadSpectrum {
    * Sets the value of the pulseChirpDurationMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setPulseChirpDurationMin(TDecimal value) {
@@ -434,7 +432,7 @@ public class SpreadSpectrum {
    * Gets the value of the timeHopNumSlots property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *         
    * <p>
    */
   public TInteger getTimeHopNumSlots() {
@@ -445,7 +443,7 @@ public class SpreadSpectrum {
    * Sets the value of the timeHopNumSlots property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5 }{@code >}
+   *              
    * <p>
    */
   public void setTimeHopNumSlots(TInteger value) {
@@ -460,7 +458,7 @@ public class SpreadSpectrum {
    * Gets the value of the timeHopPulsesPerDwell property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN12 }{@code >}
+   *         
    * <p>
    */
   public TInteger getTimeHopPulsesPerDwell() {
@@ -471,7 +469,7 @@ public class SpreadSpectrum {
    * Sets the value of the timeHopPulsesPerDwell property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN12 }{@code >}
+   *              
    * <p>
    */
   public void setTimeHopPulsesPerDwell(TInteger value) {
@@ -486,7 +484,7 @@ public class SpreadSpectrum {
    * Gets the value of the hopRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Thops }{@code >}
+   *         
    * <p>
    */
   public TDecimal getHopRate() {
@@ -497,7 +495,7 @@ public class SpreadSpectrum {
    * Sets the value of the hopRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Thops }{@code >}
+   *              
    * <p>
    */
   public void setHopRate(TDecimal value) {
@@ -512,7 +510,7 @@ public class SpreadSpectrum {
    * Gets the value of the hopDwell property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getHopDwell() {
@@ -523,7 +521,7 @@ public class SpreadSpectrum {
    * Sets the value of the hopDwell property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setHopDwell(TDecimal value) {
@@ -538,7 +536,7 @@ public class SpreadSpectrum {
    * Gets the value of the numFreqsPerHopset property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumFreqsPerHopset() {
@@ -549,7 +547,7 @@ public class SpreadSpectrum {
    * Sets the value of the numFreqsPerHopset property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *              
    * <p>
    */
   public void setNumFreqsPerHopset(TInteger value) {
@@ -564,7 +562,7 @@ public class SpreadSpectrum {
    * Gets the value of the numHopsets property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumHopsets() {
@@ -575,7 +573,7 @@ public class SpreadSpectrum {
    * Sets the value of the numHopsets property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *              
    * <p>
    */
   public void setNumHopsets(TInteger value) {
@@ -590,7 +588,7 @@ public class SpreadSpectrum {
    * Gets the value of the freqBlocking property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getFreqBlocking() {
@@ -601,7 +599,7 @@ public class SpreadSpectrum {
    * Sets the value of the freqBlocking property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setFreqBlocking(TString value) {

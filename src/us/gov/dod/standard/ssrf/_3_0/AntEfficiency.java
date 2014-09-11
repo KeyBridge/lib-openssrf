@@ -23,38 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 
 /**
+ * AntEfficiency describes the antenna efficiency at various frequencies within
+ * the frequency range of the antenna.
  * <p>
  * Java class for AntEfficiency complex type.
- * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntEfficiency">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp" minOccurs="0"/>
- *         &lt;element name="Efficiency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TPercent"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntEfficiency", propOrder = {
@@ -64,12 +45,26 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntEfficiency {
 
+  /**
+   * FreqMin: Enter the nominal frequency or minimum value of the frequency
+   * range.
+   */
   @XmlElement(name = "FreqMin")
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
+  /**
+   * FreqMax: Enter the maximum value of the frequencies in the range.
+   */
   @XmlElement(name = "FreqMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
+  /**
+   * Efficiency: Enter the efficiency of the antenna within the frequency range
+   * which is being reported.
+   * <p>
+   * Notes: The efficiency should always be less than 100%. For example, the
+   * best case for a half-wave dipole is 96.8%.
+   */
   @XmlElement(name = "Efficiency", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal efficiency;
@@ -77,8 +72,7 @@ public class AntEfficiency {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -87,8 +81,7 @@ public class AntEfficiency {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -101,9 +94,7 @@ public class AntEfficiency {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
+   * @return
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -112,10 +103,7 @@ public class AntEfficiency {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
   }
@@ -127,8 +115,7 @@ public class AntEfficiency {
   /**
    * Gets the value of the efficiency property.
    * <p>
-   * @return possible object is {@link TPercent }
-   * <p>
+   * @return
    */
   public TDecimal getEfficiency() {
     return efficiency;
@@ -137,8 +124,7 @@ public class AntEfficiency {
   /**
    * Sets the value of the efficiency property.
    * <p>
-   * @param value allowed object is {@link TPercent }
-   * <p>
+   * @param value
    */
   public void setEfficiency(TDecimal value) {
     this.efficiency = value;

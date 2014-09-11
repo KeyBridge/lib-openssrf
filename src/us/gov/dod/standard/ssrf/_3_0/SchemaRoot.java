@@ -33,48 +33,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for SchemaRoot complex type.
  * <p>
+ * Description Data element SMADEF is the root element for any SMADEF-XML
+ * message. It contains attributes defining the namespace used. Any SMADEF-XML
+ * message may contain any number of datasets.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="SchemaRoot">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Contact" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Contact" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Role" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Role" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Organisation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Organisation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ExternalReference" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ExternalReference" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Administrative" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Administrative" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Location" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Location" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ChannelPlan" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ChannelPlan" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TOA" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TOA" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Transmitter" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Transmitter" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Receiver" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Receiver" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Antenna" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Antenna" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RFSystem" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RFSystem" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SSRequest" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SSRequest" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SSReply" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SSReply" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Allotment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Allotment" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Assignment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Assignment" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Satellite" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Satellite" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="IntfReport" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IntfReport" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="JRFL" type="{urn:us:gov:dod:standard:ssrf:3.0.0}JRFL" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ForceElement" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ForceElement" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="FEDeployment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}FEDeployment" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Note" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Note" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * Example
+ * <pre>&lt;SMADEF&gt;
+ *   &lt;Datasets_here/&gt;
+ * &lt;/SMADEF&gt;
+ * <pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SchemaRoot", propOrder = {
@@ -165,7 +134,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Contact }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -202,7 +171,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Role }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -240,7 +209,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Organisation }
+     * 
    * <p>
    * <p>
    * @return
@@ -278,7 +247,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ExternalReference }
+     * 
    * <p>
    * <p>
    * @return
@@ -316,7 +285,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Administrative }
+     * 
    * <p>
    * <p>
    * @return
@@ -353,7 +322,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Location }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -391,7 +360,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ChannelPlan }
+     * 
    * <p>
    * <p>
    * @return
@@ -428,7 +397,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link TOA }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -466,7 +435,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Transmitter }
+     * 
    * <p>
    * <p>
    * @return
@@ -503,7 +472,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Receiver }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -540,7 +509,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Antenna }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -577,7 +546,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link RFSystem }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -614,7 +583,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link SSRequest }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -651,7 +620,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link SSReply }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -688,7 +657,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Allotment }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -726,7 +695,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Assignment }
+     * 
    * <p>
    * <p>
    * @return
@@ -763,7 +732,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Satellite }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -801,7 +770,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link IntfReport }
+     * 
    * <p>
    * <p>
    * @return
@@ -838,7 +807,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link JRFL }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -876,7 +845,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ForceElement }
+     * 
    * <p>
    * <p>
    * @return
@@ -914,7 +883,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link FEDeployment }
+     * 
    * <p>
    * <p>
    * @return
@@ -951,7 +920,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Note }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

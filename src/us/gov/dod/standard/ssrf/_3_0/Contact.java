@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -107,7 +107,7 @@ public class Contact extends Common {
    * Gets the value of the effectiveDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getEffectiveDate() {
@@ -118,7 +118,7 @@ public class Contact extends Common {
    * Sets the value of the effectiveDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setEffectiveDate(TCalendar value) {
@@ -133,7 +133,7 @@ public class Contact extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -144,7 +144,7 @@ public class Contact extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
@@ -159,7 +159,7 @@ public class Contact extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -170,7 +170,7 @@ public class Contact extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -185,7 +185,7 @@ public class Contact extends Common {
    * Gets the value of the titleRank property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getTitleRank() {
@@ -196,7 +196,7 @@ public class Contact extends Common {
    * Sets the value of the titleRank property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setTitleRank(TString value) {
@@ -211,7 +211,7 @@ public class Contact extends Common {
    * Gets the value of the firstName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *         
    * <p>
    */
   public TString getFirstName() {
@@ -222,7 +222,7 @@ public class Contact extends Common {
    * Sets the value of the firstName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *              
    * <p>
    */
   public void setFirstName(TString value) {
@@ -237,7 +237,7 @@ public class Contact extends Common {
    * Gets the value of the lastName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *         
    * <p>
    */
   public TString getLastName() {
@@ -248,7 +248,7 @@ public class Contact extends Common {
    * Sets the value of the lastName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *              
    * <p>
    */
   public void setLastName(TString value) {
@@ -276,7 +276,7 @@ public class Contact extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Address }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -314,7 +314,7 @@ public class Contact extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link TelephoneFax }
+     * 
    * <p>
    * <p>
    * @return
@@ -351,7 +351,7 @@ public class Contact extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link EMail }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

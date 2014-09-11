@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +32,8 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -93,8 +93,7 @@ public class FreqBand {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -103,8 +102,7 @@ public class FreqBand {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -117,8 +115,7 @@ public class FreqBand {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -127,8 +124,7 @@ public class FreqBand {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -142,7 +138,7 @@ public class FreqBand {
    * Gets the value of the useIndicator property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *         
    * <p>
    */
   public TString getUseIndicator() {
@@ -153,7 +149,7 @@ public class FreqBand {
    * Sets the value of the useIndicator property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *              
    * <p>
    */
   public void setUseIndicator(TString value) {
@@ -168,7 +164,7 @@ public class FreqBand {
    * Gets the value of the bandNotes property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getBandNotes() {
@@ -179,7 +175,7 @@ public class FreqBand {
    * Sets the value of the bandNotes property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setBandNotes(TString value) {
@@ -208,7 +204,7 @@ public class FreqBand {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Allocation }
+     * 
    * <p>
    * <p>
    * @return
@@ -246,7 +242,7 @@ public class FreqBand {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return

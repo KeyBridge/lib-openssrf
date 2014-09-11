@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -35,6 +31,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.RelatedRef;
 
 /**
  * <p>
@@ -360,7 +361,7 @@ public class Assignment extends Common {
    * Gets the value of the title property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getTitle() {
@@ -371,7 +372,7 @@ public class Assignment extends Common {
    * Sets the value of the title property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setTitle(TString value) {
@@ -386,7 +387,7 @@ public class Assignment extends Common {
    * Gets the value of the usageType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getUsageType() {
@@ -397,7 +398,7 @@ public class Assignment extends Common {
    * Sets the value of the usageType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setUsageType(TString value) {
@@ -412,7 +413,7 @@ public class Assignment extends Common {
    * Gets the value of the dateResponseRequired property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDateResponseRequired() {
@@ -423,7 +424,7 @@ public class Assignment extends Common {
    * Sets the value of the dateResponseRequired property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDateResponseRequired(TCalendar value) {
@@ -437,8 +438,7 @@ public class Assignment extends Common {
   /**
    * Gets the value of the effectiveDateTime property.
    * <p>
-   * @return possible object is {@link TDT }
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDateTime() {
     return effectiveDateTime;
@@ -447,8 +447,7 @@ public class Assignment extends Common {
   /**
    * Sets the value of the effectiveDateTime property.
    * <p>
-   * @param value allowed object is {@link TDT }
-   * <p>
+   * @param value 
    */
   public void setEffectiveDateTime(TCalendar value) {
     this.effectiveDateTime = value;
@@ -462,7 +461,7 @@ public class Assignment extends Common {
    * Gets the value of the expirationDateTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDateTime() {
@@ -473,7 +472,7 @@ public class Assignment extends Common {
    * Sets the value of the expirationDateTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDateTime(TCalendar value) {
@@ -488,7 +487,7 @@ public class Assignment extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -499,7 +498,7 @@ public class Assignment extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -514,7 +513,7 @@ public class Assignment extends Common {
    * Gets the value of the period property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getPeriod() {
@@ -525,7 +524,7 @@ public class Assignment extends Common {
    * Sets the value of the period property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setPeriod(TString value) {
@@ -540,7 +539,7 @@ public class Assignment extends Common {
    * Gets the value of the seconds property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *         
    * <p>
    */
   public TString getSeconds() {
@@ -551,7 +550,7 @@ public class Assignment extends Common {
    * Sets the value of the seconds property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *              
    * <p>
    */
   public void setSeconds(TString value) {
@@ -566,7 +565,7 @@ public class Assignment extends Common {
    * Gets the value of the minutes property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *         
    * <p>
    */
   public TString getMinutes() {
@@ -577,7 +576,7 @@ public class Assignment extends Common {
    * Sets the value of the minutes property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *              
    * <p>
    */
   public void setMinutes(TString value) {
@@ -592,7 +591,7 @@ public class Assignment extends Common {
    * Gets the value of the hours property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link THours }{@code >}
+   *         
    * <p>
    */
   public TString getHours() {
@@ -603,7 +602,7 @@ public class Assignment extends Common {
    * Sets the value of the hours property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link THours }{@code >}
+   *              
    * <p>
    */
   public void setHours(TString value) {
@@ -618,7 +617,7 @@ public class Assignment extends Common {
    * Gets the value of the daysOfMonth property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
+   *         
    * <p>
    */
   public TString getDaysOfMonth() {
@@ -629,7 +628,7 @@ public class Assignment extends Common {
    * Sets the value of the daysOfMonth property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
+   *              
    * <p>
    */
   public void setDaysOfMonth(TString value) {
@@ -644,7 +643,7 @@ public class Assignment extends Common {
    * Gets the value of the months property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
+   *         
    * <p>
    */
   public TString getMonths() {
@@ -655,7 +654,7 @@ public class Assignment extends Common {
    * Sets the value of the months property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
+   *              
    * <p>
    */
   public void setMonths(TString value) {
@@ -670,7 +669,7 @@ public class Assignment extends Common {
    * Gets the value of the daysOfWeek property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
+   *         
    * <p>
    */
   public TString getDaysOfWeek() {
@@ -681,7 +680,7 @@ public class Assignment extends Common {
    * Sets the value of the daysOfWeek property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
+   *              
    * <p>
    */
   public void setDaysOfWeek(TString value) {
@@ -696,7 +695,7 @@ public class Assignment extends Common {
    * Gets the value of the years property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
+   *         
    * <p>
    */
   public TString getYears() {
@@ -707,7 +706,7 @@ public class Assignment extends Common {
    * Sets the value of the years property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
+   *              
    * <p>
    */
   public void setYears(TString value) {
@@ -722,7 +721,7 @@ public class Assignment extends Common {
    * Gets the value of the duration property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *         
    * <p>
    */
   public TInteger getDuration() {
@@ -733,7 +732,7 @@ public class Assignment extends Common {
    * Sets the value of the duration property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *              
    * <p>
    */
   public void setDuration(TInteger value) {
@@ -748,7 +747,7 @@ public class Assignment extends Common {
    * Gets the value of the processing property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getProcessing() {
@@ -759,7 +758,7 @@ public class Assignment extends Common {
    * Sets the value of the processing property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setProcessing(TString value) {
@@ -774,7 +773,7 @@ public class Assignment extends Common {
    * Gets the value of the emergency property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getEmergency() {
@@ -785,7 +784,7 @@ public class Assignment extends Common {
    * Sets the value of the emergency property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setEmergency(TString value) {
@@ -800,7 +799,7 @@ public class Assignment extends Common {
    * Gets the value of the assignmentAuthority property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getAssignmentAuthority() {
@@ -811,7 +810,7 @@ public class Assignment extends Common {
    * Sets the value of the assignmentAuthority property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setAssignmentAuthority(TString value) {
@@ -826,7 +825,7 @@ public class Assignment extends Common {
    * Gets the value of the requirement property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getRequirement() {
@@ -837,7 +836,7 @@ public class Assignment extends Common {
    * Sets the value of the requirement property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setRequirement(TString value) {
@@ -852,7 +851,7 @@ public class Assignment extends Common {
    * Gets the value of the numSystems property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumSystems() {
@@ -863,7 +862,7 @@ public class Assignment extends Common {
    * Sets the value of the numSystems property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumSystems(TInteger value) {
@@ -878,7 +877,7 @@ public class Assignment extends Common {
    * Gets the value of the agencyActionNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *         
    * <p>
    */
   public TString getAgencyActionNum() {
@@ -889,7 +888,7 @@ public class Assignment extends Common {
    * Sets the value of the agencyActionNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *              
    * <p>
    */
   public void setAgencyActionNum(TString value) {
@@ -904,7 +903,7 @@ public class Assignment extends Common {
    * Gets the value of the agencyComments property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getAgencyComments() {
@@ -915,7 +914,7 @@ public class Assignment extends Common {
    * Sets the value of the agencyComments property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setAgencyComments(TString value) {
@@ -930,7 +929,7 @@ public class Assignment extends Common {
    * Gets the value of the agencySerialNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *         
    * <p>
    */
   public TString getAgencySerialNum() {
@@ -941,7 +940,7 @@ public class Assignment extends Common {
    * Sets the value of the agencySerialNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *              
    * <p>
    */
   public void setAgencySerialNum(TString value) {
@@ -956,7 +955,7 @@ public class Assignment extends Common {
    * Gets the value of the assignmentDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getAssignmentDate() {
@@ -967,7 +966,7 @@ public class Assignment extends Common {
    * Sets the value of the assignmentDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setAssignmentDate(TCalendar value) {
@@ -982,7 +981,7 @@ public class Assignment extends Common {
    * Gets the value of the cocomGroup property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS8 }{@code >}
+   *         
    * <p>
    */
   public TString getCOCOMGroup() {
@@ -993,7 +992,7 @@ public class Assignment extends Common {
    * Sets the value of the cocomGroup property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS8 }{@code >}
+   *              
    * <p>
    */
   public void setCOCOMGroup(TString value) {
@@ -1008,7 +1007,7 @@ public class Assignment extends Common {
    * Gets the value of the controlRequestNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *         
    * <p>
    */
   public TString getControlRequestNum() {
@@ -1019,7 +1018,7 @@ public class Assignment extends Common {
    * Sets the value of the controlRequestNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *              
    * <p>
    */
   public void setControlRequestNum(TString value) {
@@ -1034,7 +1033,7 @@ public class Assignment extends Common {
    * Gets the value of the coordinationComments property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getCoordinationComments() {
@@ -1045,7 +1044,7 @@ public class Assignment extends Common {
    * Sets the value of the coordinationComments property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setCoordinationComments(TString value) {
@@ -1060,7 +1059,7 @@ public class Assignment extends Common {
    * Gets the value of the dataSource property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS60 }{@code >}
+   *         
    * <p>
    */
   public TString getDataSource() {
@@ -1071,7 +1070,7 @@ public class Assignment extends Common {
    * Sets the value of the dataSource property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS60 }{@code >}
+   *              
    * <p>
    */
   public void setDataSource(TString value) {
@@ -1086,7 +1085,7 @@ public class Assignment extends Common {
    * Gets the value of the fccFileNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS22 }{@code >}
+   *         
    * <p>
    */
   public TString getFCCFileNum() {
@@ -1097,7 +1096,7 @@ public class Assignment extends Common {
    * Sets the value of the fccFileNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS22 }{@code >}
+   *              
    * <p>
    */
   public void setFCCFileNum(TString value) {
@@ -1112,7 +1111,7 @@ public class Assignment extends Common {
    * Gets the value of the fmscNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS14 }{@code >}
+   *         
    * <p>
    */
   public TString getFMSCNum() {
@@ -1123,7 +1122,7 @@ public class Assignment extends Common {
    * Sets the value of the fmscNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS14 }{@code >}
+   *              
    * <p>
    */
   public void setFMSCNum(TString value) {
@@ -1138,7 +1137,7 @@ public class Assignment extends Common {
    * Gets the value of the frequencyActionOfficer property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS3 }{@code >}
+   *         
    * <p>
    */
   public TString getFrequencyActionOfficer() {
@@ -1149,7 +1148,7 @@ public class Assignment extends Common {
    * Sets the value of the frequencyActionOfficer property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS3 }{@code >}
+   *              
    * <p>
    */
   public void setFrequencyActionOfficer(TString value) {
@@ -1164,7 +1163,7 @@ public class Assignment extends Common {
    * Gets the value of the listSerialNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *         
    * <p>
    */
   public TString getListSerialNum() {
@@ -1175,7 +1174,7 @@ public class Assignment extends Common {
    * Sets the value of the listSerialNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *              
    * <p>
    */
   public void setListSerialNum(TString value) {
@@ -1190,7 +1189,7 @@ public class Assignment extends Common {
    * Gets the value of the natoPooledFrequencyCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getNATOPooledFrequencyCode() {
@@ -1201,7 +1200,7 @@ public class Assignment extends Common {
    * Sets the value of the natoPooledFrequencyCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setNATOPooledFrequencyCode(TString value) {
@@ -1216,7 +1215,7 @@ public class Assignment extends Common {
    * Gets the value of the natoPooledFrequencyNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNATOPooledFrequencyNum() {
@@ -1227,7 +1226,7 @@ public class Assignment extends Common {
    * Sets the value of the natoPooledFrequencyNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *              
    * <p>
    */
   public void setNATOPooledFrequencyNum(TInteger value) {
@@ -1242,7 +1241,7 @@ public class Assignment extends Common {
    * Gets the value of the originalAssignmentDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getOriginalAssignmentDate() {
@@ -1253,7 +1252,7 @@ public class Assignment extends Common {
    * Sets the value of the originalAssignmentDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setOriginalAssignmentDate(TCalendar value) {
@@ -1268,7 +1267,7 @@ public class Assignment extends Common {
    * Gets the value of the routineAgendaItem property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getRoutineAgendaItem() {
@@ -1279,7 +1278,7 @@ public class Assignment extends Common {
    * Sets the value of the routineAgendaItem property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setRoutineAgendaItem(TString value) {
@@ -1294,7 +1293,7 @@ public class Assignment extends Common {
    * Gets the value of the supplementaryDetails property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getSupplementaryDetails() {
@@ -1305,7 +1304,7 @@ public class Assignment extends Common {
    * Sets the value of the supplementaryDetails property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setSupplementaryDetails(TString value) {
@@ -1320,7 +1319,7 @@ public class Assignment extends Common {
    * Gets the value of the typeOfService property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getTypeOfService() {
@@ -1331,7 +1330,7 @@ public class Assignment extends Common {
    * Sets the value of the typeOfService property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setTypeOfService(TString value) {
@@ -1346,7 +1345,7 @@ public class Assignment extends Common {
    * Gets the value of the usageCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS150 }{@code >}
+   *         
    * <p>
    */
   public TString getUsageCode() {
@@ -1357,7 +1356,7 @@ public class Assignment extends Common {
    * Sets the value of the usageCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS150 }{@code >}
+   *              
    * <p>
    */
   public void setUsageCode(TString value) {
@@ -1372,7 +1371,7 @@ public class Assignment extends Common {
    * Gets the value of the usageFrequency property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getUsageFrequency() {
@@ -1383,7 +1382,7 @@ public class Assignment extends Common {
    * Sets the value of the usageFrequency property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setUsageFrequency(TString value) {
@@ -1398,7 +1397,7 @@ public class Assignment extends Common {
    * Gets the value of the usagePercentage property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS_Percent }{@code >}
+   *         
    * <p>
    */
   public TInteger getUsagePercentage() {
@@ -1409,7 +1408,7 @@ public class Assignment extends Common {
    * Sets the value of the usagePercentage property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS_Percent }{@code >}
+   *              
    * <p>
    */
   public void setUsagePercentage(TInteger value) {
@@ -1424,7 +1423,7 @@ public class Assignment extends Common {
    * Gets the value of the userNetCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS6 }{@code >}
+   *         
    * <p>
    */
   public TString getUserNetCode() {
@@ -1435,7 +1434,7 @@ public class Assignment extends Common {
    * Sets the value of the userNetCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS6 }{@code >}
+   *              
    * <p>
    */
   public void setUserNetCode(TString value) {
@@ -1463,7 +1462,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Project }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1501,7 +1500,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -1539,7 +1538,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link SysOfStation }
+     * 
    * <p>
    * <p>
    * @return
@@ -1577,7 +1576,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RelatedRef }
+     * 
    * <p>
    * <p>
    * @return
@@ -1615,7 +1614,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Configuration }
+     * 
    * <p>
    * <p>
    * @return
@@ -1652,7 +1651,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Station }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1689,7 +1688,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Link }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1726,7 +1725,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link StatusLog }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1764,7 +1763,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link AsgnAllotOwner }
+     * 
    * <p>
    * <p>
    * @return
@@ -1802,7 +1801,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link CircuitRemarks }
+     * 
    * <p>
    * <p>
    * @return
@@ -1840,7 +1839,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link CoordinationData }
+     * 
    * <p>
    * <p>
    * @return
@@ -1877,7 +1876,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link DocketNum }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -1915,7 +1914,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link HostDocketNum }
+     * 
    * <p>
    * <p>
    * @return
@@ -1953,7 +1952,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link OffTheShelfEquipment }
+     * 
    * <p>
    * <p>
    * @return
@@ -1991,7 +1990,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link PreviousAuthorization }
+     * 
    * <p>
    * <p>
    * @return
@@ -2029,7 +2028,7 @@ public class Assignment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RecordNote }
+     * 
    * <p>
    * <p>
    * @return

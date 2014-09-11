@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -90,8 +90,7 @@ public class StatusLog {
   /**
    * Gets the value of the dateTime property.
    * <p>
-   * @return possible object is {@link TDT }
-   * <p>
+   * @return 
    */
   public TCalendar getDateTime() {
     return dateTime;
@@ -100,8 +99,7 @@ public class StatusLog {
   /**
    * Sets the value of the dateTime property.
    * <p>
-   * @param value allowed object is {@link TDT }
-   * <p>
+   * @param value 
    */
   public void setDateTime(TCalendar value) {
     this.dateTime = value;
@@ -114,8 +112,7 @@ public class StatusLog {
   /**
    * Gets the value of the state property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getState() {
     return state;
@@ -124,8 +121,7 @@ public class StatusLog {
   /**
    * Sets the value of the state property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setState(TString value) {
     this.state = value;
@@ -139,7 +135,7 @@ public class StatusLog {
    * Gets the value of the agencyCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS80 }{@code >}
+   *         
    * <p>
    */
   public TString getAgencyCode() {
@@ -150,7 +146,7 @@ public class StatusLog {
    * Sets the value of the agencyCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS80 }{@code >}
+   *              
    * <p>
    */
   public void setAgencyCode(TString value) {
@@ -165,7 +161,7 @@ public class StatusLog {
    * Gets the value of the comment property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getComment() {
@@ -176,7 +172,7 @@ public class StatusLog {
    * Sets the value of the comment property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setComment(TString value) {
@@ -191,7 +187,7 @@ public class StatusLog {
    * Gets the value of the pocRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getPOCRef() {
@@ -202,7 +198,7 @@ public class StatusLog {
    * Sets the value of the pocRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setPOCRef(TString value) {

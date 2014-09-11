@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +32,9 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -88,7 +88,7 @@ public class Polygon {
    * Gets the value of the excluded property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getExcluded() {
@@ -99,7 +99,7 @@ public class Polygon {
    * Sets the value of the excluded property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setExcluded(TString value) {
@@ -114,7 +114,7 @@ public class Polygon {
    * Gets the value of the altitudeMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAltitudeMin() {
@@ -125,7 +125,7 @@ public class Polygon {
    * Sets the value of the altitudeMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setAltitudeMin(TDecimal value) {
@@ -140,7 +140,7 @@ public class Polygon {
    * Gets the value of the altitudeMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAltitudeMax() {
@@ -151,7 +151,7 @@ public class Polygon {
    * Sets the value of the altitudeMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setAltitudeMax(TDecimal value) {
@@ -180,7 +180,7 @@ public class Polygon {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link PolygonPoint }
+     * 
    * <p>
    * <p>
    * @return
@@ -203,8 +203,7 @@ public class Polygon {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return possible object is {@link BigInteger }
-   * <p>
+   * @return 
    */
   public BigInteger getIdx() {
     return idx;
@@ -213,8 +212,7 @@ public class Polygon {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value allowed object is {@link BigInteger }
-   * <p>
+   * @param value 
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCSI;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -33,6 +30,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCSI;
 
 /**
  * <p>
@@ -105,7 +105,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the maxDevRatio property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getMaxDevRatio() {
@@ -116,7 +116,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the maxDevRatio property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *              
    * <p>
    */
   public void setMaxDevRatio(TDecimal value) {
@@ -131,7 +131,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the amIdx property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAMIdx() {
@@ -142,7 +142,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the amIdx property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *              
    * <p>
    */
   public void setAMIdx(TDecimal value) {
@@ -157,7 +157,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the amrmsIdx property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAMRMSIdx() {
@@ -168,7 +168,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the amrmsIdx property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *              
    * <p>
    */
   public void setAMRMSIdx(TDecimal value) {
@@ -183,7 +183,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the fmPeakFreqDev property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFMPeakFreqDev() {
@@ -194,7 +194,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the fmPeakFreqDev property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFMPeakFreqDev(TDecimal value) {
@@ -209,7 +209,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the fmrmsFreqDev property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFMRMSFreqDev() {
@@ -220,7 +220,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the fmrmsFreqDev property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFMRMSFreqDev(TDecimal value) {
@@ -235,7 +235,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the fmDeviationCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getFMDeviationCode() {
@@ -246,7 +246,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the fmDeviationCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setFMDeviationCode(TString value) {
@@ -261,7 +261,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the fmPeakModulationIdx property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFMPeakModulationIdx() {
@@ -272,7 +272,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the fmPeakModulationIdx property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN5_3 }{@code >}
+   *              
    * <p>
    */
   public void setFMPeakModulationIdx(TDecimal value) {
@@ -287,7 +287,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the carrierSuppression property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCarrierSuppression() {
@@ -298,7 +298,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the carrierSuppression property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setCarrierSuppression(TDecimal value) {
@@ -313,7 +313,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the sidebandSuppression property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSidebandSuppression() {
@@ -324,7 +324,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the sidebandSuppression property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setSidebandSuppression(TDecimal value) {
@@ -339,7 +339,7 @@ public class TxModulation extends RxModulation {
    * Gets the value of the sidebandSuppressed property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCSI }{@code >}
+   *         
    * <p>
    */
   public TString getSidebandSuppressed() {
@@ -350,7 +350,7 @@ public class TxModulation extends RxModulation {
    * Sets the value of the sidebandSuppressed property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCSI }{@code >}
+   *              
    * <p>
    */
   public void setSidebandSuppressed(TString value) {

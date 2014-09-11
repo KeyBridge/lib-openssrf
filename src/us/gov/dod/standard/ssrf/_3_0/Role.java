@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCCY;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCCY;
+import us.gov.dod.standard.ssrf._3_0.metadata.ContactRef;
 
 /**
  * <p>
@@ -107,7 +108,7 @@ public class Role extends Common {
    * Gets the value of the effectiveDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getEffectiveDate() {
@@ -118,7 +119,7 @@ public class Role extends Common {
    * Sets the value of the effectiveDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setEffectiveDate(TCalendar value) {
@@ -133,7 +134,7 @@ public class Role extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -144,7 +145,7 @@ public class Role extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
@@ -159,7 +160,7 @@ public class Role extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -170,7 +171,7 @@ public class Role extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -184,8 +185,7 @@ public class Role extends Common {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -194,8 +194,7 @@ public class Role extends Common {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -209,7 +208,7 @@ public class Role extends Common {
    * Gets the value of the country property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCCY }{@code >}
+   *         
    * <p>
    */
   public TString getCountry() {
@@ -220,7 +219,7 @@ public class Role extends Common {
    * Sets the value of the country property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCCY }{@code >}
+   *              
    * <p>
    */
   public void setCountry(TString value) {
@@ -248,7 +247,7 @@ public class Role extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Address }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -286,7 +285,7 @@ public class Role extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link TelephoneFax }
+     * 
    * <p>
    * <p>
    * @return
@@ -323,7 +322,7 @@ public class Role extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link EMail }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -361,7 +360,7 @@ public class Role extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ContactRef }
+     * 
    * <p>
    * <p>
    * @return

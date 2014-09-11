@@ -23,11 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -36,6 +31,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 
 /**
  * <p>
@@ -125,7 +125,7 @@ public class ExternalReference extends Common {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -136,7 +136,7 @@ public class ExternalReference extends Common {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -151,7 +151,7 @@ public class ExternalReference extends Common {
    * Gets the value of the date property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDate() {
@@ -162,7 +162,7 @@ public class ExternalReference extends Common {
    * Sets the value of the date property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDate(TCalendar value) {
@@ -177,7 +177,7 @@ public class ExternalReference extends Common {
    * Gets the value of the identifier property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getIdentifier() {
@@ -188,7 +188,7 @@ public class ExternalReference extends Common {
    * Sets the value of the identifier property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setIdentifier(TString value) {
@@ -203,7 +203,7 @@ public class ExternalReference extends Common {
    * Gets the value of the alternateIdentifier property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getAlternateIdentifier() {
@@ -214,7 +214,7 @@ public class ExternalReference extends Common {
    * Sets the value of the alternateIdentifier property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setAlternateIdentifier(TString value) {
@@ -229,7 +229,7 @@ public class ExternalReference extends Common {
    * Gets the value of the title property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getTitle() {
@@ -240,7 +240,7 @@ public class ExternalReference extends Common {
    * Sets the value of the title property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setTitle(TString value) {
@@ -255,7 +255,7 @@ public class ExternalReference extends Common {
    * Gets the value of the author property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getAuthor() {
@@ -266,7 +266,7 @@ public class ExternalReference extends Common {
    * Sets the value of the author property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setAuthor(TString value) {
@@ -281,7 +281,7 @@ public class ExternalReference extends Common {
    * Gets the value of the organisation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getOrganisation() {
@@ -292,7 +292,7 @@ public class ExternalReference extends Common {
    * Sets the value of the organisation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setOrganisation(TString value) {
@@ -307,7 +307,7 @@ public class ExternalReference extends Common {
    * Gets the value of the documentCls property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
+   *         
    * <p>
    */
   public TString getDocumentCls() {
@@ -318,7 +318,7 @@ public class ExternalReference extends Common {
    * Sets the value of the documentCls property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
+   *              
    * <p>
    */
   public void setDocumentCls(TString value) {
@@ -333,7 +333,7 @@ public class ExternalReference extends Common {
    * Gets the value of the resourceLocator property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getResourceLocator() {
@@ -344,7 +344,7 @@ public class ExternalReference extends Common {
    * Sets the value of the resourceLocator property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setResourceLocator(TString value) {
@@ -358,8 +358,7 @@ public class ExternalReference extends Common {
   /**
    * Gets the value of the isAttached property.
    * <p>
-   * @return possible object is {@link TListCBO }
-   * <p>
+   * @return 
    */
   public TString getIsAttached() {
     return isAttached;
@@ -368,8 +367,7 @@ public class ExternalReference extends Common {
   /**
    * Sets the value of the isAttached property.
    * <p>
-   * @param value allowed object is {@link TListCBO }
-   * <p>
+   * @param value 
    */
   public void setIsAttached(TString value) {
     this.isAttached = value;
@@ -383,7 +381,7 @@ public class ExternalReference extends Common {
    * Gets the value of the isClassified property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getIsClassified() {
@@ -394,7 +392,7 @@ public class ExternalReference extends Common {
    * Sets the value of the isClassified property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setIsClassified(TString value) {
@@ -409,7 +407,7 @@ public class ExternalReference extends Common {
    * Gets the value of the referencedStage property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
+   *         
    * <p>
    */
   public TString getReferencedStage() {
@@ -420,7 +418,7 @@ public class ExternalReference extends Common {
    * Sets the value of the referencedStage property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
+   *              
    * <p>
    */
   public void setReferencedStage(TString value) {

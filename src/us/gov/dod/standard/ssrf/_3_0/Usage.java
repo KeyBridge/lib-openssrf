@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -79,7 +79,7 @@ public class Usage {
    * Gets the value of the eqpFnct property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getEqpFnct() {
@@ -90,7 +90,7 @@ public class Usage {
    * Sets the value of the eqpFnct property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setEqpFnct(TString value) {
@@ -105,7 +105,7 @@ public class Usage {
    * Gets the value of the stnClass property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS5 }{@code >}
+   *         
    * <p>
    */
   public TString getStnClass() {
@@ -116,7 +116,7 @@ public class Usage {
    * Sets the value of the stnClass property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS5 }{@code >}
+   *              
    * <p>
    */
   public void setStnClass(TString value) {
@@ -131,7 +131,7 @@ public class Usage {
    * Gets the value of the radioService property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getRadioService() {
@@ -142,7 +142,7 @@ public class Usage {
    * Sets the value of the radioService property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setRadioService(TString value) {

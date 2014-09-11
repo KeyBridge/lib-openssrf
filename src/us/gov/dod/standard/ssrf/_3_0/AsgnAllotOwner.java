@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -74,7 +74,7 @@ public class AsgnAllotOwner {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS18 }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -85,7 +85,7 @@ public class AsgnAllotOwner {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS18 }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {
@@ -99,8 +99,7 @@ public class AsgnAllotOwner {
   /**
    * Gets the value of the ownerType property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getOwnerType() {
     return ownerType;
@@ -109,8 +108,7 @@ public class AsgnAllotOwner {
   /**
    * Sets the value of the ownerType property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setOwnerType(TString value) {
     this.ownerType = value;

@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -79,8 +79,7 @@ public class ClsDerived {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return possible object is {@link TD }
-   * <p>
+   * @return 
    */
   public TCalendar getDate() {
     return date;
@@ -89,8 +88,7 @@ public class ClsDerived {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value allowed object is {@link TD }
-   * <p>
+   * @param value 
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -103,8 +101,7 @@ public class ClsDerived {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return possible object is {@link TS30 }
-   * <p>
+   * @return 
    */
   public TString getTitle() {
     return title;
@@ -113,8 +110,7 @@ public class ClsDerived {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value allowed object is {@link TS30 }
-   * <p>
+   * @param value 
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -127,8 +123,7 @@ public class ClsDerived {
   /**
    * Gets the value of the org property.
    * <p>
-   * @return possible object is {@link TS30 }
-   * <p>
+   * @return 
    */
   public TString getOrg() {
     return org;
@@ -137,8 +132,7 @@ public class ClsDerived {
   /**
    * Sets the value of the org property.
    * <p>
-   * @param value allowed object is {@link TS30 }
-   * <p>
+   * @param value 
    */
   public void setOrg(TString value) {
     this.org = value;

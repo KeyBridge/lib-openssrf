@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 
 /**
  * <p>
@@ -72,8 +72,7 @@ public class CurvePoint {
   /**
    * Gets the value of the offset property.
    * <p>
-   * @return possible object is {@link TFreqOffset }
-   * <p>
+   * @return 
    */
   public TDecimal getOffset() {
     return offset;
@@ -82,8 +81,7 @@ public class CurvePoint {
   /**
    * Sets the value of the offset property.
    * <p>
-   * @param value allowed object is {@link TFreqOffset }
-   * <p>
+   * @param value 
    */
   public void setOffset(TDecimal value) {
     this.offset = value;
@@ -96,8 +94,7 @@ public class CurvePoint {
   /**
    * Gets the value of the level property.
    * <p>
-   * @return possible object is {@link TCurvePointLevel }
-   * <p>
+   * @return 
    */
   public TDecimal getLevel() {
     return level;
@@ -106,8 +103,7 @@ public class CurvePoint {
   /**
    * Sets the value of the level property.
    * <p>
-   * @param value allowed object is {@link TCurvePointLevel }
-   * <p>
+   * @param value 
    */
   public void setLevel(TDecimal value) {
     this.level = value;

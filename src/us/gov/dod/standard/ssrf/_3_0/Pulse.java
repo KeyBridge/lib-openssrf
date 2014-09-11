@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -33,6 +30,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -132,7 +132,7 @@ public class Pulse {
    * Gets the value of the prrMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPRRMin() {
@@ -143,7 +143,7 @@ public class Pulse {
    * Sets the value of the prrMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
+   *              
    * <p>
    */
   public void setPRRMin(TDecimal value) {
@@ -158,7 +158,7 @@ public class Pulse {
    * Gets the value of the prrMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPRRMax() {
@@ -169,7 +169,7 @@ public class Pulse {
    * Sets the value of the prrMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9_3 }{@code >}
+   *              
    * <p>
    */
   public void setPRRMax(TDecimal value) {
@@ -184,7 +184,7 @@ public class Pulse {
    * Gets the value of the pdMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPDMin() {
@@ -195,7 +195,7 @@ public class Pulse {
    * Sets the value of the pdMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setPDMin(TDecimal value) {
@@ -210,7 +210,7 @@ public class Pulse {
    * Gets the value of the pdMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPDMax() {
@@ -221,7 +221,7 @@ public class Pulse {
    * Sets the value of the pdMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setPDMax(TDecimal value) {
@@ -236,7 +236,7 @@ public class Pulse {
    * Gets the value of the dutyCycleMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *         
    * <p>
    */
   public TDecimal getDutyCycleMin() {
@@ -247,7 +247,7 @@ public class Pulse {
    * Sets the value of the dutyCycleMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *              
    * <p>
    */
   public void setDutyCycleMin(TDecimal value) {
@@ -262,7 +262,7 @@ public class Pulse {
    * Gets the value of the dutyCycleMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *         
    * <p>
    */
   public TDecimal getDutyCycleMax() {
@@ -273,7 +273,7 @@ public class Pulse {
    * Sets the value of the dutyCycleMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *              
    * <p>
    */
   public void setDutyCycleMax(TDecimal value) {
@@ -288,7 +288,7 @@ public class Pulse {
    * Gets the value of the avgPowerMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAvgPowerMin() {
@@ -299,7 +299,7 @@ public class Pulse {
    * Sets the value of the avgPowerMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setAvgPowerMin(TDecimal value) {
@@ -314,7 +314,7 @@ public class Pulse {
    * Gets the value of the avgPowerMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAvgPowerMax() {
@@ -325,7 +325,7 @@ public class Pulse {
    * Sets the value of the avgPowerMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setAvgPowerMax(TDecimal value) {
@@ -340,7 +340,7 @@ public class Pulse {
    * Gets the value of the compRatio property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN8_4 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCompRatio() {
@@ -351,7 +351,7 @@ public class Pulse {
    * Sets the value of the compRatio property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN8_4 }{@code >}
+   *              
    * <p>
    */
   public void setCompRatio(TDecimal value) {
@@ -366,7 +366,7 @@ public class Pulse {
    * Gets the value of the compMethod property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *         
    * <p>
    */
   public TString getCompMethod() {
@@ -377,7 +377,7 @@ public class Pulse {
    * Sets the value of the compMethod property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *              
    * <p>
    */
   public void setCompMethod(TString value) {
@@ -392,7 +392,7 @@ public class Pulse {
    * Gets the value of the riseTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getRiseTime() {
@@ -403,7 +403,7 @@ public class Pulse {
    * Sets the value of the riseTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setRiseTime(TDecimal value) {
@@ -418,7 +418,7 @@ public class Pulse {
    * Gets the value of the fallTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFallTime() {
@@ -429,7 +429,7 @@ public class Pulse {
    * Sets the value of the fallTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link Tmicrosecs }{@code >}
+   *              
    * <p>
    */
   public void setFallTime(TDecimal value) {
@@ -444,7 +444,7 @@ public class Pulse {
    * Gets the value of the justifyShortRiseTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getJustifyShortRiseTime() {
@@ -455,7 +455,7 @@ public class Pulse {
    * Sets the value of the justifyShortRiseTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setJustifyShortRiseTime(TString value) {
@@ -470,7 +470,7 @@ public class Pulse {
    * Gets the value of the radarProcessingGainMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getRadarProcessingGainMax() {
@@ -481,7 +481,7 @@ public class Pulse {
    * Sets the value of the radarProcessingGainMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setRadarProcessingGainMax(TDecimal value) {
@@ -496,7 +496,7 @@ public class Pulse {
    * Gets the value of the numSubpulses property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumSubpulses() {
@@ -507,7 +507,7 @@ public class Pulse {
    * Sets the value of the numSubpulses property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN10 }{@code >}
+   *              
    * <p>
    */
   public void setNumSubpulses(TInteger value) {

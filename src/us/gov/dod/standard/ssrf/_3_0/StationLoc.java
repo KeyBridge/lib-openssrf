@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -33,6 +30,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -95,7 +95,7 @@ public class StationLoc {
    * Gets the value of the locationExcluded property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getLocationExcluded() {
@@ -106,7 +106,7 @@ public class StationLoc {
    * Sets the value of the locationExcluded property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setLocationExcluded(TString value) {
@@ -121,7 +121,7 @@ public class StationLoc {
    * Gets the value of the locSatRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getLocSatRef() {
@@ -132,7 +132,7 @@ public class StationLoc {
    * Sets the value of the locSatRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setLocSatRef(TString value) {
@@ -147,7 +147,7 @@ public class StationLoc {
    * Gets the value of the locationRadius property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
+   *         
    * <p>
    */
   public TDecimal getLocationRadius() {
@@ -158,7 +158,7 @@ public class StationLoc {
    * Sets the value of the locationRadius property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
+   *              
    * <p>
    */
   public void setLocationRadius(TDecimal value) {
@@ -173,7 +173,7 @@ public class StationLoc {
    * Gets the value of the serviceVolumeLocRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getServiceVolumeLocRef() {
@@ -184,7 +184,7 @@ public class StationLoc {
    * Sets the value of the serviceVolumeLocRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setServiceVolumeLocRef(TString value) {
@@ -199,7 +199,7 @@ public class StationLoc {
    * Gets the value of the serviceVolumeRadius property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDistance }{@code >}
+   *         
    * <p>
    */
   public TDecimal getServiceVolumeRadius() {
@@ -210,7 +210,7 @@ public class StationLoc {
    * Sets the value of the serviceVolumeRadius property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDistance }{@code >}
+   *              
    * <p>
    */
   public void setServiceVolumeRadius(TDecimal value) {
@@ -225,7 +225,7 @@ public class StationLoc {
    * Gets the value of the serviceVolumeHeight property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getServiceVolumeHeight() {
@@ -236,7 +236,7 @@ public class StationLoc {
    * Sets the value of the serviceVolumeHeight property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setServiceVolumeHeight(TDecimal value) {

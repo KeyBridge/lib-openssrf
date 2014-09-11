@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -118,7 +118,7 @@ public class Assigned {
    * Gets the value of the quality property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
+   *         
    * <p>
    */
   public TInteger getQuality() {
@@ -129,7 +129,7 @@ public class Assigned {
    * Sets the value of the quality property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN1 }{@code >}
+   *              
    * <p>
    */
   public void setQuality(TInteger value) {
@@ -144,7 +144,7 @@ public class Assigned {
    * Gets the value of the colourWord property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getColourWord() {
@@ -155,7 +155,7 @@ public class Assigned {
    * Sets the value of the colourWord property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setColourWord(TString value) {
@@ -170,7 +170,7 @@ public class Assigned {
    * Gets the value of the colourNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN2 }{@code >}
+   *         
    * <p>
    */
   public TInteger getColourNum() {
@@ -181,7 +181,7 @@ public class Assigned {
    * Sets the value of the colourNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN2 }{@code >}
+   *              
    * <p>
    */
   public void setColourNum(TInteger value) {
@@ -196,7 +196,7 @@ public class Assigned {
    * Gets the value of the ituRegStatus property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getITURegStatus() {
@@ -207,7 +207,7 @@ public class Assigned {
    * Sets the value of the ituRegStatus property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setITURegStatus(TString value) {
@@ -222,7 +222,7 @@ public class Assigned {
    * Gets the value of the ituRegDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getITURegDate() {
@@ -233,7 +233,7 @@ public class Assigned {
    * Sets the value of the ituRegDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setITURegDate(TCalendar value) {
@@ -248,7 +248,7 @@ public class Assigned {
    * Gets the value of the ituRegNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS10 }{@code >}
+   *         
    * <p>
    */
   public TString getITURegNum() {
@@ -259,7 +259,7 @@ public class Assigned {
    * Sets the value of the ituRegNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS10 }{@code >}
+   *              
    * <p>
    */
   public void setITURegNum(TString value) {
@@ -274,7 +274,7 @@ public class Assigned {
    * Gets the value of the navAidsChannel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TNavAidChnl }{@code >}
+   *         
    * <p>
    */
   public TString getNavAidsChannel() {
@@ -285,7 +285,7 @@ public class Assigned {
    * Sets the value of the navAidsChannel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TNavAidChnl }{@code >}
+   *              
    * <p>
    */
   public void setNavAidsChannel(TString value) {
@@ -300,7 +300,7 @@ public class Assigned {
    * Gets the value of the netNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TNetNumber }{@code >}
+   *         
    * <p>
    */
   public TString getNetNum() {
@@ -311,7 +311,7 @@ public class Assigned {
    * Sets the value of the netNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TNetNumber }{@code >}
+   *              
    * <p>
    */
   public void setNetNum(TString value) {
@@ -326,7 +326,7 @@ public class Assigned {
    * Gets the value of the ituRegComments property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getITURegComments() {
@@ -337,7 +337,7 @@ public class Assigned {
    * Sets the value of the ituRegComments property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setITURegComments(TString value) {
@@ -365,7 +365,7 @@ public class Assigned {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Freq }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -402,7 +402,7 @@ public class Assigned {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link FreqOld }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -78,8 +78,7 @@ public class RelatedSupportability {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TS10 }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -88,8 +87,7 @@ public class RelatedSupportability {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TS10 }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -103,7 +101,7 @@ public class RelatedSupportability {
    * Gets the value of the ssRequestRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getSSRequestRef() {
@@ -114,7 +112,7 @@ public class RelatedSupportability {
    * Sets the value of the ssRequestRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setSSRequestRef(TString value) {
@@ -129,7 +127,7 @@ public class RelatedSupportability {
    * Gets the value of the j12Number property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *         
    * <p>
    */
   public TString getJ12Number() {
@@ -140,7 +138,7 @@ public class RelatedSupportability {
    * Sets the value of the j12Number property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *              
    * <p>
    */
   public void setJ12Number(TString value) {

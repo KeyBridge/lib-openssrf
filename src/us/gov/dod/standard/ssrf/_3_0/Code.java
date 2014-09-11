@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -73,8 +73,7 @@ public class Code {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getValue() {
     return value;
@@ -83,8 +82,7 @@ public class Code {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setValue(TString value) {
     this.value = value;
@@ -98,7 +96,7 @@ public class Code {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -109,7 +107,7 @@ public class Code {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {

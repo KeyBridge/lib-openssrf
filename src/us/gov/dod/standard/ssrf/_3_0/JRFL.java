@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -118,7 +118,7 @@ public class JRFL extends Common {
    * Gets the value of the effectiveDateTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *         
    * <p>
    */
   public TCalendar getEffectiveDateTime() {
@@ -129,7 +129,7 @@ public class JRFL extends Common {
    * Sets the value of the effectiveDateTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *              
    * <p>
    */
   public void setEffectiveDateTime(TCalendar value) {
@@ -144,7 +144,7 @@ public class JRFL extends Common {
    * Gets the value of the expirationDateTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDateTime() {
@@ -155,7 +155,7 @@ public class JRFL extends Common {
    * Sets the value of the expirationDateTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDateTime(TCalendar value) {
@@ -170,7 +170,7 @@ public class JRFL extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -181,7 +181,7 @@ public class JRFL extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -196,7 +196,7 @@ public class JRFL extends Common {
    * Gets the value of the seconds property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *         
    * <p>
    */
   public TString getSeconds() {
@@ -207,7 +207,7 @@ public class JRFL extends Common {
    * Sets the value of the seconds property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *              
    * <p>
    */
   public void setSeconds(TString value) {
@@ -222,7 +222,7 @@ public class JRFL extends Common {
    * Gets the value of the minutes property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *         
    * <p>
    */
   public TString getMinutes() {
@@ -233,7 +233,7 @@ public class JRFL extends Common {
    * Sets the value of the minutes property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMinSec }{@code >}
+   *              
    * <p>
    */
   public void setMinutes(TString value) {
@@ -248,7 +248,7 @@ public class JRFL extends Common {
    * Gets the value of the hours property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link THours }{@code >}
+   *         
    * <p>
    */
   public TString getHours() {
@@ -259,7 +259,7 @@ public class JRFL extends Common {
    * Sets the value of the hours property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link THours }{@code >}
+   *              
    * <p>
    */
   public void setHours(TString value) {
@@ -274,7 +274,7 @@ public class JRFL extends Common {
    * Gets the value of the daysOfMonth property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
+   *         
    * <p>
    */
   public TString getDaysOfMonth() {
@@ -285,7 +285,7 @@ public class JRFL extends Common {
    * Sets the value of the daysOfMonth property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDaysOfMonth }{@code >}
+   *              
    * <p>
    */
   public void setDaysOfMonth(TString value) {
@@ -300,7 +300,7 @@ public class JRFL extends Common {
    * Gets the value of the months property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMonths }{@code >}
+   *         
    * <p>
    */
   public TString getMonths() {
@@ -311,7 +311,7 @@ public class JRFL extends Common {
    * Sets the value of the months property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMonths }{@code >}
+   *              
    * <p>
    */
   public void setMonths(TString value) {
@@ -326,7 +326,7 @@ public class JRFL extends Common {
    * Gets the value of the daysOfWeek property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
+   *         
    * <p>
    */
   public TString getDaysOfWeek() {
@@ -337,7 +337,7 @@ public class JRFL extends Common {
    * Sets the value of the daysOfWeek property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDaysOfWeek }{@code >}
+   *              
    * <p>
    */
   public void setDaysOfWeek(TString value) {
@@ -352,7 +352,7 @@ public class JRFL extends Common {
    * Gets the value of the years property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TYears }{@code >}
+   *         
    * <p>
    */
   public TString getYears() {
@@ -363,7 +363,7 @@ public class JRFL extends Common {
    * Sets the value of the years property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TYears }{@code >}
+   *              
    * <p>
    */
   public void setYears(TString value) {
@@ -378,7 +378,7 @@ public class JRFL extends Common {
    * Gets the value of the duration property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *         
    * <p>
    */
   public TInteger getDuration() {
@@ -389,7 +389,7 @@ public class JRFL extends Common {
    * Sets the value of the duration property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN4 }{@code >}
+   *              
    * <p>
    */
   public void setDuration(TInteger value) {
@@ -417,7 +417,7 @@ public class JRFL extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link JRFLEntry }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

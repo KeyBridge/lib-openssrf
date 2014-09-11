@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -38,6 +34,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -141,8 +141,7 @@ public class Configuration {
   /**
    * Gets the value of the configID property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getConfigID() {
     return configID;
@@ -151,8 +150,7 @@ public class Configuration {
   /**
    * Sets the value of the configID property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setConfigID(TString value) {
     this.configID = value;
@@ -166,7 +164,7 @@ public class Configuration {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -177,7 +175,7 @@ public class Configuration {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {
@@ -192,7 +190,7 @@ public class Configuration {
    * Gets the value of the repeater property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getRepeater() {
@@ -203,7 +201,7 @@ public class Configuration {
    * Sets the value of the repeater property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setRepeater(TString value) {
@@ -218,7 +216,7 @@ public class Configuration {
    * Gets the value of the numUsers property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumUsers() {
@@ -229,7 +227,7 @@ public class Configuration {
    * Sets the value of the numUsers property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumUsers(TInteger value) {
@@ -244,7 +242,7 @@ public class Configuration {
    * Gets the value of the eirpMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getEIRPMin() {
@@ -255,7 +253,7 @@ public class Configuration {
    * Sets the value of the eirpMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setEIRPMin(TDecimal value) {
@@ -270,7 +268,7 @@ public class Configuration {
    * Gets the value of the eirpMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getEIRPMax() {
@@ -281,7 +279,7 @@ public class Configuration {
    * Sets the value of the eirpMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setEIRPMax(TDecimal value) {
@@ -296,7 +294,7 @@ public class Configuration {
    * Gets the value of the oobJustification property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getOOBJustification() {
@@ -307,7 +305,7 @@ public class Configuration {
    * Sets the value of the oobJustification property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setOOBJustification(TString value) {
@@ -322,7 +320,7 @@ public class Configuration {
    * Gets the value of the powerLimit property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPowerLimit() {
@@ -333,7 +331,7 @@ public class Configuration {
    * Sets the value of the powerLimit property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setPowerLimit(TDecimal value) {
@@ -348,7 +346,7 @@ public class Configuration {
    * Gets the value of the powerType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getPowerType() {
@@ -359,7 +357,7 @@ public class Configuration {
    * Sets the value of the powerType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setPowerType(TString value) {
@@ -374,7 +372,7 @@ public class Configuration {
    * Gets the value of the spectrumLink property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getSpectrumLink() {
@@ -385,7 +383,7 @@ public class Configuration {
    * Sets the value of the spectrumLink property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setSpectrumLink(TString value) {
@@ -413,7 +411,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Notation }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -450,7 +448,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Usage }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -488,7 +486,7 @@ public class Configuration {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ConfigFreq }
+     * 
    * <p>
    * <p>
    * @return
@@ -525,7 +523,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link TxRef }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -562,7 +560,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link RxRef }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -600,7 +598,7 @@ public class Configuration {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ConfigEmission }
+     * 
    * <p>
    * <p>
    * @return

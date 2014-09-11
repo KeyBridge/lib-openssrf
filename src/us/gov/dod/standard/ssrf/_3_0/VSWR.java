@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 
 /**
  * <p>
@@ -74,7 +74,7 @@ public class VSWR {
    * Gets the value of the freq property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreq() {
@@ -85,7 +85,7 @@ public class VSWR {
    * Sets the value of the freq property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreq(TDecimal value) {
@@ -99,8 +99,7 @@ public class VSWR {
   /**
    * Gets the value of the ratio property.
    * <p>
-   * @return possible object is {@link TUN2_1 }
-   * <p>
+   * @return 
    */
   public TDecimal getRatio() {
     return ratio;
@@ -109,8 +108,7 @@ public class VSWR {
   /**
    * Sets the value of the ratio property.
    * <p>
-   * @param value allowed object is {@link TUN2_1 }
-   * <p>
+   * @param value 
    */
   public void setRatio(TDecimal value) {
     this.ratio = value;

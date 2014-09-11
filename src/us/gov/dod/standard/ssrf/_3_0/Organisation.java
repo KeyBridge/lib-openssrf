@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.RoleRef;
 
 /**
  * <p>
@@ -123,7 +124,7 @@ public class Organisation extends Common {
    * Gets the value of the effectiveDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getEffectiveDate() {
@@ -134,7 +135,7 @@ public class Organisation extends Common {
    * Sets the value of the effectiveDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setEffectiveDate(TCalendar value) {
@@ -149,7 +150,7 @@ public class Organisation extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -160,7 +161,7 @@ public class Organisation extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
@@ -175,7 +176,7 @@ public class Organisation extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -186,7 +187,7 @@ public class Organisation extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -201,7 +202,7 @@ public class Organisation extends Common {
    * Gets the value of the name property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getName() {
@@ -212,7 +213,7 @@ public class Organisation extends Common {
    * Sets the value of the name property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setName(TString value) {
@@ -227,7 +228,7 @@ public class Organisation extends Common {
    * Gets the value of the alternateName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getAlternateName() {
@@ -238,7 +239,7 @@ public class Organisation extends Common {
    * Sets the value of the alternateName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setAlternateName(TString value) {
@@ -253,7 +254,7 @@ public class Organisation extends Common {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -264,7 +265,7 @@ public class Organisation extends Common {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -279,7 +280,7 @@ public class Organisation extends Common {
    * Gets the value of the uic property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getUIC() {
@@ -290,7 +291,7 @@ public class Organisation extends Common {
    * Sets the value of the uic property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setUIC(TString value) {
@@ -318,7 +319,7 @@ public class Organisation extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Address }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -356,7 +357,7 @@ public class Organisation extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link TelephoneFax }
+     * 
    * <p>
    * <p>
    * @return
@@ -393,7 +394,7 @@ public class Organisation extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link EMail }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -430,7 +431,7 @@ public class Organisation extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link RoleRef }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -468,7 +469,7 @@ public class Organisation extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RelatedOrganisation }
+     * 
    * <p>
    * <p>
    * @return

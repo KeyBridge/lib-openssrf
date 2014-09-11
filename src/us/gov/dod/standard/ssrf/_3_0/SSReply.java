@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 
 /**
  * <p>
@@ -140,7 +140,7 @@ public class SSReply extends Common {
    * Gets the value of the ssRequestRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getSSRequestRef() {
@@ -151,7 +151,7 @@ public class SSReply extends Common {
    * Sets the value of the ssRequestRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setSSRequestRef(TString value) {
@@ -165,8 +165,7 @@ public class SSReply extends Common {
   /**
    * Gets the value of the replyingCountry property.
    * <p>
-   * @return possible object is {@link TListCAO }
-   * <p>
+   * @return 
    */
   public TString getReplyingCountry() {
     return replyingCountry;
@@ -175,8 +174,7 @@ public class SSReply extends Common {
   /**
    * Sets the value of the replyingCountry property.
    * <p>
-   * @param value allowed object is {@link TListCAO }
-   * <p>
+   * @param value 
    */
   public void setReplyingCountry(TString value) {
     this.replyingCountry = value;
@@ -189,8 +187,7 @@ public class SSReply extends Common {
   /**
    * Gets the value of the supportabilityCode property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getSupportabilityCode() {
     return supportabilityCode;
@@ -199,8 +196,7 @@ public class SSReply extends Common {
   /**
    * Sets the value of the supportabilityCode property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setSupportabilityCode(TString value) {
     this.supportabilityCode = value;
@@ -214,7 +210,7 @@ public class SSReply extends Common {
    * Gets the value of the dateReceivedByCountry property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDateReceivedByCountry() {
@@ -225,7 +221,7 @@ public class SSReply extends Common {
    * Sets the value of the dateReceivedByCountry property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDateReceivedByCountry(TCalendar value) {
@@ -239,8 +235,7 @@ public class SSReply extends Common {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is {@link TD }
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -249,8 +244,7 @@ public class SSReply extends Common {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is {@link TD }
-   * <p>
+   * @param value 
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -264,7 +258,7 @@ public class SSReply extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -275,7 +269,7 @@ public class SSReply extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
@@ -290,7 +284,7 @@ public class SSReply extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -301,7 +295,7 @@ public class SSReply extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -316,7 +310,7 @@ public class SSReply extends Common {
    * Gets the value of the approvalSPSNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS11 }{@code >}
+   *         
    * <p>
    */
   public TString getApprovalSPSNum() {
@@ -327,7 +321,7 @@ public class SSReply extends Common {
    * Sets the value of the approvalSPSNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS11 }{@code >}
+   *              
    * <p>
    */
   public void setApprovalSPSNum(TString value) {
@@ -342,7 +336,7 @@ public class SSReply extends Common {
    * Gets the value of the erpNumber property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getERPNumber() {
@@ -353,7 +347,7 @@ public class SSReply extends Common {
    * Sets the value of the erpNumber property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setERPNumber(TString value) {
@@ -368,7 +362,7 @@ public class SSReply extends Common {
    * Gets the value of the fasNumber property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getFASNumber() {
@@ -379,7 +373,7 @@ public class SSReply extends Common {
    * Sets the value of the fasNumber property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setFASNumber(TString value) {
@@ -394,7 +388,7 @@ public class SSReply extends Common {
    * Gets the value of the iracNumber property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getIRACNumber() {
@@ -405,7 +399,7 @@ public class SSReply extends Common {
    * Sets the value of the iracNumber property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setIRACNumber(TString value) {
@@ -420,7 +414,7 @@ public class SSReply extends Common {
    * Gets the value of the replyingAuthority property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getReplyingAuthority() {
@@ -431,7 +425,7 @@ public class SSReply extends Common {
    * Sets the value of the replyingAuthority property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setReplyingAuthority(TString value) {
@@ -460,7 +454,7 @@ public class SSReply extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link CommentSource }
+     * 
    * <p>
    * <p>
    * @return
@@ -498,7 +492,7 @@ public class SSReply extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link StageLocation }
+     * 
    * <p>
    * <p>
    * @return
@@ -536,7 +530,7 @@ public class SSReply extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Configuration }
+     * 
    * <p>
    * <p>
    * @return

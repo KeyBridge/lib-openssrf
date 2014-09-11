@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -75,7 +75,7 @@ public class SysOfStation {
    * Gets the value of the sysName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *         
    * <p>
    */
   public TString getSysName() {
@@ -86,7 +86,7 @@ public class SysOfStation {
    * Sets the value of the sysName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *              
    * <p>
    */
   public void setSysName(TString value) {
@@ -101,7 +101,7 @@ public class SysOfStation {
    * Gets the value of the numStations property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumStations() {
@@ -112,7 +112,7 @@ public class SysOfStation {
    * Sets the value of the numStations property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumStations(TInteger value) {

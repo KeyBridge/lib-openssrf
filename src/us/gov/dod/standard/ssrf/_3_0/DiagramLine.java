@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -31,6 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -78,8 +78,7 @@ public class DiagramLine {
   /**
    * Gets the value of the txEndpointName property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getTxEndpointName() {
     return txEndpointName;
@@ -88,8 +87,7 @@ public class DiagramLine {
   /**
    * Sets the value of the txEndpointName property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setTxEndpointName(TString value) {
     this.txEndpointName = value;
@@ -102,8 +100,7 @@ public class DiagramLine {
   /**
    * Gets the value of the rxEndpointName property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getRxEndpointName() {
     return rxEndpointName;
@@ -112,8 +109,7 @@ public class DiagramLine {
   /**
    * Sets the value of the rxEndpointName property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setRxEndpointName(TString value) {
     this.rxEndpointName = value;
@@ -127,7 +123,7 @@ public class DiagramLine {
    * Gets the value of the configID property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getConfigID() {
@@ -138,7 +134,7 @@ public class DiagramLine {
    * Sets the value of the configID property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setConfigID(TString value) {

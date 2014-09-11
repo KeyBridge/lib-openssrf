@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -37,6 +34,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -97,8 +97,7 @@ public class DiagramEndpoint {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -107,8 +106,7 @@ public class DiagramEndpoint {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -122,7 +120,7 @@ public class DiagramEndpoint {
    * Gets the value of the iconType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getIconType() {
@@ -133,7 +131,7 @@ public class DiagramEndpoint {
    * Sets the value of the iconType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setIconType(TString value) {
@@ -148,7 +146,7 @@ public class DiagramEndpoint {
    * Gets the value of the iconPosLeft property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
+   *         
    * <p>
    */
   public TInteger getIconPosLeft() {
@@ -159,7 +157,7 @@ public class DiagramEndpoint {
    * Sets the value of the iconPosLeft property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
+   *              
    * <p>
    */
   public void setIconPosLeft(TInteger value) {
@@ -174,7 +172,7 @@ public class DiagramEndpoint {
    * Gets the value of the iconPosTop property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
+   *         
    * <p>
    */
   public TInteger getIconPosTop() {
@@ -185,7 +183,7 @@ public class DiagramEndpoint {
    * Sets the value of the iconPosTop property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6 }{@code >}
+   *              
    * <p>
    */
   public void setIconPosTop(TInteger value) {
@@ -200,7 +198,7 @@ public class DiagramEndpoint {
    * Gets the value of the pointToMultiPoint property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getPointToMultiPoint() {
@@ -211,7 +209,7 @@ public class DiagramEndpoint {
    * Sets the value of the pointToMultiPoint property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setPointToMultiPoint(TString value) {
@@ -240,7 +238,7 @@ public class DiagramEndpoint {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link EndpointLocation }
+     * 
    * <p>
    * <p>
    * @return

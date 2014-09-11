@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -35,6 +31,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 
 /**
  * <p>
@@ -105,8 +105,7 @@ public class Stage {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TListCSG }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -115,8 +114,7 @@ public class Stage {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TListCSG }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -130,7 +128,7 @@ public class Stage {
    * Gets the value of the startDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getStartDate() {
@@ -141,7 +139,7 @@ public class Stage {
    * Sets the value of the startDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setStartDate(TCalendar value) {
@@ -156,7 +154,7 @@ public class Stage {
    * Gets the value of the targetDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getTargetDate() {
@@ -167,7 +165,7 @@ public class Stage {
    * Sets the value of the targetDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setTargetDate(TCalendar value) {
@@ -182,7 +180,7 @@ public class Stage {
    * Gets the value of the dateApprovalRequired property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDateApprovalRequired() {
@@ -193,7 +191,7 @@ public class Stage {
    * Sets the value of the dateApprovalRequired property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDateApprovalRequired(TCalendar value) {
@@ -208,7 +206,7 @@ public class Stage {
    * Gets the value of the terminationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getTerminationDate() {
@@ -219,7 +217,7 @@ public class Stage {
    * Sets the value of the terminationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setTerminationDate(TCalendar value) {
@@ -234,7 +232,7 @@ public class Stage {
    * Gets the value of the numEquip property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumEquip() {
@@ -245,7 +243,7 @@ public class Stage {
    * Sets the value of the numEquip property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setNumEquip(TInteger value) {
@@ -260,7 +258,7 @@ public class Stage {
    * Gets the value of the geoDescription property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getGeoDescription() {
@@ -271,7 +269,7 @@ public class Stage {
    * Sets the value of the geoDescription property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setGeoDescription(TString value) {
@@ -300,7 +298,7 @@ public class Stage {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link StageLocation }
+     * 
    * <p>
    * <p>
    * @return

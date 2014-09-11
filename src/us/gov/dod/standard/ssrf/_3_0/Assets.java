@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -79,8 +79,7 @@ public class Assets {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getSerial() {
     return serial;
@@ -89,8 +88,7 @@ public class Assets {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -104,7 +102,7 @@ public class Assets {
    * Gets the value of the authorised property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getAuthorised() {
@@ -115,7 +113,7 @@ public class Assets {
    * Sets the value of the authorised property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setAuthorised(TInteger value) {
@@ -130,7 +128,7 @@ public class Assets {
    * Gets the value of the available property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *         
    * <p>
    */
   public TInteger getAvailable() {
@@ -141,7 +139,7 @@ public class Assets {
    * Sets the value of the available property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN9 }{@code >}
+   *              
    * <p>
    */
   public void setAvailable(TInteger value) {

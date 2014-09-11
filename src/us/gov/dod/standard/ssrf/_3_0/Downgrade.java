@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
 
 /**
  * <p>
@@ -80,8 +80,7 @@ public class Downgrade {
   /**
    * Gets the value of the downcls property.
    * <p>
-   * @return possible object is {@link TListCCL }
-   * <p>
+   * @return 
    */
   public TString getDowncls() {
     return downcls;
@@ -90,8 +89,7 @@ public class Downgrade {
   /**
    * Sets the value of the downcls property.
    * <p>
-   * @param value allowed object is {@link TListCCL }
-   * <p>
+   * @param value 
    */
   public void setDowncls(TString value) {
     this.downcls = value;
@@ -104,8 +102,7 @@ public class Downgrade {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return possible object is {@link TD }
-   * <p>
+   * @return 
    */
   public TCalendar getDate() {
     return date;
@@ -114,8 +111,7 @@ public class Downgrade {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value allowed object is {@link TD }
-   * <p>
+   * @param value 
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -129,7 +125,7 @@ public class Downgrade {
    * Gets the value of the downgradeInfo property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS200 }{@code >}
+   *         
    * <p>
    */
   public TString getDowngradeInfo() {
@@ -140,7 +136,7 @@ public class Downgrade {
    * Sets the value of the downgradeInfo property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS200 }{@code >}
+   *              
    * <p>
    */
   public void setDowngradeInfo(TString value) {

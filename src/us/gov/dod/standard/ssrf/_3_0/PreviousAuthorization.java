@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -80,8 +80,7 @@ public class PreviousAuthorization {
   /**
    * Gets the value of the docketNum property.
    * <p>
-   * @return possible object is {@link TS8 }
-   * <p>
+   * @return 
    */
   public TString getDocketNum() {
     return docketNum;
@@ -90,8 +89,7 @@ public class PreviousAuthorization {
   /**
    * Sets the value of the docketNum property.
    * <p>
-   * @param value allowed object is {@link TS8 }
-   * <p>
+   * @param value 
    */
   public void setDocketNum(TString value) {
     this.docketNum = value;
@@ -105,7 +103,7 @@ public class PreviousAuthorization {
    * Gets the value of the date_0020 property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDate_0020() {
@@ -116,7 +114,7 @@ public class PreviousAuthorization {
    * Sets the value of the date_0020 property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDate_0020(TCalendar value) {
@@ -131,7 +129,7 @@ public class PreviousAuthorization {
    * Gets the value of the agencySerialNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *         
    * <p>
    */
   public TString getAgencySerialNum() {
@@ -142,7 +140,7 @@ public class PreviousAuthorization {
    * Sets the value of the agencySerialNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS12 }{@code >}
+   *              
    * <p>
    */
   public void setAgencySerialNum(TString value) {

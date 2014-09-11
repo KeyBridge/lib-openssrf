@@ -23,12 +23,12 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -75,8 +75,7 @@ public class RxAntModeRef {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getSerial() {
     return serial;
@@ -85,8 +84,7 @@ public class RxAntModeRef {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -100,7 +98,7 @@ public class RxAntModeRef {
    * Gets the value of the modeID property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getModeID() {
@@ -111,7 +109,7 @@ public class RxAntModeRef {
    * Sets the value of the modeID property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setModeID(TString value) {
@@ -126,7 +124,7 @@ public class RxAntModeRef {
    * Gets the value of the couplingLoss property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getCouplingLoss() {
@@ -137,7 +135,7 @@ public class RxAntModeRef {
    * Sets the value of the couplingLoss property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setCouplingLoss(TDecimal value) {

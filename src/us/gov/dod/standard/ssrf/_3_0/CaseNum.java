@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 
 /**
  * <p>
@@ -79,7 +79,7 @@ public class CaseNum {
    * Gets the value of the country property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *         
    * <p>
    */
   public TString getCountry() {
@@ -90,7 +90,7 @@ public class CaseNum {
    * Sets the value of the country property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *              
    * <p>
    */
   public void setCountry(TString value) {
@@ -105,7 +105,7 @@ public class CaseNum {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -116,7 +116,7 @@ public class CaseNum {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -130,8 +130,7 @@ public class CaseNum {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * @return possible object is {@link TS20 }
-   * <p>
+   * @return 
    */
   public TString getIdentifier() {
     return identifier;
@@ -140,8 +139,7 @@ public class CaseNum {
   /**
    * Sets the value of the identifier property.
    * <p>
-   * @param value allowed object is {@link TS20 }
-   * <p>
+   * @param value 
    */
   public void setIdentifier(TString value) {
     this.identifier = value;

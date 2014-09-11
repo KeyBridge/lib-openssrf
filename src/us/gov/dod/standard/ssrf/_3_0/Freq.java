@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,6 +34,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -84,7 +84,7 @@ public class Freq extends AsgnFreqBase {
    * Gets the value of the tad property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS5 }{@code >}
+   *         
    * <p>
    */
   public TString getTAD() {
@@ -95,7 +95,7 @@ public class Freq extends AsgnFreqBase {
    * Sets the value of the tad property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS5 }{@code >}
+   *              
    * <p>
    */
   public void setTAD(TString value) {
@@ -110,7 +110,7 @@ public class Freq extends AsgnFreqBase {
    * Gets the value of the legacyNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getLegacyNum() {
@@ -121,7 +121,7 @@ public class Freq extends AsgnFreqBase {
    * Sets the value of the legacyNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setLegacyNum(TString value) {
@@ -150,7 +150,7 @@ public class Freq extends AsgnFreqBase {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link PairedFreq }
+     * 
    * <p>
    * <p>
    * @return
@@ -188,7 +188,7 @@ public class Freq extends AsgnFreqBase {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link NarrowBandPlanning }
+     * 
    * <p>
    * <p>
    * @return

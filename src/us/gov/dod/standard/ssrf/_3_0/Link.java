@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,6 +34,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.DCSTrunk;
+import us.gov.dod.standard.ssrf._3_0.metadata.DetailedFunction;
 
 /**
  * <p>
@@ -107,8 +109,7 @@ public class Link {
   /**
    * Gets the value of the linkID property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getLinkID() {
     return linkID;
@@ -117,8 +118,7 @@ public class Link {
   /**
    * Sets the value of the linkID property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setLinkID(TString value) {
     this.linkID = value;
@@ -132,7 +132,7 @@ public class Link {
    * Gets the value of the intermediateFunction property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS150 }{@code >}
+   *         
    * <p>
    */
   public TString getIntermediateFunction() {
@@ -143,7 +143,7 @@ public class Link {
    * Sets the value of the intermediateFunction property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS150 }{@code >}
+   *              
    * <p>
    */
   public void setIntermediateFunction(TString value) {
@@ -158,7 +158,7 @@ public class Link {
    * Gets the value of the majorFunction property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS150 }{@code >}
+   *         
    * <p>
    */
   public TString getMajorFunction() {
@@ -169,7 +169,7 @@ public class Link {
    * Sets the value of the majorFunction property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS150 }{@code >}
+   *              
    * <p>
    */
   public void setMajorFunction(TString value) {
@@ -184,7 +184,7 @@ public class Link {
    * Gets the value of the linkName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS24 }{@code >}
+   *         
    * <p>
    */
   public TString getLinkName() {
@@ -195,7 +195,7 @@ public class Link {
    * Sets the value of the linkName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS24 }{@code >}
+   *              
    * <p>
    */
   public void setLinkName(TString value) {
@@ -223,7 +223,7 @@ public class Link {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Tuning }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -261,7 +261,7 @@ public class Link {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link StationConfig }
+     * 
    * <p>
    * <p>
    * @return
@@ -298,7 +298,7 @@ public class Link {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Assigned }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -335,7 +335,7 @@ public class Link {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link DCSTrunk }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -373,7 +373,7 @@ public class Link {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link DetailedFunction }
+     * 
    * <p>
    * <p>
    * @return

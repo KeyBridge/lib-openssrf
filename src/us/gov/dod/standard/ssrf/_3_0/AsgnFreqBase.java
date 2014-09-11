@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 
 /**
  * <p>
@@ -80,8 +80,7 @@ public abstract class AsgnFreqBase {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -90,8 +89,7 @@ public abstract class AsgnFreqBase {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -105,7 +103,7 @@ public abstract class AsgnFreqBase {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -116,7 +114,7 @@ public abstract class AsgnFreqBase {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -131,7 +129,7 @@ public abstract class AsgnFreqBase {
    * Gets the value of the refFreq property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getRefFreq() {
@@ -142,7 +140,7 @@ public abstract class AsgnFreqBase {
    * Sets the value of the refFreq property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setRefFreq(TDecimal value) {
@@ -157,7 +155,7 @@ public abstract class AsgnFreqBase {
    * Gets the value of the freqUse property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
+   *         
    * <p>
    */
   public TString getFreqUse() {
@@ -168,7 +166,7 @@ public abstract class AsgnFreqBase {
    * Sets the value of the freqUse property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
+   *              
    * <p>
    */
   public void setFreqUse(TString value) {

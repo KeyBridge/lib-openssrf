@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,28 +33,23 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
- * <p>
  * Java class for Administrative complex type.
  * <p>
+ * This element inherits attributes and sub-elements from element Common. Data
+ * element Administrative has several usages:
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * It can be used to inform other data repositories that datasets have been
+ * deleted from a data repository;
  * <p>
- * <
- * pre>
- * &lt;complexType name="Administrative"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="Action" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/> &lt;choice
- * minOccurs="0"> &lt;element name="Dataset"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Dataset" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="CodeList"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}CodeList" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/choice> &lt;/sequence> &lt;/extension>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * It can also be used to reject an incoming dataset which cannot be validated
+ * against the local repository, for example is it refers to unknown datasets.
  * <p>
+ * Automated local data repository changes are not permitted on US systems.
+ * <p>
+ * [XSL ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "DR".
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -66,19 +60,32 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class Administrative extends Common {
 
+  /**
+   * Action: Indicate the action which triggered the transmission, or to be
+   * performed upon reception, of this dataset.
+   * <p>
+   * Recommend values from Code List CDR.
+   */
   @XmlElement(name = "Action", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString action;
+  /**
+   * Data element Dataset is used within an Administrative transaction to
+   * specify the identifier of the datasets on which the action must apply.
+   */
   @XmlElement(name = "Dataset")
   private List<Dataset> dataset;
+  /**
+   * Data element CodeList contains the information necessary to create or
+   * delete a code entry in a given Code List.
+   */
   @XmlElement(name = "CodeList")
   private List<CodeList> codeList;
 
   /**
    * Gets the value of the action property.
    * <p>
-   * @return possible object is {@link TS25 }
-   * <p>
+   * @return
    */
   public TString getAction() {
     return action;
@@ -87,8 +94,7 @@ public class Administrative extends Common {
   /**
    * Sets the value of the action property.
    * <p>
-   * @param value allowed object is {@link TS25 }
-   * <p>
+   * @param value
    */
   public void setAction(TString value) {
     this.action = value;
@@ -115,7 +121,7 @@ public class Administrative extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Dataset }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -152,7 +158,7 @@ public class Administrative extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link CodeList }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

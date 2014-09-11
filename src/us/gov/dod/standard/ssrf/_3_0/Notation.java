@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -72,8 +72,7 @@ public class Notation {
   /**
    * Gets the value of the code property.
    * <p>
-   * @return possible object is {@link TUS20 }
-   * <p>
+   * @return 
    */
   public TString getCode() {
     return code;
@@ -82,8 +81,7 @@ public class Notation {
   /**
    * Sets the value of the code property.
    * <p>
-   * @param value allowed object is {@link TUS20 }
-   * <p>
+   * @param value 
    */
   public void setCode(TString value) {
     this.code = value;
@@ -96,8 +94,7 @@ public class Notation {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TS25 }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -106,8 +103,7 @@ public class Notation {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TS25 }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;

@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -73,8 +73,7 @@ public class StageLocation {
   /**
    * Gets the value of the locSatRef property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getLocSatRef() {
     return locSatRef;
@@ -83,8 +82,7 @@ public class StageLocation {
   /**
    * Sets the value of the locSatRef property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
@@ -98,7 +96,7 @@ public class StageLocation {
    * Gets the value of the excluded property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getExcluded() {
@@ -109,7 +107,7 @@ public class StageLocation {
    * Sets the value of the excluded property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setExcluded(TString value) {

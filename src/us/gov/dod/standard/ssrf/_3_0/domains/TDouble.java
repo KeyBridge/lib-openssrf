@@ -26,7 +26,7 @@ package us.gov.dod.standard.ssrf._3_0.domains;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AStandardMetadataType;
 
 /**
  * A Numeric Double instance with SSRF Standard Metadata Attributes. This
@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 @XmlType(name = "TDouble", propOrder = {
   "value"
 })
-public class TDouble extends AStandardMetadataAttributes<Double> {
+public class TDouble extends AStandardMetadataType<Double> {
 
   public TDouble(Double value) {
     super(value);

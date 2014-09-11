@@ -40,8 +40,7 @@ public interface IStandardMetadataAttributes {
   /**
    * Gets the value of the cls property.
    * <p>
-   * @return possible object is {@link ListCCL }
-   * <p>
+   * @return 
    */
   public ListCCL getCls();
 
@@ -63,7 +62,7 @@ public interface IStandardMetadataAttributes {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return
@@ -88,7 +87,7 @@ public interface IStandardMetadataAttributes {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return
@@ -98,32 +97,28 @@ public interface IStandardMetadataAttributes {
   /**
    * Gets the value of the legacyReleasability property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   public String getLegacyReleasability();
 
   /**
    * Gets the value of the quality property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   public String getQuality();
 
   /**
    * Gets the value of the recommendedValue property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   public String getRecommendedValue();
 
   /**
    * Gets the value of the availability property.
    * <p>
-   * @return possible object is {@link String }
-   * <p>
+   * @return 
    */
   public String getAvailability();
 }

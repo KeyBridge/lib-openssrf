@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -37,6 +34,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCSG;
 
 /**
  * <p>
@@ -111,7 +111,7 @@ public class RFSystem extends Common {
    * Gets the value of the fieldedStatus property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
+   *         
    * <p>
    */
   public TString getFieldedStatus() {
@@ -122,7 +122,7 @@ public class RFSystem extends Common {
    * Sets the value of the fieldedStatus property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCSG }{@code >}
+   *              
    * <p>
    */
   public void setFieldedStatus(TString value) {
@@ -137,7 +137,7 @@ public class RFSystem extends Common {
    * Gets the value of the emergency property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getEmergency() {
@@ -148,7 +148,7 @@ public class RFSystem extends Common {
    * Sets the value of the emergency property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setEmergency(TString value) {
@@ -163,7 +163,7 @@ public class RFSystem extends Common {
    * Gets the value of the initialCost property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS70 }{@code >}
+   *         
    * <p>
    */
   public TString getInitialCost() {
@@ -174,7 +174,7 @@ public class RFSystem extends Common {
    * Sets the value of the initialCost property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS70 }{@code >}
+   *              
    * <p>
    */
   public void setInitialCost(TString value) {
@@ -203,7 +203,7 @@ public class RFSystem extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -241,7 +241,7 @@ public class RFSystem extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Nomenclature }
+     * 
    * <p>
    * <p>
    * @return
@@ -279,7 +279,7 @@ public class RFSystem extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Deployment }
+     * 
    * <p>
    * <p>
    * @return
@@ -317,7 +317,7 @@ public class RFSystem extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Configuration }
+     * 
    * <p>
    * <p>
    * @return
@@ -355,7 +355,7 @@ public class RFSystem extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RelatedSystem }
+     * 
    * <p>
    * <p>
    * @return
@@ -392,7 +392,7 @@ public class RFSystem extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link StockNum }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

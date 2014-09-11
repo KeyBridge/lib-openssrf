@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -37,6 +34,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 
 /**
  * <p>
@@ -141,8 +141,7 @@ public class StationConfig {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TListCAU }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -151,8 +150,7 @@ public class StationConfig {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TListCAU }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -165,8 +163,7 @@ public class StationConfig {
   /**
    * Gets the value of the configID property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getConfigID() {
     return configID;
@@ -175,8 +172,7 @@ public class StationConfig {
   /**
    * Sets the value of the configID property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setConfigID(TString value) {
     this.configID = value;
@@ -189,8 +185,7 @@ public class StationConfig {
   /**
    * Gets the value of the stationID property.
    * <p>
-   * @return possible object is {@link TS100 }
-   * <p>
+   * @return 
    */
   public TString getStationID() {
     return stationID;
@@ -199,8 +194,7 @@ public class StationConfig {
   /**
    * Sets the value of the stationID property.
    * <p>
-   * @param value allowed object is {@link TS100 }
-   * <p>
+   * @param value 
    */
   public void setStationID(TString value) {
     this.stationID = value;
@@ -214,7 +208,7 @@ public class StationConfig {
    * Gets the value of the eirpMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getEIRPMin() {
@@ -225,7 +219,7 @@ public class StationConfig {
    * Sets the value of the eirpMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setEIRPMin(TDecimal value) {
@@ -240,7 +234,7 @@ public class StationConfig {
    * Gets the value of the eirpMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *         
    * <p>
    */
   public TDecimal getEIRPMax() {
@@ -251,7 +245,7 @@ public class StationConfig {
    * Sets the value of the eirpMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   *              
    * <p>
    */
   public void setEIRPMax(TDecimal value) {
@@ -266,7 +260,7 @@ public class StationConfig {
    * Gets the value of the antFeedpointHeight property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAntFeedpointHeight() {
@@ -277,7 +271,7 @@ public class StationConfig {
    * Sets the value of the antFeedpointHeight property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setAntFeedpointHeight(TDecimal value) {
@@ -292,7 +286,7 @@ public class StationConfig {
    * Gets the value of the feedlineLength property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFeedlineLength() {
@@ -303,7 +297,7 @@ public class StationConfig {
    * Sets the value of the feedlineLength property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAltitude }{@code >}
+   *              
    * <p>
    */
   public void setFeedlineLength(TDecimal value) {
@@ -318,7 +312,7 @@ public class StationConfig {
    * Gets the value of the feedlineLoss property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFeedlineLoss() {
@@ -329,7 +323,7 @@ public class StationConfig {
    * Sets the value of the feedlineLoss property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setFeedlineLoss(TDecimal value) {
@@ -344,7 +338,7 @@ public class StationConfig {
    * Gets the value of the earthCoverage property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getEarthCoverage() {
@@ -355,7 +349,7 @@ public class StationConfig {
    * Sets the value of the earthCoverage property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setEarthCoverage(TString value) {
@@ -370,7 +364,7 @@ public class StationConfig {
    * Gets the value of the pointingAzMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPointingAzMin() {
@@ -381,7 +375,7 @@ public class StationConfig {
    * Sets the value of the pointingAzMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *              
    * <p>
    */
   public void setPointingAzMin(TDecimal value) {
@@ -396,7 +390,7 @@ public class StationConfig {
    * Gets the value of the pointingAzMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPointingAzMax() {
@@ -407,7 +401,7 @@ public class StationConfig {
    * Sets the value of the pointingAzMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *              
    * <p>
    */
   public void setPointingAzMax(TDecimal value) {
@@ -422,7 +416,7 @@ public class StationConfig {
    * Gets the value of the pointingElevMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPointingElevMin() {
@@ -433,7 +427,7 @@ public class StationConfig {
    * Sets the value of the pointingElevMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *              
    * <p>
    */
   public void setPointingElevMin(TDecimal value) {
@@ -448,7 +442,7 @@ public class StationConfig {
    * Gets the value of the pointingElevMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPointingElevMax() {
@@ -459,7 +453,7 @@ public class StationConfig {
    * Sets the value of the pointingElevMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   *              
    * <p>
    */
   public void setPointingElevMax(TDecimal value) {
@@ -474,7 +468,7 @@ public class StationConfig {
    * Gets the value of the coordinationNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *         
    * <p>
    */
   public TString getCoordinationNum() {
@@ -485,7 +479,7 @@ public class StationConfig {
    * Sets the value of the coordinationNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *              
    * <p>
    */
   public void setCoordinationNum(TString value) {
@@ -513,7 +507,7 @@ public class StationConfig {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Blanking }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

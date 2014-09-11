@@ -23,10 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCLO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -34,6 +30,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCLO;
 
 /**
  * <p>
@@ -96,7 +96,7 @@ public class FreqConversion {
    * Gets the value of the stageNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TIFNum }{@code >}
+   *         
    * <p>
    */
   public TInteger getStageNum() {
@@ -107,7 +107,7 @@ public class FreqConversion {
    * Sets the value of the stageNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TIFNum }{@code >}
+   *              
    * <p>
    */
   public void setStageNum(TInteger value) {
@@ -122,7 +122,7 @@ public class FreqConversion {
    * Gets the value of the oscillatorTuning property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCLO }{@code >}
+   *         
    * <p>
    */
   public TString getOscillatorTuning() {
@@ -133,7 +133,7 @@ public class FreqConversion {
    * Sets the value of the oscillatorTuning property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCLO }{@code >}
+   *              
    * <p>
    */
   public void setOscillatorTuning(TString value) {
@@ -148,7 +148,7 @@ public class FreqConversion {
    * Gets the value of the loFreqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getLOFreqMin() {
@@ -159,7 +159,7 @@ public class FreqConversion {
    * Sets the value of the loFreqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setLOFreqMin(TDecimal value) {
@@ -174,7 +174,7 @@ public class FreqConversion {
    * Gets the value of the loFreqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getLOFreqMax() {
@@ -185,7 +185,7 @@ public class FreqConversion {
    * Sets the value of the loFreqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setLOFreqMax(TDecimal value) {
@@ -200,7 +200,7 @@ public class FreqConversion {
    * Gets the value of the ifMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getIFMin() {
@@ -211,7 +211,7 @@ public class FreqConversion {
    * Sets the value of the ifMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setIFMin(TDecimal value) {
@@ -226,7 +226,7 @@ public class FreqConversion {
    * Gets the value of the ifMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getIFMax() {
@@ -237,7 +237,7 @@ public class FreqConversion {
    * Sets the value of the ifMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setIFMax(TDecimal value) {

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,6 +33,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.RxModeRef;
 
 /**
  * <p>
@@ -79,8 +80,7 @@ public class RxRef {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getSerial() {
     return serial;
@@ -89,8 +89,7 @@ public class RxRef {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -117,7 +116,7 @@ public class RxRef {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link RxModeRef }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -155,7 +154,7 @@ public class RxRef {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RxAntModeRef }
+     * 
    * <p>
    * <p>
    * @return

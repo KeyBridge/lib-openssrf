@@ -23,11 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -73,8 +73,7 @@ public class Footnote {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * @return possible object is {@link TS255 }
-   * <p>
+   * @return 
    */
   public TString getIdentifier() {
     return identifier;
@@ -83,8 +82,7 @@ public class Footnote {
   /**
    * Sets the value of the identifier property.
    * <p>
-   * @param value allowed object is {@link TS255 }
-   * <p>
+   * @param value 
    */
   public void setIdentifier(TString value) {
     this.identifier = value;
@@ -97,8 +95,7 @@ public class Footnote {
   /**
    * Gets the value of the text property.
    * <p>
-   * @return possible object is {@link TMEMO }
-   * <p>
+   * @return 
    */
   public TString getText() {
     return text;
@@ -107,8 +104,7 @@ public class Footnote {
   /**
    * Sets the value of the text property.
    * <p>
-   * @param value allowed object is {@link TMEMO }
-   * <p>
+   * @param value 
    */
   public void setText(TString value) {
     this.text = value;
@@ -121,8 +117,7 @@ public class Footnote {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return possible object is {@link BigInteger }
-   * <p>
+   * @return 
    */
   public BigInteger getIdx() {
     return idx;
@@ -131,8 +126,7 @@ public class Footnote {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value allowed object is {@link BigInteger }
-   * <p>
+   * @param value 
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

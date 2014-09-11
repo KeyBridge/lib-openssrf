@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -109,7 +109,7 @@ public class SecurityClass {
    * Gets the value of the clsAuthority property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *         
    * <p>
    */
   public TString getClsAuthority() {
@@ -120,7 +120,7 @@ public class SecurityClass {
    * Sets the value of the clsAuthority property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *              
    * <p>
    */
   public void setClsAuthority(TString value) {
@@ -135,7 +135,7 @@ public class SecurityClass {
    * Gets the value of the sourceClsDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getSourceClsDate() {
@@ -146,7 +146,7 @@ public class SecurityClass {
    * Sets the value of the sourceClsDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setSourceClsDate(TCalendar value) {
@@ -161,7 +161,7 @@ public class SecurityClass {
    * Gets the value of the clsOrg property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *         
    * <p>
    */
   public TString getClsOrg() {
@@ -172,7 +172,7 @@ public class SecurityClass {
    * Sets the value of the clsOrg property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS30 }{@code >}
+   *              
    * <p>
    */
   public void setClsOrg(TString value) {
@@ -187,7 +187,7 @@ public class SecurityClass {
    * Gets the value of the clsReason property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *         
    * <p>
    */
   public TString getClsReason() {
@@ -198,7 +198,7 @@ public class SecurityClass {
    * Sets the value of the clsReason property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS15 }{@code >}
+   *              
    * <p>
    */
   public void setClsReason(TString value) {
@@ -213,7 +213,7 @@ public class SecurityClass {
    * Gets the value of the declsType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getDeclsType() {
@@ -224,7 +224,7 @@ public class SecurityClass {
    * Sets the value of the declsType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setDeclsType(TString value) {
@@ -239,7 +239,7 @@ public class SecurityClass {
    * Gets the value of the declsDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getDeclsDate() {
@@ -250,7 +250,7 @@ public class SecurityClass {
    * Sets the value of the declsDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setDeclsDate(TCalendar value) {
@@ -265,7 +265,7 @@ public class SecurityClass {
    * Gets the value of the declsEvent property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS200 }{@code >}
+   *         
    * <p>
    */
   public TString getDeclsEvent() {
@@ -276,7 +276,7 @@ public class SecurityClass {
    * Sets the value of the declsEvent property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS200 }{@code >}
+   *              
    * <p>
    */
   public void setDeclsEvent(TString value) {
@@ -304,7 +304,7 @@ public class SecurityClass {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Downgrade }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -342,7 +342,7 @@ public class SecurityClass {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ClsDerived }
+     * 
    * <p>
    * <p>
    * @return

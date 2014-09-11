@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AStandardMetadataType;
 
 /**
  * A Numeric Decimal instance with SSRF Standard Metadata Attributes. This
@@ -39,7 +39,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 @XmlType(name = "TDecimal", propOrder = {
   "value"
 })
-public class TDecimal extends AStandardMetadataAttributes<BigDecimal> {
+public class TDecimal extends AStandardMetadataType<BigDecimal> {
 
   public TDecimal(BigDecimal value) {
     super(value);

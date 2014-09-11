@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -37,6 +34,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -125,8 +125,7 @@ public class Receiver extends Common {
   /**
    * Gets the value of the generic property.
    * <p>
-   * @return possible object is {@link TListCBO }
-   * <p>
+   * @return 
    */
   public TString getGeneric() {
     return generic;
@@ -135,8 +134,7 @@ public class Receiver extends Common {
   /**
    * Sets the value of the generic property.
    * <p>
-   * @param value allowed object is {@link TListCBO }
-   * <p>
+   * @param value 
    */
   public void setGeneric(TString value) {
     this.generic = value;
@@ -149,8 +147,7 @@ public class Receiver extends Common {
   /**
    * Gets the value of the duplexSep property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getDuplexSep() {
     return duplexSep;
@@ -159,8 +156,7 @@ public class Receiver extends Common {
   /**
    * Sets the value of the duplexSep property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setDuplexSep(TDecimal value) {
     this.duplexSep = value;
@@ -174,7 +170,7 @@ public class Receiver extends Common {
    * Gets the value of the duplexSepType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getDuplexSepType() {
@@ -185,7 +181,7 @@ public class Receiver extends Common {
    * Sets the value of the duplexSepType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setDuplexSepType(TString value) {
@@ -200,7 +196,7 @@ public class Receiver extends Common {
    * Gets the value of the preselectionType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS60 }{@code >}
+   *         
    * <p>
    */
   public TString getPreselectionType() {
@@ -211,7 +207,7 @@ public class Receiver extends Common {
    * Sets the value of the preselectionType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS60 }{@code >}
+   *              
    * <p>
    */
   public void setPreselectionType(TString value) {
@@ -226,7 +222,7 @@ public class Receiver extends Common {
    * Gets the value of the conductedEmissions property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUS_DBm }{@code >}
+   *         
    * <p>
    */
   public TDecimal getConductedEmissions() {
@@ -237,7 +233,7 @@ public class Receiver extends Common {
    * Sets the value of the conductedEmissions property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUS_DBm }{@code >}
+   *              
    * <p>
    */
   public void setConductedEmissions(TDecimal value) {
@@ -252,7 +248,7 @@ public class Receiver extends Common {
    * Gets the value of the fccAcceptanceNum property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getFCCAcceptanceNum() {
@@ -263,7 +259,7 @@ public class Receiver extends Common {
    * Sets the value of the fccAcceptanceNum property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setFCCAcceptanceNum(TString value) {
@@ -278,7 +274,7 @@ public class Receiver extends Common {
    * Gets the value of the tspr property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getTSPR() {
@@ -289,7 +285,7 @@ public class Receiver extends Common {
    * Sets the value of the tspr property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setTSPR(TString value) {
@@ -318,7 +314,7 @@ public class Receiver extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -356,7 +352,7 @@ public class Receiver extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Nomenclature }
+     * 
    * <p>
    * <p>
    * @return
@@ -394,7 +390,7 @@ public class Receiver extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Deployment }
+     * 
    * <p>
    * <p>
    * @return
@@ -431,7 +427,7 @@ public class Receiver extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Curve }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -468,7 +464,7 @@ public class Receiver extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link RxMode }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

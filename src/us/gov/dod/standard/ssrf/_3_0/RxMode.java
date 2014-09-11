@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCFO;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +32,10 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCFO;
+import us.gov.dod.standard.ssrf._3_0.metadata.EmsClass;
 
 /**
  * <p>
@@ -203,8 +204,7 @@ public class RxMode {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return possible object is {@link TS20 }
-   * <p>
+   * @return 
    */
   public TString getModeID() {
     return modeID;
@@ -213,8 +213,7 @@ public class RxMode {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value allowed object is {@link TS20 }
-   * <p>
+   * @param value 
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -228,7 +227,7 @@ public class RxMode {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getDescription() {
@@ -239,7 +238,7 @@ public class RxMode {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setDescription(TString value) {
@@ -254,7 +253,7 @@ public class RxMode {
    * Gets the value of the rxType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getRxType() {
@@ -265,7 +264,7 @@ public class RxMode {
    * Sets the value of the rxType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setRxType(TString value) {
@@ -280,7 +279,7 @@ public class RxMode {
    * Gets the value of the necessaryBw property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getNecessaryBw() {
@@ -291,7 +290,7 @@ public class RxMode {
    * Sets the value of the necessaryBw property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setNecessaryBw(TDecimal value) {
@@ -306,7 +305,7 @@ public class RxMode {
    * Gets the value of the tunability property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getTunability() {
@@ -317,7 +316,7 @@ public class RxMode {
    * Sets the value of the tunability property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setTunability(TString value) {
@@ -332,7 +331,7 @@ public class RxMode {
    * Gets the value of the tuningMethod property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getTuningMethod() {
@@ -343,7 +342,7 @@ public class RxMode {
    * Sets the value of the tuningMethod property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setTuningMethod(TString value) {
@@ -358,7 +357,7 @@ public class RxMode {
    * Gets the value of the intermodPct property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *         
    * <p>
    */
   public TDecimal getIntermodPct() {
@@ -369,7 +368,7 @@ public class RxMode {
    * Sets the value of the intermodPct property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TPercent }{@code >}
+   *              
    * <p>
    */
   public void setIntermodPct(TDecimal value) {
@@ -384,7 +383,7 @@ public class RxMode {
    * Gets the value of the intermodEffect property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getIntermodEffect() {
@@ -395,7 +394,7 @@ public class RxMode {
    * Sets the value of the intermodEffect property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setIntermodEffect(TString value) {
@@ -410,7 +409,7 @@ public class RxMode {
    * Gets the value of the sensitivityLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBm }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSensitivityLevel() {
@@ -421,7 +420,7 @@ public class RxMode {
    * Sets the value of the sensitivityLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBm }{@code >}
+   *              
    * <p>
    */
   public void setSensitivityLevel(TDecimal value) {
@@ -436,7 +435,7 @@ public class RxMode {
    * Gets the value of the noiseFigure property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getNoiseFigure() {
@@ -447,7 +446,7 @@ public class RxMode {
    * Sets the value of the noiseFigure property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setNoiseFigure(TDecimal value) {
@@ -462,7 +461,7 @@ public class RxMode {
    * Gets the value of the noiseTemp property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN7_1 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getNoiseTemp() {
@@ -473,7 +472,7 @@ public class RxMode {
    * Sets the value of the noiseTemp property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN7_1 }{@code >}
+   *              
    * <p>
    */
   public void setNoiseTemp(TDecimal value) {
@@ -488,7 +487,7 @@ public class RxMode {
    * Gets the value of the sensitivityCriteriaType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSensitivityCriteriaType() {
@@ -499,7 +498,7 @@ public class RxMode {
    * Sets the value of the sensitivityCriteriaType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSensitivityCriteriaType(TString value) {
@@ -514,7 +513,7 @@ public class RxMode {
    * Gets the value of the sensitivityCriteriaLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSN16_15 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSensitivityCriteriaLevel() {
@@ -525,7 +524,7 @@ public class RxMode {
    * Sets the value of the sensitivityCriteriaLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSN16_15 }{@code >}
+   *              
    * <p>
    */
   public void setSensitivityCriteriaLevel(TDecimal value) {
@@ -540,7 +539,7 @@ public class RxMode {
    * Gets the value of the sensitivityCriteriaText property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSensitivityCriteriaText() {
@@ -551,7 +550,7 @@ public class RxMode {
    * Sets the value of the sensitivityCriteriaText property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSensitivityCriteriaText(TString value) {
@@ -566,7 +565,7 @@ public class RxMode {
    * Gets the value of the postDetectionFreqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPostDetectionFreqMin() {
@@ -577,7 +576,7 @@ public class RxMode {
    * Sets the value of the postDetectionFreqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setPostDetectionFreqMin(TDecimal value) {
@@ -592,7 +591,7 @@ public class RxMode {
    * Gets the value of the postDetectionFreqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getPostDetectionFreqMax() {
@@ -603,7 +602,7 @@ public class RxMode {
    * Sets the value of the postDetectionFreqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setPostDetectionFreqMax(TDecimal value) {
@@ -618,7 +617,7 @@ public class RxMode {
    * Gets the value of the processingGain property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getProcessingGain() {
@@ -629,7 +628,7 @@ public class RxMode {
    * Sets the value of the processingGain property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setProcessingGain(TDecimal value) {
@@ -644,7 +643,7 @@ public class RxMode {
    * Gets the value of the spuriousRejection property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSpuriousRejection() {
@@ -655,7 +654,7 @@ public class RxMode {
    * Sets the value of the spuriousRejection property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setSpuriousRejection(TDecimal value) {
@@ -670,7 +669,7 @@ public class RxMode {
    * Gets the value of the imageRejection property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getImageRejection() {
@@ -681,7 +680,7 @@ public class RxMode {
    * Sets the value of the imageRejection property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setImageRejection(TDecimal value) {
@@ -696,7 +695,7 @@ public class RxMode {
    * Gets the value of the intermodRejection property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getIntermodRejection() {
@@ -707,7 +706,7 @@ public class RxMode {
    * Sets the value of the intermodRejection property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setIntermodRejection(TDecimal value) {
@@ -722,7 +721,7 @@ public class RxMode {
    * Gets the value of the adjacentChannelSelectivity property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *         
    * <p>
    */
   public TDecimal getAdjacentChannelSelectivity() {
@@ -733,7 +732,7 @@ public class RxMode {
    * Sets the value of the adjacentChannelSelectivity property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   *              
    * <p>
    */
   public void setAdjacentChannelSelectivity(TDecimal value) {
@@ -747,8 +746,7 @@ public class RxMode {
   /**
    * Gets the value of the freqTolerance property.
    * <p>
-   * @return possible object is {@link TUN18_6 }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqTolerance() {
     return freqTolerance;
@@ -757,8 +755,7 @@ public class RxMode {
   /**
    * Sets the value of the freqTolerance property.
    * <p>
-   * @param value allowed object is {@link TUN18_6 }
-   * <p>
+   * @param value 
    */
   public void setFreqTolerance(TDecimal value) {
     this.freqTolerance = value;
@@ -771,8 +768,7 @@ public class RxMode {
   /**
    * Gets the value of the freqToleranceUnit property.
    * <p>
-   * @return possible object is {@link TListCFO }
-   * <p>
+   * @return 
    */
   public TString getFreqToleranceUnit() {
     return freqToleranceUnit;
@@ -781,8 +777,7 @@ public class RxMode {
   /**
    * Sets the value of the freqToleranceUnit property.
    * <p>
-   * @param value allowed object is {@link TListCFO }
-   * <p>
+   * @param value 
    */
   public void setFreqToleranceUnit(TString value) {
     this.freqToleranceUnit = value;
@@ -796,7 +791,7 @@ public class RxMode {
    * Gets the value of the modeName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *         
    * <p>
    */
   public TString getModeName() {
@@ -807,7 +802,7 @@ public class RxMode {
    * Sets the value of the modeName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   *              
    * <p>
    */
   public void setModeName(TString value) {
@@ -835,7 +830,7 @@ public class RxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link EmsClass }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -873,7 +868,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RxSignalTuning }
+     * 
    * <p>
    * <p>
    * @return
@@ -911,7 +906,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link RxModulation }
+     * 
    * <p>
    * <p>
    * @return
@@ -948,7 +943,7 @@ public class RxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Baseband }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -986,7 +981,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link FreqConversion }
+     * 
    * <p>
    * <p>
    * @return
@@ -1009,8 +1004,7 @@ public class RxMode {
   /**
    * Gets the value of the spreadSpectrum property.
    * <p>
-   * @return possible object is {@link SpreadSpectrum }
-   * <p>
+   * @return 
    */
   public SpreadSpectrum getSpreadSpectrum() {
     return spreadSpectrum;
@@ -1019,8 +1013,7 @@ public class RxMode {
   /**
    * Sets the value of the spreadSpectrum property.
    * <p>
-   * @param value allowed object is {@link SpreadSpectrum }
-   * <p>
+   * @param value 
    */
   public void setSpreadSpectrum(SpreadSpectrum value) {
     this.spreadSpectrum = value;
@@ -1048,7 +1041,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * 
    * <p>
    * <p>
    * @return

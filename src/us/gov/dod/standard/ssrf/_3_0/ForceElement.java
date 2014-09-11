@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,6 +31,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 
 /**
  * <p>
@@ -127,7 +127,7 @@ public class ForceElement extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -138,7 +138,7 @@ public class ForceElement extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -152,8 +152,7 @@ public class ForceElement extends Common {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TS25 }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -162,8 +161,7 @@ public class ForceElement extends Common {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TS25 }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -177,7 +175,7 @@ public class ForceElement extends Common {
    * Gets the value of the uic property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getUIC() {
@@ -188,7 +186,7 @@ public class ForceElement extends Common {
    * Sets the value of the uic property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setUIC(TString value) {
@@ -203,7 +201,7 @@ public class ForceElement extends Common {
    * Gets the value of the owningCountry property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *         
    * <p>
    */
   public TString getOwningCountry() {
@@ -214,7 +212,7 @@ public class ForceElement extends Common {
    * Sets the value of the owningCountry property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *              
    * <p>
    */
   public void setOwningCountry(TString value) {
@@ -229,7 +227,7 @@ public class ForceElement extends Common {
    * Gets the value of the owningOrganisation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getOwningOrganisation() {
@@ -240,7 +238,7 @@ public class ForceElement extends Common {
    * Sets the value of the owningOrganisation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setOwningOrganisation(TString value) {
@@ -255,7 +253,7 @@ public class ForceElement extends Common {
    * Gets the value of the role property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getRole() {
@@ -266,7 +264,7 @@ public class ForceElement extends Common {
    * Sets the value of the role property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setRole(TString value) {
@@ -281,7 +279,7 @@ public class ForceElement extends Common {
    * Gets the value of the platform property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getPlatform() {
@@ -292,7 +290,7 @@ public class ForceElement extends Common {
    * Sets the value of the platform property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setPlatform(TString value) {
@@ -307,7 +305,7 @@ public class ForceElement extends Common {
    * Gets the value of the missionCode property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getMissionCode() {
@@ -318,7 +316,7 @@ public class ForceElement extends Common {
    * Sets the value of the missionCode property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setMissionCode(TString value) {
@@ -333,7 +331,7 @@ public class ForceElement extends Common {
    * Gets the value of the cmdLevel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getCmdLevel() {
@@ -344,7 +342,7 @@ public class ForceElement extends Common {
    * Sets the value of the cmdLevel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setCmdLevel(TString value) {
@@ -373,7 +371,7 @@ public class ForceElement extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return
@@ -411,7 +409,7 @@ public class ForceElement extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Identifier }
+     * 
    * <p>
    * <p>
    * @return
@@ -448,7 +446,7 @@ public class ForceElement extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Assets }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -485,7 +483,7 @@ public class ForceElement extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link StockNum }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

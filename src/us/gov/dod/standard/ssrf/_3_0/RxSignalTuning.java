@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
 
 /**
  * <p>
@@ -83,8 +83,7 @@ public class RxSignalTuning {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -93,8 +92,7 @@ public class RxSignalTuning {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -108,7 +106,7 @@ public class RxSignalTuning {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -119,7 +117,7 @@ public class RxSignalTuning {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -134,7 +132,7 @@ public class RxSignalTuning {
    * Gets the value of the tuningStep property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getTuningStep() {
@@ -145,7 +143,7 @@ public class RxSignalTuning {
    * Sets the value of the tuningStep property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setTuningStep(TDecimal value) {
@@ -160,7 +158,7 @@ public class RxSignalTuning {
    * Gets the value of the numPresetChannels property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
+   *         
    * <p>
    */
   public TInteger getNumPresetChannels() {
@@ -171,7 +169,7 @@ public class RxSignalTuning {
    * Sets the value of the numPresetChannels property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN8 }{@code >}
+   *              
    * <p>
    */
   public void setNumPresetChannels(TInteger value) {

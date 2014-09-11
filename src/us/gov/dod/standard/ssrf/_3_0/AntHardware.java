@@ -23,40 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
- * <p>
  * Java class for AntHardware complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntHardware">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="FeedType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="LeadType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="ConnectorType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="FeedOrientation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * This element contains the physical parameters related to the antenna feed and
+ * lead.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntHardware", propOrder = {
@@ -67,15 +46,42 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntHardware {
 
+  /**
+   * FeedType: Use one of the codes describing the element used to "illuminate"
+   * the reflector for an antenna unit.
+   * <p>
+   * Recommend values from Code List CAF
+   */
   @XmlElement(name = "FeedType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString feedType;
+  /**
+   * LeadType: Use one of the codes the device used for conducting or guiding
+   * the radio-frequency energy from the transmitter or receiver to the antenna
+   * (e.g., continuous waveguide).
+   * <p>
+   * Recommend values from Code List CAL
+   */
   @XmlElement(name = "LeadType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString leadType;
+  /**
+   * ConnectorType: Enter the type of connector used to attach the antenna to
+   * the equipment or the antenna to the transmission media that attaches the
+   * equipment to the antenna.
+   * <p>
+   * Recommend values from Code List CCN
+   */
   @XmlElement(name = "ConnectorType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString connectorType;
+  /**
+   * FeedOrientation: Enter the orientation of the feed when looking in the
+   * direction of the boresight.
+   * <p>
+   * Examples of orientations are right, left, center, up, down, up-left,
+   * up-right, down-left, down-right.
+   */
   @XmlElement(name = "FeedOrientation", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString feedOrientation;
@@ -84,7 +90,7 @@ public class AntHardware {
    * Gets the value of the feedType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   * <p>
    * <p>
    */
   public TString getFeedType() {
@@ -95,7 +101,7 @@ public class AntHardware {
    * Sets the value of the feedType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   * <p>
    * <p>
    */
   public void setFeedType(TString value) {
@@ -110,7 +116,7 @@ public class AntHardware {
    * Gets the value of the leadType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public TString getLeadType() {
@@ -121,7 +127,7 @@ public class AntHardware {
    * Sets the value of the leadType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public void setLeadType(TString value) {
@@ -136,7 +142,7 @@ public class AntHardware {
    * Gets the value of the connectorType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public TString getConnectorType() {
@@ -147,7 +153,7 @@ public class AntHardware {
    * Sets the value of the connectorType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public void setConnectorType(TString value) {
@@ -162,7 +168,7 @@ public class AntHardware {
    * Gets the value of the feedOrientation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   * <p>
    * <p>
    */
   public TString getFeedOrientation() {
@@ -173,7 +179,7 @@ public class AntHardware {
    * Sets the value of the feedOrientation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   * <p>
    * <p>
    */
   public void setFeedOrientation(TString value) {

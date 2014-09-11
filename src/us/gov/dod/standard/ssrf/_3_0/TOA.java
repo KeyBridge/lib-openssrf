@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -33,6 +31,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.BandApplication;
+import us.gov.dod.standard.ssrf._3_0.metadata.BandUser;
+import us.gov.dod.standard.ssrf._3_0.metadata.ChannelPlanRef;
+import us.gov.dod.standard.ssrf._3_0.metadata.Country;
 
 /**
  * <p>
@@ -111,8 +115,7 @@ public class TOA extends Common {
   /**
    * Gets the value of the administration property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getAdministration() {
     return administration;
@@ -121,8 +124,7 @@ public class TOA extends Common {
   /**
    * Sets the value of the administration property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setAdministration(TString value) {
     this.administration = value;
@@ -136,7 +138,7 @@ public class TOA extends Common {
    * Gets the value of the effectiveDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getEffectiveDate() {
@@ -147,7 +149,7 @@ public class TOA extends Common {
    * Sets the value of the effectiveDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setEffectiveDate(TCalendar value) {
@@ -162,7 +164,7 @@ public class TOA extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *         
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -173,7 +175,7 @@ public class TOA extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
+   *              
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
@@ -188,7 +190,7 @@ public class TOA extends Common {
    * Gets the value of the title property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getTitle() {
@@ -199,7 +201,7 @@ public class TOA extends Common {
    * Sets the value of the title property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setTitle(TString value) {
@@ -227,7 +229,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Footnote }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -265,7 +267,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link ChannelPlanRef }
+     * 
    * <p>
    * <p>
    * @return
@@ -303,7 +305,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link BandApplication }
+     * 
    * <p>
    * <p>
    * @return
@@ -340,7 +342,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link BandUser }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -377,7 +379,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Country }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return
@@ -414,7 +416,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link FreqBand }
+   * Objects of the following type(s) are allowed in the list 
    * <p>
    * <p>
    * @return

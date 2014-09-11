@@ -23,50 +23,25 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 
 /**
- * <p>
  * Java class for Allotment complex type.
  * <p>
+ * An allotment is a group of frequencies given to a subordinate organization
+ * for local management, for specific types of emissions, at a certain location,
+ * and for a specified period of time.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="Allotment"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- * &lt;element name="UsageType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
- * minOccurs="0"/> &lt;element name="DateResponseRequired"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
- * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview"/>
- * &lt;element name="Requirement"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="LocationRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRef"
- * maxOccurs="unbounded"/> &lt;element name="Emission"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Emission" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="AllotFreq"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AllotFreq" maxOccurs="unbounded"/>
- * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * [XSL ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "AL".
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Allotment", propOrder = {
@@ -85,44 +60,101 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class Allotment extends Common {
 
+  /**
+   * Title: Enter an identifying name for this Allotment or Assignment.
+   */
   @XmlElement(name = "Title", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString title;
+  /**
+   * UsageType: Enter the type of assignment request or approved
+   * assignment/allotment. In case of a rejected or cancelled
+   * assignment/allotment, use an associated Remarks to indicate the reason.
+   * <p>
+   * Recommend values from Code List CUT
+   */
   @XmlElement(name = "UsageType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString usageType;
+  /**
+   * DateResponseRequired: Enter the date by which the frequency assignment or
+   * Spectrum Supportability Reply is required by the user in order to complete
+   * necessary advanced operation coordination.
+   */
   @XmlElement(name = "DateResponseRequired", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateResponseRequired;
+  /**
+   * EffectiveDate: This data element indicates the date/time by which the
+   * dataset is to be operational or effective, formatted as yyyy-mm-dd
+   * (year-month-day).
+   */
   @XmlElement(name = "EffectiveDate", required = true)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
+  /**
+   * ExpirationDate: Enter the date at which the dataset will expire, formatted
+   * as yyyy-mm-dd (year-month- day). The Expiration date should be less than
+   * five years from current date.
+   */
   @XmlElement(name = "ExpirationDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
+  /**
+   * ReviewDate: Enter the date by which the dataset is to be reviewed,
+   * formatted as yyyy-mm-dd (year-month- day). The Review date should be less
+   * than five years from the effective date. In Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
+   */
   @XmlElement(name = "ReviewDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
+  /**
+   * Requirement: Enter any amplifying information on the requirement.
+   */
   @XmlElement(name = "Requirement", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString requirement;
+
+  /**
+   * Data element Project provides the Project, OPLAN, COMPLAN or Exercise name,
+   * or any other project name associated to the dataset.
+   */
   @XmlElement(name = "Project")
   private List<Project> project;
+  /**
+   * Data element POC contains a reference to a Contact, Organisation or Role
+   * dataset.
+   */
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+  /**
+   * This element references a Location dataset.
+   */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
   private List<LocationRef> locationRef;
+  /**
+   * This data element defines the limits of the authorized bandwidth and power
+   * within this allotment.
+   */
   @XmlElement(name = "Emission")
   private List<Emission> emission;
+  /**
+   * This data element defines a frequency or range of frequencies belonging to
+   * the Allotment. In the case of an allotment for a duplex frequency range,
+   * the pairs of frequencies are derived from FreqMin, FreqMax, TuningStep and
+   * PairedFreqMin as follows: (FreqMin + n * TuningStep, PairedFreqMin + n *
+   * TuningStep) with n varying from 0 until FreqMin + n * TuningStep = FreqMax.
+   */
   @XmlElement(name = "AllotFreq", required = true)
   private List<AllotFreq> allotFreq;
 
   /**
    * Gets the value of the title property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
-   * <p>
+   * @return
    */
   public TString getTitle() {
     return title;
@@ -131,10 +163,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setTitle(TString value) {
     this.title = value;
   }
@@ -146,9 +175,7 @@ public class Allotment extends Common {
   /**
    * Gets the value of the usageType property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
-   * <p>
+   * @return
    */
   public TString getUsageType() {
     return usageType;
@@ -157,10 +184,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the usageType property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setUsageType(TString value) {
     this.usageType = value;
   }
@@ -172,9 +196,7 @@ public class Allotment extends Common {
   /**
    * Gets the value of the dateResponseRequired property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
+   * @return
    */
   public TCalendar getDateResponseRequired() {
     return dateResponseRequired;
@@ -183,10 +205,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the dateResponseRequired property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
   }
@@ -198,8 +217,7 @@ public class Allotment extends Common {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is {@link TD }
-   * <p>
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -208,8 +226,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is {@link TD }
-   * <p>
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -222,9 +239,7 @@ public class Allotment extends Common {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -233,10 +248,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
   }
@@ -248,9 +260,7 @@ public class Allotment extends Common {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -259,10 +269,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TD }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
   }
@@ -274,9 +281,7 @@ public class Allotment extends Common {
   /**
    * Gets the value of the requirement property.
    * <p>
-   * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
-   * <p>
+   * @return
    */
   public TString getRequirement() {
     return requirement;
@@ -285,10 +290,7 @@ public class Allotment extends Common {
   /**
    * Sets the value of the requirement property.
    * <p>
-   * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
-   * <p>
-   */
+   * @param value   */
   public void setRequirement(TString value) {
     this.requirement = value;
   }
@@ -314,7 +316,7 @@ public class Allotment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Project }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -352,7 +354,7 @@ public class Allotment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -390,7 +392,7 @@ public class Allotment extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link LocationRef }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -427,7 +429,7 @@ public class Allotment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link Emission }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -464,7 +466,7 @@ public class Allotment extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link AllotFreq }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

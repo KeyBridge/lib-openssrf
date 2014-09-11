@@ -27,7 +27,7 @@ import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AStandardMetadataType;
 
 /**
  * A Calendar instance with SSRF Standard Metadata Attributes. This corresponds
@@ -39,7 +39,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 @XmlType(name = "TCalendar", propOrder = {
   "value"
 })
-public class TCalendar extends AStandardMetadataAttributes<Calendar> {
+public class TCalendar extends AStandardMetadataType<Calendar> {
 
   public TCalendar(Calendar value) {
     super(value);

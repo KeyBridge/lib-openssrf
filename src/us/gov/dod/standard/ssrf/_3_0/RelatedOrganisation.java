@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCFR;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +30,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCFR;
 
 /**
  * <p>
@@ -79,7 +79,7 @@ public class RelatedOrganisation {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -90,7 +90,7 @@ public class RelatedOrganisation {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -104,8 +104,7 @@ public class RelatedOrganisation {
   /**
    * Gets the value of the relation property.
    * <p>
-   * @return possible object is {@link TListCFR }
-   * <p>
+   * @return 
    */
   public TString getRelation() {
     return relation;
@@ -114,8 +113,7 @@ public class RelatedOrganisation {
   /**
    * Sets the value of the relation property.
    * <p>
-   * @param value allowed object is {@link TListCFR }
-   * <p>
+   * @param value 
    */
   public void setRelation(TString value) {
     this.relation = value;
@@ -128,8 +126,7 @@ public class RelatedOrganisation {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is {@link TSerial }
-   * <p>
+   * @return 
    */
   public TString getSerial() {
     return serial;
@@ -138,8 +135,7 @@ public class RelatedOrganisation {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is {@link TSerial }
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;

@@ -23,13 +23,13 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 
 /**
  * <p>
@@ -67,8 +67,7 @@ public class DocketNum {
   /**
    * Gets the value of the docketNum property.
    * <p>
-   * @return possible object is {@link TS12 }
-   * <p>
+   * @return 
    */
   public TString getDocketNum() {
     return docketNum;
@@ -77,8 +76,7 @@ public class DocketNum {
   /**
    * Sets the value of the docketNum property.
    * <p>
-   * @param value allowed object is {@link TS12 }
-   * <p>
+   * @param value 
    */
   public void setDocketNum(TString value) {
     this.docketNum = value;

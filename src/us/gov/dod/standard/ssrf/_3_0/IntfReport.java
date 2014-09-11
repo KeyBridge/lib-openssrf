@@ -23,11 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -36,6 +31,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -279,7 +279,7 @@ public class IntfReport extends Common {
    * Gets the value of the helpRequired property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getHelpRequired() {
@@ -290,7 +290,7 @@ public class IntfReport extends Common {
    * Sets the value of the helpRequired property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setHelpRequired(TString value) {
@@ -305,7 +305,7 @@ public class IntfReport extends Common {
    * Gets the value of the intfPeriod property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getIntfPeriod() {
@@ -316,7 +316,7 @@ public class IntfReport extends Common {
    * Sets the value of the intfPeriod property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setIntfPeriod(TString value) {
@@ -330,8 +330,7 @@ public class IntfReport extends Common {
   /**
    * Gets the value of the intfStartDateTime property.
    * <p>
-   * @return possible object is {@link TDT }
-   * <p>
+   * @return 
    */
   public TCalendar getIntfStartDateTime() {
     return intfStartDateTime;
@@ -340,8 +339,7 @@ public class IntfReport extends Common {
   /**
    * Sets the value of the intfStartDateTime property.
    * <p>
-   * @param value allowed object is {@link TDT }
-   * <p>
+   * @param value 
    */
   public void setIntfStartDateTime(TCalendar value) {
     this.intfStartDateTime = value;
@@ -355,7 +353,7 @@ public class IntfReport extends Common {
    * Gets the value of the intfStopDateTime property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *         
    * <p>
    */
   public TCalendar getIntfStopDateTime() {
@@ -366,7 +364,7 @@ public class IntfReport extends Common {
    * Sets the value of the intfStopDateTime property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TDT }{@code >}
+   *              
    * <p>
    */
   public void setIntfStopDateTime(TCalendar value) {
@@ -381,7 +379,7 @@ public class IntfReport extends Common {
    * Gets the value of the intfDescr property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getIntfDescr() {
@@ -392,7 +390,7 @@ public class IntfReport extends Common {
    * Sets the value of the intfDescr property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setIntfDescr(TString value) {
@@ -407,7 +405,7 @@ public class IntfReport extends Common {
    * Gets the value of the affectedEquipment property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getAffectedEquipment() {
@@ -418,7 +416,7 @@ public class IntfReport extends Common {
    * Sets the value of the affectedEquipment property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setAffectedEquipment(TString value) {
@@ -433,7 +431,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceFieldStrength property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN6_1 }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSourceFieldStrength() {
@@ -444,7 +442,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceFieldStrength property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN6_1 }{@code >}
+   *              
    * <p>
    */
   public void setSourceFieldStrength(TDecimal value) {
@@ -459,7 +457,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceLon property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
+   *         
    * <p>
    */
   public TString getSourceLon() {
@@ -470,7 +468,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceLon property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
+   *              
    * <p>
    */
   public void setSourceLon(TString value) {
@@ -485,7 +483,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceLat property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TLat }{@code >}
+   *         
    * <p>
    */
   public TString getSourceLat() {
@@ -496,7 +494,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceLat property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TLat }{@code >}
+   *              
    * <p>
    */
   public void setSourceLat(TString value) {
@@ -511,7 +509,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceAz property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSourceAz() {
@@ -522,7 +520,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceAz property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   *              
    * <p>
    */
   public void setSourceAz(TDecimal value) {
@@ -537,7 +535,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceLocDescr property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getSourceLocDescr() {
@@ -548,7 +546,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceLocDescr property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setSourceLocDescr(TString value) {
@@ -563,7 +561,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceFreqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSourceFreqMin() {
@@ -574,7 +572,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceFreqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setSourceFreqMin(TDecimal value) {
@@ -589,7 +587,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceFreqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSourceFreqMax() {
@@ -600,7 +598,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceFreqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setSourceFreqMax(TDecimal value) {
@@ -615,7 +613,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceEmsClass property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
+   *         
    * <p>
    */
   public TString getSourceEmsClass() {
@@ -626,7 +624,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceEmsClass property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TEmsDes }{@code >}
+   *              
    * <p>
    */
   public void setSourceEmsClass(TString value) {
@@ -641,7 +639,7 @@ public class IntfReport extends Common {
    * Gets the value of the sourceEmsBw property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSourceEmsBw() {
@@ -652,7 +650,7 @@ public class IntfReport extends Common {
    * Sets the value of the sourceEmsBw property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setSourceEmsBw(TDecimal value) {
@@ -667,7 +665,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimAsgnRef property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *         
    * <p>
    */
   public TString getVictimAsgnRef() {
@@ -678,7 +676,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimAsgnRef property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TSerial }{@code >}
+   *              
    * <p>
    */
   public void setVictimAsgnRef(TString value) {
@@ -693,7 +691,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimSystem property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *         
    * <p>
    */
   public TString getVictimSystem() {
@@ -704,7 +702,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimSystem property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   *              
    * <p>
    */
   public void setVictimSystem(TString value) {
@@ -719,7 +717,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimCountry property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *         
    * <p>
    */
   public TString getVictimCountry() {
@@ -730,7 +728,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimCountry property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAO }{@code >}
+   *              
    * <p>
    */
   public void setVictimCountry(TString value) {
@@ -745,7 +743,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimLon property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
+   *         
    * <p>
    */
   public TString getVictimLon() {
@@ -756,7 +754,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimLon property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
+   *              
    * <p>
    */
   public void setVictimLon(TString value) {
@@ -771,7 +769,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimLat property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TLat }{@code >}
+   *         
    * <p>
    */
   public TString getVictimLat() {
@@ -782,7 +780,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimLat property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TLat }{@code >}
+   *              
    * <p>
    */
   public void setVictimLat(TString value) {
@@ -797,7 +795,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimLocDescr property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *         
    * <p>
    */
   public TString getVictimLocDescr() {
@@ -808,7 +806,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimLocDescr property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS255 }{@code >}
+   *              
    * <p>
    */
   public void setVictimLocDescr(TString value) {
@@ -822,8 +820,7 @@ public class IntfReport extends Common {
   /**
    * Gets the value of the victimFreqMin property.
    * <p>
-   * @return possible object is {@link TFreqM }
-   * <p>
+   * @return 
    */
   public TDecimal getVictimFreqMin() {
     return victimFreqMin;
@@ -832,8 +829,7 @@ public class IntfReport extends Common {
   /**
    * Sets the value of the victimFreqMin property.
    * <p>
-   * @param value allowed object is {@link TFreqM }
-   * <p>
+   * @param value 
    */
   public void setVictimFreqMin(TDecimal value) {
     this.victimFreqMin = value;
@@ -847,7 +843,7 @@ public class IntfReport extends Common {
    * Gets the value of the victimFreqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getVictimFreqMax() {
@@ -858,7 +854,7 @@ public class IntfReport extends Common {
    * Sets the value of the victimFreqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setVictimFreqMax(TDecimal value) {
@@ -873,7 +869,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteName() {
@@ -884,7 +880,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteName(TString value) {
@@ -899,7 +895,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteChannel property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteChannel() {
@@ -910,7 +906,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteChannel property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteChannel(TString value) {
@@ -925,7 +921,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteUplinkFreq property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getSatelliteUplinkFreq() {
@@ -936,7 +932,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteUplinkFreq property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteUplinkFreq(TDecimal value) {
@@ -951,7 +947,7 @@ public class IntfReport extends Common {
    * Gets the value of the performanceEffects property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getPerformanceEffects() {
@@ -962,7 +958,7 @@ public class IntfReport extends Common {
    * Sets the value of the performanceEffects property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setPerformanceEffects(TString value) {
@@ -977,7 +973,7 @@ public class IntfReport extends Common {
    * Gets the value of the evaluation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *         
    * <p>
    */
   public TString getEvaluation() {
@@ -988,7 +984,7 @@ public class IntfReport extends Common {
    * Sets the value of the evaluation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   *              
    * <p>
    */
   public void setEvaluation(TString value) {
@@ -1003,7 +999,7 @@ public class IntfReport extends Common {
    * Gets the value of the solution property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getSolution() {
@@ -1014,7 +1010,7 @@ public class IntfReport extends Common {
    * Sets the value of the solution property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setSolution(TString value) {
@@ -1029,7 +1025,7 @@ public class IntfReport extends Common {
    * Gets the value of the affectedCSA property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getAffectedCSA() {
@@ -1040,7 +1036,7 @@ public class IntfReport extends Common {
    * Sets the value of the affectedCSA property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setAffectedCSA(TString value) {
@@ -1055,7 +1051,7 @@ public class IntfReport extends Common {
    * Gets the value of the characteristics property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getCharacteristics() {
@@ -1066,7 +1062,7 @@ public class IntfReport extends Common {
    * Sets the value of the characteristics property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setCharacteristics(TString value) {
@@ -1081,7 +1077,7 @@ public class IntfReport extends Common {
    * Gets the value of the gpsAffected property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getGPSAffected() {
@@ -1092,7 +1088,7 @@ public class IntfReport extends Common {
    * Sets the value of the gpsAffected property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setGPSAffected(TString value) {
@@ -1107,7 +1103,7 @@ public class IntfReport extends Common {
    * Gets the value of the localEventID property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getLocalEventID() {
@@ -1118,7 +1114,7 @@ public class IntfReport extends Common {
    * Sets the value of the localEventID property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setLocalEventID(TString value) {
@@ -1133,7 +1129,7 @@ public class IntfReport extends Common {
    * Gets the value of the netCircuitsAffected property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getNetCircuitsAffected() {
@@ -1144,7 +1140,7 @@ public class IntfReport extends Common {
    * Sets the value of the netCircuitsAffected property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setNetCircuitsAffected(TString value) {
@@ -1159,7 +1155,7 @@ public class IntfReport extends Common {
    * Gets the value of the netsAffected property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *         
    * <p>
    */
   public TString getNetsAffected() {
@@ -1170,7 +1166,7 @@ public class IntfReport extends Common {
    * Sets the value of the netsAffected property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TMEMO }{@code >}
+   *              
    * <p>
    */
   public void setNetsAffected(TString value) {
@@ -1185,7 +1181,7 @@ public class IntfReport extends Common {
    * Gets the value of the satcomPriority property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSATCOMPriority() {
@@ -1196,7 +1192,7 @@ public class IntfReport extends Common {
    * Sets the value of the satcomPriority property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSATCOMPriority(TString value) {
@@ -1211,7 +1207,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteAffected property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteAffected() {
@@ -1222,7 +1218,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteAffected property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteAffected(TString value) {
@@ -1237,7 +1233,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteDownlinkPolarisation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteDownlinkPolarisation() {
@@ -1248,7 +1244,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteDownlinkPolarisation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteDownlinkPolarisation(TString value) {
@@ -1263,7 +1259,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteHemisphere property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteHemisphere() {
@@ -1274,7 +1270,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteHemisphere property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteHemisphere(TString value) {
@@ -1289,7 +1285,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteLongitude property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TLon }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteLongitude() {
@@ -1300,7 +1296,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteLongitude property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TLon }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteLongitude(TString value) {
@@ -1315,7 +1311,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteTransponderID property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteTransponderID() {
@@ -1326,7 +1322,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteTransponderID property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteTransponderID(TString value) {
@@ -1341,7 +1337,7 @@ public class IntfReport extends Common {
    * Gets the value of the satelliteUplinkPolarisation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *         
    * <p>
    */
   public TString getSatelliteUplinkPolarisation() {
@@ -1352,7 +1348,7 @@ public class IntfReport extends Common {
    * Sets the value of the satelliteUplinkPolarisation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   *              
    * <p>
    */
   public void setSatelliteUplinkPolarisation(TString value) {
@@ -1381,7 +1377,7 @@ public class IntfReport extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link POCInformation }
+     * 
    * <p>
    * <p>
    * @return

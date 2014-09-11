@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -33,6 +30,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCCL;
 
 /**
  * <p>
@@ -88,7 +88,7 @@ public class TelephoneFax {
    * Gets the value of the preferred property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getPreferred() {
@@ -99,7 +99,7 @@ public class TelephoneFax {
    * Sets the value of the preferred property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setPreferred(TString value) {
@@ -114,7 +114,7 @@ public class TelephoneFax {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *         
    * <p>
    */
   public TString getType() {
@@ -125,7 +125,7 @@ public class TelephoneFax {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS20 }{@code >}
+   *              
    * <p>
    */
   public void setType(TString value) {
@@ -140,7 +140,7 @@ public class TelephoneFax {
    * Gets the value of the fax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getFax() {
@@ -151,7 +151,7 @@ public class TelephoneFax {
    * Sets the value of the fax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setFax(TString value) {
@@ -166,7 +166,7 @@ public class TelephoneFax {
    * Gets the value of the maxCls property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
+   *         
    * <p>
    */
   public TString getMaxCls() {
@@ -177,7 +177,7 @@ public class TelephoneFax {
    * Sets the value of the maxCls property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCCL }{@code >}
+   *              
    * <p>
    */
   public void setMaxCls(TString value) {
@@ -191,8 +191,7 @@ public class TelephoneFax {
   /**
    * Gets the value of the number property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getNumber() {
     return number;
@@ -201,8 +200,7 @@ public class TelephoneFax {
   /**
    * Sets the value of the number property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setNumber(TString value) {
     this.number = value;

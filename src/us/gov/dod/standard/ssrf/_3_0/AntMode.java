@@ -23,63 +23,27 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCRD;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCRD;
 
 /**
- * <p>
  * Java class for AntMode complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="AntMode">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/>
- *         &lt;element name="ModeUse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU" minOccurs="0"/>
- *         &lt;element name="MotionType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="SectBlanking" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Pol" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}HorzScan" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}VertScan" minOccurs="0"/>
- *         &lt;element name="RotationDirection" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCRD" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}RotationRate" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Beamwidth" minOccurs="0"/>
- *         &lt;element name="MaxPower" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
- *         &lt;element name="PortIsolation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="ModeName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40" minOccurs="0"/>
- *         &lt;element name="AntGain" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntGain" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AntFreqs" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntFreqs" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AntPattern" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntPattern" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AntEfficiency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AntEfficiency" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="VSWR" type="{urn:us:gov:dod:standard:ssrf:3.0.0}VSWR" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * This element contains the technical characteristics of one antenna mode.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntMode", propOrder = {
@@ -118,100 +82,307 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 })
 public class AntMode {
 
+  /**
+   * ModeID: Enter a short name for the mode; this name should be a meaningful
+   * identification of the mode, but it can also be automatically generated in
+   * some systems. The Name MUST be unique within the dataset and SHOULD NOT be
+   * modified during the entire lifetime of the dataset. [XSD ERR UNIQUE] Each
+   * value of this data item MUST be unique within the parent element.
+   */
   @XmlElement(name = "ModeID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
+  /**
+   * Description: Enter a description of the operational mode; this description
+   * should be a meaningful explanation of the mode main characteristics.
+   */
   @XmlElement(name = "Description", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
+  /**
+   * ModeUse: [XSD ERR CODELIST] This data item MUST use one of the codes from
+   * Code List CAU: Code Transmit Only Receive Only Transmit-Receive
+   */
   @XmlElement(name = "ModeUse", required = false)
   private TString modeUse;
+  /**
+   * MotionType: Recommend values from Code List CAD
+   */
   @XmlElement(name = "MotionType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString motionType;
+  /**
+   * SectBlanking: ("Yes" if sector blanking is possible and "No" if it is not
+   * possible) [XSD ERR CODELIST] This data item MUST use one of the codes from
+   * Code List CBO: Code Yes No
+   */
   @XmlElement(name = "SectBlanking", required = false)
   private TString sectBlanking;
+  /**
+   * PolarisationType: Recommend values from Code List CPO
+   */
   @XmlElement(name = "PolarisationType")
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString polarisationType;
+  /**
+   * PolarisationAngle: Enter the angle of the electric field vector measured
+   * counter-clockwise from the equatorial plane as referenced from the
+   * boresight or typical static positioning of the antenna.
+   */
   @XmlElement(name = "PolarisationAngle", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal polarisationAngle;
+
+  /**
+   * HorzScan: This group is OPTIONAL.
+   * <p>
+   * This group contains the method about how the antenna beam is steerable in
+   * the horizontal axis, the portion of a circle that can be scanned by the
+   * antenna, the horizontal scan rate and the number of horizontal scans per
+   * minute.
+   */
+  /**
+   * HorzScanSpeed: Enter the number of degrees per second the antenna is
+   * capable of scanning. It is not necessarily the "Sector Scanned" figure
+   * times the degrees per second. If a significant portion of time is spent
+   * vertically scanning in between horizontal sweeps, the horizontal scan rate
+   * will be lower than if the antenna were horizontally scanning all the time.
+   */
   @XmlElement(name = "HorzScanSpeed", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
   private TDecimal horzScanSpeed;
+  /**
+   * HorzScanRate: Enter the number of complete scans the antenna is capable of
+   * making each minute.
+   */
   @XmlElement(name = "HorzScanRate", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterSCANRATE.class)
   private TInteger horzScanRate;
+  /**
+   * HorzScanType: Enter the antenna horizontal scanning capability.
+   * <p>
+   * Recommend values from Code List CAS (extract only): Code 360 Degrees
+   * Rotating Bi-Directional Sector Conical Electronic Scan (360 Degrees)
+   * Electronic Scan (Sector) Fixed Fixed-3 Axis Stabilised Helical Horizontal
+   * Lobing ...
+   */
   @XmlElement(name = "HorzScanType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString horzScanType;
+  /**
+   * HorzScanSector: Enter the maximum horizontal sector the antenna can scan
+   * (enter 360 for a full rotation). Example:<HorzScanSpeed
+   * cls="U">90</HorzScanSpeed> <HorzScanRate cls="U">15</HorzScanRate>
+   * <HorzScanType cls="U">Horizontal</HorzScanType>
+   */
   @XmlElement(name = "HorzScanSector", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzScanSector;
+
+  /**
+   * Vertical Scan: This group is OPTIONAL.
+   * <p>
+   * <p>
+   * This group contains the method about how the antenna beam is steerable in
+   * the vertical axis, the minimum and maximum limits of the vertical sector
+   * scanned in degrees referenced to the horizon, the vertical scan speed and
+   * the number of vertical scans per minute.
+   */
+  /**
+   * VertScanSpeed: Enter the number of degrees of vertical scan per second. If
+   * an antenna does a horizontal scan per second as part of a raster scan and
+   * drops down one degree after each sweep, it is scanning vertically at one
+   * degree per second. If the same antenna completed a scan in 30 seconds the
+   * vertical scan speed would be 2 degrees per minute.
+   */
   @XmlElement(name = "VertScanSpeed", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
   private TDecimal vertScanSpeed;
+  /**
+   * VertScanRate: Enter the number of complete vertical scans per minute. If
+   * the antenna does a horizontal scan per second as part of a raster scan and
+   * drops down one degree after each sweep, it is scanning vertically at one
+   * degree per second. If the same antenna completed a scan in 30 seconds the
+   * vertical scan rate would be 2 scans per minute.
+   */
   @XmlElement(name = "VertScanRate", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterSCANRATE.class)
   private TInteger vertScanRate;
+  /**
+   * VertScanType: Enter the antenna vertical scanning capability.
+   * <p>
+   * Recommend values from Code List CAS (extract only): Code 360 Degrees
+   * Rotating Bi-Directional Sector Conical Electronic Scan (360 Degrees)
+   * Electronic Scan (Sector) Fixed Fixed-3 Axis Stabilised Helical Horizontal
+   * Lobing ...
+   */
   @XmlElement(name = "VertScanType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString vertScanType;
+  /**
+   * VertScanAngleMin: Enter the minimum limit of the vertical arc scanned
+   * relative to the horizontal.
+   */
   @XmlElement(name = "VertScanAngleMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal vertScanAngleMin;
+  /**
+   * VertScanAngleMax: Enter the maximum limit of the vertical arc scanned
+   * relative to the horizontal.
+   */
   @XmlElement(name = "VertScanAngleMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal vertScanAngleMax;
+
+  /**
+   * RotationDirection:
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CRD: Code Clockwise Counter-Clockwise
+   */
   @XmlElement(name = "RotationDirection", required = false)
   private TString rotationDirection;
+  /**
+   * RotationRateMin: Enter the nominal or minimum antenna rotation rate in
+   * degrees per second.
+   */
   @XmlElement(name = "RotationRateMin")
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN7_2.class)
   private TDecimal rotationRateMin;
+  /**
+   * RotationRateMax: Enter if applicable, the maximum antenna rotation rate in
+   * degrees per second.
+   * <p>
+   * [XSL ERR MINMAX] If RotationRateMax is used, it MUST be greater than
+   * RotationRateMin.
+   */
   @XmlElement(name = "RotationRateMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN7_2.class)
   private TDecimal rotationRateMax;
+
+  /**
+   * HorzBwMin: Enter the minimum or nominal horizontal beamwidth.
+   */
   @XmlElement(name = "HorzBwMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzBwMin;
+  /**
+   * HorzBwMax: Enter the maximum horizontal beamwidth for beamwidths which vary
+   * with the frequency.
+   * <p>
+   * [XSL ERR MINMAX] If HorzBwMax is used, it MUST be greater than HorzBwMin.
+   */
   @XmlElement(name = "HorzBwMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzBwMax;
+  /**
+   * VertBwMin: Enter the minimum or nominal vertical beamwidth.
+   */
   @XmlElement(name = "VertBwMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal vertBwMin;
+  /**
+   * VertBwMax: Enter the maximum vertical beamwidth for beamwidths which vary
+   * with the frequency. [XSL ERR MINMAX] If VertBwMax is used, it MUST be
+   * greater than VertBwMin.
+   */
   @XmlElement(name = "VertBwMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal vertBwMax;
+  /**
+   * BeamType: Enter one of the codes describing the shape or type of the
+   * antenna main beam .
+   * <p>
+   * Recommend values from Code List CBD: Code Cardioid Cosecant Squared
+   * Elliptical Fan Hyperbolic Omni Pencil Shaped Beam Single Symmetrical Lobe
+   * Other
+   */
   @XmlElement(name = "BeamType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString beamType;
+  /**
+   * MaxPower: Enter the maximum level of input power in dBW.
+   */
   @XmlElement(name = "MaxPower", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal maxPower;
+  /**
+   * PortIsolation: Enter the power ratio between the signal injected into one
+   * port and the power returned by the other port in dB.
+   */
   @XmlElement(name = "PortIsolation", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal portIsolation;
+  /**
+   * ModeName (US): Enter a short name for the mode.
+   */
   @XmlElement(name = "ModeName", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
   private TString modeName;
+
+  /**
+   * This element indicates the antenna gain, in decibels with reference to an
+   * isotropic source (dBi), in the direction of maximum radiation. It can also
+   * contain the gain measured 180 degrees from the direction of maximum main
+   * beam gain.
+   */
   @XmlElement(name = "AntGain")
   private List<AntGain> antGain;
+  /**
+   * This element contains the antenna's designed tuning range, or the discrete
+   * operating frequency.
+   */
   @XmlElement(name = "AntFreqs")
   private List<AntFreqs> antFreqs;
+  /**
+   * Data element AntPattern contains an antenna pattern diagram on a specific
+   * plane. General pattern cuts can be defined by a spherical coordinate system
+   * with the electrical boresite of the antenna oriented in the direction of
+   * the Z-axis. At different values of phi ( # ), pattern cuts can be taken
+   * with theta ( # ) as the dependent variable. These will be great circle cuts
+   * through the main-beam peak. An additional measurement relating the
+   * mechanical and electrical boresite must be made to fully characterize the
+   * antenna. Also the orientation of the antenna to the spherical coordinate
+   * system must be defined. (example: top of the antenna oriented in the +x
+   * direction).
+   */
   @XmlElement(name = "AntPattern")
   private List<AntPattern> antPattern;
+  /**
+   * AntEfficiency describes the antenna efficiency at various frequencies
+   * within the frequency range of the antenna.
+   */
   @XmlElement(name = "AntEfficiency")
   private List<AntEfficiency> antEfficiency;
+  /**
+   * Element VSWR stores the Voltage Standing Wave Ratio information for an
+   * Antenna Mode; it may be used to describe the VSWR curve as a function of
+   * frequency.
+   * <p>
+   * VSWR is a measure of how efficiently radio-frequency power is transmitted
+   * from a power source, through a transmission line, into a load (for example,
+   * from a power amplifier through a transmission line, to an antenna). In an
+   * ideal system, 100% of the energy is transmitted. This requires an exact
+   * match between the source impedance, the characteristic impedance of the
+   * transmission line and all its connectors, and the load's impedance. The
+   * signal's AC voltage will be the same from end to end since it runs through
+   * without interference. In real systems, mismatched impedances cause some of
+   * the power to be reflected back toward the source (like an echo).
+   * Reflections cause destructive interference, leading to peaks and valleys in
+   * the voltage at various times and distances along the line. VSWR measures
+   * these voltage variances. It is the ratio of the highest voltage anywhere
+   * along the transmission line to the lowest. Since the voltage doesn't vary
+   * in an ideal system, its VSWR is 1:1. When reflections occur, the voltages
+   * vary and VSWR is higher (1.2:1 or 2:1, for instance).
+   * <p>
+   */
   @XmlElement(name = "VSWR")
   private List<VSWR> vswr;
 
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return possible object is {@link TS20 }
-   * <p>
+   * @return
    */
   public TString getModeID() {
     return modeID;
@@ -220,8 +391,7 @@ public class AntMode {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value allowed object is {@link TS20 }
-   * <p>
+   * @param value
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -235,7 +405,7 @@ public class AntMode {
    * Gets the value of the description property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   * <p>
    * <p>
    */
   public TString getDescription() {
@@ -246,7 +416,7 @@ public class AntMode {
    * Sets the value of the description property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS100 }{@code >}
+   * <p>
    * <p>
    */
   public void setDescription(TString value) {
@@ -261,7 +431,7 @@ public class AntMode {
    * Gets the value of the modeUse property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
+   * <p>
    * <p>
    */
   public TString getModeUse() {
@@ -272,7 +442,7 @@ public class AntMode {
    * Sets the value of the modeUse property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCAU }{@code >}
+   * <p>
    * <p>
    */
   public void setModeUse(TString value) {
@@ -287,7 +457,7 @@ public class AntMode {
    * Gets the value of the motionType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public TString getMotionType() {
@@ -298,7 +468,7 @@ public class AntMode {
    * Sets the value of the motionType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public void setMotionType(TString value) {
@@ -313,7 +483,7 @@ public class AntMode {
    * Gets the value of the sectBlanking property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public TString getSectBlanking() {
@@ -324,7 +494,7 @@ public class AntMode {
    * Sets the value of the sectBlanking property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   * <p>
    * <p>
    */
   public void setSectBlanking(TString value) {
@@ -338,8 +508,7 @@ public class AntMode {
   /**
    * Gets the value of the polarisationType property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return
    */
   public TString getPolarisationType() {
     return polarisationType;
@@ -348,8 +517,7 @@ public class AntMode {
   /**
    * Sets the value of the polarisationType property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value
    */
   public void setPolarisationType(TString value) {
     this.polarisationType = value;
@@ -363,7 +531,7 @@ public class AntMode {
    * Gets the value of the polarisationAngle property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getPolarisationAngle() {
@@ -374,7 +542,7 @@ public class AntMode {
    * Sets the value of the polarisationAngle property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public void setPolarisationAngle(TDecimal value) {
@@ -389,7 +557,7 @@ public class AntMode {
    * Gets the value of the horzScanSpeed property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzScanSpeed() {
@@ -400,7 +568,7 @@ public class AntMode {
    * Sets the value of the horzScanSpeed property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzScanSpeed(TDecimal value) {
@@ -415,7 +583,7 @@ public class AntMode {
    * Gets the value of the horzScanRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
+   * <p>
    * <p>
    */
   public TInteger getHorzScanRate() {
@@ -426,7 +594,7 @@ public class AntMode {
    * Sets the value of the horzScanRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzScanRate(TInteger value) {
@@ -441,7 +609,7 @@ public class AntMode {
    * Gets the value of the horzScanType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   * <p>
    * <p>
    */
   public TString getHorzScanType() {
@@ -452,7 +620,7 @@ public class AntMode {
    * Sets the value of the horzScanType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzScanType(TString value) {
@@ -467,7 +635,7 @@ public class AntMode {
    * Gets the value of the horzScanSector property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzScanSector() {
@@ -478,7 +646,7 @@ public class AntMode {
    * Sets the value of the horzScanSector property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzScanSector(TDecimal value) {
@@ -493,7 +661,7 @@ public class AntMode {
    * Gets the value of the vertScanSpeed property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertScanSpeed() {
@@ -504,7 +672,7 @@ public class AntMode {
    * Sets the value of the vertScanSpeed property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TScanSpeed }{@code >}
+   * <p>
    * <p>
    */
   public void setVertScanSpeed(TDecimal value) {
@@ -519,7 +687,7 @@ public class AntMode {
    * Gets the value of the vertScanRate property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
+   * <p>
    * <p>
    */
   public TInteger getVertScanRate() {
@@ -530,7 +698,7 @@ public class AntMode {
    * Sets the value of the vertScanRate property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TScanRate }{@code >}
+   * <p>
    * <p>
    */
   public void setVertScanRate(TInteger value) {
@@ -545,7 +713,7 @@ public class AntMode {
    * Gets the value of the vertScanType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   * <p>
    * <p>
    */
   public TString getVertScanType() {
@@ -556,7 +724,7 @@ public class AntMode {
    * Sets the value of the vertScanType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS50 }{@code >}
+   * <p>
    * <p>
    */
   public void setVertScanType(TString value) {
@@ -571,7 +739,7 @@ public class AntMode {
    * Gets the value of the vertScanAngleMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertScanAngleMin() {
@@ -582,7 +750,7 @@ public class AntMode {
    * Sets the value of the vertScanAngleMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   * <p>
    * <p>
    */
   public void setVertScanAngleMin(TDecimal value) {
@@ -597,7 +765,7 @@ public class AntMode {
    * Gets the value of the vertScanAngleMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertScanAngleMax() {
@@ -608,7 +776,7 @@ public class AntMode {
    * Sets the value of the vertScanAngleMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TElev }{@code >}
+   * <p>
    * <p>
    */
   public void setVertScanAngleMax(TDecimal value) {
@@ -623,7 +791,7 @@ public class AntMode {
    * Gets the value of the rotationDirection property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCRD }{@code >}
+   * <p>
    * <p>
    */
   public TString getRotationDirection() {
@@ -634,7 +802,7 @@ public class AntMode {
    * Sets the value of the rotationDirection property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCRD }{@code >}
+   * <p>
    * <p>
    */
   public void setRotationDirection(TString value) {
@@ -648,8 +816,7 @@ public class AntMode {
   /**
    * Gets the value of the rotationRateMin property.
    * <p>
-   * @return possible object is {@link TUN7_2 }
-   * <p>
+   * @return
    */
   public TDecimal getRotationRateMin() {
     return rotationRateMin;
@@ -658,8 +825,7 @@ public class AntMode {
   /**
    * Sets the value of the rotationRateMin property.
    * <p>
-   * @param value allowed object is {@link TUN7_2 }
-   * <p>
+   * @param value
    */
   public void setRotationRateMin(TDecimal value) {
     this.rotationRateMin = value;
@@ -673,7 +839,7 @@ public class AntMode {
    * Gets the value of the rotationRateMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TUN7_2 }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getRotationRateMax() {
@@ -684,7 +850,7 @@ public class AntMode {
    * Sets the value of the rotationRateMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TUN7_2 }{@code >}
+   * <p>
    * <p>
    */
   public void setRotationRateMax(TDecimal value) {
@@ -699,7 +865,7 @@ public class AntMode {
    * Gets the value of the horzBwMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzBwMin() {
@@ -710,7 +876,7 @@ public class AntMode {
    * Sets the value of the horzBwMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzBwMin(TDecimal value) {
@@ -725,7 +891,7 @@ public class AntMode {
    * Gets the value of the horzBwMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getHorzBwMax() {
@@ -736,7 +902,7 @@ public class AntMode {
    * Sets the value of the horzBwMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public void setHorzBwMax(TDecimal value) {
@@ -751,7 +917,7 @@ public class AntMode {
    * Gets the value of the vertBwMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertBwMin() {
@@ -762,7 +928,7 @@ public class AntMode {
    * Sets the value of the vertBwMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public void setVertBwMin(TDecimal value) {
@@ -777,7 +943,7 @@ public class AntMode {
    * Gets the value of the vertBwMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getVertBwMax() {
@@ -788,7 +954,7 @@ public class AntMode {
    * Sets the value of the vertBwMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TAz }{@code >}
+   * <p>
    * <p>
    */
   public void setVertBwMax(TDecimal value) {
@@ -803,7 +969,7 @@ public class AntMode {
    * Gets the value of the beamType property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public TString getBeamType() {
@@ -814,7 +980,7 @@ public class AntMode {
    * Sets the value of the beamType property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS25 }{@code >}
+   * <p>
    * <p>
    */
   public void setBeamType(TString value) {
@@ -829,7 +995,7 @@ public class AntMode {
    * Gets the value of the maxPower property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getMaxPower() {
@@ -840,7 +1006,7 @@ public class AntMode {
    * Sets the value of the maxPower property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdBW }{@code >}
+   * <p>
    * <p>
    */
   public void setMaxPower(TDecimal value) {
@@ -855,7 +1021,7 @@ public class AntMode {
    * Gets the value of the portIsolation property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   * <p>
    * <p>
    */
   public TDecimal getPortIsolation() {
@@ -866,7 +1032,7 @@ public class AntMode {
    * Sets the value of the portIsolation property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TdB }{@code >}
+   * <p>
    * <p>
    */
   public void setPortIsolation(TDecimal value) {
@@ -881,7 +1047,7 @@ public class AntMode {
    * Gets the value of the modeName property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   * <p>
    * <p>
    */
   public TString getModeName() {
@@ -892,7 +1058,7 @@ public class AntMode {
    * Sets the value of the modeName property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS40 }{@code >}
+   * <p>
    * <p>
    */
   public void setModeName(TString value) {
@@ -920,7 +1086,7 @@ public class AntMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link AntGain }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -957,7 +1123,7 @@ public class AntMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link AntFreqs }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -995,7 +1161,7 @@ public class AntMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link AntPattern }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1033,7 +1199,7 @@ public class AntMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link AntEfficiency }
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1070,7 +1236,7 @@ public class AntMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list {@link VSWR }
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

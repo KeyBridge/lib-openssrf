@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,6 +34,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.Installation;
 
 /**
  * <p>
@@ -81,8 +82,7 @@ public class Deployment {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TS50 }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -91,8 +91,7 @@ public class Deployment {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TS50 }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -106,7 +105,7 @@ public class Deployment {
    * Gets the value of the status property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *         
    * <p>
    */
   public TString getStatus() {
@@ -117,7 +116,7 @@ public class Deployment {
    * Sets the value of the status property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TS10 }{@code >}
+   *              
    * <p>
    */
   public void setStatus(TString value) {
@@ -146,7 +145,7 @@ public class Deployment {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link Installation }
+     * 
    * <p>
    * <p>
    * @return

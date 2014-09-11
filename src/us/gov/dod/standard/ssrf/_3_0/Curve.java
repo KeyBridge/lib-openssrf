@@ -23,9 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
-import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +32,9 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCBO;
 
 /**
  * <p>
@@ -108,8 +108,7 @@ public class Curve {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is {@link TS25 }
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -118,8 +117,7 @@ public class Curve {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is {@link TS25 }
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -133,7 +131,7 @@ public class Curve {
    * Gets the value of the calculated property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *         
    * <p>
    */
   public TString getCalculated() {
@@ -144,7 +142,7 @@ public class Curve {
    * Sets the value of the calculated property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TListCBO }{@code >}
+   *              
    * <p>
    */
   public void setCalculated(TString value) {
@@ -158,8 +156,7 @@ public class Curve {
   /**
    * Gets the value of the freqFactor property.
    * <p>
-   * @return possible object is {@link TUN3_1 }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqFactor() {
     return freqFactor;
@@ -168,8 +165,7 @@ public class Curve {
   /**
    * Sets the value of the freqFactor property.
    * <p>
-   * @param value allowed object is {@link TUN3_1 }
-   * <p>
+   * @param value 
    */
   public void setFreqFactor(TDecimal value) {
     this.freqFactor = value;
@@ -182,8 +178,7 @@ public class Curve {
   /**
    * Gets the value of the freqConst property.
    * <p>
-   * @return possible object is {@link TFreqOffset }
-   * <p>
+   * @return 
    */
   public TDecimal getFreqConst() {
     return freqConst;
@@ -192,8 +187,7 @@ public class Curve {
   /**
    * Sets the value of the freqConst property.
    * <p>
-   * @param value allowed object is {@link TFreqOffset }
-   * <p>
+   * @param value 
    */
   public void setFreqConst(TDecimal value) {
     this.freqConst = value;
@@ -207,7 +201,7 @@ public class Curve {
    * Gets the value of the bw property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getBw() {
@@ -218,7 +212,7 @@ public class Curve {
    * Sets the value of the bw property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setBw(TDecimal value) {
@@ -233,7 +227,7 @@ public class Curve {
    * Gets the value of the freqMin property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMin() {
@@ -244,7 +238,7 @@ public class Curve {
    * Sets the value of the freqMin property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMin(TDecimal value) {
@@ -259,7 +253,7 @@ public class Curve {
    * Gets the value of the freqMax property.
    * <p>
    * @return possible object is
-   *         {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *         
    * <p>
    */
   public TDecimal getFreqMax() {
@@ -270,7 +264,7 @@ public class Curve {
    * Sets the value of the freqMax property.
    * <p>
    * @param value allowed object is
-   *              {@link JAXBElement }{@code <}{@link TFreqM }{@code >}
+   *              
    * <p>
    */
   public void setFreqMax(TDecimal value) {
@@ -299,7 +293,7 @@ public class Curve {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * {@link CurvePoint }
+     * 
    * <p>
    * <p>
    * @return
@@ -322,8 +316,7 @@ public class Curve {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return possible object is {@link BigInteger }
-   * <p>
+   * @return 
    */
   public BigInteger getIdx() {
     return idx;
@@ -332,8 +325,7 @@ public class Curve {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value allowed object is {@link BigInteger }
-   * <p>
+   * @param value 
    */
   public void setIdx(BigInteger value) {
     this.idx = value;
