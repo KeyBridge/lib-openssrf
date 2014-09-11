@@ -27,23 +27,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SMADEF;
+import us.gov.dod.standard.ssrf.SSRF;
 
 /**
- * Java class for SchemaRoot complex type.
+ * Abstract Java class for SchemaRoot complex type.
+ * <p>
+ * This class is a generic container and the entry point for SSRF and
+ * SMADEF-XML. Implementations of this class are {@link SSRF} and
+ * {@link SMADEF};
  * <p>
  * Description Data element SMADEF is the root element for any SMADEF-XML
  * message. It contains attributes defining the namespace used. Any SMADEF-XML
  * message may contain any number of datasets.
  * <p>
- * Example
- * <pre>&lt;SMADEF&gt;
- *   &lt;Datasets_here/&gt;
- * &lt;/SMADEF&gt;
- * <pre>
+ * All elements at this level must extend {@link Common}
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SchemaRoot", propOrder = {
@@ -70,7 +69,8 @@ import javax.xml.bind.annotation.XmlType;
   "feDeployment",
   "note"
 })
-public class SchemaRoot {
+@XmlSeeAlso({SSRF.class, SMADEF.class})
+public abstract class SchemaRoot {
 
   @XmlElement(name = "Contact")
   private List<Contact> contact;
@@ -134,7 +134,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -171,7 +171,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -209,7 +209,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -247,7 +247,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -285,7 +285,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -322,7 +322,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -360,7 +360,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -397,7 +397,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -435,7 +435,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -472,7 +472,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -509,7 +509,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -546,7 +546,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -583,7 +583,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -620,7 +620,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -657,7 +657,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -695,7 +695,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -732,7 +732,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -770,7 +770,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -807,7 +807,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -845,7 +845,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -883,7 +883,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -920,7 +920,7 @@ public class SchemaRoot {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
