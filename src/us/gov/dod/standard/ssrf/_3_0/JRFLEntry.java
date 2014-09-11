@@ -23,6 +23,11 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.domains.TInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCPC;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAU;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,8 +39,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.datatype.*;
-import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
  * <p>

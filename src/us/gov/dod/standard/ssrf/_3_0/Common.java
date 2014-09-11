@@ -23,52 +23,19 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.math.BigInteger;
+import us.gov.dod.standard.ssrf._3_0.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.datatype.*;
-import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
+ * This is an abstract element used as a basis for all datasets.
  * <p>
  * Java class for Common complex type.
- * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="Common"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Initial"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}LastChange" minOccurs="0"/>
- * &lt;element name="State" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"
- * minOccurs="0"/> &lt;element name="SecurityClass"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SecurityClass" minOccurs="0"/>
- * &lt;element name="CaseNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}CaseNum"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="ExtReferenceRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ExtReferenceRef"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Remarks"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Remarks" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/sequence> &lt;attribute name="cls" use="required"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ListCCL" /> &lt;attribute
- * name="releasability" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Releasability"
- * /> &lt;attribute name="remarks"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" /> &lt;attribute
- * name="extReferences" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- * &lt;attribute name="legacyReleasability"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}MEMO" /> &lt;attribute
- * name="quality" type="{urn:us:gov:dod:standard:ssrf:3.0.0}S255" />
- * &lt;attribute name="recommendedValue"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}MEMO" /> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
- * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
@@ -108,51 +75,141 @@ import us.gov.dod.standard.ssrf._3_0.enumerate.*;
   Contact.class,
   TOA.class
 })
-public abstract class Common {
+public abstract class Common extends AStandardMetadataAttributes<TString> {
 
+  /**
+   * Serial: The attribute serial is composed of four parts separated by colons
+   * (":"). The maximum total length is 29 characters (5+1+4+1+2+1+15).
+   * <p>
+   * Part 1 is the Country and is always REQUIRED. It contains one to five
+   * alphabetic uppercase characters representing either the ITU country code or
+   * the NATO Command code identifying the originator or organisation
+   * responsible for maintaining the dataset, as listed in Code List CCY.
+   * <p>
+   * Part 2 is the orgCode and is OPTIONAL. It may contain one to four
+   * alphanumeric characters (no spaces nor special characters) representing a
+   * code for an Organisation within the country or command. It will normally
+   * indicate the organisation responsible for maintaining the dataset. Domain
+   * naming is left at the discretion of each country, but should be managed by
+   * a central authority in the country to allow deconfliction and uniqueness.
+   * It should enable the location in the data repository where this dataset
+   * information is stored.
+   * <p>
+   * Part 3 is the Dataset Type and MUST contain a two-character code from the
+   * table in the Introduction section identifying the type of dataset (LO for a
+   * Location, etc).
+   * <p>
+   * Part 4 is a Serial Identifier and is always REQUIRED. It contains one to
+   * fifteen alphanumeric characters (including spaces and special characters),
+   * whose meaning is left at the discretion of each domain manager. [XSD ERR
+   * REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  protected TString serial;
+  /**
+   * EntryDateTime: Enter the date the dataset was initially entered into the
+   * data repository (e.g. FRRS for USA, SMIR for NATO).
+   */
   @XmlElement(name = "EntryDateTime", required = true)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar entryDateTime;
+  protected TCalendar entryDateTime;
+  /**
+   * EntryBy: Enter the serial of the Role which is creating the current
+   * dataset.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "JA". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "EntryBy", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString entryBy;
+  protected TString entryBy;
+  /**
+   * Owner: Enter the serial of the Role which is responsible for the accuracy
+   * of the data content.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "JA". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "Owner", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString owner;
+  protected TString owner;
+  /**
+   * LastChangeDateTime: Enter the date/time the dataset was last modified.
+   */
   @XmlElement(name = "LastChangeDateTime", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar lastChangeDateTime;
+  protected TCalendar lastChangeDateTime;
+  /**
+   * LastChangeBy: Enter the serial of the Role which last modified the current
+   * dataset.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "JA".
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "LastChangeBy", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString lastChangeBy;
+  protected TString lastChangeBy;
+  /**
+   * State: Enter the state of the dataset. Recommend values from Code List CSU:
+   * <p>
+   * Active Inactive
+   */
   @XmlElement(name = "State", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
-  private TString state;
+  protected TString state;
+  /**
+   * Data element SecurityClass ...
+   */
   @XmlElement(name = "SecurityClass")
   protected SecurityClass securityClass;
+  /**
+   * Data element CaseNum allows to store a case number associated to the
+   * dataset.
+   */
   @XmlElement(name = "CaseNum")
-  private List<CaseNum> caseNum;
+  protected List<CaseNum> caseNum;
+  /**
+   * This element refers to an external reference defined in a dataset
+   * ExternalReference.
+   * <p>
+   * ExternalReference: This element inherits attributes and sub-elements from
+   * element Common.
+   * <p>
+   * Data element ExternalReference contains bibliographic or any other
+   * references applicable to the dataset except those placed in Derivative
+   * Classification Authority (Data element ClsDerived). It may be used to
+   * indicate the file name for an external reference (e.g. a line diagram as a
+   * graphic file). It may also contain the Uniform Resource Identifier to a
+   * network resource containing the external reference. The references may be
+   * message date-time- groups (DTG), E-mails, documents, or letter references.
+   * <p>
+   * This element SHOULD be used to store identifiers when importing datasets
+   * coming from Multilateral Interoperability Programme (MIP) / Joint C3
+   * Information Exchange Data Model (JC3IEDM) applications, using type="MIPI".
+   */
   @XmlElement(name = "ExtReferenceRef", nillable = true)
-  private List<ExtReferenceRef> extReferenceRef;
+  protected List<ExtReferenceRef> extReferenceRef;
+  /**
+   * Enter any additional data pertinent to the level where this element appears
+   * that cannot be adequately represented in an established data element. In
+   * certain situations, technical data must be included in free text in order
+   * to clearly explain a technical or operational consideration; in these
+   * instances, the data must also be entered in the data element(s)
+   * specifically established for it.
+   */
   @XmlElement(name = "Remarks", nillable = true)
-  private List<Remarks> remarks;
-  @XmlAttribute(name = "cls", required = true)
-  private ListCCL cls;
-  @XmlAttribute(name = "releasability")
-  private List<ListCCY> releasability;
-  @XmlAttribute(name = "remarks")
-  private List<BigInteger> attributeRemarks;
-  @XmlAttribute(name = "extReferences")
-  private List<BigInteger> extReferences;
-  @XmlAttribute(name = "legacyReleasability")
-  protected String legacyReleasability;
-  @XmlAttribute(name = "quality")
-  protected String quality;
-  @XmlAttribute(name = "recommendedValue")
-  protected String recommendedValue;
+  protected List<Remarks> remarks;
+
+  public Common() {
+    super(null);
+  }
 
   /**
    * Gets the value of the serial property.
@@ -468,215 +525,6 @@ public abstract class Common {
     this.remarks = null;
   }
 
-  /**
-   * Gets the value of the cls property.
-   * <p>
-   * @return possible object is {@link ListCCL }
-   * <p>
-   */
-  public ListCCL getCls() {
-    return cls;
-  }
-
-  /**
-   * Sets the value of the cls property.
-   * <p>
-   * @param value allowed object is {@link ListCCL }
-   * <p>
-   */
-  public void setCls(ListCCL value) {
-    this.cls = value;
-  }
-
-  public boolean isSetCls() {
-    return (this.cls != null);
-  }
-
-  /**
-   * Gets the value of the releasability property.
-   * <p>
-   * <p>
-   * This accessor method returns a reference to the live list, not a snapshot.
-   * Therefore any modification you make to the returned list will be present
-   * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
-   * for the releasability property.
-   * <p>
-   * <p>
-   * For example, to add a new item, do as follows:
-   * <pre>
-   *    getReleasability().add(newItem);
-   * </pre>
-   * <p>
-   * <p>
-   * <p>
-   * Objects of the following type(s) are allowed in the list {@link ListCCY }
-   * <p>
-   * <p>
-   * @return
-   */
-  public List<ListCCY> getReleasability() {
-    if (releasability == null) {
-      releasability = new ArrayList<>();
-    }
-    return this.releasability;
-  }
-
-  public boolean isSetReleasability() {
-    return ((this.releasability != null) && (!this.releasability.isEmpty()));
-  }
-
-  public void unsetReleasability() {
-    this.releasability = null;
-  }
-
-  /**
-   * Gets the value of the attributeRemarks property.
-   * <p>
-   * <p>
-   * This accessor method returns a reference to the live list, not a snapshot.
-   * Therefore any modification you make to the returned list will be present
-   * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
-   * for the attributeRemarks property.
-   * <p>
-   * <p>
-   * For example, to add a new item, do as follows:
-   * <pre>
-   *    getAttributeRemarks().add(newItem);
-   * </pre>
-   * <p>
-   * <p>
-   * <p>
-   * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
-   * <p>
-   * <p>
-   * @return
-   */
-  public List<BigInteger> getAttributeRemarks() {
-    if (attributeRemarks == null) {
-      attributeRemarks = new ArrayList<>();
-    }
-    return this.attributeRemarks;
-  }
-
-  public boolean isSetAttributeRemarks() {
-    return ((this.attributeRemarks != null) && (!this.attributeRemarks.isEmpty()));
-  }
-
-  public void unsetAttributeRemarks() {
-    this.attributeRemarks = null;
-  }
-
-  /**
-   * Gets the value of the extReferences property.
-   * <p>
-   * <p>
-   * This accessor method returns a reference to the live list, not a snapshot.
-   * Therefore any modification you make to the returned list will be present
-   * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
-   * for the extReferences property.
-   * <p>
-   * <p>
-   * For example, to add a new item, do as follows:
-   * <pre>
-   *    getExtReferences().add(newItem);
-   * </pre>
-   * <p>
-   * <p>
-   * <p>
-   * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
-   * <p>
-   * <p>
-   * @return
-   */
-  public List<BigInteger> getExtReferences() {
-    if (extReferences == null) {
-      extReferences = new ArrayList<>();
-    }
-    return this.extReferences;
-  }
-
-  public boolean isSetExtReferences() {
-    return ((this.extReferences != null) && (!this.extReferences.isEmpty()));
-  }
-
-  public void unsetExtReferences() {
-    this.extReferences = null;
-  }
-
-  /**
-   * Gets the value of the legacyReleasability property.
-   * <p>
-   * @return possible object is {@link String }
-   * <p>
-   */
-  public String getLegacyReleasability() {
-    return legacyReleasability;
-  }
-
-  /**
-   * Sets the value of the legacyReleasability property.
-   * <p>
-   * @param value allowed object is {@link String }
-   * <p>
-   */
-  public void setLegacyReleasability(String value) {
-    this.legacyReleasability = value;
-  }
-
-  public boolean isSetLegacyReleasability() {
-    return (this.legacyReleasability != null);
-  }
-
-  /**
-   * Gets the value of the quality property.
-   * <p>
-   * @return possible object is {@link String }
-   * <p>
-   */
-  public String getQuality() {
-    return quality;
-  }
-
-  /**
-   * Sets the value of the quality property.
-   * <p>
-   * @param value allowed object is {@link String }
-   * <p>
-   */
-  public void setQuality(String value) {
-    this.quality = value;
-  }
-
-  public boolean isSetQuality() {
-    return (this.quality != null);
-  }
-
-  /**
-   * Gets the value of the recommendedValue property.
-   * <p>
-   * @return possible object is {@link String }
-   * <p>
-   */
-  public String getRecommendedValue() {
-    return recommendedValue;
-  }
-
-  /**
-   * Sets the value of the recommendedValue property.
-   * <p>
-   * @param value allowed object is {@link String }
-   * <p>
-   */
-  public void setRecommendedValue(String value) {
-    this.recommendedValue = value;
-  }
-
-  public boolean isSetRecommendedValue() {
-    return (this.recommendedValue != null);
-  }
-
   public Common withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -756,68 +604,6 @@ public abstract class Common {
     if (values != null) {
       getRemarks().addAll(values);
     }
-    return this;
-  }
-
-  public Common withCls(ListCCL value) {
-    setCls(value);
-    return this;
-  }
-
-  public Common withReleasability(ListCCY... values) {
-    if (values != null) {
-      getReleasability().addAll(Arrays.asList(values));
-    }
-    return this;
-  }
-
-  public Common withReleasability(Collection<ListCCY> values) {
-    if (values != null) {
-      getReleasability().addAll(values);
-    }
-    return this;
-  }
-
-  public Common withAttributeRemarks(BigInteger... values) {
-    if (values != null) {
-      getAttributeRemarks().addAll(Arrays.asList(values));
-    }
-    return this;
-  }
-
-  public Common withAttributeRemarks(Collection<BigInteger> values) {
-    if (values != null) {
-      getAttributeRemarks().addAll(values);
-    }
-    return this;
-  }
-
-  public Common withExtReferences(BigInteger... values) {
-    if (values != null) {
-      getExtReferences().addAll(Arrays.asList(values));
-    }
-    return this;
-  }
-
-  public Common withExtReferences(Collection<BigInteger> values) {
-    if (values != null) {
-      getExtReferences().addAll(values);
-    }
-    return this;
-  }
-
-  public Common withLegacyReleasability(String value) {
-    setLegacyReleasability(value);
-    return this;
-  }
-
-  public Common withQuality(String value) {
-    setQuality(value);
-    return this;
-  }
-
-  public Common withRecommendedValue(String value) {
-    setRecommendedValue(value);
     return this;
   }
 

@@ -23,6 +23,8 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.lists.ListCAO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -30,29 +32,23 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.datatype.*;
-import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 
 /**
- * <p>
  * Java class for Address complex type.
  * <p>
+ * This element contains the address of a Contact, Organisation or Role.
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
  * <p>
  * <
  * pre>
- * &lt;complexType name="Address">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Address"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -68,21 +64,46 @@ import us.gov.dod.standard.ssrf._3_0.enumerate.*;
 })
 public class Address {
 
+  /**
+   * Description: Enter the title for the address; for an Organisation, it can
+   * be the name of the specific Branch or office; for a Contact or a Role, it
+   * can be the job title associated to the address.
+   */
   @XmlElement(name = "Description", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
+  /**
+   * Street: Enter the street address.
+   */
   @XmlElement(name = "Street", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString street;
+  /**
+   * CityArea: Enter the city of the address or an operational area name.
+   */
   @XmlElement(name = "CityArea", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString cityArea;
+  /**
+   * StateCounty: Enter the state or other sub-national political area.
+   */
   @XmlElement(name = "StateCounty", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString stateCounty;
+  /**
+   * PostCode: Enter the zip code or postal code portion of the address.
+   */
   @XmlElement(name = "PostCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString postCode;
+  /**
+   * Country: Enter the country or area code. Use a one to six alphabetic
+   * characters representing either an official country code, a regional body, a
+   * group of countries or a NATO Command.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CAO (extract only).
+   */
   @XmlElement(name = "Country", required = true)
   private TString country;
 

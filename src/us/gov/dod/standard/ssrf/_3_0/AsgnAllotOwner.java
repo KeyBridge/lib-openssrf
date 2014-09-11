@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -30,7 +31,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
  * <p>
@@ -58,75 +58,75 @@ import us.gov.dod.standard.ssrf._3_0.datatype.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AsgnAllotOwner", propOrder = {
-  "description_0020",
-  "ownerType_0020"
+  "description",
+  "ownerType"
 })
 public class AsgnAllotOwner {
 
   @XmlElement(name = "Description ", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS18.class)
-  private TString description_0020;
+  private TString description;
   @XmlElement(name = "OwnerType ", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
-  private TString ownerType_0020;
+  private TString ownerType;
 
   /**
-   * Gets the value of the description_0020 property.
+   * Gets the value of the description property.
    * <p>
    * @return possible object is
    *         {@link JAXBElement }{@code <}{@link TS18 }{@code >}
    * <p>
    */
-  public TString getDescription_0020() {
-    return description_0020;
+  public TString getDescription() {
+    return description;
   }
 
   /**
-   * Sets the value of the description_0020 property.
+   * Sets the value of the description property.
    * <p>
    * @param value allowed object is
    *              {@link JAXBElement }{@code <}{@link TS18 }{@code >}
    * <p>
    */
-  public void setDescription_0020(TString value) {
-    this.description_0020 = value;
+  public void setDescription(TString value) {
+    this.description = value;
   }
 
-  public boolean isSetDescription_0020() {
-    return (this.description_0020 != null);
+  public boolean isSetDescription() {
+    return (this.description != null);
   }
 
   /**
-   * Gets the value of the ownerType_0020 property.
+   * Gets the value of the ownerType property.
    * <p>
    * @return possible object is {@link TS50 }
    * <p>
    */
-  public TString getOwnerType_0020() {
-    return ownerType_0020;
+  public TString getOwnerType() {
+    return ownerType;
   }
 
   /**
-   * Sets the value of the ownerType_0020 property.
+   * Sets the value of the ownerType property.
    * <p>
    * @param value allowed object is {@link TS50 }
    * <p>
    */
-  public void setOwnerType_0020(TString value) {
-    this.ownerType_0020 = value;
+  public void setOwnerType(TString value) {
+    this.ownerType = value;
   }
 
-  public boolean isSetOwnerType_0020() {
-    return (this.ownerType_0020 != null);
+  public boolean isSetOwnerType() {
+    return (this.ownerType != null);
   }
 
-  public AsgnAllotOwner withDescription_0020(String value) {
-    setDescription_0020(new TString(value));
+  public AsgnAllotOwner withDescription(String value) {
+    setDescription(new TString(value));
     return this;
   }
 
-  public AsgnAllotOwner withOwnerType_0020(String value) {
-    setOwnerType_0020(new TString(value));
+  public AsgnAllotOwner withOwnerType(String value) {
+    setOwnerType(new TString(value));
     return this;
   }
 

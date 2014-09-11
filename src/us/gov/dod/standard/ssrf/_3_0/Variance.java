@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
+import us.gov.dod.standard.ssrf._3_0.domains.TString;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -33,33 +34,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.datatype.*;
 
 /**
- * <p>
  * Java class for Variance complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="Variance">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"/>
- *         &lt;element name="AllocatedService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="Priority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"/>
- *         &lt;element name="Administration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Administration" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * This element indicates if the local allocation deviates from an upper level
+ * allocation (e.g. a national allocation not aligned with the ITU RR).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Variance", propOrder = {
@@ -70,12 +50,29 @@ import us.gov.dod.standard.ssrf._3_0.datatype.*;
 })
 public class Variance {
 
+  /**
+   * Type: Enter the type of variance. Recommend values from Code List CAV:
+   * <p>
+   * Additional Different
+   */
   @XmlElement(name = "Type", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString type;
+  /**
+   * AllocatedService: Enter a radiocommunication service recognized by an
+   * administration that is allocated to this frequency band (e.g., "Fixed
+   * Service"). Recommend values from Code List CSN.
+   */
   @XmlElement(name = "AllocatedService", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString allocatedService;
+  /**
+   * Priority: Indicate if this service is a primary or secondary use of this
+   * band. ("Permitted" SHOULD only be used if the priority is unknown.)
+   * Recommend values from Code List CPS:
+   * <p>
+   * Primary Secondary Permitted Other
+   */
   @XmlElement(name = "Priority", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString priority;
