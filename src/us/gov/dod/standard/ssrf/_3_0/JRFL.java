@@ -23,15 +23,12 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.jrfl.JRFLEntry;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.jrfl.JRFLEntry;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
@@ -39,30 +36,23 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for JRFL complex type.
  * <p>
+ * Joint Restricted Frequency List elements are defined in Volume III, section
+ * 4. [Ref CJCSM 3320.01] The Joint Restricted Frequency List (JRFL) is a list
+ * of frequencies that must receive various degrees of protection. The JRFL
+ * contains frequencies that fit into one of three categories: Taboo, Protected
+ * or Guarded (see Annex B).
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * The JRFL must be compiled in co-ordination between J6 (Communications), J3
+ * (Operations) and J2 (Intelligence) communities. This coordination is
+ * necessary because frequencies used by J2 (for intelligence collection or
+ * other purposes), by J3 (for EW/INFO OPS purposes), and by J6 (for command and
+ * control), must be deconflicted.
  * <p>
- * <
- * pre>
- * &lt;complexType name="JRFL">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="EffectiveDateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReviewDT"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame" minOccurs="0"/>
- *         &lt;element name="JRFLEntry" type="{urn:us:gov:dod:standard:ssrf:3.0.0}JRFLEntry" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * @see <a href="www.dtic.mil/cjcs_directives/cdata/unlimit/m332001.pdf">JOINT
+ * ELECTROMAGNETIC SPECTRUM MANAGEMENT OPERATIONS IN THE ELECTROMAGNETIC
+ * OPERATIONAL ENVIRONMENT</a>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "JRFL", propOrder = {
@@ -79,7 +69,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
   "duration",
   "jrflEntry"
 })
-public class JRFL extends Common {
+public class JRFL extends Common<JRFL> {
 
   @XmlElement(name = "EffectiveDateTime", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
@@ -121,7 +111,7 @@ public class JRFL extends Common {
    * Gets the value of the effectiveDateTime property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TCalendar getEffectiveDateTime() {
@@ -132,7 +122,7 @@ public class JRFL extends Common {
    * Sets the value of the effectiveDateTime property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setEffectiveDateTime(TCalendar value) {
@@ -147,7 +137,7 @@ public class JRFL extends Common {
    * Gets the value of the expirationDateTime property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TCalendar getExpirationDateTime() {
@@ -158,7 +148,7 @@ public class JRFL extends Common {
    * Sets the value of the expirationDateTime property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setExpirationDateTime(TCalendar value) {
@@ -173,7 +163,7 @@ public class JRFL extends Common {
    * Gets the value of the reviewDate property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TCalendar getReviewDate() {
@@ -184,7 +174,7 @@ public class JRFL extends Common {
    * Sets the value of the reviewDate property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setReviewDate(TCalendar value) {
@@ -199,7 +189,7 @@ public class JRFL extends Common {
    * Gets the value of the seconds property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getSeconds() {
@@ -210,7 +200,7 @@ public class JRFL extends Common {
    * Sets the value of the seconds property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setSeconds(TString value) {
@@ -225,7 +215,7 @@ public class JRFL extends Common {
    * Gets the value of the minutes property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getMinutes() {
@@ -236,7 +226,7 @@ public class JRFL extends Common {
    * Sets the value of the minutes property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setMinutes(TString value) {
@@ -251,7 +241,7 @@ public class JRFL extends Common {
    * Gets the value of the hours property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getHours() {
@@ -262,7 +252,7 @@ public class JRFL extends Common {
    * Sets the value of the hours property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setHours(TString value) {
@@ -277,7 +267,7 @@ public class JRFL extends Common {
    * Gets the value of the daysOfMonth property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getDaysOfMonth() {
@@ -288,7 +278,7 @@ public class JRFL extends Common {
    * Sets the value of the daysOfMonth property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setDaysOfMonth(TString value) {
@@ -303,7 +293,7 @@ public class JRFL extends Common {
    * Gets the value of the months property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getMonths() {
@@ -314,7 +304,7 @@ public class JRFL extends Common {
    * Sets the value of the months property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setMonths(TString value) {
@@ -329,7 +319,7 @@ public class JRFL extends Common {
    * Gets the value of the daysOfWeek property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getDaysOfWeek() {
@@ -340,7 +330,7 @@ public class JRFL extends Common {
    * Sets the value of the daysOfWeek property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setDaysOfWeek(TString value) {
@@ -355,7 +345,7 @@ public class JRFL extends Common {
    * Gets the value of the years property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getYears() {
@@ -366,7 +356,7 @@ public class JRFL extends Common {
    * Sets the value of the years property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setYears(TString value) {
@@ -381,7 +371,7 @@ public class JRFL extends Common {
    * Gets the value of the duration property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TInteger getDuration() {
@@ -392,7 +382,7 @@ public class JRFL extends Common {
    * Sets the value of the duration property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setDuration(TInteger value) {
@@ -420,7 +410,7 @@ public class JRFL extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

@@ -23,20 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.system.Curve;
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
@@ -96,8 +93,8 @@ import us.gov.dod.standard.ssrf._3_0.system.TxMode;
   "curve",
   "txMode"
 })
-public class Transmitter extends Common {
-
+public class Transmitter extends Common<Transmitter> {
+  
   @XmlElement(name = "Generic", required = true)
   private TString generic;
   @XmlElement(name = "DuplexSep")
@@ -135,7 +132,7 @@ public class Transmitter extends Common {
   /**
    * Gets the value of the generic property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getGeneric() {
     return generic;
@@ -144,12 +141,12 @@ public class Transmitter extends Common {
   /**
    * Sets the value of the generic property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGeneric(TString value) {
     this.generic = value;
   }
-
+  
   public boolean isSetGeneric() {
     return (this.generic != null);
   }
@@ -157,7 +154,7 @@ public class Transmitter extends Common {
   /**
    * Gets the value of the duplexSep property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getDuplexSep() {
     return duplexSep;
@@ -166,12 +163,12 @@ public class Transmitter extends Common {
   /**
    * Sets the value of the duplexSep property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDuplexSep(TDecimal value) {
     this.duplexSep = value;
   }
-
+  
   public boolean isSetDuplexSep() {
     return (this.duplexSep != null);
   }
@@ -180,7 +177,7 @@ public class Transmitter extends Common {
    * Gets the value of the duplexSepType property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getDuplexSepType() {
@@ -191,13 +188,13 @@ public class Transmitter extends Common {
    * Sets the value of the duplexSepType property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
   }
-
+  
   public boolean isSetDuplexSepType() {
     return (this.duplexSepType != null);
   }
@@ -206,7 +203,7 @@ public class Transmitter extends Common {
    * Gets the value of the outputDeviceType property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getOutputDeviceType() {
@@ -217,13 +214,13 @@ public class Transmitter extends Common {
    * Sets the value of the outputDeviceType property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setOutputDeviceType(TString value) {
     this.outputDeviceType = value;
   }
-
+  
   public boolean isSetOutputDeviceType() {
     return (this.outputDeviceType != null);
   }
@@ -232,7 +229,7 @@ public class Transmitter extends Common {
    * Gets the value of the outputDevice property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getOutputDevice() {
@@ -243,13 +240,13 @@ public class Transmitter extends Common {
    * Sets the value of the outputDevice property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setOutputDevice(TString value) {
     this.outputDevice = value;
   }
-
+  
   public boolean isSetOutputDevice() {
     return (this.outputDevice != null);
   }
@@ -258,7 +255,7 @@ public class Transmitter extends Common {
    * Gets the value of the filter property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getFilter() {
@@ -269,13 +266,13 @@ public class Transmitter extends Common {
    * Sets the value of the filter property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setFilter(TString value) {
     this.filter = value;
   }
-
+  
   public boolean isSetFilter() {
     return (this.filter != null);
   }
@@ -284,7 +281,7 @@ public class Transmitter extends Common {
    * Gets the value of the fccAcceptanceNum property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getFCCAcceptanceNum() {
@@ -295,13 +292,13 @@ public class Transmitter extends Common {
    * Sets the value of the fccAcceptanceNum property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
   }
-
+  
   public boolean isSetFCCAcceptanceNum() {
     return (this.fccAcceptanceNum != null);
   }
@@ -310,7 +307,7 @@ public class Transmitter extends Common {
    * Gets the value of the tspr property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getTSPR() {
@@ -321,13 +318,13 @@ public class Transmitter extends Common {
    * Sets the value of the tspr property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setTSPR(TString value) {
     this.tspr = value;
   }
-
+  
   public boolean isSetTSPR() {
     return (this.tspr != null);
   }
@@ -350,7 +347,7 @@ public class Transmitter extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -361,11 +358,11 @@ public class Transmitter extends Common {
     }
     return this.pocInformation;
   }
-
+  
   public boolean isSetPOCInformation() {
     return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
   }
-
+  
   public void unsetPOCInformation() {
     this.pocInformation = null;
   }
@@ -388,7 +385,7 @@ public class Transmitter extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -399,11 +396,11 @@ public class Transmitter extends Common {
     }
     return this.nomenclature;
   }
-
+  
   public boolean isSetNomenclature() {
     return ((this.nomenclature != null) && (!this.nomenclature.isEmpty()));
   }
-
+  
   public void unsetNomenclature() {
     this.nomenclature = null;
   }
@@ -426,7 +423,7 @@ public class Transmitter extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -437,11 +434,11 @@ public class Transmitter extends Common {
     }
     return this.deployment;
   }
-
+  
   public boolean isSetDeployment() {
     return ((this.deployment != null) && (!this.deployment.isEmpty()));
   }
-
+  
   public void unsetDeployment() {
     this.deployment = null;
   }
@@ -463,7 +460,7 @@ public class Transmitter extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -474,11 +471,11 @@ public class Transmitter extends Common {
     }
     return this.curve;
   }
-
+  
   public boolean isSetCurve() {
     return ((this.curve != null) && (!this.curve.isEmpty()));
   }
-
+  
   public void unsetCurve() {
     this.curve = null;
   }
@@ -500,7 +497,7 @@ public class Transmitter extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -511,123 +508,123 @@ public class Transmitter extends Common {
     }
     return this.txMode;
   }
-
+  
   public boolean isSetTxMode() {
     return ((this.txMode != null) && (!this.txMode.isEmpty()));
   }
-
+  
   public void unsetTxMode() {
     this.txMode = null;
   }
-
+  
   public Transmitter withGeneric(ListCBO value) {
     setGeneric(new TString(value.value()));
     return this;
   }
-
+  
   public Transmitter withDuplexSep(Double value) {
     setDuplexSep(new TDecimal(value));
     return this;
   }
-
+  
   public Transmitter withDuplexSepType(String value) {
     setDuplexSepType(new TString(value));
     return this;
   }
-
+  
   public Transmitter withOutputDeviceType(String value) {
     setOutputDeviceType(new TString(value));
     return this;
   }
-
+  
   public Transmitter withOutputDevice(String value) {
     setOutputDevice(new TString(value));
     return this;
   }
-
+  
   public Transmitter withFilter(String value) {
     setFilter(new TString(value));
     return this;
   }
-
+  
   public Transmitter withFCCAcceptanceNum(String value) {
     setFCCAcceptanceNum(new TString(value));
     return this;
   }
-
+  
   public Transmitter withTSPR(String value) {
     setTSPR(new TString(value));
     return this;
   }
-
+  
   public Transmitter withPOCInformation(POCInformation... values) {
     if (values != null) {
       getPOCInformation().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public Transmitter withPOCInformation(Collection<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
     return this;
   }
-
+  
   public Transmitter withNomenclature(Nomenclature... values) {
     if (values != null) {
       getNomenclature().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public Transmitter withNomenclature(Collection<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
     return this;
   }
-
+  
   public Transmitter withDeployment(Deployment... values) {
     if (values != null) {
       getDeployment().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public Transmitter withDeployment(Collection<Deployment> values) {
     if (values != null) {
       getDeployment().addAll(values);
     }
     return this;
   }
-
+  
   public Transmitter withCurve(Curve... values) {
     if (values != null) {
       getCurve().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public Transmitter withCurve(Collection<Curve> values) {
     if (values != null) {
       getCurve().addAll(values);
     }
     return this;
   }
-
+  
   public Transmitter withTxMode(TxMode... values) {
     if (values != null) {
       getTxMode().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public Transmitter withTxMode(Collection<TxMode> values) {
     if (values != null) {
       getTxMode().addAll(values);
     }
     return this;
   }
-
+  
 }

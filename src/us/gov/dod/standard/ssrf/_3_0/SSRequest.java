@@ -23,32 +23,25 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
-import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
-import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
-import us.gov.dod.standard.ssrf._3_0.assignment.StatusLog;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.assignment.StatusLog;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
+import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
+import us.gov.dod.standard.ssrf._3_0.metadata.HostNation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
-import us.gov.dod.standard.ssrf._3_0.metadata.HostNation;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.DiagramEndpoint;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.DiagramLine;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.RelatedSupportability;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.Stage;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.Time;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.Trunking;
+import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.*;
+import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
+import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
  * <p>
@@ -166,7 +159,7 @@ import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.Trunking;
   "statusLog",
   "trunking"
 })
-public class SSRequest extends Common {
+public class SSRequest extends Common<SSRequest> {
 
   @XmlElement(name = "Title", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)

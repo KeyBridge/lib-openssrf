@@ -23,18 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.common.CaseNum;
-import us.gov.dod.standard.ssrf._3_0.common.SecurityClass;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.common.CaseNum;
+import us.gov.dod.standard.ssrf._3_0.common.SecurityClass;
 import us.gov.dod.standard.ssrf._3_0.metadata.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.Remarks;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * This is an abstract element used as a basis for all core datasets.
@@ -42,6 +41,9 @@ import us.gov.dod.standard.ssrf._3_0.metadata.Remarks;
  * Common includes all SSRF Standard Metadata Attributes plus a "Initial" and
  * "LastChange" group of parameters and several other external reference and
  * remark configurations.
+ * <p>
+ * @author Jesse Caulfield <jesse@caulfield.org> 08/15/2014
+ * @param <T> The type of class extending this Common abstract class
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
@@ -81,7 +83,8 @@ import us.gov.dod.standard.ssrf._3_0.metadata.Remarks;
   Contact.class,
   TOA.class
 })
-public abstract class Common extends AStandardMetadataAttributes {
+@SuppressWarnings("unchecked")
+public abstract class Common<T> extends AStandardMetadataAttributes {
 
   /**
    * Serial: The attribute serial is composed of four parts separated by colons
@@ -110,6 +113,53 @@ public abstract class Common extends AStandardMetadataAttributes {
    * whose meaning is left at the discretion of each domain manager. [XSD ERR
    * REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   * <p>
+   * Examples of serial values: <br/>
+   * USA:AR:AS:200600001 An assignment from USA Army<br/>
+   * BEL:AF:TR:123 A Belgian Air Force equipment<br/>
+   * <p>
+   * Usage: Attribute serial is part of data element Common. This data item is a
+   * globally unique dataset identifier for the dataset inherited from Common
+   * (e.g. Location, Asgn, SSRequest, etc).
+   * <p>
+   * As SSRF is meant to exchange information (datasets) between different data
+   * repositories, a dataset identifier may only apply to the data in the
+   * current message and in the data repository from which the data is
+   * extracted. For example, an assignment request may refer to a Location
+   * record which is known in the local (requester) data repository, therefore
+   * the request contains a valid Location identifier with respect to this data
+   * repository, however not being known on the addressee side. This message
+   * would be valid at the sending side but invalid at the receive side, since
+   * the record identified by this serial would not exist.
+   * <p>
+   * The following codes MUST be used as the third part of the Serial of each
+   * dataset:
+   * <table border="0>>
+   * <tr><th>Code</th><th>Type of dataset</th></tr>
+   * <tr><td>AD</td><td>Administrative</td></tr>
+   * <tr><td>AL</td><td>Allotment</td></tr>
+   * <tr><td>AN</td><td>Antenna</td></tr>
+   * <tr><td>AS</td><td>Assignment</td></tr>
+   * <tr><td>CN</td><td>Contact</td></tr>
+   * <tr><td>CP</td><td>Channel Plan</td></tr>
+   * <tr><td>EX</td><td>External Reference</td></tr>
+   * <tr><td>FD</td><td>Force Element Deployment</td></tr>
+   * <tr><td>FE</td><td>Force Element</td></tr>
+   * <tr><td>HD</td><td>Spectrum Supportability Reply (Host Nation
+   * Declaration)</td></tr>
+   * <tr><td>IF</td><td>Interference Report</td></tr>
+   * <tr><td>JA</td><td>Role</td></tr>
+   * <tr><td>JR</td><td>JRFL</td></tr>
+   * <tr><td>LO</td><td>Location</td></tr>
+   * <tr><td>NT</td><td>Note</td></tr>
+   * <tr><td>OR</td><td>Organisation</td></tr>
+   * <tr><td>RX</td><td>Receiver</td></tr>
+   * <tr><td>SA</td><td>Satellite</td></tr>
+   * <tr><td>SR</td><td>Spectrum Supportability Request</td></tr>
+   * <tr><td>TA</td><td>Table of Allocations</td></tr>
+   * <tr><td>TR</td><td>RF System</td></tr>
+   * <tr><td>TX</td><td>Transmitter</td></tr>
+   * </table>
    */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
@@ -216,7 +266,7 @@ public abstract class Common extends AStandardMetadataAttributes {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -225,7 +275,7 @@ public abstract class Common extends AStandardMetadataAttributes {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -238,7 +288,7 @@ public abstract class Common extends AStandardMetadataAttributes {
   /**
    * Gets the value of the entryDateTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEntryDateTime() {
     return entryDateTime;
@@ -247,7 +297,7 @@ public abstract class Common extends AStandardMetadataAttributes {
   /**
    * Sets the value of the entryDateTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEntryDateTime(TCalendar value) {
     this.entryDateTime = value;
@@ -261,7 +311,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Gets the value of the entryBy property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getEntryBy() {
@@ -272,7 +322,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Sets the value of the entryBy property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setEntryBy(TString value) {
@@ -287,7 +337,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Gets the value of the owner property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getOwner() {
@@ -298,7 +348,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Sets the value of the owner property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setOwner(TString value) {
@@ -313,7 +363,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Gets the value of the lastChangeDateTime property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TCalendar getLastChangeDateTime() {
@@ -324,7 +374,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Sets the value of the lastChangeDateTime property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setLastChangeDateTime(TCalendar value) {
@@ -339,7 +389,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Gets the value of the lastChangeBy property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getLastChangeBy() {
@@ -350,7 +400,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Sets the value of the lastChangeBy property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setLastChangeBy(TString value) {
@@ -365,7 +415,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Gets the value of the state property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getState() {
@@ -376,7 +426,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * Sets the value of the state property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setState(TString value) {
@@ -390,7 +440,7 @@ public abstract class Common extends AStandardMetadataAttributes {
   /**
    * Gets the value of the securityClass property.
    * <p>
-   * @return 
+   * @return
    */
   public SecurityClass getSecurityClass() {
     return securityClass;
@@ -399,7 +449,7 @@ public abstract class Common extends AStandardMetadataAttributes {
   /**
    * Sets the value of the securityClass property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSecurityClass(SecurityClass value) {
     this.securityClass = value;
@@ -426,7 +476,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -464,7 +514,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -501,7 +551,7 @@ public abstract class Common extends AStandardMetadataAttributes {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -521,86 +571,85 @@ public abstract class Common extends AStandardMetadataAttributes {
     this.remarks = null;
   }
 
-  public Common withSerial(String value) {
+  public T withSerial(String value) {
     setSerial(new TString(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withEntryDateTime(Calendar value) {
+  public T withEntryDateTime(Calendar value) {
     setEntryDateTime(new TCalendar(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withEntryBy(String value) {
+  public T withEntryBy(String value) {
     setEntryBy(new TString(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withOwner(String value) {
+  public T withOwner(String value) {
     setOwner(new TString(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withLastChangeDateTime(Calendar value) {
+  public T withLastChangeDateTime(Calendar value) {
     setLastChangeDateTime(new TCalendar(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withLastChangeBy(String value) {
+  public T withLastChangeBy(String value) {
     setLastChangeBy(new TString(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withState(String value) {
+  public T withState(String value) {
     setState(new TString(value));
-    return this;
+    return (T) this;
   }
 
-  public Common withSecurityClass(SecurityClass value) {
+  public T withSecurityClass(SecurityClass value) {
     setSecurityClass(value);
-    return this;
+    return (T) this;
   }
 
-  public Common withCaseNum(CaseNum... values) {
+  public T withCaseNum(CaseNum... values) {
     if (values != null) {
       getCaseNum().addAll(Arrays.asList(values));
     }
-    return this;
+    return (T) this;
   }
 
-  public Common withCaseNum(Collection<CaseNum> values) {
+  public T withCaseNum(Collection<CaseNum> values) {
     if (values != null) {
       getCaseNum().addAll(values);
     }
-    return this;
+    return (T) this;
   }
 
-  public Common withExtReferenceRef(ExtReferenceRef... values) {
+  public T withExtReferenceRef(ExtReferenceRef... values) {
     if (values != null) {
       getExtReferenceRef().addAll(Arrays.asList(values));
     }
-    return this;
+    return (T) this;
   }
 
-  public Common withExtReferenceRef(Collection<ExtReferenceRef> values) {
+  public T withExtReferenceRef(Collection<ExtReferenceRef> values) {
     if (values != null) {
       getExtReferenceRef().addAll(values);
     }
-    return this;
+    return (T) this;
   }
 
-  public Common withRemarks(Remarks... values) {
+  public T withRemarks(Remarks... values) {
     if (values != null) {
       getRemarks().addAll(Arrays.asList(values));
     }
-    return this;
+    return (T) this;
   }
 
-  public Common withRemarks(Collection<Remarks> values) {
+  public T withRemarks(Collection<Remarks> values) {
     if (values != null) {
       getRemarks().addAll(values);
     }
-    return this;
+    return (T) this;
   }
-
 }

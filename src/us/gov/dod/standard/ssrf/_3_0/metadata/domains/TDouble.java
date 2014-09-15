@@ -26,7 +26,8 @@ package us.gov.dod.standard.ssrf._3_0.metadata.domains;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import javax.xml.bind.annotation.XmlValue;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * A Numeric Double instance with SSRF Standard Metadata Attributes. This
@@ -35,13 +36,45 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TDouble", propOrder = {
-  "value"
-})
-public class TDouble extends AStandardMetadataType<Double> {
+@XmlType(name = "TDouble")
+public class TDouble extends AStandardMetadataAttributes {
 
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected Double value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public TDouble(Double value) {
-    super(value);
+    this.value = value;
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public Double getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(Double value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
   }
 
 }

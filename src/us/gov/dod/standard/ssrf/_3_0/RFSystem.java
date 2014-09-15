@@ -23,22 +23,17 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
-import us.gov.dod.standard.ssrf._3_0.system.Deployment;
-import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
@@ -46,6 +41,7 @@ import us.gov.dod.standard.ssrf._3_0.system.Deployment;
 import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
 import us.gov.dod.standard.ssrf._3_0.system.RelatedSystem;
 import us.gov.dod.standard.ssrf._3_0.system.StockNum;
+import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
  * <p>
@@ -94,7 +90,7 @@ import us.gov.dod.standard.ssrf._3_0.system.StockNum;
   "relatedSystem",
   "stockNum"
 })
-public class RFSystem extends Common {
+public class RFSystem extends Common<RFSystem> {
 
   @XmlElement(name = "FieldedStatus", required = false)
   private TString fieldedStatus;

@@ -27,16 +27,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
-import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.forceelement.AtWaypoint;
+import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
@@ -86,7 +84,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
   "project",
   "atWaypoint"
 })
-public class FEDeployment extends Common {
+public class FEDeployment extends Common<FEDeployment> {
 
   @XmlElement(name = "FERef", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)

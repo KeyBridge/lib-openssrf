@@ -28,60 +28,9 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCSN.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;simpleType name="ListCSN"> &lt;restriction
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S100"> &lt;enumeration
- * value="Aeronautical Fixed Service"/> &lt;enumeration value="Aeronautical
- * Mobile (Off Route) Service"/> &lt;enumeration value="Aeronautical Mobile
- * (Route) Service"/> &lt;enumeration value="Aeronautical Mobile Service"/>
- * &lt;enumeration value="Aeronautical Mobile-Satellite (OR) Service"/>
- * &lt;enumeration value="Aeronautical Mobile-Satellite (R) Service"/>
- * &lt;enumeration value="Aeronautical Mobile-Satellite Service"/>
- * &lt;enumeration value="Aeronautical Radionavigation Service"/>
- * &lt;enumeration value="Aeronautical Radionavigation-Satellite Service"/>
- * &lt;enumeration value="Amateur Service"/> &lt;enumeration
- * value="Amateur-Satellite Service"/> &lt;enumeration value="Broadcasting
- * Service"/> &lt;enumeration value="Broadcasting-Satellite Service"/>
- * &lt;enumeration value="Earth Exploration-Satellite (active)"/>
- * &lt;enumeration value="Earth Exploration-Satellite (passive)"/>
- * &lt;enumeration value="Earth Exploration-Satellite Service"/> &lt;enumeration
- * value="Fixed Service"/> &lt;enumeration value="Fixed-Satellite Service"/>
- * &lt;enumeration value="Inter-Satellite Service"/> &lt;enumeration value="Land
- * Mobile Service"/> &lt;enumeration value="Land Mobile-Satellite Service"/>
- * &lt;enumeration value="Maritime Mobile Service"/> &lt;enumeration
- * value="Maritime Mobile-Satellite Service"/> &lt;enumeration value="Maritime
- * Radionavigation Service"/> &lt;enumeration value="Maritime
- * Radionavigation-Satellite Service"/> &lt;enumeration value="Meteorological
- * Aids Service"/> &lt;enumeration value="Meteorological-Satellite Service"/>
- * &lt;enumeration value="Mobile Service"/> &lt;enumeration
- * value="Mobile-Satellite Service"/> &lt;enumeration value="Radio Astronomy
- * Service"/> &lt;enumeration value="Radiodetermination Service"/>
- * &lt;enumeration value="Radiodetermination-Satellite Service"/>
- * &lt;enumeration value="Radiolocation Service"/> &lt;enumeration
- * value="Radiolocation-Satellite Service"/> &lt;enumeration
- * value="Radionavigation Service"/> &lt;enumeration
- * value="Radionavigation-Satellite Service"/> &lt;enumeration value="Space
- * Operation Service"/> &lt;enumeration value="Space Research (active)"/>
- * &lt;enumeration value="Space Research (passive)"/> &lt;enumeration
- * value="Space Research Service"/> &lt;enumeration value="Space Telecommand"/>
- * &lt;enumeration value="Space Telecommand (TT&amp;C)"/> &lt;enumeration
- * value="Space Telemetering"/> &lt;enumeration value="Space Telemetering
- * (TT&amp;C)"/> &lt;enumeration value="Space Tracking"/> &lt;enumeration
- * value="Space Tracking (TT&amp;C)"/> &lt;enumeration value="Special Service"/>
- * &lt;enumeration value="Specialised Mobile Radio Service"/> &lt;enumeration
- * value="Standard Frequency and Time Signal Service"/> &lt;enumeration
- * value="Standard Frequency and Time Signal-Satellite Service"/>
- * &lt;enumeration value="Other"/> &lt;/restriction> &lt;/simpleType>
- * </pre>
- * <p>
+ * Used in elements Allocation, Usage, Variance
  */
 @XmlType(name = "ListCSN")
 @XmlEnum

@@ -24,10 +24,13 @@
 package us.gov.dod.standard.ssrf._3_0.metadata.domains;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import javax.xml.bind.annotation.XmlValue;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * A Calendar instance with SSRF Standard Metadata Attributes. This corresponds
@@ -36,13 +39,61 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TCalendar", propOrder = {
-  "value"
-})
-public class TCalendar extends AStandardMetadataType<Calendar> {
+@XmlType(name = "TCalendar")
+public class TCalendar extends AStandardMetadataAttributes {
+
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected Calendar value;
 
   public TCalendar(Calendar value) {
-    super(value);
+    this.value = value;
+  }
+
+  public TCalendar(Date value) {
+    if (value != null) {
+      this.value = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      this.value.setTime(value);
+    }
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public Calendar getValue() {
+    return (value != null ? (Calendar) value.clone() : null);
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(Calendar value) {
+    this.value = (value != null ? (Calendar) value.clone() : null);
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(Date value) {
+    if (value != null) {
+      this.value = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      this.value.setTime(value);
+    } else {
+      this.value = null;
+    }
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
   }
 
 }

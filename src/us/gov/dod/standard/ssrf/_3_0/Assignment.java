@@ -23,21 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.assignment.Link;
 import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
-import us.gov.dod.standard.ssrf._3_0.assignment.OffTheShelfEquipment;
-import us.gov.dod.standard.ssrf._3_0.assignment.SysOfStation;
-import us.gov.dod.standard.ssrf._3_0.assignment.Station;
-import us.gov.dod.standard.ssrf._3_0.assignment.RecordNote;
-import us.gov.dod.standard.ssrf._3_0.assignment.PreviousAuthorization;
-import us.gov.dod.standard.ssrf._3_0.assignment.CoordinationData;
-import us.gov.dod.standard.ssrf._3_0.assignment.CircuitRemarks;
-import us.gov.dod.standard.ssrf._3_0.assignment.DocketNum;
-import us.gov.dod.standard.ssrf._3_0.assignment.HostDocketNum;
-import us.gov.dod.standard.ssrf._3_0.assignment.AsgnAllotOwner;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -224,7 +212,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.RelatedRef;
   "previousAuthorization",
   "recordNote"
 })
-public class Assignment extends Common {
+public class Assignment extends Common<Assignment> {
 
   @XmlElement(name = "Title", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)

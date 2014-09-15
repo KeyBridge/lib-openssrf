@@ -43,9 +43,7 @@ import javax.xml.bind.annotation.*;
  *            associated.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AStandardMetadataAttributes", propOrder = {
-  "value"
-})
+@XmlType(name = "AStandardMetadataType", propOrder = {"value"})
 public abstract class AStandardMetadataType<T> extends AStandardMetadataAttributes {
 
   /**
@@ -67,7 +65,7 @@ public abstract class AStandardMetadataType<T> extends AStandardMetadataAttribut
   /**
    * Gets the value of the value property.
    * <p>
-   * @return 
+   * @return
    */
   public T getValue() {
     return value;
@@ -76,7 +74,7 @@ public abstract class AStandardMetadataType<T> extends AStandardMetadataAttribut
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setValue(T value) {
     this.value = value;

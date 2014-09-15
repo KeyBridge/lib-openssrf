@@ -27,7 +27,8 @@ import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import javax.xml.bind.annotation.XmlValue;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * A Numeric Decimal instance with SSRF Standard Metadata Attributes. This
@@ -36,16 +37,54 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TDecimal", propOrder = {
-  "value"
-})
-public class TDecimal extends AStandardMetadataType<BigDecimal> {
+@XmlType(name = "TDecimal")
+public class TDecimal extends AStandardMetadataAttributes {
 
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected BigDecimal value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public TDecimal(BigDecimal value) {
-    super(value);
+    this.value = value;
   }
 
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public TDecimal(Double value) {
-    super(BigDecimal.valueOf(value));
+    this.value = value != null ? BigDecimal.valueOf(value) : null;
   }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public BigDecimal getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(BigDecimal value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
+
 }

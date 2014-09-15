@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.administrative.Dataset;
-import us.gov.dod.standard.ssrf._3_0.administrative.CodeList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,7 +32,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_0.administrative.Dataset;
@@ -63,7 +60,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
   "dataset",
   "codeList"
 })
-public class Administrative extends Common {
+public class Administrative extends Common<Administrative> {
 
   /**
    * Action: Indicate the action which triggered the transmission, or to be

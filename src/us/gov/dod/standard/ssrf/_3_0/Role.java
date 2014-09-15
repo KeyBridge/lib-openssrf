@@ -23,29 +23,20 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.contact.EMail;
-import us.gov.dod.standard.ssrf._3_0.contact.TelephoneFax;
-import us.gov.dod.standard.ssrf._3_0.contact.Address;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.contact.Address;
-import us.gov.dod.standard.ssrf._3_0.contact.Address;
-import us.gov.dod.standard.ssrf._3_0.contact.EMail;
 import us.gov.dod.standard.ssrf._3_0.contact.EMail;
 import us.gov.dod.standard.ssrf._3_0.contact.TelephoneFax;
-import us.gov.dod.standard.ssrf._3_0.contact.TelephoneFax;
+import us.gov.dod.standard.ssrf._3_0.metadata.ContactRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
-import us.gov.dod.standard.ssrf._3_0.metadata.ContactRef;
 
 /**
  * <p>
@@ -90,7 +81,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.ContactRef;
   "eMail",
   "contactRef"
 })
-public class Role extends Common {
+public class Role extends Common<Role> {
 
   @XmlElement(name = "EffectiveDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)

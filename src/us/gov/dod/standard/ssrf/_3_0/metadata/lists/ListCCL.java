@@ -27,21 +27,16 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCCL.
  * <p>
+ * A 1-letter designator representing the security classification of the
+ * dataset.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
+ * The overall security classification of the frequency proposal, assignment,
+ * allotment, antenna, Spectrum Supportability, transmitter/ receiver equipment
+ * or other dataset.
  * <p>
- * <
- * pre>
- * &lt;simpleType name="ListCCL"> &lt;restriction
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S10"> &lt;enumeration value="U"/>
- * &lt;enumeration value="R"/> &lt;enumeration value="C"/> &lt;enumeration
- * value="S"/> &lt;enumeration value="T"/> &lt;/restriction> &lt;/simpleType>
- * </pre>
- * <p>
+ * Note for the USA: The letter "R" MUST NOT be used in USA created datasets.
  */
 @XmlType(name = "ListCCL")
 @XmlEnum
@@ -49,27 +44,22 @@ public enum ListCCL {
 
   /**
    * Unclassified
-   * <p>
    */
   U,
   /**
    * Restricted (This classification SHALL NOT be used in USA-created datasets)
-   * <p>
    */
   R,
   /**
    * Confidential
-   * <p>
    */
   C,
   /**
    * Secret
-   * <p>
    */
   S,
   /**
    * Top Secret
-   * <p>
    */
   T;
 

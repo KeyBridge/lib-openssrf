@@ -23,23 +23,20 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
-import us.gov.dod.standard.ssrf._3_0.allotment.Emission;
-import us.gov.dod.standard.ssrf._3_0.allotment.AllotFreq;
 import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
-import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.allotment.AllotFreq;
 import us.gov.dod.standard.ssrf._3_0.allotment.Emission;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
+import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
+import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 
 /**
  * Java class for Allotment complex type.
@@ -65,7 +62,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
   "emission",
   "allotFreq"
 })
-public class Allotment extends Common {
+public class Allotment extends Common<Allotment> {
 
   /**
    * Title: Enter an identifying name for this Allotment or Assignment.

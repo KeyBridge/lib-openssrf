@@ -24,22 +24,20 @@
 package us.gov.dod.standard.ssrf._3_0;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.allocation.Footnote;
 import us.gov.dod.standard.ssrf._3_0.allocation.FreqBand;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.BandApplication;
 import us.gov.dod.standard.ssrf._3_0.metadata.BandUser;
 import us.gov.dod.standard.ssrf._3_0.metadata.ChannelPlanRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.Country;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * <p>
@@ -88,8 +86,8 @@ import us.gov.dod.standard.ssrf._3_0.metadata.Country;
   "country",
   "freqBand"
 })
-public class TOA extends Common {
-
+public class TOA extends Common<TOA> {
+  
   @XmlElement(name = "Administration", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString administration;
@@ -118,7 +116,7 @@ public class TOA extends Common {
   /**
    * Gets the value of the administration property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAdministration() {
     return administration;
@@ -127,12 +125,12 @@ public class TOA extends Common {
   /**
    * Sets the value of the administration property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAdministration(TString value) {
     this.administration = value;
   }
-
+  
   public boolean isSetAdministration() {
     return (this.administration != null);
   }
@@ -141,7 +139,7 @@ public class TOA extends Common {
    * Gets the value of the effectiveDate property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TCalendar getEffectiveDate() {
@@ -152,13 +150,13 @@ public class TOA extends Common {
    * Sets the value of the effectiveDate property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
   }
-
+  
   public boolean isSetEffectiveDate() {
     return (this.effectiveDate != null);
   }
@@ -167,7 +165,7 @@ public class TOA extends Common {
    * Gets the value of the expirationDate property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TCalendar getExpirationDate() {
@@ -178,13 +176,13 @@ public class TOA extends Common {
    * Sets the value of the expirationDate property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
   }
-
+  
   public boolean isSetExpirationDate() {
     return (this.expirationDate != null);
   }
@@ -193,7 +191,7 @@ public class TOA extends Common {
    * Gets the value of the title property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getTitle() {
@@ -204,13 +202,13 @@ public class TOA extends Common {
    * Sets the value of the title property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setTitle(TString value) {
     this.title = value;
   }
-
+  
   public boolean isSetTitle() {
     return (this.title != null);
   }
@@ -232,7 +230,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -243,11 +241,11 @@ public class TOA extends Common {
     }
     return this.footnote;
   }
-
+  
   public boolean isSetFootnote() {
     return ((this.footnote != null) && (!this.footnote.isEmpty()));
   }
-
+  
   public void unsetFootnote() {
     this.footnote = null;
   }
@@ -270,7 +268,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -281,11 +279,11 @@ public class TOA extends Common {
     }
     return this.channelPlanRef;
   }
-
+  
   public boolean isSetChannelPlanRef() {
     return ((this.channelPlanRef != null) && (!this.channelPlanRef.isEmpty()));
   }
-
+  
   public void unsetChannelPlanRef() {
     this.channelPlanRef = null;
   }
@@ -308,7 +306,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -319,11 +317,11 @@ public class TOA extends Common {
     }
     return this.bandApplication;
   }
-
+  
   public boolean isSetBandApplication() {
     return ((this.bandApplication != null) && (!this.bandApplication.isEmpty()));
   }
-
+  
   public void unsetBandApplication() {
     this.bandApplication = null;
   }
@@ -345,7 +343,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -356,11 +354,11 @@ public class TOA extends Common {
     }
     return this.bandUser;
   }
-
+  
   public boolean isSetBandUser() {
     return ((this.bandUser != null) && (!this.bandUser.isEmpty()));
   }
-
+  
   public void unsetBandUser() {
     this.bandUser = null;
   }
@@ -382,7 +380,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -393,11 +391,11 @@ public class TOA extends Common {
     }
     return this.country;
   }
-
+  
   public boolean isSetCountry() {
     return ((this.country != null) && (!this.country.isEmpty()));
   }
-
+  
   public void unsetCountry() {
     this.country = null;
   }
@@ -419,7 +417,7 @@ public class TOA extends Common {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -430,117 +428,117 @@ public class TOA extends Common {
     }
     return this.freqBand;
   }
-
+  
   public boolean isSetFreqBand() {
     return ((this.freqBand != null) && (!this.freqBand.isEmpty()));
   }
-
+  
   public void unsetFreqBand() {
     this.freqBand = null;
   }
-
+  
   public TOA withAdministration(String value) {
     setAdministration(new TString(value));
     return this;
   }
-
+  
   public TOA withEffectiveDate(Calendar value) {
     setEffectiveDate(new TCalendar(value));
     return this;
   }
-
+  
   public TOA withExpirationDate(Calendar value) {
     setExpirationDate(new TCalendar(value));
     return this;
   }
-
+  
   public TOA withTitle(String value) {
     setTitle(new TString(value));
     return this;
   }
-
+  
   public TOA withFootnote(Footnote... values) {
     if (values != null) {
       getFootnote().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public TOA withFootnote(Collection<Footnote> values) {
     if (values != null) {
       getFootnote().addAll(values);
     }
     return this;
   }
-
+  
   public TOA withChannelPlanRef(ChannelPlanRef... values) {
     if (values != null) {
       getChannelPlanRef().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public TOA withChannelPlanRef(Collection<ChannelPlanRef> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }
     return this;
   }
-
+  
   public TOA withBandApplication(BandApplication... values) {
     if (values != null) {
       getBandApplication().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public TOA withBandApplication(Collection<BandApplication> values) {
     if (values != null) {
       getBandApplication().addAll(values);
     }
     return this;
   }
-
+  
   public TOA withBandUser(BandUser... values) {
     if (values != null) {
       getBandUser().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public TOA withBandUser(Collection<BandUser> values) {
     if (values != null) {
       getBandUser().addAll(values);
     }
     return this;
   }
-
+  
   public TOA withCountry(Country... values) {
     if (values != null) {
       getCountry().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public TOA withCountry(Collection<Country> values) {
     if (values != null) {
       getCountry().addAll(values);
     }
     return this;
   }
-
+  
   public TOA withFreqBand(FreqBand... values) {
     if (values != null) {
       getFreqBand().addAll(Arrays.asList(values));
     }
     return this;
   }
-
+  
   public TOA withFreqBand(Collection<FreqBand> values) {
     if (values != null) {
       getFreqBand().addAll(values);
     }
     return this;
   }
-
+  
 }

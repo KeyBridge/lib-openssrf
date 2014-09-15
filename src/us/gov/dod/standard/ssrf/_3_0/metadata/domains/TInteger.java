@@ -27,7 +27,8 @@ import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import javax.xml.bind.annotation.XmlValue;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * A Numeric Integer instance with SSRF Standard Metadata Attributes. This
@@ -36,16 +37,44 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TInteger", propOrder = {
-  "value"
-})
-public class TInteger extends AStandardMetadataType<BigInteger> {
+@XmlType(name = "TInteger")
+public class TInteger extends AStandardMetadataAttributes {
+
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected BigInteger value;
 
   public TInteger(BigInteger value) {
-    super(value);
+    this.value = value;
   }
 
   public TInteger(Integer value) {
-    super(BigInteger.valueOf(value.intValue()));
+    this.value = value != null ? BigInteger.valueOf(value.intValue()) : null;
   }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public BigInteger getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(BigInteger value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
+
 }

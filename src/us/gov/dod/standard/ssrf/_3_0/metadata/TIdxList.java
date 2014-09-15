@@ -25,9 +25,10 @@ package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * <p>
@@ -48,13 +49,45 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TIdxList", propOrder = {
-  "value"
-})
-public class TIdxList extends AStandardMetadataType<List<BigInteger>> {
+@XmlType(name = "TIdxList")
+public class TIdxList extends AStandardMetadataAttributes {
 
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected List<BigInteger> value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public TIdxList(List<BigInteger> value) {
-    super(value);
+    this.value = value;
+  }
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
+  public TIdxList(BigInteger... value) {
+    if (value != null) {
+      getValue().addAll(Arrays.asList(value));
+    }
+  }
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
+  public TIdxList(Integer value) {
+    if (value != null) {
+      getValue().add(BigInteger.valueOf(value));
+    }
   }
 
   /**
@@ -75,26 +108,32 @@ public class TIdxList extends AStandardMetadataType<List<BigInteger>> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
    */
-  @Override
-  public List<BigInteger> getValue() {
+  public final List<BigInteger> getValue() {
     if (value == null) {
       value = new ArrayList<>();
     }
     return this.value;
   }
 
-  @Override
   public boolean isSetValue() {
     return ((this.value != null) && (!this.value.isEmpty()));
   }
 
   public void unsetValue() {
     this.value = null;
+  }
+
+  public void addValue(BigInteger value) {
+    getValue().add(value);
+  }
+
+  public void addValue(Integer value) {
+    getValue().add(BigInteger.valueOf(value));
   }
 
 }

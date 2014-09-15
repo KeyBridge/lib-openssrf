@@ -32,7 +32,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.common.Channel;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
@@ -66,7 +65,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
   "name",
   "channel"
 })
-public class ChannelPlan extends Common {
+public class ChannelPlan extends Common<ChannelPlan> {
 
   @XmlElement(name = "Name", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)

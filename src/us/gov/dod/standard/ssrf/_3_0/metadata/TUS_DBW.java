@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * <p>
@@ -46,12 +46,54 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TUS_dBW", propOrder = {
-  "value"
-})
-public class TUS_DBW extends AStandardMetadataType<BigDecimal> {
+@XmlType(name = "TUS_dBW")
+public class TUS_DBW extends AStandardMetadataAttributes {
 
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected BigDecimal value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public TUS_DBW(BigDecimal value) {
-    super(value);
+    this.value = value;
   }
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
+  public TUS_DBW(Double value) {
+    this.value = value != null ? BigDecimal.valueOf(value) : null;
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public BigDecimal getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(BigDecimal value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
+
 }

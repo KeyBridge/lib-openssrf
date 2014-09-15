@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_0.adapter;
 
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * Abstract String type XmlAdapter.
@@ -37,7 +38,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <p>
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
-public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
+public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
 
   /**
    * The minimum string length.
@@ -88,7 +89,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String marshal(String v) throws Exception {
+  public String marshal(TString v) throws Exception {
     return convert(v);
   }
 
@@ -102,8 +103,9 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String unmarshal(String v) throws Exception {
-    return convert(v);
+  public TString unmarshal(String v) throws Exception {
+//    return convert(v);
+    return new TString(v);
   }
 
   /**
@@ -115,25 +117,25 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    *                   responsible for reporting the error to the user through
    *                   ValidationEventHandler.
    */
-  private String convert(String v) throws Exception {
-    if (minLength != null && v.length() < minLength) {
-      throw new Exception(this.getClass().getSimpleName() + " [" + minLength + "-" + maxLength + "] string length violation [" + v.length() + "]");
+  private String convert(TString v) throws Exception {
+    if (minLength != null && v.getValue().length() < minLength) {
+      throw new Exception(this.getClass().getSimpleName() + " [" + minLength + "-" + maxLength + "] string length violation [" + v.getValue().length() + "]");
     }
-    if (maxLength != null && v.length() > maxLength) {
-      throw new Exception(this.getClass().getSimpleName() + " [" + minLength + "-" + maxLength + "] string length violation [" + v.length() + "]");
+    if (maxLength != null && v.getValue().length() > maxLength) {
+      throw new Exception(this.getClass().getSimpleName() + " [" + minLength + "-" + maxLength + "] string length violation [" + v.getValue().length() + "]");
     }
     /**
      * Validate the pattern if set.
      */
     if (pattern != null) {
-      if (!Pattern.compile(pattern).matcher(v).find()) {
-        throw new Exception(this.getClass().getSimpleName() + " [" + pattern + "] string pattern violation [" + v + "]");
+      if (!Pattern.compile(pattern).matcher(v.getValue()).find()) {
+        throw new Exception(this.getClass().getSimpleName() + " [" + pattern + "] string pattern violation [" + v.getValue() + "]");
       }
     }
     /**
      * Convert to upper case if indicated.
      */
-    return upperCase ? v.toUpperCase() : v;
+    return upperCase ? v.getValue().toUpperCase() : v.getValue();
   }
 
 }

@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * <p>
@@ -47,22 +47,54 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BandApplication", propOrder = {
-  "value"
-})
-public class BandApplication extends AStandardMetadataType<String> {
+@XmlType(name = "BandApplication")
+public class BandApplication extends AStandardMetadataAttributes {
+
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected String value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
+  public BandApplication(String value) {
+    this.value = value;
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public String getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
 
   @XmlAttribute(name = "idx", required = true)
   protected BigInteger idx;
 
-  public BandApplication(String value) {
-    super(value);
-  }
-
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getIdx() {
     return idx;
@@ -71,7 +103,7 @@ public class BandApplication extends AStandardMetadataType<String> {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

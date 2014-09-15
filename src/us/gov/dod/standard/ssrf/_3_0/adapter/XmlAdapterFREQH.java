@@ -26,6 +26,8 @@ package us.gov.dod.standard.ssrf._3_0.adapter;
 /**
  * XML data type adapter for the SSRF FREQH data type.
  * <p>
+ * Frequency values are always transmitted in MHz
+ * <p>
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 public class XmlAdapterFREQH extends AXmlAdapterNumber {

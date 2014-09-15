@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 
 /**
@@ -46,13 +46,45 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Country", propOrder = {
-  "value"
-})
-public class Country extends AStandardMetadataType<ListCAO> {
+@XmlType(name = "Country")
+public class Country extends AStandardMetadataAttributes {
 
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected ListCAO value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public Country(ListCAO value) {
-    super(value);
+    this.value = value;
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public ListCAO getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(ListCAO value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
   }
 
 }

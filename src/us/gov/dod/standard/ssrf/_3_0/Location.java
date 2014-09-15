@@ -23,26 +23,21 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.location.Ellipse;
-import us.gov.dod.standard.ssrf._3_0.location.Point;
-import us.gov.dod.standard.ssrf._3_0.location.Polygon;
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.location.Ellipse;
 import us.gov.dod.standard.ssrf._3_0.location.Point;
 import us.gov.dod.standard.ssrf._3_0.location.Polygon;
+import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
-import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 
 /**
  * <p>
@@ -94,7 +89,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
   "ellipse",
   "locationRef"
 })
-public class Location extends Common {
+public class Location extends Common<Location> {
 
   @XmlElement(name = "EffectiveDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)

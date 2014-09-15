@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * <p>
@@ -45,13 +45,45 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RFSystemRef", propOrder = {
-  "value"
-})
-public class RFSystemRef extends AStandardMetadataType<String> {
+@XmlType(name = "RFSystemRef")
+public class RFSystemRef extends AStandardMetadataAttributes {
 
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected String value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
   public RFSystemRef(String value) {
-    super(value);
+    this.value = value;
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public String getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
   }
 
 }

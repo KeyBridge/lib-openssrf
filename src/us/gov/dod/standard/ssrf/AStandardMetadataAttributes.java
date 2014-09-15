@@ -60,9 +60,8 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AStandardMetadataAttributes", propOrder = {
-  "value"
-})
+@XmlType(name = "AStandardMetadataAttributes", propOrder = {"cls"})
+@XmlTransient
 public abstract class AStandardMetadataAttributes implements IStandardMetadataAttributes {
 
   /**
@@ -77,6 +76,17 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <li>C Confidential</li>
    * <li>S Secret</li>
    * <li>T Top Secret</li></ul>
+   * <p>
+   * When applicable, the first attribute in each element will be “cls". The
+   * classification of all attributes in the element and, if it exists, of the
+   * element value will always be the common value in the cls attribute. If the
+   * attribute cls is not present in an element, the element and all of its
+   * attributes will always be unclassified. This classification does not apply
+   * to sub-elements.
+   * <p>
+   * Classification is done at the element level. This means that there will be
+   * no instances when the attributes within an XML element would be classified
+   * differently.
    */
   @XmlAttribute(name = "cls", required = true)
   protected ListCCL cls = ListCCL.U;
@@ -130,7 +140,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Gets the value of the cls property.
    * <p>
-   * @return 
+   * @return
    */
   @Override
   public ListCCL getCls() {
@@ -140,7 +150,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Sets the value of the cls property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCls(ListCCL value) {
     this.cls = value;
@@ -168,7 +178,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -207,7 +217,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -231,7 +241,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Gets the value of the legacyReleasability property.
    * <p>
-   * @return 
+   * @return
    */
   @Override
   public String getLegacyReleasability() {
@@ -241,7 +251,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Sets the value of the legacyReleasability property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLegacyReleasability(String value) {
     this.legacyReleasability = value;
@@ -254,7 +264,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Gets the value of the quality property.
    * <p>
-   * @return 
+   * @return
    */
   @Override
   public String getQuality() {
@@ -264,7 +274,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Sets the value of the quality property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setQuality(String value) {
     this.quality = value;
@@ -277,7 +287,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Gets the value of the recommendedValue property.
    * <p>
-   * @return 
+   * @return
    */
   @Override
   public String getRecommendedValue() {
@@ -287,7 +297,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Sets the value of the recommendedValue property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRecommendedValue(String value) {
     this.recommendedValue = value;
@@ -300,7 +310,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Gets the value of the availability property.
    * <p>
-   * @return 
+   * @return
    */
   @Override
   public String getAvailability() {
@@ -310,7 +320,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
   /**
    * Sets the value of the availability property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAvailability(String value) {
     this.availability = value;

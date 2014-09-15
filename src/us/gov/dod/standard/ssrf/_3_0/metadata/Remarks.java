@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_0.metadata;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataType;
+import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
  * <p>
@@ -47,27 +47,59 @@ import us.gov.dod.standard.ssrf.AStandardMetadataType;
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Remarks", propOrder = {
-  "value"
-})
-public class Remarks extends AStandardMetadataType<String> {
+@XmlType(name = "Remarks")
+public class Remarks extends AStandardMetadataAttributes {
+
+  /**
+   * The value to which the metadata attributes are associated. Expected Class
+   * types are String, BigDecimal and BigInteger.
+   */
+  @XmlValue
+  protected String value;
+
+  /**
+   * Construct a new data type instance with the indicated value.
+   * <p>
+   * @param value the value
+   */
+  public Remarks(String value) {
+    this.value = value;
+  }
+
+  /**
+   * Gets the value of the value property.
+   * <p>
+   * @return
+   */
+  public String getValue() {
+    return value;
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value
+   */
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
 
   @XmlAttribute(name = "idx", required = true)
   protected BigInteger idx;
 
-  public Remarks(String value) {
-    super(value);
-  }
-
   public Remarks(BigInteger idx, String value) {
-    super(value);
+    this.value = value;
     this.idx = idx;
   }
 
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getIdx() {
     return idx;
@@ -76,7 +108,7 @@ public class Remarks extends AStandardMetadataType<String> {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

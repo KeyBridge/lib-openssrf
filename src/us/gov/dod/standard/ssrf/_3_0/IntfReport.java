@@ -23,15 +23,14 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
@@ -149,7 +148,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
   "satelliteUplinkPolarisation",
   "pocInformation"
 })
-public class IntfReport extends Common {
+public class IntfReport extends Common<IntfReport> {
 
   @XmlElement(name = "HelpRequired", required = false)
   private TString helpRequired;
