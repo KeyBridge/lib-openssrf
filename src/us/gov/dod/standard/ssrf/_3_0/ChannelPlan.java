@@ -46,15 +46,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="ChannelPlan">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="Channel" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Channel" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="ChannelPlan"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
+ * name="Channel" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Channel"
+ * maxOccurs="unbounded"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -76,7 +72,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -85,7 +81,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -112,7 +108,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

@@ -57,12 +57,19 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
  * &lt;/Transmitter&gt;
  * </pre></code>
  * <p>
+ * Developer note: This class must be annotated as XmlTransient.
+ * <p>
+ * This class is extended by classes in the metadata packaged containing an
+ * XmlValue annotation type. JaxB is not able to handle extended classes having
+ * an XmlValue as JaxB does not build and manage a class schema hierarchy and
+ * cannot confirm that the XmlValue class does not also contain an XmlElement.
+ * <p>
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AStandardMetadataAttributes", propOrder = {"cls"})
 @XmlTransient
-public abstract class AStandardMetadataAttributes implements IStandardMetadataAttributes {
+public abstract class AStandardMetadataAttributes {
 
   /**
    * cls (Attribute): The classification of the current data item. This
@@ -89,7 +96,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * differently.
    */
   @XmlAttribute(name = "cls", required = true)
-  protected ListCCL cls = ListCCL.U;
+  protected ListCCL cls;
   /**
    * remarkReferences (Attribute): The list of indices referring to an Remarks
    * index applicable to the current data item.
@@ -142,7 +149,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public ListCCL getCls() {
     return cls;
   }
@@ -183,7 +189,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public List<BigInteger> getRemarkReferences() {
     if (remarkReferences == null) {
       remarkReferences = new ArrayList<>();
@@ -222,7 +227,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public List<BigInteger> getExtReferences() {
     if (extReferences == null) {
       extReferences = new ArrayList<>();
@@ -243,7 +247,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public String getLegacyReleasability() {
     return legacyReleasability;
   }
@@ -266,7 +269,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public String getQuality() {
     return quality;
   }
@@ -289,7 +291,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public String getRecommendedValue() {
     return recommendedValue;
   }
@@ -312,7 +313,6 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * <p>
    * @return
    */
-  @Override
   public String getAvailability() {
     return availability;
   }
@@ -340,7 +340,7 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * @param value the new classification
    * @return this instance
    */
-  public IStandardMetadataAttributes withClassification(ListCCL value) {
+  public AStandardMetadataAttributes withClassification(ListCCL value) {
     setCls(value);
     return this;
   }
@@ -353,55 +353,55 @@ public abstract class AStandardMetadataAttributes implements IStandardMetadataAt
    * @param value the new classification
    * @return this instance
    */
-  public IStandardMetadataAttributes withCls(ListCCL value) {
+  public AStandardMetadataAttributes withCls(ListCCL value) {
     setCls(value);
     return this;
   }
 
-  public IStandardMetadataAttributes withRemarks(BigInteger... values) {
+  public AStandardMetadataAttributes withRemarks(BigInteger... values) {
     if (values != null) {
       getRemarkReferences().addAll(Arrays.asList(values));
     }
     return this;
   }
 
-  public IStandardMetadataAttributes withRemarkReferences(Collection<BigInteger> values) {
+  public AStandardMetadataAttributes withRemarkReferences(Collection<BigInteger> values) {
     if (values != null) {
       getRemarkReferences().addAll(values);
     }
     return this;
   }
 
-  public IStandardMetadataAttributes withExtReferences(BigInteger... values) {
+  public AStandardMetadataAttributes withExtReferences(BigInteger... values) {
     if (values != null) {
       getExtReferences().addAll(Arrays.asList(values));
     }
     return this;
   }
 
-  public IStandardMetadataAttributes withExtReferences(Collection<BigInteger> values) {
+  public AStandardMetadataAttributes withExtReferences(Collection<BigInteger> values) {
     if (values != null) {
       getExtReferences().addAll(values);
     }
     return this;
   }
 
-  public IStandardMetadataAttributes withLegacyReleasability(String value) {
+  public AStandardMetadataAttributes withLegacyReleasability(String value) {
     setLegacyReleasability(value);
     return this;
   }
 
-  public IStandardMetadataAttributes withQuality(String value) {
+  public AStandardMetadataAttributes withQuality(String value) {
     setQuality(value);
     return this;
   }
 
-  public IStandardMetadataAttributes withRecommendedValue(String value) {
+  public AStandardMetadataAttributes withRecommendedValue(String value) {
     setRecommendedValue(value);
     return this;
   }
 
-  public IStandardMetadataAttributes withAvailability(String value) {
+  public AStandardMetadataAttributes withAvailability(String value) {
     setAvailability(value);
     return this;
   }

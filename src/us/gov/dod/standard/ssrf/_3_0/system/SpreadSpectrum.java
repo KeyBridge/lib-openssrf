@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,26 +44,27 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="SpreadSpectrum">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp" minOccurs="0"/>
- *         &lt;element name="MaxGain" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="PulseFreqDev" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="InfoDataRate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10_3" minOccurs="0"/>
- *         &lt;element name="ChipRate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMChips" minOccurs="0"/>
- *         &lt;element name="CodeRate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10_3" minOccurs="0"/>
- *         &lt;element name="PulseChirpRate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9_6" minOccurs="0"/>
- *         &lt;element name="PulseChirpFreqShift" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="PulseChirpDurationMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tmicrosecs" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeHop" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Hopset" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="SpreadSpectrum"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"
+ * minOccurs="0"/> &lt;element name="MaxGain"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;element
+ * name="PulseFreqDev" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="InfoDataRate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10_3" minOccurs="0"/>
+ * &lt;element name="ChipRate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMChips" minOccurs="0"/>
+ * &lt;element name="CodeRate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10_3" minOccurs="0"/>
+ * &lt;element name="PulseChirpRate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9_6" minOccurs="0"/> &lt;element
+ * name="PulseChirpFreqShift" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="PulseChirpDurationMin"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tmicrosecs" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeHop" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Hopset" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -149,9 +149,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -160,9 +158,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -175,7 +171,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -184,7 +180,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -197,9 +193,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -208,9 +202,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -223,9 +215,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the maxGain property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getMaxGain() {
     return maxGain;
@@ -234,9 +224,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the maxGain property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMaxGain(TDecimal value) {
     this.maxGain = value;
@@ -249,9 +237,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the pulseFreqDev property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPulseFreqDev() {
     return pulseFreqDev;
@@ -260,9 +246,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the pulseFreqDev property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPulseFreqDev(TDecimal value) {
     this.pulseFreqDev = value;
@@ -275,9 +259,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the infoDataRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getInfoDataRate() {
     return infoDataRate;
@@ -286,9 +268,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the infoDataRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setInfoDataRate(TDecimal value) {
     this.infoDataRate = value;
@@ -301,9 +281,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the chipRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getChipRate() {
     return chipRate;
@@ -312,9 +290,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the chipRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setChipRate(TDecimal value) {
     this.chipRate = value;
@@ -327,9 +303,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the codeRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCodeRate() {
     return codeRate;
@@ -338,9 +312,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the codeRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCodeRate(TDecimal value) {
     this.codeRate = value;
@@ -353,9 +325,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the pulseChirpRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPulseChirpRate() {
     return pulseChirpRate;
@@ -364,9 +334,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the pulseChirpRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPulseChirpRate(TDecimal value) {
     this.pulseChirpRate = value;
@@ -379,9 +347,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the pulseChirpFreqShift property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPulseChirpFreqShift() {
     return pulseChirpFreqShift;
@@ -390,9 +356,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the pulseChirpFreqShift property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPulseChirpFreqShift(TDecimal value) {
     this.pulseChirpFreqShift = value;
@@ -405,9 +369,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the pulseChirpDurationMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPulseChirpDurationMin() {
     return pulseChirpDurationMin;
@@ -416,9 +378,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the pulseChirpDurationMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPulseChirpDurationMin(TDecimal value) {
     this.pulseChirpDurationMin = value;
@@ -431,9 +391,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the timeHopNumSlots property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getTimeHopNumSlots() {
     return timeHopNumSlots;
@@ -442,9 +400,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the timeHopNumSlots property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTimeHopNumSlots(TInteger value) {
     this.timeHopNumSlots = value;
@@ -457,9 +413,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the timeHopPulsesPerDwell property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getTimeHopPulsesPerDwell() {
     return timeHopPulsesPerDwell;
@@ -468,9 +422,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the timeHopPulsesPerDwell property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTimeHopPulsesPerDwell(TInteger value) {
     this.timeHopPulsesPerDwell = value;
@@ -483,9 +435,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the hopRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getHopRate() {
     return hopRate;
@@ -494,9 +444,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the hopRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setHopRate(TDecimal value) {
     this.hopRate = value;
@@ -509,9 +457,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the hopDwell property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getHopDwell() {
     return hopDwell;
@@ -520,9 +466,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the hopDwell property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setHopDwell(TDecimal value) {
     this.hopDwell = value;
@@ -535,9 +479,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the numFreqsPerHopset property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumFreqsPerHopset() {
     return numFreqsPerHopset;
@@ -546,9 +488,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the numFreqsPerHopset property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumFreqsPerHopset(TInteger value) {
     this.numFreqsPerHopset = value;
@@ -561,9 +501,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the numHopsets property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumHopsets() {
     return numHopsets;
@@ -572,9 +510,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the numHopsets property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumHopsets(TInteger value) {
     this.numHopsets = value;
@@ -587,9 +523,7 @@ public class SpreadSpectrum {
   /**
    * Gets the value of the freqBlocking property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFreqBlocking() {
     return freqBlocking;
@@ -598,9 +532,7 @@ public class SpreadSpectrum {
   /**
    * Sets the value of the freqBlocking property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqBlocking(TString value) {
     this.freqBlocking = value;

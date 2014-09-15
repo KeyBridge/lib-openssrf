@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,17 +42,14 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="PairedFreq">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
- *         &lt;element name="AssignmentRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="PairedASN" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS12" minOccurs="0"/>
- *         &lt;element name="PairedType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="PairedFreq"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/> &lt;element
+ * name="AssignmentRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
+ * minOccurs="0"/> &lt;element name="PairedASN"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS12" minOccurs="0"/> &lt;element
+ * name="PairedType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -84,7 +80,7 @@ public class PairedFreq {
   /**
    * Gets the value of the freq property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreq() {
     return freq;
@@ -93,7 +89,7 @@ public class PairedFreq {
   /**
    * Sets the value of the freq property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreq(TDecimal value) {
     this.freq = value;
@@ -106,9 +102,7 @@ public class PairedFreq {
   /**
    * Gets the value of the assignmentRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAssignmentRef() {
     return assignmentRef;
@@ -117,9 +111,7 @@ public class PairedFreq {
   /**
    * Sets the value of the assignmentRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAssignmentRef(TString value) {
     this.assignmentRef = value;
@@ -132,9 +124,7 @@ public class PairedFreq {
   /**
    * Gets the value of the pairedASN property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPairedASN() {
     return pairedASN;
@@ -143,9 +133,7 @@ public class PairedFreq {
   /**
    * Sets the value of the pairedASN property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPairedASN(TString value) {
     this.pairedASN = value;
@@ -158,9 +146,7 @@ public class PairedFreq {
   /**
    * Gets the value of the pairedType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPairedType() {
     return pairedType;
@@ -169,9 +155,7 @@ public class PairedFreq {
   /**
    * Sets the value of the pairedType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPairedType(TString value) {
     this.pairedType = value;

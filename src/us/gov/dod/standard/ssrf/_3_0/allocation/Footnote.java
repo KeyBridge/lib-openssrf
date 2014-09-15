@@ -39,17 +39,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Footnote">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Identifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"/>
- *         &lt;element name="Text" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"/>
- *       &lt;/sequence>
- *       &lt;attribute name="idx" use="required" type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Footnote"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Identifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"/>
+ * &lt;element name="Text" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"/>
+ * &lt;/sequence> &lt;attribute name="idx" use="required"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,7 +69,7 @@ public class Footnote {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIdentifier() {
     return identifier;
@@ -82,7 +78,7 @@ public class Footnote {
   /**
    * Sets the value of the identifier property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdentifier(TString value) {
     this.identifier = value;
@@ -95,7 +91,7 @@ public class Footnote {
   /**
    * Gets the value of the text property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getText() {
     return text;
@@ -104,7 +100,7 @@ public class Footnote {
   /**
    * Sets the value of the text property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setText(TString value) {
     this.text = value;
@@ -117,7 +113,7 @@ public class Footnote {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getIdx() {
     return idx;
@@ -126,7 +122,7 @@ public class Footnote {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

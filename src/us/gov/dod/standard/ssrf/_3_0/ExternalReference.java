@@ -46,26 +46,27 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
  * <p>
  * <
  * pre>
- * &lt;complexType name="ExternalReference">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="Identifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="AlternateIdentifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/>
- *         &lt;element name="Author" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/>
- *         &lt;element name="Organisation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="DocumentCls" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCL" minOccurs="0"/>
- *         &lt;element name="ResourceLocator" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/>
- *         &lt;element name="IsAttached" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- *         &lt;element name="IsClassified" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="ReferencedStage" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCSG" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ExternalReference"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
+ * &lt;element name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="Identifier"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="AlternateIdentifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="Title"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/> &lt;element
+ * name="Author" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"
+ * minOccurs="0"/> &lt;element name="Organisation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="DocumentCls" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCL"
+ * minOccurs="0"/> &lt;element name="ResourceLocator"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/> &lt;element
+ * name="IsAttached" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
+ * &lt;element name="IsClassified"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;element name="ReferencedStage"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCSG" minOccurs="0"/>
+ * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -123,9 +124,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -134,9 +133,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -149,9 +146,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDate() {
     return date;
@@ -160,9 +155,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -175,9 +168,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIdentifier() {
     return identifier;
@@ -186,9 +177,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the identifier property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIdentifier(TString value) {
     this.identifier = value;
@@ -201,9 +190,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the alternateIdentifier property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAlternateIdentifier() {
     return alternateIdentifier;
@@ -212,9 +199,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the alternateIdentifier property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAlternateIdentifier(TString value) {
     this.alternateIdentifier = value;
@@ -227,9 +212,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTitle() {
     return title;
@@ -238,9 +221,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -253,9 +234,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the author property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAuthor() {
     return author;
@@ -264,9 +243,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the author property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAuthor(TString value) {
     this.author = value;
@@ -279,9 +256,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the organisation property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOrganisation() {
     return organisation;
@@ -290,9 +265,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the organisation property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOrganisation(TString value) {
     this.organisation = value;
@@ -305,9 +278,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the documentCls property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDocumentCls() {
     return documentCls;
@@ -316,9 +287,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the documentCls property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDocumentCls(TString value) {
     this.documentCls = value;
@@ -331,9 +300,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the resourceLocator property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getResourceLocator() {
     return resourceLocator;
@@ -342,9 +309,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the resourceLocator property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setResourceLocator(TString value) {
     this.resourceLocator = value;
@@ -357,7 +322,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the isAttached property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIsAttached() {
     return isAttached;
@@ -366,7 +331,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the isAttached property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIsAttached(TString value) {
     this.isAttached = value;
@@ -379,9 +344,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the isClassified property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIsClassified() {
     return isClassified;
@@ -390,9 +353,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the isClassified property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIsClassified(TString value) {
     this.isClassified = value;
@@ -405,9 +366,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the referencedStage property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getReferencedStage() {
     return referencedStage;
@@ -416,9 +375,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the referencedStage property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReferencedStage(TString value) {
     this.referencedStage = value;

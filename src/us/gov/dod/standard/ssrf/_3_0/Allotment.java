@@ -167,7 +167,8 @@ public class Allotment extends Common<Allotment> {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setTitle(TString value) {
     this.title = value;
   }
@@ -188,7 +189,8 @@ public class Allotment extends Common<Allotment> {
   /**
    * Sets the value of the usageType property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setUsageType(TString value) {
     this.usageType = value;
   }
@@ -209,7 +211,8 @@ public class Allotment extends Common<Allotment> {
   /**
    * Sets the value of the dateResponseRequired property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
   }
@@ -252,7 +255,8 @@ public class Allotment extends Common<Allotment> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
   }
@@ -273,7 +277,8 @@ public class Allotment extends Common<Allotment> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
   }
@@ -294,7 +299,8 @@ public class Allotment extends Common<Allotment> {
   /**
    * Sets the value of the requirement property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setRequirement(TString value) {
     this.requirement = value;
   }

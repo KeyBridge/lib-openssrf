@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,16 +41,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
  * <p>
  * <
  * pre>
- * &lt;complexType name="VSWR">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="Ratio" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN2_1"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VSWR"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
+ * &lt;element name="Ratio" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN2_1"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,9 +67,7 @@ public class VSWR {
   /**
    * Gets the value of the freq property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreq() {
     return freq;
@@ -84,9 +76,7 @@ public class VSWR {
   /**
    * Sets the value of the freq property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreq(TDecimal value) {
     this.freq = value;
@@ -99,7 +89,7 @@ public class VSWR {
   /**
    * Gets the value of the ratio property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getRatio() {
     return ratio;
@@ -108,7 +98,7 @@ public class VSWR {
   /**
    * Sets the value of the ratio property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRatio(TDecimal value) {
     this.ratio = value;

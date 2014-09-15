@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,16 +41,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Time">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Period" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="UsageDescription " type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Time"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Period" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
+ * &lt;element name="UsageDescription "
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,9 +68,7 @@ public class Time {
   /**
    * Gets the value of the period property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPeriod() {
     return period;
@@ -84,9 +77,7 @@ public class Time {
   /**
    * Sets the value of the period property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPeriod(TString value) {
     this.period = value;
@@ -99,9 +90,7 @@ public class Time {
   /**
    * Gets the value of the usageDescription_0020 property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUsageDescription_0020() {
     return usageDescription_0020;
@@ -110,9 +99,7 @@ public class Time {
   /**
    * Sets the value of the usageDescription_0020 property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUsageDescription_0020(TString value) {
     this.usageDescription_0020 = value;

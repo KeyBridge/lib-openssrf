@@ -110,9 +110,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the effectiveDateTime property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDateTime() {
     return effectiveDateTime;
@@ -121,9 +119,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the effectiveDateTime property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setEffectiveDateTime(TCalendar value) {
     this.effectiveDateTime = value;
@@ -136,9 +132,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the expirationDateTime property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDateTime() {
     return expirationDateTime;
@@ -147,9 +141,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the expirationDateTime property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setExpirationDateTime(TCalendar value) {
     this.expirationDateTime = value;
@@ -162,9 +154,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -173,9 +163,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -188,9 +176,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the seconds property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getSeconds() {
     return seconds;
@@ -199,9 +185,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the seconds property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setSeconds(TString value) {
     this.seconds = value;
@@ -214,9 +198,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the minutes property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getMinutes() {
     return minutes;
@@ -225,9 +207,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the minutes property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setMinutes(TString value) {
     this.minutes = value;
@@ -240,9 +220,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the hours property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getHours() {
     return hours;
@@ -251,9 +229,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the hours property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHours(TString value) {
     this.hours = value;
@@ -266,9 +242,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the daysOfMonth property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getDaysOfMonth() {
     return daysOfMonth;
@@ -277,9 +251,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the daysOfMonth property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
@@ -292,9 +264,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the months property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getMonths() {
     return months;
@@ -303,9 +273,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the months property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setMonths(TString value) {
     this.months = value;
@@ -318,9 +286,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the daysOfWeek property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getDaysOfWeek() {
     return daysOfWeek;
@@ -329,9 +295,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the daysOfWeek property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
@@ -344,9 +308,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the years property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getYears() {
     return years;
@@ -355,9 +317,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the years property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setYears(TString value) {
     this.years = value;
@@ -370,9 +330,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Gets the value of the duration property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TInteger getDuration() {
     return duration;
@@ -381,9 +339,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Sets the value of the duration property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDuration(TInteger value) {
     this.duration = value;

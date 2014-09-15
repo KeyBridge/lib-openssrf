@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -47,29 +46,34 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Trunking">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="AdditionalChannelsRationale" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="Dispatcher" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS1" minOccurs="0"/>
- *         &lt;element name="DispatcherExplanation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="EstimatedExpansionCost" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS70" minOccurs="0"/>
- *         &lt;element name="ExpansionTargetDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="FreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="NSEPUse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="NumFreqsRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10" minOccurs="0"/>
- *         &lt;element name="NumRepeaters" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN7" minOccurs="0"/>
- *         &lt;element name="NumUsers" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10" minOccurs="0"/>
- *         &lt;element name="PreviousSPSDocketNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/>
- *         &lt;element name="RequestForExpansion" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="SeparateSystemJustification" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="TrunkingAssignment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TrunkingAssignment" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Trunking"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="AdditionalChannelsRationale"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="Dispatcher" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS1"
+ * minOccurs="0"/> &lt;element name="DispatcherExplanation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="EstimatedExpansionCost" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS70"
+ * minOccurs="0"/> &lt;element name="ExpansionTargetDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="FreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="NSEPUse"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="NumFreqsRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10"
+ * minOccurs="0"/> &lt;element name="NumRepeaters"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN7" minOccurs="0"/> &lt;element
+ * name="NumUsers" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10"
+ * minOccurs="0"/> &lt;element name="PreviousSPSDocketNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/> &lt;element
+ * name="RequestForExpansion"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;element name="SeparateSystemJustification"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="TrunkingAssignment"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TrunkingAssignment"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -141,9 +145,7 @@ public class Trunking {
   /**
    * Gets the value of the additionalChannelsRationale property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAdditionalChannelsRationale() {
     return additionalChannelsRationale;
@@ -152,9 +154,7 @@ public class Trunking {
   /**
    * Sets the value of the additionalChannelsRationale property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAdditionalChannelsRationale(TString value) {
     this.additionalChannelsRationale = value;
@@ -167,9 +167,7 @@ public class Trunking {
   /**
    * Gets the value of the dispatcher property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDispatcher() {
     return dispatcher;
@@ -178,9 +176,7 @@ public class Trunking {
   /**
    * Sets the value of the dispatcher property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDispatcher(TString value) {
     this.dispatcher = value;
@@ -193,9 +189,7 @@ public class Trunking {
   /**
    * Gets the value of the dispatcherExplanation property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDispatcherExplanation() {
     return dispatcherExplanation;
@@ -204,9 +198,7 @@ public class Trunking {
   /**
    * Sets the value of the dispatcherExplanation property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDispatcherExplanation(TString value) {
     this.dispatcherExplanation = value;
@@ -219,9 +211,7 @@ public class Trunking {
   /**
    * Gets the value of the estimatedExpansionCost property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getEstimatedExpansionCost() {
     return estimatedExpansionCost;
@@ -230,9 +220,7 @@ public class Trunking {
   /**
    * Sets the value of the estimatedExpansionCost property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEstimatedExpansionCost(TString value) {
     this.estimatedExpansionCost = value;
@@ -245,9 +233,7 @@ public class Trunking {
   /**
    * Gets the value of the expansionTargetDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpansionTargetDate() {
     return expansionTargetDate;
@@ -256,9 +242,7 @@ public class Trunking {
   /**
    * Sets the value of the expansionTargetDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpansionTargetDate(TCalendar value) {
     this.expansionTargetDate = value;
@@ -271,9 +255,7 @@ public class Trunking {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -282,9 +264,7 @@ public class Trunking {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -297,9 +277,7 @@ public class Trunking {
   /**
    * Gets the value of the nsepUse property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getNSEPUse() {
     return nsepUse;
@@ -308,9 +286,7 @@ public class Trunking {
   /**
    * Sets the value of the nsepUse property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNSEPUse(TString value) {
     this.nsepUse = value;
@@ -323,9 +299,7 @@ public class Trunking {
   /**
    * Gets the value of the numFreqsRequired property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumFreqsRequired() {
     return numFreqsRequired;
@@ -334,9 +308,7 @@ public class Trunking {
   /**
    * Sets the value of the numFreqsRequired property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumFreqsRequired(TInteger value) {
     this.numFreqsRequired = value;
@@ -349,9 +321,7 @@ public class Trunking {
   /**
    * Gets the value of the numRepeaters property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumRepeaters() {
     return numRepeaters;
@@ -360,9 +330,7 @@ public class Trunking {
   /**
    * Sets the value of the numRepeaters property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumRepeaters(TInteger value) {
     this.numRepeaters = value;
@@ -375,9 +343,7 @@ public class Trunking {
   /**
    * Gets the value of the numUsers property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumUsers() {
     return numUsers;
@@ -386,9 +352,7 @@ public class Trunking {
   /**
    * Sets the value of the numUsers property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumUsers(TInteger value) {
     this.numUsers = value;
@@ -401,9 +365,7 @@ public class Trunking {
   /**
    * Gets the value of the previousSPSDocketNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPreviousSPSDocketNum() {
     return previousSPSDocketNum;
@@ -412,9 +374,7 @@ public class Trunking {
   /**
    * Sets the value of the previousSPSDocketNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPreviousSPSDocketNum(TString value) {
     this.previousSPSDocketNum = value;
@@ -427,9 +387,7 @@ public class Trunking {
   /**
    * Gets the value of the requestForExpansion property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRequestForExpansion() {
     return requestForExpansion;
@@ -438,9 +396,7 @@ public class Trunking {
   /**
    * Sets the value of the requestForExpansion property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRequestForExpansion(TString value) {
     this.requestForExpansion = value;
@@ -453,9 +409,7 @@ public class Trunking {
   /**
    * Gets the value of the separateSystemJustification property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSeparateSystemJustification() {
     return separateSystemJustification;
@@ -464,9 +418,7 @@ public class Trunking {
   /**
    * Sets the value of the separateSystemJustification property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSeparateSystemJustification(TString value) {
     this.separateSystemJustification = value;
@@ -479,9 +431,7 @@ public class Trunking {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -490,9 +440,7 @@ public class Trunking {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -520,7 +468,7 @@ public class Trunking {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

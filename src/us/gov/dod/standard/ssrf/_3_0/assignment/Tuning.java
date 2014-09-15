@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,20 +48,17 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Tuning">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="TuningStep" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
- *         &lt;element name="NumFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4"/>
- *         &lt;element name="Priority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN1" minOccurs="0"/>
- *         &lt;element name="Exclusive" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqSep" minOccurs="0"/>
- *         &lt;element name="RequestedFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnFreqBase" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Tuning"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="TuningStep" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
+ * &lt;element name="NumFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4"/>
+ * &lt;element name="Priority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN1"
+ * minOccurs="0"/> &lt;element name="Exclusive"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqSep" minOccurs="0"/> &lt;element
+ * name="RequestedFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnFreqBase"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -102,7 +98,7 @@ public class Tuning {
   /**
    * Gets the value of the tuningStep property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getTuningStep() {
     return tuningStep;
@@ -111,7 +107,7 @@ public class Tuning {
   /**
    * Sets the value of the tuningStep property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
@@ -124,7 +120,7 @@ public class Tuning {
   /**
    * Gets the value of the numFreq property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumFreq() {
     return numFreq;
@@ -133,7 +129,7 @@ public class Tuning {
   /**
    * Sets the value of the numFreq property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumFreq(TInteger value) {
     this.numFreq = value;
@@ -146,9 +142,7 @@ public class Tuning {
   /**
    * Gets the value of the priority property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getPriority() {
     return priority;
@@ -157,9 +151,7 @@ public class Tuning {
   /**
    * Sets the value of the priority property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPriority(TInteger value) {
     this.priority = value;
@@ -172,9 +164,7 @@ public class Tuning {
   /**
    * Gets the value of the exclusive property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getExclusive() {
     return exclusive;
@@ -183,9 +173,7 @@ public class Tuning {
   /**
    * Sets the value of the exclusive property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExclusive(TString value) {
     this.exclusive = value;
@@ -198,7 +186,7 @@ public class Tuning {
   /**
    * Gets the value of the freqSep property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqSep() {
     return freqSep;
@@ -207,7 +195,7 @@ public class Tuning {
   /**
    * Sets the value of the freqSep property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqSep(TDecimal value) {
     this.freqSep = value;
@@ -220,7 +208,7 @@ public class Tuning {
   /**
    * Gets the value of the freqSepType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFreqSepType() {
     return freqSepType;
@@ -229,7 +217,7 @@ public class Tuning {
   /**
    * Sets the value of the freqSepType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqSepType(TString value) {
     this.freqSepType = value;
@@ -257,7 +245,7 @@ public class Tuning {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

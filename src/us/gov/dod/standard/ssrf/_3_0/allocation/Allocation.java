@@ -28,11 +28,11 @@ import java.util.*;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.metadata.ChannelPlanRef;
+import us.gov.dod.standard.ssrf._3_0.metadata.StnClass;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.metadata.ChannelPlanRef;
-import us.gov.dod.standard.ssrf._3_0.metadata.StnClass;
 
 /**
  * This element contains the allocation of a specific frequency band to a
@@ -196,7 +196,8 @@ public class Allocation {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
   }
@@ -217,7 +218,8 @@ public class Allocation {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
   }
@@ -238,7 +240,8 @@ public class Allocation {
   /**
    * Sets the value of the allocatedByFootnote property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setAllocatedByFootnote(TString value) {
     this.allocatedByFootnote = value;
   }

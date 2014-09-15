@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
 import java.util.Calendar;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -46,19 +45,17 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="TrunkingAssignment">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="IsRelinquished" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- *         &lt;element name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/>
- *         &lt;element name="FreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="RelinquishmentDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TrunkingAssignment"> &lt;complexContent>
+ * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ * &lt;sequence> &lt;element name="IsRelinquished"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/> &lt;element
+ * name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12"
+ * minOccurs="0"/> &lt;element name="FreqMax"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="RelinquishmentDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -91,7 +88,7 @@ public class TrunkingAssignment {
   /**
    * Gets the value of the isRelinquished property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIsRelinquished() {
     return isRelinquished;
@@ -100,7 +97,7 @@ public class TrunkingAssignment {
   /**
    * Sets the value of the isRelinquished property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIsRelinquished(TString value) {
     this.isRelinquished = value;
@@ -113,9 +110,7 @@ public class TrunkingAssignment {
   /**
    * Gets the value of the agencySerialNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAgencySerialNum() {
     return agencySerialNum;
@@ -124,9 +119,7 @@ public class TrunkingAssignment {
   /**
    * Sets the value of the agencySerialNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAgencySerialNum(TString value) {
     this.agencySerialNum = value;
@@ -139,9 +132,7 @@ public class TrunkingAssignment {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -150,9 +141,7 @@ public class TrunkingAssignment {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -165,9 +154,7 @@ public class TrunkingAssignment {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -176,9 +163,7 @@ public class TrunkingAssignment {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -191,9 +176,7 @@ public class TrunkingAssignment {
   /**
    * Gets the value of the relinquishmentDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getRelinquishmentDate() {
     return relinquishmentDate;
@@ -202,9 +185,7 @@ public class TrunkingAssignment {
   /**
    * Sets the value of the relinquishmentDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRelinquishmentDate(TCalendar value) {
     this.relinquishmentDate = value;

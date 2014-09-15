@@ -114,7 +114,8 @@ public class AntFreqs {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
   }
@@ -135,7 +136,8 @@ public class AntFreqs {
   /**
    * Sets the value of the bandwidth property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setBandwidth(TDecimal value) {
     this.bandwidth = value;
   }
@@ -156,7 +158,8 @@ public class AntFreqs {
   /**
    * Sets the value of the freqUse property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setFreqUse(TString value) {
     this.freqUse = value;
   }

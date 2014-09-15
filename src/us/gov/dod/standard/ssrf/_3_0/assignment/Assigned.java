@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -117,9 +116,7 @@ public class Assigned {
   /**
    * Gets the value of the quality property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getQuality() {
     return quality;
@@ -128,9 +125,7 @@ public class Assigned {
   /**
    * Sets the value of the quality property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setQuality(TInteger value) {
     this.quality = value;
@@ -143,9 +138,7 @@ public class Assigned {
   /**
    * Gets the value of the colourWord property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getColourWord() {
     return colourWord;
@@ -154,9 +147,7 @@ public class Assigned {
   /**
    * Sets the value of the colourWord property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setColourWord(TString value) {
     this.colourWord = value;
@@ -169,9 +160,7 @@ public class Assigned {
   /**
    * Gets the value of the colourNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getColourNum() {
     return colourNum;
@@ -180,9 +169,7 @@ public class Assigned {
   /**
    * Sets the value of the colourNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setColourNum(TInteger value) {
     this.colourNum = value;
@@ -195,9 +182,7 @@ public class Assigned {
   /**
    * Gets the value of the ituRegStatus property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getITURegStatus() {
     return ituRegStatus;
@@ -206,9 +191,7 @@ public class Assigned {
   /**
    * Sets the value of the ituRegStatus property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setITURegStatus(TString value) {
     this.ituRegStatus = value;
@@ -221,9 +204,7 @@ public class Assigned {
   /**
    * Gets the value of the ituRegDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getITURegDate() {
     return ituRegDate;
@@ -232,9 +213,7 @@ public class Assigned {
   /**
    * Sets the value of the ituRegDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setITURegDate(TCalendar value) {
     this.ituRegDate = value;
@@ -247,9 +226,7 @@ public class Assigned {
   /**
    * Gets the value of the ituRegNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getITURegNum() {
     return ituRegNum;
@@ -258,9 +235,7 @@ public class Assigned {
   /**
    * Sets the value of the ituRegNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setITURegNum(TString value) {
     this.ituRegNum = value;
@@ -273,9 +248,7 @@ public class Assigned {
   /**
    * Gets the value of the navAidsChannel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getNavAidsChannel() {
     return navAidsChannel;
@@ -284,9 +257,7 @@ public class Assigned {
   /**
    * Sets the value of the navAidsChannel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNavAidsChannel(TString value) {
     this.navAidsChannel = value;
@@ -299,9 +270,7 @@ public class Assigned {
   /**
    * Gets the value of the netNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getNetNum() {
     return netNum;
@@ -310,9 +279,7 @@ public class Assigned {
   /**
    * Sets the value of the netNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNetNum(TString value) {
     this.netNum = value;
@@ -325,9 +292,7 @@ public class Assigned {
   /**
    * Gets the value of the ituRegComments property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getITURegComments() {
     return ituRegComments;
@@ -336,9 +301,7 @@ public class Assigned {
   /**
    * Sets the value of the ituRegComments property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setITURegComments(TString value) {
     this.ituRegComments = value;
@@ -365,7 +328,7 @@ public class Assigned {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -402,7 +365,7 @@ public class Assigned {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

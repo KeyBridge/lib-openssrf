@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,17 +42,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RxSignalTuning">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/>
- *         &lt;element name="TuningStep" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="NumPresetChannels" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN8" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RxSignalTuning"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/> &lt;element
+ * name="TuningStep" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="NumPresetChannels"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN8" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -83,7 +78,7 @@ public class RxSignalTuning {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -92,7 +87,7 @@ public class RxSignalTuning {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -105,9 +100,7 @@ public class RxSignalTuning {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -116,9 +109,7 @@ public class RxSignalTuning {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -131,9 +122,7 @@ public class RxSignalTuning {
   /**
    * Gets the value of the tuningStep property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getTuningStep() {
     return tuningStep;
@@ -142,9 +131,7 @@ public class RxSignalTuning {
   /**
    * Sets the value of the tuningStep property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
@@ -157,9 +144,7 @@ public class RxSignalTuning {
   /**
    * Gets the value of the numPresetChannels property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumPresetChannels() {
     return numPresetChannels;
@@ -168,9 +153,7 @@ public class RxSignalTuning {
   /**
    * Sets the value of the numPresetChannels property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumPresetChannels(TInteger value) {
     this.numPresetChannels = value;

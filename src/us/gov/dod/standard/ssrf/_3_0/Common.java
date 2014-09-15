@@ -310,9 +310,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the entryBy property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getEntryBy() {
     return entryBy;
@@ -321,9 +319,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the entryBy property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setEntryBy(TString value) {
     this.entryBy = value;
@@ -336,9 +332,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the owner property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getOwner() {
     return owner;
@@ -347,9 +341,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the owner property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setOwner(TString value) {
     this.owner = value;
@@ -362,9 +354,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the lastChangeDateTime property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TCalendar getLastChangeDateTime() {
     return lastChangeDateTime;
@@ -373,9 +363,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the lastChangeDateTime property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setLastChangeDateTime(TCalendar value) {
     this.lastChangeDateTime = value;
@@ -388,9 +376,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the lastChangeBy property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getLastChangeBy() {
     return lastChangeBy;
@@ -399,9 +385,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the lastChangeBy property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setLastChangeBy(TString value) {
     this.lastChangeBy = value;
@@ -414,9 +398,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the state property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getState() {
     return state;
@@ -425,9 +407,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the state property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setState(TString value) {
     this.state = value;

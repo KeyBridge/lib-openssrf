@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -46,23 +45,22 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Curve">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/>
- *         &lt;element name="Calculated" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="FreqFactor" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3_1"/>
- *         &lt;element name="FreqConst" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqOffset"/>
- *         &lt;element name="Bw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="CurvePoint" type="{urn:us:gov:dod:standard:ssrf:3.0.0}CurvePoint" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *       &lt;attribute name="idx" use="required" type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Curve"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/> &lt;element
+ * name="Calculated" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
+ * minOccurs="0"/> &lt;element name="FreqFactor"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3_1"/> &lt;element
+ * name="FreqConst" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqOffset"/>
+ * &lt;element name="Bw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="FreqMin"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="FreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="CurvePoint"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}CurvePoint" maxOccurs="unbounded"/>
+ * &lt;/sequence> &lt;attribute name="idx" use="required"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -108,7 +106,7 @@ public class Curve {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -117,7 +115,7 @@ public class Curve {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -130,9 +128,7 @@ public class Curve {
   /**
    * Gets the value of the calculated property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCalculated() {
     return calculated;
@@ -141,9 +137,7 @@ public class Curve {
   /**
    * Sets the value of the calculated property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCalculated(TString value) {
     this.calculated = value;
@@ -156,7 +150,7 @@ public class Curve {
   /**
    * Gets the value of the freqFactor property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqFactor() {
     return freqFactor;
@@ -165,7 +159,7 @@ public class Curve {
   /**
    * Sets the value of the freqFactor property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqFactor(TDecimal value) {
     this.freqFactor = value;
@@ -178,7 +172,7 @@ public class Curve {
   /**
    * Gets the value of the freqConst property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqConst() {
     return freqConst;
@@ -187,7 +181,7 @@ public class Curve {
   /**
    * Sets the value of the freqConst property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqConst(TDecimal value) {
     this.freqConst = value;
@@ -200,9 +194,7 @@ public class Curve {
   /**
    * Gets the value of the bw property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getBw() {
     return bw;
@@ -211,9 +203,7 @@ public class Curve {
   /**
    * Sets the value of the bw property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBw(TDecimal value) {
     this.bw = value;
@@ -226,9 +216,7 @@ public class Curve {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -237,9 +225,7 @@ public class Curve {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -252,9 +238,7 @@ public class Curve {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -263,9 +247,7 @@ public class Curve {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -293,7 +275,7 @@ public class Curve {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -316,7 +298,7 @@ public class Curve {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getIdx() {
     return idx;
@@ -325,7 +307,7 @@ public class Curve {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

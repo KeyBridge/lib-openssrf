@@ -27,15 +27,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
-import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
@@ -52,26 +51,28 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCPC;
  * <p>
  * <
  * pre>
- * &lt;complexType name="JRFLEntry">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ProtectionCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCPC"/>
- *         &lt;element name="Priority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS2" minOccurs="0"/>
- *         &lt;element name="Justification" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"/>
- *         &lt;element name="ApprovalLevel" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame" minOccurs="0"/>
- *         &lt;element name="AsgnAllotRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp" minOccurs="0"/>
- *         &lt;element name="Bandwidth" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="FreqUse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU" minOccurs="0"/>
- *         &lt;element name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="JRFLEntryLocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}JRFLEntryLocation" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="JRFLEntry"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="ProtectionCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCPC"/>
+ * &lt;element name="Priority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS2"
+ * minOccurs="0"/> &lt;element name="Justification"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"/> &lt;element
+ * name="ApprovalLevel" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame"
+ * minOccurs="0"/> &lt;element name="AsgnAllotRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp" minOccurs="0"/>
+ * &lt;element name="Bandwidth"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="FreqUse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU"
+ * minOccurs="0"/> &lt;element name="Project"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="JRFLEntryLocation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}JRFLEntryLocation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -160,7 +161,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the protectionCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getProtectionCode() {
     return protectionCode;
@@ -169,7 +170,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the protectionCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setProtectionCode(TString value) {
     this.protectionCode = value;
@@ -182,9 +183,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the priority property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPriority() {
     return priority;
@@ -193,9 +192,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the priority property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPriority(TString value) {
     this.priority = value;
@@ -208,7 +205,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the justification property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getJustification() {
     return justification;
@@ -217,7 +214,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the justification property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setJustification(TString value) {
     this.justification = value;
@@ -230,9 +227,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the approvalLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getApprovalLevel() {
     return approvalLevel;
@@ -241,9 +236,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the approvalLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setApprovalLevel(TString value) {
     this.approvalLevel = value;
@@ -256,9 +249,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the seconds property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSeconds() {
     return seconds;
@@ -267,9 +258,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the seconds property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSeconds(TString value) {
     this.seconds = value;
@@ -282,9 +271,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the minutes property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMinutes() {
     return minutes;
@@ -293,9 +280,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the minutes property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMinutes(TString value) {
     this.minutes = value;
@@ -308,9 +293,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the hours property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getHours() {
     return hours;
@@ -319,9 +302,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the hours property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setHours(TString value) {
     this.hours = value;
@@ -334,9 +315,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the daysOfMonth property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDaysOfMonth() {
     return daysOfMonth;
@@ -345,9 +324,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the daysOfMonth property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
@@ -360,9 +337,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the months property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMonths() {
     return months;
@@ -371,9 +346,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the months property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMonths(TString value) {
     this.months = value;
@@ -386,9 +359,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the daysOfWeek property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDaysOfWeek() {
     return daysOfWeek;
@@ -397,9 +368,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the daysOfWeek property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
@@ -412,9 +381,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the years property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getYears() {
     return years;
@@ -423,9 +390,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the years property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setYears(TString value) {
     this.years = value;
@@ -438,9 +403,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the duration property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getDuration() {
     return duration;
@@ -449,9 +412,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the duration property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDuration(TInteger value) {
     this.duration = value;
@@ -464,9 +425,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the asgnAllotRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAsgnAllotRef() {
     return asgnAllotRef;
@@ -475,9 +434,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the asgnAllotRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAsgnAllotRef(TString value) {
     this.asgnAllotRef = value;
@@ -490,7 +447,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -499,7 +456,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -512,9 +469,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -523,9 +478,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -538,9 +491,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the bandwidth property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getBandwidth() {
     return bandwidth;
@@ -549,9 +500,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the bandwidth property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBandwidth(TDecimal value) {
     this.bandwidth = value;
@@ -564,9 +513,7 @@ public class JRFLEntry {
   /**
    * Gets the value of the freqUse property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFreqUse() {
     return freqUse;
@@ -575,9 +522,7 @@ public class JRFLEntry {
   /**
    * Sets the value of the freqUse property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqUse(TString value) {
     this.freqUse = value;
@@ -604,7 +549,7 @@ public class JRFLEntry {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -642,7 +587,7 @@ public class JRFLEntry {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -680,7 +625,7 @@ public class JRFLEntry {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

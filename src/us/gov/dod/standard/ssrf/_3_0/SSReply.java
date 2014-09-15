@@ -141,9 +141,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the ssRequestRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSSRequestRef() {
     return ssRequestRef;
@@ -152,9 +150,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the ssRequestRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSSRequestRef(TString value) {
     this.ssRequestRef = value;
@@ -167,7 +163,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the replyingCountry property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getReplyingCountry() {
     return replyingCountry;
@@ -176,7 +172,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the replyingCountry property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReplyingCountry(TString value) {
     this.replyingCountry = value;
@@ -189,7 +185,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the supportabilityCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSupportabilityCode() {
     return supportabilityCode;
@@ -198,7 +194,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the supportabilityCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSupportabilityCode(TString value) {
     this.supportabilityCode = value;
@@ -211,9 +207,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the dateReceivedByCountry property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDateReceivedByCountry() {
     return dateReceivedByCountry;
@@ -222,9 +216,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the dateReceivedByCountry property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDateReceivedByCountry(TCalendar value) {
     this.dateReceivedByCountry = value;
@@ -237,7 +229,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -246,7 +238,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -259,9 +251,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -270,9 +260,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -285,9 +273,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -296,9 +282,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -311,9 +295,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the approvalSPSNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getApprovalSPSNum() {
     return approvalSPSNum;
@@ -322,9 +304,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the approvalSPSNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setApprovalSPSNum(TString value) {
     this.approvalSPSNum = value;
@@ -337,9 +317,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the erpNumber property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getERPNumber() {
     return erpNumber;
@@ -348,9 +326,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the erpNumber property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setERPNumber(TString value) {
     this.erpNumber = value;
@@ -363,9 +339,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the fasNumber property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFASNumber() {
     return fasNumber;
@@ -374,9 +348,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the fasNumber property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFASNumber(TString value) {
     this.fasNumber = value;
@@ -389,9 +361,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the iracNumber property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIRACNumber() {
     return iracNumber;
@@ -400,9 +370,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the iracNumber property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIRACNumber(TString value) {
     this.iracNumber = value;
@@ -415,9 +383,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the replyingAuthority property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getReplyingAuthority() {
     return replyingAuthority;
@@ -426,9 +392,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the replyingAuthority property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReplyingAuthority(TString value) {
     this.replyingAuthority = value;
@@ -456,7 +420,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -494,7 +458,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -532,7 +496,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

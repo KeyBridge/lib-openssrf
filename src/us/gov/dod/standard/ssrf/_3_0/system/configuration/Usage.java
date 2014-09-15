@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system.configuration;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,16 +41,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Usage">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="EqpFnct" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="StnClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS5" minOccurs="0"/>
- *         &lt;element name="RadioService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Usage"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="EqpFnct" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="StnClass"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS5" minOccurs="0"/> &lt;element
+ * name="RadioService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -78,9 +74,7 @@ public class Usage {
   /**
    * Gets the value of the eqpFnct property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getEqpFnct() {
     return eqpFnct;
@@ -89,9 +83,7 @@ public class Usage {
   /**
    * Sets the value of the eqpFnct property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEqpFnct(TString value) {
     this.eqpFnct = value;
@@ -104,9 +96,7 @@ public class Usage {
   /**
    * Gets the value of the stnClass property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStnClass() {
     return stnClass;
@@ -115,9 +105,7 @@ public class Usage {
   /**
    * Sets the value of the stnClass property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStnClass(TString value) {
     this.stnClass = value;
@@ -130,9 +118,7 @@ public class Usage {
   /**
    * Gets the value of the radioService property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRadioService() {
     return radioService;
@@ -141,9 +127,7 @@ public class Usage {
   /**
    * Sets the value of the radioService property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRadioService(TString value) {
     this.radioService = value;

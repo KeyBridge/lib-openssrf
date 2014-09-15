@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.location;
 
 import java.math.BigInteger;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -42,19 +41,16 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Point">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Coord"/>
- *         &lt;element name="TerrainElevation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Altitude" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="idx" use="required" type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Point"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Coord"/>
+ * &lt;element name="TerrainElevation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Altitude" minOccurs="0"/>
+ * &lt;/sequence> &lt;attribute name="idx" use="required"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -93,9 +89,7 @@ public class Point {
   /**
    * Gets the value of the excluded property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getExcluded() {
     return excluded;
@@ -104,9 +98,7 @@ public class Point {
   /**
    * Sets the value of the excluded property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExcluded(TString value) {
     this.excluded = value;
@@ -119,7 +111,7 @@ public class Point {
   /**
    * Gets the value of the lon property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLon() {
     return lon;
@@ -128,7 +120,7 @@ public class Point {
   /**
    * Sets the value of the lon property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLon(TString value) {
     this.lon = value;
@@ -141,7 +133,7 @@ public class Point {
   /**
    * Gets the value of the lat property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLat() {
     return lat;
@@ -150,7 +142,7 @@ public class Point {
   /**
    * Sets the value of the lat property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLat(TString value) {
     this.lat = value;
@@ -163,9 +155,7 @@ public class Point {
   /**
    * Gets the value of the terrainElevation property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getTerrainElevation() {
     return terrainElevation;
@@ -174,9 +164,7 @@ public class Point {
   /**
    * Sets the value of the terrainElevation property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTerrainElevation(TDecimal value) {
     this.terrainElevation = value;
@@ -189,9 +177,7 @@ public class Point {
   /**
    * Gets the value of the altitudeMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAltitudeMin() {
     return altitudeMin;
@@ -200,9 +186,7 @@ public class Point {
   /**
    * Sets the value of the altitudeMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAltitudeMin(TDecimal value) {
     this.altitudeMin = value;
@@ -215,9 +199,7 @@ public class Point {
   /**
    * Gets the value of the altitudeMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAltitudeMax() {
     return altitudeMax;
@@ -226,9 +208,7 @@ public class Point {
   /**
    * Sets the value of the altitudeMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAltitudeMax(TDecimal value) {
     this.altitudeMax = value;
@@ -241,7 +221,7 @@ public class Point {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getIdx() {
     return idx;
@@ -250,7 +230,7 @@ public class Point {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

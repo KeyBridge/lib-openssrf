@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,18 +43,15 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Power">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="PowerMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
- *         &lt;element name="PowerMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
- *         &lt;element name="PowerType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="Calculated" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Power"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="PowerMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW"
+ * minOccurs="0"/> &lt;element name="PowerMax"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/> &lt;element
+ * name="PowerType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"
+ * minOccurs="0"/> &lt;element name="Calculated"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -84,9 +80,7 @@ public class Power {
   /**
    * Gets the value of the powerMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPowerMin() {
     return powerMin;
@@ -95,9 +89,7 @@ public class Power {
   /**
    * Sets the value of the powerMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPowerMin(TDecimal value) {
     this.powerMin = value;
@@ -110,9 +102,7 @@ public class Power {
   /**
    * Gets the value of the powerMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPowerMax() {
     return powerMax;
@@ -121,9 +111,7 @@ public class Power {
   /**
    * Sets the value of the powerMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPowerMax(TDecimal value) {
     this.powerMax = value;
@@ -136,9 +124,7 @@ public class Power {
   /**
    * Gets the value of the powerType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPowerType() {
     return powerType;
@@ -147,9 +133,7 @@ public class Power {
   /**
    * Sets the value of the powerType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPowerType(TString value) {
     this.powerType = value;
@@ -162,9 +146,7 @@ public class Power {
   /**
    * Gets the value of the calculated property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCalculated() {
     return calculated;
@@ -173,9 +155,7 @@ public class Power {
   /**
    * Sets the value of the calculated property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCalculated(TString value) {
     this.calculated = value;

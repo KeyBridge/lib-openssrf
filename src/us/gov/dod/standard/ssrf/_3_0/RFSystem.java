@@ -115,9 +115,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Gets the value of the fieldedStatus property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFieldedStatus() {
     return fieldedStatus;
@@ -126,9 +124,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Sets the value of the fieldedStatus property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFieldedStatus(TString value) {
     this.fieldedStatus = value;
@@ -141,9 +137,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Gets the value of the emergency property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getEmergency() {
     return emergency;
@@ -152,9 +146,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Sets the value of the emergency property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEmergency(TString value) {
     this.emergency = value;
@@ -167,9 +159,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Gets the value of the initialCost property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getInitialCost() {
     return initialCost;
@@ -178,9 +168,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Sets the value of the initialCost property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setInitialCost(TString value) {
     this.initialCost = value;
@@ -208,7 +196,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -246,7 +234,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -284,7 +272,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -322,7 +310,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -360,7 +348,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -397,7 +385,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system.configuration;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,16 +42,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="ConfigEmission">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="EmsClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TEmsDes" minOccurs="0"/>
- *         &lt;element name="NecessaryBwMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="NecessaryBwMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="ConfigEmission"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="EmsClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TEmsDes"
+ * minOccurs="0"/> &lt;element name="NecessaryBwMax"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="NecessaryBwMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -79,9 +75,7 @@ public class ConfigEmission {
   /**
    * Gets the value of the emsClass property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getEmsClass() {
     return emsClass;
@@ -90,9 +84,7 @@ public class ConfigEmission {
   /**
    * Sets the value of the emsClass property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEmsClass(TString value) {
     this.emsClass = value;
@@ -105,9 +97,7 @@ public class ConfigEmission {
   /**
    * Gets the value of the necessaryBwMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNecessaryBwMax() {
     return necessaryBwMax;
@@ -116,9 +106,7 @@ public class ConfigEmission {
   /**
    * Sets the value of the necessaryBwMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNecessaryBwMax(TDecimal value) {
     this.necessaryBwMax = value;
@@ -131,9 +119,7 @@ public class ConfigEmission {
   /**
    * Gets the value of the necessaryBwMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNecessaryBwMin() {
     return necessaryBwMin;
@@ -142,9 +128,7 @@ public class ConfigEmission {
   /**
    * Sets the value of the necessaryBwMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNecessaryBwMin(TDecimal value) {
     this.necessaryBwMin = value;

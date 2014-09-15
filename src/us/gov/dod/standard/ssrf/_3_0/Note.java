@@ -92,9 +92,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the administration property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAdministration() {
     return administration;
@@ -103,9 +101,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the administration property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAdministration(TString value) {
     this.administration = value;
@@ -118,9 +114,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -129,9 +123,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -144,9 +136,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -155,9 +145,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -170,9 +158,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -181,9 +167,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -196,9 +180,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -207,9 +189,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -222,9 +202,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the source property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSource() {
     return source;
@@ -233,9 +211,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the source property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSource(TString value) {
     this.source = value;

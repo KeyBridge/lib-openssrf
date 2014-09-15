@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,19 +44,18 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCLO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="FreqConversion">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="StageNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TIFNum" minOccurs="0"/>
- *         &lt;element name="OscillatorTuning" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCLO" minOccurs="0"/>
- *         &lt;element name="LOFreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="LOFreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="IFMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="IFMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="FreqConversion"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="StageNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TIFNum"
+ * minOccurs="0"/> &lt;element name="OscillatorTuning"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCLO" minOccurs="0"/>
+ * &lt;element name="LOFreqMin"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="LOFreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;element name="IFMin"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="IFMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -95,9 +93,7 @@ public class FreqConversion {
   /**
    * Gets the value of the stageNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getStageNum() {
     return stageNum;
@@ -106,9 +102,7 @@ public class FreqConversion {
   /**
    * Sets the value of the stageNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStageNum(TInteger value) {
     this.stageNum = value;
@@ -121,9 +115,7 @@ public class FreqConversion {
   /**
    * Gets the value of the oscillatorTuning property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOscillatorTuning() {
     return oscillatorTuning;
@@ -132,9 +124,7 @@ public class FreqConversion {
   /**
    * Sets the value of the oscillatorTuning property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOscillatorTuning(TString value) {
     this.oscillatorTuning = value;
@@ -147,9 +137,7 @@ public class FreqConversion {
   /**
    * Gets the value of the loFreqMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getLOFreqMin() {
     return loFreqMin;
@@ -158,9 +146,7 @@ public class FreqConversion {
   /**
    * Sets the value of the loFreqMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLOFreqMin(TDecimal value) {
     this.loFreqMin = value;
@@ -173,9 +159,7 @@ public class FreqConversion {
   /**
    * Gets the value of the loFreqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getLOFreqMax() {
     return loFreqMax;
@@ -184,9 +168,7 @@ public class FreqConversion {
   /**
    * Sets the value of the loFreqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLOFreqMax(TDecimal value) {
     this.loFreqMax = value;
@@ -199,9 +181,7 @@ public class FreqConversion {
   /**
    * Gets the value of the ifMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getIFMin() {
     return ifMin;
@@ -210,9 +190,7 @@ public class FreqConversion {
   /**
    * Sets the value of the ifMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIFMin(TDecimal value) {
     this.ifMin = value;
@@ -225,9 +203,7 @@ public class FreqConversion {
   /**
    * Gets the value of the ifMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getIFMax() {
     return ifMax;
@@ -236,9 +212,7 @@ public class FreqConversion {
   /**
    * Sets the value of the ifMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIFMax(TDecimal value) {
     this.ifMax = value;

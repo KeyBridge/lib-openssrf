@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.common;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,22 +43,22 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="SecurityClass">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ClsAuthority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30" minOccurs="0"/>
- *         &lt;element name="SourceClsDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="ClsOrg" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30" minOccurs="0"/>
- *         &lt;element name="ClsReason" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/>
- *         &lt;element name="DeclsType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="DeclsDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="DeclsEvent" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS200" minOccurs="0"/>
- *         &lt;element name="Downgrade" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Downgrade" maxOccurs="3" minOccurs="0"/>
- *         &lt;element name="ClsDerived" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ClsDerived" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="SecurityClass"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="ClsAuthority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30"
+ * minOccurs="0"/> &lt;element name="SourceClsDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="ClsOrg" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30" minOccurs="0"/>
+ * &lt;element name="ClsReason" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15"
+ * minOccurs="0"/> &lt;element name="DeclsType"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/> &lt;element
+ * name="DeclsDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="DeclsEvent"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS200" minOccurs="0"/> &lt;element
+ * name="Downgrade" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Downgrade"
+ * maxOccurs="3" minOccurs="0"/> &lt;element name="ClsDerived"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ClsDerived" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -108,9 +107,7 @@ public class SecurityClass {
   /**
    * Gets the value of the clsAuthority property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getClsAuthority() {
     return clsAuthority;
@@ -119,9 +116,7 @@ public class SecurityClass {
   /**
    * Sets the value of the clsAuthority property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setClsAuthority(TString value) {
     this.clsAuthority = value;
@@ -134,9 +129,7 @@ public class SecurityClass {
   /**
    * Gets the value of the sourceClsDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getSourceClsDate() {
     return sourceClsDate;
@@ -145,9 +138,7 @@ public class SecurityClass {
   /**
    * Sets the value of the sourceClsDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSourceClsDate(TCalendar value) {
     this.sourceClsDate = value;
@@ -160,9 +151,7 @@ public class SecurityClass {
   /**
    * Gets the value of the clsOrg property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getClsOrg() {
     return clsOrg;
@@ -171,9 +160,7 @@ public class SecurityClass {
   /**
    * Sets the value of the clsOrg property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setClsOrg(TString value) {
     this.clsOrg = value;
@@ -186,9 +173,7 @@ public class SecurityClass {
   /**
    * Gets the value of the clsReason property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getClsReason() {
     return clsReason;
@@ -197,9 +182,7 @@ public class SecurityClass {
   /**
    * Sets the value of the clsReason property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setClsReason(TString value) {
     this.clsReason = value;
@@ -212,9 +195,7 @@ public class SecurityClass {
   /**
    * Gets the value of the declsType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDeclsType() {
     return declsType;
@@ -223,9 +204,7 @@ public class SecurityClass {
   /**
    * Sets the value of the declsType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDeclsType(TString value) {
     this.declsType = value;
@@ -238,9 +217,7 @@ public class SecurityClass {
   /**
    * Gets the value of the declsDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDeclsDate() {
     return declsDate;
@@ -249,9 +226,7 @@ public class SecurityClass {
   /**
    * Sets the value of the declsDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDeclsDate(TCalendar value) {
     this.declsDate = value;
@@ -264,9 +239,7 @@ public class SecurityClass {
   /**
    * Gets the value of the declsEvent property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDeclsEvent() {
     return declsEvent;
@@ -275,9 +248,7 @@ public class SecurityClass {
   /**
    * Sets the value of the declsEvent property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDeclsEvent(TString value) {
     this.declsEvent = value;
@@ -304,7 +275,7 @@ public class SecurityClass {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -342,7 +313,7 @@ public class SecurityClass {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

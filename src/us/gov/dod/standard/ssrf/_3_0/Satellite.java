@@ -253,7 +253,7 @@ public class Satellite extends Common<Satellite> {
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
   }
-  
+
   public boolean isSetReviewDate() {
     return (this.reviewDate != null);
   }
@@ -261,9 +261,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the callSign property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getCallSign() {
     return callSign;
@@ -272,14 +270,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the callSign property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setCallSign(TString value) {
     this.callSign = value;
   }
-  
+
   public boolean isSetCallSign() {
     return (this.callSign != null);
   }
@@ -287,9 +283,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the orbitType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getOrbitType() {
     return orbitType;
@@ -298,14 +292,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the orbitType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setOrbitType(TString value) {
     this.orbitType = value;
   }
-  
+
   public boolean isSetOrbitType() {
     return (this.orbitType != null);
   }
@@ -313,9 +305,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the launchStatus property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getLaunchStatus() {
     return launchStatus;
@@ -324,14 +314,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the launchStatus property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setLaunchStatus(TString value) {
     this.launchStatus = value;
   }
-  
+
   public boolean isSetLaunchStatus() {
     return (this.launchStatus != null);
   }
@@ -339,9 +327,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the launchLocRef property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getLaunchLocRef() {
     return launchLocRef;
@@ -350,14 +336,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the launchLocRef property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setLaunchLocRef(TString value) {
     this.launchLocRef = value;
   }
-  
+
   public boolean isSetLaunchLocRef() {
     return (this.launchLocRef != null);
   }
@@ -379,7 +363,7 @@ public class Satellite extends Common<Satellite> {
   public void setLaunchDate(TCalendar value) {
     this.launchDate = value;
   }
-  
+
   public boolean isSetLaunchDate() {
     return (this.launchDate != null);
   }
@@ -387,9 +371,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the geoNominalLon property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getGeoNominalLon() {
     return geoNominalLon;
@@ -398,14 +380,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the geoNominalLon property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setGeoNominalLon(TString value) {
     this.geoNominalLon = value;
   }
-  
+
   public boolean isSetGeoNominalLon() {
     return (this.geoNominalLon != null);
   }
@@ -413,9 +393,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the geoAltitude property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getGeoAltitude() {
     return geoAltitude;
@@ -424,14 +402,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the geoAltitude property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setGeoAltitude(TDecimal value) {
     this.geoAltitude = value;
   }
-  
+
   public boolean isSetGeoAltitude() {
     return (this.geoAltitude != null);
   }
@@ -439,9 +415,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoPeriod property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getNonGeoPeriod() {
     return nonGeoPeriod;
@@ -450,14 +424,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoPeriod property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setNonGeoPeriod(TDecimal value) {
     this.nonGeoPeriod = value;
   }
-  
+
   public boolean isSetNonGeoPeriod() {
     return (this.nonGeoPeriod != null);
   }
@@ -465,9 +437,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoNumSatellites property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TInteger getNonGeoNumSatellites() {
     return nonGeoNumSatellites;
@@ -476,14 +446,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoNumSatellites property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setNonGeoNumSatellites(TInteger value) {
     this.nonGeoNumSatellites = value;
   }
-  
+
   public boolean isSetNonGeoNumSatellites() {
     return (this.nonGeoNumSatellites != null);
   }
@@ -491,9 +459,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoApogee property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getNonGeoApogee() {
     return nonGeoApogee;
@@ -502,14 +468,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoApogee property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setNonGeoApogee(TDecimal value) {
     this.nonGeoApogee = value;
   }
-  
+
   public boolean isSetNonGeoApogee() {
     return (this.nonGeoApogee != null);
   }
@@ -517,9 +481,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoPerigee property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getNonGeoPerigee() {
     return nonGeoPerigee;
@@ -528,14 +490,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoPerigee property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setNonGeoPerigee(TDecimal value) {
     this.nonGeoPerigee = value;
   }
-  
+
   public boolean isSetNonGeoPerigee() {
     return (this.nonGeoPerigee != null);
   }
@@ -543,9 +503,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoInclination property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getNonGeoInclination() {
     return nonGeoInclination;
@@ -554,14 +512,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoInclination property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setNonGeoInclination(TDecimal value) {
     this.nonGeoInclination = value;
   }
-  
+
   public boolean isSetNonGeoInclination() {
     return (this.nonGeoInclination != null);
   }
@@ -569,9 +525,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the internationalDesignator property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getInternationalDesignator() {
     return internationalDesignator;
@@ -580,14 +534,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the internationalDesignator property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setInternationalDesignator(TString value) {
     this.internationalDesignator = value;
   }
-  
+
   public boolean isSetInternationalDesignator() {
     return (this.internationalDesignator != null);
   }
@@ -595,9 +547,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the objectNum property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getObjectNum() {
     return objectNum;
@@ -606,14 +556,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the objectNum property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setObjectNum(TString value) {
     this.objectNum = value;
   }
-  
+
   public boolean isSetObjectNum() {
     return (this.objectNum != null);
   }
@@ -621,9 +569,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the administration property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getAdministration() {
     return administration;
@@ -632,14 +578,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the administration property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setAdministration(TString value) {
     this.administration = value;
   }
-  
+
   public boolean isSetAdministration() {
     return (this.administration != null);
   }
@@ -647,9 +591,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the networkName property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getNetworkName() {
     return networkName;
@@ -658,14 +600,12 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the networkName property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setNetworkName(TString value) {
     this.networkName = value;
   }
-  
+
   public boolean isSetNetworkName() {
     return (this.networkName != null);
   }
@@ -699,11 +639,11 @@ public class Satellite extends Common<Satellite> {
     }
     return this.rfSystemRef;
   }
-  
+
   public boolean isSetRFSystemRef() {
     return ((this.rfSystemRef != null) && (!this.rfSystemRef.isEmpty()));
   }
-  
+
   public void unsetRFSystemRef() {
     this.rfSystemRef = null;
   }
@@ -737,11 +677,11 @@ public class Satellite extends Common<Satellite> {
     }
     return this.earthStation;
   }
-  
+
   public boolean isSetEarthStation() {
     return ((this.earthStation != null) && (!this.earthStation.isEmpty()));
   }
-  
+
   public void unsetEarthStation() {
     this.earthStation = null;
   }
@@ -775,11 +715,11 @@ public class Satellite extends Common<Satellite> {
     }
     return this.identifier;
   }
-  
+
   public boolean isSetIdentifier() {
     return ((this.identifier != null) && (!this.identifier.isEmpty()));
   }
-  
+
   public void unsetIdentifier() {
     this.identifier = null;
   }
@@ -813,154 +753,154 @@ public class Satellite extends Common<Satellite> {
     }
     return this.serviceArea;
   }
-  
+
   public boolean isSetServiceArea() {
     return ((this.serviceArea != null) && (!this.serviceArea.isEmpty()));
   }
-  
+
   public void unsetServiceArea() {
     this.serviceArea = null;
   }
-  
+
   public Satellite withReviewDate(Calendar value) {
     setReviewDate(new TCalendar(value));
     return this;
   }
-  
+
   public Satellite withCallSign(String value) {
     setCallSign(new TString(value));
     return this;
   }
-  
+
   public Satellite withOrbitType(String value) {
     setOrbitType(new TString(value));
     return this;
   }
-  
+
   public Satellite withLaunchStatus(String value) {
     setLaunchStatus(new TString(value));
     return this;
   }
-  
+
   public Satellite withLaunchLocRef(String value) {
     setLaunchLocRef(new TString(value));
     return this;
   }
-  
+
   public Satellite withLaunchDate(Calendar value) {
     setLaunchDate(new TCalendar(value));
     return this;
   }
-  
+
   public Satellite withGeoNominalLon(String value) {
     setGeoNominalLon(new TString(value));
     return this;
   }
-  
+
   public Satellite withGeoAltitude(Double value) {
     setGeoAltitude(new TDecimal(value));
     return this;
   }
-  
+
   public Satellite withNonGeoPeriod(Double value) {
     setNonGeoPeriod(new TDecimal(value));
     return this;
   }
-  
+
   public Satellite withNonGeoNumSatellites(Integer value) {
     setNonGeoNumSatellites(new TInteger(value));
     return this;
   }
-  
+
   public Satellite withNonGeoApogee(Double value) {
     setNonGeoApogee(new TDecimal(value));
     return this;
   }
-  
+
   public Satellite withNonGeoPerigee(Double value) {
     setNonGeoPerigee(new TDecimal(value));
     return this;
   }
-  
+
   public Satellite withNonGeoInclination(Double value) {
     setNonGeoInclination(new TDecimal(value));
     return this;
   }
-  
+
   public Satellite withInternationalDesignator(String value) {
     setInternationalDesignator(new TString(value));
     return this;
   }
-  
+
   public Satellite withObjectNum(String value) {
     setObjectNum(new TString(value));
     return this;
   }
-  
+
   public Satellite withAdministration(String value) {
     setAdministration(new TString(value));
     return this;
   }
-  
+
   public Satellite withNetworkName(String value) {
     setNetworkName(new TString(value));
     return this;
   }
-  
+
   public Satellite withRFSystemRef(RFSystemRef... values) {
     if (values != null) {
       getRFSystemRef().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Satellite withRFSystemRef(Collection<RFSystemRef> values) {
     if (values != null) {
       getRFSystemRef().addAll(values);
     }
     return this;
   }
-  
+
   public Satellite withEarthStation(EarthStation... values) {
     if (values != null) {
       getEarthStation().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Satellite withEarthStation(Collection<EarthStation> values) {
     if (values != null) {
       getEarthStation().addAll(values);
     }
     return this;
   }
-  
+
   public Satellite withIdentifier(Identifier... values) {
     if (values != null) {
       getIdentifier().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Satellite withIdentifier(Collection<Identifier> values) {
     if (values != null) {
       getIdentifier().addAll(values);
     }
     return this;
   }
-  
+
   public Satellite withServiceArea(ServiceArea... values) {
     if (values != null) {
       getServiceArea().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Satellite withServiceArea(Collection<ServiceArea> values) {
     if (values != null) {
       getServiceArea().addAll(values);
     }
     return this;
   }
-  
+
 }

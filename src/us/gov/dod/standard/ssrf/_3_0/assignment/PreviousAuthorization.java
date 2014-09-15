@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
 import java.util.Calendar;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,16 +43,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="PreviousAuthorization">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="DocketNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS8"/>
- *         &lt;element name="Date " type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="PreviousAuthorization"> &lt;complexContent>
+ * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ * &lt;sequence> &lt;element name="DocketNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS8"/> &lt;element name="Date "
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -80,7 +76,7 @@ public class PreviousAuthorization {
   /**
    * Gets the value of the docketNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDocketNum() {
     return docketNum;
@@ -89,7 +85,7 @@ public class PreviousAuthorization {
   /**
    * Sets the value of the docketNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDocketNum(TString value) {
     this.docketNum = value;
@@ -102,9 +98,7 @@ public class PreviousAuthorization {
   /**
    * Gets the value of the date_0020 property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDate_0020() {
     return date_0020;
@@ -113,9 +107,7 @@ public class PreviousAuthorization {
   /**
    * Sets the value of the date_0020 property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDate_0020(TCalendar value) {
     this.date_0020 = value;
@@ -128,9 +120,7 @@ public class PreviousAuthorization {
   /**
    * Gets the value of the agencySerialNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAgencySerialNum() {
     return agencySerialNum;
@@ -139,9 +129,7 @@ public class PreviousAuthorization {
   /**
    * Sets the value of the agencySerialNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAgencySerialNum(TString value) {
     this.agencySerialNum = value;

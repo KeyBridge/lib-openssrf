@@ -70,9 +70,7 @@ public class CaseNum {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getCountry() {
     return country;
@@ -81,9 +79,7 @@ public class CaseNum {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setCountry(TString value) {
     this.country = value;
@@ -96,9 +92,7 @@ public class CaseNum {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -107,9 +101,7 @@ public class CaseNum {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;

@@ -28,16 +28,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.metadata.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFO;
-import us.gov.dod.standard.ssrf._3_0.metadata.*;
 
 /**
  * <p>
@@ -49,41 +48,55 @@ import us.gov.dod.standard.ssrf._3_0.metadata.*;
  * <p>
  * <
  * pre>
- * &lt;complexType name="TxMode">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/>
- *         &lt;element name="NecessaryBw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Tunability" minOccurs="0"/>
- *         &lt;element name="NumSubCarriers" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5" minOccurs="0"/>
- *         &lt;element name="NumSideTones" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Intermodulation" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Burst" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}OccupiedBw" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Spurious" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqTolerance" minOccurs="0"/>
- *         &lt;element name="RadarType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="GpsNBL1Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBW" minOccurs="0"/>
- *         &lt;element name="GpsNBL2Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBW" minOccurs="0"/>
- *         &lt;element name="GpsWBL1Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBWHz" minOccurs="0"/>
- *         &lt;element name="GpsWBL2Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBWHz" minOccurs="0"/>
- *         &lt;element name="ModulationType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="ModeName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40" minOccurs="0"/>
- *         &lt;element name="EmsClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}EmsClass" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Power" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Power" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TxSignalTuning" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxSignalTuning" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TxModulation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxModulation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Baseband" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Baseband" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Pulse" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Pulse" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SubCarrierFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SubCarrierFreq" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SubCarrierTone" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SubCarrierTone" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SpreadSpectrum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SpreadSpectrum" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="curves" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TxMode"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/> &lt;element
+ * name="NecessaryBw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Tunability" minOccurs="0"/>
+ * &lt;element name="NumSubCarriers"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5" minOccurs="0"/> &lt;element
+ * name="NumSideTones" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Intermodulation" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Burst" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}OccupiedBw"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Spurious"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqTolerance" minOccurs="0"/>
+ * &lt;element name="RadarType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
+ * minOccurs="0"/> &lt;element name="GpsNBL1Level"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBW" minOccurs="0"/>
+ * &lt;element name="GpsNBL2Level"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBW" minOccurs="0"/>
+ * &lt;element name="GpsWBL1Level"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBWHz" minOccurs="0"/>
+ * &lt;element name="GpsWBL2Level"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBWHz" minOccurs="0"/>
+ * &lt;element name="ModulationType"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/> &lt;element
+ * name="ModeName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40"
+ * minOccurs="0"/> &lt;element name="EmsClass"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}EmsClass" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Power"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Power" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="TxSignalTuning"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxSignalTuning"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="TxModulation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxModulation" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Baseband"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Baseband" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Pulse"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Pulse" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="SubCarrierFreq"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SubCarrierFreq"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SubCarrierTone"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SubCarrierTone"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SpreadSpectrum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SpreadSpectrum" minOccurs="0"/>
+ * &lt;/sequence> &lt;attribute name="curves"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -236,7 +249,7 @@ public class TxMode {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getModeID() {
     return modeID;
@@ -245,7 +258,7 @@ public class TxMode {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -258,9 +271,7 @@ public class TxMode {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -269,9 +280,7 @@ public class TxMode {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -284,9 +293,7 @@ public class TxMode {
   /**
    * Gets the value of the necessaryBw property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNecessaryBw() {
     return necessaryBw;
@@ -295,9 +302,7 @@ public class TxMode {
   /**
    * Sets the value of the necessaryBw property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
@@ -310,9 +315,7 @@ public class TxMode {
   /**
    * Gets the value of the tunability property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTunability() {
     return tunability;
@@ -321,9 +324,7 @@ public class TxMode {
   /**
    * Sets the value of the tunability property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTunability(TString value) {
     this.tunability = value;
@@ -336,9 +337,7 @@ public class TxMode {
   /**
    * Gets the value of the tuningMethod property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTuningMethod() {
     return tuningMethod;
@@ -347,9 +346,7 @@ public class TxMode {
   /**
    * Sets the value of the tuningMethod property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTuningMethod(TString value) {
     this.tuningMethod = value;
@@ -362,9 +359,7 @@ public class TxMode {
   /**
    * Gets the value of the numSubCarriers property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumSubCarriers() {
     return numSubCarriers;
@@ -373,9 +368,7 @@ public class TxMode {
   /**
    * Sets the value of the numSubCarriers property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumSubCarriers(TInteger value) {
     this.numSubCarriers = value;
@@ -388,9 +381,7 @@ public class TxMode {
   /**
    * Gets the value of the numSideTones property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumSideTones() {
     return numSideTones;
@@ -399,9 +390,7 @@ public class TxMode {
   /**
    * Sets the value of the numSideTones property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumSideTones(TInteger value) {
     this.numSideTones = value;
@@ -414,9 +403,7 @@ public class TxMode {
   /**
    * Gets the value of the intermodPct property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getIntermodPct() {
     return intermodPct;
@@ -425,9 +412,7 @@ public class TxMode {
   /**
    * Sets the value of the intermodPct property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIntermodPct(TDecimal value) {
     this.intermodPct = value;
@@ -440,9 +425,7 @@ public class TxMode {
   /**
    * Gets the value of the intermodEffect property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIntermodEffect() {
     return intermodEffect;
@@ -451,9 +434,7 @@ public class TxMode {
   /**
    * Sets the value of the intermodEffect property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIntermodEffect(TString value) {
     this.intermodEffect = value;
@@ -466,9 +447,7 @@ public class TxMode {
   /**
    * Gets the value of the burstRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getBurstRate() {
     return burstRate;
@@ -477,9 +456,7 @@ public class TxMode {
   /**
    * Sets the value of the burstRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBurstRate(TDecimal value) {
     this.burstRate = value;
@@ -492,9 +469,7 @@ public class TxMode {
   /**
    * Gets the value of the burstDuration property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getBurstDuration() {
     return burstDuration;
@@ -503,9 +478,7 @@ public class TxMode {
   /**
    * Sets the value of the burstDuration property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBurstDuration(TDecimal value) {
     this.burstDuration = value;
@@ -518,9 +491,7 @@ public class TxMode {
   /**
    * Gets the value of the burstNumPulses property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getBurstNumPulses() {
     return burstNumPulses;
@@ -529,9 +500,7 @@ public class TxMode {
   /**
    * Sets the value of the burstNumPulses property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBurstNumPulses(TInteger value) {
     this.burstNumPulses = value;
@@ -544,9 +513,7 @@ public class TxMode {
   /**
    * Gets the value of the burstOffTime property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getBurstOffTime() {
     return burstOffTime;
@@ -555,9 +522,7 @@ public class TxMode {
   /**
    * Sets the value of the burstOffTime property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBurstOffTime(TDecimal value) {
     this.burstOffTime = value;
@@ -570,7 +535,7 @@ public class TxMode {
   /**
    * Gets the value of the occBw property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getOccBw() {
     return occBw;
@@ -579,7 +544,7 @@ public class TxMode {
   /**
    * Sets the value of the occBw property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOccBw(TDecimal value) {
     this.occBw = value;
@@ -592,9 +557,7 @@ public class TxMode {
   /**
    * Gets the value of the occBwCalculated property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOccBwCalculated() {
     return occBwCalculated;
@@ -603,9 +566,7 @@ public class TxMode {
   /**
    * Sets the value of the occBwCalculated property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOccBwCalculated(TString value) {
     this.occBwCalculated = value;
@@ -618,9 +579,7 @@ public class TxMode {
   /**
    * Gets the value of the secondHarmonicLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSecondHarmonicLevel() {
     return secondHarmonicLevel;
@@ -629,9 +588,7 @@ public class TxMode {
   /**
    * Sets the value of the secondHarmonicLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSecondHarmonicLevel(TDecimal value) {
     this.secondHarmonicLevel = value;
@@ -644,9 +601,7 @@ public class TxMode {
   /**
    * Gets the value of the thirdHarmonicLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getThirdHarmonicLevel() {
     return thirdHarmonicLevel;
@@ -655,9 +610,7 @@ public class TxMode {
   /**
    * Sets the value of the thirdHarmonicLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setThirdHarmonicLevel(TDecimal value) {
     this.thirdHarmonicLevel = value;
@@ -670,9 +623,7 @@ public class TxMode {
   /**
    * Gets the value of the otherHarmonicLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getOtherHarmonicLevel() {
     return otherHarmonicLevel;
@@ -681,9 +632,7 @@ public class TxMode {
   /**
    * Sets the value of the otherHarmonicLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOtherHarmonicLevel(TDecimal value) {
     this.otherHarmonicLevel = value;
@@ -696,9 +645,7 @@ public class TxMode {
   /**
    * Gets the value of the spuriousLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSpuriousLevel() {
     return spuriousLevel;
@@ -707,9 +654,7 @@ public class TxMode {
   /**
    * Sets the value of the spuriousLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSpuriousLevel(TDecimal value) {
     this.spuriousLevel = value;
@@ -722,7 +667,7 @@ public class TxMode {
   /**
    * Gets the value of the freqTolerance property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqTolerance() {
     return freqTolerance;
@@ -731,7 +676,7 @@ public class TxMode {
   /**
    * Sets the value of the freqTolerance property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqTolerance(TDecimal value) {
     this.freqTolerance = value;
@@ -744,7 +689,7 @@ public class TxMode {
   /**
    * Gets the value of the freqToleranceUnit property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFreqToleranceUnit() {
     return freqToleranceUnit;
@@ -753,7 +698,7 @@ public class TxMode {
   /**
    * Sets the value of the freqToleranceUnit property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqToleranceUnit(TString value) {
     this.freqToleranceUnit = value;
@@ -766,9 +711,7 @@ public class TxMode {
   /**
    * Gets the value of the radarType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRadarType() {
     return radarType;
@@ -777,9 +720,7 @@ public class TxMode {
   /**
    * Sets the value of the radarType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRadarType(TString value) {
     this.radarType = value;
@@ -792,9 +733,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsNBL1Level property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getGpsNBL1Level() {
     return gpsNBL1Level;
@@ -803,9 +742,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsNBL1Level property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setGpsNBL1Level(TDecimal value) {
     this.gpsNBL1Level = value;
@@ -818,9 +755,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsNBL2Level property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getGpsNBL2Level() {
     return gpsNBL2Level;
@@ -829,9 +764,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsNBL2Level property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setGpsNBL2Level(TDecimal value) {
     this.gpsNBL2Level = value;
@@ -844,9 +777,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsWBL1Level property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getGpsWBL1Level() {
     return gpsWBL1Level;
@@ -855,9 +786,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsWBL1Level property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setGpsWBL1Level(TDecimal value) {
     this.gpsWBL1Level = value;
@@ -870,9 +799,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsWBL2Level property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getGpsWBL2Level() {
     return gpsWBL2Level;
@@ -881,9 +808,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsWBL2Level property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setGpsWBL2Level(TDecimal value) {
     this.gpsWBL2Level = value;
@@ -896,9 +821,7 @@ public class TxMode {
   /**
    * Gets the value of the modulationType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getModulationType() {
     return modulationType;
@@ -907,9 +830,7 @@ public class TxMode {
   /**
    * Sets the value of the modulationType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setModulationType(TString value) {
     this.modulationType = value;
@@ -922,9 +843,7 @@ public class TxMode {
   /**
    * Gets the value of the modeName property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getModeName() {
     return modeName;
@@ -933,9 +852,7 @@ public class TxMode {
   /**
    * Sets the value of the modeName property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setModeName(TString value) {
     this.modeName = value;
@@ -962,7 +879,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -999,7 +916,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1037,7 +954,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1075,7 +992,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1112,7 +1029,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1149,7 +1066,7 @@ public class TxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1187,7 +1104,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1225,7 +1142,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1248,7 +1165,7 @@ public class TxMode {
   /**
    * Gets the value of the spreadSpectrum property.
    * <p>
-   * @return 
+   * @return
    */
   public SpreadSpectrum getSpreadSpectrum() {
     return spreadSpectrum;
@@ -1257,7 +1174,7 @@ public class TxMode {
   /**
    * Sets the value of the spreadSpectrum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSpreadSpectrum(SpreadSpectrum value) {
     this.spreadSpectrum = value;
@@ -1285,7 +1202,7 @@ public class TxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

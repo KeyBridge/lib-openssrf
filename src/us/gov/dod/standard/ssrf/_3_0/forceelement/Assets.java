@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.forceelement;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,17 +42,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Assets">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="Authorised" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
- *         &lt;element name="Available" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Assets"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
+ * &lt;element name="Authorised" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9"
+ * minOccurs="0"/> &lt;element name="Available"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -79,7 +74,7 @@ public class Assets {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -88,7 +83,7 @@ public class Assets {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -101,9 +96,7 @@ public class Assets {
   /**
    * Gets the value of the authorised property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getAuthorised() {
     return authorised;
@@ -112,9 +105,7 @@ public class Assets {
   /**
    * Sets the value of the authorised property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAuthorised(TInteger value) {
     this.authorised = value;
@@ -127,9 +118,7 @@ public class Assets {
   /**
    * Gets the value of the available property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getAvailable() {
     return available;
@@ -138,9 +127,7 @@ public class Assets {
   /**
    * Sets the value of the available property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAvailable(TInteger value) {
     this.available = value;

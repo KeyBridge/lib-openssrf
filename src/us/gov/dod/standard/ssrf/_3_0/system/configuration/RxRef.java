@@ -32,10 +32,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.system.RxAntModeRef;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.RxModeRef;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.system.RxAntModeRef;
 
 /**
  * <p>
@@ -47,16 +47,14 @@ import us.gov.dod.standard.ssrf._3_0.metadata.RxModeRef;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RxRef">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="RxModeRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxModeRef" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RxAntModeRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxAntModeRef" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="RxRef"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
+ * &lt;element name="RxModeRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxModeRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="RxAntModeRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxAntModeRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -81,7 +79,7 @@ public class RxRef {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -90,7 +88,7 @@ public class RxRef {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -117,7 +115,7 @@ public class RxRef {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -155,7 +153,7 @@ public class RxRef {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

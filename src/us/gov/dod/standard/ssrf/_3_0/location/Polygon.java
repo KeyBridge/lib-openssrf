@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -46,18 +45,15 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Polygon">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Altitude" minOccurs="0"/>
- *         &lt;element name="PolygonPoint" type="{urn:us:gov:dod:standard:ssrf:3.0.0}PolygonPoint" maxOccurs="unbounded" minOccurs="3"/>
- *       &lt;/sequence>
- *       &lt;attribute name="idx" use="required" type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Polygon"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Altitude"
+ * minOccurs="0"/> &lt;element name="PolygonPoint"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}PolygonPoint" maxOccurs="unbounded"
+ * minOccurs="3"/> &lt;/sequence> &lt;attribute name="idx" use="required"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -87,9 +83,7 @@ public class Polygon {
   /**
    * Gets the value of the excluded property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getExcluded() {
     return excluded;
@@ -98,9 +92,7 @@ public class Polygon {
   /**
    * Sets the value of the excluded property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExcluded(TString value) {
     this.excluded = value;
@@ -113,9 +105,7 @@ public class Polygon {
   /**
    * Gets the value of the altitudeMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAltitudeMin() {
     return altitudeMin;
@@ -124,9 +114,7 @@ public class Polygon {
   /**
    * Sets the value of the altitudeMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAltitudeMin(TDecimal value) {
     this.altitudeMin = value;
@@ -139,9 +127,7 @@ public class Polygon {
   /**
    * Gets the value of the altitudeMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAltitudeMax() {
     return altitudeMax;
@@ -150,9 +136,7 @@ public class Polygon {
   /**
    * Sets the value of the altitudeMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAltitudeMax(TDecimal value) {
     this.altitudeMax = value;
@@ -180,7 +164,7 @@ public class Polygon {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -203,7 +187,7 @@ public class Polygon {
   /**
    * Gets the value of the idx property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getIdx() {
     return idx;
@@ -212,7 +196,7 @@ public class Polygon {
   /**
    * Sets the value of the idx property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdx(BigInteger value) {
     this.idx = value;

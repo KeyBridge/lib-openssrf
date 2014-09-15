@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
 import java.util.Calendar;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,15 +43,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
  * <p>
  * <
  * pre>
- * &lt;complexType name="NarrowBandPlanning">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ChangeDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="NBFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="NarrowBandPlanning"> &lt;complexContent>
+ * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ * &lt;sequence> &lt;element name="ChangeDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="NBFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -75,9 +71,7 @@ public class NarrowBandPlanning {
   /**
    * Gets the value of the changeDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getChangeDate() {
     return changeDate;
@@ -86,9 +80,7 @@ public class NarrowBandPlanning {
   /**
    * Sets the value of the changeDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setChangeDate(TCalendar value) {
     this.changeDate = value;
@@ -101,9 +93,7 @@ public class NarrowBandPlanning {
   /**
    * Gets the value of the nbFreq property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNBFreq() {
     return nbFreq;
@@ -112,9 +102,7 @@ public class NarrowBandPlanning {
   /**
    * Sets the value of the nbFreq property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNBFreq(TDecimal value) {
     this.nbFreq = value;

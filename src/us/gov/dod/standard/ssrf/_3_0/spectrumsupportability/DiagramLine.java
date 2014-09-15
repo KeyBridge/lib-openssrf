@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,16 +41,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="DiagramLine">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="TxEndpointName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="RxEndpointName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="ConfigID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="DiagramLine"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="TxEndpointName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
+ * &lt;element name="RxEndpointName"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
+ * name="ConfigID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -78,7 +74,7 @@ public class DiagramLine {
   /**
    * Gets the value of the txEndpointName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTxEndpointName() {
     return txEndpointName;
@@ -87,7 +83,7 @@ public class DiagramLine {
   /**
    * Sets the value of the txEndpointName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTxEndpointName(TString value) {
     this.txEndpointName = value;
@@ -100,7 +96,7 @@ public class DiagramLine {
   /**
    * Gets the value of the rxEndpointName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRxEndpointName() {
     return rxEndpointName;
@@ -109,7 +105,7 @@ public class DiagramLine {
   /**
    * Sets the value of the rxEndpointName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRxEndpointName(TString value) {
     this.rxEndpointName = value;
@@ -122,9 +118,7 @@ public class DiagramLine {
   /**
    * Gets the value of the configID property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getConfigID() {
     return configID;
@@ -133,9 +127,7 @@ public class DiagramLine {
   /**
    * Sets the value of the configID property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setConfigID(TString value) {
     this.configID = value;

@@ -28,14 +28,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.metadata.EmsClass;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFO;
-import us.gov.dod.standard.ssrf._3_0.metadata.EmsClass;
 
 /**
  * <p>
@@ -47,35 +46,42 @@ import us.gov.dod.standard.ssrf._3_0.metadata.EmsClass;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RxMode">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/>
- *         &lt;element name="RxType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="NecessaryBw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Tunability" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Intermodulation" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Sensitivity" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PostDetection" minOccurs="0"/>
- *         &lt;element name="ProcessingGain" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="SpuriousRejection" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="ImageRejection" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="IntermodRejection" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="AdjacentChannelSelectivity" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqTolerance" minOccurs="0"/>
- *         &lt;element name="ModeName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40" minOccurs="0"/>
- *         &lt;element name="EmsClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}EmsClass" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RxSignalTuning" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxSignalTuning" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RxModulation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxModulation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Baseband" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Baseband" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="FreqConversion" type="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqConversion" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="SpreadSpectrum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}SpreadSpectrum" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="curves" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RxMode"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/> &lt;element
+ * name="RxType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
+ * &lt;element name="NecessaryBw"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Tunability" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Intermodulation"
+ * minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Sensitivity" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PostDetection"
+ * minOccurs="0"/> &lt;element name="ProcessingGain"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;element
+ * name="SpuriousRejection" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB"
+ * minOccurs="0"/> &lt;element name="ImageRejection"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;element
+ * name="IntermodRejection" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB"
+ * minOccurs="0"/> &lt;element name="AdjacentChannelSelectivity"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqTolerance" minOccurs="0"/>
+ * &lt;element name="ModeName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40"
+ * minOccurs="0"/> &lt;element name="EmsClass"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}EmsClass" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="RxSignalTuning"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxSignalTuning"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="RxModulation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxModulation" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Baseband"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Baseband" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="FreqConversion"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqConversion"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SpreadSpectrum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SpreadSpectrum" minOccurs="0"/>
+ * &lt;/sequence> &lt;attribute name="curves"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -204,7 +210,7 @@ public class RxMode {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getModeID() {
     return modeID;
@@ -213,7 +219,7 @@ public class RxMode {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -226,9 +232,7 @@ public class RxMode {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -237,9 +241,7 @@ public class RxMode {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -252,9 +254,7 @@ public class RxMode {
   /**
    * Gets the value of the rxType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRxType() {
     return rxType;
@@ -263,9 +263,7 @@ public class RxMode {
   /**
    * Sets the value of the rxType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRxType(TString value) {
     this.rxType = value;
@@ -278,9 +276,7 @@ public class RxMode {
   /**
    * Gets the value of the necessaryBw property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNecessaryBw() {
     return necessaryBw;
@@ -289,9 +285,7 @@ public class RxMode {
   /**
    * Sets the value of the necessaryBw property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
@@ -304,9 +298,7 @@ public class RxMode {
   /**
    * Gets the value of the tunability property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTunability() {
     return tunability;
@@ -315,9 +307,7 @@ public class RxMode {
   /**
    * Sets the value of the tunability property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTunability(TString value) {
     this.tunability = value;
@@ -330,9 +320,7 @@ public class RxMode {
   /**
    * Gets the value of the tuningMethod property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTuningMethod() {
     return tuningMethod;
@@ -341,9 +329,7 @@ public class RxMode {
   /**
    * Sets the value of the tuningMethod property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTuningMethod(TString value) {
     this.tuningMethod = value;
@@ -356,9 +342,7 @@ public class RxMode {
   /**
    * Gets the value of the intermodPct property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getIntermodPct() {
     return intermodPct;
@@ -367,9 +351,7 @@ public class RxMode {
   /**
    * Sets the value of the intermodPct property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIntermodPct(TDecimal value) {
     this.intermodPct = value;
@@ -382,9 +364,7 @@ public class RxMode {
   /**
    * Gets the value of the intermodEffect property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIntermodEffect() {
     return intermodEffect;
@@ -393,9 +373,7 @@ public class RxMode {
   /**
    * Sets the value of the intermodEffect property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIntermodEffect(TString value) {
     this.intermodEffect = value;
@@ -408,9 +386,7 @@ public class RxMode {
   /**
    * Gets the value of the sensitivityLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSensitivityLevel() {
     return sensitivityLevel;
@@ -419,9 +395,7 @@ public class RxMode {
   /**
    * Sets the value of the sensitivityLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSensitivityLevel(TDecimal value) {
     this.sensitivityLevel = value;
@@ -434,9 +408,7 @@ public class RxMode {
   /**
    * Gets the value of the noiseFigure property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNoiseFigure() {
     return noiseFigure;
@@ -445,9 +417,7 @@ public class RxMode {
   /**
    * Sets the value of the noiseFigure property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNoiseFigure(TDecimal value) {
     this.noiseFigure = value;
@@ -460,9 +430,7 @@ public class RxMode {
   /**
    * Gets the value of the noiseTemp property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNoiseTemp() {
     return noiseTemp;
@@ -471,9 +439,7 @@ public class RxMode {
   /**
    * Sets the value of the noiseTemp property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNoiseTemp(TDecimal value) {
     this.noiseTemp = value;
@@ -486,9 +452,7 @@ public class RxMode {
   /**
    * Gets the value of the sensitivityCriteriaType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSensitivityCriteriaType() {
     return sensitivityCriteriaType;
@@ -497,9 +461,7 @@ public class RxMode {
   /**
    * Sets the value of the sensitivityCriteriaType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSensitivityCriteriaType(TString value) {
     this.sensitivityCriteriaType = value;
@@ -512,9 +474,7 @@ public class RxMode {
   /**
    * Gets the value of the sensitivityCriteriaLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSensitivityCriteriaLevel() {
     return sensitivityCriteriaLevel;
@@ -523,9 +483,7 @@ public class RxMode {
   /**
    * Sets the value of the sensitivityCriteriaLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSensitivityCriteriaLevel(TDecimal value) {
     this.sensitivityCriteriaLevel = value;
@@ -538,9 +496,7 @@ public class RxMode {
   /**
    * Gets the value of the sensitivityCriteriaText property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSensitivityCriteriaText() {
     return sensitivityCriteriaText;
@@ -549,9 +505,7 @@ public class RxMode {
   /**
    * Sets the value of the sensitivityCriteriaText property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSensitivityCriteriaText(TString value) {
     this.sensitivityCriteriaText = value;
@@ -564,9 +518,7 @@ public class RxMode {
   /**
    * Gets the value of the postDetectionFreqMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPostDetectionFreqMin() {
     return postDetectionFreqMin;
@@ -575,9 +527,7 @@ public class RxMode {
   /**
    * Sets the value of the postDetectionFreqMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPostDetectionFreqMin(TDecimal value) {
     this.postDetectionFreqMin = value;
@@ -590,9 +540,7 @@ public class RxMode {
   /**
    * Gets the value of the postDetectionFreqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPostDetectionFreqMax() {
     return postDetectionFreqMax;
@@ -601,9 +549,7 @@ public class RxMode {
   /**
    * Sets the value of the postDetectionFreqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPostDetectionFreqMax(TDecimal value) {
     this.postDetectionFreqMax = value;
@@ -616,9 +562,7 @@ public class RxMode {
   /**
    * Gets the value of the processingGain property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getProcessingGain() {
     return processingGain;
@@ -627,9 +571,7 @@ public class RxMode {
   /**
    * Sets the value of the processingGain property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setProcessingGain(TDecimal value) {
     this.processingGain = value;
@@ -642,9 +584,7 @@ public class RxMode {
   /**
    * Gets the value of the spuriousRejection property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSpuriousRejection() {
     return spuriousRejection;
@@ -653,9 +593,7 @@ public class RxMode {
   /**
    * Sets the value of the spuriousRejection property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSpuriousRejection(TDecimal value) {
     this.spuriousRejection = value;
@@ -668,9 +606,7 @@ public class RxMode {
   /**
    * Gets the value of the imageRejection property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getImageRejection() {
     return imageRejection;
@@ -679,9 +615,7 @@ public class RxMode {
   /**
    * Sets the value of the imageRejection property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setImageRejection(TDecimal value) {
     this.imageRejection = value;
@@ -694,9 +628,7 @@ public class RxMode {
   /**
    * Gets the value of the intermodRejection property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getIntermodRejection() {
     return intermodRejection;
@@ -705,9 +637,7 @@ public class RxMode {
   /**
    * Sets the value of the intermodRejection property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIntermodRejection(TDecimal value) {
     this.intermodRejection = value;
@@ -720,9 +650,7 @@ public class RxMode {
   /**
    * Gets the value of the adjacentChannelSelectivity property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAdjacentChannelSelectivity() {
     return adjacentChannelSelectivity;
@@ -731,9 +659,7 @@ public class RxMode {
   /**
    * Sets the value of the adjacentChannelSelectivity property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAdjacentChannelSelectivity(TDecimal value) {
     this.adjacentChannelSelectivity = value;
@@ -746,7 +672,7 @@ public class RxMode {
   /**
    * Gets the value of the freqTolerance property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqTolerance() {
     return freqTolerance;
@@ -755,7 +681,7 @@ public class RxMode {
   /**
    * Sets the value of the freqTolerance property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqTolerance(TDecimal value) {
     this.freqTolerance = value;
@@ -768,7 +694,7 @@ public class RxMode {
   /**
    * Gets the value of the freqToleranceUnit property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFreqToleranceUnit() {
     return freqToleranceUnit;
@@ -777,7 +703,7 @@ public class RxMode {
   /**
    * Sets the value of the freqToleranceUnit property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqToleranceUnit(TString value) {
     this.freqToleranceUnit = value;
@@ -790,9 +716,7 @@ public class RxMode {
   /**
    * Gets the value of the modeName property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getModeName() {
     return modeName;
@@ -801,9 +725,7 @@ public class RxMode {
   /**
    * Sets the value of the modeName property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setModeName(TString value) {
     this.modeName = value;
@@ -830,7 +752,7 @@ public class RxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -868,7 +790,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -906,7 +828,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -943,7 +865,7 @@ public class RxMode {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -981,7 +903,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1004,7 +926,7 @@ public class RxMode {
   /**
    * Gets the value of the spreadSpectrum property.
    * <p>
-   * @return 
+   * @return
    */
   public SpreadSpectrum getSpreadSpectrum() {
     return spreadSpectrum;
@@ -1013,7 +935,7 @@ public class RxMode {
   /**
    * Sets the value of the spreadSpectrum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSpreadSpectrum(SpreadSpectrum value) {
     this.spreadSpectrum = value;
@@ -1041,7 +963,7 @@ public class RxMode {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

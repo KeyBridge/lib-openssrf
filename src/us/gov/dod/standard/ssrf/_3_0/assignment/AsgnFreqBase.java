@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -80,7 +79,7 @@ public abstract class AsgnFreqBase {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -89,7 +88,7 @@ public abstract class AsgnFreqBase {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -102,9 +101,7 @@ public abstract class AsgnFreqBase {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -113,9 +110,7 @@ public abstract class AsgnFreqBase {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -128,9 +123,7 @@ public abstract class AsgnFreqBase {
   /**
    * Gets the value of the refFreq property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getRefFreq() {
     return refFreq;
@@ -139,9 +132,7 @@ public abstract class AsgnFreqBase {
   /**
    * Sets the value of the refFreq property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRefFreq(TDecimal value) {
     this.refFreq = value;
@@ -154,9 +145,7 @@ public abstract class AsgnFreqBase {
   /**
    * Gets the value of the freqUse property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFreqUse() {
     return freqUse;
@@ -165,9 +154,7 @@ public abstract class AsgnFreqBase {
   /**
    * Sets the value of the freqUse property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFreqUse(TString value) {
     this.freqUse = value;

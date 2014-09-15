@@ -27,15 +27,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.ChannelFreq;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * <p>
@@ -47,16 +46,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.ChannelFreq;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Channel">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="User" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="ChannelFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ChannelFreq" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Channel"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
+ * &lt;element name="User" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="ChannelFreq"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ChannelFreq"
+ * maxOccurs="unbounded"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -82,9 +78,7 @@ public class Channel {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -93,9 +87,7 @@ public class Channel {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -108,9 +100,7 @@ public class Channel {
   /**
    * Gets the value of the user property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUser() {
     return user;
@@ -119,9 +109,7 @@ public class Channel {
   /**
    * Sets the value of the user property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUser(TString value) {
     this.user = value;
@@ -149,7 +137,7 @@ public class Channel {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

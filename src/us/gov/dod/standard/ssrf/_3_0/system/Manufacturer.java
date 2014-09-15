@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,16 +42,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Manufacturer">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Country" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO" minOccurs="0"/>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Manufacturer"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Country" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"
+ * minOccurs="0"/> &lt;element name="Name"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,9 +68,7 @@ public class Manufacturer {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCountry() {
     return country;
@@ -84,9 +77,7 @@ public class Manufacturer {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCountry(TString value) {
     this.country = value;
@@ -99,7 +90,7 @@ public class Manufacturer {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -108,7 +99,7 @@ public class Manufacturer {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;

@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.LocationRestriction;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 
 /**
  * Java class for AllotFreq complex type.
@@ -130,7 +130,8 @@ public class AllotFreq {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
   }
@@ -151,7 +152,8 @@ public class AllotFreq {
   /**
    * Sets the value of the pairedFreqMin property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setPairedFreqMin(TDecimal value) {
     this.pairedFreqMin = value;
   }
@@ -172,7 +174,8 @@ public class AllotFreq {
   /**
    * Sets the value of the tuningStep property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setTuningStep(TDecimal value) {
     this.tuningStep = value;
   }

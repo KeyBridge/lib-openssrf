@@ -110,9 +110,7 @@ public class AntPattern {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -121,9 +119,7 @@ public class AntPattern {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -136,9 +132,7 @@ public class AntPattern {
   /**
    * Gets the value of the calculated property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getCalculated() {
     return calculated;
@@ -147,9 +141,7 @@ public class AntPattern {
   /**
    * Sets the value of the calculated property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setCalculated(TString value) {
     this.calculated = value;
@@ -162,9 +154,7 @@ public class AntPattern {
   /**
    * Gets the value of the cutType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getCutType() {
     return cutType;
@@ -173,9 +163,7 @@ public class AntPattern {
   /**
    * Sets the value of the cutType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setCutType(TString value) {
     this.cutType = value;
@@ -188,9 +176,7 @@ public class AntPattern {
   /**
    * Gets the value of the cutAngle property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getCutAngle() {
     return cutAngle;
@@ -199,9 +185,7 @@ public class AntPattern {
   /**
    * Sets the value of the cutAngle property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setCutAngle(TDecimal value) {
     this.cutAngle = value;

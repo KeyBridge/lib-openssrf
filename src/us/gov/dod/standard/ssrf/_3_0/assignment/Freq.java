@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -83,9 +82,7 @@ public class Freq extends AsgnFreqBase {
   /**
    * Gets the value of the tad property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTAD() {
     return tad;
@@ -94,9 +91,7 @@ public class Freq extends AsgnFreqBase {
   /**
    * Sets the value of the tad property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTAD(TString value) {
     this.tad = value;
@@ -109,9 +104,7 @@ public class Freq extends AsgnFreqBase {
   /**
    * Gets the value of the legacyNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLegacyNum() {
     return legacyNum;
@@ -120,9 +113,7 @@ public class Freq extends AsgnFreqBase {
   /**
    * Sets the value of the legacyNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLegacyNum(TString value) {
     this.legacyNum = value;
@@ -150,7 +141,7 @@ public class Freq extends AsgnFreqBase {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -188,7 +179,7 @@ public class Freq extends AsgnFreqBase {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

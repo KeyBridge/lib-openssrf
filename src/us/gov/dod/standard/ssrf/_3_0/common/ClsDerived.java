@@ -43,17 +43,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="ClsDerived">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
- *         &lt;element name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30"/>
- *         &lt;element name="Org" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ClsDerived"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/> &lt;element
+ * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30"/> &lt;element
+ * name="Org" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -79,7 +74,7 @@ public class ClsDerived {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDate() {
     return date;
@@ -88,7 +83,7 @@ public class ClsDerived {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -101,7 +96,7 @@ public class ClsDerived {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTitle() {
     return title;
@@ -110,7 +105,7 @@ public class ClsDerived {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -123,7 +118,7 @@ public class ClsDerived {
   /**
    * Gets the value of the org property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOrg() {
     return org;
@@ -132,7 +127,7 @@ public class ClsDerived {
   /**
    * Sets the value of the org property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOrg(TString value) {
     this.org = value;

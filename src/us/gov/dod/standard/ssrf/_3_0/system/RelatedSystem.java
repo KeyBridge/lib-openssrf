@@ -42,16 +42,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFR;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RelatedSystem">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Relation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCFR"/>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RelatedSystem"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Relation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCFR"/>
+ * &lt;element name="Serial"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -72,7 +68,7 @@ public class RelatedSystem {
   /**
    * Gets the value of the relation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRelation() {
     return relation;
@@ -81,7 +77,7 @@ public class RelatedSystem {
   /**
    * Sets the value of the relation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRelation(TString value) {
     this.relation = value;
@@ -94,7 +90,7 @@ public class RelatedSystem {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -103,7 +99,7 @@ public class RelatedSystem {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;

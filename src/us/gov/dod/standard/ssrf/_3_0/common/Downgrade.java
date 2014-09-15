@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.common;
 
 import java.util.Calendar;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,17 +44,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Downgrade">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Downcls" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCL"/>
- *         &lt;element name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
- *         &lt;element name="DowngradeInfo" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS200" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Downgrade"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Downcls" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCL"/>
+ * &lt;element name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
+ * &lt;element name="DowngradeInfo"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS200" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -80,7 +75,7 @@ public class Downgrade {
   /**
    * Gets the value of the downcls property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDowncls() {
     return downcls;
@@ -89,7 +84,7 @@ public class Downgrade {
   /**
    * Sets the value of the downcls property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDowncls(TString value) {
     this.downcls = value;
@@ -102,7 +97,7 @@ public class Downgrade {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDate() {
     return date;
@@ -111,7 +106,7 @@ public class Downgrade {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -124,9 +119,7 @@ public class Downgrade {
   /**
    * Gets the value of the downgradeInfo property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDowngradeInfo() {
     return downgradeInfo;
@@ -135,9 +128,7 @@ public class Downgrade {
   /**
    * Sets the value of the downgradeInfo property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDowngradeInfo(TString value) {
     this.downgradeInfo = value;

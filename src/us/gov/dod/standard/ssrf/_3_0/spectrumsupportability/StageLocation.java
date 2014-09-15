@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,16 +42,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="StageLocation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="LocSatRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="StageLocation"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="LocSatRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
+ * &lt;element name="Excluded"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,7 +68,7 @@ public class StageLocation {
   /**
    * Gets the value of the locSatRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLocSatRef() {
     return locSatRef;
@@ -82,7 +77,7 @@ public class StageLocation {
   /**
    * Sets the value of the locSatRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
@@ -95,9 +90,7 @@ public class StageLocation {
   /**
    * Gets the value of the excluded property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getExcluded() {
     return excluded;
@@ -106,9 +99,7 @@ public class StageLocation {
   /**
    * Sets the value of the excluded property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExcluded(TString value) {
     this.excluded = value;

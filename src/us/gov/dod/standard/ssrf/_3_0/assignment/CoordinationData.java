@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,16 +41,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="CoordinationData">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="CoordIndicator" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="HostComments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CoordinationData"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="CoordIndicator" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
+ * &lt;element name="HostComments"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,7 +68,7 @@ public class CoordinationData {
   /**
    * Gets the value of the coordIndicator property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCoordIndicator() {
     return coordIndicator;
@@ -82,7 +77,7 @@ public class CoordinationData {
   /**
    * Sets the value of the coordIndicator property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCoordIndicator(TString value) {
     this.coordIndicator = value;
@@ -95,9 +90,7 @@ public class CoordinationData {
   /**
    * Gets the value of the hostComments property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getHostComments() {
     return hostComments;
@@ -106,9 +99,7 @@ public class CoordinationData {
   /**
    * Sets the value of the hostComments property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setHostComments(TString value) {
     this.hostComments = value;

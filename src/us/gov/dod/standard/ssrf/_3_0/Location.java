@@ -131,9 +131,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -142,9 +140,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -157,9 +153,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -168,9 +162,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -183,9 +175,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -194,9 +184,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -209,7 +197,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -218,7 +206,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -231,9 +219,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the street property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStreet() {
     return street;
@@ -242,9 +228,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the street property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStreet(TString value) {
     this.street = value;
@@ -257,9 +241,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the cityArea property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCityArea() {
     return cityArea;
@@ -268,9 +250,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the cityArea property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCityArea(TString value) {
     this.cityArea = value;
@@ -283,9 +263,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the stateCounty property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStateCounty() {
     return stateCounty;
@@ -294,9 +272,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the stateCounty property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStateCounty(TString value) {
     this.stateCounty = value;
@@ -309,9 +285,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the postCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPostCode() {
     return postCode;
@@ -320,9 +294,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the postCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPostCode(TString value) {
     this.postCode = value;
@@ -335,7 +307,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCountry() {
     return country;
@@ -344,7 +316,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCountry(TString value) {
     this.country = value;
@@ -372,7 +344,7 @@ public class Location extends Common<Location> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -409,7 +381,7 @@ public class Location extends Common<Location> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -446,7 +418,7 @@ public class Location extends Common<Location> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -483,7 +455,7 @@ public class Location extends Common<Location> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -521,7 +493,7 @@ public class Location extends Common<Location> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

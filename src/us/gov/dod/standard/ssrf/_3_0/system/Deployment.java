@@ -27,15 +27,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.Installation;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * <p>
@@ -47,16 +46,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.Installation;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Deployment">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="Status" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="Installation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Installation" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Deployment"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/> &lt;element
+ * name="Status" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
+ * &lt;element name="Installation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Installation" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -82,7 +78,7 @@ public class Deployment {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -91,7 +87,7 @@ public class Deployment {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -104,9 +100,7 @@ public class Deployment {
   /**
    * Gets the value of the status property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStatus() {
     return status;
@@ -115,9 +109,7 @@ public class Deployment {
   /**
    * Sets the value of the status property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStatus(TString value) {
     this.status = value;
@@ -145,7 +137,7 @@ public class Deployment {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

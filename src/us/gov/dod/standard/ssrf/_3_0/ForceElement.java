@@ -48,26 +48,29 @@ import us.gov.dod.standard.ssrf._3_0.system.StockNum;
  * <p>
  * <
  * pre>
- * &lt;complexType name="ForceElement">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="ReviewDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/>
- *         &lt;element name="UIC" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="OwningCountry" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO" minOccurs="0"/>
- *         &lt;element name="OwningOrganisation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="Role" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="Platform" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="MissionCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="CmdLevel" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Identifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Identifier" maxOccurs="unbounded"/>
- *         &lt;element name="Assets" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Assets" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="StockNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StockNum" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="ForceElement"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="ReviewDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="Type"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/> &lt;element name="UIC"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/> &lt;element
+ * name="OwningCountry" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"
+ * minOccurs="0"/> &lt;element name="OwningOrganisation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
+ * &lt;element name="Role" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="Platform"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="MissionCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="CmdLevel"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
+ * name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Identifier"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Identifier" maxOccurs="unbounded"/>
+ * &lt;element name="Assets" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Assets"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="StockNum"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StockNum" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -129,9 +132,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -140,9 +141,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -155,7 +154,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -164,7 +163,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -177,9 +176,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the uic property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUIC() {
     return uic;
@@ -188,9 +185,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the uic property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUIC(TString value) {
     this.uic = value;
@@ -203,9 +198,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the owningCountry property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOwningCountry() {
     return owningCountry;
@@ -214,9 +207,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the owningCountry property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOwningCountry(TString value) {
     this.owningCountry = value;
@@ -229,9 +220,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the owningOrganisation property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOwningOrganisation() {
     return owningOrganisation;
@@ -240,9 +229,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the owningOrganisation property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOwningOrganisation(TString value) {
     this.owningOrganisation = value;
@@ -255,9 +242,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the role property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRole() {
     return role;
@@ -266,9 +251,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the role property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRole(TString value) {
     this.role = value;
@@ -281,9 +264,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the platform property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPlatform() {
     return platform;
@@ -292,9 +273,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the platform property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPlatform(TString value) {
     this.platform = value;
@@ -307,9 +286,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the missionCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMissionCode() {
     return missionCode;
@@ -318,9 +295,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the missionCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMissionCode(TString value) {
     this.missionCode = value;
@@ -333,9 +308,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the cmdLevel property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCmdLevel() {
     return cmdLevel;
@@ -344,9 +317,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the cmdLevel property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCmdLevel(TString value) {
     this.cmdLevel = value;
@@ -374,7 +345,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -412,7 +383,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -449,7 +420,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -486,7 +457,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

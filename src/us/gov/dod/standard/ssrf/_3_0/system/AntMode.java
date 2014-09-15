@@ -404,9 +404,7 @@ public class AntMode {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -415,9 +413,7 @@ public class AntMode {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -430,9 +426,7 @@ public class AntMode {
   /**
    * Gets the value of the modeUse property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getModeUse() {
     return modeUse;
@@ -441,9 +435,7 @@ public class AntMode {
   /**
    * Sets the value of the modeUse property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setModeUse(TString value) {
     this.modeUse = value;
@@ -456,9 +448,7 @@ public class AntMode {
   /**
    * Gets the value of the motionType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getMotionType() {
     return motionType;
@@ -467,9 +457,7 @@ public class AntMode {
   /**
    * Sets the value of the motionType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setMotionType(TString value) {
     this.motionType = value;
@@ -482,9 +470,7 @@ public class AntMode {
   /**
    * Gets the value of the sectBlanking property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getSectBlanking() {
     return sectBlanking;
@@ -493,9 +479,7 @@ public class AntMode {
   /**
    * Sets the value of the sectBlanking property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setSectBlanking(TString value) {
     this.sectBlanking = value;
@@ -530,9 +514,7 @@ public class AntMode {
   /**
    * Gets the value of the polarisationAngle property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getPolarisationAngle() {
     return polarisationAngle;
@@ -541,9 +523,7 @@ public class AntMode {
   /**
    * Sets the value of the polarisationAngle property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setPolarisationAngle(TDecimal value) {
     this.polarisationAngle = value;
@@ -556,9 +536,7 @@ public class AntMode {
   /**
    * Gets the value of the horzScanSpeed property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzScanSpeed() {
     return horzScanSpeed;
@@ -567,9 +545,7 @@ public class AntMode {
   /**
    * Sets the value of the horzScanSpeed property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzScanSpeed(TDecimal value) {
     this.horzScanSpeed = value;
@@ -582,9 +558,7 @@ public class AntMode {
   /**
    * Gets the value of the horzScanRate property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TInteger getHorzScanRate() {
     return horzScanRate;
@@ -593,9 +567,7 @@ public class AntMode {
   /**
    * Sets the value of the horzScanRate property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzScanRate(TInteger value) {
     this.horzScanRate = value;
@@ -608,9 +580,7 @@ public class AntMode {
   /**
    * Gets the value of the horzScanType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getHorzScanType() {
     return horzScanType;
@@ -619,9 +589,7 @@ public class AntMode {
   /**
    * Sets the value of the horzScanType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzScanType(TString value) {
     this.horzScanType = value;
@@ -634,9 +602,7 @@ public class AntMode {
   /**
    * Gets the value of the horzScanSector property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzScanSector() {
     return horzScanSector;
@@ -645,9 +611,7 @@ public class AntMode {
   /**
    * Sets the value of the horzScanSector property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzScanSector(TDecimal value) {
     this.horzScanSector = value;
@@ -660,9 +624,7 @@ public class AntMode {
   /**
    * Gets the value of the vertScanSpeed property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertScanSpeed() {
     return vertScanSpeed;
@@ -671,9 +633,7 @@ public class AntMode {
   /**
    * Sets the value of the vertScanSpeed property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertScanSpeed(TDecimal value) {
     this.vertScanSpeed = value;
@@ -686,9 +646,7 @@ public class AntMode {
   /**
    * Gets the value of the vertScanRate property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TInteger getVertScanRate() {
     return vertScanRate;
@@ -697,9 +655,7 @@ public class AntMode {
   /**
    * Sets the value of the vertScanRate property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertScanRate(TInteger value) {
     this.vertScanRate = value;
@@ -712,9 +668,7 @@ public class AntMode {
   /**
    * Gets the value of the vertScanType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getVertScanType() {
     return vertScanType;
@@ -723,9 +677,7 @@ public class AntMode {
   /**
    * Sets the value of the vertScanType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertScanType(TString value) {
     this.vertScanType = value;
@@ -738,9 +690,7 @@ public class AntMode {
   /**
    * Gets the value of the vertScanAngleMin property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertScanAngleMin() {
     return vertScanAngleMin;
@@ -749,9 +699,7 @@ public class AntMode {
   /**
    * Sets the value of the vertScanAngleMin property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertScanAngleMin(TDecimal value) {
     this.vertScanAngleMin = value;
@@ -764,9 +712,7 @@ public class AntMode {
   /**
    * Gets the value of the vertScanAngleMax property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertScanAngleMax() {
     return vertScanAngleMax;
@@ -775,9 +721,7 @@ public class AntMode {
   /**
    * Sets the value of the vertScanAngleMax property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertScanAngleMax(TDecimal value) {
     this.vertScanAngleMax = value;
@@ -790,9 +734,7 @@ public class AntMode {
   /**
    * Gets the value of the rotationDirection property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getRotationDirection() {
     return rotationDirection;
@@ -801,9 +743,7 @@ public class AntMode {
   /**
    * Sets the value of the rotationDirection property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setRotationDirection(TString value) {
     this.rotationDirection = value;
@@ -838,9 +778,7 @@ public class AntMode {
   /**
    * Gets the value of the rotationRateMax property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getRotationRateMax() {
     return rotationRateMax;
@@ -849,9 +787,7 @@ public class AntMode {
   /**
    * Sets the value of the rotationRateMax property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setRotationRateMax(TDecimal value) {
     this.rotationRateMax = value;
@@ -864,9 +800,7 @@ public class AntMode {
   /**
    * Gets the value of the horzBwMin property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzBwMin() {
     return horzBwMin;
@@ -875,9 +809,7 @@ public class AntMode {
   /**
    * Sets the value of the horzBwMin property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzBwMin(TDecimal value) {
     this.horzBwMin = value;
@@ -890,9 +822,7 @@ public class AntMode {
   /**
    * Gets the value of the horzBwMax property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzBwMax() {
     return horzBwMax;
@@ -901,9 +831,7 @@ public class AntMode {
   /**
    * Sets the value of the horzBwMax property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzBwMax(TDecimal value) {
     this.horzBwMax = value;
@@ -916,9 +844,7 @@ public class AntMode {
   /**
    * Gets the value of the vertBwMin property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertBwMin() {
     return vertBwMin;
@@ -927,9 +853,7 @@ public class AntMode {
   /**
    * Sets the value of the vertBwMin property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertBwMin(TDecimal value) {
     this.vertBwMin = value;
@@ -942,9 +866,7 @@ public class AntMode {
   /**
    * Gets the value of the vertBwMax property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertBwMax() {
     return vertBwMax;
@@ -953,9 +875,7 @@ public class AntMode {
   /**
    * Sets the value of the vertBwMax property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertBwMax(TDecimal value) {
     this.vertBwMax = value;
@@ -968,9 +888,7 @@ public class AntMode {
   /**
    * Gets the value of the beamType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getBeamType() {
     return beamType;
@@ -979,9 +897,7 @@ public class AntMode {
   /**
    * Sets the value of the beamType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setBeamType(TString value) {
     this.beamType = value;
@@ -994,9 +910,7 @@ public class AntMode {
   /**
    * Gets the value of the maxPower property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getMaxPower() {
     return maxPower;
@@ -1005,9 +919,7 @@ public class AntMode {
   /**
    * Sets the value of the maxPower property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setMaxPower(TDecimal value) {
     this.maxPower = value;
@@ -1020,9 +932,7 @@ public class AntMode {
   /**
    * Gets the value of the portIsolation property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getPortIsolation() {
     return portIsolation;
@@ -1031,9 +941,7 @@ public class AntMode {
   /**
    * Sets the value of the portIsolation property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setPortIsolation(TDecimal value) {
     this.portIsolation = value;
@@ -1046,9 +954,7 @@ public class AntMode {
   /**
    * Gets the value of the modeName property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getModeName() {
     return modeName;
@@ -1057,9 +963,7 @@ public class AntMode {
   /**
    * Sets the value of the modeName property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setModeName(TString value) {
     this.modeName = value;

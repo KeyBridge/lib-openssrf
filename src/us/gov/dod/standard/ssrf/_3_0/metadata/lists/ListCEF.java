@@ -37,171 +37,114 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <
  * pre>
- * &lt;simpleType name="ListCEF">
- *   &lt;restriction base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50">
- *     &lt;enumeration value="Broadcast Radio/Television"/>
- *     &lt;enumeration value="Broadcast-Satellite"/>
- *     &lt;enumeration value="Collision Avoidance"/>
- *     &lt;enumeration value="Comms-Air Traffic Control"/>
- *     &lt;enumeration value="Comms-Data"/>
- *     &lt;enumeration value="Comms-Emergency"/>
- *     &lt;enumeration value="Comms-Monitor"/>
- *     &lt;enumeration value="Comms-P/P Or Net"/>
- *     &lt;enumeration value="Comms-Pager"/>
- *     &lt;enumeration value="Comms-Radio Relay"/>
- *     &lt;enumeration value="Comms-Satellite"/>
- *     &lt;enumeration value="Comms-Secure Voice"/>
- *     &lt;enumeration value="Comms-Troposcatter"/>
- *     &lt;enumeration value="Comms-Trunking"/>
- *     &lt;enumeration value="Comms-Video"/>
- *     &lt;enumeration value="Comms-Video/Data"/>
- *     &lt;enumeration value="Communications"/>
- *     &lt;enumeration value="Communications, Special"/>
- *     &lt;enumeration value="Communications, Spread Spectrum"/>
- *     &lt;enumeration value="Control"/>
- *     &lt;enumeration value="Control-Guidance"/>
- *     &lt;enumeration value="Control-Satellite (Uplink)"/>
- *     &lt;enumeration value="Deep Space Mission"/>
- *     &lt;enumeration value="Electronic Warfare"/>
- *     &lt;enumeration value="Electroptical Equipment"/>
- *     &lt;enumeration value="Elint Reconnaissance"/>
- *     &lt;enumeration value="EO-Forward Looking Infrared"/>
- *     &lt;enumeration value="EO-Forward Looking Radar"/>
- *     &lt;enumeration value="EO-Infrared Countermeasures"/>
- *     &lt;enumeration value="EO-Infrared Search And Track"/>
- *     &lt;enumeration value="EO-Infrared Seeker"/>
- *     &lt;enumeration value="EO-Infrared Surveillance"/>
- *     &lt;enumeration value="EO-Infrared Warning Receiver"/>
- *     &lt;enumeration value="EO-Laser Communications"/>
- *     &lt;enumeration value="EO-Laser Designator"/>
- *     &lt;enumeration value="EO-Laser Radar"/>
- *     &lt;enumeration value="EO-Laser Range Finder"/>
- *     &lt;enumeration value="EO-Laser Seeker"/>
- *     &lt;enumeration value="EO-Laser Tracker"/>
- *     &lt;enumeration value="EO-Laser Warning Receiver"/>
- *     &lt;enumeration value="EO-Laser Weapon"/>
- *     &lt;enumeration value="EO-Night Vision/Image Intensifier"/>
- *     &lt;enumeration value="EO-Night Vision/Thermal Image"/>
- *     &lt;enumeration value="EO-Surveillance"/>
- *     &lt;enumeration value="EO-Telescope"/>
- *     &lt;enumeration value="EO-TV Seeker"/>
- *     &lt;enumeration value="EO-Ultraviolet Warning Receiver"/>
- *     &lt;enumeration value="EW-Active jamming"/>
- *     &lt;enumeration value="EW-Anti-Satellite"/>
- *     &lt;enumeration value="EW-Anti-Satellite Target"/>
- *     &lt;enumeration value="EW-Deception"/>
- *     &lt;enumeration value="EW-ECCM/EPM"/>
- *     &lt;enumeration value="EW-Frequency Hopping"/>
- *     &lt;enumeration value="EW-Intercept"/>
- *     &lt;enumeration value="EW-Jamming"/>
- *     &lt;enumeration value="EW-Jamming-Barrage"/>
- *     &lt;enumeration value="EW-Jamming-Spot"/>
- *     &lt;enumeration value="EW-Jamming-Sweep"/>
- *     &lt;enumeration value="EW-Radar Warning Receiver"/>
- *     &lt;enumeration value="EW-Reactive jamming"/>
- *     &lt;enumeration value="Instrumentation"/>
- *     &lt;enumeration value="Instrumentation-Calibration"/>
- *     &lt;enumeration value="Instrumentation-Equipment Monitor"/>
- *     &lt;enumeration value="Instrumentation-Frequency Standard"/>
- *     &lt;enumeration value="Instrumentation-Test Equipment"/>
- *     &lt;enumeration value="Instrumentation-Test Range"/>
- *     &lt;enumeration value="Interrogator"/>
- *     &lt;enumeration value="Ionospheric Sounder"/>
- *     &lt;enumeration value="Location"/>
- *     &lt;enumeration value="Location-Homing"/>
- *     &lt;enumeration value="Location-Intrusion Detector"/>
- *     &lt;enumeration value="Location-Laser Reflector"/>
- *     &lt;enumeration value="Location-Low-Light Level Television"/>
- *     &lt;enumeration value="Location-Miss Distance Indicator (MDI)"/>
- *     &lt;enumeration value="Location-Satellite Beacon"/>
- *     &lt;enumeration value="Location-Satellite Tracking"/>
- *     &lt;enumeration value="Location-Sonobuoy"/>
- *     &lt;enumeration value="Location-Tracking/Ranging"/>
- *     &lt;enumeration value="Manned Platform"/>
- *     &lt;enumeration value="Meteor Burst"/>
- *     &lt;enumeration value="Meteorological Aid"/>
- *     &lt;enumeration value="Meteorological Satellite"/>
- *     &lt;enumeration value="Missile Guidance"/>
- *     &lt;enumeration value="Missile Homing"/>
- *     &lt;enumeration value="Missile Tracking"/>
- *     &lt;enumeration value="Nav-Altimeter"/>
- *     &lt;enumeration value="Nav-Beacon"/>
- *     &lt;enumeration value="Nav-Direction Finder"/>
- *     &lt;enumeration value="Nav-DME"/>
- *     &lt;enumeration value="Nav-Drift Angle Measurement"/>
- *     &lt;enumeration value="Nav-GPS/Navstar"/>
- *     &lt;enumeration value="Nav-IFF/SIF"/>
- *     &lt;enumeration value="Navigation Aids"/>
- *     &lt;enumeration value="Nav-ILS"/>
- *     &lt;enumeration value="Nav-Localizer"/>
- *     &lt;enumeration value="Nav-LORAC"/>
- *     &lt;enumeration value="Nav-LORAN"/>
- *     &lt;enumeration value="Nav-MLS"/>
- *     &lt;enumeration value="Nav-Navigation Transponder"/>
- *     &lt;enumeration value="Nav-SHORAN"/>
- *     &lt;enumeration value="Nav-Space Based Navigation Aid"/>
- *     &lt;enumeration value="Nav-TACAN"/>
- *     &lt;enumeration value="Nav-VOR"/>
- *     &lt;enumeration value="Nav-VORTAC"/>
- *     &lt;enumeration value="Nuclear Detonation Detection"/>
- *     &lt;enumeration value="Optical Astronomy"/>
- *     &lt;enumeration value="Photo Reconnaissance"/>
- *     &lt;enumeration value="Radar"/>
- *     &lt;enumeration value="Radar Calibration Aid"/>
- *     &lt;enumeration value="Radar Intercept"/>
- *     &lt;enumeration value="Radar Navigation"/>
- *     &lt;enumeration value="Radar Transponder"/>
- *     &lt;enumeration value="Radar, Spread Spectrum"/>
- *     &lt;enumeration value="Radar-Acquisition"/>
- *     &lt;enumeration value="Radar-Bombing"/>
- *     &lt;enumeration value="Radar-CW"/>
- *     &lt;enumeration value="Radar-Doppler"/>
- *     &lt;enumeration value="Radar-Duplex Repeater"/>
- *     &lt;enumeration value="Radar-Fire Control"/>
- *     &lt;enumeration value="Radar-Ground Control Approach"/>
- *     &lt;enumeration value="Radar-Height Finder"/>
- *     &lt;enumeration value="Radar-Illuminator"/>
- *     &lt;enumeration value="Radar-Mapping"/>
- *     &lt;enumeration value="Radar-Meteorological"/>
- *     &lt;enumeration value="Radar-Monopulse"/>
- *     &lt;enumeration value="Radar-Over The Horizon"/>
- *     &lt;enumeration value="Radar-Precision Approach"/>
- *     &lt;enumeration value="Radar-Pulse Compression"/>
- *     &lt;enumeration value="Radar-Ranging"/>
- *     &lt;enumeration value="Radar-Reconnaissance"/>
- *     &lt;enumeration value="Radar-Search"/>
- *     &lt;enumeration value="Radar-Side Looking"/>
- *     &lt;enumeration value="Radar-Space-Based"/>
- *     &lt;enumeration value="Radar-Special"/>
- *     &lt;enumeration value="Radar-Synthetic Aperture"/>
- *     &lt;enumeration value="Radar-Tail Warning"/>
- *     &lt;enumeration value="Radar-Target Acquisition"/>
- *     &lt;enumeration value="Radar-Terrain Avoidance"/>
- *     &lt;enumeration value="Radar-Terrain Following"/>
- *     &lt;enumeration value="Radar-Tracking"/>
- *     &lt;enumeration value="Radar-Track-While Scan"/>
- *     &lt;enumeration value="Radar-Transponder"/>
- *     &lt;enumeration value="Radar-Velocity Measurement"/>
- *     &lt;enumeration value="Radar-Warfare Simulator"/>
- *     &lt;enumeration value="Radar-Weather Avoidance"/>
- *     &lt;enumeration value="Radio Astronomy"/>
- *     &lt;enumeration value="Radiosonde"/>
- *     &lt;enumeration value="Remote Sensing"/>
- *     &lt;enumeration value="Research"/>
- *     &lt;enumeration value="Retransmission"/>
- *     &lt;enumeration value="Scientific Investigation"/>
- *     &lt;enumeration value="Search And Rescue"/>
- *     &lt;enumeration value="Seeker"/>
- *     &lt;enumeration value="Signal Collection"/>
- *     &lt;enumeration value="Simulator"/>
- *     &lt;enumeration value="Space-Based Surveillance"/>
- *     &lt;enumeration value="Submarine Buoy"/>
- *     &lt;enumeration value="Telemetry"/>
- *     &lt;enumeration value="Telemetry-Satellite"/>
- *     &lt;enumeration value="Trainer"/>
- *     &lt;enumeration value="Other"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ListCEF"> &lt;restriction
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration
+ * value="Broadcast Radio/Television"/> &lt;enumeration
+ * value="Broadcast-Satellite"/> &lt;enumeration value="Collision Avoidance"/>
+ * &lt;enumeration value="Comms-Air Traffic Control"/> &lt;enumeration
+ * value="Comms-Data"/> &lt;enumeration value="Comms-Emergency"/>
+ * &lt;enumeration value="Comms-Monitor"/> &lt;enumeration value="Comms-P/P Or
+ * Net"/> &lt;enumeration value="Comms-Pager"/> &lt;enumeration
+ * value="Comms-Radio Relay"/> &lt;enumeration value="Comms-Satellite"/>
+ * &lt;enumeration value="Comms-Secure Voice"/> &lt;enumeration
+ * value="Comms-Troposcatter"/> &lt;enumeration value="Comms-Trunking"/>
+ * &lt;enumeration value="Comms-Video"/> &lt;enumeration
+ * value="Comms-Video/Data"/> &lt;enumeration value="Communications"/>
+ * &lt;enumeration value="Communications, Special"/> &lt;enumeration
+ * value="Communications, Spread Spectrum"/> &lt;enumeration value="Control"/>
+ * &lt;enumeration value="Control-Guidance"/> &lt;enumeration
+ * value="Control-Satellite (Uplink)"/> &lt;enumeration value="Deep Space
+ * Mission"/> &lt;enumeration value="Electronic Warfare"/> &lt;enumeration
+ * value="Electroptical Equipment"/> &lt;enumeration value="Elint
+ * Reconnaissance"/> &lt;enumeration value="EO-Forward Looking Infrared"/>
+ * &lt;enumeration value="EO-Forward Looking Radar"/> &lt;enumeration
+ * value="EO-Infrared Countermeasures"/> &lt;enumeration value="EO-Infrared
+ * Search And Track"/> &lt;enumeration value="EO-Infrared Seeker"/>
+ * &lt;enumeration value="EO-Infrared Surveillance"/> &lt;enumeration
+ * value="EO-Infrared Warning Receiver"/> &lt;enumeration value="EO-Laser
+ * Communications"/> &lt;enumeration value="EO-Laser Designator"/>
+ * &lt;enumeration value="EO-Laser Radar"/> &lt;enumeration value="EO-Laser
+ * Range Finder"/> &lt;enumeration value="EO-Laser Seeker"/> &lt;enumeration
+ * value="EO-Laser Tracker"/> &lt;enumeration value="EO-Laser Warning
+ * Receiver"/> &lt;enumeration value="EO-Laser Weapon"/> &lt;enumeration
+ * value="EO-Night Vision/Image Intensifier"/> &lt;enumeration value="EO-Night
+ * Vision/Thermal Image"/> &lt;enumeration value="EO-Surveillance"/>
+ * &lt;enumeration value="EO-Telescope"/> &lt;enumeration value="EO-TV Seeker"/>
+ * &lt;enumeration value="EO-Ultraviolet Warning Receiver"/> &lt;enumeration
+ * value="EW-Active jamming"/> &lt;enumeration value="EW-Anti-Satellite"/>
+ * &lt;enumeration value="EW-Anti-Satellite Target"/> &lt;enumeration
+ * value="EW-Deception"/> &lt;enumeration value="EW-ECCM/EPM"/> &lt;enumeration
+ * value="EW-Frequency Hopping"/> &lt;enumeration value="EW-Intercept"/>
+ * &lt;enumeration value="EW-Jamming"/> &lt;enumeration
+ * value="EW-Jamming-Barrage"/> &lt;enumeration value="EW-Jamming-Spot"/>
+ * &lt;enumeration value="EW-Jamming-Sweep"/> &lt;enumeration value="EW-Radar
+ * Warning Receiver"/> &lt;enumeration value="EW-Reactive jamming"/>
+ * &lt;enumeration value="Instrumentation"/> &lt;enumeration
+ * value="Instrumentation-Calibration"/> &lt;enumeration
+ * value="Instrumentation-Equipment Monitor"/> &lt;enumeration
+ * value="Instrumentation-Frequency Standard"/> &lt;enumeration
+ * value="Instrumentation-Test Equipment"/> &lt;enumeration
+ * value="Instrumentation-Test Range"/> &lt;enumeration value="Interrogator"/>
+ * &lt;enumeration value="Ionospheric Sounder"/> &lt;enumeration
+ * value="Location"/> &lt;enumeration value="Location-Homing"/> &lt;enumeration
+ * value="Location-Intrusion Detector"/> &lt;enumeration value="Location-Laser
+ * Reflector"/> &lt;enumeration value="Location-Low-Light Level Television"/>
+ * &lt;enumeration value="Location-Miss Distance Indicator (MDI)"/>
+ * &lt;enumeration value="Location-Satellite Beacon"/> &lt;enumeration
+ * value="Location-Satellite Tracking"/> &lt;enumeration
+ * value="Location-Sonobuoy"/> &lt;enumeration
+ * value="Location-Tracking/Ranging"/> &lt;enumeration value="Manned Platform"/>
+ * &lt;enumeration value="Meteor Burst"/> &lt;enumeration value="Meteorological
+ * Aid"/> &lt;enumeration value="Meteorological Satellite"/> &lt;enumeration
+ * value="Missile Guidance"/> &lt;enumeration value="Missile Homing"/>
+ * &lt;enumeration value="Missile Tracking"/> &lt;enumeration
+ * value="Nav-Altimeter"/> &lt;enumeration value="Nav-Beacon"/> &lt;enumeration
+ * value="Nav-Direction Finder"/> &lt;enumeration value="Nav-DME"/>
+ * &lt;enumeration value="Nav-Drift Angle Measurement"/> &lt;enumeration
+ * value="Nav-GPS/Navstar"/> &lt;enumeration value="Nav-IFF/SIF"/>
+ * &lt;enumeration value="Navigation Aids"/> &lt;enumeration value="Nav-ILS"/>
+ * &lt;enumeration value="Nav-Localizer"/> &lt;enumeration value="Nav-LORAC"/>
+ * &lt;enumeration value="Nav-LORAN"/> &lt;enumeration value="Nav-MLS"/>
+ * &lt;enumeration value="Nav-Navigation Transponder"/> &lt;enumeration
+ * value="Nav-SHORAN"/> &lt;enumeration value="Nav-Space Based Navigation Aid"/>
+ * &lt;enumeration value="Nav-TACAN"/> &lt;enumeration value="Nav-VOR"/>
+ * &lt;enumeration value="Nav-VORTAC"/> &lt;enumeration value="Nuclear
+ * Detonation Detection"/> &lt;enumeration value="Optical Astronomy"/>
+ * &lt;enumeration value="Photo Reconnaissance"/> &lt;enumeration
+ * value="Radar"/> &lt;enumeration value="Radar Calibration Aid"/>
+ * &lt;enumeration value="Radar Intercept"/> &lt;enumeration value="Radar
+ * Navigation"/> &lt;enumeration value="Radar Transponder"/> &lt;enumeration
+ * value="Radar, Spread Spectrum"/> &lt;enumeration value="Radar-Acquisition"/>
+ * &lt;enumeration value="Radar-Bombing"/> &lt;enumeration value="Radar-CW"/>
+ * &lt;enumeration value="Radar-Doppler"/> &lt;enumeration value="Radar-Duplex
+ * Repeater"/> &lt;enumeration value="Radar-Fire Control"/> &lt;enumeration
+ * value="Radar-Ground Control Approach"/> &lt;enumeration value="Radar-Height
+ * Finder"/> &lt;enumeration value="Radar-Illuminator"/> &lt;enumeration
+ * value="Radar-Mapping"/> &lt;enumeration value="Radar-Meteorological"/>
+ * &lt;enumeration value="Radar-Monopulse"/> &lt;enumeration value="Radar-Over
+ * The Horizon"/> &lt;enumeration value="Radar-Precision Approach"/>
+ * &lt;enumeration value="Radar-Pulse Compression"/> &lt;enumeration
+ * value="Radar-Ranging"/> &lt;enumeration value="Radar-Reconnaissance"/>
+ * &lt;enumeration value="Radar-Search"/> &lt;enumeration value="Radar-Side
+ * Looking"/> &lt;enumeration value="Radar-Space-Based"/> &lt;enumeration
+ * value="Radar-Special"/> &lt;enumeration value="Radar-Synthetic Aperture"/>
+ * &lt;enumeration value="Radar-Tail Warning"/> &lt;enumeration
+ * value="Radar-Target Acquisition"/> &lt;enumeration value="Radar-Terrain
+ * Avoidance"/> &lt;enumeration value="Radar-Terrain Following"/>
+ * &lt;enumeration value="Radar-Tracking"/> &lt;enumeration
+ * value="Radar-Track-While Scan"/> &lt;enumeration value="Radar-Transponder"/>
+ * &lt;enumeration value="Radar-Velocity Measurement"/> &lt;enumeration
+ * value="Radar-Warfare Simulator"/> &lt;enumeration value="Radar-Weather
+ * Avoidance"/> &lt;enumeration value="Radio Astronomy"/> &lt;enumeration
+ * value="Radiosonde"/> &lt;enumeration value="Remote Sensing"/> &lt;enumeration
+ * value="Research"/> &lt;enumeration value="Retransmission"/> &lt;enumeration
+ * value="Scientific Investigation"/> &lt;enumeration value="Search And
+ * Rescue"/> &lt;enumeration value="Seeker"/> &lt;enumeration value="Signal
+ * Collection"/> &lt;enumeration value="Simulator"/> &lt;enumeration
+ * value="Space-Based Surveillance"/> &lt;enumeration value="Submarine Buoy"/>
+ * &lt;enumeration value="Telemetry"/> &lt;enumeration
+ * value="Telemetry-Satellite"/> &lt;enumeration value="Trainer"/>
+ * &lt;enumeration value="Other"/> &lt;/restriction> &lt;/simpleType>
  * </pre>
  * <p>
  */

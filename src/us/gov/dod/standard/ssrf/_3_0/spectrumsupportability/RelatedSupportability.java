@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,17 +41,14 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RelatedSupportability">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"/>
- *         &lt;element name="SSRequestRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="J12Number" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RelatedSupportability"> &lt;complexContent>
+ * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ * &lt;sequence> &lt;element name="Type"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"/> &lt;element
+ * name="SSRequestRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
+ * minOccurs="0"/> &lt;element name="J12Number"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -78,7 +74,7 @@ public class RelatedSupportability {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -87,7 +83,7 @@ public class RelatedSupportability {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -100,9 +96,7 @@ public class RelatedSupportability {
   /**
    * Gets the value of the ssRequestRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSSRequestRef() {
     return ssRequestRef;
@@ -111,9 +105,7 @@ public class RelatedSupportability {
   /**
    * Sets the value of the ssRequestRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSSRequestRef(TString value) {
     this.ssRequestRef = value;
@@ -126,9 +118,7 @@ public class RelatedSupportability {
   /**
    * Gets the value of the j12Number property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getJ12Number() {
     return j12Number;
@@ -137,9 +127,7 @@ public class RelatedSupportability {
   /**
    * Sets the value of the j12Number property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setJ12Number(TString value) {
     this.j12Number = value;

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,9 +63,7 @@ public class TxAntModeRef extends RxAntModeRef {
   /**
    * Gets the value of the spectralPowerDensity property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSpectralPowerDensity() {
     return spectralPowerDensity;
@@ -75,9 +72,7 @@ public class TxAntModeRef extends RxAntModeRef {
   /**
    * Sets the value of the spectralPowerDensity property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSpectralPowerDensity(TDecimal value) {
     this.spectralPowerDensity = value;

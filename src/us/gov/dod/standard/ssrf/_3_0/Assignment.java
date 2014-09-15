@@ -23,34 +23,22 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.Common;
-import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.assignment.AsgnAllotOwner;
-import us.gov.dod.standard.ssrf._3_0.assignment.CircuitRemarks;
-import us.gov.dod.standard.ssrf._3_0.assignment.CoordinationData;
-import us.gov.dod.standard.ssrf._3_0.assignment.DocketNum;
-import us.gov.dod.standard.ssrf._3_0.assignment.HostDocketNum;
-import us.gov.dod.standard.ssrf._3_0.assignment.Link;
-import us.gov.dod.standard.ssrf._3_0.assignment.OffTheShelfEquipment;
-import us.gov.dod.standard.ssrf._3_0.assignment.PreviousAuthorization;
-import us.gov.dod.standard.ssrf._3_0.assignment.RecordNote;
-import us.gov.dod.standard.ssrf._3_0.assignment.Station;
-import us.gov.dod.standard.ssrf._3_0.assignment.StatusLog;
-import us.gov.dod.standard.ssrf._3_0.assignment.SysOfStation;
+import us.gov.dod.standard.ssrf._3_0.assignment.*;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
+import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
+import us.gov.dod.standard.ssrf._3_0.metadata.RelatedRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_0.metadata.RelatedRef;
+import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
  * <p>
@@ -375,9 +363,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTitle() {
     return title;
@@ -386,9 +372,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -401,9 +385,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usageType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUsageType() {
     return usageType;
@@ -412,9 +394,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usageType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUsageType(TString value) {
     this.usageType = value;
@@ -427,9 +407,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the dateResponseRequired property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDateResponseRequired() {
     return dateResponseRequired;
@@ -438,9 +416,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the dateResponseRequired property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
@@ -453,7 +429,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the effectiveDateTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDateTime() {
     return effectiveDateTime;
@@ -462,7 +438,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the effectiveDateTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDateTime(TCalendar value) {
     this.effectiveDateTime = value;
@@ -475,9 +451,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the expirationDateTime property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDateTime() {
     return expirationDateTime;
@@ -486,9 +460,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the expirationDateTime property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpirationDateTime(TCalendar value) {
     this.expirationDateTime = value;
@@ -501,9 +473,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -512,9 +482,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -527,9 +495,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the period property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPeriod() {
     return period;
@@ -538,9 +504,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the period property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPeriod(TString value) {
     this.period = value;
@@ -553,9 +517,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the seconds property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSeconds() {
     return seconds;
@@ -564,9 +526,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the seconds property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSeconds(TString value) {
     this.seconds = value;
@@ -579,9 +539,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the minutes property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMinutes() {
     return minutes;
@@ -590,9 +548,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the minutes property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMinutes(TString value) {
     this.minutes = value;
@@ -605,9 +561,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the hours property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getHours() {
     return hours;
@@ -616,9 +570,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the hours property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setHours(TString value) {
     this.hours = value;
@@ -631,9 +583,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the daysOfMonth property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDaysOfMonth() {
     return daysOfMonth;
@@ -642,9 +592,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the daysOfMonth property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
@@ -657,9 +605,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the months property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMonths() {
     return months;
@@ -668,9 +614,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the months property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMonths(TString value) {
     this.months = value;
@@ -683,9 +627,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the daysOfWeek property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDaysOfWeek() {
     return daysOfWeek;
@@ -694,9 +636,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the daysOfWeek property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
@@ -709,9 +649,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the years property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getYears() {
     return years;
@@ -720,9 +658,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the years property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setYears(TString value) {
     this.years = value;
@@ -735,9 +671,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the duration property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getDuration() {
     return duration;
@@ -746,9 +680,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the duration property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDuration(TInteger value) {
     this.duration = value;
@@ -761,9 +693,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the processing property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getProcessing() {
     return processing;
@@ -772,9 +702,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the processing property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setProcessing(TString value) {
     this.processing = value;
@@ -787,9 +715,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the emergency property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getEmergency() {
     return emergency;
@@ -798,9 +724,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the emergency property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEmergency(TString value) {
     this.emergency = value;
@@ -813,9 +737,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the assignmentAuthority property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAssignmentAuthority() {
     return assignmentAuthority;
@@ -824,9 +746,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the assignmentAuthority property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAssignmentAuthority(TString value) {
     this.assignmentAuthority = value;
@@ -839,9 +759,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the requirement property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRequirement() {
     return requirement;
@@ -850,9 +768,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the requirement property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRequirement(TString value) {
     this.requirement = value;
@@ -865,9 +781,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the numSystems property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumSystems() {
     return numSystems;
@@ -876,9 +790,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the numSystems property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumSystems(TInteger value) {
     this.numSystems = value;
@@ -891,9 +803,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the agencyActionNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAgencyActionNum() {
     return agencyActionNum;
@@ -902,9 +812,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the agencyActionNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAgencyActionNum(TString value) {
     this.agencyActionNum = value;
@@ -917,9 +825,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the agencyComments property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAgencyComments() {
     return agencyComments;
@@ -928,9 +834,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the agencyComments property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAgencyComments(TString value) {
     this.agencyComments = value;
@@ -943,9 +847,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the agencySerialNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAgencySerialNum() {
     return agencySerialNum;
@@ -954,9 +856,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the agencySerialNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAgencySerialNum(TString value) {
     this.agencySerialNum = value;
@@ -969,9 +869,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the assignmentDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getAssignmentDate() {
     return assignmentDate;
@@ -980,9 +878,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the assignmentDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAssignmentDate(TCalendar value) {
     this.assignmentDate = value;
@@ -995,9 +891,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the cocomGroup property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCOCOMGroup() {
     return cocomGroup;
@@ -1006,9 +900,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the cocomGroup property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCOCOMGroup(TString value) {
     this.cocomGroup = value;
@@ -1021,9 +913,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the controlRequestNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getControlRequestNum() {
     return controlRequestNum;
@@ -1032,9 +922,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the controlRequestNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setControlRequestNum(TString value) {
     this.controlRequestNum = value;
@@ -1047,9 +935,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the coordinationComments property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCoordinationComments() {
     return coordinationComments;
@@ -1058,9 +944,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the coordinationComments property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCoordinationComments(TString value) {
     this.coordinationComments = value;
@@ -1073,9 +957,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the dataSource property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDataSource() {
     return dataSource;
@@ -1084,9 +966,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the dataSource property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDataSource(TString value) {
     this.dataSource = value;
@@ -1099,9 +979,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the fccFileNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFCCFileNum() {
     return fccFileNum;
@@ -1110,9 +988,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the fccFileNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFCCFileNum(TString value) {
     this.fccFileNum = value;
@@ -1125,9 +1001,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the fmscNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFMSCNum() {
     return fmscNum;
@@ -1136,9 +1010,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the fmscNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFMSCNum(TString value) {
     this.fmscNum = value;
@@ -1151,9 +1023,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the frequencyActionOfficer property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFrequencyActionOfficer() {
     return frequencyActionOfficer;
@@ -1162,9 +1032,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the frequencyActionOfficer property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFrequencyActionOfficer(TString value) {
     this.frequencyActionOfficer = value;
@@ -1177,9 +1045,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the listSerialNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getListSerialNum() {
     return listSerialNum;
@@ -1188,9 +1054,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the listSerialNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setListSerialNum(TString value) {
     this.listSerialNum = value;
@@ -1203,9 +1067,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the natoPooledFrequencyCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getNATOPooledFrequencyCode() {
     return natoPooledFrequencyCode;
@@ -1214,9 +1076,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the natoPooledFrequencyCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNATOPooledFrequencyCode(TString value) {
     this.natoPooledFrequencyCode = value;
@@ -1229,9 +1089,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the natoPooledFrequencyNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNATOPooledFrequencyNum() {
     return natoPooledFrequencyNum;
@@ -1240,9 +1098,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the natoPooledFrequencyNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNATOPooledFrequencyNum(TInteger value) {
     this.natoPooledFrequencyNum = value;
@@ -1255,9 +1111,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the originalAssignmentDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getOriginalAssignmentDate() {
     return originalAssignmentDate;
@@ -1266,9 +1120,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the originalAssignmentDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOriginalAssignmentDate(TCalendar value) {
     this.originalAssignmentDate = value;
@@ -1281,9 +1133,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the routineAgendaItem property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRoutineAgendaItem() {
     return routineAgendaItem;
@@ -1292,9 +1142,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the routineAgendaItem property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRoutineAgendaItem(TString value) {
     this.routineAgendaItem = value;
@@ -1307,9 +1155,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the supplementaryDetails property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSupplementaryDetails() {
     return supplementaryDetails;
@@ -1318,9 +1164,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the supplementaryDetails property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSupplementaryDetails(TString value) {
     this.supplementaryDetails = value;
@@ -1333,9 +1177,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the typeOfService property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTypeOfService() {
     return typeOfService;
@@ -1344,9 +1186,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the typeOfService property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTypeOfService(TString value) {
     this.typeOfService = value;
@@ -1359,9 +1199,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usageCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUsageCode() {
     return usageCode;
@@ -1370,9 +1208,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usageCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUsageCode(TString value) {
     this.usageCode = value;
@@ -1385,9 +1221,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usageFrequency property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUsageFrequency() {
     return usageFrequency;
@@ -1396,9 +1230,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usageFrequency property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUsageFrequency(TString value) {
     this.usageFrequency = value;
@@ -1411,9 +1243,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usagePercentage property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getUsagePercentage() {
     return usagePercentage;
@@ -1422,9 +1252,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usagePercentage property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUsagePercentage(TInteger value) {
     this.usagePercentage = value;
@@ -1437,9 +1265,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the userNetCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUserNetCode() {
     return userNetCode;
@@ -1448,9 +1274,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the userNetCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUserNetCode(TString value) {
     this.userNetCode = value;
@@ -1477,7 +1301,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1515,7 +1339,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1553,7 +1377,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1591,7 +1415,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1629,7 +1453,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1666,7 +1490,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1703,7 +1527,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1740,7 +1564,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1778,7 +1602,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1816,7 +1640,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1854,7 +1678,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1891,7 +1715,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -1929,7 +1753,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -1967,7 +1791,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -2005,7 +1829,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -2043,7 +1867,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.jrfl;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,16 +42,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="JRFLEntryLocation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="AntFeedpointHeight" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="JRFLEntryLocation"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
+ * &lt;element name="AntFeedpointHeight"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -74,7 +69,7 @@ public class JRFLEntryLocation {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -83,7 +78,7 @@ public class JRFLEntryLocation {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -96,9 +91,7 @@ public class JRFLEntryLocation {
   /**
    * Gets the value of the antFeedpointHeight property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAntFeedpointHeight() {
     return antFeedpointHeight;
@@ -107,9 +100,7 @@ public class JRFLEntryLocation {
   /**
    * Sets the value of the antFeedpointHeight property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAntFeedpointHeight(TDecimal value) {
     this.antFeedpointHeight = value;

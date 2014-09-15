@@ -89,9 +89,7 @@ public class AntHardware {
   /**
    * Gets the value of the feedType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getFeedType() {
     return feedType;
@@ -100,9 +98,7 @@ public class AntHardware {
   /**
    * Sets the value of the feedType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setFeedType(TString value) {
     this.feedType = value;
@@ -115,9 +111,7 @@ public class AntHardware {
   /**
    * Gets the value of the leadType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getLeadType() {
     return leadType;
@@ -126,9 +120,7 @@ public class AntHardware {
   /**
    * Sets the value of the leadType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setLeadType(TString value) {
     this.leadType = value;
@@ -141,9 +133,7 @@ public class AntHardware {
   /**
    * Gets the value of the connectorType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getConnectorType() {
     return connectorType;
@@ -152,9 +142,7 @@ public class AntHardware {
   /**
    * Sets the value of the connectorType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setConnectorType(TString value) {
     this.connectorType = value;
@@ -167,9 +155,7 @@ public class AntHardware {
   /**
    * Gets the value of the feedOrientation property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getFeedOrientation() {
     return feedOrientation;
@@ -178,9 +164,7 @@ public class AntHardware {
   /**
    * Sets the value of the feedOrientation property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setFeedOrientation(TString value) {
     this.feedOrientation = value;

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -41,17 +40,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RxModulation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="DigitalModType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
- *         &lt;element name="MaxBitRate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10_3" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}DigitalFormat" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RxModulation"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="DigitalModType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
+ * minOccurs="0"/> &lt;element name="MaxBitRate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10_3" minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}DigitalFormat" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -92,9 +87,7 @@ public class RxModulation {
   /**
    * Gets the value of the digitalModType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDigitalModType() {
     return digitalModType;
@@ -103,9 +96,7 @@ public class RxModulation {
   /**
    * Sets the value of the digitalModType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDigitalModType(TString value) {
     this.digitalModType = value;
@@ -118,9 +109,7 @@ public class RxModulation {
   /**
    * Gets the value of the maxBitRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getMaxBitRate() {
     return maxBitRate;
@@ -129,9 +118,7 @@ public class RxModulation {
   /**
    * Sets the value of the maxBitRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMaxBitRate(TDecimal value) {
     this.maxBitRate = value;
@@ -144,9 +131,7 @@ public class RxModulation {
   /**
    * Gets the value of the numStates property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumStates() {
     return numStates;
@@ -155,9 +140,7 @@ public class RxModulation {
   /**
    * Sets the value of the numStates property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumStates(TInteger value) {
     this.numStates = value;
@@ -170,9 +153,7 @@ public class RxModulation {
   /**
    * Gets the value of the lineCoding property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLineCoding() {
     return lineCoding;
@@ -181,9 +162,7 @@ public class RxModulation {
   /**
    * Sets the value of the lineCoding property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLineCoding(TString value) {
     this.lineCoding = value;
@@ -196,9 +175,7 @@ public class RxModulation {
   /**
    * Gets the value of the codeRate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCodeRate() {
     return codeRate;
@@ -207,9 +184,7 @@ public class RxModulation {
   /**
    * Sets the value of the codeRate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCodeRate(TDecimal value) {
     this.codeRate = value;
@@ -222,9 +197,7 @@ public class RxModulation {
   /**
    * Gets the value of the codePeriod property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCodePeriod() {
     return codePeriod;
@@ -233,9 +206,7 @@ public class RxModulation {
   /**
    * Sets the value of the codePeriod property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCodePeriod(TDecimal value) {
     this.codePeriod = value;

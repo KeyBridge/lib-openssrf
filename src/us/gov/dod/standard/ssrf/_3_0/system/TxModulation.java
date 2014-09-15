@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -104,9 +103,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the maxDevRatio property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getMaxDevRatio() {
     return maxDevRatio;
@@ -115,9 +112,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the maxDevRatio property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMaxDevRatio(TDecimal value) {
     this.maxDevRatio = value;
@@ -130,9 +125,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the amIdx property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAMIdx() {
     return amIdx;
@@ -141,9 +134,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the amIdx property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAMIdx(TDecimal value) {
     this.amIdx = value;
@@ -156,9 +147,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the amrmsIdx property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAMRMSIdx() {
     return amrmsIdx;
@@ -167,9 +156,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the amrmsIdx property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAMRMSIdx(TDecimal value) {
     this.amrmsIdx = value;
@@ -182,9 +169,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the fmPeakFreqDev property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFMPeakFreqDev() {
     return fmPeakFreqDev;
@@ -193,9 +178,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the fmPeakFreqDev property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFMPeakFreqDev(TDecimal value) {
     this.fmPeakFreqDev = value;
@@ -208,9 +191,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the fmrmsFreqDev property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFMRMSFreqDev() {
     return fmrmsFreqDev;
@@ -219,9 +200,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the fmrmsFreqDev property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFMRMSFreqDev(TDecimal value) {
     this.fmrmsFreqDev = value;
@@ -234,9 +213,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the fmDeviationCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFMDeviationCode() {
     return fmDeviationCode;
@@ -245,9 +222,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the fmDeviationCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFMDeviationCode(TString value) {
     this.fmDeviationCode = value;
@@ -260,9 +235,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the fmPeakModulationIdx property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFMPeakModulationIdx() {
     return fmPeakModulationIdx;
@@ -271,9 +244,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the fmPeakModulationIdx property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFMPeakModulationIdx(TDecimal value) {
     this.fmPeakModulationIdx = value;
@@ -286,9 +257,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the carrierSuppression property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCarrierSuppression() {
     return carrierSuppression;
@@ -297,9 +266,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the carrierSuppression property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCarrierSuppression(TDecimal value) {
     this.carrierSuppression = value;
@@ -312,9 +279,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the sidebandSuppression property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSidebandSuppression() {
     return sidebandSuppression;
@@ -323,9 +288,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the sidebandSuppression property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSidebandSuppression(TDecimal value) {
     this.sidebandSuppression = value;
@@ -338,9 +301,7 @@ public class TxModulation extends RxModulation {
   /**
    * Gets the value of the sidebandSuppressed property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSidebandSuppressed() {
     return sidebandSuppressed;
@@ -349,9 +310,7 @@ public class TxModulation extends RxModulation {
   /**
    * Sets the value of the sidebandSuppressed property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSidebandSuppressed(TString value) {
     this.sidebandSuppressed = value;

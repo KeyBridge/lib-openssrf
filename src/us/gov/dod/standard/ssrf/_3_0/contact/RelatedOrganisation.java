@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.contact;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,17 +42,14 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFR;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RelatedOrganisation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="Relation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCFR"/>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RelatedOrganisation"> &lt;complexContent>
+ * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ * &lt;sequence> &lt;element name="Type"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/> &lt;element
+ * name="Relation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCFR"/>
+ * &lt;element name="Serial"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -78,9 +74,7 @@ public class RelatedOrganisation {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -89,9 +83,7 @@ public class RelatedOrganisation {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -104,7 +96,7 @@ public class RelatedOrganisation {
   /**
    * Gets the value of the relation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRelation() {
     return relation;
@@ -113,7 +105,7 @@ public class RelatedOrganisation {
   /**
    * Sets the value of the relation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRelation(TString value) {
     this.relation = value;
@@ -126,7 +118,7 @@ public class RelatedOrganisation {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -135,7 +127,7 @@ public class RelatedOrganisation {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;

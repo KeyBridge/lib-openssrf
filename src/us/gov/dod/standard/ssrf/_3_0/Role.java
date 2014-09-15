@@ -109,9 +109,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -120,9 +118,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -135,9 +131,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -146,9 +140,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -161,9 +153,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -172,9 +162,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -187,7 +175,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -196,7 +184,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -209,9 +197,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCountry() {
     return country;
@@ -220,9 +206,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCountry(TString value) {
     this.country = value;
@@ -249,7 +233,7 @@ public class Role extends Common<Role> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -287,7 +271,7 @@ public class Role extends Common<Role> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -324,7 +308,7 @@ public class Role extends Common<Role> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -362,7 +346,7 @@ public class Role extends Common<Role> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

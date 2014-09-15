@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.allotment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,17 +42,13 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Emission">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="EmsClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TEmsDes" minOccurs="0"/>
- *         &lt;element name="NecessaryBw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="Power" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Emission"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="EmsClass" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TEmsDes"
+ * minOccurs="0"/> &lt;element name="NecessaryBw"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="Power" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -79,9 +74,7 @@ public class Emission {
   /**
    * Gets the value of the emsClass property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getEmsClass() {
     return emsClass;
@@ -90,9 +83,7 @@ public class Emission {
   /**
    * Sets the value of the emsClass property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEmsClass(TString value) {
     this.emsClass = value;
@@ -105,9 +96,7 @@ public class Emission {
   /**
    * Gets the value of the necessaryBw property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getNecessaryBw() {
     return necessaryBw;
@@ -116,9 +105,7 @@ public class Emission {
   /**
    * Sets the value of the necessaryBw property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
@@ -131,9 +118,7 @@ public class Emission {
   /**
    * Gets the value of the power property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPower() {
     return power;
@@ -142,9 +127,7 @@ public class Emission {
   /**
    * Sets the value of the power property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPower(TDecimal value) {
     this.power = value;

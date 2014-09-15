@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,18 +43,17 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="EndpointLocation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="AntennaHeight" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- *         &lt;element name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="LocSatRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="MinPointAngle" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz180" minOccurs="0"/>
- *         &lt;element name="SiteElevation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="EndpointLocation"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="AntennaHeight" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude"
+ * minOccurs="0"/> &lt;element name="Excluded"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;element name="LocSatRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
+ * &lt;element name="MinPointAngle"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz180" minOccurs="0"/> &lt;element
+ * name="SiteElevation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -89,9 +87,7 @@ public class EndpointLocation {
   /**
    * Gets the value of the antennaHeight property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAntennaHeight() {
     return antennaHeight;
@@ -100,9 +96,7 @@ public class EndpointLocation {
   /**
    * Sets the value of the antennaHeight property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAntennaHeight(TDecimal value) {
     this.antennaHeight = value;
@@ -115,9 +109,7 @@ public class EndpointLocation {
   /**
    * Gets the value of the excluded property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getExcluded() {
     return excluded;
@@ -126,9 +118,7 @@ public class EndpointLocation {
   /**
    * Sets the value of the excluded property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExcluded(TString value) {
     this.excluded = value;
@@ -141,9 +131,7 @@ public class EndpointLocation {
   /**
    * Gets the value of the locSatRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLocSatRef() {
     return locSatRef;
@@ -152,9 +140,7 @@ public class EndpointLocation {
   /**
    * Sets the value of the locSatRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
@@ -167,9 +153,7 @@ public class EndpointLocation {
   /**
    * Gets the value of the minPointAngle property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getMinPointAngle() {
     return minPointAngle;
@@ -178,9 +162,7 @@ public class EndpointLocation {
   /**
    * Sets the value of the minPointAngle property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMinPointAngle(TDecimal value) {
     this.minPointAngle = value;
@@ -193,9 +175,7 @@ public class EndpointLocation {
   /**
    * Gets the value of the siteElevation property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getSiteElevation() {
     return siteElevation;
@@ -204,9 +184,7 @@ public class EndpointLocation {
   /**
    * Sets the value of the siteElevation property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSiteElevation(TDecimal value) {
     this.siteElevation = value;

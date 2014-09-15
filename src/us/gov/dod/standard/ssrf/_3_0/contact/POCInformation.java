@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.contact;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,29 +32,7 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for POCInformation complex type.
- * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="POCInformation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/>
- *         &lt;element name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "POCInformation", propOrder = {
@@ -78,7 +55,7 @@ public class POCInformation {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -87,7 +64,7 @@ public class POCInformation {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -100,9 +77,7 @@ public class POCInformation {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -111,9 +86,7 @@ public class POCInformation {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -126,9 +99,7 @@ public class POCInformation {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return
    */
   public TString getDescription() {
     return description;
@@ -137,9 +108,7 @@ public class POCInformation {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;

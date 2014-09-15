@@ -44,6 +44,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
   "speed"
 })
 public class AtWaypoint {
+
   /**
    *
    */
@@ -104,9 +105,7 @@ public class AtWaypoint {
   /**
    * Gets the value of the speed property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getSpeed() {
     return speed;
@@ -115,9 +114,7 @@ public class AtWaypoint {
   /**
    * Sets the value of the speed property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setSpeed(TDecimal value) {
     this.speed = value;

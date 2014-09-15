@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.administrative;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,20 +44,18 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="CodeList">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Action" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/>
- *         &lt;element name="CodeListCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS3"/>
- *         &lt;element name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/>
- *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="Origin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO" minOccurs="0"/>
- *         &lt;element name="Code" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Code" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CodeList"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Action" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/> &lt;element
+ * name="CodeListCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS3"/>
+ * &lt;element name="EffectiveDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"/> &lt;element
+ * name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;element name="Origin"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO" minOccurs="0"/>
+ * &lt;element name="Code" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Code"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -94,7 +91,7 @@ public class CodeList {
   /**
    * Gets the value of the action property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAction() {
     return action;
@@ -103,7 +100,7 @@ public class CodeList {
   /**
    * Sets the value of the action property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAction(TString value) {
     this.action = value;
@@ -116,7 +113,7 @@ public class CodeList {
   /**
    * Gets the value of the codeListCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCodeListCode() {
     return codeListCode;
@@ -125,7 +122,7 @@ public class CodeList {
   /**
    * Sets the value of the codeListCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCodeListCode(TString value) {
     this.codeListCode = value;
@@ -138,7 +135,7 @@ public class CodeList {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -147,7 +144,7 @@ public class CodeList {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -160,9 +157,7 @@ public class CodeList {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -171,9 +166,7 @@ public class CodeList {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -186,9 +179,7 @@ public class CodeList {
   /**
    * Gets the value of the origin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOrigin() {
     return origin;
@@ -197,9 +188,7 @@ public class CodeList {
   /**
    * Sets the value of the origin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOrigin(TString value) {
     this.origin = value;
@@ -226,7 +215,7 @@ public class CodeList {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

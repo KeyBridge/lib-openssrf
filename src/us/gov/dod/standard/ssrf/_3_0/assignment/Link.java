@@ -27,16 +27,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.DCSTrunk;
 import us.gov.dod.standard.ssrf._3_0.metadata.DetailedFunction;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * <p>
@@ -48,23 +47,25 @@ import us.gov.dod.standard.ssrf._3_0.metadata.DetailedFunction;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Link">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="LinkID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="IntermediateFunction" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/>
- *         &lt;element name="MajorFunction" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/>
- *         &lt;element name="LinkName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS24" minOccurs="0"/>
- *         &lt;element name="Tuning" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tuning" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="StationConfig" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StationConfig" maxOccurs="unbounded"/>
- *         &lt;element name="Assigned" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Assigned" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="DCSTrunk" type="{urn:us:gov:dod:standard:ssrf:3.0.0}DCSTrunk" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="DetailedFunction" type="{urn:us:gov:dod:standard:ssrf:3.0.0}DetailedFunction" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Link"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="LinkID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
+ * name="IntermediateFunction" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150"
+ * minOccurs="0"/> &lt;element name="MajorFunction"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/> &lt;element
+ * name="LinkName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS24"
+ * minOccurs="0"/> &lt;element name="Tuning"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tuning" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="StationConfig"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StationConfig"
+ * maxOccurs="unbounded"/> &lt;element name="Assigned"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Assigned" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="DCSTrunk"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}DCSTrunk" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="DetailedFunction"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}DetailedFunction"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -109,7 +110,7 @@ public class Link {
   /**
    * Gets the value of the linkID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLinkID() {
     return linkID;
@@ -118,7 +119,7 @@ public class Link {
   /**
    * Sets the value of the linkID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLinkID(TString value) {
     this.linkID = value;
@@ -131,9 +132,7 @@ public class Link {
   /**
    * Gets the value of the intermediateFunction property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIntermediateFunction() {
     return intermediateFunction;
@@ -142,9 +141,7 @@ public class Link {
   /**
    * Sets the value of the intermediateFunction property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIntermediateFunction(TString value) {
     this.intermediateFunction = value;
@@ -157,9 +154,7 @@ public class Link {
   /**
    * Gets the value of the majorFunction property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMajorFunction() {
     return majorFunction;
@@ -168,9 +163,7 @@ public class Link {
   /**
    * Sets the value of the majorFunction property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMajorFunction(TString value) {
     this.majorFunction = value;
@@ -183,9 +176,7 @@ public class Link {
   /**
    * Gets the value of the linkName property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLinkName() {
     return linkName;
@@ -194,9 +185,7 @@ public class Link {
   /**
    * Sets the value of the linkName property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLinkName(TString value) {
     this.linkName = value;
@@ -223,7 +212,7 @@ public class Link {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -261,7 +250,7 @@ public class Link {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -298,7 +287,7 @@ public class Link {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -335,7 +324,7 @@ public class Link {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -373,7 +362,7 @@ public class Link {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

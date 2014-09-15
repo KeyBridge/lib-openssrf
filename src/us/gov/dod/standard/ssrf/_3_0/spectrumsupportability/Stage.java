@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -46,22 +45,21 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Stage">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCSG"/>
- *         &lt;element name="StartDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="TargetDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="DateApprovalRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="TerminationDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="NumEquip" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
- *         &lt;element name="GeoDescription" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="StageLocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StageLocation" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Stage"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCSG"/> &lt;element
+ * name="StartDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="TargetDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="DateApprovalRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
+ * minOccurs="0"/> &lt;element name="TerminationDate"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="NumEquip" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9"
+ * minOccurs="0"/> &lt;element name="GeoDescription"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="StageLocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StageLocation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -105,7 +103,7 @@ public class Stage {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -114,7 +112,7 @@ public class Stage {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -127,9 +125,7 @@ public class Stage {
   /**
    * Gets the value of the startDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getStartDate() {
     return startDate;
@@ -138,9 +134,7 @@ public class Stage {
   /**
    * Sets the value of the startDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStartDate(TCalendar value) {
     this.startDate = value;
@@ -153,9 +147,7 @@ public class Stage {
   /**
    * Gets the value of the targetDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getTargetDate() {
     return targetDate;
@@ -164,9 +156,7 @@ public class Stage {
   /**
    * Sets the value of the targetDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTargetDate(TCalendar value) {
     this.targetDate = value;
@@ -179,9 +169,7 @@ public class Stage {
   /**
    * Gets the value of the dateApprovalRequired property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDateApprovalRequired() {
     return dateApprovalRequired;
@@ -190,9 +178,7 @@ public class Stage {
   /**
    * Sets the value of the dateApprovalRequired property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDateApprovalRequired(TCalendar value) {
     this.dateApprovalRequired = value;
@@ -205,9 +191,7 @@ public class Stage {
   /**
    * Gets the value of the terminationDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getTerminationDate() {
     return terminationDate;
@@ -216,9 +200,7 @@ public class Stage {
   /**
    * Sets the value of the terminationDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTerminationDate(TCalendar value) {
     this.terminationDate = value;
@@ -231,9 +213,7 @@ public class Stage {
   /**
    * Gets the value of the numEquip property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumEquip() {
     return numEquip;
@@ -242,9 +222,7 @@ public class Stage {
   /**
    * Sets the value of the numEquip property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumEquip(TInteger value) {
     this.numEquip = value;
@@ -257,9 +235,7 @@ public class Stage {
   /**
    * Gets the value of the geoDescription property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getGeoDescription() {
     return geoDescription;
@@ -268,9 +244,7 @@ public class Stage {
   /**
    * Sets the value of the geoDescription property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setGeoDescription(TString value) {
     this.geoDescription = value;
@@ -298,7 +272,7 @@ public class Stage {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

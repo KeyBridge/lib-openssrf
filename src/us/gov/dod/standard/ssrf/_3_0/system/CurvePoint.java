@@ -41,16 +41,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
  * <p>
  * <
  * pre>
- * &lt;complexType name="CurvePoint">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Offset" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqOffset"/>
- *         &lt;element name="Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TCurvePointLevel"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CurvePoint"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Offset" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqOffset"/>
+ * &lt;element name="Level"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TCurvePointLevel"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -72,7 +68,7 @@ public class CurvePoint {
   /**
    * Gets the value of the offset property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getOffset() {
     return offset;
@@ -81,7 +77,7 @@ public class CurvePoint {
   /**
    * Sets the value of the offset property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOffset(TDecimal value) {
     this.offset = value;
@@ -94,7 +90,7 @@ public class CurvePoint {
   /**
    * Gets the value of the level property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getLevel() {
     return level;
@@ -103,7 +99,7 @@ public class CurvePoint {
   /**
    * Sets the value of the level property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLevel(TDecimal value) {
     this.level = value;

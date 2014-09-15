@@ -254,19 +254,13 @@ public class SSRF extends SchemaRoot {
     return this;
   }
 
-  public SSRF withAssignment(Assignment values) {
+  public SSRF withAssignment(Assignment... values) {
     if (values != null) {
       getAssignment().addAll(Arrays.asList(values));
     }
     return this;
   }
 
-//  public SSRF withAssignment(Assignment... values) {
-//    if (values != null) {
-//      getAssignment().addAll(Arrays.asList(values));
-//    }
-//    return this;
-//  }
   public SSRF withAssignment(Collection<Assignment> values) {
     if (values != null) {
       getAssignment().addAll(values);

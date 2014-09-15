@@ -37,30 +37,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <
  * pre>
- * &lt;simpleType name="ListCAS">
- *   &lt;restriction base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50">
- *     &lt;enumeration value="360 Degrees Rotating"/>
- *     &lt;enumeration value="Bi-Directional Sector"/>
- *     &lt;enumeration value="Conical"/>
- *     &lt;enumeration value="Electronic Scan (360 Degrees)"/>
- *     &lt;enumeration value="Electronic Scan (Sector)"/>
- *     &lt;enumeration value="Fixed"/>
- *     &lt;enumeration value="Fixed-3 Axis Stabilised"/>
- *     &lt;enumeration value="Helical"/>
- *     &lt;enumeration value="Horizontal"/>
- *     &lt;enumeration value="Lobing"/>
- *     &lt;enumeration value="Manual"/>
- *     &lt;enumeration value="Mechanically Steerable"/>
- *     &lt;enumeration value="Palmer Raster"/>
- *     &lt;enumeration value="Raster"/>
- *     &lt;enumeration value="Sector Scan"/>
- *     &lt;enumeration value="Spiral "/>
- *     &lt;enumeration value="Tracker"/>
- *     &lt;enumeration value="Unidirectional Sector"/>
- *     &lt;enumeration value="Vertical"/>
- *     &lt;enumeration value="Other"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ListCAS"> &lt;restriction
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration value="360
+ * Degrees Rotating"/> &lt;enumeration value="Bi-Directional Sector"/>
+ * &lt;enumeration value="Conical"/> &lt;enumeration value="Electronic Scan (360
+ * Degrees)"/> &lt;enumeration value="Electronic Scan (Sector)"/>
+ * &lt;enumeration value="Fixed"/> &lt;enumeration value="Fixed-3 Axis
+ * Stabilised"/> &lt;enumeration value="Helical"/> &lt;enumeration
+ * value="Horizontal"/> &lt;enumeration value="Lobing"/> &lt;enumeration
+ * value="Manual"/> &lt;enumeration value="Mechanically Steerable"/>
+ * &lt;enumeration value="Palmer Raster"/> &lt;enumeration value="Raster"/>
+ * &lt;enumeration value="Sector Scan"/> &lt;enumeration value="Spiral "/>
+ * &lt;enumeration value="Tracker"/> &lt;enumeration value="Unidirectional
+ * Sector"/> &lt;enumeration value="Vertical"/> &lt;enumeration value="Other"/>
+ * &lt;/restriction> &lt;/simpleType>
  * </pre>
  * <p>
  */

@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,17 +41,14 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Blanking">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="AzStart" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz" minOccurs="0"/>
- *         &lt;element name="AzStop" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz" minOccurs="0"/>
- *         &lt;element name="ElevStart" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev" minOccurs="0"/>
- *         &lt;element name="ElevStop" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Blanking"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="AzStart" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz" minOccurs="0"/>
+ * &lt;element name="AzStop" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz"
+ * minOccurs="0"/> &lt;element name="ElevStart"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev" minOccurs="0"/> &lt;element
+ * name="ElevStop" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -83,9 +79,7 @@ public class Blanking {
   /**
    * Gets the value of the azStart property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAzStart() {
     return azStart;
@@ -94,9 +88,7 @@ public class Blanking {
   /**
    * Sets the value of the azStart property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAzStart(TDecimal value) {
     this.azStart = value;
@@ -109,9 +101,7 @@ public class Blanking {
   /**
    * Gets the value of the azStop property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAzStop() {
     return azStop;
@@ -120,9 +110,7 @@ public class Blanking {
   /**
    * Sets the value of the azStop property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAzStop(TDecimal value) {
     this.azStop = value;
@@ -135,9 +123,7 @@ public class Blanking {
   /**
    * Gets the value of the elevStart property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getElevStart() {
     return elevStart;
@@ -146,9 +132,7 @@ public class Blanking {
   /**
    * Sets the value of the elevStart property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setElevStart(TDecimal value) {
     this.elevStart = value;
@@ -161,9 +145,7 @@ public class Blanking {
   /**
    * Gets the value of the elevStop property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getElevStop() {
     return elevStop;
@@ -172,9 +154,7 @@ public class Blanking {
   /**
    * Sets the value of the elevStop property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setElevStop(TDecimal value) {
     this.elevStop = value;

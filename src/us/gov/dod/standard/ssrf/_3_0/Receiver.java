@@ -129,7 +129,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the generic property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getGeneric() {
     return generic;
@@ -138,7 +138,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the generic property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGeneric(TString value) {
     this.generic = value;
@@ -151,7 +151,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the duplexSep property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getDuplexSep() {
     return duplexSep;
@@ -160,7 +160,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the duplexSep property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDuplexSep(TDecimal value) {
     this.duplexSep = value;
@@ -173,9 +173,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the duplexSepType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDuplexSepType() {
     return duplexSepType;
@@ -184,9 +182,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the duplexSepType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
@@ -199,9 +195,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the preselectionType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPreselectionType() {
     return preselectionType;
@@ -210,9 +204,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the preselectionType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPreselectionType(TString value) {
     this.preselectionType = value;
@@ -225,9 +217,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the conductedEmissions property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getConductedEmissions() {
     return conductedEmissions;
@@ -236,9 +226,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the conductedEmissions property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setConductedEmissions(TDecimal value) {
     this.conductedEmissions = value;
@@ -251,9 +239,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the fccAcceptanceNum property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFCCAcceptanceNum() {
     return fccAcceptanceNum;
@@ -262,9 +248,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the fccAcceptanceNum property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
@@ -277,9 +261,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the tspr property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTSPR() {
     return tspr;
@@ -288,9 +270,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the tspr property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTSPR(TString value) {
     this.tspr = value;
@@ -318,7 +298,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -356,7 +336,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -394,7 +374,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -431,7 +411,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -468,7 +448,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

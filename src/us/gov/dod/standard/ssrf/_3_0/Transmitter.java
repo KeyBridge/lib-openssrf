@@ -94,7 +94,7 @@ import us.gov.dod.standard.ssrf._3_0.system.TxMode;
   "txMode"
 })
 public class Transmitter extends Common<Transmitter> {
-  
+
   @XmlElement(name = "Generic", required = true)
   private TString generic;
   @XmlElement(name = "DuplexSep")
@@ -146,7 +146,7 @@ public class Transmitter extends Common<Transmitter> {
   public void setGeneric(TString value) {
     this.generic = value;
   }
-  
+
   public boolean isSetGeneric() {
     return (this.generic != null);
   }
@@ -168,7 +168,7 @@ public class Transmitter extends Common<Transmitter> {
   public void setDuplexSep(TDecimal value) {
     this.duplexSep = value;
   }
-  
+
   public boolean isSetDuplexSep() {
     return (this.duplexSep != null);
   }
@@ -176,9 +176,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the duplexSepType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getDuplexSepType() {
     return duplexSepType;
@@ -187,14 +185,12 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the duplexSepType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
   }
-  
+
   public boolean isSetDuplexSepType() {
     return (this.duplexSepType != null);
   }
@@ -202,9 +198,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the outputDeviceType property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getOutputDeviceType() {
     return outputDeviceType;
@@ -213,14 +207,12 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the outputDeviceType property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setOutputDeviceType(TString value) {
     this.outputDeviceType = value;
   }
-  
+
   public boolean isSetOutputDeviceType() {
     return (this.outputDeviceType != null);
   }
@@ -228,9 +220,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the outputDevice property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getOutputDevice() {
     return outputDevice;
@@ -239,14 +229,12 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the outputDevice property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setOutputDevice(TString value) {
     this.outputDevice = value;
   }
-  
+
   public boolean isSetOutputDevice() {
     return (this.outputDevice != null);
   }
@@ -254,9 +242,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the filter property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getFilter() {
     return filter;
@@ -265,14 +251,12 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the filter property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setFilter(TString value) {
     this.filter = value;
   }
-  
+
   public boolean isSetFilter() {
     return (this.filter != null);
   }
@@ -280,9 +264,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the fccAcceptanceNum property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getFCCAcceptanceNum() {
     return fccAcceptanceNum;
@@ -291,14 +273,12 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the fccAcceptanceNum property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
   }
-  
+
   public boolean isSetFCCAcceptanceNum() {
     return (this.fccAcceptanceNum != null);
   }
@@ -306,9 +286,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the tspr property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getTSPR() {
     return tspr;
@@ -317,14 +295,12 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the tspr property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setTSPR(TString value) {
     this.tspr = value;
   }
-  
+
   public boolean isSetTSPR() {
     return (this.tspr != null);
   }
@@ -358,11 +334,11 @@ public class Transmitter extends Common<Transmitter> {
     }
     return this.pocInformation;
   }
-  
+
   public boolean isSetPOCInformation() {
     return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
   }
-  
+
   public void unsetPOCInformation() {
     this.pocInformation = null;
   }
@@ -396,11 +372,11 @@ public class Transmitter extends Common<Transmitter> {
     }
     return this.nomenclature;
   }
-  
+
   public boolean isSetNomenclature() {
     return ((this.nomenclature != null) && (!this.nomenclature.isEmpty()));
   }
-  
+
   public void unsetNomenclature() {
     this.nomenclature = null;
   }
@@ -434,11 +410,11 @@ public class Transmitter extends Common<Transmitter> {
     }
     return this.deployment;
   }
-  
+
   public boolean isSetDeployment() {
     return ((this.deployment != null) && (!this.deployment.isEmpty()));
   }
-  
+
   public void unsetDeployment() {
     this.deployment = null;
   }
@@ -471,11 +447,11 @@ public class Transmitter extends Common<Transmitter> {
     }
     return this.curve;
   }
-  
+
   public boolean isSetCurve() {
     return ((this.curve != null) && (!this.curve.isEmpty()));
   }
-  
+
   public void unsetCurve() {
     this.curve = null;
   }
@@ -508,123 +484,123 @@ public class Transmitter extends Common<Transmitter> {
     }
     return this.txMode;
   }
-  
+
   public boolean isSetTxMode() {
     return ((this.txMode != null) && (!this.txMode.isEmpty()));
   }
-  
+
   public void unsetTxMode() {
     this.txMode = null;
   }
-  
+
   public Transmitter withGeneric(ListCBO value) {
     setGeneric(new TString(value.value()));
     return this;
   }
-  
+
   public Transmitter withDuplexSep(Double value) {
     setDuplexSep(new TDecimal(value));
     return this;
   }
-  
+
   public Transmitter withDuplexSepType(String value) {
     setDuplexSepType(new TString(value));
     return this;
   }
-  
+
   public Transmitter withOutputDeviceType(String value) {
     setOutputDeviceType(new TString(value));
     return this;
   }
-  
+
   public Transmitter withOutputDevice(String value) {
     setOutputDevice(new TString(value));
     return this;
   }
-  
+
   public Transmitter withFilter(String value) {
     setFilter(new TString(value));
     return this;
   }
-  
+
   public Transmitter withFCCAcceptanceNum(String value) {
     setFCCAcceptanceNum(new TString(value));
     return this;
   }
-  
+
   public Transmitter withTSPR(String value) {
     setTSPR(new TString(value));
     return this;
   }
-  
+
   public Transmitter withPOCInformation(POCInformation... values) {
     if (values != null) {
       getPOCInformation().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Transmitter withPOCInformation(Collection<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
     return this;
   }
-  
+
   public Transmitter withNomenclature(Nomenclature... values) {
     if (values != null) {
       getNomenclature().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Transmitter withNomenclature(Collection<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
     return this;
   }
-  
+
   public Transmitter withDeployment(Deployment... values) {
     if (values != null) {
       getDeployment().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Transmitter withDeployment(Collection<Deployment> values) {
     if (values != null) {
       getDeployment().addAll(values);
     }
     return this;
   }
-  
+
   public Transmitter withCurve(Curve... values) {
     if (values != null) {
       getCurve().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Transmitter withCurve(Collection<Curve> values) {
     if (values != null) {
       getCurve().addAll(values);
     }
     return this;
   }
-  
+
   public Transmitter withTxMode(TxMode... values) {
     if (values != null) {
       getTxMode().addAll(Arrays.asList(values));
     }
     return this;
   }
-  
+
   public Transmitter withTxMode(Collection<TxMode> values) {
     if (values != null) {
       getTxMode().addAll(values);
     }
     return this;
   }
-  
+
 }

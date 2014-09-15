@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -46,18 +45,15 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Nomenclature">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="Manufacturer" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Manufacturer" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Nomenclature"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
+ * &lt;element name="Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
+ * minOccurs="0"/> &lt;element name="Name"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
+ * name="Manufacturer" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Manufacturer"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -86,9 +82,7 @@ public class Nomenclature {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -97,9 +91,7 @@ public class Nomenclature {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -112,9 +104,7 @@ public class Nomenclature {
   /**
    * Gets the value of the level property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLevel() {
     return level;
@@ -123,9 +113,7 @@ public class Nomenclature {
   /**
    * Sets the value of the level property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLevel(TString value) {
     this.level = value;
@@ -138,7 +126,7 @@ public class Nomenclature {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -147,7 +135,7 @@ public class Nomenclature {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -175,7 +163,7 @@ public class Nomenclature {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

@@ -106,9 +106,7 @@ public class Address {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -117,9 +115,7 @@ public class Address {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -132,9 +128,7 @@ public class Address {
   /**
    * Gets the value of the street property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStreet() {
     return street;
@@ -143,9 +137,7 @@ public class Address {
   /**
    * Sets the value of the street property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStreet(TString value) {
     this.street = value;
@@ -158,9 +150,7 @@ public class Address {
   /**
    * Gets the value of the cityArea property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCityArea() {
     return cityArea;
@@ -169,9 +159,7 @@ public class Address {
   /**
    * Sets the value of the cityArea property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCityArea(TString value) {
     this.cityArea = value;
@@ -184,9 +172,7 @@ public class Address {
   /**
    * Gets the value of the stateCounty property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStateCounty() {
     return stateCounty;
@@ -195,9 +181,7 @@ public class Address {
   /**
    * Sets the value of the stateCounty property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStateCounty(TString value) {
     this.stateCounty = value;
@@ -210,9 +194,7 @@ public class Address {
   /**
    * Gets the value of the postCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPostCode() {
     return postCode;
@@ -221,9 +203,7 @@ public class Address {
   /**
    * Sets the value of the postCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPostCode(TString value) {
     this.postCode = value;
@@ -236,7 +216,7 @@ public class Address {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCountry() {
     return country;
@@ -245,7 +225,7 @@ public class Address {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCountry(TString value) {
     this.country = value;

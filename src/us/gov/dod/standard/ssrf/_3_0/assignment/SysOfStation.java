@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,16 +42,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="SysOfStation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="SysName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30" minOccurs="0"/>
- *         &lt;element name="NumStations" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="SysOfStation"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="SysName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS30"
+ * minOccurs="0"/> &lt;element name="NumStations"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -74,9 +69,7 @@ public class SysOfStation {
   /**
    * Gets the value of the sysName property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSysName() {
     return sysName;
@@ -85,9 +78,7 @@ public class SysOfStation {
   /**
    * Sets the value of the sysName property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSysName(TString value) {
     this.sysName = value;
@@ -100,9 +91,7 @@ public class SysOfStation {
   /**
    * Gets the value of the numStations property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumStations() {
     return numStations;
@@ -111,9 +100,7 @@ public class SysOfStation {
   /**
    * Sets the value of the numStations property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumStations(TInteger value) {
     this.numStations = value;

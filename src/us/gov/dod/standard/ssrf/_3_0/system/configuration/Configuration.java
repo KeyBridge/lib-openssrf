@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,29 +48,35 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Configuration">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ConfigID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="Repeater" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="NumUsers" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}EIRP" minOccurs="0"/>
- *         &lt;element name="OOBJustification" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="PowerLimit" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
- *         &lt;element name="PowerType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- *         &lt;element name="SpectrumLink" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="Notation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Notation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="Usage" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Usage" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ConfigFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ConfigFreq" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="TxRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxRef" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="RxRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxRef" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="ConfigEmission" type="{urn:us:gov:dod:standard:ssrf:3.0.0}ConfigEmission" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Configuration"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="ConfigID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
+ * &lt;element name="Description"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
+ * name="Repeater" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
+ * minOccurs="0"/> &lt;element name="NumUsers"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}EIRP" minOccurs="0"/> &lt;element
+ * name="OOBJustification" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;element name="PowerLimit"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/> &lt;element
+ * name="PowerType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"
+ * minOccurs="0"/> &lt;element name="SpectrumLink"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;element name="Notation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Notation" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="Usage"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Usage" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="ConfigFreq"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ConfigFreq" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="TxRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="RxRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxRef" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;element name="ConfigEmission"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ConfigEmission"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -141,7 +146,7 @@ public class Configuration {
   /**
    * Gets the value of the configID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getConfigID() {
     return configID;
@@ -150,7 +155,7 @@ public class Configuration {
   /**
    * Sets the value of the configID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setConfigID(TString value) {
     this.configID = value;
@@ -163,9 +168,7 @@ public class Configuration {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -174,9 +177,7 @@ public class Configuration {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -189,9 +190,7 @@ public class Configuration {
   /**
    * Gets the value of the repeater property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getRepeater() {
     return repeater;
@@ -200,9 +199,7 @@ public class Configuration {
   /**
    * Sets the value of the repeater property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRepeater(TString value) {
     this.repeater = value;
@@ -215,9 +212,7 @@ public class Configuration {
   /**
    * Gets the value of the numUsers property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumUsers() {
     return numUsers;
@@ -226,9 +221,7 @@ public class Configuration {
   /**
    * Sets the value of the numUsers property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumUsers(TInteger value) {
     this.numUsers = value;
@@ -241,9 +234,7 @@ public class Configuration {
   /**
    * Gets the value of the eirpMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getEIRPMin() {
     return eirpMin;
@@ -252,9 +243,7 @@ public class Configuration {
   /**
    * Sets the value of the eirpMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEIRPMin(TDecimal value) {
     this.eirpMin = value;
@@ -267,9 +256,7 @@ public class Configuration {
   /**
    * Gets the value of the eirpMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getEIRPMax() {
     return eirpMax;
@@ -278,9 +265,7 @@ public class Configuration {
   /**
    * Sets the value of the eirpMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEIRPMax(TDecimal value) {
     this.eirpMax = value;
@@ -293,9 +278,7 @@ public class Configuration {
   /**
    * Gets the value of the oobJustification property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getOOBJustification() {
     return oobJustification;
@@ -304,9 +287,7 @@ public class Configuration {
   /**
    * Sets the value of the oobJustification property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setOOBJustification(TString value) {
     this.oobJustification = value;
@@ -319,9 +300,7 @@ public class Configuration {
   /**
    * Gets the value of the powerLimit property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPowerLimit() {
     return powerLimit;
@@ -330,9 +309,7 @@ public class Configuration {
   /**
    * Sets the value of the powerLimit property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPowerLimit(TDecimal value) {
     this.powerLimit = value;
@@ -345,9 +322,7 @@ public class Configuration {
   /**
    * Gets the value of the powerType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPowerType() {
     return powerType;
@@ -356,9 +331,7 @@ public class Configuration {
   /**
    * Sets the value of the powerType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPowerType(TString value) {
     this.powerType = value;
@@ -371,9 +344,7 @@ public class Configuration {
   /**
    * Gets the value of the spectrumLink property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSpectrumLink() {
     return spectrumLink;
@@ -382,9 +353,7 @@ public class Configuration {
   /**
    * Sets the value of the spectrumLink property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSpectrumLink(TString value) {
     this.spectrumLink = value;
@@ -411,7 +380,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -448,7 +417,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -486,7 +455,7 @@ public class Configuration {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -523,7 +492,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -560,7 +529,7 @@ public class Configuration {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -598,7 +567,7 @@ public class Configuration {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

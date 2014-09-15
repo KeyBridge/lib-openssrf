@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.contact;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -35,31 +34,10 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
 
 /**
- * <p>
  * Java class for TelephoneFax complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="TelephoneFax">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Preferred" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="Fax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="MaxCls" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCCL" minOccurs="0"/>
- *         &lt;element name="Number" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * Data element TelephoneFax reflects the telephone and/or telefax number(s) of
+ * the Contact, Organisation or Role.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TelephoneFax", propOrder = {
@@ -71,15 +49,45 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
 })
 public class TelephoneFax {
 
+  /**
+   * Preferred: Enter a code "Yes" for the preferred number(s) and a code "No"
+   * for the others.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Preferred", required = false)
   private TString preferred;
+  /**
+   * Type: Enter the name of the network on which this number can be dialled
+   * (e.g. DSN, IVSN, CORMORANT). Use "PUBLIC" for normal public telephone or
+   * GSM.
+   */
   @XmlElement(name = "Type", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString type;
+  /**
+   * Fax: Enter "Yes" if the number is for a telefax. If this item is empty, it
+   * SHOULD be considered as "No".
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Fax", required = false)
   private TString fax;
+  /**
+   * MaxCls: Enter the highest classification that can be used on the network.
+   * Note for the USA: The letter "R" MUST NOT be used in USA created datasets.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CCL.
+   */
   @XmlElement(name = "MaxCls", required = false)
   private TString maxCls;
+  /**
+   * Number: Enter the area code, telephone/telefax number (including the
+   * extension if necessary) of individual or contact organisation.
+   */
   @XmlElement(name = "Number", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString number;
@@ -87,9 +95,7 @@ public class TelephoneFax {
   /**
    * Gets the value of the preferred property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPreferred() {
     return preferred;
@@ -98,9 +104,7 @@ public class TelephoneFax {
   /**
    * Sets the value of the preferred property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPreferred(TString value) {
     this.preferred = value;
@@ -113,9 +117,7 @@ public class TelephoneFax {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -124,9 +126,7 @@ public class TelephoneFax {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -139,9 +139,7 @@ public class TelephoneFax {
   /**
    * Gets the value of the fax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getFax() {
     return fax;
@@ -150,9 +148,7 @@ public class TelephoneFax {
   /**
    * Sets the value of the fax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFax(TString value) {
     this.fax = value;
@@ -165,9 +161,7 @@ public class TelephoneFax {
   /**
    * Gets the value of the maxCls property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMaxCls() {
     return maxCls;
@@ -176,9 +170,7 @@ public class TelephoneFax {
   /**
    * Sets the value of the maxCls property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMaxCls(TString value) {
     this.maxCls = value;
@@ -191,7 +183,7 @@ public class TelephoneFax {
   /**
    * Gets the value of the number property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNumber() {
     return number;
@@ -200,7 +192,7 @@ public class TelephoneFax {
   /**
    * Sets the value of the number property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumber(TString value) {
     this.number = value;
@@ -230,6 +222,13 @@ public class TelephoneFax {
     return this;
   }
 
+  /**
+   * Number: Enter the area code, telephone/telefax number (including the
+   * extension if necessary) of individual or contact organisation.
+   * <p>
+   * @param value the area code, telephone/telefax number
+   * @return the current instance
+   */
   public TelephoneFax withNumber(String value) {
     setNumber(new TString(value));
     return this;

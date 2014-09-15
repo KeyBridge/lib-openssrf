@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,15 +41,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="RecordNote">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="NoteRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="Comments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="RecordNote"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="NoteRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
+ * &lt;element name="Comments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -73,7 +68,7 @@ public class RecordNote {
   /**
    * Gets the value of the noteRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNoteRef() {
     return noteRef;
@@ -82,7 +77,7 @@ public class RecordNote {
   /**
    * Sets the value of the noteRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNoteRef(TString value) {
     this.noteRef = value;
@@ -95,9 +90,7 @@ public class RecordNote {
   /**
    * Gets the value of the comments property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getComments() {
     return comments;
@@ -106,9 +99,7 @@ public class RecordNote {
   /**
    * Sets the value of the comments property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setComments(TString value) {
     this.comments = value;

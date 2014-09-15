@@ -126,9 +126,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -137,9 +135,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -152,9 +148,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -163,9 +157,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -178,9 +170,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -189,9 +179,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -204,9 +192,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getName() {
     return name;
@@ -215,9 +201,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setName(TString value) {
     this.name = value;
@@ -230,9 +214,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the alternateName property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAlternateName() {
     return alternateName;
@@ -241,9 +223,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the alternateName property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAlternateName(TString value) {
     this.alternateName = value;
@@ -256,9 +236,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -267,9 +245,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -282,9 +258,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the uic property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUIC() {
     return uic;
@@ -293,9 +267,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the uic property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUIC(TString value) {
     this.uic = value;
@@ -322,7 +294,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -360,7 +332,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -397,7 +369,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -434,7 +406,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -472,7 +444,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

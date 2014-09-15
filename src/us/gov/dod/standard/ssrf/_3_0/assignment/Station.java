@@ -27,14 +27,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
@@ -49,26 +48,27 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Station">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="StationID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="CallSign" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="CositeSep" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- *         &lt;element name="CositeSepDescription" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}NumUnits" minOccurs="0"/>
- *         &lt;element name="TSDF" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TTSDFValue" minOccurs="0"/>
- *         &lt;element name="UserCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS6" minOccurs="0"/>
- *         &lt;element name="AntStructureHeight" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3" minOccurs="0"/>
- *         &lt;element name="StationName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="StationControl" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS18" minOccurs="0"/>
- *         &lt;element name="POCInformation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="StationLoc" type="{urn:us:gov:dod:standard:ssrf:3.0.0}StationLoc" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Station"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="StationID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
+ * &lt;element name="CallSign" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
+ * minOccurs="0"/> &lt;element name="CositeSep"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
+ * name="CositeSepDescription" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}NumUnits"
+ * minOccurs="0"/> &lt;element name="TSDF"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TTSDFValue" minOccurs="0"/>
+ * &lt;element name="UserCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS6"
+ * minOccurs="0"/> &lt;element name="AntStructureHeight"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3" minOccurs="0"/> &lt;element
+ * name="StationName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;element name="StationControl"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS18" minOccurs="0"/> &lt;element
+ * name="POCInformation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="StationLoc"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StationLoc" maxOccurs="unbounded"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -136,7 +136,7 @@ public class Station {
   /**
    * Gets the value of the stationID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getStationID() {
     return stationID;
@@ -145,7 +145,7 @@ public class Station {
   /**
    * Sets the value of the stationID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setStationID(TString value) {
     this.stationID = value;
@@ -158,9 +158,7 @@ public class Station {
   /**
    * Gets the value of the callSign property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCallSign() {
     return callSign;
@@ -169,9 +167,7 @@ public class Station {
   /**
    * Sets the value of the callSign property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCallSign(TString value) {
     this.callSign = value;
@@ -184,9 +180,7 @@ public class Station {
   /**
    * Gets the value of the cositeSep property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCositeSep() {
     return cositeSep;
@@ -195,9 +189,7 @@ public class Station {
   /**
    * Sets the value of the cositeSep property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCositeSep(TDecimal value) {
     this.cositeSep = value;
@@ -210,9 +202,7 @@ public class Station {
   /**
    * Gets the value of the cositeSepDescription property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCositeSepDescription() {
     return cositeSepDescription;
@@ -221,9 +211,7 @@ public class Station {
   /**
    * Sets the value of the cositeSepDescription property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCositeSepDescription(TString value) {
     this.cositeSepDescription = value;
@@ -236,9 +224,7 @@ public class Station {
   /**
    * Gets the value of the numMobileUnits property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumMobileUnits() {
     return numMobileUnits;
@@ -247,9 +233,7 @@ public class Station {
   /**
    * Sets the value of the numMobileUnits property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumMobileUnits(TInteger value) {
     this.numMobileUnits = value;
@@ -262,9 +246,7 @@ public class Station {
   /**
    * Gets the value of the numAreaUnits property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumAreaUnits() {
     return numAreaUnits;
@@ -273,9 +255,7 @@ public class Station {
   /**
    * Sets the value of the numAreaUnits property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumAreaUnits(TInteger value) {
     this.numAreaUnits = value;
@@ -288,9 +268,7 @@ public class Station {
   /**
    * Gets the value of the numCositedUnits property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumCositedUnits() {
     return numCositedUnits;
@@ -299,9 +277,7 @@ public class Station {
   /**
    * Sets the value of the numCositedUnits property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumCositedUnits(TInteger value) {
     this.numCositedUnits = value;
@@ -314,9 +290,7 @@ public class Station {
   /**
    * Gets the value of the tsdf property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getTSDF() {
     return tsdf;
@@ -325,9 +299,7 @@ public class Station {
   /**
    * Sets the value of the tsdf property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setTSDF(TString value) {
     this.tsdf = value;
@@ -340,9 +312,7 @@ public class Station {
   /**
    * Gets the value of the userCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUserCode() {
     return userCode;
@@ -351,9 +321,7 @@ public class Station {
   /**
    * Sets the value of the userCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUserCode(TString value) {
     this.userCode = value;
@@ -366,9 +334,7 @@ public class Station {
   /**
    * Gets the value of the antStructureHeight property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getAntStructureHeight() {
     return antStructureHeight;
@@ -377,9 +343,7 @@ public class Station {
   /**
    * Sets the value of the antStructureHeight property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAntStructureHeight(TInteger value) {
     this.antStructureHeight = value;
@@ -392,9 +356,7 @@ public class Station {
   /**
    * Gets the value of the stationName property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStationName() {
     return stationName;
@@ -403,9 +365,7 @@ public class Station {
   /**
    * Sets the value of the stationName property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStationName(TString value) {
     this.stationName = value;
@@ -418,9 +378,7 @@ public class Station {
   /**
    * Gets the value of the stationControl property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getStationControl() {
     return stationControl;
@@ -429,9 +387,7 @@ public class Station {
   /**
    * Sets the value of the stationControl property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setStationControl(TString value) {
     this.stationControl = value;
@@ -459,7 +415,7 @@ public class Station {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -497,7 +453,7 @@ public class Station {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

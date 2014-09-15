@@ -297,9 +297,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the phArrayNumMainBeams property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TInteger getPhArrayNumMainBeams() {
     return phArrayNumMainBeams;
@@ -308,9 +306,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the phArrayNumMainBeams property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setPhArrayNumMainBeams(TInteger value) {
     this.phArrayNumMainBeams = value;
@@ -323,9 +319,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the phArrayNumElements property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TInteger getPhArrayNumElements() {
     return phArrayNumElements;
@@ -334,9 +328,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the phArrayNumElements property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setPhArrayNumElements(TInteger value) {
     this.phArrayNumElements = value;
@@ -349,9 +341,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the shape property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getShape() {
     return shape;
@@ -360,9 +350,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the shape property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setShape(TString value) {
     this.shape = value;
@@ -375,9 +363,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the diameter property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getDiameter() {
     return diameter;
@@ -386,9 +372,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the diameter property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDiameter(TDecimal value) {
     this.diameter = value;
@@ -401,9 +385,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzDimension property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzDimension() {
     return horzDimension;
@@ -412,9 +394,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzDimension property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzDimension(TDecimal value) {
     this.horzDimension = value;
@@ -427,9 +407,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertDimension property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertDimension() {
     return vertDimension;
@@ -438,9 +416,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertDimension property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertDimension(TDecimal value) {
     this.vertDimension = value;
@@ -453,9 +429,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the apertureDiameter property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getApertureDiameter() {
     return apertureDiameter;
@@ -464,9 +438,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the apertureDiameter property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setApertureDiameter(TDecimal value) {
     this.apertureDiameter = value;
@@ -479,9 +451,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzAperture property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzAperture() {
     return horzAperture;
@@ -490,9 +460,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzAperture property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzAperture(TDecimal value) {
     this.horzAperture = value;
@@ -505,9 +473,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertAperture property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertAperture() {
     return vertAperture;
@@ -516,9 +482,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertAperture property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertAperture(TDecimal value) {
     this.vertAperture = value;
@@ -531,9 +495,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzSidelobeSuppressed property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getHorzSidelobeSuppressed() {
     return horzSidelobeSuppressed;
@@ -542,9 +504,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzSidelobeSuppressed property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzSidelobeSuppressed(TString value) {
     this.horzSidelobeSuppressed = value;
@@ -557,9 +517,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzSidelobeAz property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzSidelobeAz() {
     return horzSidelobeAz;
@@ -568,9 +526,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzSidelobeAz property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzSidelobeAz(TDecimal value) {
     this.horzSidelobeAz = value;
@@ -583,9 +539,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzSidelobeAttenuation property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getHorzSidelobeAttenuation() {
     return horzSidelobeAttenuation;
@@ -594,9 +548,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzSidelobeAttenuation property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setHorzSidelobeAttenuation(TDecimal value) {
     this.horzSidelobeAttenuation = value;
@@ -609,9 +561,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertSidelobeSuppressed property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getVertSidelobeSuppressed() {
     return vertSidelobeSuppressed;
@@ -620,9 +570,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertSidelobeSuppressed property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertSidelobeSuppressed(TString value) {
     this.vertSidelobeSuppressed = value;
@@ -635,9 +583,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertSidelobeElev property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertSidelobeElev() {
     return vertSidelobeElev;
@@ -646,9 +592,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertSidelobeElev property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertSidelobeElev(TDecimal value) {
     this.vertSidelobeElev = value;
@@ -661,9 +605,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertSidelobeAttenuation property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TDecimal getVertSidelobeAttenuation() {
     return vertSidelobeAttenuation;
@@ -672,9 +614,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertSidelobeAttenuation property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setVertSidelobeAttenuation(TDecimal value) {
     this.vertSidelobeAttenuation = value;

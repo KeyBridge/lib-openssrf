@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -48,20 +47,19 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="DiagramEndpoint">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- *         &lt;element name="IconType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- *         &lt;element name="IconPosLeft" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6" minOccurs="0"/>
- *         &lt;element name="IconPosTop" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6" minOccurs="0"/>
- *         &lt;element name="PointToMultiPoint" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="EndpointLocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}EndpointLocation" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="DiagramEndpoint"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
+ * name="IconType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
+ * minOccurs="0"/> &lt;element name="IconPosLeft"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6" minOccurs="0"/> &lt;element
+ * name="IconPosTop" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6"
+ * minOccurs="0"/> &lt;element name="PointToMultiPoint"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
+ * &lt;element name="EndpointLocation"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}EndpointLocation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -97,7 +95,7 @@ public class DiagramEndpoint {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -106,7 +104,7 @@ public class DiagramEndpoint {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -119,9 +117,7 @@ public class DiagramEndpoint {
   /**
    * Gets the value of the iconType property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getIconType() {
     return iconType;
@@ -130,9 +126,7 @@ public class DiagramEndpoint {
   /**
    * Sets the value of the iconType property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIconType(TString value) {
     this.iconType = value;
@@ -145,9 +139,7 @@ public class DiagramEndpoint {
   /**
    * Gets the value of the iconPosLeft property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getIconPosLeft() {
     return iconPosLeft;
@@ -156,9 +148,7 @@ public class DiagramEndpoint {
   /**
    * Sets the value of the iconPosLeft property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIconPosLeft(TInteger value) {
     this.iconPosLeft = value;
@@ -171,9 +161,7 @@ public class DiagramEndpoint {
   /**
    * Gets the value of the iconPosTop property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getIconPosTop() {
     return iconPosTop;
@@ -182,9 +170,7 @@ public class DiagramEndpoint {
   /**
    * Sets the value of the iconPosTop property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setIconPosTop(TInteger value) {
     this.iconPosTop = value;
@@ -197,9 +183,7 @@ public class DiagramEndpoint {
   /**
    * Gets the value of the pointToMultiPoint property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPointToMultiPoint() {
     return pointToMultiPoint;
@@ -208,9 +192,7 @@ public class DiagramEndpoint {
   /**
    * Sets the value of the pointToMultiPoint property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPointToMultiPoint(TString value) {
     this.pointToMultiPoint = value;
@@ -238,7 +220,7 @@ public class DiagramEndpoint {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

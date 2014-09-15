@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
 import java.util.Calendar;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,18 +43,15 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="StatusLog">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="DateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/>
- *         &lt;element name="State" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="AgencyCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS80" minOccurs="0"/>
- *         &lt;element name="Comment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/>
- *         &lt;element name="POCRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="StatusLog"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="DateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/> &lt;element
+ * name="State" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/> &lt;element
+ * name="AgencyCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS80"
+ * minOccurs="0"/> &lt;element name="Comment"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/> &lt;element
+ * name="POCRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -90,7 +86,7 @@ public class StatusLog {
   /**
    * Gets the value of the dateTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDateTime() {
     return dateTime;
@@ -99,7 +95,7 @@ public class StatusLog {
   /**
    * Sets the value of the dateTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDateTime(TCalendar value) {
     this.dateTime = value;
@@ -112,7 +108,7 @@ public class StatusLog {
   /**
    * Gets the value of the state property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getState() {
     return state;
@@ -121,7 +117,7 @@ public class StatusLog {
   /**
    * Sets the value of the state property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setState(TString value) {
     this.state = value;
@@ -134,9 +130,7 @@ public class StatusLog {
   /**
    * Gets the value of the agencyCode property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAgencyCode() {
     return agencyCode;
@@ -145,9 +139,7 @@ public class StatusLog {
   /**
    * Sets the value of the agencyCode property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAgencyCode(TString value) {
     this.agencyCode = value;
@@ -160,9 +152,7 @@ public class StatusLog {
   /**
    * Gets the value of the comment property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getComment() {
     return comment;
@@ -171,9 +161,7 @@ public class StatusLog {
   /**
    * Sets the value of the comment property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setComment(TString value) {
     this.comment = value;
@@ -186,9 +174,7 @@ public class StatusLog {
   /**
    * Gets the value of the pocRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getPOCRef() {
     return pocRef;
@@ -197,9 +183,7 @@ public class StatusLog {
   /**
    * Sets the value of the pocRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPOCRef(TString value) {
     this.pocRef = value;

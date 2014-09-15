@@ -41,16 +41,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Notation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Code" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS20"/>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Notation"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Code" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS20"/> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -72,7 +67,7 @@ public class Notation {
   /**
    * Gets the value of the code property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCode() {
     return code;
@@ -81,7 +76,7 @@ public class Notation {
   /**
    * Sets the value of the code property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCode(TString value) {
     this.code = value;
@@ -94,7 +89,7 @@ public class Notation {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -103,7 +98,7 @@ public class Notation {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;

@@ -41,15 +41,10 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="CircuitRemarks">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Remark" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CircuitRemarks"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Remark" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -67,7 +62,7 @@ public class CircuitRemarks {
   /**
    * Gets the value of the remark property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRemark() {
     return remark;
@@ -76,7 +71,7 @@ public class CircuitRemarks {
   /**
    * Sets the value of the remark property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRemark(TString value) {
     this.remark = value;

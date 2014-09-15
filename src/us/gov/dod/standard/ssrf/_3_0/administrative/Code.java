@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.administrative;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,15 +41,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Code">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Value" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *         &lt;element name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Code"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Value" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/> &lt;element
+ * name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -73,7 +68,7 @@ public class Code {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getValue() {
     return value;
@@ -82,7 +77,7 @@ public class Code {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setValue(TString value) {
     this.value = value;
@@ -95,9 +90,7 @@ public class Code {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -106,9 +99,7 @@ public class Code {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;

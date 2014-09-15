@@ -70,9 +70,7 @@ public class Project {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getType() {
     return type;
@@ -81,9 +79,7 @@ public class Project {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setType(TString value) {
     this.type = value;
@@ -118,9 +114,7 @@ public class Project {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   * <p>
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -129,9 +123,7 @@ public class Project {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   * <p>
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;

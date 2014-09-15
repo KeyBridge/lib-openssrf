@@ -39,16 +39,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="PolygonPoint">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Coord"/>
- *       &lt;/sequence>
- *       &lt;attribute name="sequence" use="required" type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="PolygonPoint"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Coord"/> &lt;/sequence>
+ * &lt;attribute name="sequence" use="required"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" /> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -72,7 +68,7 @@ public class PolygonPoint {
   /**
    * Gets the value of the lon property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLon() {
     return lon;
@@ -81,7 +77,7 @@ public class PolygonPoint {
   /**
    * Sets the value of the lon property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLon(TString value) {
     this.lon = value;
@@ -94,7 +90,7 @@ public class PolygonPoint {
   /**
    * Gets the value of the lat property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLat() {
     return lat;
@@ -103,7 +99,7 @@ public class PolygonPoint {
   /**
    * Sets the value of the lat property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLat(TString value) {
     this.lat = value;
@@ -116,7 +112,7 @@ public class PolygonPoint {
   /**
    * Gets the value of the sequence property.
    * <p>
-   * @return 
+   * @return
    */
   public BigInteger getSequence() {
     return sequence;
@@ -125,7 +121,7 @@ public class PolygonPoint {
   /**
    * Sets the value of the sequence property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSequence(BigInteger value) {
     this.sequence = value;

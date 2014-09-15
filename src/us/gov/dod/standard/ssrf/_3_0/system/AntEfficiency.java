@@ -103,7 +103,8 @@ public class AntEfficiency {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value   */
+   * @param value
+   */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
   }

@@ -48,20 +48,18 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="FEDeployment">
- *   &lt;complexContent>
- *     &lt;extension base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common">
- *       &lt;sequence>
- *         &lt;element name="FERef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/>
- *         &lt;element name="Num" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame" minOccurs="0"/>
- *         &lt;element name="LocationRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="AtWaypoint" type="{urn:us:gov:dod:standard:ssrf:3.0.0}AtWaypoint" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
+ * &lt;complexType name="FEDeployment"> &lt;complexContent> &lt;extension
+ * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
+ * name="FERef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/> &lt;element
+ * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"/> &lt;element
+ * name="Num" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame" minOccurs="0"/>
+ * &lt;element name="LocationRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
+ * &lt;element name="Project" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="AtWaypoint"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AtWaypoint" maxOccurs="unbounded"
+ * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -130,7 +128,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the feRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFERef() {
     return feRef;
@@ -139,7 +137,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the feRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFERef(TString value) {
     this.feRef = value;
@@ -152,7 +150,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -161,7 +159,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -174,9 +172,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the num property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNum() {
     return num;
@@ -185,9 +181,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the num property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNum(TInteger value) {
     this.num = value;
@@ -200,9 +194,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the seconds property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSeconds() {
     return seconds;
@@ -211,9 +203,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the seconds property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSeconds(TString value) {
     this.seconds = value;
@@ -226,9 +216,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the minutes property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMinutes() {
     return minutes;
@@ -237,9 +225,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the minutes property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMinutes(TString value) {
     this.minutes = value;
@@ -252,9 +238,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the hours property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getHours() {
     return hours;
@@ -263,9 +247,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the hours property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setHours(TString value) {
     this.hours = value;
@@ -278,9 +260,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the daysOfMonth property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDaysOfMonth() {
     return daysOfMonth;
@@ -289,9 +269,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the daysOfMonth property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
@@ -304,9 +282,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the months property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getMonths() {
     return months;
@@ -315,9 +291,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the months property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setMonths(TString value) {
     this.months = value;
@@ -330,9 +304,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the daysOfWeek property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDaysOfWeek() {
     return daysOfWeek;
@@ -341,9 +313,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the daysOfWeek property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
@@ -356,9 +326,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the years property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getYears() {
     return years;
@@ -367,9 +335,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the years property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setYears(TString value) {
     this.years = value;
@@ -382,9 +348,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the duration property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getDuration() {
     return duration;
@@ -393,9 +357,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the duration property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDuration(TInteger value) {
     this.duration = value;
@@ -408,9 +370,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the locationRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLocationRef() {
     return locationRef;
@@ -419,9 +379,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the locationRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLocationRef(TString value) {
     this.locationRef = value;
@@ -448,7 +406,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return
@@ -486,7 +444,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

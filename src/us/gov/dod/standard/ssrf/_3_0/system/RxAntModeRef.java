@@ -23,8 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import us.gov.dod.standard.ssrf._3_0.system.TxAntModeRef;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -76,7 +74,7 @@ public class RxAntModeRef {
   /**
    * Gets the value of the serial property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSerial() {
     return serial;
@@ -85,7 +83,7 @@ public class RxAntModeRef {
   /**
    * Sets the value of the serial property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSerial(TString value) {
     this.serial = value;
@@ -98,9 +96,7 @@ public class RxAntModeRef {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getModeID() {
     return modeID;
@@ -109,9 +105,7 @@ public class RxAntModeRef {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -124,9 +118,7 @@ public class RxAntModeRef {
   /**
    * Gets the value of the couplingLoss property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCouplingLoss() {
     return couplingLoss;
@@ -135,9 +127,7 @@ public class RxAntModeRef {
   /**
    * Sets the value of the couplingLoss property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCouplingLoss(TDecimal value) {
     this.couplingLoss = value;

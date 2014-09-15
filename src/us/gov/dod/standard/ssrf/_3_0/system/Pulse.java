@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,19 +43,16 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="Pulse">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseCycle" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseAvgCycle" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseComp" minOccurs="0"/>
- *         &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseForm" minOccurs="0"/>
- *         &lt;element name="RadarProcessingGainMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/>
- *         &lt;element name="NumSubpulses" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="Pulse"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
+ * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseCycle" minOccurs="0"/>
+ * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseAvgCycle"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseComp"
+ * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}PulseForm"
+ * minOccurs="0"/> &lt;element name="RadarProcessingGainMax"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;element
+ * name="NumSubpulses" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN10"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -131,9 +127,7 @@ public class Pulse {
   /**
    * Gets the value of the prrMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPRRMin() {
     return prrMin;
@@ -142,9 +136,7 @@ public class Pulse {
   /**
    * Sets the value of the prrMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPRRMin(TDecimal value) {
     this.prrMin = value;
@@ -157,9 +149,7 @@ public class Pulse {
   /**
    * Gets the value of the prrMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPRRMax() {
     return prrMax;
@@ -168,9 +158,7 @@ public class Pulse {
   /**
    * Sets the value of the prrMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPRRMax(TDecimal value) {
     this.prrMax = value;
@@ -183,9 +171,7 @@ public class Pulse {
   /**
    * Gets the value of the pdMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPDMin() {
     return pdMin;
@@ -194,9 +180,7 @@ public class Pulse {
   /**
    * Sets the value of the pdMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPDMin(TDecimal value) {
     this.pdMin = value;
@@ -209,9 +193,7 @@ public class Pulse {
   /**
    * Gets the value of the pdMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPDMax() {
     return pdMax;
@@ -220,9 +202,7 @@ public class Pulse {
   /**
    * Sets the value of the pdMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPDMax(TDecimal value) {
     this.pdMax = value;
@@ -235,9 +215,7 @@ public class Pulse {
   /**
    * Gets the value of the dutyCycleMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getDutyCycleMin() {
     return dutyCycleMin;
@@ -246,9 +224,7 @@ public class Pulse {
   /**
    * Sets the value of the dutyCycleMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDutyCycleMin(TDecimal value) {
     this.dutyCycleMin = value;
@@ -261,9 +237,7 @@ public class Pulse {
   /**
    * Gets the value of the dutyCycleMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getDutyCycleMax() {
     return dutyCycleMax;
@@ -272,9 +246,7 @@ public class Pulse {
   /**
    * Sets the value of the dutyCycleMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDutyCycleMax(TDecimal value) {
     this.dutyCycleMax = value;
@@ -287,9 +259,7 @@ public class Pulse {
   /**
    * Gets the value of the avgPowerMin property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAvgPowerMin() {
     return avgPowerMin;
@@ -298,9 +268,7 @@ public class Pulse {
   /**
    * Sets the value of the avgPowerMin property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAvgPowerMin(TDecimal value) {
     this.avgPowerMin = value;
@@ -313,9 +281,7 @@ public class Pulse {
   /**
    * Gets the value of the avgPowerMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getAvgPowerMax() {
     return avgPowerMax;
@@ -324,9 +290,7 @@ public class Pulse {
   /**
    * Sets the value of the avgPowerMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAvgPowerMax(TDecimal value) {
     this.avgPowerMax = value;
@@ -339,9 +303,7 @@ public class Pulse {
   /**
    * Gets the value of the compRatio property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getCompRatio() {
     return compRatio;
@@ -350,9 +312,7 @@ public class Pulse {
   /**
    * Sets the value of the compRatio property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCompRatio(TDecimal value) {
     this.compRatio = value;
@@ -365,9 +325,7 @@ public class Pulse {
   /**
    * Gets the value of the compMethod property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getCompMethod() {
     return compMethod;
@@ -376,9 +334,7 @@ public class Pulse {
   /**
    * Sets the value of the compMethod property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setCompMethod(TString value) {
     this.compMethod = value;
@@ -391,9 +347,7 @@ public class Pulse {
   /**
    * Gets the value of the riseTime property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getRiseTime() {
     return riseTime;
@@ -402,9 +356,7 @@ public class Pulse {
   /**
    * Sets the value of the riseTime property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRiseTime(TDecimal value) {
     this.riseTime = value;
@@ -417,9 +369,7 @@ public class Pulse {
   /**
    * Gets the value of the fallTime property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getFallTime() {
     return fallTime;
@@ -428,9 +378,7 @@ public class Pulse {
   /**
    * Sets the value of the fallTime property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setFallTime(TDecimal value) {
     this.fallTime = value;
@@ -443,9 +391,7 @@ public class Pulse {
   /**
    * Gets the value of the justifyShortRiseTime property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getJustifyShortRiseTime() {
     return justifyShortRiseTime;
@@ -454,9 +400,7 @@ public class Pulse {
   /**
    * Sets the value of the justifyShortRiseTime property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setJustifyShortRiseTime(TString value) {
     this.justifyShortRiseTime = value;
@@ -469,9 +413,7 @@ public class Pulse {
   /**
    * Gets the value of the radarProcessingGainMax property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getRadarProcessingGainMax() {
     return radarProcessingGainMax;
@@ -480,9 +422,7 @@ public class Pulse {
   /**
    * Sets the value of the radarProcessingGainMax property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setRadarProcessingGainMax(TDecimal value) {
     this.radarProcessingGainMax = value;
@@ -495,9 +435,7 @@ public class Pulse {
   /**
    * Gets the value of the numSubpulses property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TInteger getNumSubpulses() {
     return numSubpulses;
@@ -506,9 +444,7 @@ public class Pulse {
   /**
    * Sets the value of the numSubpulses property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setNumSubpulses(TInteger value) {
     this.numSubpulses = value;

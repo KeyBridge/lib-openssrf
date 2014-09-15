@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
@@ -45,20 +44,18 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="FreqBand">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
- *         &lt;element name="FreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
- *         &lt;element name="UseIndicator" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40" minOccurs="0"/>
- *         &lt;element name="BandNotes" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/>
- *         &lt;element name="Allocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Allocation" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="footnotes" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="FreqBand"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
+ * &lt;element name="FreqMax"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/> &lt;element
+ * name="UseIndicator" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40"
+ * minOccurs="0"/> &lt;element name="BandNotes"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
+ * name="Allocation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Allocation"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;attribute
+ * name="footnotes" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -93,7 +90,7 @@ public class FreqBand {
   /**
    * Gets the value of the freqMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMin() {
     return freqMin;
@@ -102,7 +99,7 @@ public class FreqBand {
   /**
    * Sets the value of the freqMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMin(TDecimal value) {
     this.freqMin = value;
@@ -115,7 +112,7 @@ public class FreqBand {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -124,7 +121,7 @@ public class FreqBand {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -137,9 +134,7 @@ public class FreqBand {
   /**
    * Gets the value of the useIndicator property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getUseIndicator() {
     return useIndicator;
@@ -148,9 +143,7 @@ public class FreqBand {
   /**
    * Sets the value of the useIndicator property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setUseIndicator(TString value) {
     this.useIndicator = value;
@@ -163,9 +156,7 @@ public class FreqBand {
   /**
    * Gets the value of the bandNotes property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getBandNotes() {
     return bandNotes;
@@ -174,9 +165,7 @@ public class FreqBand {
   /**
    * Sets the value of the bandNotes property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setBandNotes(TString value) {
     this.bandNotes = value;
@@ -204,7 +193,7 @@ public class FreqBand {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return
@@ -242,7 +231,7 @@ public class FreqBand {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

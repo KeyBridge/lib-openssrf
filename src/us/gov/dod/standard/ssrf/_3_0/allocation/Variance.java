@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.Administration;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * Java class for Variance complex type.
@@ -83,7 +83,7 @@ public class Variance {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -92,7 +92,7 @@ public class Variance {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -105,7 +105,7 @@ public class Variance {
   /**
    * Gets the value of the allocatedService property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAllocatedService() {
     return allocatedService;
@@ -114,7 +114,7 @@ public class Variance {
   /**
    * Sets the value of the allocatedService property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAllocatedService(TString value) {
     this.allocatedService = value;
@@ -127,7 +127,7 @@ public class Variance {
   /**
    * Gets the value of the priority property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPriority() {
     return priority;
@@ -136,7 +136,7 @@ public class Variance {
   /**
    * Sets the value of the priority property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPriority(TString value) {
     this.priority = value;
@@ -164,7 +164,7 @@ public class Variance {
    * <p>
    * <p>
    * Objects of the following type(s) are allowed in the list
-     * 
+   * <p>
    * <p>
    * <p>
    * @return

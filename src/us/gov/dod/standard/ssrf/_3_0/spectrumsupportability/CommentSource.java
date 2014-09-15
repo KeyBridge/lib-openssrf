@@ -24,16 +24,15 @@
 package us.gov.dod.standard.ssrf._3_0.spectrumsupportability;
 
 import java.util.*;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
+import us.gov.dod.standard.ssrf._3_0.metadata.Comment;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.metadata.Comment;
 
 /**
  * <p>
@@ -45,19 +44,17 @@ import us.gov.dod.standard.ssrf._3_0.metadata.Comment;
  * <p>
  * <
  * pre>
- * &lt;complexType name="CommentSource">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Source" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="Author" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="JobTitle" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- *         &lt;element name="Date" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/>
- *         &lt;element name="Comment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Comment" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CommentSource"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Source" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;element name="Author"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
+ * name="JobTitle" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
+ * minOccurs="0"/> &lt;element name="Date"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
+ * name="Comment" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Comment"
+ * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
+ * &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -90,9 +87,7 @@ public class CommentSource {
   /**
    * Gets the value of the source property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getSource() {
     return source;
@@ -101,9 +96,7 @@ public class CommentSource {
   /**
    * Sets the value of the source property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setSource(TString value) {
     this.source = value;
@@ -116,9 +109,7 @@ public class CommentSource {
   /**
    * Gets the value of the author property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getAuthor() {
     return author;
@@ -127,9 +118,7 @@ public class CommentSource {
   /**
    * Sets the value of the author property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setAuthor(TString value) {
     this.author = value;
@@ -142,9 +131,7 @@ public class CommentSource {
   /**
    * Gets the value of the jobTitle property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getJobTitle() {
     return jobTitle;
@@ -153,9 +140,7 @@ public class CommentSource {
   /**
    * Sets the value of the jobTitle property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setJobTitle(TString value) {
     this.jobTitle = value;
@@ -168,9 +153,7 @@ public class CommentSource {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TCalendar getDate() {
     return date;
@@ -179,9 +162,7 @@ public class CommentSource {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -208,7 +189,7 @@ public class CommentSource {
    * <p>
    * <p>
    * <p>
-   * Objects of the following type(s) are allowed in the list 
+   * Objects of the following type(s) are allowed in the list
    * <p>
    * <p>
    * @return

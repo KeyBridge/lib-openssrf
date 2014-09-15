@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,20 +43,20 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * <p>
  * <
  * pre>
- * &lt;complexType name="StationLoc">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="LocationExcluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- *         &lt;element name="LocSatRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="LocationRadius" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- *         &lt;element name="ServiceVolumeLocRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- *         &lt;element name="ServiceVolumeRadius" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- *         &lt;element name="ServiceVolumeHeight" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="StationLoc"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="LocationExcluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
+ * minOccurs="0"/> &lt;element name="LocSatRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
+ * &lt;element name="LocationRadius"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
+ * &lt;element name="ServiceVolumeLocRef"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
+ * &lt;element name="ServiceVolumeRadius"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
+ * &lt;element name="ServiceVolumeHeight"
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
+ * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -94,9 +93,7 @@ public class StationLoc {
   /**
    * Gets the value of the locationExcluded property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLocationExcluded() {
     return locationExcluded;
@@ -105,9 +102,7 @@ public class StationLoc {
   /**
    * Sets the value of the locationExcluded property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLocationExcluded(TString value) {
     this.locationExcluded = value;
@@ -120,9 +115,7 @@ public class StationLoc {
   /**
    * Gets the value of the locSatRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getLocSatRef() {
     return locSatRef;
@@ -131,9 +124,7 @@ public class StationLoc {
   /**
    * Sets the value of the locSatRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
@@ -146,9 +137,7 @@ public class StationLoc {
   /**
    * Gets the value of the locationRadius property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getLocationRadius() {
     return locationRadius;
@@ -157,9 +146,7 @@ public class StationLoc {
   /**
    * Sets the value of the locationRadius property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setLocationRadius(TDecimal value) {
     this.locationRadius = value;
@@ -172,9 +159,7 @@ public class StationLoc {
   /**
    * Gets the value of the serviceVolumeLocRef property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getServiceVolumeLocRef() {
     return serviceVolumeLocRef;
@@ -183,9 +168,7 @@ public class StationLoc {
   /**
    * Sets the value of the serviceVolumeLocRef property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setServiceVolumeLocRef(TString value) {
     this.serviceVolumeLocRef = value;
@@ -198,9 +181,7 @@ public class StationLoc {
   /**
    * Gets the value of the serviceVolumeRadius property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getServiceVolumeRadius() {
     return serviceVolumeRadius;
@@ -209,9 +190,7 @@ public class StationLoc {
   /**
    * Sets the value of the serviceVolumeRadius property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setServiceVolumeRadius(TDecimal value) {
     this.serviceVolumeRadius = value;
@@ -224,9 +203,7 @@ public class StationLoc {
   /**
    * Gets the value of the serviceVolumeHeight property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getServiceVolumeHeight() {
     return serviceVolumeHeight;
@@ -235,9 +212,7 @@ public class StationLoc {
   /**
    * Sets the value of the serviceVolumeHeight property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setServiceVolumeHeight(TDecimal value) {
     this.serviceVolumeHeight = value;

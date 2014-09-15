@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.system;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -43,15 +42,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="TxModeRef">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ModeID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"/>
- *         &lt;element name="PowerLimit" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
+ * &lt;complexType name="TxModeRef"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="ModeID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"/> &lt;element
+ * name="PowerLimit" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW"
+ * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
  * <p>
@@ -74,7 +69,7 @@ public class TxModeRef {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getModeID() {
     return modeID;
@@ -83,7 +78,7 @@ public class TxModeRef {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -96,9 +91,7 @@ public class TxModeRef {
   /**
    * Gets the value of the powerLimit property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TDecimal getPowerLimit() {
     return powerLimit;
@@ -107,9 +100,7 @@ public class TxModeRef {
   /**
    * Sets the value of the powerLimit property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setPowerLimit(TDecimal value) {
     this.powerLimit = value;

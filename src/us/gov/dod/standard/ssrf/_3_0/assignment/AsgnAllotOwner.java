@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.assignment;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,16 +41,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * <p>
  * <
  * pre>
- * &lt;complexType name="AsgnAllotOwner">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Description " type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS18" minOccurs="0"/>
- *         &lt;element name="OwnerType " type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AsgnAllotOwner"> &lt;complexContent> &lt;restriction
+ * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
+ * name="Description " type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS18"
+ * minOccurs="0"/> &lt;element name="OwnerType "
+ * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/> &lt;/sequence>
+ * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
  * <p>
  * <p>
@@ -73,9 +68,7 @@ public class AsgnAllotOwner {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return possible object is
-   *         
-   * <p>
+   * @return 
    */
   public TString getDescription() {
     return description;
@@ -84,9 +77,7 @@ public class AsgnAllotOwner {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value allowed object is
-   *              
-   * <p>
+   * @param value 
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -99,7 +90,7 @@ public class AsgnAllotOwner {
   /**
    * Gets the value of the ownerType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOwnerType() {
     return ownerType;
@@ -108,7 +99,7 @@ public class AsgnAllotOwner {
   /**
    * Sets the value of the ownerType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOwnerType(TString value) {
     this.ownerType = value;
