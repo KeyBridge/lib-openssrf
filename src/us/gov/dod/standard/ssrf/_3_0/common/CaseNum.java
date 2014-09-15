@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_0.common;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -34,29 +33,9 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 
 /**
- * <p>
  * Java class for CaseNum complex type.
  * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;complexType name="CaseNum">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Country" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO" minOccurs="0"/>
- *         &lt;element name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/>
- *         &lt;element name="Identifier" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
- * <p>
+ * Data element CaseNum allows to store a case number associated to the dataset.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CaseNum", propOrder = {
@@ -66,11 +45,24 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 })
 public class CaseNum {
 
+  /**
+   * Country: Enter the nation or body who provided or assigned the case number.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CAO
+   */
   @XmlElement(name = "Country", required = false)
   private TString country;
+  /**
+   * Type: Enter a text identifying the type of case number (national file,
+   * exercise name, etc).
+   */
   @XmlElement(name = "Type", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString type;
+  /**
+   * Identifier: Enter the case number.
+   */
   @XmlElement(name = "Identifier", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString identifier;
@@ -79,7 +71,7 @@ public class CaseNum {
    * Gets the value of the country property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getCountry() {
@@ -90,7 +82,7 @@ public class CaseNum {
    * Sets the value of the country property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setCountry(TString value) {
@@ -105,7 +97,7 @@ public class CaseNum {
    * Gets the value of the type property.
    * <p>
    * @return possible object is
-   *         
+   * <p>
    * <p>
    */
   public TString getType() {
@@ -116,7 +108,7 @@ public class CaseNum {
    * Sets the value of the type property.
    * <p>
    * @param value allowed object is
-   *              
+   * <p>
    * <p>
    */
   public void setType(TString value) {
@@ -130,7 +122,7 @@ public class CaseNum {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIdentifier() {
     return identifier;
@@ -139,7 +131,7 @@ public class CaseNum {
   /**
    * Sets the value of the identifier property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdentifier(TString value) {
     this.identifier = value;
