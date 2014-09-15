@@ -39,15 +39,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for FEDeployment complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="FEDeployment"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="FERef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/> &lt;element
@@ -62,7 +58,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -392,22 +387,17 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the project property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the project property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getProject().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -429,23 +419,17 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the atWaypoint property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the atWaypoint property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAtWaypoint().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

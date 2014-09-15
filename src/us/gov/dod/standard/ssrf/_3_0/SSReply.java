@@ -38,15 +38,11 @@ import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.StageLocation;
 import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
- * <p>
  * Java class for SSReply complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="SSReply"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="SSRequestRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
@@ -73,7 +69,6 @@ import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
  * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/extension>
  * &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -405,23 +400,17 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the commentSource property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the commentSource property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getCommentSource().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -443,23 +432,17 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the stageLocation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the stageLocation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStageLocation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -481,23 +464,17 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the configuration property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the configuration property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getConfiguration().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

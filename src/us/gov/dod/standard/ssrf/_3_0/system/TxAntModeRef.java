@@ -32,22 +32,17 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 
 /**
- * <p>
  * Java class for TxAntModeRef complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="TxAntModeRef"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}RxAntModeRef"> &lt;sequence>
  * &lt;element name="SpectralPowerDensity"
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBWHz" minOccurs="0"/>
  * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

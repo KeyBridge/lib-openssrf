@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCHN.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListCHN"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration value="Host
  * nominations acceptable"/> &lt;enumeration value="NATO HQ-assigned"/>

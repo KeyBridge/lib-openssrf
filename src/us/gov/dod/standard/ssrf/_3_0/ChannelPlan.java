@@ -37,15 +37,11 @@ import us.gov.dod.standard.ssrf._3_0.common.Channel;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for ChannelPlan complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="ChannelPlan"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
@@ -53,7 +49,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * maxOccurs="unbounded"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -94,22 +89,17 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Gets the value of the channel property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the channel property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getChannel().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */

@@ -33,15 +33,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFR;
 
 /**
- * <p>
  * Java class for RelatedOrganisation complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="RelatedOrganisation"> &lt;complexContent>
  * &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  * &lt;sequence> &lt;element name="Type"
@@ -51,7 +47,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFR;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/> &lt;/sequence>
  * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

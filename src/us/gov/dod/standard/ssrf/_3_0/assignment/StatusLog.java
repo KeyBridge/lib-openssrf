@@ -34,15 +34,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for StatusLog complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="StatusLog"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="DateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/> &lt;element
@@ -54,7 +50,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

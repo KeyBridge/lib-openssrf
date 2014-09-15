@@ -169,23 +169,17 @@ public abstract class AStandardMetadataAttributes {
   /**
    * Gets the value of the remarkReferences property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the remarkReferences property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRemarks().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -207,23 +201,17 @@ public abstract class AStandardMetadataAttributes {
   /**
    * Gets the value of the extReferences property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the extReferences property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getExtReferences().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

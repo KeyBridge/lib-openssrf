@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCAP.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListCAP"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S10"> &lt;enumeration
  * value="Azimuth"/> &lt;enumeration value="Elevation"/> &lt;enumeration

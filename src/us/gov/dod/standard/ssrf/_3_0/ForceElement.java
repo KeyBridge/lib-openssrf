@@ -39,15 +39,11 @@ import us.gov.dod.standard.ssrf._3_0.system.Identifier;
 import us.gov.dod.standard.ssrf._3_0.system.StockNum;
 
 /**
- * <p>
  * Java class for ForceElement complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="ForceElement"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="ReviewDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
@@ -73,7 +69,6 @@ import us.gov.dod.standard.ssrf._3_0.system.StockNum;
  * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -330,23 +325,17 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the pocInformation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the pocInformation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPOCInformation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -368,23 +357,17 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the identifier property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getIdentifier().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -406,22 +389,17 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the assets property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the assets property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAssets().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -443,22 +421,17 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the stockNum property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the stockNum property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStockNum().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */

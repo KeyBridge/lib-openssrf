@@ -39,15 +39,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for Organisation complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Organisation"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
@@ -71,7 +67,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/extension>
  * &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -280,22 +275,17 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the address property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the address property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAddress().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -317,23 +307,17 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the telephoneFax property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the telephoneFax property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getTelephoneFax().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -355,22 +339,17 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the eMail property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the eMail property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getEMail().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -392,22 +371,17 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the roleRef property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the roleRef property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRoleRef().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -429,23 +403,17 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the relatedOrganisation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the relatedOrganisation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRelatedOrganisation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

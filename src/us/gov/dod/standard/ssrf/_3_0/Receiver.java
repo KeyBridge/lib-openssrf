@@ -43,15 +43,11 @@ import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
 import us.gov.dod.standard.ssrf._3_0.system.RxMode;
 
 /**
- * <p>
  * Java class for Receiver complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Receiver"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
@@ -75,7 +71,6 @@ import us.gov.dod.standard.ssrf._3_0.system.RxMode;
  * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -283,23 +278,17 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the pocInformation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the pocInformation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPOCInformation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -321,23 +310,17 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the nomenclature property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the nomenclature property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getNomenclature().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -359,23 +342,17 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the deployment property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the deployment property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getDeployment().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -397,22 +374,17 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the curve property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the curve property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getCurve().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -434,22 +406,17 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the rxMode property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the rxMode property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRxMode().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */

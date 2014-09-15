@@ -38,15 +38,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.DetailedFunction;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for Link complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Link"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="LinkID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
@@ -67,7 +63,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
  * &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -198,22 +193,17 @@ public class Link {
   /**
    * Gets the value of the tuning property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the tuning property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getTuning().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -235,23 +225,17 @@ public class Link {
   /**
    * Gets the value of the stationConfig property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the stationConfig property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStationConfig().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -273,22 +257,17 @@ public class Link {
   /**
    * Gets the value of the assigned property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the assigned property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAssigned().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -310,22 +289,17 @@ public class Link {
   /**
    * Gets the value of the dcsTrunk property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the dcsTrunk property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getDCSTrunk().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -347,23 +321,17 @@ public class Link {
   /**
    * Gets the value of the detailedFunction property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the detailedFunction property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getDetailedFunction().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

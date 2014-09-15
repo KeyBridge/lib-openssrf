@@ -27,15 +27,11 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
- * <p>
  * Java class for EmsClass complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="EmsClass"> &lt;simpleContent> &lt;extension
  * base="&lt;urn:us:gov:dod:standard:ssrf:3.0.0>EmsDes"> &lt;attGroup
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}metadata"/> &lt;attribute
@@ -46,7 +42,6 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}MEMO" /> &lt;/extension>
  * &lt;/simpleContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

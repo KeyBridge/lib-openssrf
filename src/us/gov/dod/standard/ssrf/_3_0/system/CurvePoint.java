@@ -32,15 +32,11 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 
 /**
- * <p>
  * Java class for CurvePoint complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="CurvePoint"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="Offset" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqOffset"/>
@@ -48,7 +44,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TCurvePointLevel"/> &lt;/sequence>
  * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

@@ -118,22 +118,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the contact property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the contact property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getContact().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -155,22 +150,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the role property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the role property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRole().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -192,23 +182,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the organisation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the organisation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getOrganisation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -230,23 +214,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the externalReference property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the externalReference property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getExternalReference().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -268,23 +246,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the administrative property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the administrative property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAdministrative().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -306,22 +278,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the location property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the location property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getLocation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -343,23 +310,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the channelPlan property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the channelPlan property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getChannelPlan().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -381,22 +342,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the toa property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the toa property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getTOA().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -418,23 +374,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the transmitter property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the transmitter property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getTransmitter().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -456,22 +406,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the receiver property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the receiver property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getReceiver().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -493,22 +438,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the antenna property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the antenna property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAntenna().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -530,22 +470,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the rfSystem property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the rfSystem property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRFSystem().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -567,22 +502,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the ssRequest property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the ssRequest property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getSSRequest().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -604,22 +534,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the ssReply property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the ssReply property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getSSReply().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -641,22 +566,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the allotment property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the allotment property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAllotment().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -678,23 +598,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the assignment property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the assignment property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAssignment().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -716,22 +630,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the satellite property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the satellite property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getSatellite().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -753,23 +662,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the intfReport property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the intfReport property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getIntfReport().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -791,22 +694,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the jrfl property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the jrfl property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getJRFL().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -828,23 +726,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the forceElement property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the forceElement property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getForceElement().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -866,23 +758,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the feDeployment property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the feDeployment property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getFEDeployment().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -904,22 +790,17 @@ public abstract class SchemaRoot {
   /**
    * Gets the value of the note property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the note property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getNote().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */

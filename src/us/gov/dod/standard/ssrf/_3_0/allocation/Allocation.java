@@ -253,22 +253,17 @@ public class Allocation {
   /**
    * Gets the value of the variance property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the variance property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getVariance().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -290,22 +285,17 @@ public class Allocation {
   /**
    * Gets the value of the stnClass property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the stnClass property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStnClass().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -327,23 +317,17 @@ public class Allocation {
   /**
    * Gets the value of the channelPlanRef property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the channelPlanRef property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getChannelPlanRef().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -365,23 +349,17 @@ public class Allocation {
   /**
    * Gets the value of the footnotes property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the footnotes property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getFootnotes().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -403,23 +381,17 @@ public class Allocation {
   /**
    * Gets the value of the bandApps property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the bandApps property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getBandApps().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -441,23 +413,17 @@ public class Allocation {
   /**
    * Gets the value of the bandUsers property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the bandUsers property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getBandUsers().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

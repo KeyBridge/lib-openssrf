@@ -40,15 +40,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 
 /**
- * <p>
  * Java class for Location complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Location"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
@@ -69,7 +65,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
  * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -329,23 +324,17 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the pocInformation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the pocInformation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPOCInformation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -367,22 +356,17 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the point property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the point property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPoint().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -404,22 +388,17 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the polygon property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the polygon property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPolygon().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -441,22 +420,17 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the ellipse property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the ellipse property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getEllipse().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -478,23 +452,17 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the locationRef property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the locationRef property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getLocationRef().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

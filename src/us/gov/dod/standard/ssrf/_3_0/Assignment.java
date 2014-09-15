@@ -41,15 +41,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
- * <p>
  * Java class for Assignment complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Assignment"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
@@ -136,7 +132,6 @@ import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
  * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1287,22 +1282,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the project property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the project property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getProject().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -1324,23 +1314,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the pocInformation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the pocInformation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPOCInformation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1362,23 +1346,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the sysOfStation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the sysOfStation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getSysOfStation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1400,23 +1378,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the relatedRef property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the relatedRef property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRelatedRef().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1438,23 +1410,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the configuration property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the configuration property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getConfiguration().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1476,22 +1442,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the station property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the station property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -1513,22 +1474,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the link property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the link property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getLink().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -1550,22 +1506,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the statusLog property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the statusLog property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStatusLog().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -1587,23 +1538,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the asgnAllotOwner property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the asgnAllotOwner property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAsgnAllotOwner().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1625,23 +1570,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the circuitRemarks property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the circuitRemarks property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getCircuitRemarks().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1663,23 +1602,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the coordinationData property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the coordinationData property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getCoordinationData().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1701,22 +1634,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the docketNum property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the docketNum property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getDocketNum().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -1738,23 +1666,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the hostDocketNum property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the hostDocketNum property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getHostDocketNum().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1776,23 +1698,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the offTheShelfEquipment property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the offTheShelfEquipment property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getOffTheShelfEquipment().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1814,23 +1730,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the previousAuthorization property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the previousAuthorization property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPreviousAuthorization().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1852,23 +1762,17 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the recordNote property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the recordNote property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRecordNote().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

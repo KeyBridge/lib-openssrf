@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListUDA.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListUDA"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S60"> &lt;enumeration
  * value="FMSC/MRFL data from NATO"/> &lt;enumeration value="Industry Canada"/>

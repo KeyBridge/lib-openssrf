@@ -32,15 +32,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 
 /**
- * <p>
  * Java class for Point complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Point"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="Excluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
@@ -52,7 +48,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}UN6" /> &lt;/restriction>
  * &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

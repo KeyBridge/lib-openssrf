@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCLO.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListCLO"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S25"> &lt;enumeration value="LO
  * above or below RF"/> &lt;enumeration value="LO above RF"/> &lt;enumeration

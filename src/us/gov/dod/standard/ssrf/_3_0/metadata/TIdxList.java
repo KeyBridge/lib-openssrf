@@ -31,21 +31,16 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
- * <p>
  * Java class for TIdxList complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="TIdxList"> &lt;simpleContent> &lt;extension
  * base="&lt;urn:us:gov:dod:standard:ssrf:3.0.0>IdxList"> &lt;attGroup
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}metadata"/> &lt;/extension>
  * &lt;/simpleContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -93,23 +88,17 @@ public class TIdxList extends AStandardMetadataAttributes {
   /**
    * Gets the value of the value property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the value property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getValue().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

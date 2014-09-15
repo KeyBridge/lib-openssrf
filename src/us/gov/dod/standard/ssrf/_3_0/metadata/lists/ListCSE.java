@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCSE.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListCSE"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration value="Pulse
  * Width Opposition"/> &lt;enumeration value="Bit Error Rate"/> &lt;enumeration

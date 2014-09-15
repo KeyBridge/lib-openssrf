@@ -28,21 +28,16 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 
 /**
- * <p>
  * Java class for Administration complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Administration"> &lt;simpleContent> &lt;extension
  * base="&lt;urn:us:gov:dod:standard:ssrf:3.0.0>ListCAO"> &lt;attGroup
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}metadata"/> &lt;/extension>
  * &lt;/simpleContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

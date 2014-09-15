@@ -27,21 +27,16 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 
 /**
- * <p>
  * Java class for StnClass complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="StnClass"> &lt;simpleContent> &lt;extension
  * base="&lt;urn:us:gov:dod:standard:ssrf:3.0.0>S5"> &lt;attGroup
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}metadata"/> &lt;/extension>
  * &lt;/simpleContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

@@ -37,15 +37,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFO;
 
 /**
- * <p>
  * Java class for RxMode complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="RxMode"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/> &lt;element
@@ -83,7 +79,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFO;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" /> &lt;/restriction>
  * &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -738,22 +733,17 @@ public class RxMode {
   /**
    * Gets the value of the emsClass property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the emsClass property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getEmsClass().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -775,23 +765,17 @@ public class RxMode {
   /**
    * Gets the value of the rxSignalTuning property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the rxSignalTuning property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRxSignalTuning().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -813,23 +797,17 @@ public class RxMode {
   /**
    * Gets the value of the rxModulation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the rxModulation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRxModulation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -851,22 +829,17 @@ public class RxMode {
   /**
    * Gets the value of the baseband property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the baseband property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getBaseband().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -888,23 +861,17 @@ public class RxMode {
   /**
    * Gets the value of the freqConversion property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the freqConversion property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getFreqConversion().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -948,23 +915,17 @@ public class RxMode {
   /**
    * Gets the value of the curves property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the curves property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getCurves().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

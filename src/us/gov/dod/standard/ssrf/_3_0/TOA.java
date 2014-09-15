@@ -40,15 +40,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for TOA complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="TOA"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="Administration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
@@ -70,7 +66,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqBand" maxOccurs="unbounded"/>
  * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -204,22 +199,17 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the footnote property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the footnote property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getFootnote().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -241,23 +231,17 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the channelPlanRef property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the channelPlanRef property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getChannelPlanRef().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -279,23 +263,17 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the bandApplication property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the bandApplication property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getBandApplication().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -317,22 +295,17 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the bandUser property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the bandUser property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getBandUser().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -354,22 +327,17 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the country property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the country property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getCountry().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -391,22 +359,17 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the freqBand property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the freqBand property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getFreqBand().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */

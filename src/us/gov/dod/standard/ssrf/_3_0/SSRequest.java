@@ -44,15 +44,11 @@ import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
 import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
- * <p>
  * Java class for SSRequest complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="SSRequest"> &lt;complexContent> &lt;extension
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
  * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
@@ -116,7 +112,6 @@ import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Trunking" minOccurs="0"/>
  * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -808,22 +803,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the project property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the project property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getProject().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -845,22 +835,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the stage property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the stage property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStage().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -882,23 +867,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the nomenclature property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the nomenclature property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getNomenclature().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -920,23 +899,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the pocInformation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the pocInformation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getPOCInformation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -958,23 +931,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the relatedSupportability property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the relatedSupportability property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getRelatedSupportability().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -996,23 +963,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the hostNation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the hostNation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getHostNation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1034,22 +995,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the time property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the time property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getTime().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */
@@ -1071,23 +1027,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the diagramEndpoint property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the diagramEndpoint property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getDiagramEndpoint().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1109,23 +1059,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the diagramLine property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the diagramLine property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getDiagramLine().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1147,23 +1091,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the configuration property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the configuration property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getConfiguration().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -1185,22 +1123,17 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the statusLog property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the statusLog property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getStatusLog().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
    * <p>
    * @return
    */

@@ -33,15 +33,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 
 /**
- * <p>
  * Java class for TxSignalTuning complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="TxSignalTuning"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/> &lt;element
@@ -53,7 +49,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
  * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
  * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

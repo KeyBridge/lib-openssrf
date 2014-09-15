@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListUCJ.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListUCJ"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration
  * value="Canada"/> &lt;enumeration value="Mexico"/> &lt;enumeration

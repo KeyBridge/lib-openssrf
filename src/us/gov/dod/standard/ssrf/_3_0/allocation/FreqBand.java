@@ -35,15 +35,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
- * <p>
  * Java class for FreqBand complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="FreqBand"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="FreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
@@ -57,7 +53,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * name="footnotes" type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" />
  * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -178,23 +173,17 @@ public class FreqBand {
   /**
    * Gets the value of the allocation property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the allocation property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getAllocation().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */
@@ -216,23 +205,17 @@ public class FreqBand {
   /**
    * Gets the value of the footnotes property.
    * <p>
-   * <p>
    * This accessor method returns a reference to the live list, not a snapshot.
    * Therefore any modification you make to the returned list will be present
    * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
    * for the footnotes property.
-   * <p>
    * <p>
    * For example, to add a new item, do as follows:
    * <pre>
    *    getFootnotes().add(newItem);
    * </pre>
    * <p>
-   * <p>
-   * <p>
    * Objects of the following type(s) are allowed in the list
-   * <p>
-   * <p>
    * <p>
    * @return
    */

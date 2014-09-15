@@ -36,9 +36,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="Address"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="Description" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
@@ -46,7 +44,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
  * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"/> &lt;/sequence>
  * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

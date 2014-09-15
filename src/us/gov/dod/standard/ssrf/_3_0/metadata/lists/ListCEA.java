@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCEA.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListCEA"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S10"> &lt;enumeration
  * value="Specific"/> &lt;enumeration value="Typical"/> &lt;/restriction>

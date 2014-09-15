@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListUUC.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListUUC"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S150"> &lt;enumeration
  * value="Wartime circuits required to be operated or to be ready for operation

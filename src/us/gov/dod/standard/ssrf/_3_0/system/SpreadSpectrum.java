@@ -35,15 +35,11 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 
 /**
- * <p>
  * Java class for SpreadSpectrum complex type.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;complexType name="SpreadSpectrum"> &lt;complexContent> &lt;restriction
  * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
  * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/>
@@ -66,7 +62,6 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Hopset" minOccurs="0"/>
  * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
  * </pre>
- * <p>
  * <p>
  */
 @XmlAccessorType(XmlAccessType.FIELD)

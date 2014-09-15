@@ -28,15 +28,11 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCCY.
- * <p>
  * <p>
  * The following schema fragment specifies the expected content contained within
  * this class.
- * <p>
- * <
- * pre>
+ * <pre>
  * &lt;simpleType name="ListCCY"> &lt;restriction
  * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S8"> &lt;enumeration value="AFG"/>
  * &lt;enumeration value="ALB"/> &lt;enumeration value="DZA"/> &lt;enumeration
