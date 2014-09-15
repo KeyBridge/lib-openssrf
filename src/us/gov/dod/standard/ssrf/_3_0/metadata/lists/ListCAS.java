@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
@@ -37,20 +37,30 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <
  * pre>
- * &lt;simpleType name="ListCAS"> &lt;restriction
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration value="360
- * Degrees Rotating"/> &lt;enumeration value="Bi-Directional Sector"/>
- * &lt;enumeration value="Conical"/> &lt;enumeration value="Electronic Scan (360
- * Degrees)"/> &lt;enumeration value="Electronic Scan (Sector)"/>
- * &lt;enumeration value="Fixed"/> &lt;enumeration value="Fixed-3 Axis
- * Stabilised"/> &lt;enumeration value="Helical"/> &lt;enumeration
- * value="Horizontal"/> &lt;enumeration value="Lobing"/> &lt;enumeration
- * value="Manual"/> &lt;enumeration value="Mechanically Steerable"/>
- * &lt;enumeration value="Palmer Raster"/> &lt;enumeration value="Raster"/>
- * &lt;enumeration value="Sector Scan"/> &lt;enumeration value="Spiral "/>
- * &lt;enumeration value="Tracker"/> &lt;enumeration value="Unidirectional
- * Sector"/> &lt;enumeration value="Vertical"/> &lt;enumeration value="Other"/>
- * &lt;/restriction> &lt;/simpleType>
+ * &lt;simpleType name="ListCAS">
+ *   &lt;restriction base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50">
+ *     &lt;enumeration value="360 Degrees Rotating"/>
+ *     &lt;enumeration value="Bi-Directional Sector"/>
+ *     &lt;enumeration value="Conical"/>
+ *     &lt;enumeration value="Electronic Scan (360 Degrees)"/>
+ *     &lt;enumeration value="Electronic Scan (Sector)"/>
+ *     &lt;enumeration value="Fixed"/>
+ *     &lt;enumeration value="Fixed-3 Axis Stabilised"/>
+ *     &lt;enumeration value="Helical"/>
+ *     &lt;enumeration value="Horizontal"/>
+ *     &lt;enumeration value="Lobing"/>
+ *     &lt;enumeration value="Manual"/>
+ *     &lt;enumeration value="Mechanically Steerable"/>
+ *     &lt;enumeration value="Palmer Raster"/>
+ *     &lt;enumeration value="Raster"/>
+ *     &lt;enumeration value="Sector Scan"/>
+ *     &lt;enumeration value="Spiral "/>
+ *     &lt;enumeration value="Tracker"/>
+ *     &lt;enumeration value="Unidirectional Sector"/>
+ *     &lt;enumeration value="Vertical"/>
+ *     &lt;enumeration value="Other"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
  * </pre>
  * <p>
  */
@@ -59,62 +69,61 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCAS {
 
   @XmlEnumValue("360 Degrees Rotating")
-  VALUE_1("360 Degrees Rotating"),
+  THREEHUNDEREDSIXTY_DEGREES_ROTATING,
   @XmlEnumValue("Bi-Directional Sector")
-  VALUE_2("Bi-Directional Sector"),
+  BI_DIRECTIONAL_SECTOR,
   @XmlEnumValue("Conical")
-  VALUE_3("Conical"),
+  CONICAL,
   @XmlEnumValue("Electronic Scan (360 Degrees)")
-  VALUE_4("Electronic Scan (360 Degrees)"),
+  ELECTRONIC_SCAN_360_DEGREES,
   @XmlEnumValue("Electronic Scan (Sector)")
-  VALUE_5("Electronic Scan (Sector)"),
+  ELECTRONIC_SCAN_SECTOR,
   @XmlEnumValue("Fixed")
-  VALUE_6("Fixed"),
+  FIXED,
   @XmlEnumValue("Fixed-3 Axis Stabilised")
-  VALUE_7("Fixed-3 Axis Stabilised"),
+  FIXED_3_AXIS_STABILISED,
   @XmlEnumValue("Helical")
-  VALUE_8("Helical"),
+  HELICAL,
   @XmlEnumValue("Horizontal")
-  VALUE_9("Horizontal"),
+  HORIZONTAL,
   @XmlEnumValue("Lobing")
-  VALUE_10("Lobing"),
+  LOBING,
   @XmlEnumValue("Manual")
-  VALUE_11("Manual"),
+  MANUAL,
   @XmlEnumValue("Mechanically Steerable")
-  VALUE_12("Mechanically Steerable"),
+  MECHANICALLY_STEERABLE,
   @XmlEnumValue("Palmer Raster")
-  VALUE_13("Palmer Raster"),
+  PALMER_RASTER,
   @XmlEnumValue("Raster")
-  VALUE_14("Raster"),
+  RASTER,
   @XmlEnumValue("Sector Scan")
-  VALUE_15("Sector Scan"),
+  SECTOR_SCAN,
   @XmlEnumValue("Spiral ")
-  VALUE_16("Spiral "),
+  SPIRAL_,
   @XmlEnumValue("Tracker")
-  VALUE_17("Tracker"),
+  TRACKER,
   @XmlEnumValue("Unidirectional Sector")
-  VALUE_18("Unidirectional Sector"),
+  UNIDIRECTIONAL_SECTOR,
   @XmlEnumValue("Vertical")
-  VALUE_19("Vertical"),
+  VERTICAL,
   @XmlEnumValue("Other")
-  VALUE_20("Other");
-  private final String value;
-
-  ListCAS(String v) {
-    value = v;
-  }
+  OTHER;
 
   public String value() {
-    return value;
+    return name();
   }
 
   public static ListCAS fromValue(String v) {
     for (ListCAS c : ListCAS.values()) {
-      if (c.value.equals(v)) {
+      if (c.name().equals(v)) {
         return c;
       }
     }
     throw new IllegalArgumentException(v);
+  }
+
+  public String enumValue() {
+    return this.value();
   }
 
 }

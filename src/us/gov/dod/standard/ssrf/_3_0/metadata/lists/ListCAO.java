@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
@@ -28,199 +28,7 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * <p>
  * Java class for ListCAO.
- * <p>
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <p>
- * <
- * pre>
- * &lt;simpleType name="ListCAO"> &lt;restriction
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S8"> &lt;enumeration value="AFG"/>
- * &lt;enumeration value="FF"/> &lt;enumeration value="US-AL"/> &lt;enumeration
- * value="ALA"/> &lt;enumeration value="US-AK"/> &lt;enumeration value="ALB"/>
- * &lt;enumeration value="DZA"/> &lt;enumeration value="NT-ASC"/>
- * &lt;enumeration value="ASM"/> &lt;enumeration value="AND"/> &lt;enumeration
- * value="AGO"/> &lt;enumeration value="AIA"/> &lt;enumeration value="ANTR"/>
- * &lt;enumeration value="4Z"/> &lt;enumeration value="ATA"/> &lt;enumeration
- * value="ATG"/> &lt;enumeration value="5A"/> &lt;enumeration value="ARG"/>
- * &lt;enumeration value="US-AZ"/> &lt;enumeration value="US-AR"/>
- * &lt;enumeration value="ARM"/> &lt;enumeration value="ABW"/> &lt;enumeration
- * value="SH-AC"/> &lt;enumeration value="AB"/> &lt;enumeration value="9A"/>
- * &lt;enumeration value="AUS"/> &lt;enumeration value="AUSC"/> &lt;enumeration
- * value="AUT"/> &lt;enumeration value="AZE"/> &lt;enumeration value="PT-20"/>
- * &lt;enumeration value="BHS"/> &lt;enumeration value="BHR"/> &lt;enumeration
- * value="UM-8"/> &lt;enumeration value="BGD"/> &lt;enumeration value="BRB"/>
- * &lt;enumeration value="BLR"/> &lt;enumeration value="BEL"/> &lt;enumeration
- * value="BLZ"/> &lt;enumeration value="BEN"/> &lt;enumeration value="BMU"/>
- * &lt;enumeration value="BTN"/> &lt;enumeration value="BWCS"/> &lt;enumeration
- * value="BOL"/> &lt;enumeration value="BES"/> &lt;enumeration value="BIH"/>
- * &lt;enumeration value="BWA"/> &lt;enumeration value="BVT"/> &lt;enumeration
- * value="BRA"/> &lt;enumeration value="IOT"/> &lt;enumeration value="BRN"/>
- * &lt;enumeration value="BGR"/> &lt;enumeration value="BFA"/> &lt;enumeration
- * value="BDI"/> &lt;enumeration value="US-CA"/> &lt;enumeration value="KHM"/>
- * &lt;enumeration value="CMR"/> &lt;enumeration value="CAN"/> &lt;enumeration
- * value="ES-CN"/> &lt;enumeration value="NT-BA1"/> &lt;enumeration
- * value="NT-NA0"/> &lt;enumeration value="NT-BA2"/> &lt;enumeration
- * value="NT-BA3"/> &lt;enumeration value="NT-BA4"/> &lt;enumeration
- * value="NT-NA5"/> &lt;enumeration value="NT-NA6"/> &lt;enumeration
- * value="NT-NA7"/> &lt;enumeration value="NT-NA8"/> &lt;enumeration
- * value="NT-BA9"/> &lt;enumeration value="CPV"/> &lt;enumeration value="CARB"/>
- * &lt;enumeration value="CAI"/> &lt;enumeration value="CYM"/> &lt;enumeration
- * value="NT-NA"/> &lt;enumeration value="NT-BA"/> &lt;enumeration
- * value="CCEB"/> &lt;enumeration value="NT-BL"/> &lt;enumeration
- * value="NT-NL"/> &lt;enumeration value="NT-NM"/> &lt;enumeration
- * value="NT-BM"/> &lt;enumeration value="CAF"/> &lt;enumeration value="CAM"/>
- * &lt;enumeration value="TCD"/> &lt;enumeration value="CWCS"/> &lt;enumeration
- * value="CHL"/> &lt;enumeration value="CHN"/> &lt;enumeration value="CXR"/>
- * &lt;enumeration value="CPMT"/> &lt;enumeration value="CP"/> &lt;enumeration
- * value="CCK"/> &lt;enumeration value="COL"/> &lt;enumeration value="US-CO"/>
- * &lt;enumeration value="CMFC"/> &lt;enumeration value="COM"/> &lt;enumeration
- * value="COG"/> &lt;enumeration value="COD"/> &lt;enumeration value="US-CT"/>
- * &lt;enumeration value="COK"/> &lt;enumeration value="CMFP"/> &lt;enumeration
- * value="CRI"/> &lt;enumeration value="CIV"/> &lt;enumeration value="HRV"/>
- * &lt;enumeration value="FR-TF"/> &lt;enumeration value="CUB"/> &lt;enumeration
- * value="CUW"/> &lt;enumeration value="CYP"/> &lt;enumeration value="CZE"/>
- * &lt;enumeration value="NT-NAD"/> &lt;enumeration value="NT-BAD"/>
- * &lt;enumeration value="US-DE"/> &lt;enumeration value="DNK"/> &lt;enumeration
- * value="DG"/> &lt;enumeration value="US-DC"/> &lt;enumeration value="DJI"/>
- * &lt;enumeration value="DMA"/> &lt;enumeration value="DOM"/> &lt;enumeration
- * value="TLS"/> &lt;enumeration value="EAS"/> &lt;enumeration value="ECU"/>
- * &lt;enumeration value="EGY"/> &lt;enumeration value="SLV"/> &lt;enumeration
- * value="GNQ"/> &lt;enumeration value="ERI"/> &lt;enumeration value="EST"/>
- * &lt;enumeration value="ETH"/> &lt;enumeration value="EE"/> &lt;enumeration
- * value="EUDA"/> &lt;enumeration value="EFOR"/> &lt;enumeration value="FLK"/>
- * &lt;enumeration value="FRO"/> &lt;enumeration value="FJI"/> &lt;enumeration
- * value="FIN"/> &lt;enumeration value="FVEY"/> &lt;enumeration value="US-FL"/>
- * &lt;enumeration value="ACGU"/> &lt;enumeration value="FRA"/> &lt;enumeration
- * value="GUF"/> &lt;enumeration value="PYF"/> &lt;enumeration value="ATF"/>
- * &lt;enumeration value="GAB"/> &lt;enumeration value="GMB"/> &lt;enumeration
- * value="GEO"/> &lt;enumeration value="US-GA"/> &lt;enumeration value="GEOS"/>
- * &lt;enumeration value="DEU"/> &lt;enumeration value="GHA"/> &lt;enumeration
- * value="GIB"/> &lt;enumeration value="GCTF"/> &lt;enumeration value="GMIF"/>
- * &lt;enumeration value="9Z"/> &lt;enumeration value="GRC"/> &lt;enumeration
- * value="GRL"/> &lt;enumeration value="GRD"/> &lt;enumeration value="GLP"/>
- * &lt;enumeration value="GUM"/> &lt;enumeration value="GTM"/> &lt;enumeration
- * value="GGY"/> &lt;enumeration value="GIN"/> &lt;enumeration value="GNB"/>
- * &lt;enumeration value="1M"/> &lt;enumeration value="GUY"/> &lt;enumeration
- * value="HTI"/> &lt;enumeration value="US-HI"/> &lt;enumeration value="HMD"/>
- * &lt;enumeration value="HEME"/> &lt;enumeration value="HEMN"/> &lt;enumeration
- * value="HEMS"/> &lt;enumeration value="HEMW"/> &lt;enumeration value="HND"/>
- * &lt;enumeration value="HKG"/> &lt;enumeration value="UM-84"/> &lt;enumeration
- * value="HUN"/> &lt;enumeration value="ISL"/> &lt;enumeration value="US-ID"/>
- * &lt;enumeration value="US-IL"/> &lt;enumeration value="IND"/> &lt;enumeration
- * value="6A"/> &lt;enumeration value="US-IN"/> &lt;enumeration value="IDN"/>
- * &lt;enumeration value="INTL"/> &lt;enumeration value="ICAO"/> &lt;enumeration
- * value="IESC"/> &lt;enumeration value="ITU"/> &lt;enumeration value="US-IA"/>
- * &lt;enumeration value="IRN"/> &lt;enumeration value="IRQ"/> &lt;enumeration
- * value="IRL"/> &lt;enumeration value="ISAF-AFG"/> &lt;enumeration
- * value="IMN"/> &lt;enumeration value="ISR"/> &lt;enumeration value="ITA"/>
- * &lt;enumeration value="ITU1"/> &lt;enumeration value="ITU2"/> &lt;enumeration
- * value="ITU3"/> &lt;enumeration value="JAM"/> &lt;enumeration value="JPN"/>
- * &lt;enumeration value="UM-86"/> &lt;enumeration value="JEY"/> &lt;enumeration
- * value="NT-B"/> &lt;enumeration value="NT-N"/> &lt;enumeration value="NT-L"/>
- * &lt;enumeration value="UM-67"/> &lt;enumeration value="JOR"/> &lt;enumeration
- * value="US-KS"/> &lt;enumeration value="KAZ"/> &lt;enumeration value="US-KY"/>
- * &lt;enumeration value="KEN"/> &lt;enumeration value="KER"/> &lt;enumeration
- * value="UM-89"/> &lt;enumeration value="KIR"/> &lt;enumeration value="PRK"/>
- * &lt;enumeration value="KOR"/> &lt;enumeration value="YU-KM"/> &lt;enumeration
- * value="KWT"/> &lt;enumeration value="KGZ"/> &lt;enumeration value="9E"/>
- * &lt;enumeration value="9H"/> &lt;enumeration value="9M"/> &lt;enumeration
- * value="9N"/> &lt;enumeration value="9S"/> &lt;enumeration value="LAO"/>
- * &lt;enumeration value="LVA"/> &lt;enumeration value="LBN"/> &lt;enumeration
- * value="LSO"/> &lt;enumeration value="LBR"/> &lt;enumeration value="LBY"/>
- * &lt;enumeration value="LIE"/> &lt;enumeration value="LTU"/> &lt;enumeration
- * value="US-LA"/> &lt;enumeration value="LUX"/> &lt;enumeration value="MAC"/>
- * &lt;enumeration value="MDG"/> &lt;enumeration value="PT-30"/> &lt;enumeration
- * value="US-ME"/> &lt;enumeration value="MWI"/> &lt;enumeration value="MYS"/>
- * &lt;enumeration value="MDV"/> &lt;enumeration value="MLI"/> &lt;enumeration
- * value="MLT"/> &lt;enumeration value="US-MP"/> &lt;enumeration value="MAI"/>
- * &lt;enumeration value="MHL"/> &lt;enumeration value="MTQ"/> &lt;enumeration
- * value="US-MD"/> &lt;enumeration value="US-MA"/> &lt;enumeration value="MRT"/>
- * &lt;enumeration value="MUS"/> &lt;enumeration value="MYT"/> &lt;enumeration
- * value="89"/> &lt;enumeration value="MEX"/> &lt;enumeration value="US-MI"/>
- * &lt;enumeration value="FSM"/> &lt;enumeration value="UM-71"/> &lt;enumeration
- * value="US-MN"/> &lt;enumeration value="US-MS"/> &lt;enumeration
- * value="US-MO"/> &lt;enumeration value="MDA"/> &lt;enumeration value="MCO"/>
- * &lt;enumeration value="MNG"/> &lt;enumeration value="US-MT"/> &lt;enumeration
- * value="MNE"/> &lt;enumeration value="MSR"/> &lt;enumeration value="MAR"/>
- * &lt;enumeration value="MOZ"/> &lt;enumeration value="MLEC"/> &lt;enumeration
- * value="MCFI"/> &lt;enumeration value="MIFH"/> &lt;enumeration value="MULT"/>
- * &lt;enumeration value="MMR"/> &lt;enumeration value="NAM"/> &lt;enumeration
- * value="NT-AEW"/> &lt;enumeration value="NT-ACO"/> &lt;enumeration
- * value="NT-ACT"/> &lt;enumeration value="NT-EUR"/> &lt;enumeration
- * value="NT-HQ"/> &lt;enumeration value="NT-TMI"/> &lt;enumeration
- * value="NRU"/> &lt;enumeration value="UM-76"/> &lt;enumeration value="NC3A"/>
- * &lt;enumeration value="US-NE"/> &lt;enumeration value="NPL"/> &lt;enumeration
- * value="NLD"/> &lt;enumeration value="ANT"/> &lt;enumeration value="US-NV"/>
- * &lt;enumeration value="NCL"/> &lt;enumeration value="US-NH"/> &lt;enumeration
- * value="US-NJ"/> &lt;enumeration value="US-NM"/> &lt;enumeration
- * value="US-NY"/> &lt;enumeration value="NZL"/> &lt;enumeration value="NIC"/>
- * &lt;enumeration value="NER"/> &lt;enumeration value="NGA"/> &lt;enumeration
- * value="NIU"/> &lt;enumeration value="NGEO"/> &lt;enumeration value="NFK"/>
- * &lt;enumeration value="NACT"/> &lt;enumeration value="NN"/> &lt;enumeration
- * value="NATO"/> &lt;enumeration value="US-NC"/> &lt;enumeration
- * value="US-ND"/> &lt;enumeration value="MNP"/> &lt;enumeration value="NOR"/>
- * &lt;enumeration value="UU"/> &lt;enumeration value="US-OH"/> &lt;enumeration
- * value="US-OK"/> &lt;enumeration value="OMN"/> &lt;enumeration value="US-OR"/>
- * &lt;enumeration value="OTH"/> &lt;enumeration value="4O"/> &lt;enumeration
- * value="PAK"/> &lt;enumeration value="PLW"/> &lt;enumeration value="PSE"/>
- * &lt;enumeration value="UM-95"/> &lt;enumeration value="PAN"/> &lt;enumeration
- * value="PNG"/> &lt;enumeration value="PRY"/> &lt;enumeration value="US-PA"/>
- * &lt;enumeration value="PER"/> &lt;enumeration value="PHL"/> &lt;enumeration
- * value="KI-P"/> &lt;enumeration value="PCN"/> &lt;enumeration value="POL"/>
- * &lt;enumeration value="PRT"/> &lt;enumeration value="PRI"/> &lt;enumeration
- * value="QAT"/> &lt;enumeration value="RCVR"/> &lt;enumeration value="REU"/>
- * &lt;enumeration value="US-RI"/> &lt;enumeration value="MU-RO"/>
- * &lt;enumeration value="CFCK"/> &lt;enumeration value="ROU"/> &lt;enumeration
- * value="RUS"/> &lt;enumeration value="RWA"/> &lt;enumeration value="BLM"/>
- * &lt;enumeration value="SHN"/> &lt;enumeration value="KNA"/> &lt;enumeration
- * value="LCA"/> &lt;enumeration value="MAF"/> &lt;enumeration value="AMS"/>
- * &lt;enumeration value="SPM"/> &lt;enumeration value="VCT"/> &lt;enumeration
- * value="WSM"/> &lt;enumeration value="SMR"/> &lt;enumeration value="DO-26"/>
- * &lt;enumeration value="STP"/> &lt;enumeration value="SAU"/> &lt;enumeration
- * value="SEN"/> &lt;enumeration value="SRB"/> &lt;enumeration value="SYC"/>
- * &lt;enumeration value="SLE"/> &lt;enumeration value="SGP"/> &lt;enumeration
- * value="SXM"/> &lt;enumeration value="SVK"/> &lt;enumeration value="SVN"/>
- * &lt;enumeration value="SLB"/> &lt;enumeration value="SOM"/> &lt;enumeration
- * value="ZAF"/> &lt;enumeration value="SR"/> &lt;enumeration value="US-SC"/>
- * &lt;enumeration value="US-SD"/> &lt;enumeration value="SGS"/> &lt;enumeration
- * value="SPCE"/> &lt;enumeration value="ESP"/> &lt;enumeration value="NT-HQS"/>
- * &lt;enumeration value="LKA"/> &lt;enumeration value="KFOR"/> &lt;enumeration
- * value="NT-STF"/> &lt;enumeration value="SDN"/> &lt;enumeration value="SUR"/>
- * &lt;enumeration value="SJM"/> &lt;enumeration value="SWA"/> &lt;enumeration
- * value="SWZ"/> &lt;enumeration value="SWE"/> &lt;enumeration value="CHE"/>
- * &lt;enumeration value="SYR"/> &lt;enumeration value="TWN"/> &lt;enumeration
- * value="TJK"/> &lt;enumeration value="TZA"/> &lt;enumeration value="US-TN"/>
- * &lt;enumeration value="US-TX"/> &lt;enumeration value="THA"/> &lt;enumeration
- * value="FYR"/> &lt;enumeration value="TEYE"/> &lt;enumeration value="TGO"/>
- * &lt;enumeration value="TKL"/> &lt;enumeration value="TON"/> &lt;enumeration
- * value="TTO"/> &lt;enumeration value="SH-TA"/> &lt;enumeration value="TUN"/>
- * &lt;enumeration value="TUR"/> &lt;enumeration value="TKM"/> &lt;enumeration
- * value="TCA"/> &lt;enumeration value="TUV"/> &lt;enumeration value="UGA"/>
- * &lt;enumeration value="UKT1"/> &lt;enumeration value="UKT3"/> &lt;enumeration
- * value="UKR"/> &lt;enumeration value="ARE"/> &lt;enumeration value="GBR"/>
- * &lt;enumeration value="UN"/> &lt;enumeration value="UNCK"/> &lt;enumeration
- * value="USC"/> &lt;enumeration value="USP"/> &lt;enumeration value="UMI"/>
- * &lt;enumeration value="USA"/> &lt;enumeration value="UNKN"/> &lt;enumeration
- * value="URY"/> &lt;enumeration value="USCE"/> &lt;enumeration value="SCML"/>
- * &lt;enumeration value="USMW"/> &lt;enumeration value="USNC"/> &lt;enumeration
- * value="USNE"/> &lt;enumeration value="USNW"/> &lt;enumeration value="USSC"/>
- * &lt;enumeration value="USSE"/> &lt;enumeration value="USSW"/> &lt;enumeration
- * value="USWE"/> &lt;enumeration value="US-UT"/> &lt;enumeration value="UZB"/>
- * &lt;enumeration value="VUT"/> &lt;enumeration value="VAT"/> &lt;enumeration
- * value="VEN"/> &lt;enumeration value="US-VT"/> &lt;enumeration value="VNM"/>
- * &lt;enumeration value="VGB"/> &lt;enumeration value="VIR"/> &lt;enumeration
- * value="US-VA"/> &lt;enumeration value="XVE"/> &lt;enumeration value="UM-79"/>
- * &lt;enumeration value="WLF"/> &lt;enumeration value="US-WA"/> &lt;enumeration
- * value="US-WV"/> &lt;enumeration value="ESH"/> &lt;enumeration value="US-WI"/>
- * &lt;enumeration value="US-WY"/> &lt;enumeration value="YEM"/> &lt;enumeration
- * value="YO05"/> &lt;enumeration value="ZMB"/> &lt;enumeration value="ZWE"/>
- * &lt;/restriction> &lt;/simpleType>
- * </pre>
- * <p>
  */
 @XmlType(name = "ListCAO")
 @XmlEnum
@@ -231,1783 +39,1783 @@ public enum ListCAO {
    * <p>
    */
   @XmlEnumValue("AFG")
-  VALUE_1("AFG"),
+  AFG("Afghanistan"),
   /**
    * Africa
    * <p>
    */
   @XmlEnumValue("FF")
-  VALUE_2("FF"),
+  FF("Africa"),
   /**
    * Alabama
    * <p>
    */
   @XmlEnumValue("US-AL")
-  VALUE_3("US-AL"),
+  US_AL("Alabama"),
   /**
    * Åland Islands
    * <p>
    */
   @XmlEnumValue("ALA")
-  VALUE_4("ALA"),
+  ALA("Åland Islands"),
   /**
    * Alaska
    * <p>
    */
   @XmlEnumValue("US-AK")
-  VALUE_5("US-AK"),
+  US_AK("Alaska"),
   /**
    * Albania
    * <p>
    */
   @XmlEnumValue("ALB")
-  VALUE_6("ALB"),
+  ALB("Albania"),
   /**
    * Algeria
    * <p>
    */
   @XmlEnumValue("DZA")
-  VALUE_7("DZA"),
+  DZA("Algeria"),
   /**
    * Allied Submarine Command
    * <p>
    */
   @XmlEnumValue("NT-ASC")
-  VALUE_8("NT-ASC"),
+  NT_ASC("Allied Submarine Command"),
   /**
    * American Samoa
    * <p>
    */
   @XmlEnumValue("ASM")
-  VALUE_9("ASM"),
+  ASM("American Samoa"),
   /**
    * Andorra
    * <p>
    */
   @XmlEnumValue("AND")
-  VALUE_10("AND"),
+  AND("Andorra"),
   /**
    * Angola
    * <p>
    */
   @XmlEnumValue("AGO")
-  VALUE_11("AGO"),
+  AGO("Angola"),
   /**
    * Anguilla
    * <p>
    */
   @XmlEnumValue("AIA")
-  VALUE_12("AIA"),
+  AIA("Anguilla"),
   /**
    * Antarctic
    * <p>
    */
   @XmlEnumValue("ANTR")
-  VALUE_13("ANTR"),
+  ANTR("Antarctic"),
   /**
    * Antarctic Ocean
    * <p>
    */
   @XmlEnumValue("4Z")
-  VALUE_14("4Z"),
+  FOUR_Z("Antarctic Ocean"),
   /**
    * Antarctica Continent
    * <p>
    */
   @XmlEnumValue("ATA")
-  VALUE_15("ATA"),
+  ATA("Antarctica Continent"),
   /**
    * Antigua and Barbuda
    * <p>
    */
   @XmlEnumValue("ATG")
-  VALUE_16("ATG"),
+  ATG("Antigua and Barbuda"),
   /**
    * Arctic Ocean
    * <p>
    */
   @XmlEnumValue("5A")
-  VALUE_17("5A"),
+  FIVE_A("Arctic Ocean"),
   /**
    * Argentine Republic
    * <p>
    */
   @XmlEnumValue("ARG")
-  VALUE_18("ARG"),
+  ARG("Argentine Republic"),
   /**
    * Arizona
    * <p>
    */
   @XmlEnumValue("US-AZ")
-  VALUE_19("US-AZ"),
+  US_AZ("Arizona"),
   /**
    * Arkansas
    * <p>
    */
   @XmlEnumValue("US-AR")
-  VALUE_20("US-AR"),
+  US_AR("Arkansas"),
   /**
    * Armenia
    * <p>
    */
   @XmlEnumValue("ARM")
-  VALUE_21("ARM"),
+  ARM("Armenia"),
   /**
    * Aruba
    * <p>
    */
   @XmlEnumValue("ABW")
-  VALUE_22("ABW"),
+  ABW("Aruba"),
   /**
    * Ascension
    * <p>
    */
   @XmlEnumValue("SH-AC")
-  VALUE_23("SH-AC"),
+  SH_AC("Ascension"),
   /**
    * Asia Continent
    * <p>
    */
   @XmlEnumValue("AB")
-  VALUE_24("AB"),
+  AB("Asia Continent"),
   /**
    * Atlantic Ocean
    * <p>
    */
   @XmlEnumValue("9A")
-  VALUE_25("9A"),
+  NINE_A("Atlantic Ocean"),
   /**
    * Australia
    * <p>
    */
   @XmlEnumValue("AUS")
-  VALUE_26("AUS"),
+  AUS("Australia"),
   /**
    * Australia Continent
    * <p>
    */
   @XmlEnumValue("AUSC")
-  VALUE_27("AUSC"),
+  AUSC("Australia Continent"),
   /**
    * Austria
    * <p>
    */
   @XmlEnumValue("AUT")
-  VALUE_28("AUT"),
+  AUT("Austria"),
   /**
    * Azerbaijan
    * <p>
    */
   @XmlEnumValue("AZE")
-  VALUE_29("AZE"),
+  AZE("Azerbaijan"),
   /**
    * Azores
    * <p>
    */
   @XmlEnumValue("PT-20")
-  VALUE_30("PT-20"),
+  PT_20("Azores"),
   /**
    * Bahamas
    * <p>
    */
   @XmlEnumValue("BHS")
-  VALUE_31("BHS"),
+  BHS("Bahamas"),
   /**
    * Bahrain
    * <p>
    */
   @XmlEnumValue("BHR")
-  VALUE_32("BHR"),
+  BHR("Bahrain"),
   /**
    * Baker Island
    * <p>
    */
   @XmlEnumValue("UM-8")
-  VALUE_33("UM-8"),
+  UM_8("Baker Island"),
   /**
    * Bangladesh
    * <p>
    */
   @XmlEnumValue("BGD")
-  VALUE_34("BGD"),
+  BGD("Bangladesh"),
   /**
    * Barbados
    * <p>
    */
   @XmlEnumValue("BRB")
-  VALUE_35("BRB"),
+  BRB("Barbados"),
   /**
    * Belarus
    * <p>
    */
   @XmlEnumValue("BLR")
-  VALUE_36("BLR"),
+  BLR("Belarus"),
   /**
    * Belgium
    * <p>
    */
   @XmlEnumValue("BEL")
-  VALUE_37("BEL"),
+  BEL("Belgium"),
   /**
    * Belize
    * <p>
    */
   @XmlEnumValue("BLZ")
-  VALUE_38("BLZ"),
+  BLZ("Belize"),
   /**
    * Benin
    * <p>
    */
   @XmlEnumValue("BEN")
-  VALUE_39("BEN"),
+  BEN("Benin"),
   /**
    * Bermuda
    * <p>
    */
   @XmlEnumValue("BMU")
-  VALUE_40("BMU"),
+  BMU("Bermuda"),
   /**
    * Bhutan
    * <p>
    */
   @XmlEnumValue("BTN")
-  VALUE_41("BTN"),
+  BTN("Bhutan"),
   /**
    * Biological Weapons Convention States
    * <p>
    */
   @XmlEnumValue("BWCS")
-  VALUE_42("BWCS"),
+  BWCS("Biological Weapons Convention States"),
   /**
    * Bolivia
    * <p>
    */
   @XmlEnumValue("BOL")
-  VALUE_43("BOL"),
+  BOL("Bolivia"),
   /**
    * Bonaire, Saint Eustatius and Saba
    * <p>
    */
   @XmlEnumValue("BES")
-  VALUE_44("BES"),
+  BES("Bonaire, Saint Eustatius and Saba"),
   /**
    * Bosnia and Herzegovina
    * <p>
    */
   @XmlEnumValue("BIH")
-  VALUE_45("BIH"),
+  BIH("Bosnia and Herzegovina"),
   /**
    * Botswana
    * <p>
    */
   @XmlEnumValue("BWA")
-  VALUE_46("BWA"),
+  BWA("Botswana"),
   /**
    * Bouvet Island
    * <p>
    */
   @XmlEnumValue("BVT")
-  VALUE_47("BVT"),
+  BVT("Bouvet Island"),
   /**
    * Brazil
    * <p>
    */
   @XmlEnumValue("BRA")
-  VALUE_48("BRA"),
+  BRA("Brazil"),
   /**
    * British Indian Ocean Territory
    * <p>
    */
   @XmlEnumValue("IOT")
-  VALUE_49("IOT"),
+  IOT("British Indian Ocean Territory"),
   /**
    * Brunei Darussalam
    * <p>
    */
   @XmlEnumValue("BRN")
-  VALUE_50("BRN"),
+  BRN("Brunei Darussalam"),
   /**
    * Bulgaria
    * <p>
    */
   @XmlEnumValue("BGR")
-  VALUE_51("BGR"),
+  BGR("Bulgaria"),
   /**
    * Burkina Faso
    * <p>
    */
   @XmlEnumValue("BFA")
-  VALUE_52("BFA"),
+  BFA("Burkina Faso"),
   /**
    * Burundi
    * <p>
    */
   @XmlEnumValue("BDI")
-  VALUE_53("BDI"),
+  BDI("Burundi"),
   /**
    * California
    * <p>
    */
   @XmlEnumValue("US-CA")
-  VALUE_54("US-CA"),
+  US_CA("California"),
   /**
    * Cambodia
    * <p>
    */
   @XmlEnumValue("KHM")
-  VALUE_55("KHM"),
+  KHM("Cambodia"),
   /**
    * Cameroon
    * <p>
    */
   @XmlEnumValue("CMR")
-  VALUE_56("CMR"),
+  CMR("Cameroon"),
   /**
    * Canada
    * <p>
    */
   @XmlEnumValue("CAN")
-  VALUE_57("CAN"),
+  CAN("Canada"),
   /**
    * Canary Islands
    * <p>
    */
   @XmlEnumValue("ES-CN")
-  VALUE_58("ES-CN"),
+  ES_CN("Canary Islands"),
   /**
    * CAOC 1 Finderup Denmark
    * <p>
    */
   @XmlEnumValue("NT-BA1")
-  VALUE_59("NT-BA1"),
+  NT_BA1("CAOC 1 Finderup Denmark"),
   /**
    * CAOC 10 Monsanto Portugal
    * <p>
    */
   @XmlEnumValue("NT-NA0")
-  VALUE_60("NT-NA0"),
+  NT_NA0("CAOC 10 Monsanto Portugal"),
   /**
    * CAOC 2 Uedem Germany
    * <p>
    */
   @XmlEnumValue("NT-BA2")
-  VALUE_61("NT-BA2"),
+  NT_BA2("CAOC 2 Uedem Germany"),
   /**
    * CAOC 3 Reitan Norway
    * <p>
    */
   @XmlEnumValue("NT-BA3")
-  VALUE_62("NT-BA3"),
+  NT_BA3("CAOC 3 Reitan Norway"),
   /**
    * CAOC 4 Meßstetten Germany
    * <p>
    */
   @XmlEnumValue("NT-BA4")
-  VALUE_63("NT-BA4"),
+  NT_BA4("CAOC 4 Meßstetten Germany"),
   /**
    * CAOC 5 Poggio Renatico Italy
    * <p>
    */
   @XmlEnumValue("NT-NA5")
-  VALUE_64("NT-NA5"),
+  NT_NA5("CAOC 5 Poggio Renatico Italy"),
   /**
    * CAOC 6 Eskisehir Turkey
    * <p>
    */
   @XmlEnumValue("NT-NA6")
-  VALUE_65("NT-NA6"),
+  NT_NA6("CAOC 6 Eskisehir Turkey"),
   /**
    * CAOC 7 Larissa Greece
    * <p>
    */
   @XmlEnumValue("NT-NA7")
-  VALUE_66("NT-NA7"),
+  NT_NA7("CAOC 7 Larissa Greece"),
   /**
    * CAOC 8 Torrejon Spain
    * <p>
    */
   @XmlEnumValue("NT-NA8")
-  VALUE_67("NT-NA8"),
+  NT_NA8("CAOC 8 Torrejon Spain"),
   /**
    * CAOC 9 High Wycombe United Kingdom
    * <p>
    */
   @XmlEnumValue("NT-BA9")
-  VALUE_68("NT-BA9"),
+  NT_BA9("CAOC 9 High Wycombe United Kingdom"),
   /**
    * Cape Verde
    * <p>
    */
   @XmlEnumValue("CPV")
-  VALUE_69("CPV"),
+  CPV("Cape Verde"),
   /**
    * Caribbean
    * <p>
    */
   @XmlEnumValue("CARB")
-  VALUE_70("CARB"),
+  CARB("Caribbean"),
   /**
    * Caroline Islands
    * <p>
    */
   @XmlEnumValue("CAI")
-  VALUE_71("CAI"),
+  CAI("Caroline Islands"),
   /**
    * Cayman Islands
    * <p>
    */
   @XmlEnumValue("CYM")
-  VALUE_72("CYM"),
+  CYM("Cayman Islands"),
   /**
    * CC-Air Izmir
    * <p>
    */
   @XmlEnumValue("NT-NA")
-  VALUE_73("NT-NA"),
+  NT_NA("CC-Air Izmir"),
   /**
    * CC-Air Ramstein
    * <p>
    */
   @XmlEnumValue("NT-BA")
-  VALUE_74("NT-BA"),
+  NT_BA("CC-Air Ramstein"),
   /**
    * CCEB Nations (AUS, CAN, GBR, NZL, USA)
    * <p>
    */
   @XmlEnumValue("CCEB")
-  VALUE_75("CCEB"),
+  CCEB("CCEB Nations (AUS, CAN, GBR, NZL, USA)"),
   /**
    * CC-Land Heidelberg
    * <p>
    */
   @XmlEnumValue("NT-BL")
-  VALUE_76("NT-BL"),
+  NT_BL("CC-Land Heidelberg"),
   /**
    * CC-Land Madrid
    * <p>
    */
   @XmlEnumValue("NT-NL")
-  VALUE_77("NT-NL"),
+  NT_NL("CC-Land Madrid"),
   /**
    * CC-Maritime Naples
    * <p>
    */
   @XmlEnumValue("NT-NM")
-  VALUE_78("NT-NM"),
+  NT_NM("CC-Maritime Naples"),
   /**
    * CC-Maritime Northwood
    * <p>
    */
   @XmlEnumValue("NT-BM")
-  VALUE_79("NT-BM"),
+  NT_BM("CC-Maritime Northwood"),
   /**
    * Central African Republic
    * <p>
    */
   @XmlEnumValue("CAF")
-  VALUE_80("CAF"),
+  CAF("Central African Republic"),
   /**
    * Central America
    * <p>
    */
   @XmlEnumValue("CAM")
-  VALUE_81("CAM"),
+  CAM("Central America"),
   /**
    * Chad
    * <p>
    */
   @XmlEnumValue("TCD")
-  VALUE_82("TCD"),
+  TCD("Chad"),
   /**
    * Chemical Weapons Convention States
    * <p>
    */
   @XmlEnumValue("CWCS")
-  VALUE_83("CWCS"),
+  CWCS("Chemical Weapons Convention States"),
   /**
    * Chile
    * <p>
    */
   @XmlEnumValue("CHL")
-  VALUE_84("CHL"),
+  CHL("Chile"),
   /**
    * China
    * <p>
    */
   @XmlEnumValue("CHN")
-  VALUE_85("CHN"),
+  CHN("China"),
   /**
    * Christmas Island
    * <p>
    */
   @XmlEnumValue("CXR")
-  VALUE_86("CXR"),
+  CXR("Christmas Island"),
   /**
    * Civilian Protection Monitoring Team for Sudan
    * <p>
    */
   @XmlEnumValue("CPMT")
-  VALUE_87("CPMT"),
+  CPMT("Civilian Protection Monitoring Team for Sudan"),
   /**
    * Clipperton Island
    * <p>
    */
   @XmlEnumValue("CP")
-  VALUE_88("CP"),
+  CP("Clipperton Island"),
   /**
    * Cocos (Keeling) Islands
    * <p>
    */
   @XmlEnumValue("CCK")
-  VALUE_89("CCK"),
+  CCK("Cocos (Keeling) Islands"),
   /**
    * Colombia
    * <p>
    */
   @XmlEnumValue("COL")
-  VALUE_90("COL"),
+  COL("Colombia"),
   /**
    * Colorado
    * <p>
    */
   @XmlEnumValue("US-CO")
-  VALUE_91("US-CO"),
+  US_CO("Colorado"),
   /**
    * Combined Maritime Forces
    * <p>
    */
   @XmlEnumValue("CMFC")
-  VALUE_92("CMFC"),
+  CMFC("Combined Maritime Forces"),
   /**
    * Comoros
    * <p>
    */
   @XmlEnumValue("COM")
-  VALUE_93("COM"),
+  COM("Comoros"),
   /**
    * Congo
    * <p>
    */
   @XmlEnumValue("COG")
-  VALUE_94("COG"),
+  COG("Congo"),
   /**
    * Congo (Democratic Republic of the)
    * <p>
    */
   @XmlEnumValue("COD")
-  VALUE_95("COD"),
+  COD("Congo (Democratic Republic of the)"),
   /**
    * Connecticut
    * <p>
    */
   @XmlEnumValue("US-CT")
-  VALUE_96("US-CT"),
+  US_CT("Connecticut"),
   /**
    * Cook Islands
    * <p>
    */
   @XmlEnumValue("COK")
-  VALUE_97("COK"),
+  COK("Cook Islands"),
   /**
    * Cooperative Maritime Forces Pacific
    * <p>
    */
   @XmlEnumValue("CMFP")
-  VALUE_98("CMFP"),
+  CMFP("Cooperative Maritime Forces Pacific"),
   /**
    * Costa Rica
    * <p>
    */
   @XmlEnumValue("CRI")
-  VALUE_99("CRI"),
+  CRI("Costa Rica"),
   /**
    * Ivory Coast
    * <p>
    */
   @XmlEnumValue("CIV")
-  VALUE_100("CIV"),
+  CIV("Ivory Coast"),
   /**
    * Croatia
    * <p>
    */
   @XmlEnumValue("HRV")
-  VALUE_101("HRV"),
+  HRV("Croatia"),
   /**
    * Crozet Archipelago
    * <p>
    */
   @XmlEnumValue("FR-TF")
-  VALUE_102("FR-TF"),
+  FR_TF("Crozet Archipelago"),
   /**
    * Cuba
    * <p>
    */
   @XmlEnumValue("CUB")
-  VALUE_103("CUB"),
+  CUB("Cuba"),
   /**
    * Curaçao
    * <p>
    */
   @XmlEnumValue("CUW")
-  VALUE_104("CUW"),
+  CUW("Curaçao"),
   /**
    * Cyprus (See footnote 1)
    * <p>
    */
   @XmlEnumValue("CYP")
-  VALUE_105("CYP"),
+  CYP("Cyprus (See footnote 1)"),
   /**
    * Czech Republic
    * <p>
    */
   @XmlEnumValue("CZE")
-  VALUE_106("CZE"),
+  CZE("Czech Republic"),
   /**
    * D-CAOC P. Renatico
    * <p>
    */
   @XmlEnumValue("NT-NAD")
-  VALUE_107("NT-NAD"),
+  NT_NAD("D-CAOC P. Renatico"),
   /**
    * D-CAOC Uedem Germany
    * <p>
    */
   @XmlEnumValue("NT-BAD")
-  VALUE_108("NT-BAD"),
+  NT_BAD("D-CAOC Uedem Germany"),
   /**
    * Delaware
    * <p>
    */
   @XmlEnumValue("US-DE")
-  VALUE_109("US-DE"),
+  US_DE("Delaware"),
   /**
    * Denmark
    * <p>
    */
   @XmlEnumValue("DNK")
-  VALUE_110("DNK"),
+  DNK("Denmark"),
   /**
    * Diego Garcia
    * <p>
    */
   @XmlEnumValue("DG")
-  VALUE_111("DG"),
+  DG("Diego Garcia"),
   /**
    * District of Columbia
    * <p>
    */
   @XmlEnumValue("US-DC")
-  VALUE_112("US-DC"),
+  US_DC("District of Columbia"),
   /**
    * Djibouti
    * <p>
    */
   @XmlEnumValue("DJI")
-  VALUE_113("DJI"),
+  DJI("Djibouti"),
   /**
    * Dominica
    * <p>
    */
   @XmlEnumValue("DMA")
-  VALUE_114("DMA"),
+  DMA("Dominica"),
   /**
    * Dominican Republic
    * <p>
    */
   @XmlEnumValue("DOM")
-  VALUE_115("DOM"),
+  DOM("Dominican Republic"),
   /**
    * East Timor
    * <p>
    */
   @XmlEnumValue("TLS")
-  VALUE_116("TLS"),
+  TLS("East Timor"),
   /**
    * Easter Island
    * <p>
    */
   @XmlEnumValue("EAS")
-  VALUE_117("EAS"),
+  EAS("Easter Island"),
   /**
    * Ecuador
    * <p>
    */
   @XmlEnumValue("ECU")
-  VALUE_118("ECU"),
+  ECU("Ecuador"),
   /**
    * Egypt
    * <p>
    */
   @XmlEnumValue("EGY")
-  VALUE_119("EGY"),
+  EGY("Egypt"),
   /**
    * El Salvador
    * <p>
    */
   @XmlEnumValue("SLV")
-  VALUE_120("SLV"),
+  SLV("El Salvador"),
   /**
    * Equatorial Guinea
    * <p>
    */
   @XmlEnumValue("GNQ")
-  VALUE_121("GNQ"),
+  GNQ("Equatorial Guinea"),
   /**
    * Eritrea
    * <p>
    */
   @XmlEnumValue("ERI")
-  VALUE_122("ERI"),
+  ERI("Eritrea"),
   /**
    * Estonia
    * <p>
    */
   @XmlEnumValue("EST")
-  VALUE_123("EST"),
+  EST("Estonia"),
   /**
    * Ethiopia
    * <p>
    */
   @XmlEnumValue("ETH")
-  VALUE_124("ETH"),
+  ETH("Ethiopia"),
   /**
    * Europe Continent
    * <p>
    */
   @XmlEnumValue("EE")
-  VALUE_125("EE"),
+  EE("Europe Continent"),
   /**
    * European Union DARFUR
    * <p>
    */
   @XmlEnumValue("EUDA")
-  VALUE_126("EUDA"),
+  EUDA("European Union DARFUR"),
   /**
    * European Union Stabilization Forces in Bosnia
    * <p>
    */
   @XmlEnumValue("EFOR")
-  VALUE_127("EFOR"),
+  EFOR("European Union Stabilization Forces in Bosnia"),
   /**
    * Falkland Islands (Malvinas)
    * <p>
    */
   @XmlEnumValue("FLK")
-  VALUE_128("FLK"),
+  FLK("Falkland Islands (Malvinas)"),
   /**
    * Faroe Islands
    * <p>
    */
   @XmlEnumValue("FRO")
-  VALUE_129("FRO"),
+  FRO("Faroe Islands"),
   /**
    * Fiji
    * <p>
    */
   @XmlEnumValue("FJI")
-  VALUE_130("FJI"),
+  FJI("Fiji"),
   /**
    * Finland
    * <p>
    */
   @XmlEnumValue("FIN")
-  VALUE_131("FIN"),
+  FIN("Finland"),
   /**
    * FIVE EYES (USA, CAN, GBR, AUS, NZL)
    * <p>
    */
   @XmlEnumValue("FVEY")
-  VALUE_132("FVEY"),
+  FVEY("FIVE EYES (USA, CAN, GBR, AUS, NZL)"),
   /**
    * Florida
    * <p>
    */
   @XmlEnumValue("US-FL")
-  VALUE_133("US-FL"),
+  US_FL("Florida"),
   /**
    * FOUR EYES (USA, CAN, GBR, AUS)
    * <p>
    */
   @XmlEnumValue("ACGU")
-  VALUE_134("ACGU"),
+  ACGU("FOUR EYES (USA, CAN, GBR, AUS)"),
   /**
    * France
    * <p>
    */
   @XmlEnumValue("FRA")
-  VALUE_135("FRA"),
+  FRA("France"),
   /**
    * French Guiana
    * <p>
    */
   @XmlEnumValue("GUF")
-  VALUE_136("GUF"),
+  GUF("French Guiana"),
   /**
    * French Polynesia
    * <p>
    */
   @XmlEnumValue("PYF")
-  VALUE_137("PYF"),
+  PYF("French Polynesia"),
   /**
    * French Southern Territories
    * <p>
    */
   @XmlEnumValue("ATF")
-  VALUE_138("ATF"),
+  ATF("French Southern Territories"),
   /**
    * Gabon
    * <p>
    */
   @XmlEnumValue("GAB")
-  VALUE_139("GAB"),
+  GAB("Gabon"),
   /**
    * Gambia
    * <p>
    */
   @XmlEnumValue("GMB")
-  VALUE_140("GMB"),
+  GMB("Gambia"),
   /**
    * Georgia
    * <p>
    */
   @XmlEnumValue("GEO")
-  VALUE_141("GEO"),
+  GEO("Georgia"),
   /**
    * Georgia
    * <p>
    */
   @XmlEnumValue("US-GA")
-  VALUE_142("US-GA"),
+  US_GA("Georgia"),
   /**
    * Geostationary Satellite
    * <p>
    */
   @XmlEnumValue("GEOS")
-  VALUE_143("GEOS"),
+  GEOS("Geostationary Satellite"),
   /**
    * Germany
    * <p>
    */
   @XmlEnumValue("DEU")
-  VALUE_144("DEU"),
+  DEU("Germany"),
   /**
    * Ghana
    * <p>
    */
   @XmlEnumValue("GHA")
-  VALUE_145("GHA"),
+  GHA("Ghana"),
   /**
    * Gibraltar
    * <p>
    */
   @XmlEnumValue("GIB")
-  VALUE_146("GIB"),
+  GIB("Gibraltar"),
   /**
    * Global Counter-Terrorism Forces
    * <p>
    */
   @XmlEnumValue("GCTF")
-  VALUE_147("GCTF"),
+  GCTF("Global Counter-Terrorism Forces"),
   /**
    * Global Maritime Interception Forces
    * <p>
    */
   @XmlEnumValue("GMIF")
-  VALUE_148("GMIF"),
+  GMIF("Global Maritime Interception Forces"),
   /**
    * Great Lakes
    * <p>
    */
   @XmlEnumValue("9Z")
-  VALUE_149("9Z"),
+  NINE_Z("Great Lakes"),
   /**
    * Greece
    * <p>
    */
   @XmlEnumValue("GRC")
-  VALUE_150("GRC"),
+  GRC("Greece"),
   /**
    * Greenland
    * <p>
    */
   @XmlEnumValue("GRL")
-  VALUE_151("GRL"),
+  GRL("Greenland"),
   /**
    * Grenada
    * <p>
    */
   @XmlEnumValue("GRD")
-  VALUE_152("GRD"),
+  GRD("Grenada"),
   /**
    * Guadeloupe
    * <p>
    */
   @XmlEnumValue("GLP")
-  VALUE_153("GLP"),
+  GLP("Guadeloupe"),
   /**
    * Guam
    * <p>
    */
   @XmlEnumValue("GUM")
-  VALUE_154("GUM"),
+  GUM("Guam"),
   /**
    * Guatemala
    * <p>
    */
   @XmlEnumValue("GTM")
-  VALUE_155("GTM"),
+  GTM("Guatemala"),
   /**
    * Guernsey
    * <p>
    */
   @XmlEnumValue("GGY")
-  VALUE_156("GGY"),
+  GGY("Guernsey"),
   /**
    * Guinea
    * <p>
    */
   @XmlEnumValue("GIN")
-  VALUE_157("GIN"),
+  GIN("Guinea"),
   /**
    * Guinea-Bissau
    * <p>
    */
   @XmlEnumValue("GNB")
-  VALUE_158("GNB"),
+  GNB("Guinea-Bissau"),
   /**
    * Gulf of Mexico
    * <p>
    */
   @XmlEnumValue("1M")
-  VALUE_159("1M"),
+  ONE_M("Gulf of Mexico"),
   /**
    * Guyana
    * <p>
    */
   @XmlEnumValue("GUY")
-  VALUE_160("GUY"),
+  GUY("Guyana"),
   /**
    * Haiti
    * <p>
    */
   @XmlEnumValue("HTI")
-  VALUE_161("HTI"),
+  HTI("Haiti"),
   /**
    * Hawaii
    * <p>
    */
   @XmlEnumValue("US-HI")
-  VALUE_162("US-HI"),
+  US_HI("Hawaii"),
   /**
    * Heard and McDonald Islands
    * <p>
    */
   @XmlEnumValue("HMD")
-  VALUE_163("HMD"),
+  HMD("Heard and McDonald Islands"),
   /**
    * Hemisphere East
    * <p>
    */
   @XmlEnumValue("HEME")
-  VALUE_164("HEME"),
+  HEME("Hemisphere East"),
   /**
    * Hemisphere North
    * <p>
    */
   @XmlEnumValue("HEMN")
-  VALUE_165("HEMN"),
+  HEMN("Hemisphere North"),
   /**
    * Hemisphere South
    * <p>
    */
   @XmlEnumValue("HEMS")
-  VALUE_166("HEMS"),
+  HEMS("Hemisphere South"),
   /**
    * Hemisphere West
    * <p>
    */
   @XmlEnumValue("HEMW")
-  VALUE_167("HEMW"),
+  HEMW("Hemisphere West"),
   /**
    * Honduras
    * <p>
    */
   @XmlEnumValue("HND")
-  VALUE_168("HND"),
+  HND("Honduras"),
   /**
    * Hong Kong
    * <p>
    */
   @XmlEnumValue("HKG")
-  VALUE_169("HKG"),
+  HKG("Hong Kong"),
   /**
    * Howland Island
    * <p>
    */
   @XmlEnumValue("UM-84")
-  VALUE_170("UM-84"),
+  UM_84("Howland Island"),
   /**
    * Hungary
    * <p>
    */
   @XmlEnumValue("HUN")
-  VALUE_171("HUN"),
+  HUN("Hungary"),
   /**
    * Iceland
    * <p>
    */
   @XmlEnumValue("ISL")
-  VALUE_172("ISL"),
+  ISL("Iceland"),
   /**
    * Idaho
    * <p>
    */
   @XmlEnumValue("US-ID")
-  VALUE_173("US-ID"),
+  US_ID("Idaho"),
   /**
    * Illinois
    * <p>
    */
   @XmlEnumValue("US-IL")
-  VALUE_174("US-IL"),
+  US_IL("Illinois"),
   /**
    * India
    * <p>
    */
   @XmlEnumValue("IND")
-  VALUE_175("IND"),
+  IND("India"),
   /**
    * Indian Ocean
    * <p>
    */
   @XmlEnumValue("6A")
-  VALUE_176("6A"),
+  SIX_A("Indian Ocean"),
   /**
    * Indiana
    * <p>
    */
   @XmlEnumValue("US-IN")
-  VALUE_177("US-IN"),
+  US_IN("Indiana"),
   /**
    * Indonesia
    * <p>
    */
   @XmlEnumValue("IDN")
-  VALUE_178("IDN"),
+  IDN("Indonesia"),
   /**
    * International
    * <p>
    */
   @XmlEnumValue("INTL")
-  VALUE_179("INTL"),
+  INTL("International"),
   /**
    * International Civil Aviation Organization
    * <p>
    */
   @XmlEnumValue("ICAO")
-  VALUE_180("ICAO"),
+  ICAO("International Civil Aviation Organization"),
   /**
    * International Events Security Coalition
    * <p>
    */
   @XmlEnumValue("IESC")
-  VALUE_181("IESC"),
+  IESC("International Events Security Coalition"),
   /**
    * International Telecommunications Union
    * <p>
    */
   @XmlEnumValue("ITU")
-  VALUE_182("ITU"),
+  ITU("International Telecommunications Union"),
   /**
    * Iowa
    * <p>
    */
   @XmlEnumValue("US-IA")
-  VALUE_183("US-IA"),
+  US_IA("Iowa"),
   /**
    * Iran
    * <p>
    */
   @XmlEnumValue("IRN")
-  VALUE_184("IRN"),
+  IRN("Iran"),
   /**
    * Iraq
    * <p>
    */
   @XmlEnumValue("IRQ")
-  VALUE_185("IRQ"),
+  IRQ("Iraq"),
   /**
    * Ireland
    * <p>
    */
   @XmlEnumValue("IRL")
-  VALUE_186("IRL"),
+  IRL("Ireland"),
   /**
    * ISAF for Afghanistan
    * <p>
    */
   @XmlEnumValue("ISAF-AFG")
-  VALUE_187("ISAF-AFG"),
+  ISAF_AFG("ISAF for Afghanistan"),
   /**
    * Isle of Man
    * <p>
    */
   @XmlEnumValue("IMN")
-  VALUE_188("IMN"),
+  IMN("Isle of Man"),
   /**
    * Israel
    * <p>
    */
   @XmlEnumValue("ISR")
-  VALUE_189("ISR"),
+  ISR("Israel"),
   /**
    * Italy
    * <p>
    */
   @XmlEnumValue("ITA")
-  VALUE_190("ITA"),
+  ITA("Italy"),
   /**
    * ITU Region 1
    * <p>
    */
   @XmlEnumValue("ITU1")
-  VALUE_191("ITU1"),
+  ITU1("ITU Region 1"),
   /**
    * ITU Region 2
    * <p>
    */
   @XmlEnumValue("ITU2")
-  VALUE_192("ITU2"),
+  ITU2("ITU Region 2"),
   /**
    * ITU Region 3
    * <p>
    */
   @XmlEnumValue("ITU3")
-  VALUE_193("ITU3"),
+  ITU3("ITU Region 3"),
   /**
    * Jamaica
    * <p>
    */
   @XmlEnumValue("JAM")
-  VALUE_194("JAM"),
+  JAM("Jamaica"),
   /**
    * Japan
    * <p>
    */
   @XmlEnumValue("JPN")
-  VALUE_195("JPN"),
+  JPN("Japan"),
   /**
    * Jarvis Island
    * <p>
    */
   @XmlEnumValue("UM-86")
-  VALUE_196("UM-86"),
+  UM_86("Jarvis Island"),
   /**
    * Jersey
    * <p>
    */
   @XmlEnumValue("JEY")
-  VALUE_197("JEY"),
+  JEY("Jersey"),
   /**
    * JFC HQ Brunssum
    * <p>
    */
   @XmlEnumValue("NT-B")
-  VALUE_198("NT-B"),
+  NT_B("JFC HQ Brunssum"),
   /**
    * JFC Naples
    * <p>
    */
   @XmlEnumValue("NT-N")
-  VALUE_199("NT-N"),
+  NT_N("JFC Naples"),
   /**
    * JHQ Lisbon
    * <p>
    */
   @XmlEnumValue("NT-L")
-  VALUE_200("NT-L"),
+  NT_L("JHQ Lisbon"),
   /**
    * Johnston Atoll
    * <p>
    */
   @XmlEnumValue("UM-67")
-  VALUE_201("UM-67"),
+  UM_67("Johnston Atoll"),
   /**
    * Jordan
    * <p>
    */
   @XmlEnumValue("JOR")
-  VALUE_202("JOR"),
+  JOR("Jordan"),
   /**
    * Kansas
    * <p>
    */
   @XmlEnumValue("US-KS")
-  VALUE_203("US-KS"),
+  US_KS("Kansas"),
   /**
    * Kazakhstan
    * <p>
    */
   @XmlEnumValue("KAZ")
-  VALUE_204("KAZ"),
+  KAZ("Kazakhstan"),
   /**
    * Kentucky
    * <p>
    */
   @XmlEnumValue("US-KY")
-  VALUE_205("US-KY"),
+  US_KY("Kentucky"),
   /**
    * Kenya
    * <p>
    */
   @XmlEnumValue("KEN")
-  VALUE_206("KEN"),
+  KEN("Kenya"),
   /**
    * Kerguelen Islands
    * <p>
    */
   @XmlEnumValue("KER")
-  VALUE_207("KER"),
+  KER("Kerguelen Islands"),
   /**
    * Kingman Reef
    * <p>
    */
   @XmlEnumValue("UM-89")
-  VALUE_208("UM-89"),
+  UM_89("Kingman Reef"),
   /**
    * Kiribati
    * <p>
    */
   @XmlEnumValue("KIR")
-  VALUE_209("KIR"),
+  KIR("Kiribati"),
   /**
    * Korea, North
    * <p>
    */
   @XmlEnumValue("PRK")
-  VALUE_210("PRK"),
+  PRK("Korea, North"),
   /**
    * Korea, South
    * <p>
    */
   @XmlEnumValue("KOR")
-  VALUE_211("KOR"),
+  KOR("Korea, South"),
   /**
    * Kosovo
    * <p>
    */
   @XmlEnumValue("YU-KM")
-  VALUE_212("YU-KM"),
+  YU_KM("Kosovo"),
   /**
    * Kuwait
    * <p>
    */
   @XmlEnumValue("KWT")
-  VALUE_213("KWT"),
+  KWT("Kuwait"),
   /**
    * Kyrgyzstan
    * <p>
    */
   @XmlEnumValue("KGZ")
-  VALUE_214("KGZ"),
+  KGZ("Kyrgyzstan"),
   /**
    * Lake Erie
    * <p>
    */
   @XmlEnumValue("9E")
-  VALUE_215("9E"),
+  NINE_E("Lake Erie"),
   /**
    * Lake Huron
    * <p>
    */
   @XmlEnumValue("9H")
-  VALUE_216("9H"),
+  NINE_H("Lake Huron"),
   /**
    * Lake Michigan
    * <p>
    */
   @XmlEnumValue("9M")
-  VALUE_217("9M"),
+  NINE_M("Lake Michigan"),
   /**
    * Lake Ontario
    * <p>
    */
   @XmlEnumValue("9N")
-  VALUE_218("9N"),
+  NINE_N("Lake Ontario"),
   /**
    * Lake Superior
    * <p>
    */
   @XmlEnumValue("9S")
-  VALUE_219("9S"),
+  NINE_S("Lake Superior"),
   /**
    * Laos
    * <p>
    */
   @XmlEnumValue("LAO")
-  VALUE_220("LAO"),
+  LAO("Laos"),
   /**
    * Latvia
    * <p>
    */
   @XmlEnumValue("LVA")
-  VALUE_221("LVA"),
+  LVA("Latvia"),
   /**
    * Lebanon
    * <p>
    */
   @XmlEnumValue("LBN")
-  VALUE_222("LBN"),
+  LBN("Lebanon"),
   /**
    * Lesotho
    * <p>
    */
   @XmlEnumValue("LSO")
-  VALUE_223("LSO"),
+  LSO("Lesotho"),
   /**
    * Liberia
    * <p>
    */
   @XmlEnumValue("LBR")
-  VALUE_224("LBR"),
+  LBR("Liberia"),
   /**
    * Libya
    * <p>
    */
   @XmlEnumValue("LBY")
-  VALUE_225("LBY"),
+  LBY("Libya"),
   /**
    * Liechtenstein
    * <p>
    */
   @XmlEnumValue("LIE")
-  VALUE_226("LIE"),
+  LIE("Liechtenstein"),
   /**
    * Lithuania
    * <p>
    */
   @XmlEnumValue("LTU")
-  VALUE_227("LTU"),
+  LTU("Lithuania"),
   /**
    * Louisiana
    * <p>
    */
   @XmlEnumValue("US-LA")
-  VALUE_228("US-LA"),
+  US_LA("Louisiana"),
   /**
    * Luxembourg
    * <p>
    */
   @XmlEnumValue("LUX")
-  VALUE_229("LUX"),
+  LUX("Luxembourg"),
   /**
    * Macao
    * <p>
    */
   @XmlEnumValue("MAC")
-  VALUE_230("MAC"),
+  MAC("Macao"),
   /**
    * Madagascar
    * <p>
    */
   @XmlEnumValue("MDG")
-  VALUE_231("MDG"),
+  MDG("Madagascar"),
   /**
    * Madeira
    * <p>
    */
   @XmlEnumValue("PT-30")
-  VALUE_232("PT-30"),
+  PT_30("Madeira"),
   /**
    * Maine
    * <p>
    */
   @XmlEnumValue("US-ME")
-  VALUE_233("US-ME"),
+  US_ME("Maine"),
   /**
    * Malawi
    * <p>
    */
   @XmlEnumValue("MWI")
-  VALUE_234("MWI"),
+  MWI("Malawi"),
   /**
    * Malaysia
    * <p>
    */
   @XmlEnumValue("MYS")
-  VALUE_235("MYS"),
+  MYS("Malaysia"),
   /**
    * Maldives
    * <p>
    */
   @XmlEnumValue("MDV")
-  VALUE_236("MDV"),
+  MDV("Maldives"),
   /**
    * Mali
    * <p>
    */
   @XmlEnumValue("MLI")
-  VALUE_237("MLI"),
+  MLI("Mali"),
   /**
    * Malta
    * <p>
    */
   @XmlEnumValue("MLT")
-  VALUE_238("MLT"),
+  MLT("Malta"),
   /**
    * Mariana Islands (excluding Guam)
    * <p>
    */
   @XmlEnumValue("US-MP")
-  VALUE_239("US-MP"),
+  US_MP("Mariana Islands (excluding Guam)"),
   /**
    * Marion Island
    * <p>
    */
   @XmlEnumValue("MAI")
-  VALUE_240("MAI"),
+  MAI("Marion Island"),
   /**
    * Marshall Islands
    * <p>
    */
   @XmlEnumValue("MHL")
-  VALUE_241("MHL"),
+  MHL("Marshall Islands"),
   /**
    * Martinique
    * <p>
    */
   @XmlEnumValue("MTQ")
-  VALUE_242("MTQ"),
+  MTQ("Martinique"),
   /**
    * Maryland
    * <p>
    */
   @XmlEnumValue("US-MD")
-  VALUE_243("US-MD"),
+  US_MD("Maryland"),
   /**
    * Massachusetts
    * <p>
    */
   @XmlEnumValue("US-MA")
-  VALUE_244("US-MA"),
+  US_MA("Massachusetts"),
   /**
    * Mauritania
    * <p>
    */
   @XmlEnumValue("MRT")
-  VALUE_245("MRT"),
+  MRT("Mauritania"),
   /**
    * Mauritius
    * <p>
    */
   @XmlEnumValue("MUS")
-  VALUE_246("MUS"),
+  MUS("Mauritius"),
   /**
    * Mayotte
    * <p>
    */
   @XmlEnumValue("MYT")
-  VALUE_247("MYT"),
+  MYT("Mayotte"),
   /**
    * Mediterranean Sea
    * <p>
    */
   @XmlEnumValue("89")
-  VALUE_248("89"),
+  EIGHTY_NINE("Mediterranean Sea"),
   /**
    * Mexico
    * <p>
    */
   @XmlEnumValue("MEX")
-  VALUE_249("MEX"),
+  MEX("Mexico"),
   /**
    * Michigan
    * <p>
    */
   @XmlEnumValue("US-MI")
-  VALUE_250("US-MI"),
+  US_MI("Michigan"),
   /**
    * Micronesia
    * <p>
    */
   @XmlEnumValue("FSM")
-  VALUE_251("FSM"),
+  FSM("Micronesia"),
   /**
    * Midway Islands
    * <p>
    */
   @XmlEnumValue("UM-71")
-  VALUE_252("UM-71"),
+  UM_71("Midway Islands"),
   /**
    * Minnesota
    * <p>
    */
   @XmlEnumValue("US-MN")
-  VALUE_253("US-MN"),
+  US_MN("Minnesota"),
   /**
    * Mississippi
    * <p>
    */
   @XmlEnumValue("US-MS")
-  VALUE_254("US-MS"),
+  US_MS("Mississippi"),
   /**
    * Missouri
    * <p>
    */
   @XmlEnumValue("US-MO")
-  VALUE_255("US-MO"),
+  US_MO("Missouri"),
   /**
    * Moldova
    * <p>
    */
   @XmlEnumValue("MDA")
-  VALUE_256("MDA"),
+  MDA("Moldova"),
   /**
    * Monaco
    * <p>
    */
   @XmlEnumValue("MCO")
-  VALUE_257("MCO"),
+  MCO("Monaco"),
   /**
    * Mongolia
    * <p>
    */
   @XmlEnumValue("MNG")
-  VALUE_258("MNG"),
+  MNG("Mongolia"),
   /**
    * Montana
    * <p>
    */
   @XmlEnumValue("US-MT")
-  VALUE_259("US-MT"),
+  US_MT("Montana"),
   /**
    * Montenegro
    * <p>
    */
   @XmlEnumValue("MNE")
-  VALUE_260("MNE"),
+  MNE("Montenegro"),
   /**
    * Montserrat
    * <p>
    */
   @XmlEnumValue("MSR")
-  VALUE_261("MSR"),
+  MSR("Montserrat"),
   /**
    * Morocco
    * <p>
    */
   @XmlEnumValue("MAR")
-  VALUE_262("MAR"),
+  MAR("Morocco"),
   /**
    * Mozambique
    * <p>
    */
   @XmlEnumValue("MOZ")
-  VALUE_263("MOZ"),
+  MOZ("Mozambique"),
   /**
    * Multi-Lateral Enduring Contingency
    * <p>
    */
   @XmlEnumValue("MLEC")
-  VALUE_264("MLEC"),
+  MLEC("Multi-Lateral Enduring Contingency"),
   /**
    * Multinational Coalition Forces - Iraq
    * <p>
    */
   @XmlEnumValue("MCFI")
-  VALUE_265("MCFI"),
+  MCFI("Multinational Coalition Forces - Iraq"),
   /**
    * Multinational Interim Force Haiti
    * <p>
    */
   @XmlEnumValue("MIFH")
-  VALUE_266("MIFH"),
+  MIFH("Multinational Interim Force Haiti"),
   /**
    * Multiple Areas
    * <p>
    */
   @XmlEnumValue("MULT")
-  VALUE_267("MULT"),
+  MULT("Multiple Areas"),
   /**
    * Myanmar
    * <p>
    */
   @XmlEnumValue("MMR")
-  VALUE_268("MMR"),
+  MMR("Myanmar"),
   /**
    * Namibia
    * <p>
    */
   @XmlEnumValue("NAM")
-  VALUE_269("NAM"),
+  NAM("Namibia"),
   /**
    * NATO Airborne Early Warning
    * <p>
    */
   @XmlEnumValue("NT-AEW")
-  VALUE_270("NT-AEW"),
+  NT_AEW("NATO Airborne Early Warning"),
   /**
    * NATO Allied Command Operations (ACO)
    * <p>
    */
   @XmlEnumValue("NT-ACO")
-  VALUE_271("NT-ACO"),
+  NT_ACO("NATO Allied Command Operations (ACO)"),
   /**
    * NATO Allied Command Transformation (ACT)
    * <p>
    */
   @XmlEnumValue("NT-ACT")
-  VALUE_272("NT-ACT"),
+  NT_ACT("NATO Allied Command Transformation (ACT)"),
   /**
    * NATO European Nations (NATO, excluding USA, CAN, ISL)
    * <p>
    */
   @XmlEnumValue("NT-EUR")
-  VALUE_273("NT-EUR"),
+  NT_EUR("NATO European Nations (NATO, excluding USA, CAN, ISL)"),
   /**
    * NATO Headquarters
    * <p>
    */
   @XmlEnumValue("NT-HQ")
-  VALUE_274("NT-HQ"),
+  NT_HQ("NATO Headquarters"),
   /**
    * NATO Training Mission Iraq
    * <p>
    */
   @XmlEnumValue("NT-TMI")
-  VALUE_275("NT-TMI"),
+  NT_TMI("NATO Training Mission Iraq"),
   /**
    * Nauru
    * <p>
    */
   @XmlEnumValue("NRU")
-  VALUE_276("NRU"),
+  NRU("Nauru"),
   /**
    * Navassa Island
    * <p>
    */
   @XmlEnumValue("UM-76")
-  VALUE_277("UM-76"),
+  UM_76("Navassa Island"),
   /**
    * NC3A
    * <p>
    */
   @XmlEnumValue("NC3A")
-  VALUE_278("NC3A"),
+  NC3A("NC3A"),
   /**
    * Nebraska
    * <p>
    */
   @XmlEnumValue("US-NE")
-  VALUE_279("US-NE"),
+  US_NE("Nebraska"),
   /**
    * Nepal
    * <p>
    */
   @XmlEnumValue("NPL")
-  VALUE_280("NPL"),
+  NPL("Nepal"),
   /**
    * Netherlands
    * <p>
    */
   @XmlEnumValue("NLD")
-  VALUE_281("NLD"),
+  NLD("Netherlands"),
   /**
    * Netherlands Antilles
    * <p>
    */
   @XmlEnumValue("ANT")
-  VALUE_282("ANT"),
+  ANT("Netherlands Antilles"),
   /**
    * Nevada
    * <p>
    */
   @XmlEnumValue("US-NV")
-  VALUE_283("US-NV"),
+  US_NV("Nevada"),
   /**
    * New Caledonia
    * <p>
    */
   @XmlEnumValue("NCL")
-  VALUE_284("NCL"),
+  NCL("New Caledonia"),
   /**
    * New Hampshire
    * <p>
    */
   @XmlEnumValue("US-NH")
-  VALUE_285("US-NH"),
+  US_NH("New Hampshire"),
   /**
    * New Jersey
    * <p>
    */
   @XmlEnumValue("US-NJ")
-  VALUE_286("US-NJ"),
+  US_NJ("New Jersey"),
   /**
    * New Mexico
    * <p>
    */
   @XmlEnumValue("US-NM")
-  VALUE_287("US-NM"),
+  US_NM("New Mexico"),
   /**
    * New York
    * <p>
    */
   @XmlEnumValue("US-NY")
-  VALUE_288("US-NY"),
+  US_NY("New York"),
   /**
    * New Zealand
    * <p>
    */
   @XmlEnumValue("NZL")
-  VALUE_289("NZL"),
+  NZL("New Zealand"),
   /**
    * Nicaragua
    * <p>
    */
   @XmlEnumValue("NIC")
-  VALUE_290("NIC"),
+  NIC("Nicaragua"),
   /**
    * Niger
    * <p>
    */
   @XmlEnumValue("NER")
-  VALUE_291("NER"),
+  NER("Niger"),
   /**
    * Nigeria
    * <p>
    */
   @XmlEnumValue("NGA")
-  VALUE_292("NGA"),
+  NGA("Nigeria"),
   /**
    * Niue
    * <p>
    */
   @XmlEnumValue("NIU")
-  VALUE_293("NIU"),
+  NIU("Niue"),
   /**
    * Non-Geostationary Satellite
    * <p>
    */
   @XmlEnumValue("NGEO")
-  VALUE_294("NGEO"),
+  NGEO("Non-Geostationary Satellite"),
   /**
    * Norfolk Island
    * <p>
    */
   @XmlEnumValue("NFK")
-  VALUE_295("NFK"),
+  NFK("Norfolk Island"),
   /**
    * North African Counter-Terrorism Forces
    * <p>
    */
   @XmlEnumValue("NACT")
-  VALUE_296("NACT"),
+  NACT("North African Counter-Terrorism Forces"),
   /**
    * North America Continent
    * <p>
    */
   @XmlEnumValue("NN")
-  VALUE_297("NN"),
+  NN("North America Continent"),
   /**
    * NATO Nations (28 Nations: ALB, BEL, BUL, CAN, CZE, D, DNK, E, EST, F, G,
    * GRC, HNG, HOL, HRV, I, ISL, LUX, LIT, LVA, NOR, POL, POR, ROU, SVK, SVN,
@@ -2015,853 +1823,854 @@ public enum ListCAO {
    * <p>
    */
   @XmlEnumValue("NATO")
-  VALUE_298("NATO"),
+  NATO("NATO Nations (28 Nations: ALB, BEL, BUL, CAN, CZE, D, DNK, E, EST, F, G, GRC, HNG, HOL, HRV, I, ISL, LUX, LIT, LVA, NOR, POL, POR, ROU, SVK, SVN, TUR, USA)"),
   /**
    * North Carolina
    * <p>
    */
   @XmlEnumValue("US-NC")
-  VALUE_299("US-NC"),
+  US_NC("North Carolina"),
   /**
    * North Dakota
    * <p>
    */
   @XmlEnumValue("US-ND")
-  VALUE_300("US-ND"),
+  US_ND("North Dakota"),
   /**
    * Northern Mariana Islands
    * <p>
    */
   @XmlEnumValue("MNP")
-  VALUE_301("MNP"),
+  MNP("Northern Mariana Islands"),
   /**
    * Norway
    * <p>
    */
   @XmlEnumValue("NOR")
-  VALUE_302("NOR"),
+  NOR("Norway"),
   /**
    * Oceania
    * <p>
    */
   @XmlEnumValue("UU")
-  VALUE_303("UU"),
+  UU("Oceania"),
   /**
    * Ohio
    * <p>
    */
   @XmlEnumValue("US-OH")
-  VALUE_304("US-OH"),
+  US_OH("Ohio"),
   /**
    * Oklahoma
    * <p>
    */
   @XmlEnumValue("US-OK")
-  VALUE_305("US-OK"),
+  US_OK("Oklahoma"),
   /**
    * Oman
    * <p>
    */
   @XmlEnumValue("OMN")
-  VALUE_306("OMN"),
+  OMN("Oman"),
   /**
    * Oregon
    * <p>
    */
   @XmlEnumValue("US-OR")
-  VALUE_307("US-OR"),
+  US_OR("Oregon"),
   /**
    * Other - See Remarks
    * <p>
    */
   @XmlEnumValue("OTH")
-  VALUE_308("OTH"),
+  OTH("Other - See Remarks"),
   /**
    * Pacific Ocean
    * <p>
    */
   @XmlEnumValue("4O")
-  VALUE_309("4O"),
+  FOURTY("Pacific Ocean"),
   /**
    * Pakistan
    * <p>
    */
   @XmlEnumValue("PAK")
-  VALUE_310("PAK"),
+  PAK("Pakistan"),
   /**
    * Palau
    * <p>
    */
   @XmlEnumValue("PLW")
-  VALUE_311("PLW"),
+  PLW("Palau"),
   /**
    * Palestine
    * <p>
    */
   @XmlEnumValue("PSE")
-  VALUE_312("PSE"),
+  PSE("Palestine"),
   /**
    * Palmyra Atoll
    * <p>
    */
   @XmlEnumValue("UM-95")
-  VALUE_313("UM-95"),
+  UM_95("Palmyra Atoll"),
   /**
    * Panama
    * <p>
    */
   @XmlEnumValue("PAN")
-  VALUE_314("PAN"),
+  PAN("Panama"),
   /**
    * Papua New Guinea
    * <p>
    */
   @XmlEnumValue("PNG")
-  VALUE_315("PNG"),
+  PNG("Papua New Guinea"),
   /**
    * Paraguay
    * <p>
    */
   @XmlEnumValue("PRY")
-  VALUE_316("PRY"),
+  PRY("Paraguay"),
   /**
    * Pennsylvania
    * <p>
    */
   @XmlEnumValue("US-PA")
-  VALUE_317("US-PA"),
+  US_PA("Pennsylvania"),
   /**
    * Peru
    * <p>
    */
   @XmlEnumValue("PER")
-  VALUE_318("PER"),
+  PER("Peru"),
   /**
    * Philippines
    * <p>
    */
   @XmlEnumValue("PHL")
-  VALUE_319("PHL"),
+  PHL("Philippines"),
   /**
    * Phoenix Islands
    * <p>
    */
   @XmlEnumValue("KI-P")
-  VALUE_320("KI-P"),
+  KI_P("Phoenix Islands"),
   /**
    * Pitcairn Island
    * <p>
    */
   @XmlEnumValue("PCN")
-  VALUE_321("PCN"),
+  PCN("Pitcairn Island"),
   /**
    * Poland
    * <p>
    */
   @XmlEnumValue("POL")
-  VALUE_322("POL"),
+  POL("Poland"),
   /**
    * Portugal
    * <p>
    */
   @XmlEnumValue("PRT")
-  VALUE_323("PRT"),
+  PRT("Portugal"),
   /**
    * Puerto Rico
    * <p>
    */
   @XmlEnumValue("PRI")
-  VALUE_324("PRI"),
+  PRI("Puerto Rico"),
   /**
    * Qatar
    * <p>
    */
   @XmlEnumValue("QAT")
-  VALUE_325("QAT"),
+  QAT("Qatar"),
   /**
    * Radio Astronomy
    * <p>
    */
   @XmlEnumValue("RCVR")
-  VALUE_326("RCVR"),
+  RCVR("Radio Astronomy"),
   /**
    * Réunion
    * <p>
    */
   @XmlEnumValue("REU")
-  VALUE_327("REU"),
+  REU("Réunion"),
   /**
    * Rhode Island
    * <p>
    */
   @XmlEnumValue("US-RI")
-  VALUE_328("US-RI"),
+  US_RI("Rhode Island"),
   /**
    * Rodrigues
    * <p>
    */
   @XmlEnumValue("MU-RO")
-  VALUE_329("MU-RO"),
+  MU_RO("Rodrigues"),
   /**
    * ROK/US Combined Forces Command, Korea
    * <p>
    */
   @XmlEnumValue("CFCK")
-  VALUE_330("CFCK"),
+  CFCK("ROK/US Combined Forces Command, Korea"),
   /**
    * Romania
    * <p>
    */
   @XmlEnumValue("ROU")
-  VALUE_331("ROU"),
+  ROU("Romania"),
   /**
    * Russian Federation
    * <p>
    */
   @XmlEnumValue("RUS")
-  VALUE_332("RUS"),
+  RUS("Russian Federation"),
   /**
    * Rwanda
    * <p>
    */
   @XmlEnumValue("RWA")
-  VALUE_333("RWA"),
+  RWA("Rwanda"),
   /**
    * Saint Barthélemy
    * <p>
    */
   @XmlEnumValue("BLM")
-  VALUE_334("BLM"),
+  BLM("Saint Barthélemy"),
   /**
    * Saint Helena
    * <p>
    */
   @XmlEnumValue("SHN")
-  VALUE_335("SHN"),
+  SHN("Saint Helena"),
   /**
    * Saint Kitts and Nevis
    * <p>
    */
   @XmlEnumValue("KNA")
-  VALUE_336("KNA"),
+  KNA("Saint Kitts and Nevis"),
   /**
    * Saint Lucia
    * <p>
    */
   @XmlEnumValue("LCA")
-  VALUE_337("LCA"),
+  LCA("Saint Lucia"),
   /**
    * Saint Martin (French part)
    * <p>
    */
   @XmlEnumValue("MAF")
-  VALUE_338("MAF"),
+  MAF("Saint Martin (French part)"),
   /**
    * Saint Paul and Amsterdam Islands
    * <p>
    */
   @XmlEnumValue("AMS")
-  VALUE_339("AMS"),
+  AMS("Saint Paul and Amsterdam Islands"),
   /**
    * Saint Pierre and Miquelon
    * <p>
    */
   @XmlEnumValue("SPM")
-  VALUE_340("SPM"),
+  SPM("Saint Pierre and Miquelon"),
   /**
    * Saint Vincent and the Grenadines
    * <p>
    */
   @XmlEnumValue("VCT")
-  VALUE_341("VCT"),
+  VCT("Saint Vincent and the Grenadines"),
   /**
    * Samoa
    * <p>
    */
   @XmlEnumValue("WSM")
-  VALUE_342("WSM"),
+  WSM("Samoa"),
   /**
    * San Marino
    * <p>
    */
   @XmlEnumValue("SMR")
-  VALUE_343("SMR"),
+  SMR("San Marino"),
   /**
    * Santiago-Rodriguez
    * <p>
    */
   @XmlEnumValue("DO-26")
-  VALUE_344("DO-26"),
+  DO_26("Santiago-Rodriguez"),
   /**
    * Sao Tome and Principe
    * <p>
    */
   @XmlEnumValue("STP")
-  VALUE_345("STP"),
+  STP("Sao Tome and Principe"),
   /**
    * Saudi Arabia
    * <p>
    */
   @XmlEnumValue("SAU")
-  VALUE_346("SAU"),
+  SAU("Saudi Arabia"),
   /**
    * Senegal
    * <p>
    */
   @XmlEnumValue("SEN")
-  VALUE_347("SEN"),
+  SEN("Senegal"),
   /**
    * Serbia
    * <p>
    */
   @XmlEnumValue("SRB")
-  VALUE_348("SRB"),
+  SRB("Serbia"),
   /**
    * Seychelles
    * <p>
    */
   @XmlEnumValue("SYC")
-  VALUE_349("SYC"),
+  SYC("Seychelles"),
   /**
    * Sierra Leone
    * <p>
    */
   @XmlEnumValue("SLE")
-  VALUE_350("SLE"),
+  SLE("Sierra Leone"),
   /**
    * Singapore
    * <p>
    */
   @XmlEnumValue("SGP")
-  VALUE_351("SGP"),
+  SGP("Singapore"),
   /**
    * Sint Maarten (Dutch part)
    * <p>
    */
   @XmlEnumValue("SXM")
-  VALUE_352("SXM"),
+  SXM("Sint Maarten (Dutch part)"),
   /**
    * Slovakia
    * <p>
    */
   @XmlEnumValue("SVK")
-  VALUE_353("SVK"),
+  SVK("Slovakia"),
   /**
    * Slovenia
    * <p>
    */
   @XmlEnumValue("SVN")
-  VALUE_354("SVN"),
+  SVN("Slovenia"),
   /**
    * Solomon Islands
    * <p>
    */
   @XmlEnumValue("SLB")
-  VALUE_355("SLB"),
+  SLB("Solomon Islands"),
   /**
    * Somalia
    * <p>
    */
   @XmlEnumValue("SOM")
-  VALUE_356("SOM"),
+  SOM("Somalia"),
   /**
    * South Africa
    * <p>
    */
   @XmlEnumValue("ZAF")
-  VALUE_357("ZAF"),
+  ZAF("South Africa"),
   /**
    * South America Continent
    * <p>
    */
   @XmlEnumValue("SR")
-  VALUE_358("SR"),
+  SR("South America Continent"),
   /**
    * South Carolina
    * <p>
    */
   @XmlEnumValue("US-SC")
-  VALUE_359("US-SC"),
+  US_SC("South Carolina"),
   /**
    * South Dakota
    * <p>
    */
   @XmlEnumValue("US-SD")
-  VALUE_360("US-SD"),
+  US_SD("South Dakota"),
   /**
    * South Georgia and the South Sandwich Islands
    * <p>
    */
   @XmlEnumValue("SGS")
-  VALUE_361("SGS"),
+  SGS("South Georgia and the South Sandwich Islands"),
   /**
    * Space
    * <p>
    */
   @XmlEnumValue("SPCE")
-  VALUE_362("SPCE"),
+  SPCE("Space"),
   /**
    * Spain
    * <p>
    */
   @XmlEnumValue("ESP")
-  VALUE_363("ESP"),
+  ESP("Spain"),
   /**
    * Spectrum Management Branch in NATO HQ
    * <p>
    */
   @XmlEnumValue("NT-HQS")
-  VALUE_364("NT-HQS"),
+  NT_HQS("Spectrum Management Branch in NATO HQ"),
   /**
    * Sri Lanka
    * <p>
    */
   @XmlEnumValue("LKA")
-  VALUE_365("LKA"),
+  LKA("Sri Lanka"),
   /**
    * Stabilization Forces in Kosovo
    * <p>
    */
   @XmlEnumValue("KFOR")
-  VALUE_366("KFOR"),
+  KFOR("Stabilization Forces in Kosovo"),
   /**
    * STRIKEFORCENATO
    * <p>
    */
   @XmlEnumValue("NT-STF")
-  VALUE_367("NT-STF"),
+  NT_STF("STRIKEFORCENATO"),
   /**
    * Sudan
    * <p>
    */
   @XmlEnumValue("SDN")
-  VALUE_368("SDN"),
+  SDN("Sudan"),
   /**
    * Suriname
    * <p>
    */
   @XmlEnumValue("SUR")
-  VALUE_369("SUR"),
+  SUR("Suriname"),
   /**
    * Svalbard and Jan Mayen Islands
    * <p>
    */
   @XmlEnumValue("SJM")
-  VALUE_370("SJM"),
+  SJM("Svalbard and Jan Mayen Islands"),
   /**
    * Swan Islands
    * <p>
    */
   @XmlEnumValue("SWA")
-  VALUE_371("SWA"),
+  SWA("Swan Islands"),
   /**
    * Swaziland
    * <p>
    */
   @XmlEnumValue("SWZ")
-  VALUE_372("SWZ"),
+  SWZ("Swaziland"),
   /**
    * Sweden
    * <p>
    */
   @XmlEnumValue("SWE")
-  VALUE_373("SWE"),
+  SWE("Sweden"),
   /**
    * Switzerland
    * <p>
    */
   @XmlEnumValue("CHE")
-  VALUE_374("CHE"),
+  CHE("Switzerland"),
   /**
    * Syria
    * <p>
    */
   @XmlEnumValue("SYR")
-  VALUE_375("SYR"),
+  SYR("Syria"),
   /**
    * Taiwan
    * <p>
    */
   @XmlEnumValue("TWN")
-  VALUE_376("TWN"),
+  TWN("Taiwan"),
   /**
    * Tajikistan
    * <p>
    */
   @XmlEnumValue("TJK")
-  VALUE_377("TJK"),
+  TJK("Tajikistan"),
   /**
    * Tanzania
    * <p>
    */
   @XmlEnumValue("TZA")
-  VALUE_378("TZA"),
+  TZA("Tanzania"),
   /**
    * Tennessee
    * <p>
    */
   @XmlEnumValue("US-TN")
-  VALUE_379("US-TN"),
+  US_TN("Tennessee"),
   /**
    * Texas
    * <p>
    */
   @XmlEnumValue("US-TX")
-  VALUE_380("US-TX"),
+  US_TX("Texas"),
   /**
    * Thailand
    * <p>
    */
   @XmlEnumValue("THA")
-  VALUE_381("THA"),
+  THA("Thailand"),
   /**
    * The former Yugoslav Republic of Macedonia (See footnote 2)
    * <p>
    */
   @XmlEnumValue("FYR")
-  VALUE_382("FYR"),
+  FYR("The former Yugoslav Republic of Macedonia (See footnote 2)"),
   /**
    * THREE EYES (USA, CAN, GBR)
    * <p>
    */
   @XmlEnumValue("TEYE")
-  VALUE_383("TEYE"),
+  TEYE("THREE EYES (USA, CAN, GBR)"),
   /**
    * Togo
    * <p>
    */
   @XmlEnumValue("TGO")
-  VALUE_384("TGO"),
+  TGO("Togo"),
   /**
    * Tokelau
    * <p>
    */
   @XmlEnumValue("TKL")
-  VALUE_385("TKL"),
+  TKL("Tokelau"),
   /**
    * Tonga
    * <p>
    */
   @XmlEnumValue("TON")
-  VALUE_386("TON"),
+  TON("Tonga"),
   /**
    * Trinidad and Tobago
    * <p>
    */
   @XmlEnumValue("TTO")
-  VALUE_387("TTO"),
+  TTO("Trinidad and Tobago"),
   /**
    * Tristan da Cunha
    * <p>
    */
   @XmlEnumValue("SH-TA")
-  VALUE_388("SH-TA"),
+  SH_TA("Tristan da Cunha"),
   /**
    * Tunisia
    * <p>
    */
   @XmlEnumValue("TUN")
-  VALUE_389("TUN"),
+  TUN("Tunisia"),
   /**
    * Turkey
    * <p>
    */
   @XmlEnumValue("TUR")
-  VALUE_390("TUR"),
+  TUR("Turkey"),
   /**
    * Turkmenistan
    * <p>
    */
   @XmlEnumValue("TKM")
-  VALUE_391("TKM"),
+  TKM("Turkmenistan"),
   /**
    * Turks and Caicos Islands
    * <p>
    */
   @XmlEnumValue("TCA")
-  VALUE_392("TCA"),
+  TCA("Turks and Caicos Islands"),
   /**
    * Tuvalu
    * <p>
    */
   @XmlEnumValue("TUV")
-  VALUE_393("TUV"),
+  TUV("Tuvalu"),
   /**
    * Uganda
    * <p>
    */
   @XmlEnumValue("UGA")
-  VALUE_394("UGA"),
+  UGA("Uganda"),
   /**
    * UK Territories in Region 1
    * <p>
    */
   @XmlEnumValue("UKT1")
-  VALUE_395("UKT1"),
+  UKT1("UK Territories in Region 1"),
   /**
    * UK Territories in Region 3
    * <p>
    */
   @XmlEnumValue("UKT3")
-  VALUE_396("UKT3"),
+  UKT3("UK Territories in Region 3"),
   /**
    * Ukraine
    * <p>
    */
   @XmlEnumValue("UKR")
-  VALUE_397("UKR"),
+  UKR("Ukraine"),
   /**
    * United Arab Emirates
    * <p>
    */
   @XmlEnumValue("ARE")
-  VALUE_398("ARE"),
+  ARE("United Arab Emirates"),
   /**
    * United Kingdom
    * <p>
    */
   @XmlEnumValue("GBR")
-  VALUE_399("GBR"),
+  GBR("United Kingdom"),
   /**
    * United Nations
    * <p>
    */
   @XmlEnumValue("UN")
-  VALUE_400("UN"),
+  UN("United Nations"),
   /**
    * United Nations Command, Korea
    * <p>
    */
   @XmlEnumValue("UNCK")
-  VALUE_401("UNCK"),
+  UNCK("United Nations Command, Korea"),
   /**
    * United States (CONUS)
    * <p>
    */
   @XmlEnumValue("USC")
-  VALUE_402("USC"),
+  USC("United States (CONUS)"),
   /**
    * United States and Possessions
    * <p>
    */
   @XmlEnumValue("USP")
-  VALUE_403("USP"),
+  USP("United States and Possessions"),
   /**
    * United States Minor Outlying Islands
    * <p>
    */
   @XmlEnumValue("UMI")
-  VALUE_404("UMI"),
+  UMI("United States Minor Outlying Islands"),
   /**
    * United States of America
    * <p>
    */
   @XmlEnumValue("USA")
-  VALUE_405("USA"),
+  USA("United States of America"),
   /**
    * Unknown
    * <p>
    */
   @XmlEnumValue("UNKN")
-  VALUE_406("UNKN"),
+  UNKN("Unknown"),
   /**
    * Uruguay
    * <p>
    */
   @XmlEnumValue("URY")
-  VALUE_407("URY"),
+  URY("Uruguay"),
   /**
    * US - Central
    * <p>
    */
   @XmlEnumValue("USCE")
-  VALUE_408("USCE"),
+  USCE("US - Central"),
   /**
    * US - Mid Atlantic
    * <p>
    */
   @XmlEnumValue("SCML")
-  VALUE_409("SCML"),
+  SCML("US - Mid Atlantic"),
   /**
    * US - Midwest
    * <p>
    */
   @XmlEnumValue("USMW")
-  VALUE_410("USMW"),
+  USMW("US - Midwest"),
   /**
    * US - North Central
    * <p>
    */
   @XmlEnumValue("USNC")
-  VALUE_411("USNC"),
+  USNC("US - North Central"),
   /**
    * US - North East
    * <p>
    */
   @XmlEnumValue("USNE")
-  VALUE_412("USNE"),
+  USNE("US - North East"),
   /**
    * US - North West
    * <p>
    */
   @XmlEnumValue("USNW")
-  VALUE_413("USNW"),
+  USNW("US - North West"),
   /**
    * US - South Central
    * <p>
    */
   @XmlEnumValue("USSC")
-  VALUE_414("USSC"),
+  USSC("US - South Central"),
   /**
    * US - South East
    * <p>
    */
   @XmlEnumValue("USSE")
-  VALUE_415("USSE"),
+  USSE("US - South East"),
   /**
    * US - South West
    * <p>
    */
   @XmlEnumValue("USSW")
-  VALUE_416("USSW"),
+  USSW("US - South West"),
   /**
    * US - West
    * <p>
    */
   @XmlEnumValue("USWE")
-  VALUE_417("USWE"),
+  USWE("US - West"),
   /**
    * Utah
    * <p>
    */
   @XmlEnumValue("US-UT")
-  VALUE_418("US-UT"),
+  US_UT("Utah"),
   /**
    * Uzbekistan
    * <p>
    */
   @XmlEnumValue("UZB")
-  VALUE_419("UZB"),
+  UZB("Uzbekistan"),
   /**
    * Vanuatu
    * <p>
    */
   @XmlEnumValue("VUT")
-  VALUE_420("VUT"),
+  VUT("Vanuatu"),
   /**
    * Vatican City State
    * <p>
    */
   @XmlEnumValue("VAT")
-  VALUE_421("VAT"),
+  VAT("Vatican City State"),
   /**
    * Venezuela
    * <p>
    */
   @XmlEnumValue("VEN")
-  VALUE_422("VEN"),
+  VEN("Venezuela"),
   /**
    * Vermont
    * <p>
    */
   @XmlEnumValue("US-VT")
-  VALUE_423("US-VT"),
+  US_VT("Vermont"),
   /**
    * Vietnam
    * <p>
    */
   @XmlEnumValue("VNM")
-  VALUE_424("VNM"),
+  VNM("Vietnam"),
   /**
    * Virgin Islands (British)
    * <p>
    */
   @XmlEnumValue("VGB")
-  VALUE_425("VGB"),
+  VGB("Virgin Islands (British)"),
   /**
    * Virgin Islands (U.S.)
    * <p>
    */
   @XmlEnumValue("VIR")
-  VALUE_426("VIR"),
+  VIR("Virgin Islands (U.S.)"),
   /**
    * Virginia
    * <p>
    */
   @XmlEnumValue("US-VA")
-  VALUE_427("US-VA"),
+  US_VA("Virginia"),
   /**
    * Visible Earth
    * <p>
    */
   @XmlEnumValue("XVE")
-  VALUE_428("XVE"),
+  XVE("Visible Earth"),
   /**
    * Wake Island
    * <p>
    */
   @XmlEnumValue("UM-79")
-  VALUE_429("UM-79"),
+  UM_79("Wake Island"),
   /**
    * Wallis and Futuna Islands
    * <p>
    */
   @XmlEnumValue("WLF")
-  VALUE_430("WLF"),
+  WLF("Wallis and Futuna Islands"),
   /**
    * Washington
    * <p>
    */
   @XmlEnumValue("US-WA")
-  VALUE_431("US-WA"),
+  US_WA("Washington"),
   /**
    * West Virginia
    * <p>
    */
   @XmlEnumValue("US-WV")
-  VALUE_432("US-WV"),
+  US_WV("West Virginia"),
   /**
    * Western Sahara
    * <p>
    */
   @XmlEnumValue("ESH")
-  VALUE_433("ESH"),
+  ESH("Western Sahara"),
   /**
    * Wisconsin
    * <p>
    */
   @XmlEnumValue("US-WI")
-  VALUE_434("US-WI"),
+  US_WI("Wisconsin"),
   /**
    * Wyoming
    * <p>
    */
   @XmlEnumValue("US-WY")
-  VALUE_435("US-WY"),
+  US_WY("Wyoming"),
   /**
    * Yemen
    * <p>
    */
   @XmlEnumValue("YEM")
-  VALUE_436("YEM"),
+  YEM("Yemen"),
   /**
    * Yugoslavia (YUG) - Deprecated
    * <p>
    */
   @XmlEnumValue("YO05")
-  VALUE_437("YO05"),
+  YO05("Yugoslavia (YUG) - Deprecated"),
   /**
    * Zambia
    * <p>
    */
   @XmlEnumValue("ZMB")
-  VALUE_438("ZMB"),
+  ZMB("Zambia"),
   /**
    * Zimbabwe
    * <p>
    */
   @XmlEnumValue("ZWE")
-  VALUE_439("ZWE");
+  ZWE("Zimbabwe");
+
   private final String value;
 
   ListCAO(String v) {
@@ -2879,6 +2688,10 @@ public enum ListCAO {
       }
     }
     throw new IllegalArgumentException(v);
+  }
+
+  public String enumValue() {
+    return this.value();
   }
 
 }

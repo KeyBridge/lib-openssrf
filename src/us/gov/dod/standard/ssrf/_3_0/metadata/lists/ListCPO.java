@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
@@ -58,58 +58,57 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCPO {
 
   @XmlEnumValue("45-degrees")
-  VALUE_1("45-degrees"),
+  FOURTYFIVE_DEGREES,
   @XmlEnumValue("Left-hand circular")
-  VALUE_2("Left-hand circular"),
+  LEFT_HAND_CIRCULAR,
   @XmlEnumValue("Right-hand circular")
-  VALUE_3("Right-hand circular"),
+  RIGHT_HAND_CIRCULAR,
   @XmlEnumValue("Dual")
-  VALUE_4("Dual"),
+  DUAL,
   @XmlEnumValue("Elliptical")
-  VALUE_5("Elliptical"),
+  ELLIPTICAL,
   @XmlEnumValue("Elliptic left")
-  VALUE_6("Elliptic left"),
+  ELLIPTIC_LEFT,
   @XmlEnumValue("Elliptic right")
-  VALUE_7("Elliptic right"),
+  ELLIPTIC_RIGHT,
   @XmlEnumValue("Horizontal linear")
-  VALUE_8("Horizontal linear"),
+  HORIZONTAL_LINEAR,
   @XmlEnumValue("Horizontal and vertical")
-  VALUE_9("Horizontal and vertical"),
+  HORIZONTAL_AND_VERTICAL,
   @XmlEnumValue("Linear")
-  VALUE_10("Linear"),
+  LINEAR,
   @XmlEnumValue("Mixed")
-  VALUE_11("Mixed"),
+  MIXED,
   @XmlEnumValue("Oblique, angled, crossed")
-  VALUE_12("Oblique, angled, crossed"),
+  OBLIQUE_ANGLED_CROSSED,
   @XmlEnumValue("Rotating")
-  VALUE_13("Rotating"),
+  ROTATING,
   @XmlEnumValue("Right-hand slant")
-  VALUE_14("Right-hand slant"),
+  RIGHT_HAND_SLANT,
   @XmlEnumValue("Left-hand slant")
-  VALUE_15("Left-hand slant"),
+  LEFT_HAND_SLANT,
   @XmlEnumValue("Right and left-hand circular")
-  VALUE_16("Right and left-hand circular"),
+  RIGHT_AND_LEFT_HAND_CIRCULAR,
   @XmlEnumValue("Vertical linear")
-  VALUE_17("Vertical linear"),
+  VERTICAL_LINEAR,
   @XmlEnumValue("Other or unknown")
-  VALUE_18("Other or unknown");
-  private final String value;
-
-  ListCPO(String v) {
-    value = v;
-  }
+  OTHER_OR_UNKNOWN;
 
   public String value() {
-    return value;
+    return name();
   }
 
   public static ListCPO fromValue(String v) {
     for (ListCPO c : ListCPO.values()) {
-      if (c.value.equals(v)) {
+      if (c.name().equals(v)) {
         return c;
       }
     }
     throw new IllegalArgumentException(v);
+  }
+
+  public String enumValue() {
+    return this.value();
   }
 
 }
