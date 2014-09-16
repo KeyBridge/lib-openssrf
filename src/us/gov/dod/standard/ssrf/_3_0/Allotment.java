@@ -45,6 +45,16 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
  * for local management, for specific types of emissions, at a certain location,
  * and for a specified period of time.
  * <p>
+ * The SSRF datasets used for Allotments and Assignments are the same and can be
+ * recognized from the code AL (Allotment) or AS (Assignment) in part 3 of the
+ * Dataset Identifier. However, it should be noted that these messages will be
+ * dealt with in different contexts:
+ * <ol>
+ * <li>Allotment: Frequency allotments may be used within a nation or a command
+ * to decentralize the frequency management.</li>
+ * <li>Assignment: Frequency resource authorized for use by a given SDS at a
+ * specified location or within an AOR.</li>
+ * <ol>
  * [XSL ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "AL".
  */
 @XmlAccessorType(XmlAccessType.FIELD)

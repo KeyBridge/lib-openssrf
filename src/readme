@@ -2,18 +2,73 @@
 |  Open SSRF Software Library                                                  |
 +------------------------------------------------------------------------------+
 History
+  09/15/14 - finish marshal/unmarshal - read/write testing
   09/08/14 - complete rewrite to use a small number of simple data types
              move type validation logic into XML date type adapters:
                all typed date fields are validated on export _and_ import
                note that this will cause malformed data to ungracefully fail import
              rewrite fluent programming methods to use simple types for easier access
-             add JaxbUtility class for marshal/unmarshal and validation testing
   08/08/14 - rebuild software library using JAXB extensions for fluent programming style
              add section (below) with instructions to build using Maven
   05/15/14 - created
 
 About:
 +------------------------------------------------------------------------------+
+
+09/15/14 V0.2
+
+This updates and supercedes the May 26, 2014 software release.
+
+This is a tailored and customized compilation of the Standard Spectrum Resource 
+Format (SSRF) version 3.0 into Java. The specification is defined in MCEB Pub 8 
+Version 3.0 as of 2012-04-26.
+
+The software contained in this release is a completely redeveloped and rewritten 
+implementation of the SSRF data format specification. Special attention and effort
+has been invested to organize the software, to improve the approachability of the 
+underlying SSRF logical data model, and to add methods and techniques to simplify 
+the construction of SSRF data structures.
+
+A few key developments for this release:
+
+Release versioning:
+•	This release is named version 0.2. 
+•	The previous release (May 26, 2014) is named version 0.1.
+
+Data type validation
+•	A comprehensive data type validation strategy has been incorporated into the 
+software to implement and enforce the SSRF data format and validation rules.  
+Only valid SSRF data types may be created (written) and imported (read); invalid 
+or malformed data types will fail during processing.
+
+Pick lists
+•	Support for pick lists has been updated to match both the schema and text of 
+the specification. The software requires pick lists where appropriate and now 
+enables pick-list selection or custom, user-generated entries where allowed.
+
+Software packaging
+•	The SSRF library contains 417 different data types, each mapping to a discreet 
+implementation class. These have been reorganized into 15 logical software 
+packages according to logical hierarchy, function and class-type association. 
+•	The top-level SSRF package now contains only 25 “primary” data types 
+representing the core business processes and data conveyance of an SSRF message. 
+All other data types have been organized and moved into their respective packages.
+
+Software abstraction and simplification
+•	Metadata and other common elements and data attributes have been consolidated 
+into several abstract classes and types. This is to improve software usability, 
+readability, organization and to streamline developer implementation. 
+•	A new “SSRF” class has been created and designated as the single point of entry 
+into the SSRF data model to simplify developer implementation and data exchange.
+
+Developer utilities
+•	Methods supporting the fliend programming interface have been introduced 
+throughout the new software library. This is a major update and provides for 
+more readable and approachable software code; it allows programmers to build a 
+SSRF data structure using a “with” strategy. An example message builder 
+application is included.
+
+05/15/14 V0.1
 
 This is a verbatim compilation of the Standard Spectrum Resource Format (SSRF)
 version 3.0 into Java. The specification is defined in MCEB Pub 8 Version 3.0 
@@ -66,3 +121,41 @@ proprietary software provided all copies of the licensed software include a copy
 of the MIT License terms. Such proprietary software retains its proprietary nature 
 even though it incorporates software under the MIT License.
 
+TERMS, CONDITIONS & NOTICES
++------------------------------------------------------------------------------+
+			
+This document and associated software source code package (the “reference design”) 
+have been prepared by Key Bridge Global LLC to assist The Software Defined Radio 
+Forum Inc. (or its successors or assigns, hereafter “the Forum”). It may be amended 
+or withdrawn at a later time and it is not binding on any member of the Forum or 
+of Key Bridge Global LLC.
+
+Contributors to this reference designhave submitted copyrighted materials (the 
+Submission) to the Forum for use in this reference design retain copyright 
+ownership of their original work, while at the same time granting the Forum a 
+non-exclusive, irrevocable, worldwide, perpetual, royalty-free license under 
+the Submitter’s copyrights in the Submission to reproduce, distribute, publish, 
+display, perform, and create derivative works of the Submission based on that
+original work for under the Forum's own copyright.
+
+Permission is granted to the Forum’s participants by Key Bridge Global to reuse 
+the reference design royalty free under the MIT License. Reuse is permitted 
+within other proprietary software developed by participants provided all copies 
+of the licensed software include a copy of the MIT License terms. Such proprietary 
+software retains its proprietary nature even though it incorporates software 
+under the MIT License.
+
+THIS DOCUMENTAND ASSOCIATED SOFWARE PACKAGE ARE BEING OFFERED WITHOUT ANY WARRANTY 
+WHATSOEVER, AND IN PARTICULAR, ANY WARRANTY OF NON-INFRINGEMENT IS EXPRESSLY 
+DISCLAIMED.  ANY USE OF THIS SPECIFICATION SHALL BE MADE ENTIRELY AT THE 
+IMPLEMENTER'S OWN RISK, AND NEITHER THE FORUM, NOR ANY OF ITS MEMBERS OR 
+SUBMITTERS, SHALL HAVE ANY LIABILITY WHATSOEVER TO ANY IMPLEMENTER OR THIRD 
+PARTY FOR ANY DAMAGES OF ANY NATURE WHATSOEVER, DIRECTLY OR INDIRECTLY, ARISING 
+FROM THE USE OF THIS DOCUMENT.
+
+Recipients of this document are requested to submit, with their comments, 
+notification of any relevant patent claims or other intellectual property 
+rights of which they may be aware that might be infringed by any implementation 
+of the reference design and to provide supporting documentation.
+
++------------------------------------------------------------------------------+

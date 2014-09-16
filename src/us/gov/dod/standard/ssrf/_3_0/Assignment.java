@@ -43,96 +43,10 @@ import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 /**
  * Java class for Assignment complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Assignment"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="Title" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/>
- * &lt;element name="UsageType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
- * minOccurs="0"/> &lt;element name="DateResponseRequired"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
- * name="EffectiveDateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReviewDT"/>
- * &lt;element name="Period" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}TimeFrame"
- * minOccurs="0"/> &lt;element name="Processing"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="Emergency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
- * minOccurs="0"/> &lt;element name="AssignmentAuthority"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="Requirement" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;element name="NumSystems"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/> &lt;element
- * name="AgencyActionNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12"
- * minOccurs="0"/> &lt;element name="AgencyComments"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="AgencySerialNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12"
- * minOccurs="0"/> &lt;element name="AssignmentDate"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
- * name="COCOMGroup" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS8"
- * minOccurs="0"/> &lt;element name="ControlRequestNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/> &lt;element
- * name="CoordinationComments" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;element name="DataSource"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS60" minOccurs="0"/> &lt;element
- * name="FCCFileNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS22"
- * minOccurs="0"/> &lt;element name="FMSCNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS14" minOccurs="0"/> &lt;element
- * name="FrequencyActionOfficer" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS3"
- * minOccurs="0"/> &lt;element name="ListSerialNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS12" minOccurs="0"/> &lt;element
- * name="NATOPooledFrequencyCode"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/> &lt;element
- * name="NATOPooledFrequencyNum" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN4"
- * minOccurs="0"/> &lt;element name="OriginalAssignmentDate"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
- * name="RoutineAgendaItem" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="SupplementaryDetails"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="TypeOfService" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="UsageCode"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/> &lt;element
- * name="UsageFrequency" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="UsagePercentage"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_Percent" minOccurs="0"/>
- * &lt;element name="UserNetCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS6"
- * minOccurs="0"/> &lt;element name="Project"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Project" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SysOfStation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SysOfStation" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="RelatedRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RelatedRef" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Configuration"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Configuration"
- * maxOccurs="unbounded"/> &lt;element name="Station"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Station" maxOccurs="unbounded"/>
- * &lt;element name="Link" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Link"
- * maxOccurs="unbounded"/> &lt;element name="StatusLog"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StatusLog" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="AsgnAllotOwner"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}AsgnAllotOwner"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="CircuitRemarks"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}CircuitRemarks"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="CoordinationData"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}CoordinationData"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="DocketNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}DocketNum" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="HostDocketNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}HostDocketNum"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="OffTheShelfEquipment"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}OffTheShelfEquipment"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element
- * name="PreviousAuthorization"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}PreviousAuthorization"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="RecordNote"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RecordNote" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * This element is the XML root for all parameters of a system of assignments.
+ * It inherits attributes and sub-elements from element Common.
  * <p>
+ * [XSL ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "AS".
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Assignment", propOrder = {
@@ -197,168 +111,514 @@ import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 })
 public class Assignment extends Common<Assignment> {
 
+  /**
+   * Title: Enter an identifying name for this Allotment or Assignment.
+   */
   @XmlElement(name = "Title", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString title;
+  /**
+   * UsageType: Enter the type of assignment request or approved
+   * assignment/allotment. In case of a rejected or cancelled
+   * assignment/allotment, use an associated Remarks to indicate the reason.
+   * <p>
+   * Recommend values from Code List CUT
+   */
   @XmlElement(name = "UsageType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString usageType;
+  /**
+   * DateResponseRequired: Enter the date by which the frequency assignment or
+   * Spectrum Supportability Reply is required by the user in order to complete
+   * necessary advanced operation coordination.
+   */
   @XmlElement(name = "DateResponseRequired", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateResponseRequired;
+  /**
+   * EffectiveDateTime: This data element indicates the date/time by which the
+   * dataset is to be operational or effective, formatted as
+   * yyyy-mm-ddThh:mm:ssZ (year-month-day, "T" for time, hour:minute:seconds
+   * Zulu). To indicate a real effective time, use values 00:00:01Z to
+   * 24:00:00Z. The value 00:00:00Z is reserved to indicate that time is not an
+   * issue.
+   */
   @XmlElement(name = "EffectiveDateTime", required = true)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar effectiveDateTime;
+  /**
+   * ExpirationDateTime: Enter the date at which the dataset will expire,
+   * formatted as yyyy-mm- ddThh:mm:ssZ (year-month-day, "T" for time,
+   * hour:minute:seconds Zulu). To indicate a real effective time, use values
+   * 00:00:01Z to 24:00:00Z. The value 00:00:00Z is reserved to indicate that
+   * time is not an issue. The Expiration date should be less than five years
+   * from the effective date.
+   */
   @XmlElement(name = "ExpirationDateTime", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar expirationDateTime;
+  /**
+   * ReviewDate: Enter the date by which the dataset is to be reviewed,
+   * formatted as yyyy-mm-dd (year-month- day). The Review date should be less
+   * than five years from the effective date. In Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
+   */
   @XmlElement(name = "ReviewDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
+  /**
+   * Period: Indicate the general period on a daily basis when the frequency
+   * assignment's frequencies will be either guarded (monitored) or used for
+   * transmission.
+   * <p>
+   * Recommend values from Code List CTI
+   */
   @XmlElement(name = "Period", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString period;
+  /**
+   * Time Frame: This group is OPTIONAL. This group defines a schedule of
+   * operation for time-related datasets. Each item (except duration) may
+   * contain:
+   * <ul><li> A single number; </li>
+   * <li> A range (start and stop, separated with an hyphen "-"); optionally, a
+   * range may be followed by a step</li>
+   * (oblique stroke "/" followed by a number); the full range may be
+   * represented by the asterisk "*";</li>
+   * <li> A list of numbers and/or ranges, separated by commas ",";</li>
+   * <li> An attribute with value "*" may be omitted.</li></ul>
+   * <p>
+   * Seconds: Enter the seconds of hour [0-59]
+   */
   @XmlElement(name = "Seconds", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString seconds;
+  /**
+   * Minutes: Enter the minutes of hour [0-59]
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "Minutes", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString minutes;
+  /**
+   * Hours: Enter the hours of day [0-23] (UTC time)
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "Hours", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
   private TString hours;
+  /**
+   * DaysOfMonth: Enter the day of month [1-31]
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "DaysOfMonth", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
   private TString daysOfMonth;
+  /**
+   * Months: Enter the month of year [1-12]
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "Months", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
   private TString months;
+  /**
+   * DaysOfWeek: Enter the weekday [0-7 where 0 and 7 are for Sunday, 1 for
+   * Monday, etc]
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "DaysOfWeek", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
   private TString daysOfWeek;
+  /**
+   * Years: Enter the 4-digit year [1900..2100]
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "Years", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
   private TString years;
+  /**
+   * Duration: Enter the number of minutes for which an event will live.
+   * <p>
+   * @see #seconds
+   */
   @XmlElement(name = "Duration", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger duration;
+  /**
+   * Processing: Indicate if the frequency assignment is to be processed to
+   * national or international level for approval, or neither.
+   * <p>
+   * Recommend values from Code List CPI:
+   */
   @XmlElement(name = "Processing", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString processing;
+  /**
+   * Emergency: Enter "Yes" if the assignment may be used in a case of
+   * emergency.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Emergency", required = false)
   private TString emergency;
+  /**
+   * AssignmentAuthority: Indicate the user's acceptance of host-nation or NATO
+   * HQ frequency nominations.
+   * <p>
+   * Recommend values from Code List CHN
+   */
   @XmlElement(name = "AssignmentAuthority", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString assignmentAuthority;
+  /**
+   * Requirement:
+   * <p>
+   * NATO: Enter any amplifying information on the requirement.
+   * <p>
+   * USA: Enter Agency remarks which, while pertinent to the frequency
+   * assignment, are not intended to be part of the application processed
+   * through the Interdepartment Radio Advisory Committee (IRAC). These remarks,
+   * therefore, will be excluded from the Government Master File (GMF).
+   */
   @XmlElement(name = "Requirement", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString requirement;
+  /**
+   * NumSystems: Enter the number of systems that are expected to use this
+   * frequency assignment.
+   */
   @XmlElement(name = "NumSystems", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numSystems;
+  /**
+   * AgencyActionNum (US): Enter the An identifier used to track transactions.
+   */
   @XmlElement(name = "AgencyActionNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
   private TString agencyActionNum;
+  /**
+   * AgencyComments (US): Enter the Agency remarks in the applications processed
+   * through the Interdepartment Radio Advisory Committee (IRAC). These remarks
+   * will be included in the Government Master File (GMF).
+   */
   @XmlElement(name = "AgencyComments", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString agencyComments;
+  /**
+   * AgencySerialNum (US): Enter the externally-assigned unique identifier of a
+   * frequency assignment..
+   */
   @XmlElement(name = "AgencySerialNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
   private TString agencySerialNum;
+  /**
+   * AssignmentDate (US): Enter the date the assignment was most recently
+   * authorized.
+   */
   @XmlElement(name = "AssignmentDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar assignmentDate;
+  /**
+   * COCOMGroup (US): Enter the In the PACOM area, identifies a grouping of
+   * frequencies having a like or similar use. In the EUCOM area, identifies the
+   * function number(s) used by the Frequency Management Sub-Committee (FMSC) to
+   * specify the operational use of frequencies.
+   */
   @XmlElement(name = "COCOMGroup", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS8.class)
   private TString cocomGroup;
+  /**
+   * ControlRequestNum (US): Enter the control/request identifier that allows
+   * subordinate organizations to track specific frequency applications.
+   */
   @XmlElement(name = "ControlRequestNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString controlRequestNum;
+  /**
+   * CoordinationComments (US): Enter the Comments related to the external
+   * coordination of a frequency assignment.
+   */
   @XmlElement(name = "CoordinationComments", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString coordinationComments;
+  /**
+   * DataSource (US): Indicate the source or organization from which the data
+   * record was received.
+   * <p>
+   * Recommend values from Code List UDA
+   */
   @XmlElement(name = "DataSource", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS60.class)
   private TString dataSource;
+  /**
+   * FCCFileNum (US): Enter the file number assigned by the Federal
+   * Communications Commission (FCC), issued to non-government stations
+   * operating on government frequencies or government stations operating on
+   * non- government frequencies, which is unique to each FCC license.
+   */
   @XmlElement(name = "FCCFileNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS22.class)
   private TString fccFileNum;
+  /**
+   * FMSCNum (US): Enter the assignment serial number as registered in the
+   * Frequency Management Sub- committee (FMSC) Master Radio Frequency List
+   * (MRFL).
+   */
   @XmlElement(name = "FMSCNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS14.class)
   private TString fmscNum;
+  /**
+   * FrequencyActionOfficer (US): Enter the A MILDEP code identifying the person
+   * or group responsible for the frequency assignment.
+   */
   @XmlElement(name = "FrequencyActionOfficer", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS3.class)
   private TString frequencyActionOfficer;
+  /**
+   * ListSerialNum (US): Enter the agency list serial number of a Government
+   * Master File (GMF) record representing a group or area assignment. It brings
+   * into use, by a particular station or stations, a frequency authorized under
+   * a group assignment or authorized for communications with nongovernment
+   * stations.
+   */
   @XmlElement(name = "ListSerialNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
   private TString listSerialNum;
+  /**
+   * NATOPooledFrequencyCode (US): Indicate the Type Special Assignment for the
+   * frequency assignment.
+   * <p>
+   * Recommend values from Code List UPF: Air/ground/air Air to air
+   * Air/ground/air pool
+   */
   @XmlElement(name = "NATOPooledFrequencyCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString natoPooledFrequencyCode;
+  /**
+   * NATOPooledFrequencyNum (US): Enter the a Frequency Management Sub-committee
+   * (FMSC) assigned code number identifying the type and nationality of a
+   * frequency pool.
+   */
   @XmlElement(name = "NATOPooledFrequencyNum", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger natoPooledFrequencyNum;
+  /**
+   * OriginalAssignmentDate (US): Enter the date the frequency assignment was
+   * originally authorized.
+   */
   @XmlElement(name = "OriginalAssignmentDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar originalAssignmentDate;
+  /**
+   * RoutineAgendaItem (US): Enter the Indicates the type of National
+   * Telecommunications and Information Administration (NTIA) Frequency
+   * Assignment Subcommittee (FAS) agenda on which the application will be
+   * processed. This value is computer-generated by NTIA for its internal
+   * processing of frequency assignment applications. It is an output data item
+   * only. Possible values include: R - Routine Application A - AAG Application
+   * M - MAG Application If this XML element does not exist, the application is
+   * a “Regular Application”.
+   * <p>
+   * Recommend values from Code List URI:
+   */
   @XmlElement(name = "RoutineAgendaItem", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString routineAgendaItem;
+  /**
+   * SupplementaryDetails (US): Enter the Additional amplifying information that
+   * would facilitate processing. This includes, but is not limited to, the
+   * following items: 1) doppler shift, if a significant factor in the
+   * particular system, 2) a general description of the assignment requirement
+   * (applies to experimental stations), 3) sounder justification, 4)
+   * coordination data, and 5) refer to National Telecommunications and
+   * Information Administration (NTIA) manual, Chapter 9, for further details.
+   */
   @XmlElement(name = "SupplementaryDetails", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString supplementaryDetails;
+  /**
+   * TypeOfService (US): Enter the Indicates the type of service/circuit
+   * involved.
+   * <p>
+   * Recommend values from Code List UTY
+   */
   @XmlElement(name = "TypeOfService", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString typeOfService;
+  /**
+   * UsageCode (US): Indicate the usage and category of circuits.
+   * <p>
+   * Recommend values from Code List UUC
+   */
   @XmlElement(name = "UsageCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS150.class)
   private TString usageCode;
+  /**
+   * UsageFrequency (US): Indicate the general amount of time when the frequency
+   * assignment's frequencies will be either guarded (monitored) or used for
+   * transmission.
+   * <p>
+   * Recommend values from Code List UUF
+   */
   @XmlElement(name = "UsageFrequency", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString usageFrequency;
+  /**
+   * UsagePercentage (US): Enter the percentage of time the transmitter
+   * equipment is in use during the scheduled hours of operation.
+   */
   @XmlElement(name = "UsagePercentage", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUS_PERCENT.class)
   private TInteger usagePercentage;
+  /**
+   * UserNetCode (US): Enter a unique code that identifies the specific user of
+   * the frequency, i.e., the command, activity, unit, project, etc.
+   */
   @XmlElement(name = "UserNetCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
   private TString userNetCode;
+  /**
+   * Data element Project provides the Project, OPLAN, COMPLAN or Exercise name,
+   * or any other project name associated to the dataset. Project includes a
+   * type, name and description.
+   */
   @XmlElement(name = "Project")
   private List<Project> project;
+  /**
+   * Data element POC contains a reference to a Contact, Organisation or Role
+   * dataset.
+   */
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+  /**
+   * Data element SysOfStation defines the name of the system that this
+   * assignment belongs and whether or not the assignment provides assets to or
+   * uses another assignment resources. It also describes linkages to or from
+   * other datasets.
+   */
   @XmlElement(name = "SysOfStation")
   private List<SysOfStation> sysOfStation;
+  /**
+   * This element contains the serial of a referenced Assignment, Allotment,
+   * SSReply, ForceElement or FEDeployment.
+   * <p>
+   * It MAY be used to link several assignments which are related to each other,
+   * or to refer to the Supportability documentation on which the assignment is
+   * based. It MAY also be used to indicate that the assignment concerns a
+   * specific force element, or a deployed force element. It SHOULD be used when
+   * an assignment is produced out of an allotment.
+   */
   @XmlElement(name = "RelatedRef", nillable = true)
   private List<RelatedRef> relatedRef;
+  /**
+   * Data element Configuration identifies each operational configuration that
+   * is required in a SSRequest, granted by a Host Nation in a SSReply, or
+   * authorised in a frequency Assignment or Allotment dataset. It also
+   * identifies the functional use of the assigned frequency at a particular
+   * transmitting station. Finally, it may indicate if the receiver station is
+   * used primarily as a repeater. A direct coupling between the station's
+   * receiver and the station's transmitter allows the incoming signal to be
+   * retransmitted exactly as received.
+   */
   @XmlElement(name = "Configuration", required = true)
   private List<Configuration> configuration;
+  /**
+   * Data element Station defines the station, or one of the stations, within
+   * the current Assignment dataset. A station is one or more transmitters or
+   * receivers or a combination of transmitters and receivers, including the
+   * accessory equipment necessary at one location for carrying on a
+   * radiocommunication, radiolocation, or other spectrum dependent functions.
+   * It may indicate the international call sign assigned to the transmitting
+   * station. It also identifies the Location of the Station, and the service
+   * volume of an air/ground/air assignment defined as a circle (point location
+   * with radius), an ellipse or a polygon, plus a height. For navigational
+   * aids, this data item is used for the NAVAIDS identifier instead of a call
+   * sign.
+   */
   @XmlElement(name = "Station", required = true)
   private List<Station> station;
+  /**
+   * Data element Link identifies each link in a system of assignments. This is
+   * the top element of each Link. The exact definition of a link is very
+   * flexible and depends on the degree of accuracy needed for the assignment. A
+   * link can be very generic (one or several base stations serving an area or a
+   * volume with non-defined mobiles) to very accurate (such as one link for
+   * each radio-relay hop).
+   */
   @XmlElement(name = "Link", required = true)
   private List<Link> link;
+  /**
+   * A log of the state of the record or action performed
+   */
   @XmlElement(name = "StatusLog")
   private List<StatusLog> statusLog;
+  /**
+   * The name of an individual or organization related to the frequency
+   * assignment.
+   */
   @XmlElement(name = "AsgnAllotOwner")
   private List<AsgnAllotOwner> asgnAllotOwner;
+  /**
+   * Enter the Any additional data to be submitted by the applicant that cannot
+   * be accommodated in any of the other data items in the Government Master
+   * File (GMF).
+   */
   @XmlElement(name = "CircuitRemarks")
   private List<CircuitRemarks> circuitRemarks;
+  /**
+   * The coordinating entity and Comments from the coordinating entity.
+   */
   @XmlElement(name = "CoordinationData")
   private List<CoordinationData> coordinationData;
+  /**
+   * DocketNum: Enter the reference number assigned by the Interdepartment Radio
+   * Advisory Committee (IRAC) to frequency applications submitted to the
+   * Frequency Assignment Subcommittee (FAS).
+   */
   @XmlElement(name = "DocketNum")
   private List<DocketNum> docketNum;
+  /**
+   * HostDocketNum: Enter the docket number assigned by the host (soil) country
+   * to the frequency authorization.
+   */
   @XmlElement(name = "HostDocketNum")
   private List<HostDocketNum> hostDocketNum;
+  /**
+   * Indicate a specialized type of system/equipment used in the frequency
+   * assignment, as defined by the following choices: LMS, VOR1A, VOR1B, VOR2A,
+   * VOR2B, ILSLOC, or ILSGS.
+   */
   @XmlElement(name = "OffTheShelfEquipment")
   private List<OffTheShelfEquipment> offTheShelfEquipment;
+  /**
+   * The AgencySerialNum refers to the frequency assignment's previous
+   * Government Master File (GMF) authorization agency serial number.
+   * <p>
+   * The frequency assignment's previous Government Master File (GMF)
+   * authorization docket number.
+   */
   @XmlElement(name = "PreviousAuthorization")
   private List<PreviousAuthorization> previousAuthorization;
+  /**
+   * Enter a reference to the Note dataset that describes the note identified in
+   * NoteCode.
+   */
   @XmlElement(name = "RecordNote")
   private List<RecordNote> recordNote;
 
   /**
    * Gets the value of the title property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTitle() {
     return title;
@@ -367,7 +627,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -380,7 +640,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usageType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUsageType() {
     return usageType;
@@ -389,7 +649,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usageType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUsageType(TString value) {
     this.usageType = value;
@@ -402,7 +662,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the dateResponseRequired property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDateResponseRequired() {
     return dateResponseRequired;
@@ -411,7 +671,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the dateResponseRequired property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
@@ -446,7 +706,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the expirationDateTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDateTime() {
     return expirationDateTime;
@@ -455,7 +715,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the expirationDateTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDateTime(TCalendar value) {
     this.expirationDateTime = value;
@@ -468,7 +728,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -477,7 +737,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -490,7 +750,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the period property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPeriod() {
     return period;
@@ -499,7 +759,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the period property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPeriod(TString value) {
     this.period = value;
@@ -512,7 +772,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the seconds property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSeconds() {
     return seconds;
@@ -521,7 +781,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the seconds property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSeconds(TString value) {
     this.seconds = value;
@@ -534,7 +794,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the minutes property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getMinutes() {
     return minutes;
@@ -543,7 +803,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the minutes property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setMinutes(TString value) {
     this.minutes = value;
@@ -556,7 +816,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the hours property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getHours() {
     return hours;
@@ -565,7 +825,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the hours property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHours(TString value) {
     this.hours = value;
@@ -578,7 +838,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the daysOfMonth property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDaysOfMonth() {
     return daysOfMonth;
@@ -587,7 +847,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the daysOfMonth property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
@@ -600,7 +860,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the months property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getMonths() {
     return months;
@@ -609,7 +869,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the months property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setMonths(TString value) {
     this.months = value;
@@ -622,7 +882,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the daysOfWeek property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDaysOfWeek() {
     return daysOfWeek;
@@ -631,7 +891,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the daysOfWeek property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
@@ -644,7 +904,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the years property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getYears() {
     return years;
@@ -653,7 +913,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the years property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setYears(TString value) {
     this.years = value;
@@ -666,7 +926,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the duration property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getDuration() {
     return duration;
@@ -675,7 +935,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the duration property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDuration(TInteger value) {
     this.duration = value;
@@ -688,7 +948,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the processing property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getProcessing() {
     return processing;
@@ -697,7 +957,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the processing property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setProcessing(TString value) {
     this.processing = value;
@@ -710,7 +970,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the emergency property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEmergency() {
     return emergency;
@@ -719,7 +979,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the emergency property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEmergency(TString value) {
     this.emergency = value;
@@ -732,7 +992,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the assignmentAuthority property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAssignmentAuthority() {
     return assignmentAuthority;
@@ -741,7 +1001,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the assignmentAuthority property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAssignmentAuthority(TString value) {
     this.assignmentAuthority = value;
@@ -754,7 +1014,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the requirement property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRequirement() {
     return requirement;
@@ -763,7 +1023,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the requirement property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRequirement(TString value) {
     this.requirement = value;
@@ -776,7 +1036,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the numSystems property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumSystems() {
     return numSystems;
@@ -785,7 +1045,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the numSystems property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumSystems(TInteger value) {
     this.numSystems = value;
@@ -798,7 +1058,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the agencyActionNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAgencyActionNum() {
     return agencyActionNum;
@@ -807,7 +1067,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the agencyActionNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAgencyActionNum(TString value) {
     this.agencyActionNum = value;
@@ -820,7 +1080,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the agencyComments property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAgencyComments() {
     return agencyComments;
@@ -829,7 +1089,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the agencyComments property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAgencyComments(TString value) {
     this.agencyComments = value;
@@ -842,7 +1102,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the agencySerialNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAgencySerialNum() {
     return agencySerialNum;
@@ -851,7 +1111,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the agencySerialNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAgencySerialNum(TString value) {
     this.agencySerialNum = value;
@@ -864,7 +1124,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the assignmentDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getAssignmentDate() {
     return assignmentDate;
@@ -873,7 +1133,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the assignmentDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAssignmentDate(TCalendar value) {
     this.assignmentDate = value;
@@ -886,7 +1146,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the cocomGroup property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCOCOMGroup() {
     return cocomGroup;
@@ -895,7 +1155,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the cocomGroup property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCOCOMGroup(TString value) {
     this.cocomGroup = value;
@@ -908,7 +1168,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the controlRequestNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getControlRequestNum() {
     return controlRequestNum;
@@ -917,7 +1177,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the controlRequestNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setControlRequestNum(TString value) {
     this.controlRequestNum = value;
@@ -930,7 +1190,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the coordinationComments property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCoordinationComments() {
     return coordinationComments;
@@ -939,7 +1199,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the coordinationComments property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCoordinationComments(TString value) {
     this.coordinationComments = value;
@@ -952,7 +1212,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the dataSource property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDataSource() {
     return dataSource;
@@ -961,7 +1221,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the dataSource property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDataSource(TString value) {
     this.dataSource = value;
@@ -974,7 +1234,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the fccFileNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFCCFileNum() {
     return fccFileNum;
@@ -983,7 +1243,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the fccFileNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFCCFileNum(TString value) {
     this.fccFileNum = value;
@@ -996,7 +1256,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the fmscNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFMSCNum() {
     return fmscNum;
@@ -1005,7 +1265,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the fmscNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFMSCNum(TString value) {
     this.fmscNum = value;
@@ -1018,7 +1278,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the frequencyActionOfficer property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFrequencyActionOfficer() {
     return frequencyActionOfficer;
@@ -1027,7 +1287,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the frequencyActionOfficer property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFrequencyActionOfficer(TString value) {
     this.frequencyActionOfficer = value;
@@ -1040,7 +1300,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the listSerialNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getListSerialNum() {
     return listSerialNum;
@@ -1049,7 +1309,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the listSerialNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setListSerialNum(TString value) {
     this.listSerialNum = value;
@@ -1062,7 +1322,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the natoPooledFrequencyCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNATOPooledFrequencyCode() {
     return natoPooledFrequencyCode;
@@ -1071,7 +1331,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the natoPooledFrequencyCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNATOPooledFrequencyCode(TString value) {
     this.natoPooledFrequencyCode = value;
@@ -1084,7 +1344,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the natoPooledFrequencyNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNATOPooledFrequencyNum() {
     return natoPooledFrequencyNum;
@@ -1093,7 +1353,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the natoPooledFrequencyNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNATOPooledFrequencyNum(TInteger value) {
     this.natoPooledFrequencyNum = value;
@@ -1106,7 +1366,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the originalAssignmentDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getOriginalAssignmentDate() {
     return originalAssignmentDate;
@@ -1115,7 +1375,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the originalAssignmentDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOriginalAssignmentDate(TCalendar value) {
     this.originalAssignmentDate = value;
@@ -1128,7 +1388,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the routineAgendaItem property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRoutineAgendaItem() {
     return routineAgendaItem;
@@ -1137,7 +1397,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the routineAgendaItem property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRoutineAgendaItem(TString value) {
     this.routineAgendaItem = value;
@@ -1150,7 +1410,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the supplementaryDetails property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSupplementaryDetails() {
     return supplementaryDetails;
@@ -1159,7 +1419,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the supplementaryDetails property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSupplementaryDetails(TString value) {
     this.supplementaryDetails = value;
@@ -1172,7 +1432,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the typeOfService property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTypeOfService() {
     return typeOfService;
@@ -1181,7 +1441,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the typeOfService property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTypeOfService(TString value) {
     this.typeOfService = value;
@@ -1194,7 +1454,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usageCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUsageCode() {
     return usageCode;
@@ -1203,7 +1463,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usageCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUsageCode(TString value) {
     this.usageCode = value;
@@ -1216,7 +1476,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usageFrequency property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUsageFrequency() {
     return usageFrequency;
@@ -1225,7 +1485,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usageFrequency property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUsageFrequency(TString value) {
     this.usageFrequency = value;
@@ -1238,7 +1498,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the usagePercentage property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getUsagePercentage() {
     return usagePercentage;
@@ -1247,7 +1507,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the usagePercentage property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUsagePercentage(TInteger value) {
     this.usagePercentage = value;
@@ -1260,7 +1520,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Gets the value of the userNetCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUserNetCode() {
     return userNetCode;
@@ -1269,7 +1529,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Sets the value of the userNetCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUserNetCode(TString value) {
     this.userNetCode = value;

@@ -42,30 +42,38 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 /**
  * Java class for Location complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Location"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="EffectiveDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
- * minOccurs="0"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ExpireReview" minOccurs="0"/>
- * &lt;element name="Name" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}AddressGrp"
- * minOccurs="0"/> &lt;element name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Point"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Point" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Polygon"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Polygon" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Ellipse"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Ellipse" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="LocationRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}LocationRef" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * This element contains the parameters of a Location used to describe a
+ * geographical location, polygonal or ellipse area, or a set of those. It
+ * inherits attributes and sub-elements from element Common. To be meaningful, a
+ * Location SHOULD contain at least one of the sub-elements Point, Polygon,
+ * Ellipse or LocationRef.
  * <p>
+ * [XSL ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "LO".
+ * <p>
+ * Accurate geographical location data for emitting and, to a lesser extent,
+ * receiving stations is key to effective spectrum management. All transmitting
+ * stations must have either a fixed location or an area of operation within
+ * which authorization to emit electromagnetic energy has been obtained.
+ * <p>
+ * Each location and area of operation must be uniquely defined. Fixed locations
+ * will be described as a point and defined by the coordinates of the antenna
+ * location. An Area of Operation will be defined as a polygon with coordinates
+ * for each vertex. Location datasets are included in the data repository once
+ * and referenced by other datasets after the initial entry. To ensure
+ * referential integrity, location datasets should not be modified or deleted if
+ * one or more other datasets refer to that location.
+ * <p>
+ * Circular Areas of Operation and Service Volumes are not Location datasets.
+ * They represent authorization information and are included under the Link
+ * element of an Assignment or Allotment.
+ * <ul>
+ * <li> Circular Areas of Operation are defined by a fixed Location dataset and
+ * a radius. </li>
+ * <li>A Service Volume defines airspace within which a protected operation is
+ * permitted. Service Volumes are based upon an area defined by either a polygon
+ * dataset or circular area of operation with a vertical component called
+ * “height”. </li>
+ * </ul>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Location", propOrder = {
@@ -86,47 +94,114 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 })
 public class Location extends Common<Location> {
 
+  /**
+   * EffectiveDate: This data element indicates the date/time by which the
+   * dataset is to be operational or effective, formatted as yyyy-mm-dd
+   * (year-month-day).
+   */
   @XmlElement(name = "EffectiveDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
+  /**
+   * ExpirationDate: Enter the date at which the dataset will expire, formatted
+   * as yyyy-mm-dd (year-month- day). The Expiration date should be less than
+   * five years from current date.
+   */
   @XmlElement(name = "ExpirationDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
+  /**
+   * ReviewDate: Enter the date by which the dataset is to be reviewed,
+   * formatted as yyyy-mm-dd (year-month- day). The Review date should be less
+   * than five years from the effective date. In Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
+   */
   @XmlElement(name = "ReviewDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
+  /**
+   * Name: Enter the name of the location.
+   */
   @XmlElement(name = "Name", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
+  /**
+   * Street: Enter the street address.
+   */
   @XmlElement(name = "Street", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString street;
+  /**
+   * CityArea: Enter the city of the address or an operational area name.
+   */
   @XmlElement(name = "CityArea", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString cityArea;
+  /**
+   * StateCounty: Enter the state or other sub-national political area.
+   */
   @XmlElement(name = "StateCounty", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString stateCounty;
+  /**
+   * PostCode: Enter the zip code or postal code portion of the address.
+   */
   @XmlElement(name = "PostCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString postCode;
+  /**
+   * Country: Enter the country or area code. Use a one to six alphabetic
+   * characters representing either an official country code, a regional body, a
+   * group of countries or a NATO Command.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CAO.
+   */
   @XmlElement(name = "Country")
   private TString country;
+  /**
+   * Data element POC contains a reference to a Contact, Organisation or Role
+   * dataset.
+   */
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+  /**
+   * Data element Point contains the coordinates (WGS 84) of point(s) that
+   * represent a fixed site. It contains also the terrain elevation, in metres
+   * above mean sea level (MSL) of this point. If the antenna installed at this
+   * point is located on a structure such as a tower or a building, the site
+   * elevation is specified as the ground elevation at the base of the
+   * structure.
+   */
   @XmlElement(name = "Point")
   private List<Point> point;
+  /**
+   * A polygon is a closed geometric shape on the surface of the Earth, defined
+   * by at least three points, used to describe an operational area or an
+   * excluded area.
+   */
   @XmlElement(name = "Polygon")
   private List<Polygon> polygon;
+  /**
+   * This type of Location is an ellipse on the horizontal plane, defined by its
+   * semi-major and semi-minor axis, and by the orientation (azimuth) of the
+   * semi-major axis.
+   */
   @XmlElement(name = "Ellipse")
   private List<Ellipse> ellipse;
+  /**
+   * This element references a Location dataset by the serial of the referenced
+   * Location.
+   */
   @XmlElement(name = "LocationRef", nillable = true)
   private List<LocationRef> locationRef;
 
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -135,7 +210,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -148,7 +223,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -157,7 +232,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -170,7 +245,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -179,7 +254,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -214,7 +289,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the street property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getStreet() {
     return street;
@@ -223,7 +298,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the street property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setStreet(TString value) {
     this.street = value;
@@ -236,7 +311,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the cityArea property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCityArea() {
     return cityArea;
@@ -245,7 +320,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the cityArea property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCityArea(TString value) {
     this.cityArea = value;
@@ -258,7 +333,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the stateCounty property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getStateCounty() {
     return stateCounty;
@@ -267,7 +342,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the stateCounty property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setStateCounty(TString value) {
     this.stateCounty = value;
@@ -280,7 +355,7 @@ public class Location extends Common<Location> {
   /**
    * Gets the value of the postCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPostCode() {
     return postCode;
@@ -289,7 +364,7 @@ public class Location extends Common<Location> {
   /**
    * Sets the value of the postCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPostCode(TString value) {
     this.postCode = value;

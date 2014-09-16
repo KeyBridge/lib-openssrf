@@ -40,81 +40,38 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 /**
  * Java class for IntfReport complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="IntfReport"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="HelpRequired" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
- * minOccurs="0"/> &lt;element name="IntfPeriod"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="IntfStartDateTime" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT"/>
- * &lt;element name="IntfStopDateTime"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDT" minOccurs="0"/> &lt;element
- * name="IntfDescr" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;element name="AffectedEquipment"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
- * name="SourceFieldStrength" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN6_1"
- * minOccurs="0"/> &lt;element name="SourceLon"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLon" minOccurs="0"/> &lt;element
- * name="SourceLat" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLat"
- * minOccurs="0"/> &lt;element name="SourceAz"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz" minOccurs="0"/> &lt;element
- * name="SourceLocDescr" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255"
- * minOccurs="0"/> &lt;element name="SourceFreqMin"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
- * name="SourceFreqMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
- * minOccurs="0"/> &lt;element name="SourceEmsClass"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TEmsDes" minOccurs="0"/>
- * &lt;element name="SourceEmsBw"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
- * name="VictimAsgnRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"
- * minOccurs="0"/> &lt;element name="VictimSystem"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
- * name="VictimCountry" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"
- * minOccurs="0"/> &lt;element name="VictimLon"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLon" minOccurs="0"/> &lt;element
- * name="VictimLat" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLat"
- * minOccurs="0"/> &lt;element name="VictimLocDescr"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS255" minOccurs="0"/> &lt;element
- * name="VictimFreqMin" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"/>
- * &lt;element name="VictimFreqMax"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
- * name="SatelliteName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="SatelliteChannel"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="SatelliteUplinkFreq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
- * minOccurs="0"/> &lt;element name="PerformanceEffects"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="Evaluation" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
- * minOccurs="0"/> &lt;element name="Solution"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="AffectedCSA" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
- * minOccurs="0"/> &lt;element name="Characteristics"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="GPSAffected" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
- * minOccurs="0"/> &lt;element name="LocalEventID"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20" minOccurs="0"/> &lt;element
- * name="NetCircuitsAffected" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;element name="NetsAffected"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="SATCOMPriority" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="SatelliteAffected"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- * &lt;element name="SatelliteDownlinkPolarisation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="SatelliteHemisphere" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="SatelliteLongitude"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TLon" minOccurs="0"/> &lt;element
- * name="SatelliteTransponderID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="SatelliteUplinkPolarisation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/extension>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * This dataset contains information on a source and victim of an interference
+ * incident.
  * <p>
+ * To provide full spectrum management capability it is important that all
+ * significant interference is reported. All interference has a source (the
+ * equipment causing the interference) and a victim (the system or assignment
+ * suffering from the interference). Resolving interference may be achieved by
+ * either readjustment of the source parameters, or re-adjustment of the victim
+ * parameters. Since it is important to avoid causing further interference
+ * effects on other systems while trying to resolve a particular interference
+ * case, the resolution process should be based on careful analysis of the
+ * relevant EM environment. Therefore the process should normally involve the
+ * use of appropriate spectrum analysis tools.
+ * <p>
+ * Typically, interference will be resolved at the lowest possible
+ * organizational level. This however, is not always the case, therefore the
+ * interference reports must be generated and forwarded through the spectrum
+ * management organizational hierarchy. Assuming the victim of the interference
+ * is unable to resolve the interference, interference reports should be created
+ * at the victim site and sent to higher headquarters IAW CJCSI 3320.02. The
+ * lowest level receiving the interference report will attempt deconfliction
+ * using the tools available at that level (database, analysis tools applying
+ * various propagation and terrain models, etc). If the interference cannot be
+ * resolved at the point where the interference is initially detected, an
+ * interference report will be prepared and forwarded to the next level for
+ * action. In cases involving international coordination, the interference
+ * report may be forwarded to the relevant national authority. Regardless of the
+ * level an interference issue is resolved and the report closed, the final
+ * report should be forwarded to the central database for historical reference.
+ * <p>
+ * @see <a href="www.dtic.mil/cjcs_directives/cdata/unlimit/3320_02.pdf">CJCSI
+ * 3320.02. Joint Spectrum Interference Resolution</a>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IntfReport", propOrder = {
@@ -292,7 +249,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the helpRequired property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getHelpRequired() {
     return helpRequired;
@@ -301,7 +258,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the helpRequired property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHelpRequired(TString value) {
     this.helpRequired = value;
@@ -314,7 +271,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the intfPeriod property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIntfPeriod() {
     return intfPeriod;
@@ -323,7 +280,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the intfPeriod property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIntfPeriod(TString value) {
     this.intfPeriod = value;
@@ -358,7 +315,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the intfStopDateTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getIntfStopDateTime() {
     return intfStopDateTime;
@@ -367,7 +324,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the intfStopDateTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIntfStopDateTime(TCalendar value) {
     this.intfStopDateTime = value;
@@ -380,7 +337,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the intfDescr property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIntfDescr() {
     return intfDescr;
@@ -389,7 +346,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the intfDescr property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIntfDescr(TString value) {
     this.intfDescr = value;
@@ -402,7 +359,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the affectedEquipment property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAffectedEquipment() {
     return affectedEquipment;
@@ -411,7 +368,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the affectedEquipment property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAffectedEquipment(TString value) {
     this.affectedEquipment = value;
@@ -424,7 +381,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceFieldStrength property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSourceFieldStrength() {
     return sourceFieldStrength;
@@ -433,7 +390,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceFieldStrength property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceFieldStrength(TDecimal value) {
     this.sourceFieldStrength = value;
@@ -446,7 +403,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceLon property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSourceLon() {
     return sourceLon;
@@ -455,7 +412,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceLon property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceLon(TString value) {
     this.sourceLon = value;
@@ -468,7 +425,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceLat property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSourceLat() {
     return sourceLat;
@@ -477,7 +434,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceLat property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceLat(TString value) {
     this.sourceLat = value;
@@ -490,7 +447,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceAz property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSourceAz() {
     return sourceAz;
@@ -499,7 +456,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceAz property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceAz(TDecimal value) {
     this.sourceAz = value;
@@ -512,7 +469,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceLocDescr property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSourceLocDescr() {
     return sourceLocDescr;
@@ -521,7 +478,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceLocDescr property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceLocDescr(TString value) {
     this.sourceLocDescr = value;
@@ -534,7 +491,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceFreqMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSourceFreqMin() {
     return sourceFreqMin;
@@ -543,7 +500,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceFreqMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceFreqMin(TDecimal value) {
     this.sourceFreqMin = value;
@@ -556,7 +513,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceFreqMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSourceFreqMax() {
     return sourceFreqMax;
@@ -565,7 +522,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceFreqMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceFreqMax(TDecimal value) {
     this.sourceFreqMax = value;
@@ -578,7 +535,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceEmsClass property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSourceEmsClass() {
     return sourceEmsClass;
@@ -587,7 +544,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceEmsClass property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceEmsClass(TString value) {
     this.sourceEmsClass = value;
@@ -600,7 +557,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the sourceEmsBw property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSourceEmsBw() {
     return sourceEmsBw;
@@ -609,7 +566,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the sourceEmsBw property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSourceEmsBw(TDecimal value) {
     this.sourceEmsBw = value;
@@ -622,7 +579,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimAsgnRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVictimAsgnRef() {
     return victimAsgnRef;
@@ -631,7 +588,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimAsgnRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimAsgnRef(TString value) {
     this.victimAsgnRef = value;
@@ -644,7 +601,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimSystem property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVictimSystem() {
     return victimSystem;
@@ -653,7 +610,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimSystem property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimSystem(TString value) {
     this.victimSystem = value;
@@ -666,7 +623,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimCountry property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVictimCountry() {
     return victimCountry;
@@ -675,7 +632,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimCountry property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimCountry(TString value) {
     this.victimCountry = value;
@@ -688,7 +645,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimLon property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVictimLon() {
     return victimLon;
@@ -697,7 +654,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimLon property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimLon(TString value) {
     this.victimLon = value;
@@ -710,7 +667,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimLat property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVictimLat() {
     return victimLat;
@@ -719,7 +676,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimLat property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimLat(TString value) {
     this.victimLat = value;
@@ -732,7 +689,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimLocDescr property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVictimLocDescr() {
     return victimLocDescr;
@@ -741,7 +698,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimLocDescr property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimLocDescr(TString value) {
     this.victimLocDescr = value;
@@ -776,7 +733,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the victimFreqMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getVictimFreqMax() {
     return victimFreqMax;
@@ -785,7 +742,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the victimFreqMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVictimFreqMax(TDecimal value) {
     this.victimFreqMax = value;
@@ -798,7 +755,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteName() {
     return satelliteName;
@@ -807,7 +764,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteName(TString value) {
     this.satelliteName = value;
@@ -820,7 +777,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteChannel property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteChannel() {
     return satelliteChannel;
@@ -829,7 +786,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteChannel property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteChannel(TString value) {
     this.satelliteChannel = value;
@@ -842,7 +799,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteUplinkFreq property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSatelliteUplinkFreq() {
     return satelliteUplinkFreq;
@@ -851,7 +808,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteUplinkFreq property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteUplinkFreq(TDecimal value) {
     this.satelliteUplinkFreq = value;
@@ -864,7 +821,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the performanceEffects property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPerformanceEffects() {
     return performanceEffects;
@@ -873,7 +830,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the performanceEffects property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPerformanceEffects(TString value) {
     this.performanceEffects = value;
@@ -886,7 +843,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the evaluation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEvaluation() {
     return evaluation;
@@ -895,7 +852,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the evaluation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEvaluation(TString value) {
     this.evaluation = value;
@@ -908,7 +865,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the solution property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSolution() {
     return solution;
@@ -917,7 +874,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the solution property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSolution(TString value) {
     this.solution = value;
@@ -930,7 +887,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the affectedCSA property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAffectedCSA() {
     return affectedCSA;
@@ -939,7 +896,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the affectedCSA property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAffectedCSA(TString value) {
     this.affectedCSA = value;
@@ -952,7 +909,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the characteristics property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCharacteristics() {
     return characteristics;
@@ -961,7 +918,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the characteristics property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCharacteristics(TString value) {
     this.characteristics = value;
@@ -974,7 +931,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the gpsAffected property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getGPSAffected() {
     return gpsAffected;
@@ -983,7 +940,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the gpsAffected property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGPSAffected(TString value) {
     this.gpsAffected = value;
@@ -996,7 +953,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the localEventID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLocalEventID() {
     return localEventID;
@@ -1005,7 +962,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the localEventID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLocalEventID(TString value) {
     this.localEventID = value;
@@ -1018,7 +975,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the netCircuitsAffected property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNetCircuitsAffected() {
     return netCircuitsAffected;
@@ -1027,7 +984,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the netCircuitsAffected property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNetCircuitsAffected(TString value) {
     this.netCircuitsAffected = value;
@@ -1040,7 +997,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the netsAffected property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNetsAffected() {
     return netsAffected;
@@ -1049,7 +1006,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the netsAffected property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNetsAffected(TString value) {
     this.netsAffected = value;
@@ -1062,7 +1019,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satcomPriority property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSATCOMPriority() {
     return satcomPriority;
@@ -1071,7 +1028,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satcomPriority property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSATCOMPriority(TString value) {
     this.satcomPriority = value;
@@ -1084,7 +1041,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteAffected property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteAffected() {
     return satelliteAffected;
@@ -1093,7 +1050,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteAffected property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteAffected(TString value) {
     this.satelliteAffected = value;
@@ -1106,7 +1063,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteDownlinkPolarisation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteDownlinkPolarisation() {
     return satelliteDownlinkPolarisation;
@@ -1115,7 +1072,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteDownlinkPolarisation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteDownlinkPolarisation(TString value) {
     this.satelliteDownlinkPolarisation = value;
@@ -1128,7 +1085,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteHemisphere property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteHemisphere() {
     return satelliteHemisphere;
@@ -1137,7 +1094,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteHemisphere property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteHemisphere(TString value) {
     this.satelliteHemisphere = value;
@@ -1150,7 +1107,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteLongitude property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteLongitude() {
     return satelliteLongitude;
@@ -1159,7 +1116,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteLongitude property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteLongitude(TString value) {
     this.satelliteLongitude = value;
@@ -1172,7 +1129,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteTransponderID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteTransponderID() {
     return satelliteTransponderID;
@@ -1181,7 +1138,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteTransponderID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteTransponderID(TString value) {
     this.satelliteTransponderID = value;
@@ -1194,7 +1151,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Gets the value of the satelliteUplinkPolarisation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSatelliteUplinkPolarisation() {
     return satelliteUplinkPolarisation;
@@ -1203,7 +1160,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Sets the value of the satelliteUplinkPolarisation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSatelliteUplinkPolarisation(TString value) {
     this.satelliteUplinkPolarisation = value;

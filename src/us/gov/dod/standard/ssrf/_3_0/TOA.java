@@ -42,31 +42,21 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 /**
  * Java class for TOA complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="TOA"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="Administration" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"/>
- * &lt;element name="EffectiveDate"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD" minOccurs="0"/> &lt;element
- * name="ExpirationDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
- * minOccurs="0"/> &lt;element name="Title"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
- * name="Footnote" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Footnote"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="ChannelPlanRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ChannelPlanRef"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="BandApplication"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}BandApplication"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="BandUser"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}BandUser" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Country"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Country" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="FreqBand"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqBand" maxOccurs="unbounded"/>
- * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Table of Allocation
  * <p>
+ * A Table of Allocation (TOA) describes the national frequency allocation plan
+ * and degree of conformity with the ITU Radio Regulations. A TOA contains the
+ * division of the radio frequency spectrum into bands and details for the usage
+ * of these bands by different types of services, applications, and users. For
+ * example, a band of spectrum might be allocated for mobile radio systems used
+ * by other than national governmental users, within specified power limits and
+ * bandwidth restrictions. A TOA is considered reference data because the
+ * national rules for use of spectrum must be known in order to develop/procure
+ * equipment that is likely to be permitted to transmit, and to properly plan
+ * detailed spectrum use for training and cooperative operations.
+ * <p>
+ * The Table of Allocation provided by the Host Nation should be imported and
+ * stored in the respective spectrum management systems.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TOA", propOrder = {
@@ -133,7 +123,7 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -142,7 +132,7 @@ public class TOA extends Common<TOA> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -155,7 +145,7 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -164,7 +154,7 @@ public class TOA extends Common<TOA> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -177,7 +167,7 @@ public class TOA extends Common<TOA> {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTitle() {
     return title;
@@ -186,7 +176,7 @@ public class TOA extends Common<TOA> {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTitle(TString value) {
     this.title = value;
