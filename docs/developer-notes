@@ -1,9 +1,12 @@
-http://www.regular-expressions.info/unicode.html
++------------------------------------------------------------------------------+
+|                              Developer notes                                 |
++------------------------------------------------------------------------------+
 
 Unicode Regular Expressions
++------------------------------------------------------------------------------+
+http://www.regular-expressions.info/unicode.html
 
 Unicode is a character set that aims to define all characters and glyphs from all human languages, living and dead. With more and more software being required to support multiple languages, or even just any language, Unicode has been strongly gaining popularity in recent years. Using different character sets for different languages is simply too cumbersome for programmers and users.
-
 
     \p{L} or \p{Letter}: any kind of letter from any language.
         \p{Ll} or \p{Lowercase_Letter}: a lowercase letter that has an uppercase variant.
@@ -45,9 +48,10 @@ Unicode is a character set that aims to define all characters and glyphs from al
         \p{Cn} or \p{Unassigned}: any code point to which no character has been assigned. 
 
 
-http://www.datypic.com/books/defxmlschema/chapter09.html
 
-Definitive XML Schema
+Definitive XML Schema, Chapter 9: Regular expressions
++------------------------------------------------------------------------------+
+http://www.datypic.com/books/defxmlschema/chapter09.html
 
 Example 9-1. A simple type with a pattern
 
@@ -57,12 +61,11 @@ Example 9-1. A simple type with a pattern
   </xs:restriction>
 </xs:simpleType>
 
+
+Customizing JAXB Bindings 
++------------------------------------------------------------------------------+
 http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/1.6/tutorial/doc/JAXBUsing4.html
-
- Customizing JAXB Bindings 
  
-  The remainder of this chapter describes several examples that build on the concepts demonstrated in the basic examples.
-
 The goal of this section is to illustrate how to customize JAXB bindings by means of custom binding declarations made in either of two ways:
 
     As annotations made inline in an XML schema
@@ -70,4 +73,11 @@ The goal of this section is to illustrate how to customize JAXB bindings by mean
 
 Unlike the examples in Basic Examples, which focus on the Java code in the respective Main.java class files, the examples here focus on customizations made to the XML schema before generating the schema-derived Java binding classes. 
 
+Unofficial JAXB Guide
++------------------------------------------------------------------------------+
+https://jaxb.java.net/guide/index.html
+
+This document explains various interesting/complex/tricky aspects of JAXB, based on questions posted on the JAXB users forum and answers I provided. This is an ongoing work-in-progress. Any feedback appreciated. 
+
+Bummer - JAXB / XJC supports XPATH v1.x and does not support REGEX. :(
 
