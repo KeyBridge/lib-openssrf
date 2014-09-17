@@ -5,6 +5,8 @@ OpenSSRF is an open source reference implementation of the Standard Spectrum Res
 
 The goal of this project is to develop and publish a complete and certifiably compliant reference implementation of the Standard Spectrum Resource Format (version 3.x) into Java.
 
+See the [tutorial]{tutorial.md} for a brief how-to.
+
 In this Release
 ---------------
 The software contained in this release is a completely redeveloped and rewritten implementation of the SSRF data format specification. Special attention and effort has been invested to organize the software, to improve the approachability of the underlying SSRF logical data model, and to add methods and techniques to simplify the construction of SSRF data structures.
