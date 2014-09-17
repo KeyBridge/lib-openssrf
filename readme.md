@@ -1,5 +1,5 @@
-OpenSSRF Reference Implementation  V0.2
-=================================
+OpenSSRF Reference Implementation V0.2
+======================================
 
 OpenSSRF is an open source reference implementation of the Standard Spectrum Resource Format (SSRF). The specification is defined in MCEB Pub 8 Version 3.0 as of 2012-04-26. 
 
