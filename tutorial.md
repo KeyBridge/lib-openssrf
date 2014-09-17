@@ -1,10 +1,8 @@
-Super Short Tutorial
-====================
+# Super Short Tutorial
 
 SSRF has a rather narrow field of interest and a steep learning curve. We've tried to simplify this as much as possible, but there really is no way to escape using SSRF without having the document open for reference. To help get you started, here is our best attempt at a super short tutorial:
 
-SSRF Business Processes
------------------------
+## SSRF Business Processes
 
 SSRF supports numerous business processes, but these can be considered in five general categories.
 
@@ -14,18 +12,18 @@ SSRF supports numerous business processes, but these can be considered in five g
  4. Request & Provide Frequency Allotments & Assignments
  5. Report Interference
 
-h3. Reference Data
+### Reference Data
 
 SSRF includes a large set of pre-defined reference data and supports the query and distribution of other basic spectrum-related reference information. Two usefule examples are:
 
  * Codes: SSRF includes a large set of enumerated codes and data types. These codes, typically implemented as text strings, are used to populate data fields in other SSRF objects.
  * TOA: The SSRF `TOA` data object supports the conveyance of international Table of Allocation and channel plan information. For more information about TOAs see [Frequency Allocation](http://en.wikipedia.org/wiki/Frequency_allocation) at Wikipedia.
 
-h3. Define Transmitters, Receivers and Antennas
+### Define Transmitters, Receivers and Antennas
 
 SSRF supports the detailed description of TX and RX operating parameters and configurations. This type of information is needed and supports allocating spectrum use, certifying equipment, preparing allotments, engineering frequency assignments, and resolving frequency interference.
 
-h3. Spectrum Supportability Process
+### Spectrum Supportability Process
 
 SSRF includes data structures to support formal, automated collaboration and communication between disparate organizations for the research, request and conveyance of spectrum availability information. Note that availability does not mean authorization for use: that would be an allotment of assignment. Spectrum supportability consists of three business processes:
 
@@ -33,19 +31,18 @@ SSRF includes data structures to support formal, automated collaboration and com
  2. SSRequest: formal submission for supportability.
  3. SSReply: response with supportability information
 
-h3. Request/Provide Frequency Allotments /Assignments
+### Request/Provide Frequency Allotments /Assignments
 
 Once the total frequency requirement for a force is known, it should be submitted as a consolidated allotment request or as a series of assignment requests to the relevant spectrum management authority.
 
  * Allotment: Frequency allotments may be used within a nation or a command to decentralize the frequency management.
  * Assignment: Frequency resource authorized for use by a given SDS at a specified location or within an AOR.
 
-h3. Report Interference
+### Report Interference
 
 SSRF supports the formal reporting on a source and victim of an interference incident.
 
-Hello World
------------
+## Hello World
 
 All access to the SSRF data model begins with the `SSRF` object, which is the XML root and single point of entry to the data model.
 
