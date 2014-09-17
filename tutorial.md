@@ -53,19 +53,19 @@ All objects in the OpenSSRF library are conventional [JavaBeans](http://en.wikip
 
 SSRF is an extremely flexible format, and the `SSRF` object is basically an empty container for whatever information you wish to put into it to accomplish your desired business objective. Below is an example constructor that builds an `SSRF` object, then adds a (partial) Contact and (partial) Assignment. Note that the same data structure can be constructed using conventional Javabean setters.
 
-`SSRF ssrf = new SSRF()  
-  .withContact(new Contact()  
-    .withEMail(new EMail()  
-      .withAddress("john.doe@internet.com"))  
-    .withLastName("Doe")  
-    .withFirstName("John")  
-    .withTelephoneFax(new TelephoneFax()  
-      .withNumber("(123)456.7890")))  
-  .withAssignment(new Assignment()  
-    .withCaseNum(new CaseNum()  
-      .withType("callsign")  
-      .withIdentifier("CFDB-TV")  
-      .withCountry(ListCAO.CAN)));`
+    `SSRF ssrf = new SSRF()
+      .withContact(new Contact()
+        .withEMail(new EMail()
+          .withAddress("john.doe@internet.com"))
+        .withLastName("Doe")
+        .withFirstName("John")
+        .withTelephoneFax(new TelephoneFax()
+          .withNumber("(123)456.7890")))
+      .withAssignment(new Assignment()
+        .withCaseNum(new CaseNum()
+          .withType("callsign")
+          .withIdentifier("CFDB-TV")
+          .withCountry(ListCAO.CAN)));`
 
 __end
 
