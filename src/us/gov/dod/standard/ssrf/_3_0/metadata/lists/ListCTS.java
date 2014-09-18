@@ -47,7 +47,7 @@ public enum ListCTS {
   @XmlEnumValue("Approved")
   APPROVED("Approved"),
   @XmlEnumValue("For Review")
-  FOR___REVIEW("For Review"),
+  FOR_REVIEW("For Review"),
   @XmlEnumValue("Pending")
   PENDING("Pending");
   private final String value;

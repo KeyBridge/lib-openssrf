@@ -47,17 +47,17 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUNS {
 
   @XmlEnumValue("Agency Tracking ID")
-  AGENCY___TRACKING___ID("Agency Tracking ID"),
+  AGENCY_TRACKING_ID("Agency Tracking ID"),
   @XmlEnumValue("Commercial P/N")
-  COMMERCIAL___P___N("Commercial P/N"),
+  COMMERCIAL_P_N("Commercial P/N"),
   @XmlEnumValue("Drawing Number")
-  DRAWING___NUMBER("Drawing Number"),
+  DRAWING_NUMBER("Drawing Number"),
   @XmlEnumValue("Line Item Number")
-  LINE___ITEM___NUMBER("Line Item Number"),
+  LINE_ITEM_NUMBER("Line Item Number"),
   @XmlEnumValue("National Stock Number")
-  NATIONAL___STOCK___NUMBER("National Stock Number"),
+  NATIONAL_STOCK_NUMBER("National Stock Number"),
   @XmlEnumValue("NATO  Stock Number")
-  NATO____STOCK___NUMBER("NATO  Stock Number");
+  NATO__STOCK_NUMBER("NATO  Stock Number");
   private final String value;
 
   ListUNS(String v) {

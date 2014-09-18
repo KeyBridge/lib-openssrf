@@ -51,7 +51,7 @@ public enum ListCBD {
   @XmlEnumValue("Cardioid")
   CARDIOID("Cardioid"),
   @XmlEnumValue("Cosecant Squared")
-  COSECANT___SQUARED("Cosecant Squared"),
+  COSECANT_SQUARED("Cosecant Squared"),
   @XmlEnumValue("Elliptical")
   ELLIPTICAL("Elliptical"),
   @XmlEnumValue("Fan")
@@ -63,9 +63,9 @@ public enum ListCBD {
   @XmlEnumValue("Pencil")
   PENCIL("Pencil"),
   @XmlEnumValue("Shaped Beam")
-  SHAPED___BEAM("Shaped Beam"),
+  SHAPED_BEAM("Shaped Beam"),
   @XmlEnumValue("Single Symmetrical Lobe")
-  SINGLE___SYMMETRICAL___LOBE("Single Symmetrical Lobe"),
+  SINGLE_SYMMETRICAL_LOBE("Single Symmetrical Lobe"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

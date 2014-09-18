@@ -68,7 +68,7 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("Contact Report")
-  CONTACT___REPORT("Contact Report"),
+  CONTACT_REPORT("Contact Report"),
   /**
    * Contract Reference
    * <p>
@@ -80,7 +80,7 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("Data Retrofit")
-  DATA___RETROFIT("Data Retrofit"),
+  DATA_RETROFIT("Data Retrofit"),
   /**
    * Document in any format not otherwise covered
    * <p>
@@ -104,7 +104,7 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("Eng Report")
-  ENG___REPORT("Eng Report"),
+  ENG_REPORT("Eng Report"),
   /**
    * Electronic Warfare Integrated Reprogramming
    * <p>
@@ -123,7 +123,7 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("Industry Publication")
-  INDUSTRY___PUBLICATION("Industry Publication"),
+  INDUSTRY_PUBLICATION("Industry Publication"),
   /**
    * Interference Report (to be used only when the interference report is not in
    * SMADEF-XML format)
@@ -136,13 +136,13 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("ITU Notification")
-  ITU___NOTIFICATION("ITU Notification"),
+  ITU_NOTIFICATION("ITU Notification"),
   /**
    * ITU SSG (Satellite) Filing
    * <p>
    */
   @XmlEnumValue("ITU Sat")
-  ITU___SAT("ITU Sat"),
+  ITU_SAT("ITU Sat"),
   /**
    * Janes Publications
    * <p>
@@ -178,13 +178,13 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("National Number")
-  NATIONAL___NUMBER("National Number"),
+  NATIONAL_NUMBER("National Number"),
   /**
    * Nomenclature Card (DD FORM 61)
    * <p>
    */
   @XmlEnumValue("Nomenclature Card")
-  NOMENCLATURE___CARD("Nomenclature Card"),
+  NOMENCLATURE_CARD("Nomenclature Card"),
   /**
    * Spectrum Planning Subcommittee Number (USA code used by NTIA)
    * <p>
@@ -195,7 +195,7 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("Prev Certification")
-  PREV___CERTIFICATION("Prev Certification"),
+  PREV_CERTIFICATION("Prev Certification"),
   /**
    * Systems ID Number (USA code used by NTIA)
    * <p>
@@ -212,13 +212,13 @@ public enum ListCRE {
    * <p>
    */
   @XmlEnumValue("Technical Manual")
-  TECHNICAL___MANUAL("Technical Manual"),
+  TECHNICAL_MANUAL("Technical Manual"),
   /**
    * Certification of Spectrum Support
    * <p>
    */
   @XmlEnumValue("Spectrum Support Certification")
-  SPECTRUM___SUPPORT___CERTIFICATION("Spectrum Support Certification"),
+  SPECTRUM_SUPPORT_CERTIFICATION("Spectrum Support Certification"),
   /**
    * Any other type not listed in this list; see remarks
    * <p>

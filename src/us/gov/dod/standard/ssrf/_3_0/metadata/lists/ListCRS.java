@@ -56,7 +56,7 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCRS {
 
   @XmlEnumValue("Boxed Slot")
-  BOXED___SLOT("Boxed Slot"),
+  BOXED_SLOT("Boxed Slot"),
   @XmlEnumValue("Cavity")
   CAVITY("Cavity"),
   @XmlEnumValue("Clamshell")
@@ -66,11 +66,11 @@ public enum ListCRS {
   @XmlEnumValue("Corner")
   CORNER("Corner"),
   @XmlEnumValue("Curved Convergent")
-  CURVED___CONVERGENT("Curved Convergent"),
+  CURVED_CONVERGENT("Curved Convergent"),
   @XmlEnumValue("Cylindrical")
   CYLINDRICAL("Cylindrical"),
   @XmlEnumValue("Double Corner")
-  DOUBLE___CORNER("Double Corner"),
+  DOUBLE_CORNER("Double Corner"),
   @XmlEnumValue("Elliptical")
   ELLIPTICAL("Elliptical"),
   @XmlEnumValue("Horn")
@@ -82,11 +82,11 @@ public enum ListCRS {
   @XmlEnumValue("Mattress")
   MATTRESS("Mattress"),
   @XmlEnumValue("Orange Peel")
-  ORANGE___PEEL("Orange Peel"),
+  ORANGE_PEEL("Orange Peel"),
   @XmlEnumValue("Parabolic")
   PARABOLIC("Parabolic"),
   @XmlEnumValue("Parabolic Segment")
-  PARABOLIC___SEGMENT("Parabolic Segment"),
+  PARABOLIC_SEGMENT("Parabolic Segment"),
   @XmlEnumValue("Parasitic")
   PARASITIC("Parasitic"),
   @XmlEnumValue("Plane")

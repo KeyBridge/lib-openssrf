@@ -54,12 +54,12 @@ public enum ListUCJ {
   @XmlEnumValue("Nato")
   NATO("Nato"),
   @XmlEnumValue("Host Nation")
-  HOST___NATION("Host Nation"),
+  HOST_NATION("Host Nation"),
   @XmlEnumValue("NTIA Fas Members")
-  NTIA___FAS___MEMBERS("NTIA Fas Members"),
+  NTIA_FAS_MEMBERS("NTIA Fas Members"),
   FAA("FAA"),
   @XmlEnumValue("DoD Joint Chiefs of Staff")
-  DO_D___JOINT___CHIEFS___OF___STAFF("DoD Joint Chiefs of Staff"),
+  DO_D_JOINT_CHIEFS_OF_STAFF("DoD Joint Chiefs of Staff"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

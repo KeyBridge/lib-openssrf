@@ -53,43 +53,43 @@ public enum ListCFD {
    * <p>
    */
   @XmlEnumValue("Location-Home")
-  LOCATION___HOME("Location-Home"),
+  LOCATION_HOME("Location-Home"),
   /**
    * Physical location of the force element
    * <p>
    */
   @XmlEnumValue("Location-Current")
-  LOCATION___CURRENT("Location-Current"),
+  LOCATION_CURRENT("Location-Current"),
   /**
    * Planned location of the force element
    * <p>
    */
   @XmlEnumValue("Location-Planned")
-  LOCATION___PLANNED("Location-Planned"),
+  LOCATION_PLANNED("Location-Planned"),
   /**
    * Operating area of the force element (typically a polygon / AOR)
    * <p>
    */
   @XmlEnumValue("Operating Area-Current")
-  OPERATING___AREA___CURRENT("Operating Area-Current"),
+  OPERATING_AREA_CURRENT("Operating Area-Current"),
   /**
    * Planned operating area
    * <p>
    */
   @XmlEnumValue("Operating Area-Planned")
-  OPERATING___AREA___PLANNED("Operating Area-Planned"),
+  OPERATING_AREA_PLANNED("Operating Area-Planned"),
   /**
    * Current route
    * <p>
    */
   @XmlEnumValue("Route-Current")
-  ROUTE___CURRENT("Route-Current"),
+  ROUTE_CURRENT("Route-Current"),
   /**
    * Planned route
    * <p>
    */
   @XmlEnumValue("Route-Planned")
-  ROUTE___PLANNED("Route-Planned"),
+  ROUTE_PLANNED("Route-Planned"),
   /**
    * Other
    * <p>

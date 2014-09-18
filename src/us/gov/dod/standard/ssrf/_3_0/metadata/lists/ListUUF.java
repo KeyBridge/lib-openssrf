@@ -47,13 +47,13 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUUF {
 
   @XmlEnumValue("Regular, not limited to workweek")
-  REGULAR____NOT___LIMITED___TO___WORKWEEK("Regular, not limited to workweek"),
+  REGULAR__NOT_LIMITED_TO_WORKWEEK("Regular, not limited to workweek"),
   @XmlEnumValue("Regular, workweek")
-  REGULAR____WORKWEEK("Regular, workweek"),
+  REGULAR__WORKWEEK("Regular, workweek"),
   @XmlEnumValue("Occasional, not limited to workweek")
-  OCCASIONAL____NOT___LIMITED___TO___WORKWEEK("Occasional, not limited to workweek"),
+  OCCASIONAL__NOT_LIMITED_TO_WORKWEEK("Occasional, not limited to workweek"),
   @XmlEnumValue("Occasional, workweek")
-  OCCASIONAL____WORKWEEK("Occasional, workweek");
+  OCCASIONAL__WORKWEEK("Occasional, workweek");
   private final String value;
 
   ListUUF(String v) {

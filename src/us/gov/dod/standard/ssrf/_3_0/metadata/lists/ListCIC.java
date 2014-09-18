@@ -63,35 +63,35 @@ public enum ListCIC {
   @XmlEnumValue("Land")
   LAND("Land"),
   @XmlEnumValue("Land Mobile")
-  LAND___MOBILE("Land Mobile"),
+  LAND_MOBILE("Land Mobile"),
   @XmlEnumValue("METAIDS Ground")
-  METAIDS___GROUND("METAIDS Ground"),
+  METAIDS_GROUND("METAIDS Ground"),
   @XmlEnumValue("METAIDS Radar")
-  METAIDS___RADAR("METAIDS Radar"),
+  METAIDS_RADAR("METAIDS Radar"),
   @XmlEnumValue("METAIDS Radiosonde")
-  METAIDS___RADIOSONDE("METAIDS Radiosonde"),
+  METAIDS_RADIOSONDE("METAIDS Radiosonde"),
   @XmlEnumValue("Mobile Earth-Air")
-  MOBILE___EARTH___AIR("Mobile Earth-Air"),
+  MOBILE_EARTH_AIR("Mobile Earth-Air"),
   @XmlEnumValue("Mobile Earth-Land")
-  MOBILE___EARTH___LAND("Mobile Earth-Land"),
+  MOBILE_EARTH_LAND("Mobile Earth-Land"),
   @XmlEnumValue("Mobile Earth-Sea")
-  MOBILE___EARTH___SEA("Mobile Earth-Sea"),
+  MOBILE_EARTH_SEA("Mobile Earth-Sea"),
   @XmlEnumValue("Radar-Air")
-  RADAR___AIR("Radar-Air"),
+  RADAR_AIR("Radar-Air"),
   @XmlEnumValue("Radar-Land")
-  RADAR___LAND("Radar-Land"),
+  RADAR_LAND("Radar-Land"),
   @XmlEnumValue("Radar-Sea")
-  RADAR___SEA("Radar-Sea"),
+  RADAR_SEA("Radar-Sea"),
   @XmlEnumValue("Satellite")
   SATELLITE("Satellite"),
   @XmlEnumValue("Sea")
   SEA("Sea"),
   @XmlEnumValue("Secondary Radar-Air")
-  SECONDARY___RADAR___AIR("Secondary Radar-Air"),
+  SECONDARY_RADAR_AIR("Secondary Radar-Air"),
   @XmlEnumValue("Secondary Radar-Land")
-  SECONDARY___RADAR___LAND("Secondary Radar-Land"),
+  SECONDARY_RADAR_LAND("Secondary Radar-Land"),
   @XmlEnumValue("Secondary Radar-Sea")
-  SECONDARY___RADAR___SEA("Secondary Radar-Sea"),
+  SECONDARY_RADAR_SEA("Secondary Radar-Sea"),
   @XmlEnumValue("Target")
   TARGET("Target"),
   @XmlEnumValue("Transport")

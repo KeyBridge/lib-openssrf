@@ -55,9 +55,9 @@ public enum ListCLS {
   @XmlEnumValue("Decayed")
   DECAYED("Decayed"),
   @XmlEnumValue("Firm Future")
-  FIRM___FUTURE("Firm Future"),
+  FIRM_FUTURE("Firm Future"),
   @XmlEnumValue("Ground Spare")
-  GROUND___SPARE("Ground Spare"),
+  GROUND_SPARE("Ground Spare"),
   @XmlEnumValue("Inoperative")
   INOPERATIVE("Inoperative"),
   @XmlEnumValue("Launched")
@@ -65,17 +65,17 @@ public enum ListCLS {
   @XmlEnumValue("Operational")
   OPERATIONAL("Operational"),
   @XmlEnumValue("Orbital Spare")
-  ORBITAL___SPARE("Orbital Spare"),
+  ORBITAL_SPARE("Orbital Spare"),
   @XmlEnumValue("Orbital Test")
-  ORBITAL___TEST("Orbital Test"),
+  ORBITAL_TEST("Orbital Test"),
   @XmlEnumValue("Partially Operational")
-  PARTIALLY___OPERATIONAL("Partially Operational"),
+  PARTIALLY_OPERATIONAL("Partially Operational"),
   @XmlEnumValue("Possible Future")
-  POSSIBLE___FUTURE("Possible Future"),
+  POSSIBLE_FUTURE("Possible Future"),
   @XmlEnumValue("Retired")
   RETIRED("Retired"),
   @XmlEnumValue("Total Launch Failure")
-  TOTAL___LAUNCH___FAILURE("Total Launch Failure");
+  TOTAL_LAUNCH_FAILURE("Total Launch Failure");
   private final String value;
 
   ListCLS(String v) {

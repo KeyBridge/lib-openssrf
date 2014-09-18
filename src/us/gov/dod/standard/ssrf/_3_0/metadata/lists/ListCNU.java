@@ -52,7 +52,7 @@ public enum ListCNU {
   @XmlEnumValue("Nickname")
   NICKNAME("Nickname"),
   @XmlEnumValue("Pennant Number")
-  PENNANT___NUMBER("Pennant Number");
+  PENNANT_NUMBER("Pennant Number");
   private final String value;
 
   ListCNU(String v) {

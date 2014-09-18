@@ -46,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCTO {
 
   @XmlEnumValue("Civilian/Commercial")
-  CIVILIAN___COMMERCIAL("Civilian/Commercial"),
+  CIVILIAN_COMMERCIAL("Civilian/Commercial"),
   @XmlEnumValue("Generic")
   GENERIC("Generic"),
   @XmlEnumValue("Government ")

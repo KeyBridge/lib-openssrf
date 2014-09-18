@@ -51,25 +51,25 @@ public enum ListCSE {
    * <p>
    */
   @XmlEnumValue("Pulse Width Opposition")
-  PULSE___WIDTH___OPPOSITION("Pulse Width Opposition"),
+  PULSE_WIDTH_OPPOSITION("Pulse Width Opposition"),
   /**
    * Bit Error Rate; value is a number in scientific notation
    * <p>
    */
   @XmlEnumValue("Bit Error Rate")
-  BIT___ERROR___RATE("Bit Error Rate"),
+  BIT_ERROR_RATE("Bit Error Rate"),
   /**
    * Minimum Discernable Signal
    * <p>
    */
   @XmlEnumValue("Minimum Discernable Signal")
-  MINIMUM___DISCERNABLE___SIGNAL("Minimum Discernable Signal"),
+  MINIMUM_DISCERNABLE_SIGNAL("Minimum Discernable Signal"),
   /**
    * Minimum Target Recognition
    * <p>
    */
   @XmlEnumValue("Minimum Target Recognition")
-  MINIMUM___TARGET___RECOGNITION("Minimum Target Recognition"),
+  MINIMUM_TARGET_RECOGNITION("Minimum Target Recognition"),
   /**
    * Signal-Plus-Noise-Plus-Distortion to Noise-Plus-Distortion; value is in dB
    * <p>
@@ -80,13 +80,13 @@ public enum ListCSE {
    * <p>
    */
   @XmlEnumValue("S/N")
-  S___N("S/N"),
+  S_N("S/N"),
   /**
    * (Signal plus-Noise)-to-Noise ratio; value is in dB
    * <p>
    */
   @XmlEnumValue("(S+N)/N")
-  __S___N____N("(S+N)/N");
+  __S_N__N("(S+N)/N");
   private final String value;
 
   ListCSE(String v) {

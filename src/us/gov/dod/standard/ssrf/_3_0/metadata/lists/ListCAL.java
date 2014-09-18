@@ -57,47 +57,47 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCAL {
 
   @XmlEnumValue("Cable Air Dielectric")
-  CABLE___AIR___DIELECTRIC("Cable Air Dielectric"),
+  CABLE_AIR_DIELECTRIC("Cable Air Dielectric"),
   @XmlEnumValue("Cable Coaxial")
-  CABLE___COAXIAL("Cable Coaxial"),
+  CABLE_COAXIAL("Cable Coaxial"),
   @XmlEnumValue("Cable Flexible Coaxial")
-  CABLE___FLEXIBLE___COAXIAL("Cable Flexible Coaxial"),
+  CABLE_FLEXIBLE_COAXIAL("Cable Flexible Coaxial"),
   @XmlEnumValue("Cable Rigid Coaxial")
-  CABLE___RIGID___COAXIAL("Cable Rigid Coaxial"),
+  CABLE_RIGID_COAXIAL("Cable Rigid Coaxial"),
   @XmlEnumValue("Line Coplaner Strip")
-  LINE___COPLANER___STRIP("Line Coplaner Strip"),
+  LINE_COPLANER_STRIP("Line Coplaner Strip"),
   @XmlEnumValue("Line Ladder")
-  LINE___LADDER("Line Ladder"),
+  LINE_LADDER("Line Ladder"),
   @XmlEnumValue("Line Microstrip")
-  LINE___MICROSTRIP("Line Microstrip"),
+  LINE_MICROSTRIP("Line Microstrip"),
   @XmlEnumValue("Line Surface-Wave")
-  LINE___SURFACE___WAVE("Line Surface-Wave"),
+  LINE_SURFACE_WAVE("Line Surface-Wave"),
   @XmlEnumValue("Open Wire")
-  OPEN___WIRE("Open Wire"),
+  OPEN_WIRE("Open Wire"),
   @XmlEnumValue("Twin Lead")
-  TWIN___LEAD("Twin Lead"),
+  TWIN_LEAD("Twin Lead"),
   @XmlEnumValue("Waveguide")
   WAVEGUIDE("Waveguide"),
   @XmlEnumValue("Waveguide Beam")
-  WAVEGUIDE___BEAM("Waveguide Beam"),
+  WAVEGUIDE_BEAM("Waveguide Beam"),
   @XmlEnumValue("Waveguide Circular")
-  WAVEGUIDE___CIRCULAR("Waveguide Circular"),
+  WAVEGUIDE_CIRCULAR("Waveguide Circular"),
   @XmlEnumValue("Waveguide Dielectric")
-  WAVEGUIDE___DIELECTRIC("Waveguide Dielectric"),
+  WAVEGUIDE_DIELECTRIC("Waveguide Dielectric"),
   @XmlEnumValue("Waveguide Elliptic")
-  WAVEGUIDE___ELLIPTIC("Waveguide Elliptic"),
+  WAVEGUIDE_ELLIPTIC("Waveguide Elliptic"),
   @XmlEnumValue("Waveguide Fin-Line")
-  WAVEGUIDE___FIN___LINE("Waveguide Fin-Line"),
+  WAVEGUIDE_FIN_LINE("Waveguide Fin-Line"),
   @XmlEnumValue("Waveguide Flexible")
-  WAVEGUIDE___FLEXIBLE("Waveguide Flexible"),
+  WAVEGUIDE_FLEXIBLE("Waveguide Flexible"),
   @XmlEnumValue("Waveguide Optic-Fiber")
-  WAVEGUIDE___OPTIC___FIBER("Waveguide Optic-Fiber"),
+  WAVEGUIDE_OPTIC_FIBER("Waveguide Optic-Fiber"),
   @XmlEnumValue("Waveguide Rectangular")
-  WAVEGUIDE___RECTANGULAR("Waveguide Rectangular"),
+  WAVEGUIDE_RECTANGULAR("Waveguide Rectangular"),
   @XmlEnumValue("Waveguide Ridge")
-  WAVEGUIDE___RIDGE("Waveguide Ridge"),
+  WAVEGUIDE_RIDGE("Waveguide Ridge"),
   @XmlEnumValue("Waveguide Semirigid")
-  WAVEGUIDE___SEMIRIGID("Waveguide Semirigid"),
+  WAVEGUIDE_SEMIRIGID("Waveguide Semirigid"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

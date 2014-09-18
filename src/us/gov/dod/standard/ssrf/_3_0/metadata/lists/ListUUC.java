@@ -53,19 +53,19 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUUC {
 
   @XmlEnumValue("Wartime circuits required to be operated or to be ready for operation in Peacetime")
-  WARTIME___CIRCUITS___REQUIRED___TO___BE___OPERATED___OR___TO___BE___READY___FOR___OPERATION___IN___PEACETIME("Wartime circuits required to be operated or to be ready for operation in Peacetime"),
+  WARTIME_CIRCUITS_REQUIRED_TO_BE_OPERATED_OR_TO_BE_READY_FOR_OPERATION_IN_PEACETIME("Wartime circuits required to be operated or to be ready for operation in Peacetime"),
   @XmlEnumValue("Wartime circuits that have a limited capability in peacetime for exchanging traffic between the planned terminals")
-  WARTIME___CIRCUITS___THAT___HAVE___A___LIMITED___CAPABILITY___IN___PEACETIME___FOR___EXCHANGING___TRAFFIC___BETWEEN___THE___PLANNED___TERMINALS("Wartime circuits that have a limited capability in peacetime for exchanging traffic between the planned terminals"),
+  WARTIME_CIRCUITS_THAT_HAVE_A_LIMITED_CAPABILITY_IN_PEACETIME_FOR_EXCHANGING_TRAFFIC_BETWEEN_THE_PLANNED_TERMINALS("Wartime circuits that have a limited capability in peacetime for exchanging traffic between the planned terminals"),
   @XmlEnumValue("Required for wartime only")
-  REQUIRED___FOR___WARTIME___ONLY("Required for wartime only"),
+  REQUIRED_FOR_WARTIME_ONLY("Required for wartime only"),
   @XmlEnumValue("Required for occasional and temporary usage for training exercises or maneuver purposes")
-  REQUIRED___FOR___OCCASIONAL___AND___TEMPORARY___USAGE___FOR___TRAINING___EXERCISES___OR___MANEUVER___PURPOSES("Required for occasional and temporary usage for training exercises or maneuver purposes"),
+  REQUIRED_FOR_OCCASIONAL_AND_TEMPORARY_USAGE_FOR_TRAINING_EXERCISES_OR_MANEUVER_PURPOSES("Required for occasional and temporary usage for training exercises or maneuver purposes"),
   @XmlEnumValue("Required for the deployment phase of contingency operations")
-  REQUIRED___FOR___THE___DEPLOYMENT___PHASE___OF___CONTINGENCY___OPERATIONS("Required for the deployment phase of contingency operations"),
+  REQUIRED_FOR_THE_DEPLOYMENT_PHASE_OF_CONTINGENCY_OPERATIONS("Required for the deployment phase of contingency operations"),
   @XmlEnumValue("Required for the employment phase of contingency operations")
-  REQUIRED___FOR___THE___EMPLOYMENT___PHASE___OF___CONTINGENCY___OPERATIONS("Required for the employment phase of contingency operations"),
+  REQUIRED_FOR_THE_EMPLOYMENT_PHASE_OF_CONTINGENCY_OPERATIONS("Required for the employment phase of contingency operations"),
   @XmlEnumValue("Required for peacetime only")
-  REQUIRED___FOR___PEACETIME___ONLY("Required for peacetime only");
+  REQUIRED_FOR_PEACETIME_ONLY("Required for peacetime only");
   private final String value;
 
   ListUUC(String v) {

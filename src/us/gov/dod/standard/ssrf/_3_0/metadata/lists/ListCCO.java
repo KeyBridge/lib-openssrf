@@ -53,23 +53,23 @@ public enum ListCCO {
   @XmlEnumValue("Global ")
   GLOBAL__("Global "),
   @XmlEnumValue("Eastern Hemisphere ")
-  EASTERN___HEMISPHERE__("Eastern Hemisphere "),
+  EASTERN_HEMISPHERE__("Eastern Hemisphere "),
   @XmlEnumValue("Western Hemisphere ")
-  WESTERN___HEMISPHERE__("Western Hemisphere "),
+  WESTERN_HEMISPHERE__("Western Hemisphere "),
   @XmlEnumValue("Northern Hemisphere ")
-  NORTHERN___HEMISPHERE__("Northern Hemisphere "),
+  NORTHERN_HEMISPHERE__("Northern Hemisphere "),
   @XmlEnumValue("Southern Hemisphere ")
-  SOUTHERN___HEMISPHERE__("Southern Hemisphere "),
+  SOUTHERN_HEMISPHERE__("Southern Hemisphere "),
   @XmlEnumValue("North-eastern Earth Quarter ")
-  NORTH___EASTERN___EARTH___QUARTER__("North-eastern Earth Quarter "),
+  NORTH_EASTERN_EARTH_QUARTER__("North-eastern Earth Quarter "),
   @XmlEnumValue("North-western Earth Quarter ")
-  NORTH___WESTERN___EARTH___QUARTER__("North-western Earth Quarter "),
+  NORTH_WESTERN_EARTH_QUARTER__("North-western Earth Quarter "),
   @XmlEnumValue("South-eastern Earth Quarter")
-  SOUTH___EASTERN___EARTH___QUARTER("South-eastern Earth Quarter"),
+  SOUTH_EASTERN_EARTH_QUARTER("South-eastern Earth Quarter"),
   @XmlEnumValue("South-western Earth Quarter ")
-  SOUTH___WESTERN___EARTH___QUARTER__("South-western Earth Quarter "),
+  SOUTH_WESTERN_EARTH_QUARTER__("South-western Earth Quarter "),
   @XmlEnumValue("Narrow Beam")
-  NARROW___BEAM("Narrow Beam"),
+  NARROW_BEAM("Narrow Beam"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

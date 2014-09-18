@@ -46,13 +46,13 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCFE {
 
   @XmlEnumValue("Specific Platform")
-  SPECIFIC___PLATFORM("Specific Platform"),
+  SPECIFIC_PLATFORM("Specific Platform"),
   @XmlEnumValue("Platform Class")
-  PLATFORM___CLASS("Platform Class"),
+  PLATFORM_CLASS("Platform Class"),
   @XmlEnumValue("Specific Weapon")
-  SPECIFIC___WEAPON("Specific Weapon"),
+  SPECIFIC_WEAPON("Specific Weapon"),
   @XmlEnumValue("Weapon Class")
-  WEAPON___CLASS("Weapon Class"),
+  WEAPON_CLASS("Weapon Class"),
   @XmlEnumValue("Unit")
   UNIT("Unit");
   private final String value;

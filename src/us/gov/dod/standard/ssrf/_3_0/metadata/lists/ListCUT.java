@@ -47,15 +47,15 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCUT {
 
   @XmlEnumValue("Request Temporary")
-  REQUEST___TEMPORARY("Request Temporary"),
+  REQUEST_TEMPORARY("Request Temporary"),
   @XmlEnumValue("Request Permanent")
-  REQUEST___PERMANENT("Request Permanent"),
+  REQUEST_PERMANENT("Request Permanent"),
   @XmlEnumValue("Approved Temporary")
-  APPROVED___TEMPORARY("Approved Temporary"),
+  APPROVED_TEMPORARY("Approved Temporary"),
   @XmlEnumValue("Approved Permanent")
-  APPROVED___PERMANENT("Approved Permanent"),
+  APPROVED_PERMANENT("Approved Permanent"),
   @XmlEnumValue("Cancelled/Rejected")
-  CANCELLED___REJECTED("Cancelled/Rejected");
+  CANCELLED_REJECTED("Cancelled/Rejected");
   private final String value;
 
   ListCUT(String v) {

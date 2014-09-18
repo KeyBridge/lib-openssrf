@@ -47,7 +47,7 @@ public enum ListCRD {
   @XmlEnumValue("Clockwise")
   CLOCKWISE("Clockwise"),
   @XmlEnumValue("Counter-Clockwise")
-  COUNTER___CLOCKWISE("Counter-Clockwise");
+  COUNTER_CLOCKWISE("Counter-Clockwise");
   private final String value;
 
   ListCRD(String v) {

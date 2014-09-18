@@ -45,11 +45,11 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCAU {
 
   @XmlEnumValue("Transmit Only")
-  TRANSMIT___ONLY("Transmit Only"),
+  TRANSMIT_ONLY("Transmit Only"),
   @XmlEnumValue("Receive Only")
-  RECEIVE___ONLY("Receive Only"),
+  RECEIVE_ONLY("Receive Only"),
   @XmlEnumValue("Transmit-Receive")
-  TRANSMIT___RECEIVE("Transmit-Receive");
+  TRANSMIT_RECEIVE("Transmit-Receive");
   private final String value;
 
   ListCAU(String v) {

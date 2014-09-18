@@ -89,137 +89,137 @@ public enum ListCET {
   @XmlEnumValue("Aircraft")
   AIRCRAFT("Aircraft"),
   @XmlEnumValue("Air Drop")
-  AIR___DROP("Air Drop"),
+  AIR_DROP("Air Drop"),
   @XmlEnumValue("Helicopter")
   HELICOPTER("Helicopter"),
   @XmlEnumValue("V/STOL")
-  V___STOL("V/STOL"),
+  V_STOL("V/STOL"),
   @XmlEnumValue("Air Launched Missile")
-  AIR___LAUNCHED___MISSILE("Air Launched Missile"),
+  AIR_LAUNCHED_MISSILE("Air Launched Missile"),
   @XmlEnumValue("Armored Land Vehicle")
-  ARMORED___LAND___VEHICLE("Armored Land Vehicle"),
+  ARMORED_LAND_VEHICLE("Armored Land Vehicle"),
   @XmlEnumValue("Non-Tactical Land Vehicle")
-  NON___TACTICAL___LAND___VEHICLE("Non-Tactical Land Vehicle"),
+  NON_TACTICAL_LAND_VEHICLE("Non-Tactical Land Vehicle"),
   @XmlEnumValue("Tactical Land Vehicle")
-  TACTICAL___LAND___VEHICLE("Tactical Land Vehicle"),
+  TACTICAL_LAND_VEHICLE("Tactical Land Vehicle"),
   @XmlEnumValue("Surface Launched Missile")
-  SURFACE___LAUNCHED___MISSILE("Surface Launched Missile"),
+  SURFACE_LAUNCHED_MISSILE("Surface Launched Missile"),
   @XmlEnumValue("Water Launched Missile")
-  WATER___LAUNCHED___MISSILE("Water Launched Missile"),
+  WATER_LAUNCHED_MISSILE("Water Launched Missile"),
   @XmlEnumValue("Unmanned Air Vehicles")
-  UNMANNED___AIR___VEHICLES("Unmanned Air Vehicles"),
+  UNMANNED_AIR_VEHICLES("Unmanned Air Vehicles"),
   @XmlEnumValue("Lighter/Boat")
-  LIGHTER___BOAT("Lighter/Boat"),
+  LIGHTER_BOAT("Lighter/Boat"),
   @XmlEnumValue("Amphibious Vessel")
-  AMPHIBIOUS___VESSEL("Amphibious Vessel"),
+  AMPHIBIOUS_VESSEL("Amphibious Vessel"),
   @XmlEnumValue("Tug Boat")
-  TUG___BOAT("Tug Boat"),
+  TUG_BOAT("Tug Boat"),
   @XmlEnumValue("Command Ship")
-  COMMAND___SHIP("Command Ship"),
+  COMMAND_SHIP("Command Ship"),
   @XmlEnumValue("Landing Craft, Air Cushion")
-  LANDING___CRAFT____AIR___CUSHION("Landing Craft, Air Cushion"),
+  LANDING_CRAFT__AIR_CUSHION("Landing Craft, Air Cushion"),
   @XmlEnumValue("Amphibious Command Ship")
-  AMPHIBIOUS___COMMAND___SHIP("Amphibious Command Ship"),
+  AMPHIBIOUS_COMMAND_SHIP("Amphibious Command Ship"),
   @XmlEnumValue("Amphibious Assault Ship")
-  AMPHIBIOUS___ASSAULT___SHIP("Amphibious Assault Ship"),
+  AMPHIBIOUS_ASSAULT_SHIP("Amphibious Assault Ship"),
   @XmlEnumValue("Amphibious Transport Dock")
-  AMPHIBIOUS___TRANSPORT___DOCK("Amphibious Transport Dock"),
+  AMPHIBIOUS_TRANSPORT_DOCK("Amphibious Transport Dock"),
   @XmlEnumValue("Amphibious Cargo Ship")
-  AMPHIBIOUS___CARGO___SHIP("Amphibious Cargo Ship"),
+  AMPHIBIOUS_CARGO_SHIP("Amphibious Cargo Ship"),
   @XmlEnumValue("Landing Craft Utility")
-  LANDING___CRAFT___UTILITY("Landing Craft Utility"),
+  LANDING_CRAFT_UTILITY("Landing Craft Utility"),
   @XmlEnumValue("Amphibious Assault Vehicle")
-  AMPHIBIOUS___ASSAULT___VEHICLE("Amphibious Assault Vehicle"),
+  AMPHIBIOUS_ASSAULT_VEHICLE("Amphibious Assault Vehicle"),
   @XmlEnumValue("Expeditionary Fighting Vehicle")
-  EXPEDITIONARY___FIGHTING___VEHICLE("Expeditionary Fighting Vehicle"),
+  EXPEDITIONARY_FIGHTING_VEHICLE("Expeditionary Fighting Vehicle"),
   @XmlEnumValue("Rigid Raiding Craft")
-  RIGID___RAIDING___CRAFT("Rigid Raiding Craft"),
+  RIGID_RAIDING_CRAFT("Rigid Raiding Craft"),
   @XmlEnumValue("Riverine Assault Craft")
-  RIVERINE___ASSAULT___CRAFT("Riverine Assault Craft"),
+  RIVERINE_ASSAULT_CRAFT("Riverine Assault Craft"),
   @XmlEnumValue("High Speed Vessel")
-  HIGH___SPEED___VESSEL("High Speed Vessel"),
+  HIGH_SPEED_VESSEL("High Speed Vessel"),
   @XmlEnumValue("Joint High Speed Vessel")
-  JOINT___HIGH___SPEED___VESSEL("Joint High Speed Vessel"),
+  JOINT_HIGH_SPEED_VESSEL("Joint High Speed Vessel"),
   @XmlEnumValue("Aid to Navigation Boat")
-  AID___TO___NAVIGATION___BOAT("Aid to Navigation Boat"),
+  AID_TO_NAVIGATION_BOAT("Aid to Navigation Boat"),
   @XmlEnumValue("High Endurance Cutter")
-  HIGH___ENDURANCE___CUTTER("High Endurance Cutter"),
+  HIGH_ENDURANCE_CUTTER("High Endurance Cutter"),
   @XmlEnumValue("Motor Life Boat")
-  MOTOR___LIFE___BOAT("Motor Life Boat"),
+  MOTOR_LIFE_BOAT("Motor Life Boat"),
   @XmlEnumValue("Medium Endurance Cutter")
-  MEDIUM___ENDURANCE___CUTTER("Medium Endurance Cutter"),
+  MEDIUM_ENDURANCE_CUTTER("Medium Endurance Cutter"),
   @XmlEnumValue("Patrol Boat")
-  PATROL___BOAT("Patrol Boat"),
+  PATROL_BOAT("Patrol Boat"),
   @XmlEnumValue("Utility Boat")
-  UTILITY___BOAT("Utility Boat"),
+  UTILITY_BOAT("Utility Boat"),
   @XmlEnumValue("Transportable Port Security Boat")
-  TRANSPORTABLE___PORT___SECURITY___BOAT("Transportable Port Security Boat"),
+  TRANSPORTABLE_PORT_SECURITY_BOAT("Transportable Port Security Boat"),
   @XmlEnumValue("Mine Countermeasure Ship")
-  MINE___COUNTERMEASURE___SHIP("Mine Countermeasure Ship"),
+  MINE_COUNTERMEASURE_SHIP("Mine Countermeasure Ship"),
   @XmlEnumValue("Coastal Mine Hunter")
-  COASTAL___MINE___HUNTER("Coastal Mine Hunter"),
+  COASTAL_MINE_HUNTER("Coastal Mine Hunter"),
   @XmlEnumValue("Cruiser")
   CRUISER("Cruiser"),
   @XmlEnumValue("Aircraft Carrier")
-  AIRCRAFT___CARRIER("Aircraft Carrier"),
+  AIRCRAFT_CARRIER("Aircraft Carrier"),
   @XmlEnumValue("Destroyer")
   DESTROYER("Destroyer"),
   @XmlEnumValue("Guided Missile Destroyer")
-  GUIDED___MISSILE___DESTROYER("Guided Missile Destroyer"),
+  GUIDED_MISSILE_DESTROYER("Guided Missile Destroyer"),
   @XmlEnumValue("Frigates")
   FRIGATES("Frigates"),
   @XmlEnumValue("Coastal Patrol Craft")
-  COASTAL___PATROL___CRAFT("Coastal Patrol Craft"),
+  COASTAL_PATROL_CRAFT("Coastal Patrol Craft"),
   @XmlEnumValue("Littoral combat Ship")
-  LITTORAL___COMBAT___SHIP("Littoral combat Ship"),
+  LITTORAL_COMBAT_SHIP("Littoral combat Ship"),
   @XmlEnumValue("Crane Ship")
-  CRANE___SHIP("Crane Ship"),
+  CRANE_SHIP("Crane Ship"),
   @XmlEnumValue("Ammunition Ship")
-  AMMUNITION___SHIP("Ammunition Ship"),
+  AMMUNITION_SHIP("Ammunition Ship"),
   @XmlEnumValue("Combat Stores Ship")
-  COMBAT___STORES___SHIP("Combat Stores Ship"),
+  COMBAT_STORES_SHIP("Combat Stores Ship"),
   @XmlEnumValue("Research Ship")
-  RESEARCH___SHIP("Research Ship"),
+  RESEARCH_SHIP("Research Ship"),
   @XmlEnumValue("Surveillance Ship")
-  SURVEILLANCE___SHIP("Surveillance Ship"),
+  SURVEILLANCE_SHIP("Surveillance Ship"),
   @XmlEnumValue("Survey Ship")
-  SURVEY___SHIP("Survey Ship"),
+  SURVEY_SHIP("Survey Ship"),
   @XmlEnumValue("Hospital Ship")
-  HOSPITAL___SHIP("Hospital Ship"),
+  HOSPITAL_SHIP("Hospital Ship"),
   @XmlEnumValue("Container Ship")
-  CONTAINER___SHIP("Container Ship"),
+  CONTAINER_SHIP("Container Ship"),
   @XmlEnumValue("Dry Cargo/Ammunition Ship")
-  DRY___CARGO___AMMUNITION___SHIP("Dry Cargo/Ammunition Ship"),
+  DRY_CARGO_AMMUNITION_SHIP("Dry Cargo/Ammunition Ship"),
   @XmlEnumValue("Fast Sealift Ship")
-  FAST___SEALIFT___SHIP("Fast Sealift Ship"),
+  FAST_SEALIFT_SHIP("Fast Sealift Ship"),
   @XmlEnumValue("Underway Replenishment Oiler")
-  UNDERWAY___REPLENISHMENT___OILER("Underway Replenishment Oiler"),
+  UNDERWAY_REPLENISHMENT_OILER("Underway Replenishment Oiler"),
   @XmlEnumValue("Fast Combat Support Ship")
-  FAST___COMBAT___SUPPORT___SHIP("Fast Combat Support Ship"),
+  FAST_COMBAT_SUPPORT_SHIP("Fast Combat Support Ship"),
   @XmlEnumValue("Transport Tanker")
-  TRANSPORT___TANKER("Transport Tanker"),
+  TRANSPORT_TANKER("Transport Tanker"),
   @XmlEnumValue("Cable Repair Ship")
-  CABLE___REPAIR___SHIP("Cable Repair Ship"),
+  CABLE_REPAIR_SHIP("Cable Repair Ship"),
   @XmlEnumValue("Rescue & Salvage")
-  RESCUE_____SALVAGE("Rescue & Salvage"),
+  RESCUE___SALVAGE("Rescue & Salvage"),
   @XmlEnumValue("Ocean-Going Tug")
-  OCEAN___GOING___TUG("Ocean-Going Tug"),
+  OCEAN_GOING_TUG("Ocean-Going Tug"),
   @XmlEnumValue("Aviation Support Ship")
-  AVIATION___SUPPORT___SHIP("Aviation Support Ship"),
+  AVIATION_SUPPORT_SHIP("Aviation Support Ship"),
   @XmlEnumValue("Research Vessel")
-  RESEARCH___VESSEL("Research Vessel"),
+  RESEARCH_VESSEL("Research Vessel"),
   @XmlEnumValue("Ballistic Missile Submarine")
-  BALLISTIC___MISSILE___SUBMARINE("Ballistic Missile Submarine"),
+  BALLISTIC_MISSILE_SUBMARINE("Ballistic Missile Submarine"),
   @XmlEnumValue("Attack Submarine")
-  ATTACK___SUBMARINE("Attack Submarine"),
+  ATTACK_SUBMARINE("Attack Submarine"),
   @XmlEnumValue("Salvage Ship")
-  SALVAGE___SHIP("Salvage Ship"),
+  SALVAGE_SHIP("Salvage Ship"),
   @XmlEnumValue("Submarine Tender")
-  SUBMARINE___TENDER("Submarine Tender"),
+  SUBMARINE_TENDER("Submarine Tender"),
   @XmlEnumValue("Yard Patrol Craft")
-  YARD___PATROL___CRAFT("Yard Patrol Craft"),
+  YARD_PATROL_CRAFT("Yard Patrol Craft"),
   @XmlEnumValue("Special Operations Craft")
-  SPECIAL___OPERATIONS___CRAFT("Special Operations Craft"),
+  SPECIAL_OPERATIONS_CRAFT("Special Operations Craft"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

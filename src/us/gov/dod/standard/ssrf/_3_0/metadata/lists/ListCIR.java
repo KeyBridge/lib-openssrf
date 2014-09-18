@@ -53,19 +53,19 @@ public enum ListCIR {
    * <p>
    */
   @XmlEnumValue("Not requested-Security")
-  NOT___REQUESTED___SECURITY("Not requested-Security"),
+  NOT_REQUESTED_SECURITY("Not requested-Security"),
   /**
    * Registration with ITU-R not required
    * <p>
    */
   @XmlEnumValue("Not required")
-  NOT___REQUIRED("Not required"),
+  NOT_REQUIRED("Not required"),
   /**
    * Not notified to ITU-R due to the rules laid down in the ITU regulations
    * <p>
    */
   @XmlEnumValue("Outside Rules")
-  OUTSIDE___RULES("Outside Rules"),
+  OUTSIDE_RULES("Outside Rules"),
   /**
    * Pending notification to ITU-R
    * <p>
@@ -83,13 +83,13 @@ public enum ListCIR {
    * <p>
    */
   @XmlEnumValue("Registered on Insistence")
-  REGISTERED___ON___INSISTENCE("Registered on Insistence"),
+  REGISTERED_ON_INSISTENCE("Registered on Insistence"),
   /**
    * Registered with ITU-R but needs to be modified
    * <p>
    */
   @XmlEnumValue("Registered-Needs modification")
-  REGISTERED___NEEDS___MODIFICATION("Registered-Needs modification"),
+  REGISTERED_NEEDS_MODIFICATION("Registered-Needs modification"),
   /**
    * Registration with ITU-R is required
    * <p>

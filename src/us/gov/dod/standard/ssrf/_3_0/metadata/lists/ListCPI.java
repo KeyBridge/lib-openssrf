@@ -51,27 +51,27 @@ public enum ListCPI {
    * <p>
    */
   @XmlEnumValue("International Approval")
-  INTERNATIONAL___APPROVAL("International Approval"),
+  INTERNATIONAL_APPROVAL("International Approval"),
   /**
    * The dataset is within national boundaries; however, it need not be
    * processed to national level authority for approval
    * <p>
    */
   @XmlEnumValue("Local Approval")
-  LOCAL___APPROVAL("Local Approval"),
+  LOCAL_APPROVAL("Local Approval"),
   /**
    * The dataset is to be processed to national level authority for approval
    * <p>
    */
   @XmlEnumValue("National Approval")
-  NATIONAL___APPROVAL("National Approval"),
+  NATIONAL_APPROVAL("National Approval"),
   /**
    * The dataset is outside national boundaries and need not be processed to
    * national level authority for approval
    * <p>
    */
   @XmlEnumValue("Outside National Boundaries")
-  OUTSIDE___NATIONAL___BOUNDARIES("Outside National Boundaries");
+  OUTSIDE_NATIONAL_BOUNDARIES("Outside National Boundaries");
   private final String value;
 
   ListCPI(String v) {

@@ -46,14 +46,14 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCRA {
 
   @XmlEnumValue("Coded Pulse")
-  CODED___PULSE("Coded Pulse"),
+  CODED_PULSE("Coded Pulse"),
   CW("CW"),
   @XmlEnumValue("FM CW")
-  FM___CW("FM CW"),
+  FM_CW("FM CW"),
   @XmlEnumValue("FM Pulse")
-  FM___PULSE("FM Pulse"),
+  FM_PULSE("FM Pulse"),
   @XmlEnumValue("Non-FM Pulse")
-  NON___FM___PULSE("Non-FM Pulse"),
+  NON_FM_PULSE("Non-FM Pulse"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

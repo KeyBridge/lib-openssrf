@@ -58,7 +58,7 @@ public enum ListCAD {
    * <p>
    */
   @XmlEnumValue("Non-Dir Or Omni")
-  NON___DIR___OR___OMNI("Non-Dir Or Omni"),
+  NON_DIR_OR_OMNI("Non-Dir Or Omni"),
   /**
    * The antenna rotates at a fixed rate
    * <p>
@@ -70,13 +70,13 @@ public enum ListCAD {
    * <p>
    */
   @XmlEnumValue("Sector Scan H")
-  SECTOR___SCAN___H("Sector Scan H"),
+  SECTOR_SCAN_H("Sector Scan H"),
   /**
    * Scanning vertically through a limited sector
    * <p>
    */
   @XmlEnumValue("Sector Scan V")
-  SECTOR___SCAN___V("Sector Scan V"),
+  SECTOR_SCAN_V("Sector Scan V"),
   /**
    * Fixed direction but steerable in the reference plane
    * <p>

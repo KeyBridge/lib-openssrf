@@ -605,7 +605,7 @@ public enum ListCCY {
    * <p>
    */
   @XmlEnumValue("YU-KM")
-  YU___KM("YU-KM"),
+  YU_KM("YU-KM"),
   /**
    * Kuwait
    * <p>

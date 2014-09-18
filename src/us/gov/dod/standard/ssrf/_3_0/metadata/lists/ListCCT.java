@@ -59,49 +59,49 @@ public enum ListCCT {
    * <p>
    */
   @XmlEnumValue("Selectivity-IF1")
-  SELECTIVITY___IF_1("Selectivity-IF1"),
+  SELECTIVITY_IF_1("Selectivity-IF1"),
   /**
    * Receiver 2nd intermediate frequency selectivity
    * <p>
    */
   @XmlEnumValue("Selectivity-IF2")
-  SELECTIVITY___IF_2("Selectivity-IF2"),
+  SELECTIVITY_IF_2("Selectivity-IF2"),
   /**
    * Receiver 3rd intermediate frequency selectivity
    * <p>
    */
   @XmlEnumValue("Selectivity-IF3")
-  SELECTIVITY___IF_3("Selectivity-IF3"),
+  SELECTIVITY_IF_3("Selectivity-IF3"),
   /**
    * Receiver 4th intermediate frequency selectivity
    * <p>
    */
   @XmlEnumValue("Selectivity-IF4")
-  SELECTIVITY___IF_4("Selectivity-IF4"),
+  SELECTIVITY_IF_4("Selectivity-IF4"),
   /**
    * Receiver 5th intermediate frequency selectivity
    * <p>
    */
   @XmlEnumValue("Selectivity-IF5")
-  SELECTIVITY___IF_5("Selectivity-IF5"),
+  SELECTIVITY_IF_5("Selectivity-IF5"),
   /**
    * Overall Selectivity
    * <p>
    */
   @XmlEnumValue("Selectivity-Overall")
-  SELECTIVITY___OVERALL("Selectivity-Overall"),
+  SELECTIVITY_OVERALL("Selectivity-Overall"),
   /**
    * Receiver radio-frequency selectivity
    * <p>
    */
   @XmlEnumValue("Selectivity-RF")
-  SELECTIVITY___RF("Selectivity-RF"),
+  SELECTIVITY_RF("Selectivity-RF"),
   /**
    * Transmitter RF spectrum
    * <p>
    */
   @XmlEnumValue("Tx RF Spectrum")
-  TX___RF___SPECTRUM("Tx RF Spectrum");
+  TX_RF_SPECTRUM("Tx RF Spectrum");
   private final String value;
 
   ListCCT(String v) {

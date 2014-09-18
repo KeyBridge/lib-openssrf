@@ -57,21 +57,21 @@ public enum ListUTY {
   @XmlEnumValue("Semiduplex")
   SEMIDUPLEX("Semiduplex"),
   @XmlEnumValue("Simplex Net")
-  SIMPLEX___NET("Simplex Net"),
+  SIMPLEX_NET("Simplex Net"),
   @XmlEnumValue("One Directional Transmission")
-  ONE___DIRECTIONAL___TRANSMISSION("One Directional Transmission"),
+  ONE_DIRECTIONAL_TRANSMISSION("One Directional Transmission"),
   @XmlEnumValue("Broadcast")
   BROADCAST("Broadcast"),
   @XmlEnumValue("Simultaneous Broadcast")
-  SIMULTANEOUS___BROADCAST("Simultaneous Broadcast"),
+  SIMULTANEOUS_BROADCAST("Simultaneous Broadcast"),
   @XmlEnumValue("Radionavigation")
   RADIONAVIGATION("Radionavigation"),
   @XmlEnumValue("Radiolocation")
   RADIOLOCATION("Radiolocation"),
   @XmlEnumValue("Reception Only")
-  RECEPTION___ONLY("Reception Only"),
+  RECEPTION_ONLY("Reception Only"),
   @XmlEnumValue("Radio Determination")
-  RADIO___DETERMINATION("Radio Determination"),
+  RADIO_DETERMINATION("Radio Determination"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

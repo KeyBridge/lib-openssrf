@@ -51,22 +51,22 @@ public enum ListCCN {
 
   MC("MC"),
   @XmlEnumValue("Micro-coaxial")
-  MICRO___COAXIAL("Micro-coaxial"),
+  MICRO_COAXIAL("Micro-coaxial"),
   @XmlEnumValue("Micro-miniature coaxial")
-  MICRO___MINIATURE___COAXIAL("Micro-miniature coaxial"),
+  MICRO_MINIATURE_COAXIAL("Micro-miniature coaxial"),
   MMX("MMX"),
   @XmlEnumValue("Neill-Concelman Bayonet")
-  NEILL___CONCELMAN___BAYONET("Neill-Concelman Bayonet"),
+  NEILL_CONCELMAN_BAYONET("Neill-Concelman Bayonet"),
   @XmlEnumValue("Neill-Concelman Threaded")
-  NEILL___CONCELMAN___THREADED("Neill-Concelman Threaded"),
+  NEILL_CONCELMAN_THREADED("Neill-Concelman Threaded"),
   @XmlEnumValue("Sub-Miniature version A")
-  SUB___MINIATURE___VERSION___A("Sub-Miniature version A"),
+  SUB_MINIATURE_VERSION_A("Sub-Miniature version A"),
   @XmlEnumValue("Sub-Miniature version B")
-  SUB___MINIATURE___VERSION___B("Sub-Miniature version B"),
+  SUB_MINIATURE_VERSION_B("Sub-Miniature version B"),
   @XmlEnumValue("Sub-Miniature version C")
-  SUB___MINIATURE___VERSION___C("Sub-Miniature version C"),
+  SUB_MINIATURE_VERSION_C("Sub-Miniature version C"),
   @XmlEnumValue("Type N")
-  TYPE___N("Type N"),
+  TYPE_N("Type N"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

@@ -63,27 +63,27 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCMC {
 
   @XmlEnumValue("Admin and Special Services")
-  ADMIN___AND___SPECIAL___SERVICES("Admin and Special Services"),
+  ADMIN_AND_SPECIAL_SERVICES("Admin and Special Services"),
   @XmlEnumValue("Armor/Antitank")
-  ARMOR___ANTITANK("Armor/Antitank"),
+  ARMOR_ANTITANK("Armor/Antitank"),
   @XmlEnumValue("Artillery /Air and Space Defense")
-  ARTILLERY____AIR___AND___SPACE___DEFENSE("Artillery /Air and Space Defense"),
+  ARTILLERY__AIR_AND_SPACE_DEFENSE("Artillery /Air and Space Defense"),
   @XmlEnumValue("Aviation Support")
-  AVIATION___SUPPORT("Aviation Support"),
+  AVIATION_SUPPORT("Aviation Support"),
   @XmlEnumValue("Aviation/Anti-Aircraft")
-  AVIATION___ANTI___AIRCRAFT("Aviation/Anti-Aircraft"),
+  AVIATION_ANTI_AIRCRAFT("Aviation/Anti-Aircraft"),
   @XmlEnumValue("Chemical/Ordnance")
-  CHEMICAL___ORDNANCE("Chemical/Ordnance"),
+  CHEMICAL_ORDNANCE("Chemical/Ordnance"),
   @XmlEnumValue("Civil Affairs")
-  CIVIL___AFFAIRS("Civil Affairs"),
+  CIVIL_AFFAIRS("Civil Affairs"),
   @XmlEnumValue("Civil Air Patrol")
-  CIVIL___AIR___PATROL("Civil Air Patrol"),
+  CIVIL_AIR_PATROL("Civil Air Patrol"),
   @XmlEnumValue("Combat Support")
-  COMBAT___SUPPORT("Combat Support"),
+  COMBAT_SUPPORT("Combat Support"),
   @XmlEnumValue("Communications")
   COMMUNICATIONS("Communications"),
   @XmlEnumValue("Composite Forces")
-  COMPOSITE___FORCES("Composite Forces"),
+  COMPOSITE_FORCES("Composite Forces"),
   @XmlEnumValue("Engineering")
   ENGINEERING("Engineering"),
   @XmlEnumValue("Finance")
@@ -91,37 +91,37 @@ public enum ListCMC {
   @XmlEnumValue("Infantry")
   INFANTRY("Infantry"),
   @XmlEnumValue("Intelligence / Psychological Ops")
-  INTELLIGENCE_____PSYCHOLOGICAL___OPS("Intelligence / Psychological Ops"),
+  INTELLIGENCE___PSYCHOLOGICAL_OPS("Intelligence / Psychological Ops"),
   @XmlEnumValue("Law enforcement / Security")
-  LAW___ENFORCEMENT_____SECURITY("Law enforcement / Security"),
+  LAW_ENFORCEMENT___SECURITY("Law enforcement / Security"),
   @XmlEnumValue("Maintenance")
   MAINTENANCE("Maintenance"),
   @XmlEnumValue("Major Command")
-  MAJOR___COMMAND("Major Command"),
+  MAJOR_COMMAND("Major Command"),
   @XmlEnumValue("Medical/Dental")
-  MEDICAL___DENTAL("Medical/Dental"),
+  MEDICAL_DENTAL("Medical/Dental"),
   @XmlEnumValue("Miscellaneous")
   MISCELLANEOUS("Miscellaneous"),
   @XmlEnumValue("Multifunction Post")
-  MULTIFUNCTION___POST("Multifunction Post"),
+  MULTIFUNCTION_POST("Multifunction Post"),
   @XmlEnumValue("Naval Support")
-  NAVAL___SUPPORT("Naval Support"),
+  NAVAL_SUPPORT("Naval Support"),
   @XmlEnumValue("Recruiting")
   RECRUITING("Recruiting"),
   @XmlEnumValue("Research and Development")
-  RESEARCH___AND___DEVELOPMENT("Research and Development"),
+  RESEARCH_AND_DEVELOPMENT("Research and Development"),
   @XmlEnumValue("Special Ops")
-  SPECIAL___OPS("Special Ops"),
+  SPECIAL_OPS("Special Ops"),
   @XmlEnumValue("Supply")
   SUPPLY("Supply"),
   @XmlEnumValue("Tactical Control")
-  TACTICAL___CONTROL("Tactical Control"),
+  TACTICAL_CONTROL("Tactical Control"),
   @XmlEnumValue("Task Organisation")
-  TASK___ORGANISATION("Task Organisation"),
+  TASK_ORGANISATION("Task Organisation"),
   @XmlEnumValue("Training")
   TRAINING("Training"),
   @XmlEnumValue("Transportation / Fleet Auxiliaries")
-  TRANSPORTATION_____FLEET___AUXILIARIES("Transportation / Fleet Auxiliaries"),
+  TRANSPORTATION___FLEET_AUXILIARIES("Transportation / Fleet Auxiliaries"),
   @XmlEnumValue("Warships")
   WARSHIPS("Warships"),
   @XmlEnumValue("Other")

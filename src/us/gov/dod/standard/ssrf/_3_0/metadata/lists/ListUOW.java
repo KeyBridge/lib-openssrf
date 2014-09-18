@@ -52,21 +52,21 @@ public enum ListUOW {
   @XmlEnumValue("Agency")
   AGENCY("Agency"),
   @XmlEnumValue("Unified Command")
-  UNIFIED___COMMAND("Unified Command"),
+  UNIFIED_COMMAND("Unified Command"),
   @XmlEnumValue("Unified Command Service")
-  UNIFIED___COMMAND___SERVICE("Unified Command Service"),
+  UNIFIED_COMMAND_SERVICE("Unified Command Service"),
   @XmlEnumValue("Bureau")
   BUREAU("Bureau"),
   @XmlEnumValue("Major Command")
-  MAJOR___COMMAND("Major Command"),
+  MAJOR_COMMAND("Major Command"),
   @XmlEnumValue("Subcommand")
   SUBCOMMAND("Subcommand"),
   @XmlEnumValue("Installation Frequency Manager")
-  INSTALLATION___FREQUENCY___MANAGER("Installation Frequency Manager"),
+  INSTALLATION_FREQUENCY_MANAGER("Installation Frequency Manager"),
   @XmlEnumValue("Operating Unit")
-  OPERATING___UNIT("Operating Unit"),
+  OPERATING_UNIT("Operating Unit"),
   @XmlEnumValue("Area AFC/DoD AFC/Other Organizations")
-  AREA___AFC___DO_D___AFC___OTHER___ORGANIZATIONS("Area AFC/DoD AFC/Other Organizations"),
+  AREA_AFC_DO_D_AFC_OTHER_ORGANIZATIONS("Area AFC/DoD AFC/Other Organizations"),
   @XmlEnumValue("Requestor")
   REQUESTOR("Requestor"),
   @XmlEnumValue("Other")

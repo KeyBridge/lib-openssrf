@@ -46,15 +46,15 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUPU {
 
   @XmlEnumValue("Repeater Out")
-  REPEATER___OUT("Repeater Out"),
+  REPEATER_OUT("Repeater Out"),
   @XmlEnumValue("Repeater In")
-  REPEATER___IN("Repeater In"),
+  REPEATER_IN("Repeater In"),
   @XmlEnumValue("Duplex Pairing")
-  DUPLEX___PAIRING("Duplex Pairing"),
+  DUPLEX_PAIRING("Duplex Pairing"),
   @XmlEnumValue("Frequency Diversity")
-  FREQUENCY___DIVERSITY("Frequency Diversity"),
+  FREQUENCY_DIVERSITY("Frequency Diversity"),
   @XmlEnumValue("Space Diversity")
-  SPACE___DIVERSITY("Space Diversity");
+  SPACE_DIVERSITY("Space Diversity");
   private final String value;
 
   ListUPU(String v) {

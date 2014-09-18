@@ -56,27 +56,27 @@ public enum ListCRT {
   @XmlEnumValue("Crystal")
   CRYSTAL("Crystal"),
   @XmlEnumValue("Direct View Optics")
-  DIRECT___VIEW___OPTICS("Direct View Optics"),
+  DIRECT_VIEW_OPTICS("Direct View Optics"),
   @XmlEnumValue("Double Conversion Superheterodyne")
-  DOUBLE___CONVERSION___SUPERHETERODYNE("Double Conversion Superheterodyne"),
+  DOUBLE_CONVERSION_SUPERHETERODYNE("Double Conversion Superheterodyne"),
   @XmlEnumValue("Homodyne")
   HOMODYNE("Homodyne"),
   @XmlEnumValue("Imaging Detector")
-  IMAGING___DETECTOR("Imaging Detector"),
+  IMAGING_DETECTOR("Imaging Detector"),
   @XmlEnumValue("Non-Coherent")
-  NON___COHERENT("Non-Coherent"),
+  NON_COHERENT("Non-Coherent"),
   @XmlEnumValue("Non-Imaging Detector")
-  NON___IMAGING___DETECTOR("Non-Imaging Detector"),
+  NON_IMAGING_DETECTOR("Non-Imaging Detector"),
   @XmlEnumValue("Quad Conversion Superheterodyne")
-  QUAD___CONVERSION___SUPERHETERODYNE("Quad Conversion Superheterodyne"),
+  QUAD_CONVERSION_SUPERHETERODYNE("Quad Conversion Superheterodyne"),
   @XmlEnumValue("Super Regenerative")
-  SUPER___REGENERATIVE("Super Regenerative"),
+  SUPER_REGENERATIVE("Super Regenerative"),
   @XmlEnumValue("Superheterodyne")
   SUPERHETERODYNE("Superheterodyne"),
   @XmlEnumValue("Triple Conversion Superheterodyne")
-  TRIPLE___CONVERSION___SUPERHETERODYNE("Triple Conversion Superheterodyne"),
+  TRIPLE_CONVERSION_SUPERHETERODYNE("Triple Conversion Superheterodyne"),
   @XmlEnumValue("Tuned Radio Frequency")
-  TUNED___RADIO___FREQUENCY("Tuned Radio Frequency"),
+  TUNED_RADIO_FREQUENCY("Tuned Radio Frequency"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

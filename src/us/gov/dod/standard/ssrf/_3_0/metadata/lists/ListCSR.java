@@ -66,11 +66,11 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCSR {
 
   @XmlEnumValue("AG/Band")
-  AG___BAND("AG/Band"),
+  AG_BAND("AG/Band"),
   @XmlEnumValue("Air Defense")
-  AIR___DEFENSE("Air Defense"),
+  AIR_DEFENSE("Air Defense"),
   @XmlEnumValue("Airborne Division")
-  AIRBORNE___DIVISION("Airborne Division"),
+  AIRBORNE_DIVISION("Airborne Division"),
   @XmlEnumValue("Airmobile")
   AIRMOBILE("Airmobile"),
   @XmlEnumValue("Armor")
@@ -78,11 +78,11 @@ public enum ListCSR {
   @XmlEnumValue("Army")
   ARMY("Army"),
   @XmlEnumValue("Army Material Command")
-  ARMY___MATERIAL___COMMAND("Army Material Command"),
+  ARMY_MATERIAL_COMMAND("Army Material Command"),
   @XmlEnumValue("Aviation")
   AVIATION("Aviation"),
   @XmlEnumValue("Brigade Combat Team/IDIV")
-  BRIGADE___COMBAT___TEAM___IDIV("Brigade Combat Team/IDIV"),
+  BRIGADE_COMBAT_TEAM_IDIV("Brigade Combat Team/IDIV"),
   @XmlEnumValue("Censorship")
   CENSORSHIP("Censorship"),
   @XmlEnumValue("Chaplain")
@@ -90,51 +90,51 @@ public enum ListCSR {
   @XmlEnumValue("Chemical")
   CHEMICAL("Chemical"),
   @XmlEnumValue("Civil Affairs")
-  CIVIL___AFFAIRS("Civil Affairs"),
+  CIVIL_AFFAIRS("Civil Affairs"),
   @XmlEnumValue("Combat Service Support")
-  COMBAT___SERVICE___SUPPORT("Combat Service Support"),
+  COMBAT_SERVICE_SUPPORT("Combat Service Support"),
   @XmlEnumValue("Corps")
   CORPS("Corps"),
   @XmlEnumValue("Engineering")
   ENGINEERING("Engineering"),
   @XmlEnumValue("Field artillery")
-  FIELD___ARTILLERY("Field artillery"),
+  FIELD_ARTILLERY("Field artillery"),
   @XmlEnumValue("Finance")
   FINANCE("Finance"),
   @XmlEnumValue("General")
   GENERAL("General"),
   @XmlEnumValue("Heavy Division/Brigade")
-  HEAVY___DIVISION___BRIGADE("Heavy Division/Brigade"),
+  HEAVY_DIVISION_BRIGADE("Heavy Division/Brigade"),
   @XmlEnumValue("Infantry")
   INFANTRY("Infantry"),
   @XmlEnumValue("Judge Advocate")
-  JUDGE___ADVOCATE("Judge Advocate"),
+  JUDGE_ADVOCATE("Judge Advocate"),
   @XmlEnumValue("Maintenance")
   MAINTENANCE("Maintenance"),
   @XmlEnumValue("Medical")
   MEDICAL("Medical"),
   @XmlEnumValue("Military Intelligence (corps and below)")
-  MILITARY___INTELLIGENCE____CORPS___AND___BELOW__("Military Intelligence (corps and below)"),
+  MILITARY_INTELLIGENCE__CORPS_AND_BELOW__("Military Intelligence (corps and below)"),
   @XmlEnumValue("Military intelligence (EAC)")
-  MILITARY___INTELLIGENCE____EAC__("Military intelligence (EAC)"),
+  MILITARY_INTELLIGENCE__EAC__("Military intelligence (EAC)"),
   @XmlEnumValue("Military intelligence (SIGINT EAC)")
-  MILITARY___INTELLIGENCE____SIGINT___EAC__("Military intelligence (SIGINT EAC)"),
+  MILITARY_INTELLIGENCE__SIGINT_EAC__("Military intelligence (SIGINT EAC)"),
   @XmlEnumValue("Military police")
-  MILITARY___POLICE("Military police"),
+  MILITARY_POLICE("Military police"),
   @XmlEnumValue("Ordnance")
   ORDNANCE("Ordnance"),
   @XmlEnumValue("Psychological Operations")
-  PSYCHOLOGICAL___OPERATIONS("Psychological Operations"),
+  PSYCHOLOGICAL_OPERATIONS("Psychological Operations"),
   @XmlEnumValue("Quartermaster")
   QUARTERMASTER("Quartermaster"),
   @XmlEnumValue("Separate Light Infantry")
-  SEPARATE___LIGHT___INFANTRY("Separate Light Infantry"),
+  SEPARATE_LIGHT_INFANTRY("Separate Light Infantry"),
   @XmlEnumValue("Signal")
   SIGNAL("Signal"),
   @XmlEnumValue("Space/Missile Defense")
-  SPACE___MISSILE___DEFENSE("Space/Missile Defense"),
+  SPACE_MISSILE_DEFENSE("Space/Missile Defense"),
   @XmlEnumValue("Special Forces")
-  SPECIAL___FORCES("Special Forces"),
+  SPECIAL_FORCES("Special Forces"),
   @XmlEnumValue("Supply")
   SUPPLY("Supply"),
   @XmlEnumValue("Transportation")

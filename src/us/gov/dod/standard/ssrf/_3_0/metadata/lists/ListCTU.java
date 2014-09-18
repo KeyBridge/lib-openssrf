@@ -58,7 +58,7 @@ public enum ListCTU {
    * <p>
    */
   @XmlEnumValue("Continuous+Stepped")
-  CONTINUOUS___STEPPED("Continuous+Stepped"),
+  CONTINUOUS_STEPPED("Continuous+Stepped"),
   /**
    * Systems capable of operating on a single discrete frequency
    * <p>
@@ -70,13 +70,13 @@ public enum ListCTU {
    * <p>
    */
   @XmlEnumValue("Fixed+Continuous")
-  FIXED___CONTINUOUS("Fixed+Continuous"),
+  FIXED_CONTINUOUS("Fixed+Continuous"),
   /**
    * Combination of fixed and stepped
    * <p>
    */
   @XmlEnumValue("Fixed+Stepped")
-  FIXED___STEPPED("Fixed+Stepped"),
+  FIXED_STEPPED("Fixed+Stepped"),
   /**
    * Systems capable of being tuned across the authorised or requested band in
    * discrete steps or increments. This includes crystal control
@@ -91,14 +91,14 @@ public enum ListCTU {
    * <p>
    */
   @XmlEnumValue("Fixed-Constrained")
-  FIXED___CONSTRAINED("Fixed-Constrained"),
+  FIXED_CONSTRAINED("Fixed-Constrained"),
   /**
    * Frequency-agile radars that operate on various frequencies within a band,
    * either specified or random mode
    * <p>
    */
   @XmlEnumValue("Fixed or Random")
-  FIXED___OR___RANDOM("Fixed or Random");
+  FIXED_OR_RANDOM("Fixed or Random");
   private final String value;
 
   ListCTU(String v) {

@@ -45,9 +45,9 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCSI {
 
   @XmlEnumValue("Lower sideband")
-  LOWER___SIDEBAND("Lower sideband"),
+  LOWER_SIDEBAND("Lower sideband"),
   @XmlEnumValue("Upper sideband")
-  UPPER___SIDEBAND("Upper sideband");
+  UPPER_SIDEBAND("Upper sideband");
   private final String value;
 
   ListCSI(String v) {

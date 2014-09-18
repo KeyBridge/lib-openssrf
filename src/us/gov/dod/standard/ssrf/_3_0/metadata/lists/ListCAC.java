@@ -46,13 +46,13 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCAC {
 
   @XmlEnumValue("Add Code")
-  ADD___CODE("Add Code"),
+  ADD_CODE("Add Code"),
   @XmlEnumValue("Add List")
-  ADD___LIST("Add List"),
+  ADD_LIST("Add List"),
   @XmlEnumValue("Delete Code")
-  DELETE___CODE("Delete Code"),
+  DELETE_CODE("Delete Code"),
   @XmlEnumValue("Delete List")
-  DELETE___LIST("Delete List");
+  DELETE_LIST("Delete List");
   private final String value;
 
   ListCAC(String v) {

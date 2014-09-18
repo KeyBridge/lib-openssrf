@@ -63,11 +63,11 @@ public enum ListCAF {
   @XmlEnumValue("Cassegrain")
   CASSEGRAIN("Cassegrain"),
   @XmlEnumValue("Eight Feed Horn Cluster")
-  EIGHT___FEED___HORN___CLUSTER("Eight Feed Horn Cluster"),
+  EIGHT_FEED_HORN_CLUSTER("Eight Feed Horn Cluster"),
   @XmlEnumValue("Feed Horn Cluster")
-  FEED___HORN___CLUSTER("Feed Horn Cluster"),
+  FEED_HORN_CLUSTER("Feed Horn Cluster"),
   @XmlEnumValue("Four Horn Cluster")
-  FOUR___HORN___CLUSTER("Four Horn Cluster"),
+  FOUR_HORN_CLUSTER("Four Horn Cluster"),
   @XmlEnumValue("Conical")
   CONICAL("Conical"),
   @XmlEnumValue("Cutler")
@@ -75,29 +75,29 @@ public enum ListCAF {
   @XmlEnumValue("Dipole")
   DIPOLE("Dipole"),
   @XmlEnumValue("Dipole Array")
-  DIPOLE___ARRAY("Dipole Array"),
+  DIPOLE_ARRAY("Dipole Array"),
   @XmlEnumValue("Rotating Dipole")
-  ROTATING___DIPOLE("Rotating Dipole"),
+  ROTATING_DIPOLE("Rotating Dipole"),
   @XmlEnumValue("Faired Set Horns")
-  FAIRED___SET___HORNS("Faired Set Horns"),
+  FAIRED_SET_HORNS("Faired Set Horns"),
   @XmlEnumValue("Float Strip Type Power Divider")
-  FLOAT___STRIP___TYPE___POWER___DIVIDER("Float Strip Type Power Divider"),
+  FLOAT_STRIP_TYPE_POWER_DIVIDER("Float Strip Type Power Divider"),
   @XmlEnumValue("Half Wave Radiator")
-  HALF___WAVE___RADIATOR("Half Wave Radiator"),
+  HALF_WAVE_RADIATOR("Half Wave Radiator"),
   @XmlEnumValue("Horn")
   HORN("Horn"),
   @XmlEnumValue("Horn-Rotating Spinner")
-  HORN___ROTATING___SPINNER("Horn-Rotating Spinner"),
+  HORN_ROTATING_SPINNER("Horn-Rotating Spinner"),
   @XmlEnumValue("Lens")
   LENS("Lens"),
   @XmlEnumValue("Lewis Scanner")
-  LEWIS___SCANNER("Lewis Scanner"),
+  LEWIS_SCANNER("Lewis Scanner"),
   @XmlEnumValue("Multiple Array Of Folded Dipoles")
-  MULTIPLE___ARRAY___OF___FOLDED___DIPOLES("Multiple Array Of Folded Dipoles"),
+  MULTIPLE_ARRAY_OF_FOLDED_DIPOLES("Multiple Array Of Folded Dipoles"),
   @XmlEnumValue("Multiple Feed Horn Array")
-  MULTIPLE___FEED___HORN___ARRAY("Multiple Feed Horn Array"),
+  MULTIPLE_FEED_HORN_ARRAY("Multiple Feed Horn Array"),
   @XmlEnumValue("Pill Box")
-  PILL___BOX("Pill Box"),
+  PILL_BOX("Pill Box"),
   @XmlEnumValue("Probe")
   PROBE("Probe"),
   @XmlEnumValue("Rod")
@@ -105,11 +105,11 @@ public enum ListCAF {
   @XmlEnumValue("Slot")
   SLOT("Slot"),
   @XmlEnumValue("Slotted Linear Array")
-  SLOTTED___LINEAR___ARRAY("Slotted Linear Array"),
+  SLOTTED_LINEAR_ARRAY("Slotted Linear Array"),
   @XmlEnumValue("Waveguide")
   WAVEGUIDE("Waveguide"),
   @XmlEnumValue("Yagi Element")
-  YAGI___ELEMENT("Yagi Element"),
+  YAGI_ELEMENT("Yagi Element"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

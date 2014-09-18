@@ -29,17 +29,6 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * Java class for ListCHN.
- * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;simpleType name="ListCHN"> &lt;restriction
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}S50"> &lt;enumeration value="Host
- * nominations acceptable"/> &lt;enumeration value="NATO HQ-assigned"/>
- * &lt;enumeration value="NUFAS-assigned"/> &lt;enumeration
- * value="User-assigned"/> &lt;/restriction> &lt;/simpleType>
- * </pre>
- * <p>
  */
 @XmlType(name = "ListCHN")
 @XmlEnum
@@ -50,26 +39,26 @@ public enum ListCHN {
    * <p>
    */
   @XmlEnumValue("Host nominations acceptable")
-  HOST___NOMINATIONS___ACCEPTABLE("Host nominations acceptable"),
+  HOST_NOMINATIONS_ACCEPTABLE("Host nominations acceptable"),
   /**
    * The frequency is preassigned by NATO headquarters (NHQC3S/SC3IB).
    * <p>
    */
   @XmlEnumValue("NATO HQ-assigned")
-  NATO___HQ___ASSIGNED("NATO HQ-assigned"),
+  NATO_HQ_ASSIGNED("NATO HQ-assigned"),
   /**
    * The frequency was assigned by the NATO UHF Frequency Assignment Software
    * (NUFAS) at NHQC3S/SC3IB.
    * <p>
    */
   @XmlEnumValue("NUFAS-assigned")
-  NUFAS___ASSIGNED("NUFAS-assigned"),
+  NUFAS_ASSIGNED("NUFAS-assigned"),
   /**
    * The frequency was preassigned by the user.
    * <p>
    */
   @XmlEnumValue("User-assigned")
-  USER___ASSIGNED("User-assigned");
+  USER_ASSIGNED("User-assigned");
   private final String value;
 
   ListCHN(String v) {

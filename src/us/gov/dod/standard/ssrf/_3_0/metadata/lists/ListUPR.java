@@ -49,19 +49,19 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUPR {
 
   @XmlEnumValue("Priority 1 Strategic Order")
-  PRIORITY___1___STRATEGIC___ORDER("Priority 1 Strategic Order"),
+  PRIORITY_1_STRATEGIC_ORDER("Priority 1 Strategic Order"),
   @XmlEnumValue("Priority 2 Tasked Plan Execution")
-  PRIORITY___2___TASKED___PLAN___EXECUTION("Priority 2 Tasked Plan Execution"),
+  PRIORITY_2_TASKED_PLAN_EXECUTION("Priority 2 Tasked Plan Execution"),
   @XmlEnumValue("Priority 3 Essential Operational Support")
-  PRIORITY___3___ESSENTIAL___OPERATIONAL___SUPPORT("Priority 3 Essential Operational Support"),
+  PRIORITY_3_ESSENTIAL_OPERATIONAL_SUPPORT("Priority 3 Essential Operational Support"),
   @XmlEnumValue("Priority 4 Training")
-  PRIORITY___4___TRAINING("Priority 4 Training"),
+  PRIORITY_4_TRAINING("Priority 4 Training"),
   @XmlEnumValue("Priority 5 VIP Support")
-  PRIORITY___5___VIP___SUPPORT("Priority 5 VIP Support"),
+  PRIORITY_5_VIP_SUPPORT("Priority 5 VIP Support"),
   @XmlEnumValue("Priority 6 RDT&E and General")
-  PRIORITY___6___RDT___E___AND___GENERAL("Priority 6 RDT&E and General"),
+  PRIORITY_6_RDT_E_AND_GENERAL("Priority 6 RDT&E and General"),
   @XmlEnumValue("Priority 7 Miscellaneous")
-  PRIORITY___7___MISCELLANEOUS("Priority 7 Miscellaneous");
+  PRIORITY_7_MISCELLANEOUS("Priority 7 Miscellaneous");
   private final String value;
 
   ListUPR(String v) {

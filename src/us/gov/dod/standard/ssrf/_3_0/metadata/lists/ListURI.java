@@ -47,13 +47,13 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListURI {
 
   @XmlEnumValue("Routine Application")
-  ROUTINE___APPLICATION("Routine Application"),
+  ROUTINE_APPLICATION("Routine Application"),
   @XmlEnumValue("Regular Application")
-  REGULAR___APPLICATION("Regular Application"),
+  REGULAR_APPLICATION("Regular Application"),
   @XmlEnumValue("Aeronautical Assignment Group (AAG) Application")
-  AERONAUTICAL___ASSIGNMENT___GROUP____AAG____APPLICATION("Aeronautical Assignment Group (AAG) Application"),
+  AERONAUTICAL_ASSIGNMENT_GROUP__AAG__APPLICATION("Aeronautical Assignment Group (AAG) Application"),
   @XmlEnumValue("Marine Assignment Group (MAG) Application")
-  MARINE___ASSIGNMENT___GROUP____MAG____APPLICATION("Marine Assignment Group (MAG) Application");
+  MARINE_ASSIGNMENT_GROUP__MAG__APPLICATION("Marine Assignment Group (MAG) Application");
   private final String value;
 
   ListURI(String v) {

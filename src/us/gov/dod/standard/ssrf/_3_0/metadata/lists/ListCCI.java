@@ -52,17 +52,17 @@ public enum ListCCI {
   @XmlEnumValue("Reviewer")
   REVIEWER("Reviewer"),
   @XmlEnumValue("Program Manager")
-  PROGRAM___MANAGER("Program Manager"),
+  PROGRAM_MANAGER("Program Manager"),
   @XmlEnumValue("Project Engineer")
-  PROJECT___ENGINEER("Project Engineer"),
+  PROJECT_ENGINEER("Project Engineer"),
   @XmlEnumValue("Point of Contact")
-  POINT___OF___CONTACT("Point of Contact"),
+  POINT_OF_CONTACT("Point of Contact"),
   @XmlEnumValue("User")
   USER("User"),
   @XmlEnumValue("Supplier")
   SUPPLIER("Supplier"),
   @XmlEnumValue("Spectrum Manager")
-  SPECTRUM___MANAGER("Spectrum Manager"),
+  SPECTRUM_MANAGER("Spectrum Manager"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

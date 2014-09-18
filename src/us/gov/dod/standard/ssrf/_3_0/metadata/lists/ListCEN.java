@@ -48,10 +48,10 @@ public enum ListCEN {
 
   CENOT("CENOT"),
   @XmlEnumValue("DIA Equipment Number")
-  DIA___EQUIPMENT___NUMBER("DIA Equipment Number"),
+  DIA_EQUIPMENT_NUMBER("DIA Equipment Number"),
   ELNOT("ELNOT"),
   @XmlEnumValue("Interim identifier")
-  INTERIM___IDENTIFIER("Interim identifier"),
+  INTERIM_IDENTIFIER("Interim identifier"),
   SPOT("SPOT"),
   @XmlEnumValue("Other")
   OTHER("Other");

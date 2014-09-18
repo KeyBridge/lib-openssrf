@@ -61,31 +61,31 @@ public enum ListCIN {
   @XmlEnumValue("Amphibious")
   AMPHIBIOUS("Amphibious"),
   @XmlEnumValue("Deep Space")
-  DEEP___SPACE("Deep Space"),
+  DEEP_SPACE("Deep Space"),
   @XmlEnumValue("Handheld")
   HANDHELD("Handheld"),
   @XmlEnumValue("Land")
   LAND("Land"),
   @XmlEnumValue("Land Fixed")
-  LAND___FIXED("Land Fixed"),
+  LAND_FIXED("Land Fixed"),
   @XmlEnumValue("Land Mobile")
-  LAND___MOBILE("Land Mobile"),
+  LAND_MOBILE("Land Mobile"),
   @XmlEnumValue("Manpack")
   MANPACK("Manpack"),
   @XmlEnumValue("Missile")
   MISSILE("Missile"),
   @XmlEnumValue("Non Synchronous Orbit")
-  NON___SYNCHRONOUS___ORBIT("Non Synchronous Orbit"),
+  NON_SYNCHRONOUS_ORBIT("Non Synchronous Orbit"),
   @XmlEnumValue("Unmanned Aerial Vehicle (UAV)")
-  UNMANNED___AERIAL___VEHICLE____UAV__("Unmanned Aerial Vehicle (UAV)"),
+  UNMANNED_AERIAL_VEHICLE__UAV__("Unmanned Aerial Vehicle (UAV)"),
   @XmlEnumValue("Unmanned Aircraft System (UAS)")
-  UNMANNED___AIRCRAFT___SYSTEM____UAS__("Unmanned Aircraft System (UAS)"),
+  UNMANNED_AIRCRAFT_SYSTEM__UAS__("Unmanned Aircraft System (UAS)"),
   @XmlEnumValue("Unmanned Ground Vehicle (UGV)")
-  UNMANNED___GROUND___VEHICLE____UGV__("Unmanned Ground Vehicle (UGV)"),
+  UNMANNED_GROUND_VEHICLE__UGV__("Unmanned Ground Vehicle (UGV)"),
   @XmlEnumValue("Unmanned Surface Vehicle (USV)")
-  UNMANNED___SURFACE___VEHICLE____USV__("Unmanned Surface Vehicle (USV)"),
+  UNMANNED_SURFACE_VEHICLE__USV__("Unmanned Surface Vehicle (USV)"),
   @XmlEnumValue("Unmanned Underwater Vehicle (UUV)")
-  UNMANNED___UNDERWATER___VEHICLE____UUV__("Unmanned Underwater Vehicle (UUV)"),
+  UNMANNED_UNDERWATER_VEHICLE__UUV__("Unmanned Underwater Vehicle (UUV)"),
   @XmlEnumValue("Satellite")
   SATELLITE("Satellite"),
   @XmlEnumValue("Shipboard")
@@ -95,7 +95,7 @@ public enum ListCIN {
   @XmlEnumValue("Submarine")
   SUBMARINE("Submarine"),
   @XmlEnumValue("Synchronous Orbit")
-  SYNCHRONOUS___ORBIT("Synchronous Orbit"),
+  SYNCHRONOUS_ORBIT("Synchronous Orbit"),
   @XmlEnumValue("Transport")
   TRANSPORT("Transport"),
   @XmlEnumValue("Water")

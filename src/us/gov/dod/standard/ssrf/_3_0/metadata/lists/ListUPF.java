@@ -45,11 +45,11 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUPF {
 
   @XmlEnumValue("Air/ground/air")
-  AIR___GROUND___AIR("Air/ground/air"),
+  AIR_GROUND_AIR("Air/ground/air"),
   @XmlEnumValue("Air to air")
-  AIR___TO___AIR("Air to air"),
+  AIR_TO_AIR("Air to air"),
   @XmlEnumValue("Air/ground/air pool")
-  AIR___GROUND___AIR___POOL("Air/ground/air pool");
+  AIR_GROUND_AIR_POOL("Air/ground/air pool");
   private final String value;
 
   ListUPF(String v) {

@@ -83,122 +83,122 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCMO {
 
   @XmlEnumValue("AM Clear Voice")
-  AM___CLEAR___VOICE("AM Clear Voice"),
+  AM_CLEAR_VOICE("AM Clear Voice"),
   @XmlEnumValue("AM Secure Voice")
-  AM___SECURE___VOICE("AM Secure Voice"),
+  AM_SECURE_VOICE("AM Secure Voice"),
   @XmlEnumValue("ASK/OOK")
-  ASK___OOK("ASK/OOK"),
+  ASK_OOK("ASK/OOK"),
   @XmlEnumValue("Audio FSK")
-  AUDIO___FSK("Audio FSK"),
+  AUDIO_FSK("Audio FSK"),
   @XmlEnumValue("Binary Phase Shift Key")
-  BINARY___PHASE___SHIFT___KEY("Binary Phase Shift Key"),
+  BINARY_PHASE_SHIFT_KEY("Binary Phase Shift Key"),
   @XmlEnumValue("Code Division Multiplex")
-  CODE___DIVISION___MULTIPLEX("Code Division Multiplex"),
+  CODE_DIVISION_MULTIPLEX("Code Division Multiplex"),
   COFDM("COFDM"),
   CPFSK("CPFSK"),
   @XmlEnumValue("Data")
   DATA("Data"),
   @XmlEnumValue("Differential PSK")
-  DIFFERENTIAL___PSK("Differential PSK"),
+  DIFFERENTIAL_PSK("Differential PSK"),
   @XmlEnumValue("Doppler Frequency-Shift")
-  DOPPLER___FREQUENCY___SHIFT("Doppler Frequency-Shift"),
+  DOPPLER_FREQUENCY_SHIFT("Doppler Frequency-Shift"),
   @XmlEnumValue("FM Clear Voice")
-  FM___CLEAR___VOICE("FM Clear Voice"),
+  FM_CLEAR_VOICE("FM Clear Voice"),
   @XmlEnumValue("FM Secure Voice")
-  FM___SECURE___VOICE("FM Secure Voice"),
+  FM_SECURE_VOICE("FM Secure Voice"),
   @XmlEnumValue("Frequency Division Multiplex")
-  FREQUENCY___DIVISION___MULTIPLEX("Frequency Division Multiplex"),
+  FREQUENCY_DIVISION_MULTIPLEX("Frequency Division Multiplex"),
   FSK("FSK"),
   @XmlEnumValue("Gaussian MSK")
-  GAUSSIAN___MSK("Gaussian MSK"),
+  GAUSSIAN_MSK("Gaussian MSK"),
   @XmlEnumValue("Minimum Shift Keying")
-  MINIMUM___SHIFT___KEYING("Minimum Shift Keying"),
+  MINIMUM_SHIFT_KEYING("Minimum Shift Keying"),
   @XmlEnumValue("Multichannel ")
   MULTICHANNEL__("Multichannel "),
   @XmlEnumValue("Multichannel Data")
-  MULTICHANNEL___DATA("Multichannel Data"),
+  MULTICHANNEL_DATA("Multichannel Data"),
   @XmlEnumValue("Multichannel PCM Voice")
-  MULTICHANNEL___PCM___VOICE("Multichannel PCM Voice"),
+  MULTICHANNEL_PCM_VOICE("Multichannel PCM Voice"),
   @XmlEnumValue("Multi-channel PCM Voice")
-  MULTI___CHANNEL___PCM___VOICE("Multi-channel PCM Voice"),
+  MULTI_CHANNEL_PCM_VOICE("Multi-channel PCM Voice"),
   @XmlEnumValue("Multichannel Voice")
-  MULTICHANNEL___VOICE("Multichannel Voice"),
+  MULTICHANNEL_VOICE("Multichannel Voice"),
   @XmlEnumValue("Multichannel Voice/Data")
-  MULTICHANNEL___VOICE___DATA("Multichannel Voice/Data"),
+  MULTICHANNEL_VOICE_DATA("Multichannel Voice/Data"),
   NOISE("NOISE"),
   OFDM("OFDM"),
   PSK("PSK"),
   QAM("QAM"),
   @XmlEnumValue("Quadrature Partial Response Signaling")
-  QUADRATURE___PARTIAL___RESPONSE___SIGNALING("Quadrature Partial Response Signaling"),
+  QUADRATURE_PARTIAL_RESPONSE_SIGNALING("Quadrature Partial Response Signaling"),
   @XmlEnumValue("Quadrature PSK")
-  QUADRATURE___PSK("Quadrature PSK"),
+  QUADRATURE_PSK("Quadrature PSK"),
   @XmlEnumValue("Secure Data")
-  SECURE___DATA("Secure Data"),
+  SECURE_DATA("Secure Data"),
   @XmlEnumValue("Single Channel")
-  SINGLE___CHANNEL("Single Channel"),
+  SINGLE_CHANNEL("Single Channel"),
   @XmlEnumValue("Single Secure Voice Channel")
-  SINGLE___SECURE___VOICE___CHANNEL("Single Secure Voice Channel"),
+  SINGLE_SECURE_VOICE_CHANNEL("Single Secure Voice Channel"),
   @XmlEnumValue("Single Voice Channel")
-  SINGLE___VOICE___CHANNEL("Single Voice Channel"),
+  SINGLE_VOICE_CHANNEL("Single Voice Channel"),
   @XmlEnumValue("Time Division Multiplex")
-  TIME___DIVISION___MULTIPLEX("Time Division Multiplex"),
+  TIME_DIVISION_MULTIPLEX("Time Division Multiplex"),
   @XmlEnumValue("Tuned Frequency Modulation")
-  TUNED___FREQUENCY___MODULATION("Tuned Frequency Modulation"),
+  TUNED_FREQUENCY_MODULATION("Tuned Frequency Modulation"),
   @XmlEnumValue("Video")
   VIDEO("Video"),
   @XmlEnumValue("Binary FSK")
-  BINARY___FSK("Binary FSK"),
+  BINARY_FSK("Binary FSK"),
   @XmlEnumValue("Coherent FSK")
-  COHERENT___FSK("Coherent FSK"),
+  COHERENT_FSK("Coherent FSK"),
   @XmlEnumValue("Coherent MSK")
-  COHERENT___MSK("Coherent MSK"),
+  COHERENT_MSK("Coherent MSK"),
   @XmlEnumValue("Coherent Quadrature PSK")
-  COHERENT___QUADRATURE___PSK("Coherent Quadrature PSK"),
+  COHERENT_QUADRATURE_PSK("Coherent Quadrature PSK"),
   @XmlEnumValue("Differential Binary PSK")
-  DIFFERENTIAL___BINARY___PSK("Differential Binary PSK"),
+  DIFFERENTIAL_BINARY_PSK("Differential Binary PSK"),
   @XmlEnumValue("Differential Gaussian MSK")
-  DIFFERENTIAL___GAUSSIAN___MSK("Differential Gaussian MSK"),
+  DIFFERENTIAL_GAUSSIAN_MSK("Differential Gaussian MSK"),
   @XmlEnumValue("Differential Quadrature PSK")
-  DIFFERENTIAL___QUADRATURE___PSK("Differential Quadrature PSK"),
+  DIFFERENTIAL_QUADRATURE_PSK("Differential Quadrature PSK"),
   @XmlEnumValue("Differential Raised Cosine MSK")
-  DIFFERENTIAL___RAISED___COSINE___MSK("Differential Raised Cosine MSK"),
+  DIFFERENTIAL_RAISED_COSINE_MSK("Differential Raised Cosine MSK"),
   @XmlEnumValue("Direct Sequence Binary FSK")
-  DIRECT___SEQUENCE___BINARY___FSK("Direct Sequence Binary FSK"),
+  DIRECT_SEQUENCE_BINARY_FSK("Direct Sequence Binary FSK"),
   @XmlEnumValue("Direct Sequence Binary PSK")
-  DIRECT___SEQUENCE___BINARY___PSK("Direct Sequence Binary PSK"),
+  DIRECT_SEQUENCE_BINARY_PSK("Direct Sequence Binary PSK"),
   @XmlEnumValue("Direct Sequence Complementary Code Keying")
-  DIRECT___SEQUENCE___COMPLEMENTARY___CODE___KEYING("Direct Sequence Complementary Code Keying"),
+  DIRECT_SEQUENCE_COMPLEMENTARY_CODE_KEYING("Direct Sequence Complementary Code Keying"),
   @XmlEnumValue("Direct Sequence FSK")
-  DIRECT___SEQUENCE___FSK("Direct Sequence FSK"),
+  DIRECT_SEQUENCE_FSK("Direct Sequence FSK"),
   @XmlEnumValue("Direct Sequence MSK")
-  DIRECT___SEQUENCE___MSK("Direct Sequence MSK"),
+  DIRECT_SEQUENCE_MSK("Direct Sequence MSK"),
   @XmlEnumValue("Direct Sequence Offset Quadrature PSK")
-  DIRECT___SEQUENCE___OFFSET___QUADRATURE___PSK("Direct Sequence Offset Quadrature PSK"),
+  DIRECT_SEQUENCE_OFFSET_QUADRATURE_PSK("Direct Sequence Offset Quadrature PSK"),
   @XmlEnumValue("Direct Sequence PSK")
-  DIRECT___SEQUENCE___PSK("Direct Sequence PSK"),
+  DIRECT_SEQUENCE_PSK("Direct Sequence PSK"),
   @XmlEnumValue("Direct Sequence Quadrature PSK")
-  DIRECT___SEQUENCE___QUADRATURE___PSK("Direct Sequence Quadrature PSK"),
+  DIRECT_SEQUENCE_QUADRATURE_PSK("Direct Sequence Quadrature PSK"),
   @XmlEnumValue("Feher QPSK-B")
-  FEHER___QPSK___B("Feher QPSK-B"),
+  FEHER_QPSK_B("Feher QPSK-B"),
   @XmlEnumValue("Feher QPSK-JR")
-  FEHER___QPSK___JR("Feher QPSK-JR"),
+  FEHER_QPSK_JR("Feher QPSK-JR"),
   @XmlEnumValue("Gaussian FSK")
-  GAUSSIAN___FSK("Gaussian FSK"),
+  GAUSSIAN_FSK("Gaussian FSK"),
   @XmlEnumValue("Multi-index Continuous Phase Modulation")
-  MULTI___INDEX___CONTINUOUS___PHASE___MODULATION("Multi-index Continuous Phase Modulation"),
+  MULTI_INDEX_CONTINUOUS_PHASE_MODULATION("Multi-index Continuous Phase Modulation"),
   @XmlEnumValue("Offset Quadrature PSK")
-  OFFSET___QUADRATURE___PSK("Offset Quadrature PSK"),
+  OFFSET_QUADRATURE_PSK("Offset Quadrature PSK"),
   @XmlEnumValue("Quadrature FSK")
-  QUADRATURE___FSK("Quadrature FSK"),
+  QUADRATURE_FSK("Quadrature FSK"),
   @XmlEnumValue("Shaped Binary PSK")
-  SHAPED___BINARY___PSK("Shaped Binary PSK"),
+  SHAPED_BINARY_PSK("Shaped Binary PSK"),
   @XmlEnumValue("Shaped FSK")
-  SHAPED___FSK("Shaped FSK"),
+  SHAPED_FSK("Shaped FSK"),
   @XmlEnumValue("Shaped MSK")
-  SHAPED___MSK("Shaped MSK"),
+  SHAPED_MSK("Shaped MSK"),
   @XmlEnumValue("Shaped Offset Quadrature PSK")
-  SHAPED___OFFSET___QUADRATURE___PSK("Shaped Offset Quadrature PSK"),
+  SHAPED_OFFSET_QUADRATURE_PSK("Shaped Offset Quadrature PSK"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

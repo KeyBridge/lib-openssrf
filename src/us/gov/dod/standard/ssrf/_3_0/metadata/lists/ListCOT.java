@@ -63,28 +63,28 @@ public enum ListCOT {
   @XmlEnumValue("Amplitron")
   AMPLITRON("Amplitron"),
   @XmlEnumValue("Backward Wave Oscillator")
-  BACKWARD___WAVE___OSCILLATOR("Backward Wave Oscillator"),
+  BACKWARD_WAVE_OSCILLATOR("Backward Wave Oscillator"),
   @XmlEnumValue("Carcinatron")
   CARCINATRON("Carcinatron"),
   @XmlEnumValue("Cross Field Amplifier")
-  CROSS___FIELD___AMPLIFIER("Cross Field Amplifier"),
+  CROSS_FIELD_AMPLIFIER("Cross Field Amplifier"),
   @XmlEnumValue("Diode")
   DIODE("Diode"),
   FET("FET"),
   @XmlEnumValue("FET Push-Pull")
-  FET___PUSH___PULL("FET Push-Pull"),
+  FET_PUSH_PULL("FET Push-Pull"),
   @XmlEnumValue("Fixed Magnetron")
-  FIXED___MAGNETRON("Fixed Magnetron"),
+  FIXED_MAGNETRON("Fixed Magnetron"),
   @XmlEnumValue("Gallium Arsinide FET")
-  GALLIUM___ARSINIDE___FET("Gallium Arsinide FET"),
+  GALLIUM_ARSINIDE_FET("Gallium Arsinide FET"),
   @XmlEnumValue("Gunn Diode")
-  GUNN___DIODE("Gunn Diode"),
+  GUNN_DIODE("Gunn Diode"),
   @XmlEnumValue("Gyrotron")
   GYROTRON("Gyrotron"),
   @XmlEnumValue("Impatt Diode")
-  IMPATT___DIODE("Impatt Diode"),
+  IMPATT_DIODE("Impatt Diode"),
   @XmlEnumValue("Integrated Circuit")
-  INTEGRATED___CIRCUIT("Integrated Circuit"),
+  INTEGRATED_CIRCUIT("Integrated Circuit"),
   @XmlEnumValue("Klystron")
   KLYSTRON("Klystron"),
   @XmlEnumValue("Lighthouse")
@@ -94,13 +94,13 @@ public enum ListCOT {
   @XmlEnumValue("Pentode")
   PENTODE("Pentode"),
   @XmlEnumValue("Reactance Tube")
-  REACTANCE___TUBE("Reactance Tube"),
+  REACTANCE_TUBE("Reactance Tube"),
   @XmlEnumValue("Solid State")
-  SOLID___STATE("Solid State"),
+  SOLID_STATE("Solid State"),
   @XmlEnumValue("Stabilotron")
   STABILOTRON("Stabilotron"),
   @XmlEnumValue("Step Recovery Diode")
-  STEP___RECOVERY___DIODE("Step Recovery Diode"),
+  STEP_RECOVERY_DIODE("Step Recovery Diode"),
   @XmlEnumValue("Tetrode")
   TETRODE("Tetrode"),
   @XmlEnumValue("Transformer")
@@ -108,17 +108,17 @@ public enum ListCOT {
   @XmlEnumValue("Transistor")
   TRANSISTOR("Transistor"),
   @XmlEnumValue("Traveling-Wave Tube")
-  TRAVELING___WAVE___TUBE("Traveling-Wave Tube"),
+  TRAVELING_WAVE_TUBE("Traveling-Wave Tube"),
   @XmlEnumValue("Triode")
   TRIODE("Triode"),
   @XmlEnumValue("Tunable Magnetron")
-  TUNABLE___MAGNETRON("Tunable Magnetron"),
+  TUNABLE_MAGNETRON("Tunable Magnetron"),
   @XmlEnumValue("Twystron")
   TWYSTRON("Twystron"),
   @XmlEnumValue("Voltage Controlled Oscillator")
-  VOLTAGE___CONTROLLED___OSCILLATOR("Voltage Controlled Oscillator"),
+  VOLTAGE_CONTROLLED_OSCILLATOR("Voltage Controlled Oscillator"),
   @XmlEnumValue("Yttrium Iron Garnet")
-  YTTRIUM___IRON___GARNET("Yttrium Iron Garnet"),
+  YTTRIUM_IRON_GARNET("Yttrium Iron Garnet"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

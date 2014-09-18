@@ -51,26 +51,26 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCDF {
 
   @XmlEnumValue("Bi-Phase-Level")
-  BI___PHASE___LEVEL("Bi-Phase-Level"),
+  BI_PHASE_LEVEL("Bi-Phase-Level"),
   @XmlEnumValue("Bi-Phase-Mark")
-  BI___PHASE___MARK("Bi-Phase-Mark"),
+  BI_PHASE_MARK("Bi-Phase-Mark"),
   @XmlEnumValue("Bi-Phase-Space")
-  BI___PHASE___SPACE("Bi-Phase-Space"),
+  BI_PHASE_SPACE("Bi-Phase-Space"),
   @XmlEnumValue("Differential Bi-Phase-Level")
-  DIFFERENTIAL___BI___PHASE___LEVEL("Differential Bi-Phase-Level"),
+  DIFFERENTIAL_BI_PHASE_LEVEL("Differential Bi-Phase-Level"),
   @XmlEnumValue("Differential Bi-Phase-Mark")
-  DIFFERENTIAL___BI___PHASE___MARK("Differential Bi-Phase-Mark"),
+  DIFFERENTIAL_BI_PHASE_MARK("Differential Bi-Phase-Mark"),
   @XmlEnumValue("Differential Bi-Phase-Space")
-  DIFFERENTIAL___BI___PHASE___SPACE("Differential Bi-Phase-Space"),
+  DIFFERENTIAL_BI_PHASE_SPACE("Differential Bi-Phase-Space"),
   NRZ("NRZ"),
   @XmlEnumValue("NRZ-Mark")
-  NRZ___MARK("NRZ-Mark"),
+  NRZ_MARK("NRZ-Mark"),
   @XmlEnumValue("NRZ-Space")
-  NRZ___SPACE("NRZ-Space"),
+  NRZ_SPACE("NRZ-Space"),
   @XmlEnumValue("Return to Zero")
-  RETURN___TO___ZERO("Return to Zero"),
+  RETURN_TO_ZERO("Return to Zero"),
   @XmlEnumValue("Split Phase (Manchester)")
-  SPLIT___PHASE____MANCHESTER__("Split Phase (Manchester)"),
+  SPLIT_PHASE__MANCHESTER__("Split Phase (Manchester)"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

@@ -52,51 +52,51 @@ public enum ListCDR {
    * <p>
    */
   @XmlEnumValue("Code List Change")
-  CODE___LIST___CHANGE("Code List Change"),
+  CODE_LIST_CHANGE("Code List Change"),
   /**
    * An invalid dataset was received (other than Missing refs).
    * <p>
    */
   @XmlEnumValue("Data Invalid")
-  DATA___INVALID("Data Invalid"),
+  DATA_INVALID("Data Invalid"),
   /**
    * The referenced dataset is not supported by the system.
    * <p>
    */
   @XmlEnumValue("Data Not Supported")
-  DATA___NOT___SUPPORTED("Data Not Supported"),
+  DATA_NOT_SUPPORTED("Data Not Supported"),
   /**
    * The referenced dataset is being recalled.
    * <p>
    */
   @XmlEnumValue("Data Recall")
-  DATA___RECALL("Data Recall"),
+  DATA_RECALL("Data Recall"),
   /**
    * The received dataset does not fulfill the requirement.
    * <p>
    */
   @XmlEnumValue("Data Rejected")
-  DATA___REJECTED("Data Rejected"),
+  DATA_REJECTED("Data Rejected"),
   /**
    * The referenced datasets should be removed from the recipient local
    * repository
    * <p>
    */
   @XmlEnumValue("Data Deleted")
-  DATA___DELETED("Data Deleted"),
+  DATA_DELETED("Data Deleted"),
   /**
    * The referenced dataset has been rejected because of missing
    * cross-references.
    * <p>
    */
   @XmlEnumValue("Missing Refs")
-  MISSING___REFS("Missing Refs"),
+  MISSING_REFS("Missing Refs"),
   /**
    * The dataset is no longer Active, but may be reactivated at a future date
    * <p>
    */
   @XmlEnumValue("Data Retired")
-  DATA___RETIRED("Data Retired");
+  DATA_RETIRED("Data Retired");
   private final String value;
 
   ListCDR(String v) {

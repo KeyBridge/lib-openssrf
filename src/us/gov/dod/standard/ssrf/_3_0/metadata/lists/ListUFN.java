@@ -288,628 +288,628 @@ public enum ListUFN {
 
   UNKNOWN("UNKNOWN"),
   @XmlEnumValue("A2C2S (Army Airborne Command & Control System)")
-  A_2_C_2_S____ARMY___AIRBORNE___COMMAND_____CONTROL___SYSTEM__("A2C2S (Army Airborne Command & Control System)"),
+  A_2_C_2_S__ARMY_AIRBORNE_COMMAND___CONTROL_SYSTEM__("A2C2S (Army Airborne Command & Control System)"),
   @XmlEnumValue("ACS (Aerial Common Sensor)")
-  ACS____AERIAL___COMMON___SENSOR__("ACS (Aerial Common Sensor)"),
+  ACS__AERIAL_COMMON_SENSOR__("ACS (Aerial Common Sensor)"),
   ADMINISTRATIVE("ADMINISTRATIVE"),
   AEGIS("AEGIS"),
   @XmlEnumValue("A-EPLRS")
-  A___EPLRS("A-EPLRS"),
+  A_EPLRS("A-EPLRS"),
   @XmlEnumValue("AERO CLUB")
-  AERO___CLUB("AERO CLUB"),
+  AERO_CLUB("AERO CLUB"),
   AFATDS("AFATDS"),
   @XmlEnumValue("AFAUX/CAP (Air Force Auxiliary/Civil Air Patrol)")
-  AFAUX___CAP____AIR___FORCE___AUXILIARY___CIVIL___AIR___PATROL__("AFAUX/CAP (Air Force Auxiliary/Civil Air Patrol)"),
+  AFAUX_CAP__AIR_FORCE_AUXILIARY_CIVIL_AIR_PATROL__("AFAUX/CAP (Air Force Auxiliary/Civil Air Patrol)"),
   AFSATCOM("AFSATCOM"),
   @XmlEnumValue("AHFEWS (Army HF EW System)")
-  AHFEWS____ARMY___HF___EW___SYSTEM__("AHFEWS (Army HF EW System)"),
+  AHFEWS__ARMY_HF_EW_SYSTEM__("AHFEWS (Army HF EW System)"),
   @XmlEnumValue("AIR DEFENSE")
-  AIR___DEFENSE("AIR DEFENSE"),
+  AIR_DEFENSE("AIR DEFENSE"),
   @XmlEnumValue("AIR DEFENSE WARNING")
-  AIR___DEFENSE___WARNING("AIR DEFENSE WARNING"),
+  AIR_DEFENSE_WARNING("AIR DEFENSE WARNING"),
   @XmlEnumValue("AIR DEFENSE/INTERCEPT")
-  AIR___DEFENSE___INTERCEPT("AIR DEFENSE/INTERCEPT"),
+  AIR_DEFENSE_INTERCEPT("AIR DEFENSE/INTERCEPT"),
   @XmlEnumValue("AIR FORCE ONE")
-  AIR___FORCE___ONE("AIR FORCE ONE"),
+  AIR_FORCE_ONE("AIR FORCE ONE"),
   @XmlEnumValue("AIR FORCE SPECIAL OPERATIONS")
-  AIR___FORCE___SPECIAL___OPERATIONS("AIR FORCE SPECIAL OPERATIONS"),
+  AIR_FORCE_SPECIAL_OPERATIONS("AIR FORCE SPECIAL OPERATIONS"),
   @XmlEnumValue("AIR OPERATIONS")
-  AIR___OPERATIONS("AIR OPERATIONS"),
+  AIR_OPERATIONS("AIR OPERATIONS"),
   @XmlEnumValue("AIR ROUTE SURVEILLANCE RADAR")
-  AIR___ROUTE___SURVEILLANCE___RADAR("AIR ROUTE SURVEILLANCE RADAR"),
+  AIR_ROUTE_SURVEILLANCE_RADAR("AIR ROUTE SURVEILLANCE RADAR"),
   @XmlEnumValue("AIR TRAFFIC CONTROL")
-  AIR___TRAFFIC___CONTROL("AIR TRAFFIC CONTROL"),
+  AIR_TRAFFIC_CONTROL("AIR TRAFFIC CONTROL"),
   @XmlEnumValue("AIR/AIR COMMUNICATIONS")
-  AIR___AIR___COMMUNICATIONS("AIR/AIR COMMUNICATIONS"),
+  AIR_AIR_COMMUNICATIONS("AIR/AIR COMMUNICATIONS"),
   @XmlEnumValue("AIR/GROUND/AIR COMMUNICATIONS")
-  AIR___GROUND___AIR___COMMUNICATIONS("AIR/GROUND/AIR COMMUNICATIONS"),
+  AIR_GROUND_AIR_COMMUNICATIONS("AIR/GROUND/AIR COMMUNICATIONS"),
   @XmlEnumValue("AIRBORNE COMMAND CENTER")
-  AIRBORNE___COMMAND___CENTER("AIRBORNE COMMAND CENTER"),
+  AIRBORNE_COMMAND_CENTER("AIRBORNE COMMAND CENTER"),
   AIRCRAFT("AIRCRAFT"),
   @XmlEnumValue("AIRPORT SURVEILLANCE RADAR")
-  AIRPORT___SURVEILLANCE___RADAR("AIRPORT SURVEILLANCE RADAR"),
+  AIRPORT_SURVEILLANCE_RADAR("AIRPORT SURVEILLANCE RADAR"),
   @XmlEnumValue("ALARM SYSTEMS")
-  ALARM___SYSTEMS("ALARM SYSTEMS"),
+  ALARM_SYSTEMS("ALARM SYSTEMS"),
   @XmlEnumValue("AMPS (Air Movement Planning System)")
-  AMPS____AIR___MOVEMENT___PLANNING___SYSTEM__("AMPS (Air Movement Planning System)"),
+  AMPS__AIR_MOVEMENT_PLANNING_SYSTEM__("AMPS (Air Movement Planning System)"),
   @XmlEnumValue("AMSS (Automatic Meteorological Sensor System)")
-  AMSS____AUTOMATIC___METEOROLOGICAL___SENSOR___SYSTEM__("AMSS (Automatic Meteorological Sensor System)"),
+  AMSS__AUTOMATIC_METEOROLOGICAL_SENSOR_SYSTEM__("AMSS (Automatic Meteorological Sensor System)"),
   @XmlEnumValue("ANTI-TERRORISM")
-  ANTI___TERRORISM("ANTI-TERRORISM"),
+  ANTI_TERRORISM("ANTI-TERRORISM"),
   @XmlEnumValue("APPROACH CONTROL")
-  APPROACH___CONTROL("APPROACH CONTROL"),
+  APPROACH_CONTROL("APPROACH CONTROL"),
   @XmlEnumValue("AQF (Advanced Quick Fix)")
-  AQF____ADVANCED___QUICK___FIX__("AQF (Advanced Quick Fix)"),
+  AQF__ADVANCED_QUICK_FIX__("AQF (Advanced Quick Fix)"),
   @XmlEnumValue("ARL (Aerial Reconnaissance-Low)")
-  ARL____AERIAL___RECONNAISSANCE___LOW__("ARL (Aerial Reconnaissance-Low)"),
+  ARL__AERIAL_RECONNAISSANCE_LOW__("ARL (Aerial Reconnaissance-Low)"),
   @XmlEnumValue("ARMY AVIATION")
-  ARMY___AVIATION("ARMY AVIATION"),
+  ARMY_AVIATION("ARMY AVIATION"),
   @XmlEnumValue("ARMY SPECIAL OPERATIONS")
-  ARMY___SPECIAL___OPERATIONS("ARMY SPECIAL OPERATIONS"),
+  ARMY_SPECIAL_OPERATIONS("ARMY SPECIAL OPERATIONS"),
   ARTILLERY("ARTILLERY"),
   @XmlEnumValue("ARTS (Automated Remote Tracking System) (Telemetry)")
-  ARTS____AUTOMATED___REMOTE___TRACKING___SYSTEM_____TELEMETRY__("ARTS (Automated Remote Tracking System) (Telemetry)"),
+  ARTS__AUTOMATED_REMOTE_TRACKING_SYSTEM___TELEMETRY__("ARTS (Automated Remote Tracking System) (Telemetry)"),
   @XmlEnumValue("ASAS (All Source Analysis System)")
-  ASAS____ALL___SOURCE___ANALYSIS___SYSTEM__("ASAS (All Source Analysis System)"),
+  ASAS__ALL_SOURCE_ANALYSIS_SYSTEM__("ASAS (All Source Analysis System)"),
   @XmlEnumValue("ASOS (Automated Surface Observation System)")
-  ASOS____AUTOMATED___SURFACE___OBSERVATION___SYSTEM__("ASOS (Automated Surface Observation System)"),
+  ASOS__AUTOMATED_SURFACE_OBSERVATION_SYSTEM__("ASOS (Automated Surface Observation System)"),
   @XmlEnumValue("ASW (Anti-Submarine Warfare)")
-  ASW____ANTI___SUBMARINE___WARFARE__("ASW (Anti-Submarine Warfare)"),
+  ASW__ANTI_SUBMARINE_WARFARE__("ASW (Anti-Submarine Warfare)"),
   ATFP("ATFP"),
   @XmlEnumValue("ATIS (Auto Terminal Information Service)")
-  ATIS____AUTO___TERMINAL___INFORMATION___SERVICE__("ATIS (Auto Terminal Information Service)"),
+  ATIS__AUTO_TERMINAL_INFORMATION_SERVICE__("ATIS (Auto Terminal Information Service)"),
   @XmlEnumValue("AVENGER-STC")
-  AVENGER___STC("AVENGER-STC"),
+  AVENGER_STC("AVENGER-STC"),
   AWACS("AWACS"),
   @XmlEnumValue("AWOS (Automatic Weather Observing System)")
-  AWOS____AUTOMATIC___WEATHER___OBSERVING___SYSTEM__("AWOS (Automatic Weather Observing System)"),
+  AWOS__AUTOMATIC_WEATHER_OBSERVING_SYSTEM__("AWOS (Automatic Weather Observing System)"),
   BACKBONE("BACKBONE"),
   @XmlEnumValue("BASE OPERATIONS")
-  BASE___OPERATIONS("BASE OPERATIONS"),
+  BASE_OPERATIONS("BASE OPERATIONS"),
   @XmlEnumValue("BATTLE COMMAND")
-  BATTLE___COMMAND("BATTLE COMMAND"),
+  BATTLE_COMMAND("BATTLE COMMAND"),
   BEACON("BEACON"),
   @XmlEnumValue("BLUE ANGELS")
-  BLUE___ANGELS("BLUE ANGELS"),
+  BLUE_ANGELS("BLUE ANGELS"),
   @XmlEnumValue("BMDS (Ballistic Missile Defense System)")
-  BMDS____BALLISTIC___MISSILE___DEFENSE___SYSTEM__("BMDS (Ballistic Missile Defense System)"),
+  BMDS__BALLISTIC_MISSILE_DEFENSE_SYSTEM__("BMDS (Ballistic Missile Defense System)"),
   @XmlEnumValue("BMEWS (Ballistic Missile Early Warning System)")
-  BMEWS____BALLISTIC___MISSILE___EARLY___WARNING___SYSTEM__("BMEWS (Ballistic Missile Early Warning System)"),
+  BMEWS__BALLISTIC_MISSILE_EARLY_WARNING_SYSTEM__("BMEWS (Ballistic Missile Early Warning System)"),
   BROADCAST("BROADCAST"),
   @XmlEnumValue("C3 (Command, Control, & Communications)")
-  C_3____COMMAND____CONTROL______COMMUNICATIONS__("C3 (Command, Control, & Communications)"),
+  C_3__COMMAND__CONTROL__COMMUNICATIONS__("C3 (Command, Control, & Communications)"),
   @XmlEnumValue("CARS (Contingency Airborne Reconnaissance System)")
-  CARS____CONTINGENCY___AIRBORNE___RECONNAISSANCE___SYSTEM__("CARS (Contingency Airborne Reconnaissance System)"),
+  CARS__CONTINGENCY_AIRBORNE_RECONNAISSANCE_SYSTEM__("CARS (Contingency Airborne Reconnaissance System)"),
   CAVALRY("CAVALRY"),
   @XmlEnumValue("CBR (Chemical, Biological, Radiological)")
-  CBR____CHEMICAL____BIOLOGICAL____RADIOLOGICAL__("CBR (Chemical, Biological, Radiological)"),
+  CBR__CHEMICAL__BIOLOGICAL__RADIOLOGICAL__("CBR (Chemical, Biological, Radiological)"),
   CID("CID"),
   @XmlEnumValue("CIVIL AFFAIRS")
-  CIVIL___AFFAIRS("CIVIL AFFAIRS"),
+  CIVIL_AFFAIRS("CIVIL AFFAIRS"),
   @XmlEnumValue("CIVIL DISTURBANCES")
-  CIVIL___DISTURBANCES("CIVIL DISTURBANCES"),
+  CIVIL_DISTURBANCES("CIVIL DISTURBANCES"),
   @XmlEnumValue("CIVIL ENGINEERING")
-  CIVIL___ENGINEERING("CIVIL ENGINEERING"),
+  CIVIL_ENGINEERING("CIVIL ENGINEERING"),
   @XmlEnumValue("CIVIL SUPPORT TEAM")
-  CIVIL___SUPPORT___TEAM("CIVIL SUPPORT TEAM"),
+  CIVIL_SUPPORT_TEAM("CIVIL SUPPORT TEAM"),
   @XmlEnumValue("CIVIL WORKS")
-  CIVIL___WORKS("CIVIL WORKS"),
+  CIVIL_WORKS("CIVIL WORKS"),
   @XmlEnumValue("CIWS (Close-In Weapons System)")
-  CIWS____CLOSE___IN___WEAPONS___SYSTEM__("CIWS (Close-In Weapons System)"),
+  CIWS__CLOSE_IN_WEAPONS_SYSTEM__("CIWS (Close-In Weapons System)"),
   @XmlEnumValue("CLEARANCE DELIVERY")
-  CLEARANCE___DELIVERY("CLEARANCE DELIVERY"),
+  CLEARANCE_DELIVERY("CLEARANCE DELIVERY"),
   @XmlEnumValue("CLOSE AIR SUPPORT (CAS)")
-  CLOSE___AIR___SUPPORT____CAS__("CLOSE AIR SUPPORT (CAS)"),
+  CLOSE_AIR_SUPPORT__CAS__("CLOSE AIR SUPPORT (CAS)"),
   @XmlEnumValue("COG/COOP")
-  COG___COOP("COG/COOP"),
+  COG_COOP("COG/COOP"),
   @XmlEnumValue("COLOR/HONOR GUARD")
-  COLOR___HONOR___GUARD("COLOR/HONOR GUARD"),
+  COLOR_HONOR_GUARD("COLOR/HONOR GUARD"),
   @XmlEnumValue("COMBAT CONTROL TEAM")
-  COMBAT___CONTROL___TEAM("COMBAT CONTROL TEAM"),
+  COMBAT_CONTROL_TEAM("COMBAT CONTROL TEAM"),
   @XmlEnumValue("COMBATANT COMMAND/GENERAL OFFICER SUPPORT")
-  COMBATANT___COMMAND___GENERAL___OFFICER___SUPPORT("COMBATANT COMMAND/GENERAL OFFICER SUPPORT"),
+  COMBATANT_COMMAND_GENERAL_OFFICER_SUPPORT("COMBATANT COMMAND/GENERAL OFFICER SUPPORT"),
   @XmlEnumValue("COMMAND AND CONTROL")
-  COMMAND___AND___CONTROL("COMMAND AND CONTROL"),
+  COMMAND_AND_CONTROL("COMMAND AND CONTROL"),
   @XmlEnumValue("COMMAND DESTRUCT/TERMINATION")
-  COMMAND___DESTRUCT___TERMINATION("COMMAND DESTRUCT/TERMINATION"),
+  COMMAND_DESTRUCT_TERMINATION("COMMAND DESTRUCT/TERMINATION"),
   @XmlEnumValue("COMMAND NET")
-  COMMAND___NET("COMMAND NET"),
+  COMMAND_NET("COMMAND NET"),
   @XmlEnumValue("COMMAND POST")
-  COMMAND___POST("COMMAND POST"),
+  COMMAND_POST("COMMAND POST"),
   @XmlEnumValue("COMMAND POST/CENTER")
-  COMMAND___POST___CENTER("COMMAND POST/CENTER"),
+  COMMAND_POST_CENTER("COMMAND POST/CENTER"),
   COMMANDER("COMMANDER"),
   COMMUNICATIONS("COMMUNICATIONS"),
   @XmlEnumValue("COMMUNITY ASSISTANCE")
-  COMMUNITY___ASSISTANCE("COMMUNITY ASSISTANCE"),
+  COMMUNITY_ASSISTANCE("COMMUNITY ASSISTANCE"),
   @XmlEnumValue("CONSEQUENCE MANAGEMENT")
-  CONSEQUENCE___MANAGEMENT("CONSEQUENCE MANAGEMENT"),
+  CONSEQUENCE_MANAGEMENT("CONSEQUENCE MANAGEMENT"),
   CONSERVATION("CONSERVATION"),
   CONSTRUCTION("CONSTRUCTION"),
   CONTINGENCY("CONTINGENCY"),
   @XmlEnumValue("COUNTER DRUG")
-  COUNTER___DRUG("COUNTER DRUG"),
+  COUNTER_DRUG("COUNTER DRUG"),
   @XmlEnumValue("CSSCS (Combat Service Support Control System)")
-  CSSCS____COMBAT___SERVICE___SUPPORT___CONTROL___SYSTEM__("CSSCS (Combat Service Support Control System)"),
+  CSSCS__COMBAT_SERVICE_SUPPORT_CONTROL_SYSTEM__("CSSCS (Combat Service Support Control System)"),
   @XmlEnumValue("CTT (Commander\u2019s Tactical Terminal)")
-  CTT____COMMANDER___S___TACTICAL___TERMINAL__("CTT (Commander\u2019s Tactical Terminal)"),
+  CTT__COMMANDER_S_TACTICAL_TERMINAL__("CTT (Commander\u2019s Tactical Terminal)"),
   @XmlEnumValue("DATA COLLECTION PLATFORM")
-  DATA___COLLECTION___PLATFORM("DATA COLLECTION PLATFORM"),
+  DATA_COLLECTION_PLATFORM("DATA COLLECTION PLATFORM"),
   @XmlEnumValue("DATA LINK")
-  DATA___LINK("DATA LINK"),
+  DATA_LINK("DATA LINK"),
   @XmlEnumValue("DBRITE (Digital Bright Radar Indicator Tower Equipment)")
-  DBRITE____DIGITAL___BRIGHT___RADAR___INDICATOR___TOWER___EQUIPMENT__("DBRITE (Digital Bright Radar Indicator Tower Equipment)"),
+  DBRITE__DIGITAL_BRIGHT_RADAR_INDICATOR_TOWER_EQUIPMENT__("DBRITE (Digital Bright Radar Indicator Tower Equipment)"),
   @XmlEnumValue("DEPARTURE CONTROL")
-  DEPARTURE___CONTROL("DEPARTURE CONTROL"),
+  DEPARTURE_CONTROL("DEPARTURE CONTROL"),
   @XmlEnumValue("DIS (Defense Investigative Service)")
-  DIS____DEFENSE___INVESTIGATIVE___SERVICE__("DIS (Defense Investigative Service)"),
+  DIS__DEFENSE_INVESTIGATIVE_SERVICE__("DIS (Defense Investigative Service)"),
   @XmlEnumValue("DISASTER PLANNING")
-  DISASTER___PLANNING("DISASTER PLANNING"),
+  DISASTER_PLANNING("DISASTER PLANNING"),
   @XmlEnumValue("DMSP (Defense Meteorological Satellite Program)")
-  DMSP____DEFENSE___METEOROLOGICAL___SATELLITE___PROGRAM__("DMSP (Defense Meteorological Satellite Program)"),
+  DMSP__DEFENSE_METEOROLOGICAL_SATELLITE_PROGRAM__("DMSP (Defense Meteorological Satellite Program)"),
   @XmlEnumValue("DOMESTIC SUPPORT OPERATIONS")
-  DOMESTIC___SUPPORT___OPERATIONS("DOMESTIC SUPPORT OPERATIONS"),
+  DOMESTIC_SUPPORT_OPERATIONS("DOMESTIC SUPPORT OPERATIONS"),
   @XmlEnumValue("DRONE CONTROL")
-  DRONE___CONTROL("DRONE CONTROL"),
+  DRONE_CONTROL("DRONE CONTROL"),
   @XmlEnumValue("DSCS (Defense Satellite Communication System)")
-  DSCS____DEFENSE___SATELLITE___COMMUNICATION___SYSTEM__("DSCS (Defense Satellite Communication System)"),
+  DSCS__DEFENSE_SATELLITE_COMMUNICATION_SYSTEM__("DSCS (Defense Satellite Communication System)"),
   @XmlEnumValue("DTSS (Digital Topographic Support System)")
-  DTSS____DIGITAL___TOPOGRAPHIC___SUPPORT___SYSTEM__("DTSS (Digital Topographic Support System)"),
+  DTSS__DIGITAL_TOPOGRAPHIC_SUPPORT_SYSTEM__("DTSS (Digital Topographic Support System)"),
   EDUCATION("EDUCATION"),
   @XmlEnumValue("ELECTRONIC WARFARE")
-  ELECTRONIC___WARFARE("ELECTRONIC WARFARE"),
+  ELECTRONIC_WARFARE("ELECTRONIC WARFARE"),
   @XmlEnumValue("EMERGENCY SERVICES")
-  EMERGENCY___SERVICES("EMERGENCY SERVICES"),
+  EMERGENCY_SERVICES("EMERGENCY SERVICES"),
   EMWIN("EMWIN"),
   ENGINEERS("ENGINEERS"),
   ENVIRONMENTAL("ENVIRONMENTAL"),
   @XmlEnumValue("ENVIRONMENTAL CLEANUP")
-  ENVIRONMENTAL___CLEANUP("ENVIRONMENTAL CLEANUP"),
+  ENVIRONMENTAL_CLEANUP("ENVIRONMENTAL CLEANUP"),
   @XmlEnumValue("EOD (Emergency Ordinance Disposal)")
-  EOD____EMERGENCY___ORDINANCE___DISPOSAL__("EOD (Emergency Ordinance Disposal)"),
+  EOD__EMERGENCY_ORDINANCE_DISPOSAL__("EOD (Emergency Ordinance Disposal)"),
   @XmlEnumValue("EPLRS (Enhanced Position Location Reporting System)")
-  EPLRS____ENHANCED___POSITION___LOCATION___REPORTING___SYSTEM__("EPLRS (Enhanced Position Location Reporting System)"),
+  EPLRS__ENHANCED_POSITION_LOCATION_REPORTING_SYSTEM__("EPLRS (Enhanced Position Location Reporting System)"),
   @XmlEnumValue("EQUIPMENT CHECKS")
-  EQUIPMENT___CHECKS("EQUIPMENT CHECKS"),
+  EQUIPMENT_CHECKS("EQUIPMENT CHECKS"),
   @XmlEnumValue("ERCS (Emergency Rocket Communications Systems)")
-  ERCS____EMERGENCY___ROCKET___COMMUNICATIONS___SYSTEMS__("ERCS (Emergency Rocket Communications Systems)"),
+  ERCS__EMERGENCY_ROCKET_COMMUNICATIONS_SYSTEMS__("ERCS (Emergency Rocket Communications Systems)"),
   @XmlEnumValue("ETCAS (Enhanced Traffic Collision Avoidance System)")
-  ETCAS____ENHANCED___TRAFFIC___COLLISION___AVOIDANCE___SYSTEM__("ETCAS (Enhanced Traffic Collision Avoidance System)"),
+  ETCAS__ENHANCED_TRAFFIC_COLLISION_AVOIDANCE_SYSTEM__("ETCAS (Enhanced Traffic Collision Avoidance System)"),
   @XmlEnumValue("ETRAC (Enhanced Tactical Radar Correlator)")
-  ETRAC____ENHANCED___TACTICAL___RADAR___CORRELATOR__("ETRAC (Enhanced Tactical Radar Correlator)"),
+  ETRAC__ENHANCED_TACTICAL_RADAR_CORRELATOR__("ETRAC (Enhanced Tactical Radar Correlator)"),
   EXECUTIVE("EXECUTIVE"),
   EXERCISE("EXERCISE"),
   EXPERIMENTAL("EXPERIMENTAL"),
   @XmlEnumValue("FAADC2 (Forward Area Air Defense, Command and Control)")
-  FAADC_2____FORWARD___AREA___AIR___DEFENSE____COMMAND___AND___CONTROL__("FAADC2 (Forward Area Air Defense, Command and Control)"),
+  FAADC_2__FORWARD_AREA_AIR_DEFENSE__COMMAND_AND_CONTROL__("FAADC2 (Forward Area Air Defense, Command and Control)"),
   @XmlEnumValue("FEEDER CONTROL")
-  FEEDER___CONTROL("FEEDER CONTROL"),
+  FEEDER_CONTROL("FEEDER CONTROL"),
   @XmlEnumValue("FEMA (Federal Emergency Mgt Agency)")
-  FEMA____FEDERAL___EMERGENCY___MGT___AGENCY__("FEMA (Federal Emergency Mgt Agency)"),
+  FEMA__FEDERAL_EMERGENCY_MGT_AGENCY__("FEMA (Federal Emergency Mgt Agency)"),
   FIRE("FIRE"),
   @XmlEnumValue("FIRE ALARM")
-  FIRE___ALARM("FIRE ALARM"),
+  FIRE_ALARM("FIRE ALARM"),
   @XmlEnumValue("FIRE SUPPORT")
-  FIRE___SUPPORT("FIRE SUPPORT"),
+  FIRE_SUPPORT("FIRE SUPPORT"),
   @XmlEnumValue("FLEET SUPPORT")
-  FLEET___SUPPORT("FLEET SUPPORT"),
+  FLEET_SUPPORT("FLEET SUPPORT"),
   @XmlEnumValue("FLIGHT FOLLOWING")
-  FLIGHT___FOLLOWING("FLIGHT FOLLOWING"),
+  FLIGHT_FOLLOWING("FLIGHT FOLLOWING"),
   @XmlEnumValue("FLIGHT INSPECTION")
-  FLIGHT___INSPECTION("FLIGHT INSPECTION"),
+  FLIGHT_INSPECTION("FLIGHT INSPECTION"),
   @XmlEnumValue("FLIGHT TEST")
-  FLIGHT___TEST("FLIGHT TEST"),
+  FLIGHT_TEST("FLIGHT TEST"),
   @XmlEnumValue("FLOOD WARNING SYSTEM")
-  FLOOD___WARNING___SYSTEM("FLOOD WARNING SYSTEM"),
+  FLOOD_WARNING_SYSTEM("FLOOD WARNING SYSTEM"),
   @XmlEnumValue("FLTSATCOM (Fleet Satellite Communications)")
-  FLTSATCOM____FLEET___SATELLITE___COMMUNICATIONS__("FLTSATCOM (Fleet Satellite Communications)"),
+  FLTSATCOM__FLEET_SATELLITE_COMMUNICATIONS__("FLTSATCOM (Fleet Satellite Communications)"),
   @XmlEnumValue("FORACS (Fleet Operational Readiness Accuracy Check Site)")
-  FORACS____FLEET___OPERATIONAL___READINESS___ACCURACY___CHECK___SITE__("FORACS (Fleet Operational Readiness Accuracy Check Site)"),
+  FORACS__FLEET_OPERATIONAL_READINESS_ACCURACY_CHECK_SITE__("FORACS (Fleet Operational Readiness Accuracy Check Site)"),
   @XmlEnumValue("FORWARD AIR CONTROL POST")
-  FORWARD___AIR___CONTROL___POST("FORWARD AIR CONTROL POST"),
+  FORWARD_AIR_CONTROL_POST("FORWARD AIR CONTROL POST"),
   @XmlEnumValue("GBCS-L (Ground Based Common Sensor-Light)")
-  GBCS___L____GROUND___BASED___COMMON___SENSOR___LIGHT__("GBCS-L (Ground Based Common Sensor-Light)"),
+  GBCS_L__GROUND_BASED_COMMON_SENSOR_LIGHT__("GBCS-L (Ground Based Common Sensor-Light)"),
   @XmlEnumValue("GBS (Global Broadcast System)")
-  GBS____GLOBAL___BROADCAST___SYSTEM__("GBS (Global Broadcast System)"),
+  GBS__GLOBAL_BROADCAST_SYSTEM__("GBS (Global Broadcast System)"),
   @XmlEnumValue("GCA (Ground Control Approach)")
-  GCA____GROUND___CONTROL___APPROACH__("GCA (Ground Control Approach)"),
+  GCA__GROUND_CONTROL_APPROACH__("GCA (Ground Control Approach)"),
   @XmlEnumValue("GCCS (Global Command and Control System-Army)")
-  GCCS____GLOBAL___COMMAND___AND___CONTROL___SYSTEM___ARMY__("GCCS (Global Command and Control System-Army)"),
+  GCCS__GLOBAL_COMMAND_AND_CONTROL_SYSTEM_ARMY__("GCCS (Global Command and Control System-Army)"),
   GLOBAL("GLOBAL"),
   @XmlEnumValue("GLOBAL ALE (Automatic Link Establishment)")
-  GLOBAL___ALE____AUTOMATIC___LINK___ESTABLISHMENT__("GLOBAL ALE (Automatic Link Establishment)"),
+  GLOBAL_ALE__AUTOMATIC_LINK_ESTABLISHMENT__("GLOBAL ALE (Automatic Link Establishment)"),
   @XmlEnumValue("GLOBAL BLACK")
-  GLOBAL___BLACK("GLOBAL BLACK"),
+  GLOBAL_BLACK("GLOBAL BLACK"),
   @XmlEnumValue("GLOBAL DISCRETE")
-  GLOBAL___DISCRETE("GLOBAL DISCRETE"),
+  GLOBAL_DISCRETE("GLOBAL DISCRETE"),
   @XmlEnumValue("GLOBAL RED")
-  GLOBAL___RED("GLOBAL RED"),
+  GLOBAL_RED("GLOBAL RED"),
   @XmlEnumValue("GMD (Ground Missile Defense)")
-  GMD____GROUND___MISSILE___DEFENSE__("GMD (Ground Missile Defense)"),
+  GMD__GROUND_MISSILE_DEFENSE__("GMD (Ground Missile Defense)"),
   @XmlEnumValue("GOES (Geostationary Operational Environmental Satellites)")
-  GOES____GEOSTATIONARY___OPERATIONAL___ENVIRONMENTAL___SATELLITES__("GOES (Geostationary Operational Environmental Satellites)"),
+  GOES__GEOSTATIONARY_OPERATIONAL_ENVIRONMENTAL_SATELLITES__("GOES (Geostationary Operational Environmental Satellites)"),
   @XmlEnumValue("GOLDEN KNIGHTS")
-  GOLDEN___KNIGHTS("GOLDEN KNIGHTS"),
+  GOLDEN_KNIGHTS("GOLDEN KNIGHTS"),
   @XmlEnumValue("GPS (Global Positioning System)")
-  GPS____GLOBAL___POSITIONING___SYSTEM__("GPS (Global Positioning System)"),
+  GPS__GLOBAL_POSITIONING_SYSTEM__("GPS (Global Positioning System)"),
   @XmlEnumValue("GRCS (Guardrail Common Sensor)")
-  GRCS____GUARDRAIL___COMMON___SENSOR__("GRCS (Guardrail Common Sensor)"),
+  GRCS__GUARDRAIL_COMMON_SENSOR__("GRCS (Guardrail Common Sensor)"),
   @XmlEnumValue("GRIZZLY (M1 Bleacher MineSweeper)")
-  GRIZZLY____M_1___BLEACHER___MINE_SWEEPER__("GRIZZLY (M1 Bleacher MineSweeper)"),
+  GRIZZLY__M_1_BLEACHER_MINE_SWEEPER__("GRIZZLY (M1 Bleacher MineSweeper)"),
   @XmlEnumValue("GROUND CONTROL")
-  GROUND___CONTROL("GROUND CONTROL"),
+  GROUND_CONTROL("GROUND CONTROL"),
   @XmlEnumValue("GROUND INTERDICTION")
-  GROUND___INTERDICTION("GROUND INTERDICTION"),
+  GROUND_INTERDICTION("GROUND INTERDICTION"),
   @XmlEnumValue("GROUND OPERATIONS")
-  GROUND___OPERATIONS("GROUND OPERATIONS"),
+  GROUND_OPERATIONS("GROUND OPERATIONS"),
   @XmlEnumValue("GSR (Ground Surveillance Radar)")
-  GSR____GROUND___SURVEILLANCE___RADAR__("GSR (Ground Surveillance Radar)"),
+  GSR__GROUND_SURVEILLANCE_RADAR__("GSR (Ground Surveillance Radar)"),
   @XmlEnumValue("HAARP (High Frequency Active Auroral Research Program)")
-  HAARP____HIGH___FREQUENCY___ACTIVE___AURORAL___RESEARCH___PROGRAM__("HAARP (High Frequency Active Auroral Research Program)"),
+  HAARP__HIGH_FREQUENCY_ACTIVE_AURORAL_RESEARCH_PROGRAM__("HAARP (High Frequency Active Auroral Research Program)"),
   @XmlEnumValue("HARBOR-PORT OPERATIONS")
-  HARBOR___PORT___OPERATIONS("HARBOR-PORT OPERATIONS"),
+  HARBOR_PORT_OPERATIONS("HARBOR-PORT OPERATIONS"),
   @XmlEnumValue("HAVE QUICK")
-  HAVE___QUICK("HAVE QUICK"),
+  HAVE_QUICK("HAVE QUICK"),
   @XmlEnumValue("HAZARDOUS MATERIAL RELEASE")
-  HAZARDOUS___MATERIAL___RELEASE("HAZARDOUS MATERIAL RELEASE"),
+  HAZARDOUS_MATERIAL_RELEASE("HAZARDOUS MATERIAL RELEASE"),
   @XmlEnumValue("HAZMAT (Hazardous Materials)")
-  HAZMAT____HAZARDOUS___MATERIALS__("HAZMAT (Hazardous Materials)"),
+  HAZMAT__HAZARDOUS_MATERIALS__("HAZMAT (Hazardous Materials)"),
   @XmlEnumValue("HELO CONTROL")
-  HELO___CONTROL("HELO CONTROL"),
+  HELO_CONTROL("HELO CONTROL"),
   @XmlEnumValue("HICOM (High Command)")
-  HICOM____HIGH___COMMAND__("HICOM (High Command)"),
+  HICOM__HIGH_COMMAND__("HICOM (High Command)"),
   @XmlEnumValue("HYDRA (Hierarchical Yet Dynamically Reprogrammable Architecture)")
-  HYDRA____HIERARCHICAL___YET___DYNAMICALLY___REPROGRAMMABLE___ARCHITECTURE__("HYDRA (Hierarchical Yet Dynamically Reprogrammable Architecture)"),
+  HYDRA__HIERARCHICAL_YET_DYNAMICALLY_REPROGRAMMABLE_ARCHITECTURE__("HYDRA (Hierarchical Yet Dynamically Reprogrammable Architecture)"),
   HYDROLOGIC("HYDROLOGIC"),
   @XmlEnumValue("IEWCS (Intelligence Electronic Warfare Common Sensor)")
-  IEWCS____INTELLIGENCE___ELECTRONIC___WARFARE___COMMON___SENSOR__("IEWCS (Intelligence Electronic Warfare Common Sensor)"),
+  IEWCS__INTELLIGENCE_ELECTRONIC_WARFARE_COMMON_SENSOR__("IEWCS (Intelligence Electronic Warfare Common Sensor)"),
   @XmlEnumValue("IFF/SIF")
-  IFF___SIF("IFF/SIF"),
+  IFF_SIF("IFF/SIF"),
   @XmlEnumValue("ILS (Instrument Landing System)")
-  ILS____INSTRUMENT___LANDING___SYSTEM__("ILS (Instrument Landing System)"),
+  ILS__INSTRUMENT_LANDING_SYSTEM__("ILS (Instrument Landing System)"),
   @XmlEnumValue("IMETS (Integrated Meteorological System)")
-  IMETS____INTEGRATED___METEOROLOGICAL___SYSTEM__("IMETS (Integrated Meteorological System)"),
+  IMETS__INTEGRATED_METEOROLOGICAL_SYSTEM__("IMETS (Integrated Meteorological System)"),
   @XmlEnumValue("INDUSTRIAL CONTROLS")
-  INDUSTRIAL___CONTROLS("INDUSTRIAL CONTROLS"),
+  INDUSTRIAL_CONTROLS("INDUSTRIAL CONTROLS"),
   INFANTRY("INFANTRY"),
   INSPECTION("INSPECTION"),
   @XmlEnumValue("INSTALLATION PA SYSTEM (Giant Voice)")
-  INSTALLATION___PA___SYSTEM____GIANT___VOICE__("INSTALLATION PA SYSTEM (Giant Voice)"),
+  INSTALLATION_PA_SYSTEM__GIANT_VOICE__("INSTALLATION PA SYSTEM (Giant Voice)"),
   @XmlEnumValue("INSTRUCTOR/STUDENT TRAINING")
-  INSTRUCTOR___STUDENT___TRAINING("INSTRUCTOR/STUDENT TRAINING"),
+  INSTRUCTOR_STUDENT_TRAINING("INSTRUCTOR/STUDENT TRAINING"),
   INTELLIGENCE("INTELLIGENCE"),
   INTERPLANE("INTERPLANE"),
   @XmlEnumValue("INVENTORY/INVENTORY CONTROLS (e.g., Optical Scanners)")
-  INVENTORY___INVENTORY___CONTROLS____E___G_____OPTICAL___SCANNERS__("INVENTORY/INVENTORY CONTROLS (e.g., Optical Scanners)"),
+  INVENTORY_INVENTORY_CONTROLS__E_G___OPTICAL_SCANNERS__("INVENTORY/INVENTORY CONTROLS (e.g., Optical Scanners)"),
   @XmlEnumValue("IONOSPHERIC SOUNDER")
-  IONOSPHERIC___SOUNDER("IONOSPHERIC SOUNDER"),
+  IONOSPHERIC_SOUNDER("IONOSPHERIC SOUNDER"),
   @XmlEnumValue("I-REMBASS (Improved-Remotely Monitored Battlefield Sensor System)")
-  I___REMBASS____IMPROVED___REMOTELY___MONITORED___BATTLEFIELD___SENSOR___SYSTEM__("I-REMBASS (Improved-Remotely Monitored Battlefield Sensor System)"),
+  I_REMBASS__IMPROVED_REMOTELY_MONITORED_BATTLEFIELD_SENSOR_SYSTEM__("I-REMBASS (Improved-Remotely Monitored Battlefield Sensor System)"),
   @XmlEnumValue("ISYSCON (Integrated System Control)")
-  ISYSCON____INTEGRATED___SYSTEM___CONTROL__("ISYSCON (Integrated System Control)"),
+  ISYSCON__INTEGRATED_SYSTEM_CONTROL__("ISYSCON (Integrated System Control)"),
   @XmlEnumValue("JSS (Joint Surveillance System)")
-  JSS____JOINT___SURVEILLANCE___SYSTEM__("JSS (Joint Surveillance System)"),
+  JSS__JOINT_SURVEILLANCE_SYSTEM__("JSS (Joint Surveillance System)"),
   @XmlEnumValue("JTIDS/MIDS (Joint Tactical Information Distribution System)")
-  JTIDS___MIDS____JOINT___TACTICAL___INFORMATION___DISTRIBUTION___SYSTEM__("JTIDS/MIDS (Joint Tactical Information Distribution System)"),
+  JTIDS_MIDS__JOINT_TACTICAL_INFORMATION_DISTRIBUTION_SYSTEM__("JTIDS/MIDS (Joint Tactical Information Distribution System)"),
   @XmlEnumValue("LAND WARRIOR")
-  LAND___WARRIOR("LAND WARRIOR"),
+  LAND_WARRIOR("LAND WARRIOR"),
   @XmlEnumValue("LAW ENFORCEMENT")
-  LAW___ENFORCEMENT("LAW ENFORCEMENT"),
+  LAW_ENFORCEMENT("LAW ENFORCEMENT"),
   @XmlEnumValue("LEASAT (Leased Satellite)")
-  LEASAT____LEASED___SATELLITE__("LEASAT (Leased Satellite)"),
+  LEASAT__LEASED_SATELLITE__("LEASAT (Leased Satellite)"),
   LINEBACKER("LINEBACKER"),
   @XmlEnumValue("LLDR (Lightweight Laser Designator Rangefinder)")
-  LLDR____LIGHTWEIGHT___LASER___DESIGNATOR___RANGEFINDER__("LLDR (Lightweight Laser Designator Rangefinder)"),
+  LLDR__LIGHTWEIGHT_LASER_DESIGNATOR_RANGEFINDER__("LLDR (Lightweight Laser Designator Rangefinder)"),
   @XmlEnumValue("LMRDFS (Light Man-portable Radio Direction Finding System)")
-  LMRDFS____LIGHT___MAN___PORTABLE___RADIO___DIRECTION___FINDING___SYSTEM__("LMRDFS (Light Man-portable Radio Direction Finding System)"),
+  LMRDFS__LIGHT_MAN_PORTABLE_RADIO_DIRECTION_FINDING_SYSTEM__("LMRDFS (Light Man-portable Radio Direction Finding System)"),
   @XmlEnumValue("LOCAL CONTROL")
-  LOCAL___CONTROL("LOCAL CONTROL"),
+  LOCAL_CONTROL("LOCAL CONTROL"),
   @XmlEnumValue("LOCKS AND DAMS")
-  LOCKS___AND___DAMS("LOCKS AND DAMS"),
+  LOCKS_AND_DAMS("LOCKS AND DAMS"),
   @XmlEnumValue("LONGBOW (Apache Helicopter)")
-  LONGBOW____APACHE___HELICOPTER__("LONGBOW (Apache Helicopter)"),
+  LONGBOW__APACHE_HELICOPTER__("LONGBOW (Apache Helicopter)"),
   @XmlEnumValue("LOOTING PREVENTION")
-  LOOTING___PREVENTION("LOOTING PREVENTION"),
+  LOOTING_PREVENTION("LOOTING PREVENTION"),
   @XmlEnumValue("M93A1 FOX")
-  M_93_A_1___FOX("M93A1 FOX"),
+  M_93_A_1_FOX("M93A1 FOX"),
   MAINTENANCE("MAINTENANCE"),
   @XmlEnumValue("MARS (Military Affiliated Radio System)")
-  MARS____MILITARY___AFFILIATED___RADIO___SYSTEM__("MARS (Military Affiliated Radio System)"),
+  MARS__MILITARY_AFFILIATED_RADIO_SYSTEM__("MARS (Military Affiliated Radio System)"),
   MEDICAL("MEDICAL"),
   METEOROLOGICAL("METEOROLOGICAL"),
   @XmlEnumValue("MFCS (Mortar Fire control System)")
-  MFCS____MORTAR___FIRE___CONTROL___SYSTEM__("MFCS (Mortar Fire control System)"),
+  MFCS__MORTAR_FIRE_CONTROL_SYSTEM__("MFCS (Mortar Fire control System)"),
   MICROWAVE("MICROWAVE"),
   @XmlEnumValue("MICROWAVE DATA LINK")
-  MICROWAVE___DATA___LINK("MICROWAVE DATA LINK"),
+  MICROWAVE_DATA_LINK("MICROWAVE DATA LINK"),
   @XmlEnumValue("MILITARY POLICE")
-  MILITARY___POLICE("MILITARY POLICE"),
+  MILITARY_POLICE("MILITARY POLICE"),
   @XmlEnumValue("MILSTAR (Military Strategic and Tactical Relay System)")
-  MILSTAR____MILITARY___STRATEGIC___AND___TACTICAL___RELAY___SYSTEM__("MILSTAR (Military Strategic and Tactical Relay System)"),
+  MILSTAR__MILITARY_STRATEGIC_AND_TACTICAL_RELAY_SYSTEM__("MILSTAR (Military Strategic and Tactical Relay System)"),
   @XmlEnumValue("MISC (Miscellaneous)")
-  MISC____MISCELLANEOUS__("MISC (Miscellaneous)"),
+  MISC__MISCELLANEOUS__("MISC (Miscellaneous)"),
   MISSILE("MISSILE"),
   @XmlEnumValue("MITT/DTES (Mobile Integrated Tactical Terminal/Distributed Common Ground System Test and Evaluation Strategy)")
-  MITT___DTES____MOBILE___INTEGRATED___TACTICAL___TERMINAL___DISTRIBUTED___COMMON___GROUND___SYSTEM___TEST___AND___EVALUATION___STRATEGY__("MITT/DTES (Mobile Integrated Tactical Terminal/Distributed Common Ground System Test and Evaluation Strategy)"),
+  MITT_DTES__MOBILE_INTEGRATED_TACTICAL_TERMINAL_DISTRIBUTED_COMMON_GROUND_SYSTEM_TEST_AND_EVALUATION_STRATEGY__("MITT/DTES (Mobile Integrated Tactical Terminal/Distributed Common Ground System Test and Evaluation Strategy)"),
   @XmlEnumValue("MLRS (Multiple Launch Rocket System)")
-  MLRS____MULTIPLE___LAUNCH___ROCKET___SYSTEM__("MLRS (Multiple Launch Rocket System)"),
+  MLRS__MULTIPLE_LAUNCH_ROCKET_SYSTEM__("MLRS (Multiple Launch Rocket System)"),
   @XmlEnumValue("MLS (Microwave Landing System)")
-  MLS____MICROWAVE___LANDING___SYSTEM__("MLS (Microwave Landing System)"),
+  MLS__MICROWAVE_LANDING_SYSTEM__("MLS (Microwave Landing System)"),
   @XmlEnumValue("MOBILE TELEPHONE")
-  MOBILE___TELEPHONE("MOBILE TELEPHONE"),
+  MOBILE_TELEPHONE("MOBILE TELEPHONE"),
   @XmlEnumValue("MOMS (Man on the Move System)")
-  MOMS____MAN___ON___THE___MOVE___SYSTEM__("MOMS (Man on the Move System)"),
+  MOMS__MAN_ON_THE_MOVE_SYSTEM__("MOMS (Man on the Move System)"),
   @XmlEnumValue("MOTOR POOL")
-  MOTOR___POOL("MOTOR POOL"),
+  MOTOR_POOL("MOTOR POOL"),
   @XmlEnumValue("MSE (Mobile Subscriber Equipment)")
-  MSE____MOBILE___SUBSCRIBER___EQUIPMENT__("MSE (Mobile Subscriber Equipment)"),
+  MSE__MOBILE_SUBSCRIBER_EQUIPMENT__("MSE (Mobile Subscriber Equipment)"),
   @XmlEnumValue("MTS (Movement Tracking System)")
-  MTS____MOVEMENT___TRACKING___SYSTEM__("MTS (Movement Tracking System)"),
+  MTS__MOVEMENT_TRACKING_SYSTEM__("MTS (Movement Tracking System)"),
   MUNITIONS("MUNITIONS"),
   @XmlEnumValue("MUTUAL AID")
-  MUTUAL___AID("MUTUAL AID"),
+  MUTUAL_AID("MUTUAL AID"),
   @XmlEnumValue("MYSTIC STAR")
-  MYSTIC___STAR("MYSTIC STAR"),
+  MYSTIC_STAR("MYSTIC STAR"),
   @XmlEnumValue("NAOC (National Airborne Operations Center)")
-  NAOC____NATIONAL___AIRBORNE___OPERATIONS___CENTER__("NAOC (National Airborne Operations Center)"),
+  NAOC__NATIONAL_AIRBORNE_OPERATIONS_CENTER__("NAOC (National Airborne Operations Center)"),
   NASA("NASA"),
   @XmlEnumValue("NATURAL RESOURCES")
-  NATURAL___RESOURCES("NATURAL RESOURCES"),
+  NATURAL_RESOURCES("NATURAL RESOURCES"),
   NAVAIDS("NAVAIDS"),
   @XmlEnumValue("NAVAIDS CONTROLS")
-  NAVAIDS___CONTROLS("NAVAIDS CONTROLS"),
+  NAVAIDS_CONTROLS("NAVAIDS CONTROLS"),
   @XmlEnumValue("NAVAL GUNFIRE SUPPORT")
-  NAVAL___GUNFIRE___SUPPORT("NAVAL GUNFIRE SUPPORT"),
+  NAVAL_GUNFIRE_SUPPORT("NAVAL GUNFIRE SUPPORT"),
   @XmlEnumValue("NAVIGATION RADAR")
-  NAVIGATION___RADAR("NAVIGATION RADAR"),
+  NAVIGATION_RADAR("NAVIGATION RADAR"),
   @XmlEnumValue("NAVY SPECIAL OPERATIONS")
-  NAVY___SPECIAL___OPERATIONS("NAVY SPECIAL OPERATIONS"),
+  NAVY_SPECIAL_OPERATIONS("NAVY SPECIAL OPERATIONS"),
   @XmlEnumValue("NCIS (Naval Criminal Investigative Service)")
-  NCIS____NAVAL___CRIMINAL___INVESTIGATIVE___SERVICE__("NCIS (Naval Criminal Investigative Service)"),
+  NCIS__NAVAL_CRIMINAL_INVESTIGATIVE_SERVICE__("NCIS (Naval Criminal Investigative Service)"),
   NDB("NDB"),
   @XmlEnumValue("NERON (NOAA Environmental Real-Time Observation Network)")
-  NERON____NOAA___ENVIRONMENTAL___REAL___TIME___OBSERVATION___NETWORK__("NERON (NOAA Environmental Real-Time Observation Network)"),
+  NERON__NOAA_ENVIRONMENTAL_REAL_TIME_OBSERVATION_NETWORK__("NERON (NOAA Environmental Real-Time Observation Network)"),
   NEXRAD("NEXRAD"),
   @XmlEnumValue("NOAA WEATHER RADIO")
-  NOAA___WEATHER___RADIO("NOAA WEATHER RADIO"),
+  NOAA_WEATHER_RADIO("NOAA WEATHER RADIO"),
   @XmlEnumValue("NOAA WEATHER RADIO LINK")
-  NOAA___WEATHER___RADIO___LINK("NOAA WEATHER RADIO LINK"),
+  NOAA_WEATHER_RADIO_LINK("NOAA WEATHER RADIO LINK"),
   @XmlEnumValue("NORAD (North American Air defense Command)")
-  NORAD____NORTH___AMERICAN___AIR___DEFENSE___COMMAND__("NORAD (North American Air defense Command)"),
+  NORAD__NORTH_AMERICAN_AIR_DEFENSE_COMMAND__("NORAD (North American Air defense Command)"),
   @XmlEnumValue("NTDR (Near Term Digital Radio)")
-  NTDR____NEAR___TERM___DIGITAL___RADIO__("NTDR (Near Term Digital Radio)"),
+  NTDR__NEAR_TERM_DIGITAL_RADIO__("NTDR (Near Term Digital Radio)"),
   @XmlEnumValue("OCCS SUPPORT")
-  OCCS___SUPPORT("OCCS SUPPORT"),
+  OCCS_SUPPORT("OCCS SUPPORT"),
   @XmlEnumValue("OPERATION ALLIANCE")
-  OPERATION___ALLIANCE("OPERATION ALLIANCE"),
+  OPERATION_ALLIANCE("OPERATION ALLIANCE"),
   @XmlEnumValue("OSI (Office of Special Investigation)")
-  OSI____OFFICE___OF___SPECIAL___INVESTIGATION__("OSI (Office of Special Investigation)"),
+  OSI__OFFICE_OF_SPECIAL_INVESTIGATION__("OSI (Office of Special Investigation)"),
   @XmlEnumValue("OTHER OPERATIONS")
-  OTHER___OPERATIONS("OTHER OPERATIONS"),
+  OTHER_OPERATIONS("OTHER OPERATIONS"),
   @XmlEnumValue("OTHR/ROTHR (Over-the-Horizon Radars)")
-  OTHR___ROTHR____OVER___THE___HORIZON___RADARS__("OTHR/ROTHR (Over-the-Horizon Radars)"),
+  OTHR_ROTHR__OVER_THE_HORIZON_RADARS__("OTHR/ROTHR (Over-the-Horizon Radars)"),
   PAGING("PAGING"),
   @XmlEnumValue("PAR (Precision Approach Radar)")
-  PAR____PRECISION___APPROACH___RADAR__("PAR (Precision Approach Radar)"),
+  PAR__PRECISION_APPROACH_RADAR__("PAR (Precision Approach Radar)"),
   PATRIOT("PATRIOT"),
   @XmlEnumValue("PAVE PAWS (Precision Acquisition Vehicle Entry Phased Array Warning System)")
-  PAVE___PAWS____PRECISION___ACQUISITION___VEHICLE___ENTRY___PHASED___ARRAY___WARNING___SYSTEM__("PAVE PAWS (Precision Acquisition Vehicle Entry Phased Array Warning System)"),
+  PAVE_PAWS__PRECISION_ACQUISITION_VEHICLE_ENTRY_PHASED_ARRAY_WARNING_SYSTEM__("PAVE PAWS (Precision Acquisition Vehicle Entry Phased Array Warning System)"),
   @XmlEnumValue("PILOT-TO-DISPATCHER")
-  PILOT___TO___DISPATCHER("PILOT-TO-DISPATCHER"),
+  PILOT_TO_DISPATCHER("PILOT-TO-DISPATCHER"),
   @XmlEnumValue("PILOT-TO-METRO")
-  PILOT___TO___METRO("PILOT-TO-METRO"),
+  PILOT_TO_METRO("PILOT-TO-METRO"),
   @XmlEnumValue("PILOT-TO-PILOT")
-  PILOT___TO___PILOT("PILOT-TO-PILOT"),
+  PILOT_TO_PILOT("PILOT-TO-PILOT"),
   @XmlEnumValue("POL (Petroleum, Oil, and Lubricants)")
-  POL____PETROLEUM____OIL____AND___LUBRICANTS__("POL (Petroleum, Oil, and Lubricants)"),
+  POL__PETROLEUM__OIL__AND_LUBRICANTS__("POL (Petroleum, Oil, and Lubricants)"),
   @XmlEnumValue("POSTAL OPERATIONS")
-  POSTAL___OPERATIONS("POSTAL OPERATIONS"),
+  POSTAL_OPERATIONS("POSTAL OPERATIONS"),
   @XmlEnumValue("PRIME BEEF")
-  PRIME___BEEF("PRIME BEEF"),
+  PRIME_BEEF("PRIME BEEF"),
   @XmlEnumValue("PRISON BUS")
-  PRISON___BUS("PRISON BUS"),
+  PRISON_BUS("PRISON BUS"),
   @XmlEnumValue("PROJECT COTHEN")
-  PROJECT___COTHEN("PROJECT COTHEN"),
+  PROJECT_COTHEN("PROJECT COTHEN"),
   @XmlEnumValue("PSYCHOLOGICAL OPERATIONS")
-  PSYCHOLOGICAL___OPERATIONS("PSYCHOLOGICAL OPERATIONS"),
+  PSYCHOLOGICAL_OPERATIONS("PSYCHOLOGICAL OPERATIONS"),
   @XmlEnumValue("PUBLIC WORKS")
-  PUBLIC___WORKS("PUBLIC WORKS"),
+  PUBLIC_WORKS("PUBLIC WORKS"),
   @XmlEnumValue("RADAR (Radio Detection and Ranging)")
-  RADAR____RADIO___DETECTION___AND___RANGING__("RADAR (Radio Detection and Ranging)"),
+  RADAR__RADIO_DETECTION_AND_RANGING__("RADAR (Radio Detection and Ranging)"),
   @XmlEnumValue("RADIO RELAY")
-  RADIO___RELAY("RADIO RELAY"),
+  RADIO_RELAY("RADIO RELAY"),
   RADIOLOCATION("RADIOLOCATION"),
   RADIOSONDE("RADIOSONDE"),
   @XmlEnumValue("RAMP CONTROL")
-  RAMP___CONTROL("RAMP CONTROL"),
+  RAMP_CONTROL("RAMP CONTROL"),
   @XmlEnumValue("RANGE CONTROL")
-  RANGE___CONTROL("RANGE CONTROL"),
+  RANGE_CONTROL("RANGE CONTROL"),
   @XmlEnumValue("RANGE OPERATIONS")
-  RANGE___OPERATIONS("RANGE OPERATIONS"),
+  RANGE_OPERATIONS("RANGE OPERATIONS"),
   @XmlEnumValue("RANGER UNITS")
-  RANGER___UNITS("RANGER UNITS"),
+  RANGER_UNITS("RANGER UNITS"),
   @XmlEnumValue("RDMS (Range Data Management Subsystem)")
-  RDMS____RANGE___DATA___MANAGEMENT___SUBSYSTEM__("RDMS (Range Data Management Subsystem)"),
+  RDMS__RANGE_DATA_MANAGEMENT_SUBSYSTEM__("RDMS (Range Data Management Subsystem)"),
   @XmlEnumValue("RDTE SUPPORT")
-  RDTE___SUPPORT("RDTE SUPPORT"),
+  RDTE_SUPPORT("RDTE SUPPORT"),
   @XmlEnumValue("RED HORSE")
-  RED___HORSE("RED HORSE"),
+  RED_HORSE("RED HORSE"),
   REFUELING("REFUELING"),
   @XmlEnumValue("REMOTE BARRIER CONTROL SYSTEMS")
-  REMOTE___BARRIER___CONTROL___SYSTEMS("REMOTE BARRIER CONTROL SYSTEMS"),
+  REMOTE_BARRIER_CONTROL_SYSTEMS("REMOTE BARRIER CONTROL SYSTEMS"),
   @XmlEnumValue("REMOTE CONTROL CRANE")
-  REMOTE___CONTROL___CRANE("REMOTE CONTROL CRANE"),
+  REMOTE_CONTROL_CRANE("REMOTE CONTROL CRANE"),
   @XmlEnumValue("RESOURCES CONSERVATION")
-  RESOURCES___CONSERVATION("RESOURCES CONSERVATION"),
+  RESOURCES_CONSERVATION("RESOURCES CONSERVATION"),
   RESUPPLY("RESUPPLY"),
   @XmlEnumValue("RF TAGS")
-  RF___TAGS("RF TAGS"),
+  RF_TAGS("RF TAGS"),
   @XmlEnumValue("RUNWAY ICE DETECTION SYSTEMS")
-  RUNWAY___ICE___DETECTION___SYSTEMS("RUNWAY ICE DETECTION SYSTEMS"),
+  RUNWAY_ICE_DETECTION_SYSTEMS("RUNWAY ICE DETECTION SYSTEMS"),
   @XmlEnumValue("RUNWAY LIGHTING CONTROL")
-  RUNWAY___LIGHTING___CONTROL("RUNWAY LIGHTING CONTROL"),
+  RUNWAY_LIGHTING_CONTROL("RUNWAY LIGHTING CONTROL"),
   SAFETY("SAFETY"),
   @XmlEnumValue("SATELLITE COMMUNICATIONS")
-  SATELLITE___COMMUNICATIONS("SATELLITE COMMUNICATIONS"),
+  SATELLITE_COMMUNICATIONS("SATELLITE COMMUNICATIONS"),
   @XmlEnumValue("SAWDS (Satellite Automated WX Dist Sys)")
-  SAWDS____SATELLITE___AUTOMATED___WX___DIST___SYS__("SAWDS (Satellite Automated WX Dist Sys)"),
+  SAWDS__SATELLITE_AUTOMATED_WX_DIST_SYS__("SAWDS (Satellite Automated WX Dist Sys)"),
   @XmlEnumValue("SCAMP (Single Channel Anti-Jam Manportable Terminal)")
-  SCAMP____SINGLE___CHANNEL___ANTI___JAM___MANPORTABLE___TERMINAL__("SCAMP (Single Channel Anti-Jam Manportable Terminal)"),
+  SCAMP__SINGLE_CHANNEL_ANTI_JAM_MANPORTABLE_TERMINAL__("SCAMP (Single Channel Anti-Jam Manportable Terminal)"),
   @XmlEnumValue("SCOPE SHIELD")
-  SCOPE___SHIELD("SCOPE SHIELD"),
+  SCOPE_SHIELD("SCOPE SHIELD"),
   @XmlEnumValue("SEA OPERATIONS")
-  SEA___OPERATIONS("SEA OPERATIONS"),
+  SEA_OPERATIONS("SEA OPERATIONS"),
   SEABEES("SEABEES"),
   @XmlEnumValue("SEARCH AND RESCUE")
-  SEARCH___AND___RESCUE("SEARCH AND RESCUE"),
+  SEARCH_AND_RESCUE("SEARCH AND RESCUE"),
   @XmlEnumValue("SECURITY FORCE")
-  SECURITY___FORCE("SECURITY FORCE"),
+  SECURITY_FORCE("SECURITY FORCE"),
   SEISMIC("SEISMIC"),
   @XmlEnumValue("SENTINEL (AN/MPQ-64 Surveillance Radar)")
-  SENTINEL____AN___MPQ___64___SURVEILLANCE___RADAR__("SENTINEL (AN/MPQ-64 Surveillance Radar)"),
+  SENTINEL__AN_MPQ_64_SURVEILLANCE_RADAR__("SENTINEL (AN/MPQ-64 Surveillance Radar)"),
   @XmlEnumValue("SGLS (Space Ground Link Subsystem) (Telemetry)")
-  SGLS____SPACE___GROUND___LINK___SUBSYSTEM_____TELEMETRY__("SGLS (Space Ground Link Subsystem) (Telemetry)"),
+  SGLS__SPACE_GROUND_LINK_SUBSYSTEM___TELEMETRY__("SGLS (Space Ground Link Subsystem) (Telemetry)"),
   @XmlEnumValue("SHIP/AIR OPERATIONS")
-  SHIP___AIR___OPERATIONS("SHIP/AIR OPERATIONS"),
+  SHIP_AIR_OPERATIONS("SHIP/AIR OPERATIONS"),
   @XmlEnumValue("SHIP/SHIP")
-  SHIP___SHIP("SHIP/SHIP"),
+  SHIP_SHIP("SHIP/SHIP"),
   @XmlEnumValue("SHIP/SHORE OPERATIONS")
-  SHIP___SHORE___OPERATIONS("SHIP/SHORE OPERATIONS"),
+  SHIP_SHORE_OPERATIONS("SHIP/SHORE OPERATIONS"),
   SHIPYARD("SHIPYARD"),
   @XmlEnumValue("SHORE PATROL")
-  SHORE___PATROL("SHORE PATROL"),
+  SHORE_PATROL("SHORE PATROL"),
   @XmlEnumValue("SHORT TERM INCIDENT RESPONSE")
-  SHORT___TERM___INCIDENT___RESPONSE("SHORT TERM INCIDENT RESPONSE"),
+  SHORT_TERM_INCIDENT_RESPONSE("SHORT TERM INCIDENT RESPONSE"),
   SHUTTLE("SHUTTLE"),
   SIMULATOR("SIMULATOR"),
   @XmlEnumValue("SINCGARS (Single Channel Ground and Airborne Radio System)")
-  SINCGARS____SINGLE___CHANNEL___GROUND___AND___AIRBORNE___RADIO___SYSTEM__("SINCGARS (Single Channel Ground and Airborne Radio System)"),
+  SINCGARS__SINGLE_CHANNEL_GROUND_AND_AIRBORNE_RADIO_SYSTEM__("SINCGARS (Single Channel Ground and Airborne Radio System)"),
   @XmlEnumValue("SINCGARS-ASIP (Single Channel Ground and Airborne Radio System-Advanced System Improvement Plan)")
-  SINCGARS___ASIP____SINGLE___CHANNEL___GROUND___AND___AIRBORNE___RADIO___SYSTEM___ADVANCED___SYSTEM___IMPROVEMENT___PLAN__("SINCGARS-ASIP (Single Channel Ground and Airborne Radio System-Advanced System Improvement Plan)"),
+  SINCGARS_ASIP__SINGLE_CHANNEL_GROUND_AND_AIRBORNE_RADIO_SYSTEM_ADVANCED_SYSTEM_IMPROVEMENT_PLAN__("SINCGARS-ASIP (Single Channel Ground and Airborne Radio System-Advanced System Improvement Plan)"),
   @XmlEnumValue("SNOW REMOVAL")
-  SNOW___REMOVAL("SNOW REMOVAL"),
+  SNOW_REMOVAL("SNOW REMOVAL"),
   @XmlEnumValue("SOF (Supervisor of Flying)")
-  SOF____SUPERVISOR___OF___FLYING__("SOF (Supervisor of Flying)"),
+  SOF__SUPERVISOR_OF_FLYING__("SOF (Supervisor of Flying)"),
   SONOBUOY("SONOBUOY"),
   @XmlEnumValue("SORT (Special Operations Response Team)")
-  SORT____SPECIAL___OPERATIONS___RESPONSE___TEAM__("SORT (Special Operations Response Team)"),
+  SORT__SPECIAL_OPERATIONS_RESPONSE_TEAM__("SORT (Special Operations Response Team)"),
   @XmlEnumValue("SPACE OPERATIONS")
-  SPACE___OPERATIONS("SPACE OPERATIONS"),
+  SPACE_OPERATIONS("SPACE OPERATIONS"),
   @XmlEnumValue("SPECIAL COURIER")
-  SPECIAL___COURIER("SPECIAL COURIER"),
+  SPECIAL_COURIER("SPECIAL COURIER"),
   @XmlEnumValue("SPECIAL FORCES")
-  SPECIAL___FORCES("SPECIAL FORCES"),
+  SPECIAL_FORCES("SPECIAL FORCES"),
   @XmlEnumValue("SPECIAL OPERATIONS")
-  SPECIAL___OPERATIONS("SPECIAL OPERATIONS"),
+  SPECIAL_OPERATIONS("SPECIAL OPERATIONS"),
   @XmlEnumValue("SPECIAL PROJECTS")
-  SPECIAL___PROJECTS("SPECIAL PROJECTS"),
+  SPECIAL_PROJECTS("SPECIAL PROJECTS"),
   @XmlEnumValue("SPECIAL SECURITY OPERATIONS")
-  SPECIAL___SECURITY___OPERATIONS("SPECIAL SECURITY OPERATIONS"),
+  SPECIAL_SECURITY_OPERATIONS("SPECIAL SECURITY OPERATIONS"),
   @XmlEnumValue("SPEED MEASUREMENT SYSTEMS")
-  SPEED___MEASUREMENT___SYSTEMS("SPEED MEASUREMENT SYSTEMS"),
+  SPEED_MEASUREMENT_SYSTEMS("SPEED MEASUREMENT SYSTEMS"),
   @XmlEnumValue("SPITFIRE (SPITFIRE Manpack UHF SATCOM DAMA Terminal)")
-  SPITFIRE____SPITFIRE___MANPACK___UHF___SATCOM___DAMA___TERMINAL__("SPITFIRE (SPITFIRE Manpack UHF SATCOM DAMA Terminal)"),
+  SPITFIRE__SPITFIRE_MANPACK_UHF_SATCOM_DAMA_TERMINAL__("SPITFIRE (SPITFIRE Manpack UHF SATCOM DAMA Terminal)"),
   @XmlEnumValue("SQUADRON/WING COMMON")
-  SQUADRON___WING___COMMON("SQUADRON/WING COMMON"),
+  SQUADRON_WING_COMMON("SQUADRON/WING COMMON"),
   @XmlEnumValue("STRIKER II (Advanced Fire Support/Scout/Surveillance System)")
-  STRIKER___II____ADVANCED___FIRE___SUPPORT___SCOUT___SURVEILLANCE___SYSTEM__("STRIKER II (Advanced Fire Support/Scout/Surveillance System)"),
+  STRIKER_II__ADVANCED_FIRE_SUPPORT_SCOUT_SURVEILLANCE_SYSTEM__("STRIKER II (Advanced Fire Support/Scout/Surveillance System)"),
   @XmlEnumValue("SUPPLY AND LOGISTICS")
-  SUPPLY___AND___LOGISTICS("SUPPLY AND LOGISTICS"),
+  SUPPLY_AND_LOGISTICS("SUPPLY AND LOGISTICS"),
   @XmlEnumValue("SURFACE NAVAIDS")
-  SURFACE___NAVAIDS("SURFACE NAVAIDS"),
+  SURFACE_NAVAIDS("SURFACE NAVAIDS"),
   @XmlEnumValue("SURVEILLANCE SYSTEMS")
-  SURVEILLANCE___SYSTEMS("SURVEILLANCE SYSTEMS"),
+  SURVEILLANCE_SYSTEMS("SURVEILLANCE SYSTEMS"),
   @XmlEnumValue("SURVEILLANCE/ RECONNAISSANCE")
-  SURVEILLANCE____RECONNAISSANCE("SURVEILLANCE/ RECONNAISSANCE"),
+  SURVEILLANCE__RECONNAISSANCE("SURVEILLANCE/ RECONNAISSANCE"),
   SURVEY("SURVEY"),
   @XmlEnumValue("SUSTAINING OPERATIONS")
-  SUSTAINING___OPERATIONS("SUSTAINING OPERATIONS"),
+  SUSTAINING_OPERATIONS("SUSTAINING OPERATIONS"),
   @XmlEnumValue("TACAN (Tactical Air Navigation)")
-  TACAN____TACTICAL___AIR___NAVIGATION__("TACAN (Tactical Air Navigation)"),
+  TACAN__TACTICAL_AIR_NAVIGATION__("TACAN (Tactical Air Navigation)"),
   @XmlEnumValue("TACCS (Tactical Army Combat Service Support Computer System)")
-  TACCS____TACTICAL___ARMY___COMBAT___SERVICE___SUPPORT___COMPUTER___SYSTEM__("TACCS (Tactical Army Combat Service Support Computer System)"),
+  TACCS__TACTICAL_ARMY_COMBAT_SERVICE_SUPPORT_COMPUTER_SYSTEM__("TACCS (Tactical Army Combat Service Support Computer System)"),
   @XmlEnumValue("TACJAM (Tactical Communications Jamming System)")
-  TACJAM____TACTICAL___COMMUNICATIONS___JAMMING___SYSTEM__("TACJAM (Tactical Communications Jamming System)"),
+  TACJAM__TACTICAL_COMMUNICATIONS_JAMMING_SYSTEM__("TACJAM (Tactical Communications Jamming System)"),
   @XmlEnumValue("TACTS (Tactical Trunk Signaling)")
-  TACTS____TACTICAL___TRUNK___SIGNALING__("TACTS (Tactical Trunk Signaling)"),
+  TACTS__TACTICAL_TRUNK_SIGNALING__("TACTS (Tactical Trunk Signaling)"),
   @XmlEnumValue("TADIL-A")
-  TADIL___A("TADIL-A"),
+  TADIL_A("TADIL-A"),
   @XmlEnumValue("TADIL-C")
-  TADIL___C("TADIL-C"),
+  TADIL_C("TADIL-C"),
   TARGET("TARGET"),
   @XmlEnumValue("TARGET ACQUISITION")
-  TARGET___ACQUISITION("TARGET ACQUISITION"),
+  TARGET_ACQUISITION("TARGET ACQUISITION"),
   @XmlEnumValue("TARGET SCORING")
-  TARGET___SCORING("TARGET SCORING"),
+  TARGET_SCORING("TARGET SCORING"),
   TAXI("TAXI"),
   @XmlEnumValue("TCAS (Traffic Collision Avoidance System)")
-  TCAS____TRAFFIC___COLLISION___AVOIDANCE___SYSTEM__("TCAS (Traffic Collision Avoidance System)"),
+  TCAS__TRAFFIC_COLLISION_AVOIDANCE_SYSTEM__("TCAS (Traffic Collision Avoidance System)"),
   @XmlEnumValue("TCRS (Target Control System)")
-  TCRS____TARGET___CONTROL___SYSTEM__("TCRS (Target Control System)"),
+  TCRS__TARGET_CONTROL_SYSTEM__("TCRS (Target Control System)"),
   TEAMMATE("TEAMMATE"),
   @XmlEnumValue("TECHNICAL ESCORT UNIT")
-  TECHNICAL___ESCORT___UNIT("TECHNICAL ESCORT UNIT"),
+  TECHNICAL_ESCORT_UNIT("TECHNICAL ESCORT UNIT"),
   TELECOMMAND("TELECOMMAND"),
   TELEMETRY("TELEMETRY"),
   @XmlEnumValue("TEST AND MEASUREMENT")
-  TEST___AND___MEASUREMENT("TEST AND MEASUREMENT"),
+  TEST_AND_MEASUREMENT("TEST AND MEASUREMENT"),
   @XmlEnumValue("TEST RANGE")
-  TEST___RANGE("TEST RANGE"),
+  TEST_RANGE("TEST RANGE"),
   @XmlEnumValue("TEST RANGE TIMING")
-  TEST___RANGE___TIMING("TEST RANGE TIMING"),
+  TEST_RANGE_TIMING("TEST RANGE TIMING"),
   @XmlEnumValue("TETHERED AREOSTAT RADAR")
-  TETHERED___AREOSTAT___RADAR("TETHERED AREOSTAT RADAR"),
+  TETHERED_AREOSTAT_RADAR("TETHERED AREOSTAT RADAR"),
   THUNDERBIRDS("THUNDERBIRDS"),
   @XmlEnumValue("TIS or TRAVELERS INFORMATION SYSTEM")
-  TIS___OR___TRAVELERS___INFORMATION___SYSTEM("TIS or TRAVELERS INFORMATION SYSTEM"),
+  TIS_OR_TRAVELERS_INFORMATION_SYSTEM("TIS or TRAVELERS INFORMATION SYSTEM"),
   @XmlEnumValue("TMGS (Transportable mobile ground subsystems)")
-  TMGS____TRANSPORTABLE___MOBILE___GROUND___SUBSYSTEMS__("TMGS (Transportable mobile ground subsystems)"),
+  TMGS__TRANSPORTABLE_MOBILE_GROUND_SUBSYSTEMS__("TMGS (Transportable mobile ground subsystems)"),
   @XmlEnumValue("TOSS (TV Ordnance Scoring System)")
-  TOSS____TV___ORDNANCE___SCORING___SYSTEM__("TOSS (TV Ordnance Scoring System)"),
+  TOSS__TV_ORDNANCE_SCORING_SYSTEM__("TOSS (TV Ordnance Scoring System)"),
   TOWER("TOWER"),
   TRACKWOLF("TRACKWOLF"),
   @XmlEnumValue("TRAILBLAZER (Ground Based Communications Intelligence System)")
-  TRAILBLAZER____GROUND___BASED___COMMUNICATIONS___INTELLIGENCE___SYSTEM__("TRAILBLAZER (Ground Based Communications Intelligence System)"),
+  TRAILBLAZER__GROUND_BASED_COMMUNICATIONS_INTELLIGENCE_SYSTEM__("TRAILBLAZER (Ground Based Communications Intelligence System)"),
   TRAINING("TRAINING"),
   TRANSPORTATION("TRANSPORTATION"),
   @XmlEnumValue("TROJAN SPIRIT")
-  TROJAN___SPIRIT("TROJAN SPIRIT"),
+  TROJAN_SPIRIT("TROJAN SPIRIT"),
   TRUNKING("TRUNKING"),
   TSU("TSU"),
   @XmlEnumValue("UAV (Unmanned Aerial Vehicle)")
-  UAV____UNMANNED___AERIAL___VEHICLE__("UAV (Unmanned Aerial Vehicle)"),
+  UAV__UNMANNED_AERIAL_VEHICLE__("UAV (Unmanned Aerial Vehicle)"),
   @XmlEnumValue("UNLICENSED DEVICE")
-  UNLICENSED___DEVICE("UNLICENSED DEVICE"),
+  UNLICENSED_DEVICE("UNLICENSED DEVICE"),
   UTILITIES("UTILITIES"),
   @XmlEnumValue("VOR (Very High Frequency Omnidirectional Range)")
-  VOR____VERY___HIGH___FREQUENCY___OMNIDIRECTIONAL___RANGE__("VOR (Very High Frequency Omnidirectional Range)"),
+  VOR__VERY_HIGH_FREQUENCY_OMNIDIRECTIONAL_RANGE__("VOR (Very High Frequency Omnidirectional Range)"),
   @XmlEnumValue("VORTAC (VHF Omni-range TACAN)")
-  VORTAC____VHF___OMNI___RANGE___TACAN__("VORTAC (VHF Omni-range TACAN)"),
+  VORTAC__VHF_OMNI_RANGE_TACAN__("VORTAC (VHF Omni-range TACAN)"),
   @XmlEnumValue("WARNING SYSTEM")
-  WARNING___SYSTEM("WARNING SYSTEM"),
+  WARNING_SYSTEM("WARNING SYSTEM"),
   @XmlEnumValue("WEAPON SYSTEMS")
-  WEAPON___SYSTEMS("WEAPON SYSTEMS"),
+  WEAPON_SYSTEMS("WEAPON SYSTEMS"),
   @XmlEnumValue("WEAPONS STORAGE PROTECTION")
-  WEAPONS___STORAGE___PROTECTION("WEAPONS STORAGE PROTECTION"),
+  WEAPONS_STORAGE_PROTECTION("WEAPONS STORAGE PROTECTION"),
   WEATHER("WEATHER"),
   @XmlEnumValue("WEATHER RADAR")
-  WEATHER___RADAR("WEATHER RADAR"),
+  WEATHER_RADAR("WEATHER RADAR"),
   @XmlEnumValue("WHCA (White House Communications Agency)")
-  WHCA____WHITE___HOUSE___COMMUNICATIONS___AGENCY__("WHCA (White House Communications Agency)"),
+  WHCA__WHITE_HOUSE_COMMUNICATIONS_AGENCY__("WHCA (White House Communications Agency)"),
   @XmlEnumValue("WIDEBAND GLOBAL SATCOM")
-  WIDEBAND___GLOBAL___SATCOM("WIDEBAND GLOBAL SATCOM"),
+  WIDEBAND_GLOBAL_SATCOM("WIDEBAND GLOBAL SATCOM"),
   @XmlEnumValue("WILDLIFE PRESERVATION")
-  WILDLIFE___PRESERVATION("WILDLIFE PRESERVATION"),
+  WILDLIFE_PRESERVATION("WILDLIFE PRESERVATION"),
   @XmlEnumValue("WIND PROFILER")
-  WIND___PROFILER("WIND PROFILER"),
+  WIND_PROFILER("WIND PROFILER"),
   @XmlEnumValue("WIN-T (Warfighter Information Network-Tactical)")
-  WIN___T____WARFIGHTER___INFORMATION___NETWORK___TACTICAL__("WIN-T (Warfighter Information Network-Tactical)"),
+  WIN_T__WARFIGHTER_INFORMATION_NETWORK_TACTICAL__("WIN-T (Warfighter Information Network-Tactical)"),
   @XmlEnumValue("WIRELESS LOCAL AREA NETWORK")
-  WIRELESS___LOCAL___AREA___NETWORK("WIRELESS LOCAL AREA NETWORK"),
+  WIRELESS_LOCAL_AREA_NETWORK("WIRELESS LOCAL AREA NETWORK"),
   @XmlEnumValue("WIRELESS MIKE")
-  WIRELESS___MIKE("WIRELESS MIKE"),
+  WIRELESS_MIKE("WIRELESS MIKE"),
   @XmlEnumValue("WOLVERINE (Assault Bridge)")
-  WOLVERINE____ASSAULT___BRIDGE__("WOLVERINE (Assault Bridge)");
+  WOLVERINE__ASSAULT_BRIDGE__("WOLVERINE (Assault Bridge)");
   private final String value;
 
   ListUFN(String v) {

@@ -56,47 +56,47 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCSP {
 
   @XmlEnumValue("Deep Eccentric")
-  DEEP___ECCENTRIC("Deep Eccentric"),
+  DEEP_ECCENTRIC("Deep Eccentric"),
   @XmlEnumValue("Deep Space")
-  DEEP___SPACE("Deep Space"),
+  DEEP_SPACE("Deep Space"),
   @XmlEnumValue("GEO Drift")
-  GEO___DRIFT("GEO Drift"),
+  GEO_DRIFT("GEO Drift"),
   @XmlEnumValue("GEO Inclined")
-  GEO___INCLINED("GEO Inclined"),
+  GEO_INCLINED("GEO Inclined"),
   @XmlEnumValue("GEO Inclined Drift")
-  GEO___INCLINED___DRIFT("GEO Inclined Drift"),
+  GEO_INCLINED_DRIFT("GEO Inclined Drift"),
   @XmlEnumValue("GEO Near-Synchronous")
-  GEO___NEAR___SYNCHRONOUS("GEO Near-Synchronous"),
+  GEO_NEAR_SYNCHRONOUS("GEO Near-Synchronous"),
   @XmlEnumValue("GEO Stationary")
-  GEO___STATIONARY("GEO Stationary"),
+  GEO_STATIONARY("GEO Stationary"),
   @XmlEnumValue("GEO Synchronous")
-  GEO___SYNCHRONOUS("GEO Synchronous"),
+  GEO_SYNCHRONOUS("GEO Synchronous"),
   @XmlEnumValue("GEO Transfer")
-  GEO___TRANSFER("GEO Transfer"),
+  GEO_TRANSFER("GEO Transfer"),
   @XmlEnumValue("Heliocentric")
   HELIOCENTRIC("Heliocentric"),
   @XmlEnumValue("Highly Elliptic (HEO)")
-  HIGHLY___ELLIPTIC____HEO__("Highly Elliptic (HEO)"),
+  HIGHLY_ELLIPTIC__HEO__("Highly Elliptic (HEO)"),
   LEO("LEO"),
   @XmlEnumValue("LEO Equatorial")
-  LEO___EQUATORIAL("LEO Equatorial"),
+  LEO_EQUATORIAL("LEO Equatorial"),
   @XmlEnumValue("LEO Intermediate")
-  LEO___INTERMEDIATE("LEO Intermediate"),
+  LEO_INTERMEDIATE("LEO Intermediate"),
   @XmlEnumValue("LEO Polar")
-  LEO___POLAR("LEO Polar"),
+  LEO_POLAR("LEO Polar"),
   @XmlEnumValue("LEO Retrograde")
-  LEO___RETROGRADE("LEO Retrograde"),
+  LEO_RETROGRADE("LEO Retrograde"),
   @XmlEnumValue("LEO Sun-Synchronous")
-  LEO___SUN___SYNCHRONOUS("LEO Sun-Synchronous"),
+  LEO_SUN_SYNCHRONOUS("LEO Sun-Synchronous"),
   @XmlEnumValue("Lunar")
   LUNAR("Lunar"),
   MEO("MEO"),
   @XmlEnumValue("Molniya")
   MOLNIYA("Molniya"),
   @XmlEnumValue("Non-Earth")
-  NON___EARTH("Non-Earth"),
+  NON_EARTH("Non-Earth"),
   @XmlEnumValue("Non-GEO")
-  NON___GEO("Non-GEO"),
+  NON_GEO("Non-GEO"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

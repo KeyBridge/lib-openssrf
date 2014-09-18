@@ -53,17 +53,17 @@ public enum ListCCD {
   @XmlEnumValue("Pending")
   PENDING("Pending"),
   @XmlEnumValue("Not Supported")
-  NOT___SUPPORTED("Not Supported"),
+  NOT_SUPPORTED("Not Supported"),
   @XmlEnumValue("Supported")
   SUPPORTED("Supported"),
   @XmlEnumValue("Supported with Recommendations")
-  SUPPORTED___WITH___RECOMMENDATIONS("Supported with Recommendations"),
+  SUPPORTED_WITH_RECOMMENDATIONS("Supported with Recommendations"),
   @XmlEnumValue("Supported with Restrictions")
-  SUPPORTED___WITH___RESTRICTIONS("Supported with Restrictions"),
+  SUPPORTED_WITH_RESTRICTIONS("Supported with Restrictions"),
   @XmlEnumValue("Request Frequency Assignment")
-  REQUEST___FREQUENCY___ASSIGNMENT("Request Frequency Assignment"),
+  REQUEST_FREQUENCY_ASSIGNMENT("Request Frequency Assignment"),
   @XmlEnumValue("Temporary Assignment Only")
-  TEMPORARY___ASSIGNMENT___ONLY("Temporary Assignment Only");
+  TEMPORARY_ASSIGNMENT_ONLY("Temporary Assignment Only");
   private final String value;
 
   ListCCD(String v) {

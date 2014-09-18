@@ -45,11 +45,11 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCLO {
 
   @XmlEnumValue("LO above or below RF")
-  LO___ABOVE___OR___BELOW___RF("LO above or below RF"),
+  LO_ABOVE_OR_BELOW_RF("LO above or below RF"),
   @XmlEnumValue("LO above RF")
-  LO___ABOVE___RF("LO above RF"),
+  LO_ABOVE_RF("LO above RF"),
   @XmlEnumValue("LO below RF")
-  LO___BELOW___RF("LO below RF");
+  LO_BELOW_RF("LO below RF");
   private final String value;
 
   ListCLO(String v) {

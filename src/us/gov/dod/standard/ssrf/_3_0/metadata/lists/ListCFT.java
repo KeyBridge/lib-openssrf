@@ -48,9 +48,9 @@ public enum ListCFT {
   @XmlEnumValue("Budget")
   BUDGET("Budget"),
   @XmlEnumValue("Plan ORBAT")
-  PLAN___ORBAT("Plan ORBAT"),
+  PLAN_ORBAT("Plan ORBAT"),
   @XmlEnumValue("Reference ORBAT")
-  REFERENCE___ORBAT("Reference ORBAT"),
+  REFERENCE_ORBAT("Reference ORBAT"),
   @XmlEnumValue("Related")
   RELATED("Related"),
   @XmlEnumValue("Reporting")

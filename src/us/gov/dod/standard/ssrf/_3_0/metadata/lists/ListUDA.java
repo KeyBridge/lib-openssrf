@@ -50,19 +50,19 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListUDA {
 
   @XmlEnumValue("FMSC/MRFL data from NATO")
-  FMSC___MRFL___DATA___FROM___NATO("FMSC/MRFL data from NATO"),
+  FMSC_MRFL_DATA_FROM_NATO("FMSC/MRFL data from NATO"),
   @XmlEnumValue("Industry Canada")
-  INDUSTRY___CANADA("Industry Canada"),
+  INDUSTRY_CANADA("Industry Canada"),
   @XmlEnumValue("Federal Communications Commission")
-  FEDERAL___COMMUNICATIONS___COMMISSION("Federal Communications Commission"),
+  FEDERAL_COMMUNICATIONS_COMMISSION("Federal Communications Commission"),
   @XmlEnumValue("Frequency Resource Record System")
-  FREQUENCY___RESOURCE___RECORD___SYSTEM("Frequency Resource Record System"),
+  FREQUENCY_RESOURCE_RECORD_SYSTEM("Frequency Resource Record System"),
   @XmlEnumValue("Government Master File")
-  GOVERNMENT___MASTER___FILE("Government Master File"),
+  GOVERNMENT_MASTER_FILE("Government Master File"),
   @XmlEnumValue("International Telecommunication Union")
-  INTERNATIONAL___TELECOMMUNICATION___UNION("International Telecommunication Union"),
+  INTERNATIONAL_TELECOMMUNICATION_UNION("International Telecommunication Union"),
   @XmlEnumValue("Radio Astronomy data from the National Research Council")
-  RADIO___ASTRONOMY___DATA___FROM___THE___NATIONAL___RESEARCH___COUNCIL("Radio Astronomy data from the National Research Council"),
+  RADIO_ASTRONOMY_DATA_FROM_THE_NATIONAL_RESEARCH_COUNCIL("Radio Astronomy data from the National Research Council"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

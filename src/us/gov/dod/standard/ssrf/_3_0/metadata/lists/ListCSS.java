@@ -50,25 +50,25 @@ import javax.xml.bind.annotation.XmlType;
 public enum ListCSS {
 
   @XmlEnumValue("Automatic Channel Selection")
-  AUTOMATIC___CHANNEL___SELECTION("Automatic Channel Selection"),
+  AUTOMATIC_CHANNEL_SELECTION("Automatic Channel Selection"),
   @XmlEnumValue("Chirp")
   CHIRP("Chirp"),
   @XmlEnumValue("Direct sequence")
-  DIRECT___SEQUENCE("Direct sequence"),
+  DIRECT_SEQUENCE("Direct sequence"),
   @XmlEnumValue("Direct sequence + Frequency hopped")
-  DIRECT___SEQUENCE_____FREQUENCY___HOPPED("Direct sequence + Frequency hopped"),
+  DIRECT_SEQUENCE___FREQUENCY_HOPPED("Direct sequence + Frequency hopped"),
   @XmlEnumValue("Direct sequence + Time hopped")
-  DIRECT___SEQUENCE_____TIME___HOPPED("Direct sequence + Time hopped"),
+  DIRECT_SEQUENCE___TIME_HOPPED("Direct sequence + Time hopped"),
   @XmlEnumValue("Diversity")
   DIVERSITY("Diversity"),
   @XmlEnumValue("Free Channel Search")
-  FREE___CHANNEL___SEARCH("Free Channel Search"),
+  FREE_CHANNEL_SEARCH("Free Channel Search"),
   @XmlEnumValue("Frequency + Time hopped")
-  FREQUENCY_____TIME___HOPPED("Frequency + Time hopped"),
+  FREQUENCY___TIME_HOPPED("Frequency + Time hopped"),
   @XmlEnumValue("Frequency hopped")
-  FREQUENCY___HOPPED("Frequency hopped"),
+  FREQUENCY_HOPPED("Frequency hopped"),
   @XmlEnumValue("Time hopped")
-  TIME___HOPPED("Time hopped"),
+  TIME_HOPPED("Time hopped"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

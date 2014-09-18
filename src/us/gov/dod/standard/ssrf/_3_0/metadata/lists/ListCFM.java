@@ -47,7 +47,7 @@ public enum ListCFM {
   @XmlEnumValue("Multichannel")
   MULTICHANNEL("Multichannel"),
   @XmlEnumValue("Per Channel ")
-  PER___CHANNEL__("Per Channel ");
+  PER_CHANNEL__("Per Channel ");
   private final String value;
 
   ListCFM(String v) {
