@@ -37,6 +37,7 @@ import us.gov.dod.standard.ssrf._3_0.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_0.metadata.RoleRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for Organisation complex type.
@@ -118,10 +119,21 @@ public class Organisation extends Common<Organisation> {
   @XmlElement(name = "RelatedOrganisation")
   private List<RelatedOrganisation> relatedOrganisation;
 
+  public Organisation(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Organisation(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Organisation() {
+  }
+
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -130,7 +142,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -143,7 +155,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -152,7 +164,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -165,7 +177,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -174,7 +186,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -187,7 +199,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -196,7 +208,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -209,7 +221,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the alternateName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAlternateName() {
     return alternateName;
@@ -218,7 +230,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the alternateName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAlternateName(TString value) {
     this.alternateName = value;
@@ -231,7 +243,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -240,7 +252,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -253,7 +265,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Gets the value of the uic property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUIC() {
     return uic;
@@ -262,7 +274,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Sets the value of the uic property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUIC(TString value) {
     this.uic = value;

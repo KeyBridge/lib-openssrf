@@ -41,40 +41,21 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 /**
  * Java class for Configuration complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Configuration"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="ConfigID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- * &lt;element name="Description"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100" minOccurs="0"/> &lt;element
- * name="Repeater" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
- * minOccurs="0"/> &lt;element name="NumUsers"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN9" minOccurs="0"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}EIRP" minOccurs="0"/> &lt;element
- * name="OOBJustification" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;element name="PowerLimit"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW" minOccurs="0"/> &lt;element
- * name="PowerType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10"
- * minOccurs="0"/> &lt;element name="SpectrumLink"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO" minOccurs="0"/>
- * &lt;element name="Notation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Notation" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Usage"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Usage" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="ConfigFreq"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ConfigFreq" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="TxRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxRef" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="RxRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}RxRef" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="ConfigEmission"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}ConfigEmission"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Data element Configuration identifies each operational configuration that is
+ * required in a SSRequest, granted by a Host Nation in a SSReply, or authorised
+ * in a frequency Assignment or Allotment dataset. It also identifies the
+ * functional use of the assigned frequency at a particular transmitting
+ * station. Finally, it may indicate if the receiver station is used primarily
+ * as a repeater. A direct coupling between the station's receiver and the
+ * station's transmitter allows the incoming signal to be retransmitted exactly
+ * as received.
  * <p>
+ * This element is OPTIONAL and repeatable under HostNationConstraints element.
+ * If omitted, the SSReply is assumed to agree with every Configuration in the
+ * corresponding SSRequest. In case some configurations in SSRequest are not
+ * acceptable, use Configuration in HostNationConstraints to describe the
+ * accepted configurations (if necessary, modifying the information from the
+ * SSRequest).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Configuration", propOrder = {
@@ -97,44 +78,135 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 })
 public class Configuration {
 
+  /**
+   * ConfigID: Enter a short name for the configuration; this name should be a
+   * meaningful identification of the configuration, but it can also be
+   * automatically generated in some systems. The identifier MUST be unique
+   * within the dataset and SHOULD NOT be modified during the entire lifetime of
+   * the dataset.
+   * <p>
+   * [XSD ERR UNIQUE] Each value of this data item MUST be unique within the
+   * parent element.
+   */
   @XmlElement(name = "ConfigID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString configID;
+  /**
+   * Description: Enter a description of the operational mode; this description
+   * should be a meaningful explanation of the mode main characteristics.
+   */
   @XmlElement(name = "Description", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
+  /**
+   * Repeater: Enter "Yes" for each receiver location when a station in the
+   * fixed or mobile service is used primarily as a repeater.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Repeater", required = false)
   private TString repeater;
+  /**
+   * NumUsers: Enter the number of users supported by the configuration. This
+   * data may be used to analyse spectrum usage.
+   */
   @XmlElement(name = "NumUsers", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numUsers;
+  /**
+   * Group EIRP contains the Effective Isotropic Radiated Power (EIRP) radiated
+   * from the transmitter antenna. The EIRP is the sum of the power supplied to
+   * the antenna and the gain of the antenna, less the line loss, expressed in
+   * dBW.
+   * <p>
+   * EIRPMin: Enter the minimum or nominal EIRP radiated from the transmitter
+   * antenna.
+   */
   @XmlElement(name = "EIRPMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMin;
+  /**
+   * EIRPMax: Enter the maximum EIRP, in the case of a range of values; in the
+   * case of a SSReply, use the EIRPMax to specify the maximum authorised power
+   * in your Nation for the specified Configuration.
+   */
   @XmlElement(name = "EIRPMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMax;
+  /**
+   * OOBJustification: Enter the justification for out-of-band frequency use.
+   */
   @XmlElement(name = "OOBJustification", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString oobJustification;
+  /**
+   * PowerLimit (US): Enter the power limit of the transmissions in this
+   * configuration.
+   */
   @XmlElement(name = "PowerLimit", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal powerLimit;
+  /**
+   * PowerType (US): Enter the power type code for carrier, mean, or peak
+   * envelope power emitted. The power type code will depend on the type of
+   * emission of the transmitter equipment.
+   * <p>
+   * Recommend values from Code List CPT
+   */
   @XmlElement(name = "PowerType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString powerType;
+  /**
+   * SpectrumLink (US): Indicate whether the transmitter(s) communicate or
+   * interact with the receiver(s) in this Configuration, i.e. indicates a link
+   * versus a box.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "SpectrumLink", required = false)
   private TString spectrumLink;
+  /**
+   * This element contains the electronic identification for a pulsed or
+   * non-pulsed electromagnetic emission. It includes but is not limited to
+   * Communications Emitter Notation (CENOT) and Electronic Intelligence
+   * Notation (ELNOT). It is not nomenclature specific, but based on the
+   * emission signature. Therefore, equipment's that have the same or near same
+   * emission signature may have the same Notation.
+   */
   @XmlElement(name = "Notation")
   private List<Notation> notation;
+  /**
+   * This element identifies how an operational configuration can be used or
+   * will be used.
+   */
   @XmlElement(name = "Usage")
   private List<Usage> usage;
+  /**
+   * This element indicates the set of frequencies that a configuration uses,
+   * which may be a subset of the frequencies that the linked components
+   * (Transmitter, Receiver, Antenna) are capable of.
+   */
   @XmlElement(name = "ConfigFreq")
   private List<ConfigFreq> configFreq;
+  /**
+   * This element contains the reference of a Transmitter, and optionally some
+   * of its TxModes and the associated Antennas and AntMode.
+   */
   @XmlElement(name = "TxRef")
   private List<TxRef> txRef;
+  /**
+   * This element contains the reference of a Receiver, and optionally some of
+   * its RxModes and the associated Antennas and AntMode.
+   */
   @XmlElement(name = "RxRef")
   private List<RxRef> rxRef;
+  /**
+   * This element and its sub-elements define the emission bandwidths and
+   * classification symbols that a Configuration uses, which may be a subset of
+   * the linked components' capabilities.
+   */
   @XmlElement(name = "ConfigEmission")
   private List<ConfigEmission> configEmission;
 
@@ -163,7 +235,7 @@ public class Configuration {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDescription() {
     return description;
@@ -172,7 +244,7 @@ public class Configuration {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -185,7 +257,7 @@ public class Configuration {
   /**
    * Gets the value of the repeater property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRepeater() {
     return repeater;
@@ -194,7 +266,7 @@ public class Configuration {
   /**
    * Sets the value of the repeater property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRepeater(TString value) {
     this.repeater = value;
@@ -207,7 +279,7 @@ public class Configuration {
   /**
    * Gets the value of the numUsers property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumUsers() {
     return numUsers;
@@ -216,7 +288,7 @@ public class Configuration {
   /**
    * Sets the value of the numUsers property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumUsers(TInteger value) {
     this.numUsers = value;
@@ -229,7 +301,7 @@ public class Configuration {
   /**
    * Gets the value of the eirpMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getEIRPMin() {
     return eirpMin;
@@ -238,7 +310,7 @@ public class Configuration {
   /**
    * Sets the value of the eirpMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEIRPMin(TDecimal value) {
     this.eirpMin = value;
@@ -251,7 +323,7 @@ public class Configuration {
   /**
    * Gets the value of the eirpMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getEIRPMax() {
     return eirpMax;
@@ -260,7 +332,7 @@ public class Configuration {
   /**
    * Sets the value of the eirpMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEIRPMax(TDecimal value) {
     this.eirpMax = value;
@@ -273,7 +345,7 @@ public class Configuration {
   /**
    * Gets the value of the oobJustification property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOOBJustification() {
     return oobJustification;
@@ -282,7 +354,7 @@ public class Configuration {
   /**
    * Sets the value of the oobJustification property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOOBJustification(TString value) {
     this.oobJustification = value;
@@ -295,7 +367,7 @@ public class Configuration {
   /**
    * Gets the value of the powerLimit property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getPowerLimit() {
     return powerLimit;
@@ -304,7 +376,7 @@ public class Configuration {
   /**
    * Sets the value of the powerLimit property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPowerLimit(TDecimal value) {
     this.powerLimit = value;
@@ -317,7 +389,7 @@ public class Configuration {
   /**
    * Gets the value of the powerType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPowerType() {
     return powerType;
@@ -326,7 +398,7 @@ public class Configuration {
   /**
    * Sets the value of the powerType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPowerType(TString value) {
     this.powerType = value;
@@ -339,7 +411,7 @@ public class Configuration {
   /**
    * Gets the value of the spectrumLink property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSpectrumLink() {
     return spectrumLink;
@@ -348,7 +420,7 @@ public class Configuration {
   /**
    * Sets the value of the spectrumLink property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSpectrumLink(TString value) {
     this.spectrumLink = value;

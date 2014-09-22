@@ -123,8 +123,8 @@ public class POCInformation {
     return this;
   }
 
-  public POCInformation withSerial(String value) {
-    setSerial(new TString(value));
+  public POCInformation withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

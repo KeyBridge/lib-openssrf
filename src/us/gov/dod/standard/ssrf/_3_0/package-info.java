@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
@@ -21,5 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-@javax.xml.bind.annotation.XmlSchema(namespace = "urn:us:gov:dod:standard:ssrf:3.0.0", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(location = "https://acc.dau.mil",
+                                     elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED,
+                                     xmlns = {
+                                       @javax.xml.bind.annotation.XmlNs(prefix = "ssrf",
+                                                                        namespaceURI = "urn:us:gov:dod:standard:ssrf:3.0.0"),
+                                       @javax.xml.bind.annotation.XmlNs(prefix = "xs",
+                                                                        namespaceURI = "http://www.w3.org/2001/XMLSchema")}
+)
 package us.gov.dod.standard.ssrf._3_0;

@@ -36,34 +36,18 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.DCSTrunk;
 import us.gov.dod.standard.ssrf._3_0.metadata.DetailedFunction;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListUFN;
 
 /**
  * Java class for Link complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Link"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="LinkID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
- * name="IntermediateFunction" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150"
- * minOccurs="0"/> &lt;element name="MajorFunction"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS150" minOccurs="0"/> &lt;element
- * name="LinkName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS24"
- * minOccurs="0"/> &lt;element name="Tuning"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Tuning" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="StationConfig"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StationConfig"
- * maxOccurs="unbounded"/> &lt;element name="Assigned"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Assigned" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="DCSTrunk"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}DCSTrunk" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="DetailedFunction"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}DetailedFunction"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Data element Link identifies each link in a system of assignments. This is
+ * the top element of each Link. The exact definition of a link is very flexible
+ * and depends on the degree of accuracy needed for the assignment.
  * <p>
+ * A link can be very generic (one or several base stations serving an area or a
+ * volume with non-defined mobiles) to very accurate (such as one link for each
+ * radio-relay hop).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Link", propOrder = {
@@ -79,26 +63,71 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 })
 public class Link {
 
+  /**
+   * LinkID: Enter the name or identifier of the link; this identifier should be
+   * a meaningful identification of the link, but it can also be automatically
+   * generated in some systems. The identifier MUST be unique within the dataset
+   * and SHOULD NOT be modified during the entire lifetime of the dataset.
+   * <p>
+   * [XSD ERR UNIQUE] Each value of this data item MUST be unique within the
+   * parent element.
+   */
   @XmlElement(name = "LinkID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString linkID;
+  /**
+   * IntermediateFunction (US): Enter the intermediate function of the frequency
+   * assignment.
+   * <p>
+   * Recommend values from Code List UFN
+   */
   @XmlElement(name = "IntermediateFunction", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS150.class)
   private TString intermediateFunction;
+  /**
+   * MajorFunction (US): Enter the major (or primary) function of the frequency
+   * assignment.
+   * <p>
+   * Recommend values from Code List UFN
+   */
   @XmlElement(name = "MajorFunction", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS150.class)
   private TString majorFunction;
+  /**
+   * LinkName (US): Enter the name of the link.
+   */
   @XmlElement(name = "LinkName", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS24.class)
   private TString linkName;
+  /**
+   * Data element Tuning indicates the specific frequency or range of
+   * frequencies, tuning increment, and number of frequencies, required for an
+   * assignment.
+   */
   @XmlElement(name = "Tuning")
   private List<Tuning> tuning;
+  /**
+   * Data element StationConfig describes one couple (station, configuration)
+   * used for transmitting and/or receiving in the current Link. It may also
+   * contain additional antenna pointing/blanking parameters.
+   */
   @XmlElement(name = "StationConfig", required = true)
   private List<StationConfig> stationConfig;
+  /**
+   * This element contains the assigned frequency(ies), channel or net number;
+   * it can also contain the old frequency.
+   */
   @XmlElement(name = "Assigned")
   private List<Assigned> assigned;
+  /**
+   * Enter the Defense Communications System (DCS) trunk identifier assigned by
+   * the Defense Information Systems Agency (DISA).
+   */
   @XmlElement(name = "DCSTrunk", nillable = true)
   private List<DCSTrunk> dcsTrunk;
+  /**
+   * Enter the detailed function of the frequency assignment.
+   */
   @XmlElement(name = "DetailedFunction", nillable = true)
   private List<DetailedFunction> detailedFunction;
 
@@ -127,7 +156,7 @@ public class Link {
   /**
    * Gets the value of the intermediateFunction property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIntermediateFunction() {
     return intermediateFunction;
@@ -136,7 +165,7 @@ public class Link {
   /**
    * Sets the value of the intermediateFunction property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIntermediateFunction(TString value) {
     this.intermediateFunction = value;
@@ -149,7 +178,7 @@ public class Link {
   /**
    * Gets the value of the majorFunction property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getMajorFunction() {
     return majorFunction;
@@ -158,7 +187,7 @@ public class Link {
   /**
    * Sets the value of the majorFunction property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setMajorFunction(TString value) {
     this.majorFunction = value;
@@ -171,7 +200,7 @@ public class Link {
   /**
    * Gets the value of the linkName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLinkName() {
     return linkName;
@@ -180,7 +209,7 @@ public class Link {
   /**
    * Sets the value of the linkName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLinkName(TString value) {
     this.linkName = value;
@@ -360,8 +389,18 @@ public class Link {
     return this;
   }
 
+  public Link withIntermediateFunction(ListUFN value) {
+    setIntermediateFunction(new TString(value.value()));
+    return this;
+  }
+
   public Link withMajorFunction(String value) {
     setMajorFunction(new TString(value));
+    return this;
+  }
+
+  public Link withMajorFunction(ListUFN value) {
+    setMajorFunction(new TString(value.value()));
     return this;
   }
 

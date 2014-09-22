@@ -36,6 +36,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.system.EarthStation;
 import us.gov.dod.standard.ssrf._3_0.system.Identifier;
 
@@ -235,6 +236,17 @@ public class Satellite extends Common<Satellite> {
   @XmlElement(name = "ServiceArea", nillable = true)
   private List<ServiceArea> serviceArea;
 
+  public Satellite(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Satellite(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Satellite() {
+  }
+
   /**
    * Gets the value of the reviewDate property.
    * <p>
@@ -259,7 +271,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the callSign property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCallSign() {
     return callSign;
@@ -268,7 +280,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the callSign property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCallSign(TString value) {
     this.callSign = value;
@@ -281,7 +293,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the orbitType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOrbitType() {
     return orbitType;
@@ -290,7 +302,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the orbitType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOrbitType(TString value) {
     this.orbitType = value;
@@ -303,7 +315,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the launchStatus property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLaunchStatus() {
     return launchStatus;
@@ -312,7 +324,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the launchStatus property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLaunchStatus(TString value) {
     this.launchStatus = value;
@@ -325,7 +337,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the launchLocRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLaunchLocRef() {
     return launchLocRef;
@@ -334,7 +346,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the launchLocRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLaunchLocRef(TString value) {
     this.launchLocRef = value;
@@ -368,7 +380,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the geoNominalLon property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getGeoNominalLon() {
     return geoNominalLon;
@@ -377,7 +389,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the geoNominalLon property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGeoNominalLon(TString value) {
     this.geoNominalLon = value;
@@ -390,7 +402,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the geoAltitude property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getGeoAltitude() {
     return geoAltitude;
@@ -399,7 +411,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the geoAltitude property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGeoAltitude(TDecimal value) {
     this.geoAltitude = value;
@@ -412,7 +424,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoPeriod property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getNonGeoPeriod() {
     return nonGeoPeriod;
@@ -421,7 +433,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoPeriod property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNonGeoPeriod(TDecimal value) {
     this.nonGeoPeriod = value;
@@ -434,7 +446,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoNumSatellites property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNonGeoNumSatellites() {
     return nonGeoNumSatellites;
@@ -443,7 +455,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoNumSatellites property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNonGeoNumSatellites(TInteger value) {
     this.nonGeoNumSatellites = value;
@@ -456,7 +468,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoApogee property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getNonGeoApogee() {
     return nonGeoApogee;
@@ -465,7 +477,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoApogee property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNonGeoApogee(TDecimal value) {
     this.nonGeoApogee = value;
@@ -478,7 +490,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoPerigee property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getNonGeoPerigee() {
     return nonGeoPerigee;
@@ -487,7 +499,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoPerigee property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNonGeoPerigee(TDecimal value) {
     this.nonGeoPerigee = value;
@@ -500,7 +512,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the nonGeoInclination property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getNonGeoInclination() {
     return nonGeoInclination;
@@ -509,7 +521,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the nonGeoInclination property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNonGeoInclination(TDecimal value) {
     this.nonGeoInclination = value;
@@ -522,7 +534,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the internationalDesignator property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getInternationalDesignator() {
     return internationalDesignator;
@@ -531,7 +543,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the internationalDesignator property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setInternationalDesignator(TString value) {
     this.internationalDesignator = value;
@@ -544,7 +556,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the objectNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getObjectNum() {
     return objectNum;
@@ -553,7 +565,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the objectNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setObjectNum(TString value) {
     this.objectNum = value;
@@ -566,7 +578,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the administration property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAdministration() {
     return administration;
@@ -575,7 +587,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the administration property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAdministration(TString value) {
     this.administration = value;
@@ -588,7 +600,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Gets the value of the networkName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNetworkName() {
     return networkName;
@@ -597,7 +609,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Sets the value of the networkName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNetworkName(TString value) {
     this.networkName = value;

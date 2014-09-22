@@ -37,7 +37,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.RelatedRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.*;
 import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
 
 /**
@@ -614,6 +614,17 @@ public class Assignment extends Common<Assignment> {
    */
   @XmlElement(name = "RecordNote")
   private List<RecordNote> recordNote;
+
+  public Assignment(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Assignment(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Assignment() {
+  }
 
   /**
    * Gets the value of the title property.
@@ -2061,6 +2072,11 @@ public class Assignment extends Common<Assignment> {
     return this;
   }
 
+  public Assignment withUsageType(ListCUT value) {
+    setUsageType(new TString(value.name()));
+    return this;
+  }
+
   public Assignment withDateResponseRequired(Calendar value) {
     setDateResponseRequired(new TCalendar(value));
     return this;
@@ -2072,6 +2088,11 @@ public class Assignment extends Common<Assignment> {
   }
 
   public Assignment withExpirationDateTime(Calendar value) {
+    setExpirationDateTime(new TCalendar(value));
+    return this;
+  }
+
+  public Assignment withExpirationDateTime(Date value) {
     setExpirationDateTime(new TCalendar(value));
     return this;
   }
@@ -2191,6 +2212,11 @@ public class Assignment extends Common<Assignment> {
     return this;
   }
 
+  public Assignment withDataSource(ListUDA value) {
+    setDataSource(new TString(value.name()));
+    return this;
+  }
+
   public Assignment withFCCFileNum(String value) {
     setFCCFileNum(new TString(value));
     return this;
@@ -2226,6 +2252,11 @@ public class Assignment extends Common<Assignment> {
     return this;
   }
 
+  public Assignment withOriginalAssignmentDate(Date value) {
+    setOriginalAssignmentDate(new TCalendar(value));
+    return this;
+  }
+
   public Assignment withRoutineAgendaItem(String value) {
     setRoutineAgendaItem(new TString(value));
     return this;
@@ -2238,6 +2269,11 @@ public class Assignment extends Common<Assignment> {
 
   public Assignment withTypeOfService(String value) {
     setTypeOfService(new TString(value));
+    return this;
+  }
+
+  public Assignment withTypeOfService(ListUTY value) {
+    setTypeOfService(new TString(value.name()));
     return this;
   }
 

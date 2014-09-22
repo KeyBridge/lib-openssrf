@@ -142,8 +142,8 @@ public class RelatedOrganisation {
     return this;
   }
 
-  public RelatedOrganisation withSerial(String value) {
-    setSerial(new TString(value));
+  public RelatedOrganisation withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

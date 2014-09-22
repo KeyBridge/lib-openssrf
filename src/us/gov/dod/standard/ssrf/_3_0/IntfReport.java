@@ -36,6 +36,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for IntfReport complex type.
@@ -245,6 +246,17 @@ public class IntfReport extends Common<IntfReport> {
   private TString satelliteUplinkPolarisation;
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+
+  public IntfReport(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public IntfReport(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public IntfReport() {
+  }
 
   /**
    * Gets the value of the helpRequired property.

@@ -109,8 +109,8 @@ public class RelatedSystem {
     return this;
   }
 
-  public RelatedSystem withSerial(String value) {
-    setSerial(new TString(value));
+  public RelatedSystem withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

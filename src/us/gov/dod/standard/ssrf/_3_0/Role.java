@@ -101,10 +101,21 @@ public class Role extends Common<Role> {
   @XmlElement(name = "ContactRef", nillable = true)
   private List<ContactRef> contactRef;
 
+  public Role(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Role(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Role() {
+  }
+
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -113,7 +124,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -126,7 +137,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -135,7 +146,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -148,7 +159,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -157,7 +168,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -192,7 +203,7 @@ public class Role extends Common<Role> {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCountry() {
     return country;
@@ -201,7 +212,7 @@ public class Role extends Common<Role> {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCountry(TString value) {
     this.country = value;

@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TString", propOrder = {"value"})
 
-public class TString extends AStandardMetadataAttributes {
+public class TString extends AStandardMetadataAttributes implements IMetadataType {
 
   /**
    * The value to which the metadata attributes are associated. Expected Class
@@ -61,6 +61,7 @@ public class TString extends AStandardMetadataAttributes {
    * <p>
    * @return
    */
+  @Override
   public String getValue() {
     return value;
   }
@@ -78,4 +79,8 @@ public class TString extends AStandardMetadataAttributes {
     return (this.value != null);
   }
 
+  @Override
+  public String toString() {
+    return value;
+  }
 }

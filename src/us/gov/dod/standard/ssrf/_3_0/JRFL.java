@@ -34,6 +34,7 @@ import us.gov.dod.standard.ssrf._3_0.jrfl.JRFLEntry;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for JRFL complex type.
@@ -106,6 +107,17 @@ public class JRFL extends Common<JRFL> {
   private TInteger duration;
   @XmlElement(name = "JRFLEntry", required = true)
   private List<JRFLEntry> jrflEntry;
+
+  public JRFL(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public JRFL(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public JRFL() {
+  }
 
   /**
    * Gets the value of the effectiveDateTime property.

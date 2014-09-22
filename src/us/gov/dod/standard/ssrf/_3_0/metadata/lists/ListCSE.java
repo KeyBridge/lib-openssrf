@@ -86,7 +86,7 @@ public enum ListCSE {
    * <p>
    */
   @XmlEnumValue("(S+N)/N")
-  __S_N__N("(S+N)/N");
+  _S_N_N("(S+N)/N");
   private final String value;
 
   ListCSE(String v) {

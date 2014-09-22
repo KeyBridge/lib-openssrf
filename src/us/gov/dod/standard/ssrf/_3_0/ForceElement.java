@@ -35,6 +35,7 @@ import us.gov.dod.standard.ssrf._3_0.forceelement.Assets;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.system.Identifier;
 import us.gov.dod.standard.ssrf._3_0.system.StockNum;
 
@@ -124,10 +125,21 @@ public class ForceElement extends Common<ForceElement> {
   @XmlElement(name = "StockNum")
   private List<StockNum> stockNum;
 
+  public ForceElement(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public ForceElement(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public ForceElement() {
+  }
+
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -136,7 +148,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -171,7 +183,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the uic property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUIC() {
     return uic;
@@ -180,7 +192,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the uic property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUIC(TString value) {
     this.uic = value;
@@ -193,7 +205,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the owningCountry property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOwningCountry() {
     return owningCountry;
@@ -202,7 +214,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the owningCountry property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOwningCountry(TString value) {
     this.owningCountry = value;
@@ -215,7 +227,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the owningOrganisation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOwningOrganisation() {
     return owningOrganisation;
@@ -224,7 +236,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the owningOrganisation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOwningOrganisation(TString value) {
     this.owningOrganisation = value;
@@ -237,7 +249,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the role property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRole() {
     return role;
@@ -246,7 +258,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the role property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRole(TString value) {
     this.role = value;
@@ -259,7 +271,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the platform property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPlatform() {
     return platform;
@@ -268,7 +280,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the platform property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPlatform(TString value) {
     this.platform = value;
@@ -281,7 +293,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the missionCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getMissionCode() {
     return missionCode;
@@ -290,7 +302,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the missionCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setMissionCode(TString value) {
     this.missionCode = value;
@@ -303,7 +315,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Gets the value of the cmdLevel property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCmdLevel() {
     return cmdLevel;
@@ -312,7 +324,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Sets the value of the cmdLevel property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCmdLevel(TString value) {
     this.cmdLevel = value;

@@ -37,6 +37,7 @@ import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
 import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for Allotment complex type.
@@ -164,6 +165,17 @@ public class Allotment extends Common<Allotment> {
    */
   @XmlElement(name = "AllotFreq", required = true)
   private List<AllotFreq> allotFreq;
+
+  public Allotment(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Allotment(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Allotment() {
+  }
 
   /**
    * Gets the value of the title property.

@@ -30,6 +30,9 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCEF;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSN;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListUSC;
 
 /**
  * Java class for Usage complex type.
@@ -69,7 +72,7 @@ public class Usage {
   /**
    * Gets the value of the eqpFnct property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEqpFnct() {
     return eqpFnct;
@@ -78,7 +81,7 @@ public class Usage {
   /**
    * Sets the value of the eqpFnct property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEqpFnct(TString value) {
     this.eqpFnct = value;
@@ -91,7 +94,7 @@ public class Usage {
   /**
    * Gets the value of the stnClass property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getStnClass() {
     return stnClass;
@@ -100,7 +103,7 @@ public class Usage {
   /**
    * Sets the value of the stnClass property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setStnClass(TString value) {
     this.stnClass = value;
@@ -113,7 +116,7 @@ public class Usage {
   /**
    * Gets the value of the radioService property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRadioService() {
     return radioService;
@@ -122,7 +125,7 @@ public class Usage {
   /**
    * Sets the value of the radioService property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRadioService(TString value) {
     this.radioService = value;
@@ -137,13 +140,28 @@ public class Usage {
     return this;
   }
 
+  public Usage withEqpFnct(ListCEF value) {
+    setEqpFnct(new TString(value.value()));
+    return this;
+  }
+
   public Usage withStnClass(String value) {
     setStnClass(new TString(value));
     return this;
   }
 
+  public Usage withStnClass(ListUSC value) {
+    setStnClass(new TString(value.value()));
+    return this;
+  }
+
   public Usage withRadioService(String value) {
     setRadioService(new TString(value));
+    return this;
+  }
+
+  public Usage withRadioService(ListCSN value) {
+    setRadioService(new TString(value.value()));
     return this;
   }
 

@@ -117,7 +117,7 @@ public enum ListCET {
   @XmlEnumValue("Command Ship")
   COMMAND_SHIP("Command Ship"),
   @XmlEnumValue("Landing Craft, Air Cushion")
-  LANDING_CRAFT__AIR_CUSHION("Landing Craft, Air Cushion"),
+  LANDING_CRAFT_AIR_CUSHION("Landing Craft, Air Cushion"),
   @XmlEnumValue("Amphibious Command Ship")
   AMPHIBIOUS_COMMAND_SHIP("Amphibious Command Ship"),
   @XmlEnumValue("Amphibious Assault Ship")
@@ -201,7 +201,7 @@ public enum ListCET {
   @XmlEnumValue("Cable Repair Ship")
   CABLE_REPAIR_SHIP("Cable Repair Ship"),
   @XmlEnumValue("Rescue & Salvage")
-  RESCUE___SALVAGE("Rescue & Salvage"),
+  RESCUE__SALVAGE("Rescue & Salvage"),
   @XmlEnumValue("Ocean-Going Tug")
   OCEAN_GOING_TUG("Ocean-Going Tug"),
   @XmlEnumValue("Aviation Support Ship")

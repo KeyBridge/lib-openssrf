@@ -41,60 +41,10 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFO;
 /**
  * Java class for TxMode complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="TxMode"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}ModeInfo"/> &lt;element
- * name="NecessaryBw" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM"
- * minOccurs="0"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Tunability" minOccurs="0"/>
- * &lt;element name="NumSubCarriers"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5" minOccurs="0"/> &lt;element
- * name="NumSideTones" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN5"
- * minOccurs="0"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Intermodulation" minOccurs="0"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Burst" minOccurs="0"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}OccupiedBw"
- * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Spurious"
- * minOccurs="0"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqTolerance" minOccurs="0"/>
- * &lt;element name="RadarType" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
- * minOccurs="0"/> &lt;element name="GpsNBL1Level"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBW" minOccurs="0"/>
- * &lt;element name="GpsNBL2Level"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBW" minOccurs="0"/>
- * &lt;element name="GpsWBL1Level"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBWHz" minOccurs="0"/>
- * &lt;element name="GpsWBL2Level"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUS_dBWHz" minOccurs="0"/>
- * &lt;element name="ModulationType"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/> &lt;element
- * name="ModeName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS40"
- * minOccurs="0"/> &lt;element name="EmsClass"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}EmsClass" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Power"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Power" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="TxSignalTuning"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxSignalTuning"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="TxModulation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxModulation" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Baseband"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Baseband" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Pulse"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Pulse" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="SubCarrierFreq"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SubCarrierFreq"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SubCarrierTone"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SubCarrierTone"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="SpreadSpectrum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}SpreadSpectrum" minOccurs="0"/>
- * &lt;/sequence> &lt;attribute name="curves"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}IdxList" /> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
+ * This element and its sub-elements define all the technical parameters for a
+ * mode of operation of the Transmitter. A mode can be defined as a set of
+ * parameters or settings for a radio or radar, allowing the equipment to
+ * perform a given function (e.g. voice, data, seek, tracking, etc).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TxMode", propOrder = {
@@ -138,106 +88,328 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCFO;
 })
 public class TxMode {
 
+  /**
+   * ModeID: Enter a short name for the mode; this name should be a meaningful
+   * identification of the mode, but it can also be automatically generated in
+   * some systems. The Name MUST be unique within the dataset and SHOULD NOT be
+   * modified during the entire lifetime of the dataset.
+   * <p>
+   * [XSD ERR UNIQUE] Each value of this data item MUST be unique within the
+   * parent element.
+   */
   @XmlElement(name = "ModeID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
+  /**
+   * Description: Enter a description of the operational mode; this description
+   * should be a meaningful explanation of the mode main characteristics.
+   */
   @XmlElement(name = "Description", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
+  /**
+   * NecessaryBw: Enter the necessary bandwidth which is defined as the value in
+   * MHz, for a given class of emission, the width of the frequency band which
+   * is just sufficient to ensure the transmission of information at the rate
+   * and with the quality required under specified conditions. This is
+   * approximately at the -20 dB level on an emission curve.
+   */
   @XmlElement(name = "NecessaryBw", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal necessaryBw;
+  /**
+   * Tunability: Enter the tuning capability.
+   * <p>
+   * Recommend values from Code List CTU
+   */
   @XmlElement(name = "Tunability", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString tunability;
+  /**
+   * TuningMethod: Enter the device or process used to tune the equipment
+   * through the RF spectrum.
+   * <p>
+   * Recommend values from Code List CTN
+   */
   @XmlElement(name = "TuningMethod", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString tuningMethod;
+  /**
+   * NumSubCarriers: Enter the number of subcarrier frequencies for the
+   * subcarriers modulating the carrier individually.
+   */
   @XmlElement(name = "NumSubCarriers", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger numSubCarriers;
+  /**
+   * NumSideTones: Enter the number of side tone frequencies for the sidetones
+   * modulating the carrier individually.
+   */
   @XmlElement(name = "NumSideTones", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger numSideTones;
+  /**
+   * This group describes the distortion that is the result of two or more
+   * signals mixing together that are not harmonic frequencies. These signals
+   * mix to create additional non-harmonic frequencies that are undesirable.
+   * <p>
+   * IntermodPct: Enter the percentage of the total signal either transmitted or
+   * received affected by the distortion products
+   */
   @XmlElement(name = "IntermodPct", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal intermodPct;
+  /**
+   * IntermodEffect: Enter the effect on circuit operation caused by the level
+   * of intermodulation distortion.
+   */
   @XmlElement(name = "IntermodEffect", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString intermodEffect;
+  /**
+   * BurstRate: Enter the number of pulse bursts per second.
+   */
   @XmlElement(name = "BurstRate", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN12_3.class)
   private TDecimal burstRate;
+  /**
+   * BurstDuration: Enter the pulse burst duration in microseconds.
+   */
   @XmlElement(name = "BurstDuration", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal burstDuration;
+  /**
+   * BurstNumPulses: Enter the number of pulses in a single pulse burst.
+   */
   @XmlElement(name = "BurstNumPulses", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN8.class)
   private TInteger burstNumPulses;
+  /**
+   * BurstOffTime: Enter the pulse burst off time in microseconds (duration of
+   * time between the end of one pulse burst to the start of the next pulse
+   * burst).
+   */
   @XmlElement(name = "BurstOffTime", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal burstOffTime;
+  /**
+   * This group contains the Occupied Bandwidth which is defined as the
+   * bandwidth that contains 99% of the spectral power under the emission curve.
+   * <p>
+   * <p>
+   * OccBw: Enter the occupied bandwidth in MHz, without unit symbol.
+   */
   @XmlElement(name = "OccBw")
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal occBw;
+  /**
+   * OccBwCalculated: Enter Yes to indicate that the data was calculated, or
+   * "No" if the data is issued from measurement. Leave blank if the origin of
+   * the data is not known.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "OccBwCalculated", required = false)
   private TString occBwCalculated;
+  /**
+   * This group contains levels of emissions on a frequency or frequencies that
+   * are outside the necessary bandwidth and the level of which may be reduced
+   * without affecting the corresponding transmission of information. Spurious
+   * emissions include harmonic emissions, parasitic emissions, intermodulation
+   * products and frequency conversion products, but exclude out-of-band
+   * emissions.
+   * <p>
+   * SecondHarmonicLevel: Enter the out-of-band emission level at the frequency
+   * that is two times the fundamental frequency. The value is expressed as the
+   * power level in decibels relative to the peak output power of the carrier
+   * signal.
+   */
   @XmlElement(name = "SecondHarmonicLevel", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal secondHarmonicLevel;
+  /**
+   * ThirdHarmonicLevel: Enter the out-of-band emission level at the frequency
+   * that is three times the fundamental frequency. The value is expressed as
+   * the power level in decibels relative to the peak output power of the
+   * carrier signal.
+   */
   @XmlElement(name = "ThirdHarmonicLevel", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal thirdHarmonicLevel;
+  /**
+   * OtherHarmonicLevel: Enter the greatest out-of-band emission level at
+   * harmonic frequencies greater than three times the fundamental frequency.
+   * The value is expressed as the power level in decibels relative to the peak
+   * output power of the carrier signal.
+   */
   @XmlElement(name = "OtherHarmonicLevel", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal otherHarmonicLevel;
+  /**
+   * SpuriousLevel: Enter the maximum of all emission levels which occur outside
+   * the -60 dB bandwidth of the fundamental and not at a harmonic frequency.
+   * The value is expressed as the power level in decibels relative to the peak
+   * output power of the carrier signal.
+   */
   @XmlElement(name = "SpuriousLevel", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal spuriousLevel;
+  /**
+   * The maximum drift from an equipment's center frequency after normal warm-up
+   * time has been allowed.
+   * <p>
+   * FreqTolerance: Enter the drift in Hz or in ppm using the formula: Frequency
+   * tolerance (ppm) = Maximum drift (Hz) / Center frequency (MHz). Enter the
+   * units (Hz or ppm) in FreqToleranceUnit.
+   */
   @XmlElement(name = "FreqTolerance")
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN18_6.class)
   private TDecimal freqTolerance;
+  /**
+   * FreqToleranceUnit: Enter the units in which the Frequency Tolerance is
+   * expressed.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CFO: Hz Hertz, ppm parts per million
+   */
   @XmlElement(name = "FreqToleranceUnit")
   private TString freqToleranceUnit;
+  /**
+   * RadarType: Enter the type of radar.
+   * <p>
+   * Recommend values from Code List CRA
+   */
   @XmlElement(name = "RadarType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString radarType;
+  /**
+   * GpsNBL1Level (US): Enter the narrowband levels emitted by this system in
+   * the Navstar Global Positioning System (GPS) 1164-1240 MHz band. (dBW)
+   */
   @XmlElement(name = "GpsNBL1Level", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
   private TDecimal gpsNBL1Level;
+  /**
+   * GpsNBL2Level (US): Enter the narrowband levels emitted by this system in
+   * the Navstar Global Positioning System (GPS) 1559-1610 MHz band. (dBW)
+   */
   @XmlElement(name = "GpsNBL2Level", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
   private TDecimal gpsNBL2Level;
+  /**
+   * GpsWBL1Level (US): Enter the wideband levels emitted by this system in the
+   * Navstar Global Positioning System (GPS) 1164-1240 MHz band.
+   */
   @XmlElement(name = "GpsWBL1Level", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
   private TDecimal gpsWBL1Level;
+  /**
+   * GpsWBL2Level (US): Enter the wideband levels emitted by this system in the
+   * Navstar Global Positioning System (GPS) 1559-1610 MHz band.
+   */
   @XmlElement(name = "GpsWBL2Level", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
   private TDecimal gpsWBL2Level;
+  /**
+   * ModulationType (US): Enter the type of modulation used by a non-radar
+   * (communications) transmitter, indicating whether it is analog, digital, or
+   * pulse. If the 1st symbol of the Emission Designator is "B", "C", "H", "J",
+   * or "R", then the Modulation Type should be A - Analog. If the 1st symbol is
+   * "W" or "X", it should be D - Digital.
+   * <p>
+   * Recommend values from Code List UMD: Code Pulse Digital Analog
+   */
   @XmlElement(name = "ModulationType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString modulationType;
+  /**
+   * ModeName (US): Enter a short name for the mode.
+   */
   @XmlElement(name = "ModeName", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
   private TString modeName;
+
+  /**
+   * This data element identifies the emission classification symbols that
+   * define the baseband modulating characteristics of the emission designator.
+   * The emission classification consists of the three required symbols and the
+   * two optional symbols shown in the table below.
+   */
   @XmlElement(name = "EmsClass", nillable = true)
   private List<EmsClass> emsClass;
+  /**
+   * Data element Power identifies the transmitter power.
+   */
   @XmlElement(name = "Power")
   private List<Power> power;
+  /**
+   * Data element TxSignalTuning indicates the tuning capabilities, the specific
+   * frequency or range of frequencies within which the equipment may tune, and
+   * the tuning increments of the equipment.
+   */
   @XmlElement(name = "TxSignalTuning")
   private List<TxSignalTuning> txSignalTuning;
+  /**
+   * This element inherits attributes and sub-elements from element
+   * RxModulation.
+   * <p>
+   * This data element contains the detailed characteristics of the modulation
+   * on the transmitter side.
+   */
   @XmlElement(name = "TxModulation")
   private List<TxModulation> txModulation;
+  /**
+   * This element defines the parameters of the modulating or received signal.
+   */
   @XmlElement(name = "Baseband")
   private List<Baseband> baseband;
+  /**
+   * Data element Pulse contains the pulse characteristics for all equipment
+   * using a pulsed emission. It includes the parameters of the pulse time cycle
+   * the pulse shape.
+   */
   @XmlElement(name = "Pulse")
   private List<Pulse> pulse;
+  /**
+   * Data element SubcarrierFreq contains a frequency for the subcarrier. A
+   * subcarrier is a secondary channel that resides within the main channel (a
+   * carrier within a carrier). A type of multiplexing, the subcarrier is a
+   * modulated carrier signal at a lower frequency that is combined with the
+   * main carrier signal operating at a higher frequency.
+   */
   @XmlElement(name = "SubCarrierFreq", nillable = true)
   private List<SubCarrierFreq> subCarrierFreq;
+  /**
+   * Data element SubcarrierTone contains the sidetone frequency used to
+   * modulate the subcarrier.
+   */
   @XmlElement(name = "SubCarrierTone", nillable = true)
   private List<SubCarrierTone> subCarrierTone;
+  /**
+   * Data element SpreadSpectrum contains characteristics of systems using
+   * spread spectrum techniques.
+   */
   @XmlElement(name = "SpreadSpectrum")
   protected SpreadSpectrum spreadSpectrum;
+  /**
+   * curves (Attribute): Enter the list of indices referring to a Curve index
+   * applicable to the current data item.
+   * <p>
+   * Data element Curve defines the type of curve. It contains an indication as
+   * to whether the values were measured or calculated, the numeric factor to be
+   * applied to the carrier frequency to find the abscissa of the curve, a
+   * frequency to be added to the carrier frequency to obtain the origin of the
+   * curve, and the measurement bandwidth. The absolute frequency of the point
+   * on the curve will be indicated by: <code>Freq = Freqcarrier * X + Freqconst +
+   * Freqoffset</code> where:
+   * <ul>
+   * <li>Freqcarrier = assigned or tuned frequency for which the curve will
+   * apply</li>
+   * <li>X = value of freqFactor</li>
+   * <li>Freqconst = value of freqConst</li>
+   * <li>Freqoffset = value of offset in each CurvePoint</li></ul>
+   */
   @XmlAttribute(name = "curves")
   private List<BigInteger> curves;
 
@@ -266,7 +438,7 @@ public class TxMode {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDescription() {
     return description;
@@ -275,7 +447,7 @@ public class TxMode {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -288,7 +460,7 @@ public class TxMode {
   /**
    * Gets the value of the necessaryBw property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getNecessaryBw() {
     return necessaryBw;
@@ -297,7 +469,7 @@ public class TxMode {
   /**
    * Sets the value of the necessaryBw property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNecessaryBw(TDecimal value) {
     this.necessaryBw = value;
@@ -310,7 +482,7 @@ public class TxMode {
   /**
    * Gets the value of the tunability property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTunability() {
     return tunability;
@@ -319,7 +491,7 @@ public class TxMode {
   /**
    * Sets the value of the tunability property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTunability(TString value) {
     this.tunability = value;
@@ -332,7 +504,7 @@ public class TxMode {
   /**
    * Gets the value of the tuningMethod property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTuningMethod() {
     return tuningMethod;
@@ -341,7 +513,7 @@ public class TxMode {
   /**
    * Sets the value of the tuningMethod property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTuningMethod(TString value) {
     this.tuningMethod = value;
@@ -354,7 +526,7 @@ public class TxMode {
   /**
    * Gets the value of the numSubCarriers property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumSubCarriers() {
     return numSubCarriers;
@@ -363,7 +535,7 @@ public class TxMode {
   /**
    * Sets the value of the numSubCarriers property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumSubCarriers(TInteger value) {
     this.numSubCarriers = value;
@@ -376,7 +548,7 @@ public class TxMode {
   /**
    * Gets the value of the numSideTones property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumSideTones() {
     return numSideTones;
@@ -385,7 +557,7 @@ public class TxMode {
   /**
    * Sets the value of the numSideTones property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumSideTones(TInteger value) {
     this.numSideTones = value;
@@ -398,7 +570,7 @@ public class TxMode {
   /**
    * Gets the value of the intermodPct property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getIntermodPct() {
     return intermodPct;
@@ -407,7 +579,7 @@ public class TxMode {
   /**
    * Sets the value of the intermodPct property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIntermodPct(TDecimal value) {
     this.intermodPct = value;
@@ -420,7 +592,7 @@ public class TxMode {
   /**
    * Gets the value of the intermodEffect property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIntermodEffect() {
     return intermodEffect;
@@ -429,7 +601,7 @@ public class TxMode {
   /**
    * Sets the value of the intermodEffect property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIntermodEffect(TString value) {
     this.intermodEffect = value;
@@ -442,7 +614,7 @@ public class TxMode {
   /**
    * Gets the value of the burstRate property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getBurstRate() {
     return burstRate;
@@ -451,7 +623,7 @@ public class TxMode {
   /**
    * Sets the value of the burstRate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setBurstRate(TDecimal value) {
     this.burstRate = value;
@@ -464,7 +636,7 @@ public class TxMode {
   /**
    * Gets the value of the burstDuration property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getBurstDuration() {
     return burstDuration;
@@ -473,7 +645,7 @@ public class TxMode {
   /**
    * Sets the value of the burstDuration property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setBurstDuration(TDecimal value) {
     this.burstDuration = value;
@@ -486,7 +658,7 @@ public class TxMode {
   /**
    * Gets the value of the burstNumPulses property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getBurstNumPulses() {
     return burstNumPulses;
@@ -495,7 +667,7 @@ public class TxMode {
   /**
    * Sets the value of the burstNumPulses property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setBurstNumPulses(TInteger value) {
     this.burstNumPulses = value;
@@ -508,7 +680,7 @@ public class TxMode {
   /**
    * Gets the value of the burstOffTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getBurstOffTime() {
     return burstOffTime;
@@ -517,7 +689,7 @@ public class TxMode {
   /**
    * Sets the value of the burstOffTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setBurstOffTime(TDecimal value) {
     this.burstOffTime = value;
@@ -552,7 +724,7 @@ public class TxMode {
   /**
    * Gets the value of the occBwCalculated property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOccBwCalculated() {
     return occBwCalculated;
@@ -561,7 +733,7 @@ public class TxMode {
   /**
    * Sets the value of the occBwCalculated property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOccBwCalculated(TString value) {
     this.occBwCalculated = value;
@@ -574,7 +746,7 @@ public class TxMode {
   /**
    * Gets the value of the secondHarmonicLevel property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSecondHarmonicLevel() {
     return secondHarmonicLevel;
@@ -583,7 +755,7 @@ public class TxMode {
   /**
    * Sets the value of the secondHarmonicLevel property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSecondHarmonicLevel(TDecimal value) {
     this.secondHarmonicLevel = value;
@@ -596,7 +768,7 @@ public class TxMode {
   /**
    * Gets the value of the thirdHarmonicLevel property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getThirdHarmonicLevel() {
     return thirdHarmonicLevel;
@@ -605,7 +777,7 @@ public class TxMode {
   /**
    * Sets the value of the thirdHarmonicLevel property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setThirdHarmonicLevel(TDecimal value) {
     this.thirdHarmonicLevel = value;
@@ -618,7 +790,7 @@ public class TxMode {
   /**
    * Gets the value of the otherHarmonicLevel property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getOtherHarmonicLevel() {
     return otherHarmonicLevel;
@@ -627,7 +799,7 @@ public class TxMode {
   /**
    * Sets the value of the otherHarmonicLevel property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOtherHarmonicLevel(TDecimal value) {
     this.otherHarmonicLevel = value;
@@ -640,7 +812,7 @@ public class TxMode {
   /**
    * Gets the value of the spuriousLevel property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSpuriousLevel() {
     return spuriousLevel;
@@ -649,7 +821,7 @@ public class TxMode {
   /**
    * Sets the value of the spuriousLevel property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSpuriousLevel(TDecimal value) {
     this.spuriousLevel = value;
@@ -706,7 +878,7 @@ public class TxMode {
   /**
    * Gets the value of the radarType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRadarType() {
     return radarType;
@@ -715,7 +887,7 @@ public class TxMode {
   /**
    * Sets the value of the radarType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRadarType(TString value) {
     this.radarType = value;
@@ -728,7 +900,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsNBL1Level property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getGpsNBL1Level() {
     return gpsNBL1Level;
@@ -737,7 +909,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsNBL1Level property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGpsNBL1Level(TDecimal value) {
     this.gpsNBL1Level = value;
@@ -750,7 +922,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsNBL2Level property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getGpsNBL2Level() {
     return gpsNBL2Level;
@@ -759,7 +931,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsNBL2Level property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGpsNBL2Level(TDecimal value) {
     this.gpsNBL2Level = value;
@@ -772,7 +944,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsWBL1Level property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getGpsWBL1Level() {
     return gpsWBL1Level;
@@ -781,7 +953,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsWBL1Level property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGpsWBL1Level(TDecimal value) {
     this.gpsWBL1Level = value;
@@ -794,7 +966,7 @@ public class TxMode {
   /**
    * Gets the value of the gpsWBL2Level property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getGpsWBL2Level() {
     return gpsWBL2Level;
@@ -803,7 +975,7 @@ public class TxMode {
   /**
    * Sets the value of the gpsWBL2Level property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setGpsWBL2Level(TDecimal value) {
     this.gpsWBL2Level = value;
@@ -816,7 +988,7 @@ public class TxMode {
   /**
    * Gets the value of the modulationType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getModulationType() {
     return modulationType;
@@ -825,7 +997,7 @@ public class TxMode {
   /**
    * Sets the value of the modulationType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setModulationType(TString value) {
     this.modulationType = value;
@@ -838,7 +1010,7 @@ public class TxMode {
   /**
    * Gets the value of the modeName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getModeName() {
     return modeName;
@@ -847,7 +1019,7 @@ public class TxMode {
   /**
    * Sets the value of the modeName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setModeName(TString value) {
     this.modeName = value;

@@ -114,7 +114,7 @@ public enum ListCMO {
   @XmlEnumValue("Minimum Shift Keying")
   MINIMUM_SHIFT_KEYING("Minimum Shift Keying"),
   @XmlEnumValue("Multichannel ")
-  MULTICHANNEL__("Multichannel "),
+  MULTICHANNEL("Multichannel "),
   @XmlEnumValue("Multichannel Data")
   MULTICHANNEL_DATA("Multichannel Data"),
   @XmlEnumValue("Multichannel PCM Voice")

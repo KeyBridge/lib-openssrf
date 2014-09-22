@@ -34,24 +34,20 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCNU;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCTO;
 
 /**
  * Java class for Nomenclature complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Nomenclature"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25" minOccurs="0"/>
- * &lt;element name="Level" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS25"
- * minOccurs="0"/> &lt;element name="Name"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;element
- * name="Manufacturer" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Manufacturer"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Data element Nomenclature identifies either the standard military
+ * nomenclature or the commercial model number of an antenna, equipment or
+ * system. Each antenna, equipment or system may have several types of
+ * nomenclature, e.g. both a military nomenclature and a commercial model
+ * number.
  * <p>
+ * If available, the system nomenclature is preferred rather than the component
+ * nomenclature; however, either is acceptable.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Nomenclature", propOrder = {
@@ -62,22 +58,54 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 })
 public class Nomenclature {
 
+  /**
+   * Type: Enter the type of nomenclature (commercial, military, etc).
+   * <p>
+   * Recommend values from Code List CTO
+   */
   @XmlElement(name = "Type", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString type;
+  /**
+   * Level: Enter the level of nomenclature (primary, nickname, etc).
+   * <p>
+   * Recommend values from Code List CNU
+   */
   @XmlElement(name = "Level", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString level;
+  /**
+   * Name: Enter the nomenclature subject to the following:
+   * <ul>
+   * <li> For a government equipment nomenclature, enter the standard military
+   * or government nomenclature.</li>
+   * <li> If only a commercial model number is available, enter the complete
+   * model number and indicate the manufacturer of the equipment in data element
+   * Manufacturer.</li>
+   * <li> If the nomenclature includes a modification, insert MOD and a number,
+   * if applicable, immediately following the nomenclature. For the word MARK,
+   * insert MK as the first part of the nomenclature e.g. "MK 53 MOD 1".</li>
+   * <li> If the equipment does not have an assigned government nomenclature or
+   * commercial model number, enter a general description in this item
+   * (mandatory item), and enter the manufacturer name with a brief description
+   * of the equipment in a data element Remarks.</li>
+   * <li> If the equipment is being submitted to ITU the maximum number of
+   * characters is 20.</li>
+   * </ul>
+   */
   @XmlElement(name = "Name", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
+  /**
+   *
+   */
   @XmlElement(name = "Manufacturer")
   private List<Manufacturer> manufacturer;
 
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -86,7 +114,7 @@ public class Nomenclature {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -99,7 +127,7 @@ public class Nomenclature {
   /**
    * Gets the value of the level property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLevel() {
     return level;
@@ -108,7 +136,7 @@ public class Nomenclature {
   /**
    * Sets the value of the level property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLevel(TString value) {
     this.level = value;
@@ -177,8 +205,18 @@ public class Nomenclature {
     return this;
   }
 
+  public Nomenclature withType(ListCTO value) {
+    setType(new TString(value.value()));
+    return this;
+  }
+
   public Nomenclature withLevel(String value) {
     setLevel(new TString(value));
+    return this;
+  }
+
+  public Nomenclature withLevel(ListCNU value) {
+    setLevel(new TString(value.value()));
     return this;
   }
 

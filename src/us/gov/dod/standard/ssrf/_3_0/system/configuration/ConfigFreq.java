@@ -32,22 +32,16 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCPS;
 
 /**
  * Java class for ConfigFreq complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="ConfigFreq"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}FreqRangeGrp"/> &lt;element
- * name="InBand" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
- * minOccurs="0"/> &lt;element name="Priority"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * This element indicates the set of frequencies that a configuration uses,
+ * which may be a subset of the frequencies that the linked components
+ * (Transmitter, Receiver, Antenna) are capable of.
  * <p>
+ * Sub-Element Of: Configuration
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ConfigFreq", propOrder = {
@@ -58,14 +52,36 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 })
 public class ConfigFreq {
 
+  /**
+   * FreqMin: Enter the nominal frequency or minimum value of the frequency
+   * range.
+   */
   @XmlElement(name = "FreqMin", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
+  /**
+   * FreqMax: Enter the maximum value of the frequencies in the range.
+   */
   @XmlElement(name = "FreqMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
+  /**
+   * InBand: Enter "Yes" if this frequency range is in compliance with the
+   * applicable Frequency Allocation Table. Enter “No” if any portion of the
+   * frequency range is not in compliance.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "InBand", required = false)
   private TString inBand;
+  /**
+   * Priority: Indicator if this spectrum use is Primary, Secondary or
+   * Permitted, as defined by the system use and the appropriate
+   * Administration's Frequency Allocation Table/guidance.
+   * <p>
+   * Recommend values from Code List CPS: Code Primary Secondary Permitted Other
+   */
   @XmlElement(name = "Priority", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString priority;
@@ -95,7 +111,7 @@ public class ConfigFreq {
   /**
    * Gets the value of the freqMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreqMax() {
     return freqMax;
@@ -104,7 +120,7 @@ public class ConfigFreq {
   /**
    * Sets the value of the freqMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreqMax(TDecimal value) {
     this.freqMax = value;
@@ -117,7 +133,7 @@ public class ConfigFreq {
   /**
    * Gets the value of the inBand property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getInBand() {
     return inBand;
@@ -126,7 +142,7 @@ public class ConfigFreq {
   /**
    * Sets the value of the inBand property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setInBand(TString value) {
     this.inBand = value;
@@ -139,7 +155,7 @@ public class ConfigFreq {
   /**
    * Gets the value of the priority property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPriority() {
     return priority;
@@ -148,7 +164,7 @@ public class ConfigFreq {
   /**
    * Sets the value of the priority property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPriority(TString value) {
     this.priority = value;
@@ -175,6 +191,11 @@ public class ConfigFreq {
 
   public ConfigFreq withPriority(String value) {
     setPriority(new TString(value));
+    return this;
+  }
+
+  public ConfigFreq withPriority(ListCPS value) {
+    setPriority(new TString(value.value()));
     return this;
   }
 

@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,6 +34,9 @@ import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCDS;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCOT;
 import us.gov.dod.standard.ssrf._3_0.system.Curve;
 import us.gov.dod.standard.ssrf._3_0.system.Deployment;
 import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
@@ -45,32 +45,11 @@ import us.gov.dod.standard.ssrf._3_0.system.TxMode;
 /**
  * Java class for Transmitter complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Transmitter"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}Common"> &lt;sequence> &lt;element
- * name="Generic" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Duplex" minOccurs="0"/>
- * &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}Output" minOccurs="0"/>
- * &lt;element name="Filter" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;element name="FCCAcceptanceNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50" minOccurs="0"/> &lt;element
- * name="TSPR" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS10" minOccurs="0"/>
- * &lt;element name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="Nomenclature"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Nomenclature" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Deployment"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Deployment" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="Curve"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}Curve" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="TxMode"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxMode" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/sequence> &lt;/extension> &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ * This element inherits attributes and sub-elements from element Common. [XSL
+ * ERR DSTYPE] Part 3 of the Serial reference (dataset type) MUST be "TX".
  * <p>
+ * This data element is the root element (dataset) containing the transmitter
+ * characteristics.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Transmitter", propOrder = {
@@ -90,39 +69,112 @@ import us.gov.dod.standard.ssrf._3_0.system.TxMode;
 })
 public class Transmitter extends Common<Transmitter> {
 
+  /**
+   * Generic: Enter "Yes" to indicate that the dataset describes typical
+   * parameters of a waveform or standard signal, or a generic antenna model,
+   * rather than a specific equipment model.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "Generic", required = true)
   private TString generic;
+  /**
+   * DuplexSep: Enter the minimum or exact duplex frequency separation as a
+   * number in MHz (without unit).
+   * <p>
+   * This group identifies the required (exact or minimum) offset frequency
+   * separation between the transmit and the receive radio frequencies for an
+   * equipment capable of operating in the duplex mode.
+   */
   @XmlElement(name = "DuplexSep")
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal duplexSep;
+  /**
+   * DuplexSepType: Indicate if the frequency separation must be exactly, or at
+   * the minimum, the amount specified.
+   * <p>
+   * Recommend values from Code List CDS
+   */
   @XmlElement(name = "DuplexSepType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString duplexSepType;
+  /**
+   * This group contains the final RF power output device type and name. -
+   * <p>
+   * OutputDeviceType: Enter the type of the device. Select an entry from the
+   * list.
+   * <p>
+   * Recommend values from Code List COT.
+   */
   @XmlElement(name = "OutputDeviceType", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString outputDeviceType;
+  /**
+   * OutputDevice: Enter the name of the output device. The specific device
+   * designation should be provided, for example, VARIAN VTS5751A1.
+   */
   @XmlElement(name = "OutputDevice", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
   private TString outputDevice;
+  /**
+   * Filter: Enter a brief description of the type of the output filter.
+   */
   @XmlElement(name = "Filter", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString filter;
+  /**
+   * FCCAcceptanceNum (US): Enter the Federal Communication Commission (FCC) ID
+   * of FCC authorized equipment.
+   */
   @XmlElement(name = "FCCAcceptanceNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString fccAcceptanceNum;
+  /**
+   * TSPR (US): Enter the telecommunications service priority applicable to a
+   * spectrum-dependent radiocommunications system intended to be used in direct
+   * support of a national emergency declared under Section 706 of the
+   * Communications Act of 1934, as amended.
+   */
   @XmlElement(name = "TSPR", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString tspr;
+  /**
+   *
+   */
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+  /**
+   *
+   */
   @XmlElement(name = "Nomenclature")
   private List<Nomenclature> nomenclature;
+  /**
+   *
+   */
   @XmlElement(name = "Deployment")
   private List<Deployment> deployment;
+  /**
+   *
+   */
   @XmlElement(name = "Curve")
   private List<Curve> curve;
+  /**
+   *
+   */
   @XmlElement(name = "TxMode")
   private List<TxMode> txMode;
+
+  public Transmitter(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Transmitter(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Transmitter() {
+  }
 
   /**
    * Gets the value of the generic property.
@@ -171,7 +223,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the duplexSepType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDuplexSepType() {
     return duplexSepType;
@@ -180,7 +232,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the duplexSepType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
@@ -193,7 +245,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the outputDeviceType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOutputDeviceType() {
     return outputDeviceType;
@@ -202,7 +254,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the outputDeviceType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOutputDeviceType(TString value) {
     this.outputDeviceType = value;
@@ -215,7 +267,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the outputDevice property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOutputDevice() {
     return outputDevice;
@@ -224,7 +276,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the outputDevice property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOutputDevice(TString value) {
     this.outputDevice = value;
@@ -237,7 +289,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the filter property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFilter() {
     return filter;
@@ -246,7 +298,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the filter property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFilter(TString value) {
     this.filter = value;
@@ -259,7 +311,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the fccAcceptanceNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFCCAcceptanceNum() {
     return fccAcceptanceNum;
@@ -268,7 +320,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the fccAcceptanceNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
@@ -281,7 +333,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Gets the value of the tspr property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTSPR() {
     return tspr;
@@ -290,7 +342,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Sets the value of the tspr property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTSPR(TString value) {
     this.tspr = value;
@@ -475,6 +527,11 @@ public class Transmitter extends Common<Transmitter> {
     return this;
   }
 
+  public Transmitter withDuplexSepType(ListCDS value) {
+    setDuplexSepType(new TString(value.value()));
+    return this;
+  }
+
   public Transmitter withOutputDeviceType(String value) {
     setOutputDeviceType(new TString(value));
     return this;
@@ -482,6 +539,11 @@ public class Transmitter extends Common<Transmitter> {
 
   public Transmitter withOutputDevice(String value) {
     setOutputDevice(new TString(value));
+    return this;
+  }
+
+  public Transmitter withOutputDevice(ListCOT value) {
+    setOutputDevice(new TString(value.value()));
     return this;
   }
 

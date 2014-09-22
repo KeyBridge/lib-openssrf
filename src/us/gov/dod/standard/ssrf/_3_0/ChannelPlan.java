@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -35,6 +32,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.common.Channel;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for ChannelPlan complex type.
@@ -63,6 +61,17 @@ public class ChannelPlan extends Common<ChannelPlan> {
   private TString name;
   @XmlElement(name = "Channel", required = true)
   private List<Channel> channel;
+
+  public ChannelPlan(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public ChannelPlan(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public ChannelPlan() {
+  }
 
   /**
    * Gets the value of the name property.

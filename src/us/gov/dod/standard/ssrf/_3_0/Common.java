@@ -27,6 +27,7 @@ import java.util.*;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.SSRFFactory;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.common.CaseNum;
 import us.gov.dod.standard.ssrf._3_0.common.SecurityClass;
@@ -34,6 +35,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.Remarks;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * This is an abstract element used as a basis for all core datasets.
@@ -110,8 +112,9 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
    * <p>
    * Part 4 is a Serial Identifier and is always REQUIRED. It contains one to
    * fifteen alphanumeric characters (including spaces and special characters),
-   * whose meaning is left at the discretion of each domain manager. [XSD ERR
-   * REGEX] This data item MUST comply to the regular expression:
+   * whose meaning is left at the discretion of each domain manager.
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
    * <p>
    * Examples of serial values: <br/>
@@ -264,6 +267,87 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   protected List<Remarks> remarks;
 
   /**
+   * Construct an EMPTY Common instance type.
+   * <p>
+   * Developer note: The following two fields MUST be set to create a valid
+   * Common instance: serial and entryDateTime.
+   */
+  public Common() {
+  }
+
+  /**
+   * Common constructor with the bare minimum required elements for a valid SSRF
+   * instance.
+   * <p>
+   * @param snCountry      The Serial number Country part (REQUIRED). It
+   *                       contains one to five alphabetic uppercase characters
+   *                       representing either the ITU country code or the NATO
+   *                       Command code identifying the originator or
+   *                       organisation responsible for maintaining the dataset,
+   *                       as listed in Code List CCY.
+   * @param snOrganization The serial number Organization code (OPTIONAL). It
+   *                       may contain one to four alphanumeric characters (no
+   *                       spaces nor special characters) representing a code
+   *                       for an Organisation within the country or command. It
+   *                       will normally indicate the organisation responsible
+   *                       for maintaining the dataset. Domain naming is left at
+   *                       the discretion of each country, but should be managed
+   *                       by a central authority in the country to allow
+   *                       deconfliction and uniqueness. It should enable the
+   *                       location in the data repository where this dataset
+   *                       information is stored.
+   * @param snSerial       The serial number Serial identifier (REQUIRED). It
+   *                       contains one to fifteen alphanumeric characters
+   *                       (including spaces and special characters), whose
+   *                       meaning is left at the discretion of each domain
+   *                       manager. <em>Developer note</em>: If the snSerial is
+   *                       set to NULL then a random serial number is assigned.
+   * @param entryDateTime  Enter the date the dataset was initially entered into
+   *                       the data repository (e.g. FRRS for USA, SMIR for
+   *                       NATO).
+   */
+  public Common(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    setSerial(snCountry, snOrganization, snSerial);
+    this.entryDateTime = new TCalendar(entryDateTime);
+  }
+
+  /**
+   * Common constructor with the bare minimum required elements for a valid SSRF
+   * instance.
+   * <p>
+   * @param snCountry      The Serial number Country part (REQUIRED). It
+   *                       contains one to five alphabetic uppercase characters
+   *                       representing either the ITU country code or the NATO
+   *                       Command code identifying the originator or
+   *                       organisation responsible for maintaining the dataset,
+   *                       as listed in Code List CCY.
+   * @param snOrganization The serial number Organization code (OPTIONAL). It
+   *                       may contain one to four alphanumeric characters (no
+   *                       spaces nor special characters) representing a code
+   *                       for an Organisation within the country or command. It
+   *                       will normally indicate the organisation responsible
+   *                       for maintaining the dataset. Domain naming is left at
+   *                       the discretion of each country, but should be managed
+   *                       by a central authority in the country to allow
+   *                       deconfliction and uniqueness. It should enable the
+   *                       location in the data repository where this dataset
+   *                       information is stored.
+   * @param snSerial       The serial number Serial identifier (REQUIRED). It
+   *                       contains one to fifteen alphanumeric characters
+   *                       (including spaces and special characters), whose
+   *                       meaning is left at the discretion of each domain
+   *                       manager. <em>Developer note</em>: If the snSerial is
+   *                       set to NULL then a random serial number is assigned.
+   * @param entryDateTime  Enter the date the dataset was initially entered into
+   *                       the data repository (e.g. FRRS for USA, SMIR for
+   *                       NATO).
+   */
+  public Common(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    setSerial(snCountry, snOrganization, snSerial);
+    this.entryDateTime = new TCalendar(entryDateTime);
+  }
+
+  /**
    * Gets the value of the serial property.
    * <p>
    * @return
@@ -279,6 +363,38 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
    */
   public void setSerial(TString value) {
     this.serial = value;
+  }
+
+  /**
+   * Set the serial number for this SSRF Common class instance.
+   * <p>
+   * @param snCountry      The Serial number Country part (REQUIRED). It
+   *                       contains one to five alphabetic uppercase characters
+   *                       representing either the ITU country code or the NATO
+   *                       Command code identifying the originator or
+   *                       organisation responsible for maintaining the dataset,
+   *                       as listed in Code List CCY.
+   * @param snOrganization The serial number Organization code (OPTIONAL). It
+   *                       may contain one to four alphanumeric characters (no
+   *                       spaces nor special characters) representing a code
+   *                       for an Organisation within the country or command. It
+   *                       will normally indicate the organisation responsible
+   *                       for maintaining the dataset. Domain naming is left at
+   *                       the discretion of each country, but should be managed
+   *                       by a central authority in the country to allow
+   *                       deconfliction and uniqueness. It should enable the
+   *                       location in the data repository where this dataset
+   *                       information is stored.
+   * @param snSerial       The serial number Serial identifier (REQUIRED). It
+   *                       contains one to fifteen alphanumeric characters
+   *                       (including spaces and special characters), whose
+   *                       meaning is left at the discretion of each domain
+   *                       manager. <em>Developer note</em>: If the snSerial is
+   *                       set to NULL then a random serial number is assigned.
+   */
+  @SuppressWarnings("AssignmentToMethodParameter")
+  public final void setSerial(ListCCY snCountry, String snOrganization, String snSerial) {
+    this.serial = SSRFFactory.serial(this, snCountry, snOrganization, snSerial);
   }
 
   public boolean isSetSerial() {
@@ -310,7 +426,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the entryBy property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEntryBy() {
     return entryBy;
@@ -319,7 +435,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the entryBy property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEntryBy(TString value) {
     this.entryBy = value;
@@ -332,7 +448,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the owner property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOwner() {
     return owner;
@@ -341,7 +457,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the owner property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOwner(TString value) {
     this.owner = value;
@@ -354,7 +470,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the lastChangeDateTime property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getLastChangeDateTime() {
     return lastChangeDateTime;
@@ -363,7 +479,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the lastChangeDateTime property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLastChangeDateTime(TCalendar value) {
     this.lastChangeDateTime = value;
@@ -376,7 +492,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the lastChangeBy property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLastChangeBy() {
     return lastChangeBy;
@@ -385,7 +501,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the lastChangeBy property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLastChangeBy(TString value) {
     this.lastChangeBy = value;
@@ -398,7 +514,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Gets the value of the state property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getState() {
     return state;
@@ -407,7 +523,7 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   /**
    * Sets the value of the state property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setState(TString value) {
     this.state = value;
@@ -535,12 +651,65 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
     this.remarks = null;
   }
 
+  /**
+   * Set the serial number for this SSRF Common class instance.
+   * <p>
+   * @param value The attribute serial is composed of four parts separated by
+   *              colons (":"). The maximum total length is 29 characters
+   *              (5+1+4+1+2+1+15).
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   * @return the current instance
+   */
   public T withSerial(String value) {
     setSerial(new TString(value));
     return (T) this;
   }
 
+  public T withSerial(TString value) {
+    setSerial(value);
+    return (T) this;
+  }
+
+  /**
+   * Set the serial number for this SSRF Common class instance.
+   * <p>
+   * @param snCountry      The Serial number Country part (REQUIRED). It
+   *                       contains one to five alphabetic uppercase characters
+   *                       representing either the ITU country code or the NATO
+   *                       Command code identifying the originator or
+   *                       organisation responsible for maintaining the dataset,
+   *                       as listed in Code List CCY.
+   * @param snOrganization The serial number Organization code (OPTIONAL). It
+   *                       may contain one to four alphanumeric characters (no
+   *                       spaces nor special characters) representing a code
+   *                       for an Organisation within the country or command. It
+   *                       will normally indicate the organisation responsible
+   *                       for maintaining the dataset. Domain naming is left at
+   *                       the discretion of each country, but should be managed
+   *                       by a central authority in the country to allow
+   *                       deconfliction and uniqueness. It should enable the
+   *                       location in the data repository where this dataset
+   *                       information is stored.
+   * @param snSerial       The serial number Serial identifier (REQUIRED). It
+   *                       contains one to fifteen alphanumeric characters
+   *                       (including spaces and special characters), whose
+   *                       meaning is left at the discretion of each domain
+   *                       manager.
+   * @return the current instance
+   */
+  public T withSerial(ListCCY snCountry, String snOrganization, String snSerial) {
+    setSerial(snCountry, snOrganization, snSerial);
+    return (T) this;
+  }
+
   public T withEntryDateTime(Calendar value) {
+    setEntryDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  public T withEntryDateTime(Date value) {
     setEntryDateTime(new TCalendar(value));
     return (T) this;
   }
@@ -556,6 +725,11 @@ public abstract class Common<T> extends AStandardMetadataAttributes {
   }
 
   public T withLastChangeDateTime(Calendar value) {
+    setLastChangeDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  public T withLastChangeDateTime(Date value) {
     setLastChangeDateTime(new TCalendar(value));
     return (T) this;
   }

@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TDecimal")
-public class TDecimal extends AStandardMetadataAttributes {
+public class TDecimal extends AStandardMetadataAttributes implements IMetadataType {
 
   /**
    * The value to which the metadata attributes are associated. Expected Class
@@ -70,6 +70,7 @@ public class TDecimal extends AStandardMetadataAttributes {
    * <p>
    * @return
    */
+  @Override
   public BigDecimal getValue() {
     return value;
   }
@@ -87,4 +88,8 @@ public class TDecimal extends AStandardMetadataAttributes {
     return (this.value != null);
   }
 
+  @Override
+  public String toString() {
+    return value != null ? value.toString() : null;
+  }
 }

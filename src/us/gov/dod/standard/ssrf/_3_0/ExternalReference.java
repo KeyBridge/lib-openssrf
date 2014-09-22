@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_0;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -34,6 +35,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
 
 /**
@@ -116,10 +118,21 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "ReferencedStage", required = false)
   private TString referencedStage;
 
+  public ExternalReference(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public ExternalReference(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public ExternalReference() {
+  }
+
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -128,7 +141,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -141,7 +154,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the date property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDate() {
     return date;
@@ -150,7 +163,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the date property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDate(TCalendar value) {
     this.date = value;
@@ -163,7 +176,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the identifier property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIdentifier() {
     return identifier;
@@ -172,7 +185,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the identifier property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIdentifier(TString value) {
     this.identifier = value;
@@ -185,7 +198,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the alternateIdentifier property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAlternateIdentifier() {
     return alternateIdentifier;
@@ -194,7 +207,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the alternateIdentifier property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAlternateIdentifier(TString value) {
     this.alternateIdentifier = value;
@@ -207,7 +220,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the title property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTitle() {
     return title;
@@ -216,7 +229,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the title property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTitle(TString value) {
     this.title = value;
@@ -229,7 +242,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the author property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAuthor() {
     return author;
@@ -238,7 +251,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the author property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAuthor(TString value) {
     this.author = value;
@@ -251,7 +264,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the organisation property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOrganisation() {
     return organisation;
@@ -260,7 +273,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the organisation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOrganisation(TString value) {
     this.organisation = value;
@@ -273,7 +286,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the documentCls property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDocumentCls() {
     return documentCls;
@@ -282,7 +295,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the documentCls property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDocumentCls(TString value) {
     this.documentCls = value;
@@ -295,7 +308,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the resourceLocator property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getResourceLocator() {
     return resourceLocator;
@@ -304,7 +317,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the resourceLocator property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setResourceLocator(TString value) {
     this.resourceLocator = value;
@@ -339,7 +352,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the isClassified property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIsClassified() {
     return isClassified;
@@ -348,7 +361,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the isClassified property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIsClassified(TString value) {
     this.isClassified = value;
@@ -361,7 +374,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Gets the value of the referencedStage property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getReferencedStage() {
     return referencedStage;
@@ -370,7 +383,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Sets the value of the referencedStage property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReferencedStage(TString value) {
     this.referencedStage = value;

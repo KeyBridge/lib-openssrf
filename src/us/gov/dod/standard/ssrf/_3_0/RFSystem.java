@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,6 +33,7 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
 import us.gov.dod.standard.ssrf._3_0.system.Deployment;
 import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
@@ -107,10 +105,21 @@ public class RFSystem extends Common<RFSystem> {
   @XmlElement(name = "StockNum")
   private List<StockNum> stockNum;
 
+  public RFSystem(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public RFSystem(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public RFSystem() {
+  }
+
   /**
    * Gets the value of the fieldedStatus property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFieldedStatus() {
     return fieldedStatus;
@@ -119,7 +128,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Sets the value of the fieldedStatus property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFieldedStatus(TString value) {
     this.fieldedStatus = value;
@@ -132,7 +141,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Gets the value of the emergency property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEmergency() {
     return emergency;
@@ -141,7 +150,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Sets the value of the emergency property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEmergency(TString value) {
     this.emergency = value;
@@ -154,7 +163,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Gets the value of the initialCost property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getInitialCost() {
     return initialCost;
@@ -163,7 +172,7 @@ public class RFSystem extends Common<RFSystem> {
   /**
    * Sets the value of the initialCost property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setInitialCost(TString value) {
     this.initialCost = value;

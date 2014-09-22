@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,6 +34,7 @@ import us.gov.dod.standard.ssrf._3_0.forceelement.AtWaypoint;
 import us.gov.dod.standard.ssrf._3_0.forceelement.Project;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for FEDeployment complex type.
@@ -120,6 +118,17 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "AtWaypoint")
   private List<AtWaypoint> atWaypoint;
 
+  public FEDeployment(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public FEDeployment(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public FEDeployment() {
+  }
+
   /**
    * Gets the value of the feRef property.
    * <p>
@@ -167,7 +176,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the num property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNum() {
     return num;
@@ -176,7 +185,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the num property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNum(TInteger value) {
     this.num = value;
@@ -189,7 +198,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the seconds property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSeconds() {
     return seconds;
@@ -198,7 +207,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the seconds property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSeconds(TString value) {
     this.seconds = value;
@@ -211,7 +220,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the minutes property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getMinutes() {
     return minutes;
@@ -220,7 +229,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the minutes property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setMinutes(TString value) {
     this.minutes = value;
@@ -233,7 +242,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the hours property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getHours() {
     return hours;
@@ -242,7 +251,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the hours property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHours(TString value) {
     this.hours = value;
@@ -255,7 +264,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the daysOfMonth property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDaysOfMonth() {
     return daysOfMonth;
@@ -264,7 +273,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the daysOfMonth property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDaysOfMonth(TString value) {
     this.daysOfMonth = value;
@@ -277,7 +286,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the months property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getMonths() {
     return months;
@@ -286,7 +295,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the months property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setMonths(TString value) {
     this.months = value;
@@ -299,7 +308,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the daysOfWeek property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDaysOfWeek() {
     return daysOfWeek;
@@ -308,7 +317,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the daysOfWeek property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDaysOfWeek(TString value) {
     this.daysOfWeek = value;
@@ -321,7 +330,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the years property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getYears() {
     return years;
@@ -330,7 +339,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the years property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setYears(TString value) {
     this.years = value;
@@ -343,7 +352,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the duration property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getDuration() {
     return duration;
@@ -352,7 +361,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the duration property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDuration(TInteger value) {
     this.duration = value;
@@ -365,7 +374,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Gets the value of the locationRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLocationRef() {
     return locationRef;
@@ -374,7 +383,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Sets the value of the locationRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLocationRef(TString value) {
     this.locationRef = value;

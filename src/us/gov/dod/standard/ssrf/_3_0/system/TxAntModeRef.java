@@ -30,20 +30,15 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 
 /**
  * Java class for TxAntModeRef complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="TxAntModeRef"> &lt;complexContent> &lt;extension
- * base="{urn:us:gov:dod:standard:ssrf:3.0.0}RxAntModeRef"> &lt;sequence>
- * &lt;element name="SpectralPowerDensity"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBWHz" minOccurs="0"/>
- * &lt;/sequence> &lt;/extension> &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * This element inherits attributes and sub-elements from element RxAntModeRef.
  * <p>
+ * Data element TxAntModeRef contains references to the Antenna and its AntMode,
+ * used to construct a Transmitter Configuration.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TxAntModeRef", propOrder = {
@@ -51,6 +46,10 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 })
 public class TxAntModeRef extends RxAntModeRef {
 
+  /**
+   * SpectralPowerDensity: Enter the maximum spectral power density supplied to
+   * the input of the antenna.
+   */
   @XmlElement(name = "SpectralPowerDensity", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBWHZ.class)
   private TDecimal spectralPowerDensity;
@@ -58,7 +57,7 @@ public class TxAntModeRef extends RxAntModeRef {
   /**
    * Gets the value of the spectralPowerDensity property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getSpectralPowerDensity() {
     return spectralPowerDensity;
@@ -67,7 +66,7 @@ public class TxAntModeRef extends RxAntModeRef {
   /**
    * Sets the value of the spectralPowerDensity property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSpectralPowerDensity(TDecimal value) {
     this.spectralPowerDensity = value;
@@ -77,9 +76,26 @@ public class TxAntModeRef extends RxAntModeRef {
     return (this.spectralPowerDensity != null);
   }
 
+  @Override
+  public TxAntModeRef withSerial(TString value) {
+    setSerial(value);
+    return this;
+  }
+
+  @Override
+  public TxAntModeRef withModeID(String value) {
+    setModeID(new TString(value));
+    return this;
+  }
+
+  @Override
+  public TxAntModeRef withCouplingLoss(Double value) {
+    setCouplingLoss(new TDecimal(value));
+    return this;
+  }
+
   public TxAntModeRef withSpectralPowerDensity(Double value) {
     setSpectralPowerDensity(new TDecimal(value));
     return this;
   }
-
 }

@@ -1,0 +1,15 @@
+Developer Questions
+
+09/18/14
+
+Assignment
+
+  Link is a required element within an assignment. How does one configure a broadcast service using a Link element.
+
+TxRef / RxRef
+  How does one conveniently track the serial number references back to the original implementation
+
+ListCCY, ListCAO 
+  These two lists include enumerated country names, CCY looks like ISO-3 names whereas CAO looks like a proprietary territory naming scheme.
+
+

@@ -35,17 +35,10 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 /**
  * Java class for Manufacturer complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Manufacturer"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Country" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAO"
- * minOccurs="0"/> &lt;element name="Name"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;/sequence>
- * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
+ * Data element Manufacturer contains the manufacturer name of the equipment
+ * listed in the corresponding data entry in data element Nomenclature.
+ * Additionally the country in which the equipment is manufactured may be
+ * included.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Manufacturer", propOrder = {
@@ -54,8 +47,26 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
 })
 public class Manufacturer {
 
+  /**
+   * Country: Enter the country or area in which the Manufacturer has its
+   * Headquarters.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CAO
+   */
   @XmlElement(name = "Country", required = false)
   private TString country;
+  /**
+   * Name: Enter the name of the company that manufactured the equipment.
+   * <p>
+   * The manufacturer's name should be obtained from data plates on equipment
+   * whenever possible. This entry is optional when government nomenclature is
+   * entered in element Nomenclature. Use the phrase "Intentionally not
+   * disclosed" when the manufacturer is known but intentionally not listed (for
+   * the issue of internal security of the manufacturer); in this case a Remarks
+   * MAY be used to quantify the information to a level compatible with the
+   * dataset intended classification.
+   */
   @XmlElement(name = "Name", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
@@ -63,7 +74,7 @@ public class Manufacturer {
   /**
    * Gets the value of the country property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCountry() {
     return country;
@@ -72,7 +83,7 @@ public class Manufacturer {
   /**
    * Sets the value of the country property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCountry(TString value) {
     this.country = value;

@@ -35,17 +35,8 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 /**
  * Java class for TxModeRef complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="TxModeRef"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="ModeID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"/> &lt;element
- * name="PowerLimit" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdBW"
- * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
+ * Data element TxModeRef contains references to the Transmitter and its modes,
+ * used to construct a Configuration.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TxModeRef", propOrder = {
@@ -54,9 +45,21 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 })
 public class TxModeRef {
 
+  /**
+   * ModeID: Enter the unique identifier of a TxMode of the transmitter in this
+   * configuration. This mode is from the transmitter specified in the Serial
+   * field of the parent TxRef element.
+   * <p>
+   * [XSL WRN RELATED] This item, with item Serial in parent element SHOULD
+   * refer to an existing Transmitter/ TxMode in the data repository.
+   */
   @XmlElement(name = "ModeID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
+  /**
+   * PowerLimit: Enter the power limit of this transmitter mode when in this
+   * configuration.
+   */
   @XmlElement(name = "PowerLimit", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal powerLimit;
@@ -86,7 +89,7 @@ public class TxModeRef {
   /**
    * Gets the value of the powerLimit property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getPowerLimit() {
     return powerLimit;
@@ -95,7 +98,7 @@ public class TxModeRef {
   /**
    * Sets the value of the powerLimit property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPowerLimit(TDecimal value) {
     this.powerLimit = value;

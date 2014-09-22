@@ -37,20 +37,10 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 /**
  * Java class for Dataset complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Dataset"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- * &lt;element name="RetireDate" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TD"
- * minOccurs="0"/> &lt;element name="Reason"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO" minOccurs="0"/> &lt;element
- * name="MissingRef" type="{urn:us:gov:dod:standard:ssrf:3.0.0}MissingRef"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Data element Dataset is used within an Administrative transaction to specify
+ * the identifier of the datasets on which the action must apply.
  * <p>
+ * Sub-Element Of: {@link Administrative}
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Dataset", propOrder = {
@@ -61,15 +51,32 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 })
 public class Dataset {
 
+  /**
+   * Serial: Enter the serial of the referenced dataset.
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serial;
+  /**
+   * RetireDate: Enter the date this dataset goes out of force.
+   */
   @XmlElement(name = "RetireDate", required = false)
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar retireDate;
+  /**
+   * Reason: Enter the reason linked to the Action performed on this dataset.
+   * (MEMO)
+   */
   @XmlElement(name = "Reason", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString reason;
+  /**
+   * This element allows the recipient of a message to signal the sender that a
+   * dataset referenced in the message was not known by the recipient.
+   */
   @XmlElement(name = "MissingRef", nillable = true)
   private List<MissingRef> missingRef;
 
@@ -98,7 +105,7 @@ public class Dataset {
   /**
    * Gets the value of the retireDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getRetireDate() {
     return retireDate;
@@ -107,7 +114,7 @@ public class Dataset {
   /**
    * Sets the value of the retireDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRetireDate(TCalendar value) {
     this.retireDate = value;
@@ -120,7 +127,7 @@ public class Dataset {
   /**
    * Gets the value of the reason property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getReason() {
     return reason;
@@ -129,7 +136,7 @@ public class Dataset {
   /**
    * Sets the value of the reason property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReason(TString value) {
     this.reason = value;
@@ -171,8 +178,8 @@ public class Dataset {
     this.missingRef = null;
   }
 
-  public Dataset withSerial(String value) {
-    setSerial(new TString(value));
+  public Dataset withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

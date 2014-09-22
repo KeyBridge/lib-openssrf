@@ -388,7 +388,7 @@ public enum ListCLC {
   @XmlEnumValue("Region")
   REGION("Region"),
   @XmlEnumValue("Region(al)")
-  REGION_AL__("Region(al)"),
+  REGION_AL("Region(al)"),
   @XmlEnumValue("Representative")
   REPRESENTATIVE("Representative"),
   @XmlEnumValue("Reserves")
@@ -404,7 +404,7 @@ public enum ListCLC {
   @XmlEnumValue("Service Company")
   SERVICE_COMPANY("Service Company"),
   @XmlEnumValue("Ship, Foreign/Merchant")
-  SHIP__FOREIGN_MERCHANT("Ship, Foreign/Merchant"),
+  SHIP_FOREIGN_MERCHANT("Ship, Foreign/Merchant"),
   @XmlEnumValue("Shipyard")
   SHIPYARD("Shipyard"),
   @XmlEnumValue("Shop")

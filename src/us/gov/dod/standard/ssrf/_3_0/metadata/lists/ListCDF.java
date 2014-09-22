@@ -70,7 +70,7 @@ public enum ListCDF {
   @XmlEnumValue("Return to Zero")
   RETURN_TO_ZERO("Return to Zero"),
   @XmlEnumValue("Split Phase (Manchester)")
-  SPLIT_PHASE__MANCHESTER__("Split Phase (Manchester)"),
+  SPLIT_PHASE_MANCHESTER("Split Phase (Manchester)"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

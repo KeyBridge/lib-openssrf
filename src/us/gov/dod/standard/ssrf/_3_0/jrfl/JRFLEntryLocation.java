@@ -105,8 +105,8 @@ public class JRFLEntryLocation {
     return (this.antFeedpointHeight != null);
   }
 
-  public JRFLEntryLocation withSerial(String value) {
-    setSerial(new TString(value));
+  public JRFLEntryLocation withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

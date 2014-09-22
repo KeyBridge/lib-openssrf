@@ -35,6 +35,7 @@ import us.gov.dod.standard.ssrf._3_0.contact.EMail;
 import us.gov.dod.standard.ssrf._3_0.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for Contact complex type.
@@ -101,10 +102,21 @@ public class Contact extends Common<Contact> {
   @XmlElement(name = "EMail")
   private List<EMail> eMail;
 
+  public Contact(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Contact(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Contact() {
+  }
+
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -113,7 +125,7 @@ public class Contact extends Common<Contact> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -126,7 +138,7 @@ public class Contact extends Common<Contact> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -135,7 +147,7 @@ public class Contact extends Common<Contact> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -148,7 +160,7 @@ public class Contact extends Common<Contact> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -157,7 +169,7 @@ public class Contact extends Common<Contact> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -170,7 +182,7 @@ public class Contact extends Common<Contact> {
   /**
    * Gets the value of the titleRank property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTitleRank() {
     return titleRank;
@@ -179,7 +191,7 @@ public class Contact extends Common<Contact> {
   /**
    * Sets the value of the titleRank property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTitleRank(TString value) {
     this.titleRank = value;
@@ -192,7 +204,7 @@ public class Contact extends Common<Contact> {
   /**
    * Gets the value of the firstName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFirstName() {
     return firstName;
@@ -201,7 +213,7 @@ public class Contact extends Common<Contact> {
   /**
    * Sets the value of the firstName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFirstName(TString value) {
     this.firstName = value;
@@ -214,7 +226,7 @@ public class Contact extends Common<Contact> {
   /**
    * Gets the value of the lastName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLastName() {
     return lastName;
@@ -223,7 +235,7 @@ public class Contact extends Common<Contact> {
   /**
    * Sets the value of the lastName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLastName(TString value) {
     this.lastName = value;

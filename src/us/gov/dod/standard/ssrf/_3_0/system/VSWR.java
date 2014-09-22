@@ -34,16 +34,27 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 /**
  * Java class for VSWR complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="VSWR"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Freq" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/>
- * &lt;element name="Ratio" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN2_1"/>
- * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Element VSWR stores the Voltage Standing Wave Ratio information for an
+ * Antenna Mode; it may be used to describe the VSWR curve as a function of
+ * frequency.
  * <p>
+ * VSWR is a measure of how efficiently radio-frequency power is transmitted
+ * from a power source, through a transmission line, into a load (for example,
+ * from a power amplifier through a transmission line, to an antenna). In an
+ * ideal system, 100% of the energy is transmitted. This requires an exact match
+ * between the source impedance, the characteristic impedance of the
+ * transmission line and all its connectors, and the load's impedance.
+ * <p>
+ * The signal's AC voltage will be the same from end to end since it runs
+ * through without interference. In real systems, mismatched impedances cause
+ * some of the power to be reflected back toward the source (like an echo).
+ * Reflections cause destructive interference, leading to peaks and valleys in
+ * the voltage at various times and distances along the line.
+ * <p>
+ * VSWR measures these voltage variances. It is the ratio of the highest voltage
+ * anywhere along the transmission line to the lowest. Since the voltage doesn't
+ * vary in an ideal system, its VSWR is 1:1. When reflections occur, the
+ * voltages vary and VSWR is higher (1.2:1 or 2:1, for instance).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VSWR", propOrder = {
@@ -52,9 +63,17 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 })
 public class VSWR {
 
+  /**
+   * Freq: Enter the specific frequency the VSWR measurement was taken at. If
+   * multiple points are described, freq MUST be filled in.
+   */
   @XmlElement(name = "Freq", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freq;
+  /**
+   * Ratio: Enter the standing wave ratio referenced to the specific frequency,
+   * as a number without unit (e.g enter "2" to represent a ratio of 2:1).
+   */
   @XmlElement(name = "Ratio", required = true)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN2_1.class)
   private TDecimal ratio;
@@ -62,7 +81,7 @@ public class VSWR {
   /**
    * Gets the value of the freq property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFreq() {
     return freq;
@@ -71,7 +90,7 @@ public class VSWR {
   /**
    * Sets the value of the freq property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFreq(TDecimal value) {
     this.freq = value;

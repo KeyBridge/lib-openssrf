@@ -38,6 +38,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCSG;
 import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.*;
 import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
@@ -250,6 +251,17 @@ public class SSRequest extends Common<SSRequest> {
   @XmlElement(name = "Trunking")
   protected Trunking trunking;
 
+  public SSRequest(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public SSRequest(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public SSRequest() {
+  }
+
   /**
    * Gets the value of the title property.
    * <p>
@@ -275,7 +287,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the currentStage property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCurrentStage() {
     return currentStage;
@@ -284,7 +296,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the currentStage property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCurrentStage(TString value) {
     this.currentStage = value;
@@ -297,7 +309,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the requirement property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRequirement() {
     return requirement;
@@ -306,7 +318,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the requirement property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRequirement(TString value) {
     this.requirement = value;
@@ -319,7 +331,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the emergency property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEmergency() {
     return emergency;
@@ -328,7 +340,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the emergency property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEmergency(TString value) {
     this.emergency = value;
@@ -341,7 +353,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the numMobileUnits property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumMobileUnits() {
     return numMobileUnits;
@@ -350,7 +362,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the numMobileUnits property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumMobileUnits(TInteger value) {
     this.numMobileUnits = value;
@@ -363,7 +375,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the numAreaUnits property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumAreaUnits() {
     return numAreaUnits;
@@ -372,7 +384,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the numAreaUnits property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumAreaUnits(TInteger value) {
     this.numAreaUnits = value;
@@ -385,7 +397,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the numCositedUnits property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumCositedUnits() {
     return numCositedUnits;
@@ -394,7 +406,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the numCositedUnits property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumCositedUnits(TInteger value) {
     this.numCositedUnits = value;
@@ -407,7 +419,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the applicationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getApplicationDate() {
     return applicationDate;
@@ -416,7 +428,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the applicationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setApplicationDate(TCalendar value) {
     this.applicationDate = value;
@@ -429,7 +441,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the dateResponseRequired property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDateResponseRequired() {
     return dateResponseRequired;
@@ -438,7 +450,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the dateResponseRequired property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDateResponseRequired(TCalendar value) {
     this.dateResponseRequired = value;
@@ -451,7 +463,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the replacementInfo property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getReplacementInfo() {
     return replacementInfo;
@@ -460,7 +472,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the replacementInfo property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReplacementInfo(TString value) {
     this.replacementInfo = value;
@@ -473,7 +485,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the applicationSPSNumber property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getApplicationSPSNumber() {
     return applicationSPSNumber;
@@ -482,7 +494,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the applicationSPSNumber property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setApplicationSPSNumber(TString value) {
     this.applicationSPSNumber = value;
@@ -495,7 +507,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the coordinationNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCoordinationNum() {
     return coordinationNum;
@@ -504,7 +516,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the coordinationNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCoordinationNum(TString value) {
     this.coordinationNum = value;
@@ -517,7 +529,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the infoTransferRequirement property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getInfoTransferRequirement() {
     return infoTransferRequirement;
@@ -526,7 +538,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the infoTransferRequirement property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setInfoTransferRequirement(TString value) {
     this.infoTransferRequirement = value;
@@ -539,7 +551,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the initialCost property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getInitialCost() {
     return initialCost;
@@ -548,7 +560,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the initialCost property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setInitialCost(TString value) {
     this.initialCost = value;
@@ -561,7 +573,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the initialCostDesc property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getInitialCostDesc() {
     return initialCostDesc;
@@ -570,7 +582,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the initialCostDesc property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setInitialCostDesc(TString value) {
     this.initialCostDesc = value;
@@ -583,7 +595,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the ituWaiver property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getITUWaiver() {
     return ituWaiver;
@@ -592,7 +604,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the ituWaiver property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setITUWaiver(TString value) {
     this.ituWaiver = value;
@@ -605,7 +617,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the ntiaCoordinationRequired property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNTIACoordinationRequired() {
     return ntiaCoordinationRequired;
@@ -614,7 +626,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the ntiaCoordinationRequired property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNTIACoordinationRequired(TString value) {
     this.ntiaCoordinationRequired = value;
@@ -627,7 +639,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the ntiaSpaceData property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getNTIASpaceData() {
     return ntiaSpaceData;
@@ -636,7 +648,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the ntiaSpaceData property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNTIASpaceData(TString value) {
     this.ntiaSpaceData = value;
@@ -649,7 +661,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the operInvIntent property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOperInvIntent() {
     return operInvIntent;
@@ -658,7 +670,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the operInvIntent property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOperInvIntent(TString value) {
     this.operInvIntent = value;
@@ -671,7 +683,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the originatingAgency property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getOriginatingAgency() {
     return originatingAgency;
@@ -680,7 +692,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the originatingAgency property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setOriginatingAgency(TString value) {
     this.originatingAgency = value;
@@ -693,7 +705,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the requestType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRequestType() {
     return requestType;
@@ -702,7 +714,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the requestType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRequestType(TString value) {
     this.requestType = value;
@@ -715,7 +727,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the relatedAnalysisAndTestData property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getRelatedAnalysisAndTestData() {
     return relatedAnalysisAndTestData;
@@ -724,7 +736,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the relatedAnalysisAndTestData property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setRelatedAnalysisAndTestData(TString value) {
     this.relatedAnalysisAndTestData = value;
@@ -737,7 +749,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the sysRelationEssential property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSysRelationEssential() {
     return sysRelationEssential;
@@ -746,7 +758,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the sysRelationEssential property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSysRelationEssential(TString value) {
     this.sysRelationEssential = value;
@@ -759,7 +771,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the tspr property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTSPR() {
     return tspr;
@@ -768,7 +780,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the tspr property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTSPR(TString value) {
     this.tspr = value;
@@ -781,7 +793,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Gets the value of the wartimeUse property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getWartimeUse() {
     return wartimeUse;
@@ -790,7 +802,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Sets the value of the wartimeUse property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setWartimeUse(TString value) {
     this.wartimeUse = value;

@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,6 +33,7 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_0.administrative.Dataset;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for Administrative complex type.
@@ -83,6 +81,17 @@ public class Administrative extends Common<Administrative> {
    */
   @XmlElement(name = "CodeList")
   private List<CodeList> codeList;
+
+  public Administrative(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Administrative(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Administrative() {
+  }
 
   /**
    * Gets the value of the action property.

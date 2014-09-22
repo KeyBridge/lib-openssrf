@@ -24,8 +24,8 @@
 package us.gov.dod.standard.ssrf._3_0.adapter;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 
 /**
  * Abstract Calendar type XmlAdapter. This supports Date and DataTime string
@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <p>
  * @author Jesse Caulfield <jesse@caulfield.org>
  */
-public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
+public abstract class AXmlAdapterCalendar extends XmlAdapter<String, TCalendar> {
 
   /**
    * The date or dateTime conversion pattern.
@@ -51,11 +51,13 @@ public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
    * @return the converted value
    */
   @Override
-  public String marshal(Calendar v) {
+  public String marshal(TCalendar v) {
     if (v == null) {
       return null;
     }
-    return new SimpleDateFormat(PATTERN).format(v.getTime());
+    SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+    sdf.setTimeZone(v.getValue().getTimeZone());
+    return sdf.format(v.getValue().getTime());
   }
 
   /**
@@ -65,8 +67,8 @@ public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
    * @return the converted value
    */
   @Override
-  public Calendar unmarshal(String v) {
-    return (javax.xml.bind.DatatypeConverter.parseDate(v));
+  public TCalendar unmarshal(String v) {
+    return new TCalendar(javax.xml.bind.DatatypeConverter.parseDate(v));
   }
 
 }

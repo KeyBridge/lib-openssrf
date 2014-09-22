@@ -33,6 +33,7 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.CommentSource;
 import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.StageLocation;
 import us.gov.dod.standard.ssrf._3_0.system.configuration.Configuration;
@@ -133,10 +134,21 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "Configuration")
   private List<Configuration> configuration;
 
+  public SSReply(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public SSReply(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public SSReply() {
+  }
+
   /**
    * Gets the value of the ssRequestRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSSRequestRef() {
     return ssRequestRef;
@@ -145,7 +157,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the ssRequestRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSSRequestRef(TString value) {
     this.ssRequestRef = value;
@@ -202,7 +214,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the dateReceivedByCountry property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getDateReceivedByCountry() {
     return dateReceivedByCountry;
@@ -211,7 +223,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the dateReceivedByCountry property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDateReceivedByCountry(TCalendar value) {
     this.dateReceivedByCountry = value;
@@ -246,7 +258,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -255,7 +267,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -268,7 +280,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the reviewDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getReviewDate() {
     return reviewDate;
@@ -277,7 +289,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the reviewDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReviewDate(TCalendar value) {
     this.reviewDate = value;
@@ -290,7 +302,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the approvalSPSNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getApprovalSPSNum() {
     return approvalSPSNum;
@@ -299,7 +311,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the approvalSPSNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setApprovalSPSNum(TString value) {
     this.approvalSPSNum = value;
@@ -312,7 +324,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the erpNumber property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getERPNumber() {
     return erpNumber;
@@ -321,7 +333,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the erpNumber property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setERPNumber(TString value) {
     this.erpNumber = value;
@@ -334,7 +346,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the fasNumber property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFASNumber() {
     return fasNumber;
@@ -343,7 +355,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the fasNumber property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFASNumber(TString value) {
     this.fasNumber = value;
@@ -356,7 +368,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the iracNumber property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getIRACNumber() {
     return iracNumber;
@@ -365,7 +377,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the iracNumber property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setIRACNumber(TString value) {
     this.iracNumber = value;
@@ -378,7 +390,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Gets the value of the replyingAuthority property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getReplyingAuthority() {
     return replyingAuthority;
@@ -387,7 +399,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Sets the value of the replyingAuthority property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setReplyingAuthority(TString value) {
     this.replyingAuthority = value;

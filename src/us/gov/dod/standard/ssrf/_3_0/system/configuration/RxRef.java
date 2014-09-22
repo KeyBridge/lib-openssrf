@@ -157,8 +157,8 @@ public class RxRef {
     this.rxAntModeRef = null;
   }
 
-  public RxRef withSerial(String value) {
-    setSerial(new TString(value));
+  public RxRef withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

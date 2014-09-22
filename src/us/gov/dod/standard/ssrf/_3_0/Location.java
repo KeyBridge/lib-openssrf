@@ -38,6 +38,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.LocationRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for Location complex type.
@@ -197,6 +198,17 @@ public class Location extends Common<Location> {
    */
   @XmlElement(name = "LocationRef", nillable = true)
   private List<LocationRef> locationRef;
+
+  public Location(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Location(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Location() {
+  }
 
   /**
    * Gets the value of the effectiveDate property.

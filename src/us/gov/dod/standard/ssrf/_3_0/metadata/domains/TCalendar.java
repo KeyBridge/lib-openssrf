@@ -40,7 +40,9 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TCalendar")
-public class TCalendar extends AStandardMetadataAttributes {
+public class TCalendar extends AStandardMetadataAttributes implements IMetadataType {
+
+  private static final TimeZone TIMEZONE = TimeZone.getTimeZone("UTC");
 
   /**
    * The value to which the metadata attributes are associated. Expected Class
@@ -50,14 +52,11 @@ public class TCalendar extends AStandardMetadataAttributes {
   protected Calendar value;
 
   public TCalendar(Calendar value) {
-    this.value = value;
+    setValue(value);
   }
 
   public TCalendar(Date value) {
-    if (value != null) {
-      this.value = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-      this.value.setTime(value);
-    }
+    setValue(value);
   }
 
   /**
@@ -65,6 +64,7 @@ public class TCalendar extends AStandardMetadataAttributes {
    * <p>
    * @return
    */
+  @Override
   public Calendar getValue() {
     return (value != null ? (Calendar) value.clone() : null);
   }
@@ -74,7 +74,7 @@ public class TCalendar extends AStandardMetadataAttributes {
    * <p>
    * @param value
    */
-  public void setValue(Calendar value) {
+  public final void setValue(Calendar value) {
     this.value = (value != null ? (Calendar) value.clone() : null);
   }
 
@@ -83,9 +83,9 @@ public class TCalendar extends AStandardMetadataAttributes {
    * <p>
    * @param value
    */
-  public void setValue(Date value) {
+  public final void setValue(Date value) {
     if (value != null) {
-      this.value = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      this.value = Calendar.getInstance(TIMEZONE);
       this.value.setTime(value);
     } else {
       this.value = null;
@@ -94,6 +94,11 @@ public class TCalendar extends AStandardMetadataAttributes {
 
   public boolean isSetValue() {
     return (this.value != null);
+  }
+
+  @Override
+  public String toString() {
+    return value != null ? value.getTime().toString() : null;
   }
 
 }

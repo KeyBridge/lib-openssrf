@@ -51,7 +51,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Aeronautical Mobile (Off Route) Service")
-  AERONAUTICAL_MOBILE__OFF_ROUTE__SERVICE("Aeronautical Mobile (Off Route) Service"),
+  AERONAUTICAL_MOBILE_OFF_ROUTE_SERVICE("Aeronautical Mobile (Off Route) Service"),
   /**
    * An aeronautical mobile service reserved for communications relating to
    * safety and regularity of flight, primarily along national or international
@@ -59,7 +59,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Aeronautical Mobile (Route) Service")
-  AERONAUTICAL_MOBILE__ROUTE__SERVICE("Aeronautical Mobile (Route) Service"),
+  AERONAUTICAL_MOBILE_ROUTE_SERVICE("Aeronautical Mobile (Route) Service"),
   /**
    * A mobile service between aeronautical stations and aircraft stations, or
    * between aircraft stations, in which survival craft stations may
@@ -77,7 +77,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Aeronautical Mobile-Satellite (OR) Service")
-  AERONAUTICAL_MOBILE_SATELLITE__OR__SERVICE("Aeronautical Mobile-Satellite (OR) Service"),
+  AERONAUTICAL_MOBILE_SATELLITE_OR_SERVICE("Aeronautical Mobile-Satellite (OR) Service"),
   /**
    * An aeronautical mobile-satellite service reserved for communications
    * relating to safety and regularity of flight, primarily along national or
@@ -85,7 +85,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Aeronautical Mobile-Satellite (R) Service")
-  AERONAUTICAL_MOBILE_SATELLITE__R__SERVICE("Aeronautical Mobile-Satellite (R) Service"),
+  AERONAUTICAL_MOBILE_SATELLITE_R_SERVICE("Aeronautical Mobile-Satellite (R) Service"),
   /**
    * A mobile-satellite service in which mobile earth stations are located on
    * board aircraft; survival craft stations and emergency position-indicating
@@ -154,7 +154,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Earth Exploration-Satellite (active)")
-  EARTH_EXPLORATION_SATELLITE__ACTIVE__("Earth Exploration-Satellite (active)"),
+  EARTH_EXPLORATION_SATELLITE_ACTIVE("Earth Exploration-Satellite (active)"),
   /**
    * A radiocommunication service between earth stations and one or more passive
    * space stations, which may include links between space stations, in which:;
@@ -168,7 +168,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Earth Exploration-Satellite (passive)")
-  EARTH_EXPLORATION_SATELLITE__PASSIVE__("Earth Exploration-Satellite (passive)"),
+  EARTH_EXPLORATION_SATELLITE_PASSIVE("Earth Exploration-Satellite (passive)"),
   /**
    * A radiocommunication service between earth stations and one or more space
    * stations, which may include links between space stations, in which: -
@@ -343,14 +343,14 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Space Research (active)")
-  SPACE_RESEARCH__ACTIVE__("Space Research (active)"),
+  SPACE_RESEARCH_ACTIVE("Space Research (active)"),
   /**
    * A radiocommunication service in which spacecraft or other passive objects
    * in space are used for scientific or technological research purposes.
    * <p>
    */
   @XmlEnumValue("Space Research (passive)")
-  SPACE_RESEARCH__PASSIVE__("Space Research (passive)"),
+  SPACE_RESEARCH_PASSIVE("Space Research (passive)"),
   /**
    * A radiocommunication service in which spacecraft or other objects in space
    * are used for scientific or technological research purposes.
@@ -373,7 +373,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Space Telecommand (TT&C)")
-  SPACE_TELECOMMAND__TT_C__("Space Telecommand (TT&C)"),
+  SPACE_TELECOMMAND_TT_C("Space Telecommand (TT&C)"),
   /**
    * The use of telemetry for the transmission from a space station of results
    * of measurements made in a spacecraft, including those relating to the
@@ -389,7 +389,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Space Telemetering (TT&C)")
-  SPACE_TELEMETERING__TT_C__("Space Telemetering (TT&C)"),
+  SPACE_TELEMETERING_TT_C("Space Telemetering (TT&C)"),
   /**
    * Determination of the orbit, velocity or instantaneous position of an object
    * in space by means of radiodetermination, excluding primary radar, for the
@@ -405,7 +405,7 @@ public enum ListCSN {
    * <p>
    */
   @XmlEnumValue("Space Tracking (TT&C)")
-  SPACE_TRACKING__TT_C__("Space Tracking (TT&C)"),
+  SPACE_TRACKING_TT_C("Space Tracking (TT&C)"),
   /**
    * A radiocommunication service, not otherwise defined in this Section,
    * carried on exclusively for specific needs of general utility, and not open

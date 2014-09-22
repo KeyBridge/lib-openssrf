@@ -32,18 +32,8 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 /**
  * Java class for RxAntModeRef complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="RxAntModeRef"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- * &lt;element name="ModeID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
- * minOccurs="0"/> &lt;element name="CouplingLoss"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;/sequence>
- * &lt;/restriction> &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
+ * Data element RxAntModeRef contains references to the Antenna and its AntMode,
+ * used to construct a Receiver Configuration.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RxAntModeRef", propOrder = {
@@ -56,12 +46,35 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 })
 public class RxAntModeRef {
 
+  /**
+   * Serial: Enter the reference to an Antenna in this configuration. This
+   * antenna is associated with the receiver specified in the Serial field of
+   * the parent RxRef element.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "AN".
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serial;
+  /**
+   * ModeID: Enter the unique name of an AntMode of the Antenna specified in the
+   * corresponding Serial field. This antenna mode is grouped with the receiver
+   * modes specified in RxModeRef.
+   * <p>
+   * [XSL WRN RELATED] This item, with item Serial SHOULD refer to an existing
+   * Antenna/AntMode in the data repository.
+   */
   @XmlElement(name = "ModeID", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
+  /**
+   * CouplingLoss: Indicate the loss (in dB) that occurs when energy is
+   * transferred between the transmitter/receiver and the antenna.
+   */
   @XmlElement(name = "CouplingLoss", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal couplingLoss;
@@ -91,7 +104,7 @@ public class RxAntModeRef {
   /**
    * Gets the value of the modeID property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getModeID() {
     return modeID;
@@ -100,7 +113,7 @@ public class RxAntModeRef {
   /**
    * Sets the value of the modeID property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setModeID(TString value) {
     this.modeID = value;
@@ -113,7 +126,7 @@ public class RxAntModeRef {
   /**
    * Gets the value of the couplingLoss property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getCouplingLoss() {
     return couplingLoss;
@@ -122,7 +135,7 @@ public class RxAntModeRef {
   /**
    * Sets the value of the couplingLoss property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCouplingLoss(TDecimal value) {
     this.couplingLoss = value;
@@ -132,8 +145,8 @@ public class RxAntModeRef {
     return (this.couplingLoss != null);
   }
 
-  public RxAntModeRef withSerial(String value) {
-    setSerial(new TString(value));
+  public RxAntModeRef withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,7 +34,9 @@ import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TInteger;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAT;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.system.AntHardware;
 import us.gov.dod.standard.ssrf._3_0.system.AntMode;
 import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
@@ -250,6 +249,17 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "AntMode")
   private List<AntMode> antMode;
 
+  public Antenna(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Antenna(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Antenna() {
+  }
+
   /**
    * Gets the value of the generic property.
    * <p>
@@ -297,7 +307,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the phArrayNumMainBeams property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getPhArrayNumMainBeams() {
     return phArrayNumMainBeams;
@@ -306,7 +316,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the phArrayNumMainBeams property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPhArrayNumMainBeams(TInteger value) {
     this.phArrayNumMainBeams = value;
@@ -319,7 +329,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the phArrayNumElements property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getPhArrayNumElements() {
     return phArrayNumElements;
@@ -328,7 +338,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the phArrayNumElements property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPhArrayNumElements(TInteger value) {
     this.phArrayNumElements = value;
@@ -341,7 +351,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the shape property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getShape() {
     return shape;
@@ -350,7 +360,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the shape property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setShape(TString value) {
     this.shape = value;
@@ -363,7 +373,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the diameter property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getDiameter() {
     return diameter;
@@ -372,7 +382,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the diameter property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDiameter(TDecimal value) {
     this.diameter = value;
@@ -385,7 +395,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzDimension property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getHorzDimension() {
     return horzDimension;
@@ -394,7 +404,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzDimension property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHorzDimension(TDecimal value) {
     this.horzDimension = value;
@@ -407,7 +417,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertDimension property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getVertDimension() {
     return vertDimension;
@@ -416,7 +426,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertDimension property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVertDimension(TDecimal value) {
     this.vertDimension = value;
@@ -429,7 +439,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the apertureDiameter property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getApertureDiameter() {
     return apertureDiameter;
@@ -438,7 +448,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the apertureDiameter property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setApertureDiameter(TDecimal value) {
     this.apertureDiameter = value;
@@ -451,7 +461,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzAperture property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getHorzAperture() {
     return horzAperture;
@@ -460,7 +470,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzAperture property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHorzAperture(TDecimal value) {
     this.horzAperture = value;
@@ -473,7 +483,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertAperture property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getVertAperture() {
     return vertAperture;
@@ -482,7 +492,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertAperture property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVertAperture(TDecimal value) {
     this.vertAperture = value;
@@ -495,7 +505,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzSidelobeSuppressed property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getHorzSidelobeSuppressed() {
     return horzSidelobeSuppressed;
@@ -504,7 +514,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzSidelobeSuppressed property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHorzSidelobeSuppressed(TString value) {
     this.horzSidelobeSuppressed = value;
@@ -517,7 +527,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzSidelobeAz property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getHorzSidelobeAz() {
     return horzSidelobeAz;
@@ -526,7 +536,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzSidelobeAz property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHorzSidelobeAz(TDecimal value) {
     this.horzSidelobeAz = value;
@@ -539,7 +549,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the horzSidelobeAttenuation property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getHorzSidelobeAttenuation() {
     return horzSidelobeAttenuation;
@@ -548,7 +558,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the horzSidelobeAttenuation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setHorzSidelobeAttenuation(TDecimal value) {
     this.horzSidelobeAttenuation = value;
@@ -561,7 +571,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertSidelobeSuppressed property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getVertSidelobeSuppressed() {
     return vertSidelobeSuppressed;
@@ -570,7 +580,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertSidelobeSuppressed property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVertSidelobeSuppressed(TString value) {
     this.vertSidelobeSuppressed = value;
@@ -583,7 +593,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertSidelobeElev property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getVertSidelobeElev() {
     return vertSidelobeElev;
@@ -592,7 +602,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertSidelobeElev property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVertSidelobeElev(TDecimal value) {
     this.vertSidelobeElev = value;
@@ -605,7 +615,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Gets the value of the vertSidelobeAttenuation property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getVertSidelobeAttenuation() {
     return vertSidelobeAttenuation;
@@ -614,7 +624,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Sets the value of the vertSidelobeAttenuation property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setVertSidelobeAttenuation(TDecimal value) {
     this.vertSidelobeAttenuation = value;
@@ -759,6 +769,11 @@ public class Antenna extends Common<Antenna> {
 
   public Antenna withAntType(String value) {
     setAntType(new TString(value));
+    return this;
+  }
+
+  public Antenna withAntType(ListCAT value) {
+    setAntType(new TString(value.value()));
     return this;
   }
 

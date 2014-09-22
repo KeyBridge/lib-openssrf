@@ -352,4 +352,91 @@ public class SMADEF extends SchemaRoot {
     return this;
   }
 
+  public void addContact(Contact value) {
+    withContact(value);
+  }
+
+  public void addRole(Role value) {
+    withRole(value);
+  }
+
+  public void addOrganisation(Organisation value) {
+    withOrganisation(value);
+  }
+
+  public void addExternalreference(ExternalReference value) {
+    withExternalReference(value);
+  }
+
+  public void addAdministrative(Administrative value) {
+    withAdministrative(value);
+  }
+
+  public void addLocation(Location value) {
+    withLocation(value);
+  }
+
+  public void addChannelplan(ChannelPlan value) {
+    withChannelPlan(value);
+  }
+
+  public void addToa(TOA value) {
+    withTOA(value);
+  }
+
+  public void addTransmitter(Transmitter value) {
+    withTransmitter(value);
+  }
+
+  public void addReceiver(Receiver value) {
+    withReceiver(value);
+  }
+
+  public void addAntenna(Antenna value) {
+    withAntenna(value);
+  }
+
+  public void addRfsystem(RFSystem value) {
+    withRFSystem(value);
+  }
+
+  public void addSsrequest(SSRequest value) {
+    withSSRequest(value);
+  }
+
+  public void addSsreply(SSReply value) {
+    withSSReply(value);
+  }
+
+  public void addAllotment(Allotment value) {
+    withAllotment(value);
+  }
+
+  public void addAssignment(Assignment value) {
+    withAssignment(value);
+  }
+
+  public void addSatellite(Satellite value) {
+    withSatellite(value);
+  }
+
+  public void addIntfreport(IntfReport value) {
+    withIntfReport(value);
+  }
+
+  public void addJrfl(JRFL value) {
+    withJRFL(value);
+  }
+
+  public void addForceelement(ForceElement value) {
+    withForceElement(value);
+  }
+
+  public void addFedeployment(FEDeployment value) {
+    withFEDeployment(value);
+  }
+
+  public void addNote(Note value) {
+    withNote(value);
+  }
 }

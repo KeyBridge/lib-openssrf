@@ -38,6 +38,7 @@ import us.gov.dod.standard.ssrf._3_0.metadata.ChannelPlanRef;
 import us.gov.dod.standard.ssrf._3_0.metadata.Country;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for TOA complex type.
@@ -97,6 +98,17 @@ public class TOA extends Common<TOA> {
   private List<Country> country;
   @XmlElement(name = "FreqBand", required = true)
   private List<FreqBand> freqBand;
+
+  public TOA(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public TOA(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public TOA() {
+  }
 
   /**
    * Gets the value of the administration property.

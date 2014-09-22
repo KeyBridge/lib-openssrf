@@ -41,32 +41,17 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 /**
  * Java class for Station complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="Station"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="StationID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- * &lt;element name="CallSign" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS20"
- * minOccurs="0"/> &lt;element name="CositeSep"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TFreqM" minOccurs="0"/> &lt;element
- * name="CositeSepDescription" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TMEMO"
- * minOccurs="0"/> &lt;group ref="{urn:us:gov:dod:standard:ssrf:3.0.0}NumUnits"
- * minOccurs="0"/> &lt;element name="TSDF"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TTSDFValue" minOccurs="0"/>
- * &lt;element name="UserCode" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS6"
- * minOccurs="0"/> &lt;element name="AntStructureHeight"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TUN3" minOccurs="0"/> &lt;element
- * name="StationName" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"
- * minOccurs="0"/> &lt;element name="StationControl"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS18" minOccurs="0"/> &lt;element
- * name="POCInformation"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}POCInformation"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;element name="StationLoc"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}StationLoc" maxOccurs="unbounded"/>
- * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
- * </pre>
+ * Data element Station defines the station, or one of the stations, within the
+ * current Assignment dataset. A station is one or more transmitters or
+ * receivers or a combination of transmitters and receivers, including the
+ * accessory equipment necessary at one location for carrying on a
+ * radiocommunication, radiolocation, or other spectrum dependent functions.
  * <p>
+ * It may indicate the international call sign assigned to the transmitting
+ * station. It also identifies the Location of the Station, and the service
+ * volume of an air/ground/air assignment defined as a circle (point location
+ * with radius), an ellipse or a polygon, plus a height. For navigational aids,
+ * this data item is used for the NAVAIDS identifier instead of a call sign.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Station", propOrder = {
@@ -87,46 +72,183 @@ import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 })
 public class Station {
 
+  /**
+   * StationID: Enter the nickname for the station; this name should be a
+   * meaningful identification of the station, but it can also be automatically
+   * generated in some systems. The station identifier may be reflective of the
+   * location, such as "ANNAPOLIS 20" which could mean within 20 kilometres of
+   * some point in Annapolis, MD. In other instances the identifier could be
+   * organisationally related. The identifier MUST be unique within the dataset
+   * and SHOULD NOT be modified during the entire lifetime of the dataset.
+   * <p>
+   * [XSD ERR UNIQUE] Each value of this data item MUST be unique within the
+   * parent element.
+   */
   @XmlElement(name = "StationID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString stationID;
+  /**
+   * CallSign: Enter the call sign assigned to the transmitting station. It can
+   * be an internationally allocated call sign or the tactical call sign
+   * assigned by the operational authority when the Station is used within a
+   * Net. For navigational aids, enter the NAVAIDS identifier.
+   */
   @XmlElement(name = "CallSign", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString callSign;
+  /**
+   * CositeSep: This item identifies the minimum required frequency separation
+   * between the equipment for which the assignment is being made and any other
+   * equipment operating at the same location.
+   * <p>
+   * For a fixed frequency assignment, the required frequency separation in MHz
+   * (without unit), between this equipment and other equipment operated at one
+   * location. If the frequency separation is unknown use the NATO recommended
+   * frequency separation requirements are listed below. 0.5 (MHz) for a
+   * transmitter power below 24.8 dBW (300 watts); 2 (MHz) for a transmitter
+   * power above 24.8 dBW (300 watts); 2.0 through 9.9 (MHz) for exceptionally
+   * high transmitter powers or difficult cosite constraints.
+   * <p>
+   * For a HAVE QUICK II or SATURN frequency hopping assignments, one of the
+   * following values: <ul>
+   * <li>0 - Instantaneous separation may be as small as 25 kHz;</li>
+   * <li>4 - Minimum separation is 4 MHz;</li>
+   * <li>8 - Minimum separation is 8 MHz;</li>
+   * <li>12 - Minimum separation is 12 MHz</li></ul>
+   */
   @XmlElement(name = "CositeSep", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal cositeSep;
+  /**
+   * CositeSepDescription: Enter the minimum frequency separation between a
+   * number of transmitters or between a transmitter and a receiver in radio
+   * relay frequency requests.
+   */
   @XmlElement(name = "CositeSepDescription", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString cositeSepDescription;
+  /**
+   * NumMobileUnits: Enter the number of mobile units. These units do not
+   * necessarily operate simultaneously in the same electromagnetic environment.
+   */
   @XmlElement(name = "NumMobileUnits", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numMobileUnits;
+  /**
+   * NumAreaUnits: Enter the maximum number of units (equipment) that will be
+   * operating simultaneously in the same area of operation. An area is
+   * generally defined as a country. Enter the number of land mobile stations,
+   * ship stations, and transportable stations associated with the current
+   * Assignment or SSRequest dataset.
+   * <p>
+   * Within an Assignment (but not under SSRequest), the number entered shall
+   * represent either the exact number of stations or a range of numbers as
+   * follows: 10, 30, 100, 300, 1000, 3000, or a multiple of 10000.
+   * <p>
+   * If the exact number is to be recorded, and it is 10, 30, 100, 300, 1000,
+   * 3000, or a multiple of 10000, add one to the number to distinguish it from
+   * a figure that represents a range of numbers.
+   */
   @XmlElement(name = "NumAreaUnits", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numAreaUnits;
+  /**
+   * NumCositedUnits: Enter the maximum number of units (equipment) that will be
+   * operating simultaneously in the same cosite environment. A cosite situation
+   * occurs when several antennas are within the near field of each other.
+   */
   @XmlElement(name = "NumCositedUnits", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numCositedUnits;
+  /**
+   * TSDF: this item contains the time slot duty factor assigned to stations of
+   * a time division multiple access (TDMA) system. It is applicable in
+   * particular to the MIDS/JTIDS systems as explained in the notes below. For
+   * NATO MIDS/JTIDS assignments, enter in value the time slot duty factor
+   * expressed as NNN/nn where NNN is the maximum percentage of time that may be
+   * used by MIDS/JTIDS users in an operational area (a circle with a 100
+   * nautical mile (183.2 km) radius) and nn is the maximum percentage of time
+   * that any individual user may be using MIDS/JTIDS. Optionally, use a Remark
+   * to add any amplifying information. Notes:
+   * <p>
+   * 1. A JTIDS time slot is a 0.0078125 microsecond time interval during which
+   * MIDS/JTIDS messages may be transmitted or received.
+   * <p>
+   * 2. The 40/20 notation specifies that the total MIDS/JTIDS community will
+   * not be assigned more than 40% TSDF, with no more than 20% TSDF assigned to
+   * a single user. Note that 100% TSDF corresponds to a maximum pulse
+   * transmission rate of 396,288 pulses per 12 second period (an average of
+   * 33,024 pulses per second). The total number of pulses allowed per 12 second
+   * period is 158,515 for 40% TSDF and 79,257 for 20% TSDF. Using all 1536 time
+   * slots in each 12 second period, with 258 pulses per time slot with no
+   * contention or multinet overlap conditions results in a TSDF of 100%.
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "([0-9]{1,2}|100)/[0-9]{1,2}"
+   */
   @XmlElement(name = "TSDF", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterTSDFVALUE.class)
   private TString tsdf;
+  /**
+   * UserCode: Enter a code (nationally determined) identifying the user of the
+   * station.
+   */
   @XmlElement(name = "UserCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
   private TString userCode;
+  /**
+   * AntStructureHeight (US): Enter the overall height, in meters, of the
+   * antenna support structure above ground level.
+   */
   @XmlElement(name = "AntStructureHeight", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN3.class)
   private TInteger antStructureHeight;
+  /**
+   * StationName (US): Enter a short descriptive name for the station. This must
+   * be unique within the dataset.
+   */
   @XmlElement(name = "StationName", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString stationName;
+  /**
+   * StationControl (US): Enter the operating unit that controls, either
+   * electrically or administratively, the station when it is different from the
+   * user of the assignment.
+   */
   @XmlElement(name = "StationControl", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS18.class)
   private TString stationControl;
+  /**
+   * Data element POC contains a reference to a Contact, Organisation or Role
+   * dataset.
+   */
   @XmlElement(name = "POCInformation")
   private List<POCInformation> pocInformation;
+  /**
+   * A list of location references associated with this station.
+   * <p>
+   * Developer note: At least ONE StationLoc entry is required, and that
+   * stationLoc instance must contain either a satellite (locSatRef) or
+   * terrestrial location (serviceVolumeLocRef) reference.
+   */
   @XmlElement(name = "StationLoc", required = true)
   private List<StationLoc> stationLoc;
+
+  /**
+   * Construct a new station with the indicated Station ID.
+   * <p>
+   * @param stationID this name should be a meaningful identification of the
+   *                  station, but it can also be automatically generated
+   */
+  public Station(String stationID) {
+    this.stationID = new TString(stationID);
+  }
+
+  /**
+   * Construct a new station. You must set the Station ID.
+   */
+  public Station() {
+  }
 
   /**
    * Gets the value of the stationID property.
@@ -153,7 +275,7 @@ public class Station {
   /**
    * Gets the value of the callSign property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCallSign() {
     return callSign;
@@ -162,7 +284,7 @@ public class Station {
   /**
    * Sets the value of the callSign property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCallSign(TString value) {
     this.callSign = value;
@@ -175,7 +297,7 @@ public class Station {
   /**
    * Gets the value of the cositeSep property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getCositeSep() {
     return cositeSep;
@@ -184,7 +306,7 @@ public class Station {
   /**
    * Sets the value of the cositeSep property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCositeSep(TDecimal value) {
     this.cositeSep = value;
@@ -197,7 +319,7 @@ public class Station {
   /**
    * Gets the value of the cositeSepDescription property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCositeSepDescription() {
     return cositeSepDescription;
@@ -206,7 +328,7 @@ public class Station {
   /**
    * Sets the value of the cositeSepDescription property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCositeSepDescription(TString value) {
     this.cositeSepDescription = value;
@@ -219,7 +341,7 @@ public class Station {
   /**
    * Gets the value of the numMobileUnits property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumMobileUnits() {
     return numMobileUnits;
@@ -228,7 +350,7 @@ public class Station {
   /**
    * Sets the value of the numMobileUnits property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumMobileUnits(TInteger value) {
     this.numMobileUnits = value;
@@ -241,7 +363,7 @@ public class Station {
   /**
    * Gets the value of the numAreaUnits property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumAreaUnits() {
     return numAreaUnits;
@@ -250,7 +372,7 @@ public class Station {
   /**
    * Sets the value of the numAreaUnits property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumAreaUnits(TInteger value) {
     this.numAreaUnits = value;
@@ -263,7 +385,7 @@ public class Station {
   /**
    * Gets the value of the numCositedUnits property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getNumCositedUnits() {
     return numCositedUnits;
@@ -272,7 +394,7 @@ public class Station {
   /**
    * Sets the value of the numCositedUnits property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setNumCositedUnits(TInteger value) {
     this.numCositedUnits = value;
@@ -285,7 +407,7 @@ public class Station {
   /**
    * Gets the value of the tsdf property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTSDF() {
     return tsdf;
@@ -294,7 +416,7 @@ public class Station {
   /**
    * Sets the value of the tsdf property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTSDF(TString value) {
     this.tsdf = value;
@@ -307,7 +429,7 @@ public class Station {
   /**
    * Gets the value of the userCode property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getUserCode() {
     return userCode;
@@ -316,7 +438,7 @@ public class Station {
   /**
    * Sets the value of the userCode property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setUserCode(TString value) {
     this.userCode = value;
@@ -329,7 +451,7 @@ public class Station {
   /**
    * Gets the value of the antStructureHeight property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getAntStructureHeight() {
     return antStructureHeight;
@@ -338,7 +460,7 @@ public class Station {
   /**
    * Sets the value of the antStructureHeight property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAntStructureHeight(TInteger value) {
     this.antStructureHeight = value;
@@ -351,7 +473,7 @@ public class Station {
   /**
    * Gets the value of the stationName property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getStationName() {
     return stationName;
@@ -360,7 +482,7 @@ public class Station {
   /**
    * Sets the value of the stationName property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setStationName(TString value) {
     this.stationName = value;
@@ -373,7 +495,7 @@ public class Station {
   /**
    * Gets the value of the stationControl property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getStationControl() {
     return stationControl;
@@ -382,7 +504,7 @@ public class Station {
   /**
    * Sets the value of the stationControl property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setStationControl(TString value) {
     this.stationControl = value;
@@ -501,8 +623,8 @@ public class Station {
     return this;
   }
 
-  public Station withAntStructureHeight(Integer value) {
-    setAntStructureHeight(new TInteger(value));
+  public Station withAntStructureHeight(Number value) {
+    setAntStructureHeight(new TInteger(value.intValue()));
     return this;
   }
 

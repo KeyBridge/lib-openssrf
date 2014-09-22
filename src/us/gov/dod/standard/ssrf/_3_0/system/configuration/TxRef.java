@@ -40,20 +40,8 @@ import us.gov.dod.standard.ssrf._3_0.system.TxModeRef;
 /**
  * Java class for TxRef complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="TxRef"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Serial" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial"/>
- * &lt;element name="TxModeRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxModeRef" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;element name="TxAntModeRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TxAntModeRef" maxOccurs="unbounded"
- * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * <p>
+ * This element contains the reference of a Transmitter, and optionnally some of
+ * its TxModes and the associated Antennas and AntMode.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TxRef", propOrder = {
@@ -63,11 +51,30 @@ import us.gov.dod.standard.ssrf._3_0.system.TxModeRef;
 })
 public class TxRef {
 
+  /**
+   * Serial: A reference to a Transmitter in this configuration. The same
+   * transmitter can be referenced in different TxRef elements in order to
+   * properly group transmitter modes with antenna modes.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "TX".
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serial;
+  /**
+   * Data element TxModeRef contains references to the Transmitter and its
+   * modes, used to construct a Configuration.
+   */
   @XmlElement(name = "TxModeRef")
   private List<TxModeRef> txModeRef;
+  /**
+   * Data element TxAntModeRef contains references to the Antenna and its
+   * AntMode, used to construct a Transmitter Configuration.
+   */
   @XmlElement(name = "TxAntModeRef")
   private List<TxAntModeRef> txAntModeRef;
 

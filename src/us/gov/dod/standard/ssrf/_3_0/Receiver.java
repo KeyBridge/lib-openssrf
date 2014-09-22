@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,6 +34,7 @@ import us.gov.dod.standard.ssrf._3_0.contact.POCInformation;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_0.system.Curve;
 import us.gov.dod.standard.ssrf._3_0.system.Deployment;
 import us.gov.dod.standard.ssrf._3_0.system.Nomenclature;
@@ -121,6 +119,17 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "RxMode")
   private List<RxMode> rxMode;
 
+  public Receiver(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Receiver(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Receiver() {
+  }
+
   /**
    * Gets the value of the generic property.
    * <p>
@@ -168,7 +177,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the duplexSepType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDuplexSepType() {
     return duplexSepType;
@@ -177,7 +186,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the duplexSepType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDuplexSepType(TString value) {
     this.duplexSepType = value;
@@ -190,7 +199,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the preselectionType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getPreselectionType() {
     return preselectionType;
@@ -199,7 +208,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the preselectionType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPreselectionType(TString value) {
     this.preselectionType = value;
@@ -212,7 +221,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the conductedEmissions property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getConductedEmissions() {
     return conductedEmissions;
@@ -221,7 +230,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the conductedEmissions property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setConductedEmissions(TDecimal value) {
     this.conductedEmissions = value;
@@ -234,7 +243,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the fccAcceptanceNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getFCCAcceptanceNum() {
     return fccAcceptanceNum;
@@ -243,7 +252,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the fccAcceptanceNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFCCAcceptanceNum(TString value) {
     this.fccAcceptanceNum = value;
@@ -256,7 +265,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Gets the value of the tspr property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getTSPR() {
     return tspr;
@@ -265,7 +274,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Sets the value of the tspr property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setTSPR(TString value) {
     this.tspr = value;

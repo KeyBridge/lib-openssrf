@@ -51,9 +51,9 @@ public enum ListURI {
   @XmlEnumValue("Regular Application")
   REGULAR_APPLICATION("Regular Application"),
   @XmlEnumValue("Aeronautical Assignment Group (AAG) Application")
-  AERONAUTICAL_ASSIGNMENT_GROUP__AAG__APPLICATION("Aeronautical Assignment Group (AAG) Application"),
+  AERONAUTICAL_ASSIGNMENT_GROUP_AAG_APPLICATION("Aeronautical Assignment Group (AAG) Application"),
   @XmlEnumValue("Marine Assignment Group (MAG) Application")
-  MARINE_ASSIGNMENT_GROUP__MAG__APPLICATION("Marine Assignment Group (MAG) Application");
+  MARINE_ASSIGNMENT_GROUP_MAG_APPLICATION("Marine Assignment Group (MAG) Application");
   private final String value;
 
   ListURI(String v) {

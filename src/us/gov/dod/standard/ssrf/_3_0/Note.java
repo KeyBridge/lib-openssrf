@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_0;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,6 +34,7 @@ import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TCalendar;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
 
 /**
  * Java class for Note complex type.
@@ -84,10 +86,21 @@ public class Note extends Common<Note> {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString source;
 
+  public Note(ListCCY snCountry, String snOrganization, String snSerial, Calendar entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Note(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+    super(snCountry, snOrganization, snSerial, entryDateTime);
+  }
+
+  public Note() {
+  }
+
   /**
    * Gets the value of the administration property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getAdministration() {
     return administration;
@@ -96,7 +109,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the administration property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAdministration(TString value) {
     this.administration = value;
@@ -109,7 +122,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the description property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getDescription() {
     return description;
@@ -118,7 +131,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the description property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setDescription(TString value) {
     this.description = value;
@@ -131,7 +144,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the effectiveDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getEffectiveDate() {
     return effectiveDate;
@@ -140,7 +153,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the effectiveDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEffectiveDate(TCalendar value) {
     this.effectiveDate = value;
@@ -153,7 +166,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the expirationDate property.
    * <p>
-   * @return 
+   * @return
    */
   public TCalendar getExpirationDate() {
     return expirationDate;
@@ -162,7 +175,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the expirationDate property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setExpirationDate(TCalendar value) {
     this.expirationDate = value;
@@ -175,7 +188,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the name property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getName() {
     return name;
@@ -184,7 +197,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the name property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setName(TString value) {
     this.name = value;
@@ -197,7 +210,7 @@ public class Note extends Common<Note> {
   /**
    * Gets the value of the source property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getSource() {
     return source;
@@ -206,7 +219,7 @@ public class Note extends Common<Note> {
   /**
    * Sets the value of the source property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setSource(TString value) {
     this.source = value;

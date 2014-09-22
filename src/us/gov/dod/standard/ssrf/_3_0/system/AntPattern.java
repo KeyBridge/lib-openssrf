@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAP;
 import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 
 /**
@@ -45,10 +46,12 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
  * with the electrical boresite of the antenna oriented in the direction of the
  * Z-axis. At different values of phi ( # ), pattern cuts can be taken with
  * theta ( # ) as the dependent variable. These will be great circle cuts
- * through the main-beam peak. An additional measurement relating the mechanical
- * and electrical boresite must be made to fully characterize the antenna. Also
- * the orientation of the antenna to the spherical coordinate system must be
- * defined. (example: top of the antenna oriented in the +x direction).
+ * through the main-beam peak.
+ * <p>
+ * An additional measurement relating the mechanical and electrical boresite
+ * must be made to fully characterize the antenna. Also the orientation of the
+ * antenna to the spherical coordinate system must be defined. (example: top of
+ * the antenna oriented in the +x direction).
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntPattern", propOrder = {
@@ -110,7 +113,7 @@ public class AntPattern {
   /**
    * Gets the value of the type property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getType() {
     return type;
@@ -119,7 +122,7 @@ public class AntPattern {
   /**
    * Sets the value of the type property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setType(TString value) {
     this.type = value;
@@ -132,7 +135,7 @@ public class AntPattern {
   /**
    * Gets the value of the calculated property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCalculated() {
     return calculated;
@@ -141,7 +144,7 @@ public class AntPattern {
   /**
    * Sets the value of the calculated property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCalculated(TString value) {
     this.calculated = value;
@@ -154,7 +157,7 @@ public class AntPattern {
   /**
    * Gets the value of the cutType property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCutType() {
     return cutType;
@@ -163,7 +166,7 @@ public class AntPattern {
   /**
    * Sets the value of the cutType property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCutType(TString value) {
     this.cutType = value;
@@ -176,7 +179,7 @@ public class AntPattern {
   /**
    * Gets the value of the cutAngle property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getCutAngle() {
     return cutAngle;
@@ -185,7 +188,7 @@ public class AntPattern {
   /**
    * Sets the value of the cutAngle property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCutAngle(TDecimal value) {
     this.cutAngle = value;
@@ -229,6 +232,11 @@ public class AntPattern {
 
   public AntPattern withType(String value) {
     setType(new TString(value));
+    return this;
+  }
+
+  public AntPattern withType(ListCAP value) {
+    setType(new TString(value.value()));
     return this;
   }
 

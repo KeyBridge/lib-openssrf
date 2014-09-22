@@ -91,7 +91,7 @@ public class Assets {
   /**
    * Gets the value of the authorised property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getAuthorised() {
     return authorised;
@@ -100,7 +100,7 @@ public class Assets {
   /**
    * Sets the value of the authorised property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAuthorised(TInteger value) {
     this.authorised = value;
@@ -113,7 +113,7 @@ public class Assets {
   /**
    * Gets the value of the available property.
    * <p>
-   * @return 
+   * @return
    */
   public TInteger getAvailable() {
     return available;
@@ -122,7 +122,7 @@ public class Assets {
   /**
    * Sets the value of the available property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAvailable(TInteger value) {
     this.available = value;
@@ -132,8 +132,8 @@ public class Assets {
     return (this.available != null);
   }
 
-  public Assets withSerial(String value) {
-    setSerial(new TString(value));
+  public Assets withSerial(TString value) {
+    setSerial(value);
     return this;
   }
 

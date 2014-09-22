@@ -40,36 +40,9 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAU;
 /**
  * Java class for StationConfig complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="StationConfig"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Type" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCAU"/> &lt;element
- * name="ConfigID" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/>
- * &lt;element name="StationID"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS100"/> &lt;group
- * ref="{urn:us:gov:dod:standard:ssrf:3.0.0}EIRP" minOccurs="0"/> &lt;element
- * name="AntFeedpointHeight"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- * &lt;element name="FeedlineLength"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- * &lt;element name="FeedlineLoss"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TdB" minOccurs="0"/> &lt;element
- * name="EarthCoverage" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS50"
- * minOccurs="0"/> &lt;element name="PointingAzMin"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz" minOccurs="0"/> &lt;element
- * name="PointingAzMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAz"
- * minOccurs="0"/> &lt;element name="PointingElevMin"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev" minOccurs="0"/> &lt;element
- * name="PointingElevMax" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TElev"
- * minOccurs="0"/> &lt;element name="CoordinationNum"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TS15" minOccurs="0"/> &lt;element
- * name="Blanking" type="{urn:us:gov:dod:standard:ssrf:3.0.0}Blanking"
- * maxOccurs="unbounded" minOccurs="0"/> &lt;/sequence> &lt;/restriction>
- * &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
+ * Data element StationConfig describes one couple (station, configuration) used
+ * for transmitting and/or receiving in the current Link. It may also contain
+ * additional antenna pointing/blanking parameters.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StationConfig", propOrder = {
@@ -91,47 +64,125 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCAU;
 })
 public class StationConfig {
 
+  /**
+   * Type: Indicate if the StationConfig is acting as a transmitter, receiver or
+   * transceiver.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CAU: Transmit Only Receive Only Transmit-Receive
+   */
   @XmlElement(name = "Type", required = true)
   private TString type;
+  /**
+   * ConfigID: Enter the Name of one of the configurations defined under element
+   * Configuration for the current Assignment dataset.
+   * <p>
+   * [XSD ERR RELATED] This item MUST refer to an existing Configuration within
+   * the dataset.
+   */
   @XmlElement(name = "ConfigID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString configID;
+  /**
+   * StationID: Enter the Name of one of the stations defined under element
+   * Station for the current Assignment dataset.
+   * <p>
+   * [XSD ERR RELATED] This item MUST refer to an existing Station within the
+   * dataset.
+   */
   @XmlElement(name = "StationID", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString stationID;
+  /**
+   * EIRPMin: (dBW) Enter the minimum or nominal EIRP radiated from the
+   * transmitter antenna.
+   * <p>
+   * Group EIRP contains the Effective Isotropic Radiated Power (EIRP) radiated
+   * from the transmitter antenna. The EIRP is the sum of the power supplied to
+   * the antenna and the gain of the antenna, less the line loss, expressed in
+   * dBW.
+   */
   @XmlElement(name = "EIRPMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMin;
+  /**
+   * EIRPMax: (dBW) Enter the maximum EIRP, in the case of a range of values; in
+   * the case of a SSReply, use the EIRPMax to specify the maximum authorised
+   * power in your Nation for the specified Configuration.
+   */
   @XmlElement(name = "EIRPMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMax;
+  /**
+   * AntFeedpointHeight: Enter the antenna feed point height above the terrain,
+   * in metres. In the case where the antenna is mounted pointing vertically to
+   * a reflector on the same structure, enter the height of the reflector above
+   * ground. If the Station is a flying object, this data represents the maximum
+   * altitude of the object above ground.
+   */
   @XmlElement(name = "AntFeedpointHeight", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal antFeedpointHeight;
+  /**
+   * FeedlineLength: Enter the length of the antenna feed line in metres.
+   */
   @XmlElement(name = "FeedlineLength", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal feedlineLength;
+  /**
+   * FeedlineLoss: Enter the total loss in dB of the antenna feed line.
+   */
   @XmlElement(name = "FeedlineLoss", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal feedlineLoss;
+  /**
+   * EarthCoverage: Indicate the area of earth coverage. Recommend values from
+   * Code List CCO
+   */
   @XmlElement(name = "EarthCoverage", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString earthCoverage;
+  /**
+   * PointingAzMin: Enter the starting azimuth if an azimuth range is reported;
+   * otherwise, enter a single azimuth. This is considered the left limit of an
+   * azimuth range when an azimuth range is entered.
+   */
   @XmlElement(name = "PointingAzMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal pointingAzMin;
+  /**
+   * PointingAzMax: Enter the stopping azimuth. This is considered the right
+   * limit of an azimuth range.
+   */
   @XmlElement(name = "PointingAzMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal pointingAzMax;
+  /**
+   * PointingElevMin: Enter the minimum elevation angle. This is the lower limit
+   * of an elevation range when a range is reported.
+   */
   @XmlElement(name = "PointingElevMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal pointingElevMin;
+  /**
+   * PointingElevMax: Enter the maximum elevation specification. This is the
+   * upper limit of an elevation range.
+   */
   @XmlElement(name = "PointingElevMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal pointingElevMax;
+  /**
+   * CoordinationNum (US): Enter the US Military Communications-Electronics
+   * Board (MCEB) identifier assigned to the equipment or system. (e.g., "J/F
+   * 12/12345")
+   */
   @XmlElement(name = "CoordinationNum", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString coordinationNum;
+  /**
+   * Data element Blanking contains the start and stop angles of a horizontal
+   * and/or vertical sector that is blanked.
+   */
   @XmlElement(name = "Blanking")
   private List<Blanking> blanking;
 
@@ -204,7 +255,7 @@ public class StationConfig {
   /**
    * Gets the value of the eirpMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getEIRPMin() {
     return eirpMin;
@@ -213,7 +264,7 @@ public class StationConfig {
   /**
    * Sets the value of the eirpMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEIRPMin(TDecimal value) {
     this.eirpMin = value;
@@ -226,7 +277,7 @@ public class StationConfig {
   /**
    * Gets the value of the eirpMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getEIRPMax() {
     return eirpMax;
@@ -235,7 +286,7 @@ public class StationConfig {
   /**
    * Sets the value of the eirpMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEIRPMax(TDecimal value) {
     this.eirpMax = value;
@@ -248,7 +299,7 @@ public class StationConfig {
   /**
    * Gets the value of the antFeedpointHeight property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getAntFeedpointHeight() {
     return antFeedpointHeight;
@@ -257,7 +308,7 @@ public class StationConfig {
   /**
    * Sets the value of the antFeedpointHeight property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setAntFeedpointHeight(TDecimal value) {
     this.antFeedpointHeight = value;
@@ -270,7 +321,7 @@ public class StationConfig {
   /**
    * Gets the value of the feedlineLength property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFeedlineLength() {
     return feedlineLength;
@@ -279,7 +330,7 @@ public class StationConfig {
   /**
    * Sets the value of the feedlineLength property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFeedlineLength(TDecimal value) {
     this.feedlineLength = value;
@@ -292,7 +343,7 @@ public class StationConfig {
   /**
    * Gets the value of the feedlineLoss property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getFeedlineLoss() {
     return feedlineLoss;
@@ -301,7 +352,7 @@ public class StationConfig {
   /**
    * Sets the value of the feedlineLoss property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setFeedlineLoss(TDecimal value) {
     this.feedlineLoss = value;
@@ -314,7 +365,7 @@ public class StationConfig {
   /**
    * Gets the value of the earthCoverage property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getEarthCoverage() {
     return earthCoverage;
@@ -323,7 +374,7 @@ public class StationConfig {
   /**
    * Sets the value of the earthCoverage property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setEarthCoverage(TString value) {
     this.earthCoverage = value;
@@ -336,7 +387,7 @@ public class StationConfig {
   /**
    * Gets the value of the pointingAzMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getPointingAzMin() {
     return pointingAzMin;
@@ -345,7 +396,7 @@ public class StationConfig {
   /**
    * Sets the value of the pointingAzMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPointingAzMin(TDecimal value) {
     this.pointingAzMin = value;
@@ -358,7 +409,7 @@ public class StationConfig {
   /**
    * Gets the value of the pointingAzMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getPointingAzMax() {
     return pointingAzMax;
@@ -367,7 +418,7 @@ public class StationConfig {
   /**
    * Sets the value of the pointingAzMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPointingAzMax(TDecimal value) {
     this.pointingAzMax = value;
@@ -380,7 +431,7 @@ public class StationConfig {
   /**
    * Gets the value of the pointingElevMin property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getPointingElevMin() {
     return pointingElevMin;
@@ -389,7 +440,7 @@ public class StationConfig {
   /**
    * Sets the value of the pointingElevMin property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPointingElevMin(TDecimal value) {
     this.pointingElevMin = value;
@@ -402,7 +453,7 @@ public class StationConfig {
   /**
    * Gets the value of the pointingElevMax property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getPointingElevMax() {
     return pointingElevMax;
@@ -411,7 +462,7 @@ public class StationConfig {
   /**
    * Sets the value of the pointingElevMax property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setPointingElevMax(TDecimal value) {
     this.pointingElevMax = value;
@@ -424,7 +475,7 @@ public class StationConfig {
   /**
    * Gets the value of the coordinationNum property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getCoordinationNum() {
     return coordinationNum;
@@ -433,7 +484,7 @@ public class StationConfig {
   /**
    * Sets the value of the coordinationNum property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setCoordinationNum(TString value) {
     this.coordinationNum = value;

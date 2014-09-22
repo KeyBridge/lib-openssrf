@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_0.Location;
 import us.gov.dod.standard.ssrf._3_0.adapter.*;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
@@ -36,25 +37,8 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 /**
  * Java class for StationLoc complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within
- * this class.
- * <pre>
- * &lt;complexType name="StationLoc"> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="LocationExcluded" type="{urn:us:gov:dod:standard:ssrf:3.0.0}TListCBO"
- * minOccurs="0"/> &lt;element name="LocSatRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- * &lt;element name="LocationRadius"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- * &lt;element name="ServiceVolumeLocRef"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TSerial" minOccurs="0"/>
- * &lt;element name="ServiceVolumeRadius"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TDistance" minOccurs="0"/>
- * &lt;element name="ServiceVolumeHeight"
- * type="{urn:us:gov:dod:standard:ssrf:3.0.0}TAltitude" minOccurs="0"/>
- * &lt;/sequence> &lt;/restriction> &lt;/complexContent> &lt;/complexType>
- * </pre>
- * <p>
+ * Either a satellite (locSatRef) or terrestrial location (serviceVolumeLocRef)
+ * reference is required.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StationLoc", propOrder = {
@@ -67,20 +51,68 @@ import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCBO;
 })
 public class StationLoc {
 
+  /**
+   * LocationExcluded: Enter "Yes" to indicate that the LocSatRef is to be
+   * excluded from the possible location set for the current station. If
+   * omitted, a "No" SHOULD be assumed by processing applications, meaning that
+   * the location is included by default.
+   * <p>
+   * [XSD ERR CODELIST] This data item MUST use one of the codes from Code List
+   * CBO: Code Yes No
+   */
   @XmlElement(name = "LocationExcluded", required = false)
   private TString locationExcluded;
+  /**
+   * LocSatRef: Enter the serial of a Location or Satellite dataset. When this
+   * location is complex (other than a single point), that means that the
+   * assignment is for a mobile inside the definition location.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be "LO
+   * or SA".
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "LocSatRef", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString locSatRef;
+  /**
+   * LocationRadius: Enter the radius (in km) associated with the Location to
+   * produce a circle. Note that the Radius information only applies to points,
+   * and should be ignored in the case of polygons and ellipses.
+   */
   @XmlElement(name = "LocationRadius", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
   private TDecimal locationRadius;
+  /**
+   * ServiceVolumeLocRef: Enter the unique reference of an existing Location
+   * dataset.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "LO".
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
+   */
   @XmlElement(name = "ServiceVolumeLocRef", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serviceVolumeLocRef;
+  /**
+   * ServiceVolumeRadius: Enter the radius (in km) associated with the
+   * ServiceVolumeLocRef (referencing a Location) to produce a circle.
+   * <p>
+   * Note that the Radius information only applies to points, and should be
+   * ignored in the case of polygons and ellipses.
+   */
   @XmlElement(name = "ServiceVolumeRadius", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTANCE.class)
   private TDecimal serviceVolumeRadius;
+  /**
+   * ServiceVolumeHeight: Enter the flight altitude in meters of all
+   * aeronautical navigational aids and air traffic control assignments for
+   * radio frequencies above 30 MHz and for low-frequency beacons. The altitude
+   * is always referenced to the mean sea level (MSL).
+   */
   @XmlElement(name = "ServiceVolumeHeight", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal serviceVolumeHeight;
@@ -88,7 +120,7 @@ public class StationLoc {
   /**
    * Gets the value of the locationExcluded property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLocationExcluded() {
     return locationExcluded;
@@ -97,7 +129,7 @@ public class StationLoc {
   /**
    * Sets the value of the locationExcluded property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLocationExcluded(TString value) {
     this.locationExcluded = value;
@@ -110,7 +142,7 @@ public class StationLoc {
   /**
    * Gets the value of the locSatRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getLocSatRef() {
     return locSatRef;
@@ -119,7 +151,7 @@ public class StationLoc {
   /**
    * Sets the value of the locSatRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
@@ -132,7 +164,7 @@ public class StationLoc {
   /**
    * Gets the value of the locationRadius property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getLocationRadius() {
     return locationRadius;
@@ -141,7 +173,7 @@ public class StationLoc {
   /**
    * Sets the value of the locationRadius property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setLocationRadius(TDecimal value) {
     this.locationRadius = value;
@@ -154,7 +186,7 @@ public class StationLoc {
   /**
    * Gets the value of the serviceVolumeLocRef property.
    * <p>
-   * @return 
+   * @return
    */
   public TString getServiceVolumeLocRef() {
     return serviceVolumeLocRef;
@@ -163,7 +195,7 @@ public class StationLoc {
   /**
    * Sets the value of the serviceVolumeLocRef property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setServiceVolumeLocRef(TString value) {
     this.serviceVolumeLocRef = value;
@@ -176,7 +208,7 @@ public class StationLoc {
   /**
    * Gets the value of the serviceVolumeRadius property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getServiceVolumeRadius() {
     return serviceVolumeRadius;
@@ -185,7 +217,7 @@ public class StationLoc {
   /**
    * Sets the value of the serviceVolumeRadius property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setServiceVolumeRadius(TDecimal value) {
     this.serviceVolumeRadius = value;
@@ -198,7 +230,7 @@ public class StationLoc {
   /**
    * Gets the value of the serviceVolumeHeight property.
    * <p>
-   * @return 
+   * @return
    */
   public TDecimal getServiceVolumeHeight() {
     return serviceVolumeHeight;
@@ -207,7 +239,7 @@ public class StationLoc {
   /**
    * Sets the value of the serviceVolumeHeight property.
    * <p>
-   * @param value 
+   * @param value
    */
   public void setServiceVolumeHeight(TDecimal value) {
     this.serviceVolumeHeight = value;
@@ -234,6 +266,17 @@ public class StationLoc {
 
   public StationLoc withServiceVolumeLocRef(String value) {
     setServiceVolumeLocRef(new TString(value));
+    return this;
+  }
+
+  /**
+   * Generate a US location reference from the indicated location.
+   * <p>
+   * @param value a location
+   * @return the current instance
+   */
+  public StationLoc withServiceVolumeLocRef(Location value) {
+    setServiceVolumeLocRef(value.getSerial());
     return this;
   }
 

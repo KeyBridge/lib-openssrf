@@ -29,6 +29,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * Java class for ListCAO.
+ * <p>
+ * This looks like DoD-proprietary state and country codes - something akin to a
+ * territory code.
  */
 @XmlType(name = "ListCAO")
 @XmlEnum
