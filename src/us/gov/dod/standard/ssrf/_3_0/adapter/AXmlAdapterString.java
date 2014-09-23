@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_0.adapter;
 
+import java.util.Locale;
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
@@ -135,7 +136,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
     /**
      * Convert to upper case if indicated.
      */
-    return upperCase ? v.getValue().toUpperCase() : v.getValue();
+    return upperCase ? v.getValue().toUpperCase(Locale.getDefault()) : v.getValue();
   }
 
 }
