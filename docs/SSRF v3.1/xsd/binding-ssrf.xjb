@@ -1,0 +1,201 @@
+<jxb:bindings version="2.1"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+              jxb:extensionBindingPrefixes="xjc">
+
+  <!-- Raise theEnumMemberSizeCap limit -->
+  <!--http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/tutorial/doc/JAXBUsing4.html#wp148613-->
+  
+  <!--Setting fixedAttributeAsConstantProperty to true indicates that all fixed attributes should be bound to 
+  Java constants. By default, fixed attributes are just mapped to either simple or collection property, 
+  which ever is more appropriate-->
+  
+  <!--Setting collectionType to java.util.Vector specifies that all lists in the generated implementation 
+  classes should be represented internally as vectors. Note that the class name you specify for 
+  collectionType must implement java.util.List and be callable by newInstance-->
+ 
+  <!--If typesafeEnumBase to xsd:string it would be a global way to specify that all simple type 
+  definitions deriving directly or indirectly from xsd:string and having enumeration facets should 
+  be bound by default to a typesafe enum. If typesafeEnumBase is set to an empty string, "", no 
+  simple type definitions would ever be bound to a typesafe enum class by default. The value of 
+  typesafeEnumBase can be any atomic simple type definition except xsd:boolean and both binary types.-->
+ 
+  <!--Using typesafe enums enables you to map schema enumeration values to Java constants, which 
+  in turn makes it possible to do compares on Java constants rather than string values.-->  
+   
+   <!--http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/1.6/tutorial/doc/JAXBUsing4.html-->
+   
+  <!--[globalBindings] declarations are only valid in the annotation element of the top-level schema element. 
+  There can only be a single instance of a [globalBindings] declaration in any given schema or binding 
+  declarations file. If one source schema includes or imports a second source schema, the 
+  [globalBindings] declaration must be declared in the first source schema. -->
+   
+   <!--Global scope customizations are declared with <globalBindings>. The syntax for global scope customizations is as follows: 
+
+      collectionType can be either indexed or any fully qualified class name 
+      that implements java.util.List.
+      
+      fixedAttributeAsConstantProperty can be either true, false, 1, or 0. The default value is false.
+      
+      generateIsSetMethod can be either true, false, 1, or 0. The default value is false.
+      
+      enableFailFastCheck can be either true, false, 1, or 0. If enableFailFastCheck 
+      is true or 1 and the JAXB implementation supports this optional checking, type 
+      constraint checking is performed when setting a property. The default value is false. 
+      Please note that the JAXB implementation does not support failfast validation.
+      
+      choiceContentProperty can be either true, false, 1, or 0. The default value is false. 
+      choiceContentProperty is not relevant when the bindingStyle is elementBinding. Therefore, 
+      if bindingStyle is specified as elementBinding, then the choiceContentProperty must 
+      result in an invalid customization.
+      
+      underscoreBinding can be either asWordSeparator or asCharInWord. The default value is asWordSeparator.
+      
+      enableJavaNamingConventions can be either true, false, 1, or 0. The default value is true.
+      
+      typesafeEnumBase can be a list of QNames, each of which must resolve to a simple type 
+      definition. The default value is xs:NCName. See Typesafe Enumeration Binding Declarations 
+      for information about localized mapping of simpleType definitions to Java typesafe enum classes.
+      
+      typesafeEnumMemberName can be either generateError or generateName. The default value is generateError.
+      
+      bindingStyle can be either elementBinding, or modelGroupBinding. The default value is elementBinding.
+      
+      [javaType] can be zero or more javaType binding declarations. See [javaType] Binding 
+        Declarations for more information.-->
+
+
+  <!-- 04/15/14 - cannot use HashSet - this does not implement LIST -->
+  <!--                       collectionType="java.util.HashSet"-->
+  
+  
+
+  <jxb:globalBindings typesafeEnumMaxMembers="2048"
+                      typesafeEnumBase="xs:string"
+                      typesafeEnumMemberName="generateName"
+                      
+                      fixedAttributeAsConstantProperty="true"
+                      collectionType="java.util.ArrayList"
+                      choiceContentProperty="false"
+                      
+                      enableFailFastCheck="true"   
+                      
+                      generateIsSetMethod="true"
+                      underscoreBinding="asCharInWord">
+    
+                    <!--<xjc:simple/>-->
+                    <!--<xjc:treatRestrictionLikeNewType/>-->
+                    
+                    <!--The [javaType] declaration provides a way to customize the translation 
+                  of XML datatypes to and from Java datatypes. XML provides more datatypes 
+                  than Java, and so the [javaType] declaration lets you specify custom 
+                    datatype bindings when the default JAXB binding cannot sufficiently 
+                    represent your schema.-->
+     <jxb:javaType name="java.util.Calendar" 
+                   xmlType="xs:date"
+                   parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+                   printMethod="javax.xml.bind.DatatypeConverter.printDate"/>
+    <jxb:javaType name="java.util.Calendar" 
+                  xmlType="xs:dateTime"
+                  parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+                  printMethod="javax.xml.bind.DatatypeConverter.printDate"/>
+        
+  </jxb:globalBindings>   
+  
+  <!-- Name Clash
+  JAXB does not implement case-sensitive differentiation. This causes a clash
+  between the 'Remarks' complex type and 'remarks' attribute. Rename the internal
+  'remarks' attribute field value to accommodate. -->
+  
+  <jxb:bindings schemaLocation="ssrf.xsd">
+    <jxb:bindings node="//xs:complexType//xs:attribute[@name='remarks']">
+      <jxb:property name="attributeRemarks"/>
+    </jxb:bindings>
+    
+    <!--Place Lists in a list directory-->
+    <!--    <jxb:bindings node="//xs:complexType[starts-with(@name,'TList')]">    
+      <jxb:package name="us.gov.dod.standard.ssrf._3_0.datatype.tlist"/>        
+      <jxb:package name="datatype.tlist"/>        
+    </jxb:bindings> -->
+    
+    <!--XJC does not support REGEX - Xpath v1.x only-->
+    <!--    <jxb:bindings  multiple="true" node="//xs:complexType[matches(@name, 'T[US]N\d+')]">
+      <jxb:class ref="org.caulfield.ssrf.datatype.TInteger"/>
+    </jxb:bindings>-->
+    
+  </jxb:bindings>
+
+  <!--  <jxb:bindings schemaLocation="domains.xsd">
+       <jxb:schemaBindings>
+      <jxb:package name="us.gov.dod.standard.ssrf._3_0.domains"/>
+    </jxb:schemaBindings>
+  </jxb:bindings>
+    
+    <jxb:bindings schemaLocation="lists.xsd">
+       <jxb:schemaBindings>
+      <jxb:package name="us.gov.dod.standard.ssrf._3_0.lists"/>
+    </jxb:schemaBindings>
+  </jxb:bindings>-->
+  
+  <!--  <jxb:bindings schemaLocation="lists.xsd">         
+    <jxb:bindings node="//xs:complexType[starts-with(@name,'List')]">    
+      <jxb:package name="us.gov.dod.standard.ssrf._3_0.datatype.list"/>        
+      <jxb:package name="datatype.list"/>        
+    </jxb:bindings> 
+  </jxb:bindings>-->
+  
+  <!--  <jxb:bindings schemaLocation="domains.xsd">         
+    <jxb:package name="us.gov.dod.standard.ssrf._3_0.datatype.domains"/>        
+    <jxb:package name="datatype.domains"/>        
+  </jxb:bindings>-->
+  
+  <!-- Separate schema compilation: Modular Code Generation
+  How to put separate schemas in their own JAR
+  http://confluence.highsource.org/display/MJIIP/User+Guide#UserGuide-Separateschemacompilation-->
+     
+  <!--http://stackoverflow.com/questions/2409278/generating-java-classes-out-of-xmlschema-xsd-using-jaxb-->
+  <!--<jxb:bindings schemaLocation="ssrf.xsd">-->
+    <!--<jxb:schemaBindings>  <jxb:package name="us.gov.dod.standard.ssrf._3_0_0"/>            </jxb:schemaBindings>-->
+    <!--<jxb:bindings node="//xs:complexType[@name='complexType']">            <jxb:class name="AbstractComplexType"/>        </jxb:bindings>--> 
+    <!--<jxb:bindings node="//xs:complexType[@name='group']">      <jxb:class name="AbstractGroup"/>    </jxb:bindings>--> 
+    <!--<jxb:bindings node="//xs:complexType[@name='attributeGroup']">      <jxb:class name="AbstractAttributeGroup"/>    </jxb:bindings>--> 
+    <!--<jxb:bindings node="//xs:complexType[@name='simpleType']">      <jxb:class name="AbstractSimpleType"/>    </jxb:bindings>--> 
+    <!--<jxb:bindings node="//xs:complexType[@name='element']">      <jxb:class name="AbstractElement"/>    </jxb:bindings>--> 
+    <!--<jxb:bindings node="//xs:complexType[@name='attribute']">      <jxb:class name="BaseAttribute"/>    </jxb:bindings>--> 
+  <!--</jxb:bindings>-->
+  
+  <!--  Do not build enumerated lists. -->
+  <!--<jxb:bindings schemaLocation="ssrf.xsd">-->
+    <!--  /xs:schema/xs:simpleType[contains(@name, 'UN')] -->
+    <!--//xs:complexType[matches(@name, '[US]N\d+_')]-->
+
+  <!--Again - XJC does not support XPATH 2.x-->
+  <!--com.sun.istack.SAXParseException2-->
+    <!--TransformerException: Could not find function: matches-->
+    
+    <!--//xs:complexType[starts-with(@name, 'TUN')]-->
+    
+  <!--    <jxb:bindings  multiple="true" node="//xs:complexType[contains(@name, 'TU')]">
+    <jxb:package name="us.gov.dod.standard.ssrf._3_0.lists"/>
+  </jxb:bindings>
+   <jxb:bindings  multiple="true" node="//xs:complexType[contains(@name, 'TS')]">
+    <jxb:package name="us.gov.dod.standard.ssrf._3_0.lists"/>
+  </jxb:bindings>-->
+      
+  <!--
+    <jxb:bindings  multiple="true" node="//xs:complexType[matches(@name, 'T[US]N\d+')]">
+      <jxb:class ref="org.caulfield.ssrf.datatype.TInteger"/>
+    </jxb:bindings>
+       
+    <jxb:bindings  multiple="true" node="//xs:complexType[matches(@name, 'T[US]N\d+_{1}')]">
+      <jxb:class ref="org.caulfield.ssrf.datatype.TBigDecimal"/>
+    </jxb:bindings>
+        
+  <jxb:bindings  multiple="true" node="//xs:complexType[matches(@name, 'TU?S\d+')]">
+    <jxb:class ref="org.caulfield.ssrf.datatype.TString"/>
+  </jxb:bindings>-->
+      
+  <!--</jxb:bindings>-->
+  
+</jxb:bindings>
