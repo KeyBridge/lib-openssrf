@@ -1,4 +1,4 @@
-/*
+/* 
  * The MIT License
  *
  * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
@@ -25,7 +25,7 @@
                                      elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED,
                                      xmlns = {
                                        @javax.xml.bind.annotation.XmlNs(prefix = "ssrf",
-                                                                        namespaceURI = "urn:us:gov:dod:standard:ssrf:3.0.0"),
+                                                                        namespaceURI = "urn:us:gov:dod:standard:ssrf:3.1.0"),
                                        @javax.xml.bind.annotation.XmlNs(prefix = "xs",
                                                                         namespaceURI = "http://www.w3.org/2001/XMLSchema")}
 )

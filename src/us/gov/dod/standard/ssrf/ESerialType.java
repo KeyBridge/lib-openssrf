@@ -1,7 +1,7 @@
-/*
+/* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
+ * Copyright 2014 Key Bridge Global LLC.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,8 @@ package us.gov.dod.standard.ssrf;
  * This class contains the codes that MUST be used as the third part of the
  * Serial of each dataset corresponding to each class type.
  * <p>
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
+ * @version 3.1.0, 09/29/2014
  */
 public enum ESerialType {
 

@@ -1,7 +1,7 @@
-/*
+/* 
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
+ * Copyright 2014 Key Bridge Global LLC.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,21 +23,19 @@
  */
 package us.gov.dod.standard.ssrf;
 
-import java.util.Date;
 import java.util.UUID;
-import us.gov.dod.standard.ssrf._3_0.Administrative;
-import us.gov.dod.standard.ssrf._3_0.Assignment;
-import us.gov.dod.standard.ssrf._3_0.metadata.domains.TString;
-import us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 
 /**
  *
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
 /**
  * SSRF Serial number generator.
  * <p>
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
+ * @version 3.1.0, 09/29/2014
  */
 public class SSRFFactory {
 
@@ -113,7 +111,7 @@ public class SSRFFactory {
 
   /**
    * A convenience shortcut to
-   * {@link #serial(java.lang.Class, us.gov.dod.standard.ssrf._3_0.metadata.lists.ListCCY, java.lang.String, java.lang.String)}
+   * {@link #serial(java.lang.Class, us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY, java.lang.String, java.lang.String)}
    * but allowing for an instantiated class instead of the class type.
    * <p>
    * @param instance       the instantiated class
@@ -156,12 +154,11 @@ public class SSRFFactory {
   private SSRFFactory() {
   }
 
-  public static Assignment assignment(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
-    return new Assignment(snCountry, snOrganization, snSerial, entryDateTime);
-  }
-
-  public static Administrative administrative(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
-    return new Administrative(snCountry, snOrganization, snSerial, entryDateTime);
-  }
-
+//  public static Assignment assignment(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+//    return new Assignment(snCountry, snOrganization, snSerial, entryDateTime);
+//  }
+//
+//  public static Administrative administrative(ListCCY snCountry, String snOrganization, String snSerial, Date entryDateTime) {
+//    return new Administrative(snCountry, snOrganization, snSerial, entryDateTime);
+//  }
 }
