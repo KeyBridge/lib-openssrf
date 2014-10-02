@@ -42,8 +42,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * fields.
  * <p>
  * Example: (Dummy classification for demonstration only). In this case, the
- * power value is Unclassified, but the associated remarksark is Confidential
- * releasable to three nations only.
+ * power value is Unclassified, but the associated remarks (index 12) is
+ * Confidential releasable to three nations only.
  * <p>
  * <code><pre>
  * &lt;Transmitter cls="C"&gt;
@@ -56,23 +56,21 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  *   &lt;Other_Transmitter_Elements/&gt;
  *   &lt;Power cls="U" <strong>extReferences="1 2"</strong> <strong>remarksarkReferences="1 12"</strong>&gt;23&lt;/Power&gt;
  * &lt;/Transmitter&gt;
- * </pre></code>
+ * </pre></code> This abstract class is extended by classes in the SSRF
+ * <em>metadata</em> attribute group.
  * <p>
- * Developer note: This class must be annotated as XmlTransient.
- * <p>
- * This class is extended by classes in the metadata packaged containing an
- * XmlValue annotation type. JaxB is not able to handle extended classes having
- * an XmlValue as JaxB does not build and manage a class schema hierarchy and
- * cannot confirm that the XmlValue class does not also contain an XmlElement.
+ * Developer note: This abstract class is not part of SSRF and must be annotated
+ * as XmlTransient to successfully marshal SSRF instances.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
+ * @param <T> The class type implementation
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AStandardMetadataAttributes", propOrder = {"cls"})
+@XmlType(name = "AMetadata", propOrder = {"cls"})
 @XmlTransient
 @SuppressWarnings("unchecked")
-public abstract class AStandardMetadataAttributes<T> {
+public abstract class AMetadata<T> {
 
   /**
    * cls - Classification (Required)
@@ -640,7 +638,7 @@ public abstract class AStandardMetadataAttributes<T> {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link AStandardMetadataAttributes} requires {@link ListCCL cls}
+   * {@link AMetadata} requires {@link ListCCL cls}
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

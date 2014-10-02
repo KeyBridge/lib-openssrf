@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 
 /**
  * A simple String instance with SSRF Standard Metadata Attributes. This
@@ -39,7 +39,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TString", propOrder = {"value"})
 
-public class TString extends AStandardMetadataAttributes<TString> implements IMetadataType {
+public class TString extends AMetadata<TString> implements IMetadataType {
 
   /**
    * The value to which the metadata attributes are associated.

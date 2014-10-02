@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS6;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -42,13 +44,21 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "OffTheShelfEquipment", propOrder = {
   "value"
 })
-public class OffTheShelfEquipment extends AStandardMetadataAttributes<OffTheShelfEquipment> {
+public class OffTheShelfEquipment extends AMetadata<OffTheShelfEquipment> {
 
+  /**
+   * A specialized type of system/equipment used in the frequency assignment, as
+   * defined by the following choices: LMS, VOR1A, VOR1B, VOR2A, VOR2B, ILSLOC,
+   * or ILSGS.
+   * <p>
+   * Format is S6
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS6.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a specialized type of system/equipment
    * <p>
    * @return a {@link String} instance
    */
@@ -57,7 +67,9 @@ public class OffTheShelfEquipment extends AStandardMetadataAttributes<OffTheShel
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a specialized type of system/equipment.
+   * <p>
+   * Required choices are [LMS, VOR1A, VOR1B, VOR2A, VOR2B, ILSLOC, ILSGS]
    * <p>
    * @param value a {@link String} instance
    */
@@ -75,7 +87,9 @@ public class OffTheShelfEquipment extends AStandardMetadataAttributes<OffTheShel
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a specialized type of system/equipment.
+   * <p>
+   * Required choices are [LMS, VOR1A, VOR1B, VOR2A, VOR2B, ILSLOC, ILSGS]
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance

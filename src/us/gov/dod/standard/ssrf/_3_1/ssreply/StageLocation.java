@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_0.spectrumsupportability.Stage;
 import us.gov.dod.standard.ssrf._3_1.SSReply;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_1.ssrequest.Stage;
 
 /**
  * StageLocation defines locations where the equipment or system is allowed or

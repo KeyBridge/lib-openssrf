@@ -25,7 +25,10 @@ package us.gov.dod.standard.ssrf._3_1.ssreply;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterMEMO;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUN6;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -43,25 +46,36 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Comment", propOrder = {
   "value"
 })
-public class Comment extends AStandardMetadataAttributes<Comment> {
+public class Comment extends AMetadata<Comment> {
 
+  /**
+   * Comment (Required)
+   * <p>
+   * The comment provided by the Host Nation or Administration regarding
+   * equipment supportability.
+   * <p>
+   * Format is MEMO
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterMEMO.class)
   private String value;
   /**
    * idx - Index (Required)
    * <p>
-   * A unique index for each Comment used by this Dataset. Once an idx is used
-   * it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
-   * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.
+   * A unique index for each Comment used by this Dataset.
+   * <p>
+   * Once an idx is used it SHOULD NOT be modified during the lifetime of the
+   * Dataset; e.g., an element with idx=2 will keep idx=2 even if the first
+   * occurrence (idx=1) is deleted.
    * <p>
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterUN6.class)
   private BigInteger idx;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the comment.
    * <p>
    * @return a {@link String} instance
    */
@@ -70,7 +84,7 @@ public class Comment extends AStandardMetadataAttributes<Comment> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the comment.
    * <p>
    * @param value a {@link String} instance
    */
@@ -88,10 +102,7 @@ public class Comment extends AStandardMetadataAttributes<Comment> {
   }
 
   /**
-   * Get a unique index for each Comment used by this Dataset. Once an idx is
-   * used it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
-   * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.
+   * Get a unique index for each Comment used by this Dataset.
    * <p>
    * @return a {@link BigInteger} instance
    */
@@ -100,10 +111,7 @@ public class Comment extends AStandardMetadataAttributes<Comment> {
   }
 
   /**
-   * Set a unique index for each Comment used by this Dataset. Once an idx is
-   * used it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
-   * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.
+   * Set a unique index for each Comment used by this Dataset.
    * <p>
    * @param value a {@link BigInteger} instance
    */
@@ -121,7 +129,9 @@ public class Comment extends AStandardMetadataAttributes<Comment> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the comment.
+   * <p>
+   * Format is MEMO
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Comment object instance

@@ -452,7 +452,7 @@ public class RxMode {
   private List<BigInteger> curves;
 
   /**
-   * Get a short name for the mode; this name should be a meaningful
+   * Get the short name for the mode; this name should be a meaningful
    * identification of the mode, but it can also be automatically generated. The
    * Name MUST be unique within the dataset and SHOULD NOT be modified during
    * the lifetime of the Dataset.
@@ -464,7 +464,7 @@ public class RxMode {
   }
 
   /**
-   * Set a short name for the mode; this name should be a meaningful
+   * Set the short name for the mode; this name should be a meaningful
    * identification of the mode, but it can also be automatically generated. The
    * Name MUST be unique within the dataset and SHOULD NOT be modified during
    * the lifetime of the Dataset.
@@ -487,7 +487,7 @@ public class RxMode {
   }
 
   /**
-   * Get a description of the operational mode; this description should be a
+   * Get the description of the operational mode; this description should be a
    * meaningful explanation of the mode main characteristics.
    * <p>
    * @return the Description value in a {@link TString} data type
@@ -497,7 +497,7 @@ public class RxMode {
   }
 
   /**
-   * Set a description of the operational mode; this description should be a
+   * Set the description of the operational mode; this description should be a
    * meaningful explanation of the mode main characteristics.
    * <p>
    * @param value the Description value in a {@link TString} data type
@@ -1247,7 +1247,7 @@ public class RxMode {
   }
 
   /**
-   * Get a short name for the mode.
+   * Get the short name for the mode.
    * <p>
    * @return the ModeName value in a {@link TString} data type
    */
@@ -1256,7 +1256,7 @@ public class RxMode {
   }
 
   /**
-   * Set a short name for the mode.
+   * Set the short name for the mode.
    * <p>
    * @param value the ModeName value in a {@link TString} data type
    */
@@ -1496,7 +1496,7 @@ public class RxMode {
   }
 
   /**
-   * Set a short name for the mode; this name should be a meaningful
+   * Set the short name for the mode; this name should be a meaningful
    * identification of the mode, but it can also be automatically generated. The
    * Name MUST be unique within the dataset and SHOULD NOT be modified during
    * the lifetime of the Dataset.
@@ -1510,7 +1510,7 @@ public class RxMode {
   }
 
   /**
-   * Set a description of the operational mode; this description should be a
+   * Set the description of the operational mode; this description should be a
    * meaningful explanation of the mode main characteristics.
    * <p>
    * @param value An instances of type {@link String}
@@ -1807,7 +1807,7 @@ public class RxMode {
   }
 
   /**
-   * Set a short name for the mode.
+   * Set the short name for the mode.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RxMode object instance
@@ -2026,7 +2026,7 @@ public class RxMode {
   }
 
   /**
-   * Get a string representation of this RxMode instance configuration.
+   * Get the string representation of this RxMode instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

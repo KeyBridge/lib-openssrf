@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 
 /**
  * A Numeric Double instance with SSRF Standard Metadata Attributes. This
@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TDouble")
-public class TDouble extends AStandardMetadataAttributes<TDouble> implements IMetadataType {
+public class TDouble extends AMetadata<TDouble> implements IMetadataType {
 
   /**
    * The value to which the metadata attributes are associated.

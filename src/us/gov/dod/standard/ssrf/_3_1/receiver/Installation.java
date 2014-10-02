@@ -24,7 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS40;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -47,13 +49,21 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Installation", propOrder = {
   "value"
 })
-public class Installation extends AStandardMetadataAttributes<Installation> {
+public class Installation extends AMetadata<Installation> {
 
+  /**
+   * A platform upon which the system is mounted. All vehicles should be
+   * identified by their proper nomenclature. If the system is portable and not
+   * mounted in a vehicle, the platform user should be identified.
+   * <p>
+   * Format is S40
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS40.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the platform upon which the system is mounted.
    * <p>
    * @return a {@link String} instance
    */
@@ -62,7 +72,9 @@ public class Installation extends AStandardMetadataAttributes<Installation> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the platform upon which the system is mounted.
+   * <p>
+   * Format is S40.
    * <p>
    * @param value a {@link String} instance
    */
@@ -80,7 +92,9 @@ public class Installation extends AStandardMetadataAttributes<Installation> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the platform upon which the system is mounted.
+   * <p>
+   * Format is S40.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -91,7 +105,7 @@ public class Installation extends AStandardMetadataAttributes<Installation> {
   }
 
   /**
-   * Get a string representation of this Installation instance configuration.
+   * Get the string representation of this Installation instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

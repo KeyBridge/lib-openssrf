@@ -257,7 +257,7 @@ public class RxRef {
   }
 
   /**
-   * Get a string representation of this RxRef instance configuration.
+   * Get the string representation of this RxRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

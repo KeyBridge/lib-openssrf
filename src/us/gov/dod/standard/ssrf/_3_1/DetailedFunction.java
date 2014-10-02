@@ -24,12 +24,13 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
 
 /**
- * DetailedFunction
+ * DetailedFunctionID (US) is the function identifier for an equipment in the
+ * link of a frequency assignment or group of frequency assignments.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -38,13 +39,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
 @XmlType(name = "DetailedFunction", propOrder = {
   "value"
 })
-public class DetailedFunction extends AStandardMetadataAttributes<DetailedFunction> {
+public class DetailedFunction extends AMetadata<DetailedFunction> {
 
+  /**
+   * The function identifier for an equipment in the link of a frequency
+   * assignment or group of frequency assignments.
+   * <p>
+   * Format is L:UFN
+   */
   @XmlValue
   private ListUFN value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a function identifier for an equipment
    * <p>
    * @return a {@link ListUFN} instance
    */
@@ -53,7 +60,7 @@ public class DetailedFunction extends AStandardMetadataAttributes<DetailedFuncti
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a function identifier for an equipment
    * <p>
    * @param value a {@link ListUFN} instance
    */
@@ -71,7 +78,7 @@ public class DetailedFunction extends AStandardMetadataAttributes<DetailedFuncti
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a function identifier for an equipment
    * <p>
    * @param value An instances of type {@link ListUFN}
    * @return The current DetailedFunction object instance

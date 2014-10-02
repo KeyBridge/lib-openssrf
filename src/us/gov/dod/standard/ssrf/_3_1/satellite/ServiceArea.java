@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -41,13 +41,18 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "ServiceArea", propOrder = {
   "value"
 })
-public class ServiceArea extends AStandardMetadataAttributes<ServiceArea> {
+public class ServiceArea extends AMetadata<ServiceArea> {
 
+  /**
+   * A geographic area code.
+   * <p>
+   * Format is L:CAO
+   */
   @XmlValue
   private ListCAO value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a geographic area code.
    * <p>
    * @return a {@link ListCAO} instance
    */
@@ -56,7 +61,7 @@ public class ServiceArea extends AStandardMetadataAttributes<ServiceArea> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a geographic area code.
    * <p>
    * @param value a {@link ListCAO} instance
    */
@@ -74,7 +79,7 @@ public class ServiceArea extends AStandardMetadataAttributes<ServiceArea> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a geographic area code.
    * <p>
    * @param value An instances of type {@link ListCAO}
    * @return The current ServiceArea object instance

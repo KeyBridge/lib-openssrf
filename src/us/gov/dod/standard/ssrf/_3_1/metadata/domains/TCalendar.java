@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 
 /**
  * A Calendar instance with SSRF Standard Metadata Attributes. This corresponds
@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TCalendar")
-public class TCalendar extends AStandardMetadataAttributes<TCalendar> implements IMetadataType {
+public class TCalendar extends AMetadata<TCalendar> implements IMetadataType {
 
   private static final TimeZone TIMEZONE = TimeZone.getTimeZone("UTC");
 

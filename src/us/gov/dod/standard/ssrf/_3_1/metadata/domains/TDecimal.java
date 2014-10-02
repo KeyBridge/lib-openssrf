@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 
 /**
  * A Numeric Decimal instance with SSRF Standard Metadata Attributes. This
@@ -39,7 +39,7 @@ import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TDecimal")
-public class TDecimal extends AStandardMetadataAttributes<TDecimal> implements IMetadataType {
+public class TDecimal extends AMetadata<TDecimal> implements IMetadataType {
 
   /**
    * The value to which the metadata attributes are associated.

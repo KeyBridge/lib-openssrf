@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -40,13 +40,18 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Administration", propOrder = {
   "value"
 })
-public class Administration extends AStandardMetadataAttributes<Administration> {
+public class Administration extends AMetadata<Administration> {
 
+  /**
+   * A country code for which this variance applies.
+   * <p>
+   * Format is L:CAO
+   */
   @XmlValue
   private ListCAO value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a country code for which this variance applies.
    * <p>
    * @return a {@link ListCAO} instance
    */
@@ -55,7 +60,7 @@ public class Administration extends AStandardMetadataAttributes<Administration> 
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a country code for which this variance applies.
    * <p>
    * @param value a {@link ListCAO} instance
    */
@@ -73,7 +78,7 @@ public class Administration extends AStandardMetadataAttributes<Administration> 
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a country code for which this variance applies.
    * <p>
    * @param value An instances of type {@link ListCAO}
    * @return The current Administration object instance

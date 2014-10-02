@@ -24,7 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,18 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "LocationRestriction", propOrder = {
   "value"
 })
-public class LocationRestriction extends AStandardMetadataAttributes<LocationRestriction> {
+public class LocationRestriction extends AMetadata<LocationRestriction> {
 
+  /**
+   * The serial of a Location. This Location should be included in, or at least
+   * should intersect, the overall Allotment LocationRef.
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the serial of a Location.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +62,7 @@ public class LocationRestriction extends AStandardMetadataAttributes<LocationRes
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial of a Location.
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +80,7 @@ public class LocationRestriction extends AStandardMetadataAttributes<LocationRes
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial of a Location.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -84,7 +91,7 @@ public class LocationRestriction extends AStandardMetadataAttributes<LocationRes
   }
 
   /**
-   * Get a string representation of this LocationRestriction instance
+   * Get the string representation of this LocationRestriction instance
    * configuration.
    * <p>
    * @return The current object instance configuration as a non-null String

@@ -43,7 +43,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  * &lt;AntGain&gt;
  *   &lt;Gain cls="U"&gt;0&lt;/Gain&gt;
  * &lt;/AntGain&gt;
- * A complete entry:* &lt;AntGain&gt;
+ * </pre> A complete entry:
+ * <pre>
+ * &lt;AntGain&gt;
  *   &lt;Gain cls="U"&gt;6.1&lt;/Gain&gt;
  *   &lt;Freq cls="U"&gt;230.525&lt;/Freq&gt;
  *   &lt;FrontToBackRatio cls="U"&gt;2&lt;/FrontToBackRatio&gt;

@@ -24,7 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -41,13 +43,23 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "LoadsetRef", propOrder = {
   "value"
 })
-public class LoadsetRef extends AStandardMetadataAttributes<LoadsetRef> {
+public class LoadsetRef extends AMetadata<LoadsetRef> {
 
+  /**
+   * The identifying dataset serial number for the Loadset used in this
+   * configuration.
+   * <p>
+   * Format is SERIAL
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "LS".
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the Loadset serial number.
    * <p>
    * @return a {@link String} instance
    */
@@ -56,7 +68,7 @@ public class LoadsetRef extends AStandardMetadataAttributes<LoadsetRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the Loadset serial number.
    * <p>
    * @param value a {@link String} instance
    */
@@ -74,7 +86,7 @@ public class LoadsetRef extends AStandardMetadataAttributes<LoadsetRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the Loadset serial number.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -85,7 +97,7 @@ public class LoadsetRef extends AStandardMetadataAttributes<LoadsetRef> {
   }
 
   /**
-   * Get a string representation of this LoadsetRef instance configuration.
+   * Get the string representation of this LoadsetRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

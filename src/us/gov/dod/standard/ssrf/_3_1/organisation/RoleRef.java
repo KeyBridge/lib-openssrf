@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.organisation;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,23 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "RoleRef", propOrder = {
   "value"
 })
-public class RoleRef extends AStandardMetadataAttributes<RoleRef> {
+public class RoleRef extends AMetadata<RoleRef> {
 
+  /**
+   * Enter the unique SERIAL reference of a Role associated with this
+   * Organisation.
+   * <p>
+   * Format is SERIAL
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "JA".
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the Role SERIAL reference.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +67,9 @@ public class RoleRef extends AStandardMetadataAttributes<RoleRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the Role SERIAL reference.
+   * <p>
+   * Format is S20
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +87,9 @@ public class RoleRef extends AStandardMetadataAttributes<RoleRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the a Role SERIAL reference.
+   * <p>
+   * Format is S20
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -84,7 +100,7 @@ public class RoleRef extends AStandardMetadataAttributes<RoleRef> {
   }
 
   /**
-   * Get a string representation of this RoleRef instance configuration.
+   * Get the string representation of this RoleRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

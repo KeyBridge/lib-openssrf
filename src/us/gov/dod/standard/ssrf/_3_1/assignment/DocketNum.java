@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS12;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,21 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "DocketNum", propOrder = {
   "value"
 })
-public class DocketNum extends AStandardMetadataAttributes<DocketNum> {
+public class DocketNum extends AMetadata<DocketNum> {
 
+  /**
+   * The reference number assigned by the Interdepartment Radio Advisory
+   * Committee (IRAC) to frequency applications submitted to the Frequency
+   * Assignment Subcommittee (FAS).
+   * <p>
+   * Format is S12
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS12.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the IRAC reference number.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +65,9 @@ public class DocketNum extends AStandardMetadataAttributes<DocketNum> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the IRAC reference number.
+   * <p>
+   * Format is S12
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +85,9 @@ public class DocketNum extends AStandardMetadataAttributes<DocketNum> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the IRAC reference number.
+   * <p>
+   * Format is S12
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance

@@ -38,6 +38,17 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * CommentSource is used to provide comments to a SSRequest. It can also be used
  * to certify supportability.
  * <p>
+ * Notes (US)
+ * <ul>
+ * <li>The Date for a Source of "SPS" is also the date the SPS official signed
+ * the Certification of Spectrum Support. The date for a Source of "NTIA" is the
+ * date the NTIA Certifying Official signed the Certification of Spectrum
+ * Support.</li>
+ * <li>For NTIA and the Spectrum Planning Subcommittee (SPS), the first Comment
+ * is the signing statement in the corresponding Section 4 or 5 respectively of
+ * the Certification of Spectrum Support page.</li>
+ * </ul>
+ * <p>
  * Element of {@link SSReply}
  * <p>
  * Sub-Element is {@link Comment}
@@ -348,7 +359,7 @@ public class CommentSource {
   }
 
   /**
-   * Get a string representation of this CommentSource instance configuration.
+   * Get the string representation of this CommentSource instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

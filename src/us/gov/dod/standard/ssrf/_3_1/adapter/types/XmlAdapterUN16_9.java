@@ -26,14 +26,14 @@ package us.gov.dod.standard.ssrf._3_1.adapter.types;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 
 /**
- * XML data type adapter for the SSRF US_UN16_9 data type.
+ * XML data type adapter for the SSRF UN16_9 data type.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterUS_UN16_9 extends AXmlAdapterNumber {
+public class XmlAdapterUN16_9 extends AXmlAdapterNumber {
 
-  public XmlAdapterUS_UN16_9() {
+  public XmlAdapterUN16_9() {
     super(16, 9, 0, null);
   }
 }

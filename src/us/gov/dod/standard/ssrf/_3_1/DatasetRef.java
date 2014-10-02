@@ -24,11 +24,14 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
- * DatasetRef
+ * DatasetRefs lists the serial for each primary Dataset included in a single
+ * Message.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -37,13 +40,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "DatasetRef", propOrder = {
   "value"
 })
-public class DatasetRef extends AStandardMetadataAttributes<DatasetRef> {
+public class DatasetRef extends AMetadata<DatasetRef> {
 
+  /**
+   * The serial for a unique primary Dataset included in the Message.
+   * <p>
+   * Format is SERIAL
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a serial for a unique primary Dataset included in the Message.
    * <p>
    * @return a {@link String} instance
    */
@@ -52,7 +61,7 @@ public class DatasetRef extends AStandardMetadataAttributes<DatasetRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a serial for a unique primary Dataset included in the Message.
    * <p>
    * @param value a {@link String} instance
    */
@@ -70,7 +79,7 @@ public class DatasetRef extends AStandardMetadataAttributes<DatasetRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a serial for a unique primary Dataset included in the Message.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance

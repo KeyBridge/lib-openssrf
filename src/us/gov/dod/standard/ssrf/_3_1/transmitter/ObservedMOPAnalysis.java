@@ -313,7 +313,7 @@ public class ObservedMOPAnalysis {
    * the waveform (actual PD times instantaneous bandwidth).
    */
   @XmlElement(name = "MOPTimeBWProduct", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_UN16_9.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN16_9.class)
   private TDecimal mopTimeBWProduct;
   /**
    * In Data Item MOPType (US), indicate if the information imprinted on the

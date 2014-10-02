@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.TOA;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,22 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "ChannelPlanRef", propOrder = {
   "value"
 })
-public class ChannelPlanRef extends AStandardMetadataAttributes<ChannelPlanRef> {
+public class ChannelPlanRef extends AMetadata<ChannelPlanRef> {
 
+  /**
+   * The serial of the referenced ChannelPlan.
+   * <p>
+   * Format is SERIAL.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "CP".
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the serial of the referenced ChannelPlan.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +66,9 @@ public class ChannelPlanRef extends AStandardMetadataAttributes<ChannelPlanRef> 
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial of the referenced ChannelPlan.
+   * <p>
+   * Format is SERIAL
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +86,9 @@ public class ChannelPlanRef extends AStandardMetadataAttributes<ChannelPlanRef> 
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial of the referenced ChannelPlan.
+   * <p>
+   * Format is SERIAL
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -84,7 +99,7 @@ public class ChannelPlanRef extends AStandardMetadataAttributes<ChannelPlanRef> 
   }
 
   /**
-   * Get a string representation of this ChannelPlanRef instance configuration.
+   * Get the string representation of this ChannelPlanRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

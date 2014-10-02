@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS35;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -41,12 +43,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "HostDocketNum", propOrder = {
   "value"
 })
-public class HostDocketNum extends AStandardMetadataAttributes<HostDocketNum> {
+public class HostDocketNum extends AMetadata<HostDocketNum> {
 
+  /**
+   * The Host Nation docket number from a prior data repository.
+   * <p>
+   * Format is S35
+   */
+  @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS35.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a Host Nation docket number.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +64,9 @@ public class HostDocketNum extends AStandardMetadataAttributes<HostDocketNum> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a Host Nation docket number.
+   * <p>
+   * Format is S35
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +84,9 @@ public class HostDocketNum extends AStandardMetadataAttributes<HostDocketNum> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a Host Nation docket number.
+   * <p>
+   * Format is S35
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance

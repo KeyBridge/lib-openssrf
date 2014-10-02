@@ -24,9 +24,11 @@
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
 import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -43,13 +45,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "LocationRef", propOrder = {
   "value"
 })
-public class LocationRef extends AStandardMetadataAttributes<LocationRef> {
+public class LocationRef extends AMetadata<LocationRef> {
 
+  /**
+   * The serial of the referenced Location.
+   * <p>
+   * Format is SERIAL
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the value that is most probably correct.
    * <p>
    * @return a {@link String} instance
    */
@@ -58,7 +66,7 @@ public class LocationRef extends AStandardMetadataAttributes<LocationRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the value that is most probably correct.
    * <p>
    * @param value a {@link String} instance
    */
@@ -76,7 +84,20 @@ public class LocationRef extends AStandardMetadataAttributes<LocationRef> {
   }
 
   /**
-   * Get a string representation of this LocationRef instance configuration.
+   * Set the serial of the referenced Location.
+   * <p>
+   * Format is SERIAL
+   * <p>
+   * @param value An instances of type {@link String}
+   * @return The current LocationRestriction object instance
+   */
+  public LocationRef withValue(String value) {
+    setValue(value);
+    return this;
+  }
+
+  /**
+   * Get the string representation of this LocationRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

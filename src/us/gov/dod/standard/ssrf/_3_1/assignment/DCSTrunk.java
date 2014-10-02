@@ -24,7 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS6;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -46,13 +48,20 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "DCSTrunk", propOrder = {
   "value"
 })
-public class DCSTrunk extends AStandardMetadataAttributes<DCSTrunk> {
+public class DCSTrunk extends AMetadata<DCSTrunk> {
 
+  /**
+   * The Defense Communications System (DCS) trunk identifier assigned by the
+   * Defense Information Systems Agency (DISA).
+   * <p>
+   * Format is S6
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS6.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a Defense Communications System (DCS) trunk identifier
    * <p>
    * @return a {@link String} instance
    */
@@ -61,7 +70,9 @@ public class DCSTrunk extends AStandardMetadataAttributes<DCSTrunk> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a Defense Communications System (DCS) trunk identifier
+   * <p>
+   * Format is S6
    * <p>
    * @param value a {@link String} instance
    */
@@ -79,7 +90,9 @@ public class DCSTrunk extends AStandardMetadataAttributes<DCSTrunk> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a Defense Communications System (DCS) trunk identifier
+   * <p>
+   * Format is S6
    * <p>
    * @param value An instances of type {@link String}
    * @return The current DCSTrunk object instance

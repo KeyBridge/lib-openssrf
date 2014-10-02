@@ -25,7 +25,9 @@ package us.gov.dod.standard.ssrf._3_1.channelplan;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUN16_9;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "ChannelFreq", propOrder = {
   "value"
 })
-public class ChannelFreq extends AStandardMetadataAttributes<ChannelFreq> {
+public class ChannelFreq extends AMetadata<ChannelFreq> {
 
+  /**
+   * A frequency in the channel plan.
+   * <p>
+   * Format is UN(16,9) [0..1.0E9](MHz)
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterUN16_9.class)
   private BigDecimal value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the frequency in the channel plan. (MHz)
    * <p>
    * @return a {@link BigDecimal} instance
    */
@@ -55,7 +63,7 @@ public class ChannelFreq extends AStandardMetadataAttributes<ChannelFreq> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the frequency in the channel plan. (MHz)
    * <p>
    * @param value a {@link BigDecimal} instance
    */
@@ -73,7 +81,7 @@ public class ChannelFreq extends AStandardMetadataAttributes<ChannelFreq> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the frequency in the channel plan. (MHz)
    * <p>
    * @param value An instances of type {@link BigDecimal}
    * @return The current ChannelFreq object instance
@@ -84,7 +92,7 @@ public class ChannelFreq extends AStandardMetadataAttributes<ChannelFreq> {
   }
 
   /**
-   * Get a string representation of this ChannelFreq instance configuration.
+   * Get the string representation of this ChannelFreq instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

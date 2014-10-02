@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSC;
 
@@ -40,13 +40,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSC;
 @XmlType(name = "StnClass", propOrder = {
   "value"
 })
-public class StnClass extends AStandardMetadataAttributes<StnClass> {
+public class StnClass extends AMetadata<StnClass> {
 
+  /**
+   * The station class, as defined by the appropriate Administration. When
+   * exchanging with NATO, only include ITU entries.
+   * <p>
+   * Format is L:USC.
+   */
   @XmlValue
   private ListUSC value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the station class.
    * <p>
    * @return a {@link ListUSC} instance
    */
@@ -55,7 +61,7 @@ public class StnClass extends AStandardMetadataAttributes<StnClass> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the station class.
    * <p>
    * @param value a {@link ListUSC} instance
    */
@@ -73,7 +79,7 @@ public class StnClass extends AStandardMetadataAttributes<StnClass> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the station class.
    * <p>
    * @param value An instances of type {@link ListUSC}
    * @return The current StnClass object instance
@@ -84,7 +90,7 @@ public class StnClass extends AStandardMetadataAttributes<StnClass> {
   }
 
   /**
-   * Get a string representation of this StnClass instance configuration.
+   * Get the string representation of this StnClass instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

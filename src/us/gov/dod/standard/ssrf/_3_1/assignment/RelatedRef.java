@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -41,13 +43,27 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "RelatedRef", propOrder = {
   "value"
 })
-public class RelatedRef extends AStandardMetadataAttributes<RelatedRef> {
+public class RelatedRef extends AMetadata<RelatedRef> {
 
+  /**
+   * The serial of a related Dataset, such as a SSReply. This MAY be used to
+   * link several assignments which are related to each other, or to refer to
+   * the Supportability documentation on which the assignment is based. It MAY
+   * also be used to indicate that the assignment applies to a specific force
+   * element. It SHOULD be used when an assignment is produced from an
+   * Allotment.
+   * <p>
+   * Format is SERIAL
+   * <p>
+   * Part 3 of the serial reference (dataset type) MUST be "AS or AL or HD or FE
+   * or FD".
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the serial of a related Dataset
    * <p>
    * @return a {@link String} instance
    */
@@ -56,7 +72,9 @@ public class RelatedRef extends AStandardMetadataAttributes<RelatedRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial of a related Dataset
+   * <p>
+   * Format is SERIAL
    * <p>
    * @param value a {@link String} instance
    */
@@ -74,7 +92,9 @@ public class RelatedRef extends AStandardMetadataAttributes<RelatedRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial of a related Dataset
+   * <p>
+   * Format is SERIAL
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -85,7 +105,7 @@ public class RelatedRef extends AStandardMetadataAttributes<RelatedRef> {
   }
 
   /**
-   * Get a string representation of this RelatedRef instance configuration.
+   * Get the string representation of this RelatedRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

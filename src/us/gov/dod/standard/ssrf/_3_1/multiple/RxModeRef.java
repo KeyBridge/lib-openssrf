@@ -24,7 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS20;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,22 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "RxModeRef", propOrder = {
   "value"
 })
-public class RxModeRef extends AStandardMetadataAttributes<RxModeRef> {
+public class RxModeRef extends AMetadata<RxModeRef> {
 
+  /**
+   * The unique Mode Identifier (ModeID) of a RxMode.
+   * <p>
+   * Format is S20
+   * <p>
+   * [XSL WRN RELATED] This item, with item Serial in parent element SHOULD
+   * refer to an existing Receiver/RxMode in the data repository.
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS20.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the unique Mode Identifier (ModeID) of a RxMode.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +66,7 @@ public class RxModeRef extends AStandardMetadataAttributes<RxModeRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the unique Mode Identifier (ModeID) of a RxMode.
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +84,9 @@ public class RxModeRef extends AStandardMetadataAttributes<RxModeRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the unique Mode Identifier (ModeID) of a RxMode.
+   * <p>
+   * Format is S20
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -84,7 +97,7 @@ public class RxModeRef extends AStandardMetadataAttributes<RxModeRef> {
   }
 
   /**
-   * Get a string representation of this RxModeRef instance configuration.
+   * Get the string representation of this RxModeRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

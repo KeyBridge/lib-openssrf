@@ -24,13 +24,14 @@
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * HostNation indicates the host nations from which supportability is requested.
+ * <p>
  * If a SSRequest received by NATO has no HostNation entry, it will be assumed
  * that this SSRequest is for all NATO Nations plus AUS and NZL (in accordance
  * with the FMSC agreement).
@@ -49,13 +50,20 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "HostNation", propOrder = {
   "value"
 })
-public class HostNation extends AStandardMetadataAttributes<HostNation> {
+public class HostNation extends AMetadata<HostNation> {
 
+  /**
+   * The country code of the desired host nation. Use a one to six alphabetic
+   * characters representing either an official country code, a group of
+   * countries or a NATO Command.
+   * <p>
+   * Format is L:CAO
+   */
   @XmlValue
   private ListCAO value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get a country code of the desired host nation.
    * <p>
    * @return a {@link ListCAO} instance
    */
@@ -64,7 +72,7 @@ public class HostNation extends AStandardMetadataAttributes<HostNation> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a country code of the desired host nation.
    * <p>
    * @param value a {@link ListCAO} instance
    */
@@ -82,7 +90,7 @@ public class HostNation extends AStandardMetadataAttributes<HostNation> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set a country code of the desired host nation.
    * <p>
    * @param value An instances of type {@link ListCAO}
    * @return The current HostNation object instance

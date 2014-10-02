@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.TOA;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -47,13 +47,20 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Country", propOrder = {
   "value"
 })
-public class Country extends AStandardMetadataAttributes<Country> {
+public class Country extends AMetadata<Country> {
 
+  /**
+   * The country or area code.
+   * <p>
+   * Format is L:CAO
+   */
   @XmlValue
   private ListCAO value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the country or area code.
+   * <p>
+   * Format is L:CAO
    * <p>
    * @return a {@link ListCAO} instance
    */
@@ -62,7 +69,7 @@ public class Country extends AStandardMetadataAttributes<Country> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the country or area code.
    * <p>
    * @param value a {@link ListCAO} instance
    */
@@ -80,7 +87,9 @@ public class Country extends AStandardMetadataAttributes<Country> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the country or area code.
+   * <p>
+   * Format is L:CAO
    * <p>
    * @param value An instances of type {@link ListCAO}
    * @return The current Country object instance
@@ -91,7 +100,7 @@ public class Country extends AStandardMetadataAttributes<Country> {
   }
 
   /**
-   * Get a string representation of this Country instance configuration.
+   * Get the string representation of this Country instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */

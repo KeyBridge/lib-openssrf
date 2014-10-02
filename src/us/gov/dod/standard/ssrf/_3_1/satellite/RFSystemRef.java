@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -40,13 +42,22 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "RFSystemRef", propOrder = {
   "value"
 })
-public class RFSystemRef extends AStandardMetadataAttributes<RFSystemRef> {
+public class RFSystemRef extends AMetadata<RFSystemRef> {
 
+  /**
+   * The dataset identifier of a RFSystem.
+   * <p>
+   * Format is SERIAL.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "TR".
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
 
   /**
-   * Get a value that is most probably correct.
+   * Get the serial identifier of a RFSystem.
    * <p>
    * @return a {@link String} instance
    */
@@ -55,7 +66,9 @@ public class RFSystemRef extends AStandardMetadataAttributes<RFSystemRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial identifier of a RFSystem.
+   * <p>
+   * Format is SERIAL
    * <p>
    * @param value a {@link String} instance
    */
@@ -73,7 +86,9 @@ public class RFSystemRef extends AStandardMetadataAttributes<RFSystemRef> {
   }
 
   /**
-   * Set a value that is most probably correct.
+   * Set the serial identifier of a RFSystem.
+   * <p>
+   * Format is SERIAL
    * <p>
    * @param value An instances of type {@link String}
    * @return The current LocationRestriction object instance
@@ -84,7 +99,7 @@ public class RFSystemRef extends AStandardMetadataAttributes<RFSystemRef> {
   }
 
   /**
-   * Get a string representation of this RFSystemRef instance configuration.
+   * Get the string representation of this RFSystemRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */
