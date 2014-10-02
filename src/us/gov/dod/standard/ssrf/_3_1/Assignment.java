@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * Assignment is the XML root for all parameters of a system of assignments.
  * <p>
  * Sub-Elements are
- * {@link AsgnAllotOwner}, {@link CircuitRemarks}, {@link Configuration}, {@link CoordinationData}, {@link DocketNum}, {@link HostDocketNum}, {@link Link}, {@link OffTheShelfEquipment}, {@link POCInformation}, {@link PreviousAuthorization}, {@link Project}, {@link RecordNote}, {@link RelatedRef}, {@link Station}, {@link StatusLog}, {@link SysofStation}
+ * {@link AsgnAllotOwner}, {@link CircuitRemarks}, {@link Configuration}, {@link CoordinationData}, {@link DocketNum}, {@link HostDocketNum}, {@link Link}, {@link OffTheShelfEquipment}, {@link POCInformation}, {@link PreviousAuthorization}, {@link Project}, {@link RecordNote}, {@link RelatedRef}, {@link Station}, {@link StatusLog}, {@link SysOfStation}
  * <p>
  * Example:
  * <pre>
@@ -641,7 +641,13 @@ public class Assignment extends Common<Assignment> {
   @XmlElement(name = "UserNetCode", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
   private TString userNetCode;
-
+  /**
+   * US:PrimaryStation - Primary Station (Optional)
+   * <p>
+   * Whether this station is the station of primary regulatory interest.
+   * <p>
+   * Format is L:CBO
+   */
   @XmlElement(name = "PrimaryStation", required = false)
   private TString primaryStation;
   /**
