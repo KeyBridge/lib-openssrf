@@ -824,7 +824,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   @Override
   public boolean isSet() {
-    return true;
+    return super.isSet();
   }
 
 }

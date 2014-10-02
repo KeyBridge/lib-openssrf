@@ -645,7 +645,7 @@ public class Contact extends Common<Contact> {
    */
   @Override
   public boolean isSet() {
-    return true;
+    return super.isSet();
   }
 
 }

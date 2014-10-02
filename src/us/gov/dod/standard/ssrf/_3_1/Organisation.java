@@ -857,7 +857,7 @@ public class Organisation extends Common<Organisation> {
    */
   @Override
   public boolean isSet() {
-    return true;
+    return super.isSet();
   }
 
 }

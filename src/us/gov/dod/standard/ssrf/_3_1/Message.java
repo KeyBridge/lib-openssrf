@@ -268,7 +268,7 @@ public class Message extends Common<Message> {
    */
   @Override
   public boolean isSet() {
-    return true;
+    return super.isSet();
   }
 
 }

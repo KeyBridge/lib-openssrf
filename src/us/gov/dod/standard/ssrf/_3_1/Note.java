@@ -340,7 +340,7 @@ public class Note extends Common<Note> {
    */
   @Override
   public boolean isSet() {
-    return true;
+    return super.isSet();
   }
 
 }

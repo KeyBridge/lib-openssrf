@@ -1339,7 +1339,7 @@ public class Satellite extends Common<Satellite> {
    */
   @Override
   public boolean isSet() {
-    return true;
+    return super.isSet();
   }
 
 }

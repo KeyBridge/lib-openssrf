@@ -80,79 +80,79 @@ import javax.xml.bind.annotation.XmlType;
 public abstract class SchemaRoot<T> {
 
   @XmlElement(name = "Contact")
-  private List<Contact> contact;
+  protected List<Contact> contact;
 
   @XmlElement(name = "Role")
-  private List<Role> role;
+  protected List<Role> role;
 
   @XmlElement(name = "Organisation")
-  private List<Organisation> organisation;
+  protected List<Organisation> organisation;
 
   @XmlElement(name = "ExternalReference")
-  private List<ExternalReference> externalReference;
+  protected List<ExternalReference> externalReference;
 
   @XmlElement(name = "Administrative")
-  private List<Administrative> administrative;
+  protected List<Administrative> administrative;
 
   @XmlElement(name = "Location")
-  private List<Location> location;
+  protected List<Location> location;
 
   @XmlElement(name = "ChannelPlan")
-  private List<ChannelPlan> channelPlan;
+  protected List<ChannelPlan> channelPlan;
 
   @XmlElement(name = "TOA")
-  private List<TOA> toa;
+  protected List<TOA> toa;
 
   @XmlElement(name = "Transmitter")
-  private List<Transmitter> transmitter;
+  protected List<Transmitter> transmitter;
 
   @XmlElement(name = "Receiver")
-  private List<Receiver> receiver;
+  protected List<Receiver> receiver;
 
   @XmlElement(name = "Antenna")
-  private List<Antenna> antenna;
+  protected List<Antenna> antenna;
 
   @XmlElement(name = "RFSystem")
-  private List<RFSystem> rfSystem;
+  protected List<RFSystem> rfSystem;
 
   @XmlElement(name = "SSRequest")
-  private List<SSRequest> ssRequest;
+  protected List<SSRequest> ssRequest;
 
   @XmlElement(name = "SSReply")
-  private List<SSReply> ssReply;
+  protected List<SSReply> ssReply;
 
   @XmlElement(name = "Allotment")
-  private List<Allotment> allotment;
+  protected List<Allotment> allotment;
 
   @XmlElement(name = "Assignment")
-  private List<Assignment> assignment;
+  protected List<Assignment> assignment;
 
   @XmlElement(name = "Satellite")
-  private List<Satellite> satellite;
+  protected List<Satellite> satellite;
 
   @XmlElement(name = "IntfReport")
-  private List<IntfReport> intfReport;
+  protected List<IntfReport> intfReport;
 
   @XmlElement(name = "JRFL")
-  private List<JRFL> jrfl;
+  protected List<JRFL> jrfl;
 
   @XmlElement(name = "ForceElement")
-  private List<ForceElement> forceElement;
+  protected List<ForceElement> forceElement;
 
   @XmlElement(name = "FEDeployment")
-  private List<FEDeployment> feDeployment;
+  protected List<FEDeployment> feDeployment;
 
   @XmlElement(name = "Message")
-  private List<Message> message;
+  protected List<Message> message;
 
   @XmlElement(name = "Note")
-  private List<Note> note;
+  protected List<Note> note;
 
   @XmlElement(name = "Loadset")
-  private List<Loadset> loadset;
+  protected List<Loadset> loadset;
 
   @XmlElement(name = "RadiationPlan")
-  private List<RadiationPlan> radiationPlan;
+  protected List<RadiationPlan> radiationPlan;
 
   /**
    * Get
