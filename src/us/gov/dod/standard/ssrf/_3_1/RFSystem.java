@@ -40,6 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.forceelement.StockNum;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSG;
 import us.gov.dod.standard.ssrf._3_1.receiver.Deployment;
 import us.gov.dod.standard.ssrf._3_1.rfsystem.RelatedSystem;

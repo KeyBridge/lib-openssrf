@@ -41,6 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.antenna.UsingCountries;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAT;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRS;
 
 /**

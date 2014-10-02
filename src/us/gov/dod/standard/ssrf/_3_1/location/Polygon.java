@@ -67,11 +67,23 @@ public class Polygon {
    */
   @XmlElement(name = "Excluded", required = false)
   private TString excluded;
-
+  /**
+   * AltitudeMin - Minimum or nominal height of the point (Optional)
+   * <p>
+   * The minimum or nominal height of the point above the terrain (also known as
+   * "above ground level" AGL).
+   */
   @XmlElement(name = "AltitudeMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMin;
-
+  /**
+   * AltitudeMax - Maximum or nominal height of the point (Optional)
+   * <p>
+   * The maximum or nominal height of the point above the terrain (also known as
+   * "above ground level" AGL).
+   * <p>
+   * If AltitudeMax is used, it MUST be greater than AltitudeMin.
+   */
   @XmlElement(name = "AltitudeMax", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMax;

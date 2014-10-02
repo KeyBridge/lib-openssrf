@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.allotment;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * LocationRestriction indicates a Location where the Allotment usage is

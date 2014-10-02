@@ -33,6 +33,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * JRFL is the XML root for all parameters of a JRFL. It inherits attributes and

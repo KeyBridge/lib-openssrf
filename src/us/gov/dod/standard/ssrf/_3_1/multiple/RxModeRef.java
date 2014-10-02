@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * RxModeRef references a RxMode of the receiver used in a specific

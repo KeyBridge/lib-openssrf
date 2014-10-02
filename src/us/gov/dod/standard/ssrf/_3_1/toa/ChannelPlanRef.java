@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_1.TOA;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * ChannelPlanRef refers to a ChannelPlan.

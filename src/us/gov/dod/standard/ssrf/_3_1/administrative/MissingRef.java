@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.administrative;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * MissingRef allows the recipient of a message to signal the sender that a

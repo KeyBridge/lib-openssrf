@@ -38,6 +38,7 @@ import us.gov.dod.standard.ssrf._3_1.location.Point;
 import us.gov.dod.standard.ssrf._3_1.location.Polygon;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * Location is used to describe a geographical location, polygonal or ellipse

@@ -139,7 +139,14 @@ public class ConfigFreq {
   @XmlElement(name = "Duration", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal duration;
-
+  /**
+   * US:ConfigFreqUse - Primary Usage (Optional)
+   * <p>
+   * The primary usage of the discrete configuration frequency or frequency
+   * range.
+   * <p>
+   * Format is L:UFU
+   */
   @XmlElement(name = "ConfigFreqUse", required = false)
   private TString configFreqUse;
   /**

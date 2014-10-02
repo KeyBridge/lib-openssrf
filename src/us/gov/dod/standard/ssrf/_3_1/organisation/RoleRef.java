@@ -25,6 +25,8 @@ package us.gov.dod.standard.ssrf._3_1.organisation;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf._3_1.Organisation;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * RoleRef contains the serial of a referenced Role.

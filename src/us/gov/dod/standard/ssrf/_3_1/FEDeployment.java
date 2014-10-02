@@ -36,6 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
 import us.gov.dod.standard.ssrf._3_1.fedeployment.AtWaypoint;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFD;
 
 /**
@@ -43,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFD;
  * deployment has a period of time for which the deployment is valid described
  * by the start and end date/time.
  * <p>
- * Sub-Elements are {@link AtWayPoint}, {@link Project}
+ * Sub-Elements are {@link AtWaypoint}, {@link Project}
  * <p>
  * Example:
  * <pre>

@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * LoadsetRef describes the jamming loadset to be used against a specific target

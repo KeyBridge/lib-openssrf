@@ -26,6 +26,8 @@ package us.gov.dod.standard.ssrf._3_1.allotment;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
+import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * LocationRef references a Location dataset.

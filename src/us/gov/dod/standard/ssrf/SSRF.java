@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf._3_1.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-@XmlRootElement
+@XmlRootElement(name = "SSRF")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SSRF")
 public class SSRF extends SchemaRoot<SSRF> {

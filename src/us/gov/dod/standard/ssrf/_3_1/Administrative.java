@@ -36,6 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_1.administrative.Dataset;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDR;
 
 /**

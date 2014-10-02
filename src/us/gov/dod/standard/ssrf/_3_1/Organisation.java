@@ -35,6 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.contact.Address;
 import us.gov.dod.standard.ssrf._3_1.contact.EMail;
 import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTO;
 import us.gov.dod.standard.ssrf._3_1.organisation.RelatedOrganisation;
 import us.gov.dod.standard.ssrf._3_1.organisation.RoleRef;

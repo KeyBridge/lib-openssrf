@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.channelplan;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.AStandardMetadataAttributes;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * ChannelFreq contains one frequency in the channel plan.
