@@ -64,6 +64,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TInteger;
 public class AXmlAdapterNumber extends XmlAdapter<String, IMetadataType> {
 
   /**
+   * "XmlAdapter". The standard adapter name prefix. This is used when
+   * constructing an error message.
+   */
+  private static final String NAME_PREFIX = "XmlAdapter";
+
+  /**
    * The maximum number of total digits in the number, inclusive of fraction
    * digits. e.g. 123.456 contains 6 digits.
    */
@@ -126,6 +132,8 @@ public class AXmlAdapterNumber extends XmlAdapter<String, IMetadataType> {
   /**
    * Convert a bound type to a value type.
    * <p>
+   * This is called when converting an object to XML.
+   * <p>
    * @param v The value to be convereted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -139,6 +147,8 @@ public class AXmlAdapterNumber extends XmlAdapter<String, IMetadataType> {
 
   /**
    * Convert a value type to a bound type.
+   * <p>
+   * This is called with converting XML to an object.
    * <p>
    * @param v The value to be converted. Can be null.
    * @return the converted value
@@ -165,23 +175,23 @@ public class AXmlAdapterNumber extends XmlAdapter<String, IMetadataType> {
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception(this.getClass().getSimpleName() + " [" + minInclusive + "] minimum value violation [" + v + "]");
+      throw new Exception("minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for " + v + ".");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception(this.getClass().getSimpleName() + " [" + maxInclusive + "] maximum value violation [" + v + "]");
+      throw new Exception("maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for " + v + ".");
     }
     /**
      * Validate the digit count.
      */
     if (v instanceof BigInteger) {
       if (totalDigits != null && totalDigits > getDigitCount((BigInteger) v)) {
-        throw new Exception(this.getClass().getSimpleName() + " [" + totalDigits + "] maximum digits violation [" + v + "]");
+        throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
       }
       return new TInteger((BigInteger) v);
     } else if (v instanceof BigDecimal) {
       BigDecimal bd = new BigDecimal(v.doubleValue()).setScale(fractionDigits, RoundingMode.CEILING);
       if (totalDigits < bd.precision()) {
-        throw new Exception(this.getClass().getSimpleName() + " [" + totalDigits + "] maximum digits violation [" + bd + "]");
+        throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + bd + ".");
       }
       return new TDecimal(bd);
     }

@@ -42,6 +42,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
 
   /**
+   * "XmlAdapter". The standard adapter name prefix. This is used when
+   * constructing an error message.
+   */
+  private static final String NAME_PREFIX = "XmlAdapter";
+
+  /**
    * The minimum string length.
    */
   private final Integer minLength;
@@ -83,7 +89,9 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
   /**
    * Convert a bound type to a value type.
    * <p>
-   * @param v The value to be convereted. Can be null.
+   * This is called when converting an object to XML.
+   * <p>
+   * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
    *                   responsible for reporting the error to the user through
@@ -97,6 +105,8 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
   /**
    * Convert a value type to a bound type.
    * <p>
+   * This is called with converting XML to an object.
+   * <p>
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -105,6 +115,9 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
    */
   @Override
   public TString unmarshal(String v) throws Exception {
+    /**
+     * DEBUG - simply return the value for a relaxed configuration.
+     */
 //    return convert(v);
     return new TString(v);
   }
@@ -120,17 +133,17 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
    */
   private String convert(TString v) throws Exception {
     if (minLength != null && v.getValue().length() < minLength) {
-      throw new Exception(this.getClass().getSimpleName() + " [" + minLength + "-" + maxLength + "] string length violation [" + v.getValue().length() + "]");
+      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.getValue().length() + ".");
     }
     if (maxLength != null && v.getValue().length() > maxLength) {
-      throw new Exception(this.getClass().getSimpleName() + " [" + minLength + "-" + maxLength + "] string length violation [" + v.getValue().length() + "]");
+      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.getValue().length() + ".");
     }
     /**
-     * Validate the pattern if set.
+     * If the string length is valid then validate the pattern if applicable.
      */
     if (pattern != null) {
       if (!Pattern.compile(pattern).matcher(v.getValue()).find()) {
-        throw new Exception(this.getClass().getSimpleName() + " [" + pattern + "] string pattern violation [" + v.getValue() + "]");
+        throw new Exception("string pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + pattern + "] for \"" + v.getValue() + "\".");
       }
     }
     /**

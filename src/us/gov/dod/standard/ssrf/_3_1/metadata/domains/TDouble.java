@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * A Numeric Double instance with SSRF Standard Metadata Attributes. This
@@ -83,6 +84,26 @@ public class TDouble extends AMetadata<TDouble> implements IMetadataType {
     return (this.value != null);
   }
 
+  /**
+   * Determine if the required fields in this SSRF data type instance are set.
+   * <p>
+   * {@link TDouble} requires {@link ListCCL cls} and {@link Double value}
+   * <p>
+   * Note that this method only checks for the presence of required information;
+   * this method does not validate the information format.
+   * <p>
+   * @return TRUE if required fields are set, otherwise FALSE
+   */
+  @Override
+  public boolean isSet() {
+    return super.isSet() && isSetValue();
+  }
+
+  /**
+   * Get the configured value.
+   * <p>
+   * @return the value.
+   */
   @Override
   public String toString() {
     return value != null ? value.toString() : null;
