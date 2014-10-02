@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf;
 
+import java.util.Collection;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -42,5 +43,42 @@ import us.gov.dod.standard.ssrf._3_1.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SSRF")
 public class SSRF extends SchemaRoot<SSRF> {
+
+  /**
+   * Validate a SSRF Object instance.
+   * <p>
+   * This method recursively validates the SSRF instance and all of its
+   * components.
+   * <p>
+   * The validation procedure ensures that all required fields are set and that
+   * all configured fields contain valid data according to the SSRF data
+   * formatting rules.
+   * <p>
+   * If the object instance is NOT valid call
+   * {@link #getErrorMessages(java.lang.Object)} to retrieve a list of
+   * validation errors.
+   * <p>
+   * @return TRUE the SSRF instance is valid; otherwise FALSE.
+   */
+  public boolean isValid() {
+    return SSRFUtility.isValid(this);
+  }
+
+  /**
+   * Validate a SSRF Object instance.
+   * <p>
+   * This method recursively validates the SSRF instance and all of its
+   * components.
+   * <p>
+   * The validation procedure ensures that all required fields are set and that
+   * all configured fields contain valid data according to the SSRF data
+   * formatting rules.
+   * <p>
+   * @return a non-null Collection of error messages. The collection is EMPTY if
+   *         the object instance validates OK.
+   */
+  public Collection<String> getErrorMessages() {
+    return SSRFUtility.getErrorMessages(this);
+  }
 
 }
