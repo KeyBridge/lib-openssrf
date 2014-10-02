@@ -4,7 +4,7 @@
 History
   10/01/14 - complete upgrade to v3.1.0
                comprehensively documented
-               implement isSet basic bean validation
+               implement isSet() method to validate required fields
   09/15/14 - finish marshal/unmarshal - read/write testing
   09/08/14 - complete rewrite to use a small number of simple data types
              move type validation logic into XML date type adapters:
@@ -17,6 +17,25 @@ History
 
 About:
 +------------------------------------------------------------------------------+
+
+10/01/14
+
+This updates and supercedes the September 15, 2014 software release.
+
+This is an automated build of the version 3.1.0 SSRF specification (with subsequent
+corrections).
+
+Updates and improvements in this release
+
+* All class fields and methods are completely documented with relationship and 
+  usage cross-linking within the documentation.
+* Class packaging is organized programmatically and according to the class hierarchy 
+  within the XSD
+* Field validation added to medadata group and reference class containers
+
+  
+
+
 
 09/15/14 V0.2
 
@@ -35,37 +54,37 @@ the construction of SSRF data structures.
 A few key developments for this release:
 
 Release versioning:
-•	This release is named version 0.2. 
-•	The previous release (May 26, 2014) is named version 0.1.
+*	This release is named version 0.2. 
+*	The previous release (May 26, 2014) is named version 0.1.
 
 Data type validation
-•	A comprehensive data type validation strategy has been incorporated into the 
+*	A comprehensive data type validation strategy has been incorporated into the 
 software to implement and enforce the SSRF data format and validation rules.  
 Only valid SSRF data types may be created (written) and imported (read); invalid 
 or malformed data types will fail during processing.
 
 Pick lists
-•	Support for pick lists has been updated to match both the schema and text of 
+*	Support for pick lists has been updated to match both the schema and text of 
 the specification. The software requires pick lists where appropriate and now 
 enables pick-list selection or custom, user-generated entries where allowed.
 
 Software packaging
-•	The SSRF library contains 417 different data types, each mapping to a discreet 
+*	The SSRF library contains 417 different data types, each mapping to a discreet 
 implementation class. These have been reorganized into 15 logical software 
 packages according to logical hierarchy, function and class-type association. 
-•	The top-level SSRF package now contains only 25 “primary” data types 
+*	The top-level SSRF package now contains only 25 “primary” data types 
 representing the core business processes and data conveyance of an SSRF message. 
 All other data types have been organized and moved into their respective packages.
 
 Software abstraction and simplification
-•	Metadata and other common elements and data attributes have been consolidated 
+*	Metadata and other common elements and data attributes have been consolidated 
 into several abstract classes and types. This is to improve software usability, 
 readability, organization and to streamline developer implementation. 
-•	A new “SSRF” class has been created and designated as the single point of entry 
+*	A new “SSRF” class has been created and designated as the single point of entry 
 into the SSRF data model to simplify developer implementation and data exchange.
 
 Developer utilities
-•	Methods supporting the fliend programming interface have been introduced 
+*	Methods supporting the fliend programming interface have been introduced 
 throughout the new software library. This is a major update and provides for 
 more readable and approachable software code; it allows programmers to build a 
 SSRF data structure using a “with” strategy. An example message builder 
