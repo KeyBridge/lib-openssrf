@@ -1,6 +1,6 @@
 package org.caulfield.ssrf.test;
 
-import us.gov.dod.standard.ssrf._3_0.location.Point;
+import us.gov.dod.standard.ssrf._3_1.location.Point;
 
 /**
  *

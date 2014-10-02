@@ -285,7 +285,7 @@ public class EMail {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link EMail} requires {@link TString Address}.
+   * {@link EMail Email} requires {@link TString Address}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

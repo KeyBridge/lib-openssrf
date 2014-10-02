@@ -40,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 /**
  * Contact is the XML root for all parameters of a Contact.
  * <p>
- * Sub-Elements are {@link Address}, {@link Email}, {@link TelephoneFax}
+ * Sub-Elements are {@link Address}, {@link EMail Email}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -602,7 +602,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    * <p>
-   * @param values A collection of {@link EMail} instances
+   * @param values A collection of {@link EMail Email} instances
    * @return The current Contact object instance
    */
   public Contact withEMail(Collection<EMail> values) {

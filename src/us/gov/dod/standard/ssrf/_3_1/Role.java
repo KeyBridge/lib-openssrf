@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.role.ContactRef;
  * in the USA).
  * <p>
  * Sub-Elements are
- * {@link Address}, {@link ContactRef}, {@link Email}, {@link TelephoneFax}
+ * {@link Address}, {@link ContactRef}, {@link EMail Email}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -610,7 +610,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    * <p>
-   * @param values A collection of {@link EMail} instances
+   * @param values A collection of {@link EMail Email} instances
    * @return The current Role object instance
    */
   public Role withEMail(Collection<EMail> values) {

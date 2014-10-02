@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.organisation.RoleRef;
  * agency, manufacturer, etc).
  * <p>
  * Sub-Elements are
- * {@link Address}, {@link Email}, {@link RelatedOrganisation}, {@link RoleRef}, {@link TelephoneFax}
+ * {@link Address}, {@link EMail Email}, {@link RelatedOrganisation}, {@link RoleRef}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -746,7 +746,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
    * <p>
-   * @param values A collection of {@link EMail} instances
+   * @param values A collection of {@link EMail Email} instances
    * @return The current Organisation object instance
    */
   public Organisation withEMail(Collection<EMail> values) {
