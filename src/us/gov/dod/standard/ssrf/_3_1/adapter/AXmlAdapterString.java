@@ -37,6 +37,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
  * character string of x characters maximum (the attribute accepts only upper
  * case characters).
  * <p>
+ * This abstract adapter converts between a {@link java.lang.String} and a
+ * {@link TString}.
+ * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
 public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
@@ -99,7 +102,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
    */
   @Override
   public String marshal(TString v) throws Exception {
-    return convert(v);
+    return convert(v.getValue());
   }
 
   /**
@@ -119,7 +122,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
      * DEBUG - simply return the value for a relaxed configuration.
      */
 //    return new TString(v);
-    return new TString(convert(new TString(v)));
+    return new TString(convert(v));
   }
 
   /**
@@ -131,25 +134,25 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
    *                   responsible for reporting the error to the user through
    *                   ValidationEventHandler.
    */
-  private String convert(TString v) throws Exception {
-    if (minLength != null && v.getValue().length() < minLength) {
-      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.getValue().length() + ".");
+  private String convert(String v) throws Exception {
+    if (minLength != null && v.length() < minLength) {
+      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }
-    if (maxLength != null && v.getValue().length() > maxLength) {
-      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.getValue().length() + ".");
+    if (maxLength != null && v.length() > maxLength) {
+      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }
     /**
      * If the string length is valid then validate the pattern if applicable.
      */
     if (pattern != null) {
-      if (!Pattern.compile(pattern).matcher(v.getValue()).find()) {
-        throw new Exception("string pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + pattern + "] for \"" + v.getValue() + "\".");
+      if (!Pattern.compile(pattern).matcher(v).find()) {
+        throw new Exception("string pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + pattern + "] for \"" + v + "\".");
       }
     }
     /**
      * Convert to upper case if indicated.
      */
-    return upperCase ? v.getValue().toUpperCase(Locale.getDefault()) : v.getValue();
+    return upperCase ? v.toUpperCase(Locale.getDefault()) : v;
   }
 
 }

@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUN16_9;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUS_UN16_9;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -50,7 +50,7 @@ public class ChannelFreq extends AMetadata<ChannelFreq> {
    * Format is UN(16,9) [0..1.0E9](MHz)
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterUN16_9.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterUS_UN16_9.class)
   private BigDecimal value;
 
   /**

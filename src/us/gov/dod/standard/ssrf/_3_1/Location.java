@@ -279,6 +279,15 @@ public class Location extends Common<Location> {
   @XmlElement(name = "LocationRef", nillable = true)
   private List<LocationRef> locationRef;
 
+  private Location() {
+  }
+
+  public static Location getInstance() {
+    return new Location()
+      .withSerial(TSerial.getInstance(Location.class))
+      .withEffectiveDate(Calendar.getInstance());
+  }
+
   /**
    * Get the date by which the dataset is to be operational or effective.
    * <p>
@@ -989,7 +998,7 @@ public class Location extends Common<Location> {
   @Override
   public String toString() {
     return "Location {"
-      + " locationRef [" + locationRef + "]"
+      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
       + " ellipse [" + ellipse + "]"
       + " expirationDate [" + expirationDate + "]"
       + " pocInformation [" + pocInformation + "]"
@@ -1003,7 +1012,9 @@ public class Location extends Common<Location> {
       + " name [" + name + "]"
       + " stateCounty [" + stateCounty + "]"
       + " effectiveDate [" + effectiveDate + "]"
-      + "}";
+      + "\n  "
+      + super.toString()
+      + " }";
   }
 
   /**

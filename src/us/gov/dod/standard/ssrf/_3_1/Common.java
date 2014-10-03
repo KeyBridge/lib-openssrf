@@ -199,7 +199,7 @@ public abstract class Common<T> {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TSerial serial;
+  private TString serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
    * <p>
@@ -639,7 +639,7 @@ public abstract class Common<T> {
    * <p>
    * @return the Serial value in a {@link TString} data type
    */
-  public TSerial getSerial() {
+  public TString getSerial() {
     return serial;
   }
 
@@ -648,7 +648,7 @@ public abstract class Common<T> {
    * <p>
    * @param value the Serial value in a {@link TString} data type
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(TString value) {
     this.serial = value;
   }
 
@@ -1411,7 +1411,7 @@ public abstract class Common<T> {
    * @return The current Common object instance
    */
   public T withSerial(TSerial value) {
-    setSerial(value);
+    setSerial(new TString(value.getValue()));
     return (T) this;
   }
 
@@ -1836,5 +1836,5 @@ public abstract class Common<T> {
   public boolean isSet() {
     return isSetEntryDateTime() && isSetSerial() && isSetCls();
   }
-
+  
 }
