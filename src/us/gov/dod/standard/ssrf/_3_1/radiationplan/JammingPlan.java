@@ -656,7 +656,7 @@ public class JammingPlan {
    * Complex element JammingTarget (US) describes the target location and
    * identifies the jamming loadset to be used.
    * <p>
-   * @return a {@link List<JammingTarget>} instance
+   * @return a non-null but possibly empty list of {@link JammingTarget} instances
    */
   public List<JammingTarget> getJammingTarget() {
     if (jammingTarget == null) {

@@ -1515,7 +1515,7 @@ public class TxMode {
    * designator. The emission classification consists of the three required
    * symbols and the two optional symbols.
    * <p>
-   * @return a {@link List<EmsClass>} instance
+   * @return a non-null but possibly empty list of {@link EmsClass} instances
    */
   public List<EmsClass> getEmsClass() {
     if (emsClass == null) {
@@ -1543,7 +1543,7 @@ public class TxMode {
   /**
    * Get the power limit of this transmitter mode when in this configuration.
    * <p>
-   * @return a {@link List<Power>} instance
+   * @return a non-null but possibly empty list of {@link Power} instances
    */
   public List<Power> getPower() {
     if (power == null) {
@@ -1575,7 +1575,7 @@ public class TxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @return a {@link List<TxSignalTuning>} instance
+   * @return a non-null but possibly empty list of {@link TxSignalTuning} instances
    */
   public List<TxSignalTuning> getTxSignalTuning() {
     if (txSignalTuning == null) {
@@ -1606,7 +1606,7 @@ public class TxMode {
    * Complex element TxModulation contains the detailed characteristics of the
    * modulation on the transmitter side.
    * <p>
-   * @return a {@link List<TxModulation>} instance
+   * @return a non-null but possibly empty list of {@link TxModulation} instances
    */
   public List<TxModulation> getTxModulation() {
     if (txModulation == null) {
@@ -1637,7 +1637,7 @@ public class TxMode {
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
    * <p>
-   * @return a {@link List<Baseband>} instance
+   * @return a non-null but possibly empty list of {@link Baseband} instances
    */
   public List<Baseband> getBaseband() {
     if (baseband == null) {
@@ -1665,7 +1665,7 @@ public class TxMode {
   /**
    * Get the number of pulses in a single pulse burst.
    * <p>
-   * @return a {@link List<Pulse>} instance
+   * @return a non-null but possibly empty list of {@link Pulse} instances
    */
   public List<Pulse> getPulse() {
     if (pulse == null) {
@@ -1699,7 +1699,7 @@ public class TxMode {
    * that is combined with the main carrier signal operating at a higher
    * frequency.
    * <p>
-   * @return a {@link List<SubcarrierFreq>} instance
+   * @return a non-null but possibly empty list of {@link SubcarrierFreq} instances
    */
   public List<SubcarrierFreq> getSubcarrierFreq() {
     if (subcarrierFreq == null) {
@@ -1764,7 +1764,7 @@ public class TxMode {
    * characteristic and pattern information for the Modulation impressed On the
    * Pulse (MOP).
    * <p>
-   * @return a {@link List<ObservedMOPAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedMOPAnalysis} instances
    */
   public List<ObservedMOPAnalysis> getObservedMOPAnalysis() {
     if (observedMOPAnalysis == null) {
@@ -1795,7 +1795,7 @@ public class TxMode {
    * Complex element ObservedRFAnalysis (US) contains the statisical results of
    * actual RF observations.
    * <p>
-   * @return a {@link List<ObservedRFAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedRFAnalysis} instances
    */
   public List<ObservedRFAnalysis> getObservedRFAnalysis() {
     if (observedRFAnalysis == null) {
@@ -1827,7 +1827,7 @@ public class TxMode {
    * specific characteristics of the pulse group, pulse sequence, and distinct
    * pulse information.
    * <p>
-   * @return a {@link List<ObservedPulseAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedPulseAnalysis} instances
    */
   public List<ObservedPulseAnalysis> getObservedPulseAnalysis() {
     if (observedPulseAnalysis == null) {
@@ -1855,7 +1855,7 @@ public class TxMode {
   /**
    * Get the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
   public List<BigInteger> getCurves() {
     if (curves == null) {

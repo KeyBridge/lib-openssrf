@@ -2064,7 +2064,7 @@ public class IntfReport extends Common<IntfReport> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {

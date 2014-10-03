@@ -740,7 +740,7 @@ public class Station {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -773,7 +773,7 @@ public class Station {
    * equipment necessary at one location for carrying on a radiocommunication,
    * radiolocation, or other spectrum dependent function.
    * <p>
-   * @return a {@link List<StationLoc>} instance
+   * @return a non-null but possibly empty list of {@link StationLoc} instances
    */
   public List<StationLoc> getStationLoc() {
     if (stationLoc == null) {

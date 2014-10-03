@@ -1133,7 +1133,7 @@ public class ObservedPolarisationAnalysis {
    * Complex element ObservedPolarisationValues (US) contains data describing
    * the parametric information for the polarization tilt angle specific values.
    * <p>
-   * @return a {@link List<ObservedPolarisationValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedPolarisationValues} instances
    */
   public List<ObservedPolarisationValues> getObservedPolarisationValues() {
     if (observedPolarisationValues == null) {

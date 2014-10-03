@@ -193,7 +193,7 @@ public abstract class AMetadata<T> {
    * Get a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null list of {@link BigInteger} instances
    */
   public List<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
@@ -206,7 +206,7 @@ public abstract class AMetadata<T> {
    * Get a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null list of {@link BigInteger} instances
    */
   public boolean isSetRemarkRef() {
     return ((this.remarkRef != null) && (!this.remarkRef.isEmpty()));
@@ -235,7 +235,7 @@ public abstract class AMetadata<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @return a {@link List<ListCCY>} instance
+   * @return a non-null list of {@link ListCCY} instances
    */
   public List<ListCCY> getReleasability() {
     if (releasability == null) {
@@ -332,7 +332,7 @@ public abstract class AMetadata<T> {
    * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null list of {@link BigInteger} instances
    */
   public List<BigInteger> getExtReferences() {
     if (extReferences == null) {
@@ -482,7 +482,7 @@ public abstract class AMetadata<T> {
    * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link %1}
    * @return The current Common object instance
    */
   public T withExtReferences(BigInteger... values) {
@@ -551,7 +551,7 @@ public abstract class AMetadata<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @param values One or more instances of type {@link ListCCY...}
+   * @param values One or more instances of type {@link %1}
    * @return The current Common object instance
    */
   public T withReleasability(ListCCY... values) {
@@ -582,7 +582,7 @@ public abstract class AMetadata<T> {
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link %1}
    * @return The current Common object instance
    */
   public T withRemarkRef(BigInteger... values) {

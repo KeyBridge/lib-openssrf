@@ -727,7 +727,7 @@ public class StationConfig {
    * Complex element Blanking contains the start and stop angles of a horizontal
    * and/or vertical sector that is blanked.
    * <p>
-   * @return a {@link List<Blanking>} instance
+   * @return a non-null but possibly empty list of {@link Blanking} instances
    */
   public List<Blanking> getBlanking() {
     if (blanking == null) {

@@ -750,7 +750,7 @@ public class SSReply extends Common<SSReply> {
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability.
    * <p>
-   * @return a {@link List<CommentSource>} instance
+   * @return a non-null but possibly empty list of {@link CommentSource} instances
    */
   public List<CommentSource> getCommentSource() {
     if (commentSource == null) {
@@ -781,7 +781,7 @@ public class SSReply extends Common<SSReply> {
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    * <p>
-   * @return a {@link List<StageLocation>} instance
+   * @return a non-null but possibly empty list of {@link StageLocation} instances
    */
   public List<StageLocation> getStageLocation() {
     if (stageLocation == null) {
@@ -818,7 +818,7 @@ public class SSReply extends Common<SSReply> {
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
    * <p>
-   * @return a {@link List<Configuration>} instance
+   * @return a non-null but possibly empty list of {@link Configuration} instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {

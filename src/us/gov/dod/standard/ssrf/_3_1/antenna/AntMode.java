@@ -1359,7 +1359,7 @@ public class AntMode {
    * reference to an isotropic source (dBi), in the direction of maximum
    * radiation.
    * <p>
-   * @return a {@link List<AntGain>} instance
+   * @return a non-null but possibly empty list of {@link AntGain} instances
    */
   public List<AntGain> getAntGain() {
     if (antGain == null) {
@@ -1390,7 +1390,7 @@ public class AntMode {
    * Complex element AntFreqs contains the antenna's designed tuning range, or
    * the discrete operating frequency.
    * <p>
-   * @return a {@link List<AntFreqs>} instance
+   * @return a non-null but possibly empty list of {@link AntFreqs} instances
    */
   public List<AntFreqs> getAntFreqs() {
     if (antFreqs == null) {
@@ -1425,7 +1425,7 @@ public class AntMode {
    * be taken with theta as the dependent variable. These will be great circle
    * cuts through the main-beam peak.
    * <p>
-   * @return a {@link List<AntPattern>} instance
+   * @return a non-null but possibly empty list of {@link AntPattern} instances
    */
   public List<AntPattern> getAntPattern() {
     if (antPattern == null) {
@@ -1456,7 +1456,7 @@ public class AntMode {
    * Complex element AntEfficiency describes the antenna efficiency at various
    * frequencies within the frequency range of the antenna.
    * <p>
-   * @return a {@link List<AntEfficiency>} instance
+   * @return a non-null but possibly empty list of {@link AntEfficiency} instances
    */
   public List<AntEfficiency> getAntEfficiency() {
     if (antEfficiency == null) {
@@ -1488,7 +1488,7 @@ public class AntMode {
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency.
    * <p>
-   * @return a {@link List<VSWR>} instance
+   * @return a non-null but possibly empty list of {@link VSWR} instances
    */
   public List<VSWR> getVSWR() {
     if (vswr == null) {
@@ -1519,7 +1519,7 @@ public class AntMode {
    * Complex element ObservedLobeAnalysis (US) contains general data associated
    * with observed Antenna sidelobes and backlobes.
    * <p>
-   * @return a {@link List<ObservedLobeAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedLobeAnalysis} instances
    */
   public List<ObservedLobeAnalysis> getObservedLobeAnalysis() {
     if (observedLobeAnalysis == null) {
@@ -1550,7 +1550,7 @@ public class AntMode {
    * Complex element ObservedPolarisationAnalysis (US) contains data describing
    * the parametric information for the polarization and tilt angle information.
    * <p>
-   * @return a {@link List<ObservedPolarisationAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedPolarisationAnalysis} instances
    */
   public List<ObservedPolarisationAnalysis> getObservedPolarisationAnalysis() {
     if (observedPolarisationAnalysis == null) {
@@ -1582,7 +1582,7 @@ public class AntMode {
    * collected Horizontal and Vertical Scan parameters as well as the Adaptive
    * Driver information.
    * <p>
-   * @return a {@link List<ObservedScanAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedScanAnalysis} instances
    */
   public List<ObservedScanAnalysis> getObservedScanAnalysis() {
     if (observedScanAnalysis == null) {

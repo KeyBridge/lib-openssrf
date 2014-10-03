@@ -218,7 +218,7 @@ public class FreqBand {
    * Complex element Allocation contains the allocation of a specific frequency
    * band to a specific radiocommunication service.
    * <p>
-   * @return a {@link List<Allocation>} instance
+   * @return a non-null but possibly empty list of {@link Allocation} instances
    */
   public List<Allocation> getAllocation() {
     if (allocation == null) {
@@ -248,7 +248,7 @@ public class FreqBand {
    * frequency band. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
   public List<BigInteger> getFootnotes() {
     if (footnotes == null) {

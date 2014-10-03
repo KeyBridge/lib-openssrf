@@ -267,7 +267,7 @@ public class ObservedLobeAnalysis {
    * sidelobes or backlobes. Used to its full potential, a precise 3D picture of
    * an Antenna sidelobe can be represented.
    * <p>
-   * @return a {@link List<ObservedLobeValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedLobeValues} instances
    */
   public List<ObservedLobeValues> getObservedLobeValues() {
     if (observedLobeValues == null) {

@@ -1671,7 +1671,7 @@ public class ObservedScanAnalysis {
    * Complex element ObservedScanValues (US) contains data describing the
    * discrete scan rate values and supporting statistical information.
    * <p>
-   * @return a {@link List<ObservedScanValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedScanValues} instances
    */
   public List<ObservedScanValues> getObservedScanValues() {
     if (observedScanValues == null) {

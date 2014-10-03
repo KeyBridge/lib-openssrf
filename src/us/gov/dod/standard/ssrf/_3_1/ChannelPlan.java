@@ -123,7 +123,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Get the serial of the referenced ChannelPlan.
    * <p>
-   * @return a {@link List<Channel>} instance
+   * @return a non-null but possibly empty list of {@link Channel} instances
    */
   public List<Channel> getChannel() {
     if (channel == null) {

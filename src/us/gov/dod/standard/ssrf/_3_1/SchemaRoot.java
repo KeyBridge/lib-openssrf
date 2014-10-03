@@ -157,7 +157,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Contact>} instance
+   * @return a non-null but possibly empty list of {@link Contact} instances
    */
   public List<Contact> getContact() {
     if (contact == null) {
@@ -185,7 +185,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Role>} instance
+   * @return a non-null but possibly empty list of {@link Role} instances
    */
   public List<Role> getRole() {
     if (role == null) {
@@ -213,7 +213,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Organisation>} instance
+   * @return a non-null but possibly empty list of {@link Organisation} instances
    */
   public List<Organisation> getOrganisation() {
     if (organisation == null) {
@@ -241,7 +241,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<ExternalReference>} instance
+   * @return a non-null but possibly empty list of {@link ExternalReference} instances
    */
   public List<ExternalReference> getExternalReference() {
     if (externalReference == null) {
@@ -269,7 +269,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Administrative>} instance
+   * @return a non-null but possibly empty list of {@link Administrative} instances
    */
   public List<Administrative> getAdministrative() {
     if (administrative == null) {
@@ -297,7 +297,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Location>} instance
+   * @return a non-null but possibly empty list of {@link Location} instances
    */
   public List<Location> getLocation() {
     if (location == null) {
@@ -325,7 +325,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<ChannelPlan>} instance
+   * @return a non-null but possibly empty list of {@link ChannelPlan} instances
    */
   public List<ChannelPlan> getChannelPlan() {
     if (channelPlan == null) {
@@ -353,7 +353,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<TOA>} instance
+   * @return a non-null but possibly empty list of {@link TOA} instances
    */
   public List<TOA> getTOA() {
     if (toa == null) {
@@ -381,7 +381,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Transmitter>} instance
+   * @return a non-null but possibly empty list of {@link Transmitter} instances
    */
   public List<Transmitter> getTransmitter() {
     if (transmitter == null) {
@@ -409,7 +409,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Receiver>} instance
+   * @return a non-null but possibly empty list of {@link Receiver} instances
    */
   public List<Receiver> getReceiver() {
     if (receiver == null) {
@@ -437,7 +437,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Antenna>} instance
+   * @return a non-null but possibly empty list of {@link Antenna} instances
    */
   public List<Antenna> getAntenna() {
     if (antenna == null) {
@@ -465,7 +465,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<RFSystem>} instance
+   * @return a non-null but possibly empty list of {@link RFSystem} instances
    */
   public List<RFSystem> getRFSystem() {
     if (rfSystem == null) {
@@ -493,7 +493,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<SSRequest>} instance
+   * @return a non-null but possibly empty list of {@link SSRequest} instances
    */
   public List<SSRequest> getSSRequest() {
     if (ssRequest == null) {
@@ -521,7 +521,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<SSReply>} instance
+   * @return a non-null but possibly empty list of {@link SSReply} instances
    */
   public List<SSReply> getSSReply() {
     if (ssReply == null) {
@@ -549,7 +549,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Allotment>} instance
+   * @return a non-null but possibly empty list of {@link Allotment} instances
    */
   public List<Allotment> getAllotment() {
     if (allotment == null) {
@@ -577,7 +577,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Assignment>} instance
+   * @return a non-null but possibly empty list of {@link Assignment} instances
    */
   public List<Assignment> getAssignment() {
     if (assignment == null) {
@@ -605,7 +605,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Satellite>} instance
+   * @return a non-null but possibly empty list of {@link Satellite} instances
    */
   public List<Satellite> getSatellite() {
     if (satellite == null) {
@@ -633,7 +633,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<IntfReport>} instance
+   * @return a non-null but possibly empty list of {@link IntfReport} instances
    */
   public List<IntfReport> getIntfReport() {
     if (intfReport == null) {
@@ -661,7 +661,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<JRFL>} instance
+   * @return a non-null but possibly empty list of {@link JRFL} instances
    */
   public List<JRFL> getJRFL() {
     if (jrfl == null) {
@@ -689,7 +689,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<ForceElement>} instance
+   * @return a non-null but possibly empty list of {@link ForceElement} instances
    */
   public List<ForceElement> getForceElement() {
     if (forceElement == null) {
@@ -717,7 +717,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<FEDeployment>} instance
+   * @return a non-null but possibly empty list of {@link FEDeployment} instances
    */
   public List<FEDeployment> getFEDeployment() {
     if (feDeployment == null) {
@@ -745,7 +745,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Message>} instance
+   * @return a non-null but possibly empty list of {@link Message} instances
    */
   public List<Message> getMessage() {
     if (message == null) {
@@ -773,7 +773,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Note>} instance
+   * @return a non-null but possibly empty list of {@link Note} instances
    */
   public List<Note> getNote() {
     if (note == null) {
@@ -801,7 +801,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<Loadset>} instance
+   * @return a non-null but possibly empty list of {@link Loadset} instances
    */
   public List<Loadset> getLoadset() {
     if (loadset == null) {
@@ -829,7 +829,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a {@link List<RadiationPlan>} instance
+   * @return a non-null but possibly empty list of {@link RadiationPlan} instances
    */
   public List<RadiationPlan> getRadiationPlan() {
     if (radiationPlan == null) {

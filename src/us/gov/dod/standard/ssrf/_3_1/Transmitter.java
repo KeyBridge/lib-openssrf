@@ -499,7 +499,7 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -532,7 +532,7 @@ public class Transmitter extends Common<Transmitter> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a {@link List<Nomenclature>} instance
+   * @return a non-null but possibly empty list of {@link Nomenclature} instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -567,7 +567,7 @@ public class Transmitter extends Common<Transmitter> {
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
    * <p>
-   * @return a {@link List<Deployment>} instance
+   * @return a non-null but possibly empty list of {@link Deployment} instances
    */
   public List<Deployment> getDeployment() {
     if (deployment == null) {
@@ -601,7 +601,7 @@ public class Transmitter extends Common<Transmitter> {
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
    * <p>
-   * @return a {@link List<Curve>} instance
+   * @return a non-null but possibly empty list of {@link Curve} instances
    */
   public List<Curve> getCurve() {
     if (curve == null) {
@@ -632,7 +632,7 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element TxMode and its sub-elements define all the technical
    * parameters for a mode of operation of the Transmitter.
    * <p>
-   * @return a {@link List<TxMode>} instance
+   * @return a non-null but possibly empty list of {@link TxMode} instances
    */
   public List<TxMode> getTxMode() {
     if (txMode == null) {
@@ -663,7 +663,7 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Transmitter.
    * <p>
-   * @return a {@link List<UsingCountries>} instance
+   * @return a non-null but possibly empty list of {@link UsingCountries} instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {

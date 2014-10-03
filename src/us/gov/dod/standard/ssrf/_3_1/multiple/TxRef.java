@@ -127,7 +127,7 @@ public class TxRef {
    * Complex element TxModeRef contains references to the Transmitter and its
    * modes, used to construct a Configuration.
    * <p>
-   * @return a {@link List<TxModeRef>} instance
+   * @return a non-null but possibly empty list of {@link TxModeRef} instances
    */
   public List<TxModeRef> getTxModeRef() {
     if (txModeRef == null) {
@@ -158,7 +158,7 @@ public class TxRef {
    * Complex element TxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Transmitter Configuration.
    * <p>
-   * @return a {@link List<TxAntModeRef>} instance
+   * @return a non-null but possibly empty list of {@link TxAntModeRef} instances
    */
   public List<TxAntModeRef> getTxAntModeRef() {
     if (txAntModeRef == null) {

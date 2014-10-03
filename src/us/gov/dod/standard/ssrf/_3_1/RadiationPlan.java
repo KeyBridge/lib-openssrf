@@ -464,7 +464,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Authority (JCA) authorisation information for the jamming plan and the
    * controls affecting the level of authorisation.
    * <p>
-   * @return a {@link List<JammingAuthority>} instance
+   * @return a non-null but possibly empty list of {@link JammingAuthority} instances
    */
   public List<JammingAuthority> getJammingAuthority() {
     if (jammingAuthority == null) {
@@ -495,7 +495,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Complex element JammingPlan (US) describes the start and stop conditions,
    * priorities, desired effect, and desired effectiveness.
    * <p>
-   * @return a {@link List<JammingPlan>} instance
+   * @return a non-null but possibly empty list of {@link JammingPlan} instances
    */
   public List<JammingPlan> getJammingPlan() {
     if (jammingPlan == null) {

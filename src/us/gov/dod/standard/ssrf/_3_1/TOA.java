@@ -282,7 +282,7 @@ public class TOA extends Common<TOA> {
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
    * or Band Application (e.g., "Wind Profiler").
    * <p>
-   * @return a {@link List<Footnote>} instance
+   * @return a non-null but possibly empty list of {@link Footnote} instances
    */
   public List<Footnote> getFootnote() {
     if (footnote == null) {
@@ -312,7 +312,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @return a {@link List<ChannelPlanRef>} instance
+   * @return a non-null but possibly empty list of {@link ChannelPlanRef} instances
    */
   public List<ChannelPlanRef> getChannelPlanRef() {
     if (channelPlanRef == null) {
@@ -343,7 +343,7 @@ public class TOA extends Common<TOA> {
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force.
    * <p>
-   * @return a {@link List<Country>} instance
+   * @return a non-null but possibly empty list of {@link Country} instances
    */
   public List<Country> getCountry() {
     if (country == null) {
@@ -376,7 +376,7 @@ public class TOA extends Common<TOA> {
    * information such as the specification of the rights and responsibilities of
    * a user.
    * <p>
-   * @return a {@link List<FreqBand>} instance
+   * @return a non-null but possibly empty list of {@link FreqBand} instances
    */
   public List<FreqBand> getFreqBand() {
     if (freqBand == null) {

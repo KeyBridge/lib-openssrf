@@ -241,7 +241,7 @@ public class Nomenclature {
    * Nomenclature. Additionally the country in which the equipment is
    * manufactured may be included.
    * <p>
-   * @return a {@link List<Manufacturer>} instance
+   * @return a non-null but possibly empty list of {@link Manufacturer} instances
    */
   public List<Manufacturer> getManufacturer() {
     if (manufacturer == null) {

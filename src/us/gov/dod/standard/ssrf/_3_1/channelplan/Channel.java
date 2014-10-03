@@ -149,7 +149,7 @@ public class Channel {
   /**
    * Get one frequency in the channel plan.
    * <p>
-   * @return a {@link List<ChannelFreq>} instance
+   * @return a non-null but possibly empty list of {@link ChannelFreq} instances
    */
   public List<ChannelFreq> getChannelFreq() {
     if (channelFreq == null) {

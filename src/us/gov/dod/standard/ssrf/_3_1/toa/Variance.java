@@ -200,7 +200,7 @@ public class Variance {
    * Complex element Administration contains the country for which this variance
    * applies.
    * <p>
-   * @return a {@link List<Administration>} instance
+   * @return a non-null but possibly empty list of {@link Administration} instances
    */
   public List<Administration> getAdministration() {
     if (administration == null) {

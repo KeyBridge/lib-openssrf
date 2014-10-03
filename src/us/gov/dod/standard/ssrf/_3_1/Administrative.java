@@ -182,7 +182,7 @@ public class Administrative extends Common<Administrative> {
    * Complex element Dataset is used within an Administrative transaction to
    * specify the identifier of the datasets on which the action must apply.
    * <p>
-   * @return a {@link List<Dataset>} instance
+   * @return a non-null but possibly empty list of {@link Dataset} instances
    */
   public List<Dataset> getDataset() {
     if (dataset == null) {
@@ -213,7 +213,7 @@ public class Administrative extends Common<Administrative> {
    * Complex element CodeList contains the actions necessary to create or delete
    * a code entry in a given Code List.
    * <p>
-   * @return a {@link List<CodeList>} instance
+   * @return a non-null but possibly empty list of {@link CodeList} instances
    */
   public List<CodeList> getCodeList() {
     if (codeList == null) {

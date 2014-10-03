@@ -1324,7 +1324,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @return a {@link List<Project>} instance
+   * @return a non-null but possibly empty list of {@link Project} instances
    */
   public List<Project> getProject() {
     if (project == null) {
@@ -1352,7 +1352,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the current stage of the system.
    * <p>
-   * @return a {@link List<Stage>} instance
+   * @return a non-null but possibly empty list of {@link Stage} instances
    */
   public List<Stage> getStage() {
     if (stage == null) {
@@ -1385,7 +1385,7 @@ public class SSRequest extends Common<SSRequest> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a {@link List<Nomenclature>} instance
+   * @return a non-null but possibly empty list of {@link Nomenclature} instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -1416,7 +1416,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -1447,7 +1447,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
    * <p>
-   * @return a {@link List<RelatedSupportability>} instance
+   * @return a non-null but possibly empty list of {@link RelatedSupportability} instances
    */
   public List<RelatedSupportability> getRelatedSupportability() {
     if (relatedSupportability == null) {
@@ -1480,7 +1480,7 @@ public class SSRequest extends Common<SSRequest> {
    * HostNation entry, it will be assumed that this SSRequest is for all NATO
    * Nations plus AUS and NZL (in accordance with the FMSC agreement).
    * <p>
-   * @return a {@link List<HostNation>} instance
+   * @return a non-null but possibly empty list of {@link HostNation} instances
    */
   public List<HostNation> getHostNation() {
     if (hostNation == null) {
@@ -1508,7 +1508,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get if the system is used in a wartime environment.
    * <p>
-   * @return a {@link List<Time>} instance
+   * @return a non-null but possibly empty list of {@link Time} instances
    */
   public List<Time> getTime() {
     if (time == null) {
@@ -1539,7 +1539,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
    * <p>
-   * @return a {@link List<DiagramEndpoint>} instance
+   * @return a non-null but possibly empty list of {@link DiagramEndpoint} instances
    */
   public List<DiagramEndpoint> getDiagramEndpoint() {
     if (diagramEndpoint == null) {
@@ -1570,7 +1570,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram.
    * <p>
-   * @return a {@link List<DiagramLine>} instance
+   * @return a non-null but possibly empty list of {@link DiagramLine} instances
    */
   public List<DiagramLine> getDiagramLine() {
     if (diagramLine == null) {
@@ -1604,7 +1604,7 @@ public class SSRequest extends Common<SSRequest> {
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station.
    * <p>
-   * @return a {@link List<Configuration>} instance
+   * @return a non-null but possibly empty list of {@link Configuration} instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
@@ -1635,7 +1635,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests.
    * <p>
-   * @return a {@link List<StatusLog>} instance
+   * @return a non-null but possibly empty list of {@link StatusLog} instances
    */
   public List<StatusLog> getStatusLog() {
     if (statusLog == null) {

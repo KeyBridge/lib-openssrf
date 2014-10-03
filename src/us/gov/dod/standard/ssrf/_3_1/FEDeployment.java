@@ -670,7 +670,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @return a {@link List<Project>} instance
+   * @return a non-null but possibly empty list of {@link Project} instances
    */
   public List<Project> getProject() {
     if (project == null) {
@@ -701,7 +701,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Complex element AtWayPoint defines a point in time at which a Force Element
    * is at a given waypoint along a route.
    * <p>
-   * @return a {@link List<AtWaypoint>} instance
+   * @return a non-null but possibly empty list of {@link AtWaypoint} instances
    */
   public List<AtWaypoint> getAtWaypoint() {
     if (atWaypoint == null) {

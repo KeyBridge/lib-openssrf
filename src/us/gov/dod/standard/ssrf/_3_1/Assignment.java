@@ -2194,7 +2194,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @return a {@link List<Project>} instance
+   * @return a non-null but possibly empty list of {@link Project} instances
    */
   public List<Project> getProject() {
     if (project == null) {
@@ -2225,7 +2225,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -2258,7 +2258,7 @@ public class Assignment extends Common<Assignment> {
    * uses another assignment resources. It also describes linkages to or from
    * other datasets.
    * <p>
-   * @return a {@link List<SysOfStation>} instance
+   * @return a non-null but possibly empty list of {@link SysOfStation} instances
    */
   public List<SysOfStation> getSysOfStation() {
     if (sysOfStation == null) {
@@ -2289,7 +2289,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @return a {@link List<RelatedRef>} instance
+   * @return a non-null but possibly empty list of {@link RelatedRef} instances
    */
   public List<RelatedRef> getRelatedRef() {
     if (relatedRef == null) {
@@ -2321,7 +2321,7 @@ public class Assignment extends Common<Assignment> {
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset.
    * <p>
-   * @return a {@link List<Configuration>} instance
+   * @return a non-null but possibly empty list of {@link Configuration} instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
@@ -2352,7 +2352,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset.
    * <p>
-   * @return a {@link List<Station>} instance
+   * @return a non-null but possibly empty list of {@link Station} instances
    */
   public List<Station> getStation() {
     if (station == null) {
@@ -2387,7 +2387,7 @@ public class Assignment extends Common<Assignment> {
    * volume with non-defined mobiles) to very accurate (such as one link for
    * each radio-relay hop).
    * <p>
-   * @return a {@link List<Link>} instance
+   * @return a non-null but possibly empty list of {@link Link} instances
    */
   public List<Link> getLink() {
     if (link == null) {
@@ -2418,7 +2418,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments.
    * <p>
-   * @return a {@link List<StatusLog>} instance
+   * @return a non-null but possibly empty list of {@link StatusLog} instances
    */
   public List<StatusLog> getStatusLog() {
     if (statusLog == null) {
@@ -2449,7 +2449,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
    * <p>
-   * @return a {@link List<AsgnAllotOwner>} instance
+   * @return a non-null but possibly empty list of {@link AsgnAllotOwner} instances
    */
   public List<AsgnAllotOwner> getAsgnAllotOwner() {
     if (asgnAllotOwner == null) {
@@ -2481,7 +2481,7 @@ public class Assignment extends Common<Assignment> {
    * network and equipment used to support a specific frequency assignment or
    * assignments.
    * <p>
-   * @return a {@link List<CircuitRemarks>} instance
+   * @return a non-null but possibly empty list of {@link CircuitRemarks} instances
    */
   public List<CircuitRemarks> getCircuitRemarks() {
     if (circuitRemarks == null) {
@@ -2512,7 +2512,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
    * <p>
-   * @return a {@link List<CoordinationData>} instance
+   * @return a non-null but possibly empty list of {@link CoordinationData} instances
    */
   public List<CoordinationData> getCoordinationData() {
     if (coordinationData == null) {
@@ -2543,7 +2543,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository.
    * <p>
-   * @return a {@link List<DocketNum>} instance
+   * @return a non-null but possibly empty list of {@link DocketNum} instances
    */
   public List<DocketNum> getDocketNum() {
     if (docketNum == null) {
@@ -2574,7 +2574,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository.
    * <p>
-   * @return a {@link List<HostDocketNum>} instance
+   * @return a non-null but possibly empty list of {@link HostDocketNum} instances
    */
   public List<HostDocketNum> getHostDocketNum() {
     if (hostDocketNum == null) {
@@ -2606,7 +2606,7 @@ public class Assignment extends Common<Assignment> {
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment.
    * <p>
-   * @return a {@link List<OffTheShelfEquipment>} instance
+   * @return a non-null but possibly empty list of {@link OffTheShelfEquipment} instances
    */
   public List<OffTheShelfEquipment> getOffTheShelfEquipment() {
     if (offTheShelfEquipment == null) {
@@ -2638,7 +2638,7 @@ public class Assignment extends Common<Assignment> {
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number.
    * <p>
-   * @return a {@link List<PreviousAuthorization>} instance
+   * @return a non-null but possibly empty list of {@link PreviousAuthorization} instances
    */
   public List<PreviousAuthorization> getPreviousAuthorization() {
     if (previousAuthorization == null) {
@@ -2669,7 +2669,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments.
    * <p>
-   * @return a {@link List<RecordNote>} instance
+   * @return a non-null but possibly empty list of {@link RecordNote} instances
    */
   public List<RecordNote> getRecordNote() {
     if (recordNote == null) {

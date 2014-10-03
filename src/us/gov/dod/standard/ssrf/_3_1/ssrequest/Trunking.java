@@ -704,7 +704,7 @@ public class Trunking {
    * of the existing assignment to be relinquished or used in the trunked land
    * mobile system.
    * <p>
-   * @return a {@link List<TrunkingAssignment>} instance
+   * @return a non-null but possibly empty list of {@link TrunkingAssignment} instances
    */
   public List<TrunkingAssignment> getTrunkingAssignment() {
     if (trunkingAssignment == null) {

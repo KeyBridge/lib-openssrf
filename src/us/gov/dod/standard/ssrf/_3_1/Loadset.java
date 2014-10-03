@@ -493,7 +493,7 @@ public class Loadset extends Common<Loadset> {
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range.
    * <p>
-   * @return a {@link List<JammingChannelProfile>} instance
+   * @return a non-null but possibly empty list of {@link JammingChannelProfile} instances
    */
   public List<JammingChannelProfile> getJammingChannelProfile() {
     if (jammingChannelProfile == null) {

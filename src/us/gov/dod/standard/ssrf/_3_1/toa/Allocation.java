@@ -308,7 +308,7 @@ public class Allocation {
    * upper level allocation (e.g. a national allocation not aligned with the ITU
    * RR).
    * <p>
-   * @return a {@link List<Variance>} instance
+   * @return a non-null but possibly empty list of {@link Variance} instances
    */
   public List<Variance> getVariance() {
     if (variance == null) {
@@ -339,7 +339,7 @@ public class Allocation {
    * Complex element StnClass contains the station class associated with the TOA
    * frequency usage.
    * <p>
-   * @return a {@link List<StnClass>} instance
+   * @return a non-null but possibly empty list of {@link StnClass} instances
    */
   public List<StnClass> getStnClass() {
     if (stnClass == null) {
@@ -369,7 +369,7 @@ public class Allocation {
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @return a {@link List<ChannelPlanRef>} instance
+   * @return a non-null but possibly empty list of {@link ChannelPlanRef} instances
    */
   public List<ChannelPlanRef> getChannelPlanRef() {
     if (channelPlanRef == null) {
@@ -399,7 +399,7 @@ public class Allocation {
    * band Allocation. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
   public List<BigInteger> getFootnotes() {
     if (footnotes == null) {

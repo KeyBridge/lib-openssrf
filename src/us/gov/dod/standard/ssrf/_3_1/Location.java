@@ -574,7 +574,7 @@ public class Location extends Common<Location> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -606,7 +606,7 @@ public class Location extends Common<Location> {
    * is a flying object, this data represents the maximum altitude of the object
    * above ground.
    * <p>
-   * @return a {@link List<Point>} instance
+   * @return a non-null but possibly empty list of {@link Point} instances
    */
   public List<Point> getPoint() {
     if (point == null) {
@@ -638,7 +638,7 @@ public class Location extends Common<Location> {
    * Earth, defined by at least three points, used to describe an operational
    * area or an excluded area.
    * <p>
-   * @return a {@link List<Polygon>} instance
+   * @return a non-null but possibly empty list of {@link Polygon} instances
    */
   public List<Polygon> getPolygon() {
     if (polygon == null) {
@@ -670,7 +670,7 @@ public class Location extends Common<Location> {
    * and semi-minor axis, and by the orientation (azimuth) of the semi-major
    * axis. This element SHALL NOT be used to describe a satellite orbit.
    * <p>
-   * @return a {@link List<Ellipse>} instance
+   * @return a non-null but possibly empty list of {@link Ellipse} instances
    */
   public List<Ellipse> getEllipse() {
     if (ellipse == null) {
@@ -698,7 +698,7 @@ public class Location extends Common<Location> {
   /**
    * Get the serial of the referenced Location.
    * <p>
-   * @return a {@link List<LocationRef>} instance
+   * @return a non-null but possibly empty list of {@link LocationRef} instances
    */
   public List<LocationRef> getLocationRef() {
     if (locationRef == null) {

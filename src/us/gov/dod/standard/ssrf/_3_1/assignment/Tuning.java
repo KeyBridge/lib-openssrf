@@ -326,7 +326,7 @@ public class Tuning {
    * Complex element RequestedFreq indicates a single frequency or a range of
    * frequencies.
    * <p>
-   * @return a {@link List<AsgnFreqBase>} instance
+   * @return a non-null but possibly empty list of {@link AsgnFreqBase} instances
    */
   public List<AsgnFreqBase> getRequestedFreq() {
     if (requestedFreq == null) {

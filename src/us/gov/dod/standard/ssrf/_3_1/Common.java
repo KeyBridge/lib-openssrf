@@ -1001,7 +1001,7 @@ public abstract class Common<T> {
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
    * <p>
-   * @return a {@link List<CaseNum>} instance
+   * @return a non-null but possibly empty list of {@link CaseNum} instances
    */
   public List<CaseNum> getCaseNum() {
     if (caseNum == null) {
@@ -1032,7 +1032,7 @@ public abstract class Common<T> {
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
    * <p>
-   * @return a {@link List<ExtReferenceRef>} instance
+   * @return a non-null but possibly empty list of {@link ExtReferenceRef} instances
    */
   public List<ExtReferenceRef> getExtReferenceRef() {
     if (extReferenceRef == null) {
@@ -1060,7 +1060,7 @@ public abstract class Common<T> {
   /**
    * Get a list of Remark memo entries applicable to the current data item.
    * <p>
-   * @return a {@link List<Remarks>} instance
+   * @return a non-null but possibly empty list of {@link Remarks} instances
    */
   public List<Remarks> getRemarks() {
     if (remarks == null) {
@@ -1121,7 +1121,7 @@ public abstract class Common<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @return a {@link List<ListCCY>} instance
+   * @return a non-null but possibly empty list of {@link ListCCY} instances
    */
   public List<ListCCY> getReleasability() {
     if (releasability == null) {
@@ -1150,7 +1150,7 @@ public abstract class Common<T> {
    * Get a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
   public List<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
@@ -1179,7 +1179,7 @@ public abstract class Common<T> {
    * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
   public List<BigInteger> getExtReferences() {
     if (extReferences == null) {

@@ -286,7 +286,7 @@ public class CodeList {
    * Get the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List.
    * <p>
-   * @return a {@link List<Code>} instance
+   * @return a non-null but possibly empty list of {@link Code} instances
    */
   public List<Code> getCode() {
     if (code == null) {

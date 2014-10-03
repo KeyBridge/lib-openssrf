@@ -420,7 +420,7 @@ public class SecurityClass {
    * Complex element Downgrade (US) contains the downgrade security
    * classification from one or more data information sources.
    * <p>
-   * @return a {@link List<Downgrade>} instance
+   * @return a non-null but possibly empty list of {@link Downgrade} instances
    */
   public List<Downgrade> getDowngrade() {
     if (downgrade == null) {
@@ -451,7 +451,7 @@ public class SecurityClass {
    * Complex element ClsDerived (US) contains the derived security
    * classification from one or more data information sources.
    * <p>
-   * @return a {@link List<ClsDerived>} instance
+   * @return a non-null but possibly empty list of {@link ClsDerived} instances
    */
   public List<ClsDerived> getClsDerived() {
     if (clsDerived == null) {

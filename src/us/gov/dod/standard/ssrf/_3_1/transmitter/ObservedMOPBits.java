@@ -449,7 +449,7 @@ public class ObservedMOPBits {
   /**
    * Get
    * <p>
-   * @return a {@link List<ObservedMOPValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedMOPValues} instances
    */
   public List<ObservedMOPValues> getObservedMOPValues() {
     if (observedMOPValues == null) {

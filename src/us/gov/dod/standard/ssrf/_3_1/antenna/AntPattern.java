@@ -268,7 +268,7 @@ public class AntPattern {
    * Complex element AntPatternPoint contains a single point of the antenna
    * radiation pattern, defined by a direction and gain.
    * <p>
-   * @return a {@link List<AntPatternPoint>} instance
+   * @return a non-null but possibly empty list of {@link AntPatternPoint} instances
    */
   public List<AntPatternPoint> getAntPatternPoint() {
     if (antPatternPoint == null) {

@@ -449,7 +449,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @return a {@link List<Project>} instance
+   * @return a non-null but possibly empty list of {@link Project} instances
    */
   public List<Project> getProject() {
     if (project == null) {
@@ -480,7 +480,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -510,7 +510,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element LocationRef references a Location dataset.
    * <p>
-   * @return a {@link List<LocationRef>} instance
+   * @return a non-null but possibly empty list of {@link LocationRef} instances
    */
   public List<LocationRef> getLocationRef() {
     if (locationRef == null) {
@@ -541,7 +541,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element Emission defines the limits of the authorized bandwidth and
    * power within the allotment.
    * <p>
-   * @return a {@link List<Emission>} instance
+   * @return a non-null but possibly empty list of {@link Emission} instances
    */
   public List<Emission> getEmission() {
     if (emission == null) {
@@ -572,7 +572,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element AllotFreq defines a frequency or range of frequencies
    * belonging to the Allotment.
    * <p>
-   * @return a {@link List<AllotFreq>} instance
+   * @return a non-null but possibly empty list of {@link AllotFreq} instances
    */
   public List<AllotFreq> getAllotFreq() {
     if (allotFreq == null) {

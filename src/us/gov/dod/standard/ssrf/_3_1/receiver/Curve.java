@@ -409,7 +409,7 @@ public class Curve {
    * value in dB (relative to the carrier for a Tx characteristic, or relative
    * to sensitivity for a Rx characteristic).
    * <p>
-   * @return a {@link List<CurvePoint>} instance
+   * @return a non-null but possibly empty list of {@link CurvePoint} instances
    */
   public List<CurvePoint> getCurvePoint() {
     if (curvePoint == null) {

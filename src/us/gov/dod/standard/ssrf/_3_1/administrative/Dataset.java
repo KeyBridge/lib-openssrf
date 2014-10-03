@@ -188,7 +188,7 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @return a {@link List<MissingRef>} instance
+   * @return a non-null but possibly empty list of {@link MissingRef} instances
    */
   public List<MissingRef> getMissingRef() {
     if (missingRef == null) {

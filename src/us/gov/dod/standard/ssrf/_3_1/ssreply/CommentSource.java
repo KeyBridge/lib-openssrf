@@ -255,7 +255,7 @@ public class CommentSource {
    * Complex element Comment contains the comment provided by the Host Nation or
    * Administration regarding an equipment supportability.
    * <p>
-   * @return a {@link List<Comment>} instance
+   * @return a non-null but possibly empty list of {@link Comment} instances
    */
   public List<Comment> getComment() {
     if (comment == null) {

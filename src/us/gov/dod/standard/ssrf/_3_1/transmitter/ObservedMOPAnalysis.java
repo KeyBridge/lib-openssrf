@@ -1416,7 +1416,7 @@ public class ObservedMOPAnalysis {
    * Complex element ObservedMOPSweep (US) contains data describing the
    * parametric information for the period of the Modulation on the Pulse sweep.
    * <p>
-   * @return a {@link List<ObservedMOPSweep>} instance
+   * @return a non-null but possibly empty list of {@link ObservedMOPSweep} instances
    */
   public List<ObservedMOPSweep> getObservedMOPSweep() {
     if (observedMOPSweep == null) {

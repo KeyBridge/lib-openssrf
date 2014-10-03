@@ -176,7 +176,7 @@ public class Freq extends AsgnFreqBase {
    * paired frequency or frequency range when the allotment is for a duplex
    * system.
    * <p>
-   * @return a {@link List<PairedFreq>} instance
+   * @return a non-null but possibly empty list of {@link PairedFreq} instances
    */
   public List<PairedFreq> getPairedFreq() {
     if (pairedFreq == null) {
@@ -207,7 +207,7 @@ public class Freq extends AsgnFreqBase {
    * Complex element NarrowBandPlanning (US) describes a reduced bandwidth
    * assignment for a single frequency or a range of frequencies.
    * <p>
-   * @return a {@link List<NarrowBandPlanning>} instance
+   * @return a non-null but possibly empty list of {@link NarrowBandPlanning} instances
    */
   public List<NarrowBandPlanning> getNarrowBandPlanning() {
     if (narrowBandPlanning == null) {

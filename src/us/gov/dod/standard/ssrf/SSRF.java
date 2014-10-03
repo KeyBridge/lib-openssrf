@@ -86,9 +86,8 @@ public class SSRF extends SchemaRoot<SSRF> {
    * all configured fields contain valid data according to the SSRF data
    * formatting rules.
    * <p>
-   * If the object instance is NOT valid call
-   * {@link #getErrorMessages(java.lang.Object)} to retrieve a list of
-   * validation errors.
+   * If the object instance is NOT valid call {@link #getErrorMessages()} to
+   * retrieve a list of validation errors.
    * <p>
    * @return TRUE the SSRF instance is valid; otherwise FALSE.
    */

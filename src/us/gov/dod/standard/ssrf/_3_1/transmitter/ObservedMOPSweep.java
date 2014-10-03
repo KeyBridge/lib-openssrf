@@ -451,7 +451,7 @@ public class ObservedMOPSweep {
    * Complex element ObservedMOPSequence (US) contains descriptive information
    * about the sequencing used for the Modulation impressed On the Pulse (MOP).
    * <p>
-   * @return a {@link List<ObservedMOPSequence>} instance
+   * @return a non-null but possibly empty list of {@link ObservedMOPSequence} instances
    */
   public List<ObservedMOPSequence> getObservedMOPSequence() {
     if (observedMOPSequence == null) {

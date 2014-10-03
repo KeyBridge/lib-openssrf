@@ -885,7 +885,7 @@ public class Configuration {
    * limited to Communications Emitter Notation (CENOT) and Electronic
    * Intelligence Notation (ELNOT).
    * <p>
-   * @return a {@link List<Notation>} instance
+   * @return a non-null but possibly empty list of {@link Notation} instances
    */
   public List<Notation> getNotation() {
     if (notation == null) {
@@ -916,7 +916,7 @@ public class Configuration {
    * Complex element Usage identifies how an operational configuration can be
    * used or will be used.
    * <p>
-   * @return a {@link List<Usage>} instance
+   * @return a non-null but possibly empty list of {@link Usage} instances
    */
   public List<Usage> getUsage() {
     if (usage == null) {
@@ -948,7 +948,7 @@ public class Configuration {
    * configuration uses, which may be a subset of the frequencies that the
    * linked components (Transmitter, Receiver, Antenna) are capable of.
    * <p>
-   * @return a {@link List<ConfigFreq>} instance
+   * @return a non-null but possibly empty list of {@link ConfigFreq} instances
    */
   public List<ConfigFreq> getConfigFreq() {
     if (configFreq == null) {
@@ -979,7 +979,7 @@ public class Configuration {
    * Complex element TxRef contains the reference of a Transmitter, and
    * optionnally some of its TxModes and the associated Antennas and AntMode.
    * <p>
-   * @return a {@link List<TxRef>} instance
+   * @return a non-null but possibly empty list of {@link TxRef} instances
    */
   public List<TxRef> getTxRef() {
     if (txRef == null) {
@@ -1010,7 +1010,7 @@ public class Configuration {
    * Complex element RxRef contains the reference of a Receiver, and optionnally
    * some of its RxModes and the associated Antennas and AntMode.
    * <p>
-   * @return a {@link List<RxRef>} instance
+   * @return a non-null but possibly empty list of {@link RxRef} instances
    */
   public List<RxRef> getRxRef() {
     if (rxRef == null) {
@@ -1041,7 +1041,7 @@ public class Configuration {
    * Complex element CaseNum contains legacy and other identifiers associated
    * with the Dataset.
    * <p>
-   * @return a {@link List<CaseNum>} instance
+   * @return a non-null but possibly empty list of {@link CaseNum} instances
    */
   public List<CaseNum> getCaseNum() {
     if (caseNum == null) {
@@ -1073,7 +1073,7 @@ public class Configuration {
    * classification symbols that a Configuration uses, which may be a subset of
    * the linked components' capabilities.
    * <p>
-   * @return a {@link List<ConfigEmission>} instance
+   * @return a non-null but possibly empty list of {@link ConfigEmission} instances
    */
   public List<ConfigEmission> getConfigEmission() {
     if (configEmission == null) {
@@ -1104,7 +1104,7 @@ public class Configuration {
    * Complex element LoadsetRef describes the jamming loadset to be used against
    * a specific target or targets.
    * <p>
-   * @return a {@link List<LoadsetRef>} instance
+   * @return a non-null but possibly empty list of {@link LoadsetRef} instances
    */
   public List<LoadsetRef> getLoadsetRef() {
     if (loadsetRef == null) {
@@ -1135,7 +1135,7 @@ public class Configuration {
    * Complex element ObservedERPAnalysis (US) contains data describing Effective
    * Radiated Power (ERP) associated with an emitter or Notation.
    * <p>
-   * @return a {@link List<ObservedERPAnalysis>} instance
+   * @return a non-null but possibly empty list of {@link ObservedERPAnalysis} instances
    */
   public List<ObservedERPAnalysis> getObservedERPAnalysis() {
     if (observedERPAnalysis == null) {

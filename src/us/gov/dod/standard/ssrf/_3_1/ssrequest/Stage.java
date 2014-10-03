@@ -377,7 +377,7 @@ public class Stage {
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    * <p>
-   * @return a {@link List<StageLocation>} instance
+   * @return a non-null but possibly empty list of {@link StageLocation} instances
    */
   public List<StageLocation> getStageLocation() {
     if (stageLocation == null) {

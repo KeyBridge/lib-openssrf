@@ -207,7 +207,7 @@ public class Polygon {
    * it is assumed that they are connected to complete the boundary of the
    * polygon.
    * <p>
-   * @return a {@link List<PolygonPoint>} instance
+   * @return a non-null but possibly empty list of {@link PolygonPoint} instances
    */
   public List<PolygonPoint> getPolygonPoint() {
     if (polygonPoint == null) {

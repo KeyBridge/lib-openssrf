@@ -568,7 +568,7 @@ public class JammingTarget {
    * to be impacted and/or how well it actually was impacted, for a specific
    * jamming mission.
    * <p>
-   * @return a {@link List<JammingPerformance>} instance
+   * @return a non-null but possibly empty list of {@link JammingPerformance} instances
    */
   public List<JammingPerformance> getJammingPerformance() {
     if (jammingPerformance == null) {

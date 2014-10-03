@@ -434,7 +434,7 @@ public class ObservedMOPSequence {
   /**
    * Get
    * <p>
-   * @return a {@link List<ObservedMOPBits>} instance
+   * @return a non-null but possibly empty list of {@link ObservedMOPBits} instances
    */
   public List<ObservedMOPBits> getObservedMOPBits() {
     if (observedMOPBits == null) {

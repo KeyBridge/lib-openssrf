@@ -2796,7 +2796,7 @@ public class ObservedPulseAnalysis {
    * Complex element ObservedPulseValues (US) contains data describing the
    * distinct Pulse values related to the Modulation Type.
    * <p>
-   * @return a {@link List<ObservedPulseValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedPulseValues} instances
    */
   public List<ObservedPulseValues> getObservedPulseValues() {
     if (observedPulseValues == null) {

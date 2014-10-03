@@ -522,7 +522,7 @@ public class Assigned {
    * Complex element Freq indicates a single assigned frequency or an assigned
    * range of frequencies.
    * <p>
-   * @return a {@link List<Freq>} instance
+   * @return a non-null but possibly empty list of {@link Freq} instances
    */
   public List<Freq> getFreq() {
     if (freq == null) {
@@ -553,7 +553,7 @@ public class Assigned {
    * Complex element FreqOld indicates a previously assigned single frequency or
    * range of frequencies.
    * <p>
-   * @return a {@link List<FreqOld>} instance
+   * @return a non-null but possibly empty list of {@link FreqOld} instances
    */
   public List<FreqOld> getFreqOld() {
     if (freqOld == null) {

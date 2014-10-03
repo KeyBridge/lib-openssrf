@@ -1688,7 +1688,7 @@ public class ObservedRFAnalysis {
    * Complex element ObservedRFValues (US) contains details of actual RF
    * observations.
    * <p>
-   * @return a {@link List<ObservedRFValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedRFValues} instances
    */
   public List<ObservedRFValues> getObservedRFValues() {
     if (observedRFValues == null) {

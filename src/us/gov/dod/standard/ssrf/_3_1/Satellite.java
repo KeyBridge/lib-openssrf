@@ -839,7 +839,7 @@ public class Satellite extends Common<Satellite> {
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
    * <p>
-   * @return a {@link List<RFSystemRef>} instance
+   * @return a non-null but possibly empty list of {@link RFSystemRef} instances
    */
   public List<RFSystemRef> getRFSystemRef() {
     if (rfSystemRef == null) {
@@ -870,7 +870,7 @@ public class Satellite extends Common<Satellite> {
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
    * <p>
-   * @return a {@link List<EarthStation>} instance
+   * @return a non-null but possibly empty list of {@link EarthStation} instances
    */
   public List<EarthStation> getEarthStation() {
     if (earthStation == null) {
@@ -901,7 +901,7 @@ public class Satellite extends Common<Satellite> {
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite.
    * <p>
-   * @return a {@link List<ServiceArea>} instance
+   * @return a non-null but possibly empty list of {@link ServiceArea} instances
    */
   public List<ServiceArea> getServiceArea() {
     if (serviceArea == null) {
@@ -934,7 +934,7 @@ public class Satellite extends Common<Satellite> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a {@link List<Nomenclature>} instance
+   * @return a non-null but possibly empty list of {@link Nomenclature} instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {

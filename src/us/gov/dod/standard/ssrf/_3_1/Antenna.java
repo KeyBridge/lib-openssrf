@@ -872,7 +872,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a {@link List<POCInformation>} instance
+   * @return a non-null but possibly empty list of {@link POCInformation} instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -905,7 +905,7 @@ public class Antenna extends Common<Antenna> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a {@link List<Nomenclature>} instance
+   * @return a non-null but possibly empty list of {@link Nomenclature} instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -936,7 +936,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element AntHardware contains the physical parameters related to the
    * antenna feed and lead.
    * <p>
-   * @return a {@link List<AntHardware>} instance
+   * @return a non-null but possibly empty list of {@link AntHardware} instances
    */
   public List<AntHardware> getAntHardware() {
     if (antHardware == null) {
@@ -967,7 +967,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element AntMode contains the technical characteristics of one
    * antenna mode.
    * <p>
-   * @return a {@link List<AntMode>} instance
+   * @return a non-null but possibly empty list of {@link AntMode} instances
    */
   public List<AntMode> getAntMode() {
     if (antMode == null) {
@@ -998,7 +998,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna.
    * <p>
-   * @return a {@link List<UsingCountries>} instance
+   * @return a non-null but possibly empty list of {@link UsingCountries} instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {

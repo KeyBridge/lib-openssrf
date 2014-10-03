@@ -371,7 +371,7 @@ public class Link {
    * frequencies, tuning increment, and number of frequencies, required for an
    * assignment.
    * <p>
-   * @return a {@link List<Tuning>} instance
+   * @return a non-null but possibly empty list of {@link Tuning} instances
    */
   public List<Tuning> getTuning() {
     if (tuning == null) {
@@ -403,7 +403,7 @@ public class Link {
    * used for transmitting and/or receiving in the current Link. It may also
    * contain additional antenna pointing/blanking parameters.
    * <p>
-   * @return a {@link List<StationConfig>} instance
+   * @return a non-null but possibly empty list of {@link StationConfig} instances
    */
   public List<StationConfig> getStationConfig() {
     if (stationConfig == null) {
@@ -434,7 +434,7 @@ public class Link {
    * Complex element Assigned contains the assigned frequency(ies), channel or
    * net number; it can also contain the old frequency.
    * <p>
-   * @return a {@link List<Assigned>} instance
+   * @return a non-null but possibly empty list of {@link Assigned} instances
    */
   public List<Assigned> getAssigned() {
     if (assigned == null) {
@@ -466,7 +466,7 @@ public class Link {
    * trunk identifier for a specific "trunked" system. The identifier is
    * assigned by the Defense Information Systems Agency (DISA).
    * <p>
-   * @return a {@link List<DCSTrunk>} instance
+   * @return a non-null but possibly empty list of {@link DCSTrunk} instances
    */
   public List<DCSTrunk> getDCSTrunk() {
     if (dcsTrunk == null) {
@@ -498,7 +498,7 @@ public class Link {
    * equipment in the link of a frequency assignment or group of frequency
    * assignments.
    * <p>
-   * @return a {@link List<DetailedFunction>} instance
+   * @return a non-null but possibly empty list of {@link DetailedFunction} instances
    */
   public List<DetailedFunction> getDetailedFunction() {
     if (detailedFunction == null) {

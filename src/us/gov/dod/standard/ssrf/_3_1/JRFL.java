@@ -565,7 +565,7 @@ public class JRFL extends Common<JRFL> {
    * Complex element JRFLEntryLocation defines the location where the use of a
    * specific frequency or frequency range(s) is restricted in use.
    * <p>
-   * @return a {@link List<JRFLEntry>} instance
+   * @return a non-null but possibly empty list of {@link JRFLEntry} instances
    */
   public List<JRFLEntry> getJRFLEntry() {
     if (jrflEntry == null) {

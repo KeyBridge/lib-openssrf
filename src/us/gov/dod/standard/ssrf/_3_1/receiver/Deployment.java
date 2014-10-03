@@ -160,7 +160,7 @@ public class Deployment {
    * equipment is installed, whether it is mounted at a fixed site atop a
    * mountain, in a shelter, in a vehicle, aboard a helicopter, etc.
    * <p>
-   * @return a {@link List<Installation>} instance
+   * @return a non-null but possibly empty list of {@link Installation} instances
    */
   public List<Installation> getInstallation() {
     if (installation == null) {

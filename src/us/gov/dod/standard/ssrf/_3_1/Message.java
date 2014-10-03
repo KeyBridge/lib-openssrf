@@ -161,7 +161,7 @@ public class Message extends Common<Message> {
    * Complex element DatasetRefs lists the serial for each primary Dataset
    * included in a single Message.
    * <p>
-   * @return a {@link List<DatasetRef>} instance
+   * @return a non-null but possibly empty list of {@link DatasetRef} instances
    */
   public List<DatasetRef> getDatasetRef() {
     if (datasetRef == null) {

@@ -839,7 +839,7 @@ public class JammingChannelProfile {
    * Complex element TimingDeconflictionProtocol (US) defines algorithm(s) used
    * for synchronising Electronic Warfare jamming information.
    * <p>
-   * @return a {@link List<TimingDeconflictionProtocol>} instance
+   * @return a non-null but possibly empty list of {@link TimingDeconflictionProtocol} instances
    */
   public List<TimingDeconflictionProtocol> getTimingDeconflictionProtocol() {
     if (timingDeconflictionProtocol == null) {

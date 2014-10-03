@@ -849,7 +849,7 @@ public class ObservedERPAnalysis {
    * that describe the Effective Radiated Power (ERP) associated with an emitter
    * or Notation.
    * <p>
-   * @return a {@link List<ObservedERPValues>} instance
+   * @return a non-null but possibly empty list of {@link ObservedERPValues} instances
    */
   public List<ObservedERPValues> getObservedERPValues() {
     if (observedERPValues == null) {

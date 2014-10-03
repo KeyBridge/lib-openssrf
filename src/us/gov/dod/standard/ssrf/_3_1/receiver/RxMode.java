@@ -1283,7 +1283,7 @@ public class RxMode {
    * designator. The emission classification consists of the three required
    * symbols and the two optional symbols.
    * <p>
-   * @return a {@link List<EmsClass>} instance
+   * @return a non-null but possibly empty list of {@link EmsClass} instances
    */
   public List<EmsClass> getEmsClass() {
     if (emsClass == null) {
@@ -1315,7 +1315,7 @@ public class RxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @return a {@link List<RxSignalTuning>} instance
+   * @return a non-null but possibly empty list of {@link RxSignalTuning} instances
    */
   public List<RxSignalTuning> getRxSignalTuning() {
     if (rxSignalTuning == null) {
@@ -1346,7 +1346,7 @@ public class RxMode {
    * Complex element RxModulation contains the detailed characteristics of the
    * modulation on the receiver side.
    * <p>
-   * @return a {@link List<RxModulation>} instance
+   * @return a non-null but possibly empty list of {@link RxModulation} instances
    */
   public List<RxModulation> getRxModulation() {
     if (rxModulation == null) {
@@ -1377,7 +1377,7 @@ public class RxMode {
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
    * <p>
-   * @return a {@link List<Baseband>} instance
+   * @return a non-null but possibly empty list of {@link Baseband} instances
    */
   public List<Baseband> getBaseband() {
     if (baseband == null) {
@@ -1409,7 +1409,7 @@ public class RxMode {
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
    * parameters.
    * <p>
-   * @return a {@link List<FreqConversion>} instance
+   * @return a non-null but possibly empty list of {@link FreqConversion} instances
    */
   public List<FreqConversion> getFreqConversion() {
     if (freqConversion == null) {
@@ -1470,7 +1470,7 @@ public class RxMode {
   /**
    * Get the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @return a {@link List<BigInteger>} instance
+   * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
   public List<BigInteger> getCurves() {
     if (curves == null) {

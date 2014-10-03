@@ -430,7 +430,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    * <p>
-   * @return a {@link List<Address>} instance
+   * @return a non-null but possibly empty list of {@link Address} instances
    */
   public List<Address> getAddress() {
     if (address == null) {
@@ -461,7 +461,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    * <p>
-   * @return a {@link List<TelephoneFax>} instance
+   * @return a non-null but possibly empty list of {@link TelephoneFax} instances
    */
   public List<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
@@ -491,7 +491,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
    * <p>
-   * @return a {@link List<EMail>} instance
+   * @return a non-null but possibly empty list of {@link EMail} instances
    */
   public List<EMail> getEMail() {
     if (eMail == null) {
@@ -521,7 +521,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    * <p>
-   * @return a {@link List<RoleRef>} instance
+   * @return a non-null but possibly empty list of {@link RoleRef} instances
    */
   public List<RoleRef> getRoleRef() {
     if (roleRef == null) {
@@ -553,7 +553,7 @@ public class Organisation extends Common<Organisation> {
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling).
    * <p>
-   * @return a {@link List<RelatedOrganisation>} instance
+   * @return a non-null but possibly empty list of {@link RelatedOrganisation} instances
    */
   public List<RelatedOrganisation> getRelatedOrganisation() {
     if (relatedOrganisation == null) {

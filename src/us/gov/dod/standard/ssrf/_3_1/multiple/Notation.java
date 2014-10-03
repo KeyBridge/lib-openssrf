@@ -236,7 +236,7 @@ public class Notation {
    * Complex element NotationTimeline (US) provides history information for a
    * specific notation or signal.
    * <p>
-   * @return a {@link List<NotationTimeline>} instance
+   * @return a non-null but possibly empty list of {@link NotationTimeline} instances
    */
   public List<NotationTimeline> getNotationTimeline() {
     if (notationTimeline == null) {
@@ -267,7 +267,7 @@ public class Notation {
    * Complex element PotentialVictims (US) contains the names of systems, or the
    * Notations of signals, which may be affected by the subject Notation/Signal.
    * <p>
-   * @return a {@link List<PotentialVictims>} instance
+   * @return a non-null but possibly empty list of {@link PotentialVictims} instances
    */
   public List<PotentialVictims> getPotentialVictims() {
     if (potentialVictims == null) {
@@ -298,7 +298,7 @@ public class Notation {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Notation.
    * <p>
-   * @return a {@link List<UsingCountries>} instance
+   * @return a non-null but possibly empty list of {@link UsingCountries} instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
