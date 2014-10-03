@@ -1032,7 +1032,8 @@ public abstract class Common<T> {
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
    * <p>
-   * @return a non-null but possibly empty list of {@link ExtReferenceRef} instances
+   * @return a non-null but possibly empty list of {@link ExtReferenceRef}
+   *         instances
    */
   public List<ExtReferenceRef> getExtReferenceRef() {
     if (extReferenceRef == null) {
@@ -1790,35 +1791,35 @@ public abstract class Common<T> {
   @Override
   public String toString() {
     return "Common {"
-      + " serial [" + serial + "]"
-      + " cls [" + cls + "]"
-      + " redacted [" + redacted + "]"
-      + " legacyReleasability [" + legacyReleasability + "]"
-      + " lastReviewBy [" + lastReviewBy + "]"
-      + " state [" + state + "]"
-      + " remarks [" + remarks + "]"
-      + " approvedBy [" + approvedBy + "]"
-      + " remarkRef [" + remarkRef + "]"
-      + " extReferences [" + extReferences + "]"
-      + " recommendedValue [" + recommendedValue + "]"
-      + " description [" + description + "]"
-      + " observedFirstDateTime [" + observedFirstDateTime + "]"
-      + " idref [" + idref + "]"
-      + " entryBy [" + entryBy + "]"
-      + " lastReviewDate [" + lastReviewDate + "]"
-      + " approvedDateTime [" + approvedDateTime + "]"
-      + " securityClass [" + securityClass + "]"
-      + " modAllowedBy [" + modAllowedBy + "]"
-      + " entryDateTime [" + entryDateTime + "]"
-      + " lastChangeBy [" + lastChangeBy + "]"
-      + " releasability [" + releasability + "]"
-      + " caseNum [" + caseNum + "]"
-      + " observedLastDateTime [" + observedLastDateTime + "]"
-      + " quality [" + quality + "]"
-      + " owner [" + owner + "]"
-      + " lastObservedBy [" + lastObservedBy + "]"
-      + " extReferenceRef [" + extReferenceRef + "]"
-      + " lastChangeDateTime [" + lastChangeDateTime + "]"
+      + (serial != null ? " serial [" + serial + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (redacted != null ? " redacted [" + redacted + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
+      + (state != null ? " state [" + state + "]" : "")
+      + (remarks != null ? " remarks [" + remarks + "]" : "")
+      + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
+      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
+      + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
+      + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
+      + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
+      + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+      + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
+      + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
+      + (releasability != null ? " releasability [" + releasability + "]" : "")
+      + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (owner != null ? " owner [" + owner + "]" : "")
+      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+      + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
+      + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
       + " }";
   }
 
@@ -1836,5 +1837,5 @@ public abstract class Common<T> {
   public boolean isSet() {
     return isSetEntryDateTime() && isSetSerial() && isSetCls();
   }
-  
+
 }

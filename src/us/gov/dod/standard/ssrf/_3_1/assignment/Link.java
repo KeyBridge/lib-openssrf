@@ -403,7 +403,8 @@ public class Link {
    * used for transmitting and/or receiving in the current Link. It may also
    * contain additional antenna pointing/blanking parameters.
    * <p>
-   * @return a non-null but possibly empty list of {@link StationConfig} instances
+   * @return a non-null but possibly empty list of {@link StationConfig}
+   *         instances
    */
   public List<StationConfig> getStationConfig() {
     if (stationConfig == null) {
@@ -498,7 +499,8 @@ public class Link {
    * equipment in the link of a frequency assignment or group of frequency
    * assignments.
    * <p>
-   * @return a non-null but possibly empty list of {@link DetailedFunction} instances
+   * @return a non-null but possibly empty list of {@link DetailedFunction}
+   *         instances
    */
   public List<DetailedFunction> getDetailedFunction() {
     if (detailedFunction == null) {
@@ -770,16 +772,16 @@ public class Link {
   @Override
   public String toString() {
     return "Link {"
-      + " linkID [" + linkID + "]"
-      + " dcsTrunk [" + dcsTrunk + "]"
-      + " stationConfig [" + stationConfig + "]"
-      + " detailedFunction [" + detailedFunction + "]"
-      + " assigned [" + assigned + "]"
-      + " tuning [" + tuning + "]"
-      + " linkName [" + linkName + "]"
-      + " majorFunction [" + majorFunction + "]"
-      + " intermediateFunction [" + intermediateFunction + "]"
-      + " function [" + function + "]"
+      + (linkID != null ? " linkID [" + linkID + "]" : "")
+      + (dcsTrunk != null ? " dcsTrunk [" + dcsTrunk + "]" : "")
+      + (stationConfig != null ? " stationConfig [" + stationConfig + "]" : "")
+      + (detailedFunction != null ? " detailedFunction [" + detailedFunction + "]" : "")
+      + (assigned != null ? " assigned [" + assigned + "]" : "")
+      + (tuning != null ? " tuning [" + tuning + "]" : "")
+      + (linkName != null ? " linkName [" + linkName + "]" : "")
+      + (majorFunction != null ? " majorFunction [" + majorFunction + "]" : "")
+      + (intermediateFunction != null ? " intermediateFunction [" + intermediateFunction + "]" : "")
+      + (function != null ? " function [" + function + "]" : "")
       + "}";
   }
 

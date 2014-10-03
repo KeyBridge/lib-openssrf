@@ -200,7 +200,8 @@ public class Variance {
    * Complex element Administration contains the country for which this variance
    * applies.
    * <p>
-   * @return a non-null but possibly empty list of {@link Administration} instances
+   * @return a non-null but possibly empty list of {@link Administration}
+   *         instances
    */
   public List<Administration> getAdministration() {
     if (administration == null) {
@@ -300,10 +301,10 @@ public class Variance {
   @Override
   public String toString() {
     return "Variance {"
-      + " priority [" + priority + "]"
-      + " allocatedService [" + allocatedService + "]"
-      + " type [" + type + "]"
-      + " administration [" + administration + "]"
+      + (priority != null ? " priority [" + priority + "]" : "")
+      + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (administration != null ? " administration [" + administration + "]" : "")
       + "}";
   }
 

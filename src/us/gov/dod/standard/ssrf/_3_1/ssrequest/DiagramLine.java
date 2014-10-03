@@ -240,9 +240,9 @@ public class DiagramLine {
   @Override
   public String toString() {
     return "DiagramLine {"
-      + " rxEndpointID [" + rxEndpointID + "]"
-      + " txEndpointID [" + txEndpointID + "]"
-      + " configID [" + configID + "]"
+      + (rxEndpointID != null ? " rxEndpointID [" + rxEndpointID + "]" : "")
+      + (txEndpointID != null ? " txEndpointID [" + txEndpointID + "]" : "")
+      + (configID != null ? " configID [" + configID + "]" : "")
       + "}";
   }
 

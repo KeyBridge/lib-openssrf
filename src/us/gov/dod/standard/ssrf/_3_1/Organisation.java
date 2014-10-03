@@ -461,7 +461,8 @@ public class Organisation extends Common<Organisation> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    * <p>
-   * @return a non-null but possibly empty list of {@link TelephoneFax} instances
+   * @return a non-null but possibly empty list of {@link TelephoneFax}
+   *         instances
    */
   public List<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
@@ -553,7 +554,8 @@ public class Organisation extends Common<Organisation> {
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling).
    * <p>
-   * @return a non-null but possibly empty list of {@link RelatedOrganisation} instances
+   * @return a non-null but possibly empty list of {@link RelatedOrganisation}
+   *         instances
    */
   public List<RelatedOrganisation> getRelatedOrganisation() {
     if (relatedOrganisation == null) {
@@ -829,18 +831,18 @@ public class Organisation extends Common<Organisation> {
   @Override
   public String toString() {
     return "Organisation {"
-      + " expirationDate [" + expirationDate + "]"
-      + " address [" + address + "]"
-      + " name [" + name + "]"
-      + " eMail [" + eMail + "]"
-      + " relatedOrganisation [" + relatedOrganisation + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " roleRef [" + roleRef + "]"
-      + " telephoneFax [" + telephoneFax + "]"
-      + " type [" + type + "]"
-      + " effectiveDate [" + effectiveDate + "]"
-      + " uic [" + uic + "]"
-      + " alternateName [" + alternateName + "]"
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (address != null ? " address [" + address + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (eMail != null ? " eMail [" + eMail + "]" : "")
+      + (relatedOrganisation != null ? " relatedOrganisation [" + relatedOrganisation + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (roleRef != null ? " roleRef [" + roleRef + "]" : "")
+      + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + (uic != null ? " uic [" + uic + "]" : "")
+      + (alternateName != null ? " alternateName [" + alternateName + "]" : "")
       + "}";
   }
 

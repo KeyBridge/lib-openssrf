@@ -241,7 +241,8 @@ public class Nomenclature {
    * Nomenclature. Additionally the country in which the equipment is
    * manufactured may be included.
    * <p>
-   * @return a non-null but possibly empty list of {@link Manufacturer} instances
+   * @return a non-null but possibly empty list of {@link Manufacturer}
+   *         instances
    */
   public List<Manufacturer> getManufacturer() {
     if (manufacturer == null) {
@@ -357,11 +358,11 @@ public class Nomenclature {
   @Override
   public String toString() {
     return "Nomenclature {"
-      + " level [" + level + "]"
-      + " manufacturer [" + manufacturer + "]"
-      + " physicalUsage [" + physicalUsage + "]"
-      + " name [" + name + "]"
-      + " type [" + type + "]"
+      + (level != null ? " level [" + level + "]" : "")
+      + (manufacturer != null ? " manufacturer [" + manufacturer + "]" : "")
+      + (physicalUsage != null ? " physicalUsage [" + physicalUsage + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
       + "}";
   }
 

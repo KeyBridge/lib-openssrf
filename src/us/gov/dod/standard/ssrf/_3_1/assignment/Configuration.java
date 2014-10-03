@@ -1073,7 +1073,8 @@ public class Configuration {
    * classification symbols that a Configuration uses, which may be a subset of
    * the linked components' capabilities.
    * <p>
-   * @return a non-null but possibly empty list of {@link ConfigEmission} instances
+   * @return a non-null but possibly empty list of {@link ConfigEmission}
+   *         instances
    */
   public List<ConfigEmission> getConfigEmission() {
     if (configEmission == null) {
@@ -1135,7 +1136,8 @@ public class Configuration {
    * Complex element ObservedERPAnalysis (US) contains data describing Effective
    * Radiated Power (ERP) associated with an emitter or Notation.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedERPAnalysis} instances
+   * @return a non-null but possibly empty list of {@link ObservedERPAnalysis}
+   *         instances
    */
   public List<ObservedERPAnalysis> getObservedERPAnalysis() {
     if (observedERPAnalysis == null) {
@@ -1670,32 +1672,32 @@ public class Configuration {
   @Override
   public String toString() {
     return "Configuration {"
-      + " observedERPAnalysis [" + observedERPAnalysis + "]"
-      + " eirpMax [" + eirpMax + "]"
-      + " configApprovedBy [" + configApprovedBy + "]"
-      + " configID [" + configID + "]"
-      + " configEmission [" + configEmission + "]"
-      + " repeater [" + repeater + "]"
-      + " powerLimit [" + powerLimit + "]"
-      + " lastReviewedBy [" + lastReviewedBy + "]"
-      + " description [" + description + "]"
-      + " rxRef [" + rxRef + "]"
-      + " observedFirstDateTime [" + observedFirstDateTime + "]"
-      + " notation [" + notation + "]"
-      + " eirpMin [" + eirpMin + "]"
-      + " configFreq [" + configFreq + "]"
-      + " oobJustification [" + oobJustification + "]"
-      + " spectrumLink [" + spectrumLink + "]"
-      + " configApprovedDateTime [" + configApprovedDateTime + "]"
-      + " loadsetRef [" + loadsetRef + "]"
-      + " caseNum [" + caseNum + "]"
-      + " powerType [" + powerType + "]"
-      + " observedLastDateTime [" + observedLastDateTime + "]"
-      + " numUsers [" + numUsers + "]"
-      + " lastObservedBy [" + lastObservedBy + "]"
-      + " lastReviewedDateTime [" + lastReviewedDateTime + "]"
-      + " usage [" + usage + "]"
-      + " txRef [" + txRef + "]"
+      + (observedERPAnalysis != null ? " observedERPAnalysis [" + observedERPAnalysis + "]" : "")
+      + (eirpMax != null ? " eirpMax [" + eirpMax + "]" : "")
+      + (configApprovedBy != null ? " configApprovedBy [" + configApprovedBy + "]" : "")
+      + (configID != null ? " configID [" + configID + "]" : "")
+      + (configEmission != null ? " configEmission [" + configEmission + "]" : "")
+      + (repeater != null ? " repeater [" + repeater + "]" : "")
+      + (powerLimit != null ? " powerLimit [" + powerLimit + "]" : "")
+      + (lastReviewedBy != null ? " lastReviewedBy [" + lastReviewedBy + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (rxRef != null ? " rxRef [" + rxRef + "]" : "")
+      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+      + (notation != null ? " notation [" + notation + "]" : "")
+      + (eirpMin != null ? " eirpMin [" + eirpMin + "]" : "")
+      + (configFreq != null ? " configFreq [" + configFreq + "]" : "")
+      + (oobJustification != null ? " oobJustification [" + oobJustification + "]" : "")
+      + (spectrumLink != null ? " spectrumLink [" + spectrumLink + "]" : "")
+      + (configApprovedDateTime != null ? " configApprovedDateTime [" + configApprovedDateTime + "]" : "")
+      + (loadsetRef != null ? " loadsetRef [" + loadsetRef + "]" : "")
+      + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+      + (powerType != null ? " powerType [" + powerType + "]" : "")
+      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+      + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
+      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+      + (lastReviewedDateTime != null ? " lastReviewedDateTime [" + lastReviewedDateTime + "]" : "")
+      + (usage != null ? " usage [" + usage + "]" : "")
+      + (txRef != null ? " txRef [" + txRef + "]" : "")
       + "}";
   }
 

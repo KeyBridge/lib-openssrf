@@ -236,7 +236,8 @@ public class Notation {
    * Complex element NotationTimeline (US) provides history information for a
    * specific notation or signal.
    * <p>
-   * @return a non-null but possibly empty list of {@link NotationTimeline} instances
+   * @return a non-null but possibly empty list of {@link NotationTimeline}
+   *         instances
    */
   public List<NotationTimeline> getNotationTimeline() {
     if (notationTimeline == null) {
@@ -267,7 +268,8 @@ public class Notation {
    * Complex element PotentialVictims (US) contains the names of systems, or the
    * Notations of signals, which may be affected by the subject Notation/Signal.
    * <p>
-   * @return a non-null but possibly empty list of {@link PotentialVictims} instances
+   * @return a non-null but possibly empty list of {@link PotentialVictims}
+   *         instances
    */
   public List<PotentialVictims> getPotentialVictims() {
     if (potentialVictims == null) {
@@ -298,7 +300,8 @@ public class Notation {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Notation.
    * <p>
-   * @return a non-null but possibly empty list of {@link UsingCountries} instances
+   * @return a non-null but possibly empty list of {@link UsingCountries}
+   *         instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
@@ -461,12 +464,12 @@ public class Notation {
   @Override
   public String toString() {
     return "Notation {"
-      + " notationTimeline [" + notationTimeline + "]"
-      + " potentialVictims [" + potentialVictims + "]"
-      + " status [" + status + "]"
-      + " usingCountries [" + usingCountries + "]"
-      + " code [" + code + "]"
-      + " type [" + type + "]"
+      + (notationTimeline != null ? " notationTimeline [" + notationTimeline + "]" : "")
+      + (potentialVictims != null ? " potentialVictims [" + potentialVictims + "]" : "")
+      + (status != null ? " status [" + status + "]" : "")
+      + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+      + (code != null ? " code [" + code + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
       + "}";
   }
 

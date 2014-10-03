@@ -207,9 +207,9 @@ public class ExtReferenceRef {
   @Override
   public String toString() {
     return "ExtReferenceRef {"
-      + " idx [" + idx + "]"
-      + " cls [" + cls + "]"
-      + " value [" + value + "]"
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
       + "}";
   }
 

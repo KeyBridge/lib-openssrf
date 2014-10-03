@@ -400,12 +400,12 @@ public class Address {
   @Override
   public String toString() {
     return "Address {"
-      + " cityArea [" + cityArea + "]"
-      + " description [" + description + "]"
-      + " street [" + street + "]"
-      + " postCode [" + postCode + "]"
-      + " stateCounty [" + stateCounty + "]"
-      + " country [" + country + "]"
+      + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (street != null ? " street [" + street + "]" : "")
+      + (postCode != null ? " postCode [" + postCode + "]" : "")
+      + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
+      + (country != null ? " country [" + country + "]" : "")
       + "}";
   }
 

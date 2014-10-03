@@ -182,8 +182,8 @@ public class CurvePoint {
   @Override
   public String toString() {
     return "CurvePoint {"
-      + " level [" + level + "]"
-      + " offset [" + offset + "]"
+      + (level != null ? " level [" + level + "]" : "")
+      + (offset != null ? " offset [" + offset + "]" : "")
       + "}";
   }
 

@@ -903,7 +903,8 @@ public class JRFLEntry {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -934,7 +935,8 @@ public class JRFLEntry {
    * Complex element JRFLEntryLocation defines the location where the use of a
    * specific frequency or frequency range(s) is restricted in use.
    * <p>
-   * @return a non-null but possibly empty list of {@link JRFLEntryLocation} instances
+   * @return a non-null but possibly empty list of {@link JRFLEntryLocation}
+   *         instances
    */
   public List<JRFLEntryLocation> getJRFLEntryLocation() {
     if (jrflEntryLocation == null) {
@@ -1281,26 +1283,26 @@ public class JRFLEntry {
   @Override
   public String toString() {
     return "JRFLEntry {"
-      + " jrflEntryLocation [" + jrflEntryLocation + "]"
-      + " minutes [" + minutes + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " freqMin [" + freqMin + "]"
-      + " hours [" + hours + "]"
-      + " freqMax [" + freqMax + "]"
-      + " justification [" + justification + "]"
-      + " daysOfMonth [" + daysOfMonth + "]"
-      + " daysOfWeek [" + daysOfWeek + "]"
-      + " bandwidth [" + bandwidth + "]"
-      + " asgnAllotRef [" + asgnAllotRef + "]"
-      + " approvalLevel [" + approvalLevel + "]"
-      + " project [" + project + "]"
-      + " months [" + months + "]"
-      + " duration [" + duration + "]"
-      + " protectionCode [" + protectionCode + "]"
-      + " seconds [" + seconds + "]"
-      + " priority [" + priority + "]"
-      + " freqUse [" + freqUse + "]"
-      + " years [" + years + "]"
+      + (jrflEntryLocation != null ? " jrflEntryLocation [" + jrflEntryLocation + "]" : "")
+      + (minutes != null ? " minutes [" + minutes + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (hours != null ? " hours [" + hours + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (justification != null ? " justification [" + justification + "]" : "")
+      + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+      + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+      + (bandwidth != null ? " bandwidth [" + bandwidth + "]" : "")
+      + (asgnAllotRef != null ? " asgnAllotRef [" + asgnAllotRef + "]" : "")
+      + (approvalLevel != null ? " approvalLevel [" + approvalLevel + "]" : "")
+      + (project != null ? " project [" + project + "]" : "")
+      + (months != null ? " months [" + months + "]" : "")
+      + (duration != null ? " duration [" + duration + "]" : "")
+      + (protectionCode != null ? " protectionCode [" + protectionCode + "]" : "")
+      + (seconds != null ? " seconds [" + seconds + "]" : "")
+      + (priority != null ? " priority [" + priority + "]" : "")
+      + (freqUse != null ? " freqUse [" + freqUse + "]" : "")
+      + (years != null ? " years [" + years + "]" : "")
       + "}";
   }
 

@@ -207,7 +207,8 @@ public class Polygon {
    * it is assumed that they are connected to complete the boundary of the
    * polygon.
    * <p>
-   * @return a non-null but possibly empty list of {@link PolygonPoint} instances
+   * @return a non-null but possibly empty list of {@link PolygonPoint}
+   *         instances
    */
   public List<PolygonPoint> getPolygonPoint() {
     if (polygonPoint == null) {
@@ -351,11 +352,11 @@ public class Polygon {
   @Override
   public String toString() {
     return "Polygon {"
-      + " altitudeMax [" + altitudeMax + "]"
-      + " idx [" + idx + "]"
-      + " excluded [" + excluded + "]"
-      + " polygonPoint [" + polygonPoint + "]"
-      + " altitudeMin [" + altitudeMin + "]"
+      + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (excluded != null ? " excluded [" + excluded + "]" : "")
+      + (polygonPoint != null ? " polygonPoint [" + polygonPoint + "]" : "")
+      + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
       + "}";
   }
 

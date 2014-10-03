@@ -307,9 +307,9 @@ public class Emission {
   @Override
   public String toString() {
     return "Emission {"
-      + " necessaryBw [" + necessaryBw + "]"
-      + " emsClass [" + emsClass + "]"
-      + " power [" + power + "]"
+      + (necessaryBw != null ? " necessaryBw [" + necessaryBw + "]" : "")
+      + (emsClass != null ? " emsClass [" + emsClass + "]" : "")
+      + (power != null ? " power [" + power + "]" : "")
       + "}";
   }
 

@@ -1133,7 +1133,8 @@ public class ObservedPolarisationAnalysis {
    * Complex element ObservedPolarisationValues (US) contains data describing
    * the parametric information for the polarization tilt angle specific values.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedPolarisationValues} instances
+   * @return a non-null but possibly empty list of
+   *         {@link ObservedPolarisationValues} instances
    */
   public List<ObservedPolarisationValues> getObservedPolarisationValues() {
     if (observedPolarisationValues == null) {
@@ -1490,30 +1491,30 @@ public class ObservedPolarisationAnalysis {
   @Override
   public String toString() {
     return "ObservedPolarisationAnalysis {"
-      + " numTiltAngleElements [" + numTiltAngleElements + "]"
-      + " polarisationType [" + polarisationType + "]"
-      + " polarisationRotationRate [" + polarisationRotationRate + "]"
-      + " tiltAngleAdaptiveRuleDesc [" + tiltAngleAdaptiveRuleDesc + "]"
-      + " numTiltAnglePositions [" + numTiltAnglePositions + "]"
-      + " tiltAngleDuration [" + tiltAngleDuration + "]"
-      + " tiltAngleContinuous [" + tiltAngleContinuous + "]"
-      + " axialRatio [" + axialRatio + "]"
-      + " tiltAngleExtremeMax [" + tiltAngleExtremeMax + "]"
-      + " tiltAngleExtremeMin [" + tiltAngleExtremeMin + "]"
-      + " tiltAngleSequenceDesc [" + tiltAngleSequenceDesc + "]"
-      + " tiltAngleMedian [" + tiltAngleMedian + "]"
-      + " tiltAngleMean [" + tiltAngleMean + "]"
-      + " polarisationDirection [" + polarisationDirection + "]"
-      + " tiltAnglePatternType [" + tiltAnglePatternType + "]"
-      + " tiltAngleAdaptiveDriverDesc [" + tiltAngleAdaptiveDriverDesc + "]"
-      + " tiltAnglePatternPeriod [" + tiltAnglePatternPeriod + "]"
-      + " tiltAngleStep [" + tiltAngleStep + "]"
-      + " tiltAngleStdDev [" + tiltAngleStdDev + "]"
-      + " observedPolarisationValues [" + observedPolarisationValues + "]"
-      + " tiltAngleRate [" + tiltAngleRate + "]"
-      + " polarisationSense [" + polarisationSense + "]"
-      + " tiltAngleRangeMax [" + tiltAngleRangeMax + "]"
-      + " tiltAngleRangeMin [" + tiltAngleRangeMin + "]"
+      + (numTiltAngleElements != null ? " numTiltAngleElements [" + numTiltAngleElements + "]" : "")
+      + (polarisationType != null ? " polarisationType [" + polarisationType + "]" : "")
+      + (polarisationRotationRate != null ? " polarisationRotationRate [" + polarisationRotationRate + "]" : "")
+      + (tiltAngleAdaptiveRuleDesc != null ? " tiltAngleAdaptiveRuleDesc [" + tiltAngleAdaptiveRuleDesc + "]" : "")
+      + (numTiltAnglePositions != null ? " numTiltAnglePositions [" + numTiltAnglePositions + "]" : "")
+      + (tiltAngleDuration != null ? " tiltAngleDuration [" + tiltAngleDuration + "]" : "")
+      + (tiltAngleContinuous != null ? " tiltAngleContinuous [" + tiltAngleContinuous + "]" : "")
+      + (axialRatio != null ? " axialRatio [" + axialRatio + "]" : "")
+      + (tiltAngleExtremeMax != null ? " tiltAngleExtremeMax [" + tiltAngleExtremeMax + "]" : "")
+      + (tiltAngleExtremeMin != null ? " tiltAngleExtremeMin [" + tiltAngleExtremeMin + "]" : "")
+      + (tiltAngleSequenceDesc != null ? " tiltAngleSequenceDesc [" + tiltAngleSequenceDesc + "]" : "")
+      + (tiltAngleMedian != null ? " tiltAngleMedian [" + tiltAngleMedian + "]" : "")
+      + (tiltAngleMean != null ? " tiltAngleMean [" + tiltAngleMean + "]" : "")
+      + (polarisationDirection != null ? " polarisationDirection [" + polarisationDirection + "]" : "")
+      + (tiltAnglePatternType != null ? " tiltAnglePatternType [" + tiltAnglePatternType + "]" : "")
+      + (tiltAngleAdaptiveDriverDesc != null ? " tiltAngleAdaptiveDriverDesc [" + tiltAngleAdaptiveDriverDesc + "]" : "")
+      + (tiltAnglePatternPeriod != null ? " tiltAnglePatternPeriod [" + tiltAnglePatternPeriod + "]" : "")
+      + (tiltAngleStep != null ? " tiltAngleStep [" + tiltAngleStep + "]" : "")
+      + (tiltAngleStdDev != null ? " tiltAngleStdDev [" + tiltAngleStdDev + "]" : "")
+      + (observedPolarisationValues != null ? " observedPolarisationValues [" + observedPolarisationValues + "]" : "")
+      + (tiltAngleRate != null ? " tiltAngleRate [" + tiltAngleRate + "]" : "")
+      + (polarisationSense != null ? " polarisationSense [" + polarisationSense + "]" : "")
+      + (tiltAngleRangeMax != null ? " tiltAngleRangeMax [" + tiltAngleRangeMax + "]" : "")
+      + (tiltAngleRangeMin != null ? " tiltAngleRangeMin [" + tiltAngleRangeMin + "]" : "")
       + "}";
   }
 

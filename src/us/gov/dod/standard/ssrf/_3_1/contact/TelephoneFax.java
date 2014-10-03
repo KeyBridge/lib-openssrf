@@ -338,11 +338,11 @@ public class TelephoneFax {
   @Override
   public String toString() {
     return "TelephoneFax {"
-      + " maxCls [" + maxCls + "]"
-      + " fax [" + fax + "]"
-      + " number [" + number + "]"
-      + " type [" + type + "]"
-      + " preferred [" + preferred + "]"
+      + (maxCls != null ? " maxCls [" + maxCls + "]" : "")
+      + (fax != null ? " fax [" + fax + "]" : "")
+      + (number != null ? " number [" + number + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (preferred != null ? " preferred [" + preferred + "]" : "")
       + "}";
   }
 

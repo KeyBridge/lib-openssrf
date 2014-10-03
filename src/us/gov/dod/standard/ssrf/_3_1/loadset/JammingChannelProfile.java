@@ -839,7 +839,8 @@ public class JammingChannelProfile {
    * Complex element TimingDeconflictionProtocol (US) defines algorithm(s) used
    * for synchronising Electronic Warfare jamming information.
    * <p>
-   * @return a non-null but possibly empty list of {@link TimingDeconflictionProtocol} instances
+   * @return a non-null but possibly empty list of
+   *         {@link TimingDeconflictionProtocol} instances
    */
   public List<TimingDeconflictionProtocol> getTimingDeconflictionProtocol() {
     if (timingDeconflictionProtocol == null) {
@@ -1122,25 +1123,25 @@ public class JammingChannelProfile {
   @Override
   public String toString() {
     return "JammingChannelProfile {"
-      + " timingDeconflictionProtocol [" + timingDeconflictionProtocol + "]"
-      + " offsetFreq [" + offsetFreq + "]"
-      + " dwell [" + dwell + "]"
-      + " txDuration [" + txDuration + "]"
-      + " centerFreq [" + centerFreq + "]"
-      + " threat [" + threat + "]"
-      + " direction [" + direction + "]"
-      + " freqMin [" + freqMin + "]"
-      + " freqMax [" + freqMax + "]"
-      + " techniques [" + techniques + "]"
-      + " signal [" + signal + "]"
-      + " rxDuration [" + rxDuration + "]"
-      + " channelSpacing [" + channelSpacing + "]"
-      + " activationTime [" + activationTime + "]"
-      + " fftType [" + fftType + "]"
-      + " exBlankingOn [" + exBlankingOn + "]"
-      + " activationPower [" + activationPower + "]"
-      + " carrierWaveform [" + carrierWaveform + "]"
-      + " observeTime [" + observeTime + "]"
+      + (timingDeconflictionProtocol != null ? " timingDeconflictionProtocol [" + timingDeconflictionProtocol + "]" : "")
+      + (offsetFreq != null ? " offsetFreq [" + offsetFreq + "]" : "")
+      + (dwell != null ? " dwell [" + dwell + "]" : "")
+      + (txDuration != null ? " txDuration [" + txDuration + "]" : "")
+      + (centerFreq != null ? " centerFreq [" + centerFreq + "]" : "")
+      + (threat != null ? " threat [" + threat + "]" : "")
+      + (direction != null ? " direction [" + direction + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (techniques != null ? " techniques [" + techniques + "]" : "")
+      + (signal != null ? " signal [" + signal + "]" : "")
+      + (rxDuration != null ? " rxDuration [" + rxDuration + "]" : "")
+      + (channelSpacing != null ? " channelSpacing [" + channelSpacing + "]" : "")
+      + (activationTime != null ? " activationTime [" + activationTime + "]" : "")
+      + (fftType != null ? " fftType [" + fftType + "]" : "")
+      + (exBlankingOn != null ? " exBlankingOn [" + exBlankingOn + "]" : "")
+      + (activationPower != null ? " activationPower [" + activationPower + "]" : "")
+      + (carrierWaveform != null ? " carrierWaveform [" + carrierWaveform + "]" : "")
+      + (observeTime != null ? " observeTime [" + observeTime + "]" : "")
       + "}";
   }
 

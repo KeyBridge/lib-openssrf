@@ -704,7 +704,8 @@ public class Trunking {
    * of the existing assignment to be relinquished or used in the trunked land
    * mobile system.
    * <p>
-   * @return a non-null but possibly empty list of {@link TrunkingAssignment} instances
+   * @return a non-null but possibly empty list of {@link TrunkingAssignment}
+   *         instances
    */
   public List<TrunkingAssignment> getTrunkingAssignment() {
     if (trunkingAssignment == null) {
@@ -938,21 +939,21 @@ public class Trunking {
   @Override
   public String toString() {
     return "Trunking {"
-      + " numRepeaters [" + numRepeaters + "]"
-      + " freqMin [" + freqMin + "]"
-      + " freqMax [" + freqMax + "]"
-      + " expansionTargetDate [" + expansionTargetDate + "]"
-      + " dispatcher [" + dispatcher + "]"
-      + " estimatedExpansionCost [" + estimatedExpansionCost + "]"
-      + " numFreqsRequired [" + numFreqsRequired + "]"
-      + " requestForExpansion [" + requestForExpansion + "]"
-      + " trunkingAssignment [" + trunkingAssignment + "]"
-      + " dispatcherExplanation [" + dispatcherExplanation + "]"
-      + " numUsers [" + numUsers + "]"
-      + " separateSystemJustification [" + separateSystemJustification + "]"
-      + " previousSPSDocketNum [" + previousSPSDocketNum + "]"
-      + " nsepUse [" + nsepUse + "]"
-      + " additionalChannelsRationale [" + additionalChannelsRationale + "]"
+      + (numRepeaters != null ? " numRepeaters [" + numRepeaters + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (expansionTargetDate != null ? " expansionTargetDate [" + expansionTargetDate + "]" : "")
+      + (dispatcher != null ? " dispatcher [" + dispatcher + "]" : "")
+      + (estimatedExpansionCost != null ? " estimatedExpansionCost [" + estimatedExpansionCost + "]" : "")
+      + (numFreqsRequired != null ? " numFreqsRequired [" + numFreqsRequired + "]" : "")
+      + (requestForExpansion != null ? " requestForExpansion [" + requestForExpansion + "]" : "")
+      + (trunkingAssignment != null ? " trunkingAssignment [" + trunkingAssignment + "]" : "")
+      + (dispatcherExplanation != null ? " dispatcherExplanation [" + dispatcherExplanation + "]" : "")
+      + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
+      + (separateSystemJustification != null ? " separateSystemJustification [" + separateSystemJustification + "]" : "")
+      + (previousSPSDocketNum != null ? " previousSPSDocketNum [" + previousSPSDocketNum + "]" : "")
+      + (nsepUse != null ? " nsepUse [" + nsepUse + "]" : "")
+      + (additionalChannelsRationale != null ? " additionalChannelsRationale [" + additionalChannelsRationale + "]" : "")
       + "}";
   }
 

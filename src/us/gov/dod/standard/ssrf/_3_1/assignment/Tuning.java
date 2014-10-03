@@ -326,7 +326,8 @@ public class Tuning {
    * Complex element RequestedFreq indicates a single frequency or a range of
    * frequencies.
    * <p>
-   * @return a non-null but possibly empty list of {@link AsgnFreqBase} instances
+   * @return a non-null but possibly empty list of {@link AsgnFreqBase}
+   *         instances
    */
   public List<AsgnFreqBase> getRequestedFreq() {
     if (requestedFreq == null) {
@@ -462,13 +463,13 @@ public class Tuning {
   @Override
   public String toString() {
     return "Tuning {"
-      + " freqSep [" + freqSep + "]"
-      + " freqSepType [" + freqSepType + "]"
-      + " exclusive [" + exclusive + "]"
-      + " priority [" + priority + "]"
-      + " requestedFreq [" + requestedFreq + "]"
-      + " tuningStep [" + tuningStep + "]"
-      + " numFreq [" + numFreq + "]"
+      + (freqSep != null ? " freqSep [" + freqSep + "]" : "")
+      + (freqSepType != null ? " freqSepType [" + freqSepType + "]" : "")
+      + (exclusive != null ? " exclusive [" + exclusive + "]" : "")
+      + (priority != null ? " priority [" + priority + "]" : "")
+      + (requestedFreq != null ? " requestedFreq [" + requestedFreq + "]" : "")
+      + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
+      + (numFreq != null ? " numFreq [" + numFreq + "]" : "")
       + "}";
   }
 

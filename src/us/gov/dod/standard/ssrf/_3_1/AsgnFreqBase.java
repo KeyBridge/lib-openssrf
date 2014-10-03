@@ -233,10 +233,10 @@ public abstract class AsgnFreqBase {
   @Override
   public String toString() {
     return "AsgnFreqBase {"
-      + " refFreq [" + refFreq + "]"
-      + " freqMin [" + freqMin + "]"
-      + " freqMax [" + freqMax + "]"
-      + " freqUse [" + freqUse + "]"
+      + (refFreq != null ? " refFreq [" + refFreq + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (freqUse != null ? " freqUse [" + freqUse + "]" : "")
       + "}";
   }
 

@@ -451,7 +451,8 @@ public class ObservedMOPSweep {
    * Complex element ObservedMOPSequence (US) contains descriptive information
    * about the sequencing used for the Modulation impressed On the Pulse (MOP).
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedMOPSequence} instances
+   * @return a non-null but possibly empty list of {@link ObservedMOPSequence}
+   *         instances
    */
   public List<ObservedMOPSequence> getObservedMOPSequence() {
     if (observedMOPSequence == null) {
@@ -634,16 +635,16 @@ public class ObservedMOPSweep {
   @Override
   public String toString() {
     return "ObservedMOPSweep {"
-      + " mopNumElements [" + mopNumElements + "]"
-      + " mopRepetionInterval [" + mopRepetionInterval + "]"
-      + " mopSweepPeriod [" + mopSweepPeriod + "]"
-      + " mopStepAM [" + mopStepAM + "]"
-      + " mopStepCW [" + mopStepCW + "]"
-      + " mopDutyCycle [" + mopDutyCycle + "]"
-      + " mopFlyBackInterval [" + mopFlyBackInterval + "]"
-      + " mopStepPM [" + mopStepPM + "]"
-      + " observedMOPSequence [" + observedMOPSequence + "]"
-      + " mopStepFM [" + mopStepFM + "]"
+      + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
+      + (mopRepetionInterval != null ? " mopRepetionInterval [" + mopRepetionInterval + "]" : "")
+      + (mopSweepPeriod != null ? " mopSweepPeriod [" + mopSweepPeriod + "]" : "")
+      + (mopStepAM != null ? " mopStepAM [" + mopStepAM + "]" : "")
+      + (mopStepCW != null ? " mopStepCW [" + mopStepCW + "]" : "")
+      + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
+      + (mopFlyBackInterval != null ? " mopFlyBackInterval [" + mopFlyBackInterval + "]" : "")
+      + (mopStepPM != null ? " mopStepPM [" + mopStepPM + "]" : "")
+      + (observedMOPSequence != null ? " observedMOPSequence [" + observedMOPSequence + "]" : "")
+      + (mopStepFM != null ? " mopStepFM [" + mopStepFM + "]" : "")
       + "}";
   }
 

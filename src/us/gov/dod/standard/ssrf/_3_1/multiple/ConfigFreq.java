@@ -611,16 +611,16 @@ public class ConfigFreq {
   @Override
   public String toString() {
     return "ConfigFreq {"
-      + " configFreqUse [" + configFreqUse + "]"
-      + " inBand [" + inBand + "]"
-      + " duration [" + duration + "]"
-      + " idx [" + idx + "]"
-      + " channelSpacing [" + channelSpacing + "]"
-      + " priority [" + priority + "]"
-      + " freqMin [" + freqMin + "]"
-      + " freqMax [" + freqMax + "]"
-      + " pulseWidth [" + pulseWidth + "]"
-      + " period [" + period + "]"
+      + (configFreqUse != null ? " configFreqUse [" + configFreqUse + "]" : "")
+      + (inBand != null ? " inBand [" + inBand + "]" : "")
+      + (duration != null ? " duration [" + duration + "]" : "")
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (channelSpacing != null ? " channelSpacing [" + channelSpacing + "]" : "")
+      + (priority != null ? " priority [" + priority + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (pulseWidth != null ? " pulseWidth [" + pulseWidth + "]" : "")
+      + (period != null ? " period [" + period + "]" : "")
       + "}";
   }
 

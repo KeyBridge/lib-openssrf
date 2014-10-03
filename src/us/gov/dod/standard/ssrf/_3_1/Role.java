@@ -376,7 +376,8 @@ public class Role extends Common<Role> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    * <p>
-   * @return a non-null but possibly empty list of {@link TelephoneFax} instances
+   * @return a non-null but possibly empty list of {@link TelephoneFax}
+   *         instances
    */
   public List<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
@@ -659,15 +660,15 @@ public class Role extends Common<Role> {
   @Override
   public String toString() {
     return "Role {"
-      + " expirationDate [" + expirationDate + "]"
-      + " contactRef [" + contactRef + "]"
-      + " address [" + address + "]"
-      + " name [" + name + "]"
-      + " eMail [" + eMail + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " telephoneFax [" + telephoneFax + "]"
-      + " effectiveDate [" + effectiveDate + "]"
-      + " country [" + country + "]"
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (contactRef != null ? " contactRef [" + contactRef + "]" : "")
+      + (address != null ? " address [" + address + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (eMail != null ? " eMail [" + eMail + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + (country != null ? " country [" + country + "]" : "")
       + "}";
   }
 

@@ -982,21 +982,21 @@ public class Pulse {
   @Override
   public String toString() {
     return "Pulse {"
-      + " justifyShortRiseTime [" + justifyShortRiseTime + "]"
-      + " avgPowerMax [" + avgPowerMax + "]"
-      + " avgPowerMin [" + avgPowerMin + "]"
-      + " dutyCycleMax [" + dutyCycleMax + "]"
-      + " compRatio [" + compRatio + "]"
-      + " prrMax [" + prrMax + "]"
-      + " dutyCycleMin [" + dutyCycleMin + "]"
-      + " pdMin [" + pdMin + "]"
-      + " fallTime [" + fallTime + "]"
-      + " prrMin [" + prrMin + "]"
-      + " compMethod [" + compMethod + "]"
-      + " numSubpulses [" + numSubpulses + "]"
-      + " pdMax [" + pdMax + "]"
-      + " riseTime [" + riseTime + "]"
-      + " radarProcessingGainMax [" + radarProcessingGainMax + "]"
+      + (justifyShortRiseTime != null ? " justifyShortRiseTime [" + justifyShortRiseTime + "]" : "")
+      + (avgPowerMax != null ? " avgPowerMax [" + avgPowerMax + "]" : "")
+      + (avgPowerMin != null ? " avgPowerMin [" + avgPowerMin + "]" : "")
+      + (dutyCycleMax != null ? " dutyCycleMax [" + dutyCycleMax + "]" : "")
+      + (compRatio != null ? " compRatio [" + compRatio + "]" : "")
+      + (prrMax != null ? " prrMax [" + prrMax + "]" : "")
+      + (dutyCycleMin != null ? " dutyCycleMin [" + dutyCycleMin + "]" : "")
+      + (pdMin != null ? " pdMin [" + pdMin + "]" : "")
+      + (fallTime != null ? " fallTime [" + fallTime + "]" : "")
+      + (prrMin != null ? " prrMin [" + prrMin + "]" : "")
+      + (compMethod != null ? " compMethod [" + compMethod + "]" : "")
+      + (numSubpulses != null ? " numSubpulses [" + numSubpulses + "]" : "")
+      + (pdMax != null ? " pdMax [" + pdMax + "]" : "")
+      + (riseTime != null ? " riseTime [" + riseTime + "]" : "")
+      + (radarProcessingGainMax != null ? " radarProcessingGainMax [" + radarProcessingGainMax + "]" : "")
       + "}";
   }
 

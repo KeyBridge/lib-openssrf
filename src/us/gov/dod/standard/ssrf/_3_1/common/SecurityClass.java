@@ -642,15 +642,15 @@ public class SecurityClass {
   @Override
   public String toString() {
     return "SecurityClass {"
-      + " clsAuthority [" + clsAuthority + "]"
-      + " clsReason [" + clsReason + "]"
-      + " sourceClsDate [" + sourceClsDate + "]"
-      + " clsOrg [" + clsOrg + "]"
-      + " clsDerived [" + clsDerived + "]"
-      + " declsEvent [" + declsEvent + "]"
-      + " declsDate [" + declsDate + "]"
-      + " downgrade [" + downgrade + "]"
-      + " declsType [" + declsType + "]"
+      + (clsAuthority != null ? " clsAuthority [" + clsAuthority + "]" : "")
+      + (clsReason != null ? " clsReason [" + clsReason + "]" : "")
+      + (sourceClsDate != null ? " sourceClsDate [" + sourceClsDate + "]" : "")
+      + (clsOrg != null ? " clsOrg [" + clsOrg + "]" : "")
+      + (clsDerived != null ? " clsDerived [" + clsDerived + "]" : "")
+      + (declsEvent != null ? " declsEvent [" + declsEvent + "]" : "")
+      + (declsDate != null ? " declsDate [" + declsDate + "]" : "")
+      + (downgrade != null ? " downgrade [" + downgrade + "]" : "")
+      + (declsType != null ? " declsType [" + declsType + "]" : "")
       + "}";
   }
 

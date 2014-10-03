@@ -286,7 +286,8 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -319,7 +320,8 @@ public class RFSystem extends Common<RFSystem> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature} instances
+   * @return a non-null but possibly empty list of {@link Nomenclature}
+   *         instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -391,7 +393,8 @@ public class RFSystem extends Common<RFSystem> {
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
    * <p>
-   * @return a non-null but possibly empty list of {@link Configuration} instances
+   * @return a non-null but possibly empty list of {@link Configuration}
+   *         instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
@@ -422,7 +425,8 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element RelatedSystem identifies a System linked to the current
    * System, and the relation (parent, child, sibling).
    * <p>
-   * @return a non-null but possibly empty list of {@link RelatedSystem} instances
+   * @return a non-null but possibly empty list of {@link RelatedSystem}
+   *         instances
    */
   public List<RelatedSystem> getRelatedSystem() {
     if (relatedSystem == null) {
@@ -484,7 +488,8 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the RFSystem.
    * <p>
-   * @return a non-null but possibly empty list of {@link UsingCountries} instances
+   * @return a non-null but possibly empty list of {@link UsingCountries}
+   *         instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
@@ -798,16 +803,16 @@ public class RFSystem extends Common<RFSystem> {
   @Override
   public String toString() {
     return "RFSystem {"
-      + " nomenclature [" + nomenclature + "]"
-      + " fieldedStatus [" + fieldedStatus + "]"
-      + " relatedSystem [" + relatedSystem + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " stockNum [" + stockNum + "]"
-      + " initialCost [" + initialCost + "]"
-      + " emergency [" + emergency + "]"
-      + " deployment [" + deployment + "]"
-      + " usingCountries [" + usingCountries + "]"
-      + " configuration [" + configuration + "]"
+      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+      + (fieldedStatus != null ? " fieldedStatus [" + fieldedStatus + "]" : "")
+      + (relatedSystem != null ? " relatedSystem [" + relatedSystem + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
+      + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
+      + (emergency != null ? " emergency [" + emergency + "]" : "")
+      + (deployment != null ? " deployment [" + deployment + "]" : "")
+      + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+      + (configuration != null ? " configuration [" + configuration + "]" : "")
       + "}";
   }
 

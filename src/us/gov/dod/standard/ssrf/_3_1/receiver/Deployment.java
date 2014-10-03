@@ -160,7 +160,8 @@ public class Deployment {
    * equipment is installed, whether it is mounted at a fixed site atop a
    * mountain, in a shelter, in a vehicle, aboard a helicopter, etc.
    * <p>
-   * @return a non-null but possibly empty list of {@link Installation} instances
+   * @return a non-null but possibly empty list of {@link Installation}
+   *         instances
    */
   public List<Installation> getInstallation() {
     if (installation == null) {
@@ -249,9 +250,9 @@ public class Deployment {
   @Override
   public String toString() {
     return "Deployment {"
-      + " installation [" + installation + "]"
-      + " status [" + status + "]"
-      + " type [" + type + "]"
+      + (installation != null ? " installation [" + installation + "]" : "")
+      + (status != null ? " status [" + status + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
       + "}";
   }
 

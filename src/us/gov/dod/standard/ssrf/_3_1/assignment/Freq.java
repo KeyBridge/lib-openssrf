@@ -207,7 +207,8 @@ public class Freq extends AsgnFreqBase {
    * Complex element NarrowBandPlanning (US) describes a reduced bandwidth
    * assignment for a single frequency or a range of frequencies.
    * <p>
-   * @return a non-null but possibly empty list of {@link NarrowBandPlanning} instances
+   * @return a non-null but possibly empty list of {@link NarrowBandPlanning}
+   *         instances
    */
   public List<NarrowBandPlanning> getNarrowBandPlanning() {
     if (narrowBandPlanning == null) {
@@ -327,10 +328,10 @@ public class Freq extends AsgnFreqBase {
   @Override
   public String toString() {
     return "Freq {"
-      + " narrowBandPlanning [" + narrowBandPlanning + "]"
-      + " legacyNum [" + legacyNum + "]"
-      + " tad [" + tad + "]"
-      + " pairedFreq [" + pairedFreq + "]"
+      + (narrowBandPlanning != null ? " narrowBandPlanning [" + narrowBandPlanning + "]" : "")
+      + (legacyNum != null ? " legacyNum [" + legacyNum + "]" : "")
+      + (tad != null ? " tad [" + tad + "]" : "")
+      + (pairedFreq != null ? " pairedFreq [" + pairedFreq + "]" : "")
       + super.toString()
       + "}";
   }

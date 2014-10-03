@@ -750,7 +750,8 @@ public class SSReply extends Common<SSReply> {
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability.
    * <p>
-   * @return a non-null but possibly empty list of {@link CommentSource} instances
+   * @return a non-null but possibly empty list of {@link CommentSource}
+   *         instances
    */
   public List<CommentSource> getCommentSource() {
     if (commentSource == null) {
@@ -781,7 +782,8 @@ public class SSReply extends Common<SSReply> {
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    * <p>
-   * @return a non-null but possibly empty list of {@link StageLocation} instances
+   * @return a non-null but possibly empty list of {@link StageLocation}
+   *         instances
    */
   public List<StageLocation> getStageLocation() {
     if (stageLocation == null) {
@@ -818,7 +820,8 @@ public class SSReply extends Common<SSReply> {
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
    * <p>
-   * @return a non-null but possibly empty list of {@link Configuration} instances
+   * @return a non-null but possibly empty list of {@link Configuration}
+   *         instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
@@ -1138,23 +1141,23 @@ public class SSReply extends Common<SSReply> {
   @Override
   public String toString() {
     return "SSReply {"
-      + " coordinationNum [" + coordinationNum + "]"
-      + " expirationDate [" + expirationDate + "]"
-      + " replyingCountry [" + replyingCountry + "]"
-      + " erpNumber [" + erpNumber + "]"
-      + " replyingAuthority [" + replyingAuthority + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " distributionGroups [" + distributionGroups + "]"
-      + " supportabilityCode [" + supportabilityCode + "]"
-      + " approvalSPSNum [" + approvalSPSNum + "]"
-      + " stageLocation [" + stageLocation + "]"
-      + " ssRequestRef [" + ssRequestRef + "]"
-      + " iracNumber [" + iracNumber + "]"
-      + " dateReceivedByCountry [" + dateReceivedByCountry + "]"
-      + " configuration [" + configuration + "]"
-      + " commentSource [" + commentSource + "]"
-      + " effectiveDate [" + effectiveDate + "]"
-      + " fasNumber [" + fasNumber + "]"
+      + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (replyingCountry != null ? " replyingCountry [" + replyingCountry + "]" : "")
+      + (erpNumber != null ? " erpNumber [" + erpNumber + "]" : "")
+      + (replyingAuthority != null ? " replyingAuthority [" + replyingAuthority + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (distributionGroups != null ? " distributionGroups [" + distributionGroups + "]" : "")
+      + (supportabilityCode != null ? " supportabilityCode [" + supportabilityCode + "]" : "")
+      + (approvalSPSNum != null ? " approvalSPSNum [" + approvalSPSNum + "]" : "")
+      + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
+      + (ssRequestRef != null ? " ssRequestRef [" + ssRequestRef + "]" : "")
+      + (iracNumber != null ? " iracNumber [" + iracNumber + "]" : "")
+      + (dateReceivedByCountry != null ? " dateReceivedByCountry [" + dateReceivedByCountry + "]" : "")
+      + (configuration != null ? " configuration [" + configuration + "]" : "")
+      + (commentSource != null ? " commentSource [" + commentSource + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + (fasNumber != null ? " fasNumber [" + fasNumber + "]" : "")
       + "}";
   }
 

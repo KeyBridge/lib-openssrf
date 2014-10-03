@@ -849,7 +849,8 @@ public class ObservedERPAnalysis {
    * that describe the Effective Radiated Power (ERP) associated with an emitter
    * or Notation.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedERPValues} instances
+   * @return a non-null but possibly empty list of {@link ObservedERPValues}
+   *         instances
    */
   public List<ObservedERPValues> getObservedERPValues() {
     if (observedERPValues == null) {
@@ -1132,24 +1133,24 @@ public class ObservedERPAnalysis {
   @Override
   public String toString() {
     return "ObservedERPAnalysis {"
-      + " erpMean [" + erpMean + "]"
-      + " continuous [" + continuous + "]"
-      + " erpPatternPeriod [" + erpPatternPeriod + "]"
-      + " numObsValues [" + numObsValues + "]"
-      + " observedERPValues [" + observedERPValues + "]"
-      + " erpStdDev [" + erpStdDev + "]"
-      + " erpSequenceDesc [" + erpSequenceDesc + "]"
-      + " erpActualMax [" + erpActualMax + "]"
-      + " erpActualMin [" + erpActualMin + "]"
-      + " erpExtremeMax [" + erpExtremeMax + "]"
-      + " erpExtremeMin [" + erpExtremeMin + "]"
-      + " erpMedian [" + erpMedian + "]"
-      + " erpAdaptiveDriverDesc [" + erpAdaptiveDriverDesc + "]"
-      + " numObsPositions [" + numObsPositions + "]"
-      + " erpChangeRate [" + erpChangeRate + "]"
-      + " erpStep [" + erpStep + "]"
-      + " erpAdaptiveRuleDesc [" + erpAdaptiveRuleDesc + "]"
-      + " erpPatternType [" + erpPatternType + "]"
+      + (erpMean != null ? " erpMean [" + erpMean + "]" : "")
+      + (continuous != null ? " continuous [" + continuous + "]" : "")
+      + (erpPatternPeriod != null ? " erpPatternPeriod [" + erpPatternPeriod + "]" : "")
+      + (numObsValues != null ? " numObsValues [" + numObsValues + "]" : "")
+      + (observedERPValues != null ? " observedERPValues [" + observedERPValues + "]" : "")
+      + (erpStdDev != null ? " erpStdDev [" + erpStdDev + "]" : "")
+      + (erpSequenceDesc != null ? " erpSequenceDesc [" + erpSequenceDesc + "]" : "")
+      + (erpActualMax != null ? " erpActualMax [" + erpActualMax + "]" : "")
+      + (erpActualMin != null ? " erpActualMin [" + erpActualMin + "]" : "")
+      + (erpExtremeMax != null ? " erpExtremeMax [" + erpExtremeMax + "]" : "")
+      + (erpExtremeMin != null ? " erpExtremeMin [" + erpExtremeMin + "]" : "")
+      + (erpMedian != null ? " erpMedian [" + erpMedian + "]" : "")
+      + (erpAdaptiveDriverDesc != null ? " erpAdaptiveDriverDesc [" + erpAdaptiveDriverDesc + "]" : "")
+      + (numObsPositions != null ? " numObsPositions [" + numObsPositions + "]" : "")
+      + (erpChangeRate != null ? " erpChangeRate [" + erpChangeRate + "]" : "")
+      + (erpStep != null ? " erpStep [" + erpStep + "]" : "")
+      + (erpAdaptiveRuleDesc != null ? " erpAdaptiveRuleDesc [" + erpAdaptiveRuleDesc + "]" : "")
+      + (erpPatternType != null ? " erpPatternType [" + erpPatternType + "]" : "")
       + "}";
   }
 

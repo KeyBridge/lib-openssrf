@@ -656,7 +656,8 @@ public class JammingPlan {
    * Complex element JammingTarget (US) describes the target location and
    * identifies the jamming loadset to be used.
    * <p>
-   * @return a non-null but possibly empty list of {@link JammingTarget} instances
+   * @return a non-null but possibly empty list of {@link JammingTarget}
+   *         instances
    */
   public List<JammingTarget> getJammingTarget() {
     if (jammingTarget == null) {
@@ -888,21 +889,21 @@ public class JammingPlan {
   @Override
   public String toString() {
     return "JammingPlan {"
-      + " stopLocationRef [" + stopLocationRef + "]"
-      + " startDateTime [" + startDateTime + "]"
-      + " standOffDist [" + standOffDist + "]"
-      + " stopDateTime [" + stopDateTime + "]"
-      + " jammingTarget [" + jammingTarget + "]"
-      + " requiredEffect [" + requiredEffect + "]"
-      + " stopTrigger [" + stopTrigger + "]"
-      + " version [" + version + "]"
-      + " numFreqs [" + numFreqs + "]"
-      + " priority [" + priority + "]"
-      + " name [" + name + "]"
-      + " level3Auth [" + level3Auth + "]"
-      + " startLocationRef [" + startLocationRef + "]"
-      + " requiredPerformance [" + requiredPerformance + "]"
-      + " startTrigger [" + startTrigger + "]"
+      + (stopLocationRef != null ? " stopLocationRef [" + stopLocationRef + "]" : "")
+      + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
+      + (standOffDist != null ? " standOffDist [" + standOffDist + "]" : "")
+      + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
+      + (jammingTarget != null ? " jammingTarget [" + jammingTarget + "]" : "")
+      + (requiredEffect != null ? " requiredEffect [" + requiredEffect + "]" : "")
+      + (stopTrigger != null ? " stopTrigger [" + stopTrigger + "]" : "")
+      + (version != null ? " version [" + version + "]" : "")
+      + (numFreqs != null ? " numFreqs [" + numFreqs + "]" : "")
+      + (priority != null ? " priority [" + priority + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (level3Auth != null ? " level3Auth [" + level3Auth + "]" : "")
+      + (startLocationRef != null ? " startLocationRef [" + startLocationRef + "]" : "")
+      + (requiredPerformance != null ? " requiredPerformance [" + requiredPerformance + "]" : "")
+      + (startTrigger != null ? " startTrigger [" + startTrigger + "]" : "")
       + "}";
   }
 

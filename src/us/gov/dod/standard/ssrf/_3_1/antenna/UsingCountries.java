@@ -177,8 +177,8 @@ public class UsingCountries {
   @Override
   public String toString() {
     return "UsingCountries {"
-      + " countryName [" + countryName + "]"
-      + " role [" + role + "]"
+      + (countryName != null ? " countryName [" + countryName + "]" : "")
+      + (role != null ? " role [" + role + "]" : "")
       + "}";
   }
 

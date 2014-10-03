@@ -568,7 +568,8 @@ public class JammingTarget {
    * to be impacted and/or how well it actually was impacted, for a specific
    * jamming mission.
    * <p>
-   * @return a non-null but possibly empty list of {@link JammingPerformance} instances
+   * @return a non-null but possibly empty list of {@link JammingPerformance}
+   *         instances
    */
   public List<JammingPerformance> getJammingPerformance() {
     if (jammingPerformance == null) {
@@ -778,18 +779,18 @@ public class JammingTarget {
   @Override
   public String toString() {
     return "JammingTarget {"
-      + " polarisationType [" + polarisationType + "]"
-      + " lon [" + lon + "]"
-      + " locationRef [" + locationRef + "]"
-      + " targetID [" + targetID + "]"
-      + " freqMin [" + freqMin + "]"
-      + " jammingPerformance [" + jammingPerformance + "]"
-      + " power [" + power + "]"
-      + " freqMax [" + freqMax + "]"
-      + " bearing [" + bearing + "]"
-      + " loadsetRef [" + loadsetRef + "]"
-      + " antStabilisation [" + antStabilisation + "]"
-      + " lat [" + lat + "]"
+      + (polarisationType != null ? " polarisationType [" + polarisationType + "]" : "")
+      + (lon != null ? " lon [" + lon + "]" : "")
+      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+      + (targetID != null ? " targetID [" + targetID + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (jammingPerformance != null ? " jammingPerformance [" + jammingPerformance + "]" : "")
+      + (power != null ? " power [" + power + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (bearing != null ? " bearing [" + bearing + "]" : "")
+      + (loadsetRef != null ? " loadsetRef [" + loadsetRef + "]" : "")
+      + (antStabilisation != null ? " antStabilisation [" + antStabilisation + "]" : "")
+      + (lat != null ? " lat [" + lat + "]" : "")
       + "}";
   }
 

@@ -149,8 +149,8 @@ public class Time {
   @Override
   public String toString() {
     return "Time {"
-      + " period [" + period + "]"
-      + " usageDescription [" + usageDescription + "]"
+      + (period != null ? " period [" + period + "]" : "")
+      + (usageDescription != null ? " usageDescription [" + usageDescription + "]" : "")
       + "}";
   }
 

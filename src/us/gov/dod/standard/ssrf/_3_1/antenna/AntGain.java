@@ -287,10 +287,10 @@ public class AntGain {
   @Override
   public String toString() {
     return "AntGain {"
-      + " freq [" + freq + "]"
-      + " frontToBackRatio [" + frontToBackRatio + "]"
-      + " calculated [" + calculated + "]"
-      + " gain [" + gain + "]"
+      + (freq != null ? " freq [" + freq + "]" : "")
+      + (frontToBackRatio != null ? " frontToBackRatio [" + frontToBackRatio + "]" : "")
+      + (calculated != null ? " calculated [" + calculated + "]" : "")
+      + (gain != null ? " gain [" + gain + "]" : "")
       + "}";
   }
 

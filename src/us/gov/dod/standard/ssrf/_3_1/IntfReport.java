@@ -2064,7 +2064,8 @@ public class IntfReport extends Common<IntfReport> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -2704,49 +2705,49 @@ public class IntfReport extends Common<IntfReport> {
   @Override
   public String toString() {
     return "IntfReport {"
-      + " satelliteDownlinkPolarisation [" + satelliteDownlinkPolarisation + "]"
-      + " victimLat [" + victimLat + "]"
-      + " satelliteLongitude [" + satelliteLongitude + "]"
-      + " intfStartDateTime [" + intfStartDateTime + "]"
-      + " satelliteName [" + satelliteName + "]"
-      + " sourceLon [" + sourceLon + "]"
-      + " sourceFreqMax [" + sourceFreqMax + "]"
-      + " sourceLat [" + sourceLat + "]"
-      + " solution [" + solution + "]"
-      + " evaluation [" + evaluation + "]"
-      + " performanceEffects [" + performanceEffects + "]"
-      + " satelliteHemisphere [" + satelliteHemisphere + "]"
-      + " victimLocDescr [" + victimLocDescr + "]"
-      + " sourceFieldStrength [" + sourceFieldStrength + "]"
-      + " sourceEmsClass [" + sourceEmsClass + "]"
-      + " satelliteUplinkPolarisation [" + satelliteUplinkPolarisation + "]"
-      + " gpsAffected [" + gpsAffected + "]"
-      + " satelliteChannel [" + satelliteChannel + "]"
-      + " sourceAz [" + sourceAz + "]"
-      + " satelliteTransponderID [" + satelliteTransponderID + "]"
-      + " victimFreqMax [" + victimFreqMax + "]"
-      + " satelliteUplinkFreq [" + satelliteUplinkFreq + "]"
-      + " satelliteAffected [" + satelliteAffected + "]"
-      + " sourceLocDescr [" + sourceLocDescr + "]"
-      + " affectedEquipment [" + affectedEquipment + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " intfPeriod [" + intfPeriod + "]"
-      + " satcomPriority [" + satcomPriority + "]"
-      + " victimAsgnRef [" + victimAsgnRef + "]"
-      + " netsAffected [" + netsAffected + "]"
-      + " characteristics [" + characteristics + "]"
-      + " victimCountry [" + victimCountry + "]"
-      + " sourceFreqMin [" + sourceFreqMin + "]"
-      + " netCircuitsAffected [" + netCircuitsAffected + "]"
-      + " victimLon [" + victimLon + "]"
-      + " intfStopDateTime [" + intfStopDateTime + "]"
-      + " helpRequired [" + helpRequired + "]"
-      + " intfDescr [" + intfDescr + "]"
-      + " victimSystem [" + victimSystem + "]"
-      + " affectedCSA [" + affectedCSA + "]"
-      + " victimFreqMin [" + victimFreqMin + "]"
-      + " sourceEmsBw [" + sourceEmsBw + "]"
-      + " localEventID [" + localEventID + "]"
+      + (satelliteDownlinkPolarisation != null ? " satelliteDownlinkPolarisation [" + satelliteDownlinkPolarisation + "]" : "")
+      + (victimLat != null ? " victimLat [" + victimLat + "]" : "")
+      + (satelliteLongitude != null ? " satelliteLongitude [" + satelliteLongitude + "]" : "")
+      + (intfStartDateTime != null ? " intfStartDateTime [" + intfStartDateTime + "]" : "")
+      + (satelliteName != null ? " satelliteName [" + satelliteName + "]" : "")
+      + (sourceLon != null ? " sourceLon [" + sourceLon + "]" : "")
+      + (sourceFreqMax != null ? " sourceFreqMax [" + sourceFreqMax + "]" : "")
+      + (sourceLat != null ? " sourceLat [" + sourceLat + "]" : "")
+      + (solution != null ? " solution [" + solution + "]" : "")
+      + (evaluation != null ? " evaluation [" + evaluation + "]" : "")
+      + (performanceEffects != null ? " performanceEffects [" + performanceEffects + "]" : "")
+      + (satelliteHemisphere != null ? " satelliteHemisphere [" + satelliteHemisphere + "]" : "")
+      + (victimLocDescr != null ? " victimLocDescr [" + victimLocDescr + "]" : "")
+      + (sourceFieldStrength != null ? " sourceFieldStrength [" + sourceFieldStrength + "]" : "")
+      + (sourceEmsClass != null ? " sourceEmsClass [" + sourceEmsClass + "]" : "")
+      + (satelliteUplinkPolarisation != null ? " satelliteUplinkPolarisation [" + satelliteUplinkPolarisation + "]" : "")
+      + (gpsAffected != null ? " gpsAffected [" + gpsAffected + "]" : "")
+      + (satelliteChannel != null ? " satelliteChannel [" + satelliteChannel + "]" : "")
+      + (sourceAz != null ? " sourceAz [" + sourceAz + "]" : "")
+      + (satelliteTransponderID != null ? " satelliteTransponderID [" + satelliteTransponderID + "]" : "")
+      + (victimFreqMax != null ? " victimFreqMax [" + victimFreqMax + "]" : "")
+      + (satelliteUplinkFreq != null ? " satelliteUplinkFreq [" + satelliteUplinkFreq + "]" : "")
+      + (satelliteAffected != null ? " satelliteAffected [" + satelliteAffected + "]" : "")
+      + (sourceLocDescr != null ? " sourceLocDescr [" + sourceLocDescr + "]" : "")
+      + (affectedEquipment != null ? " affectedEquipment [" + affectedEquipment + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (intfPeriod != null ? " intfPeriod [" + intfPeriod + "]" : "")
+      + (satcomPriority != null ? " satcomPriority [" + satcomPriority + "]" : "")
+      + (victimAsgnRef != null ? " victimAsgnRef [" + victimAsgnRef + "]" : "")
+      + (netsAffected != null ? " netsAffected [" + netsAffected + "]" : "")
+      + (characteristics != null ? " characteristics [" + characteristics + "]" : "")
+      + (victimCountry != null ? " victimCountry [" + victimCountry + "]" : "")
+      + (sourceFreqMin != null ? " sourceFreqMin [" + sourceFreqMin + "]" : "")
+      + (netCircuitsAffected != null ? " netCircuitsAffected [" + netCircuitsAffected + "]" : "")
+      + (victimLon != null ? " victimLon [" + victimLon + "]" : "")
+      + (intfStopDateTime != null ? " intfStopDateTime [" + intfStopDateTime + "]" : "")
+      + (helpRequired != null ? " helpRequired [" + helpRequired + "]" : "")
+      + (intfDescr != null ? " intfDescr [" + intfDescr + "]" : "")
+      + (victimSystem != null ? " victimSystem [" + victimSystem + "]" : "")
+      + (affectedCSA != null ? " affectedCSA [" + affectedCSA + "]" : "")
+      + (victimFreqMin != null ? " victimFreqMin [" + victimFreqMin + "]" : "")
+      + (sourceEmsBw != null ? " sourceEmsBw [" + sourceEmsBw + "]" : "")
+      + (localEventID != null ? " localEventID [" + localEventID + "]" : "")
       + "}";
   }
 

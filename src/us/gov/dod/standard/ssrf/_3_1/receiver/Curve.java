@@ -608,15 +608,15 @@ public class Curve {
   @Override
   public String toString() {
     return "Curve {"
-      + " curvePoint [" + curvePoint + "]"
-      + " idx [" + idx + "]"
-      + " freqConst [" + freqConst + "]"
-      + " freqMin [" + freqMin + "]"
-      + " bw [" + bw + "]"
-      + " freqMax [" + freqMax + "]"
-      + " type [" + type + "]"
-      + " freqFactor [" + freqFactor + "]"
-      + " calculated [" + calculated + "]"
+      + (curvePoint != null ? " curvePoint [" + curvePoint + "]" : "")
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (freqConst != null ? " freqConst [" + freqConst + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (bw != null ? " bw [" + bw + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (freqFactor != null ? " freqFactor [" + freqFactor + "]" : "")
+      + (calculated != null ? " calculated [" + calculated + "]" : "")
       + "}";
   }
 

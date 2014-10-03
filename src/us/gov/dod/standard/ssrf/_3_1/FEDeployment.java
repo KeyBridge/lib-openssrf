@@ -960,20 +960,20 @@ public class FEDeployment extends Common<FEDeployment> {
   @Override
   public String toString() {
     return "FEDeployment {"
-      + " locationRef [" + locationRef + "]"
-      + " minutes [" + minutes + "]"
-      + " hours [" + hours + "]"
-      + " feRef [" + feRef + "]"
-      + " type [" + type + "]"
-      + " daysOfMonth [" + daysOfMonth + "]"
-      + " daysOfWeek [" + daysOfWeek + "]"
-      + " project [" + project + "]"
-      + " num [" + num + "]"
-      + " months [" + months + "]"
-      + " duration [" + duration + "]"
-      + " seconds [" + seconds + "]"
-      + " atWaypoint [" + atWaypoint + "]"
-      + " years [" + years + "]"
+      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+      + (minutes != null ? " minutes [" + minutes + "]" : "")
+      + (hours != null ? " hours [" + hours + "]" : "")
+      + (feRef != null ? " feRef [" + feRef + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+      + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+      + (project != null ? " project [" + project + "]" : "")
+      + (num != null ? " num [" + num + "]" : "")
+      + (months != null ? " months [" + months + "]" : "")
+      + (duration != null ? " duration [" + duration + "]" : "")
+      + (seconds != null ? " seconds [" + seconds + "]" : "")
+      + (atWaypoint != null ? " atWaypoint [" + atWaypoint + "]" : "")
+      + (years != null ? " years [" + years + "]" : "")
       + "}";
   }
 

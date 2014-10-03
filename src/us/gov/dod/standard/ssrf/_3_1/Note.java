@@ -319,11 +319,11 @@ public class Note extends Common<Note> {
   @Override
   public String toString() {
     return "Note {"
-      + " expirationDate [" + expirationDate + "]"
-      + " source [" + source + "]"
-      + " name [" + name + "]"
-      + " effectiveDate [" + effectiveDate + "]"
-      + " administration [" + administration + "]"
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (source != null ? " source [" + source + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + (administration != null ? " administration [" + administration + "]" : "")
       + "}";
   }
 

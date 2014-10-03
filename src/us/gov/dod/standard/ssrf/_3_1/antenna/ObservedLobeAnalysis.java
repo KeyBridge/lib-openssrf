@@ -267,7 +267,8 @@ public class ObservedLobeAnalysis {
    * sidelobes or backlobes. Used to its full potential, a precise 3D picture of
    * an Antenna sidelobe can be represented.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedLobeValues} instances
+   * @return a non-null but possibly empty list of {@link ObservedLobeValues}
+   *         instances
    */
   public List<ObservedLobeValues> getObservedLobeValues() {
     if (observedLobeValues == null) {
@@ -388,11 +389,11 @@ public class ObservedLobeAnalysis {
   @Override
   public String toString() {
     return "ObservedLobeAnalysis {"
-      + " lobeName [" + lobeName + "]"
-      + " observedLobeValues [" + observedLobeValues + "]"
-      + " beamType [" + beamType + "]"
-      + " lobeSymmetric [" + lobeSymmetric + "]"
-      + " lobeID [" + lobeID + "]"
+      + (lobeName != null ? " lobeName [" + lobeName + "]" : "")
+      + (observedLobeValues != null ? " observedLobeValues [" + observedLobeValues + "]" : "")
+      + (beamType != null ? " beamType [" + beamType + "]" : "")
+      + (lobeSymmetric != null ? " lobeSymmetric [" + lobeSymmetric + "]" : "")
+      + (lobeID != null ? " lobeID [" + lobeID + "]" : "")
       + "}";
   }
 

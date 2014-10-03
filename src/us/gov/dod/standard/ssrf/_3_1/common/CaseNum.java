@@ -220,9 +220,9 @@ public class CaseNum {
   @Override
   public String toString() {
     return "CaseNum {"
-      + " type [" + type + "]"
-      + " identifier [" + identifier + "]"
-      + " country [" + country + "]"
+      + (type != null ? " type [" + type + "]" : "")
+      + (identifier != null ? " identifier [" + identifier + "]" : "")
+      + (country != null ? " country [" + country + "]" : "")
       + "}";
   }
 

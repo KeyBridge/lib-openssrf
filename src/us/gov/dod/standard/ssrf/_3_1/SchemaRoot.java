@@ -213,7 +213,8 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link Organisation} instances
+   * @return a non-null but possibly empty list of {@link Organisation}
+   *         instances
    */
   public List<Organisation> getOrganisation() {
     if (organisation == null) {
@@ -241,7 +242,8 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link ExternalReference} instances
+   * @return a non-null but possibly empty list of {@link ExternalReference}
+   *         instances
    */
   public List<ExternalReference> getExternalReference() {
     if (externalReference == null) {
@@ -269,7 +271,8 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link Administrative} instances
+   * @return a non-null but possibly empty list of {@link Administrative}
+   *         instances
    */
   public List<Administrative> getAdministrative() {
     if (administrative == null) {
@@ -689,7 +692,8 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link ForceElement} instances
+   * @return a non-null but possibly empty list of {@link ForceElement}
+   *         instances
    */
   public List<ForceElement> getForceElement() {
     if (forceElement == null) {
@@ -717,7 +721,8 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link FEDeployment} instances
+   * @return a non-null but possibly empty list of {@link FEDeployment}
+   *         instances
    */
   public List<FEDeployment> getFEDeployment() {
     if (feDeployment == null) {
@@ -829,7 +834,8 @@ public abstract class SchemaRoot<T> {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link RadiationPlan} instances
+   * @return a non-null but possibly empty list of {@link RadiationPlan}
+   *         instances
    */
   public List<RadiationPlan> getRadiationPlan() {
     if (radiationPlan == null) {
@@ -1512,31 +1518,31 @@ public abstract class SchemaRoot<T> {
   @Override
   public String toString() {
     return "SchemaRoot {"
-      + " transmitter [" + transmitter + "]"
-      + " feDeployment [" + feDeployment + "]"
-      + " satellite [" + satellite + "]"
-      + " receiver [" + receiver + "]"
-      + " ssRequest [" + ssRequest + "]"
-      + " location [" + location + "]"
-      + " organisation [" + organisation + "]"
-      + " externalReference [" + externalReference + "]"
-      + " contact [" + contact + "]"
-      + " toa [" + toa + "]"
-      + " antenna [" + antenna + "]"
-      + " message [" + message + "]"
-      + " forceElement [" + forceElement + "]"
-      + " assignment [" + assignment + "]"
-      + " rfSystem [" + rfSystem + "]"
-      + " ssReply [" + ssReply + "]"
-      + " jrfl [" + jrfl + "]"
-      + " radiationPlan [" + radiationPlan + "]"
-      + " allotment [" + allotment + "]"
-      + " loadset [" + loadset + "]"
-      + " role [" + role + "]"
-      + " channelPlan [" + channelPlan + "]"
-      + " administrative [" + administrative + "]"
-      + " intfReport [" + intfReport + "]"
-      + " note [" + note + "]"
+      + (transmitter != null ? " transmitter [" + transmitter + "]" : "")
+      + (feDeployment != null ? " feDeployment [" + feDeployment + "]" : "")
+      + (satellite != null ? " satellite [" + satellite + "]" : "")
+      + (receiver != null ? " receiver [" + receiver + "]" : "")
+      + (ssRequest != null ? " ssRequest [" + ssRequest + "]" : "")
+      + (location != null ? " location [" + location + "]" : "")
+      + (organisation != null ? " organisation [" + organisation + "]" : "")
+      + (externalReference != null ? " externalReference [" + externalReference + "]" : "")
+      + (contact != null ? " contact [" + contact + "]" : "")
+      + (toa != null ? " toa [" + toa + "]" : "")
+      + (antenna != null ? " antenna [" + antenna + "]" : "")
+      + (message != null ? " message [" + message + "]" : "")
+      + (forceElement != null ? " forceElement [" + forceElement + "]" : "")
+      + (assignment != null ? " assignment [" + assignment + "]" : "")
+      + (rfSystem != null ? " rfSystem [" + rfSystem + "]" : "")
+      + (ssReply != null ? " ssReply [" + ssReply + "]" : "")
+      + (jrfl != null ? " jrfl [" + jrfl + "]" : "")
+      + (radiationPlan != null ? " radiationPlan [" + radiationPlan + "]" : "")
+      + (allotment != null ? " allotment [" + allotment + "]" : "")
+      + (loadset != null ? " loadset [" + loadset + "]" : "")
+      + (role != null ? " role [" + role + "]" : "")
+      + (channelPlan != null ? " channelPlan [" + channelPlan + "]" : "")
+      + (administrative != null ? " administrative [" + administrative + "]" : "")
+      + (intfReport != null ? " intfReport [" + intfReport + "]" : "")
+      + (note != null ? " note [" + note + "]" : "")
       + "}";
   }
 

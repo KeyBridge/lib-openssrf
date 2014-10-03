@@ -2225,7 +2225,8 @@ public class Assignment extends Common<Assignment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -2258,7 +2259,8 @@ public class Assignment extends Common<Assignment> {
    * uses another assignment resources. It also describes linkages to or from
    * other datasets.
    * <p>
-   * @return a non-null but possibly empty list of {@link SysOfStation} instances
+   * @return a non-null but possibly empty list of {@link SysOfStation}
+   *         instances
    */
   public List<SysOfStation> getSysOfStation() {
     if (sysOfStation == null) {
@@ -2321,7 +2323,8 @@ public class Assignment extends Common<Assignment> {
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link Configuration} instances
+   * @return a non-null but possibly empty list of {@link Configuration}
+   *         instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
@@ -2449,7 +2452,8 @@ public class Assignment extends Common<Assignment> {
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
    * <p>
-   * @return a non-null but possibly empty list of {@link AsgnAllotOwner} instances
+   * @return a non-null but possibly empty list of {@link AsgnAllotOwner}
+   *         instances
    */
   public List<AsgnAllotOwner> getAsgnAllotOwner() {
     if (asgnAllotOwner == null) {
@@ -2481,7 +2485,8 @@ public class Assignment extends Common<Assignment> {
    * network and equipment used to support a specific frequency assignment or
    * assignments.
    * <p>
-   * @return a non-null but possibly empty list of {@link CircuitRemarks} instances
+   * @return a non-null but possibly empty list of {@link CircuitRemarks}
+   *         instances
    */
   public List<CircuitRemarks> getCircuitRemarks() {
     if (circuitRemarks == null) {
@@ -2512,7 +2517,8 @@ public class Assignment extends Common<Assignment> {
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
    * <p>
-   * @return a non-null but possibly empty list of {@link CoordinationData} instances
+   * @return a non-null but possibly empty list of {@link CoordinationData}
+   *         instances
    */
   public List<CoordinationData> getCoordinationData() {
     if (coordinationData == null) {
@@ -2574,7 +2580,8 @@ public class Assignment extends Common<Assignment> {
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository.
    * <p>
-   * @return a non-null but possibly empty list of {@link HostDocketNum} instances
+   * @return a non-null but possibly empty list of {@link HostDocketNum}
+   *         instances
    */
   public List<HostDocketNum> getHostDocketNum() {
     if (hostDocketNum == null) {
@@ -2606,7 +2613,8 @@ public class Assignment extends Common<Assignment> {
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment.
    * <p>
-   * @return a non-null but possibly empty list of {@link OffTheShelfEquipment} instances
+   * @return a non-null but possibly empty list of {@link OffTheShelfEquipment}
+   *         instances
    */
   public List<OffTheShelfEquipment> getOffTheShelfEquipment() {
     if (offTheShelfEquipment == null) {
@@ -2638,7 +2646,8 @@ public class Assignment extends Common<Assignment> {
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number.
    * <p>
-   * @return a non-null but possibly empty list of {@link PreviousAuthorization} instances
+   * @return a non-null but possibly empty list of {@link PreviousAuthorization}
+   *         instances
    */
   public List<PreviousAuthorization> getPreviousAuthorization() {
     if (previousAuthorization == null) {
@@ -3713,8 +3722,7 @@ public class Assignment extends Common<Assignment> {
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number.
    * <p>
-   * @param values One or more instances of type
-   *               {@link PreviousAuthorization}
+   * @param values One or more instances of type {@link PreviousAuthorization}
    * @return The current Assignment object instance
    */
   public Assignment withPreviousAuthorization(PreviousAuthorization... values) {
@@ -3781,65 +3789,65 @@ public class Assignment extends Common<Assignment> {
   @Override
   public String toString() {
     return "Assignment {"
-      + " offTheShelfEquipment [" + offTheShelfEquipment + "]"
-      + " emergency [" + emergency + "]"
-      + " usageType [" + usageType + "]"
-      + " listSerialNum [" + listSerialNum + "]"
-      + " agencySerialNum [" + agencySerialNum + "]"
-      + " frequencyActionOfficer [" + frequencyActionOfficer + "]"
-      + " sysOfStation [" + sysOfStation + "]"
-      + " asgnAllotOwner [" + asgnAllotOwner + "]"
-      + " processing [" + processing + "]"
-      + " assignmentDate [" + assignmentDate + "]"
-      + " natoPooledFrequencyNum [" + natoPooledFrequencyNum + "]"
-      + " docketNum [" + docketNum + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " station [" + station + "]"
-      + " hours [" + hours + "]"
-      + " cocomGroup [" + cocomGroup + "]"
-      + " typeOfService [" + typeOfService + "]"
-      + " natoPooledFrequencyCode [" + natoPooledFrequencyCode + "]"
-      + " period [" + period + "]"
-      + " statusLog [" + statusLog + "]"
-      + " numSystems [" + numSystems + "]"
-      + " agencyComments [" + agencyComments + "]"
-      + " relatedRef [" + relatedRef + "]"
-      + " project [" + project + "]"
-      + " routineAgendaItem [" + routineAgendaItem + "]"
-      + " coordinationData [" + coordinationData + "]"
-      + " years [" + years + "]"
-      + " supplementaryDetails [" + supplementaryDetails + "]"
-      + " usageFrequency [" + usageFrequency + "]"
-      + " coordinationComments [" + coordinationComments + "]"
-      + " dataSource [" + dataSource + "]"
-      + " usagePercentage [" + usagePercentage + "]"
-      + " link [" + link + "]"
-      + " controlRequestNum [" + controlRequestNum + "]"
-      + " usageCode [" + usageCode + "]"
-      + " previousAuthorization [" + previousAuthorization + "]"
-      + " expirationDateTime [" + expirationDateTime + "]"
-      + " circuitRemarks [" + circuitRemarks + "]"
-      + " title [" + title + "]"
-      + " primaryStation [" + primaryStation + "]"
-      + " hostDocketNum [" + hostDocketNum + "]"
-      + " dateResponseRequired [" + dateResponseRequired + "]"
-      + " effectiveDateTime [" + effectiveDateTime + "]"
-      + " fccFileNum [" + fccFileNum + "]"
-      + " requirement [" + requirement + "]"
-      + " minutes [" + minutes + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " recordNote [" + recordNote + "]"
-      + " daysOfWeek [" + daysOfWeek + "]"
-      + " daysOfMonth [" + daysOfMonth + "]"
-      + " fmscNum [" + fmscNum + "]"
-      + " assignmentAuthority [" + assignmentAuthority + "]"
-      + " duration [" + duration + "]"
-      + " months [" + months + "]"
-      + " originalAssignmentDate [" + originalAssignmentDate + "]"
-      + " seconds [" + seconds + "]"
-      + " userNetCode [" + userNetCode + "]"
-      + " agencyActionNum [" + agencyActionNum + "]"
-      + " configuration [" + configuration + "]"
+      + (offTheShelfEquipment != null ? " offTheShelfEquipment [" + offTheShelfEquipment + "]" : "")
+      + (emergency != null ? " emergency [" + emergency + "]" : "")
+      + (usageType != null ? " usageType [" + usageType + "]" : "")
+      + (listSerialNum != null ? " listSerialNum [" + listSerialNum + "]" : "")
+      + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
+      + (frequencyActionOfficer != null ? " frequencyActionOfficer [" + frequencyActionOfficer + "]" : "")
+      + (sysOfStation != null ? " sysOfStation [" + sysOfStation + "]" : "")
+      + (asgnAllotOwner != null ? " asgnAllotOwner [" + asgnAllotOwner + "]" : "")
+      + (processing != null ? " processing [" + processing + "]" : "")
+      + (assignmentDate != null ? " assignmentDate [" + assignmentDate + "]" : "")
+      + (natoPooledFrequencyNum != null ? " natoPooledFrequencyNum [" + natoPooledFrequencyNum + "]" : "")
+      + (docketNum != null ? " docketNum [" + docketNum + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (station != null ? " station [" + station + "]" : "")
+      + (hours != null ? " hours [" + hours + "]" : "")
+      + (cocomGroup != null ? " cocomGroup [" + cocomGroup + "]" : "")
+      + (typeOfService != null ? " typeOfService [" + typeOfService + "]" : "")
+      + (natoPooledFrequencyCode != null ? " natoPooledFrequencyCode [" + natoPooledFrequencyCode + "]" : "")
+      + (period != null ? " period [" + period + "]" : "")
+      + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
+      + (numSystems != null ? " numSystems [" + numSystems + "]" : "")
+      + (agencyComments != null ? " agencyComments [" + agencyComments + "]" : "")
+      + (relatedRef != null ? " relatedRef [" + relatedRef + "]" : "")
+      + (project != null ? " project [" + project + "]" : "")
+      + (routineAgendaItem != null ? " routineAgendaItem [" + routineAgendaItem + "]" : "")
+      + (coordinationData != null ? " coordinationData [" + coordinationData + "]" : "")
+      + (years != null ? " years [" + years + "]" : "")
+      + (supplementaryDetails != null ? " supplementaryDetails [" + supplementaryDetails + "]" : "")
+      + (usageFrequency != null ? " usageFrequency [" + usageFrequency + "]" : "")
+      + (coordinationComments != null ? " coordinationComments [" + coordinationComments + "]" : "")
+      + (dataSource != null ? " dataSource [" + dataSource + "]" : "")
+      + (usagePercentage != null ? " usagePercentage [" + usagePercentage + "]" : "")
+      + (link != null ? " link [" + link + "]" : "")
+      + (controlRequestNum != null ? " controlRequestNum [" + controlRequestNum + "]" : "")
+      + (usageCode != null ? " usageCode [" + usageCode + "]" : "")
+      + (previousAuthorization != null ? " previousAuthorization [" + previousAuthorization + "]" : "")
+      + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
+      + (circuitRemarks != null ? " circuitRemarks [" + circuitRemarks + "]" : "")
+      + (title != null ? " title [" + title + "]" : "")
+      + (primaryStation != null ? " primaryStation [" + primaryStation + "]" : "")
+      + (hostDocketNum != null ? " hostDocketNum [" + hostDocketNum + "]" : "")
+      + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+      + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
+      + (fccFileNum != null ? " fccFileNum [" + fccFileNum + "]" : "")
+      + (requirement != null ? " requirement [" + requirement + "]" : "")
+      + (minutes != null ? " minutes [" + minutes + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (recordNote != null ? " recordNote [" + recordNote + "]" : "")
+      + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+      + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+      + (fmscNum != null ? " fmscNum [" + fmscNum + "]" : "")
+      + (assignmentAuthority != null ? " assignmentAuthority [" + assignmentAuthority + "]" : "")
+      + (duration != null ? " duration [" + duration + "]" : "")
+      + (months != null ? " months [" + months + "]" : "")
+      + (originalAssignmentDate != null ? " originalAssignmentDate [" + originalAssignmentDate + "]" : "")
+      + (seconds != null ? " seconds [" + seconds + "]" : "")
+      + (userNetCode != null ? " userNetCode [" + userNetCode + "]" : "")
+      + (agencyActionNum != null ? " agencyActionNum [" + agencyActionNum + "]" : "")
+      + (configuration != null ? " configuration [" + configuration + "]" : "")
       + "}";
   }
 

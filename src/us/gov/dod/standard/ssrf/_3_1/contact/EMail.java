@@ -278,10 +278,10 @@ public class EMail {
   @Override
   public String toString() {
     return "EMail {"
-      + " maxCls [" + maxCls + "]"
-      + " address [" + address + "]"
-      + " type [" + type + "]"
-      + " preferred [" + preferred + "]"
+      + (maxCls != null ? " maxCls [" + maxCls + "]" : "")
+      + (address != null ? " address [" + address + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (preferred != null ? " preferred [" + preferred + "]" : "")
       + "}";
   }
 

@@ -2036,38 +2036,38 @@ public class RxMode {
   @Override
   public String toString() {
     return "RxMode {"
-      + " modeID [" + modeID + "]"
-      + " sensitivityCriteriaType [" + sensitivityCriteriaType + "]"
-      + " tuningMethod [" + tuningMethod + "]"
-      + " intermodRejection [" + intermodRejection + "]"
-      + " rxSignalTuning [" + rxSignalTuning + "]"
-      + " freqTolerance [" + freqTolerance + "]"
-      + " intermodPct [" + intermodPct + "]"
-      + " modeName [" + modeName + "]"
-      + " imageRejection [" + imageRejection + "]"
-      + " curves [" + curves + "]"
-      + " sensitivityCriteriaText [" + sensitivityCriteriaText + "]"
-      + " baseband [" + baseband + "]"
-      + " spreadSpectrum [" + spreadSpectrum + "]"
-      + " intermodEffect [" + intermodEffect + "]"
-      + " description [" + description + "]"
-      + " sensitivityCriteriaLevel [" + sensitivityCriteriaLevel + "]"
-      + " postDetectionFreqMax [" + postDetectionFreqMax + "]"
-      + " freqToleranceUnit [" + freqToleranceUnit + "]"
-      + " rxModulation [" + rxModulation + "]"
-      + " rxType [" + rxType + "]"
-      + " freqConversion [" + freqConversion + "]"
-      + " spuriousRejection [" + spuriousRejection + "]"
-      + " noiseFigure [" + noiseFigure + "]"
-      + " processingGainMax [" + processingGainMax + "]"
-      + " tunability [" + tunability + "]"
-      + " processingGainMin [" + processingGainMin + "]"
-      + " adjacentChannelSelectivity [" + adjacentChannelSelectivity + "]"
-      + " emsClass [" + emsClass + "]"
-      + " necessaryBw [" + necessaryBw + "]"
-      + " postDetectionFreqMin [" + postDetectionFreqMin + "]"
-      + " noiseTemp [" + noiseTemp + "]"
-      + " sensitivityLevel [" + sensitivityLevel + "]"
+      + (modeID != null ? " modeID [" + modeID + "]" : "")
+      + (sensitivityCriteriaType != null ? " sensitivityCriteriaType [" + sensitivityCriteriaType + "]" : "")
+      + (tuningMethod != null ? " tuningMethod [" + tuningMethod + "]" : "")
+      + (intermodRejection != null ? " intermodRejection [" + intermodRejection + "]" : "")
+      + (rxSignalTuning != null ? " rxSignalTuning [" + rxSignalTuning + "]" : "")
+      + (freqTolerance != null ? " freqTolerance [" + freqTolerance + "]" : "")
+      + (intermodPct != null ? " intermodPct [" + intermodPct + "]" : "")
+      + (modeName != null ? " modeName [" + modeName + "]" : "")
+      + (imageRejection != null ? " imageRejection [" + imageRejection + "]" : "")
+      + (curves != null ? " curves [" + curves + "]" : "")
+      + (sensitivityCriteriaText != null ? " sensitivityCriteriaText [" + sensitivityCriteriaText + "]" : "")
+      + (baseband != null ? " baseband [" + baseband + "]" : "")
+      + (spreadSpectrum != null ? " spreadSpectrum [" + spreadSpectrum + "]" : "")
+      + (intermodEffect != null ? " intermodEffect [" + intermodEffect + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (sensitivityCriteriaLevel != null ? " sensitivityCriteriaLevel [" + sensitivityCriteriaLevel + "]" : "")
+      + (postDetectionFreqMax != null ? " postDetectionFreqMax [" + postDetectionFreqMax + "]" : "")
+      + (freqToleranceUnit != null ? " freqToleranceUnit [" + freqToleranceUnit + "]" : "")
+      + (rxModulation != null ? " rxModulation [" + rxModulation + "]" : "")
+      + (rxType != null ? " rxType [" + rxType + "]" : "")
+      + (freqConversion != null ? " freqConversion [" + freqConversion + "]" : "")
+      + (spuriousRejection != null ? " spuriousRejection [" + spuriousRejection + "]" : "")
+      + (noiseFigure != null ? " noiseFigure [" + noiseFigure + "]" : "")
+      + (processingGainMax != null ? " processingGainMax [" + processingGainMax + "]" : "")
+      + (tunability != null ? " tunability [" + tunability + "]" : "")
+      + (processingGainMin != null ? " processingGainMin [" + processingGainMin + "]" : "")
+      + (adjacentChannelSelectivity != null ? " adjacentChannelSelectivity [" + adjacentChannelSelectivity + "]" : "")
+      + (emsClass != null ? " emsClass [" + emsClass + "]" : "")
+      + (necessaryBw != null ? " necessaryBw [" + necessaryBw + "]" : "")
+      + (postDetectionFreqMin != null ? " postDetectionFreqMin [" + postDetectionFreqMin + "]" : "")
+      + (noiseTemp != null ? " noiseTemp [" + noiseTemp + "]" : "")
+      + (sensitivityLevel != null ? " sensitivityLevel [" + sensitivityLevel + "]" : "")
       + "}";
   }
 

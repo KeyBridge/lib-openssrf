@@ -975,21 +975,21 @@ public class StationConfig {
   @Override
   public String toString() {
     return "StationConfig {"
-      + " eirpMin [" + eirpMin + "]"
-      + " coordinationNum [" + coordinationNum + "]"
-      + " eirpMax [" + eirpMax + "]"
-      + " feedlineLength [" + feedlineLength + "]"
-      + " stationID [" + stationID + "]"
-      + " type [" + type + "]"
-      + " configID [" + configID + "]"
-      + " antFeedpointHeight [" + antFeedpointHeight + "]"
-      + " pointingAzMax [" + pointingAzMax + "]"
-      + " feedlineLoss [" + feedlineLoss + "]"
-      + " pointingElevMin [" + pointingElevMin + "]"
-      + " pointingElevMax [" + pointingElevMax + "]"
-      + " earthCoverage [" + earthCoverage + "]"
-      + " blanking [" + blanking + "]"
-      + " pointingAzMin [" + pointingAzMin + "]"
+      + (eirpMin != null ? " eirpMin [" + eirpMin + "]" : "")
+      + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
+      + (eirpMax != null ? " eirpMax [" + eirpMax + "]" : "")
+      + (feedlineLength != null ? " feedlineLength [" + feedlineLength + "]" : "")
+      + (stationID != null ? " stationID [" + stationID + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (configID != null ? " configID [" + configID + "]" : "")
+      + (antFeedpointHeight != null ? " antFeedpointHeight [" + antFeedpointHeight + "]" : "")
+      + (pointingAzMax != null ? " pointingAzMax [" + pointingAzMax + "]" : "")
+      + (feedlineLoss != null ? " feedlineLoss [" + feedlineLoss + "]" : "")
+      + (pointingElevMin != null ? " pointingElevMin [" + pointingElevMin + "]" : "")
+      + (pointingElevMax != null ? " pointingElevMax [" + pointingElevMax + "]" : "")
+      + (earthCoverage != null ? " earthCoverage [" + earthCoverage + "]" : "")
+      + (blanking != null ? " blanking [" + blanking + "]" : "")
+      + (pointingAzMin != null ? " pointingAzMin [" + pointingAzMin + "]" : "")
       + "}";
   }
 

@@ -1385,7 +1385,8 @@ public class SSRequest extends Common<SSRequest> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature} instances
+   * @return a non-null but possibly empty list of {@link Nomenclature}
+   *         instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -1416,7 +1417,8 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -1447,7 +1449,8 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
    * <p>
-   * @return a non-null but possibly empty list of {@link RelatedSupportability} instances
+   * @return a non-null but possibly empty list of {@link RelatedSupportability}
+   *         instances
    */
   public List<RelatedSupportability> getRelatedSupportability() {
     if (relatedSupportability == null) {
@@ -1539,7 +1542,8 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
    * <p>
-   * @return a non-null but possibly empty list of {@link DiagramEndpoint} instances
+   * @return a non-null but possibly empty list of {@link DiagramEndpoint}
+   *         instances
    */
   public List<DiagramEndpoint> getDiagramEndpoint() {
     if (diagramEndpoint == null) {
@@ -1604,7 +1608,8 @@ public class SSRequest extends Common<SSRequest> {
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station.
    * <p>
-   * @return a non-null but possibly empty list of {@link Configuration} instances
+   * @return a non-null but possibly empty list of {@link Configuration}
+   *         instances
    */
   public List<Configuration> getConfiguration() {
     if (configuration == null) {
@@ -2148,8 +2153,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
    * <p>
-   * @param values One or more instances of type
-   *               {@link RelatedSupportability}
+   * @param values One or more instances of type {@link RelatedSupportability}
    * @return The current SSRequest object instance
    */
   public SSRequest withRelatedSupportability(RelatedSupportability... values) {
@@ -2394,43 +2398,43 @@ public class SSRequest extends Common<SSRequest> {
   @Override
   public String toString() {
     return "SSRequest {"
-      + " relatedSupportability [" + relatedSupportability + "]"
-      + " nomenclature [" + nomenclature + "]"
-      + " numCositedUnits [" + numCositedUnits + "]"
-      + " emergency [" + emergency + "]"
-      + " stage [" + stage + "]"
-      + " ntiaSpaceData [" + ntiaSpaceData + "]"
-      + " initialCostDesc [" + initialCostDesc + "]"
-      + " replacementInfo [" + replacementInfo + "]"
-      + " time [" + time + "]"
-      + " title [" + title + "]"
-      + " sysRelationEssential [" + sysRelationEssential + "]"
-      + " dateResponseRequired [" + dateResponseRequired + "]"
-      + " originatingAgency [" + originatingAgency + "]"
-      + " initialCost [" + initialCost + "]"
-      + " ituWaiver [" + ituWaiver + "]"
-      + " diagramLine [" + diagramLine + "]"
-      + " requirement [" + requirement + "]"
-      + " coordinationNum [" + coordinationNum + "]"
-      + " applicationSPSNumber [" + applicationSPSNumber + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " currentStage [" + currentStage + "]"
-      + " diagramEndpoint [" + diagramEndpoint + "]"
-      + " relatedAnalysisAndTestData [" + relatedAnalysisAndTestData + "]"
-      + " tspr [" + tspr + "]"
-      + " requestType [" + requestType + "]"
-      + " numAreaUnits [" + numAreaUnits + "]"
-      + " operInvIntent [" + operInvIntent + "]"
-      + " statusLog [" + statusLog + "]"
-      + " ntiaCoordinationRequired [" + ntiaCoordinationRequired + "]"
-      + " project [" + project + "]"
-      + " trunking [" + trunking + "]"
-      + " hostNation [" + hostNation + "]"
-      + " numMobileUnits [" + numMobileUnits + "]"
-      + " wartimeUse [" + wartimeUse + "]"
-      + " applicationDate [" + applicationDate + "]"
-      + " configuration [" + configuration + "]"
-      + " infoTransferRequirement [" + infoTransferRequirement + "]"
+      + (relatedSupportability != null ? " relatedSupportability [" + relatedSupportability + "]" : "")
+      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+      + (numCositedUnits != null ? " numCositedUnits [" + numCositedUnits + "]" : "")
+      + (emergency != null ? " emergency [" + emergency + "]" : "")
+      + (stage != null ? " stage [" + stage + "]" : "")
+      + (ntiaSpaceData != null ? " ntiaSpaceData [" + ntiaSpaceData + "]" : "")
+      + (initialCostDesc != null ? " initialCostDesc [" + initialCostDesc + "]" : "")
+      + (replacementInfo != null ? " replacementInfo [" + replacementInfo + "]" : "")
+      + (time != null ? " time [" + time + "]" : "")
+      + (title != null ? " title [" + title + "]" : "")
+      + (sysRelationEssential != null ? " sysRelationEssential [" + sysRelationEssential + "]" : "")
+      + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+      + (originatingAgency != null ? " originatingAgency [" + originatingAgency + "]" : "")
+      + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
+      + (ituWaiver != null ? " ituWaiver [" + ituWaiver + "]" : "")
+      + (diagramLine != null ? " diagramLine [" + diagramLine + "]" : "")
+      + (requirement != null ? " requirement [" + requirement + "]" : "")
+      + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
+      + (applicationSPSNumber != null ? " applicationSPSNumber [" + applicationSPSNumber + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (currentStage != null ? " currentStage [" + currentStage + "]" : "")
+      + (diagramEndpoint != null ? " diagramEndpoint [" + diagramEndpoint + "]" : "")
+      + (relatedAnalysisAndTestData != null ? " relatedAnalysisAndTestData [" + relatedAnalysisAndTestData + "]" : "")
+      + (tspr != null ? " tspr [" + tspr + "]" : "")
+      + (requestType != null ? " requestType [" + requestType + "]" : "")
+      + (numAreaUnits != null ? " numAreaUnits [" + numAreaUnits + "]" : "")
+      + (operInvIntent != null ? " operInvIntent [" + operInvIntent + "]" : "")
+      + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
+      + (ntiaCoordinationRequired != null ? " ntiaCoordinationRequired [" + ntiaCoordinationRequired + "]" : "")
+      + (project != null ? " project [" + project + "]" : "")
+      + (trunking != null ? " trunking [" + trunking + "]" : "")
+      + (hostNation != null ? " hostNation [" + hostNation + "]" : "")
+      + (numMobileUnits != null ? " numMobileUnits [" + numMobileUnits + "]" : "")
+      + (wartimeUse != null ? " wartimeUse [" + wartimeUse + "]" : "")
+      + (applicationDate != null ? " applicationDate [" + applicationDate + "]" : "")
+      + (configuration != null ? " configuration [" + configuration + "]" : "")
+      + (infoTransferRequirement != null ? " infoTransferRequirement [" + infoTransferRequirement + "]" : "")
       + "}";
   }
 

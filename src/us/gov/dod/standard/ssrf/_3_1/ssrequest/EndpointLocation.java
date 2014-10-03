@@ -333,11 +333,11 @@ public class EndpointLocation {
   @Override
   public String toString() {
     return "EndpointLocation {"
-      + " excluded [" + excluded + "]"
-      + " antennaHeight [" + antennaHeight + "]"
-      + " locSatRef [" + locSatRef + "]"
-      + " siteElevation [" + siteElevation + "]"
-      + " minPointAngle [" + minPointAngle + "]"
+      + (excluded != null ? " excluded [" + excluded + "]" : "")
+      + (antennaHeight != null ? " antennaHeight [" + antennaHeight + "]" : "")
+      + (locSatRef != null ? " locSatRef [" + locSatRef + "]" : "")
+      + (siteElevation != null ? " siteElevation [" + siteElevation + "]" : "")
+      + (minPointAngle != null ? " minPointAngle [" + minPointAngle + "]" : "")
       + "}";
   }
 

@@ -646,13 +646,13 @@ public class Point {
   @Override
   public String toString() {
     return "Point {"
-      + " idx [" + idx + "]"
-      + " lon [" + lon + "]"
-      + " lat [" + lat + "]"
-      + " terrainElevation [" + terrainElevation + "]"
-      + " altitudeMax [" + altitudeMax + "]"
-      + " altitudeMin [" + altitudeMin + "]"
-      + " excluded [" + excluded + "]"
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (lon != null ? " lon [" + lon + "]" : "")
+      + (lat != null ? " lat [" + lat + "]" : "")
+      + (terrainElevation != null ? " terrainElevation [" + terrainElevation + "]" : "")
+      + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+      + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
+      + (excluded != null ? " excluded [" + excluded + "]" : "")
       + "}";
   }
 

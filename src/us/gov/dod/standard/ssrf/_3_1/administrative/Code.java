@@ -156,8 +156,8 @@ public class Code {
   @Override
   public String toString() {
     return "Code {"
-      + " description [" + description + "]"
-      + " value [" + value + "]"
+      + (description != null ? " description [" + description + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
       + "}";
   }
 

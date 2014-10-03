@@ -750,19 +750,19 @@ public class ExternalReference extends Common<ExternalReference> {
   @Override
   public String toString() {
     return "ExternalReference {"
-      + " author [" + author + "]"
-      + " title [" + title + "]"
-      + " documentCls [" + documentCls + "]"
-      + " referencedStage [" + referencedStage + "]"
-      + " isAttached [" + isAttached + "]"
-      + " organisation [" + organisation + "]"
-      + " isClassified [" + isClassified + "]"
-      + " resourceLocator [" + resourceLocator + "]"
-      + " alternateIdentifier [" + alternateIdentifier + "]"
-      + " repeat [" + repeat + "]"
-      + " date [" + date + "]"
-      + " type [" + type + "]"
-      + " identifier [" + identifier + "]"
+      + (author != null ? " author [" + author + "]" : "")
+      + (title != null ? " title [" + title + "]" : "")
+      + (documentCls != null ? " documentCls [" + documentCls + "]" : "")
+      + (referencedStage != null ? " referencedStage [" + referencedStage + "]" : "")
+      + (isAttached != null ? " isAttached [" + isAttached + "]" : "")
+      + (organisation != null ? " organisation [" + organisation + "]" : "")
+      + (isClassified != null ? " isClassified [" + isClassified + "]" : "")
+      + (resourceLocator != null ? " resourceLocator [" + resourceLocator + "]" : "")
+      + (alternateIdentifier != null ? " alternateIdentifier [" + alternateIdentifier + "]" : "")
+      + (repeat != null ? " repeat [" + repeat + "]" : "")
+      + (date != null ? " date [" + date + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (identifier != null ? " identifier [" + identifier + "]" : "")
       + "}";
   }
 

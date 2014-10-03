@@ -464,7 +464,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Authority (JCA) authorisation information for the jamming plan and the
    * controls affecting the level of authorisation.
    * <p>
-   * @return a non-null but possibly empty list of {@link JammingAuthority} instances
+   * @return a non-null but possibly empty list of {@link JammingAuthority}
+   *         instances
    */
   public List<JammingAuthority> getJammingAuthority() {
     if (jammingAuthority == null) {
@@ -686,16 +687,16 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @Override
   public String toString() {
     return "RadiationPlan {"
-      + " locationRef [" + locationRef + "]"
-      + " startDateTime [" + startDateTime + "]"
-      + " freqMin [" + freqMin + "]"
-      + " name [" + name + "]"
-      + " jcaLevel [" + jcaLevel + "]"
-      + " freqMax [" + freqMax + "]"
-      + " jammingAuthority [" + jammingAuthority + "]"
-      + " jammingPlan [" + jammingPlan + "]"
-      + " stopDateTime [" + stopDateTime + "]"
-      + " version [" + version + "]"
+      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+      + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
+      + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
+      + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
+      + (version != null ? " version [" + version + "]" : "")
       + "}";
   }
 

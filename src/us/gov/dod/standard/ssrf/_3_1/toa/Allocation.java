@@ -369,7 +369,8 @@ public class Allocation {
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @return a non-null but possibly empty list of {@link ChannelPlanRef} instances
+   * @return a non-null but possibly empty list of {@link ChannelPlanRef}
+   *         instances
    */
   public List<ChannelPlanRef> getChannelPlanRef() {
     if (channelPlanRef == null) {
@@ -618,15 +619,15 @@ public class Allocation {
   @Override
   public String toString() {
     return "Allocation {"
-      + " stnClass [" + stnClass + "]"
-      + " expirationDate [" + expirationDate + "]"
-      + " priority [" + priority + "]"
-      + " variance [" + variance + "]"
-      + " channelPlanRef [" + channelPlanRef + "]"
-      + " allocatedService [" + allocatedService + "]"
-      + " effectiveDate [" + effectiveDate + "]"
-      + " footnotes [" + footnotes + "]"
-      + " allocatedByFootnote [" + allocatedByFootnote + "]"
+      + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (priority != null ? " priority [" + priority + "]" : "")
+      + (variance != null ? " variance [" + variance + "]" : "")
+      + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
+      + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
+      + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
       + "}";
   }
 

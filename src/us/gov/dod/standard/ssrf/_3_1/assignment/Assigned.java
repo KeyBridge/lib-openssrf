@@ -771,17 +771,17 @@ public class Assigned {
   @Override
   public String toString() {
     return "Assigned {"
-      + " freqOld [" + freqOld + "]"
-      + " colourNum [" + colourNum + "]"
-      + " ituRegStatus [" + ituRegStatus + "]"
-      + " freq [" + freq + "]"
-      + " navAidsChannel [" + navAidsChannel + "]"
-      + " ituRegNum [" + ituRegNum + "]"
-      + " quality [" + quality + "]"
-      + " ituRegDate [" + ituRegDate + "]"
-      + " colourWord [" + colourWord + "]"
-      + " netNum [" + netNum + "]"
-      + " ituRegComments [" + ituRegComments + "]"
+      + (freqOld != null ? " freqOld [" + freqOld + "]" : "")
+      + (colourNum != null ? " colourNum [" + colourNum + "]" : "")
+      + (ituRegStatus != null ? " ituRegStatus [" + ituRegStatus + "]" : "")
+      + (freq != null ? " freq [" + freq + "]" : "")
+      + (navAidsChannel != null ? " navAidsChannel [" + navAidsChannel + "]" : "")
+      + (ituRegNum != null ? " ituRegNum [" + ituRegNum + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (ituRegDate != null ? " ituRegDate [" + ituRegDate + "]" : "")
+      + (colourWord != null ? " colourWord [" + colourWord + "]" : "")
+      + (netNum != null ? " netNum [" + netNum + "]" : "")
+      + (ituRegComments != null ? " ituRegComments [" + ituRegComments + "]" : "")
       + "}";
   }
 

@@ -160,8 +160,8 @@ public class ObservedScanValues {
   @Override
   public String toString() {
     return "ObservedScanValues {"
-      + " statisticalIndicator [" + statisticalIndicator + "]"
-      + " scanValue [" + scanValue + "]"
+      + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")
+      + (scanValue != null ? " scanValue [" + scanValue + "]" : "")
       + "}";
   }
 

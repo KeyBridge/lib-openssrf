@@ -163,16 +163,16 @@ public class Comment extends AMetadata<Comment> {
   @Override
   public String toString() {
     return "Comment {"
-      + " extReferences [" + extReferences + "]"
-      + " cls [" + cls + "]"
-      + " idx [" + idx + "]"
-      + " recommendedValue [" + recommendedValue + "]"
-      + " quality [" + quality + "]"
-      + " legacyReleasability [" + legacyReleasability + "]"
-      + " value [" + value + "]"
-      + " remarks [" + remarkRef + "]"
-      + " idref [" + idref + "]"
-      + " availability [" + availability + "]"
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
+      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (availability != null ? " availability [" + availability + "]" : "")
       + "}";
   }
 

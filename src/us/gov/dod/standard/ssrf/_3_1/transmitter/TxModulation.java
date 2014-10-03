@@ -960,21 +960,21 @@ public class TxModulation
   @Override
   public String toString() {
     return "TxModulation {"
-      + " muxScheme [" + muxScheme + "]"
-      + " keysAngle [" + keysAngle + "]"
-      + " sidebandSuppressed [" + sidebandSuppressed + "]"
-      + " muxLevel [" + muxLevel + "]"
-      + " amIdx [" + amIdx + "]"
-      + " keysDesc [" + keysDesc + "]"
-      + " maxDevRatio [" + maxDevRatio + "]"
-      + " symbolSize [" + symbolSize + "]"
-      + " fmPeakModulationIdx [" + fmPeakModulationIdx + "]"
-      + " fmrmsFreqDev [" + fmrmsFreqDev + "]"
-      + " carrierSuppression [" + carrierSuppression + "]"
-      + " fmDeviationCode [" + fmDeviationCode + "]"
-      + " fmPeakFreqDev [" + fmPeakFreqDev + "]"
-      + " amrmsIdx [" + amrmsIdx + "]"
-      + " sidebandSuppression [" + sidebandSuppression + "]"
+      + (muxScheme != null ? " muxScheme [" + muxScheme + "]" : "")
+      + (keysAngle != null ? " keysAngle [" + keysAngle + "]" : "")
+      + (sidebandSuppressed != null ? " sidebandSuppressed [" + sidebandSuppressed + "]" : "")
+      + (muxLevel != null ? " muxLevel [" + muxLevel + "]" : "")
+      + (amIdx != null ? " amIdx [" + amIdx + "]" : "")
+      + (keysDesc != null ? " keysDesc [" + keysDesc + "]" : "")
+      + (maxDevRatio != null ? " maxDevRatio [" + maxDevRatio + "]" : "")
+      + (symbolSize != null ? " symbolSize [" + symbolSize + "]" : "")
+      + (fmPeakModulationIdx != null ? " fmPeakModulationIdx [" + fmPeakModulationIdx + "]" : "")
+      + (fmrmsFreqDev != null ? " fmrmsFreqDev [" + fmrmsFreqDev + "]" : "")
+      + (carrierSuppression != null ? " carrierSuppression [" + carrierSuppression + "]" : "")
+      + (fmDeviationCode != null ? " fmDeviationCode [" + fmDeviationCode + "]" : "")
+      + (fmPeakFreqDev != null ? " fmPeakFreqDev [" + fmPeakFreqDev + "]" : "")
+      + (amrmsIdx != null ? " amrmsIdx [" + amrmsIdx + "]" : "")
+      + (sidebandSuppression != null ? " sidebandSuppression [" + sidebandSuppression + "]" : "")
       + "}";
   }
 

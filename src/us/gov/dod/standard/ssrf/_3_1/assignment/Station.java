@@ -740,7 +740,8 @@ public class Station {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -1052,21 +1053,21 @@ public class Station {
   @Override
   public String toString() {
     return "Station {"
-      + " stationLoc [" + stationLoc + "]"
-      + " antStructureHeight [" + antStructureHeight + "]"
-      + " primaryStation [" + primaryStation + "]"
-      + " numMobileUnits [" + numMobileUnits + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " userCode [" + userCode + "]"
-      + " numCositedUnits [" + numCositedUnits + "]"
-      + " callSign [" + callSign + "]"
-      + " stationControl [" + stationControl + "]"
-      + " cositeSepDescription [" + cositeSepDescription + "]"
-      + " numAreaUnits [" + numAreaUnits + "]"
-      + " stationID [" + stationID + "]"
-      + " stationName [" + stationName + "]"
-      + " cositeSep [" + cositeSep + "]"
-      + " tsdf [" + tsdf + "]"
+      + (stationLoc != null ? " stationLoc [" + stationLoc + "]" : "")
+      + (antStructureHeight != null ? " antStructureHeight [" + antStructureHeight + "]" : "")
+      + (primaryStation != null ? " primaryStation [" + primaryStation + "]" : "")
+      + (numMobileUnits != null ? " numMobileUnits [" + numMobileUnits + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (userCode != null ? " userCode [" + userCode + "]" : "")
+      + (numCositedUnits != null ? " numCositedUnits [" + numCositedUnits + "]" : "")
+      + (callSign != null ? " callSign [" + callSign + "]" : "")
+      + (stationControl != null ? " stationControl [" + stationControl + "]" : "")
+      + (cositeSepDescription != null ? " cositeSepDescription [" + cositeSepDescription + "]" : "")
+      + (numAreaUnits != null ? " numAreaUnits [" + numAreaUnits + "]" : "")
+      + (stationID != null ? " stationID [" + stationID + "]" : "")
+      + (stationName != null ? " stationName [" + stationName + "]" : "")
+      + (cositeSep != null ? " cositeSep [" + cositeSep + "]" : "")
+      + (tsdf != null ? " tsdf [" + tsdf + "]" : "")
       + "}";
   }
 

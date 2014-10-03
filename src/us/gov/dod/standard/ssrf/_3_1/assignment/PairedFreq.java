@@ -278,10 +278,10 @@ public class PairedFreq {
   @Override
   public String toString() {
     return "PairedFreq {"
-      + " assignmentRef [" + assignmentRef + "]"
-      + " pairedASN [" + pairedASN + "]"
-      + " freq [" + freq + "]"
-      + " pairedType [" + pairedType + "]"
+      + (assignmentRef != null ? " assignmentRef [" + assignmentRef + "]" : "")
+      + (pairedASN != null ? " pairedASN [" + pairedASN + "]" : "")
+      + (freq != null ? " freq [" + freq + "]" : "")
+      + (pairedType != null ? " pairedType [" + pairedType + "]" : "")
       + "}";
   }
 

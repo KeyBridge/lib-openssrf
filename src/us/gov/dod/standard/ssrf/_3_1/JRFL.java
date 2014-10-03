@@ -752,18 +752,18 @@ public class JRFL extends Common<JRFL> {
   @Override
   public String toString() {
     return "JRFL {"
-      + " duration [" + duration + "]"
-      + " months [" + months + "]"
-      + " jrflEntry [" + jrflEntry + "]"
-      + " minutes [" + minutes + "]"
-      + " effectiveDateTime [" + effectiveDateTime + "]"
-      + " seconds [" + seconds + "]"
-      + " hours [" + hours + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " years [" + years + "]"
-      + " expirationDateTime [" + expirationDateTime + "]"
-      + " daysOfWeek [" + daysOfWeek + "]"
-      + " daysOfMonth [" + daysOfMonth + "]"
+      + (duration != null ? " duration [" + duration + "]" : "")
+      + (months != null ? " months [" + months + "]" : "")
+      + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
+      + (minutes != null ? " minutes [" + minutes + "]" : "")
+      + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
+      + (seconds != null ? " seconds [" + seconds + "]" : "")
+      + (hours != null ? " hours [" + hours + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (years != null ? " years [" + years + "]" : "")
+      + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
+      + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+      + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
       + "}";
   }
 

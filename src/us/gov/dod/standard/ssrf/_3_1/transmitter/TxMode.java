@@ -1575,7 +1575,8 @@ public class TxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @return a non-null but possibly empty list of {@link TxSignalTuning} instances
+   * @return a non-null but possibly empty list of {@link TxSignalTuning}
+   *         instances
    */
   public List<TxSignalTuning> getTxSignalTuning() {
     if (txSignalTuning == null) {
@@ -1606,7 +1607,8 @@ public class TxMode {
    * Complex element TxModulation contains the detailed characteristics of the
    * modulation on the transmitter side.
    * <p>
-   * @return a non-null but possibly empty list of {@link TxModulation} instances
+   * @return a non-null but possibly empty list of {@link TxModulation}
+   *         instances
    */
   public List<TxModulation> getTxModulation() {
     if (txModulation == null) {
@@ -1699,7 +1701,8 @@ public class TxMode {
    * that is combined with the main carrier signal operating at a higher
    * frequency.
    * <p>
-   * @return a non-null but possibly empty list of {@link SubcarrierFreq} instances
+   * @return a non-null but possibly empty list of {@link SubcarrierFreq}
+   *         instances
    */
   public List<SubcarrierFreq> getSubcarrierFreq() {
     if (subcarrierFreq == null) {
@@ -1764,7 +1767,8 @@ public class TxMode {
    * characteristic and pattern information for the Modulation impressed On the
    * Pulse (MOP).
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedMOPAnalysis} instances
+   * @return a non-null but possibly empty list of {@link ObservedMOPAnalysis}
+   *         instances
    */
   public List<ObservedMOPAnalysis> getObservedMOPAnalysis() {
     if (observedMOPAnalysis == null) {
@@ -1795,7 +1799,8 @@ public class TxMode {
    * Complex element ObservedRFAnalysis (US) contains the statisical results of
    * actual RF observations.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedRFAnalysis} instances
+   * @return a non-null but possibly empty list of {@link ObservedRFAnalysis}
+   *         instances
    */
   public List<ObservedRFAnalysis> getObservedRFAnalysis() {
     if (observedRFAnalysis == null) {
@@ -1827,7 +1832,8 @@ public class TxMode {
    * specific characteristics of the pulse group, pulse sequence, and distinct
    * pulse information.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedPulseAnalysis} instances
+   * @return a non-null but possibly empty list of {@link ObservedPulseAnalysis}
+   *         instances
    */
   public List<ObservedPulseAnalysis> getObservedPulseAnalysis() {
     if (observedPulseAnalysis == null) {
@@ -2550,8 +2556,7 @@ public class TxMode {
    * specific characteristics of the pulse group, pulse sequence, and distinct
    * pulse information.
    * <p>
-   * @param values One or more instances of type
-   *               {@link ObservedPulseAnalysis}
+   * @param values One or more instances of type {@link ObservedPulseAnalysis}
    * @return The current TxMode object instance
    */
   public TxMode withObservedPulseAnalysis(ObservedPulseAnalysis... values) {
@@ -2612,48 +2617,48 @@ public class TxMode {
   @Override
   public String toString() {
     return "TxMode {"
-      + " observedMOPAnalysis [" + observedMOPAnalysis + "]"
-      + " modulationType [" + modulationType + "]"
-      + " modeID [" + modeID + "]"
-      + " burstDuration [" + burstDuration + "]"
-      + " gpsWBL1Level [" + gpsWBL1Level + "]"
-      + " tuningMethod [" + tuningMethod + "]"
-      + " freqTolerance [" + freqTolerance + "]"
-      + " occBw [" + occBw + "]"
-      + " burstOffTime [" + burstOffTime + "]"
-      + " burstNumPulses [" + burstNumPulses + "]"
-      + " intermodPct [" + intermodPct + "]"
-      + " occBwCalculated [" + occBwCalculated + "]"
-      + " pulse [" + pulse + "]"
-      + " modeName [" + modeName + "]"
-      + " curves [" + curves + "]"
-      + " baseband [" + baseband + "]"
-      + " gpsNBL2Level [" + gpsNBL2Level + "]"
-      + " channelDwell [" + channelDwell + "]"
-      + " spuriousLevel [" + spuriousLevel + "]"
-      + " observedRFAnalysis [" + observedRFAnalysis + "]"
-      + " spreadSpectrum [" + spreadSpectrum + "]"
-      + " intermodEffect [" + intermodEffect + "]"
-      + " description [" + description + "]"
-      + " numSubCarriers [" + numSubCarriers + "]"
-      + " gpsNBL1Level [" + gpsNBL1Level + "]"
-      + " power [" + power + "]"
-      + " freqToleranceUnit [" + freqToleranceUnit + "]"
-      + " thirdHarmonicLevel [" + thirdHarmonicLevel + "]"
-      + " observedPulseAnalysis [" + observedPulseAnalysis + "]"
-      + " secondHarmonicLevel [" + secondHarmonicLevel + "]"
-      + " subcarrierFreq [" + subcarrierFreq + "]"
-      + " gpsWBL2Level [" + gpsWBL2Level + "]"
-      + " burstRate [" + burstRate + "]"
-      + " tunability [" + tunability + "]"
-      + " txSignalTuning [" + txSignalTuning + "]"
-      + " emsClass [" + emsClass + "]"
-      + " necessaryBw [" + necessaryBw + "]"
-      + " numSideTones [" + numSideTones + "]"
-      + " jitterCapable [" + jitterCapable + "]"
-      + " txModulation [" + txModulation + "]"
-      + " otherHarmonicLevel [" + otherHarmonicLevel + "]"
-      + " radarType [" + radarType + "]"
+      + (observedMOPAnalysis != null ? " observedMOPAnalysis [" + observedMOPAnalysis + "]" : "")
+      + (modulationType != null ? " modulationType [" + modulationType + "]" : "")
+      + (modeID != null ? " modeID [" + modeID + "]" : "")
+      + (burstDuration != null ? " burstDuration [" + burstDuration + "]" : "")
+      + (gpsWBL1Level != null ? " gpsWBL1Level [" + gpsWBL1Level + "]" : "")
+      + (tuningMethod != null ? " tuningMethod [" + tuningMethod + "]" : "")
+      + (freqTolerance != null ? " freqTolerance [" + freqTolerance + "]" : "")
+      + (occBw != null ? " occBw [" + occBw + "]" : "")
+      + (burstOffTime != null ? " burstOffTime [" + burstOffTime + "]" : "")
+      + (burstNumPulses != null ? " burstNumPulses [" + burstNumPulses + "]" : "")
+      + (intermodPct != null ? " intermodPct [" + intermodPct + "]" : "")
+      + (occBwCalculated != null ? " occBwCalculated [" + occBwCalculated + "]" : "")
+      + (pulse != null ? " pulse [" + pulse + "]" : "")
+      + (modeName != null ? " modeName [" + modeName + "]" : "")
+      + (curves != null ? " curves [" + curves + "]" : "")
+      + (baseband != null ? " baseband [" + baseband + "]" : "")
+      + (gpsNBL2Level != null ? " gpsNBL2Level [" + gpsNBL2Level + "]" : "")
+      + (channelDwell != null ? " channelDwell [" + channelDwell + "]" : "")
+      + (spuriousLevel != null ? " spuriousLevel [" + spuriousLevel + "]" : "")
+      + (observedRFAnalysis != null ? " observedRFAnalysis [" + observedRFAnalysis + "]" : "")
+      + (spreadSpectrum != null ? " spreadSpectrum [" + spreadSpectrum + "]" : "")
+      + (intermodEffect != null ? " intermodEffect [" + intermodEffect + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (numSubCarriers != null ? " numSubCarriers [" + numSubCarriers + "]" : "")
+      + (gpsNBL1Level != null ? " gpsNBL1Level [" + gpsNBL1Level + "]" : "")
+      + (power != null ? " power [" + power + "]" : "")
+      + (freqToleranceUnit != null ? " freqToleranceUnit [" + freqToleranceUnit + "]" : "")
+      + (thirdHarmonicLevel != null ? " thirdHarmonicLevel [" + thirdHarmonicLevel + "]" : "")
+      + (observedPulseAnalysis != null ? " observedPulseAnalysis [" + observedPulseAnalysis + "]" : "")
+      + (secondHarmonicLevel != null ? " secondHarmonicLevel [" + secondHarmonicLevel + "]" : "")
+      + (subcarrierFreq != null ? " subcarrierFreq [" + subcarrierFreq + "]" : "")
+      + (gpsWBL2Level != null ? " gpsWBL2Level [" + gpsWBL2Level + "]" : "")
+      + (burstRate != null ? " burstRate [" + burstRate + "]" : "")
+      + (tunability != null ? " tunability [" + tunability + "]" : "")
+      + (txSignalTuning != null ? " txSignalTuning [" + txSignalTuning + "]" : "")
+      + (emsClass != null ? " emsClass [" + emsClass + "]" : "")
+      + (necessaryBw != null ? " necessaryBw [" + necessaryBw + "]" : "")
+      + (numSideTones != null ? " numSideTones [" + numSideTones + "]" : "")
+      + (jitterCapable != null ? " jitterCapable [" + jitterCapable + "]" : "")
+      + (txModulation != null ? " txModulation [" + txModulation + "]" : "")
+      + (otherHarmonicLevel != null ? " otherHarmonicLevel [" + otherHarmonicLevel + "]" : "")
+      + (radarType != null ? " radarType [" + radarType + "]" : "")
       + "}";
   }
 

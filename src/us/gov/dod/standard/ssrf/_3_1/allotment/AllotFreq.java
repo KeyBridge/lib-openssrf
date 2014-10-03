@@ -286,7 +286,8 @@ public class AllotFreq {
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
    * <p>
-   * @return a non-null but possibly empty list of {@link LocationRestriction} instances
+   * @return a non-null but possibly empty list of {@link LocationRestriction}
+   *         instances
    */
   public List<LocationRestriction> getLocationRestriction() {
     if (locationRestriction == null) {
@@ -410,12 +411,12 @@ public class AllotFreq {
   @Override
   public String toString() {
     return "AllotFreq {"
-      + " pairedFreqMin [" + pairedFreqMin + "]"
-      + " locationRestriction [" + locationRestriction + "]"
-      + " freqMin [" + freqMin + "]"
-      + " tuningStep [" + tuningStep + "]"
-      + " allotChannel [" + allotChannel + "]"
-      + " freqMax [" + freqMax + "]"
+      + (pairedFreqMin != null ? " pairedFreqMin [" + pairedFreqMin + "]" : "")
+      + (locationRestriction != null ? " locationRestriction [" + locationRestriction + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
+      + (allotChannel != null ? " allotChannel [" + allotChannel + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
       + "}";
   }
 

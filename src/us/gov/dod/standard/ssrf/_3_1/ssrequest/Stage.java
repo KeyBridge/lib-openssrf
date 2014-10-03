@@ -377,7 +377,8 @@ public class Stage {
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    * <p>
-   * @return a non-null but possibly empty list of {@link StageLocation} instances
+   * @return a non-null but possibly empty list of {@link StageLocation}
+   *         instances
    */
   public List<StageLocation> getStageLocation() {
     if (stageLocation == null) {
@@ -524,14 +525,14 @@ public class Stage {
   @Override
   public String toString() {
     return "Stage {"
-      + " startDate [" + startDate + "]"
-      + " terminationDate [" + terminationDate + "]"
-      + " stageLocation [" + stageLocation + "]"
-      + " dateApprovalRequired [" + dateApprovalRequired + "]"
-      + " targetDate [" + targetDate + "]"
-      + " type [" + type + "]"
-      + " geoDescription [" + geoDescription + "]"
-      + " numEquip [" + numEquip + "]"
+      + (startDate != null ? " startDate [" + startDate + "]" : "")
+      + (terminationDate != null ? " terminationDate [" + terminationDate + "]" : "")
+      + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
+      + (dateApprovalRequired != null ? " dateApprovalRequired [" + dateApprovalRequired + "]" : "")
+      + (targetDate != null ? " targetDate [" + targetDate + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (geoDescription != null ? " geoDescription [" + geoDescription + "]" : "")
+      + (numEquip != null ? " numEquip [" + numEquip + "]" : "")
       + "}";
   }
 

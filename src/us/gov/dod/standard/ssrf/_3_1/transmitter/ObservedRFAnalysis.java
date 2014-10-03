@@ -1688,7 +1688,8 @@ public class ObservedRFAnalysis {
    * Complex element ObservedRFValues (US) contains details of actual RF
    * observations.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedRFValues} instances
+   * @return a non-null but possibly empty list of {@link ObservedRFValues}
+   *         instances
    */
   public List<ObservedRFValues> getObservedRFValues() {
     if (observedRFValues == null) {
@@ -2198,44 +2199,44 @@ public class ObservedRFAnalysis {
   @Override
   public String toString() {
     return "ObservedRFAnalysis {"
-      + " rfPatternPeriod [" + rfPatternPeriod + "]"
-      + " numRFElements [" + numRFElements + "]"
-      + " instantRFBW06 [" + instantRFBW06 + "]"
-      + " rfPatternType [" + rfPatternType + "]"
-      + " rfChangeRate [" + rfChangeRate + "]"
-      + " freqMin [" + freqMin + "]"
-      + " freqMax [" + freqMax + "]"
-      + " rfFreqToleranceUnit [" + rfFreqToleranceUnit + "]"
-      + " dwellTime [" + dwellTime + "]"
-      + " numRFChannels [" + numRFChannels + "]"
-      + " rfChannelFreqMin [" + rfChannelFreqMin + "]"
-      + " rfFreqToleranceInterval [" + rfFreqToleranceInterval + "]"
-      + " rfChannelFreqMax [" + rfChannelFreqMax + "]"
-      + " numRFSimultaneous [" + numRFSimultaneous + "]"
-      + " rfCoherent [" + rfCoherent + "]"
-      + " rfTuningStep [" + rfTuningStep + "]"
-      + " rfMean [" + rfMean + "]"
-      + " rfAdaptiveDriver [" + rfAdaptiveDriver + "]"
-      + " rfSlotDuration [" + rfSlotDuration + "]"
-      + " rfRestFreq [" + rfRestFreq + "]"
-      + " instantRFBW20 [" + instantRFBW20 + "]"
-      + " numRFPositions [" + numRFPositions + "]"
-      + " rfSequenceDesc [" + rfSequenceDesc + "]"
-      + " rfMedian [" + rfMedian + "]"
-      + " instantRFBW03 [" + instantRFBW03 + "]"
-      + " rfStandardDeviation [" + rfStandardDeviation + "]"
-      + " rfBasicClockPeriod [" + rfBasicClockPeriod + "]"
-      + " rfFreqTolerance [" + rfFreqTolerance + "]"
-      + " chipRate [" + chipRate + "]"
-      + " operationalRFBW [" + operationalRFBW + "]"
-      + " observedRFValues [" + observedRFValues + "]"
-      + " tuningStep [" + tuningStep + "]"
-      + " rfFreqMin [" + rfFreqMin + "]"
-      + " rfContinuous [" + rfContinuous + "]"
-      + " rfFreqMax [" + rfFreqMax + "]"
-      + " rfAdaptiveRule [" + rfAdaptiveRule + "]"
-      + " guardBand [" + guardBand + "]"
-      + " instantRFBW10 [" + instantRFBW10 + "]"
+      + (rfPatternPeriod != null ? " rfPatternPeriod [" + rfPatternPeriod + "]" : "")
+      + (numRFElements != null ? " numRFElements [" + numRFElements + "]" : "")
+      + (instantRFBW06 != null ? " instantRFBW06 [" + instantRFBW06 + "]" : "")
+      + (rfPatternType != null ? " rfPatternType [" + rfPatternType + "]" : "")
+      + (rfChangeRate != null ? " rfChangeRate [" + rfChangeRate + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (rfFreqToleranceUnit != null ? " rfFreqToleranceUnit [" + rfFreqToleranceUnit + "]" : "")
+      + (dwellTime != null ? " dwellTime [" + dwellTime + "]" : "")
+      + (numRFChannels != null ? " numRFChannels [" + numRFChannels + "]" : "")
+      + (rfChannelFreqMin != null ? " rfChannelFreqMin [" + rfChannelFreqMin + "]" : "")
+      + (rfFreqToleranceInterval != null ? " rfFreqToleranceInterval [" + rfFreqToleranceInterval + "]" : "")
+      + (rfChannelFreqMax != null ? " rfChannelFreqMax [" + rfChannelFreqMax + "]" : "")
+      + (numRFSimultaneous != null ? " numRFSimultaneous [" + numRFSimultaneous + "]" : "")
+      + (rfCoherent != null ? " rfCoherent [" + rfCoherent + "]" : "")
+      + (rfTuningStep != null ? " rfTuningStep [" + rfTuningStep + "]" : "")
+      + (rfMean != null ? " rfMean [" + rfMean + "]" : "")
+      + (rfAdaptiveDriver != null ? " rfAdaptiveDriver [" + rfAdaptiveDriver + "]" : "")
+      + (rfSlotDuration != null ? " rfSlotDuration [" + rfSlotDuration + "]" : "")
+      + (rfRestFreq != null ? " rfRestFreq [" + rfRestFreq + "]" : "")
+      + (instantRFBW20 != null ? " instantRFBW20 [" + instantRFBW20 + "]" : "")
+      + (numRFPositions != null ? " numRFPositions [" + numRFPositions + "]" : "")
+      + (rfSequenceDesc != null ? " rfSequenceDesc [" + rfSequenceDesc + "]" : "")
+      + (rfMedian != null ? " rfMedian [" + rfMedian + "]" : "")
+      + (instantRFBW03 != null ? " instantRFBW03 [" + instantRFBW03 + "]" : "")
+      + (rfStandardDeviation != null ? " rfStandardDeviation [" + rfStandardDeviation + "]" : "")
+      + (rfBasicClockPeriod != null ? " rfBasicClockPeriod [" + rfBasicClockPeriod + "]" : "")
+      + (rfFreqTolerance != null ? " rfFreqTolerance [" + rfFreqTolerance + "]" : "")
+      + (chipRate != null ? " chipRate [" + chipRate + "]" : "")
+      + (operationalRFBW != null ? " operationalRFBW [" + operationalRFBW + "]" : "")
+      + (observedRFValues != null ? " observedRFValues [" + observedRFValues + "]" : "")
+      + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
+      + (rfFreqMin != null ? " rfFreqMin [" + rfFreqMin + "]" : "")
+      + (rfContinuous != null ? " rfContinuous [" + rfContinuous + "]" : "")
+      + (rfFreqMax != null ? " rfFreqMax [" + rfFreqMax + "]" : "")
+      + (rfAdaptiveRule != null ? " rfAdaptiveRule [" + rfAdaptiveRule + "]" : "")
+      + (guardBand != null ? " guardBand [" + guardBand + "]" : "")
+      + (instantRFBW10 != null ? " instantRFBW10 [" + instantRFBW10 + "]" : "")
       + "}";
   }
 

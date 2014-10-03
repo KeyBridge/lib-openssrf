@@ -1143,25 +1143,25 @@ public class SpreadSpectrum {
   @Override
   public String toString() {
     return "SpreadSpectrum {"
-      + " pulseChirpDurationMin [" + pulseChirpDurationMin + "]"
-      + " timeHopNumSlots [" + timeHopNumSlots + "]"
-      + " chipRate [" + chipRate + "]"
-      + " freqMin [" + freqMin + "]"
-      + " freqBlocking [" + freqBlocking + "]"
-      + " maxGain [" + maxGain + "]"
-      + " pulseChirpDurationMax [" + pulseChirpDurationMax + "]"
-      + " freqMax [" + freqMax + "]"
-      + " pulseChirpFreqShift [" + pulseChirpFreqShift + "]"
-      + " numHopsets [" + numHopsets + "]"
-      + " type [" + type + "]"
-      + " infoDataRate [" + infoDataRate + "]"
-      + " hopRate [" + hopRate + "]"
-      + " hopDwell [" + hopDwell + "]"
-      + " timeHopPulsesPerDwell [" + timeHopPulsesPerDwell + "]"
-      + " codeRate [" + codeRate + "]"
-      + " numFreqsPerHopset [" + numFreqsPerHopset + "]"
-      + " pulseFreqDev [" + pulseFreqDev + "]"
-      + " pulseChirpRate [" + pulseChirpRate + "]"
+      + (pulseChirpDurationMin != null ? " pulseChirpDurationMin [" + pulseChirpDurationMin + "]" : "")
+      + (timeHopNumSlots != null ? " timeHopNumSlots [" + timeHopNumSlots + "]" : "")
+      + (chipRate != null ? " chipRate [" + chipRate + "]" : "")
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (freqBlocking != null ? " freqBlocking [" + freqBlocking + "]" : "")
+      + (maxGain != null ? " maxGain [" + maxGain + "]" : "")
+      + (pulseChirpDurationMax != null ? " pulseChirpDurationMax [" + pulseChirpDurationMax + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (pulseChirpFreqShift != null ? " pulseChirpFreqShift [" + pulseChirpFreqShift + "]" : "")
+      + (numHopsets != null ? " numHopsets [" + numHopsets + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (infoDataRate != null ? " infoDataRate [" + infoDataRate + "]" : "")
+      + (hopRate != null ? " hopRate [" + hopRate + "]" : "")
+      + (hopDwell != null ? " hopDwell [" + hopDwell + "]" : "")
+      + (timeHopPulsesPerDwell != null ? " timeHopPulsesPerDwell [" + timeHopPulsesPerDwell + "]" : "")
+      + (codeRate != null ? " codeRate [" + codeRate + "]" : "")
+      + (numFreqsPerHopset != null ? " numFreqsPerHopset [" + numFreqsPerHopset + "]" : "")
+      + (pulseFreqDev != null ? " pulseFreqDev [" + pulseFreqDev + "]" : "")
+      + (pulseChirpRate != null ? " pulseChirpRate [" + pulseChirpRate + "]" : "")
       + "}";
   }
 

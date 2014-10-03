@@ -160,8 +160,8 @@ public class AntPatternPoint {
   @Override
   public String toString() {
     return "AntPatternPoint {"
-      + " dir [" + dir + "]"
-      + " gain [" + gain + "]"
+      + (dir != null ? " dir [" + dir + "]" : "")
+      + (gain != null ? " gain [" + gain + "]" : "")
       + "}";
   }
 

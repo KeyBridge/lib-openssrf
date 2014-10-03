@@ -392,12 +392,12 @@ public class FreqConversion {
   @Override
   public String toString() {
     return "FreqConversion {"
-      + " loFreqMin [" + loFreqMin + "]"
-      + " ifMin [" + ifMin + "]"
-      + " ifMax [" + ifMax + "]"
-      + " loFreqMax [" + loFreqMax + "]"
-      + " oscillatorTuning [" + oscillatorTuning + "]"
-      + " stageNum [" + stageNum + "]"
+      + (loFreqMin != null ? " loFreqMin [" + loFreqMin + "]" : "")
+      + (ifMin != null ? " ifMin [" + ifMin + "]" : "")
+      + (ifMax != null ? " ifMax [" + ifMax + "]" : "")
+      + (loFreqMax != null ? " loFreqMax [" + loFreqMax + "]" : "")
+      + (oscillatorTuning != null ? " oscillatorTuning [" + oscillatorTuning + "]" : "")
+      + (stageNum != null ? " stageNum [" + stageNum + "]" : "")
       + "}";
   }
 

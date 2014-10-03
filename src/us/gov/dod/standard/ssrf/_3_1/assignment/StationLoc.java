@@ -430,12 +430,12 @@ public class StationLoc {
   @Override
   public String toString() {
     return "StationLoc {"
-      + " serviceVolumeLocRef [" + serviceVolumeLocRef + "]"
-      + " locationRadius [" + locationRadius + "]"
-      + " locSatRef [" + locSatRef + "]"
-      + " serviceVolumeHeight [" + serviceVolumeHeight + "]"
-      + " locationExcluded [" + locationExcluded + "]"
-      + " serviceVolumeRadius [" + serviceVolumeRadius + "]"
+      + (serviceVolumeLocRef != null ? " serviceVolumeLocRef [" + serviceVolumeLocRef + "]" : "")
+      + (locationRadius != null ? " locationRadius [" + locationRadius + "]" : "")
+      + (locSatRef != null ? " locSatRef [" + locSatRef + "]" : "")
+      + (serviceVolumeHeight != null ? " serviceVolumeHeight [" + serviceVolumeHeight + "]" : "")
+      + (locationExcluded != null ? " locationExcluded [" + locationExcluded + "]" : "")
+      + (serviceVolumeRadius != null ? " serviceVolumeRadius [" + serviceVolumeRadius + "]" : "")
       + "}";
   }
 

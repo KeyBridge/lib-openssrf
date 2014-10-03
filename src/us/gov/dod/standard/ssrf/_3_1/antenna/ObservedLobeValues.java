@@ -685,17 +685,17 @@ public class ObservedLobeValues {
   @Override
   public String toString() {
     return "ObservedLobeValues {"
-      + " lobeValueAngleVert [" + lobeValueAngleVert + "]"
-      + " horzBwMin [" + horzBwMin + "]"
-      + " horzBwMax [" + horzBwMax + "]"
-      + " lobeValueLevelAccuracy [" + lobeValueLevelAccuracy + "]"
-      + " lobeValueAngleAccuracy [" + lobeValueAngleAccuracy + "]"
-      + " vertBwMax [" + vertBwMax + "]"
-      + " vertBwMin [" + vertBwMin + "]"
-      + " lobeValueAngleHorz [" + lobeValueAngleHorz + "]"
-      + " lobeValueName [" + lobeValueName + "]"
-      + " lobeValueLevel [" + lobeValueLevel + "]"
-      + " lobeValueID [" + lobeValueID + "]"
+      + (lobeValueAngleVert != null ? " lobeValueAngleVert [" + lobeValueAngleVert + "]" : "")
+      + (horzBwMin != null ? " horzBwMin [" + horzBwMin + "]" : "")
+      + (horzBwMax != null ? " horzBwMax [" + horzBwMax + "]" : "")
+      + (lobeValueLevelAccuracy != null ? " lobeValueLevelAccuracy [" + lobeValueLevelAccuracy + "]" : "")
+      + (lobeValueAngleAccuracy != null ? " lobeValueAngleAccuracy [" + lobeValueAngleAccuracy + "]" : "")
+      + (vertBwMax != null ? " vertBwMax [" + vertBwMax + "]" : "")
+      + (vertBwMin != null ? " vertBwMin [" + vertBwMin + "]" : "")
+      + (lobeValueAngleHorz != null ? " lobeValueAngleHorz [" + lobeValueAngleHorz + "]" : "")
+      + (lobeValueName != null ? " lobeValueName [" + lobeValueName + "]" : "")
+      + (lobeValueLevel != null ? " lobeValueLevel [" + lobeValueLevel + "]" : "")
+      + (lobeValueID != null ? " lobeValueID [" + lobeValueID + "]" : "")
       + "}";
   }
 

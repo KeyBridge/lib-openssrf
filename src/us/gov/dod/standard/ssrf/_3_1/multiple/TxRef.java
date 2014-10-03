@@ -158,7 +158,8 @@ public class TxRef {
    * Complex element TxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Transmitter Configuration.
    * <p>
-   * @return a non-null but possibly empty list of {@link TxAntModeRef} instances
+   * @return a non-null but possibly empty list of {@link TxAntModeRef}
+   *         instances
    */
   public List<TxAntModeRef> getTxAntModeRef() {
     if (txAntModeRef == null) {
@@ -268,9 +269,9 @@ public class TxRef {
   @Override
   public String toString() {
     return "TxRef {"
-      + " txAntModeRef [" + txAntModeRef + "]"
-      + " txModeRef [" + txModeRef + "]"
-      + " serial [" + serial + "]"
+      + (txAntModeRef != null ? " txAntModeRef [" + txAntModeRef + "]" : "")
+      + (txModeRef != null ? " txModeRef [" + txModeRef + "]" : "")
+      + (serial != null ? " serial [" + serial + "]" : "")
       + "}";
   }
 

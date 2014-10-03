@@ -870,7 +870,8 @@ public class Satellite extends Common<Satellite> {
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
    * <p>
-   * @return a non-null but possibly empty list of {@link EarthStation} instances
+   * @return a non-null but possibly empty list of {@link EarthStation}
+   *         instances
    */
   public List<EarthStation> getEarthStation() {
     if (earthStation == null) {
@@ -934,7 +935,8 @@ public class Satellite extends Common<Satellite> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature} instances
+   * @return a non-null but possibly empty list of {@link Nomenclature}
+   *         instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -1302,27 +1304,27 @@ public class Satellite extends Common<Satellite> {
   @Override
   public String toString() {
     return "Satellite {"
-      + " launchLocRef [" + launchLocRef + "]"
-      + " nomenclature [" + nomenclature + "]"
-      + " geoAltitude [" + geoAltitude + "]"
-      + " internationalDesignator [" + internationalDesignator + "]"
-      + " objectNum [" + objectNum + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " orbitType [" + orbitType + "]"
-      + " nonGeoInclination [" + nonGeoInclination + "]"
-      + " nonGeoPeriod [" + nonGeoPeriod + "]"
-      + " nonGeoNumSatellites [" + nonGeoNumSatellites + "]"
-      + " rfSystemRef [" + rfSystemRef + "]"
-      + " nonGeoApogee [" + nonGeoApogee + "]"
-      + " earthStation [" + earthStation + "]"
-      + " callSign [" + callSign + "]"
-      + " launchStatus [" + launchStatus + "]"
-      + " geoNominalLon [" + geoNominalLon + "]"
-      + " networkName [" + networkName + "]"
-      + " serviceArea [" + serviceArea + "]"
-      + " launchDate [" + launchDate + "]"
-      + " administration [" + administration + "]"
-      + " nonGeoPerigee [" + nonGeoPerigee + "]"
+      + (launchLocRef != null ? " launchLocRef [" + launchLocRef + "]" : "")
+      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+      + (geoAltitude != null ? " geoAltitude [" + geoAltitude + "]" : "")
+      + (internationalDesignator != null ? " internationalDesignator [" + internationalDesignator + "]" : "")
+      + (objectNum != null ? " objectNum [" + objectNum + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (orbitType != null ? " orbitType [" + orbitType + "]" : "")
+      + (nonGeoInclination != null ? " nonGeoInclination [" + nonGeoInclination + "]" : "")
+      + (nonGeoPeriod != null ? " nonGeoPeriod [" + nonGeoPeriod + "]" : "")
+      + (nonGeoNumSatellites != null ? " nonGeoNumSatellites [" + nonGeoNumSatellites + "]" : "")
+      + (rfSystemRef != null ? " rfSystemRef [" + rfSystemRef + "]" : "")
+      + (nonGeoApogee != null ? " nonGeoApogee [" + nonGeoApogee + "]" : "")
+      + (earthStation != null ? " earthStation [" + earthStation + "]" : "")
+      + (callSign != null ? " callSign [" + callSign + "]" : "")
+      + (launchStatus != null ? " launchStatus [" + launchStatus + "]" : "")
+      + (geoNominalLon != null ? " geoNominalLon [" + geoNominalLon + "]" : "")
+      + (networkName != null ? " networkName [" + networkName + "]" : "")
+      + (serviceArea != null ? " serviceArea [" + serviceArea + "]" : "")
+      + (launchDate != null ? " launchDate [" + launchDate + "]" : "")
+      + (administration != null ? " administration [" + administration + "]" : "")
+      + (nonGeoPerigee != null ? " nonGeoPerigee [" + nonGeoPerigee + "]" : "")
       + "}";
   }
 

@@ -480,7 +480,8 @@ public class Allotment extends Common<Allotment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -850,18 +851,18 @@ public class Allotment extends Common<Allotment> {
   @Override
   public String toString() {
     return "Allotment {"
-      + " project [" + project + "]"
-      + " locationRef [" + locationRef + "]"
-      + " requirement [" + requirement + "]"
-      + " title [" + title + "]"
-      + " expirationDate [" + expirationDate + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " dateResponseRequired [" + dateResponseRequired + "]"
-      + " emission [" + emission + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " usageType [" + usageType + "]"
-      + " allotFreq [" + allotFreq + "]"
-      + " effectiveDate [" + effectiveDate + "]"
+      + (project != null ? " project [" + project + "]" : "")
+      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+      + (requirement != null ? " requirement [" + requirement + "]" : "")
+      + (title != null ? " title [" + title + "]" : "")
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+      + (emission != null ? " emission [" + emission + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (usageType != null ? " usageType [" + usageType + "]" : "")
+      + (allotFreq != null ? " allotFreq [" + allotFreq + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + "}";
   }
 

@@ -290,10 +290,10 @@ public class AntHardware {
   @Override
   public String toString() {
     return "AntHardware {"
-      + " connectorType [" + connectorType + "]"
-      + " feedType [" + feedType + "]"
-      + " leadType [" + leadType + "]"
-      + " feedOrientation [" + feedOrientation + "]"
+      + (connectorType != null ? " connectorType [" + connectorType + "]" : "")
+      + (feedType != null ? " feedType [" + feedType + "]" : "")
+      + (leadType != null ? " leadType [" + leadType + "]" : "")
+      + (feedOrientation != null ? " feedOrientation [" + feedOrientation + "]" : "")
       + "}";
   }
 

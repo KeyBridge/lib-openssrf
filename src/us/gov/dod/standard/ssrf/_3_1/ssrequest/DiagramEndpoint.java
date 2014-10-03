@@ -347,7 +347,8 @@ public class DiagramEndpoint {
    * Complex element EndpointLocation defines locations where the diagram
    * endpoint is allowed or forbidden from use.
    * <p>
-   * @return a non-null but possibly empty list of {@link EndpointLocation} instances
+   * @return a non-null but possibly empty list of {@link EndpointLocation}
+   *         instances
    */
   public List<EndpointLocation> getEndpointLocation() {
     if (endpointLocation == null) {
@@ -498,14 +499,14 @@ public class DiagramEndpoint {
   @Override
   public String toString() {
     return "DiagramEndpoint {"
-      + " endpointID [" + endpointID + "]"
-      + " description [" + description + "]"
-      + " pointToMultiPoint [" + pointToMultiPoint + "]"
-      + " name [" + name + "]"
-      + " iconPosLeft [" + iconPosLeft + "]"
-      + " endpointLocation [" + endpointLocation + "]"
-      + " iconPosTop [" + iconPosTop + "]"
-      + " iconType [" + iconType + "]"
+      + (endpointID != null ? " endpointID [" + endpointID + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (pointToMultiPoint != null ? " pointToMultiPoint [" + pointToMultiPoint + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (iconPosLeft != null ? " iconPosLeft [" + iconPosLeft + "]" : "")
+      + (endpointLocation != null ? " endpointLocation [" + endpointLocation + "]" : "")
+      + (iconPosTop != null ? " iconPosTop [" + iconPosTop + "]" : "")
+      + (iconType != null ? " iconType [" + iconType + "]" : "")
       + "}";
   }
 

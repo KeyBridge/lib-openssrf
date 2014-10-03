@@ -154,7 +154,8 @@ public class RxRef {
    * Complex element RxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Receiver Configuration.
    * <p>
-   * @return a non-null but possibly empty list of {@link RxAntModeRef} instances
+   * @return a non-null but possibly empty list of {@link RxAntModeRef}
+   *         instances
    */
   public List<RxAntModeRef> getRxAntModeRef() {
     if (rxAntModeRef == null) {
@@ -264,9 +265,9 @@ public class RxRef {
   @Override
   public String toString() {
     return "RxRef {"
-      + " rxModeRef [" + rxModeRef + "]"
-      + " serial [" + serial + "]"
-      + " rxAntModeRef [" + rxAntModeRef + "]"
+      + (rxModeRef != null ? " rxModeRef [" + rxModeRef + "]" : "")
+      + (serial != null ? " serial [" + serial + "]" : "")
+      + (rxAntModeRef != null ? " rxAntModeRef [" + rxAntModeRef + "]" : "")
       + "}";
   }
 

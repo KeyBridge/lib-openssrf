@@ -279,10 +279,10 @@ public class Blanking {
   @Override
   public String toString() {
     return "Blanking {"
-      + " elevStart [" + elevStart + "]"
-      + " azStart [" + azStart + "]"
-      + " elevStop [" + elevStop + "]"
-      + " azStop [" + azStop + "]"
+      + (elevStart != null ? " elevStart [" + elevStart + "]" : "")
+      + (azStart != null ? " azStart [" + azStart + "]" : "")
+      + (elevStop != null ? " elevStop [" + elevStop + "]" : "")
+      + (azStop != null ? " azStop [" + azStop + "]" : "")
       + "}";
   }
 

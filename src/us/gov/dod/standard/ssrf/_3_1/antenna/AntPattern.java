@@ -268,7 +268,8 @@ public class AntPattern {
    * Complex element AntPatternPoint contains a single point of the antenna
    * radiation pattern, defined by a direction and gain.
    * <p>
-   * @return a non-null but possibly empty list of {@link AntPatternPoint} instances
+   * @return a non-null but possibly empty list of {@link AntPatternPoint}
+   *         instances
    */
   public List<AntPatternPoint> getAntPatternPoint() {
     if (antPatternPoint == null) {
@@ -386,11 +387,11 @@ public class AntPattern {
   @Override
   public String toString() {
     return "AntPattern {"
-      + " cutType [" + cutType + "]"
-      + " cutAngle [" + cutAngle + "]"
-      + " antPatternPoint [" + antPatternPoint + "]"
-      + " type [" + type + "]"
-      + " calculated [" + calculated + "]"
+      + (cutType != null ? " cutType [" + cutType + "]" : "")
+      + (cutAngle != null ? " cutAngle [" + cutAngle + "]" : "")
+      + (antPatternPoint != null ? " antPatternPoint [" + antPatternPoint + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (calculated != null ? " calculated [" + calculated + "]" : "")
       + "}";
   }
 

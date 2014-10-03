@@ -363,18 +363,18 @@ public class EmsClass extends AMetadata<EmsClass> {
   @Override
   public String toString() {
     return "EmsClass {"
-      + " availability [" + availability + "]"
-      + " cls [" + cls + "]"
-      + " explainInformationTypeX [" + explainInformationTypeX + "]"
-      + " explainModulationTypeX [" + explainModulationTypeX + "]"
-      + " explainNatureOfSignalX [" + explainNatureOfSignalX + "]"
-      + " extReferences [" + extReferences + "]"
-      + " idref [" + idref + "]"
-      + " legacyReleasability [" + legacyReleasability + "]"
-      + " quality [" + quality + "]"
-      + " recommendedValue [" + recommendedValue + "]"
-      + " remarks [" + remarkRef + "]"
-      + " value [" + value + "]"
+      + (availability != null ? " availability [" + availability + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (explainInformationTypeX != null ? " explainInformationTypeX [" + explainInformationTypeX + "]" : "")
+      + (explainModulationTypeX != null ? " explainModulationTypeX [" + explainModulationTypeX + "]" : "")
+      + (explainNatureOfSignalX != null ? " explainNatureOfSignalX [" + explainNatureOfSignalX + "]" : "")
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
       + "}";
   }
 

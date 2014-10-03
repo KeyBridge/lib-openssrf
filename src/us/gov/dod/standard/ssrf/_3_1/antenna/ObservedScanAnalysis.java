@@ -1671,7 +1671,8 @@ public class ObservedScanAnalysis {
    * Complex element ObservedScanValues (US) contains data describing the
    * discrete scan rate values and supporting statistical information.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedScanValues} instances
+   * @return a non-null but possibly empty list of {@link ObservedScanValues}
+   *         instances
    */
   public List<ObservedScanValues> getObservedScanValues() {
     if (observedScanValues == null) {
@@ -2182,43 +2183,43 @@ public class ObservedScanAnalysis {
   @Override
   public String toString() {
     return "ObservedScanAnalysis {"
-      + " scanPatternType [" + scanPatternType + "]"
-      + " azScanSector [" + azScanSector + "]"
-      + " azScanRateExtremeMax [" + azScanRateExtremeMax + "]"
-      + " scanElevContinuous [" + scanElevContinuous + "]"
-      + " scanDwellSequence [" + scanDwellSequence + "]"
-      + " scanAdaptiveRuleDesc [" + scanAdaptiveRuleDesc + "]"
-      + " scansHorzContinuous [" + scansHorzContinuous + "]"
-      + " observedScanValues [" + observedScanValues + "]"
-      + " scanAdaptiveDriverDesc [" + scanAdaptiveDriverDesc + "]"
-      + " azScanChangeRate [" + azScanChangeRate + "]"
-      + " scanAngleAzStart [" + scanAngleAzStart + "]"
-      + " azScanSectorMax [" + azScanSectorMax + "]"
-      + " azScanRateMean [" + azScanRateMean + "]"
-      + " numBeamPositionsPerScan [" + numBeamPositionsPerScan + "]"
-      + " elevScanVelocity [" + elevScanVelocity + "]"
-      + " numBeamsPerRaster [" + numBeamsPerRaster + "]"
-      + " elevScanChangeRate [" + elevScanChangeRate + "]"
-      + " azScanVelocity [" + azScanVelocity + "]"
-      + " numBeamPositionsTotal [" + numBeamPositionsTotal + "]"
-      + " numScanValues [" + numScanValues + "]"
-      + " scanDwellTime [" + scanDwellTime + "]"
-      + " numScanPositions [" + numScanPositions + "]"
-      + " elevScanRateExtremeMin [" + elevScanRateExtremeMin + "]"
-      + " scanType [" + scanType + "]"
-      + " scanDwell [" + scanDwell + "]"
-      + " scanAngleElevStop [" + scanAngleElevStop + "]"
-      + " elevScanSectorMax [" + elevScanSectorMax + "]"
-      + " elevScanRateExtremeMax [" + elevScanRateExtremeMax + "]"
-      + " elevScanSector [" + elevScanSector + "]"
-      + " azBoresightAngle [" + azBoresightAngle + "]"
-      + " scanAngleElevStart [" + scanAngleElevStart + "]"
-      + " elevScanRateMedian [" + elevScanRateMedian + "]"
-      + " azScanRateExtremeMin [" + azScanRateExtremeMin + "]"
-      + " elevScanRateMean [" + elevScanRateMean + "]"
-      + " scanAngleAzStop [" + scanAngleAzStop + "]"
-      + " azScanRateMedian [" + azScanRateMedian + "]"
-      + " numRastersPerCycle [" + numRastersPerCycle + "]"
+      + (scanPatternType != null ? " scanPatternType [" + scanPatternType + "]" : "")
+      + (azScanSector != null ? " azScanSector [" + azScanSector + "]" : "")
+      + (azScanRateExtremeMax != null ? " azScanRateExtremeMax [" + azScanRateExtremeMax + "]" : "")
+      + (scanElevContinuous != null ? " scanElevContinuous [" + scanElevContinuous + "]" : "")
+      + (scanDwellSequence != null ? " scanDwellSequence [" + scanDwellSequence + "]" : "")
+      + (scanAdaptiveRuleDesc != null ? " scanAdaptiveRuleDesc [" + scanAdaptiveRuleDesc + "]" : "")
+      + (scansHorzContinuous != null ? " scansHorzContinuous [" + scansHorzContinuous + "]" : "")
+      + (observedScanValues != null ? " observedScanValues [" + observedScanValues + "]" : "")
+      + (scanAdaptiveDriverDesc != null ? " scanAdaptiveDriverDesc [" + scanAdaptiveDriverDesc + "]" : "")
+      + (azScanChangeRate != null ? " azScanChangeRate [" + azScanChangeRate + "]" : "")
+      + (scanAngleAzStart != null ? " scanAngleAzStart [" + scanAngleAzStart + "]" : "")
+      + (azScanSectorMax != null ? " azScanSectorMax [" + azScanSectorMax + "]" : "")
+      + (azScanRateMean != null ? " azScanRateMean [" + azScanRateMean + "]" : "")
+      + (numBeamPositionsPerScan != null ? " numBeamPositionsPerScan [" + numBeamPositionsPerScan + "]" : "")
+      + (elevScanVelocity != null ? " elevScanVelocity [" + elevScanVelocity + "]" : "")
+      + (numBeamsPerRaster != null ? " numBeamsPerRaster [" + numBeamsPerRaster + "]" : "")
+      + (elevScanChangeRate != null ? " elevScanChangeRate [" + elevScanChangeRate + "]" : "")
+      + (azScanVelocity != null ? " azScanVelocity [" + azScanVelocity + "]" : "")
+      + (numBeamPositionsTotal != null ? " numBeamPositionsTotal [" + numBeamPositionsTotal + "]" : "")
+      + (numScanValues != null ? " numScanValues [" + numScanValues + "]" : "")
+      + (scanDwellTime != null ? " scanDwellTime [" + scanDwellTime + "]" : "")
+      + (numScanPositions != null ? " numScanPositions [" + numScanPositions + "]" : "")
+      + (elevScanRateExtremeMin != null ? " elevScanRateExtremeMin [" + elevScanRateExtremeMin + "]" : "")
+      + (scanType != null ? " scanType [" + scanType + "]" : "")
+      + (scanDwell != null ? " scanDwell [" + scanDwell + "]" : "")
+      + (scanAngleElevStop != null ? " scanAngleElevStop [" + scanAngleElevStop + "]" : "")
+      + (elevScanSectorMax != null ? " elevScanSectorMax [" + elevScanSectorMax + "]" : "")
+      + (elevScanRateExtremeMax != null ? " elevScanRateExtremeMax [" + elevScanRateExtremeMax + "]" : "")
+      + (elevScanSector != null ? " elevScanSector [" + elevScanSector + "]" : "")
+      + (azBoresightAngle != null ? " azBoresightAngle [" + azBoresightAngle + "]" : "")
+      + (scanAngleElevStart != null ? " scanAngleElevStart [" + scanAngleElevStart + "]" : "")
+      + (elevScanRateMedian != null ? " elevScanRateMedian [" + elevScanRateMedian + "]" : "")
+      + (azScanRateExtremeMin != null ? " azScanRateExtremeMin [" + azScanRateExtremeMin + "]" : "")
+      + (elevScanRateMean != null ? " elevScanRateMean [" + elevScanRateMean + "]" : "")
+      + (scanAngleAzStop != null ? " scanAngleAzStop [" + scanAngleAzStop + "]" : "")
+      + (azScanRateMedian != null ? " azScanRateMedian [" + azScanRateMedian + "]" : "")
+      + (numRastersPerCycle != null ? " numRastersPerCycle [" + numRastersPerCycle + "]" : "")
       + "}";
   }
 

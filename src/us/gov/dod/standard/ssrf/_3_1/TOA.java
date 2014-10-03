@@ -312,7 +312,8 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @return a non-null but possibly empty list of {@link ChannelPlanRef} instances
+   * @return a non-null but possibly empty list of {@link ChannelPlanRef}
+   *         instances
    */
   public List<ChannelPlanRef> getChannelPlanRef() {
     if (channelPlanRef == null) {
@@ -587,14 +588,14 @@ public class TOA extends Common<TOA> {
   @Override
   public String toString() {
     return "TOA {"
-      + " title [" + title + "]"
-      + " expirationDate [" + expirationDate + "]"
-      + " footnote [" + footnote + "]"
-      + " channelPlanRef [" + channelPlanRef + "]"
-      + " effectiveDate [" + effectiveDate + "]"
-      + " freqBand [" + freqBand + "]"
-      + " administration [" + administration + "]"
-      + " country [" + country + "]"
+      + (title != null ? " title [" + title + "]" : "")
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (footnote != null ? " footnote [" + footnote + "]" : "")
+      + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
+      + (administration != null ? " administration [" + administration + "]" : "")
+      + (country != null ? " country [" + country + "]" : "")
       + "}";
   }
 

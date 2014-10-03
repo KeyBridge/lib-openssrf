@@ -872,7 +872,8 @@ public class Antenna extends Common<Antenna> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -905,7 +906,8 @@ public class Antenna extends Common<Antenna> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature} instances
+   * @return a non-null but possibly empty list of {@link Nomenclature}
+   *         instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -998,7 +1000,8 @@ public class Antenna extends Common<Antenna> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna.
    * <p>
-   * @return a non-null but possibly empty list of {@link UsingCountries} instances
+   * @return a non-null but possibly empty list of {@link UsingCountries}
+   *         instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
@@ -1394,28 +1397,28 @@ public class Antenna extends Common<Antenna> {
   @Override
   public String toString() {
     return "Antenna {"
-      + " generic [" + generic + "]"
-      + " phArrayNumElements [" + phArrayNumElements + "]"
-      + " horzAperture [" + horzAperture + "]"
-      + " nomenclature [" + nomenclature + "]"
-      + " diameter [" + diameter + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " horzSidelobeAz [" + horzSidelobeAz + "]"
-      + " phArrayNumMainBeams [" + phArrayNumMainBeams + "]"
-      + " vertAperture [" + vertAperture + "]"
-      + " vertSidelobeAttenuation [" + vertSidelobeAttenuation + "]"
-      + " antMode [" + antMode + "]"
-      + " vertDimension [" + vertDimension + "]"
-      + " shape [" + shape + "]"
-      + " horzDimension [" + horzDimension + "]"
-      + " vertSidelobeSuppressed [" + vertSidelobeSuppressed + "]"
-      + " antType [" + antType + "]"
-      + " antHardware [" + antHardware + "]"
-      + " vertSidelobeElev [" + vertSidelobeElev + "]"
-      + " horzSidelobeAttenuation [" + horzSidelobeAttenuation + "]"
-      + " usingCountries [" + usingCountries + "]"
-      + " apertureDiameter [" + apertureDiameter + "]"
-      + " horzSidelobeSuppressed [" + horzSidelobeSuppressed + "]"
+      + (generic != null ? " generic [" + generic + "]" : "")
+      + (phArrayNumElements != null ? " phArrayNumElements [" + phArrayNumElements + "]" : "")
+      + (horzAperture != null ? " horzAperture [" + horzAperture + "]" : "")
+      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+      + (diameter != null ? " diameter [" + diameter + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (horzSidelobeAz != null ? " horzSidelobeAz [" + horzSidelobeAz + "]" : "")
+      + (phArrayNumMainBeams != null ? " phArrayNumMainBeams [" + phArrayNumMainBeams + "]" : "")
+      + (vertAperture != null ? " vertAperture [" + vertAperture + "]" : "")
+      + (vertSidelobeAttenuation != null ? " vertSidelobeAttenuation [" + vertSidelobeAttenuation + "]" : "")
+      + (antMode != null ? " antMode [" + antMode + "]" : "")
+      + (vertDimension != null ? " vertDimension [" + vertDimension + "]" : "")
+      + (shape != null ? " shape [" + shape + "]" : "")
+      + (horzDimension != null ? " horzDimension [" + horzDimension + "]" : "")
+      + (vertSidelobeSuppressed != null ? " vertSidelobeSuppressed [" + vertSidelobeSuppressed + "]" : "")
+      + (antType != null ? " antType [" + antType + "]" : "")
+      + (antHardware != null ? " antHardware [" + antHardware + "]" : "")
+      + (vertSidelobeElev != null ? " vertSidelobeElev [" + vertSidelobeElev + "]" : "")
+      + (horzSidelobeAttenuation != null ? " horzSidelobeAttenuation [" + horzSidelobeAttenuation + "]" : "")
+      + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+      + (apertureDiameter != null ? " apertureDiameter [" + apertureDiameter + "]" : "")
+      + (horzSidelobeSuppressed != null ? " horzSidelobeSuppressed [" + horzSidelobeSuppressed + "]" : "")
       + "}";
   }
 

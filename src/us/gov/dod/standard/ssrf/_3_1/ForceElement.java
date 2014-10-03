@@ -505,7 +505,8 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -570,7 +571,8 @@ public class ForceElement extends Common<ForceElement> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature} instances
+   * @return a non-null but possibly empty list of {@link Nomenclature}
+   *         instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -879,19 +881,19 @@ public class ForceElement extends Common<ForceElement> {
   @Override
   public String toString() {
     return "ForceElement {"
-      + " nomenclature [" + nomenclature + "]"
-      + " assets [" + assets + "]"
-      + " platform [" + platform + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " stockNum [" + stockNum + "]"
-      + " owningCountry [" + owningCountry + "]"
-      + " role [" + role + "]"
-      + " owningOrganisation [" + owningOrganisation + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " cmdLevel [" + cmdLevel + "]"
-      + " type [" + type + "]"
-      + " missionCode [" + missionCode + "]"
-      + " uic [" + uic + "]"
+      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+      + (assets != null ? " assets [" + assets + "]" : "")
+      + (platform != null ? " platform [" + platform + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
+      + (owningCountry != null ? " owningCountry [" + owningCountry + "]" : "")
+      + (role != null ? " role [" + role + "]" : "")
+      + (owningOrganisation != null ? " owningOrganisation [" + owningOrganisation + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (cmdLevel != null ? " cmdLevel [" + cmdLevel + "]" : "")
+      + (type != null ? " type [" + type + "]" : "")
+      + (missionCode != null ? " missionCode [" + missionCode + "]" : "")
+      + (uic != null ? " uic [" + uic + "]" : "")
       + "}";
   }
 

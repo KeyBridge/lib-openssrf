@@ -587,15 +587,15 @@ public class Baseband {
   @Override
   public String toString() {
     return "Baseband {"
-      + " modFreqMax [" + modFreqMax + "]"
-      + " modFreqMin [" + modFreqMin + "]"
-      + " signalSequenceDesc [" + signalSequenceDesc + "]"
-      + " bitDuration [" + bitDuration + "]"
-      + " signalType [" + signalType + "]"
-      + " signalShape [" + signalShape + "]"
-      + " signalDurationMax [" + signalDurationMax + "]"
-      + " signalDurationMin [" + signalDurationMin + "]"
-      + " ookPattern [" + ookPattern + "]"
+      + (modFreqMax != null ? " modFreqMax [" + modFreqMax + "]" : "")
+      + (modFreqMin != null ? " modFreqMin [" + modFreqMin + "]" : "")
+      + (signalSequenceDesc != null ? " signalSequenceDesc [" + signalSequenceDesc + "]" : "")
+      + (bitDuration != null ? " bitDuration [" + bitDuration + "]" : "")
+      + (signalType != null ? " signalType [" + signalType + "]" : "")
+      + (signalShape != null ? " signalShape [" + signalShape + "]" : "")
+      + (signalDurationMax != null ? " signalDurationMax [" + signalDurationMax + "]" : "")
+      + (signalDurationMin != null ? " signalDurationMin [" + signalDurationMin + "]" : "")
+      + (ookPattern != null ? " ookPattern [" + ookPattern + "]" : "")
       + "}";
   }
 

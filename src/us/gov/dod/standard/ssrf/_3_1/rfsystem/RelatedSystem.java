@@ -165,8 +165,8 @@ public class RelatedSystem {
   @Override
   public String toString() {
     return "RelatedSystem {"
-      + " relation [" + relation + "]"
-      + " serial [" + serial + "]"
+      + (relation != null ? " relation [" + relation + "]" : "")
+      + (serial != null ? " serial [" + serial + "]" : "")
       + "}";
   }
 

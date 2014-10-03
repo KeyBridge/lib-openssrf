@@ -250,9 +250,9 @@ public class PolygonPoint {
   @Override
   public String toString() {
     return "PolygonPoint {"
-      + " lon [" + lon + "]"
-      + " sequence [" + sequence + "]"
-      + " lat [" + lat + "]"
+      + (lon != null ? " lon [" + lon + "]" : "")
+      + (sequence != null ? " sequence [" + sequence + "]" : "")
+      + (lat != null ? " lat [" + lat + "]" : "")
       + "}";
   }
 

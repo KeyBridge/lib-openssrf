@@ -2796,7 +2796,8 @@ public class ObservedPulseAnalysis {
    * Complex element ObservedPulseValues (US) contains data describing the
    * distinct Pulse values related to the Modulation Type.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedPulseValues} instances
+   * @return a non-null but possibly empty list of {@link ObservedPulseValues}
+   *         instances
    */
   public List<ObservedPulseValues> getObservedPulseValues() {
     if (observedPulseValues == null) {
@@ -3613,67 +3614,67 @@ public class ObservedPulseAnalysis {
   @Override
   public String toString() {
     return "ObservedPulseAnalysis {"
-      + " priStability [" + priStability + "]"
-      + " priTimingShift [" + priTimingShift + "]"
-      + " pdStdDev [" + pdStdDev + "]"
-      + " priMedianCountdowns [" + priMedianCountdowns + "]"
-      + " priGroupSpacing [" + priGroupSpacing + "]"
-      + " pdMean [" + pdMean + "]"
-      + " priStep [" + priStep + "]"
-      + " riseTime [" + riseTime + "]"
-      + " pdTypicalMin [" + pdTypicalMin + "]"
-      + " pdPatternPeriod [" + pdPatternPeriod + "]"
-      + " priChangeRate [" + priChangeRate + "]"
-      + " priAdaptiveDriverDesc [" + priAdaptiveDriverDesc + "]"
-      + " priMean [" + priMean + "]"
-      + " priExtremeMin [" + priExtremeMin + "]"
-      + " pdMin [" + pdMin + "]"
-      + " prfChangeRate [" + prfChangeRate + "]"
-      + " fallTime [" + fallTime + "]"
-      + " pdMedian [" + pdMedian + "]"
-      + " numPRIPositions [" + numPRIPositions + "]"
-      + " prfExtremeMin [" + prfExtremeMin + "]"
-      + " numPRIElements [" + numPRIElements + "]"
-      + " prfExtremeMax [" + prfExtremeMax + "]"
-      + " priStdDev [" + priStdDev + "]"
-      + " pdPatternType [" + pdPatternType + "]"
-      + " pdExtremeMin [" + pdExtremeMin + "]"
-      + " numPDPositions [" + numPDPositions + "]"
-      + " priStabilitySamplePeriod [" + priStabilitySamplePeriod + "]"
-      + " priExtremeMax [" + priExtremeMax + "]"
-      + " priMedian [" + priMedian + "]"
-      + " prfTypicalMin [" + prfTypicalMin + "]"
-      + " pdDwellMax [" + pdDwellMax + "]"
-      + " priTypicalMax [" + priTypicalMax + "]"
-      + " numPDValues [" + numPDValues + "]"
-      + " priFramePeriod [" + priFramePeriod + "]"
-      + " priAnomalousValues [" + priAnomalousValues + "]"
-      + " priSubframeRate [" + priSubframeRate + "]"
-      + " pdMax [" + pdMax + "]"
-      + " pdAdaptiveRuleDesc [" + pdAdaptiveRuleDesc + "]"
-      + " priSubframePeriod [" + priSubframePeriod + "]"
-      + " prfMax [" + prfMax + "]"
-      + " priPulsesPerGroup [" + priPulsesPerGroup + "]"
-      + " prfMin [" + prfMin + "]"
-      + " pdExtremeMax [" + pdExtremeMax + "]"
-      + " priBasicClockPeriod [" + priBasicClockPeriod + "]"
-      + " priTypicalMin [" + priTypicalMin + "]"
-      + " pdDwellMin [" + pdDwellMin + "]"
-      + " priGroupPulseSpacing [" + priGroupPulseSpacing + "]"
-      + " pdStep [" + pdStep + "]"
-      + " observedPulseValues [" + observedPulseValues + "]"
-      + " priCountdown [" + priCountdown + "]"
-      + " prfTypicalMax [" + prfTypicalMax + "]"
-      + " pdContinuous [" + pdContinuous + "]"
-      + " priAdaptiveRuleDesc [" + priAdaptiveRuleDesc + "]"
-      + " priPatternType [" + priPatternType + "]"
-      + " pdSequenceDesc [" + pdSequenceDesc + "]"
-      + " priFrameRate [" + priFrameRate + "]"
-      + " priPatternPeriod [" + priPatternPeriod + "]"
-      + " priContinuous [" + priContinuous + "]"
-      + " priCountdownKey [" + priCountdownKey + "]"
-      + " pdTypicalMax [" + pdTypicalMax + "]"
-      + " priSequenceDesc [" + priSequenceDesc + "]"
+      + (priStability != null ? " priStability [" + priStability + "]" : "")
+      + (priTimingShift != null ? " priTimingShift [" + priTimingShift + "]" : "")
+      + (pdStdDev != null ? " pdStdDev [" + pdStdDev + "]" : "")
+      + (priMedianCountdowns != null ? " priMedianCountdowns [" + priMedianCountdowns + "]" : "")
+      + (priGroupSpacing != null ? " priGroupSpacing [" + priGroupSpacing + "]" : "")
+      + (pdMean != null ? " pdMean [" + pdMean + "]" : "")
+      + (priStep != null ? " priStep [" + priStep + "]" : "")
+      + (riseTime != null ? " riseTime [" + riseTime + "]" : "")
+      + (pdTypicalMin != null ? " pdTypicalMin [" + pdTypicalMin + "]" : "")
+      + (pdPatternPeriod != null ? " pdPatternPeriod [" + pdPatternPeriod + "]" : "")
+      + (priChangeRate != null ? " priChangeRate [" + priChangeRate + "]" : "")
+      + (priAdaptiveDriverDesc != null ? " priAdaptiveDriverDesc [" + priAdaptiveDriverDesc + "]" : "")
+      + (priMean != null ? " priMean [" + priMean + "]" : "")
+      + (priExtremeMin != null ? " priExtremeMin [" + priExtremeMin + "]" : "")
+      + (pdMin != null ? " pdMin [" + pdMin + "]" : "")
+      + (prfChangeRate != null ? " prfChangeRate [" + prfChangeRate + "]" : "")
+      + (fallTime != null ? " fallTime [" + fallTime + "]" : "")
+      + (pdMedian != null ? " pdMedian [" + pdMedian + "]" : "")
+      + (numPRIPositions != null ? " numPRIPositions [" + numPRIPositions + "]" : "")
+      + (prfExtremeMin != null ? " prfExtremeMin [" + prfExtremeMin + "]" : "")
+      + (numPRIElements != null ? " numPRIElements [" + numPRIElements + "]" : "")
+      + (prfExtremeMax != null ? " prfExtremeMax [" + prfExtremeMax + "]" : "")
+      + (priStdDev != null ? " priStdDev [" + priStdDev + "]" : "")
+      + (pdPatternType != null ? " pdPatternType [" + pdPatternType + "]" : "")
+      + (pdExtremeMin != null ? " pdExtremeMin [" + pdExtremeMin + "]" : "")
+      + (numPDPositions != null ? " numPDPositions [" + numPDPositions + "]" : "")
+      + (priStabilitySamplePeriod != null ? " priStabilitySamplePeriod [" + priStabilitySamplePeriod + "]" : "")
+      + (priExtremeMax != null ? " priExtremeMax [" + priExtremeMax + "]" : "")
+      + (priMedian != null ? " priMedian [" + priMedian + "]" : "")
+      + (prfTypicalMin != null ? " prfTypicalMin [" + prfTypicalMin + "]" : "")
+      + (pdDwellMax != null ? " pdDwellMax [" + pdDwellMax + "]" : "")
+      + (priTypicalMax != null ? " priTypicalMax [" + priTypicalMax + "]" : "")
+      + (numPDValues != null ? " numPDValues [" + numPDValues + "]" : "")
+      + (priFramePeriod != null ? " priFramePeriod [" + priFramePeriod + "]" : "")
+      + (priAnomalousValues != null ? " priAnomalousValues [" + priAnomalousValues + "]" : "")
+      + (priSubframeRate != null ? " priSubframeRate [" + priSubframeRate + "]" : "")
+      + (pdMax != null ? " pdMax [" + pdMax + "]" : "")
+      + (pdAdaptiveRuleDesc != null ? " pdAdaptiveRuleDesc [" + pdAdaptiveRuleDesc + "]" : "")
+      + (priSubframePeriod != null ? " priSubframePeriod [" + priSubframePeriod + "]" : "")
+      + (prfMax != null ? " prfMax [" + prfMax + "]" : "")
+      + (priPulsesPerGroup != null ? " priPulsesPerGroup [" + priPulsesPerGroup + "]" : "")
+      + (prfMin != null ? " prfMin [" + prfMin + "]" : "")
+      + (pdExtremeMax != null ? " pdExtremeMax [" + pdExtremeMax + "]" : "")
+      + (priBasicClockPeriod != null ? " priBasicClockPeriod [" + priBasicClockPeriod + "]" : "")
+      + (priTypicalMin != null ? " priTypicalMin [" + priTypicalMin + "]" : "")
+      + (pdDwellMin != null ? " pdDwellMin [" + pdDwellMin + "]" : "")
+      + (priGroupPulseSpacing != null ? " priGroupPulseSpacing [" + priGroupPulseSpacing + "]" : "")
+      + (pdStep != null ? " pdStep [" + pdStep + "]" : "")
+      + (observedPulseValues != null ? " observedPulseValues [" + observedPulseValues + "]" : "")
+      + (priCountdown != null ? " priCountdown [" + priCountdown + "]" : "")
+      + (prfTypicalMax != null ? " prfTypicalMax [" + prfTypicalMax + "]" : "")
+      + (pdContinuous != null ? " pdContinuous [" + pdContinuous + "]" : "")
+      + (priAdaptiveRuleDesc != null ? " priAdaptiveRuleDesc [" + priAdaptiveRuleDesc + "]" : "")
+      + (priPatternType != null ? " priPatternType [" + priPatternType + "]" : "")
+      + (pdSequenceDesc != null ? " pdSequenceDesc [" + pdSequenceDesc + "]" : "")
+      + (priFrameRate != null ? " priFrameRate [" + priFrameRate + "]" : "")
+      + (priPatternPeriod != null ? " priPatternPeriod [" + priPatternPeriod + "]" : "")
+      + (priContinuous != null ? " priContinuous [" + priContinuous + "]" : "")
+      + (priCountdownKey != null ? " priCountdownKey [" + priCountdownKey + "]" : "")
+      + (pdTypicalMax != null ? " pdTypicalMax [" + pdTypicalMax + "]" : "")
+      + (priSequenceDesc != null ? " priSequenceDesc [" + priSequenceDesc + "]" : "")
       + "}";
   }
 

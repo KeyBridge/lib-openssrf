@@ -318,11 +318,11 @@ public class StatusLog {
   @Override
   public String toString() {
     return "StatusLog {"
-      + " dateTime [" + dateTime + "]"
-      + " pocRef [" + pocRef + "]"
-      + " agencyCode [" + agencyCode + "]"
-      + " state [" + state + "]"
-      + " comment [" + comment + "]"
+      + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
+      + (pocRef != null ? " pocRef [" + pocRef + "]" : "")
+      + (agencyCode != null ? " agencyCode [" + agencyCode + "]" : "")
+      + (state != null ? " state [" + state + "]" : "")
+      + (comment != null ? " comment [" + comment + "]" : "")
       + "}";
   }
 

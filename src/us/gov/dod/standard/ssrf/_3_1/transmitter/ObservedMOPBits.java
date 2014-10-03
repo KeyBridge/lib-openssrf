@@ -449,7 +449,8 @@ public class ObservedMOPBits {
   /**
    * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedMOPValues} instances
+   * @return a non-null but possibly empty list of {@link ObservedMOPValues}
+   *         instances
    */
   public List<ObservedMOPValues> getObservedMOPValues() {
     if (observedMOPValues == null) {
@@ -624,16 +625,16 @@ public class ObservedMOPBits {
   @Override
   public String toString() {
     return "ObservedMOPBits {"
-      + " mopNumElements [" + mopNumElements + "]"
-      + " mopRepetionInterval [" + mopRepetionInterval + "]"
-      + " mopStepAM [" + mopStepAM + "]"
-      + " observedMOPValues [" + observedMOPValues + "]"
-      + " mopStepCW [" + mopStepCW + "]"
-      + " bitDuration [" + bitDuration + "]"
-      + " mopDutyCycle [" + mopDutyCycle + "]"
-      + " bitRate [" + bitRate + "]"
-      + " mopStepPM [" + mopStepPM + "]"
-      + " mopStepFM [" + mopStepFM + "]"
+      + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
+      + (mopRepetionInterval != null ? " mopRepetionInterval [" + mopRepetionInterval + "]" : "")
+      + (mopStepAM != null ? " mopStepAM [" + mopStepAM + "]" : "")
+      + (observedMOPValues != null ? " observedMOPValues [" + observedMOPValues + "]" : "")
+      + (mopStepCW != null ? " mopStepCW [" + mopStepCW + "]" : "")
+      + (bitDuration != null ? " bitDuration [" + bitDuration + "]" : "")
+      + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
+      + (bitRate != null ? " bitRate [" + bitRate + "]" : "")
+      + (mopStepPM != null ? " mopStepPM [" + mopStepPM + "]" : "")
+      + (mopStepFM != null ? " mopStepFM [" + mopStepFM + "]" : "")
       + "}";
   }
 

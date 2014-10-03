@@ -209,9 +209,9 @@ public class Remarks {
   @Override
   public String toString() {
     return "Remarks {"
-      + " idx [" + idx + "]"
-      + " cls [" + cls + "]"
-      + " value [" + value + "]"
+      + (idx != null ? " idx [" + idx + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
       + "}";
   }
 

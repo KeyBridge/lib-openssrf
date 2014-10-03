@@ -574,7 +574,8 @@ public class Location extends Common<Location> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -999,19 +1000,19 @@ public class Location extends Common<Location> {
   public String toString() {
     return "Location {"
       + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-      + " ellipse [" + ellipse + "]"
-      + " expirationDate [" + expirationDate + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " street [" + street + "]"
-      + " postCode [" + postCode + "]"
-      + " reviewDate [" + reviewDate + "]"
-      + " country [" + country + "]"
-      + " polygon [" + polygon + "]"
-      + " point [" + point + "]"
-      + " cityArea [" + cityArea + "]"
-      + " name [" + name + "]"
-      + " stateCounty [" + stateCounty + "]"
-      + " effectiveDate [" + effectiveDate + "]"
+      + (ellipse != null ? " ellipse [" + ellipse + "]" : "")
+      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (street != null ? " street [" + street + "]" : "")
+      + (postCode != null ? " postCode [" + postCode + "]" : "")
+      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+      + (country != null ? " country [" + country + "]" : "")
+      + (polygon != null ? " polygon [" + polygon + "]" : "")
+      + (point != null ? " point [" + point + "]" : "")
+      + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
+      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + "\n  "
       + super.toString()
       + " }";

@@ -1416,7 +1416,8 @@ public class ObservedMOPAnalysis {
    * Complex element ObservedMOPSweep (US) contains data describing the
    * parametric information for the period of the Modulation on the Pulse sweep.
    * <p>
-   * @return a non-null but possibly empty list of {@link ObservedMOPSweep} instances
+   * @return a non-null but possibly empty list of {@link ObservedMOPSweep}
+   *         instances
    */
   public List<ObservedMOPSweep> getObservedMOPSweep() {
     if (observedMOPSweep == null) {
@@ -1877,38 +1878,38 @@ public class ObservedMOPAnalysis {
   @Override
   public String toString() {
     return "ObservedMOPAnalysis {"
-      + " mopNumElements [" + mopNumElements + "]"
-      + " mopValueMinCW [" + mopValueMinCW + "]"
-      + " mopValueMaxPM [" + mopValueMaxPM + "]"
-      + " mopPatternName [" + mopPatternName + "]"
-      + " mopChangeRateAM [" + mopChangeRateAM + "]"
-      + " signalType [" + signalType + "]"
-      + " mopOffTime [" + mopOffTime + "]"
-      + " mopTimeBWProduct [" + mopTimeBWProduct + "]"
-      + " mopMeanValuePM [" + mopMeanValuePM + "]"
-      + " mopValueMinFM [" + mopValueMinFM + "]"
-      + " mopValueMaxFM [" + mopValueMaxFM + "]"
-      + " mopChangeRateCW [" + mopChangeRateCW + "]"
-      + " mopChangeRatePM [" + mopChangeRatePM + "]"
-      + " mopAdaptiveDriverDesc [" + mopAdaptiveDriverDesc + "]"
-      + " mopMeanValueCW [" + mopMeanValueCW + "]"
-      + " mopMeanValueFM [" + mopMeanValueFM + "]"
-      + " mopValueMinAM [" + mopValueMinAM + "]"
-      + " mopPulseDurationLink [" + mopPulseDurationLink + "]"
-      + " mopamPercentModulation [" + mopamPercentModulation + "]"
-      + " mopid [" + mopid + "]"
-      + " mopType [" + mopType + "]"
-      + " observedMOPSweep [" + observedMOPSweep + "]"
-      + " mopContinuous [" + mopContinuous + "]"
-      + " mopValueMaxCW [" + mopValueMaxCW + "]"
-      + " mopPatternType [" + mopPatternType + "]"
-      + " mopChangeRateFM [" + mopChangeRateFM + "]"
-      + " mopOnTime [" + mopOnTime + "]"
-      + " mopValueMinPM [" + mopValueMinPM + "]"
-      + " mopValueMaxAM [" + mopValueMaxAM + "]"
-      + " mopPatternPeriod [" + mopPatternPeriod + "]"
-      + " mopAdaptiveDriverRuleDesc [" + mopAdaptiveDriverRuleDesc + "]"
-      + " mopMeanValueAM [" + mopMeanValueAM + "]"
+      + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
+      + (mopValueMinCW != null ? " mopValueMinCW [" + mopValueMinCW + "]" : "")
+      + (mopValueMaxPM != null ? " mopValueMaxPM [" + mopValueMaxPM + "]" : "")
+      + (mopPatternName != null ? " mopPatternName [" + mopPatternName + "]" : "")
+      + (mopChangeRateAM != null ? " mopChangeRateAM [" + mopChangeRateAM + "]" : "")
+      + (signalType != null ? " signalType [" + signalType + "]" : "")
+      + (mopOffTime != null ? " mopOffTime [" + mopOffTime + "]" : "")
+      + (mopTimeBWProduct != null ? " mopTimeBWProduct [" + mopTimeBWProduct + "]" : "")
+      + (mopMeanValuePM != null ? " mopMeanValuePM [" + mopMeanValuePM + "]" : "")
+      + (mopValueMinFM != null ? " mopValueMinFM [" + mopValueMinFM + "]" : "")
+      + (mopValueMaxFM != null ? " mopValueMaxFM [" + mopValueMaxFM + "]" : "")
+      + (mopChangeRateCW != null ? " mopChangeRateCW [" + mopChangeRateCW + "]" : "")
+      + (mopChangeRatePM != null ? " mopChangeRatePM [" + mopChangeRatePM + "]" : "")
+      + (mopAdaptiveDriverDesc != null ? " mopAdaptiveDriverDesc [" + mopAdaptiveDriverDesc + "]" : "")
+      + (mopMeanValueCW != null ? " mopMeanValueCW [" + mopMeanValueCW + "]" : "")
+      + (mopMeanValueFM != null ? " mopMeanValueFM [" + mopMeanValueFM + "]" : "")
+      + (mopValueMinAM != null ? " mopValueMinAM [" + mopValueMinAM + "]" : "")
+      + (mopPulseDurationLink != null ? " mopPulseDurationLink [" + mopPulseDurationLink + "]" : "")
+      + (mopamPercentModulation != null ? " mopamPercentModulation [" + mopamPercentModulation + "]" : "")
+      + (mopid != null ? " mopid [" + mopid + "]" : "")
+      + (mopType != null ? " mopType [" + mopType + "]" : "")
+      + (observedMOPSweep != null ? " observedMOPSweep [" + observedMOPSweep + "]" : "")
+      + (mopContinuous != null ? " mopContinuous [" + mopContinuous + "]" : "")
+      + (mopValueMaxCW != null ? " mopValueMaxCW [" + mopValueMaxCW + "]" : "")
+      + (mopPatternType != null ? " mopPatternType [" + mopPatternType + "]" : "")
+      + (mopChangeRateFM != null ? " mopChangeRateFM [" + mopChangeRateFM + "]" : "")
+      + (mopOnTime != null ? " mopOnTime [" + mopOnTime + "]" : "")
+      + (mopValueMinPM != null ? " mopValueMinPM [" + mopValueMinPM + "]" : "")
+      + (mopValueMaxAM != null ? " mopValueMaxAM [" + mopValueMaxAM + "]" : "")
+      + (mopPatternPeriod != null ? " mopPatternPeriod [" + mopPatternPeriod + "]" : "")
+      + (mopAdaptiveDriverRuleDesc != null ? " mopAdaptiveDriverRuleDesc [" + mopAdaptiveDriverRuleDesc + "]" : "")
+      + (mopMeanValueAM != null ? " mopMeanValueAM [" + mopMeanValueAM + "]" : "")
       + "}";
   }
 

@@ -108,15 +108,15 @@ public class OffTheShelfEquipment extends AMetadata<OffTheShelfEquipment> {
   @Override
   public String toString() {
     return "OffTheShelfEquipment {"
-      + " extReferences [" + extReferences + "]"
-      + " cls [" + cls + "]"
-      + " recommendedValue [" + recommendedValue + "]"
-      + " quality [" + quality + "]"
-      + " legacyReleasability [" + legacyReleasability + "]"
-      + " value [" + value + "]"
-      + " remarks [" + remarkRef + "]"
-      + " idref [" + idref + "]"
-      + " availability [" + availability + "]"
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
+      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (availability != null ? " availability [" + availability + "]" : "")
       + "}";
   }
 

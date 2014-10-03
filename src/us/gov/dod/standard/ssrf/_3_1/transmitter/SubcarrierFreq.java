@@ -182,7 +182,8 @@ public class SubcarrierFreq {
    * Complex element SubcarrierTone describes the sidetone frequency used to
    * modulate the subcarrier.
    * <p>
-   * @return a non-null but possibly empty list of {@link SubcarrierTone} instances
+   * @return a non-null but possibly empty list of {@link SubcarrierTone}
+   *         instances
    */
   public List<SubcarrierTone> getSubcarrierTone() {
     if (subcarrierTone == null) {
@@ -281,10 +282,10 @@ public class SubcarrierFreq {
   @Override
   public String toString() {
     return "SubcarrierFreq {"
-      + " subcarrierTone [" + subcarrierTone + "]"
-      + " freqRest [" + freqRest + "]"
-      + " freq [" + freq + "]"
-      + " freqOffset [" + freqOffset + "]"
+      + (subcarrierTone != null ? " subcarrierTone [" + subcarrierTone + "]" : "")
+      + (freqRest != null ? " freqRest [" + freqRest + "]" : "")
+      + (freq != null ? " freq [" + freq + "]" : "")
+      + (freqOffset != null ? " freqOffset [" + freqOffset + "]" : "")
       + "}";
   }
 

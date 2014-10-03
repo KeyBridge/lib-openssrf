@@ -333,10 +333,10 @@ public class Administrative extends Common<Administrative> {
   @Override
   public String toString() {
     return "Administrative {"
-      + " messageRef [" + messageRef + "]"
-      + " dataset [" + dataset + "]"
-      + " action [" + action + "]"
-      + " codeList [" + codeList + "]"
+      + (messageRef != null ? " messageRef [" + messageRef + "]" : "")
+      + (dataset != null ? " dataset [" + dataset + "]" : "")
+      + (action != null ? " action [" + action + "]" : "")
+      + (codeList != null ? " codeList [" + codeList + "]" : "")
       + "}";
   }
 

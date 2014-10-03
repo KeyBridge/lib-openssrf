@@ -499,7 +499,8 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation} instances
+   * @return a non-null but possibly empty list of {@link POCInformation}
+   *         instances
    */
   public List<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
@@ -532,7 +533,8 @@ public class Transmitter extends Common<Transmitter> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature} instances
+   * @return a non-null but possibly empty list of {@link Nomenclature}
+   *         instances
    */
   public List<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
@@ -663,7 +665,8 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Transmitter.
    * <p>
-   * @return a non-null but possibly empty list of {@link UsingCountries} instances
+   * @return a non-null but possibly empty list of {@link UsingCountries}
+   *         instances
    */
   public List<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
@@ -1002,20 +1005,20 @@ public class Transmitter extends Common<Transmitter> {
   @Override
   public String toString() {
     return "Transmitter {"
-      + " curve [" + curve + "]"
-      + " fccAcceptanceNum [" + fccAcceptanceNum + "]"
-      + " generic [" + generic + "]"
-      + " nomenclature [" + nomenclature + "]"
-      + " outputDeviceType [" + outputDeviceType + "]"
-      + " duplexSepType [" + duplexSepType + "]"
-      + " duplexSep [" + duplexSep + "]"
-      + " txMode [" + txMode + "]"
-      + " pocInformation [" + pocInformation + "]"
-      + " tspr [" + tspr + "]"
-      + " outputDevice [" + outputDevice + "]"
-      + " deployment [" + deployment + "]"
-      + " usingCountries [" + usingCountries + "]"
-      + " filter [" + filter + "]"
+      + (curve != null ? " curve [" + curve + "]" : "")
+      + (fccAcceptanceNum != null ? " fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
+      + (generic != null ? " generic [" + generic + "]" : "")
+      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+      + (outputDeviceType != null ? " outputDeviceType [" + outputDeviceType + "]" : "")
+      + (duplexSepType != null ? " duplexSepType [" + duplexSepType + "]" : "")
+      + (duplexSep != null ? " duplexSep [" + duplexSep + "]" : "")
+      + (txMode != null ? " txMode [" + txMode + "]" : "")
+      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+      + (tspr != null ? " tspr [" + tspr + "]" : "")
+      + (outputDevice != null ? " outputDevice [" + outputDevice + "]" : "")
+      + (deployment != null ? " deployment [" + deployment + "]" : "")
+      + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+      + (filter != null ? " filter [" + filter + "]" : "")
       + "}";
   }
 

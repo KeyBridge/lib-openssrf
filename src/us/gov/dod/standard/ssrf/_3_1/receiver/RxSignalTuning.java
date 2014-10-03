@@ -281,10 +281,10 @@ public class RxSignalTuning {
   @Override
   public String toString() {
     return "RxSignalTuning {"
-      + " freqMin [" + freqMin + "]"
-      + " tuningStep [" + tuningStep + "]"
-      + " freqMax [" + freqMax + "]"
-      + " numPresetChannels [" + numPresetChannels + "]"
+      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+      + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
+      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+      + (numPresetChannels != null ? " numPresetChannels [" + numPresetChannels + "]" : "")
       + "}";
   }
 

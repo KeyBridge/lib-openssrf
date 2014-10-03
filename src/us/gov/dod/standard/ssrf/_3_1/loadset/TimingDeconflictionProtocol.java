@@ -481,14 +481,14 @@ public class TimingDeconflictionProtocol {
   @Override
   public String toString() {
     return "TimingDeconflictionProtocol {"
-      + " triggerOff [" + triggerOff + "]"
-      + " description [" + description + "]"
-      + " name [" + name + "]"
-      + " triggerOn [" + triggerOn + "]"
-      + " required [" + required + "]"
-      + " period [" + period + "]"
-      + " ranking [" + ranking + "]"
-      + " syncMethod [" + syncMethod + "]"
+      + (triggerOff != null ? " triggerOff [" + triggerOff + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (triggerOn != null ? " triggerOn [" + triggerOn + "]" : "")
+      + (required != null ? " required [" + required + "]" : "")
+      + (period != null ? " period [" + period + "]" : "")
+      + (ranking != null ? " ranking [" + ranking + "]" : "")
+      + (syncMethod != null ? " syncMethod [" + syncMethod + "]" : "")
       + "}";
   }
 

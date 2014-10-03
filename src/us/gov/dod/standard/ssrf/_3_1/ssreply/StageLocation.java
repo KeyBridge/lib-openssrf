@@ -166,8 +166,8 @@ public class StageLocation {
   @Override
   public String toString() {
     return "StageLocation {"
-      + " excluded [" + excluded + "]"
-      + " locSatRef [" + locSatRef + "]"
+      + (excluded != null ? " excluded [" + excluded + "]" : "")
+      + (locSatRef != null ? " locSatRef [" + locSatRef + "]" : "")
       + "}";
   }
 

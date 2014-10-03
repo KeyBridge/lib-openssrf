@@ -493,7 +493,8 @@ public class Loadset extends Common<Loadset> {
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range.
    * <p>
-   * @return a non-null but possibly empty list of {@link JammingChannelProfile} instances
+   * @return a non-null but possibly empty list of {@link JammingChannelProfile}
+   *         instances
    */
   public List<JammingChannelProfile> getJammingChannelProfile() {
     if (jammingChannelProfile == null) {
@@ -629,8 +630,7 @@ public class Loadset extends Common<Loadset> {
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range.
    * <p>
-   * @param values One or more instances of type
-   *               {@link JammingChannelProfile}
+   * @param values One or more instances of type {@link JammingChannelProfile}
    * @return The current Loadset object instance
    */
   public Loadset withJammingChannelProfile(JammingChannelProfile... values) {
@@ -664,16 +664,16 @@ public class Loadset extends Common<Loadset> {
   @Override
   public String toString() {
     return "Loadset {"
-      + " resetProcedure [" + resetProcedure + "]"
-      + " maxActiveFrames [" + maxActiveFrames + "]"
-      + " keyLoadProcedure [" + keyLoadProcedure + "]"
-      + " software [" + software + "]"
-      + " maxReactiveFrames [" + maxReactiveFrames + "]"
-      + " jammingChannelProfile [" + jammingChannelProfile + "]"
-      + " primaryFirmware [" + primaryFirmware + "]"
-      + " mission [" + mission + "]"
-      + " name [" + name + "]"
-      + " secondaryFirmware [" + secondaryFirmware + "]"
+      + (resetProcedure != null ? " resetProcedure [" + resetProcedure + "]" : "")
+      + (maxActiveFrames != null ? " maxActiveFrames [" + maxActiveFrames + "]" : "")
+      + (keyLoadProcedure != null ? " keyLoadProcedure [" + keyLoadProcedure + "]" : "")
+      + (software != null ? " software [" + software + "]" : "")
+      + (maxReactiveFrames != null ? " maxReactiveFrames [" + maxReactiveFrames + "]" : "")
+      + (jammingChannelProfile != null ? " jammingChannelProfile [" + jammingChannelProfile + "]" : "")
+      + (primaryFirmware != null ? " primaryFirmware [" + primaryFirmware + "]" : "")
+      + (mission != null ? " mission [" + mission + "]" : "")
+      + (name != null ? " name [" + name + "]" : "")
+      + (secondaryFirmware != null ? " secondaryFirmware [" + secondaryFirmware + "]" : "")
       + "}";
   }
 

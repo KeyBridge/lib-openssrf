@@ -115,7 +115,7 @@ public class TxAntModeRef
   @Override
   public String toString() {
     return "TxAntModeRef {"
-      + " spectralPowerDensity [" + spectralPowerDensity + "]"
+      + (spectralPowerDensity != null ? " spectralPowerDensity [" + spectralPowerDensity + "]" : "")
       + "}";
   }
 

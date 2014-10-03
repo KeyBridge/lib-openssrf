@@ -342,11 +342,11 @@ public class ObservedMOPValues {
   @Override
   public String toString() {
     return "ObservedMOPValues {"
-      + " statisticalIndicator [" + statisticalIndicator + "]"
-      + " mopValueAM [" + mopValueAM + "]"
-      + " mopValuePM [" + mopValuePM + "]"
-      + " mopValueFM [" + mopValueFM + "]"
-      + " mopValueCW [" + mopValueCW + "]"
+      + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")
+      + (mopValueAM != null ? " mopValueAM [" + mopValueAM + "]" : "")
+      + (mopValuePM != null ? " mopValuePM [" + mopValuePM + "]" : "")
+      + (mopValueFM != null ? " mopValueFM [" + mopValueFM + "]" : "")
+      + (mopValueCW != null ? " mopValueCW [" + mopValueCW + "]" : "")
       + "}";
   }
 
