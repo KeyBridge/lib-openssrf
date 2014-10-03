@@ -199,7 +199,7 @@ public abstract class Common<T> {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
    * <p>
@@ -639,7 +639,7 @@ public abstract class Common<T> {
    * <p>
    * @return the Serial value in a {@link TString} data type
    */
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -648,7 +648,7 @@ public abstract class Common<T> {
    * <p>
    * @param value the Serial value in a {@link TString} data type
    */
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -1410,8 +1410,8 @@ public abstract class Common<T> {
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    */
-  public T withSerial(String value) {
-    setSerial(new TString(value));
+  public T withSerial(TSerial value) {
+    setSerial(value);
     return (T) this;
   }
 
@@ -1790,6 +1790,8 @@ public abstract class Common<T> {
   @Override
   public String toString() {
     return "Common {"
+      + " serial [" + serial + "]"
+      + " cls [" + cls + "]"
       + " redacted [" + redacted + "]"
       + " legacyReleasability [" + legacyReleasability + "]"
       + " lastReviewBy [" + lastReviewBy + "]"
@@ -1807,7 +1809,6 @@ public abstract class Common<T> {
       + " approvedDateTime [" + approvedDateTime + "]"
       + " securityClass [" + securityClass + "]"
       + " modAllowedBy [" + modAllowedBy + "]"
-      + " cls [" + cls + "]"
       + " entryDateTime [" + entryDateTime + "]"
       + " lastChangeBy [" + lastChangeBy + "]"
       + " releasability [" + releasability + "]"
@@ -1817,9 +1818,8 @@ public abstract class Common<T> {
       + " owner [" + owner + "]"
       + " lastObservedBy [" + lastObservedBy + "]"
       + " extReferenceRef [" + extReferenceRef + "]"
-      + " serial [" + serial + "]"
       + " lastChangeDateTime [" + lastChangeDateTime + "]"
-      + "}";
+      + " }";
   }
 
   /**
