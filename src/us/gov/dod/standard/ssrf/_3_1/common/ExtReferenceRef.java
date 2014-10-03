@@ -48,6 +48,20 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 })
 public class ExtReferenceRef {
 
+  /**
+   * The serial of an existing external reference (defined in an
+   * ExternalReference).
+   * <p>
+   * <p>
+   * External References SHALL NOT be linked to Data Items that are not
+   * populated.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "EX".
+   * <p>
+   * Developer note: This value is an undecorated String instance and is not
+   * programmatically validated.
+   */
   @XmlValue
   private String value;
   /**
