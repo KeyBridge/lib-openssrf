@@ -158,11 +158,11 @@ public class Assigned {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS10.class)
   private TString ituRegNum;
   /**
-   * In Data Item NavAidsChannel, for TACAN and DME assignments, enter the
-   * channel number of the allocated pair of radio frequencies assigned for use
-   * by Air / Ground / Air radionavigation facilities such as: TACAN, VORTAC,
-   * DME, MLS/DME, etc ... as follows: 001 through 126 "X" 001 through 126 "Y"
-   * 018 through 056 "W" 017 through 119 "Z" Leading zeros are required.
+   * NavAidsChannel, for TACAN and DME assignments, enter the channel number of
+   * the allocated pair of radio frequencies assigned for use by Air / Ground /
+   * Air radionavigation facilities such as: TACAN, VORTAC, DME, MLS/DME, etc
+   * ... as follows: 001 through 126 "X" 001 through 126 "Y" 018 through 056 "W"
+   * 017 through 119 "Z" Leading zeros are required.
    */
   @XmlElement(name = "NavAidsChannel", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterNAVAIDCHNL.class)
@@ -411,11 +411,11 @@ public class Assigned {
   }
 
   /**
-   * Get In Data Item NavAidsChannel, for TACAN and DME assignments, enter the
-   * channel number of the allocated pair of radio frequencies assigned for use
-   * by Air / Ground / Air radionavigation facilities such as: TACAN, VORTAC,
-   * DME, MLS/DME, etc ... as follows: 001 through 126 "X" 001 through 126 "Y"
-   * 018 through 056 "W" 017 through 119 "Z" Leading zeros are required.
+   * Get NavAidsChannel, for TACAN and DME assignments, enter the channel number
+   * of the allocated pair of radio frequencies assigned for use by Air / Ground
+   * / Air radionavigation facilities such as: TACAN, VORTAC, DME, MLS/DME, etc
+   * ... as follows: 001 through 126 "X" 001 through 126 "Y" 018 through 056 "W"
+   * 017 through 119 "Z" Leading zeros are required.
    * <p>
    * @return the NavAidsChannel value in a {@link TString} data type
    */
@@ -424,11 +424,11 @@ public class Assigned {
   }
 
   /**
-   * Set In Data Item NavAidsChannel, for TACAN and DME assignments, enter the
-   * channel number of the allocated pair of radio frequencies assigned for use
-   * by Air / Ground / Air radionavigation facilities such as: TACAN, VORTAC,
-   * DME, MLS/DME, etc ... as follows: 001 through 126 "X" 001 through 126 "Y"
-   * 018 through 056 "W" 017 through 119 "Z" Leading zeros are required.
+   * Set NavAidsChannel, for TACAN and DME assignments, enter the channel number
+   * of the allocated pair of radio frequencies assigned for use by Air / Ground
+   * / Air radionavigation facilities such as: TACAN, VORTAC, DME, MLS/DME, etc
+   * ... as follows: 001 through 126 "X" 001 through 126 "Y" 018 through 056 "W"
+   * 017 through 119 "Z" Leading zeros are required.
    * <p>
    * @param value the NavAidsChannel value in a {@link TString} data type
    */
@@ -656,11 +656,11 @@ public class Assigned {
   }
 
   /**
-   * Set In Data Item NavAidsChannel, for TACAN and DME assignments, enter the
-   * channel number of the allocated pair of radio frequencies assigned for use
-   * by Air / Ground / Air radionavigation facilities such as: TACAN, VORTAC,
-   * DME, MLS/DME, etc ... as follows: 001 through 126 "X" 001 through 126 "Y"
-   * 018 through 056 "W" 017 through 119 "Z" Leading zeros are required.
+   * Set NavAidsChannel, for TACAN and DME assignments, enter the channel number
+   * of the allocated pair of radio frequencies assigned for use by Air / Ground
+   * / Air radionavigation facilities such as: TACAN, VORTAC, DME, MLS/DME, etc
+   * ... as follows: 001 through 126 "X" 001 through 126 "Y" 018 through 056 "W"
+   * 017 through 119 "Z" Leading zeros are required.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Assigned object instance

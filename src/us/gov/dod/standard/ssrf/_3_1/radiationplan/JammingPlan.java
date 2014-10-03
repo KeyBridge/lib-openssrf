@@ -69,8 +69,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
 public class JammingPlan {
 
   /**
-   * In Data Item Name (US), enter a unique name (within the parent
-   * RadiationPlan) for the Jamming Plan.
+   * Name (US), enter a unique name (within the parent RadiationPlan) for the
+   * Jamming Plan.
    */
   @XmlElement(name = "Name", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
@@ -191,9 +191,9 @@ public class JammingPlan {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString version;
   /**
-   * In Data Item Level3Auth (US), indicate if a request should go directly to
-   * third-level authorization. If "Yes" is entered, then for Radiation Plan
-   * approval, the JammingAuthority complex element MUST contain an entry.
+   * Level3Auth (US), indicate if a request should go directly to third-level
+   * authorization. If "Yes" is entered, then for Radiation Plan approval, the
+   * JammingAuthority complex element MUST contain an entry.
    */
   @XmlElement(name = "Level3Auth", required = true)
   private TString level3Auth;
@@ -217,8 +217,8 @@ public class JammingPlan {
   private List<JammingTarget> jammingTarget;
 
   /**
-   * Get In Data Item Name (US), enter a unique name (within the parent
-   * RadiationPlan) for the Jamming Plan.
+   * Get Name (US), enter a unique name (within the parent RadiationPlan) for
+   * the Jamming Plan.
    * <p>
    * @return the Name value in a {@link TString} data type
    */
@@ -227,8 +227,8 @@ public class JammingPlan {
   }
 
   /**
-   * Set In Data Item Name (US), enter a unique name (within the parent
-   * RadiationPlan) for the Jamming Plan.
+   * Set Name (US), enter a unique name (within the parent RadiationPlan) for
+   * the Jamming Plan.
    * <p>
    * @param value the Name value in a {@link TString} data type
    */
@@ -589,8 +589,8 @@ public class JammingPlan {
   }
 
   /**
-   * Get In Data Item Level3Auth (US), indicate if a request should go directly
-   * to third-level authorization. If "Yes" is entered, then for Radiation Plan
+   * Get Level3Auth (US), indicate if a request should go directly to
+   * third-level authorization. If "Yes" is entered, then for Radiation Plan
    * approval, the JammingAuthority complex element MUST contain an entry.
    * <p>
    * @return the Level3Auth value in a {@link TString} data type
@@ -600,8 +600,8 @@ public class JammingPlan {
   }
 
   /**
-   * Set In Data Item Level3Auth (US), indicate if a request should go directly
-   * to third-level authorization. If "Yes" is entered, then for Radiation Plan
+   * Set Level3Auth (US), indicate if a request should go directly to
+   * third-level authorization. If "Yes" is entered, then for Radiation Plan
    * approval, the JammingAuthority complex element MUST contain an entry.
    * <p>
    * @param value the Level3Auth value in a {@link TString} data type
@@ -683,8 +683,8 @@ public class JammingPlan {
   }
 
   /**
-   * Set In Data Item Name (US), enter a unique name (within the parent
-   * RadiationPlan) for the Jamming Plan.
+   * Set Name (US), enter a unique name (within the parent RadiationPlan) for
+   * the Jamming Plan.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JammingPlan object instance
@@ -826,8 +826,8 @@ public class JammingPlan {
   }
 
   /**
-   * Set In Data Item Level3Auth (US), indicate if a request should go directly
-   * to third-level authorization. If "Yes" is entered, then for Radiation Plan
+   * Set Level3Auth (US), indicate if a request should go directly to
+   * third-level authorization. If "Yes" is entered, then for Radiation Plan
    * approval, the JammingAuthority complex element MUST contain an entry.
    * <p>
    * @param value An instances of type {@link ListCBO}

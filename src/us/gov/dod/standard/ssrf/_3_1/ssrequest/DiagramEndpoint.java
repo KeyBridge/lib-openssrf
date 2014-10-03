@@ -272,11 +272,11 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Get the Y coordinate of the icon in twips." to read, "In Data Item
-   * IconPosTop, enter the Y coordinate of the icon in twips. Twips are
-   * screen-independent units to ensure that the proportion of screen elements
-   * is the same on all display systems. A twip is defined as being 1/1440 of an
-   * inch, or 17.639µm.
+   * Get the Y coordinate of the icon in twips." to read, "
+   * <p>
+   * Enter the Y coordinate of the icon in twips. Twips are screen-independent
+   * units to ensure that the proportion of screen elements is the same on all
+   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
    * <p>
    * @return the IconPosTop value in a {@link TInteger} data type
    */
@@ -285,11 +285,11 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Set the Y coordinate of the icon in twips." to read, "In Data Item
-   * IconPosTop, enter the Y coordinate of the icon in twips. Twips are
-   * screen-independent units to ensure that the proportion of screen elements
-   * is the same on all display systems. A twip is defined as being 1/1440 of an
-   * inch, or 17.639µm.
+   * Set the Y coordinate of the icon in twips." to read, "
+   * <p>
+   * Enter the Y coordinate of the icon in twips. Twips are screen-independent
+   * units to ensure that the proportion of screen elements is the same on all
+   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
    * <p>
    * @param value the IconPosTop value in a {@link TInteger} data type
    */
@@ -309,9 +309,11 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Get "Yes" if the diagram endpoint participates in point-to-multipoint
-   * links. enter "No" if it participates in point-to-point links. Note for the
-   * USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
+   * Get "Yes" if the diagram endpoint participates in point-to-multipoint links
+   * or "No" if it participates in point-to-point links.
+   * <p>
+   * Note for the USA: Required when operating between 932 and 935 MHz or 941
+   * and 944 MHz.
    * <p>
    * @return the PointToMultiPoint value in a {@link TString} data type
    */
@@ -320,9 +322,11 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Set "Yes" if the diagram endpoint participates in point-to-multipoint
-   * links. enter "No" if it participates in point-to-point links. Note for the
-   * USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
+   * Set "Yes" if the diagram endpoint participates in point-to-multipoint links
+   * or "No" if it participates in point-to-point links.
+   * <p>
+   * Note for the USA: Required when operating between 932 and 935 MHz or 941
+   * and 944 MHz.
    * <p>
    * @param value the PointToMultiPoint value in a {@link TString} data type
    */
@@ -419,9 +423,11 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Set the X coordinate of the icon in twips. Twips are screen-independent
-   * units to ensure that the proportion of screen elements is the same on all
-   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+   * Set the X coordinate of the icon in twips.
+   * <p>
+   * Twips are screen-independent units to ensure that the proportion of screen
+   * elements is the same on all display systems. A twip is defined as being
+   * 1/1440 of an inch, or 17.639µm.
    * <p>
    * @param value An instances of type {@link Integer}
    * @return The current DiagramEndpoint object instance
@@ -432,11 +438,12 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Set the Y coordinate of the icon in twips." to read, "In Data Item
-   * IconPosTop, enter the Y coordinate of the icon in twips. Twips are
-   * screen-independent units to ensure that the proportion of screen elements
-   * is the same on all display systems. A twip is defined as being 1/1440 of an
-   * inch, or 17.639µm.
+   * Set the Y coordinate of the icon in twips." to read, "
+   * <p>
+   * In Data Item IconPosTop, enter the Y coordinate of the icon in twips. Twips
+   * are screen-independent units to ensure that the proportion of screen
+   * elements is the same on all display systems. A twip is defined as being
+   * 1/1440 of an inch, or 17.639µm.
    * <p>
    * @param value An instances of type {@link Integer}
    * @return The current DiagramEndpoint object instance
@@ -447,9 +454,11 @@ public class DiagramEndpoint {
   }
 
   /**
-   * Set "Yes" if the diagram endpoint participates in point-to-multipoint
-   * links. enter "No" if it participates in point-to-point links. Note for the
-   * USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
+   * Set "Yes" if the diagram endpoint participates in point-to-multipoint links
+   * or "No" if it participates in point-to-point links.
+   * <p>
+   * Note for the USA: Required when operating between 932 and 935 MHz or 941
+   * and 944 MHz.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current DiagramEndpoint object instance

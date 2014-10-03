@@ -101,10 +101,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS7;
 public class ObservedERPAnalysis {
 
   /**
-   * In Data Item Continuous (US), indicate whether pulse-to-pulse ERP
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Continuous (US), indicate whether pulse-to-pulse ERP variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    */
   @XmlElement(name = "Continuous", required = false)
   private TString continuous;
@@ -140,8 +140,8 @@ public class ObservedERPAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal erpPatternPeriod;
   /**
-   * In Data Item ERPPatternType (US), indicate whether ERP is unmodulated ERP
-   * variations are Patterned, Non-Patterned, or Adaptive.
+   * ERPPatternType (US), indicate whether ERP is unmodulated ERP variations are
+   * Patterned, Non-Patterned, or Adaptive.
    */
   @XmlElement(name = "ERPPatternType", required = false)
   private TString erpPatternType;
@@ -232,8 +232,8 @@ public class ObservedERPAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpMedian;
   /**
-   * In Data Item ERP SequenceDesc (US), enter the textual description of the
-   * observed algorithm for the sequence of variation for the ERP.
+   * ERP SequenceDesc (US) - The textual description of the observed algorithm
+   * for the sequence of variation for the ERP.
    */
   @XmlElement(name = "ERPSequenceDesc", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
@@ -294,10 +294,10 @@ public class ObservedERPAnalysis {
   private List<ObservedERPValues> observedERPValues;
 
   /**
-   * Get In Data Item Continuous (US), indicate whether pulse-to-pulse ERP
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Get Continuous (US), indicate whether pulse-to-pulse ERP variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @return the Continuous value in a {@link TString} data type
    */
@@ -306,10 +306,10 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Set In Data Item Continuous (US), indicate whether pulse-to-pulse ERP
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Set Continuous (US), indicate whether pulse-to-pulse ERP variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @param value the Continuous value in a {@link TString} data type
    */
@@ -418,8 +418,8 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Get In Data Item ERPPatternType (US), indicate whether ERP is unmodulated
-   * ERP variations are Patterned, Non-Patterned, or Adaptive.
+   * Get ERPPatternType (US), indicate whether ERP is unmodulated ERP variations
+   * are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @return the ERPPatternType value in a {@link TString} data type
    */
@@ -428,8 +428,8 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Set In Data Item ERPPatternType (US), indicate whether ERP is unmodulated
-   * ERP variations are Patterned, Non-Patterned, or Adaptive.
+   * Set ERPPatternType (US), indicate whether ERP is unmodulated ERP variations
+   * are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value the ERPPatternType value in a {@link TString} data type
    */
@@ -684,8 +684,8 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Get In Data Item ERP SequenceDesc (US), enter the textual description of
-   * the observed algorithm for the sequence of variation for the ERP.
+   * Get ERP SequenceDesc (US) - The textual description of the observed
+   * algorithm for the sequence of variation for the ERP.
    * <p>
    * @return the ERPSequenceDesc value in a {@link TString} data type
    */
@@ -694,8 +694,8 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Set In Data Item ERP SequenceDesc (US), enter the textual description of
-   * the observed algorithm for the sequence of variation for the ERP.
+   * Set ERP SequenceDesc (US) - The textual description of the observed
+   * algorithm for the sequence of variation for the ERP.
    * <p>
    * @param value the ERPSequenceDesc value in a {@link TString} data type
    */
@@ -876,10 +876,10 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Set In Data Item Continuous (US), indicate whether pulse-to-pulse ERP
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Set Continuous (US), indicate whether pulse-to-pulse ERP variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedERPAnalysis object instance
@@ -924,8 +924,8 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Set In Data Item ERPPatternType (US), indicate whether ERP is unmodulated
-   * ERP variations are Patterned, Non-Patterned, or Adaptive.
+   * Set ERPPatternType (US), indicate whether ERP is unmodulated ERP variations
+   * are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value An instances of type {@link ListUS7}
    * @return The current ObservedERPAnalysis object instance
@@ -1029,8 +1029,8 @@ public class ObservedERPAnalysis {
   }
 
   /**
-   * Set In Data Item ERP SequenceDesc (US), enter the textual description of
-   * the observed algorithm for the sequence of variation for the ERP.
+   * Set ERP SequenceDesc (US) - The textual description of the observed
+   * algorithm for the sequence of variation for the ERP.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current ObservedERPAnalysis object instance

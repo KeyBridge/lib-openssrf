@@ -306,8 +306,8 @@ public class ObservedRFAnalysis {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString rfAdaptiveDriver;
   /**
-   * In Data Item RFAdaptiveRule (US), indicate how the RF is chosen for
-   * Adaptive RF variations.
+   * RFAdaptiveRule (US), indicate how the RF is chosen for Adaptive RF
+   * variations.
    */
   @XmlElement(name = "RFAdaptiveRule", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
@@ -358,8 +358,8 @@ public class ObservedRFAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfChannelFreqMin;
   /**
-   * In Data Item RFCoherent (US), indicate if the observed RF signal is
-   * coherent, non-coherent, or unknown.
+   * RFCoherent (US), indicate if the observed RF signal is coherent,
+   * non-coherent, or unknown.
    */
   @XmlElement(name = "RFCoherent", required = false)
   private TString rfCoherent;
@@ -429,8 +429,8 @@ public class ObservedRFAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal rfPatternPeriod;
   /**
-   * In Data Item RFPatternType (US), Indicate whether RF is unmodulated or
-   * pulse-to-pulse RF variations are Patterned, Non-Patterned, or Adaptive.
+   * RFPatternType (US), Indicate whether RF is unmodulated or pulse-to-pulse RF
+   * variations are Patterned, Non-Patterned, or Adaptive.
    */
   @XmlElement(name = "RFPatternType", required = false)
   private TString rfPatternType;
@@ -488,8 +488,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFFreqToleranceUnit", required = false)
   private TString rfFreqToleranceUnit;
   /**
-   * In Data Item:RFFreqToleranceInterval (US), enter the time interval over
-   * which the RF stability measurements were taken.
+   * In Data Item:RFFreqToleranceInterval (US) - The time interval over which
+   * the RF stability measurements were taken.
    */
   @XmlElement(name = "RFFreqToleranceInterval", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
@@ -1002,8 +1002,8 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Get In Data Item RFAdaptiveRule (US), indicate how the RF is chosen for
-   * Adaptive RF variations.
+   * Get RFAdaptiveRule (US), indicate how the RF is chosen for Adaptive RF
+   * variations.
    * <p>
    * @return the RFAdaptiveRule value in a {@link TString} data type
    */
@@ -1012,8 +1012,8 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item RFAdaptiveRule (US), indicate how the RF is chosen for
-   * Adaptive RF variations.
+   * Set RFAdaptiveRule (US), indicate how the RF is chosen for Adaptive RF
+   * variations.
    * <p>
    * @param value the RFAdaptiveRule value in a {@link TString} data type
    */
@@ -1159,8 +1159,8 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Get In Data Item RFCoherent (US), indicate if the observed RF signal is
-   * coherent, non-coherent, or unknown.
+   * Get RFCoherent (US), indicate if the observed RF signal is coherent,
+   * non-coherent, or unknown.
    * <p>
    * @return the RFCoherent value in a {@link TString} data type
    */
@@ -1169,8 +1169,8 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item RFCoherent (US), indicate if the observed RF signal is
-   * coherent, non-coherent, or unknown.
+   * Set RFCoherent (US), indicate if the observed RF signal is coherent,
+   * non-coherent, or unknown.
    * <p>
    * @param value the RFCoherent value in a {@link TString} data type
    */
@@ -1376,7 +1376,7 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Get In Data Item RFPatternType (US), Indicate whether RF is unmodulated or
+   * Get RFPatternType (US), Indicate whether RF is unmodulated or
    * pulse-to-pulse RF variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @return the RFPatternType value in a {@link TString} data type
@@ -1386,7 +1386,7 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item RFPatternType (US), Indicate whether RF is unmodulated or
+   * Set RFPatternType (US), Indicate whether RF is unmodulated or
    * pulse-to-pulse RF variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value the RFPatternType value in a {@link TString} data type
@@ -1560,7 +1560,7 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Get In Data Item:RFFreqToleranceInterval (US), enter the time interval over
+   * Get In Data Item:RFFreqToleranceInterval (US) - The time interval over
    * which the RF stability measurements were taken.
    * <p>
    * @return the RFFreqToleranceInterval value in a {@link TDecimal} data type
@@ -1570,7 +1570,7 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item:RFFreqToleranceInterval (US), enter the time interval over
+   * Set In Data Item:RFFreqToleranceInterval (US) - The time interval over
    * which the RF stability measurements were taken.
    * <p>
    * @param value the RFFreqToleranceInterval value in a {@link TDecimal} data
@@ -1896,8 +1896,8 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item RFAdaptiveRule (US), indicate how the RF is chosen for
-   * Adaptive RF variations.
+   * Set RFAdaptiveRule (US), indicate how the RF is chosen for Adaptive RF
+   * variations.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current ObservedRFAnalysis object instance
@@ -1957,8 +1957,8 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item RFCoherent (US), indicate if the observed RF signal is
-   * coherent, non-coherent, or unknown.
+   * Set RFCoherent (US), indicate if the observed RF signal is coherent,
+   * non-coherent, or unknown.
    * <p>
    * @param value An instances of type {@link ListUSY}
    * @return The current ObservedRFAnalysis object instance
@@ -2041,7 +2041,7 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item RFPatternType (US), Indicate whether RF is unmodulated or
+   * Set RFPatternType (US), Indicate whether RF is unmodulated or
    * pulse-to-pulse RF variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value An instances of type {@link ListUS7}
@@ -2112,7 +2112,7 @@ public class ObservedRFAnalysis {
   }
 
   /**
-   * Set In Data Item:RFFreqToleranceInterval (US), enter the time interval over
+   * Set In Data Item:RFFreqToleranceInterval (US) - The time interval over
    * which the RF stability measurements were taken.
    * <p>
    * @param value An instances of type {@link Double}

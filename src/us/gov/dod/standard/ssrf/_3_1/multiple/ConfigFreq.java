@@ -122,8 +122,8 @@ public class ConfigFreq {
   @XmlElement(name = "Priority", required = false)
   private TString priority;
   /**
-   * In Data Item ChannelSpacing (US)- enter the amount of bandwidth allotted to
-   * each channel, measured as the spacing between center frequencies (or
+   * ChannelSpacing (US)- enter the amount of bandwidth allotted to each
+   * channel, measured as the spacing between center frequencies (or
    * wavelengths) of adjacent channels.
    */
   @XmlElement(name = "ChannelSpacing", required = false)
@@ -150,8 +150,7 @@ public class ConfigFreq {
   @XmlElement(name = "ConfigFreqUse", required = false)
   private TString configFreqUse;
   /**
-   * In Data Item Period (US),- enter how often the frequency is being monitored
-   * or jammed.
+   * Period (US),- enter how often the frequency is being monitored or jammed.
    */
   @XmlElement(name = "Period", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
@@ -307,9 +306,9 @@ public class ConfigFreq {
   }
 
   /**
-   * Get In Data Item ChannelSpacing (US)- enter the amount of bandwidth
-   * allotted to each channel, measured as the spacing between center
-   * frequencies (or wavelengths) of adjacent channels.
+   * Get ChannelSpacing (US)- enter the amount of bandwidth allotted to each
+   * channel, measured as the spacing between center frequencies (or
+   * wavelengths) of adjacent channels.
    * <p>
    * @return the ChannelSpacing value in a {@link TDecimal} data type
    */
@@ -318,9 +317,9 @@ public class ConfigFreq {
   }
 
   /**
-   * Set In Data Item ChannelSpacing (US)- enter the amount of bandwidth
-   * allotted to each channel, measured as the spacing between center
-   * frequencies (or wavelengths) of adjacent channels.
+   * Set ChannelSpacing (US)- enter the amount of bandwidth allotted to each
+   * channel, measured as the spacing between center frequencies (or
+   * wavelengths) of adjacent channels.
    * <p>
    * @param value the ChannelSpacing value in a {@link TDecimal} data type
    */
@@ -398,8 +397,8 @@ public class ConfigFreq {
   }
 
   /**
-   * Get In Data Item Period (US),- enter how often the frequency is being
-   * monitored or jammed.
+   * Get Period (US),- enter how often the frequency is being monitored or
+   * jammed.
    * <p>
    * @return the Period value in a {@link TDecimal} data type
    */
@@ -408,8 +407,8 @@ public class ConfigFreq {
   }
 
   /**
-   * Set In Data Item Period (US),- enter how often the frequency is being
-   * monitored or jammed.
+   * Set Period (US),- enter how often the frequency is being monitored or
+   * jammed.
    * <p>
    * @param value the Period value in a {@link TDecimal} data type
    */
@@ -535,9 +534,9 @@ public class ConfigFreq {
   }
 
   /**
-   * Set In Data Item ChannelSpacing (US)- enter the amount of bandwidth
-   * allotted to each channel, measured as the spacing between center
-   * frequencies (or wavelengths) of adjacent channels.
+   * Set ChannelSpacing (US)- enter the amount of bandwidth allotted to each
+   * channel, measured as the spacing between center frequencies (or
+   * wavelengths) of adjacent channels.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ConfigFreq object instance
@@ -570,8 +569,8 @@ public class ConfigFreq {
   }
 
   /**
-   * Set In Data Item Period (US),- enter how often the frequency is being
-   * monitored or jammed.
+   * Set Period (US),- enter how often the frequency is being monitored or
+   * jammed.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ConfigFreq object instance

@@ -55,22 +55,21 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWC;
 public class JammingAuthority {
 
   /**
-   * In Data Item JCACallSign (US), enter the unique net identifier for the JCA.
-   * If an active JCEOI is in effect, it SHOULD take precedence.
+   * JCACallSign (US) - The unique net identifier for the JCA. If an active
+   * JCEOI is in effect, it SHOULD take precedence.
    */
   @XmlElement(name = "JCACallSign", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString jcaCallSign;
   /**
-   * In Data Item JCAFreq (US), enter the frequency assigned to the JCA. If an
-   * active JCEOI is in effect, it SHOULD take precedence.
+   * JCAFreq (US) - The frequency assigned to the JCA. If an active JCEOI is in
+   * effect, it SHOULD take precedence.
    */
   @XmlElement(name = "JCAFreq", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal jcaFreq;
   /**
-   * In Data Item JCALevel (US), enter the required level of authorisation for
-   * the jamming plan.
+   * JCALevel (US) - The required level of authorisation for the jamming plan.
    */
   @XmlElement(name = "JCALevel", required = true)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN2.class)
@@ -87,8 +86,8 @@ public class JammingAuthority {
   private TString jcaState;
 
   /**
-   * Get In Data Item JCACallSign (US), enter the unique net identifier for the
-   * JCA. If an active JCEOI is in effect, it SHOULD take precedence.
+   * Get JCACallSign (US) - The unique net identifier for the JCA. If an active
+   * JCEOI is in effect, it SHOULD take precedence.
    * <p>
    * @return the JCACallSign value in a {@link TString} data type
    */
@@ -97,8 +96,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Set In Data Item JCACallSign (US), enter the unique net identifier for the
-   * JCA. If an active JCEOI is in effect, it SHOULD take precedence.
+   * Set JCACallSign (US) - The unique net identifier for the JCA. If an active
+   * JCEOI is in effect, it SHOULD take precedence.
    * <p>
    * @param value the JCACallSign value in a {@link TString} data type
    */
@@ -118,8 +117,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Get In Data Item JCAFreq (US), enter the frequency assigned to the JCA. If
-   * an active JCEOI is in effect, it SHOULD take precedence.
+   * Get JCAFreq (US) - The frequency assigned to the JCA. If an active JCEOI is
+   * in effect, it SHOULD take precedence.
    * <p>
    * @return the JCAFreq value in a {@link TDecimal} data type
    */
@@ -128,8 +127,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Set In Data Item JCAFreq (US), enter the frequency assigned to the JCA. If
-   * an active JCEOI is in effect, it SHOULD take precedence.
+   * Set JCAFreq (US) - The frequency assigned to the JCA. If an active JCEOI is
+   * in effect, it SHOULD take precedence.
    * <p>
    * @param value the JCAFreq value in a {@link TDecimal} data type
    */
@@ -149,8 +148,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Get In Data Item JCALevel (US), enter the required level of authorisation
-   * for the jamming plan.
+   * Get JCALevel (US) - The required level of authorisation for the jamming
+   * plan.
    * <p>
    * @return the JCALevel value in a {@link TInteger} data type
    */
@@ -159,8 +158,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Set In Data Item JCALevel (US), enter the required level of authorisation
-   * for the jamming plan.
+   * Set JCALevel (US) - The required level of authorisation for the jamming
+   * plan.
    * <p>
    * @param value the JCALevel value in a {@link TInteger} data type
    */
@@ -211,8 +210,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Set In Data Item JCACallSign (US), enter the unique net identifier for the
-   * JCA. If an active JCEOI is in effect, it SHOULD take precedence.
+   * Set JCACallSign (US) - The unique net identifier for the JCA. If an active
+   * JCEOI is in effect, it SHOULD take precedence.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JammingAuthority object instance
@@ -223,8 +222,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Set In Data Item JCAFreq (US), enter the frequency assigned to the JCA. If
-   * an active JCEOI is in effect, it SHOULD take precedence.
+   * Set JCAFreq (US) - The frequency assigned to the JCA. If an active JCEOI is
+   * in effect, it SHOULD take precedence.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current JammingAuthority object instance
@@ -235,8 +234,8 @@ public class JammingAuthority {
   }
 
   /**
-   * Set In Data Item JCALevel (US), enter the required level of authorisation
-   * for the jamming plan.
+   * Set JCALevel (US) - The required level of authorisation for the jamming
+   * plan.
    * <p>
    * @param value An instances of type {@link Integer}
    * @return The current JammingAuthority object instance

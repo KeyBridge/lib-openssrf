@@ -328,7 +328,7 @@ public class JRFL extends Common<JRFL> {
   }
 
   /**
-   * Get In Data Item Seconds,enter the seconds of hour [0-59]
+   * Get Seconds,enter the seconds of hour [0-59]
    * <p>
    * @return the Seconds value in a {@link TString} data type
    */
@@ -337,7 +337,7 @@ public class JRFL extends Common<JRFL> {
   }
 
   /**
-   * Set In Data Item Seconds,enter the seconds of hour [0-59]
+   * Set Seconds,enter the seconds of hour [0-59]
    * <p>
    * @param value the Seconds value in a {@link TString} data type
    */
@@ -625,7 +625,7 @@ public class JRFL extends Common<JRFL> {
   }
 
   /**
-   * Set In Data Item Seconds,enter the seconds of hour [0-59]
+   * Set Seconds,enter the seconds of hour [0-59]
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JRFL object instance

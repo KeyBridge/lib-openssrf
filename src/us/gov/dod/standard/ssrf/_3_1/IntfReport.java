@@ -132,9 +132,9 @@ public class IntfReport extends Common<IntfReport> {
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar intfStopDateTime;
   /**
-   * In Data Item IntfDescr, describe the interference. Provide as much
-   * information as possible. State what actions you have taken so far to
-   * resolve the interference.
+   * IntfDescr, describe the interference. Provide as much information as
+   * possible. State what actions you have taken so far to resolve the
+   * interference.
    */
   @XmlElement(name = "IntfDescr", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
@@ -236,52 +236,51 @@ public class IntfReport extends Common<IntfReport> {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal sourceFreqMax;
   /**
-   * In Data Item SourceEmsClass, In Data Item EmsClass, enter a three to five
-   * characters code, derived from the table below, representing the emission
-   * classification. If an "X" is used in any of the symbols, Remarks SHOULD be
-   * used to explain the nature of the signal. First Symbol - Designates Type of
-   * Modulation of the Main Carrier Unmodulated N - Emission of unmodulated
-   * carrier Amplitude Modulated A - Double sideband H - Single sideband, full
-   * carrier R - Single sideband, reduced or variable level carrier J - Single
-   * sideband, suppressed carrier B - Independent sidebands C - Vestigial
-   * sidebands Angle-Modulated F - Frequency modulation G - Phase modulation
-   * Amplitude and Angle-Modulated D - Main carrier is amplitude-modulated and
-   * angle-modulated simultaneously or in a preestablished sequence Pulse P -
-   * Sequence of unmodulated pulses K - Modulated in amplitude L - Modulated in
-   * width/duration M - Modulated in position phase Q - Carrier is
-   * angle-modulated during the period of the pulse V - Combination of the
-   * foregoing or is produced by other means Combination W - Cases not covered
-   * above in which an emission consists of the main carrier being modulated,
-   * either simultaneously or in a preestablished sequence, in a combination of
-   * two or more of the following modes: amplitude, angle, pulse Other X - Cases
-   * not otherwise covered - : Unknown (to be used only by legacy data) Second
-   * Symbol - Designates the Nature of Signal(s) Modulating the Main Carrier 0 -
-   * No modulating signal 1 - A single channel containing quantised or digital
-   * information, not using a modulating subcarrier. (Excludes time-division
-   * multiplex) 2 - A single channel containing quantised or digital
-   * information, using a modulating subcarrier 3 - A single channel containing
-   * analogue information 7 - Two or more channels containing quantised or
-   * digital information 8 - Two or more channels containing analogue
-   * information 9 - Composite system with one or more channels containing
-   * quantised or digital information, together with one or more channels
-   * containing analogue information X - Cases not otherwise covered - : Unknown
-   * (to be used only by legacy data) Third Symbol - Type of Information to be
-   * Transmitted a N - No information transmitted A - Telegraphy - for aural
-   * reception B - Telegraphy - for automatic reception C - Facsimile D - Data
-   * transmission, telemetry, telecommand E - Telephony (including sound
-   * broadcasting) F - Television (video) W - Combination of the above X - Cases
-   * not otherwise covered. - : Unknown (to be used only by legacy data) a In
-   * this context, the word "information" does not include information of a
-   * constant, unvarying, nature such as that provided by standard frequency
-   * emissions, continuous wave, pulse radars, etc. b A full explanation for the
-   * selection of the letter X shall be provided in Information unless the
-   * application is for a non-directional beacon in the bands 190-435 and
-   * 510-535 kHz. Fourth Symbol - Designates the Details of Signal(s) A -
-   * Two-condition code with elements of differing numbers and/or durations B -
-   * Two-condition code with elements of the same number and duration without
-   * error correction C - Two-condition code with elements of the same number
-   * and duration with error correction D - Four-condition code in which each
-   * condition represents a signal element of one or more bits E -
+   * SourceEmsClass, EmsClass, enter a three to five characters code, derived
+   * from the table below, representing the emission classification. If an "X"
+   * is used in any of the symbols, Remarks SHOULD be used to explain the nature
+   * of the signal. First Symbol - Designates Type of Modulation of the Main
+   * Carrier Unmodulated N - Emission of unmodulated carrier Amplitude Modulated
+   * A - Double sideband H - Single sideband, full carrier R - Single sideband,
+   * reduced or variable level carrier J - Single sideband, suppressed carrier B
+   * - Independent sidebands C - Vestigial sidebands Angle-Modulated F -
+   * Frequency modulation G - Phase modulation Amplitude and Angle-Modulated D -
+   * Main carrier is amplitude-modulated and angle-modulated simultaneously or
+   * in a preestablished sequence Pulse P - Sequence of unmodulated pulses K -
+   * Modulated in amplitude L - Modulated in width/duration M - Modulated in
+   * position phase Q - Carrier is angle-modulated during the period of the
+   * pulse V - Combination of the foregoing or is produced by other means
+   * Combination W - Cases not covered above in which an emission consists of
+   * the main carrier being modulated, either simultaneously or in a
+   * preestablished sequence, in a combination of two or more of the following
+   * modes: amplitude, angle, pulse Other X - Cases not otherwise covered - :
+   * Unknown (to be used only by legacy data) Second Symbol - Designates the
+   * Nature of Signal(s) Modulating the Main Carrier 0 - No modulating signal 1
+   * - A single channel containing quantised or digital information, not using a
+   * modulating subcarrier. (Excludes time-division multiplex) 2 - A single
+   * channel containing quantised or digital information, using a modulating
+   * subcarrier 3 - A single channel containing analogue information 7 - Two or
+   * more channels containing quantised or digital information 8 - Two or more
+   * channels containing analogue information 9 - Composite system with one or
+   * more channels containing quantised or digital information, together with
+   * one or more channels containing analogue information X - Cases not
+   * otherwise covered - : Unknown (to be used only by legacy data) Third Symbol
+   * - Type of Information to be Transmitted a N - No information transmitted A
+   * - Telegraphy - for aural reception B - Telegraphy - for automatic reception
+   * C - Facsimile D - Data transmission, telemetry, telecommand E - Telephony
+   * (including sound broadcasting) F - Television (video) W - Combination of
+   * the above X - Cases not otherwise covered. - : Unknown (to be used only by
+   * legacy data) a In this context, the word "information" does not include
+   * information of a constant, unvarying, nature such as that provided by
+   * standard frequency emissions, continuous wave, pulse radars, etc. b A full
+   * explanation for the selection of the letter X shall be provided in
+   * Information unless the application is for a non-directional beacon in the
+   * bands 190-435 and 510-535 kHz. Fourth Symbol - Designates the Details of
+   * Signal(s) A - Two-condition code with elements of differing numbers and/or
+   * durations B - Two-condition code with elements of the same number and
+   * duration without error correction C - Two-condition code with elements of
+   * the same number and duration with error correction D - Four-condition code
+   * in which each condition represents a signal element of one or more bits E -
    * Multi-condition code in which each condition represents a signal element of
    * one or more bits F - Multi-condition code in which each condition or
    * combination of conditions represents a character G - Sound of broadcasting
@@ -315,8 +314,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal sourceEmsBw;
   /**
-   * In Data Item VictimAsgnRef, Enter the serial number of the assignment
-   * victim of the interference.
+   * VictimAsgnRef - The serial number of the assignment victim of the
+   * interference.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
@@ -728,9 +727,9 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Get In Data Item IntfDescr, describe the interference. Provide as much
-   * information as possible. State what actions you have taken so far to
-   * resolve the interference.
+   * Get IntfDescr, describe the interference. Provide as much information as
+   * possible. State what actions you have taken so far to resolve the
+   * interference.
    * <p>
    * @return the IntfDescr value in a {@link TString} data type
    */
@@ -739,9 +738,9 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set In Data Item IntfDescr, describe the interference. Provide as much
-   * information as possible. State what actions you have taken so far to
-   * resolve the interference.
+   * Set IntfDescr, describe the interference. Provide as much information as
+   * possible. State what actions you have taken so far to resolve the
+   * interference.
    * <p>
    * @param value the IntfDescr value in a {@link TString} data type
    */
@@ -1031,18 +1030,17 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Get In Data Item SourceEmsClass, In Data Item EmsClass, enter a three to
-   * five characters code, derived from the table below, representing the
-   * emission classification. If an "X" is used in any of the symbols, Remarks
-   * SHOULD be used to explain the nature of the signal. First Symbol -
-   * Designates Type of Modulation of the Main Carrier Unmodulated N - Emission
-   * of unmodulated carrier Amplitude Modulated A - Double sideband H - Single
-   * sideband, full carrier R - Single sideband, reduced or variable level
-   * carrier J - Single sideband, suppressed carrier B - Independent sidebands C
-   * - Vestigial sidebands Angle-Modulated F - Frequency modulation G - Phase
-   * modulation Amplitude and Angle-Modulated D - Main carrier is
-   * amplitude-modulated and angle-modulated simultaneously or in a
-   * preestablished sequence Pulse P - Sequence of unmodulated pulses K -
+   * Get SourceEmsClass, EmsClass, enter a three to five characters code,
+   * derived from the table below, representing the emission classification. If
+   * an "X" is used in any of the symbols, Remarks SHOULD be used to explain the
+   * nature of the signal. First Symbol - Designates Type of Modulation of the
+   * Main Carrier Unmodulated N - Emission of unmodulated carrier Amplitude
+   * Modulated A - Double sideband H - Single sideband, full carrier R - Single
+   * sideband, reduced or variable level carrier J - Single sideband, suppressed
+   * carrier B - Independent sidebands C - Vestigial sidebands Angle-Modulated F
+   * - Frequency modulation G - Phase modulation Amplitude and Angle-Modulated D
+   * - Main carrier is amplitude-modulated and angle-modulated simultaneously or
+   * in a preestablished sequence Pulse P - Sequence of unmodulated pulses K -
    * Modulated in amplitude L - Modulated in width/duration M - Modulated in
    * position phase Q - Carrier is angle-modulated during the period of the
    * pulse V - Combination of the foregoing or is produced by other means
@@ -1103,18 +1101,17 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set In Data Item SourceEmsClass, In Data Item EmsClass, enter a three to
-   * five characters code, derived from the table below, representing the
-   * emission classification. If an "X" is used in any of the symbols, Remarks
-   * SHOULD be used to explain the nature of the signal. First Symbol -
-   * Designates Type of Modulation of the Main Carrier Unmodulated N - Emission
-   * of unmodulated carrier Amplitude Modulated A - Double sideband H - Single
-   * sideband, full carrier R - Single sideband, reduced or variable level
-   * carrier J - Single sideband, suppressed carrier B - Independent sidebands C
-   * - Vestigial sidebands Angle-Modulated F - Frequency modulation G - Phase
-   * modulation Amplitude and Angle-Modulated D - Main carrier is
-   * amplitude-modulated and angle-modulated simultaneously or in a
-   * preestablished sequence Pulse P - Sequence of unmodulated pulses K -
+   * Set SourceEmsClass, EmsClass, enter a three to five characters code,
+   * derived from the table below, representing the emission classification. If
+   * an "X" is used in any of the symbols, Remarks SHOULD be used to explain the
+   * nature of the signal. First Symbol - Designates Type of Modulation of the
+   * Main Carrier Unmodulated N - Emission of unmodulated carrier Amplitude
+   * Modulated A - Double sideband H - Single sideband, full carrier R - Single
+   * sideband, reduced or variable level carrier J - Single sideband, suppressed
+   * carrier B - Independent sidebands C - Vestigial sidebands Angle-Modulated F
+   * - Frequency modulation G - Phase modulation Amplitude and Angle-Modulated D
+   * - Main carrier is amplitude-modulated and angle-modulated simultaneously or
+   * in a preestablished sequence Pulse P - Sequence of unmodulated pulses K -
    * Modulated in amplitude L - Modulated in width/duration M - Modulated in
    * position phase Q - Carrier is angle-modulated during the period of the
    * pulse V - Combination of the foregoing or is produced by other means
@@ -1215,8 +1212,8 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Get In Data Item VictimAsgnRef, Enter the serial number of the assignment
-   * victim of the interference.
+   * Get VictimAsgnRef - The serial number of the assignment victim of the
+   * interference.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
@@ -1229,8 +1226,8 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set In Data Item VictimAsgnRef, Enter the serial number of the assignment
-   * victim of the interference.
+   * Set VictimAsgnRef - The serial number of the assignment victim of the
+   * interference.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
@@ -2136,9 +2133,9 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set In Data Item IntfDescr, describe the interference. Provide as much
-   * information as possible. State what actions you have taken so far to
-   * resolve the interference.
+   * Set IntfDescr, describe the interference. Provide as much information as
+   * possible. State what actions you have taken so far to resolve the
+   * interference.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current IntfReport object instance
@@ -2256,18 +2253,17 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set In Data Item SourceEmsClass, In Data Item EmsClass, enter a three to
-   * five characters code, derived from the table below, representing the
-   * emission classification. If an "X" is used in any of the symbols, Remarks
-   * SHOULD be used to explain the nature of the signal. First Symbol -
-   * Designates Type of Modulation of the Main Carrier Unmodulated N - Emission
-   * of unmodulated carrier Amplitude Modulated A - Double sideband H - Single
-   * sideband, full carrier R - Single sideband, reduced or variable level
-   * carrier J - Single sideband, suppressed carrier B - Independent sidebands C
-   * - Vestigial sidebands Angle-Modulated F - Frequency modulation G - Phase
-   * modulation Amplitude and Angle-Modulated D - Main carrier is
-   * amplitude-modulated and angle-modulated simultaneously or in a
-   * preestablished sequence Pulse P - Sequence of unmodulated pulses K -
+   * Set SourceEmsClass, EmsClass, enter a three to five characters code,
+   * derived from the table below, representing the emission classification. If
+   * an "X" is used in any of the symbols, Remarks SHOULD be used to explain the
+   * nature of the signal. First Symbol - Designates Type of Modulation of the
+   * Main Carrier Unmodulated N - Emission of unmodulated carrier Amplitude
+   * Modulated A - Double sideband H - Single sideband, full carrier R - Single
+   * sideband, reduced or variable level carrier J - Single sideband, suppressed
+   * carrier B - Independent sidebands C - Vestigial sidebands Angle-Modulated F
+   * - Frequency modulation G - Phase modulation Amplitude and Angle-Modulated D
+   * - Main carrier is amplitude-modulated and angle-modulated simultaneously or
+   * in a preestablished sequence Pulse P - Sequence of unmodulated pulses K -
    * Modulated in amplitude L - Modulated in width/duration M - Modulated in
    * position phase Q - Carrier is angle-modulated during the period of the
    * pulse V - Combination of the foregoing or is produced by other means
@@ -2341,8 +2337,8 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set In Data Item VictimAsgnRef, Enter the serial number of the assignment
-   * victim of the interference.
+   * Set VictimAsgnRef - The serial number of the assignment victim of the
+   * interference.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:

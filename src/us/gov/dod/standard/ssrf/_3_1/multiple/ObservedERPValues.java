@@ -74,9 +74,9 @@ public class ObservedERPValues {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpValue;
   /**
-   * In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * StatisticalIndicator (US), indicate how this specific data observation was
+   * used (e.g., 95% of the observed values). If this element is empty, then the
+   * value is assumed to be part of the 100% sample size.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
@@ -149,9 +149,9 @@ public class ObservedERPValues {
   }
 
   /**
-   * Get In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * Get StatisticalIndicator (US), indicate how this specific data observation
+   * was used (e.g., 95% of the observed values). If this element is empty, then
+   * the value is assumed to be part of the 100% sample size.
    * <p>
    * @return the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -160,9 +160,9 @@ public class ObservedERPValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was used (e.g., 95% of the observed values). If this element is empty, then
+   * the value is assumed to be part of the 100% sample size.
    * <p>
    * @param value the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -208,9 +208,9 @@ public class ObservedERPValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was used (e.g., 95% of the observed values). If this element is empty, then
+   * the value is assumed to be part of the 100% sample size.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedERPValues object instance

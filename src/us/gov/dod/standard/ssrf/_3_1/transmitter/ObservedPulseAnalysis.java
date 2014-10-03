@@ -253,10 +253,10 @@ public class ObservedPulseAnalysis {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString pdAdaptiveRuleDesc;
   /**
-   * In Data Item PDContinuous (US), indicate whether pulse-to-pulse PD
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * PDContinuous (US), indicate whether pulse-to-pulse PD variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    */
   @XmlElement(name = "PDContinuous", required = false)
   private TString pdContinuous;
@@ -366,8 +366,8 @@ public class ObservedPulseAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdPatternPeriod;
   /**
-   * In Data Item PDPatternType (US), Indicate whether PD is unmodulated or
-   * pulse-to-pulse PD variations are Patterned, Non-Patterned, or Adaptive.
+   * PDPatternType (US), Indicate whether PD is unmodulated or pulse-to-pulse PD
+   * variations are Patterned, Non-Patterned, or Adaptive.
    */
   @XmlElement(name = "PDPatternType", required = false)
   private TString pdPatternType;
@@ -570,10 +570,10 @@ public class ObservedPulseAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal priChangeRate;
   /**
-   * In Data Item PRIContinuous (US), Indicate whether pulse-to-pulse PRI
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * PRIContinuous (US), Indicate whether pulse-to-pulse PRI variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    */
   @XmlElement(name = "PRIContinuous", required = false)
   private TString priContinuous;
@@ -1054,10 +1054,10 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Get In Data Item PDContinuous (US), indicate whether pulse-to-pulse PD
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Get PDContinuous (US), indicate whether pulse-to-pulse PD variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @return the PDContinuous value in a {@link TString} data type
    */
@@ -1066,10 +1066,10 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Set In Data Item PDContinuous (US), indicate whether pulse-to-pulse PD
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Set PDContinuous (US), indicate whether pulse-to-pulse PD variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @param value the PDContinuous value in a {@link TString} data type
    */
@@ -1382,7 +1382,7 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Get In Data Item PDPatternType (US), Indicate whether PD is unmodulated or
+   * Get PDPatternType (US), Indicate whether PD is unmodulated or
    * pulse-to-pulse PD variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @return the PDPatternType value in a {@link TString} data type
@@ -1392,7 +1392,7 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Set In Data Item PDPatternType (US), Indicate whether PD is unmodulated or
+   * Set PDPatternType (US), Indicate whether PD is unmodulated or
    * pulse-to-pulse PD variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value the PDPatternType value in a {@link TString} data type
@@ -1964,10 +1964,10 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Get In Data Item PRIContinuous (US), Indicate whether pulse-to-pulse PRI
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Get PRIContinuous (US), Indicate whether pulse-to-pulse PRI variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @return the PRIContinuous value in a {@link TString} data type
    */
@@ -1976,10 +1976,10 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Set In Data Item PRIContinuous (US), Indicate whether pulse-to-pulse PRI
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Set PRIContinuous (US), Indicate whether pulse-to-pulse PRI variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @param value the PRIContinuous value in a {@link TString} data type
    */
@@ -2895,10 +2895,10 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Set In Data Item PDContinuous (US), indicate whether pulse-to-pulse PD
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Set PDContinuous (US), indicate whether pulse-to-pulse PD variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedPulseAnalysis object instance
@@ -3024,7 +3024,7 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Set In Data Item PDPatternType (US), Indicate whether PD is unmodulated or
+   * Set PDPatternType (US), Indicate whether PD is unmodulated or
    * pulse-to-pulse PD variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value An instances of type {@link ListUS7}
@@ -3252,10 +3252,10 @@ public class ObservedPulseAnalysis {
   }
 
   /**
-   * Set In Data Item PRIContinuous (US), Indicate whether pulse-to-pulse PRI
-   * variations are Discrete or Continuous. Discrete uses a finite number of
-   * fixed values separated by ranges of unused values. Continuous potentially
-   * uses an infinite number of values within one or more ranges.
+   * Set PRIContinuous (US), Indicate whether pulse-to-pulse PRI variations are
+   * Discrete or Continuous. Discrete uses a finite number of fixed values
+   * separated by ranges of unused values. Continuous potentially uses an
+   * infinite number of values within one or more ranges.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedPulseAnalysis object instance

@@ -156,8 +156,8 @@ public class SpreadSpectrum {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal maxGain;
   /**
-   * In Data Item PulseFreqDev, Enter, for FM pulse radars, the total frequency
-   * shift during the pulse width.
+   * PulseFreqDev, Enter, for FM pulse radars, the total frequency shift during
+   * the pulse width.
    */
   @XmlElement(name = "PulseFreqDev", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
@@ -448,8 +448,8 @@ public class SpreadSpectrum {
   }
 
   /**
-   * Get In Data Item PulseFreqDev, Enter, for FM pulse radars, the total
-   * frequency shift during the pulse width.
+   * Get PulseFreqDev, Enter, for FM pulse radars, the total frequency shift
+   * during the pulse width.
    * <p>
    * @return the PulseFreqDev value in a {@link TDecimal} data type
    */
@@ -458,8 +458,8 @@ public class SpreadSpectrum {
   }
 
   /**
-   * Set In Data Item PulseFreqDev, Enter, for FM pulse radars, the total
-   * frequency shift during the pulse width.
+   * Set PulseFreqDev, Enter, for FM pulse radars, the total frequency shift
+   * during the pulse width.
    * <p>
    * @param value the PulseFreqDev value in a {@link TDecimal} data type
    */
@@ -958,8 +958,8 @@ public class SpreadSpectrum {
   }
 
   /**
-   * Set In Data Item PulseFreqDev, Enter, for FM pulse radars, the total
-   * frequency shift during the pulse width.
+   * Set PulseFreqDev, Enter, for FM pulse radars, the total frequency shift
+   * during the pulse width.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current SpreadSpectrum object instance

@@ -178,217 +178,212 @@ public class ObservedMOPAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT2.class)
   private TDecimal mopamPercentModulation;
   /**
-   * In Data Item US:MOPChangeRateAM (US), enter the change in amplitude within
-   * the pulse. Use of this element should agree with the selection made in
+   * US:MOPChangeRateAM (US) - The change in amplitude within the pulse. Use of
+   * this element should agree with the selection made in
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRateAM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPCHGAM.class)
   private TDecimal mopChangeRateAM;
   /**
-   * In Data Item US:MOPChangeRateCW (US), enter the change in continuous wave
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPChangeRateCW (US) - The change in continuous wave frequency within
+   * the pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRateCW", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPCHGFM.class)
   private TDecimal mopChangeRateCW;
   /**
-   * In Data Item US:MOPChangeRateFM (US), enter the change in frequency within
-   * the pulse. Use of this element should agree with the selection made in
+   * US:MOPChangeRateFM (US) - The change in frequency within the pulse. Use of
+   * this element should agree with the selection made in
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRateFM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPCHGFM.class)
   private TDecimal mopChangeRateFM;
   /**
-   * In Data Item US:MOPChangeRatePM (US), enter the change in phase angle
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPChangeRatePM (US) - The change in phase angle within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRatePM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLERATE.class)
   private TDecimal mopChangeRatePM;
   /**
-   * In Data Item US:MOPContinuous (US), indicate whether MOP or CW modulation
-   * is Discrete or Continuous.
+   * US:MOPContinuous (US), indicate whether MOP or CW modulation is Discrete or
+   * Continuous.
    */
   @XmlElement(name = "MOPContinuous", required = false)
   private TString mopContinuous;
   /**
-   * In Data Item US:MOPID (US), enter a unique identifier (within the TxMode)
-   * for the MOP data.
+   * US:MOPID (US), enter a unique identifier (within the TxMode) for the MOP
+   * data.
    */
   @XmlElement(name = "MOPID", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString mopid;
   /**
-   * In Data Item US:MOPMeanValueAM (US), enter the average amplitude for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPMeanValueAM (US) - The average amplitude for a signal which changes
+   * on a non-patterned basis within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValueAM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopMeanValueAM;
   /**
-   * In Data Item US:MOPMeanValueCW (US), enter the average continuous wave
-   * frequency for a signal which changes on a non-patterned basis within a
-   * pulse. Use of this element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPMeanValueCW (US) - The average continuous wave frequency for a signal
+   * which changes on a non-patterned basis within a pulse. Use of this element
+   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValueCW", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopMeanValueCW;
   /**
-   * In Data Item US:MOPMeanValue (US), enter the average frequency for a signal
-   * which changes on a non-patterned basis within a pulse. Use of this element
-   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPMeanValue (US) - The average frequency for a signal which changes on
+   * a non-patterned basis within a pulse. Use of this element should agree with
+   * the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValueFM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopMeanValueFM;
   /**
-   * In Data Item US:MOPMeanValue (US), enter the average phase angle for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPMeanValue (US) - The average phase angle for a signal which changes
+   * on a non-patterned basis within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValuePM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopMeanValuePM;
   /**
-   * In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    */
   @XmlElement(name = "MOPNumElements", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger mopNumElements;
   /**
-   * In Data Item US:MOPOffTime (US), enter the duration of the state of the
-   * modulated waveform with the absence of energy.
+   * US:MOPOffTime (US) - The duration of the state of the modulated waveform
+   * with the absence of energy.
    */
   @XmlElement(name = "MOPOffTime", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopOffTime;
   /**
-   * In Data Item US:MOPOnTime (US), enter the duration of the one on-time
-   * related to the binary form of amplitude modulation called on-off keying.
+   * US:MOPOnTime (US) - The duration of the one on-time related to the binary
+   * form of amplitude modulation called on-off keying.
    */
   @XmlElement(name = "MOPOnTime", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopOnTime;
   /**
-   * In Data Item MOPPatternName (US), enter a freeform text name for the
-   * pattern (e.g., Phase Alpha).
+   * MOPPatternName (US), enter a freeform text name for the pattern (e.g.,
+   * Phase Alpha).
    */
   @XmlElement(name = "MOPPatternName", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString mopPatternName;
   /**
-   * In Data Item US:MOPPatternPeriod (US), enter the duration of one complete
-   * cycle of Frequency, Phase or Amplitude variations for a signal which
-   * changes on a patterned basis, within a pulse, for pulsed signals.
+   * US:MOPPatternPeriod (US) - The duration of one complete cycle of Frequency,
+   * Phase or Amplitude variations for a signal which changes on a patterned
+   * basis, within a pulse, for pulsed signals.
    */
   @XmlElement(name = "MOPPatternPeriod", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopPatternPeriod;
   /**
-   * In Data Item US:MOPPatternType (US), indicate whether MOP or CW
-   * characteristics are Patterned, Non-Patterned, Adaptive, or Unmodulated.
+   * US:MOPPatternType (US), indicate whether MOP or CW characteristics are
+   * Patterned, Non-Patterned, Adaptive, or Unmodulated.
    */
   @XmlElement(name = "MOPPatternType", required = false)
   private TString mopPatternType;
   /**
-   * In Data Item US:MOPPulseDurationLink (US), enter the Discrete PD value
-   * which is associated with the selected MOP name (i.e., the name in the MOP
-   * Pattern List).
+   * US:MOPPulseDurationLink (US) - The Discrete PD value which is associated
+   * with the selected MOP name (i.e., the name in the MOP Pattern List).
    */
   @XmlElement(name = "MOPPulseDurationLink", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopPulseDurationLink;
   /**
-   * In Data Item US:MOPTimeBWProduct (US), enter the time-bandwidth product of
-   * the waveform (actual PD times instantaneous bandwidth).
+   * US:MOPTimeBWProduct (US) - The time-bandwidth product of the waveform
+   * (actual PD times instantaneous bandwidth).
    */
   @XmlElement(name = "MOPTimeBWProduct", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_UN16_9.class)
   private TDecimal mopTimeBWProduct;
   /**
-   * In Data Item MOPType (US), indicate if the information imprinted on the
-   * pulse is modulated by amplitude (AM), frequency (FM), phase (PM), or is a
-   * continuous wave (CW).
+   * MOPType (US), indicate if the information imprinted on the pulse is
+   * modulated by amplitude (AM), frequency (FM), phase (PM), or is a continuous
+   * wave (CW).
    */
   @XmlElement(name = "MOPType", required = false)
   private TString mopType;
   /**
-   * In Data Item US:MOPValueMaxAM (US), enter the maximum change in amplitude
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMaxAM (US) - The maximum change in amplitude within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxAM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopValueMaxAM;
   /**
-   * In Data Item US:MOPValueMaxCW (US), enter the maximum change in continuous
-   * wave frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMaxCW (US) - The maximum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxCW", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMaxCW;
   /**
-   * In Data Item US:MOPValueMaxFM (US), enter the maximum change in frequency
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMaxFM (US) - The maximum change in frequency within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxFM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMaxFM;
   /**
-   * In Data Item US:MOPValueMaxPM (US), enter the maximum change in phase angle
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMaxPM (US) - The maximum change in phase angle within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxPM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopValueMaxPM;
   /**
-   * In Data Item US:MOPValueMinAM (US), enter the minimum change in amplitude
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMinAM (US) - The minimum change in amplitude within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinAM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopValueMinAM;
   /**
-   * In Data Item US:MOPValueMinCW (US), enter the minimum change in continuous
-   * wave frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMinCW (US) - The minimum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinCW", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMinCW;
   /**
-   * In Data Item US:MOPValueMinFM (US), enter the minimum change in frequency
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMinFM (US) - The minimum change in frequency within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinFM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMinFM;
   /**
-   * In Data Item US:MOPValueMinPM (US), enter the minimum change in phase angle
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueMinPM (US) - The minimum change in phase angle within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinPM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopValueMinPM;
   /**
-   * In Data Item SignalType (US), indicate the specific type of modulation
-   * used/detected.
+   * SignalType (US), indicate the specific type of modulation used/detected.
    */
   @XmlElement(name = "SignalType", required = false)
   private TString signalType;
@@ -495,9 +490,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPChangeRateAM (US), enter the change in amplitude
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPChangeRateAM (US) - The change in amplitude within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPChangeRateAM value in a {@link TDecimal} data type
    */
@@ -506,9 +501,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRateAM (US), enter the change in amplitude
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRateAM (US) - The change in amplitude within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPChangeRateAM value in a {@link TDecimal} data type
    */
@@ -528,9 +523,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPChangeRateCW (US), enter the change in continuous
-   * wave frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPChangeRateCW (US) - The change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPChangeRateCW value in a {@link TDecimal} data type
    */
@@ -539,9 +534,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRateCW (US), enter the change in continuous
-   * wave frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRateCW (US) - The change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPChangeRateCW value in a {@link TDecimal} data type
    */
@@ -561,9 +556,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPChangeRateFM (US), enter the change in frequency
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPChangeRateFM (US) - The change in frequency within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPChangeRateFM value in a {@link TDecimal} data type
    */
@@ -572,9 +567,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRateFM (US), enter the change in frequency
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRateFM (US) - The change in frequency within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPChangeRateFM value in a {@link TDecimal} data type
    */
@@ -594,9 +589,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPChangeRatePM (US), enter the change in phase angle
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPChangeRatePM (US) - The change in phase angle within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPChangeRatePM value in a {@link TDecimal} data type
    */
@@ -605,9 +600,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRatePM (US), enter the change in phase angle
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRatePM (US) - The change in phase angle within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPChangeRatePM value in a {@link TDecimal} data type
    */
@@ -627,8 +622,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPContinuous (US), indicate whether MOP or CW
-   * modulation is Discrete or Continuous.
+   * Get US:MOPContinuous (US), indicate whether MOP or CW modulation is
+   * Discrete or Continuous.
    * <p>
    * @return the MOPContinuous value in a {@link TString} data type
    */
@@ -637,8 +632,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPContinuous (US), indicate whether MOP or CW
-   * modulation is Discrete or Continuous.
+   * Set US:MOPContinuous (US), indicate whether MOP or CW modulation is
+   * Discrete or Continuous.
    * <p>
    * @param value the MOPContinuous value in a {@link TString} data type
    */
@@ -658,8 +653,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPID (US), enter a unique identifier (within the
-   * TxMode) for the MOP data.
+   * Get US:MOPID (US), enter a unique identifier (within the TxMode) for the
+   * MOP data.
    * <p>
    * @return the MOPID value in a {@link TString} data type
    */
@@ -668,8 +663,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPID (US), enter a unique identifier (within the
-   * TxMode) for the MOP data.
+   * Set US:MOPID (US), enter a unique identifier (within the TxMode) for the
+   * MOP data.
    * <p>
    * @param value the MOPID value in a {@link TString} data type
    */
@@ -689,10 +684,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPMeanValueAM (US), enter the average amplitude for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPMeanValueAM (US) - The average amplitude for a signal which
+   * changes on a non-patterned basis within a pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPMeanValueAM value in a {@link TDecimal} data type
    */
@@ -701,10 +695,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValueAM (US), enter the average amplitude for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPMeanValueAM (US) - The average amplitude for a signal which
+   * changes on a non-patterned basis within a pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPMeanValueAM value in a {@link TDecimal} data type
    */
@@ -724,9 +717,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPMeanValueCW (US), enter the average continuous wave
-   * frequency for a signal which changes on a non-patterned basis within a
-   * pulse. Use of this element should agree with the selection made in
+   * Get US:MOPMeanValueCW (US) - The average continuous wave frequency for a
+   * signal which changes on a non-patterned basis within a pulse. Use of this
+   * element should agree with the selection made in
    * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPMeanValueCW value in a {@link TDecimal} data type
@@ -736,9 +729,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValueCW (US), enter the average continuous wave
-   * frequency for a signal which changes on a non-patterned basis within a
-   * pulse. Use of this element should agree with the selection made in
+   * Set US:MOPMeanValueCW (US) - The average continuous wave frequency for a
+   * signal which changes on a non-patterned basis within a pulse. Use of this
+   * element should agree with the selection made in
    * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPMeanValueCW value in a {@link TDecimal} data type
@@ -759,10 +752,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPMeanValue (US), enter the average frequency for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPMeanValue (US) - The average frequency for a signal which changes
+   * on a non-patterned basis within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPMeanValueFM value in a {@link TDecimal} data type
    */
@@ -771,10 +763,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValue (US), enter the average frequency for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPMeanValue (US) - The average frequency for a signal which changes
+   * on a non-patterned basis within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPMeanValueFM value in a {@link TDecimal} data type
    */
@@ -794,10 +785,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPMeanValue (US), enter the average phase angle for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPMeanValue (US) - The average phase angle for a signal which
+   * changes on a non-patterned basis within a pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPMeanValuePM value in a {@link TDecimal} data type
    */
@@ -806,10 +796,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValue (US), enter the average phase angle for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPMeanValue (US) - The average phase angle for a signal which
+   * changes on a non-patterned basis within a pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPMeanValuePM value in a {@link TDecimal} data type
    */
@@ -829,9 +818,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * Get US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    * <p>
    * @return the MOPNumElements value in a {@link TInteger} data type
    */
@@ -840,9 +829,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * Set US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    * <p>
    * @param value the MOPNumElements value in a {@link TInteger} data type
    */
@@ -862,8 +851,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPOffTime (US), enter the duration of the state of the
-   * modulated waveform with the absence of energy.
+   * Get US:MOPOffTime (US) - The duration of the state of the modulated
+   * waveform with the absence of energy.
    * <p>
    * @return the MOPOffTime value in a {@link TDecimal} data type
    */
@@ -872,8 +861,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPOffTime (US), enter the duration of the state of the
-   * modulated waveform with the absence of energy.
+   * Set US:MOPOffTime (US) - The duration of the state of the modulated
+   * waveform with the absence of energy.
    * <p>
    * @param value the MOPOffTime value in a {@link TDecimal} data type
    */
@@ -893,8 +882,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPOnTime (US), enter the duration of the one on-time
-   * related to the binary form of amplitude modulation called on-off keying.
+   * Get US:MOPOnTime (US) - The duration of the one on-time related to the
+   * binary form of amplitude modulation called on-off keying.
    * <p>
    * @return the MOPOnTime value in a {@link TDecimal} data type
    */
@@ -903,8 +892,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPOnTime (US), enter the duration of the one on-time
-   * related to the binary form of amplitude modulation called on-off keying.
+   * Set US:MOPOnTime (US) - The duration of the one on-time related to the
+   * binary form of amplitude modulation called on-off keying.
    * <p>
    * @param value the MOPOnTime value in a {@link TDecimal} data type
    */
@@ -924,8 +913,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item MOPPatternName (US), enter a freeform text name for the
-   * pattern (e.g., Phase Alpha).
+   * Get MOPPatternName (US), enter a freeform text name for the pattern (e.g.,
+   * Phase Alpha).
    * <p>
    * @return the MOPPatternName value in a {@link TString} data type
    */
@@ -934,8 +923,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item MOPPatternName (US), enter a freeform text name for the
-   * pattern (e.g., Phase Alpha).
+   * Set MOPPatternName (US), enter a freeform text name for the pattern (e.g.,
+   * Phase Alpha).
    * <p>
    * @param value the MOPPatternName value in a {@link TString} data type
    */
@@ -955,9 +944,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPPatternPeriod (US), enter the duration of one
-   * complete cycle of Frequency, Phase or Amplitude variations for a signal
-   * which changes on a patterned basis, within a pulse, for pulsed signals.
+   * Get US:MOPPatternPeriod (US) - The duration of one complete cycle of
+   * Frequency, Phase or Amplitude variations for a signal which changes on a
+   * patterned basis, within a pulse, for pulsed signals.
    * <p>
    * @return the MOPPatternPeriod value in a {@link TDecimal} data type
    */
@@ -966,9 +955,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPPatternPeriod (US), enter the duration of one
-   * complete cycle of Frequency, Phase or Amplitude variations for a signal
-   * which changes on a patterned basis, within a pulse, for pulsed signals.
+   * Set US:MOPPatternPeriod (US) - The duration of one complete cycle of
+   * Frequency, Phase or Amplitude variations for a signal which changes on a
+   * patterned basis, within a pulse, for pulsed signals.
    * <p>
    * @param value the MOPPatternPeriod value in a {@link TDecimal} data type
    */
@@ -988,8 +977,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPPatternType (US), indicate whether MOP or CW
-   * characteristics are Patterned, Non-Patterned, Adaptive, or Unmodulated.
+   * Get US:MOPPatternType (US), indicate whether MOP or CW characteristics are
+   * Patterned, Non-Patterned, Adaptive, or Unmodulated.
    * <p>
    * @return the MOPPatternType value in a {@link TString} data type
    */
@@ -998,8 +987,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPPatternType (US), indicate whether MOP or CW
-   * characteristics are Patterned, Non-Patterned, Adaptive, or Unmodulated.
+   * Set US:MOPPatternType (US), indicate whether MOP or CW characteristics are
+   * Patterned, Non-Patterned, Adaptive, or Unmodulated.
    * <p>
    * @param value the MOPPatternType value in a {@link TString} data type
    */
@@ -1019,9 +1008,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPPulseDurationLink (US), enter the Discrete PD value
-   * which is associated with the selected MOP name (i.e., the name in the MOP
-   * Pattern List).
+   * Get US:MOPPulseDurationLink (US) - The Discrete PD value which is
+   * associated with the selected MOP name (i.e., the name in the MOP Pattern
+   * List).
    * <p>
    * @return the MOPPulseDurationLink value in a {@link TDecimal} data type
    */
@@ -1030,9 +1019,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPPulseDurationLink (US), enter the Discrete PD value
-   * which is associated with the selected MOP name (i.e., the name in the MOP
-   * Pattern List).
+   * Set US:MOPPulseDurationLink (US) - The Discrete PD value which is
+   * associated with the selected MOP name (i.e., the name in the MOP Pattern
+   * List).
    * <p>
    * @param value the MOPPulseDurationLink value in a {@link TDecimal} data type
    */
@@ -1052,8 +1041,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPTimeBWProduct (US), enter the time-bandwidth product
-   * of the waveform (actual PD times instantaneous bandwidth).
+   * Get US:MOPTimeBWProduct (US) - The time-bandwidth product of the waveform
+   * (actual PD times instantaneous bandwidth).
    * <p>
    * @return the MOPTimeBWProduct value in a {@link TDecimal} data type
    */
@@ -1062,8 +1051,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPTimeBWProduct (US), enter the time-bandwidth product
-   * of the waveform (actual PD times instantaneous bandwidth).
+   * Set US:MOPTimeBWProduct (US) - The time-bandwidth product of the waveform
+   * (actual PD times instantaneous bandwidth).
    * <p>
    * @param value the MOPTimeBWProduct value in a {@link TDecimal} data type
    */
@@ -1083,9 +1072,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item MOPType (US), indicate if the information imprinted on the
-   * pulse is modulated by amplitude (AM), frequency (FM), phase (PM), or is a
-   * continuous wave (CW).
+   * Get MOPType (US), indicate if the information imprinted on the pulse is
+   * modulated by amplitude (AM), frequency (FM), phase (PM), or is a continuous
+   * wave (CW).
    * <p>
    * @return the MOPType value in a {@link TString} data type
    */
@@ -1094,9 +1083,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item MOPType (US), indicate if the information imprinted on the
-   * pulse is modulated by amplitude (AM), frequency (FM), phase (PM), or is a
-   * continuous wave (CW).
+   * Set MOPType (US), indicate if the information imprinted on the pulse is
+   * modulated by amplitude (AM), frequency (FM), phase (PM), or is a continuous
+   * wave (CW).
    * <p>
    * @param value the MOPType value in a {@link TString} data type
    */
@@ -1116,9 +1105,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMaxAM (US), enter the maximum change in
-   * amplitude within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMaxAM (US) - The maximum change in amplitude within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMaxAM value in a {@link TDecimal} data type
    */
@@ -1127,9 +1116,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxAM (US), enter the maximum change in
-   * amplitude within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxAM (US) - The maximum change in amplitude within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMaxAM value in a {@link TDecimal} data type
    */
@@ -1149,9 +1138,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMaxCW (US), enter the maximum change in
-   * continuous wave frequency within the pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMaxCW (US) - The maximum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMaxCW value in a {@link TDecimal} data type
    */
@@ -1160,9 +1149,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxCW (US), enter the maximum change in
-   * continuous wave frequency within the pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxCW (US) - The maximum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMaxCW value in a {@link TDecimal} data type
    */
@@ -1182,9 +1171,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMaxFM (US), enter the maximum change in
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMaxFM (US) - The maximum change in frequency within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMaxFM value in a {@link TDecimal} data type
    */
@@ -1193,9 +1182,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxFM (US), enter the maximum change in
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxFM (US) - The maximum change in frequency within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMaxFM value in a {@link TDecimal} data type
    */
@@ -1215,9 +1204,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMaxPM (US), enter the maximum change in phase
-   * angle within the pulse. Use of this element should agree with the selection
-   * made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMaxPM (US) - The maximum change in phase angle within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMaxPM value in a {@link TDecimal} data type
    */
@@ -1226,9 +1215,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxPM (US), enter the maximum change in phase
-   * angle within the pulse. Use of this element should agree with the selection
-   * made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxPM (US) - The maximum change in phase angle within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMaxPM value in a {@link TDecimal} data type
    */
@@ -1248,9 +1237,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMinAM (US), enter the minimum change in
-   * amplitude within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMinAM (US) - The minimum change in amplitude within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMinAM value in a {@link TDecimal} data type
    */
@@ -1259,9 +1248,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinAM (US), enter the minimum change in
-   * amplitude within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinAM (US) - The minimum change in amplitude within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMinAM value in a {@link TDecimal} data type
    */
@@ -1281,9 +1270,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMinCW (US), enter the minimum change in
-   * continuous wave frequency within the pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMinCW (US) - The minimum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMinCW value in a {@link TDecimal} data type
    */
@@ -1292,9 +1281,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinCW (US), enter the minimum change in
-   * continuous wave frequency within the pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinCW (US) - The minimum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMinCW value in a {@link TDecimal} data type
    */
@@ -1314,9 +1303,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMinFM (US), enter the minimum change in
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMinFM (US) - The minimum change in frequency within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMinFM value in a {@link TDecimal} data type
    */
@@ -1325,9 +1314,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinFM (US), enter the minimum change in
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinFM (US) - The minimum change in frequency within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMinFM value in a {@link TDecimal} data type
    */
@@ -1347,9 +1336,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item US:MOPValueMinPM (US), enter the minimum change in phase
-   * angle within the pulse. Use of this element should agree with the selection
-   * made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueMinPM (US) - The minimum change in phase angle within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueMinPM value in a {@link TDecimal} data type
    */
@@ -1358,9 +1347,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinPM (US), enter the minimum change in phase
-   * angle within the pulse. Use of this element should agree with the selection
-   * made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinPM (US) - The minimum change in phase angle within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueMinPM value in a {@link TDecimal} data type
    */
@@ -1380,7 +1369,7 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Get In Data Item SignalType (US), indicate the specific type of modulation
+   * Get SignalType (US), indicate the specific type of modulation
    * used/detected.
    * <p>
    * @return the SignalType value in a {@link TString} data type
@@ -1390,7 +1379,7 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item SignalType (US), indicate the specific type of modulation
+   * Set SignalType (US), indicate the specific type of modulation
    * used/detected.
    * <p>
    * @param value the SignalType value in a {@link TString} data type
@@ -1478,9 +1467,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRateAM (US), enter the change in amplitude
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRateAM (US) - The change in amplitude within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1491,9 +1480,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRateCW (US), enter the change in continuous
-   * wave frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRateCW (US) - The change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1504,9 +1493,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRateFM (US), enter the change in frequency
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRateFM (US) - The change in frequency within the pulse. Use
+   * of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1517,9 +1506,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPChangeRatePM (US), enter the change in phase angle
-   * within the pulse. Use of this element should agree with the selection made
-   * in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPChangeRatePM (US) - The change in phase angle within the pulse.
+   * Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1530,8 +1519,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPContinuous (US), indicate whether MOP or CW
-   * modulation is Discrete or Continuous.
+   * Set US:MOPContinuous (US), indicate whether MOP or CW modulation is
+   * Discrete or Continuous.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedMOPAnalysis object instance
@@ -1542,8 +1531,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPID (US), enter a unique identifier (within the
-   * TxMode) for the MOP data.
+   * Set US:MOPID (US), enter a unique identifier (within the TxMode) for the
+   * MOP data.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current ObservedMOPAnalysis object instance
@@ -1554,10 +1543,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValueAM (US), enter the average amplitude for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPMeanValueAM (US) - The average amplitude for a signal which
+   * changes on a non-patterned basis within a pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1568,9 +1556,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValueCW (US), enter the average continuous wave
-   * frequency for a signal which changes on a non-patterned basis within a
-   * pulse. Use of this element should agree with the selection made in
+   * Set US:MOPMeanValueCW (US) - The average continuous wave frequency for a
+   * signal which changes on a non-patterned basis within a pulse. Use of this
+   * element should agree with the selection made in
    * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
@@ -1582,10 +1570,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValue (US), enter the average frequency for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPMeanValue (US) - The average frequency for a signal which changes
+   * on a non-patterned basis within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1596,10 +1583,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPMeanValue (US), enter the average phase angle for a
-   * signal which changes on a non-patterned basis within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPMeanValue (US) - The average phase angle for a signal which
+   * changes on a non-patterned basis within a pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1610,9 +1596,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * Set US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    * <p>
    * @param value An instances of type {@link Integer}
    * @return The current ObservedMOPAnalysis object instance
@@ -1623,8 +1609,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPOffTime (US), enter the duration of the state of the
-   * modulated waveform with the absence of energy.
+   * Set US:MOPOffTime (US) - The duration of the state of the modulated
+   * waveform with the absence of energy.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1635,8 +1621,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPOnTime (US), enter the duration of the one on-time
-   * related to the binary form of amplitude modulation called on-off keying.
+   * Set US:MOPOnTime (US) - The duration of the one on-time related to the
+   * binary form of amplitude modulation called on-off keying.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1647,8 +1633,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item MOPPatternName (US), enter a freeform text name for the
-   * pattern (e.g., Phase Alpha).
+   * Set MOPPatternName (US), enter a freeform text name for the pattern (e.g.,
+   * Phase Alpha).
    * <p>
    * @param value An instances of type {@link String}
    * @return The current ObservedMOPAnalysis object instance
@@ -1659,9 +1645,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPPatternPeriod (US), enter the duration of one
-   * complete cycle of Frequency, Phase or Amplitude variations for a signal
-   * which changes on a patterned basis, within a pulse, for pulsed signals.
+   * Set US:MOPPatternPeriod (US) - The duration of one complete cycle of
+   * Frequency, Phase or Amplitude variations for a signal which changes on a
+   * patterned basis, within a pulse, for pulsed signals.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1672,8 +1658,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPPatternType (US), indicate whether MOP or CW
-   * characteristics are Patterned, Non-Patterned, Adaptive, or Unmodulated.
+   * Set US:MOPPatternType (US), indicate whether MOP or CW characteristics are
+   * Patterned, Non-Patterned, Adaptive, or Unmodulated.
    * <p>
    * @param value An instances of type {@link ListUS7}
    * @return The current ObservedMOPAnalysis object instance
@@ -1684,9 +1670,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPPulseDurationLink (US), enter the Discrete PD value
-   * which is associated with the selected MOP name (i.e., the name in the MOP
-   * Pattern List).
+   * Set US:MOPPulseDurationLink (US) - The Discrete PD value which is
+   * associated with the selected MOP name (i.e., the name in the MOP Pattern
+   * List).
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1697,8 +1683,8 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPTimeBWProduct (US), enter the time-bandwidth product
-   * of the waveform (actual PD times instantaneous bandwidth).
+   * Set US:MOPTimeBWProduct (US) - The time-bandwidth product of the waveform
+   * (actual PD times instantaneous bandwidth).
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1709,9 +1695,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item MOPType (US), indicate if the information imprinted on the
-   * pulse is modulated by amplitude (AM), frequency (FM), phase (PM), or is a
-   * continuous wave (CW).
+   * Set MOPType (US), indicate if the information imprinted on the pulse is
+   * modulated by amplitude (AM), frequency (FM), phase (PM), or is a continuous
+   * wave (CW).
    * <p>
    * @param value An instances of type {@link ListUSX}
    * @return The current ObservedMOPAnalysis object instance
@@ -1722,9 +1708,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxAM (US), enter the maximum change in
-   * amplitude within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxAM (US) - The maximum change in amplitude within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1735,9 +1721,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxCW (US), enter the maximum change in
-   * continuous wave frequency within the pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxCW (US) - The maximum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1748,9 +1734,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxFM (US), enter the maximum change in
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxFM (US) - The maximum change in frequency within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1761,9 +1747,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMaxPM (US), enter the maximum change in phase
-   * angle within the pulse. Use of this element should agree with the selection
-   * made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMaxPM (US) - The maximum change in phase angle within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1774,9 +1760,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinAM (US), enter the minimum change in
-   * amplitude within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinAM (US) - The minimum change in amplitude within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1787,9 +1773,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinCW (US), enter the minimum change in
-   * continuous wave frequency within the pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinCW (US) - The minimum change in continuous wave frequency
+   * within the pulse. Use of this element should agree with the selection made
+   * in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1800,9 +1786,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinFM (US), enter the minimum change in
-   * frequency within the pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinFM (US) - The minimum change in frequency within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1813,9 +1799,9 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item US:MOPValueMinPM (US), enter the minimum change in phase
-   * angle within the pulse. Use of this element should agree with the selection
-   * made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueMinPM (US) - The minimum change in phase angle within the
+   * pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPAnalysis object instance
@@ -1826,7 +1812,7 @@ public class ObservedMOPAnalysis {
   }
 
   /**
-   * Set In Data Item SignalType (US), indicate the specific type of modulation
+   * Set SignalType (US), indicate the specific type of modulation
    * used/detected.
    * <p>
    * @param value An instances of type {@link ListCMO}

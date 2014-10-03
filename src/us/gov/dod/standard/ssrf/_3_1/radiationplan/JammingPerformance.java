@@ -62,8 +62,8 @@ public class JammingPerformance {
   @XmlElement(name = "ActualEffect", required = false)
   private TString actualEffect;
   /**
-   * In Data Item US:ActualPerformance (US), enter the assessed effectiveness of
-   * the service request.
+   * US:ActualPerformance (US) - The assessed effectiveness of the service
+   * request.
    */
   @XmlElement(name = "ActualPerformance", required = false)
   private TString actualPerformance;
@@ -127,8 +127,8 @@ public class JammingPerformance {
   }
 
   /**
-   * Get In Data Item US:ActualPerformance (US), enter the assessed
-   * effectiveness of the service request.
+   * Get US:ActualPerformance (US) - The assessed effectiveness of the service
+   * request.
    * <p>
    * @return the ActualPerformance value in a {@link TString} data type
    */
@@ -137,8 +137,8 @@ public class JammingPerformance {
   }
 
   /**
-   * Set In Data Item US:ActualPerformance (US), enter the assessed
-   * effectiveness of the service request.
+   * Set US:ActualPerformance (US) - The assessed effectiveness of the service
+   * request.
    * <p>
    * @param value the ActualPerformance value in a {@link TString} data type
    */
@@ -262,8 +262,8 @@ public class JammingPerformance {
   }
 
   /**
-   * Set In Data Item US:ActualPerformance (US), enter the assessed
-   * effectiveness of the service request.
+   * Set US:ActualPerformance (US) - The assessed effectiveness of the service
+   * request.
    * <p>
    * @param value An instances of type {@link ListUWB}
    * @return The current JammingPerformance object instance

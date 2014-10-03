@@ -81,8 +81,8 @@ public class Message extends Common<Message> {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
   private TString name;
   /**
-   * In Data Item SecondaryDatasets, indicate if datasets referenced by the
-   * primary dataset are included.
+   * SecondaryDatasets, indicate if datasets referenced by the primary dataset
+   * are included.
    */
   @XmlElement(name = "SecondaryDatasets", required = false)
   private TString secondaryDatasets;
@@ -126,8 +126,8 @@ public class Message extends Common<Message> {
   }
 
   /**
-   * Get In Data Item SecondaryDatasets, indicate if datasets referenced by the
-   * primary dataset are included.
+   * Get SecondaryDatasets, indicate if datasets referenced by the primary
+   * dataset are included.
    * <p>
    * @return the SecondaryDatasets value in a {@link TString} data type
    */
@@ -136,8 +136,8 @@ public class Message extends Common<Message> {
   }
 
   /**
-   * Set In Data Item SecondaryDatasets, indicate if datasets referenced by the
-   * primary dataset are included.
+   * Set SecondaryDatasets, indicate if datasets referenced by the primary
+   * dataset are included.
    * <p>
    * @param value the SecondaryDatasets value in a {@link TString} data type
    */
@@ -199,8 +199,8 @@ public class Message extends Common<Message> {
   }
 
   /**
-   * Set In Data Item SecondaryDatasets, indicate if datasets referenced by the
-   * primary dataset are included.
+   * Set SecondaryDatasets, indicate if datasets referenced by the primary
+   * dataset are included.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current Message object instance

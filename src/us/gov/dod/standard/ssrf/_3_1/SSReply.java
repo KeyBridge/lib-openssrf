@@ -159,11 +159,10 @@ public class SSReply extends Common<SSReply> {
    * ReviewDate - Review Date (Optional)
    * <p>
    * The date by which the dataset is to be reviewed. The Review date should be
-   * less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicates when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicates when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * Format is Date
    * <p>
@@ -231,8 +230,8 @@ public class SSReply extends Common<SSReply> {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString replyingAuthority;
   /**
-   * In Data Item DistributionGroups (US), identify to whom the signed
-   * certification should be distributed (e.g., "J-12 Holders").
+   * DistributionGroups (US), identify to whom the signed certification should
+   * be distributed (e.g., "J-12 Holders").
    */
   @XmlElement(name = "DistributionGroups", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
@@ -475,11 +474,10 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicates when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicates when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * @return the ReviewDate value in a {@link TCalendar} data type
    */
@@ -489,11 +487,10 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicates when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicates when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * @param value the ReviewDate value in a {@link TCalendar} data type
    */
@@ -675,8 +672,8 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Get In Data Item DistributionGroups (US), identify to whom the signed
-   * certification should be distributed (e.g., "J-12 Holders").
+   * Get DistributionGroups (US), identify to whom the signed certification
+   * should be distributed (e.g., "J-12 Holders").
    * <p>
    * @return the DistributionGroups value in a {@link TString} data type
    */
@@ -685,8 +682,8 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set In Data Item DistributionGroups (US), identify to whom the signed
-   * certification should be distributed (e.g., "J-12 Holders").
+   * Set DistributionGroups (US), identify to whom the signed certification
+   * should be distributed (e.g., "J-12 Holders").
    * <p>
    * @param value the DistributionGroups value in a {@link TString} data type
    */
@@ -920,11 +917,10 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicates when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicates when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current SSReply object instance
@@ -998,8 +994,8 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set In Data Item DistributionGroups (US), identify to whom the signed
-   * certification should be distributed (e.g., "J-12 Holders").
+   * Set DistributionGroups (US), identify to whom the signed certification
+   * should be distributed (e.g., "J-12 Holders").
    * <p>
    * @param value An instances of type {@link String}
    * @return The current SSReply object instance

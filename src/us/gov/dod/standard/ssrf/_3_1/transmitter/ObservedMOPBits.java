@@ -65,49 +65,48 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedMOPBits {
 
   /**
-   * In Data Item US:MOPDutyCycle (US), enter as a percentage, the minimum or
-   * nominal ratio of the pulse duration to the pulse period.
+   * US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal ratio
+   * of the pulse duration to the pulse period.
    */
   @XmlElement(name = "MOPDutyCycle", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal mopDutyCycle;
   /**
-   * In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    */
   @XmlElement(name = "MOPNumElements", required = false)
   @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger mopNumElements;
   /**
-   * In Data Item US:MOPStepAM (US), enter the difference between adjacent
-   * amplitude discrete power values, within a pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPStepAM (US) - The difference between adjacent amplitude discrete
+   * power values, within a pulse. Use of this element should agree with the
+   * selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepAM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
   private TDecimal mopStepAM;
   /**
-   * In Data Item US:MOPStepCW(US), enter the difference between adjacent
-   * continuous wave frequency discrete values, within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPStepCW(US) - The difference between adjacent continuous wave
+   * frequency discrete values, within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepCW", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopStepCW;
   /**
-   * In Data Item US:MOPStepFM (US), enter the difference between adjacent
-   * frequency discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPStepFM (US) - The difference between adjacent frequency discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepFM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopStepFM;
   /**
-   * In Data Item US:MOPStepPM (US), enter the difference between adjacent phase
-   * discrete values, within a pulse. Use of this element should agree with the
-   * selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPStepPM (US) - The difference between adjacent phase discrete values,
+   * within a pulse. Use of this element should agree with the selection made in
+   * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepPM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
@@ -152,8 +151,8 @@ public class ObservedMOPBits {
   private List<ObservedMOPValues> observedMOPValues;
 
   /**
-   * Get In Data Item US:MOPDutyCycle (US), enter as a percentage, the minimum
-   * or nominal ratio of the pulse duration to the pulse period.
+   * Get US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
+   * ratio of the pulse duration to the pulse period.
    * <p>
    * @return the MOPDutyCycle value in a {@link TDecimal} data type
    */
@@ -162,8 +161,8 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPDutyCycle (US), enter as a percentage, the minimum
-   * or nominal ratio of the pulse duration to the pulse period.
+   * Set US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
+   * ratio of the pulse duration to the pulse period.
    * <p>
    * @param value the MOPDutyCycle value in a {@link TDecimal} data type
    */
@@ -183,9 +182,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Get In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * Get US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    * <p>
    * @return the MOPNumElements value in a {@link TInteger} data type
    */
@@ -194,9 +193,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * Set US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    * <p>
    * @param value the MOPNumElements value in a {@link TInteger} data type
    */
@@ -216,9 +215,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Get In Data Item US:MOPStepAM (US), enter the difference between adjacent
-   * amplitude discrete power values, within a pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPStepAM (US) - The difference between adjacent amplitude discrete
+   * power values, within a pulse. Use of this element should agree with the
+   * selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPStepAM value in a {@link TDecimal} data type
    */
@@ -227,9 +226,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepAM (US), enter the difference between adjacent
-   * amplitude discrete power values, within a pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepAM (US) - The difference between adjacent amplitude discrete
+   * power values, within a pulse. Use of this element should agree with the
+   * selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPStepAM value in a {@link TDecimal} data type
    */
@@ -249,10 +248,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Get In Data Item US:MOPStepCW(US), enter the difference between adjacent
-   * continuous wave frequency discrete values, within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPStepCW(US) - The difference between adjacent continuous wave
+   * frequency discrete values, within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPStepCW value in a {@link TDecimal} data type
    */
@@ -261,10 +259,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepCW(US), enter the difference between adjacent
-   * continuous wave frequency discrete values, within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepCW(US) - The difference between adjacent continuous wave
+   * frequency discrete values, within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPStepCW value in a {@link TDecimal} data type
    */
@@ -284,9 +281,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Get In Data Item US:MOPStepFM (US), enter the difference between adjacent
-   * frequency discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPStepFM (US) - The difference between adjacent frequency discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPStepFM value in a {@link TDecimal} data type
    */
@@ -295,9 +292,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepFM (US), enter the difference between adjacent
-   * frequency discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepFM (US) - The difference between adjacent frequency discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPStepFM value in a {@link TDecimal} data type
    */
@@ -317,9 +314,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Get In Data Item US:MOPStepPM (US), enter the difference between adjacent
-   * phase discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPStepPM (US) - The difference between adjacent phase discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPStepPM value in a {@link TDecimal} data type
    */
@@ -328,9 +325,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepPM (US), enter the difference between adjacent
-   * phase discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepPM (US) - The difference between adjacent phase discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPStepPM value in a {@link TDecimal} data type
    */
@@ -476,8 +473,8 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPDutyCycle (US), enter as a percentage, the minimum
-   * or nominal ratio of the pulse duration to the pulse period.
+   * Set US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
+   * ratio of the pulse duration to the pulse period.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPBits object instance
@@ -488,9 +485,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPNumElements (US), enter the number of discrete
-   * FREQ/PHASE/AMP values transmitted in a patterned sequence (i.e., any
-   * repeated values are counted each time)
+   * Set US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
+   * transmitted in a patterned sequence (i.e., any repeated values are counted
+   * each time)
    * <p>
    * @param value An instances of type {@link Integer}
    * @return The current ObservedMOPBits object instance
@@ -501,9 +498,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepAM (US), enter the difference between adjacent
-   * amplitude discrete power values, within a pulse. Use of this element should
-   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepAM (US) - The difference between adjacent amplitude discrete
+   * power values, within a pulse. Use of this element should agree with the
+   * selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPBits object instance
@@ -514,10 +511,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepCW(US), enter the difference between adjacent
-   * continuous wave frequency discrete values, within a pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepCW(US) - The difference between adjacent continuous wave
+   * frequency discrete values, within a pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPBits object instance
@@ -528,9 +524,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepFM (US), enter the difference between adjacent
-   * frequency discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepFM (US) - The difference between adjacent frequency discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPBits object instance
@@ -541,9 +537,9 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set In Data Item US:MOPStepPM (US), enter the difference between adjacent
-   * phase discrete values, within a pulse. Use of this element should agree
-   * with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPStepPM (US) - The difference between adjacent phase discrete
+   * values, within a pulse. Use of this element should agree with the selection
+   * made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPBits object instance

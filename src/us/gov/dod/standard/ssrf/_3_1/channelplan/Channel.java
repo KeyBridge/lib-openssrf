@@ -81,7 +81,7 @@ public class Channel {
    * <p>
    * One frequency in the channel plan.
    * <p>
-   * Format is UN(16,9) [0..1E9] (MHz)
+   * Format is UN(16,9) [0..1E9] (same as FREQM) (MHz)
    */
   @XmlElement(name = "ChannelFreq", required = true, nillable = true)
   private List<ChannelFreq> channelFreq;

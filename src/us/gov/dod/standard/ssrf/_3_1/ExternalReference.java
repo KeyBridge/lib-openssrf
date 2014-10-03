@@ -196,8 +196,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "ReferencedStage", required = false)
   private TString referencedStage;
   /**
-   * In Data Item Repeat (US), indicate if the attached file should be
-   * repeatedly viewed / listened to.
+   * Repeat (US), indicate if the attached file should be repeatedly viewed /
+   * listened to.
    */
   @XmlElement(name = "Repeat", required = false)
   private TString repeat;
@@ -562,8 +562,8 @@ public class ExternalReference extends Common<ExternalReference> {
   }
 
   /**
-   * Get In Data Item Repeat (US), indicate if the attached file should be
-   * repeatedly viewed / listened to.
+   * Get Repeat (US), indicate if the attached file should be repeatedly viewed
+   * / listened to.
    * <p>
    * @return the Repeat value in a {@link TString} data type
    */
@@ -572,8 +572,8 @@ public class ExternalReference extends Common<ExternalReference> {
   }
 
   /**
-   * Set In Data Item Repeat (US), indicate if the attached file should be
-   * repeatedly viewed / listened to.
+   * Set Repeat (US), indicate if the attached file should be repeatedly viewed
+   * / listened to.
    * <p>
    * @param value the Repeat value in a {@link TString} data type
    */
@@ -730,8 +730,8 @@ public class ExternalReference extends Common<ExternalReference> {
   }
 
   /**
-   * Set In Data Item Repeat (US), indicate if the attached file should be
-   * repeatedly viewed / listened to.
+   * Set Repeat (US), indicate if the attached file should be repeatedly viewed
+   * / listened to.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ExternalReference object instance

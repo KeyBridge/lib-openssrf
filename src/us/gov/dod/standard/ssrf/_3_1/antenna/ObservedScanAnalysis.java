@@ -138,8 +138,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS8;
 public class ObservedScanAnalysis {
 
   /**
-   * In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth
-   * progression is a continuous sweep.
+   * ScanHorzContinuous (US), indicate the if the scan azimuth progression is a
+   * continuous sweep.
    */
   @XmlElement(name = "ScansHorzContinuous", required = false)
   private TString scansHorzContinuous;
@@ -247,17 +247,16 @@ public class ObservedScanAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
   private TDecimal azScanVelocity;
   /**
-   * In Data Item Vertical Scan Change Rate (US), enter the rate of change for
-   * vertical Scan Period variations expressed in Scan Period change per unit of
-   * time
+   * Vertical Scan Change Rate (US) - The rate of change for vertical Scan
+   * Period variations expressed in Scan Period change per unit of time
    */
   @XmlElement(name = "ElevScanChangeRate", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal elevScanChangeRate;
   /**
-   * In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin.
@@ -266,9 +265,9 @@ public class ObservedScanAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal elevScanRateExtremeMax;
   /**
-   * In Data Item Extreme Vertical Scan Rate Min (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    */
   @XmlElement(name = "ElevScanRateExtremeMin", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
@@ -492,20 +491,20 @@ public class ObservedScanAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal scanDwellTime;
   /**
-   * In Data Item ScanElevContinuous (US), indicate the if the scan elevation
-   * progression is a continuous sweep.
+   * ScanElevContinuous (US), indicate the if the scan elevation progression is
+   * a continuous sweep.
    */
   @XmlElement(name = "ScanElevContinuous", required = false)
   private TString scanElevContinuous;
   /**
-   * In Data Item ScanPatternType (US), indicate whether the Scan Period is
-   * unmodulated, Patterned, Non-Patterned, or Adaptive.
+   * ScanPatternType (US), indicate whether the Scan Period is unmodulated,
+   * Patterned, Non-Patterned, or Adaptive.
    */
   @XmlElement(name = "ScanPatternType", required = false)
   private TString scanPatternType;
   /**
-   * In Data Item ScanType (US), indicate if the observed data was detected via
-   * a primary or secondary scan.
+   * ScanType (US), indicate if the observed data was detected via a primary or
+   * secondary scan.
    */
   @XmlElement(name = "ScanType", required = false)
   private TString scanType;
@@ -519,8 +518,8 @@ public class ObservedScanAnalysis {
   private List<ObservedScanValues> observedScanValues;
 
   /**
-   * Get In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth
-   * progression is a continuous sweep.
+   * Get ScanHorzContinuous (US), indicate the if the scan azimuth progression
+   * is a continuous sweep.
    * <p>
    * @return the ScansHorzContinuous value in a {@link TString} data type
    */
@@ -529,8 +528,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth
-   * progression is a continuous sweep.
+   * Set ScanHorzContinuous (US), indicate the if the scan azimuth progression
+   * is a continuous sweep.
    * <p>
    * @param value the ScansHorzContinuous value in a {@link TString} data type
    */
@@ -843,9 +842,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Get In Data Item Vertical Scan Change Rate (US), enter the rate of change
-   * for vertical Scan Period variations expressed in Scan Period change per
-   * unit of time
+   * Get Vertical Scan Change Rate (US) - The rate of change for vertical Scan
+   * Period variations expressed in Scan Period change per unit of time
    * <p>
    * @return the ElevScanChangeRate value in a {@link TDecimal} data type
    */
@@ -854,9 +852,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item Vertical Scan Change Rate (US), enter the rate of change
-   * for vertical Scan Period variations expressed in Scan Period change per
-   * unit of time
+   * Set Vertical Scan Change Rate (US) - The rate of change for vertical Scan
+   * Period variations expressed in Scan Period change per unit of time
    * <p>
    * @param value the ElevScanChangeRate value in a {@link TDecimal} data type
    */
@@ -876,9 +873,9 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Get In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Get Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin.
@@ -890,9 +887,9 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Set Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin.
@@ -916,9 +913,9 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Get In Data Item Extreme Vertical Scan Rate Min (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Get Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * @return the ElevScanRateExtremeMin value in a {@link TDecimal} data type
    */
@@ -927,9 +924,9 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item Extreme Vertical Scan Rate Min (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Set Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * @param value the ElevScanRateExtremeMin value in a {@link TDecimal} data
    *              type
@@ -1573,8 +1570,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Get In Data Item ScanElevContinuous (US), indicate the if the scan
-   * elevation progression is a continuous sweep.
+   * Get ScanElevContinuous (US), indicate the if the scan elevation progression
+   * is a continuous sweep.
    * <p>
    * @return the ScanElevContinuous value in a {@link TString} data type
    */
@@ -1583,8 +1580,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanElevContinuous (US), indicate the if the scan
-   * elevation progression is a continuous sweep.
+   * Set ScanElevContinuous (US), indicate the if the scan elevation progression
+   * is a continuous sweep.
    * <p>
    * @param value the ScanElevContinuous value in a {@link TString} data type
    */
@@ -1604,8 +1601,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Get In Data Item ScanPatternType (US), indicate whether the Scan Period is
-   * unmodulated, Patterned, Non-Patterned, or Adaptive.
+   * Get ScanPatternType (US), indicate whether the Scan Period is unmodulated,
+   * Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @return the ScanPatternType value in a {@link TString} data type
    */
@@ -1614,8 +1611,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanPatternType (US), indicate whether the Scan Period is
-   * unmodulated, Patterned, Non-Patterned, or Adaptive.
+   * Set ScanPatternType (US), indicate whether the Scan Period is unmodulated,
+   * Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value the ScanPatternType value in a {@link TString} data type
    */
@@ -1635,8 +1632,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Get In Data Item ScanType (US), indicate if the observed data was detected
-   * via a primary or secondary scan.
+   * Get ScanType (US), indicate if the observed data was detected via a primary
+   * or secondary scan.
    * <p>
    * @return the ScanType value in a {@link TString} data type
    */
@@ -1645,8 +1642,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanType (US), indicate if the observed data was detected
-   * via a primary or secondary scan.
+   * Set ScanType (US), indicate if the observed data was detected via a primary
+   * or secondary scan.
    * <p>
    * @param value the ScanType value in a {@link TString} data type
    */
@@ -1698,8 +1695,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth
-   * progression is a continuous sweep.
+   * Set ScanHorzContinuous (US), indicate the if the scan azimuth progression
+   * is a continuous sweep.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedScanAnalysis object instance
@@ -1825,9 +1822,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item Vertical Scan Change Rate (US), enter the rate of change
-   * for vertical Scan Period variations expressed in Scan Period change per
-   * unit of time
+   * Set Vertical Scan Change Rate (US) - The rate of change for vertical Scan
+   * Period variations expressed in Scan Period change per unit of time
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedScanAnalysis object instance
@@ -1838,9 +1834,9 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Set Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin.
@@ -1854,9 +1850,9 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item Extreme Vertical Scan Rate Min (US), enter the range of
-   * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.
+   * Set Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
+   * values that represent 100% of the signal observed Scan values obtained from
+   * a statistical study of a data set.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedScanAnalysis object instance
@@ -2107,8 +2103,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanElevContinuous (US), indicate the if the scan
-   * elevation progression is a continuous sweep.
+   * Set ScanElevContinuous (US), indicate the if the scan elevation progression
+   * is a continuous sweep.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedScanAnalysis object instance
@@ -2119,8 +2115,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanPatternType (US), indicate whether the Scan Period is
-   * unmodulated, Patterned, Non-Patterned, or Adaptive.
+   * Set ScanPatternType (US), indicate whether the Scan Period is unmodulated,
+   * Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value An instances of type {@link ListUS7}
    * @return The current ObservedScanAnalysis object instance
@@ -2131,8 +2127,8 @@ public class ObservedScanAnalysis {
   }
 
   /**
-   * Set In Data Item ScanType (US), indicate if the observed data was detected
-   * via a primary or secondary scan.
+   * Set ScanType (US), indicate if the observed data was detected via a primary
+   * or secondary scan.
    * <p>
    * @param value An instances of type {@link ListUS8}
    * @return The current ObservedScanAnalysis object instance

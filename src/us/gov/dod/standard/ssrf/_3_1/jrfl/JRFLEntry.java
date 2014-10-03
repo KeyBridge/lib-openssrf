@@ -85,7 +85,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTS;
 public class JRFLEntry {
 
   /**
-   * In Data Item ProtectionCode, indicate the type of JRFL entry.
+   * ProtectionCode, indicate the type of JRFL entry.
    */
   @XmlElement(name = "ProtectionCode", required = true)
   private TString protectionCode;
@@ -123,7 +123,7 @@ public class JRFLEntry {
   @XmlElement(name = "ApprovalLevel", required = false)
   private TString approvalLevel;
   /**
-   * In Data Item Seconds,enter the seconds of hour [0-59]
+   * Seconds,enter the seconds of hour [0-59]
    */
   @XmlElement(name = "Seconds", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
@@ -312,7 +312,7 @@ public class JRFLEntry {
   private List<JRFLEntryLocation> jrflEntryLocation;
 
   /**
-   * Get In Data Item ProtectionCode, indicate the type of JRFL entry.
+   * Get ProtectionCode, indicate the type of JRFL entry.
    * <p>
    * @return the ProtectionCode value in a {@link TString} data type
    */
@@ -321,7 +321,7 @@ public class JRFLEntry {
   }
 
   /**
-   * Set In Data Item ProtectionCode, indicate the type of JRFL entry.
+   * Set ProtectionCode, indicate the type of JRFL entry.
    * <p>
    * @param value the ProtectionCode value in a {@link TString} data type
    */
@@ -436,7 +436,7 @@ public class JRFLEntry {
   }
 
   /**
-   * Get In Data Item Seconds,enter the seconds of hour [0-59]
+   * Get Seconds,enter the seconds of hour [0-59]
    * <p>
    * @return the Seconds value in a {@link TString} data type
    */
@@ -445,7 +445,7 @@ public class JRFLEntry {
   }
 
   /**
-   * Set In Data Item Seconds,enter the seconds of hour [0-59]
+   * Set Seconds,enter the seconds of hour [0-59]
    * <p>
    * @param value the Seconds value in a {@link TString} data type
    */
@@ -962,7 +962,7 @@ public class JRFLEntry {
   }
 
   /**
-   * Set In Data Item ProtectionCode, indicate the type of JRFL entry.
+   * Set ProtectionCode, indicate the type of JRFL entry.
    * <p>
    * @param value An instances of type {@link ListCPC}
    * @return The current JRFLEntry object instance
@@ -1010,7 +1010,7 @@ public class JRFLEntry {
   }
 
   /**
-   * Set In Data Item Seconds,enter the seconds of hour [0-59]
+   * Set Seconds,enter the seconds of hour [0-59]
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JRFLEntry object instance

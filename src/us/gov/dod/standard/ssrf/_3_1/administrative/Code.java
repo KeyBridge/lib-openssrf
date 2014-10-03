@@ -58,8 +58,8 @@ public class Code {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString value;
   /**
-   * In Data Item Description, the long text name of the code entry or a brief
-   * description of the entry to be created or modified.
+   * Description, the long text name of the code entry or a brief description of
+   * the entry to be created or modified.
    */
   @XmlElement(name = "Description", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
@@ -95,8 +95,8 @@ public class Code {
   }
 
   /**
-   * Get In Data Item Description, the long text name of the code entry or a
-   * brief description of the entry to be created or modified.
+   * Get Description, the long text name of the code entry or a brief
+   * description of the entry to be created or modified.
    * <p>
    * @return the Description value in a {@link TString} data type
    */
@@ -105,8 +105,8 @@ public class Code {
   }
 
   /**
-   * Set In Data Item Description, the long text name of the code entry or a
-   * brief description of the entry to be created or modified.
+   * Set Description, the long text name of the code entry or a brief
+   * description of the entry to be created or modified.
    * <p>
    * @param value the Description value in a {@link TString} data type
    */
@@ -137,8 +137,8 @@ public class Code {
   }
 
   /**
-   * Set In Data Item Description, the long text name of the code entry or a
-   * brief description of the entry to be created or modified.
+   * Set Description, the long text name of the code entry or a brief
+   * description of the entry to be created or modified.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Code object instance

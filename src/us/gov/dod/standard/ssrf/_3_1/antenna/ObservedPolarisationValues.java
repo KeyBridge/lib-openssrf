@@ -47,9 +47,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedPolarisationValues {
 
   /**
-   * In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * StatisticalIndicator (US), indicate how this specific data observation was
+   * collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
@@ -67,9 +67,9 @@ public class ObservedPolarisationValues {
   private TDecimal tiltAngleValue;
 
   /**
-   * Get In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * Get StatisticalIndicator (US), indicate how this specific data observation
+   * was collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    * <p>
    * @return the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -78,9 +78,9 @@ public class ObservedPolarisationValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    * <p>
    * @param value the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -131,9 +131,9 @@ public class ObservedPolarisationValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedPolarisationValues object instance

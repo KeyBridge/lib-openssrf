@@ -51,54 +51,50 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedMOPValues {
 
   /**
-   * In Data Item US:MOPValueAM (US), enter specific data that describes the
-   * Amplitude (AM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueAM (US), enter specific data that describes the Amplitude (AM)
+   * features of a signal impressed on a Pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueAM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopValueAM;
   /**
-   * In Data Item US:MOPValueCW (US), enter specific data that describes the
-   * Continuous Wave (CW) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueCW (US), enter specific data that describes the Continuous Wave
+   * (CW) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueCW", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal mopValueCW;
   /**
-   * In Data Item US:MOPValueFM (US), enter specific data that describes the
-   * Frequency (FM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValueFM (US), enter specific data that describes the Frequency (FM)
+   * features of a signal impressed on a Pulse. Use of this element should agree
+   * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueFM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal mopValueFM;
   /**
-   * In Data Item US:MOPValuePM (US), enter specific data that describes the
-   * Phase (PM)features of a signal impressed on a Pulse. Use of this element
-   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * US:MOPValuePM (US), enter specific data that describes the Phase
+   * (PM)features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValuePM", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal mopValuePM;
   /**
-   * In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * StatisticalIndicator (US), indicate how this specific data observation was
+   * collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
   private TDecimal statisticalIndicator;
 
   /**
-   * Get In Data Item US:MOPValueAM (US), enter specific data that describes the
-   * Amplitude (AM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueAM (US), enter specific data that describes the Amplitude
+   * (AM) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueAM value in a {@link TDecimal} data type
    */
@@ -107,10 +103,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValueAM (US), enter specific data that describes the
-   * Amplitude (AM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueAM (US), enter specific data that describes the Amplitude
+   * (AM) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueAM value in a {@link TDecimal} data type
    */
@@ -130,10 +125,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Get In Data Item US:MOPValueCW (US), enter specific data that describes the
-   * Continuous Wave (CW) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueCW (US), enter specific data that describes the Continuous
+   * Wave (CW) features of a signal impressed on a Pulse. Use of this element
+   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueCW value in a {@link TDecimal} data type
    */
@@ -142,10 +136,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValueCW (US), enter specific data that describes the
-   * Continuous Wave (CW) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueCW (US), enter specific data that describes the Continuous
+   * Wave (CW) features of a signal impressed on a Pulse. Use of this element
+   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueCW value in a {@link TDecimal} data type
    */
@@ -165,10 +158,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Get In Data Item US:MOPValueFM (US), enter specific data that describes the
-   * Frequency (FM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValueFM (US), enter specific data that describes the Frequency
+   * (FM) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValueFM value in a {@link TDecimal} data type
    */
@@ -177,10 +169,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValueFM (US), enter specific data that describes the
-   * Frequency (FM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueFM (US), enter specific data that describes the Frequency
+   * (FM) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValueFM value in a {@link TDecimal} data type
    */
@@ -200,9 +191,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Get In Data Item US:MOPValuePM (US), enter specific data that describes the
-   * Phase (PM)features of a signal impressed on a Pulse. Use of this element
-   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Get US:MOPValuePM (US), enter specific data that describes the Phase
+   * (PM)features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @return the MOPValuePM value in a {@link TDecimal} data type
    */
@@ -211,9 +202,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValuePM (US), enter specific data that describes the
-   * Phase (PM)features of a signal impressed on a Pulse. Use of this element
-   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValuePM (US), enter specific data that describes the Phase
+   * (PM)features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value the MOPValuePM value in a {@link TDecimal} data type
    */
@@ -233,9 +224,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Get In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * Get StatisticalIndicator (US), indicate how this specific data observation
+   * was collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    * <p>
    * @return the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -244,9 +235,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    * <p>
    * @param value the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -266,10 +257,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValueAM (US), enter specific data that describes the
-   * Amplitude (AM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueAM (US), enter specific data that describes the Amplitude
+   * (AM) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPValues object instance
@@ -280,10 +270,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValueCW (US), enter specific data that describes the
-   * Continuous Wave (CW) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueCW (US), enter specific data that describes the Continuous
+   * Wave (CW) features of a signal impressed on a Pulse. Use of this element
+   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPValues object instance
@@ -294,10 +283,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValueFM (US), enter specific data that describes the
-   * Frequency (FM) features of a signal impressed on a Pulse. Use of this
-   * element should agree with the selection made in
-   * US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValueFM (US), enter specific data that describes the Frequency
+   * (FM) features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPValues object instance
@@ -308,9 +296,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item US:MOPValuePM (US), enter specific data that describes the
-   * Phase (PM)features of a signal impressed on a Pulse. Use of this element
-   * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
+   * Set US:MOPValuePM (US), enter specific data that describes the Phase
+   * (PM)features of a signal impressed on a Pulse. Use of this element should
+   * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPValues object instance
@@ -321,9 +309,9 @@ public class ObservedMOPValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was collected (e.g., 95% of the observed values). If this
-   * element is empty, then the value is assumed to be part of the 100% sample.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was collected (e.g., 95% of the observed values). If this element is empty,
+   * then the value is assumed to be part of the 100% sample.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedMOPValues object instance

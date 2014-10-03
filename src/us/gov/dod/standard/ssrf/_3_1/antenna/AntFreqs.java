@@ -89,8 +89,8 @@ public class AntFreqs {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
-   * In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
-   * total operating bandwidth of the Antenna centered around FreqMin.
+   * Bandwidth, as an alternative to FreqMin/FreqMax, enter the total operating
+   * bandwidth of the Antenna centered around FreqMin.
    */
   @XmlElement(name = "Bandwidth", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
@@ -169,8 +169,8 @@ public class AntFreqs {
   }
 
   /**
-   * Get In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
-   * total operating bandwidth of the Antenna centered around FreqMin.
+   * Get Bandwidth, as an alternative to FreqMin/FreqMax, enter the total
+   * operating bandwidth of the Antenna centered around FreqMin.
    * <p>
    * @return the Bandwidth value in a {@link TDecimal} data type
    */
@@ -179,8 +179,8 @@ public class AntFreqs {
   }
 
   /**
-   * Set In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
-   * total operating bandwidth of the Antenna centered around FreqMin.
+   * Set Bandwidth, as an alternative to FreqMin/FreqMax, enter the total
+   * operating bandwidth of the Antenna centered around FreqMin.
    * <p>
    * @param value the Bandwidth value in a {@link TDecimal} data type
    */
@@ -255,8 +255,8 @@ public class AntFreqs {
   }
 
   /**
-   * Set In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
-   * total operating bandwidth of the Antenna centered around FreqMin.
+   * Set Bandwidth, as an alternative to FreqMin/FreqMax, enter the total
+   * operating bandwidth of the Antenna centered around FreqMin.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current AntFreqs object instance

@@ -149,7 +149,7 @@ public class JammingChannelProfile {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal dwell;
   /**
-   * In Data Item ExBlankingOn (US), indicate if external blanking is enabled.
+   * ExBlankingOn (US), indicate if external blanking is enabled.
    */
   @XmlElement(name = "ExBlankingOn", required = false)
   private TString exBlankingOn;
@@ -487,8 +487,7 @@ public class JammingChannelProfile {
   }
 
   /**
-   * Get In Data Item ExBlankingOn (US), indicate if external blanking is
-   * enabled.
+   * Get ExBlankingOn (US), indicate if external blanking is enabled.
    * <p>
    * @return the ExBlankingOn value in a {@link TString} data type
    */
@@ -497,8 +496,7 @@ public class JammingChannelProfile {
   }
 
   /**
-   * Set In Data Item ExBlankingOn (US), indicate if external blanking is
-   * enabled.
+   * Set ExBlankingOn (US), indicate if external blanking is enabled.
    * <p>
    * @param value the ExBlankingOn value in a {@link TString} data type
    */
@@ -947,8 +945,7 @@ public class JammingChannelProfile {
   }
 
   /**
-   * Set In Data Item ExBlankingOn (US), indicate if external blanking is
-   * enabled.
+   * Set ExBlankingOn (US), indicate if external blanking is enabled.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current JammingChannelProfile object instance

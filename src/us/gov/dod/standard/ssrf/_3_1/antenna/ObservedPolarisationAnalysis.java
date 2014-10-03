@@ -295,9 +295,8 @@ public class ObservedPolarisationAnalysis {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal tiltAnglePatternPeriod;
   /**
-   * In Data Item TiltAnglePatternType (US), indicate whether Tilt Angle is
-   * unmodulated or Tilt Angle variations are Patterned, Non-Patterned, or
-   * Adaptive.
+   * TiltAnglePatternType (US), indicate whether Tilt Angle is unmodulated or
+   * Tilt Angle variations are Patterned, Non-Patterned, or Adaptive.
    */
   @XmlElement(name = "TiltAnglePatternType", required = false)
   private TString tiltAnglePatternType;
@@ -899,9 +898,8 @@ public class ObservedPolarisationAnalysis {
   }
 
   /**
-   * Get In Data Item TiltAnglePatternType (US), indicate whether Tilt Angle is
-   * unmodulated or Tilt Angle variations are Patterned, Non-Patterned, or
-   * Adaptive.
+   * Get TiltAnglePatternType (US), indicate whether Tilt Angle is unmodulated
+   * or Tilt Angle variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @return the TiltAnglePatternType value in a {@link TString} data type
    */
@@ -910,9 +908,8 @@ public class ObservedPolarisationAnalysis {
   }
 
   /**
-   * Set In Data Item TiltAnglePatternType (US), indicate whether Tilt Angle is
-   * unmodulated or Tilt Angle variations are Patterned, Non-Patterned, or
-   * Adaptive.
+   * Set TiltAnglePatternType (US), indicate whether Tilt Angle is unmodulated
+   * or Tilt Angle variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value the TiltAnglePatternType value in a {@link TString} data type
    */
@@ -1360,9 +1357,8 @@ public class ObservedPolarisationAnalysis {
   }
 
   /**
-   * Set In Data Item TiltAnglePatternType (US), indicate whether Tilt Angle is
-   * unmodulated or Tilt Angle variations are Patterned, Non-Patterned, or
-   * Adaptive.
+   * Set TiltAnglePatternType (US), indicate whether Tilt Angle is unmodulated
+   * or Tilt Angle variations are Patterned, Non-Patterned, or Adaptive.
    * <p>
    * @param value An instances of type {@link ListUS7}
    * @return The current ObservedPolarisationAnalysis object instance

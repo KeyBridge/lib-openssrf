@@ -128,8 +128,8 @@ public class JammingTarget {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
   private TString lat;
   /**
-   * In Data Item LoadsetRef (US), the serial of a Loadset dataset that contains
-   * the details to be used for this jamming instance.
+   * LoadsetRef (US), the serial of a Loadset dataset that contains the details
+   * to be used for this jamming instance.
    */
   @XmlElement(name = "LoadsetRef", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
@@ -369,8 +369,8 @@ public class JammingTarget {
   }
 
   /**
-   * Get In Data Item LoadsetRef (US), the serial of a Loadset dataset that
-   * contains the details to be used for this jamming instance.
+   * Get LoadsetRef (US), the serial of a Loadset dataset that contains the
+   * details to be used for this jamming instance.
    * <p>
    * @return the LoadsetRef value in a {@link TString} data type
    */
@@ -379,8 +379,8 @@ public class JammingTarget {
   }
 
   /**
-   * Set In Data Item LoadsetRef (US), the serial of a Loadset dataset that
-   * contains the details to be used for this jamming instance.
+   * Set LoadsetRef (US), the serial of a Loadset dataset that contains the
+   * details to be used for this jamming instance.
    * <p>
    * @param value the LoadsetRef value in a {@link TString} data type
    */
@@ -661,8 +661,8 @@ public class JammingTarget {
   }
 
   /**
-   * Set In Data Item LoadsetRef (US), the serial of a Loadset dataset that
-   * contains the details to be used for this jamming instance.
+   * Set LoadsetRef (US), the serial of a Loadset dataset that contains the
+   * details to be used for this jamming instance.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JammingTarget object instance

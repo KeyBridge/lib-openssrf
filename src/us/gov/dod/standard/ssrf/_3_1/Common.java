@@ -159,9 +159,9 @@ public abstract class Common<T> {
   @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar approvedDateTime;
   /**
-   * In Data Item Redacted (US), indicate if any original, or authoritative,
-   * data was omitted. Supports datasets which have some data withheld by the
-   * submitting agency.
+   * Redacted (US), indicate if any original, or authoritative, data was
+   * omitted. Supports datasets which have some data withheld by the submitting
+   * agency.
    */
   @XmlElement(name = "Redacted", required = false)
   private TString redacted;
@@ -617,9 +617,9 @@ public abstract class Common<T> {
   }
 
   /**
-   * Get In Data Item Redacted (US), indicate if any original, or authoritative,
-   * data was omitted. Supports datasets which have some data withheld by the
-   * submitting agency.
+   * Get Redacted (US), indicate if any original, or authoritative, data was
+   * omitted. Supports datasets which have some data withheld by the submitting
+   * agency.
    * <p>
    * @return the Redacted value in a {@link TString} data type
    */
@@ -628,9 +628,9 @@ public abstract class Common<T> {
   }
 
   /**
-   * Set In Data Item Redacted (US), indicate if any original, or authoritative,
-   * data was omitted. Supports datasets which have some data withheld by the
-   * submitting agency.
+   * Set Redacted (US), indicate if any original, or authoritative, data was
+   * omitted. Supports datasets which have some data withheld by the submitting
+   * agency.
    * <p>
    * @param value the Redacted value in a {@link TString} data type
    */
@@ -1409,9 +1409,9 @@ public abstract class Common<T> {
   }
 
   /**
-   * Set In Data Item Redacted (US), indicate if any original, or authoritative,
-   * data was omitted. Supports datasets which have some data withheld by the
-   * submitting agency.
+   * Set Redacted (US), indicate if any original, or authoritative, data was
+   * omitted. Supports datasets which have some data withheld by the submitting
+   * agency.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current Common object instance

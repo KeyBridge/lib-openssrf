@@ -90,11 +90,10 @@ public class Satellite extends Common<Satellite> {
    * ReviewDate - Review Date (Optional)
    * <p>
    * The date by which the dataset is to be reviewed. The Review date should be
-   * less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * Format is Date
    */
@@ -307,11 +306,10 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * @return the ReviewDate value in a {@link TCalendar} data type
    */
@@ -321,11 +319,10 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * @param value the ReviewDate value in a {@link TCalendar} data type
    */
@@ -963,11 +960,10 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Satellite object instance

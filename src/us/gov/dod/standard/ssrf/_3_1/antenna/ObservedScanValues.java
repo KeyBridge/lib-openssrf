@@ -57,9 +57,9 @@ public class ObservedScanValues {
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
   private TDecimal scanValue;
   /**
-   * In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * StatisticalIndicator (US), indicate how this specific data observation was
+   * used (e.g., 95% of the observed values). If this element is empty, then the
+   * value is assumed to be part of the 100% sample size.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
@@ -95,9 +95,9 @@ public class ObservedScanValues {
   }
 
   /**
-   * Get In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * Get StatisticalIndicator (US), indicate how this specific data observation
+   * was used (e.g., 95% of the observed values). If this element is empty, then
+   * the value is assumed to be part of the 100% sample size.
    * <p>
    * @return the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -106,9 +106,9 @@ public class ObservedScanValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was used (e.g., 95% of the observed values). If this element is empty, then
+   * the value is assumed to be part of the 100% sample size.
    * <p>
    * @param value the StatisticalIndicator value in a {@link TDecimal} data type
    */
@@ -139,9 +139,9 @@ public class ObservedScanValues {
   }
 
   /**
-   * Set In Data Item StatisticalIndicator (US), indicate how this specific data
-   * observation was used (e.g., 95% of the observed values). If this element is
-   * empty, then the value is assumed to be part of the 100% sample size.
+   * Set StatisticalIndicator (US), indicate how this specific data observation
+   * was used (e.g., 95% of the observed values). If this element is empty, then
+   * the value is assumed to be part of the 100% sample size.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current ObservedScanValues object instance

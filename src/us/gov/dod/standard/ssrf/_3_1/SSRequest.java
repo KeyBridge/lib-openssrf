@@ -359,10 +359,10 @@ public class SSRequest extends Common<SSRequest> {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString requestType;
   /**
-   * In Data Item RelatedAnalysisAndTestData (US), describe electromagnetic
-   * compatibility studies, testing or analyses relevant to this system,
-   * including documents currently in progress. Use the ExtReference attribute
-   * of this element as appropriate.
+   * RelatedAnalysisAndTestData (US), describe electromagnetic compatibility
+   * studies, testing or analyses relevant to this system, including documents
+   * currently in progress. Use the ExtReference attribute of this element as
+   * appropriate.
    */
   @XmlElement(name = "RelatedAnalysisAndTestData", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
@@ -1190,10 +1190,10 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Get In Data Item RelatedAnalysisAndTestData (US), describe electromagnetic
-   * compatibility studies, testing or analyses relevant to this system,
-   * including documents currently in progress. Use the ExtReference attribute
-   * of this element as appropriate.
+   * Get RelatedAnalysisAndTestData (US), describe electromagnetic compatibility
+   * studies, testing or analyses relevant to this system, including documents
+   * currently in progress. Use the ExtReference attribute of this element as
+   * appropriate.
    * <p>
    * @return the RelatedAnalysisAndTestData value in a {@link TString} data type
    */
@@ -1202,10 +1202,10 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set In Data Item RelatedAnalysisAndTestData (US), describe electromagnetic
-   * compatibility studies, testing or analyses relevant to this system,
-   * including documents currently in progress. Use the ExtReference attribute
-   * of this element as appropriate.
+   * Set RelatedAnalysisAndTestData (US), describe electromagnetic compatibility
+   * studies, testing or analyses relevant to this system, including documents
+   * currently in progress. Use the ExtReference attribute of this element as
+   * appropriate.
    * <p>
    * @param value the RelatedAnalysisAndTestData value in a {@link TString} data
    *              type
@@ -1972,10 +1972,10 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set In Data Item RelatedAnalysisAndTestData (US), describe electromagnetic
-   * compatibility studies, testing or analyses relevant to this system,
-   * including documents currently in progress. Use the ExtReference attribute
-   * of this element as appropriate.
+   * Set RelatedAnalysisAndTestData (US), describe electromagnetic compatibility
+   * studies, testing or analyses relevant to this system, including documents
+   * currently in progress. Use the ExtReference attribute of this element as
+   * appropriate.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current SSRequest object instance

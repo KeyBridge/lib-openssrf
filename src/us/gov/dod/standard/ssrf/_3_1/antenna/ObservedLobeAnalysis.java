@@ -82,13 +82,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class ObservedLobeAnalysis {
 
   /**
-   * In Data Item BeamType (US), indicate the pattern beam type that best
-   * represents the general shape of the beam as it radiates from the antenna.
-   * The beam shape is a direct function of the radiating antenna shape and the
-   * beams are characterized by their shape (volume) in space so as to help
-   * determine how and where to measure mainbeam and sidelobe levels.
-   * Additionally. radar beam shapes are generally characteristic of the
-   * function of a particular radar.
+   * BeamType (US), indicate the pattern beam type that best represents the
+   * general shape of the beam as it radiates from the antenna. The beam shape
+   * is a direct function of the radiating antenna shape and the beams are
+   * characterized by their shape (volume) in space so as to help determine how
+   * and where to measure mainbeam and sidelobe levels. Additionally. radar beam
+   * shapes are generally characteristic of the function of a particular radar.
    */
   @XmlElement(name = "BeamType", required = false)
   private TString beamType;
@@ -113,8 +112,7 @@ public class ObservedLobeAnalysis {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
   private TString lobeName;
   /**
-   * In Data Item LobeSymmetric (US), indicate whether the sidelobe is
-   * symmetric.
+   * LobeSymmetric (US), indicate whether the sidelobe is symmetric.
    */
   @XmlElement(name = "LobeSymmetric", required = false)
   private TString lobeSymmetric;
@@ -130,13 +128,12 @@ public class ObservedLobeAnalysis {
   private List<ObservedLobeValues> observedLobeValues;
 
   /**
-   * Get In Data Item BeamType (US), indicate the pattern beam type that best
-   * represents the general shape of the beam as it radiates from the antenna.
-   * The beam shape is a direct function of the radiating antenna shape and the
-   * beams are characterized by their shape (volume) in space so as to help
-   * determine how and where to measure mainbeam and sidelobe levels.
-   * Additionally. radar beam shapes are generally characteristic of the
-   * function of a particular radar.
+   * Get BeamType (US), indicate the pattern beam type that best represents the
+   * general shape of the beam as it radiates from the antenna. The beam shape
+   * is a direct function of the radiating antenna shape and the beams are
+   * characterized by their shape (volume) in space so as to help determine how
+   * and where to measure mainbeam and sidelobe levels. Additionally. radar beam
+   * shapes are generally characteristic of the function of a particular radar.
    * <p>
    * @return the BeamType value in a {@link TString} data type
    */
@@ -145,13 +142,12 @@ public class ObservedLobeAnalysis {
   }
 
   /**
-   * Set In Data Item BeamType (US), indicate the pattern beam type that best
-   * represents the general shape of the beam as it radiates from the antenna.
-   * The beam shape is a direct function of the radiating antenna shape and the
-   * beams are characterized by their shape (volume) in space so as to help
-   * determine how and where to measure mainbeam and sidelobe levels.
-   * Additionally. radar beam shapes are generally characteristic of the
-   * function of a particular radar.
+   * Set BeamType (US), indicate the pattern beam type that best represents the
+   * general shape of the beam as it radiates from the antenna. The beam shape
+   * is a direct function of the radiating antenna shape and the beams are
+   * characterized by their shape (volume) in space so as to help determine how
+   * and where to measure mainbeam and sidelobe levels. Additionally. radar beam
+   * shapes are generally characteristic of the function of a particular radar.
    * <p>
    * @param value the BeamType value in a {@link TString} data type
    */
@@ -229,8 +225,7 @@ public class ObservedLobeAnalysis {
   }
 
   /**
-   * Get In Data Item LobeSymmetric (US), indicate whether the sidelobe is
-   * symmetric.
+   * Get LobeSymmetric (US), indicate whether the sidelobe is symmetric.
    * <p>
    * @return the LobeSymmetric value in a {@link TString} data type
    */
@@ -239,8 +234,7 @@ public class ObservedLobeAnalysis {
   }
 
   /**
-   * Set In Data Item LobeSymmetric (US), indicate whether the sidelobe is
-   * symmetric.
+   * Set LobeSymmetric (US), indicate whether the sidelobe is symmetric.
    * <p>
    * @param value the LobeSymmetric value in a {@link TString} data type
    */
@@ -294,13 +288,12 @@ public class ObservedLobeAnalysis {
   }
 
   /**
-   * Set In Data Item BeamType (US), indicate the pattern beam type that best
-   * represents the general shape of the beam as it radiates from the antenna.
-   * The beam shape is a direct function of the radiating antenna shape and the
-   * beams are characterized by their shape (volume) in space so as to help
-   * determine how and where to measure mainbeam and sidelobe levels.
-   * Additionally. radar beam shapes are generally characteristic of the
-   * function of a particular radar.
+   * Set BeamType (US), indicate the pattern beam type that best represents the
+   * general shape of the beam as it radiates from the antenna. The beam shape
+   * is a direct function of the radiating antenna shape and the beams are
+   * characterized by their shape (volume) in space so as to help determine how
+   * and where to measure mainbeam and sidelobe levels. Additionally. radar beam
+   * shapes are generally characteristic of the function of a particular radar.
    * <p>
    * @param value An instances of type {@link ListCBD}
    * @return The current ObservedLobeAnalysis object instance
@@ -333,8 +326,7 @@ public class ObservedLobeAnalysis {
   }
 
   /**
-   * Set In Data Item LobeSymmetric (US), indicate whether the sidelobe is
-   * symmetric.
+   * Set LobeSymmetric (US), indicate whether the sidelobe is symmetric.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current ObservedLobeAnalysis object instance

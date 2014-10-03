@@ -128,8 +128,8 @@ public class AntMode {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
-   * In Data Item ModeUse, indicate if the mode is used for transmit, receive,
-   * or both transmit and receive.
+   * ModeUse, indicate if the mode is used for transmit, receive, or both
+   * transmit and receive.
    */
   @XmlElement(name = "ModeUse", required = false)
   private TString modeUse;
@@ -560,8 +560,8 @@ public class AntMode {
   }
 
   /**
-   * Get In Data Item ModeUse, indicate if the mode is used for transmit,
-   * receive, or both transmit and receive.
+   * Get ModeUse, indicate if the mode is used for transmit, receive, or both
+   * transmit and receive.
    * <p>
    * @return the ModeUse value in a {@link TString} data type
    */
@@ -570,8 +570,8 @@ public class AntMode {
   }
 
   /**
-   * Set In Data Item ModeUse, indicate if the mode is used for transmit,
-   * receive, or both transmit and receive.
+   * Set ModeUse, indicate if the mode is used for transmit, receive, or both
+   * transmit and receive.
    * <p>
    * @param value the ModeUse value in a {@link TString} data type
    */
@@ -1638,8 +1638,8 @@ public class AntMode {
   }
 
   /**
-   * Set In Data Item ModeUse, indicate if the mode is used for transmit,
-   * receive, or both transmit and receive.
+   * Set ModeUse, indicate if the mode is used for transmit, receive, or both
+   * transmit and receive.
    * <p>
    * @param value An instances of type {@link ListCAU}
    * @return The current AntMode object instance

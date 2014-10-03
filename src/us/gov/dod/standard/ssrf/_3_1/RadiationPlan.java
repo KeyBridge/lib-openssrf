@@ -162,7 +162,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString locationRef;
   /**
-   * In Data Item Name (US), enter a descriptive name for the Radiation Plan.
+   * Name (US), enter a descriptive name for the Radiation Plan.
    */
   @XmlElement(name = "Name", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
@@ -338,8 +338,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Get In Data Item Name (US), enter a descriptive name for the Radiation
-   * Plan.
+   * Get Name (US), enter a descriptive name for the Radiation Plan.
    * <p>
    * @return the Name value in a {@link TString} data type
    */
@@ -348,8 +347,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Set In Data Item Name (US), enter a descriptive name for the Radiation
-   * Plan.
+   * Set Name (US), enter a descriptive name for the Radiation Plan.
    * <p>
    * @param value the Name value in a {@link TString} data type
    */
@@ -569,8 +567,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Set In Data Item Name (US), enter a descriptive name for the Radiation
-   * Plan.
+   * Set Name (US), enter a descriptive name for the Radiation Plan.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RadiationPlan object instance

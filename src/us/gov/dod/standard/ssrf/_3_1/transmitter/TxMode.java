@@ -470,8 +470,8 @@ public class TxMode {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
   private TString modeName;
   /**
-   * In Data Item JitterCapable (US), indicate whether the mode of the pulse
-   * stream is jitter capable.
+   * JitterCapable (US), indicate whether the mode of the pulse stream is jitter
+   * capable.
    */
   @XmlElement(name = "JitterCapable", required = false)
   private TString jitterCapable;
@@ -1477,8 +1477,8 @@ public class TxMode {
   }
 
   /**
-   * Get In Data Item JitterCapable (US), indicate whether the mode of the pulse
-   * stream is jitter capable.
+   * Get JitterCapable (US), indicate whether the mode of the pulse stream is
+   * jitter capable.
    * <p>
    * @return the JitterCapable value in a {@link TString} data type
    */
@@ -1487,8 +1487,8 @@ public class TxMode {
   }
 
   /**
-   * Set In Data Item JitterCapable (US), indicate whether the mode of the pulse
-   * stream is jitter capable.
+   * Set JitterCapable (US), indicate whether the mode of the pulse stream is
+   * jitter capable.
    * <p>
    * @param value the JitterCapable value in a {@link TString} data type
    */
@@ -2234,8 +2234,8 @@ public class TxMode {
   }
 
   /**
-   * Set In Data Item JitterCapable (US), indicate whether the mode of the pulse
-   * stream is jitter capable.
+   * Set JitterCapable (US), indicate whether the mode of the pulse stream is
+   * jitter capable.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current TxMode object instance

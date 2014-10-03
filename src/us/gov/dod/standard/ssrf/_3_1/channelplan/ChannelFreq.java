@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUS_UN16_9;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterFREQM;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -47,10 +47,10 @@ public class ChannelFreq extends AMetadata<ChannelFreq> {
   /**
    * A frequency in the channel plan.
    * <p>
-   * Format is UN(16,9) [0..1.0E9](MHz)
+   * Format is FREQ / UN(16,9) [0..1.0E9](MHz)
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterUS_UN16_9.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterFREQM.class)
   private BigDecimal value;
 
   /**
@@ -64,6 +64,8 @@ public class ChannelFreq extends AMetadata<ChannelFreq> {
 
   /**
    * Set the frequency in the channel plan. (MHz)
+   * <p>
+   * Format is FREQ / UN(16,9) [0..1.0E9](MHz)
    * <p>
    * @param value a {@link BigDecimal} instance
    */
@@ -82,6 +84,8 @@ public class ChannelFreq extends AMetadata<ChannelFreq> {
 
   /**
    * Set the frequency in the channel plan. (MHz)
+   * <p>
+   * Format is FREQ / UN(16,9) [0..1.0E9](MHz)
    * <p>
    * @param value An instances of type {@link BigDecimal}
    * @return The current ChannelFreq object instance

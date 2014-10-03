@@ -85,7 +85,7 @@ public class Nomenclature {
    * Name - Name (Required)
    * <p>
    * The standard military nomenclature. If the unit does not have a military
-   * nomenclature, enter the manufacturer model number, or a short description.
+   * nomenclature - The manufacturer model number, or a short description.
    * <p>
    * Format is S100
    * <p>
@@ -96,8 +96,8 @@ public class Nomenclature {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
   /**
-   * In Data Item PhysicalUsage (US), indicate the type of vehicle or other
-   * entity that uses the equipment, or from which the subject signal emanates.
+   * PhysicalUsage (US), indicate the type of vehicle or other entity that uses
+   * the equipment, or from which the subject signal emanates.
    */
   @XmlElement(name = "PhysicalUsage", required = false)
   private TString physicalUsage;
@@ -171,7 +171,7 @@ public class Nomenclature {
 
   /**
    * Get the standard military nomenclature. If the unit does not have a
-   * military nomenclature, enter the manufacturer model number, or a short
+   * military nomenclature - The manufacturer model number, or a short
    * description.
    * <p>
    * @return the Name value in a {@link TString} data type
@@ -182,7 +182,7 @@ public class Nomenclature {
 
   /**
    * Set the standard military nomenclature. If the unit does not have a
-   * military nomenclature, enter the manufacturer model number, or a short
+   * military nomenclature - The manufacturer model number, or a short
    * description.
    * <p>
    * @param value the Name value in a {@link TString} data type
@@ -203,8 +203,8 @@ public class Nomenclature {
   }
 
   /**
-   * Get In Data Item PhysicalUsage (US), indicate the type of vehicle or other
-   * entity that uses the equipment, or from which the subject signal emanates.
+   * Get PhysicalUsage (US), indicate the type of vehicle or other entity that
+   * uses the equipment, or from which the subject signal emanates.
    * <p>
    * @return the PhysicalUsage value in a {@link TString} data type
    */
@@ -213,8 +213,8 @@ public class Nomenclature {
   }
 
   /**
-   * Set In Data Item PhysicalUsage (US), indicate the type of vehicle or other
-   * entity that uses the equipment, or from which the subject signal emanates.
+   * Set PhysicalUsage (US), indicate the type of vehicle or other entity that
+   * uses the equipment, or from which the subject signal emanates.
    * <p>
    * @param value the PhysicalUsage value in a {@link TString} data type
    */
@@ -291,7 +291,7 @@ public class Nomenclature {
 
   /**
    * Set the standard military nomenclature. If the unit does not have a
-   * military nomenclature, enter the manufacturer model number, or a short
+   * military nomenclature - The manufacturer model number, or a short
    * description.
    * <p>
    * @param value An instances of type {@link String}
@@ -303,8 +303,8 @@ public class Nomenclature {
   }
 
   /**
-   * Set In Data Item PhysicalUsage (US), indicate the type of vehicle or other
-   * entity that uses the equipment, or from which the subject signal emanates.
+   * Set PhysicalUsage (US), indicate the type of vehicle or other entity that
+   * uses the equipment, or from which the subject signal emanates.
    * <p>
    * @param value An instances of type {@link ListUS5}
    * @return The current Nomenclature object instance

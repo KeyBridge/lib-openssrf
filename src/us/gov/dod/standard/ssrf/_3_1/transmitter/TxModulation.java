@@ -233,15 +233,15 @@ public class TxModulation
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString keysDesc;
   /**
-   * In Data Item US:MUXLevel (US), enter the signal power in dB referenced to
-   * the baseband carrier for the companding of the multiplexed signal.
+   * US:MUXLevel (US) - The signal power in dB referenced to the baseband
+   * carrier for the companding of the multiplexed signal.
    */
   @XmlElement(name = "MUXLevel", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal muxLevel;
   /**
-   * In Data Item US:MUXScheme (US), enter a freetext description of the
-   * multiplexing algorithm.
+   * US:MUXScheme (US), enter a freetext description of the multiplexing
+   * algorithm.
    */
   @XmlElement(name = "MUXScheme", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
@@ -662,8 +662,8 @@ public class TxModulation
   }
 
   /**
-   * Get In Data Item US:MUXLevel (US), enter the signal power in dB referenced
-   * to the baseband carrier for the companding of the multiplexed signal.
+   * Get US:MUXLevel (US) - The signal power in dB referenced to the baseband
+   * carrier for the companding of the multiplexed signal.
    * <p>
    * @return the MUXLevel value in a {@link TDecimal} data type
    */
@@ -672,8 +672,8 @@ public class TxModulation
   }
 
   /**
-   * Set In Data Item US:MUXLevel (US), enter the signal power in dB referenced
-   * to the baseband carrier for the companding of the multiplexed signal.
+   * Set US:MUXLevel (US) - The signal power in dB referenced to the baseband
+   * carrier for the companding of the multiplexed signal.
    * <p>
    * @param value the MUXLevel value in a {@link TDecimal} data type
    */
@@ -693,8 +693,8 @@ public class TxModulation
   }
 
   /**
-   * Get In Data Item US:MUXScheme (US), enter a freetext description of the
-   * multiplexing algorithm.
+   * Get US:MUXScheme (US), enter a freetext description of the multiplexing
+   * algorithm.
    * <p>
    * @return the MUXScheme value in a {@link TString} data type
    */
@@ -703,8 +703,8 @@ public class TxModulation
   }
 
   /**
-   * Set In Data Item US:MUXScheme (US), enter a freetext description of the
-   * multiplexing algorithm.
+   * Set US:MUXScheme (US), enter a freetext description of the multiplexing
+   * algorithm.
    * <p>
    * @param value the MUXScheme value in a {@link TString} data type
    */
@@ -916,8 +916,8 @@ public class TxModulation
   }
 
   /**
-   * Set In Data Item US:MUXLevel (US), enter the signal power in dB referenced
-   * to the baseband carrier for the companding of the multiplexed signal.
+   * Set US:MUXLevel (US) - The signal power in dB referenced to the baseband
+   * carrier for the companding of the multiplexed signal.
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current TxModulation object instance
@@ -928,8 +928,8 @@ public class TxModulation
   }
 
   /**
-   * Set In Data Item US:MUXScheme (US), enter a freetext description of the
-   * multiplexing algorithm.
+   * Set US:MUXScheme (US), enter a freetext description of the multiplexing
+   * algorithm.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current TxModulation object instance
