@@ -149,7 +149,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @param value a valid SSRF SERIAL string
    * @throws Exception if the value does not conform to the SERIAL format
    */
-  public TSerial(String value) throws Exception {
+  private TSerial(String value) throws Exception {
     this.value = value;
     parse();
   }
@@ -157,7 +157,52 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
   /**
    * Default no-arg constructor.
    */
-  public TSerial() {
+  private TSerial() {
+  }
+
+  /**
+   * Get a TSerial instance for the indicated class instance.
+   * <p>
+   * The local is set to the current system default. The serial is
+   * programmatically set to a time-sequenced, UUID-based 15-character snippet.
+   * The organization is left blank and may be set by th user.
+   * <p>
+   * @param instance a SSRF object instance that extends Common
+   * @return a TSerial instance
+   * @throws IllegalArgumentException if the object instance does not extend
+   *                                  Common
+   */
+  public static TSerial getInstance(Object instance) throws IllegalArgumentException {
+    return getInstance(instance.getClass());
+  }
+
+  /**
+   * Get a TSerial instance for the indicated class instance.
+   * <p>
+   * The local is set to the current system default. The serial is
+   * programmatically set to a time-sequenced, UUID-based 15-character snippet.
+   * The organization is left blank and may be set by th user.
+   * <p>
+   * @param clazz a SSRF class type that extends Common
+   * @return a TSerial instance
+   * @throws IllegalArgumentException if the object instance does not extend
+   *                                  Common
+   */
+  public static TSerial getInstance(Class<? extends Common<?>> clazz) {
+    return new TSerial()
+      .withLocale(Locale.getDefault())
+      .withDatasetType(clazz)
+      .withSerial(uuidSnippet());
+  }
+
+  /**
+   * Internal helper method to generate a 15-character UUID-based alphanumeric
+   * snippet.
+   * <p>
+   * @return a 15-character UUID-based alphanumeric String
+   */
+  private static String uuidSnippet() {
+    return UUID.randomUUID().toString().replaceAll("-", "").substring(0, 14);
   }
 
   /**
@@ -171,7 +216,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
       .append(":")
       .append(datasetType != null ? datasetType.name() : "")
       .append(":")
-      .append(serial != null ? serial : UUID.randomUUID().toString().replaceAll("-", "").substring(0, 14));
+      .append(serial != null ? serial : uuidSnippet());
     this.value = sb.toString();
   }
 
@@ -245,10 +290,10 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @param serial the serial number Serial identifier.
    * @throws Exception if the input value is too long (&gt; 15 characters)
    */
-  public void setSerial(String serial) throws Exception {
-    if (serial.length() > 15) {
-      throw new Exception("SERIAL string length violation " + this.getClass().getSimpleName() + " [1, 15]" + " with length = " + value.length() + ".");
-    }
+  public void setSerial(String serial) {
+//    if (serial.length() > 15) {
+//      throw new Exception("SERIAL string length violation " + this.getClass().getSimpleName() + " [1, 15]" + " with length = " + value.length() + ".");
+//    }
     this.serial = serial;
     format();
   }
@@ -357,7 +402,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @return The current TSerial object instance
    * @throws Exception if the input value is too long (&gt; 15 characters)
    */
-  public TSerial withSerial(String value) throws Exception {
+  public TSerial withSerial(String value) {
     setSerial(serial);
     return this;
   }
