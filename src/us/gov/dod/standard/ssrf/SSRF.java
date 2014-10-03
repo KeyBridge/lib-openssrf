@@ -23,7 +23,16 @@
  */
 package us.gov.dod.standard.ssrf;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Collection;
+import java.util.Map;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.Preferences;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -43,6 +52,29 @@ import us.gov.dod.standard.ssrf._3_1.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SSRF")
 public class SSRF extends SchemaRoot<SSRF> {
+
+  public void loadProperties(File propertiesFile) throws IOException {
+//    Preferences prefs = Preferences.systemNodeForPackage(SSRF.class);
+    Preferences prefs = Preferences.userRoot();
+    Properties properties = new Properties();
+    properties.load(new FileReader(propertiesFile));
+    for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+      prefs.put((String) entry.getKey(), (String) entry.getValue());
+    }
+  }
+
+  public void foo() {
+    Preferences prefs = Preferences.userRoot();
+    System.out.println("SSRF PREFS ");
+    try {
+      for (String string : prefs.keys()) {
+        System.out.println("pref [" + string + "] , [" + prefs.get(string, "") + "]");
+      }
+    } catch (BackingStoreException ex) {
+      Logger.getLogger(SSRF.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+  }
 
   /**
    * Validate a SSRF Object instance.

@@ -103,7 +103,7 @@ public class SSRFFactory {
     if (snOrganization != null) {
       sb.append(snOrganization).append(":");
     }
-    sb.append(ESerialType.fromInstance(clazz)).append(":");
+    sb.append(EDatasetType.fromInstance(clazz)).append(":");
     sb.append(snSerial);
 
     return new TString(sb.toString());

@@ -23,46 +23,76 @@
  */
 package us.gov.dod.standard.ssrf;
 
+import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
+
 /**
  * Enumerated list of serial number data types.
  * <p>
  * This class contains the codes that MUST be used as the third part of the
  * Serial of each dataset corresponding to each class type.
  * <p>
+ * Used by {@link TSerial}
+ * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public enum ESerialType {
+public enum EDatasetType {
 
-  AD("Administrative"),
-  AL("Allotment"),
-  AN("Antenna"),
-  AS("Assignment"),
-  CP("ChannelPlan"),
-  CN("Contact"),
-  EX("ExternalReference"),
-  FD("FEDeployment"),
-  FE("ForceElement"),
-  IF("IntfReport"),
-  JR("JRFL"),
-  LO("Location"),
-  NT("Note"),
-  OR("Organisation"),
-  RX("Receiver"),
-  TR("RFSystem"),
-  JA("Role"),
-  SA("Satellite"),
-  HD("SSReply"),
-  SR("SSRequest"),
-  TA("TOA"),
-  TX("Transmitter");
+  AD(Administrative.class),
+  AL(Allotment.class),
+  AN(Antenna.class),
+  AS(Assignment.class),
+  CN(Contact.class),
+  CP(ChannelPlan.class),
+  EX(ExternalReference.class),
   /**
-   * The class type simple name.
+   * Force Element Deployment
    */
-  private final String classSimpleName;
+  FD(FEDeployment.class),
+  FE(ForceElement.class),
+  /**
+   * Spectrum Supportability Reply (Host Nation Declaration)
+   */
+  HD(SSReply.class),
+  IF(IntfReport.class),
+  JA(Role.class),
+  JR(JRFL.class),
+  LO(Location.class),
+  LS(Loadset.class),
+  MS(Message.class),
+  NT(Note.class),
+  OR(Organisation.class),
+  RP(RadiationPlan.class),
+  RX(Receiver.class),
+  SA(Satellite.class),
+  /**
+   * Spectrum Supportability Request
+   */
+  SR(SSRequest.class),
+  /**
+   * Table of Allocations
+   */
+  TA(TOA.class),
+  TR(RFSystem.class),
+  TX(Transmitter.class);
 
-  private ESerialType(String classType) {
-    this.classSimpleName = classType;
+  /**
+   * The class type.
+   */
+  private final Class<? extends Common<?>> clazz;
+
+  private EDatasetType(Class<? extends Common<?>> clazz) {
+    this.clazz = clazz;
+  }
+
+  /**
+   * Get the class type for this serial type.
+   * <p>
+   * @return the class type.
+   */
+  public Class<? extends Common<?>> getClazz() {
+    return clazz;
   }
 
   /**
@@ -73,7 +103,7 @@ public enum ESerialType {
    * @param instance the object instance
    * @return the serial number data type code
    */
-  public static String fromInstance(Object instance) {
+  public static EDatasetType fromInstance(Object instance) {
     return fromInstance(instance.getClass());
   }
 
@@ -85,11 +115,10 @@ public enum ESerialType {
    * @param clazz the object instance class type
    * @return the serial number data type code
    */
-  public static String fromInstance(Class clazz) {
-
-    for (ESerialType type : ESerialType.values()) {
-      if (clazz.getSimpleName().equals(type.getClassSimpleName())) {
-        return type.name();
+  public static EDatasetType fromInstance(Class clazz) {
+    for (EDatasetType eSerialType : EDatasetType.values()) {
+      if (eSerialType.getClazz().equals(clazz)) {
+        return eSerialType;
       }
     }
     return null;
@@ -102,7 +131,7 @@ public enum ESerialType {
    *         "Allotment"
    */
   public String getClassSimpleName() {
-    return classSimpleName;
+    return clazz.getSimpleName();
   }
 
 }
