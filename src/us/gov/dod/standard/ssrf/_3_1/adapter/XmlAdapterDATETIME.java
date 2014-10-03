@@ -28,7 +28,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
-public class XmlAdapterDATETIME extends AXmlAdapterCalendar {
+public class XmlAdapterDATETIME extends AXmlAdapterTCalendar {
 
   /**
    * The DateTime pattern.

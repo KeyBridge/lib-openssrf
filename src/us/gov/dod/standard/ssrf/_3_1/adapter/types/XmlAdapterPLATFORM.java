@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterPLATFORM extends AXmlAdapterString {
+public class XmlAdapterPLATFORM extends AXmlAdapterTString {
 
   public XmlAdapterPLATFORM() {
     super(1, 4, false, "\\P{Ll}{1,4}");

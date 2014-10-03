@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterIFNUM extends AXmlAdapterNumber {
+public class XmlAdapterIFNUM extends AXmlAdapterTNumber {
 
   public XmlAdapterIFNUM() {
     super(1, null, 1, 5);

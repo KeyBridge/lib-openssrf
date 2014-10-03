@@ -27,6 +27,10 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.IMetadataType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TDouble;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TInteger;
 
 /**
  * Abstract Number type XmlAdapter.
@@ -57,7 +61,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
-public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
+public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
 
   /**
    * "XmlAdapter". The standard adapter name prefix. This is used when
@@ -99,7 +103,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                       digits to the right of the decimal. e.g. 123.456
    *                       contains 3 fraction digits.
    */
-  public AXmlAdapterNumber(Integer totalDigits, Integer fractionDigits) {
+  public AXmlAdapterTNumber(Integer totalDigits, Integer fractionDigits) {
     this.totalDigits = totalDigits;
     this.fractionDigits = fractionDigits;
     this.minInclusive = null;
@@ -118,7 +122,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * @param minInclusive   The minimum inclusive value.
    * @param maxInclusive   The maximum inclusive value.
    */
-  public AXmlAdapterNumber(Integer totalDigits, Integer fractionDigits, Integer minInclusive, Integer maxInclusive) {
+  public AXmlAdapterTNumber(Integer totalDigits, Integer fractionDigits, Integer minInclusive, Integer maxInclusive) {
     this.totalDigits = totalDigits;
     this.fractionDigits = fractionDigits;
     this.minInclusive = minInclusive;
@@ -137,8 +141,8 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String marshal(Number v) throws Exception {
-    return convert(v).toString();
+  public String marshal(IMetadataType v) throws Exception {
+    return convert((Number) v.getValue()).toString();
   }
 
   /**
@@ -153,7 +157,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                   ValidationEventHandler.
    */
   @Override
-  public Number unmarshal(String v) throws Exception {
+  public IMetadataType unmarshal(String v) throws Exception {
     return convert(v.contains(".") ? new BigDecimal(v) : new BigInteger(v));
   }
 
@@ -166,7 +170,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                   responsible for reporting the error to the user through
    *                   ValidationEventHandler.
    */
-  private Number convert(Number v) throws Exception {
+  private IMetadataType convert(Number v) throws Exception {
     /**
      * Validate the max/min values.
      */
@@ -183,18 +187,18 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
       if (totalDigits != null && totalDigits > getDigitCount((BigInteger) v)) {
         throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
       }
-      return v;
+      return new TInteger((BigInteger) v);
     } else if (v instanceof BigDecimal || v instanceof Double) {
       /**
        * Just convert the number precision to ensure it matches the required XML
        * style pattern.
        */
-      return new BigDecimal(v.doubleValue()).setScale(totalDigits - fractionDigits, RoundingMode.HALF_UP);
+      return new TDecimal(new BigDecimal(v.doubleValue()).setScale(totalDigits - fractionDigits, RoundingMode.HALF_UP));
     }
     /**
-     * Default fall through with whatever Number type was presented.
+     * Default fall through is a Double type.
      */
-    return v;
+    return new TDouble((Double) v);
   }
 
   /**

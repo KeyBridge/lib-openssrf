@@ -23,52 +23,15 @@
  */
 package us.gov.dod.standard.ssrf._3_1.adapter;
 
-import java.text.SimpleDateFormat;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TCalendar;
-
 /**
- * Abstract Calendar type XmlAdapter. This supports Date and DataTime string
- * conversion via a simple data formatter.
+ * XML data type adapter for the SSRF FREQM data type.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
+ * @version 3.1.0, 09/29/2014
  */
-public abstract class AXmlAdapterCalendar extends XmlAdapter<String, TCalendar> {
+public class XmlAdapterBigDecimalFREQM extends AXmlAdapterNumber {
 
-  /**
-   * The date or dateTime conversion pattern.
-   */
-  private final String PATTERN;
-
-  public AXmlAdapterCalendar(String PATTERN) {
-    this.PATTERN = PATTERN;
+  public XmlAdapterBigDecimalFREQM() {
+    super(16, 9, 0, 1000000000);
   }
-
-  /**
-   * Convert a bound type to a value type.
-   * <p>
-   * @param v The value to be converted. Can be null.
-   * @return the converted value
-   */
-  @Override
-  public String marshal(TCalendar v) {
-    if (v == null) {
-      return null;
-    }
-    SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
-    sdf.setTimeZone(v.getValue().getTimeZone());
-    return sdf.format(v.getValue().getTime());
-  }
-
-  /**
-   * Convert a value type to a bound type.
-   * <p>
-   * @param v The value to be converted. Must be non-null.
-   * @return the converted value
-   */
-  @Override
-  public TCalendar unmarshal(String v) {
-    return new TCalendar(javax.xml.bind.DatatypeConverter.parseDate(v));
-  }
-
 }

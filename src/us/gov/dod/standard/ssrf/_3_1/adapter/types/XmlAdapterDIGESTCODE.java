@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterDIGESTCODE extends AXmlAdapterString {
+public class XmlAdapterDIGESTCODE extends AXmlAdapterTString {
 
   public XmlAdapterDIGESTCODE() {
     super(1, 512, false, "[0-9A-Fa-f]{1,512}");

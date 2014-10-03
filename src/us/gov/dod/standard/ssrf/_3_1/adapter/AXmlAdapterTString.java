@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 
 /**
  * Abstract String type XmlAdapter.
@@ -37,11 +38,11 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * case characters).
  * <p>
  * This abstract adapter converts between a {@link java.lang.String} and a
- * {@link String}.
+ * {@link TString}.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
-public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
+public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
 
   /**
    * "XmlAdapter". The standard adapter name prefix. This is used when
@@ -67,21 +68,21 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    */
   private final String pattern;
 
-  public AXmlAdapterString(Integer minLength, Integer maxLength) {
+  public AXmlAdapterTString(Integer minLength, Integer maxLength) {
     this.minLength = minLength;
     this.maxLength = maxLength;
     this.upperCase = false;
     this.pattern = null;
   }
 
-  public AXmlAdapterString(Integer minLength, Integer maxLength, String pattern) {
+  public AXmlAdapterTString(Integer minLength, Integer maxLength, String pattern) {
     this.minLength = minLength;
     this.maxLength = maxLength;
     this.upperCase = false;
     this.pattern = pattern;
   }
 
-  public AXmlAdapterString(Integer minLength, Integer maxLength, boolean upperCase, String pattern) {
+  public AXmlAdapterTString(Integer minLength, Integer maxLength, boolean upperCase, String pattern) {
     this.minLength = minLength;
     this.maxLength = maxLength;
     this.upperCase = upperCase;
@@ -100,8 +101,8 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String marshal(String v) throws Exception {
-    return convert(v);
+  public String marshal(TString v) throws Exception {
+    return convert(v.getValue());
   }
 
   /**
@@ -116,8 +117,12 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String unmarshal(String v) throws Exception {
-    return convert(v);
+  public TString unmarshal(String v) throws Exception {
+    /**
+     * DEBUG - simply return the value for a relaxed configuration.
+     */
+//    return new TString(v);
+    return new TString(convert(v));
   }
 
   /**

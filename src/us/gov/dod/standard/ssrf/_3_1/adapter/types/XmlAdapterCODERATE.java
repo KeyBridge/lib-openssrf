@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterCODERATE extends AXmlAdapterNumber {
+public class XmlAdapterCODERATE extends AXmlAdapterTNumber {
 
   public XmlAdapterCODERATE() {
     super(10, 3, 0, null);

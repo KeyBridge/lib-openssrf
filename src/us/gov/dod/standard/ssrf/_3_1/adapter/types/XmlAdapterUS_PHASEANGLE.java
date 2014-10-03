@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterUS_PHASEANGLE extends AXmlAdapterNumber {
+public class XmlAdapterUS_PHASEANGLE extends AXmlAdapterTNumber {
 
   public XmlAdapterUS_PHASEANGLE() {
     super(3, 2, 0, null);

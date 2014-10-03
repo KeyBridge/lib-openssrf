@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterUS_MOPCHGAM extends AXmlAdapterNumber {
+public class XmlAdapterUS_MOPCHGAM extends AXmlAdapterTNumber {
 
   public XmlAdapterUS_MOPCHGAM() {
     super(5, 2, null, null);

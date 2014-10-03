@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterHEIGHT_UN4 extends AXmlAdapterNumber {
+public class XmlAdapterHEIGHT_UN4 extends AXmlAdapterTNumber {
 
   public XmlAdapterHEIGHT_UN4() {
     super(5, null, 0, null);

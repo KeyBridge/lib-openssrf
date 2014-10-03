@@ -23,24 +23,52 @@
  */
 package us.gov.dod.standard.ssrf._3_1.adapter;
 
+import java.text.SimpleDateFormat;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TCalendar;
+
 /**
- * SSRF Date type adapter.
+ * Abstract Calendar type XmlAdapter. This supports Date and DataTime string
+ * conversion via a simple data formatter.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
-public class XmlAdapterDATE extends AXmlAdapterTCalendar {
+public abstract class AXmlAdapterTCalendar extends XmlAdapter<String, TCalendar> {
 
   /**
-   * The Date pattern.
-   * <p>
-   * D is a date value formatted in 10 characters as YYYY-MM-DD
-   * (year-month-day). This format is compliant with the W3C Recommendation on
-   * XML Schema.
+   * The date or dateTime conversion pattern.
    */
-  private static final String PATTERN = "yyyy-MM-dd";
+  private final String PATTERN;
 
-  public XmlAdapterDATE() {
-    super(PATTERN);
+  public AXmlAdapterTCalendar(String PATTERN) {
+    this.PATTERN = PATTERN;
+  }
+
+  /**
+   * Convert a bound type to a value type.
+   * <p>
+   * @param v The value to be converted. Can be null.
+   * @return the converted value
+   */
+  @Override
+  public String marshal(TCalendar v) {
+    if (v == null) {
+      return null;
+    }
+    SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+    sdf.setTimeZone(v.getValue().getTimeZone());
+    return sdf.format(v.getValue().getTime());
+  }
+
+  /**
+   * Convert a value type to a bound type.
+   * <p>
+   * @param v The value to be converted. Must be non-null.
+   * @return the converted value
+   */
+  @Override
+  public TCalendar unmarshal(String v) {
+    return new TCalendar(javax.xml.bind.DatatypeConverter.parseDate(v));
   }
 
 }

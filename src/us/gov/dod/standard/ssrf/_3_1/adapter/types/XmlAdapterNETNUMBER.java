@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterNETNUMBER extends AXmlAdapterString {
+public class XmlAdapterNETNUMBER extends AXmlAdapterTString {
 
   public XmlAdapterNETNUMBER() {
     super(1, 6, false, "[AB][0-9]{3}(00|25|50|75)");

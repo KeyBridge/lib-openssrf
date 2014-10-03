@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterSERIAL extends AXmlAdapterString {
+public class XmlAdapterSERIAL extends AXmlAdapterTString {
 
   public XmlAdapterSERIAL() {
     super(1, 29, false, "[A-Z0-9-]{1,5}:\\w{0,4}:[A-Z]{2}:\\S{1,15}");

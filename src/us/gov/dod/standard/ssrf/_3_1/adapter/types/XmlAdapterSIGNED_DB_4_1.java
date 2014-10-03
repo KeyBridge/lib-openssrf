@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterSIGNED_DB_4_1 extends AXmlAdapterNumber {
+public class XmlAdapterSIGNED_DB_4_1 extends AXmlAdapterTNumber {
 
   public XmlAdapterSIGNED_DB_4_1() {
     super(4, 1, -150, 150);

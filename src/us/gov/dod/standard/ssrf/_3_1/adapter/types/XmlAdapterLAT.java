@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/29/2014
  */
-public class XmlAdapterLAT extends AXmlAdapterString {
+public class XmlAdapterLAT extends AXmlAdapterTString {
 
   public XmlAdapterLAT() {
     super(1, 10, false, "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X");
