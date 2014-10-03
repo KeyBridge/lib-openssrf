@@ -73,7 +73,6 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TSerial", propOrder = {"value"})
-
 public class TSerial extends AMetadata<TSerial> implements IMetadataType {
 
   /**
@@ -172,9 +171,9 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @throws IllegalArgumentException if the object instance does not extend
    *                                  Common
    */
-  public static TSerial getInstance(Object instance) throws IllegalArgumentException {
-    return getInstance(instance.getClass());
-  }
+//  public static TSerial getInstance(Object instance) throws IllegalArgumentException {
+//    return getInstance(instance.getClass());
+//  }
 
   /**
    * Get a TSerial instance for the indicated class instance.
@@ -241,11 +240,14 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
   }
 
   /**
-   * Set the data set class type.
+   * Set the data set class type. (Private)
+   * <p>
+   * Developer note: The datasetType field is REQUIRED and MUST be set upon
+   * TSerial object instantiation.
    * <p>
    * @param datasetType an enumerated dataset class type
    */
-  public void setDatasetType(EDatasetType datasetType) {
+  private void setDatasetType(EDatasetType datasetType) {
     this.datasetType = datasetType;
     format();
   }
@@ -359,12 +361,15 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
   }
 
   /**
-   * Set the class type.
+   * Set the class type. (Private)
+   * <p>
+   * Developer note: The datasetType field is REQUIRED and MUST be set upon
+   * TSerial object instantiation.
    * <p>
    * @param value a SSRF class type or instance
    * @return the current serial instance
    */
-  public TSerial withDatasetType(Class<? extends Common<?>> value) {
+  private TSerial withDatasetType(Class<? extends Common<?>> value) {
     setDatasetType(EDatasetType.fromInstance(value));
     return this;
   }
@@ -375,7 +380,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @param value a SSRF class type or instance that extends Common
    * @return the current serial instance
    */
-  public TSerial withDatasetType(Object value) {
+  private TSerial withDatasetType(Object value) {
     setDatasetType(EDatasetType.fromInstance(value));
     return this;
   }
