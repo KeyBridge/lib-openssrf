@@ -26,7 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.receiver;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS40;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS40;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -59,7 +59,7 @@ public class Installation extends AMetadata<Installation> {
    * Format is S40
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS40.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS40.class)
   private String value;
 
   /**

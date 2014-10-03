@@ -25,7 +25,10 @@ package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -52,6 +55,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class Remarks {
 
   @XmlValue
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringMEMO.class)
   private String value;
   /**
    * cls - Classification (Required)
@@ -73,6 +77,7 @@ public class Remarks {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

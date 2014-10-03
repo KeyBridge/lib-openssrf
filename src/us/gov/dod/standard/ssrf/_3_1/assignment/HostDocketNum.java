@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS35;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS35;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -51,7 +51,7 @@ public class HostDocketNum extends AMetadata<HostDocketNum> {
    * Format is S35
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS35.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS35.class)
   private String value;
 
   /**

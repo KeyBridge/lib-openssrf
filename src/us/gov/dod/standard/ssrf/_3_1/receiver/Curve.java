@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -184,6 +185,7 @@ public class Curve {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

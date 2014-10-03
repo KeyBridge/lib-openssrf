@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -175,6 +176,7 @@ public class ConfigFreq {
    * parent element.
    */
   @XmlAttribute(name = "idx", required = true)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

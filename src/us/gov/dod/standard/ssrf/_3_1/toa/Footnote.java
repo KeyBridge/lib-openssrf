@@ -27,6 +27,7 @@ import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.TOA;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTA;
@@ -116,6 +117,7 @@ public class Footnote {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

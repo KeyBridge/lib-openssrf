@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS6;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS6;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -54,7 +54,7 @@ public class OffTheShelfEquipment extends AMetadata<OffTheShelfEquipment> {
    * Format is S6
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterS6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS6.class)
   private String value;
 
   /**

@@ -200,6 +200,7 @@ public abstract class Common<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "Serial", required = true)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)

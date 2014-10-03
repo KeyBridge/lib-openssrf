@@ -27,8 +27,8 @@ import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterMEMO;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUN6;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -57,7 +57,7 @@ public class Comment extends AMetadata<Comment> {
    * Format is MEMO
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringMEMO.class)
   private String value;
   /**
    * idx - Index (Required)
@@ -71,7 +71,7 @@ public class Comment extends AMetadata<Comment> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
