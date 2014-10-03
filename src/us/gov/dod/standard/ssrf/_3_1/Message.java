@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * were received. If a dataset fails validation, a separate Administrative
  * dataset SHOULD be returned to the sender informing them of the error.
  * <p>
- * Sub-Element is {@link DatasetRef}
+ * Sub-Element is
  * <p>
  * Example:
  * <pre>
@@ -93,7 +93,8 @@ public class Message extends Common<Message> {
    * Message.
    */
   @XmlElement(name = "DatasetRef", required = true, nillable = true)
-  private List<DatasetRef> datasetRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> datasetRef;
 
   /**
    * Get a human-readable name for the message.
@@ -161,9 +162,9 @@ public class Message extends Common<Message> {
    * Complex element DatasetRefs lists the serial for each primary Dataset
    * included in a single Message.
    * <p>
-   * @return a non-null but possibly empty list of {@link DatasetRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<DatasetRef> getDatasetRef() {
+  public List<TString> getDatasetRef() {
     if (datasetRef == null) {
       datasetRef = new ArrayList<>();
     }
@@ -215,10 +216,10 @@ public class Message extends Common<Message> {
    * Complex element DatasetRefs lists the serial for each primary Dataset
    * included in a single Message.
    * <p>
-   * @param values One or more instances of type {@link DatasetRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Message object instance
    */
-  public Message withDatasetRef(DatasetRef... values) {
+  public Message withDatasetRef(TString... values) {
     if (values != null) {
       getDatasetRef().addAll(Arrays.asList(values));
     }
@@ -231,10 +232,10 @@ public class Message extends Common<Message> {
    * Complex element DatasetRefs lists the serial for each primary Dataset
    * included in a single Message.
    * <p>
-   * @param values A collection of {@link DatasetRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Message object instance
    */
-  public Message withDatasetRef(Collection<DatasetRef> values) {
+  public Message withDatasetRef(Collection<TString> values) {
     if (values != null) {
       getDatasetRef().addAll(values);
     }

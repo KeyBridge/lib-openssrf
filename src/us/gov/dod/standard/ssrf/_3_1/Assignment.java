@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * Assignment is the XML root for all parameters of a system of assignments.
  * <p>
  * Sub-Elements are
- * {@link AsgnAllotOwner}, {@link CircuitRemarks}, {@link Configuration}, {@link CoordinationData}, {@link DocketNum}, {@link HostDocketNum}, {@link Link}, {@link OffTheShelfEquipment}, {@link POCInformation}, {@link PreviousAuthorization}, {@link Project}, {@link RecordNote}, {@link RelatedRef}, {@link Station}, {@link StatusLog}, {@link SysOfStation}
+ * {@link AsgnAllotOwner}, {@link CircuitRemarks}, {@link Configuration}, {@link CoordinationData}, {@link DocketNum}, {@link HostDocketNum}, {@link Link}, {@link OffTheShelfEquipment}, {@link POCInformation}, {@link PreviousAuthorization}, {@link Project}, {@link RecordNote}, {@link Station}, {@link StatusLog}, {@link SysOfStation}
  * <p>
  * Example:
  * <pre>
@@ -682,7 +682,8 @@ public class Assignment extends Common<Assignment> {
    * SSReply, ForceElement or FEDeployment.
    */
   @XmlElement(name = "RelatedRef", nillable = true)
-  private List<RelatedRef> relatedRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> relatedRef;
   /**
    * Configuration (Required)
    * <p>
@@ -2291,9 +2292,9 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @return a non-null but possibly empty list of {@link RelatedRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<RelatedRef> getRelatedRef() {
+  public List<TString> getRelatedRef() {
     if (relatedRef == null) {
       relatedRef = new ArrayList<>();
     }
@@ -3355,10 +3356,10 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @param values One or more instances of type {@link RelatedRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Assignment object instance
    */
-  public Assignment withRelatedRef(RelatedRef... values) {
+  public Assignment withRelatedRef(TString... values) {
     if (values != null) {
       getRelatedRef().addAll(Arrays.asList(values));
     }
@@ -3371,10 +3372,10 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @param values A collection of {@link RelatedRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Assignment object instance
    */
-  public Assignment withRelatedRef(Collection<RelatedRef> values) {
+  public Assignment withRelatedRef(Collection<TString> values) {
     if (values != null) {
       getRelatedRef().addAll(values);
     }

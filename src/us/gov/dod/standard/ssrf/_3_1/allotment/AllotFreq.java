@@ -42,7 +42,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * <p>
  * Element of {@link Allotment}
  * <p>
- * Sub-Element is {@link LocationRestriction}
+ * Sub-Element is
  * <p>
  * Example: See {@link Allotment}.
  * <p>
@@ -125,7 +125,8 @@ public class AllotFreq {
    * forbidden.
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
-  private List<LocationRestriction> locationRestriction;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> locationRestriction;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -286,10 +287,9 @@ public class AllotFreq {
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
    * <p>
-   * @return a non-null but possibly empty list of {@link LocationRestriction}
-   *         instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<LocationRestriction> getLocationRestriction() {
+  public List<TString> getLocationRestriction() {
     if (locationRestriction == null) {
       locationRestriction = new ArrayList<>();
     }
@@ -377,10 +377,10 @@ public class AllotFreq {
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
    * <p>
-   * @param values One or more instances of type {@link LocationRestriction}
+   * @param values One or more instances of type {@link TString}
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestriction(LocationRestriction... values) {
+  public AllotFreq withLocationRestriction(TString... values) {
     if (values != null) {
       getLocationRestriction().addAll(Arrays.asList(values));
     }
@@ -393,10 +393,10 @@ public class AllotFreq {
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
    * <p>
-   * @param values A collection of {@link LocationRestriction} instances
+   * @param values A collection of {@link TString} instances
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestriction(Collection<LocationRestriction> values) {
+  public AllotFreq withLocationRestriction(Collection<TString> values) {
     if (values != null) {
       getLocationRestriction().addAll(values);
     }

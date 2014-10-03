@@ -40,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * <p>
  * Element of {@link Administrative}
  * <p>
- * Sub-Element is {@link MissingRef}
+ * Sub-Element is
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -91,7 +91,8 @@ public class Dataset {
    * dataset referenced in the message was not known by the recipient.
    */
   @XmlElement(name = "MissingRef", nillable = true)
-  private List<MissingRef> missingRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> missingRef;
 
   /**
    * Get the serial of the referenced Dataset.
@@ -188,9 +189,9 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @return a non-null but possibly empty list of {@link MissingRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<MissingRef> getMissingRef() {
+  public List<TString> getMissingRef() {
     if (missingRef == null) {
       missingRef = new ArrayList<>();
     }
@@ -253,10 +254,10 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @param values One or more instances of type {@link MissingRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Dataset object instance
    */
-  public Dataset withMissingRef(MissingRef... values) {
+  public Dataset withMissingRef(TString... values) {
     if (values != null) {
       getMissingRef().addAll(Arrays.asList(values));
     }
@@ -270,10 +271,10 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @param values A collection of {@link MissingRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Dataset object instance
    */
-  public Dataset withMissingRef(Collection<MissingRef> values) {
+  public Dataset withMissingRef(Collection<TString> values) {
     if (values != null) {
       getMissingRef().addAll(values);
     }

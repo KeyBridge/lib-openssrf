@@ -37,14 +37,13 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCLS;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSP;
 import us.gov.dod.standard.ssrf._3_1.satellite.EarthStation;
-import us.gov.dod.standard.ssrf._3_1.satellite.RFSystemRef;
 import us.gov.dod.standard.ssrf._3_1.satellite.ServiceArea;
 
 /**
  * Satellite contains station information related to the space service.
  * <p>
  * Sub-Elements are
- * {@link EarthStation}, {@link Nomenclature}, {@link RFSystemRef}, {@link ServiceArea}
+ * {@link EarthStation}, {@link Nomenclature}, {@link ServiceArea}
  * <p>
  * Example:
  * <pre>
@@ -276,7 +275,8 @@ public class Satellite extends Common<Satellite> {
    * RFSystemRef contains a reference to a RF System used on the satellite.
    */
   @XmlElement(name = "RFSystemRef", nillable = true)
-  private List<RFSystemRef> rfSystemRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> rfSystemRef;
   /**
    * EarthStation (Optional)
    * <p>
@@ -839,9 +839,9 @@ public class Satellite extends Common<Satellite> {
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
    * <p>
-   * @return a non-null but possibly empty list of {@link RFSystemRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<RFSystemRef> getRFSystemRef() {
+  public List<TString> getRFSystemRef() {
     if (rfSystemRef == null) {
       rfSystemRef = new ArrayList<>();
     }
@@ -1170,10 +1170,10 @@ public class Satellite extends Common<Satellite> {
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
    * <p>
-   * @param values One or more instances of type {@link RFSystemRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Satellite object instance
    */
-  public Satellite withRFSystemRef(RFSystemRef... values) {
+  public Satellite withRFSystemRef(TString... values) {
     if (values != null) {
       getRFSystemRef().addAll(Arrays.asList(values));
     }
@@ -1186,10 +1186,10 @@ public class Satellite extends Common<Satellite> {
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
    * <p>
-   * @param values A collection of {@link RFSystemRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Satellite object instance
    */
-  public Satellite withRFSystemRef(Collection<RFSystemRef> values) {
+  public Satellite withRFSystemRef(Collection<TString> values) {
     if (values != null) {
       getRFSystemRef().addAll(values);
     }

@@ -47,7 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.multiple.*;
  * {@link Assignment}, {@link RFSystem}, {@link SSReply}, {@link SSRequest}
  * <p>
  * Sub-Elements are
- * {@link CaseNum}, {@link ConfigEmission}, {@link ConfigFreq}, {@link LoadsetRef}, {@link Notation}, {@link ObservedERPAnalysis}, {@link RxRef}, {@link TxRef}, {@link Usage}
+ * {@link CaseNum}, {@link ConfigEmission}, {@link ConfigFreq}, {@link Notation}, {@link ObservedERPAnalysis}, {@link RxRef}, {@link TxRef}, {@link Usage}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -328,7 +328,8 @@ public class Configuration {
    * target or targets.
    */
   @XmlElement(name = "LoadsetRef", nillable = true)
-  private List<LoadsetRef> loadsetRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> loadsetRef;
   /**
    * US:ObservedERPAnalysis (Optional)
    * <p>
@@ -1105,9 +1106,9 @@ public class Configuration {
    * Complex element LoadsetRef describes the jamming loadset to be used against
    * a specific target or targets.
    * <p>
-   * @return a non-null but possibly empty list of {@link LoadsetRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<LoadsetRef> getLoadsetRef() {
+  public List<TString> getLoadsetRef() {
     if (loadsetRef == null) {
       loadsetRef = new ArrayList<>();
     }
@@ -1606,10 +1607,10 @@ public class Configuration {
    * Complex element LoadsetRef describes the jamming loadset to be used against
    * a specific target or targets.
    * <p>
-   * @param values One or more instances of type {@link LoadsetRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Configuration object instance
    */
-  public Configuration withLoadsetRef(LoadsetRef... values) {
+  public Configuration withLoadsetRef(TString... values) {
     if (values != null) {
       getLoadsetRef().addAll(Arrays.asList(values));
     }
@@ -1622,10 +1623,10 @@ public class Configuration {
    * Complex element LoadsetRef describes the jamming loadset to be used against
    * a specific target or targets.
    * <p>
-   * @param values A collection of {@link LoadsetRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Configuration object instance
    */
-  public Configuration withLoadsetRef(Collection<LoadsetRef> values) {
+  public Configuration withLoadsetRef(Collection<TString> values) {
     if (values != null) {
       getLoadsetRef().addAll(values);
     }

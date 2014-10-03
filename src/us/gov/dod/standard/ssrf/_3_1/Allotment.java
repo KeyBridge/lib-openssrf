@@ -42,7 +42,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCUT;
  * for a specified period of time.
  * <p>
  * Sub-Elements are
- * {@link AllotFreq}, {@link Emission}, {@link LocationRef}, {@link POCInformation}, {@link Project}
+ * {@link AllotFreq}, {@link Emission}, {@link POCInformation}, {@link Project}
  * <p>
  * Example:
  * <pre>
@@ -197,7 +197,8 @@ public class Allotment extends Common<Allotment> {
    * LocationRef references a Location dataset.
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
-  private List<LocationRef> locationRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> locationRef;
   /**
    * Emission (Optional)
    * <p>
@@ -511,9 +512,9 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element LocationRef references a Location dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link LocationRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<LocationRef> getLocationRef() {
+  public List<TString> getLocationRef() {
     if (locationRef == null) {
       locationRef = new ArrayList<>();
     }
@@ -754,10 +755,10 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element LocationRef references a Location dataset.
    * <p>
-   * @param values One or more instances of type {@link LocationRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Allotment object instance
    */
-  public Allotment withLocationRef(LocationRef... values) {
+  public Allotment withLocationRef(TString... values) {
     if (values != null) {
       getLocationRef().addAll(Arrays.asList(values));
     }
@@ -769,10 +770,10 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element LocationRef references a Location dataset.
    * <p>
-   * @param values A collection of {@link LocationRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Allotment object instance
    */
-  public Allotment withLocationRef(Collection<LocationRef> values) {
+  public Allotment withLocationRef(Collection<TString> values) {
     if (values != null) {
       getLocationRef().addAll(values);
     }

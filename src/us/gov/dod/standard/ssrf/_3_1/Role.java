@@ -37,15 +37,13 @@ import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
-import us.gov.dod.standard.ssrf._3_1.role.ContactRef;
 
 /**
  * Role is the XML root for all parameters of a Role (position or role
  * representing an organisational user of the system; also known as Job Account
  * in the USA).
  * <p>
- * Sub-Elements are
- * {@link Address}, {@link ContactRef}, {@link EMail Email}, {@link TelephoneFax}
+ * Sub-Elements are {@link Address}, {@link EMail Email}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -167,7 +165,8 @@ public class Role extends Common<Role> {
    * ContactRef references a Contact.
    */
   @XmlElement(name = "ContactRef", nillable = true)
-  private List<ContactRef> contactRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> contactRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -437,9 +436,9 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element ContactRef references a Contact.
    * <p>
-   * @return a non-null but possibly empty list of {@link ContactRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<ContactRef> getContactRef() {
+  public List<TString> getContactRef() {
     if (contactRef == null) {
       contactRef = new ArrayList<>();
     }
@@ -627,10 +626,10 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element ContactRef references a Contact.
    * <p>
-   * @param values One or more instances of type {@link ContactRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Role object instance
    */
-  public Role withContactRef(ContactRef... values) {
+  public Role withContactRef(TString... values) {
     if (values != null) {
       getContactRef().addAll(Arrays.asList(values));
     }
@@ -642,10 +641,10 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element ContactRef references a Contact.
    * <p>
-   * @param values A collection of {@link ContactRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Role object instance
    */
-  public Role withContactRef(Collection<ContactRef> values) {
+  public Role withContactRef(Collection<TString> values) {
     if (values != null) {
       getContactRef().addAll(values);
     }

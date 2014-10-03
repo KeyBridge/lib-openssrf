@@ -33,7 +33,6 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
-import us.gov.dod.standard.ssrf._3_1.toa.ChannelPlanRef;
 import us.gov.dod.standard.ssrf._3_1.toa.Country;
 import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
@@ -42,8 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
  * TOA is the XML root for all parameters of a Table of Allocations. It inherits
  * attributes and sub-elements from element Common.
  * <p>
- * Sub-Elements are
- * {@link ChannelPlanRef}, {@link Country}, {@link Footnote}, {@link FreqBand}
+ * Sub-Elements are {@link Country}, {@link Footnote}, {@link FreqBand}
  * <p>
  * Example:
  * <pre>
@@ -134,7 +132,8 @@ public class TOA extends Common<TOA> {
    * ChannelPlanRef refers to a ChannelPlan.
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  private List<ChannelPlanRef> channelPlanRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> channelPlanRef;
   /**
    * Country (Optional)
    * <p>
@@ -312,10 +311,9 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @return a non-null but possibly empty list of {@link ChannelPlanRef}
-   *         instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<ChannelPlanRef> getChannelPlanRef() {
+  public List<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new ArrayList<>();
     }
@@ -487,10 +485,10 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @param values One or more instances of type {@link ChannelPlanRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current TOA object instance
    */
-  public TOA withChannelPlanRef(ChannelPlanRef... values) {
+  public TOA withChannelPlanRef(TString... values) {
     if (values != null) {
       getChannelPlanRef().addAll(Arrays.asList(values));
     }
@@ -502,10 +500,10 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @param values A collection of {@link ChannelPlanRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current TOA object instance
    */
-  public TOA withChannelPlanRef(Collection<ChannelPlanRef> values) {
+  public TOA withChannelPlanRef(Collection<TString> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }

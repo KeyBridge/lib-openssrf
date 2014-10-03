@@ -38,14 +38,13 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTO;
 import us.gov.dod.standard.ssrf._3_1.organisation.RelatedOrganisation;
-import us.gov.dod.standard.ssrf._3_1.organisation.RoleRef;
 
 /**
  * Organisation is the XML root for all parameters of an Organisation (service,
  * agency, manufacturer, etc).
  * <p>
  * Sub-Elements are
- * {@link Address}, {@link EMail Email}, {@link RelatedOrganisation}, {@link RoleRef}, {@link TelephoneFax}
+ * {@link Address}, {@link EMail Email}, {@link RelatedOrganisation}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -191,7 +190,8 @@ public class Organisation extends Common<Organisation> {
    * RoleRef contains the serial of a referenced Role.
    */
   @XmlElement(name = "RoleRef", nillable = true)
-  private List<RoleRef> roleRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> roleRef;
   /**
    * RelatedOrganisation (Optional)
    * <p>
@@ -522,9 +522,9 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    * <p>
-   * @return a non-null but possibly empty list of {@link RoleRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<RoleRef> getRoleRef() {
+  public List<TString> getRoleRef() {
     if (roleRef == null) {
       roleRef = new ArrayList<>();
     }
@@ -764,10 +764,10 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    * <p>
-   * @param values One or more instances of type {@link RoleRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Organisation object instance
    */
-  public Organisation withRoleRef(RoleRef... values) {
+  public Organisation withRoleRef(TString... values) {
     if (values != null) {
       getRoleRef().addAll(Arrays.asList(values));
     }
@@ -779,10 +779,10 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    * <p>
-   * @param values A collection of {@link RoleRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Organisation object instance
    */
-  public Organisation withRoleRef(Collection<RoleRef> values) {
+  public Organisation withRoleRef(Collection<TString> values) {
     if (values != null) {
       getRoleRef().addAll(values);
     }

@@ -28,6 +28,7 @@ import java.util.*;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPS;
@@ -39,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
  * <p>
  * Element of {@link FreqBand}
  * <p>
- * Sub-Elements are {@link ChannelPlanRef}, {@link StnClass}, {@link Variance}
+ * Sub-Elements are {@link StnClass}, {@link Variance}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -131,7 +132,8 @@ public class Allocation {
    * ChannelPlanRef references the ChannelPlan.
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  private List<ChannelPlanRef> channelPlanRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> channelPlanRef;
   /**
    * footnotes - Link to allocation usage notes (Optional)
    * <p>
@@ -369,10 +371,9 @@ public class Allocation {
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @return a non-null but possibly empty list of {@link ChannelPlanRef}
-   *         instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<ChannelPlanRef> getChannelPlanRef() {
+  public List<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new ArrayList<>();
     }
@@ -556,10 +557,10 @@ public class Allocation {
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @param values One or more instances of type {@link ChannelPlanRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Allocation object instance
    */
-  public Allocation withChannelPlanRef(ChannelPlanRef... values) {
+  public Allocation withChannelPlanRef(TString... values) {
     if (values != null) {
       getChannelPlanRef().addAll(Arrays.asList(values));
     }
@@ -571,10 +572,10 @@ public class Allocation {
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @param values A collection of {@link ChannelPlanRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Allocation object instance
    */
-  public Allocation withChannelPlanRef(Collection<ChannelPlanRef> values) {
+  public Allocation withChannelPlanRef(Collection<TString> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }

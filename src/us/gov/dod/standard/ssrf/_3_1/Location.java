@@ -31,7 +31,6 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
-import us.gov.dod.standard.ssrf._3_1.allotment.LocationRef;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
 import us.gov.dod.standard.ssrf._3_1.location.Point;
@@ -45,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * area, or a set of those.
  * <p>
  * Sub-Elements are
- * {@link Ellipse}, {@link LocationRef}, {@link POCInformation}, {@link Point}, {@link Polygon}
+ * {@link Ellipse}, {@link POCInformation}, {@link Point}, {@link Polygon}
  * <p>
  * Example: A simple fixed location:
  * <pre>
@@ -277,7 +276,8 @@ public class Location extends Common<Location> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", nillable = true)
-  private List<LocationRef> locationRef;
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  private List<TString> locationRef;
 
   private Location() {
   }
@@ -699,9 +699,9 @@ public class Location extends Common<Location> {
   /**
    * Get the serial of the referenced Location.
    * <p>
-   * @return a non-null but possibly empty list of {@link LocationRef} instances
+   * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<LocationRef> getLocationRef() {
+  public List<TString> getLocationRef() {
     if (locationRef == null) {
       locationRef = new ArrayList<>();
     }
@@ -968,10 +968,10 @@ public class Location extends Common<Location> {
   /**
    * Set the serial of the referenced Location.
    * <p>
-   * @param values One or more instances of type {@link LocationRef}
+   * @param values One or more instances of type {@link TString}
    * @return The current Location object instance
    */
-  public Location withLocationRef(LocationRef... values) {
+  public Location withLocationRef(TString... values) {
     if (values != null) {
       getLocationRef().addAll(Arrays.asList(values));
     }
@@ -981,10 +981,10 @@ public class Location extends Common<Location> {
   /**
    * Set the serial of the referenced Location.
    * <p>
-   * @param values A collection of {@link LocationRef} instances
+   * @param values A collection of {@link TString} instances
    * @return The current Location object instance
    */
-  public Location withLocationRef(Collection<LocationRef> values) {
+  public Location withLocationRef(Collection<TString> values) {
     if (values != null) {
       getLocationRef().addAll(values);
     }
