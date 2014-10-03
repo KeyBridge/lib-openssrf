@@ -166,21 +166,6 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * programmatically set to a time-sequenced, UUID-based 15-character snippet.
    * The organization is left blank and may be set by th user.
    * <p>
-   * @param instance a SSRF object instance that extends Common
-   * @return a TSerial instance
-   * @throws IllegalArgumentException if the object instance does not extend
-   *                                  Common
-   */
-//  public static TSerial getInstance(Object instance) throws IllegalArgumentException {
-//    return getInstance(instance.getClass());
-//  }
-  /**
-   * Get a TSerial instance for the indicated class instance.
-   * <p>
-   * The local is set to the current system default. The serial is
-   * programmatically set to a time-sequenced, UUID-based 15-character snippet.
-   * The organization is left blank and may be set by th user.
-   * <p>
    * @param clazz a SSRF class type that extends Common
    * @return a TSerial instance
    * @throws IllegalArgumentException if the object instance does not extend
@@ -216,8 +201,6 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
       .append(":")
       .append(serial != null ? serial : uuidSnippet());
     this.value = sb.toString();
-
-    System.out.println("DEBUG TSerial Format " + this.value);
   }
 
   /**
