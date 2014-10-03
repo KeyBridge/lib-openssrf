@@ -34,14 +34,13 @@ import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
 import us.gov.dod.standard.ssrf._3_1.satellite.ServiceArea;
 import us.gov.dod.standard.ssrf._3_1.ssrequest.HostNation;
-import us.gov.dod.standard.ssrf._3_1.toa.Administration;
 import us.gov.dod.standard.ssrf._3_1.toa.Country;
 
 /**
  * Enumerated values for fields using the ListCAO type.
  * <p>
  * Used in
- * {@link Address}, {@link Administration}, {@link CaseNum}, {@link CodeList}, {@link Country}, {@link ForceElement}, {@link HostNation}, {@link IntfReport}, {@link Location}, {@link Manufacturer}, {@link Note}, {@link SSReply}, {@link ServiceArea}, {@link UsingCountries}
+ * {@link Address}, {@link CaseNum}, {@link CodeList}, {@link Country}, {@link ForceElement}, {@link HostNation}, {@link IntfReport}, {@link Location}, {@link Manufacturer}, {@link Note}, {@link SSReply}, {@link ServiceArea}, {@link UsingCountries}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 10/01/2014

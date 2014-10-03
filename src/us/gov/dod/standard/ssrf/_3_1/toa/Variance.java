@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -32,6 +31,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAV;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPS;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
@@ -101,7 +101,7 @@ public class Variance {
    * Administration contains the country for which this variance applies.
    */
   @XmlElement(name = "Administration", nillable = true)
-  private List<Administration> administration;
+  private List<TString> administration;
 
   /**
    * Get the type of variance.
@@ -203,7 +203,7 @@ public class Variance {
    * @return a non-null but possibly empty list of {@link Administration}
    *         instances
    */
-  public List<Administration> getAdministration() {
+  public List<TString> getAdministration() {
     if (administration == null) {
       administration = new ArrayList<>();
     }
@@ -270,9 +270,11 @@ public class Variance {
    * @param values One or more instances of type {@link Administration}
    * @return The current Variance object instance
    */
-  public Variance withAdministration(Administration... values) {
+  public Variance withAdministration(ListCAO... values) {
     if (values != null) {
-      getAdministration().addAll(Arrays.asList(values));
+      for (ListCAO listCAO : values) {
+        getAdministration().add(new TString(listCAO.name()));
+      }
     }
     return this;
   }
@@ -286,9 +288,11 @@ public class Variance {
    * @param values A collection of {@link Administration} instances
    * @return The current Variance object instance
    */
-  public Variance withAdministration(Collection<Administration> values) {
+  public Variance withAdministration(Collection<ListCAO> values) {
     if (values != null) {
-      getAdministration().addAll(values);
+      for (ListCAO listCAO : values) {
+        getAdministration().add(new TString(listCAO.name()));
+      }
     }
     return this;
   }
