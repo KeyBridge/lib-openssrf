@@ -47,6 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
+ * @param <T> The inheriting class type
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
@@ -102,6 +103,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
 @SuppressWarnings("unchecked")
 public abstract class Common<T> {
 
+  //<editor-fold defaultstate="collapsed" desc="Class Fields">
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -198,8 +200,7 @@ public abstract class Common<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
    * <p>
@@ -441,8 +442,22 @@ public abstract class Common<T> {
    * Format is S10
    */
   @XmlAttribute(name = "idref")
-  private String idref;
+  private String idref;//</editor-fold>
 
+  /**
+   * Abstract constructor for the Common class type.
+   * <p>
+   * This constructor sets the minimum mandatory fields {@link #serial} with a
+   * programmatically generated {@link TSerial} instance and
+   * {@link #entryDateTime} with the current DATETIME.
+   */
+  @SuppressWarnings("unchecked")
+  public Common() {
+    this.serial = TSerial.getInstance((Class<? extends Common<?>>) this.getClass());
+    this.entryDateTime = new TCalendar(Calendar.getInstance());
+  }
+
+  //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
   /**
    * Get the identifier of the person or entity who last observed this Dataset.
    * <p>
@@ -637,18 +652,18 @@ public abstract class Common<T> {
   /**
    * Get a unique Dataset identifier.
    * <p>
-   * @return the Serial value in a {@link TString} data type
+   * @return the Serial value in a {@link TSerial} data type
    */
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
   /**
    * Set a unique Dataset identifier.
    * <p>
-   * @param value the Serial value in a {@link TString} data type
+   * @param value the Serial value in a {@link TSerial} data type
    */
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -1331,8 +1346,9 @@ public abstract class Common<T> {
    */
   public boolean isSetIdref() {
     return (this.idref != null);
-  }
+  }//</editor-fold>
 
+  //<editor-fold defaultstate="collapsed" desc="With Setters">
   /**
    * Set the identifier of the person or entity who last observed this Dataset.
    * <p>
@@ -1408,11 +1424,11 @@ public abstract class Common<T> {
   /**
    * Set a unique Dataset identifier.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link TSerial}
    * @return The current Common object instance
    */
   public T withSerial(TSerial value) {
-    setSerial(new TString(value.getValue()));
+    setSerial(value);
     return (T) this;
   }
 
@@ -1781,7 +1797,7 @@ public abstract class Common<T> {
    */
   public T withIdref(String value) {
     return (T) this;
-  }
+  }//</editor-fold>
 
   /**
    * Get a string representation of this Common instance configuration.
@@ -1791,7 +1807,7 @@ public abstract class Common<T> {
   @Override
   public String toString() {
     return "Common {"
-      + (serial != null ? " serial [" + serial + "]" : "")
+      + (serial != null ? "serial [" + serial + "]" : "")
       + (cls != null ? " cls [" + cls + "]" : "")
       + (redacted != null ? " redacted [" + redacted + "]" : "")
       + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
@@ -1820,7 +1836,7 @@ public abstract class Common<T> {
       + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
       + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
       + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-      + " }";
+      + "}";
   }
 
   /**
