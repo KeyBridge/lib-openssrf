@@ -138,7 +138,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    */
   @Override
   public String marshal(Number v) throws Exception {
-    return convert(v).toString();
+    return v != null ? convert(v).toString() : null;
   }
 
   /**
@@ -154,7 +154,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    */
   @Override
   public Number unmarshal(String v) throws Exception {
-    return convert(v.contains(".") ? new BigDecimal(v) : new BigInteger(v));
+    return v != null ? convert(v.contains(".") ? new BigDecimal(v) : new BigInteger(v)) : null;
   }
 
   /**
@@ -167,6 +167,9 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                   ValidationEventHandler.
    */
   private Number convert(Number v) throws Exception {
+    if (v == null) {
+      return null;
+    }
     /**
      * Validate the max/min values.
      */
@@ -180,7 +183,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
      * Validate the digit count.
      */
     if (v instanceof BigInteger) {
-      if (totalDigits != null && totalDigits > getDigitCount((BigInteger) v)) {
+      if (totalDigits != null && totalDigits < getDigitCount((BigInteger) v)) {
         throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
       }
       return v;

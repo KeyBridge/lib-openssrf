@@ -118,10 +118,6 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
    */
   @Override
   public TString unmarshal(String v) throws Exception {
-    /**
-     * DEBUG - simply return the value for a relaxed configuration.
-     */
-//    return new TString(v);
     return new TString(convert(v));
   }
 
@@ -135,6 +131,9 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
    *                   ValidationEventHandler.
    */
   private String convert(String v) throws Exception {
+    if (v == null) {
+      return null;
+    }
     if (minLength != null && v.length() < minLength) {
       throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }

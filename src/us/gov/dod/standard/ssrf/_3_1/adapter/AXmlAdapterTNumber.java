@@ -175,17 +175,17 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception("minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for " + v + ".");
+      throw new Exception("minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for \"" + v + "\".");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception("maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for " + v + ".");
+      throw new Exception("maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for \"" + v + "\".");
     }
     /**
      * Validate the digit count.
      */
     if (v instanceof BigInteger) {
-      if (totalDigits != null && totalDigits > getDigitCount((BigInteger) v)) {
-        throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
+      if (totalDigits != null && totalDigits < getDigitCount((BigInteger) v)) {
+        throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for \"" + v + "\".");
       }
       return new TInteger((BigInteger) v);
     } else if (v instanceof BigDecimal || v instanceof Double) {
