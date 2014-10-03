@@ -974,6 +974,7 @@ public class FEDeployment extends Common<FEDeployment> {
       + (seconds != null ? " seconds [" + seconds + "]" : "")
       + (atWaypoint != null ? " atWaypoint [" + atWaypoint + "]" : "")
       + (years != null ? " years [" + years + "]" : "")
+      + "\n  FEDeployment." + super.toString() + "\n"
       + "}";
   }
 

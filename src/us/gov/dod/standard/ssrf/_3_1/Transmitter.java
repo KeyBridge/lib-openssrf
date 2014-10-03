@@ -1019,6 +1019,7 @@ public class Transmitter extends Common<Transmitter> {
       + (deployment != null ? " deployment [" + deployment + "]" : "")
       + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
       + (filter != null ? " filter [" + filter + "]" : "")
+      + "\n  Transmitter." + super.toString() + "\n"
       + "}";
   }
 

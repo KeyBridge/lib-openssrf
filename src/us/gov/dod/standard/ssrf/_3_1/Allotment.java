@@ -864,6 +864,7 @@ public class Allotment extends Common<Allotment> {
       + (usageType != null ? " usageType [" + usageType + "]" : "")
       + (allotFreq != null ? " allotFreq [" + allotFreq + "]" : "")
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + "\n  Allotment." + super.toString() + "\n"
       + "}";
   }
 

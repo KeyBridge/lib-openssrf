@@ -763,6 +763,7 @@ public class ExternalReference extends Common<ExternalReference> {
       + (date != null ? " date [" + date + "]" : "")
       + (type != null ? " type [" + type + "]" : "")
       + (identifier != null ? " identifier [" + identifier + "]" : "")
+      + "\n  ExternalReference." + super.toString() + "\n"
       + "}";
   }
 

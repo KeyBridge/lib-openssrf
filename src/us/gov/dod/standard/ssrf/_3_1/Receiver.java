@@ -958,6 +958,7 @@ public class Receiver extends Common<Receiver> {
       + (conductedEmissions != null ? " conductedEmissions [" + conductedEmissions + "]" : "")
       + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
       + (rxMode != null ? " rxMode [" + rxMode + "]" : "")
+      + "\n  Receiver." + super.toString() + "\n"
       + "}";
   }
 

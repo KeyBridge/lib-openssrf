@@ -3849,6 +3849,7 @@ public class Assignment extends Common<Assignment> {
       + (userNetCode != null ? " userNetCode [" + userNetCode + "]" : "")
       + (agencyActionNum != null ? " agencyActionNum [" + agencyActionNum + "]" : "")
       + (configuration != null ? " configuration [" + configuration + "]" : "")
+      + "\n  Assignment." + super.toString() + "\n"
       + "}";
   }
 

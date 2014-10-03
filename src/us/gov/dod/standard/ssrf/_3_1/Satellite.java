@@ -1325,6 +1325,7 @@ public class Satellite extends Common<Satellite> {
       + (launchDate != null ? " launchDate [" + launchDate + "]" : "")
       + (administration != null ? " administration [" + administration + "]" : "")
       + (nonGeoPerigee != null ? " nonGeoPerigee [" + nonGeoPerigee + "]" : "")
+      + "\n  Satellite." + super.toString() + "\n"
       + "}";
   }
 

@@ -2435,6 +2435,7 @@ public class SSRequest extends Common<SSRequest> {
       + (applicationDate != null ? " applicationDate [" + applicationDate + "]" : "")
       + (configuration != null ? " configuration [" + configuration + "]" : "")
       + (infoTransferRequirement != null ? " infoTransferRequirement [" + infoTransferRequirement + "]" : "")
+      + "\n  SSRequest." + super.toString() + "\n"
       + "}";
   }
 

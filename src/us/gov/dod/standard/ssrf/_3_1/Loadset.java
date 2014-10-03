@@ -674,6 +674,7 @@ public class Loadset extends Common<Loadset> {
       + (mission != null ? " mission [" + mission + "]" : "")
       + (name != null ? " name [" + name + "]" : "")
       + (secondaryFirmware != null ? " secondaryFirmware [" + secondaryFirmware + "]" : "")
+      + "\n  Loadset." + super.toString() + "\n"
       + "}";
   }
 

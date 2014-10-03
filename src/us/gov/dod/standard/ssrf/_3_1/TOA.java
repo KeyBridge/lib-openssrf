@@ -594,6 +594,7 @@ public class TOA extends Common<TOA> {
       + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
       + (administration != null ? " administration [" + administration + "]" : "")
       + (country != null ? " country [" + country + "]" : "")
+      + "\n  TOA." + super.toString() + "\n"
       + "}";
   }
 

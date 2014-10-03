@@ -196,6 +196,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
     return "ChannelPlan {"
       + (name != null ? " name [" + name + "]" : "")
       + (channel != null ? " channel [" + channel + "]" : "")
+      + "\n  ChannelPlan." + super.toString() + "\n"
       + "}";
   }
 

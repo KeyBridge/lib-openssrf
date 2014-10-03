@@ -2748,6 +2748,7 @@ public class IntfReport extends Common<IntfReport> {
       + (victimFreqMin != null ? " victimFreqMin [" + victimFreqMin + "]" : "")
       + (sourceEmsBw != null ? " sourceEmsBw [" + sourceEmsBw + "]" : "")
       + (localEventID != null ? " localEventID [" + localEventID + "]" : "")
+      + "\n  IntfReport." + super.toString() + "\n"
       + "}";
   }
 

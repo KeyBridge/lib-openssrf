@@ -697,6 +697,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
       + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
       + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
       + (version != null ? " version [" + version + "]" : "")
+      + "\n  RadiationPlan." + super.toString() + "\n"
       + "}";
   }
 

@@ -894,6 +894,7 @@ public class ForceElement extends Common<ForceElement> {
       + (type != null ? " type [" + type + "]" : "")
       + (missionCode != null ? " missionCode [" + missionCode + "]" : "")
       + (uic != null ? " uic [" + uic + "]" : "")
+      + "\n  ForceElement." + super.toString() + "\n"
       + "}";
   }
 

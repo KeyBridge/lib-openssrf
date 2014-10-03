@@ -630,6 +630,7 @@ public class Contact extends Common<Contact> {
       + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
       + (firstName != null ? " firstName [" + firstName + "]" : "")
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+      + "\n  Contact." + super.toString() + "\n"
       + "}";
   }
 

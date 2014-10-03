@@ -1158,6 +1158,7 @@ public class SSReply extends Common<SSReply> {
       + (commentSource != null ? " commentSource [" + commentSource + "]" : "")
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + (fasNumber != null ? " fasNumber [" + fasNumber + "]" : "")
+      + "\n  SSReply." + super.toString() + "\n"
       + "}";
   }
 

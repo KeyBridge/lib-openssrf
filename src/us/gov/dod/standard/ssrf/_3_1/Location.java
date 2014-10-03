@@ -1015,6 +1015,7 @@ public class Location extends Common<Location> {
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + "\n  "
       + super.toString()
+      + "\n  Location." + super.toString() + "\n"
       + " }";
   }
 

@@ -174,7 +174,6 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
 //  public static TSerial getInstance(Object instance) throws IllegalArgumentException {
 //    return getInstance(instance.getClass());
 //  }
-
   /**
    * Get a TSerial instance for the indicated class instance.
    * <p>
@@ -217,6 +216,8 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
       .append(":")
       .append(serial != null ? serial : uuidSnippet());
     this.value = sb.toString();
+
+    System.out.println("DEBUG TSerial Format " + this.value);
   }
 
   /**
@@ -278,6 +279,9 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @param organization
    */
   public void setOrganization(String organization) {
+    if (organization.length() > 4) {
+      throw new IllegalArgumentException("String length violation S4 [0, 4]. Length is " + value.length() + " for \"" + value + "\"");
+    }
     this.organization = organization;
     format();
   }
@@ -292,10 +296,9 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @param serial the serial number Serial identifier.
    */
   public void setSerial(String serial) {
-//   * @throws Exception if the input value is too long (&gt; 15 characters)
-//    if (serial.length() > 15) {
-//      throw new Exception("SERIAL string length violation " + this.getClass().getSimpleName() + " [1, 15]" + " with length = " + value.length() + ".");
-//    }
+    if (serial.length() > 15) {
+      throw new IllegalArgumentException("String length violation S15 [1, 15]. Length is " + value.length() + " for \"" + value + "\"");
+    }
     this.serial = serial;
     format();
   }
@@ -375,17 +378,6 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
   }
 
   /**
-   * Set the class type.
-   * <p>
-   * @param value a SSRF class type or instance that extends Common
-   * @return the current serial instance
-   */
-  private TSerial withDatasetType(Object value) {
-    setDatasetType(EDatasetType.fromInstance(value));
-    return this;
-  }
-
-  /**
    * Set the serial number Organization code (OPTIONAL).
    * <p>
    * Format is S4
@@ -394,7 +386,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @return The current TSerial object instance
    */
   public TSerial withOrganization(String value) {
-    setOrganization(organization);
+    setOrganization(value != null ? value.toUpperCase(Locale.getDefault()) : "");
     return this;
   }
 
@@ -408,7 +400,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @throws Exception if the input value is too long (&gt; 15 characters)
    */
   public TSerial withSerial(String value) {
-    setSerial(serial);
+    setSerial(value);
     return this;
   }
 

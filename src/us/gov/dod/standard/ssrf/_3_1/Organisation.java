@@ -843,6 +843,7 @@ public class Organisation extends Common<Organisation> {
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + (uic != null ? " uic [" + uic + "]" : "")
       + (alternateName != null ? " alternateName [" + alternateName + "]" : "")
+      + "\n  Organisation." + super.toString() + "\n"
       + "}";
   }
 

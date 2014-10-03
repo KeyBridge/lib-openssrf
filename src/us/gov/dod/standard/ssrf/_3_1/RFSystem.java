@@ -813,6 +813,7 @@ public class RFSystem extends Common<RFSystem> {
       + (deployment != null ? " deployment [" + deployment + "]" : "")
       + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
       + (configuration != null ? " configuration [" + configuration + "]" : "")
+      + "\n  RFSystem." + super.toString() + "\n"
       + "}";
   }
 

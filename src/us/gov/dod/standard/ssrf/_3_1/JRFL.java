@@ -764,6 +764,7 @@ public class JRFL extends Common<JRFL> {
       + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
       + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
       + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+      + "\n  JRFL." + super.toString() + "\n"
       + "}";
   }
 

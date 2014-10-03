@@ -1419,6 +1419,7 @@ public class Antenna extends Common<Antenna> {
       + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
       + (apertureDiameter != null ? " apertureDiameter [" + apertureDiameter + "]" : "")
       + (horzSidelobeSuppressed != null ? " horzSidelobeSuppressed [" + horzSidelobeSuppressed + "]" : "")
+      + "\n  Antenna." + super.toString() + "\n"
       + "}";
   }
 

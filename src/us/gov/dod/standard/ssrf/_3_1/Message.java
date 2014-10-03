@@ -253,6 +253,7 @@ public class Message extends Common<Message> {
       + (name != null ? " name [" + name + "]" : "")
       + (secondaryDatasets != null ? " secondaryDatasets [" + secondaryDatasets + "]" : "")
       + (datasetRef != null ? " datasetRef [" + datasetRef + "]" : "")
+      + "\n  Message." + super.toString() + "\n"
       + "}";
   }
 

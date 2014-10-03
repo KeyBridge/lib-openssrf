@@ -337,6 +337,7 @@ public class Administrative extends Common<Administrative> {
       + (dataset != null ? " dataset [" + dataset + "]" : "")
       + (action != null ? " action [" + action + "]" : "")
       + (codeList != null ? " codeList [" + codeList + "]" : "")
+      + "\n  Administrative." + super.toString() + "\n"
       + "}";
   }
 

@@ -324,6 +324,7 @@ public class Note extends Common<Note> {
       + (name != null ? " name [" + name + "]" : "")
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + (administration != null ? " administration [" + administration + "]" : "")
+      + "\n  Note." + super.toString() + "\n"
       + "}";
   }
 

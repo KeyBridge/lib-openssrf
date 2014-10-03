@@ -668,6 +668,7 @@ public class Role extends Common<Role> {
       + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + (country != null ? " country [" + country + "]" : "")
+      + "\n  Role." + super.toString() + "\n"
       + "}";
   }
 
