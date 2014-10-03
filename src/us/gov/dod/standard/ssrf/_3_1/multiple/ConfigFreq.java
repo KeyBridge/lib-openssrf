@@ -166,7 +166,15 @@ public class ConfigFreq {
   @XmlElement(name = "PulseWidth", required = false)
   @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pulseWidth;
-
+  /**
+   * idx - Index (Required)
+   * <p>
+   * A unique index for each discrete or ranged frequency used in this instance
+   * of the ConfigFreq complex element.
+   * <p>
+   * [XSD ERR UNIQUE] Each value of this data item MUST be unique within the
+   * parent element.
+   */
   @XmlAttribute(name = "idx", required = true)
   private BigInteger idx;
 
