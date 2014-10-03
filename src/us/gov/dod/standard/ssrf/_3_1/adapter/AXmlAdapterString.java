@@ -118,8 +118,8 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, TString> {
     /**
      * DEBUG - simply return the value for a relaxed configuration.
      */
-//    return convert(v);
-    return new TString(v);
+//    return new TString(v);
+    return new TString(convert(new TString(v)));
   }
 
   /**
