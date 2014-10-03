@@ -188,15 +188,15 @@ public class AXmlAdapterNumber extends XmlAdapter<String, IMetadataType> {
         throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
       }
       return new TInteger((BigInteger) v);
-    } else if (v instanceof BigDecimal) {
-      BigDecimal bd = new BigDecimal(v.doubleValue()).setScale(fractionDigits, RoundingMode.CEILING);
-      if (totalDigits < bd.precision()) {
-        throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + bd + ".");
-      }
-      return new TDecimal(bd);
+    } else if (v instanceof BigDecimal || v instanceof Double) {
+      /**
+       * Just convert the number precision to ensure it matches the required XML
+       * style pattern.
+       */
+      return new TDecimal(new BigDecimal(v.doubleValue()).setScale(totalDigits - fractionDigits, RoundingMode.HALF_UP));
     }
     /**
-     * Default is fall through.
+     * Default fall through is a Double type.
      */
     return new TDouble((Double) v);
   }
