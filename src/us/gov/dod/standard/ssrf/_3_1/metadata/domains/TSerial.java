@@ -243,8 +243,12 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * manager.
    * <p>
    * @param serial the serial number Serial identifier.
+   * @throws Exception if the input value is too long (&gt; 15 characters)
    */
-  public void setSerial(String serial) {
+  public void setSerial(String serial) throws Exception {
+    if (serial.length() > 15) {
+      throw new Exception("SERIAL string length violation " + this.getClass().getSimpleName() + " [1, 15]" + " with length = " + value.length() + ".");
+    }
     this.serial = serial;
     format();
   }
@@ -316,7 +320,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @return the current serial instance
    */
   public TSerial withDatasetType(Class<? extends Common<?>> value) {
-    this.datasetType = EDatasetType.fromInstance(value);
+    setDatasetType(EDatasetType.fromInstance(value));
     return this;
   }
 
@@ -327,7 +331,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @return the current serial instance
    */
   public TSerial withDatasetType(Object value) {
-    this.datasetType = EDatasetType.fromInstance(value);
+    setDatasetType(EDatasetType.fromInstance(value));
     return this;
   }
 
@@ -351,8 +355,9 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * <p>
    * @param value the serial number Serial identifier
    * @return The current TSerial object instance
+   * @throws Exception if the input value is too long (&gt; 15 characters)
    */
-  public TSerial withSerial(String value) {
+  public TSerial withSerial(String value) throws Exception {
     setSerial(serial);
     return this;
   }
