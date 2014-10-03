@@ -58,6 +58,12 @@ public class TString extends AMetadata<TString> implements IMetadataType {
   }
 
   /**
+   * Empty constructor.
+   */
+  public TString() {
+  }
+
+  /**
    * Gets the value of the value property.
    * <p>
    * @return the value of the value property.

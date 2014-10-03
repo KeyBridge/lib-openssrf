@@ -28,12 +28,8 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf.EDatasetType;
 import us.gov.dod.standard.ssrf._3_1.Common;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 
 /**
@@ -73,23 +69,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TSerial", propOrder = {"value"})
-public class TSerial extends AMetadata<TSerial> implements IMetadataType {
+public class TSerial extends TString {
 
   /**
    * The SERIAL number string pattern.
    */
   private static final String PATTERN = "^([A-Z0-9-]{1,5}):(\\w{0,4}):([A-Z]{2}):(\\S{1,15})$";
-
-  /**
-   * Serial number (REQUIRED) - SSRF Serial number.
-   * <p>
-   * The SERIAL value to which the metadata attributes are associated.
-   * <p>
-   * Format is SERIAL
-   */
-  @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
-  protected String value;
 
   /**
    * The Serial number Country part (REQUIRED).
@@ -209,7 +194,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * <p>
    * @throws Exception if the value does not conform to the SERIAL format
    */
-  private void parse() throws Exception {
+  private void parse() {
     if (value != null && !value.isEmpty()) {
       Matcher m = Pattern.compile(PATTERN).matcher(value);
       if (m.find()) {
@@ -217,9 +202,8 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
         setDatasetType(EDatasetType.valueOf(m.group(2)));
         setOrganization(m.group(3));
         setSerial(m.group(4));
-      } else {
-        new XmlAdapterSERIAL().marshal(new TString(value));
       }
+//      else {        new XmlAdapterSERIAL().unmarshal(value);      }
     }
   }
 
@@ -306,18 +290,10 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * @param value a formatted SERIAL number String
    * @throws Exception if the value does not conform to the SERIAL format
    */
-  public void setValue(String value) throws Exception {
+  @Override
+  public void setValue(String value) {
     this.value = value;
     parse();
-  }
-
-  /**
-   * Determine if the Value is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetValue() {
-    return (this.value != null);
   }
 
   /**
@@ -387,28 +363,4 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
     return this;
   }
 
-  /**
-   * Get the configured value.
-   * <p>
-   * @return the value.
-   */
-  @Override
-  public String toString() {
-    return value;
-  }
-
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link TString} requires {@link ListCCL cls} and {@link String value}
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  @Override
-  public boolean isSet() {
-    return super.isSet() && isSetValue();
-  }
 }
