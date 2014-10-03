@@ -2247,7 +2247,7 @@ public class TxMode {
    * designator. The emission classification consists of the three required
    * symbols and the two optional symbols.
    * <p>
-   * @param values One or more instances of type {@link EmsClass...}
+   * @param values One or more instances of type {@link EmsClass}
    * @return The current TxMode object instance
    */
   public TxMode withEmsClass(EmsClass... values) {
@@ -2278,7 +2278,7 @@ public class TxMode {
   /**
    * Set the power limit of this transmitter mode when in this configuration.
    * <p>
-   * @param values One or more instances of type {@link Power...}
+   * @param values One or more instances of type {@link Power}
    * @return The current TxMode object instance
    */
   public TxMode withPower(Power... values) {
@@ -2308,7 +2308,7 @@ public class TxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @param values One or more instances of type {@link TxSignalTuning...}
+   * @param values One or more instances of type {@link TxSignalTuning}
    * @return The current TxMode object instance
    */
   public TxMode withTxSignalTuning(TxSignalTuning... values) {
@@ -2341,7 +2341,7 @@ public class TxMode {
    * Complex element TxModulation contains the detailed characteristics of the
    * modulation on the transmitter side.
    * <p>
-   * @param values One or more instances of type {@link TxModulation...}
+   * @param values One or more instances of type {@link TxModulation}
    * @return The current TxMode object instance
    */
   public TxMode withTxModulation(TxModulation... values) {
@@ -2373,7 +2373,7 @@ public class TxMode {
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
    * <p>
-   * @param values One or more instances of type {@link Baseband...}
+   * @param values One or more instances of type {@link Baseband}
    * @return The current TxMode object instance
    */
   public TxMode withBaseband(Baseband... values) {
@@ -2402,7 +2402,7 @@ public class TxMode {
   /**
    * Set the number of pulses in a single pulse burst.
    * <p>
-   * @param values One or more instances of type {@link Pulse...}
+   * @param values One or more instances of type {@link Pulse}
    * @return The current TxMode object instance
    */
   public TxMode withPulse(Pulse... values) {
@@ -2434,7 +2434,7 @@ public class TxMode {
    * that is combined with the main carrier signal operating at a higher
    * frequency.
    * <p>
-   * @param values One or more instances of type {@link SubcarrierFreq...}
+   * @param values One or more instances of type {@link SubcarrierFreq}
    * @return The current TxMode object instance
    */
   public TxMode withSubcarrierFreq(SubcarrierFreq... values) {
@@ -2484,7 +2484,7 @@ public class TxMode {
    * characteristic and pattern information for the Modulation impressed On the
    * Pulse (MOP).
    * <p>
-   * @param values One or more instances of type {@link ObservedMOPAnalysis...}
+   * @param values One or more instances of type {@link ObservedMOPAnalysis}
    * @return The current TxMode object instance
    */
   public TxMode withObservedMOPAnalysis(ObservedMOPAnalysis... values) {
@@ -2517,7 +2517,7 @@ public class TxMode {
    * Complex element ObservedRFAnalysis (US) contains the statisical results of
    * actual RF observations.
    * <p>
-   * @param values One or more instances of type {@link ObservedRFAnalysis...}
+   * @param values One or more instances of type {@link ObservedRFAnalysis}
    * @return The current TxMode object instance
    */
   public TxMode withObservedRFAnalysis(ObservedRFAnalysis... values) {
@@ -2551,7 +2551,7 @@ public class TxMode {
    * pulse information.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedPulseAnalysis...}
+   *               {@link ObservedPulseAnalysis}
    * @return The current TxMode object instance
    */
   public TxMode withObservedPulseAnalysis(ObservedPulseAnalysis... values) {
@@ -2581,7 +2581,7 @@ public class TxMode {
   /**
    * Set the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current TxMode object instance
    */
   public TxMode withCurves(BigInteger... values) {
@@ -2594,7 +2594,7 @@ public class TxMode {
   /**
    * Set the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @param values A collection of {@link Curves} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current TxMode object instance
    */
   public TxMode withCurves(Collection<BigInteger> values) {

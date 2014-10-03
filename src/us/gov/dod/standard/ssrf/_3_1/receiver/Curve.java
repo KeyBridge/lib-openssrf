@@ -558,7 +558,7 @@ public class Curve {
    * value in dB (relative to the carrier for a Tx characteristic, or relative
    * to sensitivity for a Rx characteristic).
    * <p>
-   * @param values One or more instances of type {@link CurvePoint...}
+   * @param values One or more instances of type {@link CurvePoint}
    * @return The current Curve object instance
    */
   public Curve withCurvePoint(CurvePoint... values) {

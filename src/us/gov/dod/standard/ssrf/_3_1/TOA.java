@@ -454,7 +454,7 @@ public class TOA extends Common<TOA> {
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
    * or Band Application (e.g., "Wind Profiler").
    * <p>
-   * @param values One or more instances of type {@link Footnote...}
+   * @param values One or more instances of type {@link Footnote}
    * @return The current TOA object instance
    */
   public TOA withFootnote(Footnote... values) {
@@ -486,7 +486,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @param values One or more instances of type {@link ChannelPlanRef...}
+   * @param values One or more instances of type {@link ChannelPlanRef}
    * @return The current TOA object instance
    */
   public TOA withChannelPlanRef(ChannelPlanRef... values) {
@@ -517,7 +517,7 @@ public class TOA extends Common<TOA> {
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force.
    * <p>
-   * @param values One or more instances of type {@link Country...}
+   * @param values One or more instances of type {@link Country}
    * @return The current TOA object instance
    */
   public TOA withCountry(Country... values) {
@@ -551,7 +551,7 @@ public class TOA extends Common<TOA> {
    * information such as the specification of the rights and responsibilities of
    * a user.
    * <p>
-   * @param values One or more instances of type {@link FreqBand...}
+   * @param values One or more instances of type {@link FreqBand}
    * @return The current TOA object instance
    */
   public TOA withFreqBand(FreqBand... values) {

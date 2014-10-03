@@ -669,7 +669,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    * <p>
-   * @param values One or more instances of type {@link Address...}
+   * @param values One or more instances of type {@link Address}
    * @return The current Organisation object instance
    */
   public Organisation withAddress(Address... values) {
@@ -701,7 +701,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    * <p>
-   * @param values One or more instances of type {@link TelephoneFax...}
+   * @param values One or more instances of type {@link TelephoneFax}
    * @return The current Organisation object instance
    */
   public Organisation withTelephoneFax(TelephoneFax... values) {
@@ -732,7 +732,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
    * <p>
-   * @param values One or more instances of type {@link EMail...}
+   * @param values One or more instances of type {@link EMail}
    * @return The current Organisation object instance
    */
   public Organisation withEMail(EMail... values) {
@@ -762,7 +762,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    * <p>
-   * @param values One or more instances of type {@link RoleRef...}
+   * @param values One or more instances of type {@link RoleRef}
    * @return The current Organisation object instance
    */
   public Organisation withRoleRef(RoleRef... values) {
@@ -794,7 +794,7 @@ public class Organisation extends Common<Organisation> {
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling).
    * <p>
-   * @param values One or more instances of type {@link RelatedOrganisation...}
+   * @param values One or more instances of type {@link RelatedOrganisation}
    * @return The current Organisation object instance
    */
   public Organisation withRelatedOrganisation(RelatedOrganisation... values) {

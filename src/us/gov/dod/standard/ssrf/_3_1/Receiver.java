@@ -730,7 +730,7 @@ public class Receiver extends Common<Receiver> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Receiver object instance
    */
   public Receiver withPOCInformation(POCInformation... values) {
@@ -764,7 +764,7 @@ public class Receiver extends Common<Receiver> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current Receiver object instance
    */
   public Receiver withNomenclature(Nomenclature... values) {
@@ -802,7 +802,7 @@ public class Receiver extends Common<Receiver> {
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
    * <p>
-   * @param values One or more instances of type {@link Deployment...}
+   * @param values One or more instances of type {@link Deployment}
    * @return The current Receiver object instance
    */
   public Receiver withDeployment(Deployment... values) {
@@ -841,7 +841,7 @@ public class Receiver extends Common<Receiver> {
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
    * <p>
-   * @param values One or more instances of type {@link Curve...}
+   * @param values One or more instances of type {@link Curve}
    * @return The current Receiver object instance
    */
   public Receiver withCurve(Curve... values) {
@@ -876,7 +876,7 @@ public class Receiver extends Common<Receiver> {
    * Complex element RxMode and sub-elements define all the technical parameters
    * for a mode of operation of the Receiver.
    * <p>
-   * @param values One or more instances of type {@link RxMode...}
+   * @param values One or more instances of type {@link RxMode}
    * @return The current Receiver object instance
    */
   public Receiver withRxMode(RxMode... values) {
@@ -908,7 +908,7 @@ public class Receiver extends Common<Receiver> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Receiver.
    * <p>
-   * @param values One or more instances of type {@link UsingCountries...}
+   * @param values One or more instances of type {@link UsingCountries}
    * @return The current Receiver object instance
    */
   public Receiver withUsingCountries(UsingCountries... values) {

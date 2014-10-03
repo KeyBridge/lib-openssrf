@@ -2163,7 +2163,7 @@ public class ObservedRFAnalysis {
    * Complex element ObservedRFValues (US) contains details of actual RF
    * observations.
    * <p>
-   * @param values One or more instances of type {@link ObservedRFValues...}
+   * @param values One or more instances of type {@link ObservedRFValues}
    * @return The current ObservedRFAnalysis object instance
    */
   public ObservedRFAnalysis withObservedRFValues(ObservedRFValues... values) {

@@ -321,7 +321,7 @@ public class Nomenclature {
    * Nomenclature. Additionally the country in which the equipment is
    * manufactured may be included.
    * <p>
-   * @param values One or more instances of type {@link Manufacturer...}
+   * @param values One or more instances of type {@link Manufacturer}
    * @return The current Nomenclature object instance
    */
   public Nomenclature withManufacturer(Manufacturer... values) {

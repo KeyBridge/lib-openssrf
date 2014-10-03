@@ -576,7 +576,7 @@ public class ObservedMOPSequence {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link ObservedMOPBits...}
+   * @param values One or more instances of type {@link ObservedMOPBits}
    * @return The current ObservedMOPSequence object instance
    */
   public ObservedMOPSequence withObservedMOPBits(ObservedMOPBits... values) {

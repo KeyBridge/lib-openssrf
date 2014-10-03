@@ -266,7 +266,7 @@ public class Variance {
    * Complex element Administration contains the country for which this variance
    * applies.
    * <p>
-   * @param values One or more instances of type {@link Administration...}
+   * @param values One or more instances of type {@link Administration}
    * @return The current Variance object instance
    */
   public Variance withAdministration(Administration... values) {

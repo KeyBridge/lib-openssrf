@@ -576,7 +576,7 @@ public class SecurityClass {
    * Complex element Downgrade (US) contains the downgrade security
    * classification from one or more data information sources.
    * <p>
-   * @param values One or more instances of type {@link Downgrade...}
+   * @param values One or more instances of type {@link Downgrade}
    * @return The current SecurityClass object instance
    */
   public SecurityClass withDowngrade(Downgrade... values) {
@@ -608,7 +608,7 @@ public class SecurityClass {
    * Complex element ClsDerived (US) contains the derived security
    * classification from one or more data information sources.
    * <p>
-   * @param values One or more instances of type {@link ClsDerived...}
+   * @param values One or more instances of type {@link ClsDerived}
    * @return The current SecurityClass object instance
    */
   public SecurityClass withClsDerived(ClsDerived... values) {

@@ -2022,7 +2022,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @param values One or more instances of type {@link Project...}
+   * @param values One or more instances of type {@link Project}
    * @return The current SSRequest object instance
    */
   public SSRequest withProject(Project... values) {
@@ -2051,7 +2051,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the current stage of the system.
    * <p>
-   * @param values One or more instances of type {@link Stage...}
+   * @param values One or more instances of type {@link Stage}
    * @return The current SSRequest object instance
    */
   public SSRequest withStage(Stage... values) {
@@ -2082,7 +2082,7 @@ public class SSRequest extends Common<SSRequest> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current SSRequest object instance
    */
   public SSRequest withNomenclature(Nomenclature... values) {
@@ -2116,7 +2116,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current SSRequest object instance
    */
   public SSRequest withPOCInformation(POCInformation... values) {
@@ -2149,7 +2149,7 @@ public class SSRequest extends Common<SSRequest> {
    * current dataset has a dependency.
    * <p>
    * @param values One or more instances of type
-   *               {@link RelatedSupportability...}
+   *               {@link RelatedSupportability}
    * @return The current SSRequest object instance
    */
   public SSRequest withRelatedSupportability(RelatedSupportability... values) {
@@ -2183,7 +2183,7 @@ public class SSRequest extends Common<SSRequest> {
    * HostNation entry, it will be assumed that this SSRequest is for all NATO
    * Nations plus AUS and NZL (in accordance with the FMSC agreement).
    * <p>
-   * @param values One or more instances of type {@link HostNation...}
+   * @param values One or more instances of type {@link HostNation}
    * @return The current SSRequest object instance
    */
   public SSRequest withHostNation(HostNation... values) {
@@ -2214,7 +2214,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set if the system is used in a wartime environment.
    * <p>
-   * @param values One or more instances of type {@link Time...}
+   * @param values One or more instances of type {@link Time}
    * @return The current SSRequest object instance
    */
   public SSRequest withTime(Time... values) {
@@ -2243,7 +2243,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
    * <p>
-   * @param values One or more instances of type {@link DiagramEndpoint...}
+   * @param values One or more instances of type {@link DiagramEndpoint}
    * @return The current SSRequest object instance
    */
   public SSRequest withDiagramEndpoint(DiagramEndpoint... values) {
@@ -2275,7 +2275,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram.
    * <p>
-   * @param values One or more instances of type {@link DiagramLine...}
+   * @param values One or more instances of type {@link DiagramLine}
    * @return The current SSRequest object instance
    */
   public SSRequest withDiagramLine(DiagramLine... values) {
@@ -2310,7 +2310,7 @@ public class SSRequest extends Common<SSRequest> {
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station.
    * <p>
-   * @param values One or more instances of type {@link Configuration...}
+   * @param values One or more instances of type {@link Configuration}
    * @return The current SSRequest object instance
    */
   public SSRequest withConfiguration(Configuration... values) {
@@ -2345,7 +2345,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests.
    * <p>
-   * @param values One or more instances of type {@link StatusLog...}
+   * @param values One or more instances of type {@link StatusLog}
    * @return The current SSRequest object instance
    */
   public SSRequest withStatusLog(StatusLog... values) {

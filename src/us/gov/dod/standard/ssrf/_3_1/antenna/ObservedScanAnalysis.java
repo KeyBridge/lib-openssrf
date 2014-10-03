@@ -2147,7 +2147,7 @@ public class ObservedScanAnalysis {
    * Complex element ObservedScanValues (US) contains data describing the
    * discrete scan rate values and supporting statistical information.
    * <p>
-   * @param values One or more instances of type {@link ObservedScanValues...}
+   * @param values One or more instances of type {@link ObservedScanValues}
    * @return The current ObservedScanAnalysis object instance
    */
   public ObservedScanAnalysis withObservedScanValues(ObservedScanValues... values) {

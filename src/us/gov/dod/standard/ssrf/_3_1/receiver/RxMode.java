@@ -1315,7 +1315,8 @@ public class RxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @return a non-null but possibly empty list of {@link RxSignalTuning} instances
+   * @return a non-null but possibly empty list of {@link RxSignalTuning}
+   *         instances
    */
   public List<RxSignalTuning> getRxSignalTuning() {
     if (rxSignalTuning == null) {
@@ -1346,7 +1347,8 @@ public class RxMode {
    * Complex element RxModulation contains the detailed characteristics of the
    * modulation on the receiver side.
    * <p>
-   * @return a non-null but possibly empty list of {@link RxModulation} instances
+   * @return a non-null but possibly empty list of {@link RxModulation}
+   *         instances
    */
   public List<RxModulation> getRxModulation() {
     if (rxModulation == null) {
@@ -1409,7 +1411,8 @@ public class RxMode {
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
    * parameters.
    * <p>
-   * @return a non-null but possibly empty list of {@link FreqConversion} instances
+   * @return a non-null but possibly empty list of {@link FreqConversion}
+   *         instances
    */
   public List<FreqConversion> getFreqConversion() {
     if (freqConversion == null) {
@@ -1825,7 +1828,7 @@ public class RxMode {
    * designator. The emission classification consists of the three required
    * symbols and the two optional symbols.
    * <p>
-   * @param values One or more instances of type {@link EmsClass...}
+   * @param values One or more instances of type {@link EmsClass}
    * @return The current RxMode object instance
    */
   public RxMode withEmsClass(EmsClass... values) {
@@ -1860,7 +1863,7 @@ public class RxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @param values One or more instances of type {@link RxSignalTuning...}
+   * @param values One or more instances of type {@link RxSignalTuning}
    * @return The current RxMode object instance
    */
   public RxMode withRxSignalTuning(RxSignalTuning... values) {
@@ -1893,7 +1896,7 @@ public class RxMode {
    * Complex element RxModulation contains the detailed characteristics of the
    * modulation on the receiver side.
    * <p>
-   * @param values One or more instances of type {@link RxModulation...}
+   * @param values One or more instances of type {@link RxModulation}
    * @return The current RxMode object instance
    */
   public RxMode withRxModulation(RxModulation... values) {
@@ -1925,7 +1928,7 @@ public class RxMode {
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
    * <p>
-   * @param values One or more instances of type {@link Baseband...}
+   * @param values One or more instances of type {@link Baseband}
    * @return The current RxMode object instance
    */
   public RxMode withBaseband(Baseband... values) {
@@ -1958,7 +1961,7 @@ public class RxMode {
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
    * parameters.
    * <p>
-   * @param values One or more instances of type {@link FreqConversion...}
+   * @param values One or more instances of type {@link FreqConversion}
    * @return The current RxMode object instance
    */
   public RxMode withFreqConversion(FreqConversion... values) {
@@ -2002,7 +2005,7 @@ public class RxMode {
   /**
    * Set the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current RxMode object instance
    */
   public RxMode withCurves(BigInteger... values) {
@@ -2015,7 +2018,7 @@ public class RxMode {
   /**
    * Set the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @param values A collection of {@link Curves} instances
+   * @param values A collection of {@link Curve} instances
    * @return The current RxMode object instance
    */
   public RxMode withCurves(Collection<BigInteger> values) {

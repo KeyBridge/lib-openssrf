@@ -490,7 +490,7 @@ public class Stage {
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    * <p>
-   * @param values One or more instances of type {@link StageLocation...}
+   * @param values One or more instances of type {@link StageLocation}
    * @return The current Stage object instance
    */
   public Stage withStageLocation(StageLocation... values) {

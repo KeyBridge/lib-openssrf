@@ -742,7 +742,7 @@ public class JammingTarget {
    * to be impacted and/or how well it actually was impacted, for a specific
    * jamming mission.
    * <p>
-   * @param values One or more instances of type {@link JammingPerformance...}
+   * @param values One or more instances of type {@link JammingPerformance}
    * @return The current JammingTarget object instance
    */
   public JammingTarget withJammingPerformance(JammingPerformance... values) {

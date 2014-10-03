@@ -59,7 +59,7 @@ public class TDouble extends AMetadata<TDouble> implements IMetadataType {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return
+   * @return the value of the value property.
    */
   @Override
   public Double getValue() {

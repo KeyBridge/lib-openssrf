@@ -599,7 +599,7 @@ public class ObservedMOPSweep {
    * Complex element ObservedMOPSequence (US) contains descriptive information
    * about the sequencing used for the Modulation impressed On the Pulse (MOP).
    * <p>
-   * @param values One or more instances of type {@link ObservedMOPSequence...}
+   * @param values One or more instances of type {@link ObservedMOPSequence}
    * @return The current ObservedMOPSweep object instance
    */
   public ObservedMOPSweep withObservedMOPSequence(ObservedMOPSequence... values) {

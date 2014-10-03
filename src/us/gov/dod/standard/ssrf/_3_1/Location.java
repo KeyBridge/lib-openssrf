@@ -836,7 +836,7 @@ public class Location extends Common<Location> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Location object instance
    */
   public Location withPOCInformation(POCInformation... values) {
@@ -869,7 +869,7 @@ public class Location extends Common<Location> {
    * is a flying object, this data represents the maximum altitude of the object
    * above ground.
    * <p>
-   * @param values One or more instances of type {@link Point...}
+   * @param values One or more instances of type {@link Point}
    * @return The current Location object instance
    */
   public Location withPoint(Point... values) {
@@ -903,7 +903,7 @@ public class Location extends Common<Location> {
    * Earth, defined by at least three points, used to describe an operational
    * area or an excluded area.
    * <p>
-   * @param values One or more instances of type {@link Polygon...}
+   * @param values One or more instances of type {@link Polygon}
    * @return The current Location object instance
    */
   public Location withPolygon(Polygon... values) {
@@ -937,7 +937,7 @@ public class Location extends Common<Location> {
    * and semi-minor axis, and by the orientation (azimuth) of the semi-major
    * axis. This element SHALL NOT be used to describe a satellite orbit.
    * <p>
-   * @param values One or more instances of type {@link Ellipse...}
+   * @param values One or more instances of type {@link Ellipse}
    * @return The current Location object instance
    */
   public Location withEllipse(Ellipse... values) {
@@ -967,7 +967,7 @@ public class Location extends Common<Location> {
   /**
    * Set the serial of the referenced Location.
    * <p>
-   * @param values One or more instances of type {@link LocationRef...}
+   * @param values One or more instances of type {@link LocationRef}
    * @return The current Location object instance
    */
   public Location withLocationRef(LocationRef... values) {

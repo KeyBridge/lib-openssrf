@@ -704,7 +704,7 @@ public class Assigned {
    * Complex element Freq indicates a single assigned frequency or an assigned
    * range of frequencies.
    * <p>
-   * @param values One or more instances of type {@link Freq...}
+   * @param values One or more instances of type {@link Freq}
    * @return The current Assigned object instance
    */
   public Assigned withFreq(Freq... values) {
@@ -737,7 +737,7 @@ public class Assigned {
    * Complex element FreqOld indicates a previously assigned single frequency or
    * range of frequencies.
    * <p>
-   * @param values One or more instances of type {@link FreqOld...}
+   * @param values One or more instances of type {@link FreqOld}
    * @return The current Assigned object instance
    */
   public Assigned withFreqOld(FreqOld... values) {

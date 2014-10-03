@@ -630,7 +630,7 @@ public class Loadset extends Common<Loadset> {
    * parameters for jamming a discrete frequency or frequency range.
    * <p>
    * @param values One or more instances of type
-   *               {@link JammingChannelProfile...}
+   *               {@link JammingChannelProfile}
    * @return The current Loadset object instance
    */
   public Loadset withJammingChannelProfile(JammingChannelProfile... values) {

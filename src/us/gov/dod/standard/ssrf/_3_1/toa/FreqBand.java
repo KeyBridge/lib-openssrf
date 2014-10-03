@@ -315,7 +315,7 @@ public class FreqBand {
    * Complex element Allocation contains the allocation of a specific frequency
    * band to a specific radiocommunication service.
    * <p>
-   * @param values One or more instances of type {@link Allocation...}
+   * @param values One or more instances of type {@link Allocation}
    * @return The current FreqBand object instance
    */
   public FreqBand withAllocation(Allocation... values) {
@@ -346,7 +346,7 @@ public class FreqBand {
    * frequency band. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current FreqBand object instance
    */
   public FreqBand withFootnotes(BigInteger... values) {
@@ -361,7 +361,7 @@ public class FreqBand {
    * frequency band. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @param values A collection of {@link Footnotes} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current FreqBand object instance
    */
   public FreqBand withFootnotes(Collection<BigInteger> values) {

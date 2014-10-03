@@ -351,7 +351,7 @@ public class ObservedLobeAnalysis {
    * sidelobes or backlobes. Used to its full potential, a precise 3D picture of
    * an Antenna sidelobe can be represented.
    * <p>
-   * @param values One or more instances of type {@link ObservedLobeValues...}
+   * @param values One or more instances of type {@link ObservedLobeValues}
    * @return The current ObservedLobeAnalysis object instance
    */
   public ObservedLobeAnalysis withObservedLobeValues(ObservedLobeValues... values) {

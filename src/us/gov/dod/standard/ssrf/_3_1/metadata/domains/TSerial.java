@@ -288,9 +288,9 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
    * manager.
    * <p>
    * @param serial the serial number Serial identifier.
-   * @throws Exception if the input value is too long (&gt; 15 characters)
    */
   public void setSerial(String serial) {
+//   * @throws Exception if the input value is too long (&gt; 15 characters)
 //    if (serial.length() > 15) {
 //      throw new Exception("SERIAL string length violation " + this.getClass().getSimpleName() + " [1, 15]" + " with length = " + value.length() + ".");
 //    }
@@ -301,7 +301,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return
+   * @return the value of the value property.
    */
   @Override
   public String getValue() {

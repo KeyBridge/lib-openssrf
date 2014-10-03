@@ -1168,7 +1168,7 @@ public class Satellite extends Common<Satellite> {
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
    * <p>
-   * @param values One or more instances of type {@link RFSystemRef...}
+   * @param values One or more instances of type {@link RFSystemRef}
    * @return The current Satellite object instance
    */
   public Satellite withRFSystemRef(RFSystemRef... values) {
@@ -1200,7 +1200,7 @@ public class Satellite extends Common<Satellite> {
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
    * <p>
-   * @param values One or more instances of type {@link EarthStation...}
+   * @param values One or more instances of type {@link EarthStation}
    * @return The current Satellite object instance
    */
   public Satellite withEarthStation(EarthStation... values) {
@@ -1232,7 +1232,7 @@ public class Satellite extends Common<Satellite> {
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite.
    * <p>
-   * @param values One or more instances of type {@link ServiceArea...}
+   * @param values One or more instances of type {@link ServiceArea}
    * @return The current Satellite object instance
    */
   public Satellite withServiceArea(ServiceArea... values) {
@@ -1266,7 +1266,7 @@ public class Satellite extends Common<Satellite> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current Satellite object instance
    */
   public Satellite withNomenclature(Nomenclature... values) {

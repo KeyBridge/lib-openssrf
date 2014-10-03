@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.multiple.*;
  * frequency Assignment or Allotment dataset.
  * <p>
  * Element of
- * {@link Assignment}, {@link Multiple}, {@link RFSystem}, {@link SSReply}, {@link SSRequest}
+ * {@link Assignment}, {@link RFSystem}, {@link SSReply}, {@link SSRequest}
  * <p>
  * Sub-Elements are
  * {@link CaseNum}, {@link ConfigEmission}, {@link ConfigFreq}, {@link LoadsetRef}, {@link Notation}, {@link ObservedERPAnalysis}, {@link RxRef}, {@link TxRef}, {@link Usage}
@@ -1374,7 +1374,7 @@ public class Configuration {
    * limited to Communications Emitter Notation (CENOT) and Electronic
    * Intelligence Notation (ELNOT).
    * <p>
-   * @param values One or more instances of type {@link Notation...}
+   * @param values One or more instances of type {@link Notation}
    * @return The current Configuration object instance
    */
   public Configuration withNotation(Notation... values) {
@@ -1408,7 +1408,7 @@ public class Configuration {
    * Complex element Usage identifies how an operational configuration can be
    * used or will be used.
    * <p>
-   * @param values One or more instances of type {@link Usage...}
+   * @param values One or more instances of type {@link Usage}
    * @return The current Configuration object instance
    */
   public Configuration withUsage(Usage... values) {
@@ -1441,7 +1441,7 @@ public class Configuration {
    * configuration uses, which may be a subset of the frequencies that the
    * linked components (Transmitter, Receiver, Antenna) are capable of.
    * <p>
-   * @param values One or more instances of type {@link ConfigFreq...}
+   * @param values One or more instances of type {@link ConfigFreq}
    * @return The current Configuration object instance
    */
   public Configuration withConfigFreq(ConfigFreq... values) {
@@ -1474,7 +1474,7 @@ public class Configuration {
    * Complex element TxRef contains the reference of a Transmitter, and
    * optionnally some of its TxModes and the associated Antennas and AntMode.
    * <p>
-   * @param values One or more instances of type {@link TxRef...}
+   * @param values One or more instances of type {@link TxRef}
    * @return The current Configuration object instance
    */
   public Configuration withTxRef(TxRef... values) {
@@ -1506,7 +1506,7 @@ public class Configuration {
    * Complex element RxRef contains the reference of a Receiver, and optionnally
    * some of its RxModes and the associated Antennas and AntMode.
    * <p>
-   * @param values One or more instances of type {@link RxRef...}
+   * @param values One or more instances of type {@link RxRef}
    * @return The current Configuration object instance
    */
   public Configuration withRxRef(RxRef... values) {
@@ -1538,7 +1538,7 @@ public class Configuration {
    * Complex element CaseNum contains legacy and other identifiers associated
    * with the Dataset.
    * <p>
-   * @param values One or more instances of type {@link CaseNum...}
+   * @param values One or more instances of type {@link CaseNum}
    * @return The current Configuration object instance
    */
   public Configuration withCaseNum(CaseNum... values) {
@@ -1571,7 +1571,7 @@ public class Configuration {
    * classification symbols that a Configuration uses, which may be a subset of
    * the linked components' capabilities.
    * <p>
-   * @param values One or more instances of type {@link ConfigEmission...}
+   * @param values One or more instances of type {@link ConfigEmission}
    * @return The current Configuration object instance
    */
   public Configuration withConfigEmission(ConfigEmission... values) {
@@ -1604,7 +1604,7 @@ public class Configuration {
    * Complex element LoadsetRef describes the jamming loadset to be used against
    * a specific target or targets.
    * <p>
-   * @param values One or more instances of type {@link LoadsetRef...}
+   * @param values One or more instances of type {@link LoadsetRef}
    * @return The current Configuration object instance
    */
   public Configuration withLoadsetRef(LoadsetRef... values) {
@@ -1636,7 +1636,7 @@ public class Configuration {
    * Complex element ObservedERPAnalysis (US) contains data describing Effective
    * Radiated Power (ERP) associated with an emitter or Notation.
    * <p>
-   * @param values One or more instances of type {@link ObservedERPAnalysis...}
+   * @param values One or more instances of type {@link ObservedERPAnalysis}
    * @return The current Configuration object instance
    */
   public Configuration withObservedERPAnalysis(ObservedERPAnalysis... values) {

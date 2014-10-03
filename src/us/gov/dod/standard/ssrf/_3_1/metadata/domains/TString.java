@@ -60,7 +60,7 @@ public class TString extends AMetadata<TString> implements IMetadataType {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return
+   * @return the value of the value property.
    */
   @Override
   public String getValue() {

@@ -593,7 +593,7 @@ public class ObservedMOPBits {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link ObservedMOPValues...}
+   * @param values One or more instances of type {@link ObservedMOPValues}
    * @return The current ObservedMOPBits object instance
    */
   public ObservedMOPBits withObservedMOPValues(ObservedMOPValues... values) {

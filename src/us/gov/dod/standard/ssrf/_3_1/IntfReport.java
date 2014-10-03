@@ -2670,7 +2670,7 @@ public class IntfReport extends Common<IntfReport> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current IntfReport object instance
    */
   public IntfReport withPOCInformation(POCInformation... values) {

@@ -491,7 +491,7 @@ public class Allocation {
    * upper level allocation (e.g. a national allocation not aligned with the ITU
    * RR).
    * <p>
-   * @param values One or more instances of type {@link Variance...}
+   * @param values One or more instances of type {@link Variance}
    * @return The current Allocation object instance
    */
   public Allocation withVariance(Variance... values) {
@@ -524,7 +524,7 @@ public class Allocation {
    * Complex element StnClass contains the station class associated with the TOA
    * frequency usage.
    * <p>
-   * @param values One or more instances of type {@link StnClass...}
+   * @param values One or more instances of type {@link StnClass}
    * @return The current Allocation object instance
    */
   public Allocation withStnClass(StnClass... values) {
@@ -555,7 +555,7 @@ public class Allocation {
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @param values One or more instances of type {@link ChannelPlanRef...}
+   * @param values One or more instances of type {@link ChannelPlanRef}
    * @return The current Allocation object instance
    */
   public Allocation withChannelPlanRef(ChannelPlanRef... values) {
@@ -585,7 +585,7 @@ public class Allocation {
    * band Allocation. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current Allocation object instance
    */
   public Allocation withFootnotes(BigInteger... values) {
@@ -600,7 +600,7 @@ public class Allocation {
    * band Allocation. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @param values A collection of {@link Footnotes} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current Allocation object instance
    */
   public Allocation withFootnotes(Collection<BigInteger> values) {

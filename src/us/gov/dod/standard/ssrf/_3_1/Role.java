@@ -533,7 +533,7 @@ public class Role extends Common<Role> {
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    * <p>
-   * @param values One or more instances of type {@link Address...}
+   * @param values One or more instances of type {@link Address}
    * @return The current Role object instance
    */
   public Role withAddress(Address... values) {
@@ -565,7 +565,7 @@ public class Role extends Common<Role> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    * <p>
-   * @param values One or more instances of type {@link TelephoneFax...}
+   * @param values One or more instances of type {@link TelephoneFax}
    * @return The current Role object instance
    */
   public Role withTelephoneFax(TelephoneFax... values) {
@@ -596,7 +596,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    * <p>
-   * @param values One or more instances of type {@link EMail...}
+   * @param values One or more instances of type {@link EMail}
    * @return The current Role object instance
    */
   public Role withEMail(EMail... values) {
@@ -626,7 +626,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element ContactRef references a Contact.
    * <p>
-   * @param values One or more instances of type {@link ContactRef...}
+   * @param values One or more instances of type {@link ContactRef}
    * @return The current Role object instance
    */
   public Role withContactRef(ContactRef... values) {

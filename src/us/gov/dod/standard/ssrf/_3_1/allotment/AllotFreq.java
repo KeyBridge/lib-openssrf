@@ -376,7 +376,7 @@ public class AllotFreq {
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
    * <p>
-   * @param values One or more instances of type {@link LocationRestriction...}
+   * @param values One or more instances of type {@link LocationRestriction}
    * @return The current AllotFreq object instance
    */
   public AllotFreq withLocationRestriction(LocationRestriction... values) {

@@ -200,7 +200,7 @@ public class Channel {
   /**
    * Set one frequency in the channel plan.
    * <p>
-   * @param values One or more instances of type {@link ChannelFreq...}
+   * @param values One or more instances of type {@link ChannelFreq}
    * @return The current Channel object instance
    */
   public Channel withChannelFreq(ChannelFreq... values) {

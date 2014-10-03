@@ -982,7 +982,7 @@ public class Station {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Station object instance
    */
   public Station withPOCInformation(POCInformation... values) {
@@ -1016,7 +1016,7 @@ public class Station {
    * equipment necessary at one location for carrying on a radiocommunication,
    * radiolocation, or other spectrum dependent function.
    * <p>
-   * @param values One or more instances of type {@link StationLoc...}
+   * @param values One or more instances of type {@link StationLoc}
    * @return The current Station object instance
    */
   public Station withStationLoc(StationLoc... values) {

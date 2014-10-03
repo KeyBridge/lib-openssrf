@@ -464,7 +464,7 @@ public class DiagramEndpoint {
    * Complex element EndpointLocation defines locations where the diagram
    * endpoint is allowed or forbidden from use.
    * <p>
-   * @param values One or more instances of type {@link EndpointLocation...}
+   * @param values One or more instances of type {@link EndpointLocation}
    * @return The current DiagramEndpoint object instance
    */
   public DiagramEndpoint withEndpointLocation(EndpointLocation... values) {

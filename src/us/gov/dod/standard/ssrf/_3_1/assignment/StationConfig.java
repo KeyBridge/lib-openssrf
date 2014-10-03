@@ -941,7 +941,7 @@ public class StationConfig {
    * Complex element Blanking contains the start and stop angles of a horizontal
    * and/or vertical sector that is blanked.
    * <p>
-   * @param values One or more instances of type {@link Blanking...}
+   * @param values One or more instances of type {@link Blanking}
    * @return The current StationConfig object instance
    */
   public StationConfig withBlanking(Blanking... values) {

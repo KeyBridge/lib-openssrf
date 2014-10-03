@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDS;
  * <p>
  * Element of {@link Link}
  * <p>
- * Sub-Element is {@link RequestedFreq}
+ * Sub-Element is {@link AsgnFreqBase RequestedFreq}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -428,7 +428,7 @@ public class Tuning {
    * Complex element RequestedFreq indicates a single frequency or a range of
    * frequencies.
    * <p>
-   * @param values One or more instances of type {@link AsgnFreqBase...}
+   * @param values One or more instances of type {@link AsgnFreqBase}
    * @return The current Tuning object instance
    */
   public Tuning withRequestedFreq(AsgnFreqBase... values) {
@@ -444,7 +444,7 @@ public class Tuning {
    * Complex element RequestedFreq indicates a single frequency or a range of
    * frequencies.
    * <p>
-   * @param values A collection of {@link RequestedFreq} instances
+   * @param values A collection of {@link AsgnFreqBase} instances
    * @return The current Tuning object instance
    */
   public Tuning withRequestedFreq(Collection<AsgnFreqBase> values) {

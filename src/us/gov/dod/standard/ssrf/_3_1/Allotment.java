@@ -690,7 +690,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @param values One or more instances of type {@link Project...}
+   * @param values One or more instances of type {@link Project}
    * @return The current Allotment object instance
    */
   public Allotment withProject(Project... values) {
@@ -722,7 +722,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Allotment object instance
    */
   public Allotment withPOCInformation(POCInformation... values) {
@@ -753,7 +753,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element LocationRef references a Location dataset.
    * <p>
-   * @param values One or more instances of type {@link LocationRef...}
+   * @param values One or more instances of type {@link LocationRef}
    * @return The current Allotment object instance
    */
   public Allotment withLocationRef(LocationRef... values) {
@@ -784,7 +784,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element Emission defines the limits of the authorized bandwidth and
    * power within the allotment.
    * <p>
-   * @param values One or more instances of type {@link Emission...}
+   * @param values One or more instances of type {@link Emission}
    * @return The current Allotment object instance
    */
   public Allotment withEmission(Emission... values) {
@@ -816,7 +816,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element AllotFreq defines a frequency or range of frequencies
    * belonging to the Allotment.
    * <p>
-   * @param values One or more instances of type {@link AllotFreq...}
+   * @param values One or more instances of type {@link AllotFreq}
    * @return The current Allotment object instance
    */
   public Allotment withAllotFreq(AllotFreq... values) {

@@ -214,7 +214,7 @@ public class Deployment {
    * equipment is installed, whether it is mounted at a fixed site atop a
    * mountain, in a shelter, in a vehicle, aboard a helicopter, etc.
    * <p>
-   * @param values One or more instances of type {@link Installation...}
+   * @param values One or more instances of type {@link Installation}
    * @return The current Deployment object instance
    */
   public Deployment withInstallation(Installation... values) {

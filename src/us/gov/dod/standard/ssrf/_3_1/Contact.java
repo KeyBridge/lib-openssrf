@@ -524,7 +524,7 @@ public class Contact extends Common<Contact> {
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    * <p>
-   * @param values One or more instances of type {@link Address...}
+   * @param values One or more instances of type {@link Address}
    * @return The current Contact object instance
    */
   public Contact withAddress(Address... values) {
@@ -556,7 +556,7 @@ public class Contact extends Common<Contact> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    * <p>
-   * @param values One or more instances of type {@link TelephoneFax...}
+   * @param values One or more instances of type {@link TelephoneFax}
    * @return The current Contact object instance
    */
   public Contact withTelephoneFax(TelephoneFax... values) {
@@ -587,7 +587,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    * <p>
-   * @param values One or more instances of type {@link EMail...}
+   * @param values One or more instances of type {@link EMail}
    * @return The current Contact object instance
    */
   public Contact withEMail(EMail... values) {

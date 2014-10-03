@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * were received. If a dataset fails validation, a separate Administrative
  * dataset SHOULD be returned to the sender informing them of the error.
  * <p>
- * Sub-Element is {@link DatasetRefs}
+ * Sub-Element is {@link DatasetRef}
  * <p>
  * Example:
  * <pre>
@@ -215,7 +215,7 @@ public class Message extends Common<Message> {
    * Complex element DatasetRefs lists the serial for each primary Dataset
    * included in a single Message.
    * <p>
-   * @param values One or more instances of type {@link DatasetRef...}
+   * @param values One or more instances of type {@link DatasetRef}
    * @return The current Message object instance
    */
   public Message withDatasetRef(DatasetRef... values) {

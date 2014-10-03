@@ -1842,7 +1842,7 @@ public class ObservedMOPAnalysis {
    * Complex element ObservedMOPSweep (US) contains data describing the
    * parametric information for the period of the Modulation on the Pulse sweep.
    * <p>
-   * @param values One or more instances of type {@link ObservedMOPSweep...}
+   * @param values One or more instances of type {@link ObservedMOPSweep}
    * @return The current ObservedMOPAnalysis object instance
    */
   public ObservedMOPAnalysis withObservedMOPSweep(ObservedMOPSweep... values) {

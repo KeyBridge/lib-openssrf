@@ -854,7 +854,7 @@ public class JammingPlan {
    * Complex element JammingTarget (US) describes the target location and
    * identifies the jamming loadset to be used.
    * <p>
-   * @param values One or more instances of type {@link JammingTarget...}
+   * @param values One or more instances of type {@link JammingTarget}
    * @return The current JammingPlan object instance
    */
   public JammingPlan withJammingTarget(JammingTarget... values) {

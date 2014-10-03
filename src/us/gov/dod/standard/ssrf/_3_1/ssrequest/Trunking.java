@@ -903,7 +903,7 @@ public class Trunking {
    * of the existing assignment to be relinquished or used in the trunked land
    * mobile system.
    * <p>
-   * @param values One or more instances of type {@link TrunkingAssignment...}
+   * @param values One or more instances of type {@link TrunkingAssignment}
    * @return The current Trunking object instance
    */
   public Trunking withTrunkingAssignment(TrunkingAssignment... values) {

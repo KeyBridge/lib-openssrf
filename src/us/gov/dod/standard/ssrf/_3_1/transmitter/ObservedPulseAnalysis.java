@@ -3578,7 +3578,7 @@ public class ObservedPulseAnalysis {
    * Complex element ObservedPulseValues (US) contains data describing the
    * distinct Pulse values related to the Modulation Type.
    * <p>
-   * @param values One or more instances of type {@link ObservedPulseValues...}
+   * @param values One or more instances of type {@link ObservedPulseValues}
    * @return The current ObservedPulseAnalysis object instance
    */
   public ObservedPulseAnalysis withObservedPulseValues(ObservedPulseValues... values) {

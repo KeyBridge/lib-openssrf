@@ -857,7 +857,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Contact...}
+   * @param values One or more instances of type {@link Contact}
    * @return The current SchemaRoot object instance
    */
   public T withContact(Contact... values) {
@@ -883,7 +883,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Role...}
+   * @param values One or more instances of type {@link Role}
    * @return The current SchemaRoot object instance
    */
   public T withRole(Role... values) {
@@ -909,7 +909,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Organisation...}
+   * @param values One or more instances of type {@link Organisation}
    * @return The current SchemaRoot object instance
    */
   public T withOrganisation(Organisation... values) {
@@ -935,7 +935,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link ExternalReference...}
+   * @param values One or more instances of type {@link ExternalReference}
    * @return The current SchemaRoot object instance
    */
   public T withExternalReference(ExternalReference... values) {
@@ -961,7 +961,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Administrative...}
+   * @param values One or more instances of type {@link Administrative}
    * @return The current SchemaRoot object instance
    */
   public T withAdministrative(Administrative... values) {
@@ -987,7 +987,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Location...}
+   * @param values One or more instances of type {@link Location}
    * @return The current SchemaRoot object instance
    */
   public T withLocation(Location... values) {
@@ -1013,7 +1013,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link ChannelPlan...}
+   * @param values One or more instances of type {@link ChannelPlan}
    * @return The current SchemaRoot object instance
    */
   public T withChannelPlan(ChannelPlan... values) {
@@ -1039,7 +1039,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link TOA...}
+   * @param values One or more instances of type {@link TOA}
    * @return The current SchemaRoot object instance
    */
   public T withTOA(TOA... values) {
@@ -1065,7 +1065,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Transmitter...}
+   * @param values One or more instances of type {@link Transmitter}
    * @return The current SchemaRoot object instance
    */
   public T withTransmitter(Transmitter... values) {
@@ -1091,7 +1091,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Receiver...}
+   * @param values One or more instances of type {@link Receiver}
    * @return The current SchemaRoot object instance
    */
   public T withReceiver(Receiver... values) {
@@ -1117,7 +1117,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Antenna...}
+   * @param values One or more instances of type {@link Antenna}
    * @return The current SchemaRoot object instance
    */
   public T withAntenna(Antenna... values) {
@@ -1143,7 +1143,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link RFSystem...}
+   * @param values One or more instances of type {@link RFSystem}
    * @return The current SchemaRoot object instance
    */
   public T withRFSystem(RFSystem... values) {
@@ -1169,7 +1169,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link SSRequest...}
+   * @param values One or more instances of type {@link SSRequest}
    * @return The current SchemaRoot object instance
    */
   public T withSSRequest(SSRequest... values) {
@@ -1195,7 +1195,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link SSReply...}
+   * @param values One or more instances of type {@link SSReply}
    * @return The current SchemaRoot object instance
    */
   public T withSSReply(SSReply... values) {
@@ -1221,7 +1221,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Allotment...}
+   * @param values One or more instances of type {@link Allotment}
    * @return The current SchemaRoot object instance
    */
   public T withAllotment(Allotment... values) {
@@ -1247,7 +1247,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Assignment...}
+   * @param values One or more instances of type {@link Assignment}
    * @return The current SchemaRoot object instance
    */
   public T withAssignment(Assignment... values) {
@@ -1273,7 +1273,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Satellite...}
+   * @param values One or more instances of type {@link Satellite}
    * @return The current SchemaRoot object instance
    */
   public T withSatellite(Satellite... values) {
@@ -1299,7 +1299,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link IntfReport...}
+   * @param values One or more instances of type {@link IntfReport}
    * @return The current SchemaRoot object instance
    */
   public T withIntfReport(IntfReport... values) {
@@ -1325,7 +1325,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link JRFL...}
+   * @param values One or more instances of type {@link JRFL}
    * @return The current SchemaRoot object instance
    */
   public T withJRFL(JRFL... values) {
@@ -1351,7 +1351,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link ForceElement...}
+   * @param values One or more instances of type {@link ForceElement}
    * @return The current SchemaRoot object instance
    */
   public T withForceElement(ForceElement... values) {
@@ -1377,7 +1377,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link FEDeployment...}
+   * @param values One or more instances of type {@link FEDeployment}
    * @return The current SchemaRoot object instance
    */
   public T withFEDeployment(FEDeployment... values) {
@@ -1403,7 +1403,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Message...}
+   * @param values One or more instances of type {@link Message}
    * @return The current SchemaRoot object instance
    */
   public T withMessage(Message... values) {
@@ -1429,7 +1429,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Note...}
+   * @param values One or more instances of type {@link Note}
    * @return The current SchemaRoot object instance
    */
   public T withNote(Note... values) {
@@ -1455,7 +1455,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link Loadset...}
+   * @param values One or more instances of type {@link Loadset}
    * @return The current SchemaRoot object instance
    */
   public T withLoadset(Loadset... values) {
@@ -1481,7 +1481,7 @@ public abstract class SchemaRoot<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link RadiationPlan...}
+   * @param values One or more instances of type {@link RadiationPlan}
    * @return The current SchemaRoot object instance
    */
   public T withRadiationPlan(RadiationPlan... values) {

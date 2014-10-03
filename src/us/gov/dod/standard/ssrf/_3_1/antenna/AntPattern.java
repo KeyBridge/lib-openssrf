@@ -352,7 +352,7 @@ public class AntPattern {
    * Complex element AntPatternPoint contains a single point of the antenna
    * radiation pattern, defined by a direction and gain.
    * <p>
-   * @param values One or more instances of type {@link AntPatternPoint...}
+   * @param values One or more instances of type {@link AntPatternPoint}
    * @return The current AntPattern object instance
    */
   public AntPattern withAntPatternPoint(AntPatternPoint... values) {

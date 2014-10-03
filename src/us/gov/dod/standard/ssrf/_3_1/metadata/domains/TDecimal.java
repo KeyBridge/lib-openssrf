@@ -69,7 +69,7 @@ public class TDecimal extends AMetadata<TDecimal> implements IMetadataType {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return
+   * @return the value of the value property.
    */
   @Override
   public BigDecimal getValue() {

@@ -1183,7 +1183,7 @@ public class JRFLEntry {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @param values One or more instances of type {@link Project...}
+   * @param values One or more instances of type {@link Project}
    * @return The current JRFLEntry object instance
    */
   public JRFLEntry withProject(Project... values) {
@@ -1215,7 +1215,7 @@ public class JRFLEntry {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current JRFLEntry object instance
    */
   public JRFLEntry withPOCInformation(POCInformation... values) {
@@ -1247,7 +1247,7 @@ public class JRFLEntry {
    * Complex element JRFLEntryLocation defines the location where the use of a
    * specific frequency or frequency range(s) is restricted in use.
    * <p>
-   * @param values One or more instances of type {@link JRFLEntryLocation...}
+   * @param values One or more instances of type {@link JRFLEntryLocation}
    * @return The current JRFLEntry object instance
    */
   public JRFLEntry withJRFLEntryLocation(JRFLEntryLocation... values) {

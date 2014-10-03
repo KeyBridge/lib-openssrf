@@ -1087,7 +1087,7 @@ public class JammingChannelProfile {
    * for synchronising Electronic Warfare jamming information.
    * <p>
    * @param values One or more instances of type
-   *               {@link TimingDeconflictionProtocol...}
+   *               {@link TimingDeconflictionProtocol}
    * @return The current JammingChannelProfile object instance
    */
   public JammingChannelProfile withTimingDeconflictionProtocol(TimingDeconflictionProtocol... values) {

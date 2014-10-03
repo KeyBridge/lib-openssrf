@@ -1228,7 +1228,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Antenna object instance
    */
   public Antenna withPOCInformation(POCInformation... values) {
@@ -1262,7 +1262,7 @@ public class Antenna extends Common<Antenna> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current Antenna object instance
    */
   public Antenna withNomenclature(Nomenclature... values) {
@@ -1296,7 +1296,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element AntHardware contains the physical parameters related to the
    * antenna feed and lead.
    * <p>
-   * @param values One or more instances of type {@link AntHardware...}
+   * @param values One or more instances of type {@link AntHardware}
    * @return The current Antenna object instance
    */
   public Antenna withAntHardware(AntHardware... values) {
@@ -1328,7 +1328,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element AntMode contains the technical characteristics of one
    * antenna mode.
    * <p>
-   * @param values One or more instances of type {@link AntMode...}
+   * @param values One or more instances of type {@link AntMode}
    * @return The current Antenna object instance
    */
   public Antenna withAntMode(AntMode... values) {
@@ -1360,7 +1360,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna.
    * <p>
-   * @param values One or more instances of type {@link UsingCountries...}
+   * @param values One or more instances of type {@link UsingCountries}
    * @return The current Antenna object instance
    */
   public Antenna withUsingCountries(UsingCountries... values) {

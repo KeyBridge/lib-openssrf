@@ -548,7 +548,7 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current RFSystem object instance
    */
   public RFSystem withPOCInformation(POCInformation... values) {
@@ -582,7 +582,7 @@ public class RFSystem extends Common<RFSystem> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current RFSystem object instance
    */
   public RFSystem withNomenclature(Nomenclature... values) {
@@ -620,7 +620,7 @@ public class RFSystem extends Common<RFSystem> {
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
    * <p>
-   * @param values One or more instances of type {@link Deployment...}
+   * @param values One or more instances of type {@link Deployment}
    * @return The current RFSystem object instance
    */
   public RFSystem withDeployment(Deployment... values) {
@@ -662,7 +662,7 @@ public class RFSystem extends Common<RFSystem> {
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
    * <p>
-   * @param values One or more instances of type {@link Configuration...}
+   * @param values One or more instances of type {@link Configuration}
    * @return The current RFSystem object instance
    */
   public RFSystem withConfiguration(Configuration... values) {
@@ -700,7 +700,7 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element RelatedSystem identifies a System linked to the current
    * System, and the relation (parent, child, sibling).
    * <p>
-   * @param values One or more instances of type {@link RelatedSystem...}
+   * @param values One or more instances of type {@link RelatedSystem}
    * @return The current RFSystem object instance
    */
   public RFSystem withRelatedSystem(RelatedSystem... values) {
@@ -732,7 +732,7 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
    * <p>
-   * @param values One or more instances of type {@link StockNum...}
+   * @param values One or more instances of type {@link StockNum}
    * @return The current RFSystem object instance
    */
   public RFSystem withStockNum(StockNum... values) {
@@ -764,7 +764,7 @@ public class RFSystem extends Common<RFSystem> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the RFSystem.
    * <p>
-   * @param values One or more instances of type {@link UsingCountries...}
+   * @param values One or more instances of type {@link UsingCountries}
    * @return The current RFSystem object instance
    */
   public RFSystem withUsingCountries(UsingCountries... values) {

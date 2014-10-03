@@ -743,7 +743,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current ForceElement object instance
    */
   public ForceElement withPOCInformation(POCInformation... values) {
@@ -776,7 +776,7 @@ public class ForceElement extends Common<ForceElement> {
    * the equipment, RF systems, or other Force Elements used or owned by the
    * Force Element.
    * <p>
-   * @param values One or more instances of type {@link Assets...}
+   * @param values One or more instances of type {@link Assets}
    * @return The current ForceElement object instance
    */
   public ForceElement withAssets(Assets... values) {
@@ -811,7 +811,7 @@ public class ForceElement extends Common<ForceElement> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current ForceElement object instance
    */
   public ForceElement withNomenclature(Nomenclature... values) {
@@ -845,7 +845,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
    * <p>
-   * @param values One or more instances of type {@link StockNum...}
+   * @param values One or more instances of type {@link StockNum}
    * @return The current ForceElement object instance
    */
   public ForceElement withStockNum(StockNum... values) {

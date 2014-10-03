@@ -198,7 +198,7 @@ public class RxRef {
    * Complex element RxModeRef references a RxMode of the receiver used in a
    * specific configuration.
    * <p>
-   * @param values One or more instances of type {@link RxModeRef...}
+   * @param values One or more instances of type {@link RxModeRef}
    * @return The current RxRef object instance
    */
   public RxRef withRxModeRef(RxModeRef... values) {
@@ -230,7 +230,7 @@ public class RxRef {
    * Complex element RxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Receiver Configuration.
    * <p>
-   * @param values One or more instances of type {@link RxAntModeRef...}
+   * @param values One or more instances of type {@link RxAntModeRef}
    * @return The current RxRef object instance
    */
   public RxRef withRxAntModeRef(RxAntModeRef... values) {

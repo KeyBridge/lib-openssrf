@@ -71,7 +71,7 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType {
   /**
    * Gets the value of the value property.
    * <p>
-   * @return
+   * @return the value of the value property.
    */
   @Override
   public Calendar getValue() {

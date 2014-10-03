@@ -790,7 +790,7 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Transmitter object instance
    */
   public Transmitter withPOCInformation(POCInformation... values) {
@@ -824,7 +824,7 @@ public class Transmitter extends Common<Transmitter> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    * <p>
-   * @param values One or more instances of type {@link Nomenclature...}
+   * @param values One or more instances of type {@link Nomenclature}
    * @return The current Transmitter object instance
    */
   public Transmitter withNomenclature(Nomenclature... values) {
@@ -862,7 +862,7 @@ public class Transmitter extends Common<Transmitter> {
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
    * <p>
-   * @param values One or more instances of type {@link Deployment...}
+   * @param values One or more instances of type {@link Deployment}
    * @return The current Transmitter object instance
    */
   public Transmitter withDeployment(Deployment... values) {
@@ -901,7 +901,7 @@ public class Transmitter extends Common<Transmitter> {
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
    * <p>
-   * @param values One or more instances of type {@link Curve...}
+   * @param values One or more instances of type {@link Curve}
    * @return The current Transmitter object instance
    */
   public Transmitter withCurve(Curve... values) {
@@ -936,7 +936,7 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element TxMode and its sub-elements define all the technical
    * parameters for a mode of operation of the Transmitter.
    * <p>
-   * @param values One or more instances of type {@link TxMode...}
+   * @param values One or more instances of type {@link TxMode}
    * @return The current Transmitter object instance
    */
   public Transmitter withTxMode(TxMode... values) {
@@ -968,7 +968,7 @@ public class Transmitter extends Common<Transmitter> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Transmitter.
    * <p>
-   * @param values One or more instances of type {@link UsingCountries...}
+   * @param values One or more instances of type {@link UsingCountries}
    * @return The current Transmitter object instance
    */
   public Transmitter withUsingCountries(UsingCountries... values) {

@@ -1949,7 +1949,7 @@ public class AntMode {
    * reference to an isotropic source (dBi), in the direction of maximum
    * radiation.
    * <p>
-   * @param values One or more instances of type {@link AntGain...}
+   * @param values One or more instances of type {@link AntGain}
    * @return The current AntMode object instance
    */
   public AntMode withAntGain(AntGain... values) {
@@ -1982,7 +1982,7 @@ public class AntMode {
    * Complex element AntFreqs contains the antenna's designed tuning range, or
    * the discrete operating frequency.
    * <p>
-   * @param values One or more instances of type {@link AntFreqs...}
+   * @param values One or more instances of type {@link AntFreqs}
    * @return The current AntMode object instance
    */
   public AntMode withAntFreqs(AntFreqs... values) {
@@ -2018,7 +2018,7 @@ public class AntMode {
    * be taken with theta as the dependent variable. These will be great circle
    * cuts through the main-beam peak.
    * <p>
-   * @param values One or more instances of type {@link AntPattern...}
+   * @param values One or more instances of type {@link AntPattern}
    * @return The current AntMode object instance
    */
   public AntMode withAntPattern(AntPattern... values) {
@@ -2054,7 +2054,7 @@ public class AntMode {
    * Complex element AntEfficiency describes the antenna efficiency at various
    * frequencies within the frequency range of the antenna.
    * <p>
-   * @param values One or more instances of type {@link AntEfficiency...}
+   * @param values One or more instances of type {@link AntEfficiency}
    * @return The current AntMode object instance
    */
   public AntMode withAntEfficiency(AntEfficiency... values) {
@@ -2087,7 +2087,7 @@ public class AntMode {
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency.
    * <p>
-   * @param values One or more instances of type {@link VSWR...}
+   * @param values One or more instances of type {@link VSWR}
    * @return The current AntMode object instance
    */
   public AntMode withVSWR(VSWR... values) {
@@ -2120,7 +2120,7 @@ public class AntMode {
    * Complex element ObservedLobeAnalysis (US) contains general data associated
    * with observed Antenna sidelobes and backlobes.
    * <p>
-   * @param values One or more instances of type {@link ObservedLobeAnalysis...}
+   * @param values One or more instances of type {@link ObservedLobeAnalysis}
    * @return The current AntMode object instance
    */
   public AntMode withObservedLobeAnalysis(ObservedLobeAnalysis... values) {
@@ -2153,7 +2153,7 @@ public class AntMode {
    * the parametric information for the polarization and tilt angle information.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedPolarisationAnalysis...}
+   *               {@link ObservedPolarisationAnalysis}
    * @return The current AntMode object instance
    */
   public AntMode withObservedPolarisationAnalysis(ObservedPolarisationAnalysis... values) {
@@ -2187,7 +2187,7 @@ public class AntMode {
    * collected Horizontal and Vertical Scan parameters as well as the Adaptive
    * Driver information.
    * <p>
-   * @param values One or more instances of type {@link ObservedScanAnalysis...}
+   * @param values One or more instances of type {@link ObservedScanAnalysis}
    * @return The current AntMode object instance
    */
   public AntMode withObservedScanAnalysis(ObservedScanAnalysis... values) {

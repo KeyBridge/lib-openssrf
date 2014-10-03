@@ -3246,7 +3246,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @param values One or more instances of type {@link Project...}
+   * @param values One or more instances of type {@link Project}
    * @return The current Assignment object instance
    */
   public Assignment withProject(Project... values) {
@@ -3278,7 +3278,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}
+   * @param values One or more instances of type {@link POCInformation}
    * @return The current Assignment object instance
    */
   public Assignment withPOCInformation(POCInformation... values) {
@@ -3312,7 +3312,7 @@ public class Assignment extends Common<Assignment> {
    * uses another assignment resources. It also describes linkages to or from
    * other datasets.
    * <p>
-   * @param values One or more instances of type {@link SysOfStation...}
+   * @param values One or more instances of type {@link SysOfStation}
    * @return The current Assignment object instance
    */
   public Assignment withSysOfStation(SysOfStation... values) {
@@ -3346,7 +3346,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @param values One or more instances of type {@link RelatedRef...}
+   * @param values One or more instances of type {@link RelatedRef}
    * @return The current Assignment object instance
    */
   public Assignment withRelatedRef(RelatedRef... values) {
@@ -3379,7 +3379,7 @@ public class Assignment extends Common<Assignment> {
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset.
    * <p>
-   * @param values One or more instances of type {@link Configuration...}
+   * @param values One or more instances of type {@link Configuration}
    * @return The current Assignment object instance
    */
   public Assignment withConfiguration(Configuration... values) {
@@ -3412,7 +3412,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset.
    * <p>
-   * @param values One or more instances of type {@link Station...}
+   * @param values One or more instances of type {@link Station}
    * @return The current Assignment object instance
    */
   public Assignment withStation(Station... values) {
@@ -3448,7 +3448,7 @@ public class Assignment extends Common<Assignment> {
    * volume with non-defined mobiles) to very accurate (such as one link for
    * each radio-relay hop).
    * <p>
-   * @param values One or more instances of type {@link Link...}
+   * @param values One or more instances of type {@link Link}
    * @return The current Assignment object instance
    */
   public Assignment withLink(Link... values) {
@@ -3484,7 +3484,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments.
    * <p>
-   * @param values One or more instances of type {@link StatusLog...}
+   * @param values One or more instances of type {@link StatusLog}
    * @return The current Assignment object instance
    */
   public Assignment withStatusLog(StatusLog... values) {
@@ -3516,7 +3516,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
    * <p>
-   * @param values One or more instances of type {@link AsgnAllotOwner...}
+   * @param values One or more instances of type {@link AsgnAllotOwner}
    * @return The current Assignment object instance
    */
   public Assignment withAsgnAllotOwner(AsgnAllotOwner... values) {
@@ -3549,7 +3549,7 @@ public class Assignment extends Common<Assignment> {
    * network and equipment used to support a specific frequency assignment or
    * assignments.
    * <p>
-   * @param values One or more instances of type {@link CircuitRemarks...}
+   * @param values One or more instances of type {@link CircuitRemarks}
    * @return The current Assignment object instance
    */
   public Assignment withCircuitRemarks(CircuitRemarks... values) {
@@ -3582,7 +3582,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
    * <p>
-   * @param values One or more instances of type {@link CoordinationData...}
+   * @param values One or more instances of type {@link CoordinationData}
    * @return The current Assignment object instance
    */
   public Assignment withCoordinationData(CoordinationData... values) {
@@ -3614,7 +3614,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository.
    * <p>
-   * @param values One or more instances of type {@link DocketNum...}
+   * @param values One or more instances of type {@link DocketNum}
    * @return The current Assignment object instance
    */
   public Assignment withDocketNum(DocketNum... values) {
@@ -3646,7 +3646,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository.
    * <p>
-   * @param values One or more instances of type {@link HostDocketNum...}
+   * @param values One or more instances of type {@link HostDocketNum}
    * @return The current Assignment object instance
    */
   public Assignment withHostDocketNum(HostDocketNum... values) {
@@ -3679,7 +3679,7 @@ public class Assignment extends Common<Assignment> {
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment.
    * <p>
-   * @param values One or more instances of type {@link OffTheShelfEquipment...}
+   * @param values One or more instances of type {@link OffTheShelfEquipment}
    * @return The current Assignment object instance
    */
   public Assignment withOffTheShelfEquipment(OffTheShelfEquipment... values) {
@@ -3714,7 +3714,7 @@ public class Assignment extends Common<Assignment> {
    * serial number.
    * <p>
    * @param values One or more instances of type
-   *               {@link PreviousAuthorization...}
+   *               {@link PreviousAuthorization}
    * @return The current Assignment object instance
    */
   public Assignment withPreviousAuthorization(PreviousAuthorization... values) {
@@ -3747,7 +3747,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments.
    * <p>
-   * @param values One or more instances of type {@link RecordNote...}
+   * @param values One or more instances of type {@link RecordNote}
    * @return The current Assignment object instance
    */
   public Assignment withRecordNote(RecordNote... values) {

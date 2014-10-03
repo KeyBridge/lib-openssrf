@@ -49,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
  * Element of {@link Assignment}
  * <p>
  * Sub-Elements are
- * {@link Assigned}, {@link DCSTrunk}, {@link DetailedFunctionID}, {@link StationConfig}, {@link Tuning}
+ * {@link Assigned}, {@link DCSTrunk}, {@link DetailedFunction}, {@link StationConfig}, {@link Tuning}
  * <p>
  * Example:
  * <pre>
@@ -601,7 +601,7 @@ public class Link {
    * frequencies, tuning increment, and number of frequencies, required for an
    * assignment.
    * <p>
-   * @param values One or more instances of type {@link Tuning...}
+   * @param values One or more instances of type {@link Tuning}
    * @return The current Link object instance
    */
   public Link withTuning(Tuning... values) {
@@ -635,7 +635,7 @@ public class Link {
    * used for transmitting and/or receiving in the current Link. It may also
    * contain additional antenna pointing/blanking parameters.
    * <p>
-   * @param values One or more instances of type {@link StationConfig...}
+   * @param values One or more instances of type {@link StationConfig}
    * @return The current Link object instance
    */
   public Link withStationConfig(StationConfig... values) {
@@ -668,7 +668,7 @@ public class Link {
    * Complex element Assigned contains the assigned frequency(ies), channel or
    * net number; it can also contain the old frequency.
    * <p>
-   * @param values One or more instances of type {@link Assigned...}
+   * @param values One or more instances of type {@link Assigned}
    * @return The current Link object instance
    */
   public Link withAssigned(Assigned... values) {
@@ -701,7 +701,7 @@ public class Link {
    * trunk identifier for a specific "trunked" system. The identifier is
    * assigned by the Defense Information Systems Agency (DISA).
    * <p>
-   * @param values One or more instances of type {@link DCSTrunk...}
+   * @param values One or more instances of type {@link DCSTrunk}
    * @return The current Link object instance
    */
   public Link withDCSTrunk(DCSTrunk... values) {
@@ -735,7 +735,7 @@ public class Link {
    * equipment in the link of a frequency assignment or group of frequency
    * assignments.
    * <p>
-   * @param values One or more instances of type {@link DetailedFunction...}
+   * @param values One or more instances of type {@link DetailedFunction}
    * @return The current Link object instance
    */
   public Link withDetailedFunction(DetailedFunction... values) {

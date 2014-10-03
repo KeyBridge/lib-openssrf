@@ -372,7 +372,7 @@ public class CodeList {
    * Set the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List.
    * <p>
-   * @param values One or more instances of type {@link Code...}
+   * @param values One or more instances of type {@link Code}
    * @return The current CodeList object instance
    */
   public CodeList withCode(Code... values) {

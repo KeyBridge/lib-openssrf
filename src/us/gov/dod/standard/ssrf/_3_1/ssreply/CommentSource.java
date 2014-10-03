@@ -332,7 +332,7 @@ public class CommentSource {
    * Complex element Comment contains the comment provided by the Host Nation or
    * Administration regarding an equipment supportability.
    * <p>
-   * @param values One or more instances of type {@link Comment...}
+   * @param values One or more instances of type {@link Comment}
    * @return The current CommentSource object instance
    */
   public CommentSource withComment(Comment... values) {

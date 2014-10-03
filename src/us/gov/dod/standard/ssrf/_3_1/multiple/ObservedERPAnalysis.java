@@ -1096,7 +1096,7 @@ public class ObservedERPAnalysis {
    * that describe the Effective Radiated Power (ERP) associated with an emitter
    * or Notation.
    * <p>
-   * @param values One or more instances of type {@link ObservedERPValues...}
+   * @param values One or more instances of type {@link ObservedERPValues}
    * @return The current ObservedERPAnalysis object instance
    */
   public ObservedERPAnalysis withObservedERPValues(ObservedERPValues... values) {

@@ -1455,7 +1455,7 @@ public class ObservedPolarisationAnalysis {
    * the parametric information for the polarization tilt angle specific values.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedPolarisationValues...}
+   *               {@link ObservedPolarisationValues}
    * @return The current ObservedPolarisationAnalysis object instance
    */
   public ObservedPolarisationAnalysis withObservedPolarisationValues(ObservedPolarisationValues... values) {

@@ -202,7 +202,7 @@ public class TxRef {
    * Complex element TxModeRef contains references to the Transmitter and its
    * modes, used to construct a Configuration.
    * <p>
-   * @param values One or more instances of type {@link TxModeRef...}
+   * @param values One or more instances of type {@link TxModeRef}
    * @return The current TxRef object instance
    */
   public TxRef withTxModeRef(TxModeRef... values) {
@@ -234,7 +234,7 @@ public class TxRef {
    * Complex element TxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Transmitter Configuration.
    * <p>
-   * @param values One or more instances of type {@link TxAntModeRef...}
+   * @param values One or more instances of type {@link TxAntModeRef}
    * @return The current TxRef object instance
    */
   public TxRef withTxAntModeRef(TxAntModeRef... values) {

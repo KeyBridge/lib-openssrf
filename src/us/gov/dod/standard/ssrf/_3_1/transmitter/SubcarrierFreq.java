@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -120,7 +119,7 @@ public class SubcarrierFreq {
   /**
    * Get the frequency differential from the subcarrier frequency.
    * <p>
-   * @return a {@link JAXBElement<TDecimal>} instance
+   * @return a {@link TDecimal} instance
    */
   public TDecimal getFreqOffset() {
     return freqOffset;
@@ -129,7 +128,7 @@ public class SubcarrierFreq {
   /**
    * Set the frequency differential from the subcarrier frequency.
    * <p>
-   * @param value a {@link JAXBElement} instance
+   * @param value a {@link TDecimal} instance
    */
   public void setFreqOffset(TDecimal value) {
     this.freqOffset = value;
@@ -248,7 +247,7 @@ public class SubcarrierFreq {
    * Complex element SubcarrierTone describes the sidetone frequency used to
    * modulate the subcarrier.
    * <p>
-   * @param values One or more instances of type {@link SubcarrierTone...}
+   * @param values One or more instances of type {@link SubcarrierTone}
    * @return The current SubcarrierFreq object instance
    */
   public SubcarrierFreq withSubcarrierTone(SubcarrierTone... values) {

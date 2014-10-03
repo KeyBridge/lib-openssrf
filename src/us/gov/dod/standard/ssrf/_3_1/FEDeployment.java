@@ -894,7 +894,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @param values One or more instances of type {@link Project...}
+   * @param values One or more instances of type {@link Project}
    * @return The current FEDeployment object instance
    */
   public FEDeployment withProject(Project... values) {
@@ -926,7 +926,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Complex element AtWayPoint defines a point in time at which a Force Element
    * is at a given waypoint along a route.
    * <p>
-   * @param values One or more instances of type {@link AtWaypoint...}
+   * @param values One or more instances of type {@link AtWaypoint}
    * @return The current FEDeployment object instance
    */
   public FEDeployment withAtWaypoint(AtWaypoint... values) {

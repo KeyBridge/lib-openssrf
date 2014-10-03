@@ -1547,7 +1547,7 @@ public abstract class Common<T> {
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
    * <p>
-   * @param values One or more instances of type {@link CaseNum...}
+   * @param values One or more instances of type {@link CaseNum}
    * @return The current Common object instance
    */
   public T withCaseNum(CaseNum... values) {
@@ -1579,7 +1579,7 @@ public abstract class Common<T> {
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
    * <p>
-   * @param values One or more instances of type {@link ExtReferenceRef...}
+   * @param values One or more instances of type {@link ExtReferenceRef}
    * @return The current Common object instance
    */
   public T withExtReferenceRef(ExtReferenceRef... values) {
@@ -1609,7 +1609,7 @@ public abstract class Common<T> {
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @param values One or more instances of type {@link Remarks...}
+   * @param values One or more instances of type {@link Remarks}
    * @return The current Common object instance
    */
   public T withRemarks(Remarks... values) {
@@ -1651,7 +1651,7 @@ public abstract class Common<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @param values One or more instances of type {@link ListCCY...}
+   * @param values One or more instances of type {@link ListCCY}
    * @return The current Common object instance
    */
   public T withReleasability(ListCCY... values) {
@@ -1668,7 +1668,7 @@ public abstract class Common<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @param values A collection of {@link Releasability} instances
+   * @param values A collection of {@link ListCCY} instances
    * @return The current Common object instance
    */
   public T withReleasability(Collection<ListCCY> values) {
@@ -1681,7 +1681,7 @@ public abstract class Common<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current Common object instance
    */
   public T withRemarkRef(BigInteger... values) {
@@ -1694,7 +1694,7 @@ public abstract class Common<T> {
   /**
    * Set
    * <p>
-   * @param values A collection of {@link RemarkRef} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    */
   public T withRemarkRef(Collection<BigInteger> values) {
@@ -1708,7 +1708,7 @@ public abstract class Common<T> {
    * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current Common object instance
    */
   public T withExtReferences(BigInteger... values) {
@@ -1722,7 +1722,7 @@ public abstract class Common<T> {
    * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @param values A collection of {@link ExtReferences} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    */
   public T withExtReferences(Collection<BigInteger> values) {

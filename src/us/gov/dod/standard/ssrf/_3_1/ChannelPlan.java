@@ -163,7 +163,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Set the serial of the referenced ChannelPlan.
    * <p>
-   * @param values One or more instances of type {@link Channel...}
+   * @param values One or more instances of type {@link Channel}
    * @return The current ChannelPlan object instance
    */
   public ChannelPlan withChannel(Channel... values) {

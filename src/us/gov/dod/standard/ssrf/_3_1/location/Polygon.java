@@ -303,7 +303,7 @@ public class Polygon {
    * it is assumed that they are connected to complete the boundary of the
    * polygon.
    * <p>
-   * @param values One or more instances of type {@link PolygonPoint...}
+   * @param values One or more instances of type {@link PolygonPoint}
    * @return The current Polygon object instance
    */
   public Polygon withPolygonPoint(PolygonPoint... values) {

@@ -253,7 +253,7 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @param values One or more instances of type {@link MissingRef...}
+   * @param values One or more instances of type {@link MissingRef}
    * @return The current Dataset object instance
    */
   public Dataset withMissingRef(MissingRef... values) {
