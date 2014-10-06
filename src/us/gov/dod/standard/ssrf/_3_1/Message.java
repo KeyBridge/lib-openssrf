@@ -89,7 +89,7 @@ public class Message extends Common<Message> {
   /**
    * DatasetRefs (Required)
    * <p>
-   * DatasetRefs lists the serial for each primary Dataset included in a single
+   * DatasetRefs lists the SERIAL for each primary Dataset included in a single
    * Message.
    */
   @XmlElement(name = "DatasetRef", required = true, nillable = true)
