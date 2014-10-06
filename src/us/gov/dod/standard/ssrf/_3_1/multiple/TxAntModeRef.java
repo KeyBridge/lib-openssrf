@@ -50,8 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 @XmlType(name = "TxAntModeRef", propOrder = {
   "spectralPowerDensity"
 })
-public class TxAntModeRef
-  extends RxAntModeRef {
+public class TxAntModeRef  extends RxAntModeRef {
 
   /**
    * SpectralPowerDensity - Spectral Power Density (Optional)

@@ -292,7 +292,7 @@ public class Configuration {
   /**
    * TxRef (Optional)
    * <p>
-   * TxRef contains the reference of a Transmitter, and optionnally some of its
+   * TxRef contains the reference of a Transmitter, and optionally some of its
    * TxModes and the associated Antennas and AntMode.
    */
   @XmlElement(name = "TxRef")

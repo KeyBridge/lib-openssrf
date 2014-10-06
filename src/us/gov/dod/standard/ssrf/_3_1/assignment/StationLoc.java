@@ -79,8 +79,9 @@ public class StationLoc {
    * US:LocSatRef - Location or Satellite Reference (Optional)
    * <p>
    * The serial of a Location or Satellite dataset. If this location is a
-   * complex dataset (more than a single point), tthe assignment is mobile,
-   * inside the Station location.
+   * complex dataset (more than a single point) then the assignment is mobile
+   * and inside the Station location (e.g. inside the satellite beam
+   * footprint.).
    * <p>
    * Format is pattern (S29)
    */
