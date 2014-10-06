@@ -324,6 +324,8 @@ public class Dataset {
    * MissingRef allows the recipient of a message to signal the sender that a
    * dataset referenced in the message was not known by the recipient.
    * <p>
+   * This may be any instance of type {@link Common}
+   * <p>
    * @since 3.1.0
    */
   @XmlTransient
@@ -336,7 +338,7 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @return a {@link Common} instance
+   * @return An instance of type {@link Common}
    * @since 3.1.0
    */
   public List<Common<?>> getMissing() {
@@ -362,7 +364,7 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @param values An instances of type {@link Common<?>}
+   * @param values Any instances of type {@link Common}
    * @return The current Dataset object instance
    * @since 3.1.0
    */
@@ -377,7 +379,7 @@ public class Dataset {
    * sender that a dataset referenced in the message was not known by the
    * recipient.
    * <p>
-   * @param values An instances of type {@link Common<?>}
+   * @param values Any instances of type {@link Common}
    * @return The current Dataset object instance
    * @since 3.1.0
    */
