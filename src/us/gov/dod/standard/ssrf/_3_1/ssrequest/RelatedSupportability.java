@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -244,5 +241,64 @@ public class RelatedSupportability {
   public boolean isSet() {
     return isSetType();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * SSRequestRef - SSRequest Serial (Optional)
+   * <p>
+   * A Serial reference to a superseded or related SSRequest application.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private SSRequest ssRequest;
+
+  /**
+   * Get a Serial reference to a superseded or related SSRequest application.
+   * <p>
+   * @return a {@link SSRequest} instance
+   * @since 3.1.0
+   */
+  public SSRequest getSsRequest() {
+    return ssRequest;
+  }
+
+  /**
+   * Determine if the ssRequest field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetSsRequest() {
+    return this.ssRequest != null;
+  }
+
+  /**
+   * Set a Serial reference to a superseded or related SSRequest application.
+   * <p>
+   * @param value An instances of type {@link SSRequest}
+   * @return The current RelatedSupportability object instance
+   * @since 3.1.0
+   */
+  public RelatedSupportability withSsRequest(SSRequest value) {
+    this.ssRequest = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RelatedSupportability record.
+   * <p>
+   * This method builds the exported {@link #ssRequestRef} field with values
+   * from the transient {@link #ssRequest} field. This method should typically
+   * be called after the RelatedSupportability is configured and (optionally)
+   * before exporting an SSRF message.
+   * <p>
+   * @return The current RelatedSupportability object instance
+   */
+  public RelatedSupportability build() {
+    this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

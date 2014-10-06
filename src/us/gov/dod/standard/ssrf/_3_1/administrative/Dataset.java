@@ -24,12 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.administrative;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Administrative;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -190,7 +188,10 @@ public class Dataset {
    * recipient.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getMissing()} instead.
    */
+  @Deprecated
   public List<TString> getMissingRef() {
     if (missingRef == null) {
       missingRef = new ArrayList<>();
@@ -256,7 +257,10 @@ public class Dataset {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Dataset object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withMissing(Common...)} instead.
    */
+  @Deprecated
   public Dataset withMissingRef(TString... values) {
     if (values != null) {
       getMissingRef().addAll(Arrays.asList(values));
@@ -273,7 +277,10 @@ public class Dataset {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Dataset object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withMissing(Common...)} instead.
    */
+  @Deprecated
   public Dataset withMissingRef(Collection<TString> values) {
     if (values != null) {
       getMissingRef().addAll(values);
@@ -309,5 +316,93 @@ public class Dataset {
   public boolean isSet() {
     return isSetSerial();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * MissingRef (Optional)
+   * <p>
+   * MissingRef allows the recipient of a message to signal the sender that a
+   * dataset referenced in the message was not known by the recipient.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<Common<?>> missing;
+
+  /**
+   * Get the MissingRef
+   * <p>
+   * Complex element MissingRef allows the recipient of a message to signal the
+   * sender that a dataset referenced in the message was not known by the
+   * recipient.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public List<Common<?>> getMissing() {
+    if (missing == null) {
+      missing = new ArrayList<>();
+    }
+    return missing;
+  }
+
+  /**
+   * Determine if the missing field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetMissing() {
+    return this.missing != null && !this.missing.isEmpty();
+  }
+
+  /**
+   * Set the MissingRef
+   * <p>
+   * Complex element MissingRef allows the recipient of a message to signal the
+   * sender that a dataset referenced in the message was not known by the
+   * recipient.
+   * <p>
+   * @param values An instances of type {@link Common<?>}
+   * @return The current Dataset object instance
+   * @since 3.1.0
+   */
+  public Dataset withMissing(Common<?>... values) {
+    return withMissing(Arrays.asList(values));
+  }
+
+  /**
+   * Set the MissingRef
+   * <p>
+   * Complex element MissingRef allows the recipient of a message to signal the
+   * sender that a dataset referenced in the message was not known by the
+   * recipient.
+   * <p>
+   * @param values An instances of type {@link Common<?>}
+   * @return The current Dataset object instance
+   * @since 3.1.0
+   */
+  public Dataset withMissing(Collection<Common<?>> values) {
+    getMissing().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Dataset record.
+   * <p>
+   * This method builds the exported {@link #missingRef} field with values from
+   * the transient {@link #missing} field. This method should typically be
+   * called after the Dataset is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current Dataset object instance
+   * @since 3.1.0
+   */
+  public Dataset build() {
+    this.missingRef = new ArrayList<>();
+    for (Common<?> instance : getMissing()) {
+      this.missingRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

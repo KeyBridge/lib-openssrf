@@ -27,11 +27,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Loadset;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -373,7 +371,10 @@ public class JammingTarget {
    * details to be used for this jamming instance.
    * <p>
    * @return the LoadsetRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLoadset()} instead.
    */
+  @Deprecated
   public TString getLoadsetRef() {
     return loadsetRef;
   }
@@ -383,7 +384,10 @@ public class JammingTarget {
    * details to be used for this jamming instance.
    * <p>
    * @param value the LoadsetRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLoadset(Loadset)} instead.
    */
+  @Deprecated
   public void setLoadsetRef(TString value) {
     this.loadsetRef = value;
   }
@@ -666,7 +670,10 @@ public class JammingTarget {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JammingTarget object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLoadset(Loadset)} instead.
    */
+  @Deprecated
   public JammingTarget withLoadsetRef(String value) {
     setLoadsetRef(new TString(value));
     return this;
@@ -807,5 +814,63 @@ public class JammingTarget {
   public boolean isSet() {
     return isSetFreqMin();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * In Data Item LoadsetRef (US), the serial of a Loadset dataset that contains
+   * the details to be used for this jamming instance.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Loadset loadset;
+
+  /**
+   * Get In Data Item LoadsetRef (US), the serial of a Loadset dataset that
+   * contains the details to be used for this jamming instance.
+   * <p>
+   * @return a {@link Loadset} instance
+   * @since 3.1.0
+   */
+  public Loadset getLoadset() {
+    return loadset;
+  }
+
+  /**
+   * Determine if the loadset field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLoadset() {
+    return this.loadset != null;
+  }
+
+  /**
+   * Set In Data Item LoadsetRef (US), the serial of a Loadset dataset that
+   * contains the details to be used for this jamming instance.
+   * <p>
+   * @param value An instances of type {@link Loadset}
+   * @return The current JammingTarget object instance
+   * @since 3.1.0
+   */
+  public JammingTarget withLoadset(Loadset value) {
+    this.loadset = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JammingTarget record.
+   * <p>
+   * This method builds the exported {@link #loadsetRef} field with values from
+   * the transient {@link #loadset} field. This method should typically be
+   * called after the JammingTarget is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current JammingTarget object instance
+   */
+  public JammingTarget build() {
+    this.loadsetRef = loadset != null ? loadset.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

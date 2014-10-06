@@ -23,11 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -131,7 +129,10 @@ public class PairedFreq {
    * repeater, duplex link or frequency diversity capability.
    * <p>
    * @return the AssignmentRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getAssignment()} instead.
    */
+  @Deprecated
   public TString getAssignmentRef() {
     return assignmentRef;
   }
@@ -141,7 +142,10 @@ public class PairedFreq {
    * repeater, duplex link or frequency diversity capability.
    * <p>
    * @param value the AssignmentRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setAssignment(Assignment)} instead.
    */
+  @Deprecated
   public void setAssignmentRef(TString value) {
     this.assignmentRef = value;
   }
@@ -239,7 +243,10 @@ public class PairedFreq {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current PairedFreq object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withAssignment(Assignment)} instead.
    */
+  @Deprecated
   public PairedFreq withAssignmentRef(String value) {
     setAssignmentRef(new TString(value));
     return this;
@@ -298,5 +305,67 @@ public class PairedFreq {
   public boolean isSet() {
     return isSetFreq();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:AssignmentRef - Assignment Reference (Optional)
+   * <p>
+   * A reference to an Assignment that is paired with this AsgnAllot in a
+   * repeater, duplex link or frequency diversity capability.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Assignment assignment;
+
+  /**
+   * Get a reference to an Assignment that is paired with this AsgnAllot in a
+   * repeater, duplex link or frequency diversity capability.
+   * <p>
+   * @return a {@link Assignment} instance
+   * @since 3.1.0
+   */
+  public Assignment getAssignment() {
+    return assignment;
+  }
+
+  /**
+   * Determine if the assignment field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetAssignment() {
+    return this.assignment != null;
+  }
+
+  /**
+   * Set a reference to an Assignment that is paired with this AsgnAllot in a
+   * repeater, duplex link or frequency diversity capability.
+   * <p>
+   * @param value An instances of type {@link Assignment}
+   * @return The current PairedFreq object instance
+   * @since 3.1.0
+   */
+  public PairedFreq withAssignment(Assignment value) {
+    this.assignment = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this PairedFreq record.
+   * <p>
+   * This method builds the exported {@link #assignmentRef} field with values
+   * from the transient {@link #assignment} field. This method should typically
+   * be called after the PairedFreq is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current PairedFreq object instance
+   */
+  public PairedFreq build() {
+    this.assignmentRef = assignment != null ? assignment.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

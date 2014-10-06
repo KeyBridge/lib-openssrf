@@ -23,11 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.forceelement;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ForceElement;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -97,7 +95,10 @@ public class Assets {
    * ForceElement.
    * <p>
    * @return the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getAsset()} instead.
    */
+  @Deprecated
   public TString getSerial() {
     return serial;
   }
@@ -108,7 +109,10 @@ public class Assets {
    * ForceElement.
    * <p>
    * @param value the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setAsset(Common)} instead.
    */
+  @Deprecated
   public void setSerial(TString value) {
     this.serial = value;
   }
@@ -189,7 +193,10 @@ public class Assets {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Assets object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withAsset(Common)} instead.
    */
+  @Deprecated
   public Assets withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -244,5 +251,70 @@ public class Assets {
   public boolean isSet() {
     return isSetSerial();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Serial - Equipment/FE Reference (Required)
+   * <p>
+   * A reference to a Transmitter, Receiver, Antenna, RFSystem used by this
+   * ForceElement, or to a ForceElement carried by or belonging to this
+   * ForceElement.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Common<?> asset;
+
+  /**
+   * Get a reference to a Transmitter, Receiver, Antenna, RFSystem used by this
+   * ForceElement, or to a ForceElement carried by or belonging to this
+   * ForceElement.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public Common<?> getAsset() {
+    return asset;
+  }
+
+  /**
+   * Determine if the asset field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetAsset() {
+    return this.asset != null;
+  }
+
+  /**
+   * Set a reference to a Transmitter, Receiver, Antenna, RFSystem used by this
+   * ForceElement, or to a ForceElement carried by or belonging to this
+   * ForceElement.
+   * <p>
+   * @param value An instances of type {@link Common<?>}
+   * @return The current Assets object instance
+   * @since 3.1.0
+   */
+  public Assets withAsset(Common<?> value) {
+    this.asset = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Assets record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #asset} field. This method should typically be called
+   * after the Assets is configured and (optionally) before exporting an SSRF
+   * message.
+   * <p>
+   * @return The current Assets object instance
+   */
+  public Assets build() {
+    this.serial = asset != null ? asset.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

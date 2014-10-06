@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -440,7 +437,10 @@ public class Satellite extends Common<Satellite> {
    * location.
    * <p>
    * @return the LaunchLocRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLaunchLoc()} instead.
    */
+  @Deprecated
   public TString getLaunchLocRef() {
     return launchLocRef;
   }
@@ -450,7 +450,10 @@ public class Satellite extends Common<Satellite> {
    * location.
    * <p>
    * @param value the LaunchLocRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLaunchLoc(Location)} instead.
    */
+  @Deprecated
   public void setLaunchLocRef(TString value) {
     this.launchLocRef = value;
   }
@@ -1015,7 +1018,10 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Satellite object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLaunchLoc(Location)} instead.
    */
+  @Deprecated
   public Satellite withLaunchLocRef(String value) {
     setLaunchLocRef(new TString(value));
     return this;
@@ -1340,5 +1346,66 @@ public class Satellite extends Common<Satellite> {
   public boolean isSet() {
     return super.isSet();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * LaunchLocRef - Launch Location Serial (Optional)
+   * <p>
+   * A reference to a Location that identifies the satellite launch location.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location launchLoc;
+
+  /**
+   * Get a reference to a Location that identifies the satellite launch
+   * location.
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getLaunchLoc() {
+    return launchLoc;
+  }
+
+  /**
+   * Determine if the launchLoc field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLaunchLoc() {
+    return this.launchLoc != null;
+  }
+
+  /**
+   * Set a reference to a Location that identifies the satellite launch
+   * location.
+   * <p>
+   * @param value An instances of type {@link Location}
+   * @return The current Satellite object instance
+   * @since 3.1.0
+   */
+  public Satellite withLaunchLoc(Location value) {
+    this.launchLoc = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Satellite record.
+   * <p>
+   * This method builds the exported {@link #launchLocRef} field with values
+   * from the transient {@link #launchLoc} field. This method should typically
+   * be called after the Satellite is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current Satellite object instance
+   */
+  public Satellite build() {
+    this.launchLocRef = launchLoc != null ? launchLoc.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

@@ -24,11 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -410,7 +408,10 @@ public class JammingPlan {
    * Region" or "Troops Not in Region", in attribute StartTrigger.
    * <p>
    * @return the StartLocationRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getStartLocation()} instead.
    */
+  @Deprecated
   public TString getStartLocationRef() {
     return startLocationRef;
   }
@@ -420,7 +421,10 @@ public class JammingPlan {
    * Region" or "Troops Not in Region", in attribute StartTrigger.
    * <p>
    * @param value the StartLocationRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setStartLocation(Location)} instead.
    */
+  @Deprecated
   public void setStartLocationRef(TString value) {
     this.startLocationRef = value;
   }
@@ -761,7 +765,10 @@ public class JammingPlan {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JammingPlan object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withStartLocation(Location)} instead.
    */
+  @Deprecated
   public JammingPlan withStartLocationRef(String value) {
     setStartLocationRef(new TString(value));
     return this;
@@ -921,5 +928,67 @@ public class JammingPlan {
   public boolean isSet() {
     return isSetJammingTarget() && isSetLevel3Auth() && isSetPriority() && isSetStartTrigger() && isSetStopTrigger();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:StartLocationRef - Start Location Serial (Optional)
+   * <p>
+   * The Location serial indicating the region associated with "Troops in
+   * Region" or "Troops Not in Region", in attribute StartTrigger.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location startLocation;
+
+  /**
+   * Get the Location serial indicating the region associated with "Troops in
+   * Region" or "Troops Not in Region", in attribute StartTrigger.
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getStartLocation() {
+    return startLocation;
+  }
+
+  /**
+   * Determine if the startLocation field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetStartLocation() {
+    return this.startLocation != null;
+  }
+
+  /**
+   * Set the Location serial indicating the region associated with "Troops in
+   * Region" or "Troops Not in Region", in attribute StartTrigger.
+   * <p>
+   * @param value An instances of type {@link Location}
+   * @return The current JammingPlan object instance
+   * @since 3.1.0
+   */
+  public JammingPlan withStartLocation(Location value) {
+    this.startLocation = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JammingPlan record.
+   * <p>
+   * This method builds the exported {@link #startLocationRef} field with values
+   * from the transient {@link #startLocation} field. This method should
+   * typically be called after the JammingPlan is configured and (optionally)
+   * before exporting an SSRF message.
+   * <p>
+   * @return The current JammingPlan object instance
+   */
+  public JammingPlan build() {
+    this.startLocationRef = startLocation != null ? startLocation.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

@@ -23,11 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -184,7 +182,10 @@ public class StationLoc {
    * inside the Station location.
    * <p>
    * @return the LocSatRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocSat()} instead.
    */
+  @Deprecated
   public TString getLocSatRef() {
     return locSatRef;
   }
@@ -195,7 +196,10 @@ public class StationLoc {
    * inside the Station location.
    * <p>
    * @param value the LocSatRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLocSat(Common)} instead.
    */
+  @Deprecated
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
   }
@@ -365,7 +369,10 @@ public class StationLoc {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current StationLoc object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocSat(Common)} instead.
    */
+  @Deprecated
   public StationLoc withLocSatRef(String value) {
     setLocSatRef(new TString(value));
     return this;
@@ -451,5 +458,70 @@ public class StationLoc {
   public boolean isSet() {
     return true;
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:LocSatRef - Location or Satellite Reference (Optional)
+   * <p>
+   * The serial of a Location or Satellite dataset. If this location is a
+   * complex dataset (more than a single point), tthe assignment is mobile,
+   * inside the Station location.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Common<?> locSat;
+
+  /**
+   * Get the serial of a Location or Satellite dataset. If this location is a
+   * complex dataset (more than a single point), tthe assignment is mobile,
+   * inside the Station location.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public Common<?> getLocSat() {
+    return locSat;
+  }
+
+  /**
+   * Determine if the locSat field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocSat() {
+    return this.locSat != null;
+  }
+
+  /**
+   * Set the serial of a Location or Satellite dataset. If this location is a
+   * complex dataset (more than a single point), tthe assignment is mobile,
+   * inside the Station location.
+   * <p>
+   * @param value An instances of type {@link Common<?>}
+   * @return The current StationLoc object instance
+   * @since 3.1.0
+   */
+  public StationLoc withLocSat(Common<?> value) {
+    this.locSat = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this StationLoc record.
+   * <p>
+   * This method builds the exported {@link #locSatRef} field with values from
+   * the transient {@link #locSat} field. This method should typically be called
+   * after the StationLoc is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current StationLoc object instance
+   */
+  public StationLoc build() {
+    this.locSatRef = locSat != null ? locSat.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

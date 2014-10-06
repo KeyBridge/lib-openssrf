@@ -23,12 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.Note;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -77,7 +75,10 @@ public class RecordNote {
    * NoteCode.
    * <p>
    * @return the NoteRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getNote()} instead.
    */
+  @Deprecated
   public TString getNoteRef() {
     return noteRef;
   }
@@ -87,7 +88,10 @@ public class RecordNote {
    * NoteCode.
    * <p>
    * @param value the NoteRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setNote(Note)} instead.
    */
+  @Deprecated
   public void setNoteRef(TString value) {
     this.noteRef = value;
   }
@@ -142,7 +146,10 @@ public class RecordNote {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RecordNote object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withNote(Note)} instead.
    */
+  @Deprecated
   public RecordNote withNoteRef(String value) {
     setNoteRef(new TString(value));
     return this;
@@ -187,5 +194,67 @@ public class RecordNote {
   public boolean isSet() {
     return isSetNoteRef();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:NoteRef - Note Reference (Required)
+   * <p>
+   * A reference to the Note dataset that describes the note identified in
+   * NoteCode.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Note note;
+
+  /**
+   * Get a reference to the Note dataset that describes the note identified in
+   * NoteCode.
+   * <p>
+   * @return a {@link Note} instance
+   * @since 3.1.0
+   */
+  public Note getNote() {
+    return note;
+  }
+
+  /**
+   * Determine if the note field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetNote() {
+    return this.note != null;
+  }
+
+  /**
+   * Set a reference to the Note dataset that describes the note identified in
+   * NoteCode.
+   * <p>
+   * @param value An instances of type {@link Note}
+   * @return The current RecordNote object instance
+   * @since 3.1.0
+   */
+  public RecordNote withNote(Note value) {
+    this.note = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RecordNote record.
+   * <p>
+   * This method builds the exported {@link #noteRef} field with values from the
+   * transient {@link #note} field. This method should typically be called after
+   * the RecordNote is configured and (optionally) before exporting an SSRF
+   * message.
+   * <p>
+   * @return The current RecordNote object instance
+   */
+  public RecordNote build() {
+    this.noteRef = note != null ? note.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

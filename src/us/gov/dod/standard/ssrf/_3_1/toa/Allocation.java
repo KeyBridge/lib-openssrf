@@ -27,6 +27,7 @@ import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.ChannelPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -372,7 +373,10 @@ public class Allocation {
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getChannelPlan()} instead.
    */
+  @Deprecated
   public List<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new ArrayList<>();
@@ -559,7 +563,10 @@ public class Allocation {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Allocation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
+  @Deprecated
   public Allocation withChannelPlanRef(TString... values) {
     if (values != null) {
       getChannelPlanRef().addAll(Arrays.asList(values));
@@ -574,7 +581,10 @@ public class Allocation {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Allocation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
+  @Deprecated
   public Allocation withChannelPlanRef(Collection<TString> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
@@ -646,5 +656,86 @@ public class Allocation {
   public boolean isSet() {
     return isSetAllocatedService() && isSetPriority();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * ChannelPlanRef (Optional)
+   * <p>
+   * ChannelPlanRef references the ChannelPlan.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<ChannelPlan> channelPlan;
+
+  /**
+   * Get the ChannelPlanRef
+   * <p>
+   * Complex element ChannelPlanRef references the ChannelPlan.
+   * <p>
+   * @return a {@link ChannelPlan} instance
+   * @since 3.1.0
+   */
+  public List<ChannelPlan> getChannelPlan() {
+    if (channelPlan == null) {
+      channelPlan = new ArrayList<>();
+    }
+    return channelPlan;
+  }
+
+  /**
+   * Determine if the channelPlan field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetChannelPlan() {
+    return this.channelPlan != null && !this.channelPlan.isEmpty();
+  }
+
+  /**
+   * Set the ChannelPlanRef
+   * <p>
+   * Complex element ChannelPlanRef references the ChannelPlan.
+   * <p>
+   * @param values An instances of type {@link ChannelPlan}
+   * @return The current Allocation object instance
+   * @since 3.1.0
+   */
+  public Allocation withChannelPlan(ChannelPlan... values) {
+    return withChannelPlan(Arrays.asList(values));
+  }
+
+  /**
+   * Set the ChannelPlanRef
+   * <p>
+   * Complex element ChannelPlanRef references the ChannelPlan.
+   * <p>
+   * @param values An instances of type {@link ChannelPlan}
+   * @return The current Allocation object instance
+   * @since 3.1.0
+   */
+  public Allocation withChannelPlan(Collection<ChannelPlan> values) {
+    getChannelPlan().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Allocation record.
+   * <p>
+   * This method builds the exported {@link #channelPlanRef} field with values
+   * from the transient {@link #channelPlan} field. This method should typically
+   * be called after the Allocation is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current Allocation object instance
+   * @since 3.1.0
+   */
+  public Allocation build() {
+    this.channelPlanRef = new ArrayList<>();
+    for (ChannelPlan instance : getChannelPlan()) {
+      this.channelPlanRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

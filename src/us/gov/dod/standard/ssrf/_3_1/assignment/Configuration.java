@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -1107,7 +1104,10 @@ public class Configuration {
    * a specific target or targets.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLoadset()} instead.
    */
+  @Deprecated
   public List<TString> getLoadsetRef() {
     if (loadsetRef == null) {
       loadsetRef = new ArrayList<>();
@@ -1609,7 +1609,10 @@ public class Configuration {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Configuration object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLoadset(Loadset...)} instead.
    */
+  @Deprecated
   public Configuration withLoadsetRef(TString... values) {
     if (values != null) {
       getLoadsetRef().addAll(Arrays.asList(values));
@@ -1625,7 +1628,10 @@ public class Configuration {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Configuration object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLoadset(Loadset...)} instead.
    */
+  @Deprecated
   public Configuration withLoadsetRef(Collection<TString> values) {
     if (values != null) {
       getLoadsetRef().addAll(values);
@@ -1715,5 +1721,90 @@ public class Configuration {
   public boolean isSet() {
     return isSetConfigID();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * LoadsetRef (Optional)
+   * <p>
+   * LoadsetRef describes the jamming loadset to be used against a specific
+   * target or targets.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<Loadset> loadset;
+
+  /**
+   * Get the LoadsetRef
+   * <p>
+   * Complex element LoadsetRef describes the jamming loadset to be used against
+   * a specific target or targets.
+   * <p>
+   * @return a {@link Loadset} instance
+   * @since 3.1.0
+   */
+  public List<Loadset> getLoadset() {
+    if (loadset == null) {
+      loadset = new ArrayList<>();
+    }
+    return loadset;
+  }
+
+  /**
+   * Determine if the loadset field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLoadset() {
+    return this.loadset != null && !this.loadset.isEmpty();
+  }
+
+  /**
+   * Set the LoadsetRef
+   * <p>
+   * Complex element LoadsetRef describes the jamming loadset to be used against
+   * a specific target or targets.
+   * <p>
+   * @param values An instances of type {@link Loadset}
+   * @return The current Configuration object instance
+   * @since 3.1.0
+   */
+  public Configuration withLoadset(Loadset... values) {
+    return withLoadset(Arrays.asList(values));
+  }
+
+  /**
+   * Set the LoadsetRef
+   * <p>
+   * Complex element LoadsetRef describes the jamming loadset to be used against
+   * a specific target or targets.
+   * <p>
+   * @param values An instances of type {@link Loadset}
+   * @return The current Configuration object instance
+   * @since 3.1.0
+   */
+  public Configuration withLoadset(Collection<Loadset> values) {
+    getLoadset().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Configuration record.
+   * <p>
+   * This method builds the exported {@link #loadsetRef} field with values from
+   * the transient {@link #loadset} field. This method should typically be
+   * called after the Configuration is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current Configuration object instance
+   * @since 3.1.0
+   */
+  public Configuration build() {
+    this.loadsetRef = new ArrayList<>();
+    for (Loadset instance : getLoadset()) {
+      this.loadsetRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

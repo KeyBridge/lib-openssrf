@@ -23,12 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUOW;
@@ -138,7 +136,10 @@ public class AsgnAllotOwner {
    * unambiguously linked to an internal directory of organizations.
    * <p>
    * @return the OwnerOrgRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getOwnerOrg()} instead.
    */
+  @Deprecated
   public TString getOwnerOrgRef() {
     return ownerOrgRef;
   }
@@ -150,7 +151,10 @@ public class AsgnAllotOwner {
    * unambiguously linked to an internal directory of organizations.
    * <p>
    * @param value the OwnerOrgRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setOwnerOrg(Organisation)} instead.
    */
+  @Deprecated
   public void setOwnerOrgRef(TString value) {
     this.ownerOrgRef = value;
   }
@@ -198,7 +202,10 @@ public class AsgnAllotOwner {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current AsgnAllotOwner object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withOwnerOrg(Organisation)} instead.
    */
+  @Deprecated
   public AsgnAllotOwner withOwnerOrgRef(String value) {
     setOwnerOrgRef(new TString(value));
     return this;
@@ -228,5 +235,73 @@ public class AsgnAllotOwner {
   public boolean isSet() {
     return true;
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:OwnerOrgRef - Owner Organisation Serial (Optional)
+   * <p>
+   * The serial of the owning, or originating, organisation. This definitively
+   * identifies the owning agency when there is a possibility that multiple
+   * entities are listed in a text string name. This identifier can be
+   * unambiguously linked to an internal directory of organizations.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Organisation ownerOrg;
+
+  /**
+   * Get the serial of the owning, or originating, organisation. This
+   * definitively identifies the owning agency when there is a possibility that
+   * multiple entities are listed in a text string name. This identifier can be
+   * unambiguously linked to an internal directory of organizations.
+   * <p>
+   * @return a {@link Organisation} instance
+   * @since 3.1.0
+   */
+  public Organisation getOwnerOrg() {
+    return ownerOrg;
+  }
+
+  /**
+   * Determine if the ownerOrg field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetOwnerOrg() {
+    return this.ownerOrg != null;
+  }
+
+  /**
+   * Set the serial of the owning, or originating, organisation. This
+   * definitively identifies the owning agency when there is a possibility that
+   * multiple entities are listed in a text string name. This identifier can be
+   * unambiguously linked to an internal directory of organizations.
+   * <p>
+   * @param value An instances of type {@link Organisation}
+   * @return The current AsgnAllotOwner object instance
+   * @since 3.1.0
+   */
+  public AsgnAllotOwner withOwnerOrg(Organisation value) {
+    this.ownerOrg = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this AsgnAllotOwner record.
+   * <p>
+   * This method builds the exported {@link #ownerOrgRef} field with values from
+   * the transient {@link #ownerOrg} field. This method should typically be
+   * called after the AsgnAllotOwner is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current AsgnAllotOwner object instance
+   */
+  public AsgnAllotOwner build() {
+    this.ownerOrgRef = ownerOrg != null ? ownerOrg.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

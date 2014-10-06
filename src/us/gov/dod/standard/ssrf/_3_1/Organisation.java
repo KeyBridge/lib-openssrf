@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -523,7 +520,10 @@ public class Organisation extends Common<Organisation> {
    * Complex element RoleRef contains the serial of a referenced Role.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getRole()} instead.
    */
+  @Deprecated
   public List<TString> getRoleRef() {
     if (roleRef == null) {
       roleRef = new ArrayList<>();
@@ -766,7 +766,10 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Organisation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withRole(Role...)} instead.
    */
+  @Deprecated
   public Organisation withRoleRef(TString... values) {
     if (values != null) {
       getRoleRef().addAll(Arrays.asList(values));
@@ -781,7 +784,10 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Organisation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withRole(Role...)} instead.
    */
+  @Deprecated
   public Organisation withRoleRef(Collection<TString> values) {
     if (values != null) {
       getRoleRef().addAll(values);
@@ -862,5 +868,86 @@ public class Organisation extends Common<Organisation> {
   public boolean isSet() {
     return super.isSet();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * RoleRef (Optional)
+   * <p>
+   * RoleRef contains the serial of a referenced Role.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<Role> role;
+
+  /**
+   * Get the RoleRef
+   * <p>
+   * Complex element RoleRef contains the serial of a referenced Role.
+   * <p>
+   * @return a {@link Role} instance
+   * @since 3.1.0
+   */
+  public List<Role> getRole() {
+    if (role == null) {
+      role = new ArrayList<>();
+    }
+    return role;
+  }
+
+  /**
+   * Determine if the role field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetRole() {
+    return this.role != null && !this.role.isEmpty();
+  }
+
+  /**
+   * Set the RoleRef
+   * <p>
+   * Complex element RoleRef contains the serial of a referenced Role.
+   * <p>
+   * @param values An instances of type {@link Role}
+   * @return The current Organisation object instance
+   * @since 3.1.0
+   */
+  public Organisation withRole(Role... values) {
+    return withRole(Arrays.asList(values));
+  }
+
+  /**
+   * Set the RoleRef
+   * <p>
+   * Complex element RoleRef contains the serial of a referenced Role.
+   * <p>
+   * @param values An instances of type {@link Role}
+   * @return The current Organisation object instance
+   * @since 3.1.0
+   */
+  public Organisation withRole(Collection<Role> values) {
+    getRole().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Organisation record.
+   * <p>
+   * This method builds the exported {@link #roleRef} field with values from the
+   * transient {@link #role} field. This method should typically be called after
+   * the Organisation is configured and (optionally) before exporting an SSRF
+   * message.
+   * <p>
+   * @return The current Organisation object instance
+   * @since 3.1.0
+   */
+  public Organisation build() {
+    this.roleRef = new ArrayList<>();
+    for (Role instance : getRole()) {
+      this.roleRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

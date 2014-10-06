@@ -27,10 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
@@ -151,7 +148,10 @@ public class Administrative extends Common<Administrative> {
    * Get the serial of the Message Dataset that is causing this response.
    * <p>
    * @return the MessageRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getMessage()} instead.
    */
+  @Deprecated
   public TString getMessageRef() {
     return messageRef;
   }
@@ -160,7 +160,10 @@ public class Administrative extends Common<Administrative> {
    * Set the serial of the Message Dataset that is causing this response.
    * <p>
    * @param value the MessageRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setMessage(Message)} instead.
    */
+  @Deprecated
   public void setMessageRef(TString value) {
     this.messageRef = value;
   }
@@ -255,7 +258,10 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Administrative object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withMessage(Message)} instead.
    */
+  @Deprecated
   public Administrative withMessageRef(String value) {
     setMessageRef(new TString(value));
     return this;
@@ -357,5 +363,64 @@ public class Administrative extends Common<Administrative> {
   public boolean isSet() {
     return super.isSet() && isSetAction();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * MessageRef - Message Reference (Optional)
+   * <p>
+   * The serial of the Message Dataset that is causing this response.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Message message;
+
+  /**
+   * Get the serial of the Message Dataset that is causing this response.
+   * <p>
+   * @return a {@link Message} instance
+   * @since 3.1.0
+   */
+  public Message getMessage() {
+    return message;
+  }
+
+  /**
+   * Determine if the message field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetMessage() {
+    return this.message != null;
+  }
+
+  /**
+   * Set the serial of the Message Dataset that is causing this response.
+   * <p>
+   * @param value An instances of type {@link Message}
+   * @return The current Administrative object instance
+   * @since 3.1.0
+   */
+  public Administrative withMessage(Message value) {
+    this.message = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Administrative record.
+   * <p>
+   * This method builds the exported {@link #messageRef} field with values from
+   * the transient {@link #message} field. This method should typically be
+   * called after the Administrative is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current Administrative object instance
+   */
+  public Administrative build() {
+    this.messageRef = message != null ? message.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

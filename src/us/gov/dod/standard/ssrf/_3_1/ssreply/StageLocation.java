@@ -23,11 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.ssreply;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.SSReply;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -76,7 +74,10 @@ public class StageLocation {
    * Get the serial of a Location or satellite.
    * <p>
    * @return the LocSatRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocSat()} instead.
    */
+  @Deprecated
   public TString getLocSatRef() {
     return locSatRef;
   }
@@ -85,7 +86,10 @@ public class StageLocation {
    * Set the serial of a Location or satellite.
    * <p>
    * @param value the LocSatRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLocSat(Common)} instead.
    */
+  @Deprecated
   public void setLocSatRef(TString value) {
     this.locSatRef = value;
   }
@@ -139,7 +143,10 @@ public class StageLocation {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current StageLocation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocSat(Common)} instead.
    */
+  @Deprecated
   public StageLocation withLocSatRef(String value) {
     setLocSatRef(new TString(value));
     return this;
@@ -184,5 +191,64 @@ public class StageLocation {
   public boolean isSet() {
     return isSetLocSatRef();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * LocSatRef - Location or Satellite Reference (Required)
+   * <p>
+   * The serial of a Location or satellite.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Common<?> locSat;
+
+  /**
+   * Get the serial of a Location or satellite.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public Common<?> getLocSat() {
+    return locSat;
+  }
+
+  /**
+   * Determine if the locSat field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocSat() {
+    return this.locSat != null;
+  }
+
+  /**
+   * Set the serial of a Location or satellite.
+   * <p>
+   * @param value An instances of type {@link Common<?>}
+   * @return The current StageLocation object instance
+   * @since 3.1.0
+   */
+  public StageLocation withLocSat(Common<?> value) {
+    this.locSat = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this StageLocation record.
+   * <p>
+   * This method builds the exported {@link #locSatRef} field with values from
+   * the transient {@link #locSat} field. This method should typically be called
+   * after the StageLocation is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current StageLocation object instance
+   */
+  public StageLocation build() {
+    this.locSatRef = locSat != null ? locSat.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

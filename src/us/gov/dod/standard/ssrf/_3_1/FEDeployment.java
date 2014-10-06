@@ -27,10 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
@@ -994,5 +991,64 @@ public class FEDeployment extends Common<FEDeployment> {
   public boolean isSet() {
     return super.isSet() && isSetFERef() && isSetType();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * FERef - Force Element Serial (Required)
+   * <p>
+   * The dataset identifier of the ForceElement being deployed.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private ForceElement forceElement;
+
+  /**
+   * Get the dataset identifier of the ForceElement being deployed.
+   * <p>
+   * @return a {@link ForceElement} instance
+   * @since 3.1.0
+   */
+  public ForceElement getForceElement() {
+    return forceElement;
+  }
+
+  /**
+   * Determine if the forceElement field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetForceElement() {
+    return this.forceElement != null;
+  }
+
+  /**
+   * Set the dataset identifier of the ForceElement being deployed.
+   * <p>
+   * @param value An instances of type {@link ForceElement}
+   * @return The current FEDeployment object instance
+   * @since 3.1.0
+   */
+  public FEDeployment withForceElement(ForceElement value) {
+    this.forceElement = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this FEDeployment record.
+   * <p>
+   * This method builds the exported {@link #feRef} field with values from the
+   * transient {@link #forceElement} field. This method should typically be
+   * called after the FEDeployment is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current FEDeployment object instance
+   */
+  public FEDeployment build() {
+    this.feRef = forceElement != null ? forceElement.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

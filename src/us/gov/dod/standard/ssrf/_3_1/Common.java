@@ -292,7 +292,7 @@ public abstract class Common<T> {
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
    * <p>
-   * The serial of the Role which is authorised to modify the current dataset.
+   * The serial of the Role which is authorized to modify the current dataset.
    * <p>
    * Format is pattern (S29)
    * <p>
@@ -715,7 +715,10 @@ public abstract class Common<T> {
    * Get the serial of the Role which is creating the current dataset.
    * <p>
    * @return the EntryBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getEntryByRole()} instead.
    */
+  @Deprecated
   public TString getEntryBy() {
     return entryBy;
   }
@@ -724,7 +727,10 @@ public abstract class Common<T> {
    * Set the serial of the Role which is creating the current dataset.
    * <p>
    * @param value the EntryBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setEntryByRole(Role)} instead.
    */
+  @Deprecated
   public void setEntryBy(TString value) {
     this.entryBy = value;
   }
@@ -745,7 +751,10 @@ public abstract class Common<T> {
    * data content.
    * <p>
    * @return the Owner value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getOwnerRole()} instead.
    */
+  @Deprecated
   public TString getOwner() {
     return owner;
   }
@@ -755,7 +764,10 @@ public abstract class Common<T> {
    * data content.
    * <p>
    * @param value the Owner value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setOwnerRole(Role)} instead.
    */
+  @Deprecated
   public void setOwner(TString value) {
     this.owner = value;
   }
@@ -805,7 +817,10 @@ public abstract class Common<T> {
    * Get the serial of the Role which last modified the current dataset.
    * <p>
    * @return the LastChangeBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLastChangeByRole()} instead.
    */
+  @Deprecated
   public TString getLastChangeBy() {
     return lastChangeBy;
   }
@@ -814,7 +829,10 @@ public abstract class Common<T> {
    * Set the serial of the Role which last modified the current dataset.
    * <p>
    * @param value the LastChangeBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLastChangeByRole(Role)} instead.
    */
+  @Deprecated
   public void setLastChangeBy(TString value) {
     this.lastChangeBy = value;
   }
@@ -864,7 +882,10 @@ public abstract class Common<T> {
    * Get the Role reference serial of the person who last reviewed the dataset.
    * <p>
    * @return the LastReviewBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLastReviewByRole()} instead.
    */
+  @Deprecated
   public TString getLastReviewBy() {
     return lastReviewBy;
   }
@@ -873,7 +894,10 @@ public abstract class Common<T> {
    * Set the Role reference serial of the person who last reviewed the dataset.
    * <p>
    * @param value the LastReviewBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLastReviewByRole(Role)} instead.
    */
+  @Deprecated
   public void setLastReviewBy(TString value) {
     this.lastReviewBy = value;
   }
@@ -890,21 +914,27 @@ public abstract class Common<T> {
   }
 
   /**
-   * Get the serial of the Role which is authorised to modify the current
+   * Get the serial of the Role which is authorized to modify the current
    * dataset.
    * <p>
    * @return the ModAllowedBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getModAllowedByRole()} instead.
    */
+  @Deprecated
   public TString getModAllowedBy() {
     return modAllowedBy;
   }
 
   /**
-   * Set the serial of the Role which is authorised to modify the current
+   * Set the serial of the Role which is authorized to modify the current
    * dataset.
    * <p>
    * @param value the ModAllowedBy value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setModAllowedByRole(Role)} instead.
    */
+  @Deprecated
   public void setModAllowedBy(TString value) {
     this.modAllowedBy = value;
   }
@@ -1450,7 +1480,10 @@ public abstract class Common<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withEntryByRole(Role)} instead.
    */
+  @Deprecated
   public T withEntryBy(String value) {
     setEntryBy(new TString(value));
     return (T) this;
@@ -1462,7 +1495,10 @@ public abstract class Common<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withOwnerRole(Role)} instead.
    */
+  @Deprecated
   public T withOwner(String value) {
     setOwner(new TString(value));
     return (T) this;
@@ -1484,7 +1520,10 @@ public abstract class Common<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLastChangeByRole(Role)} instead.
    */
+  @Deprecated
   public T withLastChangeBy(String value) {
     setLastChangeBy(new TString(value));
     return (T) this;
@@ -1506,19 +1545,25 @@ public abstract class Common<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLastReviewByRole(Role)} instead.
    */
+  @Deprecated
   public T withLastReviewBy(String value) {
     setLastReviewBy(new TString(value));
     return (T) this;
   }
 
   /**
-   * Set the serial of the Role which is authorised to modify the current
+   * Set the serial of the Role which is authorized to modify the current
    * dataset.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withModAllowedByRole(Role)} instead.
    */
+  @Deprecated
   public T withModAllowedBy(String value) {
     setModAllowedBy(new TString(value));
     return (T) this;
@@ -1855,4 +1900,256 @@ public abstract class Common<T> {
     return isSetEntryDateTime() && isSetSerial() && isSetCls();
   }
 
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * EntryBy - Creator Role (Optional)
+   * <p>
+   * The serial of the Role which is creating the current dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Role entryByRole;
+  /**
+   * Owner - Role which Owns the Dataset (Optional)
+   * <p>
+   * The serial of the Role which is responsible for the accuracy of the data
+   * content.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Role ownerRole;
+  /**
+   * LastChangeBy - Last Modifier Role (Optional)
+   * <p>
+   * The serial of the Role which last modified the current dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group LastChange (Optional)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Role lastChangeByRole;
+  /**
+   * LastReviewBy - Last Review Person RoleRef (Optional)
+   * <p>
+   * The Role reference serial of the person who last reviewed the dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group LastReview (Optional)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Role lastReviewByRole;
+
+  /**
+   * ModAllowedBy - Role Allowed to Modify (Optional)
+   * <p>
+   * The serial of the Role which is authorized to modify the current dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Divergence from SMADEF: Automated changes using ModAllowedBy are not
+   * permitted for use by USA systems.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Role modAllowedByRole;
+
+  /**
+   * Get the serial of the Role which is creating the current dataset.
+   * <p>
+   * @return a {@link Role} instance
+   * @since 3.1.0
+   */
+  public Role getEntryByRole() {
+    return entryByRole;
+  }
+
+  /**
+   * Determine if the entryByRole field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetEntryByRole() {
+    return this.entryByRole != null;
+  }
+
+  /**
+   * Set the serial of the Role which is creating the current dataset.
+   * <p>
+   * @param value An instances of type {@link Role}
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withEntryByRole(Role value) {
+    this.entryByRole = value;
+    return (T) this;
+  }
+
+  /**
+   * Get the serial of the Role which is responsible for the accuracy of the
+   * data content.
+   * <p>
+   * @return a {@link Role} instance
+   * @since 3.1.0
+   */
+  public Role getOwnerRole() {
+    return ownerRole;
+  }
+
+  /**
+   * Determine if the ownerRole field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetOwnerRole() {
+    return this.ownerRole != null;
+  }
+
+  /**
+   * Set the serial of the Role which is responsible for the accuracy of the
+   * data content.
+   * <p>
+   * @param value An instances of type {@link Role}
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withOwnerRole(Role value) {
+    this.ownerRole = value;
+    return (T) this;
+  }
+
+  /**
+   * Get the serial of the Role which last modified the current dataset.
+   * <p>
+   * @return a {@link Role} instance
+   * @since 3.1.0
+   */
+  public Role getLastChangeByRole() {
+    return lastChangeByRole;
+  }
+
+  /**
+   * Determine if the lastChangeByRole field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLastChangeByRole() {
+    return this.lastChangeByRole != null;
+  }
+
+  /**
+   * Set the serial of the Role which last modified the current dataset.
+   * <p>
+   * @param value An instances of type {@link Role}
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withLastChangeByRole(Role value) {
+    this.lastChangeByRole = value;
+    return (T) this;
+  }
+
+  /**
+   * Get the Role reference serial of the person who last reviewed the dataset.
+   * <p>
+   * @return a {@link Role} instance
+   * @since 3.1.0
+   */
+  public Role getLastReviewByRole() {
+    return lastReviewByRole;
+  }
+
+  /**
+   * Determine if the lastReviewByRole field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLastReviewByRole() {
+    return this.lastReviewByRole != null;
+  }
+
+  /**
+   * Set the Role reference serial of the person who last reviewed the dataset.
+   * <p>
+   * @param value An instances of type {@link Role}
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withLastReviewByRole(Role value) {
+    this.lastReviewByRole = value;
+    return (T) this;
+  }
+
+  /**
+   * Get the serial of the Role which is authorized to modify the current
+   * dataset.
+   * <p>
+   * @return a {@link Role} instance
+   * @since 3.1.0
+   */
+  public Role getModAllowedByRole() {
+    return modAllowedByRole;
+  }
+
+  /**
+   * Determine if the modAllowedByRole field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetModAllowedByRole() {
+    return this.modAllowedByRole != null;
+  }
+
+  /**
+   * Set the serial of the Role which is authorized to modify the current
+   * dataset.
+   * <p>
+   * @param value An instances of type {@link Role}
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withModAllowedByRole(Role value) {
+    this.modAllowedByRole = value;
+    return (T) this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Common record.
+   * <p>
+   * This method builds Common exported fields with values from their respective
+   * transient object instance fields.:<br/> {@link #entryBy} from
+   * {@link #entryByRole} <br/> {@link #owner} from {@link #ownerRole} <br/>
+   * {@link #lastChangeBy} from {@link #lastChangeByRole} <br/>
+   * {@link #lastReviewBy} from {@link #lastReviewByRole} <br/>
+   * {@link #modAllowedBy} from {@link #modAllowedByRole}
+   * <p>
+   * This method should typically be called after the Common is configured and
+   * (optionally) before exporting an SSRF message.
+   * <p>
+   * @return The current Common object instance
+   */
+  public T build() {
+    this.entryBy = entryByRole != null ? entryByRole.getSerial() : null;
+    this.owner = ownerRole != null ? ownerRole.getSerial() : null;
+    this.lastChangeBy = lastChangeByRole != null ? lastChangeByRole.getSerial() : null;
+    this.lastReviewBy = lastReviewByRole != null ? lastReviewByRole.getSerial() : null;
+    this.modAllowedBy = modAllowedByRole != null ? modAllowedByRole.getSerial() : null;
+    return (T) this;
+  }//</editor-fold>
 }

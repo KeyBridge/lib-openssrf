@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -312,7 +309,10 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Get the unique reference serial of an existing Location dataset.
    * <p>
    * @return the LocationRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocation()} instead.
    */
+  @Deprecated
   public TString getLocationRef() {
     return locationRef;
   }
@@ -321,7 +321,10 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Set the unique reference serial of an existing Location dataset.
    * <p>
    * @param value the LocationRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLocation(Location)} instead.
    */
+  @Deprecated
   public void setLocationRef(TString value) {
     this.locationRef = value;
   }
@@ -560,7 +563,10 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RadiationPlan object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocation(Location)} instead.
    */
+  @Deprecated
   public RadiationPlan withLocationRef(String value) {
     setLocationRef(new TString(value));
     return this;
@@ -714,5 +720,64 @@ public class RadiationPlan extends Common<RadiationPlan> {
   public boolean isSet() {
     return super.isSet() && isSetFreqMin();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:LocationRef - Plan Location Serial (Optional)
+   * <p>
+   * The unique reference serial of an existing Location dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location location;
+
+  /**
+   * Get the unique reference serial of an existing Location dataset.
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getLocation() {
+    return location;
+  }
+
+  /**
+   * Determine if the location field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocation() {
+    return this.location != null;
+  }
+
+  /**
+   * Set the unique reference serial of an existing Location dataset.
+   * <p>
+   * @param value An instances of type {@link Location}
+   * @return The current RadiationPlan object instance
+   * @since 3.1.0
+   */
+  public RadiationPlan withLocation(Location value) {
+    this.location = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RadiationPlan record.
+   * <p>
+   * This method builds the exported {@link #locationRef} field with values from
+   * the transient {@link #location} field. This method should typically be
+   * called after the RadiationPlan is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current RadiationPlan object instance
+   */
+  public RadiationPlan build() {
+    this.locationRef = location != null ? location.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

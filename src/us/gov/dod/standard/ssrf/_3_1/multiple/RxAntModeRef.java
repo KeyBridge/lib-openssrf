@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Antenna;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -98,7 +99,10 @@ public class RxAntModeRef {
    * RxRef element.
    * <p>
    * @return the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getAntenna()} instead.
    */
+  @Deprecated
   public TString getSerial() {
     return serial;
   }
@@ -109,7 +113,10 @@ public class RxAntModeRef {
    * RxRef element.
    * <p>
    * @param value the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setAntenna(Antenna)} instead.
    */
+  @Deprecated
   public void setSerial(TString value) {
     this.serial = value;
   }
@@ -196,7 +203,10 @@ public class RxAntModeRef {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RxAntModeRef object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withAntenna(Antenna)} instead.
    */
+  @Deprecated
   public RxAntModeRef withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -254,5 +264,70 @@ public class RxAntModeRef {
   public boolean isSet() {
     return isSetSerial();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Serial - Antenna Identifier (Required)
+   * <p>
+   * The reference to an Antenna in this configuration. This antenna is
+   * associated with the receiver specified in the Serial field of the parent
+   * RxRef element.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Antenna antenna;
+
+  /**
+   * Get the reference to an Antenna in this configuration. This antenna is
+   * associated with the receiver specified in the Serial field of the parent
+   * RxRef element.
+   * <p>
+   * @return a {@link Antenna} instance
+   * @since 3.1.0
+   */
+  public Antenna getAntenna() {
+    return antenna;
+  }
+
+  /**
+   * Determine if the antenna field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetAntenna() {
+    return this.antenna != null;
+  }
+
+  /**
+   * Set the reference to an Antenna in this configuration. This antenna is
+   * associated with the receiver specified in the Serial field of the parent
+   * RxRef element.
+   * <p>
+   * @param value An instances of type {@link Antenna}
+   * @return The current RxAntModeRef object instance
+   * @since 3.1.0
+   */
+  public RxAntModeRef withAntenna(Antenna value) {
+    this.antenna = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RxAntModeRef record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #antenna} field. This method should typically be called
+   * after the RxAntModeRef is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current RxAntModeRef object instance
+   */
+  public RxAntModeRef build() {
+    this.serial = antenna != null ? antenna.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

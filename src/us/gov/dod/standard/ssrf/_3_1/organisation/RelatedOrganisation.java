@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.organisation;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -154,7 +151,10 @@ public class RelatedOrganisation {
    * Organisation.
    * <p>
    * @return the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getOrganisation()} instead.
    */
+  @Deprecated
   public TString getSerial() {
     return serial;
   }
@@ -164,7 +164,10 @@ public class RelatedOrganisation {
    * Organisation.
    * <p>
    * @param value the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setOrganisation(Organisation)} instead.
    */
+  @Deprecated
   public void setSerial(TString value) {
     this.serial = value;
   }
@@ -208,7 +211,10 @@ public class RelatedOrganisation {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RelatedOrganisation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withOrganisation(Organisation)} instead.
    */
+  @Deprecated
   public RelatedOrganisation withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -243,5 +249,67 @@ public class RelatedOrganisation {
   public boolean isSet() {
     return isSetRelation() && isSetSerial();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Serial - Organisation Serial (Required)
+   * <p>
+   * The unique reference of the Organisation associated with the current
+   * Organisation.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Organisation organisation;
+
+  /**
+   * Get the unique reference of the Organisation associated with the current
+   * Organisation.
+   * <p>
+   * @return a {@link Organisation} instance
+   * @since 3.1.0
+   */
+  public Organisation getOrganisation() {
+    return organisation;
+  }
+
+  /**
+   * Determine if the organisation field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetOrganisation() {
+    return this.organisation != null;
+  }
+
+  /**
+   * Set the unique reference of the Organisation associated with the current
+   * Organisation.
+   * <p>
+   * @param value An instances of type {@link Organisation}
+   * @return The current RelatedOrganisation object instance
+   * @since 3.1.0
+   */
+  public RelatedOrganisation withOrganisation(Organisation value) {
+    this.organisation = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RelatedOrganisation record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #organisation} field. This method should typically be
+   * called after the RelatedOrganisation is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current RelatedOrganisation object instance
+   */
+  public RelatedOrganisation build() {
+    this.serial = organisation != null ? organisation.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -437,7 +434,10 @@ public class Role extends Common<Role> {
    * Complex element ContactRef references a Contact.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getContact()} instead.
    */
+  @Deprecated
   public List<TString> getContactRef() {
     if (contactRef == null) {
       contactRef = new ArrayList<>();
@@ -628,7 +628,10 @@ public class Role extends Common<Role> {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Role object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withContact(Contact...)} instead.
    */
+  @Deprecated
   public Role withContactRef(TString... values) {
     if (values != null) {
       getContactRef().addAll(Arrays.asList(values));
@@ -643,7 +646,10 @@ public class Role extends Common<Role> {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Role object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withContact(Contact...)} instead.
    */
+  @Deprecated
   public Role withContactRef(Collection<TString> values) {
     if (values != null) {
       getContactRef().addAll(values);
@@ -688,5 +694,86 @@ public class Role extends Common<Role> {
   public boolean isSet() {
     return super.isSet() && isSetName();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * ContactRef (Optional)
+   * <p>
+   * ContactRef references a Contact.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<Contact> contact;
+
+  /**
+   * Get the ContactRef
+   * <p>
+   * Complex element ContactRef references a Contact.
+   * <p>
+   * @return a {@link Contact} instance
+   * @since 3.1.0
+   */
+  public List<Contact> getContact() {
+    if (contact == null) {
+      contact = new ArrayList<>();
+    }
+    return contact;
+  }
+
+  /**
+   * Determine if the contact field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetContact() {
+    return this.contact != null && !this.contact.isEmpty();
+  }
+
+  /**
+   * Set the ContactRef
+   * <p>
+   * Complex element ContactRef references a Contact.
+   * <p>
+   * @param values An instances of type {@link Contact}
+   * @return The current Role object instance
+   * @since 3.1.0
+   */
+  public Role withContact(Contact... values) {
+    return withContact(Arrays.asList(values));
+  }
+
+  /**
+   * Set the ContactRef
+   * <p>
+   * Complex element ContactRef references a Contact.
+   * <p>
+   * @param values An instances of type {@link Contact}
+   * @return The current Role object instance
+   * @since 3.1.0
+   */
+  public Role withContact(Collection<Contact> values) {
+    getContact().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Role record.
+   * <p>
+   * This method builds the exported {@link #contactRef} field with values from
+   * the transient {@link #contact} field. This method should typically be
+   * called after the Role is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current Role object instance
+   * @since 3.1.0
+   */
+  public Role build() {
+    this.contactRef = new ArrayList<>();
+    for (Contact instance : getContact()) {
+      this.contactRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

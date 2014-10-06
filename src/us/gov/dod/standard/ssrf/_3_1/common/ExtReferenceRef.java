@@ -27,6 +27,7 @@ import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.ExternalReference;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -96,7 +97,10 @@ public class ExtReferenceRef {
    * Get a value that is most probably correct.
    * <p>
    * @return a {@link String} instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getExternalReference()} instead.
    */
+  @Deprecated
   public String getValue() {
     return value;
   }
@@ -105,7 +109,10 @@ public class ExtReferenceRef {
    * Set a value that is most probably correct.
    * <p>
    * @param value a {@link String} instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setExternalReference(ExternalReference)} instead.
    */
+  @Deprecated
   public void setValue(String value) {
     this.value = value;
   }
@@ -186,7 +193,10 @@ public class ExtReferenceRef {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current ExtReferenceRef object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withExternalReference(ExternalReference)} instead.
    */
+  @Deprecated
   public ExtReferenceRef withValue(String value) {
     setValue(value);
     return this;
@@ -246,5 +256,64 @@ public class ExtReferenceRef {
   public boolean isSet() {
     return isSetCls() && isSetIdx() && isSetValue();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:recommendedValue - Recommended Value (Optional)
+   * <p>
+   * A value that is most probably correct.
+   * <p>
+   * Format is Memo
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private ExternalReference externalReference;
+
+  /**
+   * Get a value that is most probably correct.
+   * <p>
+   * @return a {@link ExternalReference} instance
+   * @since 3.1.0
+   */
+  public ExternalReference getExternalReference() {
+    return externalReference;
+  }
+
+  /**
+   * Determine if the externalReference field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetExternalReference() {
+    return this.externalReference != null;
+  }
+
+  /**
+   * Set a value that is most probably correct.
+   * <p>
+   * @param value An instances of type {@link ExternalReference}
+   * @return The current ExtReferenceRef object instance
+   * @since 3.1.0
+   */
+  public ExtReferenceRef withExternalReference(ExternalReference value) {
+    this.externalReference = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this ExtReferenceRef record.
+   * <p>
+   * This method builds the exported {@link #value} field with values from the
+   * transient {@link #externalReference} field. This method should typically be
+   * called after the ExtReferenceRef is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current ExtReferenceRef object instance
+   */
+  public ExtReferenceRef build() {
+    this.value = externalReference != null ? externalReference.getSerial().getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

@@ -23,11 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -84,7 +82,10 @@ public class JRFLEntryLocation {
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
    * @return the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocation()} instead.
    */
+  @Deprecated
   public TString getSerial() {
     return serial;
   }
@@ -97,7 +98,10 @@ public class JRFLEntryLocation {
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
    * @param value the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLocation(Location)} instead.
    */
+  @Deprecated
   public void setSerial(TString value) {
     this.serial = value;
   }
@@ -159,7 +163,10 @@ public class JRFLEntryLocation {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JRFLEntryLocation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocation(Location)} instead.
    */
+  @Deprecated
   public JRFLEntryLocation withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -207,5 +214,76 @@ public class JRFLEntryLocation {
   public boolean isSet() {
     return isSetSerial();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Serial - Location Reference (Required)
+   * <p>
+   * The serial of the referenced Location.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "LO". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location location;
+
+  /**
+   * Get the serial of the referenced Location.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "LO". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getLocation() {
+    return location;
+  }
+
+  /**
+   * Determine if the location field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocation() {
+    return this.location != null;
+  }
+
+  /**
+   * Set the serial of the referenced Location.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "LO". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @param value An instances of type {@link Location}
+   * @return The current JRFLEntryLocation object instance
+   * @since 3.1.0
+   */
+  public JRFLEntryLocation withLocation(Location value) {
+    this.location = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JRFLEntryLocation record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #location} field. This method should typically be called
+   * after the JRFLEntryLocation is configured and (optionally) before exporting
+   * an SSRF message.
+   * <p>
+   * @return The current JRFLEntryLocation object instance
+   */
+  public JRFLEntryLocation build() {
+    this.serial = location != null ? location.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

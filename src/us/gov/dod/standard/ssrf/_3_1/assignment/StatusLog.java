@@ -24,12 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Calendar;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -352,5 +350,67 @@ public class StatusLog {
   public boolean isSet() {
     return isSetDateTime() && isSetState();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * US:POCRef - Point Of Contact Reference (Optional)
+   * <p>
+   * The reference to a Contact, Organisation, or Role responsible for this
+   * status log entry or the recipient of the action.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Common<?> poc;
+
+  /**
+   * Get the reference to a Contact, Organisation, or Role responsible for this
+   * status log entry or the recipient of the action.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public Common<?> getPoc() {
+    return poc;
+  }
+
+  /**
+   * Determine if the poc field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetPoc() {
+    return this.poc != null;
+  }
+
+  /**
+   * Set the reference to a Contact, Organisation, or Role responsible for this
+   * status log entry or the recipient of the action.
+   * <p>
+   * @param value An instances of type {@link Common<?>}
+   * @return The current StatusLog object instance
+   * @since 3.1.0
+   */
+  public StatusLog withPoc(Common<?> value) {
+    this.poc = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this StatusLog record.
+   * <p>
+   * This method builds the exported {@link #pocRef} field with values from the
+   * transient {@link #poc} field. This method should typically be called after
+   * the StatusLog is configured and (optionally) before exporting an SSRF
+   * message.
+   * <p>
+   * @return The current StatusLog object instance
+   */
+  public StatusLog build() {
+    this.pocRef = poc != null ? poc.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

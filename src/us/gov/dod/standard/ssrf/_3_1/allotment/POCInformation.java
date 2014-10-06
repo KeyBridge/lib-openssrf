@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -130,7 +127,10 @@ public class POCInformation {
    * Get the dataset identifier of the Contact, Organisation, or Role.
    * <p>
    * @return the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getPoc()} instead.
    */
+  @Deprecated
   public TString getSerial() {
     return serial;
   }
@@ -139,7 +139,10 @@ public class POCInformation {
    * Set the dataset identifier of the Contact, Organisation, or Role.
    * <p>
    * @param value the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setPoc(Common)} instead.
    */
+  @Deprecated
   public void setSerial(TString value) {
     this.serial = value;
   }
@@ -205,7 +208,10 @@ public class POCInformation {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current POCInformation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withPoc(Common)} instead.
    */
+  @Deprecated
   public POCInformation withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -251,5 +257,64 @@ public class POCInformation {
   public boolean isSet() {
     return isSetType();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Serial - Serial of Referenced dataset (Optional)
+   * <p>
+   * The dataset identifier of the Contact, Organisation, or Role.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Common<?> poc;
+
+  /**
+   * Get the dataset identifier of the Contact, Organisation, or Role.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public Common<?> getPoc() {
+    return poc;
+  }
+
+  /**
+   * Determine if the poc field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetPoc() {
+    return this.poc != null;
+  }
+
+  /**
+   * Set the dataset identifier of the Contact, Organisation, or Role.
+   * <p>
+   * @param value An instances of type {@link Common<?>}
+   * @return The current POCInformation object instance
+   * @since 3.1.0
+   */
+  public POCInformation withPoc(Common<?> value) {
+    this.poc = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this POCInformation record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #poc} field. This method should typically be called after
+   * the POCInformation is configured and (optionally) before exporting an SSRF
+   * message.
+   * <p>
+   * @return The current POCInformation object instance
+   */
+  public POCInformation build() {
+    this.serial = poc != null ? poc.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

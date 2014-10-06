@@ -27,10 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -163,7 +160,10 @@ public class Message extends Common<Message> {
    * included in a single Message.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getData()} instead.
    */
+  @Deprecated
   public List<TString> getDatasetRef() {
     if (datasetRef == null) {
       datasetRef = new ArrayList<>();
@@ -218,7 +218,10 @@ public class Message extends Common<Message> {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Message object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withData(Common...)} instead.
    */
+  @Deprecated
   public Message withDatasetRef(TString... values) {
     if (values != null) {
       getDatasetRef().addAll(Arrays.asList(values));
@@ -234,7 +237,10 @@ public class Message extends Common<Message> {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Message object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withData(Common...)} instead.
    */
+  @Deprecated
   public Message withDatasetRef(Collection<TString> values) {
     if (values != null) {
       getDatasetRef().addAll(values);
@@ -272,5 +278,73 @@ public class Message extends Common<Message> {
   public boolean isSet() {
     return super.isSet();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  @XmlTransient
+  private List<Common<?>> data;
+
+  /**
+   * Get
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public List<Common<?>> getData() {
+    if (data == null) {
+      data = new ArrayList<>();
+    }
+    return data;
+  }
+
+  /**
+   * Determine if the data field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetData() {
+    return this.data != null && !this.data.isEmpty();
+  }
+
+  /**
+   * Set
+   * <p>
+   * @param values An instances of type {@link Common<?>}
+   * @return The current Message object instance
+   * @since 3.1.0
+   */
+  public Message withData(Common<?>... values) {
+    return withData(Arrays.asList(values));
+  }
+
+  /**
+   * Set
+   * <p>
+   * @param values An instances of type {@link Common<?>}
+   * @return The current Message object instance
+   * @since 3.1.0
+   */
+  public Message withData(Collection<Common<?>> values) {
+    getData().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Message record.
+   * <p>
+   * This method builds the exported {@link #datasetRef} field with values from
+   * the transient {@link #data} field. This method should typically be called
+   * after the Message is configured and (optionally) before exporting an SSRF
+   * message.
+   * <p>
+   * @return The current Message object instance
+   * @since 3.1.0
+   */
+  public Message build() {
+    this.datasetRef = new ArrayList<>();
+    for (Common<?> instance : getData()) {
+      this.datasetRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

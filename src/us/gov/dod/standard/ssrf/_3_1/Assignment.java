@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -2293,7 +2290,10 @@ public class Assignment extends Common<Assignment> {
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getRelated()} instead.
    */
+  @Deprecated
   public List<TString> getRelatedRef() {
     if (relatedRef == null) {
       relatedRef = new ArrayList<>();
@@ -3358,7 +3358,10 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Assignment object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withRelated(Common...)} instead.
    */
+  @Deprecated
   public Assignment withRelatedRef(TString... values) {
     if (values != null) {
       getRelatedRef().addAll(Arrays.asList(values));
@@ -3374,7 +3377,10 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Assignment object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withRelated(Common...)} instead.
    */
+  @Deprecated
   public Assignment withRelatedRef(Collection<TString> values) {
     if (values != null) {
       getRelatedRef().addAll(values);
@@ -3870,5 +3876,90 @@ public class Assignment extends Common<Assignment> {
   public boolean isSet() {
     return super.isSet() && isSetConfiguration() && isSetEffectiveDateTime() && isSetLink() && isSetStation();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * RelatedRef (Optional)
+   * <p>
+   * RelatedRef contains the serial of a referenced Assignment, Allotment,
+   * SSReply, ForceElement or FEDeployment.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<Common<?>> related;
+
+  /**
+   * Get the RelatedRef
+   * <p>
+   * Complex element RelatedRef contains the serial of a referenced Assignment,
+   * Allotment, SSReply, ForceElement or FEDeployment.
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public List<Common<?>> getRelated() {
+    if (related == null) {
+      related = new ArrayList<>();
+    }
+    return related;
+  }
+
+  /**
+   * Determine if the related field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetRelated() {
+    return this.related != null && !this.related.isEmpty();
+  }
+
+  /**
+   * Set the RelatedRef
+   * <p>
+   * Complex element RelatedRef contains the serial of a referenced Assignment,
+   * Allotment, SSReply, ForceElement or FEDeployment.
+   * <p>
+   * @param values An instances of type {@link Common<?>}
+   * @return The current Assignment object instance
+   * @since 3.1.0
+   */
+  public Assignment withRelated(Common<?>... values) {
+    return withRelated(Arrays.asList(values));
+  }
+
+  /**
+   * Set the RelatedRef
+   * <p>
+   * Complex element RelatedRef contains the serial of a referenced Assignment,
+   * Allotment, SSReply, ForceElement or FEDeployment.
+   * <p>
+   * @param values An instances of type {@link Common<?>}
+   * @return The current Assignment object instance
+   * @since 3.1.0
+   */
+  public Assignment withRelated(Collection<Common<?>> values) {
+    getRelated().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Assignment record.
+   * <p>
+   * This method builds the exported {@link #relatedRef} field with values from
+   * the transient {@link #related} field. This method should typically be
+   * called after the Assignment is configured and (optionally) before exporting
+   * an SSRF message.
+   * <p>
+   * @return The current Assignment object instance
+   * @since 3.1.0
+   */
+  public Assignment build() {
+    this.relatedRef = new ArrayList<>();
+    for (Common<?> instance : getRelated()) {
+      this.relatedRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

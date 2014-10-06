@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -147,7 +148,10 @@ public class EarthStation {
    * Get the serial of the referenced Location.
    * <p>
    * @return the LocationRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocation()} instead.
    */
+  @Deprecated
   public TString getLocationRef() {
     return locationRef;
   }
@@ -156,7 +160,10 @@ public class EarthStation {
    * Set the serial of the referenced Location.
    * <p>
    * @param value the LocationRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setLocation(Location)} instead.
    */
+  @Deprecated
   public void setLocationRef(TString value) {
     this.locationRef = value;
   }
@@ -199,7 +206,10 @@ public class EarthStation {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current EarthStation object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocation(Location)} instead.
    */
+  @Deprecated
   public EarthStation withLocationRef(String value) {
     setLocationRef(new TString(value));
     return this;
@@ -229,5 +239,64 @@ public class EarthStation {
   public boolean isSet() {
     return true;
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * LocationRef - Location Serial (Optional)
+   * <p>
+   * The serial of the referenced Location.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location location;
+
+  /**
+   * Get the serial of the referenced Location.
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getLocation() {
+    return location;
+  }
+
+  /**
+   * Determine if the location field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocation() {
+    return this.location != null;
+  }
+
+  /**
+   * Set the serial of the referenced Location.
+   * <p>
+   * @param value An instances of type {@link Location}
+   * @return The current EarthStation object instance
+   * @since 3.1.0
+   */
+  public EarthStation withLocation(Location value) {
+    this.location = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this EarthStation record.
+   * <p>
+   * This method builds the exported {@link #locationRef} field with values from
+   * the transient {@link #location} field. This method should typically be
+   * called after the EarthStation is configured and (optionally) before
+   * exporting an SSRF message.
+   * <p>
+   * @return The current EarthStation object instance
+   */
+  public EarthStation build() {
+    this.locationRef = location != null ? location.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

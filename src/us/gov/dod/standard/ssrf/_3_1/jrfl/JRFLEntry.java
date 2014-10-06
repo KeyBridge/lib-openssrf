@@ -27,11 +27,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.JRFL;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -717,7 +715,10 @@ public class JRFLEntry {
    * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
    * @return the AsgnAllotRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getAssignmentAllotment()} instead.
    */
+  @Deprecated
   public TString getAsgnAllotRef() {
     return asgnAllotRef;
   }
@@ -730,7 +731,10 @@ public class JRFLEntry {
    * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
    * @param value the AsgnAllotRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setAssignmentAllotment(Common)} instead.
    */
+  @Deprecated
   public void setAsgnAllotRef(TString value) {
     this.asgnAllotRef = value;
   }
@@ -1127,7 +1131,10 @@ public class JRFLEntry {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current JRFLEntry object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withAssignmentAllotment(Common)} instead.
    */
+  @Deprecated
   public JRFLEntry withAsgnAllotRef(String value) {
     setAsgnAllotRef(new TString(value));
     return this;
@@ -1320,5 +1327,76 @@ public class JRFLEntry {
   public boolean isSet() {
     return isSetJustification() && isSetProtectionCode();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * AsgnAllotRef - Assignment or Allotment Serial (Optional)
+   * <p>
+   * The Serial reference of the Assignment or Allotment to be protected.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be "AS
+   * or AL". [XSD ERR REGEX] This data item MUST comply to the regular
+   * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Common<?> assignmentAllotment;
+
+  /**
+   * Get the Serial reference of the Assignment or Allotment to be protected.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be "AS
+   * or AL". [XSD ERR REGEX] This data item MUST comply to the regular
+   * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @return a {@link Common} instance
+   * @since 3.1.0
+   */
+  public Common<?> getAssignmentAllotment() {
+    return assignmentAllotment;
+  }
+
+  /**
+   * Determine if the assignmentAllotment field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetAssignmentAllotment() {
+    return this.assignmentAllotment != null;
+  }
+
+  /**
+   * Set the Serial reference of the Assignment or Allotment to be protected.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be "AS
+   * or AL". [XSD ERR REGEX] This data item MUST comply to the regular
+   * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @param value An instances of type {@link Common<?>}
+   * @return The current JRFLEntry object instance
+   * @since 3.1.0
+   */
+  public JRFLEntry withAssignmentAllotment(Common<?> value) {
+    this.assignmentAllotment = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JRFLEntry record.
+   * <p>
+   * This method builds the exported {@link #asgnAllotRef} field with values
+   * from the transient {@link #assignmentAllotment} field. This method should
+   * typically be called after the JRFLEntry is configured and (optionally)
+   * before exporting an SSRF message.
+   * <p>
+   * @return The current JRFLEntry object instance
+   */
+  public JRFLEntry build() {
+    this.asgnAllotRef = assignmentAllotment != null ? assignmentAllotment.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

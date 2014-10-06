@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.rfsystem;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -110,7 +107,10 @@ public class RelatedSystem {
    * Get the reference of the System associated with the current System.
    * <p>
    * @return the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getRfSystem()} instead.
    */
+  @Deprecated
   public TString getSerial() {
     return serial;
   }
@@ -119,7 +119,10 @@ public class RelatedSystem {
    * Set the reference of the System associated with the current System.
    * <p>
    * @param value the Serial value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setRfSystem(RFSystem)} instead.
    */
+  @Deprecated
   public void setSerial(TString value) {
     this.serial = value;
   }
@@ -151,7 +154,10 @@ public class RelatedSystem {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current RelatedSystem object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withRfSystem(RFSystem)} instead.
    */
+  @Deprecated
   public RelatedSystem withSerial(String value) {
     setSerial(new TString(value));
     return this;
@@ -184,5 +190,64 @@ public class RelatedSystem {
   public boolean isSet() {
     return isSetRelation() && isSetSerial();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Serial - Related System Serial (Required)
+   * <p>
+   * The reference of the System associated with the current System.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private RFSystem rfSystem;
+
+  /**
+   * Get the reference of the System associated with the current System.
+   * <p>
+   * @return a {@link RFSystem} instance
+   * @since 3.1.0
+   */
+  public RFSystem getRfSystem() {
+    return rfSystem;
+  }
+
+  /**
+   * Determine if the rfSystem field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetRfSystem() {
+    return this.rfSystem != null;
+  }
+
+  /**
+   * Set the reference of the System associated with the current System.
+   * <p>
+   * @param value An instances of type {@link RFSystem}
+   * @return The current RelatedSystem object instance
+   * @since 3.1.0
+   */
+  public RelatedSystem withRfSystem(RFSystem value) {
+    this.rfSystem = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RelatedSystem record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #rfSystem} field. This method should typically be called
+   * after the RelatedSystem is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current RelatedSystem object instance
+   */
+  public RelatedSystem build() {
+    this.serial = rfSystem != null ? rfSystem.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

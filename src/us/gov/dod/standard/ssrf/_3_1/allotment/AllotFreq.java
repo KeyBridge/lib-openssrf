@@ -27,12 +27,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
+import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -288,7 +286,10 @@ public class AllotFreq {
    * Allotment usage is forbidden.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocationRestriction()} instead.
    */
+  @Deprecated
   public List<TString> getLocationRestrictionRef() {
     if (locationRestrictionRef == null) {
       locationRestrictionRef = new ArrayList<>();
@@ -301,7 +302,7 @@ public class AllotFreq {
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
-  public boolean isSetLocationRestriction() {
+  public boolean isSetLocationRestrictionRef() {
     return ((this.locationRestrictionRef != null) && (!this.locationRestrictionRef.isEmpty()));
   }
 
@@ -380,7 +381,7 @@ public class AllotFreq {
    * @param values One or more instances of type {@link TString}
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestriction(TString... values) {
+  public AllotFreq withLocationRestrictionRef(TString... values) {
     if (values != null) {
       getLocationRestrictionRef().addAll(Arrays.asList(values));
     }
@@ -396,7 +397,7 @@ public class AllotFreq {
    * @param values A collection of {@link TString} instances
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestriction(Collection<TString> values) {
+  public AllotFreq withLocationRestrictionRef(Collection<TString> values) {
     if (values != null) {
       getLocationRestrictionRef().addAll(values);
     }
@@ -433,5 +434,79 @@ public class AllotFreq {
   public boolean isSet() {
     return isSetFreqMin();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * LocationRestriction (Optional)
+   * <p>
+   * LocationRestriction indicates a Location where the Allotment usage is
+   * forbidden.
+   */
+  @XmlTransient
+  private List<Location> locationRestriction;
+
+  /**
+   * Get a Location where the Allotment usage is forbidden.
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public List<Location> getLocationRestriction() {
+    if (locationRestriction == null) {
+      locationRestriction = new ArrayList<>();
+    }
+    return locationRestriction;
+  }
+
+  /**
+   * Determine if the locationRestriction field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocationRestriction() {
+    return this.locationRestriction != null && !this.locationRestriction.isEmpty();
+  }
+
+  /**
+   * Set a Location where the Allotment usage is forbidden.
+   * <p>
+   * @param values An instances of type {@link Location}
+   * @return The current AllotFreq object instance
+   * @since 3.1.0
+   */
+  public AllotFreq withLocationRestriction(Location... values) {
+    return withLocationRestriction(Arrays.asList(values));
+  }
+
+  /**
+   * Set a Location where the Allotment usage is forbidden.
+   * <p>
+   * @param values An instances of type {@link Location}
+   * @return The current AllotFreq object instance
+   * @since 3.1.0
+   */
+  public AllotFreq withLocationRestriction(Collection<Location> values) {
+    getLocationRestriction().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this AllotFreq record.
+   * <p>
+   * This method builds the exported {@link #locationRestrictionRef} field with
+   * values from the transient {@link #locationRestriction} field. This method
+   * should typically be called after the AllotFreq is configured and
+   * (optionally) before exporting an SSRF message.
+   * <p>
+   * @return The current AllotFreq object instance
+   * @since 3.1.0
+   */
+  public AllotFreq build() {
+    this.locationRestrictionRef = new ArrayList<>();
+    for (Location instance : getLocationRestriction()) {
+      this.locationRestrictionRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

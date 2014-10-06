@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -312,7 +309,10 @@ public class TOA extends Common<TOA> {
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getChannelPlan()} instead.
    */
+  @Deprecated
   public List<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new ArrayList<>();
@@ -487,7 +487,10 @@ public class TOA extends Common<TOA> {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current TOA object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
+  @Deprecated
   public TOA withChannelPlanRef(TString... values) {
     if (values != null) {
       getChannelPlanRef().addAll(Arrays.asList(values));
@@ -502,7 +505,10 @@ public class TOA extends Common<TOA> {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current TOA object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
+  @Deprecated
   public TOA withChannelPlanRef(Collection<TString> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
@@ -614,5 +620,86 @@ public class TOA extends Common<TOA> {
   public boolean isSet() {
     return super.isSet() && isSetAdministration() && isSetFreqBand();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * ChannelPlanRef (Optional)
+   * <p>
+   * ChannelPlanRef refers to a ChannelPlan.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<ChannelPlan> channelPlan;
+
+  /**
+   * Get the ChannelPlanRef
+   * <p>
+   * Complex element ChannelPlanRef refers to a ChannelPlan.
+   * <p>
+   * @return a {@link ChannelPlan} instance
+   * @since 3.1.0
+   */
+  public List<ChannelPlan> getChannelPlan() {
+    if (channelPlan == null) {
+      channelPlan = new ArrayList<>();
+    }
+    return channelPlan;
+  }
+
+  /**
+   * Determine if the channelPlan field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetChannelPlan() {
+    return this.channelPlan != null && !this.channelPlan.isEmpty();
+  }
+
+  /**
+   * Set the ChannelPlanRef
+   * <p>
+   * Complex element ChannelPlanRef refers to a ChannelPlan.
+   * <p>
+   * @param values An instances of type {@link ChannelPlan}
+   * @return The current TOA object instance
+   * @since 3.1.0
+   */
+  public TOA withChannelPlan(ChannelPlan... values) {
+    return withChannelPlan(Arrays.asList(values));
+  }
+
+  /**
+   * Set the ChannelPlanRef
+   * <p>
+   * Complex element ChannelPlanRef refers to a ChannelPlan.
+   * <p>
+   * @param values An instances of type {@link ChannelPlan}
+   * @return The current TOA object instance
+   * @since 3.1.0
+   */
+  public TOA withChannelPlan(Collection<ChannelPlan> values) {
+    getChannelPlan().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this TOA record.
+   * <p>
+   * This method builds the exported {@link #channelPlanRef} field with values
+   * from the transient {@link #channelPlan} field. This method should typically
+   * be called after the TOA is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current TOA object instance
+   * @since 3.1.0
+   */
+  public TOA build() {
+    this.channelPlanRef = new ArrayList<>();
+    for (ChannelPlan instance : getChannelPlan()) {
+      this.channelPlanRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -1220,7 +1217,10 @@ public class IntfReport extends Common<IntfReport> {
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
    * @return the VictimAsgnRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getVictimAssignment()} instead.
    */
+  @Deprecated
   public TString getVictimAsgnRef() {
     return victimAsgnRef;
   }
@@ -1234,7 +1234,10 @@ public class IntfReport extends Common<IntfReport> {
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
    * @param value the VictimAsgnRef value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setVictimAssignment(Assignment)} instead.
    */
+  @Deprecated
   public void setVictimAsgnRef(TString value) {
     this.victimAsgnRef = value;
   }
@@ -2346,7 +2349,10 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current IntfReport object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withVictimAssignment(Assignment)} instead.
    */
+  @Deprecated
   public IntfReport withVictimAsgnRef(String value) {
     setVictimAsgnRef(new TString(value));
     return this;
@@ -2764,5 +2770,75 @@ public class IntfReport extends Common<IntfReport> {
   public boolean isSet() {
     return super.isSet() && isSetIntfStartDateTime() && isSetVictimFreqMin();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * In Data Item VictimAsgnRef, Enter the serial number of the assignment
+   * victim of the interference.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Assignment victimAssignment;
+
+  /**
+   * Get In Data Item VictimAsgnRef, Enter the serial number of the assignment
+   * victim of the interference.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @return a {@link Assignment} instance
+   * @since 3.1.0
+   */
+  public Assignment getVictimAssignment() {
+    return victimAssignment;
+  }
+
+  /**
+   * Determine if the victimAssignment field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetVictimAssignment() {
+    return this.victimAssignment != null;
+  }
+
+  /**
+   * Set In Data Item VictimAsgnRef, Enter the serial number of the assignment
+   * victim of the interference.
+   * <p>
+   * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
+   * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
+   * <p>
+   * @param value An instances of type {@link Assignment}
+   * @return The current IntfReport object instance
+   * @since 3.1.0
+   */
+  public IntfReport withVictimAssignment(Assignment value) {
+    this.victimAssignment = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this IntfReport record.
+   * <p>
+   * This method builds the exported {@link #victimAsgnRef} field with values
+   * from the transient {@link #victimAssignment} field. This method should
+   * typically be called after the IntfReport is configured and (optionally)
+   * before exporting an SSRF message.
+   * <p>
+   * @return The current IntfReport object instance
+   */
+  public IntfReport build() {
+    this.victimAsgnRef = victimAssignment != null ? victimAssignment.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }

@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -700,7 +697,10 @@ public class Location extends Common<Location> {
    * Get the serial of the referenced Location.
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getLocation()} instead.
    */
+  @Deprecated
   public List<TString> getLocationRef() {
     if (locationRef == null) {
       locationRef = new ArrayList<>();
@@ -970,7 +970,10 @@ public class Location extends Common<Location> {
    * <p>
    * @param values One or more instances of type {@link TString}
    * @return The current Location object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocation(Location...)} instead.
    */
+  @Deprecated
   public Location withLocationRef(TString... values) {
     if (values != null) {
       getLocationRef().addAll(Arrays.asList(values));
@@ -983,7 +986,10 @@ public class Location extends Common<Location> {
    * <p>
    * @param values A collection of {@link TString} instances
    * @return The current Location object instance
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #withLocation(Location...)} instead.
    */
+  @Deprecated
   public Location withLocationRef(Collection<TString> values) {
     if (values != null) {
       getLocationRef().addAll(values);
@@ -1035,5 +1041,82 @@ public class Location extends Common<Location> {
   public boolean isSet() {
     return super.isSet() && isSetName();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * LocationRef - Element Content (Required)
+   * <p>
+   * The serial of the referenced Location.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private List<Location> location;
+
+  /**
+   * Get the serial of the referenced Location.
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public List<Location> getLocation() {
+    if (location == null) {
+      location = new ArrayList<>();
+    }
+    return location;
+  }
+
+  /**
+   * Determine if the location field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocation() {
+    return this.location != null && !this.location.isEmpty();
+  }
+
+  /**
+   * Set the serial of the referenced Location.
+   * <p>
+   * @param values An instances of type {@link Location}
+   * @return The current Location object instance
+   * @since 3.1.0
+   */
+  public Location withLocation(Location... values) {
+    return withLocation(Arrays.asList(values));
+  }
+
+  /**
+   * Set the serial of the referenced Location.
+   * <p>
+   * @param values An instances of type {@link Location}
+   * @return The current Location object instance
+   * @since 3.1.0
+   */
+  public Location withLocation(Collection<Location> values) {
+    getLocation().addAll(values);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Location record.
+   * <p>
+   * This method builds the exported {@link #locationRef} field with values from
+   * the transient {@link #location} field. This method should typically be
+   * called after the Location is configured and (optionally) before exporting
+   * an SSRF message.
+   * <p>
+   * @return The current Location object instance
+   * @since 3.1.0
+   */
+  public Location build() {
+    this.locationRef = new ArrayList<>();
+    for (Location instance : getLocation()) {
+      this.locationRef.add(instance.getSerial());
+    }
+    return this;
+  }//</editor-fold>
 
 }

@@ -24,10 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -348,7 +345,10 @@ public class ForceElement extends Common<ForceElement> {
    * Get a reference to the organisation that owns the ForceElement.
    * <p>
    * @return the OwningOrganisation value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #getOwningOrganisation()} instead.
    */
+  @Deprecated
   public TString getOwningOrganisationRef() {
     return owningOrganisationRef;
   }
@@ -357,7 +357,10 @@ public class ForceElement extends Common<ForceElement> {
    * Set a reference to the organisation that owns the ForceElement.
    * <p>
    * @param value the OwningOrganisation value in a {@link TString} data type
+   * @deprecated SSRF references are managed automatically. Use
+   * {@link #setOwningOrganisation(Organisation)} instead.
    */
+  @Deprecated
   public void setOwningOrganisationRef(TString value) {
     this.owningOrganisationRef = value;
   }
@@ -369,7 +372,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
-  public boolean isSetOwningOrganisation() {
+  public boolean isSetOwningOrganisationRef() {
     return (this.owningOrganisationRef != null ? this.owningOrganisationRef.isSetValue() : false);
   }
 
@@ -914,5 +917,55 @@ public class ForceElement extends Common<ForceElement> {
   public boolean isSet() {
     return super.isSet() && isSetNomenclature() && isSetType();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  @XmlTransient
+  private Organisation owningOrganisation;
+
+  /**
+   * Get
+   * <p>
+   * @return a {@link Organisation} instance
+   * @since 3.1.0
+   */
+  public Organisation getOwningOrganisation() {
+    return owningOrganisation;
+  }
+
+  /**
+   * Determine if the owningOrganisation field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetOwningOrganisation() {
+    return this.owningOrganisation != null;
+  }
+
+  /**
+   * Set
+   * <p>
+   * @param value An instances of type {@link Organisation}
+   * @return The current ForceElement object instance
+   * @since 3.1.0
+   */
+  public ForceElement withOwningOrganisation(Organisation value) {
+    this.owningOrganisation = value;
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this ForceElement record.
+   * <p>
+   * This method builds the exported {@link #owningOrganisationRef} field with
+   * values from the transient {@link #owningOrganisation} field. This method
+   * should typically be called after the ForceElement is configured and
+   * (optionally) before exporting an SSRF message.
+   * <p>
+   * @return The current ForceElement object instance
+   */
+  public ForceElement build() {
+    this.owningOrganisationRef = owningOrganisation != null ? owningOrganisation.getSerial() : null;
+    return this;
+  }//</editor-fold>
 
 }
