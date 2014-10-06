@@ -34,12 +34,24 @@ import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUST;
 
 /**
  * StatusLog (US) contains the transactional processing information related to
  * frequency assignments.
  * <p>
  * Element of {@link Assignment}, {@link SSRequest}
+ * <p>
+ * Example:
+ * <pre>
+ * &lt;StatusLog&gt;
+ *   &lt;AgencyCode cls="U"&gt;DISA&lt;/AgencyCode&gt;
+ *   &lt;Comment cls="U"&gt;Validated by independent review&lt;/Comment&gt;
+ *   &lt;DateTime cls="U"&gt;2011-12-25T01:23:001Z&lt;/DateTime&gt;
+ *   &lt;POCRef cls="U"&gt;USA:DISA:CN:123&lt;/POCRef&gt;
+ *   &lt;State cls="U"&gt;ASSIGNED_BY&lt;/State&gt;
+ * &lt;/StatusLog&gt;
+ * </pre>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 3.1.0, 09/30/2014
@@ -271,8 +283,8 @@ public class StatusLog {
    * @param value An instances of type {@link String}
    * @return The current StatusLog object instance
    */
-  public StatusLog withState(String value) {
-    setState(new TString(value));
+  public StatusLog withState(ListUST value) {
+    setState(new TString(value.value()));
     return this;
   }
 

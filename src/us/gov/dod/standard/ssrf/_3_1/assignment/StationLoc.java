@@ -33,8 +33,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
 /**
- * Station (US) defines one or more transmitters or receivers or a combination
- * of transmitters and receivers, including the accessory
+ * StationLoc (US) provides detailed location information associated with one or
+ * more Satellites or Location datasets associated with a specific Station.
  * <p>
  * Element of {@link Station}
  * <p>
@@ -83,7 +83,7 @@ public class StationLoc {
    * and inside the Station location (e.g. inside the satellite beam
    * footprint.).
    * <p>
-   * Format is pattern (S29)
+   * Format is SERIAL (S29)
    */
   @XmlElement(name = "LocSatRef", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
@@ -108,7 +108,7 @@ public class StationLoc {
    * example, ServiceVolumeLocRef can reference a point location that is
    * extended with a radius and height to form a cylinder.
    * <p>
-   * Format is pattern (S29)
+   * Format is SERIAL (S29)
    * <p>
    * Attribute group SV (Optional)
    */
@@ -118,9 +118,9 @@ public class StationLoc {
   /**
    * US:ServiceVolumeRadius - Service Volume Radius (Optional)
    * <p>
-   * The radius associated with the Location to produce a circle. Radius
-   * information only applies to points, and should be ignored in the case of
-   * polygons and ellipses.
+   * The radius (in km) associated with the ServiceVolumeLocRef Location to
+   * produce a circle. Radius information only applies to points, and should be
+   * ignored in the case of polygons and ellipses.
    * <p>
    * Format is UN(9,4) (km)
    * <p>
@@ -132,9 +132,10 @@ public class StationLoc {
   /**
    * US:ServiceVolumeHeight - Service Volume Height (Optional)
    * <p>
-   * The altitude of aeronautical navigational aids, air traffic control
-   * assignments for radio frequencies above 30 MHz, and low-frequency beacons.
-   * The altitude is referenced to mean sea level (MSL).
+   * The the flight altitude in metres of all altitude of aeronautical
+   * navigational aids, air traffic control assignments for radio frequencies
+   * above 30 MHz, and low-frequency beacons. The altitude is referenced to mean
+   * sea level (MSL).
    * <p>
    * Format is SN(7,2) (m)
    * <p>
