@@ -52,38 +52,105 @@ public class SSRFUtility {
   private static final int MAX_STRING_LENGTH = 33;
 
   /**
-   * Validate a SSRF Object instance.
+   * Internal method to recursively validate an object instance.
    * <p>
-   * This method recursively validates the provided object instance and all of
-   * its components.
+   * This method keeps track of the instance parent instance, plus the field
+   * within that parent instance where the current object instance is set. These
+   * are tracked to help produce a set of legible error messages.
    * <p>
-   * The validation procedure ensures that all required fields are set and that
-   * all configured fields contain valid data according to the SSRF data
-   * formatting rules.
-   * <p>
-   * It is expected that this method will only be called on the top-level SSRF
-   * class. However it will just as easily validate any SSRF data type.
-   * <p>
-   * If the object instance is NOT valid call
-   * {@link #getErrorMessages(java.lang.Object)} to retrieve a list of
-   * validation errors.
+   * Developer note: For more information about Java reflection see
+   * <a href="http://docs.oracle.com/javase/tutorial/reflect/index.html">The
+   * Reflection API</a> and <a
+   * href="http://tutorials.jenkov.com/java-reflection/index.html">Java
+   * Reflection Tutorial</a>.
    * <p>
    * @param instance the object instance to validate
-   * @return TRUE the object instance validates OK; otherwise FALSE.
+   * @throws java.lang.Exception if the SSRF instance fails to validate
    */
-  public static boolean isValid(Object instance) {
-    return validate(instance, null, null, null).isEmpty();
+  @SuppressWarnings({"unchecked", "AssignmentToMethodParameter"})
+  public static void validate(Object instance) throws Exception {
+    /**
+     * Assign the class type under study to a local variable for convenience.
+     */
+    Class<?> clazz = instance.getClass();
+    /**
+     * Important: NO NOT inspect classes that are not within the SSRF package.
+     * Also and equally important: DO NOT inspect or try to validate enumerated
+     * classes.
+     */
+    if (instance.getClass().isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+      return;
+    }
+    /**
+     * Iterate through the list of declared fields (public, protected and
+     * private) and inspect each according to its annotated configuration and
+     * state.
+     */
+    for (Field field : findDeclaredAndInheritedFields(clazz)) {
+      /**
+       * Important: Enable access to the Object instance fields (public,
+       * protected and private).
+       */
+      field.setAccessible(true);
+      /**
+       * Get the instance field value. Skip (do not check and fail gracefully)
+       * if the field value is null (e.g. not configured) or (somehow) not
+       * accessible.
+       */
+      Object fieldValue;
+      try {
+        fieldValue = field.get(instance);
+      } catch (IllegalArgumentException | IllegalAccessException ex) {
+//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+        continue;
+      }
+      /**
+       * Report an ERROR if the field is required and not configured.
+       */
+      if (isRequired(field) && fieldValue == null) {
+        throw new Exception(field.getName() + " is required.");
+      }
+      /**
+       * If the field value is not required and NULL then DO NOT try to validate
+       * it.
+       */
+      if (fieldValue == null) {
+        continue;
+      }
+      /**
+       * If the field value object is a Collection then iterate through the
+       * collection to recursively validate each entry object instance,
+       * otherwise recurse to validate the field value object instance directly.
+       */
+      if (fieldValue instanceof Collection) {
+        for (Object entry : (Collection) fieldValue) {
+          if (entry != null) {
+            validate(entry);
+          }
+        }
+      } else {
+        validate(fieldValue);
+        /**
+         * After the field validation status is completed try to validate the
+         * object instance configuration against an XmlJavaTypeAdapter, if
+         * present.
+         */
+        validateField(field, fieldValue);
+      }
+    }
   }
 
   /**
-   * Validate a SSRF Object instance.
+   * Evaluate a SSRF Object instance; record and report any configuration
+   * errors.
    * <p>
    * This method recursively validates the provided object instance and all of
-   * its components.
+   * its components. The validation procedure ensures that all required fields
+   * are set and that all configured fields contain valid data according to the
+   * SSRF data formatting rules.
    * <p>
-   * The validation procedure ensures that all required fields are set and that
-   * all configured fields contain valid data according to the SSRF data
-   * formatting rules.
+   * If the SSRF object instance does not validate OK then each specific
+   * validation error condition is recorded and returned.
    * <p>
    * It is expected that this method will only be called on the top-level SSRF
    * class. However it will just as easily validate any SSRF data type.
@@ -92,8 +159,8 @@ public class SSRFUtility {
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
    */
-  public static Collection<String> getErrorMessages(Object instance) {
-    return validate(instance, null, null, null);
+  public static Collection<String> evaluate(Object instance) {
+    return evaluate(instance, null, null, null);
   }
 
   /**
@@ -117,7 +184,7 @@ public class SSRFUtility {
    *         the object instance validates OK.
    */
   @SuppressWarnings({"unchecked", "AssignmentToMethodParameter"})
-  private static Collection<String> validate(Object instance, Object parentInstance, Field parentField, Collection<String> messages) {
+  private static Collection<String> evaluate(Object instance, Object parentInstance, Field parentField, Collection<String> messages) {
     /**
      * Initialize the messages collection if required.
      */
@@ -180,11 +247,11 @@ public class SSRFUtility {
       if (fieldValue instanceof Collection) {
         for (Object entry : (Collection) fieldValue) {
           if (entry != null) {
-            validate(entry, instance, field, messages);
+            evaluate(entry, instance, field, messages);
           }
         }
       } else {
-        validate(fieldValue, instance, field, messages);
+        evaluate(fieldValue, instance, field, messages);
         /**
          * After the field validation status is completed try to validate the
          * object instance configuration against an XmlJavaTypeAdapter, if

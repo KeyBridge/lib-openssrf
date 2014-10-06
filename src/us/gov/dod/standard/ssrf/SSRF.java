@@ -79,37 +79,49 @@ public class SSRF extends SchemaRoot<SSRF> {
   /**
    * Validate a SSRF Object instance.
    * <p>
-   * This method recursively validates the SSRF instance and all of its
-   * components.
+   * This method recursively validates the provided object instance and all of
+   * its components. The validation procedure ensures that all required fields
+   * are set and that all configured fields contain valid data according to the
+   * SSRF data formatting rules.
    * <p>
-   * The validation procedure ensures that all required fields are set and that
-   * all configured fields contain valid data according to the SSRF data
-   * formatting rules.
+   * It is expected that this method will only be called on the top-level SSRF
+   * class. However it will just as easily validate any SSRF data type.
    * <p>
-   * If the object instance is NOT valid call {@link #getErrorMessages()} to
-   * retrieve a list of validation errors.
+   * If the object instance is NOT valid then call
+   * {@link #evaluate(java.lang.Object)} to re-inspect the SSRF object instance
+   * and retrieve a list of specific validation errors.
    * <p>
-   * @return TRUE the SSRF instance is valid; otherwise FALSE.
+   * @return TRUE the object instance validates OK; otherwise FALSE.
    */
-  public boolean isValid() {
-    return SSRFUtility.isValid(this);
+  public boolean validate() {
+    try {
+      SSRFUtility.validate(this);
+      return true;
+    } catch (Exception exception) {
+      return false;
+    }
   }
 
   /**
-   * Validate a SSRF Object instance.
+   * Evaluate a SSRF Object instance; record and report any configuration
+   * errors.
    * <p>
-   * This method recursively validates the SSRF instance and all of its
-   * components.
+   * This method recursively validates the provided object instance and all of
+   * its components. The validation procedure ensures that all required fields
+   * are set and that all configured fields contain valid data according to the
+   * SSRF data formatting rules.
    * <p>
-   * The validation procedure ensures that all required fields are set and that
-   * all configured fields contain valid data according to the SSRF data
-   * formatting rules.
+   * If the SSRF object instance does not validate OK then each specific
+   * validation error condition is recorded and returned.
+   * <p>
+   * It is expected that this method will only be called on the top-level SSRF
+   * class. However it will just as easily validate any SSRF data type.
    * <p>
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
    */
-  public Collection<String> getErrorMessages() {
-    return SSRFUtility.getErrorMessages(this);
+  public Collection<String> evaluate() {
+    return SSRFUtility.evaluate(this);
   }
 
 }
