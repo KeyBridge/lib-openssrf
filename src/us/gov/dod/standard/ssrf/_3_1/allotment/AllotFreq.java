@@ -126,7 +126,7 @@ public class AllotFreq {
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> locationRestriction;
+  private List<TString> locationRestrictionRef;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -289,11 +289,11 @@ public class AllotFreq {
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public List<TString> getLocationRestriction() {
-    if (locationRestriction == null) {
-      locationRestriction = new ArrayList<>();
+  public List<TString> getLocationRestrictionRef() {
+    if (locationRestrictionRef == null) {
+      locationRestrictionRef = new ArrayList<>();
     }
-    return this.locationRestriction;
+    return this.locationRestrictionRef;
   }
 
   /**
@@ -302,14 +302,14 @@ public class AllotFreq {
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRestriction() {
-    return ((this.locationRestriction != null) && (!this.locationRestriction.isEmpty()));
+    return ((this.locationRestrictionRef != null) && (!this.locationRestrictionRef.isEmpty()));
   }
 
   /**
    * Clear the LocationRestriction field. This sets the field to null.
    */
   public void unsetLocationRestriction() {
-    this.locationRestriction = null;
+    this.locationRestrictionRef = null;
   }
 
   /**
@@ -382,7 +382,7 @@ public class AllotFreq {
    */
   public AllotFreq withLocationRestriction(TString... values) {
     if (values != null) {
-      getLocationRestriction().addAll(Arrays.asList(values));
+      getLocationRestrictionRef().addAll(Arrays.asList(values));
     }
     return this;
   }
@@ -398,7 +398,7 @@ public class AllotFreq {
    */
   public AllotFreq withLocationRestriction(Collection<TString> values) {
     if (values != null) {
-      getLocationRestriction().addAll(values);
+      getLocationRestrictionRef().addAll(values);
     }
     return this;
   }
@@ -412,7 +412,7 @@ public class AllotFreq {
   public String toString() {
     return "AllotFreq {"
       + (pairedFreqMin != null ? " pairedFreqMin [" + pairedFreqMin + "]" : "")
-      + (locationRestriction != null ? " locationRestriction [" + locationRestriction + "]" : "")
+      + (locationRestrictionRef != null ? " locationRestriction [" + locationRestrictionRef + "]" : "")
       + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
       + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
       + (allotChannel != null ? " allotChannel [" + allotChannel + "]" : "")
