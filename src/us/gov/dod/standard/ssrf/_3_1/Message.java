@@ -53,10 +53,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;Name cls="U"&gt;Results of Your 2012-01-05 Data Request&lt;/Name&gt;
  *   &lt;SecondaryDatasets cls="U"&gt;No&lt;/SecondaryDatasets&gt;
  *   &lt;DatasetRef cls="U"&gt;POL::AN:456&lt;DatasetRef&gt;
- *     &lt;DatasetRef cls="U"&gt;DEU::AL:456&lt;DatasetRef&gt;
- *       &lt;DatasetRef cls="U"&gt;NED::TX:456&lt;DatasetRef&gt;
- *         &lt;DatasetRef cls="U"&gt;USA::RX:456&lt;DatasetRef&gt;
- *         &lt;/Message&gt;
+ *   &lt;DatasetRef cls="U"&gt;DEU::AL:456&lt;DatasetRef&gt;
+ *   &lt;DatasetRef cls="U"&gt;NED::TX:456&lt;DatasetRef&gt;
+ *   &lt;DatasetRef cls="U"&gt;USA::RX:456&lt;DatasetRef&gt;
+ * &lt;/Message&gt;
  * </pre>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
