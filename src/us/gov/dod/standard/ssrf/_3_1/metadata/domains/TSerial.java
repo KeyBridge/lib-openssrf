@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
+import java.math.BigInteger;
 import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -130,12 +131,12 @@ public class TSerial extends TString {
   /**
    * Construct a new data type instance with the indicated value.
    * <p>
-   * @param value a valid SSRF SERIAL string
+   * @param ssrfSerial a valid SSRF SERIAL string
    * @throws Exception if the value does not conform to the SERIAL format
    */
-  private TSerial(String value) throws Exception {
-    this.value = value;
+  private TSerial(String ssrfSerial) throws Exception {
     parse();
+    this.value = ssrfSerial;
   }
 
   /**
@@ -254,6 +255,35 @@ public class TSerial extends TString {
   }
 
   /**
+   * Set the serial number Serial identifier component. This returns part 4 of
+   * the SSRF SERIAL number.
+   * <p>
+   * It contains one to fifteen alphanumeric characters (including spaces and
+   * special characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * @return serial the serial number Serial identifier.
+   */
+  public String getSerial() {
+    return serial;
+  }
+
+  /**
+   * Set the serial number Serial identifier component. This returns part 4 of
+   * the SSRF SERIAL number.
+   * <p>
+   * It contains one to fifteen alphanumeric characters (including spaces and
+   * special characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * @return serial the serial number Serial identifier converted to a Long.
+   *         NULL if not set.
+   */
+  public Long getSerialAsNumber() {
+    return serial != null ? new BigInteger(serial).longValue() : null;
+  }
+
+  /**
    * Set the serial number Serial identifier.
    * <p>
    * It contains one to fifteen alphanumeric characters (including spaces and
@@ -271,7 +301,32 @@ public class TSerial extends TString {
   }
 
   /**
-   * Gets the value of the value property.
+   * Set the serial number Serial identifier as a Long Number instance.
+   * <p>
+   * It contains one to fifteen alphanumeric characters (including spaces and
+   * special characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * Developer note: The maximum number value is 15 digits (1E15). This should
+   * accommodate most everyday instances including millisecond time stamps (12
+   * digits).
+   * <p>
+   * @param number the serial number Serial identifier as an unsigned number up
+   *               to 1E15.
+   */
+  public void setSerial(Long number) {
+    BigInteger bi = new BigInteger(String.valueOf(number));
+    if (getDigitCount(bi) > 15) {
+      throw new IllegalArgumentException("Serial value violation. Maximum " + value.length() + " digits for \"" + value + "\"");
+    } else if (number < 0) {
+      throw new IllegalArgumentException("Serial value violation S15 [1, 15]. Numeric serial numbers must be unsigned.");
+    }
+    this.serial = bi.toString();
+    format();
+  }
+
+  /**
+   * Gets the SSRF SERIAL number value.
    * <p>
    * @return the value of the value property.
    */
@@ -282,13 +337,14 @@ public class TSerial extends TString {
   }
 
   /**
-   * Sets the value of the value property.
+   * Sets the SSRF SERIAL number value.
    * <p>
    * If the input value is not null this method attempts to parse the serial
    * number into its component parts and set the internal fields accordingly.
    * <p>
    * @param value a formatted SERIAL number String
-   * @throws Exception if the value does not conform to the SERIAL format
+   * @throws IllegalArgumentException if the value does not conform to the
+   *                                  SERIAL format
    */
   @Override
   public void setValue(String value) {
@@ -356,11 +412,40 @@ public class TSerial extends TString {
    * <p>
    * @param value the serial number Serial identifier
    * @return The current TSerial object instance
-   * @throws Exception if the input value is too long (&gt; 15 characters)
+   * @throws IllegalArgumentException if the input value is too long (&gt; 15
+   *                                  characters)
    */
   public TSerial withSerial(String value) {
     setSerial(value);
     return this;
+  }
+
+  /**
+   * Set the serial number Serial identifier (REQUIRED) as a Long Number
+   * instance.
+   * <p>
+   * @param value the serial number Serial identifier
+   * @return The current TSerial object instance
+   */
+  public TSerial withSerial(Long value) {
+    setSerial(value);
+    return this;
+  }
+
+  /**
+   * Internal helper method to get the number of digits from a BigInteger
+   * instance.
+   * <p>
+   * @param number a BigInteger number instance.
+   * @return the total number of digits in the number.
+   */
+  private int getDigitCount(BigInteger number) {
+    double factor = Math.log(2) / Math.log(10);
+    int digitCount = (int) (factor * number.bitLength() + 1);
+    if (BigInteger.TEN.pow(digitCount - 1).compareTo(number) > 0) {
+      return digitCount - 1;
+    }
+    return digitCount;
   }
 
 }
