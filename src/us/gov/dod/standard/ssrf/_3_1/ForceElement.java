@@ -134,7 +134,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   @XmlElement(name = "OwningOrganisation", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString owningOrganisation;
+  private TString owningOrganisationRef;
   /**
    * Role - Role (Optional)
    * <p>
@@ -349,8 +349,8 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * @return the OwningOrganisation value in a {@link TString} data type
    */
-  public TString getOwningOrganisation() {
-    return owningOrganisation;
+  public TString getOwningOrganisationRef() {
+    return owningOrganisationRef;
   }
 
   /**
@@ -358,8 +358,8 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * @param value the OwningOrganisation value in a {@link TString} data type
    */
-  public void setOwningOrganisation(TString value) {
-    this.owningOrganisation = value;
+  public void setOwningOrganisationRef(TString value) {
+    this.owningOrganisationRef = value;
   }
 
   /**
@@ -370,7 +370,7 @@ public class ForceElement extends Common<ForceElement> {
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwningOrganisation() {
-    return (this.owningOrganisation != null ? this.owningOrganisation.isSetValue() : false);
+    return (this.owningOrganisationRef != null ? this.owningOrganisationRef.isSetValue() : false);
   }
 
   /**
@@ -686,7 +686,7 @@ public class ForceElement extends Common<ForceElement> {
    * @return The current ForceElement object instance
    */
   public ForceElement withOwningOrganisation(String value) {
-    setOwningOrganisation(new TString(value));
+    setOwningOrganisationRef(new TString(value));
     return this;
   }
 
@@ -888,7 +888,7 @@ public class ForceElement extends Common<ForceElement> {
       + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
       + (owningCountry != null ? " owningCountry [" + owningCountry + "]" : "")
       + (role != null ? " role [" + role + "]" : "")
-      + (owningOrganisation != null ? " owningOrganisation [" + owningOrganisation + "]" : "")
+      + (owningOrganisationRef != null ? " owningOrganisation [" + owningOrganisationRef + "]" : "")
       + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
       + (cmdLevel != null ? " cmdLevel [" + cmdLevel + "]" : "")
       + (type != null ? " type [" + type + "]" : "")
