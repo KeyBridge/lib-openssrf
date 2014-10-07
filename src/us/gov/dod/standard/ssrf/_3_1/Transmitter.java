@@ -288,7 +288,9 @@ public class Transmitter extends Common<Transmitter> {
   }
 
   /**
-   * Set the minimum or exact duplex frequency separation
+   * Set the minimum or exact duplex frequency separation.
+   * <p>
+   * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * @param value the DuplexSep value in a {@link TDecimal} data type
    */
@@ -706,6 +708,8 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set the minimum or exact duplex frequency separation
+   * <p>
+   * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * @param value An instances of type {@link Double}
    * @return The current Transmitter object instance

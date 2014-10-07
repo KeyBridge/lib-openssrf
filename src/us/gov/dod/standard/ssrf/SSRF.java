@@ -73,7 +73,19 @@ public class SSRF extends SchemaRoot<SSRF> {
     } catch (BackingStoreException ex) {
       Logger.getLogger(SSRF.class.getName()).log(Level.SEVERE, null, ex);
     }
+  }
 
+  /**
+   * Process this SSRF source instance for export.
+   * <p>
+   * This method makes a copy of the source instance configuration, copying all
+   * required data objects into their proper location and preparing the SSRF
+   * destination instance for export.
+   * <p>
+   * @return a copy of the current SSRF instance, prepared for export
+   */
+  public SSRF build() {
+    return SSRFUtility.build(this);
   }
 
   /**

@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -79,80 +76,56 @@ import javax.xml.bind.annotation.XmlType;
 @SuppressWarnings("unchecked")
 public abstract class SchemaRoot<T> {
 
-  @XmlElement(name = "Contact")
-  protected List<Contact> contact;
-
-  @XmlElement(name = "Role")
-  protected List<Role> role;
-
-  @XmlElement(name = "Organisation")
-  protected List<Organisation> organisation;
-
-  @XmlElement(name = "ExternalReference")
-  protected List<ExternalReference> externalReference;
-
   @XmlElement(name = "Administrative")
   protected List<Administrative> administrative;
-
-  @XmlElement(name = "Location")
-  protected List<Location> location;
-
-  @XmlElement(name = "ChannelPlan")
-  protected List<ChannelPlan> channelPlan;
-
-  @XmlElement(name = "TOA")
-  protected List<TOA> toa;
-
-  @XmlElement(name = "Transmitter")
-  protected List<Transmitter> transmitter;
-
-  @XmlElement(name = "Receiver")
-  protected List<Receiver> receiver;
-
-  @XmlElement(name = "Antenna")
-  protected List<Antenna> antenna;
-
-  @XmlElement(name = "RFSystem")
-  protected List<RFSystem> rfSystem;
-
-  @XmlElement(name = "SSRequest")
-  protected List<SSRequest> ssRequest;
-
-  @XmlElement(name = "SSReply")
-  protected List<SSReply> ssReply;
-
   @XmlElement(name = "Allotment")
   protected List<Allotment> allotment;
-
+  @XmlElement(name = "Antenna")
+  protected List<Antenna> antenna;
   @XmlElement(name = "Assignment")
   protected List<Assignment> assignment;
-
-  @XmlElement(name = "Satellite")
-  protected List<Satellite> satellite;
-
-  @XmlElement(name = "IntfReport")
-  protected List<IntfReport> intfReport;
-
-  @XmlElement(name = "JRFL")
-  protected List<JRFL> jrfl;
-
-  @XmlElement(name = "ForceElement")
-  protected List<ForceElement> forceElement;
-
+  @XmlElement(name = "ChannelPlan")
+  protected List<ChannelPlan> channelPlan;
+  @XmlElement(name = "Contact")
+  protected List<Contact> contact;
+  @XmlElement(name = "ExternalReference")
+  protected List<ExternalReference> externalReference;
   @XmlElement(name = "FEDeployment")
   protected List<FEDeployment> feDeployment;
-
-  @XmlElement(name = "Message")
-  protected List<Message> message;
-
-  @XmlElement(name = "Note")
-  protected List<Note> note;
-
+  @XmlElement(name = "ForceElement")
+  protected List<ForceElement> forceElement;
+  @XmlElement(name = "IntfReport")
+  protected List<IntfReport> intfReport;
+  @XmlElement(name = "JRFL")
+  protected List<JRFL> jrfl;
   @XmlElement(name = "Loadset")
   protected List<Loadset> loadset;
-
+  @XmlElement(name = "Location")
+  protected List<Location> location;
+  @XmlElement(name = "Message")
+  protected List<Message> message;
+  @XmlElement(name = "Note")
+  protected List<Note> note;
+  @XmlElement(name = "Organisation")
+  protected List<Organisation> organisation;
+  @XmlElement(name = "RFSystem")
+  protected List<RFSystem> rfSystem;
   @XmlElement(name = "RadiationPlan")
   protected List<RadiationPlan> radiationPlan;
+  @XmlElement(name = "Receiver")
+  protected List<Receiver> receiver;
+  @XmlElement(name = "Role")
+  protected List<Role> role;
+  @XmlElement(name = "SSReply")
+  protected List<SSReply> ssReply;
+  @XmlElement(name = "SSRequest")
+  protected List<SSRequest> ssRequest;
+  @XmlElement(name = "Satellite")
+  protected List<Satellite> satellite;
+  @XmlElement(name = "TOA")
+  protected List<TOA> toa;
+  @XmlElement(name = "Transmitter")
+  protected List<Transmitter> transmitter;
 
   /**
    * Get
@@ -1272,7 +1245,7 @@ public abstract class SchemaRoot<T> {
   public T withAssignment(Collection<Assignment> values) {
     if (values != null) {
       getAssignment().addAll(values);
-    }
+      }
     return (T) this;
   }
 

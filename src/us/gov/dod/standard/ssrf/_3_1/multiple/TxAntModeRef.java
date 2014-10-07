@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Antenna;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -107,6 +108,64 @@ public class TxAntModeRef extends RxAntModeRef {
   }
 
   /**
+   * Set the unique name of an AntMode of the Antenna specified in the
+   * corresponding Serial field. This antenna mode is grouped with the receiver
+   * modes specified in RxModeRef.
+   * <p>
+   * @param value An instances of type {@link String}
+   * @return The current RxAntModeRef object instance
+   */
+  @Override
+  public TxAntModeRef withModeID(String value) {
+    super.withModeID(value);
+    return this;
+  }
+
+  /**
+   * Set the loss that occurs when energy is transferred between the
+   * transmitter/receiver and the antenna.
+   * <p>
+   * @param value An instances of type {@link Double}
+   * @return The current RxAntModeRef object instance
+   */
+  @Override
+  public TxAntModeRef withCouplingLoss(Double value) {
+    super.withCouplingLoss(value);
+    return this;
+  }
+
+  /**
+   * Set the reference to an Antenna in this configuration. This antenna is
+   * associated with the receiver specified in the Serial field of the parent
+   * RxRef element.
+   * <p>
+   * @param value An instances of type {@link Antenna}
+   * @return The current RxAntModeRef object instance
+   * @since 3.1.0
+   */
+  @Override
+  public TxAntModeRef withAntenna(Antenna value) {
+    super.withAntenna(value);
+    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RxAntModeRef record.
+   * <p>
+   * This method builds the exported {@link #serial} field with values from the
+   * transient {@link #antenna} field. This method should typically be called
+   * after the RxAntModeRef is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @return The current RxAntModeRef object instance
+   */
+  @Override
+  public TxAntModeRef build() {
+    super.build();
+    return this;
+  }
+
+  /**
    * Get a string representation of this TxAntModeRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
@@ -116,17 +175,6 @@ public class TxAntModeRef extends RxAntModeRef {
     return "TxAntModeRef {"
       + (spectralPowerDensity != null ? " spectralPowerDensity [" + spectralPowerDensity + "]" : "")
       + "}";
-  }
-
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link TxAntModeRef} has no configuration requirement.
-   * <p>
-   * @return TRUE
-   */
-  public boolean isSet() {
-    return true;
   }
 
 }
