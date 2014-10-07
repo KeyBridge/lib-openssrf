@@ -132,9 +132,10 @@ public class TSerial extends TString {
    * Construct a new data type instance with the indicated value.
    * <p>
    * @param ssrfSerial a valid SSRF SERIAL string
-   * @throws Exception if the value does not conform to the SERIAL format
+   * @throws IllegalArgumentException if the value does not conform to the
+   *                                  SERIAL format
    */
-  private TSerial(String ssrfSerial) throws Exception {
+  private TSerial(String ssrfSerial) throws IllegalArgumentException {
     parse();
     this.value = ssrfSerial;
   }
@@ -193,9 +194,10 @@ public class TSerial extends TString {
    * Internal method to parse a SERIAL number value and set the internal
    * components.
    * <p>
-   * @throws Exception if the value does not conform to the SERIAL format
+   * @throws IllegalArgumentException if the value does not conform to the
+   *                                  SERIAL format
    */
-  private void parse() {
+  private void parse() throws IllegalArgumentException {
     if (value != null && !value.isEmpty()) {
       Matcher m = Pattern.compile(PATTERN).matcher(value);
       if (m.find()) {
@@ -203,8 +205,9 @@ public class TSerial extends TString {
         setDatasetType(EDatasetType.valueOf(m.group(2)));
         setOrganization(m.group(3));
         setSerial(m.group(4));
+      } else {
+        throw new IllegalArgumentException("SERIAL format error " + PATTERN + " for \"" + value + "\"");
       }
-//      else {        new XmlAdapterSERIAL().unmarshal(value);      }
     }
   }
 
