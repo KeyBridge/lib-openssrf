@@ -101,7 +101,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
   Contact.class
 })
 @SuppressWarnings("unchecked")
-public abstract class Common<T> {
+public abstract class Common<T> implements Comparable<T> {
 
   //<editor-fold defaultstate="collapsed" desc="Class Fields">
   /**
@@ -2222,4 +2222,68 @@ public abstract class Common<T> {
     this.modAllowedBy = modAllowedByRole != null ? modAllowedByRole.getSerial() : null;
     return (T) this;
   }//</editor-fold>
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the object serial number.
+   * <p>
+   * @return A unique hash code for this object instance.
+   */
+  @Override
+  public int hashCode() {
+    int hash = 5;
+    hash = 67 * hash + Objects.hashCode(this.serial);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the object serial number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are of the same class and their serial numbers
+   *         match
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.serial, ((Common<?>) obj).getSerial());
+  }
+
+  /**
+   * Comparison is based alphabetically by class type, reverse chronologically
+   * by entry date/time, then finally by alphabetically by the (semi-random)
+   * serial number.
+   * <p>
+   * @param o the other object instance to sort
+   * @return alphabetical sort order
+   */
+  @Override
+  public int compareTo(Object o) {
+    if (o == null) {
+      return 1;
+    }
+    if (this.getClass().equals(o.getClass())) {
+      if (this.getEntryDateTime().equals(((Common<T>) o).getEntryDateTime())) {
+        /**
+         * If the classes are equal and have the same time stamp then sort by
+         * serial number. Note that this is semi-random.
+         */
+        return this.serial.compareTo(((Common<T>) o).getSerial());
+      }
+      /**
+       * Sort reverse chronologically.
+       */
+      return this.getEntryDateTime().compareTo(((Common<T>) o).getEntryDateTime());
+    }
+    /**
+     * Sort based upon the class name.
+     */
+    return this.getClass().getSimpleName().compareTo(o.getClass().getSimpleName());
+  }//</editor-fold>
+
 }

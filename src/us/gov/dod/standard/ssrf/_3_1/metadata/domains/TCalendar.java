@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 import java.util.TimeZone;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TCalendar")
-public class TCalendar extends AMetadata<TCalendar> implements IMetadataType {
+public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Comparable<TCalendar> {
 
   /**
    * UTC. The default time zone.
@@ -141,4 +142,50 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType {
     return null;
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the Calendar value.
+   * <p>
+   * @return a unique hash code from the Calendar value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 97 * hash + Objects.hashCode(this.value);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the Calendar value.
+   * <p>
+   * @param obj the other object to compare
+   * @return TRUE if the Calendar values match exactly
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.value, ((TCalendar) obj).getValue());
+  }
+
+  /**
+   * Comparison and sorting is in REVERSE chronological order (Newest to Oldest)
+   * <p>
+   * @param o the other object to compare
+   * @return the reverse chronological order
+   */
+  @Override
+  public int compareTo(TCalendar o) {
+    if (o == null) {
+      return 1;
+    }
+    if (this.value == null) {
+      return -1;
+    }
+    return -1 * this.value.compareTo(o.getValue());
+  }//</editor-fold>
 }

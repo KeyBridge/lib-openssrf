@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -40,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TInteger")
-public class TInteger extends AMetadata<TInteger> implements IMetadataType {
+public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comparable<TInteger> {
 
   /**
    * The value to which the metadata attributes are associated.
@@ -108,5 +109,52 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType {
   public String toString() {
     return value != null ? value.toString() : null;
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the value.
+   * <p>
+   * @return a unique hash code.
+   */
+  @Override
+  public int hashCode() {
+    int hash = 3;
+    hash = 79 * hash + Objects.hashCode(this.value);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the value.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the string values match.
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.value, ((TString) obj).value);
+  }
+
+  /**
+   * Comparison and sorting is based upon the value.
+   * <p>
+   * @param o the other object instance
+   * @return alphabetical sort order
+   */
+  @Override
+  public int compareTo(TInteger o) {
+    if (o == null) {
+      return 1;
+    }
+    if (value == null) {
+      return -1;
+    }
+    return value.compareTo(o.getValue());
+  }//</editor-fold>
 
 }
