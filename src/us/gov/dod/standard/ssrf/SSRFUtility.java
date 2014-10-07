@@ -27,7 +27,9 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.math.BigInteger;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -35,6 +37,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
+import us.gov.dod.standard.ssrf._3_1.common.Remarks;
+import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
+import us.gov.dod.standard.ssrf._3_1.location.Point;
+import us.gov.dod.standard.ssrf._3_1.location.Polygon;
+import us.gov.dod.standard.ssrf._3_1.multiple.ConfigFreq;
+import us.gov.dod.standard.ssrf._3_1.receiver.Curve;
+import us.gov.dod.standard.ssrf._3_1.ssreply.Comment;
+import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 
 /**
  * SSRF Utility classes.
@@ -51,6 +62,31 @@ public class SSRFUtility {
    * readability while providing useful context to the user.
    */
   private static final int MAX_STRING_LENGTH = 33;
+
+  /**
+   * A randomly seeded AtomicInteger used to provide guaranteed unique index
+   * values for SSRF classes requiring an index. This implementation   * provides a unique sequence of Integer values incrementing from a randomly
+   * selected start value.
+   */
+  private static final AtomicInteger atomicIndex = new AtomicInteger(new Random().nextInt());
+
+  /**
+   * Get the next guaranteed unique index compatible with SSRF "idx" fields.   * The returned value is monotonically incremented by one from the previously
+   * provided value.
+   * <p>
+   * All values increment from a randomly selected start value unique to each
+   * SSRFUtility instantiation.
+   * <p>
+   * This method is required by the following 9 classes which set an index in
+   * their constructors:
+   * {@link Comment}, {@link ConfigFreq}, {@link Curve}, {@link Ellipse}, {@link ExtReferenceRef}, {@link Footnote}, {@link Point}, {@link Polygon}, {@link Remarks},
+   * <p>
+   * @return an {@link AtomicInteger}, wrapped inside a {@link BigInteger}
+   *         instance.
+   */
+  public static BigInteger nextIndex() {
+    return new BigInteger(String.valueOf(Math.abs(atomicIndex.incrementAndGet())));
+  }
 
   /**
    * Internal method to recursively validate an object instance.
@@ -373,7 +409,7 @@ public class SSRFUtility {
    * @param clazz the class type to inspect
    * @return a non-null {@link HashSet} instance of Methods
    */
-  public static Set<Method> findDeclaredAndInheritedMethods(Class<?> clazz) {
+  private static Set<Method> findDeclaredAndInheritedMethods(Class<?> clazz) {
     Set<Method> methodSet = new HashSet<>();
     Class<?> clazzType = clazz;
     while (clazzType != null && clazzType != Object.class) {
@@ -429,9 +465,6 @@ public class SSRFUtility {
    * @return a finali
    */
   public static SSRF build(SSRF ssrf) {
-//    SSRF destination = new SSRF();
-//    build(ssrf, destination);
-//    return destination;
     return (SSRF) build(ssrf, null);
   }
 
@@ -445,6 +478,10 @@ public class SSRFUtility {
    *                            into their proper destination
    */
   private static Object build(Object sourceInstance, Object destinationInstance) {
+    /**
+     * Return immediately if the source instance is null. Instantiate a new
+     * destination instance if none is provided.
+     */
     if (sourceInstance == null) {
       return null;
     } else if (destinationInstance == null) {
@@ -454,7 +491,6 @@ public class SSRFUtility {
         Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
       }
     }
-
     /**
      * Assign the class type under study to a local variable for convenience.
      */
@@ -533,6 +569,9 @@ public class SSRFUtility {
         }
       }
     }
+    /**
+     * This recursion branch is finished.
+     */
     return destinationInstance;
   }
 

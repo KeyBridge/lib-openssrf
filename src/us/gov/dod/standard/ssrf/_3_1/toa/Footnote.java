@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.TOA;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -74,7 +76,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTA;
   "identifier",
   "text"
 })
-public class Footnote {
+public class Footnote implements Comparable<Footnote> {
 
   /**
    * FootnoteType - Footnote Type (Required)
@@ -119,6 +121,13 @@ public class Footnote {
   @XmlAttribute(name = "idx", required = true)
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
+
+  /**
+   * Footnote constructor. Automatically sets the {@link #idx} value.
+   */
+  public Footnote() {
+    this.idx = SSRFUtility.nextIndex();
+  }
 
   /**
    * Get the type or source of the Footnote.
@@ -322,5 +331,47 @@ public class Footnote {
   public boolean isSet() {
     return isSetFootnoteType() && isSetIdentifier() && isSetText() && isSetIdx();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the index "idx" number.
+   * <p>
+   * @return an object hash code value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 83 * hash + Objects.hashCode(this.idx);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the index "idx" number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are the same class and have a matching index
+   *         value
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.idx, ((Footnote) obj).getIdx());
+  }
+
+  /**
+   * Comparison and sorting are based upon the index "idx" number.
+   * <p>
+   * @param o the other object
+   * @return the object order
+   */
+  @Override
+  public int compareTo(Footnote o) {
+    return idx.compareTo(o.getIdx());
+  }//</editor-fold>
 
 }

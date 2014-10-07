@@ -24,9 +24,11 @@
 package us.gov.dod.standard.ssrf._3_1.ssreply;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -46,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Comment", propOrder = {
   "value"
 })
-public class Comment extends AMetadata<Comment> {
+public class Comment extends AMetadata<Comment> implements Comparable<Comment> {
 
   /**
    * Comment (Required)
@@ -73,6 +75,13 @@ public class Comment extends AMetadata<Comment> {
   @XmlAttribute(name = "idx", required = true)
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
+
+  /**
+   * Comment constructor. Automatically sets the {@link #idx} value.
+   */
+  public Comment() {
+    this.idx = SSRFUtility.nextIndex();
+  }
 
   /**
    * Get the comment.
@@ -191,5 +200,47 @@ public class Comment extends AMetadata<Comment> {
   public boolean isSet() {
     return super.isSet() && isSetIdx() && isSetValue();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the index "idx" number.
+   * <p>
+   * @return an object hash code value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 83 * hash + Objects.hashCode(this.idx);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the index "idx" number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are the same class and have a matching index
+   *         value
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.idx, ((Comment) obj).getIdx());
+  }
+
+  /**
+   * Comparison and sorting are based upon the index "idx" number.
+   * <p>
+   * @param o the other object
+   * @return the object order
+   */
+  @Override
+  public int compareTo(Comment o) {
+    return idx.compareTo(o.getIdx());
+  }//</editor-fold>
 
 }

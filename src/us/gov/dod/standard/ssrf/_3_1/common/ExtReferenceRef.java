@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ExternalReference;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
@@ -50,11 +52,11 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "ExtReferenceRef", propOrder = {
   "value"
 })
-public class ExtReferenceRef {
+public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
 
   /**
    * The serial of an existing external reference (defined in an
-   * ExternalReference).
+   * {@link ExternalReference}).
    * <p>
    * <p>
    * External References SHALL NOT be linked to Data Items that are not
@@ -92,6 +94,13 @@ public class ExtReferenceRef {
   @XmlAttribute(name = "idx", required = true)
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
+
+  /**
+   * ExtReferenceRef constructor. Automatically sets the {@link #idx} value.
+   */
+  public ExtReferenceRef() {
+    this.idx = SSRFUtility.nextIndex();
+  }
 
   /**
    * Get a value that is most probably correct.
@@ -156,7 +165,7 @@ public class ExtReferenceRef {
   }
 
   /**
-   * Get a unique index for each External Reference used by this Dataset. Once
+   * Get a unique index for each External Reference used by this Dataset. * Once
    * an idx is used it SHOULD NOT be modified during the lifetime of the
    * Dataset; e.g., an element with idx=2 will keep idx=2 even if the first
    * occurrence (idx=1) is deleted.
@@ -168,7 +177,7 @@ public class ExtReferenceRef {
   }
 
   /**
-   * Set a unique index for each External Reference used by this Dataset. Once
+   * Set a unique index for each External Reference used by this Dataset. * Once
    * an idx is used it SHOULD NOT be modified during the lifetime of the
    * Dataset; e.g., an element with idx=2 will keep idx=2 even if the first
    * occurrence (idx=1) is deleted.
@@ -215,7 +224,7 @@ public class ExtReferenceRef {
   }
 
   /**
-   * Set a unique index for each External Reference used by this Dataset. Once
+   * Set a unique index for each External Reference used by this Dataset. * Once
    * an idx is used it SHOULD NOT be modified during the lifetime of the
    * Dataset; e.g., an element with idx=2 will keep idx=2 even if the first
    * occurrence (idx=1) is deleted.
@@ -314,6 +323,48 @@ public class ExtReferenceRef {
   public ExtReferenceRef build() {
     this.value = externalReference != null ? externalReference.getSerial().getSerial() : null;
     return this;
+  }//</editor-fold>
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the index "idx" number.
+   * <p>
+   * @return an object hash code value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 83 * hash + Objects.hashCode(this.idx);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the index "idx" number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are the same class and have a matching index
+   *         value
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.idx, ((ExtReferenceRef) obj).getIdx());
+  }
+
+  /**
+   * Comparison and sorting are based upon the index "idx" number.
+   * <p>
+   * @param o the other object
+   * @return the object order
+   */
+  @Override
+  public int compareTo(ExtReferenceRef o) {
+    return idx.compareTo(o.getIdx());
   }//</editor-fold>
 
 }

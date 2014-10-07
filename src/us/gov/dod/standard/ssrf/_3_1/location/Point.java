@@ -25,10 +25,12 @@ package us.gov.dod.standard.ssrf._3_1.location;
 
 import java.math.BigInteger;
 import java.text.DecimalFormat;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -64,7 +66,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
   "altitudeMin",
   "altitudeMax"
 })
-public class Point {
+public class Point implements Comparable<Point> {
 
   /**
    * Excluded - Shape is Excluded (Optional)
@@ -167,6 +169,13 @@ public class Point {
   @XmlAttribute(name = "idx", required = true)
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
+
+  /**
+   * Point constructor. Automatically sets the {@link #idx} value.
+   */
+  public Point() {
+    this.idx = SSRFUtility.nextIndex();
+  }
 
   /**
    * Get "Yes" to indicate that the shape is to be excluded from the set. If
@@ -379,7 +388,7 @@ public class Point {
   }
 
   /**
-   * Get the sequential index of a Point within the referenced Location. Some
+   * Get the sequential index of a Point within the referenced Location. * Some
    * points of the Location may be omitted, and are not necessarily visited in
    * the order they are defined in the Location. For example a Location might
    * have 10 Points; however, a Force Element may use a route passing
@@ -392,7 +401,7 @@ public class Point {
   }
 
   /**
-   * Set the sequential index of a Point within the referenced Location. Some
+   * Set the sequential index of a Point within the referenced Location. * Some
    * points of the Location may be omitted, and are not necessarily visited in
    * the order they are defined in the Location. For example a Location might
    * have 10 Points; however, a Force Element may use a route passing
@@ -626,7 +635,7 @@ public class Point {
   }
 
   /**
-   * Set the sequential index of a Point within the referenced Location. Some
+   * Set the sequential index of a Point within the referenced Location. * Some
    * points of the Location may be omitted, and are not necessarily visited in
    * the order they are defined in the Location. For example a Location might
    * have 10 Points; however, a Force Element may use a route passing
@@ -672,5 +681,47 @@ public class Point {
   public boolean isSet() {
     return isSetLat() && isSetLon() && isSetIdx();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the index "idx" number.
+   * <p>
+   * @return an object hash code value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 83 * hash + Objects.hashCode(this.idx);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the index "idx" number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are the same class and have a matching index
+   *         value
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.idx, ((Point) obj).getIdx());
+  }
+
+  /**
+   * Comparison and sorting are based upon the index "idx" number.
+   * <p>
+   * @param o the other object
+   * @return the object order
+   */
+  @Override
+  public int compareTo(Point o) {
+    return idx.compareTo(o.getIdx());
+  }//</editor-fold>
 
 }

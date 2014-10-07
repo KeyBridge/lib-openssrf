@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
@@ -72,7 +74,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFU;
   "period",
   "pulseWidth"
 })
-public class ConfigFreq {
+public class ConfigFreq implements Comparable<ConfigFreq> {
 
   /**
    * FreqMin - Nominal or Minimum Frequency (Required)
@@ -178,6 +180,13 @@ public class ConfigFreq {
   @XmlAttribute(name = "idx", required = true)
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
+
+  /**
+   * ConfigFred constructor. Automatically sets the {@link #idx} value.
+   */
+  public ConfigFreq() {
+    this.idx = SSRFUtility.nextIndex();
+  }
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -639,5 +648,47 @@ public class ConfigFreq {
   public boolean isSet() {
     return isSetFreqMin() && isSetIdx();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the index "idx" number.
+   * <p>
+   * @return an object hash code value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 83 * hash + Objects.hashCode(this.idx);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the index "idx" number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are the same class and have a matching index
+   *         value
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.idx, ((ConfigFreq) obj).getIdx());
+  }
+
+  /**
+   * Comparison and sorting are based upon the index "idx" number.
+   * <p>
+   * @param o the other object
+   * @return the object order
+   */
+  @Override
+  public int compareTo(ConfigFreq o) {
+    return idx.compareTo(o.getIdx());
+  }//</editor-fold>
 
 }

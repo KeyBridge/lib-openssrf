@@ -24,8 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.math.BigInteger;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
@@ -52,7 +54,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Remarks", propOrder = {
   "value"
 })
-public class Remarks {
+public class Remarks implements Comparable<Remarks> {
 
   @XmlValue
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringMEMO.class)
@@ -79,6 +81,13 @@ public class Remarks {
   @XmlAttribute(name = "idx", required = true)
   @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
+
+  /**
+   * Remarks constructor. Automatically sets the {@link #idx} value.
+   */
+  public Remarks() {
+    this.idx = SSRFUtility.nextIndex();
+  }
 
   /**
    * Get a value that is most probably correct.
@@ -234,5 +243,47 @@ public class Remarks {
   public boolean isSet() {
     return isSetCls() && isSetIdx() && isSetValue();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the index "idx" number.
+   * <p>
+   * @return an object hash code value
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 83 * hash + Objects.hashCode(this.idx);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the index "idx" number.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the objects are the same class and have a matching index
+   *         value
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.idx, ((Remarks) obj).getIdx());
+  }
+
+  /**
+   * Comparison and sorting are based upon the index "idx" number.
+   * <p>
+   * @param o the other object
+   * @return the object order
+   */
+  @Override
+  public int compareTo(Remarks o) {
+    return idx.compareTo(o.getIdx());
+  }//</editor-fold>
 
 }
