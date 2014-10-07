@@ -65,13 +65,16 @@ public class SSRFUtility {
 
   /**
    * A randomly seeded AtomicInteger used to provide guaranteed unique index
-   * values for SSRF classes requiring an index. This implementation   * provides a unique sequence of Integer values incrementing from a randomly
-   * selected start value.
+   * values for SSRF classes requiring an index.
+   * <p>
+   * This implementation provides a unique sequence of Integer values
+   * incrementing from one (1).
    */
-  private static final AtomicInteger atomicIndex = new AtomicInteger(new Random().nextInt());
+  private static final AtomicInteger atomicIndex = new AtomicInteger();
 
   /**
-   * Get the next guaranteed unique index compatible with SSRF "idx" fields.   * The returned value is monotonically incremented by one from the previously
+   * Get the next guaranteed unique index compatible with SSRF "idx" fields. *
+   * The returned value is monotonically incremented by one from the previously
    * provided value.
    * <p>
    * All values increment from a randomly selected start value unique to each
