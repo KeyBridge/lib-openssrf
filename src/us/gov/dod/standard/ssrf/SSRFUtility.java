@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -78,7 +79,7 @@ public class SSRFUtility {
      * Also and equally important: DO NOT inspect or try to validate enumerated
      * classes.
      */
-    if (instance.getClass().isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
       return;
     }
     /**
@@ -200,7 +201,7 @@ public class SSRFUtility {
      * Also and equally important: DO NOT inspect or try to validate enumerated
      * classes.
      */
-    if (instance.getClass().isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
       return messages;
     }
     /**
@@ -261,7 +262,7 @@ public class SSRFUtility {
           validateField(field, fieldValue);
         } catch (Exception exception) {
 //          System.err.println(instance.getClass().getSimpleName() + "." + field.getName() + " " + exception.getMessage());
-          messages.add(instance.getClass().getSimpleName() + "." + field.getName() + " " + exception.getMessage());
+          messages.add(clazz.getSimpleName() + "." + field.getName() + " " + exception.getMessage());
         }
       }
     }
@@ -350,7 +351,7 @@ public class SSRFUtility {
    * inheritance tree and returns all declared fields.
    * <p>
    * @param clazz the class type to inspect
-   * @return a non-null {@link HashSet} instance
+   * @return a non-null {@link HashSet} instance of Fields
    */
   private static Set<Field> findDeclaredAndInheritedFields(Class<?> clazz) {
     Set<Field> fieldSet = new HashSet<>();
@@ -360,6 +361,26 @@ public class SSRFUtility {
       clazzType = clazzType.getSuperclass();
     }
     return fieldSet;
+  }
+
+  /**
+   * Get all declared and inherited methods from a class type.
+   * <p>
+   * Reflection does not expose inherited fields. This method implements a
+   * recursive search (up to but not including the base Object) of the Class
+   * inheritance tree and returns all declared methods.
+   * <p>
+   * @param clazz the class type to inspect
+   * @return a non-null {@link HashSet} instance of Methods
+   */
+  public static Set<Method> findDeclaredAndInheritedMethods(Class<?> clazz) {
+    Set<Method> methodSet = new HashSet<>();
+    Class<?> clazzType = clazz;
+    while (clazzType != null && clazzType != Object.class) {
+      methodSet.addAll(Arrays.asList(clazzType.getDeclaredMethods()));
+      clazzType = clazzType.getSuperclass();
+    }
+    return methodSet;
   }
 
   /**
@@ -395,6 +416,184 @@ public class SSRFUtility {
     return value.length() <= maxLength
       ? value
       : value.substring(0, maxLength - 3) + "...";
+  }
+
+  /**
+   * Process an SSRF source instance for export.
+   * <p>
+   * This method makes a copy of the source instance configuration, copying all
+   * required data objects into their proper location and preparing the SSRF
+   * destination instance for export.
+   * <p>
+   * @param ssrf the SSRF working copy
+   * @return a finali
+   */
+  public static SSRF build(SSRF ssrf) {
+//    SSRF destination = new SSRF();
+//    build(ssrf, destination);
+//    return destination;
+    return (SSRF) build(ssrf, null);
+  }
+
+  /**
+   * Process an SSRF source instance for export. This method makes a copy of the
+   * source instance configuration, copying all required data objects into their
+   * proper location and preparing the SSRF destination instance for export.
+   * <p>
+   * @param sourceInstance      the SSRF working copy
+   * @param destinationInstance a new SSRF instance with the components copied
+   *                            into their proper destination
+   */
+  private static Object build(Object sourceInstance, Object destinationInstance) {
+    if (sourceInstance == null) {
+      return null;
+    } else if (destinationInstance == null) {
+      try {
+        destinationInstance = Class.forName(sourceInstance.getClass().getName()).getConstructor().newInstance();
+      } catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
+
+    /**
+     * Assign the class type under study to a local variable for convenience.
+     */
+    Class<?> clazz = sourceInstance.getClass();
+    /**
+     * Important: NO NOT inspect classes that are not within the SSRF package.
+     * Also and equally important: DO NOT inspect or try to validate enumerated
+     * classes.
+     */
+    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+      return destinationInstance;
+    }
+    /**
+     * Iterate through the list of declared fields (public, protected and
+     * private) and inspect each according to its annotated configuration and
+     * state.
+     */
+    for (Field field : findDeclaredAndInheritedFields(clazz)) {
+      /**
+       * Important: Enable access to the Object instance fields (public,
+       * protected and private).
+       */
+      field.setAccessible(true);
+      /**
+       * Get the instance field value. Skip (do not check and fail gracefully)
+       * if the field value is null (e.g. not configured) or (somehow) not
+       * accessible.
+       */
+      Object fieldValue;
+      try {
+        fieldValue = field.get(sourceInstance);
+      } catch (IllegalArgumentException | IllegalAccessException ex) {
+//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+        continue;
+      }
+      /**
+       * If the field value is not required and NULL then DO NOT try to validate
+       * it.
+       */
+      if (fieldValue == null) {
+        continue;
+      }
+      /**
+       * If the field value object is a Collection then iterate through the
+       * collection to recursively validate each entry object instance,
+       * otherwise recurse to validate the field value object instance directly.
+       */
+      if (fieldValue instanceof Collection) {
+        for (Object entry : (Collection) fieldValue) {
+          if (isBuildable(entry)) {
+            /**
+             * Try to invoke the build method within the class instance. If
+             * available this will copy transient SSRF data type serial numbers
+             * into their respective reference containers.
+             */
+            invokeBuild(entry);
+            /**
+             * Recurse into the class instance.
+             */
+            build(entry, destinationInstance);
+            /**
+             * After recursion try adding the value to the destination (root
+             * SSRF) instance.
+             */
+            addValueToDestinationInstance(entry, destinationInstance);
+          }
+        }
+      } else {
+        if (isBuildable(fieldValue)) {
+          /**
+           * Same process as above.
+           */
+          invokeBuild(fieldValue);
+          build(fieldValue, destinationInstance);
+          addValueToDestinationInstance(fieldValue, destinationInstance);
+        }
+      }
+    }
+    return destinationInstance;
+  }
+
+  /**
+   * Add the object instance to the destination instance. This method tries to
+   * find a "with" setter in the destination instance that accepts the source
+   * object instance class type. If found the source object instance is added to
+   * the destination object instance.
+   * <p>
+   * @param sourceInstance      the source object instance to add to the
+   *                            destination object instance
+   * @param destinationInstance the destination object instance to which the
+   *                            source object instance is to be added
+   */
+  private static void addValueToDestinationInstance(Object sourceInstance, Object destinationInstance) {
+    try {
+      Method method = destinationInstance.getClass().getMethod("with" + sourceInstance.getClass().getSimpleName(), Collection.class);
+      method.invoke(destinationInstance, Arrays.asList(new Object[]{sourceInstance}));
+    } catch (NoSuchMethodException | SecurityException ex) {
+    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+      //      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex );
+    }
+  }
+
+  /**
+   * Test if the object instance class is buildable; that is, whether an attempt
+   * to invoke the build() method should be made.
+   * <p>
+   * @param instance the object instance
+   * @return true if the object class name matches classes that _might_
+   *         implement the build() method.
+   */
+  private static boolean isBuildable(Object instance) {
+    if (instance == null) {
+      return false;
+    }
+    return instance.getClass().getName().startsWith("us.gov.dod.standard.ssrf")
+      && !instance.getClass().getName().contains(".adapter.")
+      && !instance.getClass().getName().contains(".metadata.");
+  }
+
+  /**
+   * Try to invoke the build() method on the provided object instance. If the
+   * object does not implement build() this method will fail gracefully.
+   * <p>
+   * @param instance the object instance
+   */
+  private static void invokeBuild(Object instance) {
+    if (instance == null) {
+      return;
+    }
+    try {
+      Method buildMethod = instance.getClass().getMethod("build", null);
+      System.out.println(instance.getClass().getSimpleName() + " invoking build()");
+      buildMethod.invoke(instance, null);
+    } catch (NoSuchMethodException | SecurityException ex) {
+//              Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+//      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
   }
 
 }
