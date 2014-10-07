@@ -963,7 +963,9 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * @return The current ForceElement object instance
    */
+  @Override
   public ForceElement build() {
+    super.build();
     this.owningOrganisationRef = owningOrganisation != null ? owningOrganisation.getSerial() : null;
     return this;
   }//</editor-fold>

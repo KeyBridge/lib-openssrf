@@ -768,7 +768,9 @@ public class Role extends Common<Role> {
    * @return The current Role object instance
    * @since 3.1.0
    */
+  @Override
   public Role build() {
+    super.build();
     this.contactRef = new ArrayList<>();
     for (Contact instance : getContact()) {
       this.contactRef.add(instance.getSerial());

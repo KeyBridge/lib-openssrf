@@ -1111,7 +1111,9 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    * @since 3.1.0
    */
+  @Override
   public Location build() {
+    super.build();
     this.locationRef = new ArrayList<>();
     for (Location instance : getLocation()) {
       this.locationRef.add(instance.getSerial());

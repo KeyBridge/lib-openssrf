@@ -775,7 +775,9 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * @return The current RadiationPlan object instance
    */
+  @Override
   public RadiationPlan build() {
+    super.build();
     this.locationRef = location != null ? location.getSerial() : null;
     return this;
   }//</editor-fold>

@@ -1227,7 +1227,9 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * @return The current SSReply object instance
    */
+  @Override
   public SSReply build() {
+    super.build();
     this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : null;
     return this;
   }//</editor-fold>

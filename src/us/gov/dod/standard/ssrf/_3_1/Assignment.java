@@ -3954,7 +3954,9 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    * @since 3.1.0
    */
+  @Override
   public Assignment build() {
+    super.build();
     this.relatedRef = new ArrayList<>();
     for (Common<?> instance : getRelated()) {
       this.relatedRef.add(instance.getSerial());

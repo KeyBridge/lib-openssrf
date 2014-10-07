@@ -418,7 +418,9 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * @return The current Administrative object instance
    */
+  @Override
   public Administrative build() {
+    super.build();
     this.messageRef = message != null ? message.getSerial() : null;
     return this;
   }//</editor-fold>

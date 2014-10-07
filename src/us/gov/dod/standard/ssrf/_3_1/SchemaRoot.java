@@ -1245,7 +1245,7 @@ public abstract class SchemaRoot<T> {
   public T withAssignment(Collection<Assignment> values) {
     if (values != null) {
       getAssignment().addAll(values);
-      }
+    }
     return (T) this;
   }
 

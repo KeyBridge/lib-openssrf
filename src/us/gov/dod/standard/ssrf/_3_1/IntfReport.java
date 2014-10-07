@@ -2836,7 +2836,9 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * @return The current IntfReport object instance
    */
+  @Override
   public IntfReport build() {
+    super.build();
     this.victimAsgnRef = victimAssignment != null ? victimAssignment.getSerial() : null;
     return this;
   }//</editor-fold>

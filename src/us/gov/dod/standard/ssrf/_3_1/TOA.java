@@ -694,7 +694,9 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    * @since 3.1.0
    */
+  @Override
   public TOA build() {
+    super.build();
     this.channelPlanRef = new ArrayList<>();
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());

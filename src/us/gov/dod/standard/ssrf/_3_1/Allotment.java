@@ -964,7 +964,9 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    * @since 3.1.0
    */
+  @Override
   public Allotment build() {
+    super.build();
     this.locationRef = new ArrayList<>();
     for (Location instance : getLocation()) {
       this.locationRef.add(instance.getSerial());

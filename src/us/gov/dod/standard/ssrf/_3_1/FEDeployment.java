@@ -1046,7 +1046,9 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @return The current FEDeployment object instance
    */
+  @Override
   public FEDeployment build() {
+    super.build();
     this.feRef = forceElement != null ? forceElement.getSerial() : null;
     return this;
   }//</editor-fold>

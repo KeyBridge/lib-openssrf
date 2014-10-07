@@ -339,7 +339,9 @@ public class Message extends Common<Message> {
    * @return The current Message object instance
    * @since 3.1.0
    */
+  @Override
   public Message build() {
+    super.build();
     this.datasetRef = new ArrayList<>();
     for (Common<?> instance : getData()) {
       this.datasetRef.add(instance.getSerial());

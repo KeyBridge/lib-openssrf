@@ -942,7 +942,9 @@ public class Organisation extends Common<Organisation> {
    * @return The current Organisation object instance
    * @since 3.1.0
    */
+  @Override
   public Organisation build() {
+    super.build();
     this.roleRef = new ArrayList<>();
     for (Role instance : getRole()) {
       this.roleRef.add(instance.getSerial());

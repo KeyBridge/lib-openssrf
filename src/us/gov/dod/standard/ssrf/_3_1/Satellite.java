@@ -1403,7 +1403,9 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * @return The current Satellite object instance
    */
+  @Override
   public Satellite build() {
+    super.build();
     this.launchLocRef = launchLoc != null ? launchLoc.getSerial() : null;
     return this;
   }//</editor-fold>
