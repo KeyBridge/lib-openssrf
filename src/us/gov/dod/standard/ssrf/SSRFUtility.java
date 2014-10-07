@@ -48,10 +48,11 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.Comment;
 import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 
 /**
- * SSRF Utility classes.
+ * A collection of useful SSRF Utility classes.
  * <p>
  * @author Jesse Caulfield <jesse@caulfield.org>
- * @version 3.1.0, 10/02/14
+ * @version 1.0, 10/02/14
+ * @since 3.1.0
  */
 public class SSRFUtility {
 
@@ -626,16 +627,150 @@ public class SSRFUtility {
     if (instance == null) {
       return;
     }
+    /**
+     * Try to invoke the build() method. Fail gracefully if the instance class
+     * does not implement the build() method.
+     */
     try {
-      Method buildMethod = instance.getClass().getMethod("build", null);
-      System.out.println(instance.getClass().getSimpleName() + " invoking build()");
-      buildMethod.invoke(instance, null);
+//      Method buildMethod = instance.getClass().getMethod("build", null);
+//      buildMethod.invoke(instance, null);
+      instance.getClass().getMethod("build", null).invoke(instance, null);
     } catch (NoSuchMethodException | SecurityException ex) {
-//              Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
 //      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
     }
+  }
 
+  /**
+   * Assign a SSRF Properties configuration to a SSRF object instance.
+   * <p>
+   * This assigns default values declared in a SSRF configuration profile to a
+   * SSRF configuration.
+   * <p>
+   * @param properties a SSRF properties configuration
+   * @param instance   a SSRF object instance. The field type is a generic
+   *                   object as this method calls itself recursively.
+   */
+  @SuppressWarnings("unchecked")
+  public static void setProperties(SSRFProperties properties, Object instance) {
+    if (instance == null) {
+      return;
+    }
+    /**
+     * Assign the class type under study to a local variable for convenience.
+     */
+    Class<?> clazz = instance.getClass();
+    /**
+     * Important: NO NOT inspect classes that are not within the SSRF package.
+     * Also and equally important: DO NOT inspect or try to validate enumerated
+     * classes.
+     */
+    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+      return;
+    }
+    /**
+     * Iterate through the list of declared fields (public, protected and
+     * private) and inspect each according to its annotated configuration and
+     * state.
+     */
+    for (Field field : findDeclaredAndInheritedFields(clazz)) {
+      /**
+       * Important: Enable access to the Object instance fields (public,
+       * protected and private).
+       */
+      field.setAccessible(true);
+      /**
+       * Try to recurse into the configured field value. Get the instance field
+       * value. Skip (do not check and fail gracefully) if the field value is
+       * null (e.g. not configured) or (somehow) not accessible.
+       */
+      Object fieldValue;
+      try {
+        fieldValue = field.get(instance);
+      } catch (IllegalArgumentException | IllegalAccessException ex) {
+//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+        continue;
+      }
+      /**
+       * If the field value is not set then inspect the properties to determine
+       * if a user-defined setting exists for this field.
+       */
+      if (fieldValue == null) {
+        /**
+         * If a property is configured for this class and field try to set the
+         * value using the WITH setter.
+         */
+        String propertyValue = properties.getProperty(clazz, field);
+        if (propertyValue != null) {
+          /**
+           * Get the WITH setter.
+           */
+          Method method = findWithMethod(clazz, field);
+          if (method != null && method.getParameterTypes().length != 0) {
+            Class<?> paramType = method.getParameterTypes()[0];
+            /**
+             * Handle the case where the object instance is an enumerated type.
+             */
+            Object objectValue;
+            if (paramType.isEnum()) {
+              objectValue = Enum.valueOf((Class<Enum>) paramType, propertyValue);
+            } else {
+              objectValue = propertyValue;
+            }
+            /**
+             * Try to invoke the WITH setter with the user-defined properties
+             * configuration (either an ENUM or String). Ignore all errors to
+             * fail gracefully.
+             */
+            try {
+              method.invoke(instance, objectValue);
+            } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+              Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+            }
+          }
+        } else {
+          /**
+           * If the field is null and the no SSRF Property is configured for
+           * this field then skip it.
+           */
+          continue;
+        }
+      }
+      /**
+       * If the field value object is a Collection then iterate through the
+       * collection to recursively set each entry object instance, otherwise
+       * recurse to set the field value object instance directly.
+       */
+      if (fieldValue instanceof Collection) {
+        for (Object entry : (Collection) fieldValue) {
+          setProperties(properties, entry);
+        }
+      } else {
+        setProperties(properties, fieldValue);
+      }
+    }
+  }
+
+  /**
+   * Internal helper method supporting the
+   * {@link #setProperties(us.gov.dod.standard.ssrf.SSRFProperties, java.lang.Object)}
+   * method. This method inspects the indicated Class to find the first declared
+   * or inherited WITH setter method for the indicated field type.
+   * <p>
+   * @param clazz the class type to inspect
+   * @param field the field to look for
+   * @return a WITH setter method, if present
+   */
+  private static Method findWithMethod(Class<?> clazz, Field field) {
+    /**
+     * Push all names to lower case to perform a case-insensitive search.
+     */
+    for (Method method : findDeclaredAndInheritedMethods(clazz)) {
+      if (method.getName().toLowerCase().contains("with" + field.getName().toLowerCase())) {
+        return method;
+      }
+    }
+    return null;
   }
 
 }
