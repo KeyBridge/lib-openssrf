@@ -602,12 +602,34 @@ public class JRFL extends Common<JRFL> {
   }
 
   /**
+   * Set the width of the range (or band) of restricted frequency(s).
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current JRFL object instance
+   */
+  public JRFL withEffectiveDateTime(Date value) {
+    setEffectiveDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date at which the dataset will expire.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current JRFL object instance
    */
   public JRFL withExpirationDateTime(Calendar value) {
+    setExpirationDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date at which the dataset will expire.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current JRFL object instance
+   */
+  public JRFL withExpirationDateTime(Date value) {
     setExpirationDateTime(new TCalendar(value));
     return this;
   }
@@ -620,6 +642,18 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set a description of the justification of why the JRFL entry is required,
+   * to support the spectrum manager.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current JRFL object instance
+   */
+  public JRFL withReviewDate(Date value) {
     setReviewDate(new TCalendar(value));
     return this;
   }

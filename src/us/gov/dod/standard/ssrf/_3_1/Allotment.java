@@ -637,12 +637,36 @@ public class Allotment extends Common<Allotment> {
   }
 
   /**
+   * Set the date by which the frequency assignment or Spectrum Supportability
+   * Reply is required by the user in order to complete necessary advanced
+   * operation coordination.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Allotment object instance
+   */
+  public Allotment withDateResponseRequired(Date value) {
+    setDateResponseRequired(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Allotment object instance
    */
   public Allotment withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the dataset is to be operational or effective.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Allotment object instance
+   */
+  public Allotment withEffectiveDate(Date value) {
     setEffectiveDate(new TCalendar(value));
     return this;
   }
@@ -660,6 +684,18 @@ public class Allotment extends Common<Allotment> {
   }
 
   /**
+   * Set the date at which the dataset will expire. The Expiration date should
+   * be less than five years from current date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Allotment object instance
+   */
+  public Allotment withExpirationDate(Date value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which the dataset is to be reviewed. The Review date should
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicate when the organisation
@@ -671,6 +707,22 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the dataset is to be reviewed. The Review date should
+   * be less than five years from the effective date. In Data Item Spectrum
+   * Supportability datasets, this date indicate when the organisation
+   * responsible for re-initiating host coordination plans to resubmit a
+   * Spectrum Supportability request to the host nation for continued use of the
+   * equipment.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Allotment object instance
+   */
+  public Allotment withReviewDate(Date value) {
     setReviewDate(new TCalendar(value));
     return this;
   }

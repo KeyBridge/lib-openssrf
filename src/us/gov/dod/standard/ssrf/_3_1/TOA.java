@@ -424,6 +424,17 @@ public class TOA extends Common<TOA> {
   }
 
   /**
+   * Set the date by which the dataset is to be operational or effective.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current TOA object instance
+   */
+  public TOA withEffectiveDate(Date value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
@@ -431,6 +442,18 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    */
   public TOA withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date at which the dataset will expire. The Expiration date should
+   * be less than five years from current date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current TOA object instance
+   */
+  public TOA withExpirationDate(Date value) {
     setExpirationDate(new TCalendar(value));
     return this;
   }

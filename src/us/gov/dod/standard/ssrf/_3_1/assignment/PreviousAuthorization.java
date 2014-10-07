@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -188,6 +189,18 @@ public class PreviousAuthorization {
    * @return The current PreviousAuthorization object instance
    */
   public PreviousAuthorization withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the previous frequency assignment Government Master File (GMF)
+   * authorization date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current PreviousAuthorization object instance
+   */
+  public PreviousAuthorization withDate(Date value) {
     setDate(new TCalendar(value));
     return this;
   }

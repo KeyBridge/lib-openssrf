@@ -1405,12 +1405,36 @@ public abstract class Common<T> {
 
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
+   * signal was first collected.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Common object instance
+   */
+  public T withObservedFirstDateTime(Date value) {
+    setObservedFirstDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  /**
+   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
    */
   public T withObservedLastDateTime(Calendar value) {
+    setObservedLastDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  /**
+   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
+   * signal was last collected.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Common object instance
+   */
+  public T withObservedLastDateTime(Date value) {
     setObservedLastDateTime(new TCalendar(value));
     return (T) this;
   }
@@ -1435,6 +1459,18 @@ public abstract class Common<T> {
    * @return The current Common object instance
    */
   public T withApprovedDateTime(Calendar value) {
+    setApprovedDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  /**
+   * Set the last date and time, based on Greenwich Mean Time (GMT), that the
+   * dataset was approved or accepted by a designated expert.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Common object instance
+   */
+  public T withApprovedDateTime(Date value) {
     setApprovedDateTime(new TCalendar(value));
     return (T) this;
   }
@@ -1471,6 +1507,18 @@ public abstract class Common<T> {
    * @return The current Common object instance
    */
   public T withEntryDateTime(Calendar value) {
+    setEntryDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  /**
+   * Set the date and UTC Time the dataset was initially entered into the data
+   * repository (e.g., FRRS for USA, SMIR for NATO).
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Common object instance
+   */
+  public T withEntryDateTime(Date value) {
     setEntryDateTime(new TCalendar(value));
     return (T) this;
   }
@@ -1516,6 +1564,17 @@ public abstract class Common<T> {
   }
 
   /**
+   * Set the date and UTC Time the dataset was last modified.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Common object instance
+   */
+  public T withLastChangeDateTime(Date value) {
+    setLastChangeDateTime(new TCalendar(value));
+    return (T) this;
+  }
+
+  /**
    * Set the serial of the Role which last modified the current dataset.
    * <p>
    * @param value An instances of type {@link String}
@@ -1536,6 +1595,17 @@ public abstract class Common<T> {
    * @return The current Common object instance
    */
   public T withLastReviewDate(Calendar value) {
+    setLastReviewDate(new TCalendar(value));
+    return (T) this;
+  }
+
+  /**
+   * Set the last date that the dataset was reviewed.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Common object instance
+   */
+  public T withLastReviewDate(Date value) {
     setLastReviewDate(new TCalendar(value));
     return (T) this;
   }

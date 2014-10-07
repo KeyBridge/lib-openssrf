@@ -459,6 +459,17 @@ public class Contact extends Common<Contact> {
   }
 
   /**
+   * Set the date by which the dataset is to be operational or effective.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Contact object instance
+   */
+  public Contact withEffectiveDate(Date value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
@@ -466,6 +477,18 @@ public class Contact extends Common<Contact> {
    * @return The current Contact object instance
    */
   public Contact withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date at which the dataset will expire. The Expiration date should
+   * be less than five years from current date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Contact object instance
+   */
+  public Contact withExpirationDate(Date value) {
     setExpirationDate(new TCalendar(value));
     return this;
   }
@@ -482,6 +505,22 @@ public class Contact extends Common<Contact> {
    * @return The current Contact object instance
    */
   public Contact withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the dataset is to be reviewed. The Review date should
+   * be less than five years from the effective date. In Data Item Spectrum
+   * Supportability datasets, this date indicate when the organisation
+   * responsible for re-initiating host coordination plans to resubmit a
+   * Spectrum Supportability request to the host nation for continued use of the
+   * equipment.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Contact object instance
+   */
+  public Contact withReviewDate(Date value) {
     setReviewDate(new TCalendar(value));
     return this;
   }

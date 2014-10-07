@@ -595,12 +595,34 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
+   * Set the timestamp when the denial of spectrum use is planned to begin.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current RadiationPlan object instance
+   */
+  public RadiationPlan withStartDateTime(Date value) {
+    setStartDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the timestamp when the denial of spectrum use is planned to be halted.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current RadiationPlan object instance
    */
   public RadiationPlan withStopDateTime(Calendar value) {
+    setStopDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the timestamp when the denial of spectrum use is planned to be halted.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current RadiationPlan object instance
+   */
+  public RadiationPlan withStopDateTime(Date value) {
     setStopDateTime(new TCalendar(value));
     return this;
   }

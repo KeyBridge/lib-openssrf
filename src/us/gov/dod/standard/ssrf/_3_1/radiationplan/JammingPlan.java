@@ -760,6 +760,19 @@ public class JammingPlan {
   }
 
   /**
+   * Set the date/time stamp when to initiate the jamming, if "Date/Time" is
+   * used in element StartTrigger. Entries must be equal to or later than
+   * RadiationPlan.StartDateTime, and less than RadiationPlan.StopDateTime.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current JammingPlan object instance
+   */
+  public JammingPlan withStartDateTime(Date value) {
+    setStartDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the Location serial indicating the region associated with "Troops in
    * Region" or "Troops Not in Region", in attribute StartTrigger.
    * <p>
@@ -794,6 +807,19 @@ public class JammingPlan {
    * @return The current JammingPlan object instance
    */
   public JammingPlan withStopDateTime(Calendar value) {
+    setStopDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date/time stamp when to stop the jamming, if "Date/Time" is used in
+   * element StopTrigger. Entries must be after RadiationPlan.StartDateTime, and
+   * be equal to or less than RadiationPlan.StopDateTime.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current JammingPlan object instance
+   */
+  public JammingPlan withStopDateTime(Date value) {
     setStopDateTime(new TCalendar(value));
     return this;
   }

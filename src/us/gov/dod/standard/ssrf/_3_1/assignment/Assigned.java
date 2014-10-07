@@ -644,6 +644,18 @@ public class Assigned {
   }
 
   /**
+   * Set the date the frequency assignment was registered with the International
+   * Telecommunication Union (ITU) Radiocommunication Bureau (BR).
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assigned object instance
+   */
+  public Assigned withITURegDate(Date value) {
+    setITURegDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the registration number assigned by the International Telecommunication
    * Union (ITU) Radiocommunication Bureau (BR).
    * <p>

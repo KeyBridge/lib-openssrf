@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -248,6 +249,18 @@ public class NotationTimeline {
    * @return The current NotationTimeline object instance
    */
   public NotationTimeline withStatusChangeDateTime(Calendar value) {
+    setStatusChangeDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the timestamp when the prior, or associated, Notation achieved this
+   * Status.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current NotationTimeline object instance
+   */
+  public NotationTimeline withStatusChangeDateTime(Date value) {
     setStatusChangeDateTime(new TCalendar(value));
     return this;
   }

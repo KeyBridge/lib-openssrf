@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.fedeployment;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -215,6 +216,17 @@ public class AtWaypoint {
    * @return The current AtWaypoint object instance
    */
   public AtWaypoint withDateTime(Calendar value) {
+    setDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date and time that the force element is at the selected waypoint.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current AtWaypoint object instance
+   */
+  public AtWaypoint withDateTime(Date value) {
     setDateTime(new TCalendar(value));
     return this;
   }

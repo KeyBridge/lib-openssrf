@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
@@ -271,6 +272,17 @@ public class StatusLog {
    * @return The current StatusLog object instance
    */
   public StatusLog withDateTime(Calendar value) {
+    setDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date and UTC time of this status log entry.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current StatusLog object instance
+   */
+  public StatusLog withDateTime(Date value) {
     setDateTime(new TCalendar(value));
     return this;
   }

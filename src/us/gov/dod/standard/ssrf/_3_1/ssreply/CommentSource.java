@@ -327,6 +327,17 @@ public class CommentSource {
   }
 
   /**
+   * Set the date the comment was provided.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current CommentSource object instance
+   */
+  public CommentSource withDate(Date value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the Comment
    * <p>
    * Complex element Comment contains the comment provided by the Host Nation or

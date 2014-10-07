@@ -2125,12 +2125,34 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
+   * Set the date/time the interference was first perceived.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current IntfReport object instance
+   */
+  public IntfReport withIntfStartDateTime(Date value) {
+    setIntfStartDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date/time the interference ceased.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current IntfReport object instance
    */
   public IntfReport withIntfStopDateTime(Calendar value) {
+    setIntfStopDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date/time the interference ceased.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current IntfReport object instance
+   */
+  public IntfReport withIntfStopDateTime(Date value) {
     setIntfStopDateTime(new TCalendar(value));
     return this;
   }

@@ -501,6 +501,18 @@ public class SecurityClass {
   }
 
   /**
+   * Set the date this classified dataset was prepared, i.e., the Original
+   * Classification Date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SecurityClass object instance
+   */
+  public SecurityClass withSourceClsDate(Date value) {
+    setSourceClsDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the organization of the original classification authority.
    * <p>
    * @param value An instances of type {@link String}
@@ -554,6 +566,18 @@ public class SecurityClass {
    * @return The current SecurityClass object instance
    */
   public SecurityClass withDeclsDate(Calendar value) {
+    setDeclsDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the declassification date for DEDATE and DE25Xn-based declassification
+   * instructions.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SecurityClass object instance
+   */
+  public SecurityClass withDeclsDate(Date value) {
     setDeclsDate(new TCalendar(value));
     return this;
   }

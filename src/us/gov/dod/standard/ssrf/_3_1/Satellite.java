@@ -977,6 +977,21 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
+   * Set the date by which the dataset is to be reviewed. The Review date should
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicate when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Satellite object instance
+   */
+  public Satellite withReviewDate(Date value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the call sign assigned to the transmitting station. It can be an
    * internationally allocated call sign or the tactical call sign assigned by
    * the operational authority when the Station is used within a Net. For
@@ -1034,6 +1049,17 @@ public class Satellite extends Common<Satellite> {
    * @return The current Satellite object instance
    */
   public Satellite withLaunchDate(Calendar value) {
+    setLaunchDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date of the satellite launch.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Satellite object instance
+   */
+  public Satellite withLaunchDate(Date value) {
     setLaunchDate(new TCalendar(value));
     return this;
   }

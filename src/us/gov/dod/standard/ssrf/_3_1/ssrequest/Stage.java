@@ -426,6 +426,17 @@ public class Stage {
   }
 
   /**
+   * Set the date upon which work will commence on this stage.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Stage object instance
+   */
+  public Stage withStartDate(Date value) {
+    setStartDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which a usable version of the system is expected to be
    * available for testing or deployment.
    * <p>
@@ -433,6 +444,18 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withTargetDate(Calendar value) {
+    setTargetDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which a usable version of the system is expected to be
+   * available for testing or deployment.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Stage object instance
+   */
+  public Stage withTargetDate(Date value) {
     setTargetDate(new TCalendar(value));
     return this;
   }
@@ -449,6 +472,17 @@ public class Stage {
   }
 
   /**
+   * Set the date by which the approval of the application is desired
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Stage object instance
+   */
+  public Stage withDateApprovalRequired(Date value) {
+    setDateApprovalRequired(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date this stage is expected to terminate. For a stage 2 application
    * the date entered is the date when the system is expected to enter stage 3.
    * The date may be an estimate.
@@ -457,6 +491,19 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withTerminationDate(Calendar value) {
+    setTerminationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date this stage is expected to terminate. For a stage 2 application
+   * the date entered is the date when the system is expected to enter stage 3.
+   * The date may be an estimate.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Stage object instance
+   */
+  public Stage withTerminationDate(Date value) {
     setTerminationDate(new TCalendar(value));
     return this;
   }

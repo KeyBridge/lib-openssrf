@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -331,6 +332,18 @@ public class TrunkingAssignment {
    * @return The current TrunkingAssignment object instance
    */
   public TrunkingAssignment withRelinquishmentDate(Calendar value) {
+    setRelinquishmentDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the expected date the existing assignment will be relinquished by the
+   * trunked land mobile system.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current TrunkingAssignment object instance
+   */
+  public TrunkingAssignment withRelinquishmentDate(Date value) {
     setRelinquishmentDate(new TCalendar(value));
     return this;
   }

@@ -466,6 +466,17 @@ public class Allocation {
   }
 
   /**
+   * Set the date by which the dataset is to be operational or effective.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Allocation object instance
+   */
+  public Allocation withEffectiveDate(Date value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
@@ -473,6 +484,18 @@ public class Allocation {
    * @return The current Allocation object instance
    */
   public Allocation withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date at which the dataset will expire. The Expiration date should
+   * be less than five years from current date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Allocation object instance
+   */
+  public Allocation withExpirationDate(Date value) {
     setExpirationDate(new TCalendar(value));
     return this;
   }

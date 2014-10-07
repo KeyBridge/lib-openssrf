@@ -648,6 +648,22 @@ public class ForceElement extends Common<ForceElement> {
   }
 
   /**
+   * Set the date by which the dataset is to be reviewed. The Review date should
+   * be less than five years from the effective date. In Data Item Spectrum
+   * Supportability datasets, this date indicate when the organisation
+   * responsible for re-initiating host coordination plans to resubmit a
+   * Spectrum Supportability request to the host nation for continued use of the
+   * equipment.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current ForceElement object instance
+   */
+  public ForceElement withReviewDate(Date value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set if the Force Element is a Unit or a Platform.
    * <p>
    * @param value An instances of type {@link ListCFE}

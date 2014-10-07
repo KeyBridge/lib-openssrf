@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -137,6 +138,18 @@ public class NarrowBandPlanning {
    * @return The current NarrowBandPlanning object instance
    */
   public NarrowBandPlanning withChangeDate(Calendar value) {
+    setChangeDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date this record is expected to be updated to comply with narrow
+   * band transition plans.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current NarrowBandPlanning object instance
+   */
+  public NarrowBandPlanning withChangeDate(Date value) {
     setChangeDate(new TCalendar(value));
     return this;
   }

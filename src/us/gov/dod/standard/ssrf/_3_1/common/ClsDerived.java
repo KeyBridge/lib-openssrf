@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -185,6 +186,17 @@ public class ClsDerived {
    * @return The current ClsDerived object instance
    */
   public ClsDerived withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date of the source document.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current ClsDerived object instance
+   */
+  public ClsDerived withDate(Date value) {
     setDate(new TCalendar(value));
     return this;
   }

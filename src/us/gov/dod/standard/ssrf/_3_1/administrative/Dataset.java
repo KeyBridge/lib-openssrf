@@ -238,6 +238,17 @@ public class Dataset {
   }
 
   /**
+   * Set the date this Dataset goes out of force.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Dataset object instance
+   */
+  public Dataset withRetireDate(Date value) {
+    setRetireDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the reason linked to the Action performed on this dataset.
    * <p>
    * @param value An instances of type {@link String}

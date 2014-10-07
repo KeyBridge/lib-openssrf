@@ -346,6 +346,17 @@ public class CodeList {
   }
 
   /**
+   * Set the date by which the dataset is to be operational or effective.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current CodeList object instance
+   */
+  public CodeList withEffectiveDate(Date value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the description of the intended contents of new code list, and the
    * element(s) where it will be used.
    * <p>

@@ -1812,6 +1812,18 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
+   * Set the date on which the application will be submitted to the appropriate
+   * spectrum management office.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SSRequest object instance
+   */
+  public SSRequest withApplicationDate(Date value) {
+    setApplicationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
@@ -1820,6 +1832,19 @@ public class SSRequest extends Common<SSRequest> {
    * @return The current SSRequest object instance
    */
   public SSRequest withDateResponseRequired(Calendar value) {
+    setDateResponseRequired(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the frequency assignment or Spectrum Supportability
+   * Reply is required by the user in order to complete necessary advanced
+   * operation coordination.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SSRequest object instance
+   */
+  public SSRequest withDateResponseRequired(Date value) {
     setDateResponseRequired(new TCalendar(value));
     return this;
   }

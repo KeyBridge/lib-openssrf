@@ -789,6 +789,18 @@ public class Trunking {
   }
 
   /**
+   * Set the date this expansion will be activated (i.e., the date the system
+   * will require the additional radio frequencies).
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Trunking object instance
+   */
+  public Trunking withExpansionTargetDate(Date value) {
+    setExpansionTargetDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the upper frequency of band.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.

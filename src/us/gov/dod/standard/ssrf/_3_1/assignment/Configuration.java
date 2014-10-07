@@ -1311,6 +1311,17 @@ public class Configuration {
   }
 
   /**
+   * Set
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Configuration object instance
+   */
+  public Configuration withConfigApprovedDateTime(Date value) {
+    setConfigApprovedDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
@@ -1324,12 +1335,36 @@ public class Configuration {
 
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
+   * signal was first collected.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Configuration object instance
+   */
+  public Configuration withObservedFirstDateTime(Date value) {
+    setObservedFirstDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Configuration object instance
    */
   public Configuration withObservedLastDateTime(Calendar value) {
+    setObservedLastDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
+   * signal was last collected.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Configuration object instance
+   */
+  public Configuration withObservedLastDateTime(Date value) {
     setObservedLastDateTime(new TCalendar(value));
     return this;
   }
@@ -1365,6 +1400,18 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withLastReviewedDateTime(Calendar value) {
+    setLastReviewedDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date and time, based on Greenwich Mean Time (GMT), the
+   * configuration was thoroughly reviewed.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Configuration object instance
+   */
+  public Configuration withLastReviewedDateTime(Date value) {
     setLastReviewedDateTime(new TCalendar(value));
     return this;
   }

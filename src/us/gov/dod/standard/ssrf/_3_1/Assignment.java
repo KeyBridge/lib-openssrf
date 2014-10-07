@@ -2741,12 +2741,35 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
+   * Set the date by which the Assignment or SSReply is required by the
+   * requestor.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assignment object instance
+   */
+  public Assignment withDateResponseRequired(Date value) {
+    setDateResponseRequired(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date and UTC time when the Assignment will be operational.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Assignment object instance
    */
   public Assignment withEffectiveDateTime(Calendar value) {
+    setEffectiveDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date and UTC time when the Assignment will be operational.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assignment object instance
+   */
+  public Assignment withEffectiveDateTime(Date value) {
     setEffectiveDateTime(new TCalendar(value));
     return this;
   }
@@ -2764,6 +2787,18 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
+   * Set the date and UTC time that this Assignment will expire. The Expiration
+   * date should be less than five years from the effective date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assignment object instance
+   */
+  public Assignment withExpirationDateTime(Date value) {
+    setExpirationDateTime(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which the dataset is to be reviewed. The Review date should
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicates when the request should be
@@ -2773,6 +2808,20 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the dataset is to be reviewed. The Review date should
+   * be less than five years from the effective date. In Data Item Spectrum
+   * Supportability datasets, this date indicates when the request should be
+   * resubmitted to the host nation for continued equipment use.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assignment object instance
+   */
+  public Assignment withReviewDate(Date value) {
     setReviewDate(new TCalendar(value));
     return this;
   }
@@ -3015,6 +3064,17 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
+   * Set the date the assignment was most recently authorized.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assignment object instance
+   */
+  public Assignment withAssignmentDate(Date value) {
+    setAssignmentDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set PACOM to identify a grouping of frequencies having a like or similar
    * use. Enter EUCOM to identify the function number(s) used by the Frequency
    * Management Sub-Committee (FMSC) to specify the operational use of
@@ -3145,6 +3205,17 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withOriginalAssignmentDate(Calendar value) {
+    setOriginalAssignmentDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date the frequency assignment was originally authorized.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Assignment object instance
+   */
+  public Assignment withOriginalAssignmentDate(Date value) {
     setOriginalAssignmentDate(new TCalendar(value));
     return this;
   }

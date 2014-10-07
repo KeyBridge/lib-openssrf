@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -279,12 +280,34 @@ public class Note extends Common<Note> {
   }
 
   /**
+   * Set the date this note comes in force.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Note object instance
+   */
+  public Note withEffectiveDate(Date value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date this note goes out of force.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Note object instance
    */
   public Note withExpirationDate(Calendar value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date this note goes out of force.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Note object instance
+   */
+  public Note withExpirationDate(Date value) {
     setExpirationDate(new TCalendar(value));
     return this;
   }

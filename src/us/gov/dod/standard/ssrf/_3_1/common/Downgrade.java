@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.util.Calendar;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -195,6 +196,17 @@ public class Downgrade {
    * @return The current Downgrade object instance
    */
   public Downgrade withDate(Calendar value) {
+    setDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date of the permitted downgrading.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current Downgrade object instance
+   */
+  public Downgrade withDate(Date value) {
     setDate(new TCalendar(value));
     return this;
   }

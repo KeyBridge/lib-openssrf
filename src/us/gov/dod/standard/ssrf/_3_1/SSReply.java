@@ -890,12 +890,34 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
+   * Set the date the request was received by the Host Nation Administration.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SSReply object instance
+   */
+  public SSReply withDateReceivedByCountry(Date value) {
+    setDateReceivedByCountry(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current SSReply object instance
    */
   public SSReply withEffectiveDate(Calendar value) {
+    setEffectiveDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the dataset is to be operational or effective.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SSReply object instance
+   */
+  public SSReply withEffectiveDate(Date value) {
     setEffectiveDate(new TCalendar(value));
     return this;
   }
@@ -913,6 +935,18 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
+   * Set the date at which the dataset will expire. The Expiration date should
+   * be less than five years from current date.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SSReply object instance
+   */
+  public SSReply withExpirationDate(Date value) {
+    setExpirationDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
    * Set the date by which the dataset is to be reviewed. The Review date should
    * be less than five years from the effective date. Spectrum Supportability
    * datasets, this date indicates when the organisation responsible for
@@ -923,6 +957,21 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withReviewDate(Calendar value) {
+    setReviewDate(new TCalendar(value));
+    return this;
+  }
+
+  /**
+   * Set the date by which the dataset is to be reviewed. The Review date should
+   * be less than five years from the effective date. Spectrum Supportability
+   * datasets, this date indicates when the organisation responsible for
+   * re-initiating host coordination plans to resubmit a Spectrum Supportability
+   * request to the host nation for continued use of the equipment.
+   * <p>
+   * @param value An instances of type {@link Date}
+   * @return The current SSReply object instance
+   */
+  public SSReply withReviewDate(Date value) {
     setReviewDate(new TCalendar(value));
     return this;
   }
