@@ -276,15 +276,6 @@ public class Location extends Common<Location> {
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private List<TString> locationRef;
 
-  private Location() {
-  }
-
-  public static Location getInstance() {
-    return new Location()
-      .withSerial(TSerial.getInstance(Location.class))
-      .withEffectiveDate(Calendar.getInstance());
-  }
-
   /**
    * Get the date by which the dataset is to be operational or effective.
    * <p>
