@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.util.Set;
-import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

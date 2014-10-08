@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;

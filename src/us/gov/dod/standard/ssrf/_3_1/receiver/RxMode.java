@@ -24,7 +24,6 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import java.math.BigInteger;
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
