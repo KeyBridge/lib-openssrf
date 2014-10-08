@@ -87,10 +87,7 @@ public class SSRF extends SchemaRoot<SSRF> {
   /**
    * Unset (clear) a SSRF property.
    * <p>
-   * @param propertyName the SSRF class name (e.g. "ChannelPlan")
-   * @param fieldName    the SSRF field name within the named class (e.g.
-   *                     "name"). Set to null or an empty string to unset all
-   *                     properties with the indicated className.
+   * @param propertyName a SSRF property name (e.g. "ChannelPlan.name")
    */
   public void unsetProperty(String propertyName) {
     if (ssrfProperties != null) {
@@ -99,17 +96,20 @@ public class SSRF extends SchemaRoot<SSRF> {
   }
 
   /**
-   * Internal method to assemble the SSRF instance. This method applies
-   * properties and invokes prepare() methods. This method supports the {@link #build()},
+   * Assemble the SSRF instance. This method applies properties and invokes
+   * prepare() methods. This method supports the {@link #build()},
    * {@link #isValid()} and {@link #evaluate()} methods.
+   * <p>
+   * This method does not perform any validation. Call {@link #prepare()} to
+   * validate.
    * <p>
    * @since 3.1.0
    */
-  private void assemble() {
-    SSRFUtility.prepare(this);
+  public void assemble() {
     if (ssrfProperties != null) {
       SSRFUtility.setProperties(ssrfProperties, this);
     }
+    SSRFUtility.prepare(this);
   }
 
   /**
@@ -127,6 +127,10 @@ public class SSRF extends SchemaRoot<SSRF> {
    * @since 3.1.0
    */
   public void prepare() throws Exception {
+    /**
+     * Call assemble() twice to add parameters and then to add metadata (if
+     * configured) to those parameters.
+     */
     assemble();
     assemble();
     SSRFUtility.validate(this);
@@ -152,6 +156,10 @@ public class SSRF extends SchemaRoot<SSRF> {
    */
   public boolean isValid() {
     try {
+      /**
+       * Call assemble() twice to add parameters and then to add metadata (if
+       * configured) to those parameters.
+       */
       assemble();
       assemble();
       SSRFUtility.validate(this);
