@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -335,6 +334,24 @@ public class Configuration {
    */
   @XmlElement(name = "ObservedERPAnalysis")
   private List<ObservedERPAnalysis> observedERPAnalysis;
+
+  /**
+   * Empty constructor. The {@link #configID} is automatically set to a random
+   * UUID value. Use {@link #withConfigID(String)} or
+   * {@link #setConfigID(TString)} to set it.
+   */
+  public Configuration() {
+    this.configID = new TString(UUID.randomUUID().toString());
+  }
+
+  /**
+   * Constructor setting the {@link #configID}.
+   * <p>
+   * @param configID the {@link #configID}.
+   */
+  public Configuration(TString configID) {
+    this.configID = configID;
+  }
 
   /**
    * Get a short name for the configuration; this name should be a meaningful
