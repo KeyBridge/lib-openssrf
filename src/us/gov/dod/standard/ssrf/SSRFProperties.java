@@ -122,13 +122,13 @@ public class SSRFProperties extends Properties {
    * its defaults, recursively, are then checked. The method returns null if the
    * property is not found.
    * <p>
-   * @param className the containing class name
+   * @param classPath the containing class name
    * @param fieldName the field name
    * @return a string representation of the value, if set; otherwise NULL.
    */
   @Override
-  public String getProperty(String className, String fieldName) {
-    return getProperty(className, fieldName, null);
+  public String getProperty(String classPath, String fieldName) {
+    return getProperty(classPath, fieldName, null);
   }
 
   /**
@@ -138,16 +138,16 @@ public class SSRFProperties extends Properties {
    * and its defaults, recursively, are then checked. The method returns the
    * default value argument if the property is not found.
    * <p>
-   * @param className    the containing class name
+   * @param classPath    the containing class name
    * @param fieldName    the field name
    * @param defaultValue a default value
    * @return a string representation of the value, if set; otherwise NULL.
    */
-  public String getProperty(String className, String fieldName, String defaultValue) {
+  public String getProperty(String classPath, String fieldName, String defaultValue) {
     /**
-     * First try a specific match for the class PLUS field.
+     * First try a specific match for the full class path PLUS field.
      */
-    Pattern p = Pattern.compile(className + "\\." + fieldName + "$");
+    Pattern p = Pattern.compile(classPath + "\\." + fieldName + "$");
     for (Map.Entry<Object, Object> entry : entrySet()) {
       Matcher m = p.matcher((String) entry.getKey());
       if (m.find()) {
