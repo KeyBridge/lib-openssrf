@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
+ * Copyright 2014 Key Bridge Global LLC.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -50,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 /**
  * A collection of useful SSRF Utility classes.
  * <p>
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 1.0, 10/02/14
  * @since 3.1.0
  */
@@ -227,10 +227,11 @@ public class SSRFUtility {
   @SuppressWarnings({"unchecked", "AssignmentToMethodParameter"})
   private static Collection<String> evaluate(Object instance, Object parentInstance, Field parentField, Collection<String> messages) {
     /**
-     * Initialize the messages collection if required.
+     * Initialize the messages collection if required. Use a TreeSet to
+     * eliminate duplicates and provide a pretty-print output.
      */
     if (messages == null) {
-      messages = new ArrayList<>();
+      messages = new TreeSet<>();
     }
     /**
      * Assign the class type under study to a local variable for convenience.
@@ -459,41 +460,35 @@ public class SSRFUtility {
   }
 
   /**
-   * Process an SSRF source instance for export.
+   * Process a SSRF instance object for export. This method examines the class
+   * tree and copies all required data objects into their proper location and
+   * preparing the SSRF destination instance for export.
    * <p>
-   * This method makes a copy of the source instance configuration, copying all
-   * required data objects into their proper location and preparing the SSRF
-   * destination instance for export.
-   * <p>
-   * @param ssrf the SSRF working copy
-   * @return a finali
+   * @param ssrf a SSRF working copy
    */
-  public static SSRF build(SSRF ssrf) {
-    return (SSRF) build(ssrf, null);
+  public static void build(SSRF ssrf) {
+    build(ssrf, null);
   }
 
   /**
-   * Process an SSRF source instance for export. This method makes a copy of the
-   * source instance configuration, copying all required data objects into their
-   * proper location and preparing the SSRF destination instance for export.
+   * Process a SSRF instance object for export. This method examines the class
+   * tree and copies all required data objects into their proper location and
+   * preparing the SSRF destination instance for export.
    * <p>
    * @param sourceInstance      the SSRF working copy
-   * @param destinationInstance a new SSRF instance with the components copied
-   *                            into their proper destination
+   * @param destinationInstance the root SSRF instance into which the components
+   *                            are copied into their proper destination
    */
-  private static Object build(Object sourceInstance, Object destinationInstance) {
+  @SuppressWarnings("AssignmentToMethodParameter")
+  private static void build(Object sourceInstance, Object destinationInstance) {
     /**
      * Return immediately if the source instance is null. Instantiate a new
      * destination instance if none is provided.
      */
     if (sourceInstance == null) {
-      return null;
+      return;
     } else if (destinationInstance == null) {
-      try {
-        destinationInstance = Class.forName(sourceInstance.getClass().getName()).getConstructor().newInstance();
-      } catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
-      }
+      destinationInstance = sourceInstance;
     }
     /**
      * Assign the class type under study to a local variable for convenience.
@@ -505,7 +500,7 @@ public class SSRFUtility {
      * classes.
      */
     if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
-      return destinationInstance;
+      return;
     }
     /**
      * Iterate through the list of declared fields (public, protected and
@@ -543,24 +538,35 @@ public class SSRFUtility {
        * otherwise recurse to validate the field value object instance directly.
        */
       if (fieldValue instanceof Collection) {
-        for (Object entry : (Collection) fieldValue) {
-          if (isBuildable(entry)) {
-            /**
-             * Try to invoke the build method within the class instance. If
-             * available this will copy transient SSRF data type serial numbers
-             * into their respective reference containers.
-             */
-            invokeBuild(entry);
-            /**
-             * Recurse into the class instance.
-             */
-            build(entry, destinationInstance);
-            /**
-             * After recursion try adding the value to the destination (root
-             * SSRF) instance.
-             */
-            addValueToDestinationInstance(entry, destinationInstance);
+        /**
+         * To avoid a ConcurrentModificationException create a temporary list of
+         * objects that are buildable then proceed to call each in turn.
+         */
+        List<Object> buildableList = new ArrayList<>();
+        for (Object entryCandidate : (Collection) fieldValue) {
+          if (isBuildable(entryCandidate)) {
+            buildableList.add(entryCandidate);
           }
+        }
+        /**
+         * Now call and recurse into all of the buildable object instances.
+         */
+        for (Object buildable : buildableList) {
+          /**
+           * Try to invoke the build method within the class instance. If
+           * available this will copy transient SSRF data type serial numbers
+           * into their respective reference containers.
+           */
+          invokeBuild(buildable);
+          /**
+           * Recurse into the class instance.
+           */
+          build(buildable, destinationInstance);
+          /**
+           * After recursion try adding the value to the destination (root SSRF)
+           * instance.
+           */
+          addValueToDestinationInstance(buildable, destinationInstance);
         }
       } else {
         if (isBuildable(fieldValue)) {
@@ -576,7 +582,6 @@ public class SSRFUtility {
     /**
      * This recursion branch is finished.
      */
-    return destinationInstance;
   }
 
   /**
@@ -632,12 +637,9 @@ public class SSRFUtility {
      * does not implement the build() method.
      */
     try {
-//      Method buildMethod = instance.getClass().getMethod("build", null);
-//      buildMethod.invoke(instance, null);
       instance.getClass().getMethod("build", null).invoke(instance, null);
     } catch (NoSuchMethodException | SecurityException ex) {
     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-//      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
 

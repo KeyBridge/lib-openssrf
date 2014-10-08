@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2014 Jesse Caulfield <jesse@caulfield.org>.
+ * Copyright 2014 Key Bridge Global LLC.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -46,7 +46,7 @@ import java.util.regex.Pattern;
  * <p>
  * SSRF Properties can be saved to a File/Stream or loaded from a File/Stream.
  * <p>
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  * @version 1.0, 10/07/14
  * @since 3.1.0
  */
@@ -57,13 +57,15 @@ public class SSRFProperties extends Properties {
   /**
    * Get an instance of the default SSRF properties configuration.
    * <p>
-   * A SSRF properties with the global classification to U "Unclassified".
-   * Existing properties may be edited and new properties may be freely added.
+   * The default configuration is a SSRF properties containing ONLY a global
+   * classification configuration set to U ("Unclassified").
+   * <p>
+   * The returned SSRFProperties instance may be freely edited and updated
+   * before assigning it to a SSRF configuration.
    * <p>
    * @return the default SSRFProperties instance
    */
   public static SSRFProperties getDefault() {
-    System.out.println("DEBUG SSRFProperties getDefault");
     SSRFProperties p = new SSRFProperties();
     try {
       p.load(SSRFProperties.class.getClassLoader().getResourceAsStream("META-INF/profiles/default.properties"));
