@@ -546,40 +546,40 @@ public class SSRFUtility {
       if (fieldValue instanceof Collection) {
         /**
          * To avoid a ConcurrentModificationException create a temporary list of
-         * objects that are buildable then proceed to call each in turn.
+         * objects that are preparable then proceed to call each in turn.
          */
-        Set<Object> buildableList = new HashSet<>();
+        Set<Object> preparablObjects = new HashSet<>();
         for (Object entryCandidate : (Collection) fieldValue) {
-          if (isBuildable(entryCandidate)) {
-            buildableList.add(entryCandidate);
+          if (implementsPrepare(entryCandidate)) {
+            preparablObjects.add(entryCandidate);
           }
         }
         /**
-         * Now call and recurse into all of the buildable object instances.
+         * Now call and recurse into all of the preparable object instances.
          */
-        for (Object buildable : buildableList) {
+        for (Object preparableObject : preparablObjects) {
           /**
-           * Try to invoke the build method within the class instance. If
+           * Try to invoke the prepare method within the class instance. If
            * available this will copy transient SSRF data type serial numbers
            * into their respective reference containers.
            */
-          invokeBuild(buildable);
+          invokePrepare(preparableObject);
           /**
            * Recurse into the class instance.
            */
-          prepare(buildable, rootInstance);
+          prepare(preparableObject, rootInstance);
           /**
            * After recursion try adding the value to the destination (root SSRF)
            * instance.
            */
-          addValueToDestinationInstance(buildable, rootInstance);
+          addValueToDestinationInstance(preparableObject, rootInstance);
         }
       } else {
-        if (isBuildable(fieldValue)) {
+        if (implementsPrepare(fieldValue)) {
           /**
            * Same process as above.
            */
-          invokeBuild(fieldValue);
+          invokePrepare(fieldValue);
           prepare(fieldValue, rootInstance);
           addValueToDestinationInstance(fieldValue, rootInstance);
         }
@@ -613,14 +613,14 @@ public class SSRFUtility {
   }
 
   /**
-   * Test if the object instance class is prepareable; that is, whether an
+   * Test if the object instance class is preparable; that is, whether an
    * attempt to invoke the prepare() method should be made.
    * <p>
    * @param instance the object instance
    * @return true if the object class name matches classes that _might_
    *         implement the prepare() method.
    */
-  private static boolean isBuildable(Object instance) {
+  private static boolean implementsPrepare(Object instance) {
     if (instance == null) {
       return false;
     }
@@ -632,10 +632,10 @@ public class SSRFUtility {
       && !className.contains(".adapter.")
       && !className.contains(".metadata.")) {
       try {
-        return instance.getClass().getMethod("build") != null;
+        return instance.getClass().getMethod("prepare") != null;
       } catch (NoSuchMethodException | SecurityException ex) {
         /**
-         * Does not implement build().
+         * Does not implement prepare().
          */
 //      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
       }
@@ -649,23 +649,23 @@ public class SSRFUtility {
    * <p>
    * @param instance the object instance
    */
-  private static void invokeBuild(Object instance) {
+  private static void invokePrepare(Object instance) {
     if (instance == null) {
       return;
     }
     /**
-     * Try to invoke the build() method. Fail gracefully if the instance class
-     * does not implement the build() method.
+     * Try to invoke the prepare() method. Fail gracefully if the instance class
+     * does not implement the prepare() method.
      */
     try {
-      instance.getClass().getMethod("build").invoke(instance);
+      instance.getClass().getMethod("prepare").invoke(instance);
     } catch (NoSuchMethodException | SecurityException ex) {
       /**
-       * Does not implement build().
+       * Does not implement prepare().
        */
     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
       /**
-       * build() is not accessible (e.g. private).
+       * prepare() is not accessible (e.g. private).
        */
     }
   }
