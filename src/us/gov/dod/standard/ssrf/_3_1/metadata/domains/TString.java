@@ -143,7 +143,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
     if (getClass() != obj.getClass()) {
       return false;
     }
-    return Objects.equals(this.value, ((TString) obj).value);
+    return Objects.equals(this.value, ((TString) obj).getValue());
   }
 
   /**
