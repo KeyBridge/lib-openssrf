@@ -142,7 +142,7 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
    */
   @Override
   public String marshal(IMetadataType v) throws Exception {
-    return convert((Number) v.getValue()).toString();
+    return convert((Number) v.getValue()).getValue().toString();
   }
 
   /**
