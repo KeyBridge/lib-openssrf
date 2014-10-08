@@ -112,7 +112,7 @@ public class TSerial extends TString {
    * Format is S4
    */
   @XmlTransient
-  private String organization;
+  private String organisation;
   /**
    * The serial number Serial identifier (REQUIRED).
    * <p>
@@ -151,7 +151,7 @@ public class TSerial extends TString {
    * <p>
    * The local is set to the current system default. The serial is
    * programmatically set to a time-sequenced, UUID-based 15-character snippet.
-   * The organization is left blank and may be set by th user.
+   * The organisation is left blank and may be set by th user.
    * <p>
    * @param clazz a SSRF class type that extends Common
    * @return a TSerial instance
@@ -182,7 +182,7 @@ public class TSerial extends TString {
     StringBuilder sb = new StringBuilder();
     sb.append(country != null ? country.name() : "")
       .append(":")
-      .append(organization != null ? organization : "")
+      .append(organisation != null ? organisation : "")
       .append(":")
       .append(datasetType != null ? datasetType.name() : "")
       .append(":")
@@ -203,12 +203,25 @@ public class TSerial extends TString {
       if (m.find()) {
         setCountry(ListCCY.valueOf(m.group(1)));
         setDatasetType(EDatasetType.valueOf(m.group(2)));
-        setOrganization(m.group(3));
+        setOrganisation(m.group(3));
         setSerial(m.group(4));
       } else {
         throw new IllegalArgumentException("SERIAL format error " + PATTERN + " for \"" + value + "\"");
       }
     }
+  }
+
+  /**
+   * Update the serial number.
+   * <p>
+   * This method should typically be called after the serial number fields are
+   * configured and (optionally) before exporting an SSRF message.
+   * <p>
+   * @return The current TSerial object instance
+   */
+  public TSerial build() {
+    format();
+    return this;
   }
 
   /**
@@ -247,13 +260,13 @@ public class TSerial extends TString {
   /**
    * Set the serial number Organization code (OPTIONAL).
    * <p>
-   * @param organization
+   * @param organisation
    */
-  public void setOrganization(String organization) {
-    if (organization.length() > 4) {
+  public void setOrganisation(String organisation) {
+    if (organisation.length() > 4) {
       throw new IllegalArgumentException("String length violation S4 [0, 4]. Length is " + value.length() + " for \"" + value + "\"");
     }
-    this.organization = organization;
+    this.organisation = organisation;
     format();
   }
 
@@ -404,7 +417,7 @@ public class TSerial extends TString {
    * @return The current TSerial object instance
    */
   public TSerial withOrganization(String value) {
-    setOrganization(value != null ? value.toUpperCase(Locale.getDefault()) : "");
+    setOrganisation(value != null ? value.toUpperCase(Locale.getDefault()) : "");
     return this;
   }
 
