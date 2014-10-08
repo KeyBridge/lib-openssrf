@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
 import java.math.BigInteger;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -202,8 +203,8 @@ public class TSerial extends TString {
       Matcher m = Pattern.compile(PATTERN).matcher(value);
       if (m.find()) {
         setCountry(ListCCY.valueOf(m.group(1)));
-        setDatasetType(EDatasetType.valueOf(m.group(2)));
-        setOrganisation(m.group(3));
+        setOrganisation(m.group(2));
+        setDatasetType(EDatasetType.valueOf(m.group(3)));
         setSerial(m.group(4));
       } else {
         throw new IllegalArgumentException("SERIAL format error " + PATTERN + " for \"" + value + "\"");
@@ -212,16 +213,27 @@ public class TSerial extends TString {
   }
 
   /**
-   * Update the serial number.
+   * Update the serial number with the component configurations.
    * <p>
    * This method should typically be called after the serial number fields are
    * configured and (optionally) before exporting an SSRF message.
    * <p>
-   * @return The current TSerial object instance
+   * @since 3.1.0
    */
-  public TSerial prepare() {
+  public void prepare() {
     format();
-    return this;
+  }
+
+  /**
+   * Update the serial number to write the component configurations.
+   * <p>
+   * This method should typically be called after the Common is imported from
+   * XML.
+   * <p>
+   * @since 3.1.0
+   */
+  public void postLoad() {
+    parse();
   }
 
   /**
@@ -465,5 +477,43 @@ public class TSerial extends TString {
     }
     return digitCount;
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals">
+  /**
+   * Hash code is based upon the user-configured serial number portion of the
+   * value.
+   * <p>
+   * @return a hash code of the user-configured serial number portion
+   */
+  @Override
+  public int hashCode() {
+    if (this.serial == null) {
+      return super.hashCode();
+    }
+    int hash = 5;
+    hash = 47 * hash + Objects.hashCode(this.serial);
+    return hash;
+  }
+
+  /**
+   * Equality is based upon the user-configured serial number portion of the
+   * value.
+   * <p>
+   * @param obj the other object to compare
+   * @return TRUE if the serial number components are equal
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    if (this.serial == null) {
+      return super.equals(obj);
+    }
+    return Objects.equals(this.serial, ((TSerial) obj).serial);
+  }//</editor-fold>
 
 }
