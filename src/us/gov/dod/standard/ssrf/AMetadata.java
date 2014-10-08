@@ -68,7 +68,6 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AMetadata", propOrder = {"cls"})
-@XmlTransient
 @SuppressWarnings("unchecked")
 public abstract class AMetadata<T> {
 
@@ -162,12 +161,20 @@ public abstract class AMetadata<T> {
   @XmlAttribute(name = "idref")
   protected String idref;
   /**
-   * In attribute availability (US), enter data supporting legacy equipment
-   * certification business practice of entering "Unknown", "N/A", "Not
-   * Available" or "Not Applicable", when data is not available.
+   * US:availability - data supporting legacy equipment certification business
+   * practice.
+   * <p>
+   * Values should be selected from one of "Unknown", "N/A", "Not Available" or
+   * "Not Applicable", when data is not available.
    */
   @XmlAttribute(name = "availability")
   protected String availability;
+
+  /**
+   * Metadata types require a zero argument constructor.
+   */
+  public AMetadata() {
+  }
 
   /**
    * Get the classification of the current data item. This attribute is REQUIRED
@@ -455,14 +462,14 @@ public abstract class AMetadata<T> {
    */
   @Override
   public String toString() {
-    return "AStandardMetadataAttributes {"
-      + " cls [" + cls + "]"
-      + " extReferences [" + extReferences + "]"
-      + " legacyReleasability [" + legacyReleasability + "]"
-      + " quality [" + quality + "]"
-      + " recommendedValue [" + recommendedValue + "]"
-      + " releasability [" + releasability + "]"
-      + " rem [" + remarkRef + "]"
+    return " metadata {"
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (releasability != null ? " releasability [" + releasability + "]" : "")
+      + (remarkRef != null ? " rem [" + remarkRef + "]" : "")
       + "}";
   }
 
