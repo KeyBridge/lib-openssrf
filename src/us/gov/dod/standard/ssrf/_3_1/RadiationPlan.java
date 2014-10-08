@@ -202,7 +202,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * the level of authorisation.
    */
   @XmlElement(name = "JammingAuthority")
-  private List<JammingAuthority> jammingAuthority;
+  private Collection<JammingAuthority> jammingAuthority;
   /**
    * US:JammingPlan (Optional)
    * <p>
@@ -210,7 +210,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * desired effect, and desired effectiveness.
    */
   @XmlElement(name = "JammingPlan")
-  private List<JammingPlan> jammingPlan;
+  private Collection<JammingPlan> jammingPlan;
 
   /**
    * Get the frequency range maximum value planned for denial of use.
@@ -468,9 +468,9 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return a non-null but possibly empty list of {@link JammingAuthority}
    *         instances
    */
-  public List<JammingAuthority> getJammingAuthority() {
+  public Collection<JammingAuthority> getJammingAuthority() {
     if (jammingAuthority == null) {
-      jammingAuthority = new ArrayList<>();
+      jammingAuthority = new HashSet<>();
     }
     return this.jammingAuthority;
   }
@@ -499,9 +499,9 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * @return a non-null but possibly empty list of {@link JammingPlan} instances
    */
-  public List<JammingPlan> getJammingPlan() {
+  public Collection<JammingPlan> getJammingPlan() {
     if (jammingPlan == null) {
-      jammingPlan = new ArrayList<>();
+      jammingPlan = new HashSet<>();
     }
     return this.jammingPlan;
   }

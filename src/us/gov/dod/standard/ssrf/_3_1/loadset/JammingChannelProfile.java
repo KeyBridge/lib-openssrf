@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.loadset;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -273,7 +273,7 @@ public class JammingChannelProfile {
    * synchronising Electronic Warfare jamming information.
    */
   @XmlElement(name = "TimingDeconflictionProtocol")
-  private List<TimingDeconflictionProtocol> timingDeconflictionProtocol;
+  private Collection<TimingDeconflictionProtocol> timingDeconflictionProtocol;
 
   /**
    * Get the signal level required to activate the loadset, for systems capable
@@ -840,9 +840,9 @@ public class JammingChannelProfile {
    * @return a non-null but possibly empty list of
    *         {@link TimingDeconflictionProtocol} instances
    */
-  public List<TimingDeconflictionProtocol> getTimingDeconflictionProtocol() {
+  public Collection<TimingDeconflictionProtocol> getTimingDeconflictionProtocol() {
     if (timingDeconflictionProtocol == null) {
-      timingDeconflictionProtocol = new ArrayList<>();
+      timingDeconflictionProtocol = new HashSet<>();
     }
     return this.timingDeconflictionProtocol;
   }

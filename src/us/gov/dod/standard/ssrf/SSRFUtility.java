@@ -54,6 +54,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
  * @version 1.0, 10/02/14
  * @since 3.1.0
  */
+@SuppressWarnings({"unchecked"})
 public class SSRFUtility {
 
   /**
@@ -108,7 +109,7 @@ public class SSRFUtility {
    * @param instance the object instance to validate
    * @throws java.lang.Exception if the SSRF instance fails to validate
    */
-  @SuppressWarnings({"unchecked", "AssignmentToMethodParameter"})
+  @SuppressWarnings({"AssignmentToMethodParameter"})
   public static void validate(Object instance) throws Exception {
     /**
      * Assign the class type under study to a local variable for convenience.
@@ -224,7 +225,7 @@ public class SSRFUtility {
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
    */
-  @SuppressWarnings({"unchecked", "AssignmentToMethodParameter"})
+  @SuppressWarnings({"AssignmentToMethodParameter"})
   private static Collection<String> evaluate(Object instance, Object parentInstance, Field parentField, Collection<String> messages) {
     /**
      * Initialize the messages collection if required. Use a TreeSet to
@@ -345,7 +346,6 @@ public class SSRFUtility {
          * valid.
          */
         try {
-          @SuppressWarnings("unchecked")
           XmlAdapter<Object, Object> anInstance = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
           anInstance.marshal(fieldValue);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
@@ -543,7 +543,7 @@ public class SSRFUtility {
          * To avoid a ConcurrentModificationException create a temporary list of
          * objects that are buildable then proceed to call each in turn.
          */
-        List<Object> buildableList = new ArrayList<>();
+        Collection<Object> buildableList = new HashSet<>();
         for (Object entryCandidate : (Collection) fieldValue) {
           if (isBuildable(entryCandidate)) {
             buildableList.add(entryCandidate);
@@ -673,7 +673,6 @@ public class SSRFUtility {
    * @param instance   a SSRF object instance. The field type is a generic
    *                   object as this method calls itself recursively.
    */
-  @SuppressWarnings("unchecked")
   public static void setProperties(SSRFProperties properties, Object instance) {
     if (instance == null) {
       return;
@@ -728,6 +727,7 @@ public class SSRFUtility {
            * Get the WITH setter.
            */
           Method method = findWithMethod(clazz, field);
+//          if (method == null) {            method = findSetMethod(clazz, field);          }
           if (method != null && method.getParameterTypes().length != 0) {
             Class<?> paramType = method.getParameterTypes()[0];
             /**
@@ -775,9 +775,9 @@ public class SSRFUtility {
 
   /**
    * Internal helper method supporting the
-   * {@link #setProperties(us.gov.dod.standard.ssrf.SSRFProperties, java.lang.Object)}
-   * method. This method inspects the indicated Class to find the first declared
-   * or inherited WITH setter method for the indicated field type.
+   * {@link #setProperties(SSRFProperties, java.lang.Object)} method. This
+   * method inspects the indicated Class to find the first declared or inherited
+   * WITH setter method for the indicated field type.
    * <p>
    * @param clazz the class type to inspect
    * @param field the field to look for
@@ -789,6 +789,28 @@ public class SSRFUtility {
      */
     for (Method method : findDeclaredAndInheritedMethods(clazz)) {
       if (method.getName().toLowerCase().contains("with" + field.getName().toLowerCase())) {
+        return method;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Internal helper method supporting the
+   * {@link #setProperties(SSRFProperties, java.lang.Object)} method. This
+   * method inspects the indicated Class to find the first declared or inherited
+   * SET setter method for the indicated field type.
+   * <p>
+   * @param clazz the class type to inspect
+   * @param field the field to look for
+   * @return a SET setter method, if present
+   */
+  private static Method findSetMethod(Class<?> clazz, Field field) {
+    /**
+     * Push all names to lower case to perform a case-insensitive search.
+     */
+    for (Method method : findDeclaredAndInheritedMethods(clazz)) {
+      if (method.getName().toLowerCase().contains("set" + field.getName().toLowerCase())) {
         return method;
       }
     }

@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -432,7 +432,7 @@ public class AntMode {
    * isotropic source (dBi), in the direction of maximum radiation.
    */
   @XmlElement(name = "AntGain")
-  private List<AntGain> antGain;
+  private Collection<AntGain> antGain;
   /**
    * AntFreqs (Optional)
    * <p>
@@ -440,7 +440,7 @@ public class AntMode {
    * operating frequency.
    */
   @XmlElement(name = "AntFreqs")
-  private List<AntFreqs> antFreqs;
+  private Collection<AntFreqs> antFreqs;
   /**
    * AntPattern (Optional)
    * <p>
@@ -452,7 +452,7 @@ public class AntMode {
    * peak.
    */
   @XmlElement(name = "AntPattern")
-  private List<AntPattern> antPattern;
+  private Collection<AntPattern> antPattern;
   /**
    * AntEfficiency (Optional)
    * <p>
@@ -460,14 +460,14 @@ public class AntMode {
    * within the frequency range of the antenna.
    */
   @XmlElement(name = "AntEfficiency")
-  private List<AntEfficiency> antEfficiency;
+  private Collection<AntEfficiency> antEfficiency;
   /**
    * Complex Element VSWR stores the Voltage Standing Wave Ratio information for
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency.
    */
   @XmlElement(name = "VSWR")
-  private List<VSWR> vswr;
+  private Collection<VSWR> vswr;
   /**
    * US:ObservedLobeAnalysis (Optional)
    * <p>
@@ -475,7 +475,7 @@ public class AntMode {
    * Antenna sidelobes and backlobes.
    */
   @XmlElement(name = "ObservedLobeAnalysis")
-  private List<ObservedLobeAnalysis> observedLobeAnalysis;
+  private Collection<ObservedLobeAnalysis> observedLobeAnalysis;
   /**
    * US:ObservedPolarisationAnalysis (Optional)
    * <p>
@@ -483,7 +483,7 @@ public class AntMode {
    * information for the polarization and tilt angle information.
    */
   @XmlElement(name = "ObservedPolarisationAnalysis")
-  private List<ObservedPolarisationAnalysis> observedPolarisationAnalysis;
+  private Collection<ObservedPolarisationAnalysis> observedPolarisationAnalysis;
   /**
    * US:ObservedScanAnalysis (Optional)
    * <p>
@@ -491,7 +491,7 @@ public class AntMode {
    * and Vertical Scan parameters as well as the Adaptive Driver information.
    */
   @XmlElement(name = "ObservedScanAnalysis")
-  private List<ObservedScanAnalysis> observedScanAnalysis;
+  private Collection<ObservedScanAnalysis> observedScanAnalysis;
 
   /**
    * Get a short name for the mode; this name should be a meaningful
@@ -1361,9 +1361,9 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link AntGain} instances
    */
-  public List<AntGain> getAntGain() {
+  public Collection<AntGain> getAntGain() {
     if (antGain == null) {
-      antGain = new ArrayList<>();
+      antGain = new HashSet<>();
     }
     return this.antGain;
   }
@@ -1392,9 +1392,9 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link AntFreqs} instances
    */
-  public List<AntFreqs> getAntFreqs() {
+  public Collection<AntFreqs> getAntFreqs() {
     if (antFreqs == null) {
-      antFreqs = new ArrayList<>();
+      antFreqs = new HashSet<>();
     }
     return this.antFreqs;
   }
@@ -1427,9 +1427,9 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link AntPattern} instances
    */
-  public List<AntPattern> getAntPattern() {
+  public Collection<AntPattern> getAntPattern() {
     if (antPattern == null) {
-      antPattern = new ArrayList<>();
+      antPattern = new HashSet<>();
     }
     return this.antPattern;
   }
@@ -1459,9 +1459,9 @@ public class AntMode {
    * @return a non-null but possibly empty list of {@link AntEfficiency}
    *         instances
    */
-  public List<AntEfficiency> getAntEfficiency() {
+  public Collection<AntEfficiency> getAntEfficiency() {
     if (antEfficiency == null) {
-      antEfficiency = new ArrayList<>();
+      antEfficiency = new HashSet<>();
     }
     return this.antEfficiency;
   }
@@ -1491,9 +1491,9 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link VSWR} instances
    */
-  public List<VSWR> getVSWR() {
+  public Collection<VSWR> getVSWR() {
     if (vswr == null) {
-      vswr = new ArrayList<>();
+      vswr = new HashSet<>();
     }
     return this.vswr;
   }
@@ -1523,9 +1523,9 @@ public class AntMode {
    * @return a non-null but possibly empty list of {@link ObservedLobeAnalysis}
    *         instances
    */
-  public List<ObservedLobeAnalysis> getObservedLobeAnalysis() {
+  public Collection<ObservedLobeAnalysis> getObservedLobeAnalysis() {
     if (observedLobeAnalysis == null) {
-      observedLobeAnalysis = new ArrayList<>();
+      observedLobeAnalysis = new HashSet<>();
     }
     return this.observedLobeAnalysis;
   }
@@ -1555,9 +1555,9 @@ public class AntMode {
    * @return a non-null but possibly empty list of
    *         {@link ObservedPolarisationAnalysis} instances
    */
-  public List<ObservedPolarisationAnalysis> getObservedPolarisationAnalysis() {
+  public Collection<ObservedPolarisationAnalysis> getObservedPolarisationAnalysis() {
     if (observedPolarisationAnalysis == null) {
-      observedPolarisationAnalysis = new ArrayList<>();
+      observedPolarisationAnalysis = new HashSet<>();
     }
     return this.observedPolarisationAnalysis;
   }
@@ -1588,9 +1588,9 @@ public class AntMode {
    * @return a non-null but possibly empty list of {@link ObservedScanAnalysis}
    *         instances
    */
-  public List<ObservedScanAnalysis> getObservedScanAnalysis() {
+  public Collection<ObservedScanAnalysis> getObservedScanAnalysis() {
     if (observedScanAnalysis == null) {
-      observedScanAnalysis = new ArrayList<>();
+      observedScanAnalysis = new HashSet<>();
     }
     return this.observedScanAnalysis;
   }

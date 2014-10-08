@@ -179,7 +179,7 @@ public class Allotment extends Common<Allotment> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private List<Project> project;
+  private Collection<Project> project;
   /**
    * POCInformation (Optional)
    * <p>
@@ -187,7 +187,7 @@ public class Allotment extends Common<Allotment> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * LocationRef (Required)
    * <p>
@@ -195,7 +195,7 @@ public class Allotment extends Common<Allotment> {
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> locationRef;
+  private Collection<TString> locationRef;
   /**
    * Emission (Optional)
    * <p>
@@ -203,7 +203,7 @@ public class Allotment extends Common<Allotment> {
    * the allotment.
    */
   @XmlElement(name = "Emission")
-  private List<Emission> emission;
+  private Collection<Emission> emission;
   /**
    * AllotFreq (Required)
    * <p>
@@ -211,7 +211,7 @@ public class Allotment extends Common<Allotment> {
    * Allotment.
    */
   @XmlElement(name = "AllotFreq", required = true)
-  private List<AllotFreq> allotFreq;
+  private Collection<AllotFreq> allotFreq;
 
   /**
    * Get an identifying name for this Allotment or Assignment.
@@ -449,9 +449,9 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public List<Project> getProject() {
+  public Collection<Project> getProject() {
     if (project == null) {
-      project = new ArrayList<>();
+      project = new HashSet<>();
     }
     return this.project;
   }
@@ -481,9 +481,9 @@ public class Allotment extends Common<Allotment> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -514,9 +514,9 @@ public class Allotment extends Common<Allotment> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public List<TString> getLocationRef() {
+  public Collection<TString> getLocationRef() {
     if (locationRef == null) {
-      locationRef = new ArrayList<>();
+      locationRef = new HashSet<>();
     }
     return this.locationRef;
   }
@@ -545,9 +545,9 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Emission} instances
    */
-  public List<Emission> getEmission() {
+  public Collection<Emission> getEmission() {
     if (emission == null) {
-      emission = new ArrayList<>();
+      emission = new HashSet<>();
     }
     return this.emission;
   }
@@ -576,9 +576,9 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * @return a non-null but possibly empty list of {@link AllotFreq} instances
    */
-  public List<AllotFreq> getAllotFreq() {
+  public Collection<AllotFreq> getAllotFreq() {
     if (allotFreq == null) {
-      allotFreq = new ArrayList<>();
+      allotFreq = new HashSet<>();
     }
     return this.allotFreq;
   }
@@ -952,7 +952,7 @@ public class Allotment extends Common<Allotment> {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<Location> location;
+  private Collection<Location> location;
 
   /**
    * Get the LocationRef
@@ -962,9 +962,9 @@ public class Allotment extends Common<Allotment> {
    * @return a {@link Location} instance
    * @since 3.1.0
    */
-  public List<Location> getLocation() {
+  public Collection<Location> getLocation() {
     if (location == null) {
-      location = new ArrayList<>();
+      location = new HashSet<>();
     }
     return location;
   }
@@ -1019,7 +1019,7 @@ public class Allotment extends Common<Allotment> {
   @Override
   public Allotment build() {
     super.build();
-    this.locationRef = new ArrayList<>();
+    this.locationRef = new HashSet<>();
     for (Location instance : getLocation()) {
       this.locationRef.add(instance.getSerial());
     }

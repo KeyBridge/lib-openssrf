@@ -346,7 +346,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Dataset.
    */
   @XmlElement(name = "CaseNum")
-  private List<CaseNum> caseNum;
+  private Collection<CaseNum> caseNum;
   /**
    * ExtReferenceRef (Optional)
    * <p>
@@ -354,7 +354,7 @@ public abstract class Common<T> implements Comparable<T> {
    * ExternalReference.
    */
   @XmlElement(name = "ExtReferenceRef", nillable = true)
-  private List<ExtReferenceRef> extReferenceRef;
+  private Collection<ExtReferenceRef> extReferenceRef;
   /**
    * remarks - Remarks (Optional)
    * <p>
@@ -365,7 +365,7 @@ public abstract class Common<T> implements Comparable<T> {
    * specifically established for it.
    */
   @XmlElement(name = "Remarks", nillable = true)
-  private List<Remarks> remarks;
+  private Collection<Remarks> remarks;
 
   /**
    * releasability - Releasability Markings (Optional)
@@ -379,7 +379,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is List of L:CCY
    */
   @XmlAttribute(name = "releasability")
-  private List<ListCCY> releasability;
+  private Collection<ListCCY> releasability;
   /**
    * remarks - Index reference to Data Item Remarks (Optional)
    * <p>
@@ -388,7 +388,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "remarks")
-  private List<BigInteger> remarkRef;
+  private Collection<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
@@ -398,7 +398,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "extReferences")
-  private List<BigInteger> extReferences;
+  private Collection<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
    * <p>
@@ -1050,9 +1050,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link CaseNum} instances
    */
-  public List<CaseNum> getCaseNum() {
+  public Collection<CaseNum> getCaseNum() {
     if (caseNum == null) {
-      caseNum = new ArrayList<>();
+      caseNum = new HashSet<>();
     }
     return this.caseNum;
   }
@@ -1082,9 +1082,9 @@ public abstract class Common<T> implements Comparable<T> {
    * @return a non-null but possibly empty list of {@link ExtReferenceRef}
    *         instances
    */
-  public List<ExtReferenceRef> getExtReferenceRef() {
+  public Collection<ExtReferenceRef> getExtReferenceRef() {
     if (extReferenceRef == null) {
-      extReferenceRef = new ArrayList<>();
+      extReferenceRef = new HashSet<>();
     }
     return this.extReferenceRef;
   }
@@ -1110,9 +1110,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Remarks} instances
    */
-  public List<Remarks> getRemarks() {
+  public Collection<Remarks> getRemarks() {
     if (remarks == null) {
-      remarks = new ArrayList<>();
+      remarks = new HashSet<>();
     }
     return this.remarks;
   }
@@ -1171,9 +1171,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link ListCCY} instances
    */
-  public List<ListCCY> getReleasability() {
+  public Collection<ListCCY> getReleasability() {
     if (releasability == null) {
-      releasability = new ArrayList<>();
+      releasability = new HashSet<>();
     }
     return this.releasability;
   }
@@ -1200,9 +1200,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public List<BigInteger> getRemarkRef() {
+  public Collection<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
-      remarkRef = new ArrayList<>();
+      remarkRef = new HashSet<>();
     }
     return this.remarkRef;
   }
@@ -1229,9 +1229,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public List<BigInteger> getExtReferences() {
+  public Collection<BigInteger> getExtReferences() {
     if (extReferences == null) {
-      extReferences = new ArrayList<>();
+      extReferences = new HashSet<>();
     }
     return this.extReferences;
   }

@@ -118,7 +118,7 @@ public class Allocation {
    * allocation (e.g. a national allocation not aligned with the ITU RR).
    */
   @XmlElement(name = "Variance")
-  private List<Variance> variance;
+  private Collection<Variance> variance;
   /**
    * StnClass (Optional)
    * <p>
@@ -126,7 +126,7 @@ public class Allocation {
    * usage.
    */
   @XmlElement(name = "StnClass", nillable = true)
-  private List<StnClass> stnClass;
+  private Collection<StnClass> stnClass;
   /**
    * ChannelPlanRef (Optional)
    * <p>
@@ -134,7 +134,7 @@ public class Allocation {
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> channelPlanRef;
+  private Collection<TString> channelPlanRef;
   /**
    * footnotes - Link to allocation usage notes (Optional)
    * <p>
@@ -145,7 +145,7 @@ public class Allocation {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "footnotes")
-  private List<BigInteger> footnotes;
+  private Collection<BigInteger> footnotes;
 
   /**
    * Get a radiocommunication service recognized by an administration that is
@@ -313,9 +313,9 @@ public class Allocation {
    * <p>
    * @return a non-null but possibly empty list of {@link Variance} instances
    */
-  public List<Variance> getVariance() {
+  public Collection<Variance> getVariance() {
     if (variance == null) {
-      variance = new ArrayList<>();
+      variance = new HashSet<>();
     }
     return this.variance;
   }
@@ -344,9 +344,9 @@ public class Allocation {
    * <p>
    * @return a non-null but possibly empty list of {@link StnClass} instances
    */
-  public List<StnClass> getStnClass() {
+  public Collection<StnClass> getStnClass() {
     if (stnClass == null) {
-      stnClass = new ArrayList<>();
+      stnClass = new HashSet<>();
     }
     return this.stnClass;
   }
@@ -377,9 +377,9 @@ public class Allocation {
    * {@link #getChannelPlan()} instead.
    */
   @Deprecated
-  public List<TString> getChannelPlanRef() {
+  public Collection<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
-      channelPlanRef = new ArrayList<>();
+      channelPlanRef = new HashSet<>();
     }
     return this.channelPlanRef;
   }
@@ -407,9 +407,9 @@ public class Allocation {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public List<BigInteger> getFootnotes() {
+  public Collection<BigInteger> getFootnotes() {
     if (footnotes == null) {
-      footnotes = new ArrayList<>();
+      footnotes = new HashSet<>();
     }
     return this.footnotes;
   }
@@ -689,7 +689,7 @@ public class Allocation {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<ChannelPlan> channelPlan;
+  private Collection<ChannelPlan> channelPlan;
 
   /**
    * Get the ChannelPlanRef
@@ -699,9 +699,9 @@ public class Allocation {
    * @return a {@link ChannelPlan} instance
    * @since 3.1.0
    */
-  public List<ChannelPlan> getChannelPlan() {
+  public Collection<ChannelPlan> getChannelPlan() {
     if (channelPlan == null) {
-      channelPlan = new ArrayList<>();
+      channelPlan = new HashSet<>();
     }
     return channelPlan;
   }
@@ -754,7 +754,7 @@ public class Allocation {
    * @since 3.1.0
    */
   public Allocation build() {
-    this.channelPlanRef = new ArrayList<>();
+    this.channelPlanRef = new HashSet<>();
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());
     }

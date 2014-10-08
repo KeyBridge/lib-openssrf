@@ -265,7 +265,7 @@ public class Configuration {
    * Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
    */
   @XmlElement(name = "Notation")
-  private List<Notation> notation;
+  private Collection<Notation> notation;
   /**
    * Usage (Optional)
    * <p>
@@ -273,7 +273,7 @@ public class Configuration {
    * used.
    */
   @XmlElement(name = "Usage")
-  private List<Usage> usage;
+  private Collection<Usage> usage;
   /**
    * ConfigFreq (Optional)
    * <p>
@@ -284,7 +284,7 @@ public class Configuration {
    * Notes: When referenced by SSRequest, the Frequency i
    */
   @XmlElement(name = "ConfigFreq")
-  private List<ConfigFreq> configFreq;
+  private Collection<ConfigFreq> configFreq;
   /**
    * TxRef (Optional)
    * <p>
@@ -292,7 +292,7 @@ public class Configuration {
    * TxModes and the associated Antennas and AntMode.
    */
   @XmlElement(name = "TxRef")
-  private List<TxRef> txRef;
+  private Collection<TxRef> txRef;
   /**
    * RxRef (Optional)
    * <p>
@@ -300,14 +300,14 @@ public class Configuration {
    * RxModes and the associated Antennas and AntMode.
    */
   @XmlElement(name = "RxRef")
-  private List<RxRef> rxRef;
+  private Collection<RxRef> rxRef;
   /**
    * CaseNum (Optional)
    * <p>
    * CaseNum contains legacy and other identifiers associated with the Dataset.
    */
   @XmlElement(name = "CaseNum")
-  private List<CaseNum> caseNum;
+  private Collection<CaseNum> caseNum;
   /**
    * US:ConfigEmission (Optional)
    * <p>
@@ -316,7 +316,7 @@ public class Configuration {
    * components' capabilities.
    */
   @XmlElement(name = "ConfigEmission")
-  private List<ConfigEmission> configEmission;
+  private Collection<ConfigEmission> configEmission;
   /**
    * LoadsetRef (Optional)
    * <p>
@@ -325,7 +325,7 @@ public class Configuration {
    */
   @XmlElement(name = "LoadsetRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> loadsetRef;
+  private Collection<TString> loadsetRef;
   /**
    * US:ObservedERPAnalysis (Optional)
    * <p>
@@ -333,7 +333,7 @@ public class Configuration {
    * (ERP) associated with an emitter or Notation.
    */
   @XmlElement(name = "ObservedERPAnalysis")
-  private List<ObservedERPAnalysis> observedERPAnalysis;
+  private Collection<ObservedERPAnalysis> observedERPAnalysis;
 
   /**
    * Empty constructor. The {@link #configID} is automatically set to a random
@@ -902,9 +902,9 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link Notation} instances
    */
-  public List<Notation> getNotation() {
+  public Collection<Notation> getNotation() {
     if (notation == null) {
-      notation = new ArrayList<>();
+      notation = new HashSet<>();
     }
     return this.notation;
   }
@@ -933,9 +933,9 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link Usage} instances
    */
-  public List<Usage> getUsage() {
+  public Collection<Usage> getUsage() {
     if (usage == null) {
-      usage = new ArrayList<>();
+      usage = new HashSet<>();
     }
     return this.usage;
   }
@@ -965,9 +965,9 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link ConfigFreq} instances
    */
-  public List<ConfigFreq> getConfigFreq() {
+  public Collection<ConfigFreq> getConfigFreq() {
     if (configFreq == null) {
-      configFreq = new ArrayList<>();
+      configFreq = new HashSet<>();
     }
     return this.configFreq;
   }
@@ -996,9 +996,9 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link TxRef} instances
    */
-  public List<TxRef> getTxRef() {
+  public Collection<TxRef> getTxRef() {
     if (txRef == null) {
-      txRef = new ArrayList<>();
+      txRef = new HashSet<>();
     }
     return this.txRef;
   }
@@ -1027,9 +1027,9 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link RxRef} instances
    */
-  public List<RxRef> getRxRef() {
+  public Collection<RxRef> getRxRef() {
     if (rxRef == null) {
-      rxRef = new ArrayList<>();
+      rxRef = new HashSet<>();
     }
     return this.rxRef;
   }
@@ -1058,9 +1058,9 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link CaseNum} instances
    */
-  public List<CaseNum> getCaseNum() {
+  public Collection<CaseNum> getCaseNum() {
     if (caseNum == null) {
-      caseNum = new ArrayList<>();
+      caseNum = new HashSet<>();
     }
     return this.caseNum;
   }
@@ -1091,9 +1091,9 @@ public class Configuration {
    * @return a non-null but possibly empty list of {@link ConfigEmission}
    *         instances
    */
-  public List<ConfigEmission> getConfigEmission() {
+  public Collection<ConfigEmission> getConfigEmission() {
     if (configEmission == null) {
-      configEmission = new ArrayList<>();
+      configEmission = new HashSet<>();
     }
     return this.configEmission;
   }
@@ -1125,9 +1125,9 @@ public class Configuration {
    * {@link #getLoadset()} instead.
    */
   @Deprecated
-  public List<TString> getLoadsetRef() {
+  public Collection<TString> getLoadsetRef() {
     if (loadsetRef == null) {
-      loadsetRef = new ArrayList<>();
+      loadsetRef = new HashSet<>();
     }
     return this.loadsetRef;
   }
@@ -1157,9 +1157,9 @@ public class Configuration {
    * @return a non-null but possibly empty list of {@link ObservedERPAnalysis}
    *         instances
    */
-  public List<ObservedERPAnalysis> getObservedERPAnalysis() {
+  public Collection<ObservedERPAnalysis> getObservedERPAnalysis() {
     if (observedERPAnalysis == null) {
-      observedERPAnalysis = new ArrayList<>();
+      observedERPAnalysis = new HashSet<>();
     }
     return this.observedERPAnalysis;
   }
@@ -1796,7 +1796,7 @@ public class Configuration {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<Loadset> loadset;
+  private Collection<Loadset> loadset;
 
   /**
    * Get the LoadsetRef
@@ -1807,9 +1807,9 @@ public class Configuration {
    * @return a {@link Loadset} instance
    * @since 3.1.0
    */
-  public List<Loadset> getLoadset() {
+  public Collection<Loadset> getLoadset() {
     if (loadset == null) {
-      loadset = new ArrayList<>();
+      loadset = new HashSet<>();
     }
     return loadset;
   }
@@ -1864,7 +1864,7 @@ public class Configuration {
    * @since 3.1.0
    */
   public Configuration build() {
-    this.loadsetRef = new ArrayList<>();
+    this.loadsetRef = new HashSet<>();
     for (Loadset instance : getLoadset()) {
       this.loadsetRef.add(instance.getSerial());
     }

@@ -77,64 +77,64 @@ import javax.xml.bind.annotation.XmlType;
 public abstract class SchemaRoot<T> {
 
   @XmlElement(name = "Administrative")
-  protected List<Administrative> administrative;
+  protected Collection<Administrative> administrative;
   @XmlElement(name = "Allotment")
-  protected List<Allotment> allotment;
+  protected Collection<Allotment> allotment;
   @XmlElement(name = "Antenna")
-  protected List<Antenna> antenna;
+  protected Collection<Antenna> antenna;
   @XmlElement(name = "Assignment")
-  protected List<Assignment> assignment;
+  protected Collection<Assignment> assignment;
   @XmlElement(name = "ChannelPlan")
-  protected List<ChannelPlan> channelPlan;
+  protected Collection<ChannelPlan> channelPlan;
   @XmlElement(name = "Contact")
-  protected List<Contact> contact;
+  protected Collection<Contact> contact;
   @XmlElement(name = "ExternalReference")
-  protected List<ExternalReference> externalReference;
+  protected Collection<ExternalReference> externalReference;
   @XmlElement(name = "FEDeployment")
-  protected List<FEDeployment> feDeployment;
+  protected Collection<FEDeployment> feDeployment;
   @XmlElement(name = "ForceElement")
-  protected List<ForceElement> forceElement;
+  protected Collection<ForceElement> forceElement;
   @XmlElement(name = "IntfReport")
-  protected List<IntfReport> intfReport;
+  protected Collection<IntfReport> intfReport;
   @XmlElement(name = "JRFL")
-  protected List<JRFL> jrfl;
+  protected Collection<JRFL> jrfl;
   @XmlElement(name = "Loadset")
-  protected List<Loadset> loadset;
+  protected Collection<Loadset> loadset;
   @XmlElement(name = "Location")
-  protected List<Location> location;
+  protected Collection<Location> location;
   @XmlElement(name = "Message")
-  protected List<Message> message;
+  protected Collection<Message> message;
   @XmlElement(name = "Note")
-  protected List<Note> note;
+  protected Collection<Note> note;
   @XmlElement(name = "Organisation")
-  protected List<Organisation> organisation;
+  protected Collection<Organisation> organisation;
   @XmlElement(name = "RFSystem")
-  protected List<RFSystem> rfSystem;
+  protected Collection<RFSystem> rfSystem;
   @XmlElement(name = "RadiationPlan")
-  protected List<RadiationPlan> radiationPlan;
+  protected Collection<RadiationPlan> radiationPlan;
   @XmlElement(name = "Receiver")
-  protected List<Receiver> receiver;
+  protected Collection<Receiver> receiver;
   @XmlElement(name = "Role")
-  protected List<Role> role;
+  protected Collection<Role> role;
   @XmlElement(name = "SSReply")
-  protected List<SSReply> ssReply;
+  protected Collection<SSReply> ssReply;
   @XmlElement(name = "SSRequest")
-  protected List<SSRequest> ssRequest;
+  protected Collection<SSRequest> ssRequest;
   @XmlElement(name = "Satellite")
-  protected List<Satellite> satellite;
+  protected Collection<Satellite> satellite;
   @XmlElement(name = "TOA")
-  protected List<TOA> toa;
+  protected Collection<TOA> toa;
   @XmlElement(name = "Transmitter")
-  protected List<Transmitter> transmitter;
+  protected Collection<Transmitter> transmitter;
 
   /**
    * Get
    * <p>
    * @return a non-null but possibly empty list of {@link Contact} instances
    */
-  public List<Contact> getContact() {
+  public Collection<Contact> getContact() {
     if (contact == null) {
-      contact = new ArrayList<>();
+      contact = new HashSet<>();
     }
     return this.contact;
   }
@@ -160,9 +160,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Role} instances
    */
-  public List<Role> getRole() {
+  public Collection<Role> getRole() {
     if (role == null) {
-      role = new ArrayList<>();
+      role = new HashSet<>();
     }
     return this.role;
   }
@@ -189,9 +189,9 @@ public abstract class SchemaRoot<T> {
    * @return a non-null but possibly empty list of {@link Organisation}
    *         instances
    */
-  public List<Organisation> getOrganisation() {
+  public Collection<Organisation> getOrganisation() {
     if (organisation == null) {
-      organisation = new ArrayList<>();
+      organisation = new HashSet<>();
     }
     return this.organisation;
   }
@@ -218,9 +218,9 @@ public abstract class SchemaRoot<T> {
    * @return a non-null but possibly empty list of {@link ExternalReference}
    *         instances
    */
-  public List<ExternalReference> getExternalReference() {
+  public Collection<ExternalReference> getExternalReference() {
     if (externalReference == null) {
-      externalReference = new ArrayList<>();
+      externalReference = new HashSet<>();
     }
     return this.externalReference;
   }
@@ -247,9 +247,9 @@ public abstract class SchemaRoot<T> {
    * @return a non-null but possibly empty list of {@link Administrative}
    *         instances
    */
-  public List<Administrative> getAdministrative() {
+  public Collection<Administrative> getAdministrative() {
     if (administrative == null) {
-      administrative = new ArrayList<>();
+      administrative = new HashSet<>();
     }
     return this.administrative;
   }
@@ -275,9 +275,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Location} instances
    */
-  public List<Location> getLocation() {
+  public Collection<Location> getLocation() {
     if (location == null) {
-      location = new ArrayList<>();
+      location = new HashSet<>();
     }
     return this.location;
   }
@@ -303,9 +303,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link ChannelPlan} instances
    */
-  public List<ChannelPlan> getChannelPlan() {
+  public Collection<ChannelPlan> getChannelPlan() {
     if (channelPlan == null) {
-      channelPlan = new ArrayList<>();
+      channelPlan = new HashSet<>();
     }
     return this.channelPlan;
   }
@@ -331,9 +331,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link TOA} instances
    */
-  public List<TOA> getTOA() {
+  public Collection<TOA> getTOA() {
     if (toa == null) {
-      toa = new ArrayList<>();
+      toa = new HashSet<>();
     }
     return this.toa;
   }
@@ -359,9 +359,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Transmitter} instances
    */
-  public List<Transmitter> getTransmitter() {
+  public Collection<Transmitter> getTransmitter() {
     if (transmitter == null) {
-      transmitter = new ArrayList<>();
+      transmitter = new HashSet<>();
     }
     return this.transmitter;
   }
@@ -387,9 +387,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Receiver} instances
    */
-  public List<Receiver> getReceiver() {
+  public Collection<Receiver> getReceiver() {
     if (receiver == null) {
-      receiver = new ArrayList<>();
+      receiver = new HashSet<>();
     }
     return this.receiver;
   }
@@ -415,9 +415,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Antenna} instances
    */
-  public List<Antenna> getAntenna() {
+  public Collection<Antenna> getAntenna() {
     if (antenna == null) {
-      antenna = new ArrayList<>();
+      antenna = new HashSet<>();
     }
     return this.antenna;
   }
@@ -443,9 +443,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link RFSystem} instances
    */
-  public List<RFSystem> getRFSystem() {
+  public Collection<RFSystem> getRFSystem() {
     if (rfSystem == null) {
-      rfSystem = new ArrayList<>();
+      rfSystem = new HashSet<>();
     }
     return this.rfSystem;
   }
@@ -471,9 +471,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link SSRequest} instances
    */
-  public List<SSRequest> getSSRequest() {
+  public Collection<SSRequest> getSSRequest() {
     if (ssRequest == null) {
-      ssRequest = new ArrayList<>();
+      ssRequest = new HashSet<>();
     }
     return this.ssRequest;
   }
@@ -499,9 +499,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link SSReply} instances
    */
-  public List<SSReply> getSSReply() {
+  public Collection<SSReply> getSSReply() {
     if (ssReply == null) {
-      ssReply = new ArrayList<>();
+      ssReply = new HashSet<>();
     }
     return this.ssReply;
   }
@@ -527,9 +527,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Allotment} instances
    */
-  public List<Allotment> getAllotment() {
+  public Collection<Allotment> getAllotment() {
     if (allotment == null) {
-      allotment = new ArrayList<>();
+      allotment = new HashSet<>();
     }
     return this.allotment;
   }
@@ -555,9 +555,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Assignment} instances
    */
-  public List<Assignment> getAssignment() {
+  public Collection<Assignment> getAssignment() {
     if (assignment == null) {
-      assignment = new ArrayList<>();
+      assignment = new HashSet<>();
     }
     return this.assignment;
   }
@@ -583,9 +583,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Satellite} instances
    */
-  public List<Satellite> getSatellite() {
+  public Collection<Satellite> getSatellite() {
     if (satellite == null) {
-      satellite = new ArrayList<>();
+      satellite = new HashSet<>();
     }
     return this.satellite;
   }
@@ -611,9 +611,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link IntfReport} instances
    */
-  public List<IntfReport> getIntfReport() {
+  public Collection<IntfReport> getIntfReport() {
     if (intfReport == null) {
-      intfReport = new ArrayList<>();
+      intfReport = new HashSet<>();
     }
     return this.intfReport;
   }
@@ -639,9 +639,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link JRFL} instances
    */
-  public List<JRFL> getJRFL() {
+  public Collection<JRFL> getJRFL() {
     if (jrfl == null) {
-      jrfl = new ArrayList<>();
+      jrfl = new HashSet<>();
     }
     return this.jrfl;
   }
@@ -668,9 +668,9 @@ public abstract class SchemaRoot<T> {
    * @return a non-null but possibly empty list of {@link ForceElement}
    *         instances
    */
-  public List<ForceElement> getForceElement() {
+  public Collection<ForceElement> getForceElement() {
     if (forceElement == null) {
-      forceElement = new ArrayList<>();
+      forceElement = new HashSet<>();
     }
     return this.forceElement;
   }
@@ -697,9 +697,9 @@ public abstract class SchemaRoot<T> {
    * @return a non-null but possibly empty list of {@link FEDeployment}
    *         instances
    */
-  public List<FEDeployment> getFEDeployment() {
+  public Collection<FEDeployment> getFEDeployment() {
     if (feDeployment == null) {
-      feDeployment = new ArrayList<>();
+      feDeployment = new HashSet<>();
     }
     return this.feDeployment;
   }
@@ -725,9 +725,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Message} instances
    */
-  public List<Message> getMessage() {
+  public Collection<Message> getMessage() {
     if (message == null) {
-      message = new ArrayList<>();
+      message = new HashSet<>();
     }
     return this.message;
   }
@@ -753,9 +753,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Note} instances
    */
-  public List<Note> getNote() {
+  public Collection<Note> getNote() {
     if (note == null) {
-      note = new ArrayList<>();
+      note = new HashSet<>();
     }
     return this.note;
   }
@@ -781,9 +781,9 @@ public abstract class SchemaRoot<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Loadset} instances
    */
-  public List<Loadset> getLoadset() {
+  public Collection<Loadset> getLoadset() {
     if (loadset == null) {
-      loadset = new ArrayList<>();
+      loadset = new HashSet<>();
     }
     return this.loadset;
   }
@@ -810,9 +810,9 @@ public abstract class SchemaRoot<T> {
    * @return a non-null but possibly empty list of {@link RadiationPlan}
    *         instances
    */
-  public List<RadiationPlan> getRadiationPlan() {
+  public Collection<RadiationPlan> getRadiationPlan() {
     if (radiationPlan == null) {
-      radiationPlan = new ArrayList<>();
+      radiationPlan = new HashSet<>();
     }
     return this.radiationPlan;
   }

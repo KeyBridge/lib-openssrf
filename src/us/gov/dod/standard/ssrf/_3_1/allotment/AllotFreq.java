@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
@@ -124,7 +124,7 @@ public class AllotFreq {
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> locationRestrictionRef;
+  private Collection<TString> locationRestrictionRef;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -290,9 +290,9 @@ public class AllotFreq {
    * {@link #getLocationRestriction()} instead.
    */
   @Deprecated
-  public List<TString> getLocationRestrictionRef() {
+  public Collection<TString> getLocationRestrictionRef() {
     if (locationRestrictionRef == null) {
-      locationRestrictionRef = new ArrayList<>();
+      locationRestrictionRef = new HashSet<>();
     }
     return this.locationRestrictionRef;
   }
@@ -443,7 +443,7 @@ public class AllotFreq {
    * forbidden.
    */
   @XmlTransient
-  private List<Location> locationRestriction;
+  private Collection<Location> locationRestriction;
 
   /**
    * Get a Location where the Allotment usage is forbidden.
@@ -451,9 +451,9 @@ public class AllotFreq {
    * @return a {@link Location} instance
    * @since 3.1.0
    */
-  public List<Location> getLocationRestriction() {
+  public Collection<Location> getLocationRestriction() {
     if (locationRestriction == null) {
-      locationRestriction = new ArrayList<>();
+      locationRestriction = new HashSet<>();
     }
     return locationRestriction;
   }
@@ -502,7 +502,7 @@ public class AllotFreq {
    * @since 3.1.0
    */
   public AllotFreq build() {
-    this.locationRestrictionRef = new ArrayList<>();
+    this.locationRestrictionRef = new HashSet<>();
     for (Location instance : getLocationRestriction()) {
       this.locationRestrictionRef.add(instance.getSerial());
     }

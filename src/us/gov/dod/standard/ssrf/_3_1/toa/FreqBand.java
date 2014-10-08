@@ -24,10 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.TOA;
@@ -107,7 +107,7 @@ public class FreqBand {
    * specific radiocommunication service.
    */
   @XmlElement(name = "Allocation")
-  private List<Allocation> allocation;
+  private Collection<Allocation> allocation;
   /**
    * footnotes - Link to band usage notes (Optional)
    * <p>
@@ -117,7 +117,7 @@ public class FreqBand {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "footnotes")
-  private List<BigInteger> footnotes;
+  private Collection<BigInteger> footnotes;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -220,9 +220,9 @@ public class FreqBand {
    * <p>
    * @return a non-null but possibly empty list of {@link Allocation} instances
    */
-  public List<Allocation> getAllocation() {
+  public Collection<Allocation> getAllocation() {
     if (allocation == null) {
-      allocation = new ArrayList<>();
+      allocation = new HashSet<>();
     }
     return this.allocation;
   }
@@ -250,9 +250,9 @@ public class FreqBand {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public List<BigInteger> getFootnotes() {
+  public Collection<BigInteger> getFootnotes() {
     if (footnotes == null) {
-      footnotes = new ArrayList<>();
+      footnotes = new HashSet<>();
     }
     return this.footnotes;
   }

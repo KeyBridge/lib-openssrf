@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -109,7 +109,7 @@ public class Nomenclature {
    * country in which the equipment is manufactured may be included.
    */
   @XmlElement(name = "Manufacturer")
-  private List<Manufacturer> manufacturer;
+  private Collection<Manufacturer> manufacturer;
 
   /**
    * Get the type of nomenclature (commercial, military, etc).
@@ -244,9 +244,9 @@ public class Nomenclature {
    * @return a non-null but possibly empty list of {@link Manufacturer}
    *         instances
    */
-  public List<Manufacturer> getManufacturer() {
+  public Collection<Manufacturer> getManufacturer() {
     if (manufacturer == null) {
-      manufacturer = new ArrayList<>();
+      manufacturer = new HashSet<>();
     }
     return this.manufacturer;
   }

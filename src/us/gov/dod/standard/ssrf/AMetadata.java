@@ -24,10 +24,9 @@
 package us.gov.dod.standard.ssrf;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
@@ -93,7 +92,7 @@ public abstract class AMetadata<T> {
    * Format is List of L:CCY
    */
   @XmlAttribute(name = "releasability")
-  protected List<ListCCY> releasability;
+  protected Collection<ListCCY> releasability;
   /**
    * remark References - Links to Data Item Remarks (Optional)
    * <p>
@@ -102,7 +101,7 @@ public abstract class AMetadata<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "remarks")
-  protected List<BigInteger> remarkRef;
+  protected Collection<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
@@ -112,7 +111,7 @@ public abstract class AMetadata<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "extReferences")
-  protected List<BigInteger> extReferences;
+  protected Collection<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
    * <p>
@@ -201,9 +200,9 @@ public abstract class AMetadata<T> {
    * <p>
    * @return a non-null list of {@link BigInteger} instances
    */
-  public List<BigInteger> getRemarkRef() {
+  public Collection<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
-      remarkRef = new ArrayList<>();
+      remarkRef = new HashSet<>();
     }
     return this.remarkRef;
   }
@@ -243,9 +242,9 @@ public abstract class AMetadata<T> {
    * <p>
    * @return a non-null list of {@link ListCCY} instances
    */
-  public List<ListCCY> getReleasability() {
+  public Collection<ListCCY> getReleasability() {
     if (releasability == null) {
-      releasability = new ArrayList<>();
+      releasability = new HashSet<>();
     }
     return this.releasability;
   }
@@ -340,9 +339,9 @@ public abstract class AMetadata<T> {
    * <p>
    * @return a non-null list of {@link BigInteger} instances
    */
-  public List<BigInteger> getExtReferences() {
+  public Collection<BigInteger> getExtReferences() {
     if (extReferences == null) {
-      extReferences = new ArrayList<>();
+      extReferences = new HashSet<>();
     }
     return this.extReferences;
   }
@@ -461,15 +460,13 @@ public abstract class AMetadata<T> {
    */
   @Override
   public String toString() {
-    return " metadata {"
-      + (cls != null ? " cls [" + cls + "]" : "")
+    return (cls != null ? " cls [" + cls + "]" : "")
       + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
       + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
       + (quality != null ? " quality [" + quality + "]" : "")
       + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
       + (releasability != null ? " releasability [" + releasability + "]" : "")
-      + (remarkRef != null ? " rem [" + remarkRef + "]" : "")
-      + "}";
+      + (remarkRef != null ? " rem [" + remarkRef + "]" : "");
   }
 
   /**

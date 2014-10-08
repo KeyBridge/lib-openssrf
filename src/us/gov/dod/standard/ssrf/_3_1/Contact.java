@@ -148,7 +148,7 @@ public class Contact extends Common<Contact> {
    * Address contains the address of a Contact, Organisation or Role.
    */
   @XmlElement(name = "Address")
-  private List<Address> address;
+  private Collection<Address> address;
   /**
    * TelephoneFax (Optional)
    * <p>
@@ -156,14 +156,14 @@ public class Contact extends Common<Contact> {
    * Contact, Organisation or Role.
    */
   @XmlElement(name = "TelephoneFax")
-  private List<TelephoneFax> telephoneFax;
+  private Collection<TelephoneFax> telephoneFax;
   /**
    * Email (Optional)
    * <p>
    * Email contains the email address of the Contact or Role.
    */
   @XmlElement(name = "EMail")
-  private List<EMail> eMail;
+  private Collection<EMail> eMail;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -362,9 +362,9 @@ public class Contact extends Common<Contact> {
    * <p>
    * @return a non-null but possibly empty list of {@link Address} instances
    */
-  public List<Address> getAddress() {
+  public Collection<Address> getAddress() {
     if (address == null) {
-      address = new ArrayList<>();
+      address = new HashSet<>();
     }
     return this.address;
   }
@@ -394,9 +394,9 @@ public class Contact extends Common<Contact> {
    * @return a non-null but possibly empty list of {@link TelephoneFax}
    *         instances
    */
-  public List<TelephoneFax> getTelephoneFax() {
+  public Collection<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
-      telephoneFax = new ArrayList<>();
+      telephoneFax = new HashSet<>();
     }
     return this.telephoneFax;
   }
@@ -424,9 +424,9 @@ public class Contact extends Common<Contact> {
    * <p>
    * @return a non-null but possibly empty list of {@link EMail} instances
    */
-  public List<EMail> getEMail() {
+  public Collection<EMail> getEMail() {
     if (eMail == null) {
-      eMail = new ArrayList<>();
+      eMail = new HashSet<>();
     }
     return this.eMail;
   }

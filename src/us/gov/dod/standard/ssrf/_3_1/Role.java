@@ -140,7 +140,7 @@ public class Role extends Common<Role> {
    * Address contains the address of a Contact, Organisation or Role.
    */
   @XmlElement(name = "Address")
-  private List<Address> address;
+  private Collection<Address> address;
   /**
    * TelephoneFax (Optional)
    * <p>
@@ -148,14 +148,14 @@ public class Role extends Common<Role> {
    * Contact, Organisation or Role.
    */
   @XmlElement(name = "TelephoneFax")
-  private List<TelephoneFax> telephoneFax;
+  private Collection<TelephoneFax> telephoneFax;
   /**
    * Email (Optional)
    * <p>
    * Email contains the email address of the Contact or Role.
    */
   @XmlElement(name = "EMail")
-  private List<EMail> eMail;
+  private Collection<EMail> eMail;
   /**
    * ContactRef (Optional)
    * <p>
@@ -163,7 +163,7 @@ public class Role extends Common<Role> {
    */
   @XmlElement(name = "ContactRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> contactRef;
+  private Collection<TString> contactRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -343,9 +343,9 @@ public class Role extends Common<Role> {
    * <p>
    * @return a non-null but possibly empty list of {@link Address} instances
    */
-  public List<Address> getAddress() {
+  public Collection<Address> getAddress() {
     if (address == null) {
-      address = new ArrayList<>();
+      address = new HashSet<>();
     }
     return this.address;
   }
@@ -375,9 +375,9 @@ public class Role extends Common<Role> {
    * @return a non-null but possibly empty list of {@link TelephoneFax}
    *         instances
    */
-  public List<TelephoneFax> getTelephoneFax() {
+  public Collection<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
-      telephoneFax = new ArrayList<>();
+      telephoneFax = new HashSet<>();
     }
     return this.telephoneFax;
   }
@@ -405,9 +405,9 @@ public class Role extends Common<Role> {
    * <p>
    * @return a non-null but possibly empty list of {@link EMail} instances
    */
-  public List<EMail> getEMail() {
+  public Collection<EMail> getEMail() {
     if (eMail == null) {
-      eMail = new ArrayList<>();
+      eMail = new HashSet<>();
     }
     return this.eMail;
   }
@@ -438,9 +438,9 @@ public class Role extends Common<Role> {
    * {@link #getContact()} instead.
    */
   @Deprecated
-  public List<TString> getContactRef() {
+  public Collection<TString> getContactRef() {
     if (contactRef == null) {
-      contactRef = new ArrayList<>();
+      contactRef = new HashSet<>();
     }
     return this.contactRef;
   }
@@ -743,7 +743,7 @@ public class Role extends Common<Role> {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<Contact> contact;
+  private Collection<Contact> contact;
 
   /**
    * Get the ContactRef
@@ -753,9 +753,9 @@ public class Role extends Common<Role> {
    * @return a {@link Contact} instance
    * @since 3.1.0
    */
-  public List<Contact> getContact() {
+  public Collection<Contact> getContact() {
     if (contact == null) {
-      contact = new ArrayList<>();
+      contact = new HashSet<>();
     }
     return contact;
   }
@@ -810,7 +810,7 @@ public class Role extends Common<Role> {
   @Override
   public Role build() {
     super.build();
-    this.contactRef = new ArrayList<>();
+    this.contactRef = new HashSet<>();
     for (Contact instance : getContact()) {
       this.contactRef.add(instance.getSerial());
     }

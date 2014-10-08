@@ -400,7 +400,7 @@ public class SSRequest extends Common<SSRequest> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private List<Project> project;
+  private Collection<Project> project;
   /**
    * CurrentStage - Current Stage (Optional)
    * <p>
@@ -409,7 +409,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is L:CSG
    */
   @XmlElement(name = "Stage")
-  private List<Stage> stage;
+  private Collection<Stage> stage;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -419,7 +419,7 @@ public class SSRequest extends Common<SSRequest> {
    * military nomenclature and a commercial model number.
    */
   @XmlElement(name = "Nomenclature")
-  private List<Nomenclature> nomenclature;
+  private Collection<Nomenclature> nomenclature;
   /**
    * POCInformation (Optional)
    * <p>
@@ -427,7 +427,7 @@ public class SSRequest extends Common<SSRequest> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * RelatedSupportability (Optional)
    * <p>
@@ -435,7 +435,7 @@ public class SSRequest extends Common<SSRequest> {
    * has a dependency.
    */
   @XmlElement(name = "RelatedSupportability")
-  private List<RelatedSupportability> relatedSupportability;
+  private Collection<RelatedSupportability> relatedSupportability;
   /**
    * HostNation (Optional)
    * <p>
@@ -445,7 +445,7 @@ public class SSRequest extends Common<SSRequest> {
    * accordance with the FMSC agreement).
    */
   @XmlElement(name = "HostNation", nillable = true)
-  private List<HostNation> hostNation;
+  private Collection<HostNation> hostNation;
   /**
    * US:WartimeUse - Wartime Use (Optional)
    * <p>
@@ -454,21 +454,21 @@ public class SSRequest extends Common<SSRequest> {
    * Format is L:CBO
    */
   @XmlElement(name = "Time")
-  private List<Time> time;
+  private Collection<Time> time;
   /**
    * DiagramEndpoint (Optional)
    * <p>
    * DiagramEndpoint defines an instance of an icon on the diagram.
    */
   @XmlElement(name = "DiagramEndpoint")
-  private List<DiagramEndpoint> diagramEndpoint;
+  private Collection<DiagramEndpoint> diagramEndpoint;
   /**
    * DiagramLine (Optional)
    * <p>
    * DiagramLine defines a line between two endpoints on the diagram.
    */
   @XmlElement(name = "DiagramLine")
-  private List<DiagramLine> diagramLine;
+  private Collection<DiagramLine> diagramLine;
   /**
    * Configuration (Optional)
    * <p>
@@ -481,7 +481,7 @@ public class SSRequest extends Common<SSRequest> {
    * Divergence from SMADEF: Mandatory [1..n] when exchanging with NATO /
    */
   @XmlElement(name = "Configuration")
-  private List<Configuration> configuration;
+  private Collection<Configuration> configuration;
   /**
    * US:StatusLog (Optional)
    * <p>
@@ -489,7 +489,7 @@ public class SSRequest extends Common<SSRequest> {
    * spectrum supportability requests.
    */
   @XmlElement(name = "StatusLog")
-  private List<StatusLog> statusLog;
+  private Collection<StatusLog> statusLog;
   /**
    * US:Trunking (Optional)
    * <p>
@@ -1326,9 +1326,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public List<Project> getProject() {
+  public Collection<Project> getProject() {
     if (project == null) {
-      project = new ArrayList<>();
+      project = new HashSet<>();
     }
     return this.project;
   }
@@ -1354,9 +1354,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link Stage} instances
    */
-  public List<Stage> getStage() {
+  public Collection<Stage> getStage() {
     if (stage == null) {
-      stage = new ArrayList<>();
+      stage = new HashSet<>();
     }
     return this.stage;
   }
@@ -1388,9 +1388,9 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public List<Nomenclature> getNomenclature() {
+  public Collection<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
-      nomenclature = new ArrayList<>();
+      nomenclature = new HashSet<>();
     }
     return this.nomenclature;
   }
@@ -1420,9 +1420,9 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -1452,9 +1452,9 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link RelatedSupportability}
    *         instances
    */
-  public List<RelatedSupportability> getRelatedSupportability() {
+  public Collection<RelatedSupportability> getRelatedSupportability() {
     if (relatedSupportability == null) {
-      relatedSupportability = new ArrayList<>();
+      relatedSupportability = new HashSet<>();
     }
     return this.relatedSupportability;
   }
@@ -1485,9 +1485,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link HostNation} instances
    */
-  public List<HostNation> getHostNation() {
+  public Collection<HostNation> getHostNation() {
     if (hostNation == null) {
-      hostNation = new ArrayList<>();
+      hostNation = new HashSet<>();
     }
     return this.hostNation;
   }
@@ -1513,9 +1513,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link Time} instances
    */
-  public List<Time> getTime() {
+  public Collection<Time> getTime() {
     if (time == null) {
-      time = new ArrayList<>();
+      time = new HashSet<>();
     }
     return this.time;
   }
@@ -1545,9 +1545,9 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link DiagramEndpoint}
    *         instances
    */
-  public List<DiagramEndpoint> getDiagramEndpoint() {
+  public Collection<DiagramEndpoint> getDiagramEndpoint() {
     if (diagramEndpoint == null) {
-      diagramEndpoint = new ArrayList<>();
+      diagramEndpoint = new HashSet<>();
     }
     return this.diagramEndpoint;
   }
@@ -1576,9 +1576,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link DiagramLine} instances
    */
-  public List<DiagramLine> getDiagramLine() {
+  public Collection<DiagramLine> getDiagramLine() {
     if (diagramLine == null) {
-      diagramLine = new ArrayList<>();
+      diagramLine = new HashSet<>();
     }
     return this.diagramLine;
   }
@@ -1611,9 +1611,9 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link Configuration}
    *         instances
    */
-  public List<Configuration> getConfiguration() {
+  public Collection<Configuration> getConfiguration() {
     if (configuration == null) {
-      configuration = new ArrayList<>();
+      configuration = new HashSet<>();
     }
     return this.configuration;
   }
@@ -1642,9 +1642,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link StatusLog} instances
    */
-  public List<StatusLog> getStatusLog() {
+  public Collection<StatusLog> getStatusLog() {
     if (statusLog == null) {
-      statusLog = new ArrayList<>();
+      statusLog = new HashSet<>();
     }
     return this.statusLog;
   }

@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -97,7 +97,7 @@ public class Freq extends AsgnFreqBase {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "PairedFreq")
-  private List<PairedFreq> pairedFreq;
+  private Collection<PairedFreq> pairedFreq;
   /**
    * US:NarrowBandPlanning (Optional)
    * <p>
@@ -105,7 +105,7 @@ public class Freq extends AsgnFreqBase {
    * single frequency or a range of frequencies.
    */
   @XmlElement(name = "NarrowBandPlanning")
-  private List<NarrowBandPlanning> narrowBandPlanning;
+  private Collection<NarrowBandPlanning> narrowBandPlanning;
 
   /**
    * Get the TAD associated to the assigned frequency. A Tactical Air Designator
@@ -178,9 +178,9 @@ public class Freq extends AsgnFreqBase {
    * <p>
    * @return a non-null but possibly empty list of {@link PairedFreq} instances
    */
-  public List<PairedFreq> getPairedFreq() {
+  public Collection<PairedFreq> getPairedFreq() {
     if (pairedFreq == null) {
-      pairedFreq = new ArrayList<>();
+      pairedFreq = new HashSet<>();
     }
     return this.pairedFreq;
   }
@@ -210,9 +210,9 @@ public class Freq extends AsgnFreqBase {
    * @return a non-null but possibly empty list of {@link NarrowBandPlanning}
    *         instances
    */
-  public List<NarrowBandPlanning> getNarrowBandPlanning() {
+  public Collection<NarrowBandPlanning> getNarrowBandPlanning() {
     if (narrowBandPlanning == null) {
-      narrowBandPlanning = new ArrayList<>();
+      narrowBandPlanning = new HashSet<>();
     }
     return this.narrowBandPlanning;
   }

@@ -203,7 +203,7 @@ public class Assigned {
    * frequencies.
    */
   @XmlElement(name = "Freq")
-  private List<Freq> freq;
+  private Collection<Freq> freq;
   /**
    * FreqOld (Optional)
    * <p>
@@ -211,7 +211,7 @@ public class Assigned {
    * frequencies.
    */
   @XmlElement(name = "FreqOld", nillable = true)
-  private List<FreqOld> freqOld;
+  private Collection<FreqOld> freqOld;
 
   /**
    * Get an application-specific measure of the quality for the assigned
@@ -524,9 +524,9 @@ public class Assigned {
    * <p>
    * @return a non-null but possibly empty list of {@link Freq} instances
    */
-  public List<Freq> getFreq() {
+  public Collection<Freq> getFreq() {
     if (freq == null) {
-      freq = new ArrayList<>();
+      freq = new HashSet<>();
     }
     return this.freq;
   }
@@ -555,9 +555,9 @@ public class Assigned {
    * <p>
    * @return a non-null but possibly empty list of {@link FreqOld} instances
    */
-  public List<FreqOld> getFreqOld() {
+  public Collection<FreqOld> getFreqOld() {
     if (freqOld == null) {
-      freqOld = new ArrayList<>();
+      freqOld = new HashSet<>();
     }
     return this.freqOld;
   }

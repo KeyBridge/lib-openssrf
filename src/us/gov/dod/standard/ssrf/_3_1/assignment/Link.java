@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -151,7 +151,7 @@ public class Link {
    * increment, and number of frequencies, required for an assignment.
    */
   @XmlElement(name = "Tuning")
-  private List<Tuning> tuning;
+  private Collection<Tuning> tuning;
   /**
    * StationConfig (Required)
    * <p>
@@ -160,7 +160,7 @@ public class Link {
    * additional antenna pointing/blanking parameters.
    */
   @XmlElement(name = "StationConfig", required = true)
-  private List<StationConfig> stationConfig;
+  private Collection<StationConfig> stationConfig;
   /**
    * Assigned (Optional)
    * <p>
@@ -168,7 +168,7 @@ public class Link {
    * can also contain the old frequency.
    */
   @XmlElement(name = "Assigned")
-  private List<Assigned> assigned;
+  private Collection<Assigned> assigned;
   /**
    * US:DCSTrunk (Optional)
    * <p>
@@ -177,7 +177,7 @@ public class Link {
    * Information Systems Agency (DISA).
    */
   @XmlElement(name = "DCSTrunk", nillable = true)
-  private List<DCSTrunk> dcsTrunk;
+  private Collection<DCSTrunk> dcsTrunk;
   /**
    * US:DetailedFunctionID (Optional)
    * <p>
@@ -185,7 +185,7 @@ public class Link {
    * link of a frequency assignment or group of frequency assignments.
    */
   @XmlElement(name = "DetailedFunction", nillable = true)
-  private List<DetailedFunction> detailedFunction;
+  private Collection<DetailedFunction> detailedFunction;
 
   /**
    * Get a unique identifier for the link. This identifier should be a
@@ -373,9 +373,9 @@ public class Link {
    * <p>
    * @return a non-null but possibly empty list of {@link Tuning} instances
    */
-  public List<Tuning> getTuning() {
+  public Collection<Tuning> getTuning() {
     if (tuning == null) {
-      tuning = new ArrayList<>();
+      tuning = new HashSet<>();
     }
     return this.tuning;
   }
@@ -406,9 +406,9 @@ public class Link {
    * @return a non-null but possibly empty list of {@link StationConfig}
    *         instances
    */
-  public List<StationConfig> getStationConfig() {
+  public Collection<StationConfig> getStationConfig() {
     if (stationConfig == null) {
-      stationConfig = new ArrayList<>();
+      stationConfig = new HashSet<>();
     }
     return this.stationConfig;
   }
@@ -437,9 +437,9 @@ public class Link {
    * <p>
    * @return a non-null but possibly empty list of {@link Assigned} instances
    */
-  public List<Assigned> getAssigned() {
+  public Collection<Assigned> getAssigned() {
     if (assigned == null) {
-      assigned = new ArrayList<>();
+      assigned = new HashSet<>();
     }
     return this.assigned;
   }
@@ -469,9 +469,9 @@ public class Link {
    * <p>
    * @return a non-null but possibly empty list of {@link DCSTrunk} instances
    */
-  public List<DCSTrunk> getDCSTrunk() {
+  public Collection<DCSTrunk> getDCSTrunk() {
     if (dcsTrunk == null) {
-      dcsTrunk = new ArrayList<>();
+      dcsTrunk = new HashSet<>();
     }
     return this.dcsTrunk;
   }
@@ -502,9 +502,9 @@ public class Link {
    * @return a non-null but possibly empty list of {@link DetailedFunction}
    *         instances
    */
-  public List<DetailedFunction> getDetailedFunction() {
+  public Collection<DetailedFunction> getDetailedFunction() {
     if (detailedFunction == null) {
-      detailedFunction = new ArrayList<>();
+      detailedFunction = new HashSet<>();
     }
     return this.detailedFunction;
   }

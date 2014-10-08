@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -532,7 +532,7 @@ public class ObservedRFAnalysis {
    * ObservedRFValues (US) contains details of actual RF observations.
    */
   @XmlElement(name = "ObservedRFValues")
-  private List<ObservedRFValues> observedRFValues;
+  private Collection<ObservedRFValues> observedRFValues;
 
   /**
    * Get the chip rate. Pertains mostly to spread spectrum.
@@ -1691,9 +1691,9 @@ public class ObservedRFAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedRFValues}
    *         instances
    */
-  public List<ObservedRFValues> getObservedRFValues() {
+  public Collection<ObservedRFValues> getObservedRFValues() {
     if (observedRFValues == null) {
-      observedRFValues = new ArrayList<>();
+      observedRFValues = new HashSet<>();
     }
     return this.observedRFValues;
   }

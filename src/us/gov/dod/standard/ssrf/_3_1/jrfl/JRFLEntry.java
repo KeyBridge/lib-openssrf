@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Common;
@@ -291,7 +291,7 @@ public class JRFLEntry {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private List<Project> project;
+  private Collection<Project> project;
   /**
    * POCInformation (Optional)
    * <p>
@@ -299,7 +299,7 @@ public class JRFLEntry {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * JRFLEntryLocation (Optional)
    * <p>
@@ -307,7 +307,7 @@ public class JRFLEntry {
    * frequency or frequency range(s) is restricted in use.
    */
   @XmlElement(name = "JRFLEntryLocation")
-  private List<JRFLEntryLocation> jrflEntryLocation;
+  private Collection<JRFLEntryLocation> jrflEntryLocation;
 
   /**
    * Get ProtectionCode, indicate the type of JRFL entry.
@@ -878,9 +878,9 @@ public class JRFLEntry {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public List<Project> getProject() {
+  public Collection<Project> getProject() {
     if (project == null) {
-      project = new ArrayList<>();
+      project = new HashSet<>();
     }
     return this.project;
   }
@@ -910,9 +910,9 @@ public class JRFLEntry {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -942,9 +942,9 @@ public class JRFLEntry {
    * @return a non-null but possibly empty list of {@link JRFLEntryLocation}
    *         instances
    */
-  public List<JRFLEntryLocation> getJRFLEntryLocation() {
+  public Collection<JRFLEntryLocation> getJRFLEntryLocation() {
     if (jrflEntryLocation == null) {
-      jrflEntryLocation = new ArrayList<>();
+      jrflEntryLocation = new HashSet<>();
     }
     return this.jrflEntryLocation;
   }

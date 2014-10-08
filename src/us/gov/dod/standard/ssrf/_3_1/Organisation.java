@@ -163,7 +163,7 @@ public class Organisation extends Common<Organisation> {
    * Address contains the address of a Contact, Organisation or Role.
    */
   @XmlElement(name = "Address")
-  private List<Address> address;
+  private Collection<Address> address;
   /**
    * TelephoneFax (Optional)
    * <p>
@@ -171,7 +171,7 @@ public class Organisation extends Common<Organisation> {
    * Contact, Organisation or Role.
    */
   @XmlElement(name = "TelephoneFax")
-  private List<TelephoneFax> telephoneFax;
+  private Collection<TelephoneFax> telephoneFax;
   /**
    * Email (Optional)
    * <p>
@@ -180,7 +180,7 @@ public class Organisation extends Common<Organisation> {
    * Notes: Will add Organisation to text in next release
    */
   @XmlElement(name = "EMail")
-  private List<EMail> eMail;
+  private Collection<EMail> eMail;
   /**
    * RoleRef (Optional)
    * <p>
@@ -188,7 +188,7 @@ public class Organisation extends Common<Organisation> {
    */
   @XmlElement(name = "RoleRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> roleRef;
+  private Collection<TString> roleRef;
   /**
    * RelatedOrganisation (Optional)
    * <p>
@@ -197,7 +197,7 @@ public class Organisation extends Common<Organisation> {
    * relation (parent, child, sibling).
    */
   @XmlElement(name = "RelatedOrganisation")
-  private List<RelatedOrganisation> relatedOrganisation;
+  private Collection<RelatedOrganisation> relatedOrganisation;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -429,9 +429,9 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * @return a non-null but possibly empty list of {@link Address} instances
    */
-  public List<Address> getAddress() {
+  public Collection<Address> getAddress() {
     if (address == null) {
-      address = new ArrayList<>();
+      address = new HashSet<>();
     }
     return this.address;
   }
@@ -461,9 +461,9 @@ public class Organisation extends Common<Organisation> {
    * @return a non-null but possibly empty list of {@link TelephoneFax}
    *         instances
    */
-  public List<TelephoneFax> getTelephoneFax() {
+  public Collection<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
-      telephoneFax = new ArrayList<>();
+      telephoneFax = new HashSet<>();
     }
     return this.telephoneFax;
   }
@@ -491,9 +491,9 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * @return a non-null but possibly empty list of {@link EMail} instances
    */
-  public List<EMail> getEMail() {
+  public Collection<EMail> getEMail() {
     if (eMail == null) {
-      eMail = new ArrayList<>();
+      eMail = new HashSet<>();
     }
     return this.eMail;
   }
@@ -524,9 +524,9 @@ public class Organisation extends Common<Organisation> {
    * {@link #getRole()} instead.
    */
   @Deprecated
-  public List<TString> getRoleRef() {
+  public Collection<TString> getRoleRef() {
     if (roleRef == null) {
-      roleRef = new ArrayList<>();
+      roleRef = new HashSet<>();
     }
     return this.roleRef;
   }
@@ -557,9 +557,9 @@ public class Organisation extends Common<Organisation> {
    * @return a non-null but possibly empty list of {@link RelatedOrganisation}
    *         instances
    */
-  public List<RelatedOrganisation> getRelatedOrganisation() {
+  public Collection<RelatedOrganisation> getRelatedOrganisation() {
     if (relatedOrganisation == null) {
-      relatedOrganisation = new ArrayList<>();
+      relatedOrganisation = new HashSet<>();
     }
     return this.relatedOrganisation;
   }
@@ -917,7 +917,7 @@ public class Organisation extends Common<Organisation> {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<Role> role;
+  private Collection<Role> role;
 
   /**
    * Get the RoleRef
@@ -927,9 +927,9 @@ public class Organisation extends Common<Organisation> {
    * @return a {@link Role} instance
    * @since 3.1.0
    */
-  public List<Role> getRole() {
+  public Collection<Role> getRole() {
     if (role == null) {
-      role = new ArrayList<>();
+      role = new HashSet<>();
     }
     return role;
   }
@@ -984,7 +984,7 @@ public class Organisation extends Common<Organisation> {
   @Override
   public Organisation build() {
     super.build();
-    this.roleRef = new ArrayList<>();
+    this.roleRef = new HashSet<>();
     for (Role instance : getRole()) {
       this.roleRef.add(instance.getSerial());
     }

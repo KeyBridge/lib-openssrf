@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -193,7 +193,7 @@ public class Transmitter extends Common<Transmitter> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -205,7 +205,7 @@ public class Transmitter extends Common<Transmitter> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private List<Nomenclature> nomenclature;
+  private Collection<Nomenclature> nomenclature;
   /**
    * Deployment (Optional)
    * <p>
@@ -216,7 +216,7 @@ public class Transmitter extends Common<Transmitter> {
    * an airborne platform, a ship or fixed land installation.
    */
   @XmlElement(name = "Deployment")
-  private List<Deployment> deployment;
+  private Collection<Deployment> deployment;
   /**
    * Curve (Optional)
    * <p>
@@ -227,7 +227,7 @@ public class Transmitter extends Common<Transmitter> {
    * measurement bandwidth.
    */
   @XmlElement(name = "Curve")
-  private List<Curve> curve;
+  private Collection<Curve> curve;
   /**
    * TxMode (Optional)
    * <p>
@@ -235,7 +235,7 @@ public class Transmitter extends Common<Transmitter> {
    * of operation of the Transmitter.
    */
   @XmlElement(name = "TxMode")
-  private List<TxMode> txMode;
+  private Collection<TxMode> txMode;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -243,7 +243,7 @@ public class Transmitter extends Common<Transmitter> {
    * supply (Source), and use (Using) the Transmitter.
    */
   @XmlElement(name = "UsingCountries")
-  private List<UsingCountries> usingCountries;
+  private Collection<UsingCountries> usingCountries;
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -504,9 +504,9 @@ public class Transmitter extends Common<Transmitter> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -538,9 +538,9 @@ public class Transmitter extends Common<Transmitter> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public List<Nomenclature> getNomenclature() {
+  public Collection<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
-      nomenclature = new ArrayList<>();
+      nomenclature = new HashSet<>();
     }
     return this.nomenclature;
   }
@@ -573,9 +573,9 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * @return a non-null but possibly empty list of {@link Deployment} instances
    */
-  public List<Deployment> getDeployment() {
+  public Collection<Deployment> getDeployment() {
     if (deployment == null) {
-      deployment = new ArrayList<>();
+      deployment = new HashSet<>();
     }
     return this.deployment;
   }
@@ -607,9 +607,9 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * @return a non-null but possibly empty list of {@link Curve} instances
    */
-  public List<Curve> getCurve() {
+  public Collection<Curve> getCurve() {
     if (curve == null) {
-      curve = new ArrayList<>();
+      curve = new HashSet<>();
     }
     return this.curve;
   }
@@ -638,9 +638,9 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * @return a non-null but possibly empty list of {@link TxMode} instances
    */
-  public List<TxMode> getTxMode() {
+  public Collection<TxMode> getTxMode() {
     if (txMode == null) {
-      txMode = new ArrayList<>();
+      txMode = new HashSet<>();
     }
     return this.txMode;
   }
@@ -670,9 +670,9 @@ public class Transmitter extends Common<Transmitter> {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public List<UsingCountries> getUsingCountries() {
+  public Collection<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
-      usingCountries = new ArrayList<>();
+      usingCountries = new HashSet<>();
     }
     return this.usingCountries;
   }

@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -275,7 +275,7 @@ public class Station {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * US:StationLoc (Required)
    * <p>
@@ -285,7 +285,7 @@ public class Station {
    * Divergence from SMADEF: When exchanging data with NATO, only one Stat
    */
   @XmlElement(name = "StationLoc", required = true)
-  private List<StationLoc> stationLoc;
+  private Collection<StationLoc> stationLoc;
 
   /**
    * Get the unique identifier of one of the stations used by this Assignment at
@@ -743,9 +743,9 @@ public class Station {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -776,9 +776,9 @@ public class Station {
    * <p>
    * @return a non-null but possibly empty list of {@link StationLoc} instances
    */
-  public List<StationLoc> getStationLoc() {
+  public Collection<StationLoc> getStationLoc() {
     if (stationLoc == null) {
-      stationLoc = new ArrayList<>();
+      stationLoc = new HashSet<>();
     }
     return this.stationLoc;
   }

@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -125,7 +125,7 @@ public class ObservedLobeAnalysis {
    * sidelobe can be represented.
    */
   @XmlElement(name = "ObservedLobeValues")
-  private List<ObservedLobeValues> observedLobeValues;
+  private Collection<ObservedLobeValues> observedLobeValues;
 
   /**
    * Get BeamType (US), indicate the pattern beam type that best represents the
@@ -264,9 +264,9 @@ public class ObservedLobeAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedLobeValues}
    *         instances
    */
-  public List<ObservedLobeValues> getObservedLobeValues() {
+  public Collection<ObservedLobeValues> getObservedLobeValues() {
     if (observedLobeValues == null) {
-      observedLobeValues = new ArrayList<>();
+      observedLobeValues = new HashSet<>();
     }
     return this.observedLobeValues;
   }

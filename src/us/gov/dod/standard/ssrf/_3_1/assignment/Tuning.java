@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -134,7 +134,7 @@ public class Tuning {
    * RequestedFreq indicates a single frequency or a range of frequencies.
    */
   @XmlElement(name = "RequestedFreq")
-  private List<AsgnFreqBase> requestedFreq;
+  private Collection<AsgnFreqBase> requestedFreq;
 
   /**
    * Get the tuning increment expressed of the requested frequency range. This
@@ -329,9 +329,9 @@ public class Tuning {
    * @return a non-null but possibly empty list of {@link AsgnFreqBase}
    *         instances
    */
-  public List<AsgnFreqBase> getRequestedFreq() {
+  public Collection<AsgnFreqBase> getRequestedFreq() {
     if (requestedFreq == null) {
-      requestedFreq = new ArrayList<>();
+      requestedFreq = new HashSet<>();
     }
     return this.requestedFreq;
   }

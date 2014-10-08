@@ -24,10 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
@@ -400,7 +400,7 @@ public class RxMode {
    * optional symbols.
    */
   @XmlElement(name = "EmsClass", nillable = true)
-  private List<EmsClass> emsClass;
+  private Collection<EmsClass> emsClass;
   /**
    * RxSignalTuning (Optional)
    * <p>
@@ -409,7 +409,7 @@ public class RxMode {
    * increments of the equipment.
    */
   @XmlElement(name = "RxSignalTuning")
-  private List<RxSignalTuning> rxSignalTuning;
+  private Collection<RxSignalTuning> rxSignalTuning;
   /**
    * RxModulation (Optional)
    * <p>
@@ -417,14 +417,14 @@ public class RxMode {
    * receiver side.
    */
   @XmlElement(name = "RxModulation")
-  private List<RxModulation> rxModulation;
+  private Collection<RxModulation> rxModulation;
   /**
    * Baseband (Optional)
    * <p>
    * Baseband defines the parameters of the modulating or received signal.
    */
   @XmlElement(name = "Baseband")
-  private List<Baseband> baseband;
+  private Collection<Baseband> baseband;
   /**
    * FreqConversion (Optional)
    * <p>
@@ -432,7 +432,7 @@ public class RxMode {
    * stage: intermediate frequency (IF) and local oscillator (LO) parameters.
    */
   @XmlElement(name = "FreqConversion")
-  private List<FreqConversion> freqConversion;
+  private Collection<FreqConversion> freqConversion;
   /**
    * Spread Spectrum (Optional)
    * <p>
@@ -449,7 +449,7 @@ public class RxMode {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "curves")
-  private List<BigInteger> curves;
+  private Collection<BigInteger> curves;
 
   /**
    * Get the short name for the mode; this name should be a meaningful
@@ -1285,9 +1285,9 @@ public class RxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link EmsClass} instances
    */
-  public List<EmsClass> getEmsClass() {
+  public Collection<EmsClass> getEmsClass() {
     if (emsClass == null) {
-      emsClass = new ArrayList<>();
+      emsClass = new HashSet<>();
     }
     return this.emsClass;
   }
@@ -1318,9 +1318,9 @@ public class RxMode {
    * @return a non-null but possibly empty list of {@link RxSignalTuning}
    *         instances
    */
-  public List<RxSignalTuning> getRxSignalTuning() {
+  public Collection<RxSignalTuning> getRxSignalTuning() {
     if (rxSignalTuning == null) {
-      rxSignalTuning = new ArrayList<>();
+      rxSignalTuning = new HashSet<>();
     }
     return this.rxSignalTuning;
   }
@@ -1350,9 +1350,9 @@ public class RxMode {
    * @return a non-null but possibly empty list of {@link RxModulation}
    *         instances
    */
-  public List<RxModulation> getRxModulation() {
+  public Collection<RxModulation> getRxModulation() {
     if (rxModulation == null) {
-      rxModulation = new ArrayList<>();
+      rxModulation = new HashSet<>();
     }
     return this.rxModulation;
   }
@@ -1381,9 +1381,9 @@ public class RxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link Baseband} instances
    */
-  public List<Baseband> getBaseband() {
+  public Collection<Baseband> getBaseband() {
     if (baseband == null) {
-      baseband = new ArrayList<>();
+      baseband = new HashSet<>();
     }
     return this.baseband;
   }
@@ -1414,9 +1414,9 @@ public class RxMode {
    * @return a non-null but possibly empty list of {@link FreqConversion}
    *         instances
    */
-  public List<FreqConversion> getFreqConversion() {
+  public Collection<FreqConversion> getFreqConversion() {
     if (freqConversion == null) {
-      freqConversion = new ArrayList<>();
+      freqConversion = new HashSet<>();
     }
     return this.freqConversion;
   }
@@ -1475,9 +1475,9 @@ public class RxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public List<BigInteger> getCurves() {
+  public Collection<BigInteger> getCurves() {
     if (curves == null) {
-      curves = new ArrayList<>();
+      curves = new HashSet<>();
     }
     return this.curves;
   }

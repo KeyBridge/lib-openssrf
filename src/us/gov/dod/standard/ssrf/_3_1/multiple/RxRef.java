@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
@@ -72,7 +72,7 @@ public class RxRef {
    * configuration.
    */
   @XmlElement(name = "RxModeRef", nillable = true)
-  private List<RxModeRef> rxModeRef;
+  private Collection<RxModeRef> rxModeRef;
   /**
    * RxAntModeRef (Optional)
    * <p>
@@ -80,7 +80,7 @@ public class RxRef {
    * construct a Receiver Configuration.
    */
   @XmlElement(name = "RxAntModeRef")
-  private List<RxAntModeRef> rxAntModeRef;
+  private Collection<RxAntModeRef> rxAntModeRef;
 
   /**
    * Get the identifier of the related Receiver used in this configuration. The
@@ -129,9 +129,9 @@ public class RxRef {
    * <p>
    * @return a non-null but possibly empty list of {@link RxModeRef} instances
    */
-  public List<RxModeRef> getRxModeRef() {
+  public Collection<RxModeRef> getRxModeRef() {
     if (rxModeRef == null) {
-      rxModeRef = new ArrayList<>();
+      rxModeRef = new HashSet<>();
     }
     return this.rxModeRef;
   }
@@ -161,9 +161,9 @@ public class RxRef {
    * @return a non-null but possibly empty list of {@link RxAntModeRef}
    *         instances
    */
-  public List<RxAntModeRef> getRxAntModeRef() {
+  public Collection<RxAntModeRef> getRxAntModeRef() {
     if (rxAntModeRef == null) {
-      rxAntModeRef = new ArrayList<>();
+      rxAntModeRef = new HashSet<>();
     }
     return this.rxAntModeRef;
   }

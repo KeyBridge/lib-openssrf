@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -93,7 +93,7 @@ public class Deployment {
    * shelter, in a vehicle, aboard a helicopter, etc.
    */
   @XmlElement(name = "Installation", nillable = true)
-  private List<Installation> installation;
+  private Collection<Installation> installation;
 
   /**
    * Get the type of deployment.
@@ -163,9 +163,9 @@ public class Deployment {
    * @return a non-null but possibly empty list of {@link Installation}
    *         instances
    */
-  public List<Installation> getInstallation() {
+  public Collection<Installation> getInstallation() {
     if (installation == null) {
-      installation = new ArrayList<>();
+      installation = new HashSet<>();
     }
     return this.installation;
   }

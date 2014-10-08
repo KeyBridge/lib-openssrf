@@ -90,7 +90,7 @@ public class Dataset {
    */
   @XmlElement(name = "MissingRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> missingRef;
+  private Collection<TString> missingRef;
 
   /**
    * Get the serial of the referenced Dataset.
@@ -192,9 +192,9 @@ public class Dataset {
    * {@link #getMissing()} instead.
    */
   @Deprecated
-  public List<TString> getMissingRef() {
+  public Collection<TString> getMissingRef() {
     if (missingRef == null) {
-      missingRef = new ArrayList<>();
+      missingRef = new HashSet<>();
     }
     return this.missingRef;
   }
@@ -340,7 +340,7 @@ public class Dataset {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<Common<?>> missing;
+  private Collection<Common<?>> missing;
 
   /**
    * Get the MissingRef
@@ -352,9 +352,9 @@ public class Dataset {
    * @return An instance of type {@link Common}
    * @since 3.1.0
    */
-  public List<Common<?>> getMissing() {
+  public Collection<Common<?>> getMissing() {
     if (missing == null) {
-      missing = new ArrayList<>();
+      missing = new HashSet<>();
     }
     return missing;
   }
@@ -411,7 +411,7 @@ public class Dataset {
    * @since 3.1.0
    */
   public Dataset build() {
-    this.missingRef = new ArrayList<>();
+    this.missingRef = new HashSet<>();
     for (Common<?> instance : getMissing()) {
       this.missingRef.add(instance.getSerial());
     }

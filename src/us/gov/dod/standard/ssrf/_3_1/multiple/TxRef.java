@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -74,7 +74,7 @@ public class TxRef {
    * Notes: TxModeRef specifies a transmitter mode that i
    */
   @XmlElement(name = "TxModeRef")
-  private List<TxModeRef> txModeRef;
+  private Collection<TxModeRef> txModeRef;
   /**
    * TxAntModeRef (Optional)
    * <p>
@@ -84,7 +84,7 @@ public class TxRef {
    * Notes: AntModeRef specifies an antenna mode that is
    */
   @XmlElement(name = "TxAntModeRef")
-  private List<TxAntModeRef> txAntModeRef;
+  private Collection<TxAntModeRef> txAntModeRef;
 
   /**
    * Get the serial of a Transmitter in this configuration. The same transmitter
@@ -133,9 +133,9 @@ public class TxRef {
    * <p>
    * @return a non-null but possibly empty list of {@link TxModeRef} instances
    */
-  public List<TxModeRef> getTxModeRef() {
+  public Collection<TxModeRef> getTxModeRef() {
     if (txModeRef == null) {
-      txModeRef = new ArrayList<>();
+      txModeRef = new HashSet<>();
     }
     return this.txModeRef;
   }
@@ -165,9 +165,9 @@ public class TxRef {
    * @return a non-null but possibly empty list of {@link TxAntModeRef}
    *         instances
    */
-  public List<TxAntModeRef> getTxAntModeRef() {
+  public Collection<TxAntModeRef> getTxAntModeRef() {
     if (txAntModeRef == null) {
-      txAntModeRef = new ArrayList<>();
+      txAntModeRef = new HashSet<>();
     }
     return this.txAntModeRef;
   }

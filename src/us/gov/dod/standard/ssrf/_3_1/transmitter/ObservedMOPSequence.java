@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -136,7 +136,7 @@ public class ObservedMOPSequence {
   private TDecimal mopRepetionInterval;
 
   @XmlElement(name = "ObservedMOPBits")
-  private List<ObservedMOPBits> observedMOPBits;
+  private Collection<ObservedMOPBits> observedMOPBits;
 
   /**
    * Get US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
@@ -431,9 +431,9 @@ public class ObservedMOPSequence {
    * @return a non-null but possibly empty list of {@link ObservedMOPBits}
    *         instances
    */
-  public List<ObservedMOPBits> getObservedMOPBits() {
+  public Collection<ObservedMOPBits> getObservedMOPBits() {
     if (observedMOPBits == null) {
-      observedMOPBits = new ArrayList<>();
+      observedMOPBits = new HashSet<>();
     }
     return this.observedMOPBits;
   }

@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -243,7 +243,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private List<Project> project;
+  private Collection<Project> project;
   /**
    * AtWayPoint (Optional)
    * <p>
@@ -251,7 +251,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * waypoint along a route.
    */
   @XmlElement(name = "AtWaypoint")
-  private List<AtWaypoint> atWaypoint;
+  private Collection<AtWaypoint> atWaypoint;
 
   /**
    * Get the dataset identifier of the ForceElement being deployed.
@@ -669,9 +669,9 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public List<Project> getProject() {
+  public Collection<Project> getProject() {
     if (project == null) {
-      project = new ArrayList<>();
+      project = new HashSet<>();
     }
     return this.project;
   }
@@ -700,9 +700,9 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @return a non-null but possibly empty list of {@link AtWaypoint} instances
    */
-  public List<AtWaypoint> getAtWaypoint() {
+  public Collection<AtWaypoint> getAtWaypoint() {
     if (atWaypoint == null) {
-      atWaypoint = new ArrayList<>();
+      atWaypoint = new HashSet<>();
     }
     return this.atWaypoint;
   }

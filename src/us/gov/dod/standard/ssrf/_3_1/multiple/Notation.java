@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -123,7 +123,7 @@ public class Notation {
    * or signal.
    */
   @XmlElement(name = "NotationTimeline")
-  private List<NotationTimeline> notationTimeline;
+  private Collection<NotationTimeline> notationTimeline;
   /**
    * US:PotentialVictims (Optional)
    * <p>
@@ -131,7 +131,7 @@ public class Notation {
    * signals, which may be affected by the subject Notation/Signal.
    */
   @XmlElement(name = "PotentialVictims")
-  private List<PotentialVictims> potentialVictims;
+  private Collection<PotentialVictims> potentialVictims;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -139,7 +139,7 @@ public class Notation {
    * supply (Source), and use (Using) the Notation.
    */
   @XmlElement(name = "UsingCountries")
-  private List<UsingCountries> usingCountries;
+  private Collection<UsingCountries> usingCountries;
 
   /**
    * Get an alphanumeric combination that is used to identify a particular
@@ -239,9 +239,9 @@ public class Notation {
    * @return a non-null but possibly empty list of {@link NotationTimeline}
    *         instances
    */
-  public List<NotationTimeline> getNotationTimeline() {
+  public Collection<NotationTimeline> getNotationTimeline() {
     if (notationTimeline == null) {
-      notationTimeline = new ArrayList<>();
+      notationTimeline = new HashSet<>();
     }
     return this.notationTimeline;
   }
@@ -271,9 +271,9 @@ public class Notation {
    * @return a non-null but possibly empty list of {@link PotentialVictims}
    *         instances
    */
-  public List<PotentialVictims> getPotentialVictims() {
+  public Collection<PotentialVictims> getPotentialVictims() {
     if (potentialVictims == null) {
-      potentialVictims = new ArrayList<>();
+      potentialVictims = new HashSet<>();
     }
     return this.potentialVictims;
   }
@@ -303,9 +303,9 @@ public class Notation {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public List<UsingCountries> getUsingCountries() {
+  public Collection<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
-      usingCountries = new ArrayList<>();
+      usingCountries = new HashSet<>();
     }
     return this.usingCountries;
   }

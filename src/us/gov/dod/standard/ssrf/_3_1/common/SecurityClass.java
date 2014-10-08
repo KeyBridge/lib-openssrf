@@ -165,7 +165,7 @@ public class SecurityClass {
    * more data information sources.
    */
   @XmlElement(name = "Downgrade")
-  private List<Downgrade> downgrade;
+  private Collection<Downgrade> downgrade;
   /**
    * US:ClsDerived (Optional)
    * <p>
@@ -173,7 +173,7 @@ public class SecurityClass {
    * more data information sources.
    */
   @XmlElement(name = "ClsDerived")
-  private List<ClsDerived> clsDerived;
+  private Collection<ClsDerived> clsDerived;
 
   /**
    * Get the identity, by name and position, or by personal identifier, of the
@@ -422,9 +422,9 @@ public class SecurityClass {
    * <p>
    * @return a non-null but possibly empty list of {@link Downgrade} instances
    */
-  public List<Downgrade> getDowngrade() {
+  public Collection<Downgrade> getDowngrade() {
     if (downgrade == null) {
-      downgrade = new ArrayList<>();
+      downgrade = new HashSet<>();
     }
     return this.downgrade;
   }
@@ -453,9 +453,9 @@ public class SecurityClass {
    * <p>
    * @return a non-null but possibly empty list of {@link ClsDerived} instances
    */
-  public List<ClsDerived> getClsDerived() {
+  public Collection<ClsDerived> getClsDerived() {
     if (clsDerived == null) {
-      clsDerived = new ArrayList<>();
+      clsDerived = new HashSet<>();
     }
     return this.clsDerived;
   }

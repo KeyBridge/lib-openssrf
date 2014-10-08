@@ -231,7 +231,7 @@ public class JRFL extends Common<JRFL> {
    * frequency or frequency range(s) is restricted in use.
    */
   @XmlElement(name = "JRFLEntry", required = true)
-  private List<JRFLEntry> jrflEntry;
+  private Collection<JRFLEntry> jrflEntry;
 
   /**
    * Get the width of the range (or band) of restricted frequency(s).
@@ -567,9 +567,9 @@ public class JRFL extends Common<JRFL> {
    * <p>
    * @return a non-null but possibly empty list of {@link JRFLEntry} instances
    */
-  public List<JRFLEntry> getJRFLEntry() {
+  public Collection<JRFLEntry> getJRFLEntry() {
     if (jrflEntry == null) {
-      jrflEntry = new ArrayList<>();
+      jrflEntry = new HashSet<>();
     }
     return this.jrflEntry;
   }

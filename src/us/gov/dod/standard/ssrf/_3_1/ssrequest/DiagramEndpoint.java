@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -118,7 +118,7 @@ public class DiagramEndpoint {
    * forbidden from use.
    */
   @XmlElement(name = "EndpointLocation")
-  private List<EndpointLocation> endpointLocation;
+  private Collection<EndpointLocation> endpointLocation;
 
   /**
    * Get the type of icon for the diagram endpoint.
@@ -354,9 +354,9 @@ public class DiagramEndpoint {
    * @return a non-null but possibly empty list of {@link EndpointLocation}
    *         instances
    */
-  public List<EndpointLocation> getEndpointLocation() {
+  public Collection<EndpointLocation> getEndpointLocation() {
     if (endpointLocation == null) {
-      endpointLocation = new ArrayList<>();
+      endpointLocation = new HashSet<>();
     }
     return this.endpointLocation;
   }

@@ -236,7 +236,7 @@ public class Location extends Common<Location> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
    * <p>
@@ -249,7 +249,7 @@ public class Location extends Common<Location> {
    * Format is SN(7,2) (m)
    */
   @XmlElement(name = "Point")
-  private List<Point> point;
+  private Collection<Point> point;
   /**
    * Polygon (Optional)
    * <p>
@@ -258,7 +258,7 @@ public class Location extends Common<Location> {
    * area.
    */
   @XmlElement(name = "Polygon")
-  private List<Polygon> polygon;
+  private Collection<Polygon> polygon;
   /**
    * Ellipse (Optional)
    * <p>
@@ -267,7 +267,7 @@ public class Location extends Common<Location> {
    * SHALL NOT be used to describe a satellite orbit.
    */
   @XmlElement(name = "Ellipse")
-  private List<Ellipse> ellipse;
+  private Collection<Ellipse> ellipse;
   /**
    * LocationRef - Element Content (Required)
    * <p>
@@ -277,7 +277,7 @@ public class Location extends Common<Location> {
    */
   @XmlElement(name = "LocationRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> locationRef;
+  private Collection<TString> locationRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -568,9 +568,9 @@ public class Location extends Common<Location> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -600,9 +600,9 @@ public class Location extends Common<Location> {
    * <p>
    * @return a non-null but possibly empty list of {@link Point} instances
    */
-  public List<Point> getPoint() {
+  public Collection<Point> getPoint() {
     if (point == null) {
-      point = new ArrayList<>();
+      point = new HashSet<>();
     }
     return this.point;
   }
@@ -632,9 +632,9 @@ public class Location extends Common<Location> {
    * <p>
    * @return a non-null but possibly empty list of {@link Polygon} instances
    */
-  public List<Polygon> getPolygon() {
+  public Collection<Polygon> getPolygon() {
     if (polygon == null) {
-      polygon = new ArrayList<>();
+      polygon = new HashSet<>();
     }
     return this.polygon;
   }
@@ -664,9 +664,9 @@ public class Location extends Common<Location> {
    * <p>
    * @return a non-null but possibly empty list of {@link Ellipse} instances
    */
-  public List<Ellipse> getEllipse() {
+  public Collection<Ellipse> getEllipse() {
     if (ellipse == null) {
-      ellipse = new ArrayList<>();
+      ellipse = new HashSet<>();
     }
     return this.ellipse;
   }
@@ -695,9 +695,9 @@ public class Location extends Common<Location> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public List<TString> getLocationRef() {
+  public Collection<TString> getLocationRef() {
     if (locationRef == null) {
-      locationRef = new ArrayList<>();
+      locationRef = new HashSet<>();
     }
     return this.locationRef;
   }
@@ -1086,7 +1086,7 @@ public class Location extends Common<Location> {
    * @since 3.1.0
    */
   @XmlTransient
-  private List<Location> location;
+  private Collection<Location> location;
 
   /**
    * Get the serial of the referenced Location.
@@ -1094,9 +1094,9 @@ public class Location extends Common<Location> {
    * @return a {@link Location} instance
    * @since 3.1.0
    */
-  public List<Location> getLocation() {
+  public Collection<Location> getLocation() {
     if (location == null) {
-      location = new ArrayList<>();
+      location = new HashSet<>();
     }
     return location;
   }
@@ -1147,7 +1147,7 @@ public class Location extends Common<Location> {
   @Override
   public Location build() {
     super.build();
-    this.locationRef = new ArrayList<>();
+    this.locationRef = new HashSet<>();
     for (Location instance : getLocation()) {
       this.locationRef.add(instance.getSerial());
     }

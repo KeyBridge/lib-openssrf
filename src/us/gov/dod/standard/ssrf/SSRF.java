@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.*;
 
@@ -74,41 +71,30 @@ public class SSRF extends SchemaRoot<SSRF> {
    * Set a SSRF property. To unset a property simply set the field value to null
    * or to an empty string "";
    * <p>
-   * @param className  the SSRF class name (e.g. "ChannelPlan")
-   * @param fieldName  the SSRF field name within the named class (e.g. "name")
-   * @param fieldValue the value to set the SSRF field (e.g. "My Channel Plan")
+   * @param propertyName  A dot-delimited SSRF class and field name (e.g.
+   *                      "ChannelPlan.name")
+   * @param propertyValue the value to set the SSRF field (e.g. "My Channel
+   *                      Plan")
    * @since 3.1.0
    */
-  public void setProperty(String className, String fieldName, String fieldValue) {
+  public void setProperty(String propertyName, String propertyValue) {
     if (ssrfProperties == null) {
       ssrfProperties = new SSRFProperties();
     }
-    ssrfProperties.setProperty(className + "." + fieldName, fieldValue);
+    ssrfProperties.setProperty(propertyName, propertyValue);
   }
 
   /**
    * Unset (clear) a SSRF property.
    * <p>
-   * @param className the SSRF class name (e.g. "ChannelPlan")
-   * @param fieldName the SSRF field name within the named class (e.g. "name").
-   *                  Set to null or an empty string to unset all properties
-   *                  with the indicated className.
+   * @param propertyName the SSRF class name (e.g. "ChannelPlan")
+   * @param fieldName    the SSRF field name within the named class (e.g.
+   *                     "name"). Set to null or an empty string to unset all
+   *                     properties with the indicated className.
    */
-  public void unsetProperty(String className, String fieldName) {
+  public void unsetProperty(String propertyName) {
     if (ssrfProperties != null) {
-      List<String> remove = new ArrayList<>();
-      for (Map.Entry<Object, Object> entry : ssrfProperties.entrySet()) {
-        if (fieldName == null || fieldName.isEmpty()) {
-          if (((String) entry.getKey()).equals(className)) {
-            remove.add((String) entry.getKey());
-          }
-        } else if (((String) entry.getKey()).equals(className + "." + fieldName)) {
-          remove.add((String) entry.getKey());
-        }
-      }
-      for (String key : remove) {
-        ssrfProperties.remove(key);
-      }
+      ssrfProperties.remove(propertyName);
     }
   }
 
@@ -119,7 +105,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * @since 3.1.0
    */
-  private void assemble() {
+  public void assemble() {
     SSRFUtility.build(this);
     if (ssrfProperties != null) {
       SSRFUtility.setProperties(ssrfProperties, this);
@@ -141,6 +127,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * @since 3.1.0
    */
   public void prepare() throws Exception {
+    assemble();
     assemble();
     SSRFUtility.validate(this);
   }
@@ -165,6 +152,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    */
   public boolean isValid() {
     try {
+      assemble();
       assemble();
       SSRFUtility.validate(this);
       return true;

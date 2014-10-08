@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -255,7 +255,7 @@ public class StationConfig {
    * sector that is blanked.
    */
   @XmlElement(name = "Blanking")
-  private List<Blanking> blanking;
+  private Collection<Blanking> blanking;
 
   /**
    * Get whether the StationConfig is acting as a transmitter, receiver or
@@ -729,9 +729,9 @@ public class StationConfig {
    * <p>
    * @return a non-null but possibly empty list of {@link Blanking} instances
    */
-  public List<Blanking> getBlanking() {
+  public Collection<Blanking> getBlanking() {
     if (blanking == null) {
-      blanking = new ArrayList<>();
+      blanking = new HashSet<>();
     }
     return this.blanking;
   }

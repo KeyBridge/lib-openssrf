@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -394,7 +394,7 @@ public class ObservedMOPAnalysis {
    * for the period of the Modulation on the Pulse sweep.
    */
   @XmlElement(name = "ObservedMOPSweep")
-  private List<ObservedMOPSweep> observedMOPSweep;
+  private Collection<ObservedMOPSweep> observedMOPSweep;
 
   /**
    * Get the condition which controls, or can be associated with, the signal MOP
@@ -1408,9 +1408,9 @@ public class ObservedMOPAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedMOPSweep}
    *         instances
    */
-  public List<ObservedMOPSweep> getObservedMOPSweep() {
+  public Collection<ObservedMOPSweep> getObservedMOPSweep() {
     if (observedMOPSweep == null) {
-      observedMOPSweep = new ArrayList<>();
+      observedMOPSweep = new HashSet<>();
     }
     return this.observedMOPSweep;
   }

@@ -23,10 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -377,7 +376,7 @@ public class ObservedPolarisationAnalysis {
    * information for the polarization tilt angle specific values.
    */
   @XmlElement(name = "ObservedPolarisationValues")
-  private List<ObservedPolarisationValues> observedPolarisationValues;
+  private Collection<ObservedPolarisationValues> observedPolarisationValues;
 
   /**
    * Get the ratio of the polarisation ellipse major axis to its minor axis
@@ -1133,9 +1132,9 @@ public class ObservedPolarisationAnalysis {
    * @return a non-null but possibly empty list of
    *         {@link ObservedPolarisationValues} instances
    */
-  public List<ObservedPolarisationValues> getObservedPolarisationValues() {
+  public Collection<ObservedPolarisationValues> getObservedPolarisationValues() {
     if (observedPolarisationValues == null) {
-      observedPolarisationValues = new ArrayList<>();
+      observedPolarisationValues = new HashSet<>();
     }
     return this.observedPolarisationValues;
   }

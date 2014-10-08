@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.channelplan;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -84,7 +84,7 @@ public class Channel {
    * Format is UN(16,9) [0..1E9] (same as FREQM) (MHz)
    */
   @XmlElement(name = "ChannelFreq", required = true, nillable = true)
-  private List<ChannelFreq> channelFreq;
+  private Collection<ChannelFreq> channelFreq;
 
   /**
    * Get the name of this channel (e.g., "Video carrier, Sound carrier, Nicam
@@ -151,9 +151,9 @@ public class Channel {
    * <p>
    * @return a non-null but possibly empty list of {@link ChannelFreq} instances
    */
-  public List<ChannelFreq> getChannelFreq() {
+  public Collection<ChannelFreq> getChannelFreq() {
     if (channelFreq == null) {
-      channelFreq = new ArrayList<>();
+      channelFreq = new HashSet<>();
     }
     return this.channelFreq;
   }

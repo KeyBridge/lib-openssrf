@@ -130,7 +130,7 @@ public class CodeList {
    * Format is US(3)
    */
   @XmlElement(name = "Code")
-  private List<Code> code;
+  private Collection<Code> code;
 
   /**
    * Get the intended type of modification to the given code list.
@@ -288,9 +288,9 @@ public class CodeList {
    * <p>
    * @return a non-null but possibly empty list of {@link Code} instances
    */
-  public List<Code> getCode() {
+  public Collection<Code> getCode() {
     if (code == null) {
-      code = new ArrayList<>();
+      code = new HashSet<>();
     }
     return this.code;
   }

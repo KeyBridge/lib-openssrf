@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -306,7 +306,7 @@ public class Antenna extends Common<Antenna> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -318,7 +318,7 @@ public class Antenna extends Common<Antenna> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private List<Nomenclature> nomenclature;
+  private Collection<Nomenclature> nomenclature;
   /**
    * AntHardware (Optional)
    * <p>
@@ -326,7 +326,7 @@ public class Antenna extends Common<Antenna> {
    * and lead.
    */
   @XmlElement(name = "AntHardware")
-  private List<AntHardware> antHardware;
+  private Collection<AntHardware> antHardware;
   /**
    * AntMode (Optional)
    * <p>
@@ -335,7 +335,7 @@ public class Antenna extends Common<Antenna> {
    * Divergence from SMADEF: SMADEF requires (1..n) AntModes
    */
   @XmlElement(name = "AntMode")
-  private List<AntMode> antMode;
+  private Collection<AntMode> antMode;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -343,7 +343,7 @@ public class Antenna extends Common<Antenna> {
    * supply (Source), and use (Using) the Antenna.
    */
   @XmlElement(name = "UsingCountries")
-  private List<UsingCountries> usingCountries;
+  private Collection<UsingCountries> usingCountries;
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -875,9 +875,9 @@ public class Antenna extends Common<Antenna> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }
@@ -909,9 +909,9 @@ public class Antenna extends Common<Antenna> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public List<Nomenclature> getNomenclature() {
+  public Collection<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
-      nomenclature = new ArrayList<>();
+      nomenclature = new HashSet<>();
     }
     return this.nomenclature;
   }
@@ -940,9 +940,9 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * @return a non-null but possibly empty list of {@link AntHardware} instances
    */
-  public List<AntHardware> getAntHardware() {
+  public Collection<AntHardware> getAntHardware() {
     if (antHardware == null) {
-      antHardware = new ArrayList<>();
+      antHardware = new HashSet<>();
     }
     return this.antHardware;
   }
@@ -971,9 +971,9 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * @return a non-null but possibly empty list of {@link AntMode} instances
    */
-  public List<AntMode> getAntMode() {
+  public Collection<AntMode> getAntMode() {
     if (antMode == null) {
-      antMode = new ArrayList<>();
+      antMode = new HashSet<>();
     }
     return this.antMode;
   }
@@ -1003,9 +1003,9 @@ public class Antenna extends Common<Antenna> {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public List<UsingCountries> getUsingCountries() {
+  public Collection<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
-      usingCountries = new ArrayList<>();
+      usingCountries = new HashSet<>();
     }
     return this.usingCountries;
   }

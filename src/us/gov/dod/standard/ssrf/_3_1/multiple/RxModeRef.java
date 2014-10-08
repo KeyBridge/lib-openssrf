@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS20;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -104,7 +104,7 @@ public class RxModeRef extends AMetadata<RxModeRef> {
   @Override
   public String toString() {
     return "RxModeRef {"
-      + value + " " + super.toString()
+      + value + super.toString()
       + "}";
   }
 

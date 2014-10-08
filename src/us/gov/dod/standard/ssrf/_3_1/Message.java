@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -91,7 +91,7 @@ public class Message extends Common<Message> {
    */
   @XmlElement(name = "DatasetRef", required = true, nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private List<TString> datasetRef;
+  private Collection<TString> datasetRef;
 
   /**
    * Get a human-readable name for the message.
@@ -164,9 +164,9 @@ public class Message extends Common<Message> {
    * {@link #getData()} instead.
    */
   @Deprecated
-  public List<TString> getDatasetRef() {
+  public Collection<TString> getDatasetRef() {
     if (datasetRef == null) {
-      datasetRef = new ArrayList<>();
+      datasetRef = new HashSet<>();
     }
     return this.datasetRef;
   }
@@ -281,7 +281,7 @@ public class Message extends Common<Message> {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   @XmlTransient
-  private List<Common<?>> data;
+  private Collection<Common<?>> data;
 
   /**
    * Get
@@ -289,9 +289,9 @@ public class Message extends Common<Message> {
    * @return a {@link Common} instance
    * @since 3.1.0
    */
-  public List<Common<?>> getData() {
+  public Collection<Common<?>> getData() {
     if (data == null) {
-      data = new ArrayList<>();
+      data = new HashSet<>();
     }
     return data;
   }
@@ -342,7 +342,7 @@ public class Message extends Common<Message> {
   @Override
   public Message build() {
     super.build();
-    this.datasetRef = new ArrayList<>();
+    this.datasetRef = new HashSet<>();
     for (Common<?> instance : getData()) {
       this.datasetRef.add(instance.getSerial());
     }

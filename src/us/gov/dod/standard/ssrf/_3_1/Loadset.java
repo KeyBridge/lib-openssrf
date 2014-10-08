@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -212,7 +212,7 @@ public class Loadset extends Common<Loadset> {
    * Divergence from SMADEF:
    */
   @XmlElement(name = "JammingChannelProfile", required = true)
-  private List<JammingChannelProfile> jammingChannelProfile;
+  private Collection<JammingChannelProfile> jammingChannelProfile;
 
   /**
    * Get the sequence pattern for initializing the jamming equipment.
@@ -496,9 +496,9 @@ public class Loadset extends Common<Loadset> {
    * @return a non-null but possibly empty list of {@link JammingChannelProfile}
    *         instances
    */
-  public List<JammingChannelProfile> getJammingChannelProfile() {
+  public Collection<JammingChannelProfile> getJammingChannelProfile() {
     if (jammingChannelProfile == null) {
-      jammingChannelProfile = new ArrayList<>();
+      jammingChannelProfile = new HashSet<>();
     }
     return this.jammingChannelProfile;
   }

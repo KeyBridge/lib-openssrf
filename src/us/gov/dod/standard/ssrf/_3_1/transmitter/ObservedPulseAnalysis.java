@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -865,7 +865,7 @@ public class ObservedPulseAnalysis {
    * related to the Modulation Type.
    */
   @XmlElement(name = "ObservedPulseValues")
-  private List<ObservedPulseValues> observedPulseValues;
+  private Collection<ObservedPulseValues> observedPulseValues;
 
   /**
    * Get the time required for a pulse to fall from 90% to 10 percent of the
@@ -2799,9 +2799,9 @@ public class ObservedPulseAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedPulseValues}
    *         instances
    */
-  public List<ObservedPulseValues> getObservedPulseValues() {
+  public Collection<ObservedPulseValues> getObservedPulseValues() {
     if (observedPulseValues == null) {
-      observedPulseValues = new ArrayList<>();
+      observedPulseValues = new HashSet<>();
     }
     return this.observedPulseValues;
   }

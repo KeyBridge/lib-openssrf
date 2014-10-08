@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -126,7 +126,7 @@ public class AntPattern {
    * defined by a direction and gain.
    */
   @XmlElement(name = "AntPatternPoint", required = true)
-  private List<AntPatternPoint> antPatternPoint;
+  private Collection<AntPatternPoint> antPatternPoint;
 
   /**
    * Get the type of the pattern cut. A Theta cut holds Phi constant while
@@ -271,9 +271,9 @@ public class AntPattern {
    * @return a non-null but possibly empty list of {@link AntPatternPoint}
    *         instances
    */
-  public List<AntPatternPoint> getAntPatternPoint() {
+  public Collection<AntPatternPoint> getAntPatternPoint() {
     if (antPatternPoint == null) {
-      antPatternPoint = new ArrayList<>();
+      antPatternPoint = new HashSet<>();
     }
     return this.antPatternPoint;
   }

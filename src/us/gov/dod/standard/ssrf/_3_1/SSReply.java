@@ -255,7 +255,7 @@ public class SSReply extends Common<SSReply> {
    * used to certify supportability.
    */
   @XmlElement(name = "CommentSource")
-  private List<CommentSource> commentSource;
+  private Collection<CommentSource> commentSource;
   /**
    * StageLocation (Optional)
    * <p>
@@ -263,7 +263,7 @@ public class SSReply extends Common<SSReply> {
    * forbidden from use.
    */
   @XmlElement(name = "StageLocation")
-  private List<StageLocation> stageLocation;
+  private Collection<StageLocation> stageLocation;
   /**
    * Configuration (Optional)
    * <p>
@@ -277,7 +277,7 @@ public class SSReply extends Common<SSReply> {
    * exactly as received.
    */
   @XmlElement(name = "Configuration")
-  private List<Configuration> configuration;
+  private Collection<Configuration> configuration;
 
   /**
    * Get the dataset identifier of the SSRequest being replied to.
@@ -747,9 +747,9 @@ public class SSReply extends Common<SSReply> {
    * @return a non-null but possibly empty list of {@link CommentSource}
    *         instances
    */
-  public List<CommentSource> getCommentSource() {
+  public Collection<CommentSource> getCommentSource() {
     if (commentSource == null) {
-      commentSource = new ArrayList<>();
+      commentSource = new HashSet<>();
     }
     return this.commentSource;
   }
@@ -779,9 +779,9 @@ public class SSReply extends Common<SSReply> {
    * @return a non-null but possibly empty list of {@link StageLocation}
    *         instances
    */
-  public List<StageLocation> getStageLocation() {
+  public Collection<StageLocation> getStageLocation() {
     if (stageLocation == null) {
-      stageLocation = new ArrayList<>();
+      stageLocation = new HashSet<>();
     }
     return this.stageLocation;
   }
@@ -817,9 +817,9 @@ public class SSReply extends Common<SSReply> {
    * @return a non-null but possibly empty list of {@link Configuration}
    *         instances
    */
-  public List<Configuration> getConfiguration() {
+  public Collection<Configuration> getConfiguration() {
     if (configuration == null) {
-      configuration = new ArrayList<>();
+      configuration = new HashSet<>();
     }
     return this.configuration;
   }

@@ -151,7 +151,7 @@ public class Stage {
    * forbidden from use.
    */
   @XmlElement(name = "StageLocation")
-  private List<StageLocation> stageLocation;
+  private Collection<StageLocation> stageLocation;
 
   /**
    * Get the stage.
@@ -380,9 +380,9 @@ public class Stage {
    * @return a non-null but possibly empty list of {@link StageLocation}
    *         instances
    */
-  public List<StageLocation> getStageLocation() {
+  public Collection<StageLocation> getStageLocation() {
     if (stageLocation == null) {
-      stageLocation = new ArrayList<>();
+      stageLocation = new HashSet<>();
     }
     return this.stageLocation;
   }

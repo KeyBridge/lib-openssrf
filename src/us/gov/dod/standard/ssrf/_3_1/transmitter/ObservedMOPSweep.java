@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -145,7 +145,7 @@ public class ObservedMOPSweep {
    * sequencing used for the Modulation impressed On the Pulse (MOP).
    */
   @XmlElement(name = "ObservedMOPSequence")
-  private List<ObservedMOPSequence> observedMOPSequence;
+  private Collection<ObservedMOPSequence> observedMOPSequence;
 
   /**
    * Get US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
@@ -451,9 +451,9 @@ public class ObservedMOPSweep {
    * @return a non-null but possibly empty list of {@link ObservedMOPSequence}
    *         instances
    */
-  public List<ObservedMOPSequence> getObservedMOPSequence() {
+  public Collection<ObservedMOPSequence> getObservedMOPSequence() {
     if (observedMOPSequence == null) {
-      observedMOPSequence = new ArrayList<>();
+      observedMOPSequence = new HashSet<>();
     }
     return this.observedMOPSequence;
   }

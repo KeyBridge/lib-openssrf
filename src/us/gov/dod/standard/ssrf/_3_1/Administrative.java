@@ -23,10 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -103,7 +100,7 @@ public class Administrative extends Common<Administrative> {
    * identifier of the datasets on which the action must apply.
    */
   @XmlElement(name = "Dataset")
-  private List<Dataset> dataset;
+  private Collection<Dataset> dataset;
   /**
    * CodeList (Optional)
    * <p>
@@ -111,7 +108,7 @@ public class Administrative extends Common<Administrative> {
    * a given Code List.
    */
   @XmlElement(name = "CodeList")
-  private List<CodeList> codeList;
+  private Collection<CodeList> codeList;
 
   /**
    * Get the action which triggered the transmission, or to be performed upon
@@ -187,9 +184,9 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * @return a non-null but possibly empty list of {@link Dataset} instances
    */
-  public List<Dataset> getDataset() {
+  public Collection<Dataset> getDataset() {
     if (dataset == null) {
-      dataset = new ArrayList<>();
+      dataset = new HashSet<>();
     }
     return this.dataset;
   }
@@ -218,9 +215,9 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * @return a non-null but possibly empty list of {@link CodeList} instances
    */
-  public List<CodeList> getCodeList() {
+  public Collection<CodeList> getCodeList() {
     if (codeList == null) {
-      codeList = new ArrayList<>();
+      codeList = new HashSet<>();
     }
     return this.codeList;
   }

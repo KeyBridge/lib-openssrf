@@ -601,7 +601,7 @@ public class IntfReport extends Common<IntfReport> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private List<POCInformation> pocInformation;
+  private Collection<POCInformation> pocInformation;
 
   /**
    * Get whether the user needs technical assistance from another organisation
@@ -2067,9 +2067,9 @@ public class IntfReport extends Common<IntfReport> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public List<POCInformation> getPOCInformation() {
+  public Collection<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
-      pocInformation = new ArrayList<>();
+      pocInformation = new HashSet<>();
     }
     return this.pocInformation;
   }

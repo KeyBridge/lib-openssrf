@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Loadset;
@@ -197,7 +197,7 @@ public class JammingTarget {
    * how well it actually was impacted, for a specific jamming mission.
    */
   @XmlElement(name = "JammingPerformance")
-  private List<JammingPerformance> jammingPerformance;
+  private Collection<JammingPerformance> jammingPerformance;
 
   /**
    * Get the method by which the jamming antenna beam is focused.
@@ -575,9 +575,9 @@ public class JammingTarget {
    * @return a non-null but possibly empty list of {@link JammingPerformance}
    *         instances
    */
-  public List<JammingPerformance> getJammingPerformance() {
+  public Collection<JammingPerformance> getJammingPerformance() {
     if (jammingPerformance == null) {
-      jammingPerformance = new ArrayList<>();
+      jammingPerformance = new HashSet<>();
     }
     return this.jammingPerformance;
   }

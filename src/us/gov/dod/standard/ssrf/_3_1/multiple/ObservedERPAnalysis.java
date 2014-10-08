@@ -23,10 +23,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -291,7 +291,7 @@ public class ObservedERPAnalysis {
    * Effective Radiated Power (ERP) associated with an emitter or Notation.
    */
   @XmlElement(name = "ObservedERPValues")
-  private List<ObservedERPValues> observedERPValues;
+  private Collection<ObservedERPValues> observedERPValues;
 
   /**
    * Get Continuous (US), indicate whether pulse-to-pulse ERP variations are
@@ -852,9 +852,9 @@ public class ObservedERPAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedERPValues}
    *         instances
    */
-  public List<ObservedERPValues> getObservedERPValues() {
+  public Collection<ObservedERPValues> getObservedERPValues() {
     if (observedERPValues == null) {
-      observedERPValues = new ArrayList<>();
+      observedERPValues = new HashSet<>();
     }
     return this.observedERPValues;
   }
