@@ -1863,7 +1863,7 @@ public class Configuration {
    * @return The current Configuration object instance
    * @since 3.1.0
    */
-  public Configuration build() {
+  public Configuration prepare() {
     this.loadsetRef = new HashSet<>();
     for (Loadset instance : getLoadset()) {
       this.loadsetRef.add(instance.getSerial());

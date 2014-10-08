@@ -24,8 +24,8 @@
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Station;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
@@ -312,7 +312,7 @@ public class POCInformation {
    * <p>
    * @return The current POCInformation object instance
    */
-  public POCInformation build() {
+  public POCInformation prepare() {
     this.serial = poc != null ? poc.getSerial() : null;
     return this;
   }//</editor-fold>

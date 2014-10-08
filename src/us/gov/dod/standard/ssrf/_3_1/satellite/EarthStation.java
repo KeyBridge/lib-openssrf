@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEA;
@@ -294,7 +294,7 @@ public class EarthStation {
    * <p>
    * @return The current EarthStation object instance
    */
-  public EarthStation build() {
+  public EarthStation prepare() {
     this.locationRef = location != null ? location.getSerial() : null;
     return this;
   }//</editor-fold>

@@ -26,7 +26,6 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
@@ -420,7 +419,7 @@ public class StatusLog {
    * <p>
    * @return The current StatusLog object instance
    */
-  public StatusLog build() {
+  public StatusLog prepare() {
     this.pocRef = poc != null ? poc.getSerial() : null;
     return this;
   }//</editor-fold>

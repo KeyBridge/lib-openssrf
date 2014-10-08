@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -980,8 +979,8 @@ public class ForceElement extends Common<ForceElement> {
    * @return The current ForceElement object instance
    */
   @Override
-  public ForceElement build() {
-    super.build();
+  public ForceElement prepare() {
+    super.prepare();
     this.owningOrganisationRef = owningOrganisation != null ? owningOrganisation.getSerial() : null;
     return this;
   }//</editor-fold>

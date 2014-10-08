@@ -26,7 +26,6 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.ChannelPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
@@ -753,7 +752,7 @@ public class Allocation {
    * @return The current Allocation object instance
    * @since 3.1.0
    */
-  public Allocation build() {
+  public Allocation prepare() {
     this.channelPlanRef = new HashSet<>();
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());

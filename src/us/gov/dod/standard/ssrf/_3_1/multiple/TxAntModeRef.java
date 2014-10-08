@@ -24,8 +24,8 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -160,8 +160,8 @@ public class TxAntModeRef extends RxAntModeRef {
    * @return The current RxAntModeRef object instance
    */
   @Override
-  public TxAntModeRef build() {
-    super.build();
+  public TxAntModeRef prepare() {
+    super.prepare();
     return this;
   }
 

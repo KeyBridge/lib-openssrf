@@ -24,8 +24,8 @@
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -281,7 +281,7 @@ public class JRFLEntryLocation {
    * <p>
    * @return The current JRFLEntryLocation object instance
    */
-  public JRFLEntryLocation build() {
+  public JRFLEntryLocation prepare() {
     this.serial = location != null ? location.getSerial() : null;
     return this;
   }//</editor-fold>

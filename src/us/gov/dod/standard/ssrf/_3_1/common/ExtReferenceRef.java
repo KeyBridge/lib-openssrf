@@ -320,7 +320,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * <p>
    * @return The current ExtReferenceRef object instance
    */
-  public ExtReferenceRef build() {
+  public ExtReferenceRef prepare() {
     this.value = externalReference != null ? externalReference.getSerial().getSerial() : null;
     return this;
   }//</editor-fold>

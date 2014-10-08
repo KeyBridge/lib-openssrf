@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.forceelement;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ForceElement;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -312,7 +312,7 @@ public class Assets {
    * <p>
    * @return The current Assets object instance
    */
-  public Assets build() {
+  public Assets prepare() {
     this.serial = asset != null ? asset.getSerial() : null;
     return this;
   }//</editor-fold>

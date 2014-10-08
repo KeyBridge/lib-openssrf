@@ -26,7 +26,6 @@ package us.gov.dod.standard.ssrf._3_1;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
@@ -2223,7 +2222,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return The current Common object instance
    */
-  public T build() {
+  public T prepare() {
     this.entryBy = entryByRole != null ? entryByRole.getSerial() : null;
     this.owner = ownerRole != null ? ownerRole.getSerial() : null;
     this.lastChangeBy = lastChangeByRole != null ? lastChangeByRole.getSerial() : null;

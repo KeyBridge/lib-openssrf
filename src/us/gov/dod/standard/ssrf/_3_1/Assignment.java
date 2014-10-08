@@ -4025,8 +4025,8 @@ public class Assignment extends Common<Assignment> {
    * @since 3.1.0
    */
   @Override
-  public Assignment build() {
-    super.build();
+  public Assignment prepare() {
+    super.prepare();
     this.relatedRef = new HashSet<>();
     for (Common<?> instance : getRelated()) {
       this.relatedRef.add(instance.getSerial());

@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUOW;
@@ -299,7 +299,7 @@ public class AsgnAllotOwner {
    * <p>
    * @return The current AsgnAllotOwner object instance
    */
-  public AsgnAllotOwner build() {
+  public AsgnAllotOwner prepare() {
     this.ownerOrgRef = ownerOrg != null ? ownerOrg.getSerial() : null;
     return this;
   }//</editor-fold>

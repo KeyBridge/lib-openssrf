@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -798,8 +797,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return The current RadiationPlan object instance
    */
   @Override
-  public RadiationPlan build() {
-    super.build();
+  public RadiationPlan prepare() {
+    super.prepare();
     this.locationRef = location != null ? location.getSerial() : null;
     return this;
   }//</editor-fold>

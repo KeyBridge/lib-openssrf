@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -352,7 +351,7 @@ public class RxRef {
    * <p>
    * @return The current RxRef object instance
    */
-  public RxRef build() {
+  public RxRef prepare() {
     this.serial = receiver != null ? receiver.getSerial() : null;
     return this;
   }//</editor-fold>

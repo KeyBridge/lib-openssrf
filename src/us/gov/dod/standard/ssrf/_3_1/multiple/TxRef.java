@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -356,7 +355,7 @@ public class TxRef {
    * <p>
    * @return The current TxRef object instance
    */
-  public TxRef build() {
+  public TxRef prepare() {
     this.serial = transmitter != null ? transmitter.getSerial() : null;
     return this;
   }//</editor-fold>

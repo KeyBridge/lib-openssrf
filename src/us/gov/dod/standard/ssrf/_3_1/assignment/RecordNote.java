@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Note;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -252,7 +252,7 @@ public class RecordNote {
    * <p>
    * @return The current RecordNote object instance
    */
-  public RecordNote build() {
+  public RecordNote prepare() {
     this.noteRef = note != null ? note.getSerial() : null;
     return this;
   }//</editor-fold>

@@ -613,12 +613,12 @@ public class SSRFUtility {
   }
 
   /**
-   * Test if the object instance class is prepareable; that is, whether an attempt
- to invoke the prepare() method should be made.
+   * Test if the object instance class is prepareable; that is, whether an
+   * attempt to invoke the prepare() method should be made.
    * <p>
    * @param instance the object instance
    * @return true if the object class name matches classes that _might_
-         implement the prepare() method.
+   *         implement the prepare() method.
    */
   private static boolean isBuildable(Object instance) {
     if (instance == null) {
@@ -645,8 +645,8 @@ public class SSRFUtility {
 
   /**
    * Try to invoke the prepare() method on the provided object instance. If the
- object does not implement prepare() this method will fail gracefully.
- <p>
+   * object does not implement prepare() this method will fail gracefully.
+   * <p>
    * @param instance the object instance
    */
   private static void invokeBuild(Object instance) {

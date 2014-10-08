@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -868,7 +867,7 @@ public class JammingTarget {
    * <p>
    * @return The current JammingTarget object instance
    */
-  public JammingTarget build() {
+  public JammingTarget prepare() {
     this.loadsetRef = loadset != null ? loadset.getSerial() : null;
     return this;
   }//</editor-fold>

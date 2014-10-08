@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -1047,8 +1046,8 @@ public class FEDeployment extends Common<FEDeployment> {
    * @return The current FEDeployment object instance
    */
   @Override
-  public FEDeployment build() {
-    super.build();
+  public FEDeployment prepare() {
+    super.prepare();
     this.feRef = forceElement != null ? forceElement.getSerial() : null;
     return this;
   }//</editor-fold>

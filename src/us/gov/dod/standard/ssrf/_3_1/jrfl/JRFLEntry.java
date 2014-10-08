@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -1394,7 +1393,7 @@ public class JRFLEntry {
    * <p>
    * @return The current JRFLEntry object instance
    */
-  public JRFLEntry build() {
+  public JRFLEntry prepare() {
     this.asgnAllotRef = assignmentAllotment != null ? assignmentAllotment.getSerial() : null;
     return this;
   }//</editor-fold>

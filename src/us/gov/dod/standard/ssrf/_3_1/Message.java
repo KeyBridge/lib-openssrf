@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -340,8 +339,8 @@ public class Message extends Common<Message> {
    * @since 3.1.0
    */
   @Override
-  public Message build() {
-    super.build();
+  public Message prepare() {
+    super.prepare();
     this.datasetRef = new HashSet<>();
     for (Common<?> instance : getData()) {
       this.datasetRef.add(instance.getSerial());

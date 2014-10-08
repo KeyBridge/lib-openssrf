@@ -1145,8 +1145,8 @@ public class Location extends Common<Location> {
    * @since 3.1.0
    */
   @Override
-  public Location build() {
-    super.build();
+  public Location prepare() {
+    super.prepare();
     this.locationRef = new HashSet<>();
     for (Location instance : getLocation()) {
       this.locationRef.add(instance.getSerial());

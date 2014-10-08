@@ -24,8 +24,8 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -325,7 +325,7 @@ public class RxAntModeRef {
    * <p>
    * @return The current RxAntModeRef object instance
    */
-  public RxAntModeRef build() {
+  public RxAntModeRef prepare() {
     this.serial = antenna != null ? antenna.getSerial() : null;
     return this;
   }//</editor-fold>

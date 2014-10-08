@@ -23,7 +23,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
-import java.util.Set;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
@@ -501,7 +500,7 @@ public class AllotFreq {
    * @return The current AllotFreq object instance
    * @since 3.1.0
    */
-  public AllotFreq build() {
+  public AllotFreq prepare() {
     this.locationRestrictionRef = new HashSet<>();
     for (Location instance : getLocationRestriction()) {
       this.locationRestrictionRef.add(instance.getSerial());

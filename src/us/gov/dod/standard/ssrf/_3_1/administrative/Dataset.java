@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1.administrative;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Administrative;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -410,7 +409,7 @@ public class Dataset {
    * @return The current Dataset object instance
    * @since 3.1.0
    */
-  public Dataset build() {
+  public Dataset prepare() {
     this.missingRef = new HashSet<>();
     for (Common<?> instance : getMissing()) {
       this.missingRef.add(instance.getSerial());

@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -718,8 +717,8 @@ public class TOA extends Common<TOA> {
    * @since 3.1.0
    */
   @Override
-  public TOA build() {
-    super.build();
+  public TOA prepare() {
+    super.prepare();
     this.channelPlanRef = new HashSet<>();
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());

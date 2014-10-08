@@ -24,8 +24,8 @@
 package us.gov.dod.standard.ssrf._3_1.organisation;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFR;
@@ -307,7 +307,7 @@ public class RelatedOrganisation {
    * <p>
    * @return The current RelatedOrganisation object instance
    */
-  public RelatedOrganisation build() {
+  public RelatedOrganisation prepare() {
     this.serial = organisation != null ? organisation.getSerial() : null;
     return this;
   }//</editor-fold>

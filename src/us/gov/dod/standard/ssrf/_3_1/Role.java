@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
@@ -808,8 +807,8 @@ public class Role extends Common<Role> {
    * @since 3.1.0
    */
   @Override
-  public Role build() {
-    super.build();
+  public Role prepare() {
+    super.prepare();
     this.contactRef = new HashSet<>();
     for (Contact instance : getContact()) {
       this.contactRef.add(instance.getSerial());

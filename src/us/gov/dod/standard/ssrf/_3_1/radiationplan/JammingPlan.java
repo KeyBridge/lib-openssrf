@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -1012,7 +1011,7 @@ public class JammingPlan {
    * <p>
    * @return The current JammingPlan object instance
    */
-  public JammingPlan build() {
+  public JammingPlan prepare() {
     this.startLocationRef = startLocation != null ? startLocation.getSerial() : null;
     return this;
   }//</editor-fold>

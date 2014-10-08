@@ -219,7 +219,7 @@ public class TSerial extends TString {
    * <p>
    * @return The current TSerial object instance
    */
-  public TSerial build() {
+  public TSerial prepare() {
     format();
     return this;
   }
