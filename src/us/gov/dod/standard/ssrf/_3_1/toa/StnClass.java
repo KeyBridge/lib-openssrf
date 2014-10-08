@@ -97,15 +97,7 @@ public class StnClass extends AMetadata<StnClass> {
   @Override
   public String toString() {
     return "StnClass {"
-      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-      + (cls != null ? " cls [" + cls + "]" : "")
-      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-      + (value != null ? " value [" + value + "]" : "")
-      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-      + (idref != null ? " idref [" + idref + "]" : "")
-      + (availability != null ? " availability [" + availability + "]" : "")
+      + value + super.toString()
       + "}";
   }
 

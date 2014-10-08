@@ -363,18 +363,11 @@ public class EmsClass extends AMetadata<EmsClass> {
   @Override
   public String toString() {
     return "EmsClass {"
-      + (availability != null ? " availability [" + availability + "]" : "")
-      + (cls != null ? " cls [" + cls + "]" : "")
+      + value
       + (explainInformationTypeX != null ? " explainInformationTypeX [" + explainInformationTypeX + "]" : "")
       + (explainModulationTypeX != null ? " explainModulationTypeX [" + explainModulationTypeX + "]" : "")
       + (explainNatureOfSignalX != null ? " explainNatureOfSignalX [" + explainNatureOfSignalX + "]" : "")
-      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-      + (idref != null ? " idref [" + idref + "]" : "")
-      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-      + (value != null ? " value [" + value + "]" : "")
+      + super.toString()
       + "}";
   }
 

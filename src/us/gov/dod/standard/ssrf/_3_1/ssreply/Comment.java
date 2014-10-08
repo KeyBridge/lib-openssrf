@@ -172,16 +172,8 @@ public class Comment extends AMetadata<Comment> implements Comparable<Comment> {
   @Override
   public String toString() {
     return "Comment {"
-      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-      + (cls != null ? " cls [" + cls + "]" : "")
       + (idx != null ? " idx [" + idx + "]" : "")
-      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-      + (value != null ? " value [" + value + "]" : "")
-      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-      + (idref != null ? " idref [" + idref + "]" : "")
-      + (availability != null ? " availability [" + availability + "]" : "")
+      + value + super.toString()
       + "}";
   }
 

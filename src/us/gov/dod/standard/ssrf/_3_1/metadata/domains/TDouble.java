@@ -58,6 +58,12 @@ public class TDouble extends AMetadata<TDouble> implements IMetadataType, Compar
   }
 
   /**
+   * Zero argument constructor.
+   */
+  public TDouble() {
+  }
+
+  /**
    * Gets the value of the value property.
    * <p>
    * @return the value of the value property.
@@ -107,7 +113,8 @@ public class TDouble extends AMetadata<TDouble> implements IMetadataType, Compar
    */
   @Override
   public String toString() {
-    return value != null ? value.toString() : null;
+    return value + super.toString();
+    //    return value != null ? value.toString() : null;
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">

@@ -58,6 +58,12 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comp
   }
 
   /**
+   * Zero argument constructor.
+   */
+  public TInteger() {
+  }
+
+  /**
    * Gets the value of the value property.
    * <p>
    * @return the value of the value property.
@@ -107,7 +113,8 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comp
    */
   @Override
   public String toString() {
-    return value != null ? value.toString() : null;
+//    return value != null ? value.toString() : null;
+    return value + super.toString();
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">

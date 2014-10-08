@@ -70,6 +70,12 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Co
   }
 
   /**
+   * Zero argument constructor.
+   */
+  public TCalendar() {
+  }
+
+  /**
    * Gets the value of the value property.
    * <p>
    * @return the value of the value property.
@@ -137,7 +143,7 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Co
     if (value != null) {
       SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
       sdf.setCalendar(value);
-      return sdf.format(value.getTime());
+      return sdf.format(value.getTime()) + " " + super.toString();
     }
     return null;
   }

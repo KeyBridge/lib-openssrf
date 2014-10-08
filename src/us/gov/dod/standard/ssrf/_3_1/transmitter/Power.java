@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterDBW;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPT;

@@ -114,7 +114,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    */
   @Override
   public String toString() {
-    return value;
+    return value + " " + super.toString();
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
