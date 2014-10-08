@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -125,7 +125,7 @@ public class ObservedLobeAnalysis {
    * sidelobe can be represented.
    */
   @XmlElement(name = "ObservedLobeValues")
-  private Collection<ObservedLobeValues> observedLobeValues;
+  private Set<ObservedLobeValues> observedLobeValues;
 
   /**
    * Get BeamType (US), indicate the pattern beam type that best represents the
@@ -264,7 +264,7 @@ public class ObservedLobeAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedLobeValues}
    *         instances
    */
-  public Collection<ObservedLobeValues> getObservedLobeValues() {
+  public Set<ObservedLobeValues> getObservedLobeValues() {
     if (observedLobeValues == null) {
       observedLobeValues = new HashSet<>();
     }
@@ -349,7 +349,7 @@ public class ObservedLobeAnalysis {
    */
   public ObservedLobeAnalysis withObservedLobeValues(ObservedLobeValues... values) {
     if (values != null) {
-      getObservedLobeValues().addAll(Arrays.asList(values));
+      getObservedLobeValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -365,7 +365,7 @@ public class ObservedLobeAnalysis {
    * @param values A collection of {@link ObservedLobeValues} instances
    * @return The current ObservedLobeAnalysis object instance
    */
-  public ObservedLobeAnalysis withObservedLobeValues(Collection<ObservedLobeValues> values) {
+  public ObservedLobeAnalysis withObservedLobeValues(Set<ObservedLobeValues> values) {
     if (values != null) {
       getObservedLobeValues().addAll(values);
     }

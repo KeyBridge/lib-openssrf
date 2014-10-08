@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -97,7 +97,7 @@ public class Freq extends AsgnFreqBase {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "PairedFreq")
-  private Collection<PairedFreq> pairedFreq;
+  private Set<PairedFreq> pairedFreq;
   /**
    * US:NarrowBandPlanning (Optional)
    * <p>
@@ -105,7 +105,7 @@ public class Freq extends AsgnFreqBase {
    * single frequency or a range of frequencies.
    */
   @XmlElement(name = "NarrowBandPlanning")
-  private Collection<NarrowBandPlanning> narrowBandPlanning;
+  private Set<NarrowBandPlanning> narrowBandPlanning;
 
   /**
    * Get the TAD associated to the assigned frequency. A Tactical Air Designator
@@ -178,7 +178,7 @@ public class Freq extends AsgnFreqBase {
    * <p>
    * @return a non-null but possibly empty list of {@link PairedFreq} instances
    */
-  public Collection<PairedFreq> getPairedFreq() {
+  public Set<PairedFreq> getPairedFreq() {
     if (pairedFreq == null) {
       pairedFreq = new HashSet<>();
     }
@@ -210,7 +210,7 @@ public class Freq extends AsgnFreqBase {
    * @return a non-null but possibly empty list of {@link NarrowBandPlanning}
    *         instances
    */
-  public Collection<NarrowBandPlanning> getNarrowBandPlanning() {
+  public Set<NarrowBandPlanning> getNarrowBandPlanning() {
     if (narrowBandPlanning == null) {
       narrowBandPlanning = new HashSet<>();
     }
@@ -268,7 +268,7 @@ public class Freq extends AsgnFreqBase {
    */
   public Freq withPairedFreq(PairedFreq... values) {
     if (values != null) {
-      getPairedFreq().addAll(Arrays.asList(values));
+      getPairedFreq().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -281,7 +281,7 @@ public class Freq extends AsgnFreqBase {
    * @param values A collection of {@link PairedFreq} instances
    * @return The current Freq object instance
    */
-  public Freq withPairedFreq(Collection<PairedFreq> values) {
+  public Freq withPairedFreq(Set<PairedFreq> values) {
     if (values != null) {
       getPairedFreq().addAll(values);
     }
@@ -299,7 +299,7 @@ public class Freq extends AsgnFreqBase {
    */
   public Freq withNarrowBandPlanning(NarrowBandPlanning... values) {
     if (values != null) {
-      getNarrowBandPlanning().addAll(Arrays.asList(values));
+      getNarrowBandPlanning().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -313,7 +313,7 @@ public class Freq extends AsgnFreqBase {
    * @param values A collection of {@link NarrowBandPlanning} instances
    * @return The current Freq object instance
    */
-  public Freq withNarrowBandPlanning(Collection<NarrowBandPlanning> values) {
+  public Freq withNarrowBandPlanning(Set<NarrowBandPlanning> values) {
     if (values != null) {
       getNarrowBandPlanning().addAll(values);
     }

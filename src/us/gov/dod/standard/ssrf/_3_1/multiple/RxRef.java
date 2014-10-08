@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -72,7 +72,7 @@ public class RxRef {
    * configuration.
    */
   @XmlElement(name = "RxModeRef", nillable = true)
-  private Collection<RxModeRef> rxModeRef;
+  private Set<RxModeRef> rxModeRef;
   /**
    * RxAntModeRef (Optional)
    * <p>
@@ -80,7 +80,7 @@ public class RxRef {
    * construct a Receiver Configuration.
    */
   @XmlElement(name = "RxAntModeRef")
-  private Collection<RxAntModeRef> rxAntModeRef;
+  private Set<RxAntModeRef> rxAntModeRef;
 
   /**
    * Get the identifier of the related Receiver used in this configuration. The
@@ -129,7 +129,7 @@ public class RxRef {
    * <p>
    * @return a non-null but possibly empty list of {@link RxModeRef} instances
    */
-  public Collection<RxModeRef> getRxModeRef() {
+  public Set<RxModeRef> getRxModeRef() {
     if (rxModeRef == null) {
       rxModeRef = new HashSet<>();
     }
@@ -161,7 +161,7 @@ public class RxRef {
    * @return a non-null but possibly empty list of {@link RxAntModeRef}
    *         instances
    */
-  public Collection<RxAntModeRef> getRxAntModeRef() {
+  public Set<RxAntModeRef> getRxAntModeRef() {
     if (rxAntModeRef == null) {
       rxAntModeRef = new HashSet<>();
     }
@@ -211,7 +211,7 @@ public class RxRef {
    */
   public RxRef withRxModeRef(RxModeRef... values) {
     if (values != null) {
-      getRxModeRef().addAll(Arrays.asList(values));
+      getRxModeRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -225,7 +225,7 @@ public class RxRef {
    * @param values A collection of {@link RxModeRef} instances
    * @return The current RxRef object instance
    */
-  public RxRef withRxModeRef(Collection<RxModeRef> values) {
+  public RxRef withRxModeRef(Set<RxModeRef> values) {
     if (values != null) {
       getRxModeRef().addAll(values);
     }
@@ -243,7 +243,7 @@ public class RxRef {
    */
   public RxRef withRxAntModeRef(RxAntModeRef... values) {
     if (values != null) {
-      getRxAntModeRef().addAll(Arrays.asList(values));
+      getRxAntModeRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -257,7 +257,7 @@ public class RxRef {
    * @param values A collection of {@link RxAntModeRef} instances
    * @return The current RxRef object instance
    */
-  public RxRef withRxAntModeRef(Collection<RxAntModeRef> values) {
+  public RxRef withRxAntModeRef(Set<RxAntModeRef> values) {
     if (values != null) {
       getRxAntModeRef().addAll(values);
     }

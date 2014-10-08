@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import java.math.BigInteger;
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -400,7 +400,7 @@ public class RxMode {
    * optional symbols.
    */
   @XmlElement(name = "EmsClass", nillable = true)
-  private Collection<EmsClass> emsClass;
+  private Set<EmsClass> emsClass;
   /**
    * RxSignalTuning (Optional)
    * <p>
@@ -409,7 +409,7 @@ public class RxMode {
    * increments of the equipment.
    */
   @XmlElement(name = "RxSignalTuning")
-  private Collection<RxSignalTuning> rxSignalTuning;
+  private Set<RxSignalTuning> rxSignalTuning;
   /**
    * RxModulation (Optional)
    * <p>
@@ -417,14 +417,14 @@ public class RxMode {
    * receiver side.
    */
   @XmlElement(name = "RxModulation")
-  private Collection<RxModulation> rxModulation;
+  private Set<RxModulation> rxModulation;
   /**
    * Baseband (Optional)
    * <p>
    * Baseband defines the parameters of the modulating or received signal.
    */
   @XmlElement(name = "Baseband")
-  private Collection<Baseband> baseband;
+  private Set<Baseband> baseband;
   /**
    * FreqConversion (Optional)
    * <p>
@@ -432,7 +432,7 @@ public class RxMode {
    * stage: intermediate frequency (IF) and local oscillator (LO) parameters.
    */
   @XmlElement(name = "FreqConversion")
-  private Collection<FreqConversion> freqConversion;
+  private Set<FreqConversion> freqConversion;
   /**
    * Spread Spectrum (Optional)
    * <p>
@@ -449,7 +449,7 @@ public class RxMode {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "curves")
-  private Collection<BigInteger> curves;
+  private Set<BigInteger> curves;
 
   /**
    * Get the short name for the mode; this name should be a meaningful
@@ -1285,7 +1285,7 @@ public class RxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link EmsClass} instances
    */
-  public Collection<EmsClass> getEmsClass() {
+  public Set<EmsClass> getEmsClass() {
     if (emsClass == null) {
       emsClass = new HashSet<>();
     }
@@ -1318,7 +1318,7 @@ public class RxMode {
    * @return a non-null but possibly empty list of {@link RxSignalTuning}
    *         instances
    */
-  public Collection<RxSignalTuning> getRxSignalTuning() {
+  public Set<RxSignalTuning> getRxSignalTuning() {
     if (rxSignalTuning == null) {
       rxSignalTuning = new HashSet<>();
     }
@@ -1350,7 +1350,7 @@ public class RxMode {
    * @return a non-null but possibly empty list of {@link RxModulation}
    *         instances
    */
-  public Collection<RxModulation> getRxModulation() {
+  public Set<RxModulation> getRxModulation() {
     if (rxModulation == null) {
       rxModulation = new HashSet<>();
     }
@@ -1381,7 +1381,7 @@ public class RxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link Baseband} instances
    */
-  public Collection<Baseband> getBaseband() {
+  public Set<Baseband> getBaseband() {
     if (baseband == null) {
       baseband = new HashSet<>();
     }
@@ -1414,7 +1414,7 @@ public class RxMode {
    * @return a non-null but possibly empty list of {@link FreqConversion}
    *         instances
    */
-  public Collection<FreqConversion> getFreqConversion() {
+  public Set<FreqConversion> getFreqConversion() {
     if (freqConversion == null) {
       freqConversion = new HashSet<>();
     }
@@ -1475,7 +1475,7 @@ public class RxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getCurves() {
+  public Set<BigInteger> getCurves() {
     if (curves == null) {
       curves = new HashSet<>();
     }
@@ -1833,7 +1833,7 @@ public class RxMode {
    */
   public RxMode withEmsClass(EmsClass... values) {
     if (values != null) {
-      getEmsClass().addAll(Arrays.asList(values));
+      getEmsClass().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1849,7 +1849,7 @@ public class RxMode {
    * @param values A collection of {@link EmsClass} instances
    * @return The current RxMode object instance
    */
-  public RxMode withEmsClass(Collection<EmsClass> values) {
+  public RxMode withEmsClass(Set<EmsClass> values) {
     if (values != null) {
       getEmsClass().addAll(values);
     }
@@ -1868,7 +1868,7 @@ public class RxMode {
    */
   public RxMode withRxSignalTuning(RxSignalTuning... values) {
     if (values != null) {
-      getRxSignalTuning().addAll(Arrays.asList(values));
+      getRxSignalTuning().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1883,7 +1883,7 @@ public class RxMode {
    * @param values A collection of {@link RxSignalTuning} instances
    * @return The current RxMode object instance
    */
-  public RxMode withRxSignalTuning(Collection<RxSignalTuning> values) {
+  public RxMode withRxSignalTuning(Set<RxSignalTuning> values) {
     if (values != null) {
       getRxSignalTuning().addAll(values);
     }
@@ -1901,7 +1901,7 @@ public class RxMode {
    */
   public RxMode withRxModulation(RxModulation... values) {
     if (values != null) {
-      getRxModulation().addAll(Arrays.asList(values));
+      getRxModulation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1915,7 +1915,7 @@ public class RxMode {
    * @param values A collection of {@link RxModulation} instances
    * @return The current RxMode object instance
    */
-  public RxMode withRxModulation(Collection<RxModulation> values) {
+  public RxMode withRxModulation(Set<RxModulation> values) {
     if (values != null) {
       getRxModulation().addAll(values);
     }
@@ -1933,7 +1933,7 @@ public class RxMode {
    */
   public RxMode withBaseband(Baseband... values) {
     if (values != null) {
-      getBaseband().addAll(Arrays.asList(values));
+      getBaseband().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1947,7 +1947,7 @@ public class RxMode {
    * @param values A collection of {@link Baseband} instances
    * @return The current RxMode object instance
    */
-  public RxMode withBaseband(Collection<Baseband> values) {
+  public RxMode withBaseband(Set<Baseband> values) {
     if (values != null) {
       getBaseband().addAll(values);
     }
@@ -1966,7 +1966,7 @@ public class RxMode {
    */
   public RxMode withFreqConversion(FreqConversion... values) {
     if (values != null) {
-      getFreqConversion().addAll(Arrays.asList(values));
+      getFreqConversion().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1981,7 +1981,7 @@ public class RxMode {
    * @param values A collection of {@link FreqConversion} instances
    * @return The current RxMode object instance
    */
-  public RxMode withFreqConversion(Collection<FreqConversion> values) {
+  public RxMode withFreqConversion(Set<FreqConversion> values) {
     if (values != null) {
       getFreqConversion().addAll(values);
     }
@@ -2010,7 +2010,7 @@ public class RxMode {
    */
   public RxMode withCurves(BigInteger... values) {
     if (values != null) {
-      getCurves().addAll(Arrays.asList(values));
+      getCurves().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2021,7 +2021,7 @@ public class RxMode {
    * @param values A collection of {@link Curve} instances
    * @return The current RxMode object instance
    */
-  public RxMode withCurves(Collection<BigInteger> values) {
+  public RxMode withCurves(Set<BigInteger> values) {
     if (values != null) {
       getCurves().addAll(values);
     }

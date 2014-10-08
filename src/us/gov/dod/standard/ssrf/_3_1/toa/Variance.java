@@ -23,8 +23,8 @@
  */
 package us.gov.dod.standard.ssrf._3_1.toa;
 
-import java.util.Collection;
-import java.util.Collection;
+import java.util.Set;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -101,7 +101,7 @@ public class Variance {
    * Administration contains the country for which this variance applies.
    */
   @XmlElement(name = "Administration", nillable = true)
-  private Collection<TString> administration;
+  private Set<TString> administration;
 
   /**
    * Get the type of variance.
@@ -203,7 +203,7 @@ public class Variance {
    * @return a non-null but possibly empty list of {@link Administration}
    *         instances
    */
-  public Collection<TString> getAdministration() {
+  public Set<TString> getAdministration() {
     if (administration == null) {
       administration = new HashSet<>();
     }
@@ -288,7 +288,7 @@ public class Variance {
    * @param values A collection of {@link Administration} instances
    * @return The current Variance object instance
    */
-  public Variance withAdministration(Collection<ListCAO> values) {
+  public Variance withAdministration(Set<ListCAO> values) {
     if (values != null) {
       for (ListCAO listCAO : values) {
         getAdministration().add(new TString(listCAO.name()));

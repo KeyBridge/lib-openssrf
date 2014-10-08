@@ -231,7 +231,7 @@ public class JRFL extends Common<JRFL> {
    * frequency or frequency range(s) is restricted in use.
    */
   @XmlElement(name = "JRFLEntry", required = true)
-  private Collection<JRFLEntry> jrflEntry;
+  private Set<JRFLEntry> jrflEntry;
 
   /**
    * Get the width of the range (or band) of restricted frequency(s).
@@ -567,7 +567,7 @@ public class JRFL extends Common<JRFL> {
    * <p>
    * @return a non-null but possibly empty list of {@link JRFLEntry} instances
    */
-  public Collection<JRFLEntry> getJRFLEntry() {
+  public Set<JRFLEntry> getJRFLEntry() {
     if (jrflEntry == null) {
       jrflEntry = new HashSet<>();
     }
@@ -757,7 +757,7 @@ public class JRFL extends Common<JRFL> {
    */
   public JRFL withJRFLEntry(JRFLEntry... values) {
     if (values != null) {
-      getJRFLEntry().addAll(Arrays.asList(values));
+      getJRFLEntry().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -771,7 +771,7 @@ public class JRFL extends Common<JRFL> {
    * @param values A collection of {@link JRFLEntry} instances
    * @return The current JRFL object instance
    */
-  public JRFL withJRFLEntry(Collection<JRFLEntry> values) {
+  public JRFL withJRFLEntry(Set<JRFLEntry> values) {
     if (values != null) {
       getJRFLEntry().addAll(values);
     }

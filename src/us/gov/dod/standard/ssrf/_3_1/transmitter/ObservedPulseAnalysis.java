@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -865,7 +865,7 @@ public class ObservedPulseAnalysis {
    * related to the Modulation Type.
    */
   @XmlElement(name = "ObservedPulseValues")
-  private Collection<ObservedPulseValues> observedPulseValues;
+  private Set<ObservedPulseValues> observedPulseValues;
 
   /**
    * Get the time required for a pulse to fall from 90% to 10 percent of the
@@ -2799,7 +2799,7 @@ public class ObservedPulseAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedPulseValues}
    *         instances
    */
-  public Collection<ObservedPulseValues> getObservedPulseValues() {
+  public Set<ObservedPulseValues> getObservedPulseValues() {
     if (observedPulseValues == null) {
       observedPulseValues = new HashSet<>();
     }
@@ -3584,7 +3584,7 @@ public class ObservedPulseAnalysis {
    */
   public ObservedPulseAnalysis withObservedPulseValues(ObservedPulseValues... values) {
     if (values != null) {
-      getObservedPulseValues().addAll(Arrays.asList(values));
+      getObservedPulseValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3598,7 +3598,7 @@ public class ObservedPulseAnalysis {
    * @param values A collection of {@link ObservedPulseValues} instances
    * @return The current ObservedPulseAnalysis object instance
    */
-  public ObservedPulseAnalysis withObservedPulseValues(Collection<ObservedPulseValues> values) {
+  public ObservedPulseAnalysis withObservedPulseValues(Set<ObservedPulseValues> values) {
     if (values != null) {
       getObservedPulseValues().addAll(values);
     }

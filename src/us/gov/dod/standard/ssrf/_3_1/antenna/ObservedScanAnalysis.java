@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -515,7 +515,7 @@ public class ObservedScanAnalysis {
    * values and supporting statistical information.
    */
   @XmlElement(name = "ObservedScanValues")
-  private Collection<ObservedScanValues> observedScanValues;
+  private Set<ObservedScanValues> observedScanValues;
 
   /**
    * Get ScanHorzContinuous (US), indicate the if the scan azimuth progression
@@ -1671,7 +1671,7 @@ public class ObservedScanAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedScanValues}
    *         instances
    */
-  public Collection<ObservedScanValues> getObservedScanValues() {
+  public Set<ObservedScanValues> getObservedScanValues() {
     if (observedScanValues == null) {
       observedScanValues = new HashSet<>();
     }
@@ -2149,7 +2149,7 @@ public class ObservedScanAnalysis {
    */
   public ObservedScanAnalysis withObservedScanValues(ObservedScanValues... values) {
     if (values != null) {
-      getObservedScanValues().addAll(Arrays.asList(values));
+      getObservedScanValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2163,7 +2163,7 @@ public class ObservedScanAnalysis {
    * @param values A collection of {@link ObservedScanValues} instances
    * @return The current ObservedScanAnalysis object instance
    */
-  public ObservedScanAnalysis withObservedScanValues(Collection<ObservedScanValues> values) {
+  public ObservedScanAnalysis withObservedScanValues(Set<ObservedScanValues> values) {
     if (values != null) {
       getObservedScanValues().addAll(values);
     }

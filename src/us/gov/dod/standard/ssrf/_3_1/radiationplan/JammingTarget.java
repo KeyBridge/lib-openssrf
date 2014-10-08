@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -197,7 +197,7 @@ public class JammingTarget {
    * how well it actually was impacted, for a specific jamming mission.
    */
   @XmlElement(name = "JammingPerformance")
-  private Collection<JammingPerformance> jammingPerformance;
+  private Set<JammingPerformance> jammingPerformance;
 
   /**
    * Get the method by which the jamming antenna beam is focused.
@@ -575,7 +575,7 @@ public class JammingTarget {
    * @return a non-null but possibly empty list of {@link JammingPerformance}
    *         instances
    */
-  public Collection<JammingPerformance> getJammingPerformance() {
+  public Set<JammingPerformance> getJammingPerformance() {
     if (jammingPerformance == null) {
       jammingPerformance = new HashSet<>();
     }
@@ -755,7 +755,7 @@ public class JammingTarget {
    */
   public JammingTarget withJammingPerformance(JammingPerformance... values) {
     if (values != null) {
-      getJammingPerformance().addAll(Arrays.asList(values));
+      getJammingPerformance().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -771,7 +771,7 @@ public class JammingTarget {
    * @param values A collection of {@link JammingPerformance} instances
    * @return The current JammingTarget object instance
    */
-  public JammingTarget withJammingPerformance(Collection<JammingPerformance> values) {
+  public JammingTarget withJammingPerformance(Set<JammingPerformance> values) {
     if (values != null) {
       getJammingPerformance().addAll(values);
     }

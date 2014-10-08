@@ -151,7 +151,7 @@ public class Stage {
    * forbidden from use.
    */
   @XmlElement(name = "StageLocation")
-  private Collection<StageLocation> stageLocation;
+  private Set<StageLocation> stageLocation;
 
   /**
    * Get the stage.
@@ -380,7 +380,7 @@ public class Stage {
    * @return a non-null but possibly empty list of {@link StageLocation}
    *         instances
    */
-  public Collection<StageLocation> getStageLocation() {
+  public Set<StageLocation> getStageLocation() {
     if (stageLocation == null) {
       stageLocation = new HashSet<>();
     }
@@ -543,7 +543,7 @@ public class Stage {
    */
   public Stage withStageLocation(StageLocation... values) {
     if (values != null) {
-      getStageLocation().addAll(Arrays.asList(values));
+      getStageLocation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -557,7 +557,7 @@ public class Stage {
    * @param values A collection of {@link StageLocation} instances
    * @return The current Stage object instance
    */
-  public Stage withStageLocation(Collection<StageLocation> values) {
+  public Stage withStageLocation(Set<StageLocation> values) {
     if (values != null) {
       getStageLocation().addAll(values);
     }

@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -118,7 +118,7 @@ public class DiagramEndpoint {
    * forbidden from use.
    */
   @XmlElement(name = "EndpointLocation")
-  private Collection<EndpointLocation> endpointLocation;
+  private Set<EndpointLocation> endpointLocation;
 
   /**
    * Get the type of icon for the diagram endpoint.
@@ -354,7 +354,7 @@ public class DiagramEndpoint {
    * @return a non-null but possibly empty list of {@link EndpointLocation}
    *         instances
    */
-  public Collection<EndpointLocation> getEndpointLocation() {
+  public Set<EndpointLocation> getEndpointLocation() {
     if (endpointLocation == null) {
       endpointLocation = new HashSet<>();
     }
@@ -479,7 +479,7 @@ public class DiagramEndpoint {
    */
   public DiagramEndpoint withEndpointLocation(EndpointLocation... values) {
     if (values != null) {
-      getEndpointLocation().addAll(Arrays.asList(values));
+      getEndpointLocation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -493,7 +493,7 @@ public class DiagramEndpoint {
    * @param values A collection of {@link EndpointLocation} instances
    * @return The current DiagramEndpoint object instance
    */
-  public DiagramEndpoint withEndpointLocation(Collection<EndpointLocation> values) {
+  public DiagramEndpoint withEndpointLocation(Set<EndpointLocation> values) {
     if (values != null) {
       getEndpointLocation().addAll(values);
     }

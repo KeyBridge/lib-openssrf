@@ -601,7 +601,7 @@ public class IntfReport extends Common<IntfReport> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
 
   /**
    * Get whether the user needs technical assistance from another organisation
@@ -2067,7 +2067,7 @@ public class IntfReport extends Common<IntfReport> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -2700,7 +2700,7 @@ public class IntfReport extends Common<IntfReport> {
    */
   public IntfReport withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2714,7 +2714,7 @@ public class IntfReport extends Common<IntfReport> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current IntfReport object instance
    */
-  public IntfReport withPOCInformation(Collection<POCInformation> values) {
+  public IntfReport withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }

@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -654,7 +653,7 @@ public class Assignment extends Common<Assignment> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private Collection<Project> project;
+  private Set<Project> project;
   /**
    * POCInformation (Optional)
    * <p>
@@ -662,7 +661,7 @@ public class Assignment extends Common<Assignment> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * SysofStation (Optional)
    * <p>
@@ -671,7 +670,7 @@ public class Assignment extends Common<Assignment> {
    * assignment resources. It also describes linkages to or from other datasets.
    */
   @XmlElement(name = "SysOfStation")
-  private Collection<SysOfStation> sysOfStation;
+  private Set<SysOfStation> sysOfStation;
   /**
    * RelatedRef (Optional)
    * <p>
@@ -680,7 +679,7 @@ public class Assignment extends Common<Assignment> {
    */
   @XmlElement(name = "RelatedRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> relatedRef;
+  private Set<TString> relatedRef;
   /**
    * Configuration (Required)
    * <p>
@@ -689,7 +688,7 @@ public class Assignment extends Common<Assignment> {
    * frequency Assignment or Allotment dataset.
    */
   @XmlElement(name = "Configuration", required = true)
-  private Collection<Configuration> configuration;
+  private Set<Configuration> configuration;
   /**
    * Station (Required)
    * <p>
@@ -697,7 +696,7 @@ public class Assignment extends Common<Assignment> {
    * Assignment dataset.
    */
   @XmlElement(name = "Station", required = true)
-  private Collection<Station> station;
+  private Set<Station> station;
   /**
    * Link (Required)
    * <p>
@@ -709,7 +708,7 @@ public class Assignment extends Common<Assignment> {
    * radio-relay hop).
    */
   @XmlElement(name = "Link", required = true)
-  private Collection<Link> link;
+  private Set<Link> link;
   /**
    * US:StatusLog (Optional)
    * <p>
@@ -717,7 +716,7 @@ public class Assignment extends Common<Assignment> {
    * frequency assignments.
    */
   @XmlElement(name = "StatusLog")
-  private Collection<StatusLog> statusLog;
+  private Set<StatusLog> statusLog;
   /**
    * US:AsgnAllotOwner (Optional)
    * <p>
@@ -725,7 +724,7 @@ public class Assignment extends Common<Assignment> {
    * organisation.
    */
   @XmlElement(name = "AsgnAllotOwner")
-  private Collection<AsgnAllotOwner> asgnAllotOwner;
+  private Set<AsgnAllotOwner> asgnAllotOwner;
   /**
    * US:CircuitRemarks (Optional)
    * <p>
@@ -733,21 +732,21 @@ public class Assignment extends Common<Assignment> {
    * equipment used to support a specific frequency assignment or assignments.
    */
   @XmlElement(name = "CircuitRemarks", nillable = true)
-  private Collection<CircuitRemarks> circuitRemarks;
+  private Set<CircuitRemarks> circuitRemarks;
   /**
    * US:CoordinationData (Optional)
    * <p>
    * CoordinationData (US) contains Host Nation coordination information.
    */
   @XmlElement(name = "CoordinationData")
-  private Collection<CoordinationData> coordinationData;
+  private Set<CoordinationData> coordinationData;
   /**
    * US:DocketNum (Optional)
    * <p>
    * DocketNum (US) contains the docket number from a prior data repository.
    */
   @XmlElement(name = "DocketNum", nillable = true)
-  private Collection<DocketNum> docketNum;
+  private Set<DocketNum> docketNum;
   /**
    * US:HostDocketNum (Optional)
    * <p>
@@ -755,7 +754,7 @@ public class Assignment extends Common<Assignment> {
    * repository.
    */
   @XmlElement(name = "HostDocketNum", nillable = true)
-  private Collection<HostDocketNum> hostDocketNum;
+  private Set<HostDocketNum> hostDocketNum;
   /**
    * US:OffTheShelfEquipment (Optional)
    * <p>
@@ -764,7 +763,7 @@ public class Assignment extends Common<Assignment> {
    * function to DoD or government equipment.
    */
   @XmlElement(name = "OffTheShelfEquipment", nillable = true)
-  private Collection<OffTheShelfEquipment> offTheShelfEquipment;
+  private Set<OffTheShelfEquipment> offTheShelfEquipment;
   /**
    * US:PreviousAuthorization (Optional)
    * <p>
@@ -772,7 +771,7 @@ public class Assignment extends Common<Assignment> {
    * Government Master File (GMF) authorization agency serial number.
    */
   @XmlElement(name = "PreviousAuthorization")
-  private Collection<PreviousAuthorization> previousAuthorization;
+  private Set<PreviousAuthorization> previousAuthorization;
   /**
    * US:RecordNote (Optional)
    * <p>
@@ -780,7 +779,7 @@ public class Assignment extends Common<Assignment> {
    * specific comments.
    */
   @XmlElement(name = "RecordNote")
-  private Collection<RecordNote> recordNote;
+  private Set<RecordNote> recordNote;
 
   /**
    * Get an identifying name for this Allotment or Assignment.
@@ -2194,7 +2193,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public Collection<Project> getProject() {
+  public Set<Project> getProject() {
     if (project == null) {
       project = new HashSet<>();
     }
@@ -2226,7 +2225,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -2260,7 +2259,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link SysOfStation}
    *         instances
    */
-  public Collection<SysOfStation> getSysOfStation() {
+  public Set<SysOfStation> getSysOfStation() {
     if (sysOfStation == null) {
       sysOfStation = new HashSet<>();
     }
@@ -2294,7 +2293,7 @@ public class Assignment extends Common<Assignment> {
    * {@link #getRelated()} instead.
    */
   @Deprecated
-  public Collection<TString> getRelatedRef() {
+  public Set<TString> getRelatedRef() {
     if (relatedRef == null) {
       relatedRef = new HashSet<>();
     }
@@ -2327,7 +2326,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link Configuration}
    *         instances
    */
-  public Collection<Configuration> getConfiguration() {
+  public Set<Configuration> getConfiguration() {
     if (configuration == null) {
       configuration = new HashSet<>();
     }
@@ -2358,7 +2357,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Station} instances
    */
-  public Collection<Station> getStation() {
+  public Set<Station> getStation() {
     if (station == null) {
       station = new HashSet<>();
     }
@@ -2393,7 +2392,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Link} instances
    */
-  public Collection<Link> getLink() {
+  public Set<Link> getLink() {
     if (link == null) {
       link = new HashSet<>();
     }
@@ -2424,7 +2423,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @return a non-null but possibly empty list of {@link StatusLog} instances
    */
-  public Collection<StatusLog> getStatusLog() {
+  public Set<StatusLog> getStatusLog() {
     if (statusLog == null) {
       statusLog = new HashSet<>();
     }
@@ -2456,7 +2455,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link AsgnAllotOwner}
    *         instances
    */
-  public Collection<AsgnAllotOwner> getAsgnAllotOwner() {
+  public Set<AsgnAllotOwner> getAsgnAllotOwner() {
     if (asgnAllotOwner == null) {
       asgnAllotOwner = new HashSet<>();
     }
@@ -2489,7 +2488,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link CircuitRemarks}
    *         instances
    */
-  public Collection<CircuitRemarks> getCircuitRemarks() {
+  public Set<CircuitRemarks> getCircuitRemarks() {
     if (circuitRemarks == null) {
       circuitRemarks = new HashSet<>();
     }
@@ -2521,7 +2520,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link CoordinationData}
    *         instances
    */
-  public Collection<CoordinationData> getCoordinationData() {
+  public Set<CoordinationData> getCoordinationData() {
     if (coordinationData == null) {
       coordinationData = new HashSet<>();
     }
@@ -2552,7 +2551,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @return a non-null but possibly empty list of {@link DocketNum} instances
    */
-  public Collection<DocketNum> getDocketNum() {
+  public Set<DocketNum> getDocketNum() {
     if (docketNum == null) {
       docketNum = new HashSet<>();
     }
@@ -2584,7 +2583,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link HostDocketNum}
    *         instances
    */
-  public Collection<HostDocketNum> getHostDocketNum() {
+  public Set<HostDocketNum> getHostDocketNum() {
     if (hostDocketNum == null) {
       hostDocketNum = new HashSet<>();
     }
@@ -2617,7 +2616,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link OffTheShelfEquipment}
    *         instances
    */
-  public Collection<OffTheShelfEquipment> getOffTheShelfEquipment() {
+  public Set<OffTheShelfEquipment> getOffTheShelfEquipment() {
     if (offTheShelfEquipment == null) {
       offTheShelfEquipment = new HashSet<>();
     }
@@ -2650,7 +2649,7 @@ public class Assignment extends Common<Assignment> {
    * @return a non-null but possibly empty list of {@link PreviousAuthorization}
    *         instances
    */
-  public Collection<PreviousAuthorization> getPreviousAuthorization() {
+  public Set<PreviousAuthorization> getPreviousAuthorization() {
     if (previousAuthorization == null) {
       previousAuthorization = new HashSet<>();
     }
@@ -2681,7 +2680,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * @return a non-null but possibly empty list of {@link RecordNote} instances
    */
-  public Collection<RecordNote> getRecordNote() {
+  public Set<RecordNote> getRecordNote() {
     if (recordNote == null) {
       recordNote = new HashSet<>();
     }
@@ -3332,7 +3331,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withProject(Project... values) {
     if (values != null) {
-      getProject().addAll(Arrays.asList(values));
+      getProject().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3346,7 +3345,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link Project} instances
    * @return The current Assignment object instance
    */
-  public Assignment withProject(Collection<Project> values) {
+  public Assignment withProject(Set<Project> values) {
     if (values != null) {
       getProject().addAll(values);
     }
@@ -3364,7 +3363,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3378,7 +3377,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Assignment object instance
    */
-  public Assignment withPOCInformation(Collection<POCInformation> values) {
+  public Assignment withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -3398,7 +3397,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withSysOfStation(SysOfStation... values) {
     if (values != null) {
-      getSysOfStation().addAll(Arrays.asList(values));
+      getSysOfStation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3414,7 +3413,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link SysOfStation} instances
    * @return The current Assignment object instance
    */
-  public Assignment withSysOfStation(Collection<SysOfStation> values) {
+  public Assignment withSysOfStation(Set<SysOfStation> values) {
     if (values != null) {
       getSysOfStation().addAll(values);
     }
@@ -3435,7 +3434,7 @@ public class Assignment extends Common<Assignment> {
   @Deprecated
   public Assignment withRelatedRef(TString... values) {
     if (values != null) {
-      getRelatedRef().addAll(Arrays.asList(values));
+      getRelatedRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3452,7 +3451,7 @@ public class Assignment extends Common<Assignment> {
    * {@link #withRelated(Common...)} instead.
    */
   @Deprecated
-  public Assignment withRelatedRef(Collection<TString> values) {
+  public Assignment withRelatedRef(Set<TString> values) {
     if (values != null) {
       getRelatedRef().addAll(values);
     }
@@ -3471,7 +3470,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withConfiguration(Configuration... values) {
     if (values != null) {
-      getConfiguration().addAll(Arrays.asList(values));
+      getConfiguration().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3486,7 +3485,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link Configuration} instances
    * @return The current Assignment object instance
    */
-  public Assignment withConfiguration(Collection<Configuration> values) {
+  public Assignment withConfiguration(Set<Configuration> values) {
     if (values != null) {
       getConfiguration().addAll(values);
     }
@@ -3504,7 +3503,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withStation(Station... values) {
     if (values != null) {
-      getStation().addAll(Arrays.asList(values));
+      getStation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3518,7 +3517,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link Station} instances
    * @return The current Assignment object instance
    */
-  public Assignment withStation(Collection<Station> values) {
+  public Assignment withStation(Set<Station> values) {
     if (values != null) {
       getStation().addAll(values);
     }
@@ -3540,7 +3539,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withLink(Link... values) {
     if (values != null) {
-      getLink().addAll(Arrays.asList(values));
+      getLink().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3558,7 +3557,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link Link} instances
    * @return The current Assignment object instance
    */
-  public Assignment withLink(Collection<Link> values) {
+  public Assignment withLink(Set<Link> values) {
     if (values != null) {
       getLink().addAll(values);
     }
@@ -3576,7 +3575,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withStatusLog(StatusLog... values) {
     if (values != null) {
-      getStatusLog().addAll(Arrays.asList(values));
+      getStatusLog().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3590,7 +3589,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link StatusLog} instances
    * @return The current Assignment object instance
    */
-  public Assignment withStatusLog(Collection<StatusLog> values) {
+  public Assignment withStatusLog(Set<StatusLog> values) {
     if (values != null) {
       getStatusLog().addAll(values);
     }
@@ -3608,7 +3607,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withAsgnAllotOwner(AsgnAllotOwner... values) {
     if (values != null) {
-      getAsgnAllotOwner().addAll(Arrays.asList(values));
+      getAsgnAllotOwner().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3622,7 +3621,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link AsgnAllotOwner} instances
    * @return The current Assignment object instance
    */
-  public Assignment withAsgnAllotOwner(Collection<AsgnAllotOwner> values) {
+  public Assignment withAsgnAllotOwner(Set<AsgnAllotOwner> values) {
     if (values != null) {
       getAsgnAllotOwner().addAll(values);
     }
@@ -3641,7 +3640,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withCircuitRemarks(CircuitRemarks... values) {
     if (values != null) {
-      getCircuitRemarks().addAll(Arrays.asList(values));
+      getCircuitRemarks().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3656,7 +3655,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link CircuitRemarks} instances
    * @return The current Assignment object instance
    */
-  public Assignment withCircuitRemarks(Collection<CircuitRemarks> values) {
+  public Assignment withCircuitRemarks(Set<CircuitRemarks> values) {
     if (values != null) {
       getCircuitRemarks().addAll(values);
     }
@@ -3674,7 +3673,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withCoordinationData(CoordinationData... values) {
     if (values != null) {
-      getCoordinationData().addAll(Arrays.asList(values));
+      getCoordinationData().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3688,7 +3687,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link CoordinationData} instances
    * @return The current Assignment object instance
    */
-  public Assignment withCoordinationData(Collection<CoordinationData> values) {
+  public Assignment withCoordinationData(Set<CoordinationData> values) {
     if (values != null) {
       getCoordinationData().addAll(values);
     }
@@ -3706,7 +3705,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withDocketNum(DocketNum... values) {
     if (values != null) {
-      getDocketNum().addAll(Arrays.asList(values));
+      getDocketNum().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3720,7 +3719,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link DocketNum} instances
    * @return The current Assignment object instance
    */
-  public Assignment withDocketNum(Collection<DocketNum> values) {
+  public Assignment withDocketNum(Set<DocketNum> values) {
     if (values != null) {
       getDocketNum().addAll(values);
     }
@@ -3738,7 +3737,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withHostDocketNum(HostDocketNum... values) {
     if (values != null) {
-      getHostDocketNum().addAll(Arrays.asList(values));
+      getHostDocketNum().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3752,7 +3751,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link HostDocketNum} instances
    * @return The current Assignment object instance
    */
-  public Assignment withHostDocketNum(Collection<HostDocketNum> values) {
+  public Assignment withHostDocketNum(Set<HostDocketNum> values) {
     if (values != null) {
       getHostDocketNum().addAll(values);
     }
@@ -3771,7 +3770,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withOffTheShelfEquipment(OffTheShelfEquipment... values) {
     if (values != null) {
-      getOffTheShelfEquipment().addAll(Arrays.asList(values));
+      getOffTheShelfEquipment().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3786,7 +3785,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link OffTheShelfEquipment} instances
    * @return The current Assignment object instance
    */
-  public Assignment withOffTheShelfEquipment(Collection<OffTheShelfEquipment> values) {
+  public Assignment withOffTheShelfEquipment(Set<OffTheShelfEquipment> values) {
     if (values != null) {
       getOffTheShelfEquipment().addAll(values);
     }
@@ -3805,7 +3804,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withPreviousAuthorization(PreviousAuthorization... values) {
     if (values != null) {
-      getPreviousAuthorization().addAll(Arrays.asList(values));
+      getPreviousAuthorization().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3820,7 +3819,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link PreviousAuthorization} instances
    * @return The current Assignment object instance
    */
-  public Assignment withPreviousAuthorization(Collection<PreviousAuthorization> values) {
+  public Assignment withPreviousAuthorization(Set<PreviousAuthorization> values) {
     if (values != null) {
       getPreviousAuthorization().addAll(values);
     }
@@ -3838,7 +3837,7 @@ public class Assignment extends Common<Assignment> {
    */
   public Assignment withRecordNote(RecordNote... values) {
     if (values != null) {
-      getRecordNote().addAll(Arrays.asList(values));
+      getRecordNote().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -3852,7 +3851,7 @@ public class Assignment extends Common<Assignment> {
    * @param values A collection of {@link RecordNote} instances
    * @return The current Assignment object instance
    */
-  public Assignment withRecordNote(Collection<RecordNote> values) {
+  public Assignment withRecordNote(Set<RecordNote> values) {
     if (values != null) {
       getRecordNote().addAll(values);
     }
@@ -3958,7 +3957,7 @@ public class Assignment extends Common<Assignment> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Common<?>> related;
+  private Set<Common<?>> related;
 
   /**
    * Get the RelatedRef
@@ -3969,7 +3968,7 @@ public class Assignment extends Common<Assignment> {
    * @return a {@link Common} instance
    * @since 3.1.0
    */
-  public Collection<Common<?>> getRelated() {
+  public Set<Common<?>> getRelated() {
     if (related == null) {
       related = new HashSet<>();
     }
@@ -3996,7 +3995,7 @@ public class Assignment extends Common<Assignment> {
    * @since 3.1.0
    */
   public Assignment withRelated(Common<?>... values) {
-    return withRelated(Arrays.asList(values));
+    return withRelated(new HashSet<>(new HashSet<>(Arrays.asList(values))));
   }
 
   /**
@@ -4009,7 +4008,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    * @since 3.1.0
    */
-  public Assignment withRelated(Collection<Common<?>> values) {
+  public Assignment withRelated(Set<Common<?>> values) {
     getRelated().addAll(values);
     return this;
   }

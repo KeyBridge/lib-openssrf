@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.math.BigInteger;
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -107,7 +107,7 @@ public class FreqBand {
    * specific radiocommunication service.
    */
   @XmlElement(name = "Allocation")
-  private Collection<Allocation> allocation;
+  private Set<Allocation> allocation;
   /**
    * footnotes - Link to band usage notes (Optional)
    * <p>
@@ -117,7 +117,7 @@ public class FreqBand {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "footnotes")
-  private Collection<BigInteger> footnotes;
+  private Set<BigInteger> footnotes;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -220,7 +220,7 @@ public class FreqBand {
    * <p>
    * @return a non-null but possibly empty list of {@link Allocation} instances
    */
-  public Collection<Allocation> getAllocation() {
+  public Set<Allocation> getAllocation() {
     if (allocation == null) {
       allocation = new HashSet<>();
     }
@@ -250,7 +250,7 @@ public class FreqBand {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getFootnotes() {
+  public Set<BigInteger> getFootnotes() {
     if (footnotes == null) {
       footnotes = new HashSet<>();
     }
@@ -320,7 +320,7 @@ public class FreqBand {
    */
   public FreqBand withAllocation(Allocation... values) {
     if (values != null) {
-      getAllocation().addAll(Arrays.asList(values));
+      getAllocation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -334,7 +334,7 @@ public class FreqBand {
    * @param values A collection of {@link Allocation} instances
    * @return The current FreqBand object instance
    */
-  public FreqBand withAllocation(Collection<Allocation> values) {
+  public FreqBand withAllocation(Set<Allocation> values) {
     if (values != null) {
       getAllocation().addAll(values);
     }
@@ -351,7 +351,7 @@ public class FreqBand {
    */
   public FreqBand withFootnotes(BigInteger... values) {
     if (values != null) {
-      getFootnotes().addAll(Arrays.asList(values));
+      getFootnotes().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -364,7 +364,7 @@ public class FreqBand {
    * @param values A collection of {@link BigInteger} instances
    * @return The current FreqBand object instance
    */
-  public FreqBand withFootnotes(Collection<BigInteger> values) {
+  public FreqBand withFootnotes(Set<BigInteger> values) {
     if (values != null) {
       getFootnotes().addAll(values);
     }

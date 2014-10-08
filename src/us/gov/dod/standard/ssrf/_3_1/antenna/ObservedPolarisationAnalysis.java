@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -376,7 +376,7 @@ public class ObservedPolarisationAnalysis {
    * information for the polarization tilt angle specific values.
    */
   @XmlElement(name = "ObservedPolarisationValues")
-  private Collection<ObservedPolarisationValues> observedPolarisationValues;
+  private Set<ObservedPolarisationValues> observedPolarisationValues;
 
   /**
    * Get the ratio of the polarisation ellipse major axis to its minor axis
@@ -1132,7 +1132,7 @@ public class ObservedPolarisationAnalysis {
    * @return a non-null but possibly empty list of
    *         {@link ObservedPolarisationValues} instances
    */
-  public Collection<ObservedPolarisationValues> getObservedPolarisationValues() {
+  public Set<ObservedPolarisationValues> getObservedPolarisationValues() {
     if (observedPolarisationValues == null) {
       observedPolarisationValues = new HashSet<>();
     }
@@ -1456,7 +1456,7 @@ public class ObservedPolarisationAnalysis {
    */
   public ObservedPolarisationAnalysis withObservedPolarisationValues(ObservedPolarisationValues... values) {
     if (values != null) {
-      getObservedPolarisationValues().addAll(Arrays.asList(values));
+      getObservedPolarisationValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1470,7 +1470,7 @@ public class ObservedPolarisationAnalysis {
    * @param values A collection of {@link ObservedPolarisationValues} instances
    * @return The current ObservedPolarisationAnalysis object instance
    */
-  public ObservedPolarisationAnalysis withObservedPolarisationValues(Collection<ObservedPolarisationValues> values) {
+  public ObservedPolarisationAnalysis withObservedPolarisationValues(Set<ObservedPolarisationValues> values) {
     if (values != null) {
       getObservedPolarisationValues().addAll(values);
     }

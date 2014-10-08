@@ -95,7 +95,7 @@ public class Polygon implements Comparable<Polygon> {
    * assumed that they are connected to complete the boundary of the polygon.
    */
   @XmlElement(name = "PolygonPoint", required = true)
-  private Collection<PolygonPoint> polygonPoint;
+  private Set<PolygonPoint> polygonPoint;
   /**
    * idx - Index (Required)
    * <p>
@@ -217,7 +217,7 @@ public class Polygon implements Comparable<Polygon> {
    * @return a non-null but possibly empty list of {@link PolygonPoint}
    *         instances
    */
-  public Collection<PolygonPoint> getPolygonPoint() {
+  public Set<PolygonPoint> getPolygonPoint() {
     if (polygonPoint == null) {
       polygonPoint = new HashSet<>();
     }
@@ -316,7 +316,7 @@ public class Polygon implements Comparable<Polygon> {
    */
   public Polygon withPolygonPoint(PolygonPoint... values) {
     if (values != null) {
-      getPolygonPoint().addAll(Arrays.asList(values));
+      getPolygonPoint().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -333,7 +333,7 @@ public class Polygon implements Comparable<Polygon> {
    * @param values A collection of {@link PolygonPoint} instances
    * @return The current Polygon object instance
    */
-  public Polygon withPolygonPoint(Collection<PolygonPoint> values) {
+  public Polygon withPolygonPoint(Set<PolygonPoint> values) {
     if (values != null) {
       getPolygonPoint().addAll(values);
     }

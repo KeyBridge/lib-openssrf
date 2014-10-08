@@ -23,10 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -306,7 +305,7 @@ public class Antenna extends Common<Antenna> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -318,7 +317,7 @@ public class Antenna extends Common<Antenna> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
   /**
    * AntHardware (Optional)
    * <p>
@@ -326,7 +325,7 @@ public class Antenna extends Common<Antenna> {
    * and lead.
    */
   @XmlElement(name = "AntHardware")
-  private Collection<AntHardware> antHardware;
+  private Set<AntHardware> antHardware;
   /**
    * AntMode (Optional)
    * <p>
@@ -335,7 +334,7 @@ public class Antenna extends Common<Antenna> {
    * Divergence from SMADEF: SMADEF requires (1..n) AntModes
    */
   @XmlElement(name = "AntMode")
-  private Collection<AntMode> antMode;
+  private Set<AntMode> antMode;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -343,7 +342,7 @@ public class Antenna extends Common<Antenna> {
    * supply (Source), and use (Using) the Antenna.
    */
   @XmlElement(name = "UsingCountries")
-  private Collection<UsingCountries> usingCountries;
+  private Set<UsingCountries> usingCountries;
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -875,7 +874,7 @@ public class Antenna extends Common<Antenna> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -909,7 +908,7 @@ public class Antenna extends Common<Antenna> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -940,7 +939,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * @return a non-null but possibly empty list of {@link AntHardware} instances
    */
-  public Collection<AntHardware> getAntHardware() {
+  public Set<AntHardware> getAntHardware() {
     if (antHardware == null) {
       antHardware = new HashSet<>();
     }
@@ -971,7 +970,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * @return a non-null but possibly empty list of {@link AntMode} instances
    */
-  public Collection<AntMode> getAntMode() {
+  public Set<AntMode> getAntMode() {
     if (antMode == null) {
       antMode = new HashSet<>();
     }
@@ -1003,7 +1002,7 @@ public class Antenna extends Common<Antenna> {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public Collection<UsingCountries> getUsingCountries() {
+  public Set<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
       usingCountries = new HashSet<>();
     }
@@ -1236,7 +1235,7 @@ public class Antenna extends Common<Antenna> {
    */
   public Antenna withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1250,7 +1249,7 @@ public class Antenna extends Common<Antenna> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Antenna object instance
    */
-  public Antenna withPOCInformation(Collection<POCInformation> values) {
+  public Antenna withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -1270,7 +1269,7 @@ public class Antenna extends Common<Antenna> {
    */
   public Antenna withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1286,7 +1285,7 @@ public class Antenna extends Common<Antenna> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Antenna object instance
    */
-  public Antenna withNomenclature(Collection<Nomenclature> values) {
+  public Antenna withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
@@ -1304,7 +1303,7 @@ public class Antenna extends Common<Antenna> {
    */
   public Antenna withAntHardware(AntHardware... values) {
     if (values != null) {
-      getAntHardware().addAll(Arrays.asList(values));
+      getAntHardware().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1318,7 +1317,7 @@ public class Antenna extends Common<Antenna> {
    * @param values A collection of {@link AntHardware} instances
    * @return The current Antenna object instance
    */
-  public Antenna withAntHardware(Collection<AntHardware> values) {
+  public Antenna withAntHardware(Set<AntHardware> values) {
     if (values != null) {
       getAntHardware().addAll(values);
     }
@@ -1336,7 +1335,7 @@ public class Antenna extends Common<Antenna> {
    */
   public Antenna withAntMode(AntMode... values) {
     if (values != null) {
-      getAntMode().addAll(Arrays.asList(values));
+      getAntMode().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1350,7 +1349,7 @@ public class Antenna extends Common<Antenna> {
    * @param values A collection of {@link AntMode} instances
    * @return The current Antenna object instance
    */
-  public Antenna withAntMode(Collection<AntMode> values) {
+  public Antenna withAntMode(Set<AntMode> values) {
     if (values != null) {
       getAntMode().addAll(values);
     }
@@ -1368,7 +1367,7 @@ public class Antenna extends Common<Antenna> {
    */
   public Antenna withUsingCountries(UsingCountries... values) {
     if (values != null) {
-      getUsingCountries().addAll(Arrays.asList(values));
+      getUsingCountries().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1382,7 +1381,7 @@ public class Antenna extends Common<Antenna> {
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Antenna object instance
    */
-  public Antenna withUsingCountries(Collection<UsingCountries> values) {
+  public Antenna withUsingCountries(Set<UsingCountries> values) {
     if (values != null) {
       getUsingCountries().addAll(values);
     }

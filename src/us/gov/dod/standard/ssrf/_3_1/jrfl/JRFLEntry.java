@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -291,7 +291,7 @@ public class JRFLEntry {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private Collection<Project> project;
+  private Set<Project> project;
   /**
    * POCInformation (Optional)
    * <p>
@@ -299,7 +299,7 @@ public class JRFLEntry {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * JRFLEntryLocation (Optional)
    * <p>
@@ -307,7 +307,7 @@ public class JRFLEntry {
    * frequency or frequency range(s) is restricted in use.
    */
   @XmlElement(name = "JRFLEntryLocation")
-  private Collection<JRFLEntryLocation> jrflEntryLocation;
+  private Set<JRFLEntryLocation> jrflEntryLocation;
 
   /**
    * Get ProtectionCode, indicate the type of JRFL entry.
@@ -878,7 +878,7 @@ public class JRFLEntry {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public Collection<Project> getProject() {
+  public Set<Project> getProject() {
     if (project == null) {
       project = new HashSet<>();
     }
@@ -910,7 +910,7 @@ public class JRFLEntry {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -942,7 +942,7 @@ public class JRFLEntry {
    * @return a non-null but possibly empty list of {@link JRFLEntryLocation}
    *         instances
    */
-  public Collection<JRFLEntryLocation> getJRFLEntryLocation() {
+  public Set<JRFLEntryLocation> getJRFLEntryLocation() {
     if (jrflEntryLocation == null) {
       jrflEntryLocation = new HashSet<>();
     }
@@ -1197,7 +1197,7 @@ public class JRFLEntry {
    */
   public JRFLEntry withProject(Project... values) {
     if (values != null) {
-      getProject().addAll(Arrays.asList(values));
+      getProject().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1211,7 +1211,7 @@ public class JRFLEntry {
    * @param values A collection of {@link Project} instances
    * @return The current JRFLEntry object instance
    */
-  public JRFLEntry withProject(Collection<Project> values) {
+  public JRFLEntry withProject(Set<Project> values) {
     if (values != null) {
       getProject().addAll(values);
     }
@@ -1229,7 +1229,7 @@ public class JRFLEntry {
    */
   public JRFLEntry withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1243,7 +1243,7 @@ public class JRFLEntry {
    * @param values A collection of {@link POCInformation} instances
    * @return The current JRFLEntry object instance
    */
-  public JRFLEntry withPOCInformation(Collection<POCInformation> values) {
+  public JRFLEntry withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -1261,7 +1261,7 @@ public class JRFLEntry {
    */
   public JRFLEntry withJRFLEntryLocation(JRFLEntryLocation... values) {
     if (values != null) {
-      getJRFLEntryLocation().addAll(Arrays.asList(values));
+      getJRFLEntryLocation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1275,7 +1275,7 @@ public class JRFLEntry {
    * @param values A collection of {@link JRFLEntryLocation} instances
    * @return The current JRFLEntry object instance
    */
-  public JRFLEntry withJRFLEntryLocation(Collection<JRFLEntryLocation> values) {
+  public JRFLEntry withJRFLEntryLocation(Set<JRFLEntryLocation> values) {
     if (values != null) {
       getJRFLEntryLocation().addAll(values);
     }

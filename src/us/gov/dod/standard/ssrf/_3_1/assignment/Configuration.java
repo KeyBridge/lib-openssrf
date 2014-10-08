@@ -265,7 +265,7 @@ public class Configuration {
    * Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
    */
   @XmlElement(name = "Notation")
-  private Collection<Notation> notation;
+  private Set<Notation> notation;
   /**
    * Usage (Optional)
    * <p>
@@ -273,7 +273,7 @@ public class Configuration {
    * used.
    */
   @XmlElement(name = "Usage")
-  private Collection<Usage> usage;
+  private Set<Usage> usage;
   /**
    * ConfigFreq (Optional)
    * <p>
@@ -284,7 +284,7 @@ public class Configuration {
    * Notes: When referenced by SSRequest, the Frequency i
    */
   @XmlElement(name = "ConfigFreq")
-  private Collection<ConfigFreq> configFreq;
+  private Set<ConfigFreq> configFreq;
   /**
    * TxRef (Optional)
    * <p>
@@ -292,7 +292,7 @@ public class Configuration {
    * TxModes and the associated Antennas and AntMode.
    */
   @XmlElement(name = "TxRef")
-  private Collection<TxRef> txRef;
+  private Set<TxRef> txRef;
   /**
    * RxRef (Optional)
    * <p>
@@ -300,14 +300,14 @@ public class Configuration {
    * RxModes and the associated Antennas and AntMode.
    */
   @XmlElement(name = "RxRef")
-  private Collection<RxRef> rxRef;
+  private Set<RxRef> rxRef;
   /**
    * CaseNum (Optional)
    * <p>
    * CaseNum contains legacy and other identifiers associated with the Dataset.
    */
   @XmlElement(name = "CaseNum")
-  private Collection<CaseNum> caseNum;
+  private Set<CaseNum> caseNum;
   /**
    * US:ConfigEmission (Optional)
    * <p>
@@ -316,7 +316,7 @@ public class Configuration {
    * components' capabilities.
    */
   @XmlElement(name = "ConfigEmission")
-  private Collection<ConfigEmission> configEmission;
+  private Set<ConfigEmission> configEmission;
   /**
    * LoadsetRef (Optional)
    * <p>
@@ -325,7 +325,7 @@ public class Configuration {
    */
   @XmlElement(name = "LoadsetRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> loadsetRef;
+  private Set<TString> loadsetRef;
   /**
    * US:ObservedERPAnalysis (Optional)
    * <p>
@@ -333,7 +333,7 @@ public class Configuration {
    * (ERP) associated with an emitter or Notation.
    */
   @XmlElement(name = "ObservedERPAnalysis")
-  private Collection<ObservedERPAnalysis> observedERPAnalysis;
+  private Set<ObservedERPAnalysis> observedERPAnalysis;
 
   /**
    * Empty constructor. The {@link #configID} is automatically set to a random
@@ -902,7 +902,7 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link Notation} instances
    */
-  public Collection<Notation> getNotation() {
+  public Set<Notation> getNotation() {
     if (notation == null) {
       notation = new HashSet<>();
     }
@@ -933,7 +933,7 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link Usage} instances
    */
-  public Collection<Usage> getUsage() {
+  public Set<Usage> getUsage() {
     if (usage == null) {
       usage = new HashSet<>();
     }
@@ -965,7 +965,7 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link ConfigFreq} instances
    */
-  public Collection<ConfigFreq> getConfigFreq() {
+  public Set<ConfigFreq> getConfigFreq() {
     if (configFreq == null) {
       configFreq = new HashSet<>();
     }
@@ -996,7 +996,7 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link TxRef} instances
    */
-  public Collection<TxRef> getTxRef() {
+  public Set<TxRef> getTxRef() {
     if (txRef == null) {
       txRef = new HashSet<>();
     }
@@ -1027,7 +1027,7 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link RxRef} instances
    */
-  public Collection<RxRef> getRxRef() {
+  public Set<RxRef> getRxRef() {
     if (rxRef == null) {
       rxRef = new HashSet<>();
     }
@@ -1058,7 +1058,7 @@ public class Configuration {
    * <p>
    * @return a non-null but possibly empty list of {@link CaseNum} instances
    */
-  public Collection<CaseNum> getCaseNum() {
+  public Set<CaseNum> getCaseNum() {
     if (caseNum == null) {
       caseNum = new HashSet<>();
     }
@@ -1091,7 +1091,7 @@ public class Configuration {
    * @return a non-null but possibly empty list of {@link ConfigEmission}
    *         instances
    */
-  public Collection<ConfigEmission> getConfigEmission() {
+  public Set<ConfigEmission> getConfigEmission() {
     if (configEmission == null) {
       configEmission = new HashSet<>();
     }
@@ -1125,7 +1125,7 @@ public class Configuration {
    * {@link #getLoadset()} instead.
    */
   @Deprecated
-  public Collection<TString> getLoadsetRef() {
+  public Set<TString> getLoadsetRef() {
     if (loadsetRef == null) {
       loadsetRef = new HashSet<>();
     }
@@ -1157,7 +1157,7 @@ public class Configuration {
    * @return a non-null but possibly empty list of {@link ObservedERPAnalysis}
    *         instances
    */
-  public Collection<ObservedERPAnalysis> getObservedERPAnalysis() {
+  public Set<ObservedERPAnalysis> getObservedERPAnalysis() {
     if (observedERPAnalysis == null) {
       observedERPAnalysis = new HashSet<>();
     }
@@ -1446,7 +1446,7 @@ public class Configuration {
    */
   public Configuration withNotation(Notation... values) {
     if (values != null) {
-      getNotation().addAll(Arrays.asList(values));
+      getNotation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1462,7 +1462,7 @@ public class Configuration {
    * @param values A collection of {@link Notation} instances
    * @return The current Configuration object instance
    */
-  public Configuration withNotation(Collection<Notation> values) {
+  public Configuration withNotation(Set<Notation> values) {
     if (values != null) {
       getNotation().addAll(values);
     }
@@ -1480,7 +1480,7 @@ public class Configuration {
    */
   public Configuration withUsage(Usage... values) {
     if (values != null) {
-      getUsage().addAll(Arrays.asList(values));
+      getUsage().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1494,7 +1494,7 @@ public class Configuration {
    * @param values A collection of {@link Usage} instances
    * @return The current Configuration object instance
    */
-  public Configuration withUsage(Collection<Usage> values) {
+  public Configuration withUsage(Set<Usage> values) {
     if (values != null) {
       getUsage().addAll(values);
     }
@@ -1513,7 +1513,7 @@ public class Configuration {
    */
   public Configuration withConfigFreq(ConfigFreq... values) {
     if (values != null) {
-      getConfigFreq().addAll(Arrays.asList(values));
+      getConfigFreq().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1528,7 +1528,7 @@ public class Configuration {
    * @param values A collection of {@link ConfigFreq} instances
    * @return The current Configuration object instance
    */
-  public Configuration withConfigFreq(Collection<ConfigFreq> values) {
+  public Configuration withConfigFreq(Set<ConfigFreq> values) {
     if (values != null) {
       getConfigFreq().addAll(values);
     }
@@ -1546,7 +1546,7 @@ public class Configuration {
    */
   public Configuration withTxRef(TxRef... values) {
     if (values != null) {
-      getTxRef().addAll(Arrays.asList(values));
+      getTxRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1560,7 +1560,7 @@ public class Configuration {
    * @param values A collection of {@link TxRef} instances
    * @return The current Configuration object instance
    */
-  public Configuration withTxRef(Collection<TxRef> values) {
+  public Configuration withTxRef(Set<TxRef> values) {
     if (values != null) {
       getTxRef().addAll(values);
     }
@@ -1578,7 +1578,7 @@ public class Configuration {
    */
   public Configuration withRxRef(RxRef... values) {
     if (values != null) {
-      getRxRef().addAll(Arrays.asList(values));
+      getRxRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1592,7 +1592,7 @@ public class Configuration {
    * @param values A collection of {@link RxRef} instances
    * @return The current Configuration object instance
    */
-  public Configuration withRxRef(Collection<RxRef> values) {
+  public Configuration withRxRef(Set<RxRef> values) {
     if (values != null) {
       getRxRef().addAll(values);
     }
@@ -1610,7 +1610,7 @@ public class Configuration {
    */
   public Configuration withCaseNum(CaseNum... values) {
     if (values != null) {
-      getCaseNum().addAll(Arrays.asList(values));
+      getCaseNum().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1624,7 +1624,7 @@ public class Configuration {
    * @param values A collection of {@link CaseNum} instances
    * @return The current Configuration object instance
    */
-  public Configuration withCaseNum(Collection<CaseNum> values) {
+  public Configuration withCaseNum(Set<CaseNum> values) {
     if (values != null) {
       getCaseNum().addAll(values);
     }
@@ -1643,7 +1643,7 @@ public class Configuration {
    */
   public Configuration withConfigEmission(ConfigEmission... values) {
     if (values != null) {
-      getConfigEmission().addAll(Arrays.asList(values));
+      getConfigEmission().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1658,7 +1658,7 @@ public class Configuration {
    * @param values A collection of {@link ConfigEmission} instances
    * @return The current Configuration object instance
    */
-  public Configuration withConfigEmission(Collection<ConfigEmission> values) {
+  public Configuration withConfigEmission(Set<ConfigEmission> values) {
     if (values != null) {
       getConfigEmission().addAll(values);
     }
@@ -1679,7 +1679,7 @@ public class Configuration {
   @Deprecated
   public Configuration withLoadsetRef(TString... values) {
     if (values != null) {
-      getLoadsetRef().addAll(Arrays.asList(values));
+      getLoadsetRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1696,7 +1696,7 @@ public class Configuration {
    * {@link #withLoadset(Loadset...)} instead.
    */
   @Deprecated
-  public Configuration withLoadsetRef(Collection<TString> values) {
+  public Configuration withLoadsetRef(Set<TString> values) {
     if (values != null) {
       getLoadsetRef().addAll(values);
     }
@@ -1714,7 +1714,7 @@ public class Configuration {
    */
   public Configuration withObservedERPAnalysis(ObservedERPAnalysis... values) {
     if (values != null) {
-      getObservedERPAnalysis().addAll(Arrays.asList(values));
+      getObservedERPAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1728,7 +1728,7 @@ public class Configuration {
    * @param values A collection of {@link ObservedERPAnalysis} instances
    * @return The current Configuration object instance
    */
-  public Configuration withObservedERPAnalysis(Collection<ObservedERPAnalysis> values) {
+  public Configuration withObservedERPAnalysis(Set<ObservedERPAnalysis> values) {
     if (values != null) {
       getObservedERPAnalysis().addAll(values);
     }
@@ -1796,7 +1796,7 @@ public class Configuration {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Loadset> loadset;
+  private Set<Loadset> loadset;
 
   /**
    * Get the LoadsetRef
@@ -1807,7 +1807,7 @@ public class Configuration {
    * @return a {@link Loadset} instance
    * @since 3.1.0
    */
-  public Collection<Loadset> getLoadset() {
+  public Set<Loadset> getLoadset() {
     if (loadset == null) {
       loadset = new HashSet<>();
     }
@@ -1834,7 +1834,7 @@ public class Configuration {
    * @since 3.1.0
    */
   public Configuration withLoadset(Loadset... values) {
-    return withLoadset(Arrays.asList(values));
+    return withLoadset(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -1847,7 +1847,7 @@ public class Configuration {
    * @return The current Configuration object instance
    * @since 3.1.0
    */
-  public Configuration withLoadset(Collection<Loadset> values) {
+  public Configuration withLoadset(Set<Loadset> values) {
     getLoadset().addAll(values);
     return this;
   }

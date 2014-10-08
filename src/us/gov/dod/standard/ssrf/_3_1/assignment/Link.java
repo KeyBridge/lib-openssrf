@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -151,7 +151,7 @@ public class Link {
    * increment, and number of frequencies, required for an assignment.
    */
   @XmlElement(name = "Tuning")
-  private Collection<Tuning> tuning;
+  private Set<Tuning> tuning;
   /**
    * StationConfig (Required)
    * <p>
@@ -160,7 +160,7 @@ public class Link {
    * additional antenna pointing/blanking parameters.
    */
   @XmlElement(name = "StationConfig", required = true)
-  private Collection<StationConfig> stationConfig;
+  private Set<StationConfig> stationConfig;
   /**
    * Assigned (Optional)
    * <p>
@@ -168,7 +168,7 @@ public class Link {
    * can also contain the old frequency.
    */
   @XmlElement(name = "Assigned")
-  private Collection<Assigned> assigned;
+  private Set<Assigned> assigned;
   /**
    * US:DCSTrunk (Optional)
    * <p>
@@ -177,7 +177,7 @@ public class Link {
    * Information Systems Agency (DISA).
    */
   @XmlElement(name = "DCSTrunk", nillable = true)
-  private Collection<DCSTrunk> dcsTrunk;
+  private Set<DCSTrunk> dcsTrunk;
   /**
    * US:DetailedFunctionID (Optional)
    * <p>
@@ -185,7 +185,7 @@ public class Link {
    * link of a frequency assignment or group of frequency assignments.
    */
   @XmlElement(name = "DetailedFunction", nillable = true)
-  private Collection<DetailedFunction> detailedFunction;
+  private Set<DetailedFunction> detailedFunction;
 
   /**
    * Get a unique identifier for the link. This identifier should be a
@@ -373,7 +373,7 @@ public class Link {
    * <p>
    * @return a non-null but possibly empty list of {@link Tuning} instances
    */
-  public Collection<Tuning> getTuning() {
+  public Set<Tuning> getTuning() {
     if (tuning == null) {
       tuning = new HashSet<>();
     }
@@ -406,7 +406,7 @@ public class Link {
    * @return a non-null but possibly empty list of {@link StationConfig}
    *         instances
    */
-  public Collection<StationConfig> getStationConfig() {
+  public Set<StationConfig> getStationConfig() {
     if (stationConfig == null) {
       stationConfig = new HashSet<>();
     }
@@ -437,7 +437,7 @@ public class Link {
    * <p>
    * @return a non-null but possibly empty list of {@link Assigned} instances
    */
-  public Collection<Assigned> getAssigned() {
+  public Set<Assigned> getAssigned() {
     if (assigned == null) {
       assigned = new HashSet<>();
     }
@@ -469,7 +469,7 @@ public class Link {
    * <p>
    * @return a non-null but possibly empty list of {@link DCSTrunk} instances
    */
-  public Collection<DCSTrunk> getDCSTrunk() {
+  public Set<DCSTrunk> getDCSTrunk() {
     if (dcsTrunk == null) {
       dcsTrunk = new HashSet<>();
     }
@@ -502,7 +502,7 @@ public class Link {
    * @return a non-null but possibly empty list of {@link DetailedFunction}
    *         instances
    */
-  public Collection<DetailedFunction> getDetailedFunction() {
+  public Set<DetailedFunction> getDetailedFunction() {
     if (detailedFunction == null) {
       detailedFunction = new HashSet<>();
     }
@@ -608,7 +608,7 @@ public class Link {
    */
   public Link withTuning(Tuning... values) {
     if (values != null) {
-      getTuning().addAll(Arrays.asList(values));
+      getTuning().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -623,7 +623,7 @@ public class Link {
    * @param values A collection of {@link Tuning} instances
    * @return The current Link object instance
    */
-  public Link withTuning(Collection<Tuning> values) {
+  public Link withTuning(Set<Tuning> values) {
     if (values != null) {
       getTuning().addAll(values);
     }
@@ -642,7 +642,7 @@ public class Link {
    */
   public Link withStationConfig(StationConfig... values) {
     if (values != null) {
-      getStationConfig().addAll(Arrays.asList(values));
+      getStationConfig().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -657,7 +657,7 @@ public class Link {
    * @param values A collection of {@link StationConfig} instances
    * @return The current Link object instance
    */
-  public Link withStationConfig(Collection<StationConfig> values) {
+  public Link withStationConfig(Set<StationConfig> values) {
     if (values != null) {
       getStationConfig().addAll(values);
     }
@@ -675,7 +675,7 @@ public class Link {
    */
   public Link withAssigned(Assigned... values) {
     if (values != null) {
-      getAssigned().addAll(Arrays.asList(values));
+      getAssigned().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -689,7 +689,7 @@ public class Link {
    * @param values A collection of {@link Assigned} instances
    * @return The current Link object instance
    */
-  public Link withAssigned(Collection<Assigned> values) {
+  public Link withAssigned(Set<Assigned> values) {
     if (values != null) {
       getAssigned().addAll(values);
     }
@@ -708,7 +708,7 @@ public class Link {
    */
   public Link withDCSTrunk(DCSTrunk... values) {
     if (values != null) {
-      getDCSTrunk().addAll(Arrays.asList(values));
+      getDCSTrunk().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -723,7 +723,7 @@ public class Link {
    * @param values A collection of {@link DCSTrunk} instances
    * @return The current Link object instance
    */
-  public Link withDCSTrunk(Collection<DCSTrunk> values) {
+  public Link withDCSTrunk(Set<DCSTrunk> values) {
     if (values != null) {
       getDCSTrunk().addAll(values);
     }
@@ -742,7 +742,7 @@ public class Link {
    */
   public Link withDetailedFunction(DetailedFunction... values) {
     if (values != null) {
-      getDetailedFunction().addAll(Arrays.asList(values));
+      getDetailedFunction().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -757,7 +757,7 @@ public class Link {
    * @param values A collection of {@link DetailedFunction} instances
    * @return The current Link object instance
    */
-  public Link withDetailedFunction(Collection<DetailedFunction> values) {
+  public Link withDetailedFunction(Set<DetailedFunction> values) {
     if (values != null) {
       getDetailedFunction().addAll(values);
     }

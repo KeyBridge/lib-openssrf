@@ -165,7 +165,7 @@ public class SecurityClass {
    * more data information sources.
    */
   @XmlElement(name = "Downgrade")
-  private Collection<Downgrade> downgrade;
+  private Set<Downgrade> downgrade;
   /**
    * US:ClsDerived (Optional)
    * <p>
@@ -173,7 +173,7 @@ public class SecurityClass {
    * more data information sources.
    */
   @XmlElement(name = "ClsDerived")
-  private Collection<ClsDerived> clsDerived;
+  private Set<ClsDerived> clsDerived;
 
   /**
    * Get the identity, by name and position, or by personal identifier, of the
@@ -422,7 +422,7 @@ public class SecurityClass {
    * <p>
    * @return a non-null but possibly empty list of {@link Downgrade} instances
    */
-  public Collection<Downgrade> getDowngrade() {
+  public Set<Downgrade> getDowngrade() {
     if (downgrade == null) {
       downgrade = new HashSet<>();
     }
@@ -453,7 +453,7 @@ public class SecurityClass {
    * <p>
    * @return a non-null but possibly empty list of {@link ClsDerived} instances
    */
-  public Collection<ClsDerived> getClsDerived() {
+  public Set<ClsDerived> getClsDerived() {
     if (clsDerived == null) {
       clsDerived = new HashSet<>();
     }
@@ -605,7 +605,7 @@ public class SecurityClass {
    */
   public SecurityClass withDowngrade(Downgrade... values) {
     if (values != null) {
-      getDowngrade().addAll(Arrays.asList(values));
+      getDowngrade().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -619,7 +619,7 @@ public class SecurityClass {
    * @param values A collection of {@link Downgrade} instances
    * @return The current SecurityClass object instance
    */
-  public SecurityClass withDowngrade(Collection<Downgrade> values) {
+  public SecurityClass withDowngrade(Set<Downgrade> values) {
     if (values != null) {
       getDowngrade().addAll(values);
     }
@@ -637,7 +637,7 @@ public class SecurityClass {
    */
   public SecurityClass withClsDerived(ClsDerived... values) {
     if (values != null) {
-      getClsDerived().addAll(Arrays.asList(values));
+      getClsDerived().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -651,7 +651,7 @@ public class SecurityClass {
    * @param values A collection of {@link ClsDerived} instances
    * @return The current SecurityClass object instance
    */
-  public SecurityClass withClsDerived(Collection<ClsDerived> values) {
+  public SecurityClass withClsDerived(Set<ClsDerived> values) {
     if (values != null) {
       getClsDerived().addAll(values);
     }

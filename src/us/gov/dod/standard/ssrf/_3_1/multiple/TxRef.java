@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
@@ -74,7 +74,7 @@ public class TxRef {
    * Notes: TxModeRef specifies a transmitter mode that i
    */
   @XmlElement(name = "TxModeRef")
-  private Collection<TxModeRef> txModeRef;
+  private Set<TxModeRef> txModeRef;
   /**
    * TxAntModeRef (Optional)
    * <p>
@@ -84,7 +84,7 @@ public class TxRef {
    * Notes: AntModeRef specifies an antenna mode that is
    */
   @XmlElement(name = "TxAntModeRef")
-  private Collection<TxAntModeRef> txAntModeRef;
+  private Set<TxAntModeRef> txAntModeRef;
 
   /**
    * Get the serial of a Transmitter in this configuration. The same transmitter
@@ -133,7 +133,7 @@ public class TxRef {
    * <p>
    * @return a non-null but possibly empty list of {@link TxModeRef} instances
    */
-  public Collection<TxModeRef> getTxModeRef() {
+  public Set<TxModeRef> getTxModeRef() {
     if (txModeRef == null) {
       txModeRef = new HashSet<>();
     }
@@ -165,7 +165,7 @@ public class TxRef {
    * @return a non-null but possibly empty list of {@link TxAntModeRef}
    *         instances
    */
-  public Collection<TxAntModeRef> getTxAntModeRef() {
+  public Set<TxAntModeRef> getTxAntModeRef() {
     if (txAntModeRef == null) {
       txAntModeRef = new HashSet<>();
     }
@@ -215,7 +215,7 @@ public class TxRef {
    */
   public TxRef withTxModeRef(TxModeRef... values) {
     if (values != null) {
-      getTxModeRef().addAll(Arrays.asList(values));
+      getTxModeRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -229,7 +229,7 @@ public class TxRef {
    * @param values A collection of {@link TxModeRef} instances
    * @return The current TxRef object instance
    */
-  public TxRef withTxModeRef(Collection<TxModeRef> values) {
+  public TxRef withTxModeRef(Set<TxModeRef> values) {
     if (values != null) {
       getTxModeRef().addAll(values);
     }
@@ -247,7 +247,7 @@ public class TxRef {
    */
   public TxRef withTxAntModeRef(TxAntModeRef... values) {
     if (values != null) {
-      getTxAntModeRef().addAll(Arrays.asList(values));
+      getTxAntModeRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -261,7 +261,7 @@ public class TxRef {
    * @param values A collection of {@link TxAntModeRef} instances
    * @return The current TxRef object instance
    */
-  public TxRef withTxAntModeRef(Collection<TxAntModeRef> values) {
+  public TxRef withTxAntModeRef(Set<TxAntModeRef> values) {
     if (values != null) {
       getTxAntModeRef().addAll(values);
     }

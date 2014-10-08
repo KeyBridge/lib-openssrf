@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -145,7 +145,7 @@ public class ObservedMOPSweep {
    * sequencing used for the Modulation impressed On the Pulse (MOP).
    */
   @XmlElement(name = "ObservedMOPSequence")
-  private Collection<ObservedMOPSequence> observedMOPSequence;
+  private Set<ObservedMOPSequence> observedMOPSequence;
 
   /**
    * Get US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
@@ -451,7 +451,7 @@ public class ObservedMOPSweep {
    * @return a non-null but possibly empty list of {@link ObservedMOPSequence}
    *         instances
    */
-  public Collection<ObservedMOPSequence> getObservedMOPSequence() {
+  public Set<ObservedMOPSequence> getObservedMOPSequence() {
     if (observedMOPSequence == null) {
       observedMOPSequence = new HashSet<>();
     }
@@ -601,7 +601,7 @@ public class ObservedMOPSweep {
    */
   public ObservedMOPSweep withObservedMOPSequence(ObservedMOPSequence... values) {
     if (values != null) {
-      getObservedMOPSequence().addAll(Arrays.asList(values));
+      getObservedMOPSequence().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -615,7 +615,7 @@ public class ObservedMOPSweep {
    * @param values A collection of {@link ObservedMOPSequence} instances
    * @return The current ObservedMOPSweep object instance
    */
-  public ObservedMOPSweep withObservedMOPSequence(Collection<ObservedMOPSequence> values) {
+  public ObservedMOPSweep withObservedMOPSequence(Set<ObservedMOPSequence> values) {
     if (values != null) {
       getObservedMOPSequence().addAll(values);
     }

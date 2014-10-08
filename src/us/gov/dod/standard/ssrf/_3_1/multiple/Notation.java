@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -123,7 +123,7 @@ public class Notation {
    * or signal.
    */
   @XmlElement(name = "NotationTimeline")
-  private Collection<NotationTimeline> notationTimeline;
+  private Set<NotationTimeline> notationTimeline;
   /**
    * US:PotentialVictims (Optional)
    * <p>
@@ -131,7 +131,7 @@ public class Notation {
    * signals, which may be affected by the subject Notation/Signal.
    */
   @XmlElement(name = "PotentialVictims")
-  private Collection<PotentialVictims> potentialVictims;
+  private Set<PotentialVictims> potentialVictims;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -139,7 +139,7 @@ public class Notation {
    * supply (Source), and use (Using) the Notation.
    */
   @XmlElement(name = "UsingCountries")
-  private Collection<UsingCountries> usingCountries;
+  private Set<UsingCountries> usingCountries;
 
   /**
    * Get an alphanumeric combination that is used to identify a particular
@@ -239,7 +239,7 @@ public class Notation {
    * @return a non-null but possibly empty list of {@link NotationTimeline}
    *         instances
    */
-  public Collection<NotationTimeline> getNotationTimeline() {
+  public Set<NotationTimeline> getNotationTimeline() {
     if (notationTimeline == null) {
       notationTimeline = new HashSet<>();
     }
@@ -271,7 +271,7 @@ public class Notation {
    * @return a non-null but possibly empty list of {@link PotentialVictims}
    *         instances
    */
-  public Collection<PotentialVictims> getPotentialVictims() {
+  public Set<PotentialVictims> getPotentialVictims() {
     if (potentialVictims == null) {
       potentialVictims = new HashSet<>();
     }
@@ -303,7 +303,7 @@ public class Notation {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public Collection<UsingCountries> getUsingCountries() {
+  public Set<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
       usingCountries = new HashSet<>();
     }
@@ -371,7 +371,7 @@ public class Notation {
    */
   public Notation withNotationTimeline(NotationTimeline... values) {
     if (values != null) {
-      getNotationTimeline().addAll(Arrays.asList(values));
+      getNotationTimeline().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -385,7 +385,7 @@ public class Notation {
    * @param values A collection of {@link NotationTimeline} instances
    * @return The current Notation object instance
    */
-  public Notation withNotationTimeline(Collection<NotationTimeline> values) {
+  public Notation withNotationTimeline(Set<NotationTimeline> values) {
     if (values != null) {
       getNotationTimeline().addAll(values);
     }
@@ -403,7 +403,7 @@ public class Notation {
    */
   public Notation withPotentialVictims(PotentialVictims... values) {
     if (values != null) {
-      getPotentialVictims().addAll(Arrays.asList(values));
+      getPotentialVictims().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -417,7 +417,7 @@ public class Notation {
    * @param values A collection of {@link PotentialVictims} instances
    * @return The current Notation object instance
    */
-  public Notation withPotentialVictims(Collection<PotentialVictims> values) {
+  public Notation withPotentialVictims(Set<PotentialVictims> values) {
     if (values != null) {
       getPotentialVictims().addAll(values);
     }
@@ -435,7 +435,7 @@ public class Notation {
    */
   public Notation withUsingCountries(UsingCountries... values) {
     if (values != null) {
-      getUsingCountries().addAll(Arrays.asList(values));
+      getUsingCountries().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -449,7 +449,7 @@ public class Notation {
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Notation object instance
    */
-  public Notation withUsingCountries(Collection<UsingCountries> values) {
+  public Notation withUsingCountries(Set<UsingCountries> values) {
     if (values != null) {
       getUsingCountries().addAll(values);
     }

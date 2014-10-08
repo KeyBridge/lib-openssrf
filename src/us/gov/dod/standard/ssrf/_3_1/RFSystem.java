@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -130,7 +130,7 @@ public class RFSystem extends Common<RFSystem> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -142,7 +142,7 @@ public class RFSystem extends Common<RFSystem> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
   /**
    * Deployment (Optional)
    * <p>
@@ -153,7 +153,7 @@ public class RFSystem extends Common<RFSystem> {
    * an airborne platform, a ship or fixed land installation.
    */
   @XmlElement(name = "Deployment")
-  private Collection<Deployment> deployment;
+  private Set<Deployment> deployment;
   /**
    * Configuration (Optional)
    * <p>
@@ -167,7 +167,7 @@ public class RFSystem extends Common<RFSystem> {
    * exactly as received.
    */
   @XmlElement(name = "Configuration")
-  private Collection<Configuration> configuration;
+  private Set<Configuration> configuration;
   /**
    * RelatedSystem (Optional)
    * <p>
@@ -175,7 +175,7 @@ public class RFSystem extends Common<RFSystem> {
    * relation (parent, child, sibling).
    */
   @XmlElement(name = "RelatedSystem")
-  private Collection<RelatedSystem> relatedSystem;
+  private Set<RelatedSystem> relatedSystem;
   /**
    * US:StockNum (Optional)
    * <p>
@@ -183,7 +183,7 @@ public class RFSystem extends Common<RFSystem> {
    * stock number.
    */
   @XmlElement(name = "StockNum")
-  private Collection<StockNum> stockNum;
+  private Set<StockNum> stockNum;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -191,7 +191,7 @@ public class RFSystem extends Common<RFSystem> {
    * supply (Source), and use (Using) the RFSystem.
    */
   @XmlElement(name = "UsingCountries")
-  private Collection<UsingCountries> usingCountries;
+  private Set<UsingCountries> usingCountries;
 
   /**
    * Get the current stage of the RFSystem.
@@ -289,7 +289,7 @@ public class RFSystem extends Common<RFSystem> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -323,7 +323,7 @@ public class RFSystem extends Common<RFSystem> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -358,7 +358,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * @return a non-null but possibly empty list of {@link Deployment} instances
    */
-  public Collection<Deployment> getDeployment() {
+  public Set<Deployment> getDeployment() {
     if (deployment == null) {
       deployment = new HashSet<>();
     }
@@ -396,7 +396,7 @@ public class RFSystem extends Common<RFSystem> {
    * @return a non-null but possibly empty list of {@link Configuration}
    *         instances
    */
-  public Collection<Configuration> getConfiguration() {
+  public Set<Configuration> getConfiguration() {
     if (configuration == null) {
       configuration = new HashSet<>();
     }
@@ -428,7 +428,7 @@ public class RFSystem extends Common<RFSystem> {
    * @return a non-null but possibly empty list of {@link RelatedSystem}
    *         instances
    */
-  public Collection<RelatedSystem> getRelatedSystem() {
+  public Set<RelatedSystem> getRelatedSystem() {
     if (relatedSystem == null) {
       relatedSystem = new HashSet<>();
     }
@@ -459,7 +459,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * @return a non-null but possibly empty list of {@link StockNum} instances
    */
-  public Collection<StockNum> getStockNum() {
+  public Set<StockNum> getStockNum() {
     if (stockNum == null) {
       stockNum = new HashSet<>();
     }
@@ -491,7 +491,7 @@ public class RFSystem extends Common<RFSystem> {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public Collection<UsingCountries> getUsingCountries() {
+  public Set<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
       usingCountries = new HashSet<>();
     }
@@ -558,7 +558,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -572,7 +572,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withPOCInformation(Collection<POCInformation> values) {
+  public RFSystem withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -592,7 +592,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -608,7 +608,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withNomenclature(Collection<Nomenclature> values) {
+  public RFSystem withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
@@ -630,7 +630,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withDeployment(Deployment... values) {
     if (values != null) {
-      getDeployment().addAll(Arrays.asList(values));
+      getDeployment().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -648,7 +648,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link Deployment} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withDeployment(Collection<Deployment> values) {
+  public RFSystem withDeployment(Set<Deployment> values) {
     if (values != null) {
       getDeployment().addAll(values);
     }
@@ -672,7 +672,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withConfiguration(Configuration... values) {
     if (values != null) {
-      getConfiguration().addAll(Arrays.asList(values));
+      getConfiguration().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -692,7 +692,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link Configuration} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withConfiguration(Collection<Configuration> values) {
+  public RFSystem withConfiguration(Set<Configuration> values) {
     if (values != null) {
       getConfiguration().addAll(values);
     }
@@ -710,7 +710,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withRelatedSystem(RelatedSystem... values) {
     if (values != null) {
-      getRelatedSystem().addAll(Arrays.asList(values));
+      getRelatedSystem().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -724,7 +724,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link RelatedSystem} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withRelatedSystem(Collection<RelatedSystem> values) {
+  public RFSystem withRelatedSystem(Set<RelatedSystem> values) {
     if (values != null) {
       getRelatedSystem().addAll(values);
     }
@@ -742,7 +742,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withStockNum(StockNum... values) {
     if (values != null) {
-      getStockNum().addAll(Arrays.asList(values));
+      getStockNum().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -756,7 +756,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link StockNum} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withStockNum(Collection<StockNum> values) {
+  public RFSystem withStockNum(Set<StockNum> values) {
     if (values != null) {
       getStockNum().addAll(values);
     }
@@ -774,7 +774,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   public RFSystem withUsingCountries(UsingCountries... values) {
     if (values != null) {
-      getUsingCountries().addAll(Arrays.asList(values));
+      getUsingCountries().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -788,7 +788,7 @@ public class RFSystem extends Common<RFSystem> {
    * @param values A collection of {@link UsingCountries} instances
    * @return The current RFSystem object instance
    */
-  public RFSystem withUsingCountries(Collection<UsingCountries> values) {
+  public RFSystem withUsingCountries(Set<UsingCountries> values) {
     if (values != null) {
       getUsingCountries().addAll(values);
     }

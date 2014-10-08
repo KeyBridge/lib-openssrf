@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -432,7 +432,7 @@ public class AntMode {
    * isotropic source (dBi), in the direction of maximum radiation.
    */
   @XmlElement(name = "AntGain")
-  private Collection<AntGain> antGain;
+  private Set<AntGain> antGain;
   /**
    * AntFreqs (Optional)
    * <p>
@@ -440,7 +440,7 @@ public class AntMode {
    * operating frequency.
    */
   @XmlElement(name = "AntFreqs")
-  private Collection<AntFreqs> antFreqs;
+  private Set<AntFreqs> antFreqs;
   /**
    * AntPattern (Optional)
    * <p>
@@ -452,7 +452,7 @@ public class AntMode {
    * peak.
    */
   @XmlElement(name = "AntPattern")
-  private Collection<AntPattern> antPattern;
+  private Set<AntPattern> antPattern;
   /**
    * AntEfficiency (Optional)
    * <p>
@@ -460,14 +460,14 @@ public class AntMode {
    * within the frequency range of the antenna.
    */
   @XmlElement(name = "AntEfficiency")
-  private Collection<AntEfficiency> antEfficiency;
+  private Set<AntEfficiency> antEfficiency;
   /**
    * Complex Element VSWR stores the Voltage Standing Wave Ratio information for
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency.
    */
   @XmlElement(name = "VSWR")
-  private Collection<VSWR> vswr;
+  private Set<VSWR> vswr;
   /**
    * US:ObservedLobeAnalysis (Optional)
    * <p>
@@ -475,7 +475,7 @@ public class AntMode {
    * Antenna sidelobes and backlobes.
    */
   @XmlElement(name = "ObservedLobeAnalysis")
-  private Collection<ObservedLobeAnalysis> observedLobeAnalysis;
+  private Set<ObservedLobeAnalysis> observedLobeAnalysis;
   /**
    * US:ObservedPolarisationAnalysis (Optional)
    * <p>
@@ -483,7 +483,7 @@ public class AntMode {
    * information for the polarization and tilt angle information.
    */
   @XmlElement(name = "ObservedPolarisationAnalysis")
-  private Collection<ObservedPolarisationAnalysis> observedPolarisationAnalysis;
+  private Set<ObservedPolarisationAnalysis> observedPolarisationAnalysis;
   /**
    * US:ObservedScanAnalysis (Optional)
    * <p>
@@ -491,7 +491,7 @@ public class AntMode {
    * and Vertical Scan parameters as well as the Adaptive Driver information.
    */
   @XmlElement(name = "ObservedScanAnalysis")
-  private Collection<ObservedScanAnalysis> observedScanAnalysis;
+  private Set<ObservedScanAnalysis> observedScanAnalysis;
 
   /**
    * Get a short name for the mode; this name should be a meaningful
@@ -1361,7 +1361,7 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link AntGain} instances
    */
-  public Collection<AntGain> getAntGain() {
+  public Set<AntGain> getAntGain() {
     if (antGain == null) {
       antGain = new HashSet<>();
     }
@@ -1392,7 +1392,7 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link AntFreqs} instances
    */
-  public Collection<AntFreqs> getAntFreqs() {
+  public Set<AntFreqs> getAntFreqs() {
     if (antFreqs == null) {
       antFreqs = new HashSet<>();
     }
@@ -1427,7 +1427,7 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link AntPattern} instances
    */
-  public Collection<AntPattern> getAntPattern() {
+  public Set<AntPattern> getAntPattern() {
     if (antPattern == null) {
       antPattern = new HashSet<>();
     }
@@ -1459,7 +1459,7 @@ public class AntMode {
    * @return a non-null but possibly empty list of {@link AntEfficiency}
    *         instances
    */
-  public Collection<AntEfficiency> getAntEfficiency() {
+  public Set<AntEfficiency> getAntEfficiency() {
     if (antEfficiency == null) {
       antEfficiency = new HashSet<>();
     }
@@ -1491,7 +1491,7 @@ public class AntMode {
    * <p>
    * @return a non-null but possibly empty list of {@link VSWR} instances
    */
-  public Collection<VSWR> getVSWR() {
+  public Set<VSWR> getVSWR() {
     if (vswr == null) {
       vswr = new HashSet<>();
     }
@@ -1523,7 +1523,7 @@ public class AntMode {
    * @return a non-null but possibly empty list of {@link ObservedLobeAnalysis}
    *         instances
    */
-  public Collection<ObservedLobeAnalysis> getObservedLobeAnalysis() {
+  public Set<ObservedLobeAnalysis> getObservedLobeAnalysis() {
     if (observedLobeAnalysis == null) {
       observedLobeAnalysis = new HashSet<>();
     }
@@ -1555,7 +1555,7 @@ public class AntMode {
    * @return a non-null but possibly empty list of
    *         {@link ObservedPolarisationAnalysis} instances
    */
-  public Collection<ObservedPolarisationAnalysis> getObservedPolarisationAnalysis() {
+  public Set<ObservedPolarisationAnalysis> getObservedPolarisationAnalysis() {
     if (observedPolarisationAnalysis == null) {
       observedPolarisationAnalysis = new HashSet<>();
     }
@@ -1588,7 +1588,7 @@ public class AntMode {
    * @return a non-null but possibly empty list of {@link ObservedScanAnalysis}
    *         instances
    */
-  public Collection<ObservedScanAnalysis> getObservedScanAnalysis() {
+  public Set<ObservedScanAnalysis> getObservedScanAnalysis() {
     if (observedScanAnalysis == null) {
       observedScanAnalysis = new HashSet<>();
     }
@@ -1958,7 +1958,7 @@ public class AntMode {
    */
   public AntMode withAntGain(AntGain... values) {
     if (values != null) {
-      getAntGain().addAll(Arrays.asList(values));
+      getAntGain().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1973,7 +1973,7 @@ public class AntMode {
    * @param values A collection of {@link AntGain} instances
    * @return The current AntMode object instance
    */
-  public AntMode withAntGain(Collection<AntGain> values) {
+  public AntMode withAntGain(Set<AntGain> values) {
     if (values != null) {
       getAntGain().addAll(values);
     }
@@ -1991,7 +1991,7 @@ public class AntMode {
    */
   public AntMode withAntFreqs(AntFreqs... values) {
     if (values != null) {
-      getAntFreqs().addAll(Arrays.asList(values));
+      getAntFreqs().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2005,7 +2005,7 @@ public class AntMode {
    * @param values A collection of {@link AntFreqs} instances
    * @return The current AntMode object instance
    */
-  public AntMode withAntFreqs(Collection<AntFreqs> values) {
+  public AntMode withAntFreqs(Set<AntFreqs> values) {
     if (values != null) {
       getAntFreqs().addAll(values);
     }
@@ -2027,7 +2027,7 @@ public class AntMode {
    */
   public AntMode withAntPattern(AntPattern... values) {
     if (values != null) {
-      getAntPattern().addAll(Arrays.asList(values));
+      getAntPattern().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2045,7 +2045,7 @@ public class AntMode {
    * @param values A collection of {@link AntPattern} instances
    * @return The current AntMode object instance
    */
-  public AntMode withAntPattern(Collection<AntPattern> values) {
+  public AntMode withAntPattern(Set<AntPattern> values) {
     if (values != null) {
       getAntPattern().addAll(values);
     }
@@ -2063,7 +2063,7 @@ public class AntMode {
    */
   public AntMode withAntEfficiency(AntEfficiency... values) {
     if (values != null) {
-      getAntEfficiency().addAll(Arrays.asList(values));
+      getAntEfficiency().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2077,7 +2077,7 @@ public class AntMode {
    * @param values A collection of {@link AntEfficiency} instances
    * @return The current AntMode object instance
    */
-  public AntMode withAntEfficiency(Collection<AntEfficiency> values) {
+  public AntMode withAntEfficiency(Set<AntEfficiency> values) {
     if (values != null) {
       getAntEfficiency().addAll(values);
     }
@@ -2096,7 +2096,7 @@ public class AntMode {
    */
   public AntMode withVSWR(VSWR... values) {
     if (values != null) {
-      getVSWR().addAll(Arrays.asList(values));
+      getVSWR().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2111,7 +2111,7 @@ public class AntMode {
    * @param values A collection of {@link VSWR} instances
    * @return The current AntMode object instance
    */
-  public AntMode withVSWR(Collection<VSWR> values) {
+  public AntMode withVSWR(Set<VSWR> values) {
     if (values != null) {
       getVSWR().addAll(values);
     }
@@ -2129,7 +2129,7 @@ public class AntMode {
    */
   public AntMode withObservedLobeAnalysis(ObservedLobeAnalysis... values) {
     if (values != null) {
-      getObservedLobeAnalysis().addAll(Arrays.asList(values));
+      getObservedLobeAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2143,7 +2143,7 @@ public class AntMode {
    * @param values A collection of {@link ObservedLobeAnalysis} instances
    * @return The current AntMode object instance
    */
-  public AntMode withObservedLobeAnalysis(Collection<ObservedLobeAnalysis> values) {
+  public AntMode withObservedLobeAnalysis(Set<ObservedLobeAnalysis> values) {
     if (values != null) {
       getObservedLobeAnalysis().addAll(values);
     }
@@ -2162,7 +2162,7 @@ public class AntMode {
    */
   public AntMode withObservedPolarisationAnalysis(ObservedPolarisationAnalysis... values) {
     if (values != null) {
-      getObservedPolarisationAnalysis().addAll(Arrays.asList(values));
+      getObservedPolarisationAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2177,7 +2177,7 @@ public class AntMode {
    *               instances
    * @return The current AntMode object instance
    */
-  public AntMode withObservedPolarisationAnalysis(Collection<ObservedPolarisationAnalysis> values) {
+  public AntMode withObservedPolarisationAnalysis(Set<ObservedPolarisationAnalysis> values) {
     if (values != null) {
       getObservedPolarisationAnalysis().addAll(values);
     }
@@ -2196,7 +2196,7 @@ public class AntMode {
    */
   public AntMode withObservedScanAnalysis(ObservedScanAnalysis... values) {
     if (values != null) {
-      getObservedScanAnalysis().addAll(Arrays.asList(values));
+      getObservedScanAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2211,7 +2211,7 @@ public class AntMode {
    * @param values A collection of {@link ObservedScanAnalysis} instances
    * @return The current AntMode object instance
    */
-  public AntMode withObservedScanAnalysis(Collection<ObservedScanAnalysis> values) {
+  public AntMode withObservedScanAnalysis(Set<ObservedScanAnalysis> values) {
     if (values != null) {
       getObservedScanAnalysis().addAll(values);
     }

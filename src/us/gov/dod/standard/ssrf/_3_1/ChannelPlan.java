@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -86,7 +86,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Channel", required = true)
-  private Collection<Channel> channel;
+  private Set<Channel> channel;
 
   /**
    * Get the name of this channel plan (e.g., "Plan for Wireless Microphones in
@@ -124,7 +124,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * <p>
    * @return a non-null but possibly empty list of {@link Channel} instances
    */
-  public Collection<Channel> getChannel() {
+  public Set<Channel> getChannel() {
     if (channel == null) {
       channel = new HashSet<>();
     }
@@ -167,7 +167,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    */
   public ChannelPlan withChannel(Channel... values) {
     if (values != null) {
-      getChannel().addAll(Arrays.asList(values));
+      getChannel().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -178,7 +178,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * @param values A collection of {@link Channel} instances
    * @return The current ChannelPlan object instance
    */
-  public ChannelPlan withChannel(Collection<Channel> values) {
+  public ChannelPlan withChannel(Set<Channel> values) {
     if (values != null) {
       getChannel().addAll(values);
     }

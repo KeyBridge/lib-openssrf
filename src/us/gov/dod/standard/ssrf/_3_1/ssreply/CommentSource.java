@@ -126,7 +126,7 @@ public class CommentSource {
    * regarding an equipment supportability.
    */
   @XmlElement(name = "Comment", nillable = true)
-  private Collection<Comment> comment;
+  private Set<Comment> comment;
 
   /**
    * Get the name of the organisation or authority that is the source of the
@@ -257,7 +257,7 @@ public class CommentSource {
    * <p>
    * @return a non-null but possibly empty list of {@link Comment} instances
    */
-  public Collection<Comment> getComment() {
+  public Set<Comment> getComment() {
     if (comment == null) {
       comment = new HashSet<>();
     }
@@ -348,7 +348,7 @@ public class CommentSource {
    */
   public CommentSource withComment(Comment... values) {
     if (values != null) {
-      getComment().addAll(Arrays.asList(values));
+      getComment().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -362,7 +362,7 @@ public class CommentSource {
    * @param values A collection of {@link Comment} instances
    * @return The current CommentSource object instance
    */
-  public CommentSource withComment(Collection<Comment> values) {
+  public CommentSource withComment(Set<Comment> values) {
     if (values != null) {
       getComment().addAll(values);
     }

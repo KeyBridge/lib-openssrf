@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -532,7 +532,7 @@ public class ObservedRFAnalysis {
    * ObservedRFValues (US) contains details of actual RF observations.
    */
   @XmlElement(name = "ObservedRFValues")
-  private Collection<ObservedRFValues> observedRFValues;
+  private Set<ObservedRFValues> observedRFValues;
 
   /**
    * Get the chip rate. Pertains mostly to spread spectrum.
@@ -1691,7 +1691,7 @@ public class ObservedRFAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedRFValues}
    *         instances
    */
-  public Collection<ObservedRFValues> getObservedRFValues() {
+  public Set<ObservedRFValues> getObservedRFValues() {
     if (observedRFValues == null) {
       observedRFValues = new HashSet<>();
     }
@@ -2169,7 +2169,7 @@ public class ObservedRFAnalysis {
    */
   public ObservedRFAnalysis withObservedRFValues(ObservedRFValues... values) {
     if (values != null) {
-      getObservedRFValues().addAll(Arrays.asList(values));
+      getObservedRFValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2183,7 +2183,7 @@ public class ObservedRFAnalysis {
    * @param values A collection of {@link ObservedRFValues} instances
    * @return The current ObservedRFAnalysis object instance
    */
-  public ObservedRFAnalysis withObservedRFValues(Collection<ObservedRFValues> values) {
+  public ObservedRFAnalysis withObservedRFValues(Set<ObservedRFValues> values) {
     if (values != null) {
       getObservedRFValues().addAll(values);
     }

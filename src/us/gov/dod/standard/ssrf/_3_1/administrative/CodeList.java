@@ -130,7 +130,7 @@ public class CodeList {
    * Format is US(3)
    */
   @XmlElement(name = "Code")
-  private Collection<Code> code;
+  private Set<Code> code;
 
   /**
    * Get the intended type of modification to the given code list.
@@ -288,7 +288,7 @@ public class CodeList {
    * <p>
    * @return a non-null but possibly empty list of {@link Code} instances
    */
-  public Collection<Code> getCode() {
+  public Set<Code> getCode() {
     if (code == null) {
       code = new HashSet<>();
     }
@@ -388,7 +388,7 @@ public class CodeList {
    */
   public CodeList withCode(Code... values) {
     if (values != null) {
-      getCode().addAll(Arrays.asList(values));
+      getCode().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -400,7 +400,7 @@ public class CodeList {
    * @param values A collection of {@link Code} instances
    * @return The current CodeList object instance
    */
-  public CodeList withCode(Collection<Code> values) {
+  public CodeList withCode(Set<Code> values) {
     if (values != null) {
       getCode().addAll(values);
     }

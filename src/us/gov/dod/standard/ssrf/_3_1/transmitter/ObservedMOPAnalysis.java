@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -394,7 +394,7 @@ public class ObservedMOPAnalysis {
    * for the period of the Modulation on the Pulse sweep.
    */
   @XmlElement(name = "ObservedMOPSweep")
-  private Collection<ObservedMOPSweep> observedMOPSweep;
+  private Set<ObservedMOPSweep> observedMOPSweep;
 
   /**
    * Get the condition which controls, or can be associated with, the signal MOP
@@ -1408,7 +1408,7 @@ public class ObservedMOPAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedMOPSweep}
    *         instances
    */
-  public Collection<ObservedMOPSweep> getObservedMOPSweep() {
+  public Set<ObservedMOPSweep> getObservedMOPSweep() {
     if (observedMOPSweep == null) {
       observedMOPSweep = new HashSet<>();
     }
@@ -1834,7 +1834,7 @@ public class ObservedMOPAnalysis {
    */
   public ObservedMOPAnalysis withObservedMOPSweep(ObservedMOPSweep... values) {
     if (values != null) {
-      getObservedMOPSweep().addAll(Arrays.asList(values));
+      getObservedMOPSweep().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1848,7 +1848,7 @@ public class ObservedMOPAnalysis {
    * @param values A collection of {@link ObservedMOPSweep} instances
    * @return The current ObservedMOPAnalysis object instance
    */
-  public ObservedMOPAnalysis withObservedMOPSweep(Collection<ObservedMOPSweep> values) {
+  public ObservedMOPAnalysis withObservedMOPSweep(Set<ObservedMOPSweep> values) {
     if (values != null) {
       getObservedMOPSweep().addAll(values);
     }

@@ -255,7 +255,7 @@ public class SSReply extends Common<SSReply> {
    * used to certify supportability.
    */
   @XmlElement(name = "CommentSource")
-  private Collection<CommentSource> commentSource;
+  private Set<CommentSource> commentSource;
   /**
    * StageLocation (Optional)
    * <p>
@@ -263,7 +263,7 @@ public class SSReply extends Common<SSReply> {
    * forbidden from use.
    */
   @XmlElement(name = "StageLocation")
-  private Collection<StageLocation> stageLocation;
+  private Set<StageLocation> stageLocation;
   /**
    * Configuration (Optional)
    * <p>
@@ -277,7 +277,7 @@ public class SSReply extends Common<SSReply> {
    * exactly as received.
    */
   @XmlElement(name = "Configuration")
-  private Collection<Configuration> configuration;
+  private Set<Configuration> configuration;
 
   /**
    * Get the dataset identifier of the SSRequest being replied to.
@@ -747,7 +747,7 @@ public class SSReply extends Common<SSReply> {
    * @return a non-null but possibly empty list of {@link CommentSource}
    *         instances
    */
-  public Collection<CommentSource> getCommentSource() {
+  public Set<CommentSource> getCommentSource() {
     if (commentSource == null) {
       commentSource = new HashSet<>();
     }
@@ -779,7 +779,7 @@ public class SSReply extends Common<SSReply> {
    * @return a non-null but possibly empty list of {@link StageLocation}
    *         instances
    */
-  public Collection<StageLocation> getStageLocation() {
+  public Set<StageLocation> getStageLocation() {
     if (stageLocation == null) {
       stageLocation = new HashSet<>();
     }
@@ -817,7 +817,7 @@ public class SSReply extends Common<SSReply> {
    * @return a non-null but possibly empty list of {@link Configuration}
    *         instances
    */
-  public Collection<Configuration> getConfiguration() {
+  public Set<Configuration> getConfiguration() {
     if (configuration == null) {
       configuration = new HashSet<>();
     }
@@ -1078,7 +1078,7 @@ public class SSReply extends Common<SSReply> {
    */
   public SSReply withCommentSource(CommentSource... values) {
     if (values != null) {
-      getCommentSource().addAll(Arrays.asList(values));
+      getCommentSource().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1092,7 +1092,7 @@ public class SSReply extends Common<SSReply> {
    * @param values A collection of {@link CommentSource} instances
    * @return The current SSReply object instance
    */
-  public SSReply withCommentSource(Collection<CommentSource> values) {
+  public SSReply withCommentSource(Set<CommentSource> values) {
     if (values != null) {
       getCommentSource().addAll(values);
     }
@@ -1110,7 +1110,7 @@ public class SSReply extends Common<SSReply> {
    */
   public SSReply withStageLocation(StageLocation... values) {
     if (values != null) {
-      getStageLocation().addAll(Arrays.asList(values));
+      getStageLocation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1124,7 +1124,7 @@ public class SSReply extends Common<SSReply> {
    * @param values A collection of {@link StageLocation} instances
    * @return The current SSReply object instance
    */
-  public SSReply withStageLocation(Collection<StageLocation> values) {
+  public SSReply withStageLocation(Set<StageLocation> values) {
     if (values != null) {
       getStageLocation().addAll(values);
     }
@@ -1148,7 +1148,7 @@ public class SSReply extends Common<SSReply> {
    */
   public SSReply withConfiguration(Configuration... values) {
     if (values != null) {
-      getConfiguration().addAll(Arrays.asList(values));
+      getConfiguration().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1168,7 +1168,7 @@ public class SSReply extends Common<SSReply> {
    * @param values A collection of {@link Configuration} instances
    * @return The current SSReply object instance
    */
-  public SSReply withConfiguration(Collection<Configuration> values) {
+  public SSReply withConfiguration(Set<Configuration> values) {
     if (values != null) {
       getConfiguration().addAll(values);
     }

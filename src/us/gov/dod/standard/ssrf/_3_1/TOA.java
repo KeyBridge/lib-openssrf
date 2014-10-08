@@ -122,7 +122,7 @@ public class TOA extends Common<TOA> {
    * Application (e.g., "Wind Profiler").
    */
   @XmlElement(name = "Footnote")
-  private Collection<Footnote> footnote;
+  private Set<Footnote> footnote;
   /**
    * ChannelPlanRef (Optional)
    * <p>
@@ -130,7 +130,7 @@ public class TOA extends Common<TOA> {
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> channelPlanRef;
+  private Set<TString> channelPlanRef;
   /**
    * Country (Optional)
    * <p>
@@ -138,7 +138,7 @@ public class TOA extends Common<TOA> {
    * is in force.
    */
   @XmlElement(name = "Country", nillable = true)
-  private Collection<Country> country;
+  private Set<Country> country;
   /**
    * FreqBand (Required)
    * <p>
@@ -147,7 +147,7 @@ public class TOA extends Common<TOA> {
    * such as the specification of the rights and responsibilities of a user.
    */
   @XmlElement(name = "FreqBand", required = true)
-  private Collection<FreqBand> freqBand;
+  private Set<FreqBand> freqBand;
 
   /**
    * Get the nation or regulatory body that administers this Table of
@@ -280,7 +280,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * @return a non-null but possibly empty list of {@link Footnote} instances
    */
-  public Collection<Footnote> getFootnote() {
+  public Set<Footnote> getFootnote() {
     if (footnote == null) {
       footnote = new HashSet<>();
     }
@@ -313,7 +313,7 @@ public class TOA extends Common<TOA> {
    * {@link #getChannelPlan()} instead.
    */
   @Deprecated
-  public Collection<TString> getChannelPlanRef() {
+  public Set<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new HashSet<>();
     }
@@ -344,7 +344,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * @return a non-null but possibly empty list of {@link Country} instances
    */
-  public Collection<Country> getCountry() {
+  public Set<Country> getCountry() {
     if (country == null) {
       country = new HashSet<>();
     }
@@ -377,7 +377,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * @return a non-null but possibly empty list of {@link FreqBand} instances
    */
-  public Collection<FreqBand> getFreqBand() {
+  public Set<FreqBand> getFreqBand() {
     if (freqBand == null) {
       freqBand = new HashSet<>();
     }
@@ -481,7 +481,7 @@ public class TOA extends Common<TOA> {
    */
   public TOA withFootnote(Footnote... values) {
     if (values != null) {
-      getFootnote().addAll(Arrays.asList(values));
+      getFootnote().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -496,7 +496,7 @@ public class TOA extends Common<TOA> {
    * @param values A collection of {@link Footnote} instances
    * @return The current TOA object instance
    */
-  public TOA withFootnote(Collection<Footnote> values) {
+  public TOA withFootnote(Set<Footnote> values) {
     if (values != null) {
       getFootnote().addAll(values);
     }
@@ -516,7 +516,7 @@ public class TOA extends Common<TOA> {
   @Deprecated
   public TOA withChannelPlanRef(TString... values) {
     if (values != null) {
-      getChannelPlanRef().addAll(Arrays.asList(values));
+      getChannelPlanRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -532,7 +532,7 @@ public class TOA extends Common<TOA> {
    * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
   @Deprecated
-  public TOA withChannelPlanRef(Collection<TString> values) {
+  public TOA withChannelPlanRef(Set<TString> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }
@@ -550,7 +550,7 @@ public class TOA extends Common<TOA> {
    */
   public TOA withCountry(Country... values) {
     if (values != null) {
-      getCountry().addAll(Arrays.asList(values));
+      getCountry().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -564,7 +564,7 @@ public class TOA extends Common<TOA> {
    * @param values A collection of {@link Country} instances
    * @return The current TOA object instance
    */
-  public TOA withCountry(Collection<Country> values) {
+  public TOA withCountry(Set<Country> values) {
     if (values != null) {
       getCountry().addAll(values);
     }
@@ -584,7 +584,7 @@ public class TOA extends Common<TOA> {
    */
   public TOA withFreqBand(FreqBand... values) {
     if (values != null) {
-      getFreqBand().addAll(Arrays.asList(values));
+      getFreqBand().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -600,7 +600,7 @@ public class TOA extends Common<TOA> {
    * @param values A collection of {@link FreqBand} instances
    * @return The current TOA object instance
    */
-  public TOA withFreqBand(Collection<FreqBand> values) {
+  public TOA withFreqBand(Set<FreqBand> values) {
     if (values != null) {
       getFreqBand().addAll(values);
     }
@@ -653,7 +653,7 @@ public class TOA extends Common<TOA> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<ChannelPlan> channelPlan;
+  private Set<ChannelPlan> channelPlan;
 
   /**
    * Get the ChannelPlanRef
@@ -663,7 +663,7 @@ public class TOA extends Common<TOA> {
    * @return a {@link ChannelPlan} instance
    * @since 3.1.0
    */
-  public Collection<ChannelPlan> getChannelPlan() {
+  public Set<ChannelPlan> getChannelPlan() {
     if (channelPlan == null) {
       channelPlan = new HashSet<>();
     }
@@ -689,7 +689,7 @@ public class TOA extends Common<TOA> {
    * @since 3.1.0
    */
   public TOA withChannelPlan(ChannelPlan... values) {
-    return withChannelPlan(Arrays.asList(values));
+    return withChannelPlan(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -701,7 +701,7 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    * @since 3.1.0
    */
-  public TOA withChannelPlan(Collection<ChannelPlan> values) {
+  public TOA withChannelPlan(Set<ChannelPlan> values) {
     getChannelPlan().addAll(values);
     return this;
   }

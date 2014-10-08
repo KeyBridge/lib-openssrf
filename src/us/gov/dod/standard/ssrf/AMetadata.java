@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf;
 
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -92,7 +92,7 @@ public abstract class AMetadata<T> {
    * Format is List of L:CCY
    */
   @XmlAttribute(name = "releasability")
-  protected Collection<ListCCY> releasability;
+  protected Set<ListCCY> releasability;
   /**
    * remark References - Links to Data Item Remarks (Optional)
    * <p>
@@ -101,7 +101,7 @@ public abstract class AMetadata<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "remarks")
-  protected Collection<BigInteger> remarkRef;
+  protected Set<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
@@ -111,7 +111,7 @@ public abstract class AMetadata<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "extReferences")
-  protected Collection<BigInteger> extReferences;
+  protected Set<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
    * <p>
@@ -200,7 +200,7 @@ public abstract class AMetadata<T> {
    * <p>
    * @return a non-null list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getRemarkRef() {
+  public Set<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
       remarkRef = new HashSet<>();
     }
@@ -242,7 +242,7 @@ public abstract class AMetadata<T> {
    * <p>
    * @return a non-null list of {@link ListCCY} instances
    */
-  public Collection<ListCCY> getReleasability() {
+  public Set<ListCCY> getReleasability() {
     if (releasability == null) {
       releasability = new HashSet<>();
     }
@@ -339,7 +339,7 @@ public abstract class AMetadata<T> {
    * <p>
    * @return a non-null list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getExtReferences() {
+  public Set<BigInteger> getExtReferences() {
     if (extReferences == null) {
       extReferences = new HashSet<>();
     }
@@ -490,7 +490,7 @@ public abstract class AMetadata<T> {
    */
   public T withExtReferences(BigInteger... values) {
     if (values != null) {
-      getExtReferences().addAll(Arrays.asList(values));
+      getExtReferences().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -502,7 +502,7 @@ public abstract class AMetadata<T> {
    * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    */
-  public T withExtReferences(Collection<BigInteger> values) {
+  public T withExtReferences(Set<BigInteger> values) {
     if (values != null) {
       getExtReferences().addAll(values);
     }
@@ -559,7 +559,7 @@ public abstract class AMetadata<T> {
    */
   public T withReleasability(ListCCY... values) {
     if (values != null) {
-      getReleasability().addAll(Arrays.asList(values));
+      getReleasability().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -574,7 +574,7 @@ public abstract class AMetadata<T> {
    * @param values A collection of {@link ListCCY} instances
    * @return The current Common object instance
    */
-  public T withReleasability(Collection<ListCCY> values) {
+  public T withReleasability(Set<ListCCY> values) {
     if (values != null) {
       getReleasability().addAll(values);
     }
@@ -590,7 +590,7 @@ public abstract class AMetadata<T> {
    */
   public T withRemarkRef(BigInteger... values) {
     if (values != null) {
-      getRemarkRef().addAll(Arrays.asList(values));
+      getRemarkRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -602,7 +602,7 @@ public abstract class AMetadata<T> {
    * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    */
-  public T withRemarkRef(Collection<BigInteger> values) {
+  public T withRemarkRef(Set<BigInteger> values) {
     if (values != null) {
       getRemarkRef().addAll(values);
     }

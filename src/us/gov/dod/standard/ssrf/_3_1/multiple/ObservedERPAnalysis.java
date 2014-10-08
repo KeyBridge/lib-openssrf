@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -291,7 +291,7 @@ public class ObservedERPAnalysis {
    * Effective Radiated Power (ERP) associated with an emitter or Notation.
    */
   @XmlElement(name = "ObservedERPValues")
-  private Collection<ObservedERPValues> observedERPValues;
+  private Set<ObservedERPValues> observedERPValues;
 
   /**
    * Get Continuous (US), indicate whether pulse-to-pulse ERP variations are
@@ -852,7 +852,7 @@ public class ObservedERPAnalysis {
    * @return a non-null but possibly empty list of {@link ObservedERPValues}
    *         instances
    */
-  public Collection<ObservedERPValues> getObservedERPValues() {
+  public Set<ObservedERPValues> getObservedERPValues() {
     if (observedERPValues == null) {
       observedERPValues = new HashSet<>();
     }
@@ -1102,7 +1102,7 @@ public class ObservedERPAnalysis {
    */
   public ObservedERPAnalysis withObservedERPValues(ObservedERPValues... values) {
     if (values != null) {
-      getObservedERPValues().addAll(Arrays.asList(values));
+      getObservedERPValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1117,7 +1117,7 @@ public class ObservedERPAnalysis {
    * @param values A collection of {@link ObservedERPValues} instances
    * @return The current ObservedERPAnalysis object instance
    */
-  public ObservedERPAnalysis withObservedERPValues(Collection<ObservedERPValues> values) {
+  public ObservedERPAnalysis withObservedERPValues(Set<ObservedERPValues> values) {
     if (values != null) {
       getObservedERPValues().addAll(values);
     }

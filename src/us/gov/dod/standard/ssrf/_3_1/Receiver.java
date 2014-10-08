@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -173,7 +173,7 @@ public class Receiver extends Common<Receiver> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -185,7 +185,7 @@ public class Receiver extends Common<Receiver> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
   /**
    * Deployment (Optional)
    * <p>
@@ -196,7 +196,7 @@ public class Receiver extends Common<Receiver> {
    * an airborne platform, a ship or fixed land installation.
    */
   @XmlElement(name = "Deployment")
-  private Collection<Deployment> deployment;
+  private Set<Deployment> deployment;
   /**
    * Curve (Optional)
    * <p>
@@ -207,7 +207,7 @@ public class Receiver extends Common<Receiver> {
    * measurement bandwidth.
    */
   @XmlElement(name = "Curve")
-  private Collection<Curve> curve;
+  private Set<Curve> curve;
   /**
    * RxMode (Optional)
    * <p>
@@ -215,7 +215,7 @@ public class Receiver extends Common<Receiver> {
    * operation of the Receiver.
    */
   @XmlElement(name = "RxMode")
-  private Collection<RxMode> rxMode;
+  private Set<RxMode> rxMode;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -223,7 +223,7 @@ public class Receiver extends Common<Receiver> {
    * supply (Source), and use (Using) the Receiver.
    */
   @XmlElement(name = "UsingCountries")
-  private Collection<UsingCountries> usingCountries;
+  private Set<UsingCountries> usingCountries;
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -453,7 +453,7 @@ public class Receiver extends Common<Receiver> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -487,7 +487,7 @@ public class Receiver extends Common<Receiver> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -522,7 +522,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * @return a non-null but possibly empty list of {@link Deployment} instances
    */
-  public Collection<Deployment> getDeployment() {
+  public Set<Deployment> getDeployment() {
     if (deployment == null) {
       deployment = new HashSet<>();
     }
@@ -556,7 +556,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * @return a non-null but possibly empty list of {@link Curve} instances
    */
-  public Collection<Curve> getCurve() {
+  public Set<Curve> getCurve() {
     if (curve == null) {
       curve = new HashSet<>();
     }
@@ -587,7 +587,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * @return a non-null but possibly empty list of {@link RxMode} instances
    */
-  public Collection<RxMode> getRxMode() {
+  public Set<RxMode> getRxMode() {
     if (rxMode == null) {
       rxMode = new HashSet<>();
     }
@@ -619,7 +619,7 @@ public class Receiver extends Common<Receiver> {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public Collection<UsingCountries> getUsingCountries() {
+  public Set<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
       usingCountries = new HashSet<>();
     }
@@ -738,7 +738,7 @@ public class Receiver extends Common<Receiver> {
    */
   public Receiver withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -752,7 +752,7 @@ public class Receiver extends Common<Receiver> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Receiver object instance
    */
-  public Receiver withPOCInformation(Collection<POCInformation> values) {
+  public Receiver withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -772,7 +772,7 @@ public class Receiver extends Common<Receiver> {
    */
   public Receiver withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -788,7 +788,7 @@ public class Receiver extends Common<Receiver> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Receiver object instance
    */
-  public Receiver withNomenclature(Collection<Nomenclature> values) {
+  public Receiver withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
@@ -810,7 +810,7 @@ public class Receiver extends Common<Receiver> {
    */
   public Receiver withDeployment(Deployment... values) {
     if (values != null) {
-      getDeployment().addAll(Arrays.asList(values));
+      getDeployment().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -828,7 +828,7 @@ public class Receiver extends Common<Receiver> {
    * @param values A collection of {@link Deployment} instances
    * @return The current Receiver object instance
    */
-  public Receiver withDeployment(Collection<Deployment> values) {
+  public Receiver withDeployment(Set<Deployment> values) {
     if (values != null) {
       getDeployment().addAll(values);
     }
@@ -849,7 +849,7 @@ public class Receiver extends Common<Receiver> {
    */
   public Receiver withCurve(Curve... values) {
     if (values != null) {
-      getCurve().addAll(Arrays.asList(values));
+      getCurve().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -866,7 +866,7 @@ public class Receiver extends Common<Receiver> {
    * @param values A collection of {@link Curve} instances
    * @return The current Receiver object instance
    */
-  public Receiver withCurve(Collection<Curve> values) {
+  public Receiver withCurve(Set<Curve> values) {
     if (values != null) {
       getCurve().addAll(values);
     }
@@ -884,7 +884,7 @@ public class Receiver extends Common<Receiver> {
    */
   public Receiver withRxMode(RxMode... values) {
     if (values != null) {
-      getRxMode().addAll(Arrays.asList(values));
+      getRxMode().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -898,7 +898,7 @@ public class Receiver extends Common<Receiver> {
    * @param values A collection of {@link RxMode} instances
    * @return The current Receiver object instance
    */
-  public Receiver withRxMode(Collection<RxMode> values) {
+  public Receiver withRxMode(Set<RxMode> values) {
     if (values != null) {
       getRxMode().addAll(values);
     }
@@ -916,7 +916,7 @@ public class Receiver extends Common<Receiver> {
    */
   public Receiver withUsingCountries(UsingCountries... values) {
     if (values != null) {
-      getUsingCountries().addAll(Arrays.asList(values));
+      getUsingCountries().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -930,7 +930,7 @@ public class Receiver extends Common<Receiver> {
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Receiver object instance
    */
-  public Receiver withUsingCountries(Collection<UsingCountries> values) {
+  public Receiver withUsingCountries(Set<UsingCountries> values) {
     if (values != null) {
       getUsingCountries().addAll(values);
     }

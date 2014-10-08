@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -126,7 +126,7 @@ public class AntPattern {
    * defined by a direction and gain.
    */
   @XmlElement(name = "AntPatternPoint", required = true)
-  private Collection<AntPatternPoint> antPatternPoint;
+  private Set<AntPatternPoint> antPatternPoint;
 
   /**
    * Get the type of the pattern cut. A Theta cut holds Phi constant while
@@ -271,7 +271,7 @@ public class AntPattern {
    * @return a non-null but possibly empty list of {@link AntPatternPoint}
    *         instances
    */
-  public Collection<AntPatternPoint> getAntPatternPoint() {
+  public Set<AntPatternPoint> getAntPatternPoint() {
     if (antPatternPoint == null) {
       antPatternPoint = new HashSet<>();
     }
@@ -358,7 +358,7 @@ public class AntPattern {
    */
   public AntPattern withAntPatternPoint(AntPatternPoint... values) {
     if (values != null) {
-      getAntPatternPoint().addAll(Arrays.asList(values));
+      getAntPatternPoint().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -372,7 +372,7 @@ public class AntPattern {
    * @param values A collection of {@link AntPatternPoint} instances
    * @return The current AntPattern object instance
    */
-  public AntPattern withAntPatternPoint(Collection<AntPatternPoint> values) {
+  public AntPattern withAntPatternPoint(Set<AntPatternPoint> values) {
     if (values != null) {
       getAntPatternPoint().addAll(values);
     }

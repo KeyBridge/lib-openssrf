@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -193,7 +193,7 @@ public class Transmitter extends Common<Transmitter> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -205,7 +205,7 @@ public class Transmitter extends Common<Transmitter> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
   /**
    * Deployment (Optional)
    * <p>
@@ -216,7 +216,7 @@ public class Transmitter extends Common<Transmitter> {
    * an airborne platform, a ship or fixed land installation.
    */
   @XmlElement(name = "Deployment")
-  private Collection<Deployment> deployment;
+  private Set<Deployment> deployment;
   /**
    * Curve (Optional)
    * <p>
@@ -227,7 +227,7 @@ public class Transmitter extends Common<Transmitter> {
    * measurement bandwidth.
    */
   @XmlElement(name = "Curve")
-  private Collection<Curve> curve;
+  private Set<Curve> curve;
   /**
    * TxMode (Optional)
    * <p>
@@ -235,7 +235,7 @@ public class Transmitter extends Common<Transmitter> {
    * of operation of the Transmitter.
    */
   @XmlElement(name = "TxMode")
-  private Collection<TxMode> txMode;
+  private Set<TxMode> txMode;
   /**
    * US:UsingCountries (Optional)
    * <p>
@@ -243,7 +243,7 @@ public class Transmitter extends Common<Transmitter> {
    * supply (Source), and use (Using) the Transmitter.
    */
   @XmlElement(name = "UsingCountries")
-  private Collection<UsingCountries> usingCountries;
+  private Set<UsingCountries> usingCountries;
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -504,7 +504,7 @@ public class Transmitter extends Common<Transmitter> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -538,7 +538,7 @@ public class Transmitter extends Common<Transmitter> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -573,7 +573,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * @return a non-null but possibly empty list of {@link Deployment} instances
    */
-  public Collection<Deployment> getDeployment() {
+  public Set<Deployment> getDeployment() {
     if (deployment == null) {
       deployment = new HashSet<>();
     }
@@ -607,7 +607,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * @return a non-null but possibly empty list of {@link Curve} instances
    */
-  public Collection<Curve> getCurve() {
+  public Set<Curve> getCurve() {
     if (curve == null) {
       curve = new HashSet<>();
     }
@@ -638,7 +638,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * @return a non-null but possibly empty list of {@link TxMode} instances
    */
-  public Collection<TxMode> getTxMode() {
+  public Set<TxMode> getTxMode() {
     if (txMode == null) {
       txMode = new HashSet<>();
     }
@@ -670,7 +670,7 @@ public class Transmitter extends Common<Transmitter> {
    * @return a non-null but possibly empty list of {@link UsingCountries}
    *         instances
    */
-  public Collection<UsingCountries> getUsingCountries() {
+  public Set<UsingCountries> getUsingCountries() {
     if (usingCountries == null) {
       usingCountries = new HashSet<>();
     }
@@ -802,7 +802,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   public Transmitter withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -816,7 +816,7 @@ public class Transmitter extends Common<Transmitter> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Transmitter object instance
    */
-  public Transmitter withPOCInformation(Collection<POCInformation> values) {
+  public Transmitter withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -836,7 +836,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   public Transmitter withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -852,7 +852,7 @@ public class Transmitter extends Common<Transmitter> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Transmitter object instance
    */
-  public Transmitter withNomenclature(Collection<Nomenclature> values) {
+  public Transmitter withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
@@ -874,7 +874,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   public Transmitter withDeployment(Deployment... values) {
     if (values != null) {
-      getDeployment().addAll(Arrays.asList(values));
+      getDeployment().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -892,7 +892,7 @@ public class Transmitter extends Common<Transmitter> {
    * @param values A collection of {@link Deployment} instances
    * @return The current Transmitter object instance
    */
-  public Transmitter withDeployment(Collection<Deployment> values) {
+  public Transmitter withDeployment(Set<Deployment> values) {
     if (values != null) {
       getDeployment().addAll(values);
     }
@@ -913,7 +913,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   public Transmitter withCurve(Curve... values) {
     if (values != null) {
-      getCurve().addAll(Arrays.asList(values));
+      getCurve().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -930,7 +930,7 @@ public class Transmitter extends Common<Transmitter> {
    * @param values A collection of {@link Curve} instances
    * @return The current Transmitter object instance
    */
-  public Transmitter withCurve(Collection<Curve> values) {
+  public Transmitter withCurve(Set<Curve> values) {
     if (values != null) {
       getCurve().addAll(values);
     }
@@ -948,7 +948,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   public Transmitter withTxMode(TxMode... values) {
     if (values != null) {
-      getTxMode().addAll(Arrays.asList(values));
+      getTxMode().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -962,7 +962,7 @@ public class Transmitter extends Common<Transmitter> {
    * @param values A collection of {@link TxMode} instances
    * @return The current Transmitter object instance
    */
-  public Transmitter withTxMode(Collection<TxMode> values) {
+  public Transmitter withTxMode(Set<TxMode> values) {
     if (values != null) {
       getTxMode().addAll(values);
     }
@@ -980,7 +980,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   public Transmitter withUsingCountries(UsingCountries... values) {
     if (values != null) {
-      getUsingCountries().addAll(Arrays.asList(values));
+      getUsingCountries().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -994,7 +994,7 @@ public class Transmitter extends Common<Transmitter> {
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Transmitter object instance
    */
-  public Transmitter withUsingCountries(Collection<UsingCountries> values) {
+  public Transmitter withUsingCountries(Set<UsingCountries> values) {
     if (values != null) {
       getUsingCountries().addAll(values);
     }

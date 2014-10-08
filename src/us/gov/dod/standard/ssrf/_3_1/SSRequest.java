@@ -400,7 +400,7 @@ public class SSRequest extends Common<SSRequest> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private Collection<Project> project;
+  private Set<Project> project;
   /**
    * CurrentStage - Current Stage (Optional)
    * <p>
@@ -409,7 +409,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is L:CSG
    */
   @XmlElement(name = "Stage")
-  private Collection<Stage> stage;
+  private Set<Stage> stage;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -419,7 +419,7 @@ public class SSRequest extends Common<SSRequest> {
    * military nomenclature and a commercial model number.
    */
   @XmlElement(name = "Nomenclature")
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
   /**
    * POCInformation (Optional)
    * <p>
@@ -427,7 +427,7 @@ public class SSRequest extends Common<SSRequest> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * RelatedSupportability (Optional)
    * <p>
@@ -435,7 +435,7 @@ public class SSRequest extends Common<SSRequest> {
    * has a dependency.
    */
   @XmlElement(name = "RelatedSupportability")
-  private Collection<RelatedSupportability> relatedSupportability;
+  private Set<RelatedSupportability> relatedSupportability;
   /**
    * HostNation (Optional)
    * <p>
@@ -445,7 +445,7 @@ public class SSRequest extends Common<SSRequest> {
    * accordance with the FMSC agreement).
    */
   @XmlElement(name = "HostNation", nillable = true)
-  private Collection<HostNation> hostNation;
+  private Set<HostNation> hostNation;
   /**
    * US:WartimeUse - Wartime Use (Optional)
    * <p>
@@ -454,21 +454,21 @@ public class SSRequest extends Common<SSRequest> {
    * Format is L:CBO
    */
   @XmlElement(name = "Time")
-  private Collection<Time> time;
+  private Set<Time> time;
   /**
    * DiagramEndpoint (Optional)
    * <p>
    * DiagramEndpoint defines an instance of an icon on the diagram.
    */
   @XmlElement(name = "DiagramEndpoint")
-  private Collection<DiagramEndpoint> diagramEndpoint;
+  private Set<DiagramEndpoint> diagramEndpoint;
   /**
    * DiagramLine (Optional)
    * <p>
    * DiagramLine defines a line between two endpoints on the diagram.
    */
   @XmlElement(name = "DiagramLine")
-  private Collection<DiagramLine> diagramLine;
+  private Set<DiagramLine> diagramLine;
   /**
    * Configuration (Optional)
    * <p>
@@ -481,7 +481,7 @@ public class SSRequest extends Common<SSRequest> {
    * Divergence from SMADEF: Mandatory [1..n] when exchanging with NATO /
    */
   @XmlElement(name = "Configuration")
-  private Collection<Configuration> configuration;
+  private Set<Configuration> configuration;
   /**
    * US:StatusLog (Optional)
    * <p>
@@ -489,7 +489,7 @@ public class SSRequest extends Common<SSRequest> {
    * spectrum supportability requests.
    */
   @XmlElement(name = "StatusLog")
-  private Collection<StatusLog> statusLog;
+  private Set<StatusLog> statusLog;
   /**
    * US:Trunking (Optional)
    * <p>
@@ -1326,7 +1326,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public Collection<Project> getProject() {
+  public Set<Project> getProject() {
     if (project == null) {
       project = new HashSet<>();
     }
@@ -1354,7 +1354,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link Stage} instances
    */
-  public Collection<Stage> getStage() {
+  public Set<Stage> getStage() {
     if (stage == null) {
       stage = new HashSet<>();
     }
@@ -1388,7 +1388,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -1420,7 +1420,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -1452,7 +1452,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link RelatedSupportability}
    *         instances
    */
-  public Collection<RelatedSupportability> getRelatedSupportability() {
+  public Set<RelatedSupportability> getRelatedSupportability() {
     if (relatedSupportability == null) {
       relatedSupportability = new HashSet<>();
     }
@@ -1485,7 +1485,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link HostNation} instances
    */
-  public Collection<HostNation> getHostNation() {
+  public Set<HostNation> getHostNation() {
     if (hostNation == null) {
       hostNation = new HashSet<>();
     }
@@ -1513,7 +1513,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link Time} instances
    */
-  public Collection<Time> getTime() {
+  public Set<Time> getTime() {
     if (time == null) {
       time = new HashSet<>();
     }
@@ -1545,7 +1545,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link DiagramEndpoint}
    *         instances
    */
-  public Collection<DiagramEndpoint> getDiagramEndpoint() {
+  public Set<DiagramEndpoint> getDiagramEndpoint() {
     if (diagramEndpoint == null) {
       diagramEndpoint = new HashSet<>();
     }
@@ -1576,7 +1576,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link DiagramLine} instances
    */
-  public Collection<DiagramLine> getDiagramLine() {
+  public Set<DiagramLine> getDiagramLine() {
     if (diagramLine == null) {
       diagramLine = new HashSet<>();
     }
@@ -1611,7 +1611,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return a non-null but possibly empty list of {@link Configuration}
    *         instances
    */
-  public Collection<Configuration> getConfiguration() {
+  public Set<Configuration> getConfiguration() {
     if (configuration == null) {
       configuration = new HashSet<>();
     }
@@ -1642,7 +1642,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * @return a non-null but possibly empty list of {@link StatusLog} instances
    */
-  public Collection<StatusLog> getStatusLog() {
+  public Set<StatusLog> getStatusLog() {
     if (statusLog == null) {
       statusLog = new HashSet<>();
     }
@@ -2057,7 +2057,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withProject(Project... values) {
     if (values != null) {
-      getProject().addAll(Arrays.asList(values));
+      getProject().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2071,7 +2071,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link Project} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withProject(Collection<Project> values) {
+  public SSRequest withProject(Set<Project> values) {
     if (values != null) {
       getProject().addAll(values);
     }
@@ -2086,7 +2086,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withStage(Stage... values) {
     if (values != null) {
-      getStage().addAll(Arrays.asList(values));
+      getStage().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2097,7 +2097,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link Stage} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withStage(Collection<Stage> values) {
+  public SSRequest withStage(Set<Stage> values) {
     if (values != null) {
       getStage().addAll(values);
     }
@@ -2117,7 +2117,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2133,7 +2133,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withNomenclature(Collection<Nomenclature> values) {
+  public SSRequest withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
@@ -2151,7 +2151,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2165,7 +2165,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withPOCInformation(Collection<POCInformation> values) {
+  public SSRequest withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -2183,7 +2183,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withRelatedSupportability(RelatedSupportability... values) {
     if (values != null) {
-      getRelatedSupportability().addAll(Arrays.asList(values));
+      getRelatedSupportability().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2197,7 +2197,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link RelatedSupportability} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withRelatedSupportability(Collection<RelatedSupportability> values) {
+  public SSRequest withRelatedSupportability(Set<RelatedSupportability> values) {
     if (values != null) {
       getRelatedSupportability().addAll(values);
     }
@@ -2217,7 +2217,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withHostNation(HostNation... values) {
     if (values != null) {
-      getHostNation().addAll(Arrays.asList(values));
+      getHostNation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2233,7 +2233,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link HostNation} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withHostNation(Collection<HostNation> values) {
+  public SSRequest withHostNation(Set<HostNation> values) {
     if (values != null) {
       getHostNation().addAll(values);
     }
@@ -2248,7 +2248,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withTime(Time... values) {
     if (values != null) {
-      getTime().addAll(Arrays.asList(values));
+      getTime().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2259,7 +2259,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link Time} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withTime(Collection<Time> values) {
+  public SSRequest withTime(Set<Time> values) {
     if (values != null) {
       getTime().addAll(values);
     }
@@ -2277,7 +2277,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withDiagramEndpoint(DiagramEndpoint... values) {
     if (values != null) {
-      getDiagramEndpoint().addAll(Arrays.asList(values));
+      getDiagramEndpoint().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2291,7 +2291,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link DiagramEndpoint} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withDiagramEndpoint(Collection<DiagramEndpoint> values) {
+  public SSRequest withDiagramEndpoint(Set<DiagramEndpoint> values) {
     if (values != null) {
       getDiagramEndpoint().addAll(values);
     }
@@ -2309,7 +2309,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withDiagramLine(DiagramLine... values) {
     if (values != null) {
-      getDiagramLine().addAll(Arrays.asList(values));
+      getDiagramLine().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2323,7 +2323,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link DiagramLine} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withDiagramLine(Collection<DiagramLine> values) {
+  public SSRequest withDiagramLine(Set<DiagramLine> values) {
     if (values != null) {
       getDiagramLine().addAll(values);
     }
@@ -2344,7 +2344,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withConfiguration(Configuration... values) {
     if (values != null) {
-      getConfiguration().addAll(Arrays.asList(values));
+      getConfiguration().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2361,7 +2361,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link Configuration} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withConfiguration(Collection<Configuration> values) {
+  public SSRequest withConfiguration(Set<Configuration> values) {
     if (values != null) {
       getConfiguration().addAll(values);
     }
@@ -2379,7 +2379,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   public SSRequest withStatusLog(StatusLog... values) {
     if (values != null) {
-      getStatusLog().addAll(Arrays.asList(values));
+      getStatusLog().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2393,7 +2393,7 @@ public class SSRequest extends Common<SSRequest> {
    * @param values A collection of {@link StatusLog} instances
    * @return The current SSRequest object instance
    */
-  public SSRequest withStatusLog(Collection<StatusLog> values) {
+  public SSRequest withStatusLog(Set<StatusLog> values) {
     if (values != null) {
       getStatusLog().addAll(values);
     }

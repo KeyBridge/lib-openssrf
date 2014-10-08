@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -148,7 +148,7 @@ public class ObservedMOPBits {
   private TDecimal bitDuration;
 
   @XmlElement(name = "ObservedMOPValues")
-  private Collection<ObservedMOPValues> observedMOPValues;
+  private Set<ObservedMOPValues> observedMOPValues;
 
   /**
    * Get US:MOPDutyCycle (US), enter as a percentage, the minimum or nominal
@@ -449,7 +449,7 @@ public class ObservedMOPBits {
    * @return a non-null but possibly empty list of {@link ObservedMOPValues}
    *         instances
    */
-  public Collection<ObservedMOPValues> getObservedMOPValues() {
+  public Set<ObservedMOPValues> getObservedMOPValues() {
     if (observedMOPValues == null) {
       observedMOPValues = new HashSet<>();
     }
@@ -595,7 +595,7 @@ public class ObservedMOPBits {
    */
   public ObservedMOPBits withObservedMOPValues(ObservedMOPValues... values) {
     if (values != null) {
-      getObservedMOPValues().addAll(Arrays.asList(values));
+      getObservedMOPValues().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -606,7 +606,7 @@ public class ObservedMOPBits {
    * @param values A collection of {@link ObservedMOPValues} instances
    * @return The current ObservedMOPBits object instance
    */
-  public ObservedMOPBits withObservedMOPValues(Collection<ObservedMOPValues> values) {
+  public ObservedMOPBits withObservedMOPValues(Set<ObservedMOPValues> values) {
     if (values != null) {
       getObservedMOPValues().addAll(values);
     }

@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -124,7 +124,7 @@ public class AllotFreq {
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> locationRestrictionRef;
+  private Set<TString> locationRestrictionRef;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -290,7 +290,7 @@ public class AllotFreq {
    * {@link #getLocationRestriction()} instead.
    */
   @Deprecated
-  public Collection<TString> getLocationRestrictionRef() {
+  public Set<TString> getLocationRestrictionRef() {
     if (locationRestrictionRef == null) {
       locationRestrictionRef = new HashSet<>();
     }
@@ -383,7 +383,7 @@ public class AllotFreq {
    */
   public AllotFreq withLocationRestrictionRef(TString... values) {
     if (values != null) {
-      getLocationRestrictionRef().addAll(Arrays.asList(values));
+      getLocationRestrictionRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -397,7 +397,7 @@ public class AllotFreq {
    * @param values A collection of {@link TString} instances
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestrictionRef(Collection<TString> values) {
+  public AllotFreq withLocationRestrictionRef(Set<TString> values) {
     if (values != null) {
       getLocationRestrictionRef().addAll(values);
     }
@@ -443,7 +443,7 @@ public class AllotFreq {
    * forbidden.
    */
   @XmlTransient
-  private Collection<Location> locationRestriction;
+  private Set<Location> locationRestriction;
 
   /**
    * Get a Location where the Allotment usage is forbidden.
@@ -451,7 +451,7 @@ public class AllotFreq {
    * @return a {@link Location} instance
    * @since 3.1.0
    */
-  public Collection<Location> getLocationRestriction() {
+  public Set<Location> getLocationRestriction() {
     if (locationRestriction == null) {
       locationRestriction = new HashSet<>();
     }
@@ -475,7 +475,7 @@ public class AllotFreq {
    * @since 3.1.0
    */
   public AllotFreq withLocationRestriction(Location... values) {
-    return withLocationRestriction(Arrays.asList(values));
+    return withLocationRestriction(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -485,7 +485,7 @@ public class AllotFreq {
    * @return The current AllotFreq object instance
    * @since 3.1.0
    */
-  public AllotFreq withLocationRestriction(Collection<Location> values) {
+  public AllotFreq withLocationRestriction(Set<Location> values) {
     getLocationRestriction().addAll(values);
     return this;
   }

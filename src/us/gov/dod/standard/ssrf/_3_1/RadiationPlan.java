@@ -202,7 +202,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * the level of authorisation.
    */
   @XmlElement(name = "JammingAuthority")
-  private Collection<JammingAuthority> jammingAuthority;
+  private Set<JammingAuthority> jammingAuthority;
   /**
    * US:JammingPlan (Optional)
    * <p>
@@ -210,7 +210,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * desired effect, and desired effectiveness.
    */
   @XmlElement(name = "JammingPlan")
-  private Collection<JammingPlan> jammingPlan;
+  private Set<JammingPlan> jammingPlan;
 
   /**
    * Get the frequency range maximum value planned for denial of use.
@@ -468,7 +468,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return a non-null but possibly empty list of {@link JammingAuthority}
    *         instances
    */
-  public Collection<JammingAuthority> getJammingAuthority() {
+  public Set<JammingAuthority> getJammingAuthority() {
     if (jammingAuthority == null) {
       jammingAuthority = new HashSet<>();
     }
@@ -499,7 +499,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * @return a non-null but possibly empty list of {@link JammingPlan} instances
    */
-  public Collection<JammingPlan> getJammingPlan() {
+  public Set<JammingPlan> getJammingPlan() {
     if (jammingPlan == null) {
       jammingPlan = new HashSet<>();
     }
@@ -650,7 +650,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    */
   public RadiationPlan withJammingAuthority(JammingAuthority... values) {
     if (values != null) {
-      getJammingAuthority().addAll(Arrays.asList(values));
+      getJammingAuthority().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -665,7 +665,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @param values A collection of {@link JammingAuthority} instances
    * @return The current RadiationPlan object instance
    */
-  public RadiationPlan withJammingAuthority(Collection<JammingAuthority> values) {
+  public RadiationPlan withJammingAuthority(Set<JammingAuthority> values) {
     if (values != null) {
       getJammingAuthority().addAll(values);
     }
@@ -683,7 +683,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    */
   public RadiationPlan withJammingPlan(JammingPlan... values) {
     if (values != null) {
-      getJammingPlan().addAll(Arrays.asList(values));
+      getJammingPlan().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -697,7 +697,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @param values A collection of {@link JammingPlan} instances
    * @return The current RadiationPlan object instance
    */
-  public RadiationPlan withJammingPlan(Collection<JammingPlan> values) {
+  public RadiationPlan withJammingPlan(Set<JammingPlan> values) {
     if (values != null) {
       getJammingPlan().addAll(values);
     }

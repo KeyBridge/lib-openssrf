@@ -180,7 +180,7 @@ public class ForceElement extends Common<ForceElement> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * Assets (Optional)
    * <p>
@@ -188,7 +188,7 @@ public class ForceElement extends Common<ForceElement> {
    * systems, or other Force Elements used or owned by the Force Element.
    */
   @XmlElement(name = "Assets")
-  private Collection<Assets> assets;
+  private Set<Assets> assets;
   /**
    * Nomenclature (Required)
    * <p>
@@ -200,7 +200,7 @@ public class ForceElement extends Common<ForceElement> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature", required = true)
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
   /**
    * US:StockNum (Optional)
    * <p>
@@ -208,7 +208,7 @@ public class ForceElement extends Common<ForceElement> {
    * stock number.
    */
   @XmlElement(name = "StockNum")
-  private Collection<StockNum> stockNum;
+  private Set<StockNum> stockNum;
 
   /**
    * Get the date by which the dataset is to be reviewed. The Review date should
@@ -511,7 +511,7 @@ public class ForceElement extends Common<ForceElement> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -543,7 +543,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * @return a non-null but possibly empty list of {@link Assets} instances
    */
-  public Collection<Assets> getAssets() {
+  public Set<Assets> getAssets() {
     if (assets == null) {
       assets = new HashSet<>();
     }
@@ -577,7 +577,7 @@ public class ForceElement extends Common<ForceElement> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -608,7 +608,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * @return a non-null but possibly empty list of {@link StockNum} instances
    */
-  public Collection<StockNum> getStockNum() {
+  public Set<StockNum> getStockNum() {
     if (stockNum == null) {
       stockNum = new HashSet<>();
     }
@@ -769,7 +769,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   public ForceElement withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -783,7 +783,7 @@ public class ForceElement extends Common<ForceElement> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current ForceElement object instance
    */
-  public ForceElement withPOCInformation(Collection<POCInformation> values) {
+  public ForceElement withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -802,7 +802,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   public ForceElement withAssets(Assets... values) {
     if (values != null) {
-      getAssets().addAll(Arrays.asList(values));
+      getAssets().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -817,7 +817,7 @@ public class ForceElement extends Common<ForceElement> {
    * @param values A collection of {@link Assets} instances
    * @return The current ForceElement object instance
    */
-  public ForceElement withAssets(Collection<Assets> values) {
+  public ForceElement withAssets(Set<Assets> values) {
     if (values != null) {
       getAssets().addAll(values);
     }
@@ -837,7 +837,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   public ForceElement withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -853,7 +853,7 @@ public class ForceElement extends Common<ForceElement> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current ForceElement object instance
    */
-  public ForceElement withNomenclature(Collection<Nomenclature> values) {
+  public ForceElement withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }
@@ -871,7 +871,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   public ForceElement withStockNum(StockNum... values) {
     if (values != null) {
-      getStockNum().addAll(Arrays.asList(values));
+      getStockNum().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -885,7 +885,7 @@ public class ForceElement extends Common<ForceElement> {
    * @param values A collection of {@link StockNum} instances
    * @return The current ForceElement object instance
    */
-  public ForceElement withStockNum(Collection<StockNum> values) {
+  public ForceElement withStockNum(Set<StockNum> values) {
     if (values != null) {
       getStockNum().addAll(values);
     }

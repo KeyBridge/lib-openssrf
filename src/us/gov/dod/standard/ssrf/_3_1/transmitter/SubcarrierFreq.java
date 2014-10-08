@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -85,7 +85,7 @@ public class SubcarrierFreq {
    * subcarrier.
    */
   @XmlElement(name = "SubcarrierTone")
-  private Collection<SubcarrierTone> subcarrierTone;
+  private Set<SubcarrierTone> subcarrierTone;
 
   /**
    * Get the subcarrier frequency.
@@ -185,7 +185,7 @@ public class SubcarrierFreq {
    * @return a non-null but possibly empty list of {@link SubcarrierTone}
    *         instances
    */
-  public Collection<SubcarrierTone> getSubcarrierTone() {
+  public Set<SubcarrierTone> getSubcarrierTone() {
     if (subcarrierTone == null) {
       subcarrierTone = new HashSet<>();
     }
@@ -253,7 +253,7 @@ public class SubcarrierFreq {
    */
   public SubcarrierFreq withSubcarrierTone(SubcarrierTone... values) {
     if (values != null) {
-      getSubcarrierTone().addAll(Arrays.asList(values));
+      getSubcarrierTone().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -267,7 +267,7 @@ public class SubcarrierFreq {
    * @param values A collection of {@link SubcarrierTone} instances
    * @return The current SubcarrierFreq object instance
    */
-  public SubcarrierFreq withSubcarrierTone(Collection<SubcarrierTone> values) {
+  public SubcarrierFreq withSubcarrierTone(Set<SubcarrierTone> values) {
     if (values != null) {
       getSubcarrierTone().addAll(values);
     }

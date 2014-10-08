@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -275,7 +275,7 @@ public class Station {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * US:StationLoc (Required)
    * <p>
@@ -285,7 +285,7 @@ public class Station {
    * Divergence from SMADEF: When exchanging data with NATO, only one Stat
    */
   @XmlElement(name = "StationLoc", required = true)
-  private Collection<StationLoc> stationLoc;
+  private Set<StationLoc> stationLoc;
 
   /**
    * Get the unique identifier of one of the stations used by this Assignment at
@@ -743,7 +743,7 @@ public class Station {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -776,7 +776,7 @@ public class Station {
    * <p>
    * @return a non-null but possibly empty list of {@link StationLoc} instances
    */
-  public Collection<StationLoc> getStationLoc() {
+  public Set<StationLoc> getStationLoc() {
     if (stationLoc == null) {
       stationLoc = new HashSet<>();
     }
@@ -988,7 +988,7 @@ public class Station {
    */
   public Station withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1002,7 +1002,7 @@ public class Station {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Station object instance
    */
-  public Station withPOCInformation(Collection<POCInformation> values) {
+  public Station withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -1022,7 +1022,7 @@ public class Station {
    */
   public Station withStationLoc(StationLoc... values) {
     if (values != null) {
-      getStationLoc().addAll(Arrays.asList(values));
+      getStationLoc().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1038,7 +1038,7 @@ public class Station {
    * @param values A collection of {@link StationLoc} instances
    * @return The current Station object instance
    */
-  public Station withStationLoc(Collection<StationLoc> values) {
+  public Station withStationLoc(Set<StationLoc> values) {
     if (values != null) {
       getStationLoc().addAll(values);
     }

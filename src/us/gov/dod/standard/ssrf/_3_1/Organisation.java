@@ -163,7 +163,7 @@ public class Organisation extends Common<Organisation> {
    * Address contains the address of a Contact, Organisation or Role.
    */
   @XmlElement(name = "Address")
-  private Collection<Address> address;
+  private Set<Address> address;
   /**
    * TelephoneFax (Optional)
    * <p>
@@ -171,7 +171,7 @@ public class Organisation extends Common<Organisation> {
    * Contact, Organisation or Role.
    */
   @XmlElement(name = "TelephoneFax")
-  private Collection<TelephoneFax> telephoneFax;
+  private Set<TelephoneFax> telephoneFax;
   /**
    * Email (Optional)
    * <p>
@@ -180,7 +180,7 @@ public class Organisation extends Common<Organisation> {
    * Notes: Will add Organisation to text in next release
    */
   @XmlElement(name = "EMail")
-  private Collection<EMail> eMail;
+  private Set<EMail> eMail;
   /**
    * RoleRef (Optional)
    * <p>
@@ -188,7 +188,7 @@ public class Organisation extends Common<Organisation> {
    */
   @XmlElement(name = "RoleRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> roleRef;
+  private Set<TString> roleRef;
   /**
    * RelatedOrganisation (Optional)
    * <p>
@@ -197,7 +197,7 @@ public class Organisation extends Common<Organisation> {
    * relation (parent, child, sibling).
    */
   @XmlElement(name = "RelatedOrganisation")
-  private Collection<RelatedOrganisation> relatedOrganisation;
+  private Set<RelatedOrganisation> relatedOrganisation;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -429,7 +429,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * @return a non-null but possibly empty list of {@link Address} instances
    */
-  public Collection<Address> getAddress() {
+  public Set<Address> getAddress() {
     if (address == null) {
       address = new HashSet<>();
     }
@@ -461,7 +461,7 @@ public class Organisation extends Common<Organisation> {
    * @return a non-null but possibly empty list of {@link TelephoneFax}
    *         instances
    */
-  public Collection<TelephoneFax> getTelephoneFax() {
+  public Set<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
       telephoneFax = new HashSet<>();
     }
@@ -491,7 +491,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * @return a non-null but possibly empty list of {@link EMail} instances
    */
-  public Collection<EMail> getEMail() {
+  public Set<EMail> getEMail() {
     if (eMail == null) {
       eMail = new HashSet<>();
     }
@@ -524,7 +524,7 @@ public class Organisation extends Common<Organisation> {
    * {@link #getRole()} instead.
    */
   @Deprecated
-  public Collection<TString> getRoleRef() {
+  public Set<TString> getRoleRef() {
     if (roleRef == null) {
       roleRef = new HashSet<>();
     }
@@ -557,7 +557,7 @@ public class Organisation extends Common<Organisation> {
    * @return a non-null but possibly empty list of {@link RelatedOrganisation}
    *         instances
    */
-  public Collection<RelatedOrganisation> getRelatedOrganisation() {
+  public Set<RelatedOrganisation> getRelatedOrganisation() {
     if (relatedOrganisation == null) {
       relatedOrganisation = new HashSet<>();
     }
@@ -715,7 +715,7 @@ public class Organisation extends Common<Organisation> {
    */
   public Organisation withAddress(Address... values) {
     if (values != null) {
-      getAddress().addAll(Arrays.asList(values));
+      getAddress().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -729,7 +729,7 @@ public class Organisation extends Common<Organisation> {
    * @param values A collection of {@link Address} instances
    * @return The current Organisation object instance
    */
-  public Organisation withAddress(Collection<Address> values) {
+  public Organisation withAddress(Set<Address> values) {
     if (values != null) {
       getAddress().addAll(values);
     }
@@ -747,7 +747,7 @@ public class Organisation extends Common<Organisation> {
    */
   public Organisation withTelephoneFax(TelephoneFax... values) {
     if (values != null) {
-      getTelephoneFax().addAll(Arrays.asList(values));
+      getTelephoneFax().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -761,7 +761,7 @@ public class Organisation extends Common<Organisation> {
    * @param values A collection of {@link TelephoneFax} instances
    * @return The current Organisation object instance
    */
-  public Organisation withTelephoneFax(Collection<TelephoneFax> values) {
+  public Organisation withTelephoneFax(Set<TelephoneFax> values) {
     if (values != null) {
       getTelephoneFax().addAll(values);
     }
@@ -778,7 +778,7 @@ public class Organisation extends Common<Organisation> {
    */
   public Organisation withEMail(EMail... values) {
     if (values != null) {
-      getEMail().addAll(Arrays.asList(values));
+      getEMail().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -791,7 +791,7 @@ public class Organisation extends Common<Organisation> {
    * @param values A collection of {@link EMail Email} instances
    * @return The current Organisation object instance
    */
-  public Organisation withEMail(Collection<EMail> values) {
+  public Organisation withEMail(Set<EMail> values) {
     if (values != null) {
       getEMail().addAll(values);
     }
@@ -811,7 +811,7 @@ public class Organisation extends Common<Organisation> {
   @Deprecated
   public Organisation withRoleRef(TString... values) {
     if (values != null) {
-      getRoleRef().addAll(Arrays.asList(values));
+      getRoleRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -827,7 +827,7 @@ public class Organisation extends Common<Organisation> {
    * {@link #withRole(Role...)} instead.
    */
   @Deprecated
-  public Organisation withRoleRef(Collection<TString> values) {
+  public Organisation withRoleRef(Set<TString> values) {
     if (values != null) {
       getRoleRef().addAll(values);
     }
@@ -846,7 +846,7 @@ public class Organisation extends Common<Organisation> {
    */
   public Organisation withRelatedOrganisation(RelatedOrganisation... values) {
     if (values != null) {
-      getRelatedOrganisation().addAll(Arrays.asList(values));
+      getRelatedOrganisation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -861,7 +861,7 @@ public class Organisation extends Common<Organisation> {
    * @param values A collection of {@link RelatedOrganisation} instances
    * @return The current Organisation object instance
    */
-  public Organisation withRelatedOrganisation(Collection<RelatedOrganisation> values) {
+  public Organisation withRelatedOrganisation(Set<RelatedOrganisation> values) {
     if (values != null) {
       getRelatedOrganisation().addAll(values);
     }
@@ -917,7 +917,7 @@ public class Organisation extends Common<Organisation> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Role> role;
+  private Set<Role> role;
 
   /**
    * Get the RoleRef
@@ -927,7 +927,7 @@ public class Organisation extends Common<Organisation> {
    * @return a {@link Role} instance
    * @since 3.1.0
    */
-  public Collection<Role> getRole() {
+  public Set<Role> getRole() {
     if (role == null) {
       role = new HashSet<>();
     }
@@ -953,7 +953,7 @@ public class Organisation extends Common<Organisation> {
    * @since 3.1.0
    */
   public Organisation withRole(Role... values) {
-    return withRole(Arrays.asList(values));
+    return withRole(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -965,7 +965,7 @@ public class Organisation extends Common<Organisation> {
    * @return The current Organisation object instance
    * @since 3.1.0
    */
-  public Organisation withRole(Collection<Role> values) {
+  public Organisation withRole(Set<Role> values) {
     getRole().addAll(values);
     return this;
   }

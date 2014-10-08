@@ -203,7 +203,7 @@ public class Assigned {
    * frequencies.
    */
   @XmlElement(name = "Freq")
-  private Collection<Freq> freq;
+  private Set<Freq> freq;
   /**
    * FreqOld (Optional)
    * <p>
@@ -211,7 +211,7 @@ public class Assigned {
    * frequencies.
    */
   @XmlElement(name = "FreqOld", nillable = true)
-  private Collection<FreqOld> freqOld;
+  private Set<FreqOld> freqOld;
 
   /**
    * Get an application-specific measure of the quality for the assigned
@@ -524,7 +524,7 @@ public class Assigned {
    * <p>
    * @return a non-null but possibly empty list of {@link Freq} instances
    */
-  public Collection<Freq> getFreq() {
+  public Set<Freq> getFreq() {
     if (freq == null) {
       freq = new HashSet<>();
     }
@@ -555,7 +555,7 @@ public class Assigned {
    * <p>
    * @return a non-null but possibly empty list of {@link FreqOld} instances
    */
-  public Collection<FreqOld> getFreqOld() {
+  public Set<FreqOld> getFreqOld() {
     if (freqOld == null) {
       freqOld = new HashSet<>();
     }
@@ -721,7 +721,7 @@ public class Assigned {
    */
   public Assigned withFreq(Freq... values) {
     if (values != null) {
-      getFreq().addAll(Arrays.asList(values));
+      getFreq().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -736,7 +736,7 @@ public class Assigned {
    * @param values A collection of {@link Freq} instances
    * @return The current Assigned object instance
    */
-  public Assigned withFreq(Collection<Freq> values) {
+  public Assigned withFreq(Set<Freq> values) {
     if (values != null) {
       getFreq().addAll(values);
     }
@@ -754,7 +754,7 @@ public class Assigned {
    */
   public Assigned withFreqOld(FreqOld... values) {
     if (values != null) {
-      getFreqOld().addAll(Arrays.asList(values));
+      getFreqOld().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -768,7 +768,7 @@ public class Assigned {
    * @param values A collection of {@link FreqOld} instances
    * @return The current Assigned object instance
    */
-  public Assigned withFreqOld(Collection<FreqOld> values) {
+  public Assigned withFreqOld(Set<FreqOld> values) {
     if (values != null) {
       getFreqOld().addAll(values);
     }

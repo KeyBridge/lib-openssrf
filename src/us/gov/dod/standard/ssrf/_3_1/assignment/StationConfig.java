@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -255,7 +255,7 @@ public class StationConfig {
    * sector that is blanked.
    */
   @XmlElement(name = "Blanking")
-  private Collection<Blanking> blanking;
+  private Set<Blanking> blanking;
 
   /**
    * Get whether the StationConfig is acting as a transmitter, receiver or
@@ -729,7 +729,7 @@ public class StationConfig {
    * <p>
    * @return a non-null but possibly empty list of {@link Blanking} instances
    */
-  public Collection<Blanking> getBlanking() {
+  public Set<Blanking> getBlanking() {
     if (blanking == null) {
       blanking = new HashSet<>();
     }
@@ -946,7 +946,7 @@ public class StationConfig {
    */
   public StationConfig withBlanking(Blanking... values) {
     if (values != null) {
-      getBlanking().addAll(Arrays.asList(values));
+      getBlanking().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -960,7 +960,7 @@ public class StationConfig {
    * @param values A collection of {@link Blanking} instances
    * @return The current StationConfig object instance
    */
-  public StationConfig withBlanking(Collection<Blanking> values) {
+  public StationConfig withBlanking(Set<Blanking> values) {
     if (values != null) {
       getBlanking().addAll(values);
     }

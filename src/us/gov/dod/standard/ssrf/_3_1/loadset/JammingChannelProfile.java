@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.loadset;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -273,7 +273,7 @@ public class JammingChannelProfile {
    * synchronising Electronic Warfare jamming information.
    */
   @XmlElement(name = "TimingDeconflictionProtocol")
-  private Collection<TimingDeconflictionProtocol> timingDeconflictionProtocol;
+  private Set<TimingDeconflictionProtocol> timingDeconflictionProtocol;
 
   /**
    * Get the signal level required to activate the loadset, for systems capable
@@ -840,7 +840,7 @@ public class JammingChannelProfile {
    * @return a non-null but possibly empty list of
    *         {@link TimingDeconflictionProtocol} instances
    */
-  public Collection<TimingDeconflictionProtocol> getTimingDeconflictionProtocol() {
+  public Set<TimingDeconflictionProtocol> getTimingDeconflictionProtocol() {
     if (timingDeconflictionProtocol == null) {
       timingDeconflictionProtocol = new HashSet<>();
     }
@@ -1090,7 +1090,7 @@ public class JammingChannelProfile {
    */
   public JammingChannelProfile withTimingDeconflictionProtocol(TimingDeconflictionProtocol... values) {
     if (values != null) {
-      getTimingDeconflictionProtocol().addAll(Arrays.asList(values));
+      getTimingDeconflictionProtocol().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1104,7 +1104,7 @@ public class JammingChannelProfile {
    * @param values A collection of {@link TimingDeconflictionProtocol} instances
    * @return The current JammingChannelProfile object instance
    */
-  public JammingChannelProfile withTimingDeconflictionProtocol(Collection<TimingDeconflictionProtocol> values) {
+  public JammingChannelProfile withTimingDeconflictionProtocol(Set<TimingDeconflictionProtocol> values) {
     if (values != null) {
       getTimingDeconflictionProtocol().addAll(values);
     }

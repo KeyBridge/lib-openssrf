@@ -90,7 +90,7 @@ public class Dataset {
    */
   @XmlElement(name = "MissingRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> missingRef;
+  private Set<TString> missingRef;
 
   /**
    * Get the serial of the referenced Dataset.
@@ -192,7 +192,7 @@ public class Dataset {
    * {@link #getMissing()} instead.
    */
   @Deprecated
-  public Collection<TString> getMissingRef() {
+  public Set<TString> getMissingRef() {
     if (missingRef == null) {
       missingRef = new HashSet<>();
     }
@@ -274,7 +274,7 @@ public class Dataset {
   @Deprecated
   public Dataset withMissingRef(TString... values) {
     if (values != null) {
-      getMissingRef().addAll(Arrays.asList(values));
+      getMissingRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -292,7 +292,7 @@ public class Dataset {
    * {@link #withMissing(Common...)} instead.
    */
   @Deprecated
-  public Dataset withMissingRef(Collection<TString> values) {
+  public Dataset withMissingRef(Set<TString> values) {
     if (values != null) {
       getMissingRef().addAll(values);
     }
@@ -340,7 +340,7 @@ public class Dataset {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Common<?>> missing;
+  private Set<Common<?>> missing;
 
   /**
    * Get the MissingRef
@@ -352,7 +352,7 @@ public class Dataset {
    * @return An instance of type {@link Common}
    * @since 3.1.0
    */
-  public Collection<Common<?>> getMissing() {
+  public Set<Common<?>> getMissing() {
     if (missing == null) {
       missing = new HashSet<>();
     }
@@ -380,7 +380,7 @@ public class Dataset {
    * @since 3.1.0
    */
   public Dataset withMissing(Common<?>... values) {
-    return withMissing(Arrays.asList(values));
+    return withMissing(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -394,7 +394,7 @@ public class Dataset {
    * @return The current Dataset object instance
    * @since 3.1.0
    */
-  public Dataset withMissing(Collection<Common<?>> values) {
+  public Dataset withMissing(Set<Common<?>> values) {
     getMissing().addAll(values);
     return this;
   }

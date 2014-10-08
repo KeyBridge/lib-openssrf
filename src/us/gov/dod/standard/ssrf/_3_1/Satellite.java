@@ -272,7 +272,7 @@ public class Satellite extends Common<Satellite> {
    */
   @XmlElement(name = "RFSystemRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> rfSystemRef;
+  private Set<TString> rfSystemRef;
   /**
    * EarthStation (Optional)
    * <p>
@@ -280,14 +280,14 @@ public class Satellite extends Common<Satellite> {
    * satellite network.
    */
   @XmlElement(name = "EarthStation")
-  private Collection<EarthStation> earthStation;
+  private Set<EarthStation> earthStation;
   /**
    * ServiceArea (Optional)
    * <p>
    * ServiceArea contains the geographic area serviced by the satellite.
    */
   @XmlElement(name = "ServiceArea", nillable = true)
-  private Collection<ServiceArea> serviceArea;
+  private Set<ServiceArea> serviceArea;
   /**
    * Nomenclature (Optional)
    * <p>
@@ -299,7 +299,7 @@ public class Satellite extends Common<Satellite> {
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
    */
   @XmlElement(name = "Nomenclature")
-  private Collection<Nomenclature> nomenclature;
+  private Set<Nomenclature> nomenclature;
 
   /**
    * Get the date by which the dataset is to be reviewed. The Review date should
@@ -841,7 +841,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * @return a non-null but possibly empty list of {@link TString} instances
    */
-  public Collection<TString> getRFSystemRef() {
+  public Set<TString> getRFSystemRef() {
     if (rfSystemRef == null) {
       rfSystemRef = new HashSet<>();
     }
@@ -873,7 +873,7 @@ public class Satellite extends Common<Satellite> {
    * @return a non-null but possibly empty list of {@link EarthStation}
    *         instances
    */
-  public Collection<EarthStation> getEarthStation() {
+  public Set<EarthStation> getEarthStation() {
     if (earthStation == null) {
       earthStation = new HashSet<>();
     }
@@ -904,7 +904,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * @return a non-null but possibly empty list of {@link ServiceArea} instances
    */
-  public Collection<ServiceArea> getServiceArea() {
+  public Set<ServiceArea> getServiceArea() {
     if (serviceArea == null) {
       serviceArea = new HashSet<>();
     }
@@ -938,7 +938,7 @@ public class Satellite extends Common<Satellite> {
    * @return a non-null but possibly empty list of {@link Nomenclature}
    *         instances
    */
-  public Collection<Nomenclature> getNomenclature() {
+  public Set<Nomenclature> getNomenclature() {
     if (nomenclature == null) {
       nomenclature = new HashSet<>();
     }
@@ -1203,7 +1203,7 @@ public class Satellite extends Common<Satellite> {
    */
   public Satellite withRFSystemRef(TString... values) {
     if (values != null) {
-      getRFSystemRef().addAll(Arrays.asList(values));
+      getRFSystemRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1217,7 +1217,7 @@ public class Satellite extends Common<Satellite> {
    * @param values A collection of {@link TString} instances
    * @return The current Satellite object instance
    */
-  public Satellite withRFSystemRef(Collection<TString> values) {
+  public Satellite withRFSystemRef(Set<TString> values) {
     if (values != null) {
       getRFSystemRef().addAll(values);
     }
@@ -1235,7 +1235,7 @@ public class Satellite extends Common<Satellite> {
    */
   public Satellite withEarthStation(EarthStation... values) {
     if (values != null) {
-      getEarthStation().addAll(Arrays.asList(values));
+      getEarthStation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1249,7 +1249,7 @@ public class Satellite extends Common<Satellite> {
    * @param values A collection of {@link EarthStation} instances
    * @return The current Satellite object instance
    */
-  public Satellite withEarthStation(Collection<EarthStation> values) {
+  public Satellite withEarthStation(Set<EarthStation> values) {
     if (values != null) {
       getEarthStation().addAll(values);
     }
@@ -1267,7 +1267,7 @@ public class Satellite extends Common<Satellite> {
    */
   public Satellite withServiceArea(ServiceArea... values) {
     if (values != null) {
-      getServiceArea().addAll(Arrays.asList(values));
+      getServiceArea().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1281,7 +1281,7 @@ public class Satellite extends Common<Satellite> {
    * @param values A collection of {@link ServiceArea} instances
    * @return The current Satellite object instance
    */
-  public Satellite withServiceArea(Collection<ServiceArea> values) {
+  public Satellite withServiceArea(Set<ServiceArea> values) {
     if (values != null) {
       getServiceArea().addAll(values);
     }
@@ -1301,7 +1301,7 @@ public class Satellite extends Common<Satellite> {
    */
   public Satellite withNomenclature(Nomenclature... values) {
     if (values != null) {
-      getNomenclature().addAll(Arrays.asList(values));
+      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1317,7 +1317,7 @@ public class Satellite extends Common<Satellite> {
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Satellite object instance
    */
-  public Satellite withNomenclature(Collection<Nomenclature> values) {
+  public Satellite withNomenclature(Set<Nomenclature> values) {
     if (values != null) {
       getNomenclature().addAll(values);
     }

@@ -346,7 +346,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Dataset.
    */
   @XmlElement(name = "CaseNum")
-  private Collection<CaseNum> caseNum;
+  private Set<CaseNum> caseNum;
   /**
    * ExtReferenceRef (Optional)
    * <p>
@@ -354,7 +354,7 @@ public abstract class Common<T> implements Comparable<T> {
    * ExternalReference.
    */
   @XmlElement(name = "ExtReferenceRef", nillable = true)
-  private Collection<ExtReferenceRef> extReferenceRef;
+  private Set<ExtReferenceRef> extReferenceRef;
   /**
    * remarks - Remarks (Optional)
    * <p>
@@ -365,7 +365,7 @@ public abstract class Common<T> implements Comparable<T> {
    * specifically established for it.
    */
   @XmlElement(name = "Remarks", nillable = true)
-  private Collection<Remarks> remarks;
+  private Set<Remarks> remarks;
 
   /**
    * releasability - Releasability Markings (Optional)
@@ -379,7 +379,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is List of L:CCY
    */
   @XmlAttribute(name = "releasability")
-  private Collection<ListCCY> releasability;
+  private Set<ListCCY> releasability;
   /**
    * remarks - Index reference to Data Item Remarks (Optional)
    * <p>
@@ -388,7 +388,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "remarks")
-  private Collection<BigInteger> remarkRef;
+  private Set<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
@@ -398,7 +398,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is List of UN6
    */
   @XmlAttribute(name = "extReferences")
-  private Collection<BigInteger> extReferences;
+  private Set<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
    * <p>
@@ -1050,7 +1050,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link CaseNum} instances
    */
-  public Collection<CaseNum> getCaseNum() {
+  public Set<CaseNum> getCaseNum() {
     if (caseNum == null) {
       caseNum = new HashSet<>();
     }
@@ -1082,7 +1082,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return a non-null but possibly empty list of {@link ExtReferenceRef}
    *         instances
    */
-  public Collection<ExtReferenceRef> getExtReferenceRef() {
+  public Set<ExtReferenceRef> getExtReferenceRef() {
     if (extReferenceRef == null) {
       extReferenceRef = new HashSet<>();
     }
@@ -1110,7 +1110,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link Remarks} instances
    */
-  public Collection<Remarks> getRemarks() {
+  public Set<Remarks> getRemarks() {
     if (remarks == null) {
       remarks = new HashSet<>();
     }
@@ -1171,7 +1171,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link ListCCY} instances
    */
-  public Collection<ListCCY> getReleasability() {
+  public Set<ListCCY> getReleasability() {
     if (releasability == null) {
       releasability = new HashSet<>();
     }
@@ -1200,7 +1200,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getRemarkRef() {
+  public Set<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
       remarkRef = new HashSet<>();
     }
@@ -1229,7 +1229,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getExtReferences() {
+  public Set<BigInteger> getExtReferences() {
     if (extReferences == null) {
       extReferences = new HashSet<>();
     }
@@ -1687,7 +1687,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withCaseNum(CaseNum... values) {
     if (values != null) {
-      getCaseNum().addAll(Arrays.asList(values));
+      getCaseNum().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -1701,7 +1701,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param values A collection of {@link CaseNum} instances
    * @return The current Common object instance
    */
-  public T withCaseNum(Collection<CaseNum> values) {
+  public T withCaseNum(Set<CaseNum> values) {
     if (values != null) {
       getCaseNum().addAll(values);
     }
@@ -1719,7 +1719,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withExtReferenceRef(ExtReferenceRef... values) {
     if (values != null) {
-      getExtReferenceRef().addAll(Arrays.asList(values));
+      getExtReferenceRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -1733,7 +1733,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param values A collection of {@link ExtReferenceRef} instances
    * @return The current Common object instance
    */
-  public T withExtReferenceRef(Collection<ExtReferenceRef> values) {
+  public T withExtReferenceRef(Set<ExtReferenceRef> values) {
     if (values != null) {
       getExtReferenceRef().addAll(values);
     }
@@ -1749,7 +1749,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withRemarks(Remarks... values) {
     if (values != null) {
-      getRemarks().addAll(Arrays.asList(values));
+      getRemarks().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -1761,7 +1761,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param values A collection of {@link Remarks} instances
    * @return The current Common object instance
    */
-  public T withRemarks(Collection<Remarks> values) {
+  public T withRemarks(Set<Remarks> values) {
     if (values != null) {
       getRemarks().addAll(values);
     }
@@ -1792,7 +1792,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withReleasability(ListCCY... values) {
     if (values != null) {
-      getReleasability().addAll(Arrays.asList(values));
+      getReleasability().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -1807,7 +1807,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param values A collection of {@link ListCCY} instances
    * @return The current Common object instance
    */
-  public T withReleasability(Collection<ListCCY> values) {
+  public T withReleasability(Set<ListCCY> values) {
     if (values != null) {
       getReleasability().addAll(values);
     }
@@ -1822,7 +1822,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withRemarkRef(BigInteger... values) {
     if (values != null) {
-      getRemarkRef().addAll(Arrays.asList(values));
+      getRemarkRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -1833,7 +1833,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    */
-  public T withRemarkRef(Collection<BigInteger> values) {
+  public T withRemarkRef(Set<BigInteger> values) {
     if (values != null) {
       getRemarkRef().addAll(values);
     }
@@ -1849,7 +1849,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withExtReferences(BigInteger... values) {
     if (values != null) {
-      getExtReferences().addAll(Arrays.asList(values));
+      getExtReferences().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return (T) this;
   }
@@ -1861,7 +1861,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    */
-  public T withExtReferences(Collection<BigInteger> values) {
+  public T withExtReferences(Set<BigInteger> values) {
     if (values != null) {
       getExtReferences().addAll(values);
     }

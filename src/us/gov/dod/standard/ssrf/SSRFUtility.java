@@ -66,6 +66,11 @@ public class SSRFUtility {
   private static final int MAX_STRING_LENGTH = 33;
 
   /**
+   * "us.gov.dod.standard.ssrf". The SSRF top level package.
+   */
+  private static final String SSRF_PACKAGE = "us.gov.dod.standard.ssrf";
+
+  /**
    * A randomly seeded AtomicInteger used to provide guaranteed unique index
    * values for SSRF classes requiring an index.
    * <p>
@@ -120,7 +125,7 @@ public class SSRFUtility {
      * Also and equally important: DO NOT inspect or try to validate enumerated
      * classes.
      */
-    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+    if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
       return;
     }
     /**
@@ -201,7 +206,7 @@ public class SSRFUtility {
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
    */
-  public static Collection<String> evaluate(Object instance) {
+  public static Set<String> evaluate(Object instance) {
     return evaluate(instance, null, null, null);
   }
 
@@ -226,7 +231,7 @@ public class SSRFUtility {
    *         the object instance validates OK.
    */
   @SuppressWarnings({"AssignmentToMethodParameter"})
-  private static Collection<String> evaluate(Object instance, Object parentInstance, Field parentField, Collection<String> messages) {
+  private static Set<String> evaluate(Object instance, Object parentInstance, Field parentField, Set<String> messages) {
     /**
      * Initialize the messages collection if required. Use a TreeSet to
      * eliminate duplicates and provide a pretty-print output.
@@ -243,7 +248,7 @@ public class SSRFUtility {
      * Also and equally important: DO NOT inspect or try to validate enumerated
      * classes.
      */
-    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+    if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
       return messages;
     }
     /**
@@ -500,7 +505,7 @@ public class SSRFUtility {
      * Also and equally important: DO NOT inspect or try to validate enumerated
      * classes.
      */
-    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+    if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
       return;
     }
     /**
@@ -543,7 +548,7 @@ public class SSRFUtility {
          * To avoid a ConcurrentModificationException create a temporary list of
          * objects that are buildable then proceed to call each in turn.
          */
-        Collection<Object> buildableList = new HashSet<>();
+        Set<Object> buildableList = new HashSet<>();
         for (Object entryCandidate : (Collection) fieldValue) {
           if (isBuildable(entryCandidate)) {
             buildableList.add(entryCandidate);
@@ -599,8 +604,8 @@ public class SSRFUtility {
    */
   private static void addValueToDestinationInstance(Object sourceInstance, Object destinationInstance) {
     try {
-      Method method = destinationInstance.getClass().getMethod("with" + sourceInstance.getClass().getSimpleName(), Collection.class);
-      method.invoke(destinationInstance, Arrays.asList(new Object[]{sourceInstance}));
+      Method method = destinationInstance.getClass().getMethod("with" + sourceInstance.getClass().getSimpleName(), Set.class);
+      method.invoke(destinationInstance, new HashSet<>(Arrays.asList(new Object[]{sourceInstance})));
     } catch (NoSuchMethodException | SecurityException ex) {
     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
       //      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex );
@@ -623,7 +628,9 @@ public class SSRFUtility {
     /**
      * Only inspect SSRF classes, but ignore ADAPTER and METADATA helpers.
      */
-    if (className.startsWith("us.gov.dod.standard.ssrf") && !instance.getClass().getName().contains(".adapter.") && !instance.getClass().getName().contains(".metadata.")) {
+    if (className.startsWith(SSRF_PACKAGE)
+      && !className.contains(".adapter.")
+      && !className.contains(".metadata.")) {
       try {
         return instance.getClass().getMethod("build") != null;
       } catch (NoSuchMethodException | SecurityException ex) {
@@ -686,7 +693,7 @@ public class SSRFUtility {
      * Also and equally important: DO NOT inspect or try to validate enumerated
      * classes.
      */
-    if (clazz.isEnum() || !clazz.getName().startsWith("us.gov.dod.standard.ssrf")) {
+    if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
       return;
     }
     /**

@@ -118,7 +118,7 @@ public class Allocation {
    * allocation (e.g. a national allocation not aligned with the ITU RR).
    */
   @XmlElement(name = "Variance")
-  private Collection<Variance> variance;
+  private Set<Variance> variance;
   /**
    * StnClass (Optional)
    * <p>
@@ -126,7 +126,7 @@ public class Allocation {
    * usage.
    */
   @XmlElement(name = "StnClass", nillable = true)
-  private Collection<StnClass> stnClass;
+  private Set<StnClass> stnClass;
   /**
    * ChannelPlanRef (Optional)
    * <p>
@@ -134,7 +134,7 @@ public class Allocation {
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> channelPlanRef;
+  private Set<TString> channelPlanRef;
   /**
    * footnotes - Link to allocation usage notes (Optional)
    * <p>
@@ -145,7 +145,7 @@ public class Allocation {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "footnotes")
-  private Collection<BigInteger> footnotes;
+  private Set<BigInteger> footnotes;
 
   /**
    * Get a radiocommunication service recognized by an administration that is
@@ -313,7 +313,7 @@ public class Allocation {
    * <p>
    * @return a non-null but possibly empty list of {@link Variance} instances
    */
-  public Collection<Variance> getVariance() {
+  public Set<Variance> getVariance() {
     if (variance == null) {
       variance = new HashSet<>();
     }
@@ -344,7 +344,7 @@ public class Allocation {
    * <p>
    * @return a non-null but possibly empty list of {@link StnClass} instances
    */
-  public Collection<StnClass> getStnClass() {
+  public Set<StnClass> getStnClass() {
     if (stnClass == null) {
       stnClass = new HashSet<>();
     }
@@ -377,7 +377,7 @@ public class Allocation {
    * {@link #getChannelPlan()} instead.
    */
   @Deprecated
-  public Collection<TString> getChannelPlanRef() {
+  public Set<TString> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new HashSet<>();
     }
@@ -407,7 +407,7 @@ public class Allocation {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getFootnotes() {
+  public Set<BigInteger> getFootnotes() {
     if (footnotes == null) {
       footnotes = new HashSet<>();
     }
@@ -525,7 +525,7 @@ public class Allocation {
    */
   public Allocation withVariance(Variance... values) {
     if (values != null) {
-      getVariance().addAll(Arrays.asList(values));
+      getVariance().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -540,7 +540,7 @@ public class Allocation {
    * @param values A collection of {@link Variance} instances
    * @return The current Allocation object instance
    */
-  public Allocation withVariance(Collection<Variance> values) {
+  public Allocation withVariance(Set<Variance> values) {
     if (values != null) {
       getVariance().addAll(values);
     }
@@ -558,7 +558,7 @@ public class Allocation {
    */
   public Allocation withStnClass(StnClass... values) {
     if (values != null) {
-      getStnClass().addAll(Arrays.asList(values));
+      getStnClass().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -572,7 +572,7 @@ public class Allocation {
    * @param values A collection of {@link StnClass} instances
    * @return The current Allocation object instance
    */
-  public Allocation withStnClass(Collection<StnClass> values) {
+  public Allocation withStnClass(Set<StnClass> values) {
     if (values != null) {
       getStnClass().addAll(values);
     }
@@ -592,7 +592,7 @@ public class Allocation {
   @Deprecated
   public Allocation withChannelPlanRef(TString... values) {
     if (values != null) {
-      getChannelPlanRef().addAll(Arrays.asList(values));
+      getChannelPlanRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -608,7 +608,7 @@ public class Allocation {
    * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
   @Deprecated
-  public Allocation withChannelPlanRef(Collection<TString> values) {
+  public Allocation withChannelPlanRef(Set<TString> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }
@@ -625,7 +625,7 @@ public class Allocation {
    */
   public Allocation withFootnotes(BigInteger... values) {
     if (values != null) {
-      getFootnotes().addAll(Arrays.asList(values));
+      getFootnotes().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -638,7 +638,7 @@ public class Allocation {
    * @param values A collection of {@link BigInteger} instances
    * @return The current Allocation object instance
    */
-  public Allocation withFootnotes(Collection<BigInteger> values) {
+  public Allocation withFootnotes(Set<BigInteger> values) {
     if (values != null) {
       getFootnotes().addAll(values);
     }
@@ -689,7 +689,7 @@ public class Allocation {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<ChannelPlan> channelPlan;
+  private Set<ChannelPlan> channelPlan;
 
   /**
    * Get the ChannelPlanRef
@@ -699,7 +699,7 @@ public class Allocation {
    * @return a {@link ChannelPlan} instance
    * @since 3.1.0
    */
-  public Collection<ChannelPlan> getChannelPlan() {
+  public Set<ChannelPlan> getChannelPlan() {
     if (channelPlan == null) {
       channelPlan = new HashSet<>();
     }
@@ -725,7 +725,7 @@ public class Allocation {
    * @since 3.1.0
    */
   public Allocation withChannelPlan(ChannelPlan... values) {
-    return withChannelPlan(Arrays.asList(values));
+    return withChannelPlan(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -737,7 +737,7 @@ public class Allocation {
    * @return The current Allocation object instance
    * @since 3.1.0
    */
-  public Allocation withChannelPlan(Collection<ChannelPlan> values) {
+  public Allocation withChannelPlan(Set<ChannelPlan> values) {
     getChannelPlan().addAll(values);
     return this;
   }

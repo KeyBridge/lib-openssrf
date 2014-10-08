@@ -24,9 +24,9 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import java.math.BigInteger;
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -484,7 +484,7 @@ public class TxMode {
    * optional symbols.
    */
   @XmlElement(name = "EmsClass", nillable = true)
-  private Collection<EmsClass> emsClass;
+  private Set<EmsClass> emsClass;
   /**
    * PowerLimit - Power Limit (Optional)
    * <p>
@@ -493,7 +493,7 @@ public class TxMode {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "Power")
-  private Collection<Power> power;
+  private Set<Power> power;
   /**
    * TxSignalTuning (Optional)
    * <p>
@@ -502,7 +502,7 @@ public class TxMode {
    * increments of the equipment.
    */
   @XmlElement(name = "TxSignalTuning")
-  private Collection<TxSignalTuning> txSignalTuning;
+  private Set<TxSignalTuning> txSignalTuning;
   /**
    * TxModulation (Optional)
    * <p>
@@ -510,14 +510,14 @@ public class TxMode {
    * transmitter side.
    */
   @XmlElement(name = "TxModulation")
-  private Collection<TxModulation> txModulation;
+  private Set<TxModulation> txModulation;
   /**
    * Baseband (Optional)
    * <p>
    * Baseband defines the parameters of the modulating or received signal.
    */
   @XmlElement(name = "Baseband")
-  private Collection<Baseband> baseband;
+  private Set<Baseband> baseband;
   /**
    * BurstNumPulses - Number of Pulses in Burst (Optional)
    * <p>
@@ -528,14 +528,14 @@ public class TxMode {
    * Attribute group Burst (Optional)
    */
   @XmlElement(name = "Pulse")
-  private Collection<Pulse> pulse;
+  private Set<Pulse> pulse;
   /**
    * SubcarrierFreq (Optional)
    * <p>
    * SubcarrierFreq describes the secondary channel that
    */
   @XmlElement(name = "SubcarrierFreq")
-  private Collection<SubcarrierFreq> subcarrierFreq;
+  private Set<SubcarrierFreq> subcarrierFreq;
   /**
    * Spread Spectrum (Optional)
    * <p>
@@ -551,7 +551,7 @@ public class TxMode {
    * pattern information for the Modulation impressed On the Pulse (MOP).
    */
   @XmlElement(name = "ObservedMOPAnalysis")
-  private Collection<ObservedMOPAnalysis> observedMOPAnalysis;
+  private Set<ObservedMOPAnalysis> observedMOPAnalysis;
   /**
    * US:ObservedRFAnalysis (Optional)
    * <p>
@@ -559,7 +559,7 @@ public class TxMode {
    * observations.
    */
   @XmlElement(name = "ObservedRFAnalysis")
-  private Collection<ObservedRFAnalysis> observedRFAnalysis;
+  private Set<ObservedRFAnalysis> observedRFAnalysis;
   /**
    * US:ObservedPulseAnalysis (Optional)
    * <p>
@@ -568,7 +568,7 @@ public class TxMode {
    * information.
    */
   @XmlElement(name = "ObservedPulseAnalysis")
-  private Collection<ObservedPulseAnalysis> observedPulseAnalysis;
+  private Set<ObservedPulseAnalysis> observedPulseAnalysis;
   /**
    * curves - Links to Curves (Optional)
    * <p>
@@ -577,7 +577,7 @@ public class TxMode {
    * Format is List of UN(6)
    */
   @XmlAttribute(name = "curves")
-  private Collection<BigInteger> curves;
+  private Set<BigInteger> curves;
 
   /**
    * Get the unique identifier of a TxMode of the transmitter in this
@@ -1517,7 +1517,7 @@ public class TxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link EmsClass} instances
    */
-  public Collection<EmsClass> getEmsClass() {
+  public Set<EmsClass> getEmsClass() {
     if (emsClass == null) {
       emsClass = new HashSet<>();
     }
@@ -1545,7 +1545,7 @@ public class TxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link Power} instances
    */
-  public Collection<Power> getPower() {
+  public Set<Power> getPower() {
     if (power == null) {
       power = new HashSet<>();
     }
@@ -1578,7 +1578,7 @@ public class TxMode {
    * @return a non-null but possibly empty list of {@link TxSignalTuning}
    *         instances
    */
-  public Collection<TxSignalTuning> getTxSignalTuning() {
+  public Set<TxSignalTuning> getTxSignalTuning() {
     if (txSignalTuning == null) {
       txSignalTuning = new HashSet<>();
     }
@@ -1610,7 +1610,7 @@ public class TxMode {
    * @return a non-null but possibly empty list of {@link TxModulation}
    *         instances
    */
-  public Collection<TxModulation> getTxModulation() {
+  public Set<TxModulation> getTxModulation() {
     if (txModulation == null) {
       txModulation = new HashSet<>();
     }
@@ -1641,7 +1641,7 @@ public class TxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link Baseband} instances
    */
-  public Collection<Baseband> getBaseband() {
+  public Set<Baseband> getBaseband() {
     if (baseband == null) {
       baseband = new HashSet<>();
     }
@@ -1669,7 +1669,7 @@ public class TxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link Pulse} instances
    */
-  public Collection<Pulse> getPulse() {
+  public Set<Pulse> getPulse() {
     if (pulse == null) {
       pulse = new HashSet<>();
     }
@@ -1704,7 +1704,7 @@ public class TxMode {
    * @return a non-null but possibly empty list of {@link SubcarrierFreq}
    *         instances
    */
-  public Collection<SubcarrierFreq> getSubcarrierFreq() {
+  public Set<SubcarrierFreq> getSubcarrierFreq() {
     if (subcarrierFreq == null) {
       subcarrierFreq = new HashSet<>();
     }
@@ -1770,7 +1770,7 @@ public class TxMode {
    * @return a non-null but possibly empty list of {@link ObservedMOPAnalysis}
    *         instances
    */
-  public Collection<ObservedMOPAnalysis> getObservedMOPAnalysis() {
+  public Set<ObservedMOPAnalysis> getObservedMOPAnalysis() {
     if (observedMOPAnalysis == null) {
       observedMOPAnalysis = new HashSet<>();
     }
@@ -1802,7 +1802,7 @@ public class TxMode {
    * @return a non-null but possibly empty list of {@link ObservedRFAnalysis}
    *         instances
    */
-  public Collection<ObservedRFAnalysis> getObservedRFAnalysis() {
+  public Set<ObservedRFAnalysis> getObservedRFAnalysis() {
     if (observedRFAnalysis == null) {
       observedRFAnalysis = new HashSet<>();
     }
@@ -1835,7 +1835,7 @@ public class TxMode {
    * @return a non-null but possibly empty list of {@link ObservedPulseAnalysis}
    *         instances
    */
-  public Collection<ObservedPulseAnalysis> getObservedPulseAnalysis() {
+  public Set<ObservedPulseAnalysis> getObservedPulseAnalysis() {
     if (observedPulseAnalysis == null) {
       observedPulseAnalysis = new HashSet<>();
     }
@@ -1863,7 +1863,7 @@ public class TxMode {
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
    */
-  public Collection<BigInteger> getCurves() {
+  public Set<BigInteger> getCurves() {
     if (curves == null) {
       curves = new HashSet<>();
     }
@@ -2258,7 +2258,7 @@ public class TxMode {
    */
   public TxMode withEmsClass(EmsClass... values) {
     if (values != null) {
-      getEmsClass().addAll(Arrays.asList(values));
+      getEmsClass().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2274,7 +2274,7 @@ public class TxMode {
    * @param values A collection of {@link EmsClass} instances
    * @return The current TxMode object instance
    */
-  public TxMode withEmsClass(Collection<EmsClass> values) {
+  public TxMode withEmsClass(Set<EmsClass> values) {
     if (values != null) {
       getEmsClass().addAll(values);
     }
@@ -2289,7 +2289,7 @@ public class TxMode {
    */
   public TxMode withPower(Power... values) {
     if (values != null) {
-      getPower().addAll(Arrays.asList(values));
+      getPower().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2300,7 +2300,7 @@ public class TxMode {
    * @param values A collection of {@link Power} instances
    * @return The current TxMode object instance
    */
-  public TxMode withPower(Collection<Power> values) {
+  public TxMode withPower(Set<Power> values) {
     if (values != null) {
       getPower().addAll(values);
     }
@@ -2319,7 +2319,7 @@ public class TxMode {
    */
   public TxMode withTxSignalTuning(TxSignalTuning... values) {
     if (values != null) {
-      getTxSignalTuning().addAll(Arrays.asList(values));
+      getTxSignalTuning().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2334,7 +2334,7 @@ public class TxMode {
    * @param values A collection of {@link TxSignalTuning} instances
    * @return The current TxMode object instance
    */
-  public TxMode withTxSignalTuning(Collection<TxSignalTuning> values) {
+  public TxMode withTxSignalTuning(Set<TxSignalTuning> values) {
     if (values != null) {
       getTxSignalTuning().addAll(values);
     }
@@ -2352,7 +2352,7 @@ public class TxMode {
    */
   public TxMode withTxModulation(TxModulation... values) {
     if (values != null) {
-      getTxModulation().addAll(Arrays.asList(values));
+      getTxModulation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2366,7 +2366,7 @@ public class TxMode {
    * @param values A collection of {@link TxModulation} instances
    * @return The current TxMode object instance
    */
-  public TxMode withTxModulation(Collection<TxModulation> values) {
+  public TxMode withTxModulation(Set<TxModulation> values) {
     if (values != null) {
       getTxModulation().addAll(values);
     }
@@ -2384,7 +2384,7 @@ public class TxMode {
    */
   public TxMode withBaseband(Baseband... values) {
     if (values != null) {
-      getBaseband().addAll(Arrays.asList(values));
+      getBaseband().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2398,7 +2398,7 @@ public class TxMode {
    * @param values A collection of {@link Baseband} instances
    * @return The current TxMode object instance
    */
-  public TxMode withBaseband(Collection<Baseband> values) {
+  public TxMode withBaseband(Set<Baseband> values) {
     if (values != null) {
       getBaseband().addAll(values);
     }
@@ -2413,7 +2413,7 @@ public class TxMode {
    */
   public TxMode withPulse(Pulse... values) {
     if (values != null) {
-      getPulse().addAll(Arrays.asList(values));
+      getPulse().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2424,7 +2424,7 @@ public class TxMode {
    * @param values A collection of {@link Pulse} instances
    * @return The current TxMode object instance
    */
-  public TxMode withPulse(Collection<Pulse> values) {
+  public TxMode withPulse(Set<Pulse> values) {
     if (values != null) {
       getPulse().addAll(values);
     }
@@ -2445,7 +2445,7 @@ public class TxMode {
    */
   public TxMode withSubcarrierFreq(SubcarrierFreq... values) {
     if (values != null) {
-      getSubcarrierFreq().addAll(Arrays.asList(values));
+      getSubcarrierFreq().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2462,7 +2462,7 @@ public class TxMode {
    * @param values A collection of {@link SubcarrierFreq} instances
    * @return The current TxMode object instance
    */
-  public TxMode withSubcarrierFreq(Collection<SubcarrierFreq> values) {
+  public TxMode withSubcarrierFreq(Set<SubcarrierFreq> values) {
     if (values != null) {
       getSubcarrierFreq().addAll(values);
     }
@@ -2495,7 +2495,7 @@ public class TxMode {
    */
   public TxMode withObservedMOPAnalysis(ObservedMOPAnalysis... values) {
     if (values != null) {
-      getObservedMOPAnalysis().addAll(Arrays.asList(values));
+      getObservedMOPAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2510,7 +2510,7 @@ public class TxMode {
    * @param values A collection of {@link ObservedMOPAnalysis} instances
    * @return The current TxMode object instance
    */
-  public TxMode withObservedMOPAnalysis(Collection<ObservedMOPAnalysis> values) {
+  public TxMode withObservedMOPAnalysis(Set<ObservedMOPAnalysis> values) {
     if (values != null) {
       getObservedMOPAnalysis().addAll(values);
     }
@@ -2528,7 +2528,7 @@ public class TxMode {
    */
   public TxMode withObservedRFAnalysis(ObservedRFAnalysis... values) {
     if (values != null) {
-      getObservedRFAnalysis().addAll(Arrays.asList(values));
+      getObservedRFAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2542,7 +2542,7 @@ public class TxMode {
    * @param values A collection of {@link ObservedRFAnalysis} instances
    * @return The current TxMode object instance
    */
-  public TxMode withObservedRFAnalysis(Collection<ObservedRFAnalysis> values) {
+  public TxMode withObservedRFAnalysis(Set<ObservedRFAnalysis> values) {
     if (values != null) {
       getObservedRFAnalysis().addAll(values);
     }
@@ -2561,7 +2561,7 @@ public class TxMode {
    */
   public TxMode withObservedPulseAnalysis(ObservedPulseAnalysis... values) {
     if (values != null) {
-      getObservedPulseAnalysis().addAll(Arrays.asList(values));
+      getObservedPulseAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2576,7 +2576,7 @@ public class TxMode {
    * @param values A collection of {@link ObservedPulseAnalysis} instances
    * @return The current TxMode object instance
    */
-  public TxMode withObservedPulseAnalysis(Collection<ObservedPulseAnalysis> values) {
+  public TxMode withObservedPulseAnalysis(Set<ObservedPulseAnalysis> values) {
     if (values != null) {
       getObservedPulseAnalysis().addAll(values);
     }
@@ -2591,7 +2591,7 @@ public class TxMode {
    */
   public TxMode withCurves(BigInteger... values) {
     if (values != null) {
-      getCurves().addAll(Arrays.asList(values));
+      getCurves().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -2602,7 +2602,7 @@ public class TxMode {
    * @param values A collection of {@link BigInteger} instances
    * @return The current TxMode object instance
    */
-  public TxMode withCurves(Collection<BigInteger> values) {
+  public TxMode withCurves(Set<BigInteger> values) {
     if (values != null) {
       getCurves().addAll(values);
     }

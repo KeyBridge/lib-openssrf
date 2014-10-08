@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -243,7 +243,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private Collection<Project> project;
+  private Set<Project> project;
   /**
    * AtWayPoint (Optional)
    * <p>
@@ -251,7 +251,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * waypoint along a route.
    */
   @XmlElement(name = "AtWaypoint")
-  private Collection<AtWaypoint> atWaypoint;
+  private Set<AtWaypoint> atWaypoint;
 
   /**
    * Get the dataset identifier of the ForceElement being deployed.
@@ -669,7 +669,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public Collection<Project> getProject() {
+  public Set<Project> getProject() {
     if (project == null) {
       project = new HashSet<>();
     }
@@ -700,7 +700,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @return a non-null but possibly empty list of {@link AtWaypoint} instances
    */
-  public Collection<AtWaypoint> getAtWaypoint() {
+  public Set<AtWaypoint> getAtWaypoint() {
     if (atWaypoint == null) {
       atWaypoint = new HashSet<>();
     }
@@ -896,7 +896,7 @@ public class FEDeployment extends Common<FEDeployment> {
    */
   public FEDeployment withProject(Project... values) {
     if (values != null) {
-      getProject().addAll(Arrays.asList(values));
+      getProject().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -910,7 +910,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * @param values A collection of {@link Project} instances
    * @return The current FEDeployment object instance
    */
-  public FEDeployment withProject(Collection<Project> values) {
+  public FEDeployment withProject(Set<Project> values) {
     if (values != null) {
       getProject().addAll(values);
     }
@@ -928,7 +928,7 @@ public class FEDeployment extends Common<FEDeployment> {
    */
   public FEDeployment withAtWaypoint(AtWaypoint... values) {
     if (values != null) {
-      getAtWaypoint().addAll(Arrays.asList(values));
+      getAtWaypoint().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -942,7 +942,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * @param values A collection of {@link AtWaypoint} instances
    * @return The current FEDeployment object instance
    */
-  public FEDeployment withAtWaypoint(Collection<AtWaypoint> values) {
+  public FEDeployment withAtWaypoint(Set<AtWaypoint> values) {
     if (values != null) {
       getAtWaypoint().addAll(values);
     }

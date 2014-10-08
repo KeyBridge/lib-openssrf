@@ -100,7 +100,7 @@ public class Administrative extends Common<Administrative> {
    * identifier of the datasets on which the action must apply.
    */
   @XmlElement(name = "Dataset")
-  private Collection<Dataset> dataset;
+  private Set<Dataset> dataset;
   /**
    * CodeList (Optional)
    * <p>
@@ -108,7 +108,7 @@ public class Administrative extends Common<Administrative> {
    * a given Code List.
    */
   @XmlElement(name = "CodeList")
-  private Collection<CodeList> codeList;
+  private Set<CodeList> codeList;
 
   /**
    * Get the action which triggered the transmission, or to be performed upon
@@ -184,7 +184,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * @return a non-null but possibly empty list of {@link Dataset} instances
    */
-  public Collection<Dataset> getDataset() {
+  public Set<Dataset> getDataset() {
     if (dataset == null) {
       dataset = new HashSet<>();
     }
@@ -215,7 +215,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * @return a non-null but possibly empty list of {@link CodeList} instances
    */
-  public Collection<CodeList> getCodeList() {
+  public Set<CodeList> getCodeList() {
     if (codeList == null) {
       codeList = new HashSet<>();
     }
@@ -275,7 +275,7 @@ public class Administrative extends Common<Administrative> {
    */
   public Administrative withDataset(Dataset... values) {
     if (values != null) {
-      getDataset().addAll(Arrays.asList(values));
+      getDataset().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -289,7 +289,7 @@ public class Administrative extends Common<Administrative> {
    * @param values A collection of {@link Dataset} instances
    * @return The current Administrative object instance
    */
-  public Administrative withDataset(Collection<Dataset> values) {
+  public Administrative withDataset(Set<Dataset> values) {
     if (values != null) {
       getDataset().addAll(values);
     }
@@ -307,7 +307,7 @@ public class Administrative extends Common<Administrative> {
    */
   public Administrative withCodeList(CodeList... values) {
     if (values != null) {
-      getCodeList().addAll(Arrays.asList(values));
+      getCodeList().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -321,7 +321,7 @@ public class Administrative extends Common<Administrative> {
    * @param values A collection of {@link CodeList} instances
    * @return The current Administrative object instance
    */
-  public Administrative withCodeList(Collection<CodeList> values) {
+  public Administrative withCodeList(Set<CodeList> values) {
     if (values != null) {
       getCodeList().addAll(values);
     }

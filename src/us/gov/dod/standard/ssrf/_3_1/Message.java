@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -91,7 +91,7 @@ public class Message extends Common<Message> {
    */
   @XmlElement(name = "DatasetRef", required = true, nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> datasetRef;
+  private Set<TString> datasetRef;
 
   /**
    * Get a human-readable name for the message.
@@ -164,7 +164,7 @@ public class Message extends Common<Message> {
    * {@link #getData()} instead.
    */
   @Deprecated
-  public Collection<TString> getDatasetRef() {
+  public Set<TString> getDatasetRef() {
     if (datasetRef == null) {
       datasetRef = new HashSet<>();
     }
@@ -224,7 +224,7 @@ public class Message extends Common<Message> {
   @Deprecated
   public Message withDatasetRef(TString... values) {
     if (values != null) {
-      getDatasetRef().addAll(Arrays.asList(values));
+      getDatasetRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -241,7 +241,7 @@ public class Message extends Common<Message> {
    * {@link #withData(Common...)} instead.
    */
   @Deprecated
-  public Message withDatasetRef(Collection<TString> values) {
+  public Message withDatasetRef(Set<TString> values) {
     if (values != null) {
       getDatasetRef().addAll(values);
     }
@@ -281,7 +281,7 @@ public class Message extends Common<Message> {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   @XmlTransient
-  private Collection<Common<?>> data;
+  private Set<Common<?>> data;
 
   /**
    * Get
@@ -289,7 +289,7 @@ public class Message extends Common<Message> {
    * @return a {@link Common} instance
    * @since 3.1.0
    */
-  public Collection<Common<?>> getData() {
+  public Set<Common<?>> getData() {
     if (data == null) {
       data = new HashSet<>();
     }
@@ -313,7 +313,7 @@ public class Message extends Common<Message> {
    * @since 3.1.0
    */
   public Message withData(Common<?>... values) {
-    return withData(Arrays.asList(values));
+    return withData(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -323,7 +323,7 @@ public class Message extends Common<Message> {
    * @return The current Message object instance
    * @since 3.1.0
    */
-  public Message withData(Collection<Common<?>> values) {
+  public Message withData(Set<Common<?>> values) {
     getData().addAll(values);
     return this;
   }

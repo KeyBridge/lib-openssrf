@@ -140,7 +140,7 @@ public class Role extends Common<Role> {
    * Address contains the address of a Contact, Organisation or Role.
    */
   @XmlElement(name = "Address")
-  private Collection<Address> address;
+  private Set<Address> address;
   /**
    * TelephoneFax (Optional)
    * <p>
@@ -148,14 +148,14 @@ public class Role extends Common<Role> {
    * Contact, Organisation or Role.
    */
   @XmlElement(name = "TelephoneFax")
-  private Collection<TelephoneFax> telephoneFax;
+  private Set<TelephoneFax> telephoneFax;
   /**
    * Email (Optional)
    * <p>
    * Email contains the email address of the Contact or Role.
    */
   @XmlElement(name = "EMail")
-  private Collection<EMail> eMail;
+  private Set<EMail> eMail;
   /**
    * ContactRef (Optional)
    * <p>
@@ -163,7 +163,7 @@ public class Role extends Common<Role> {
    */
   @XmlElement(name = "ContactRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> contactRef;
+  private Set<TString> contactRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -343,7 +343,7 @@ public class Role extends Common<Role> {
    * <p>
    * @return a non-null but possibly empty list of {@link Address} instances
    */
-  public Collection<Address> getAddress() {
+  public Set<Address> getAddress() {
     if (address == null) {
       address = new HashSet<>();
     }
@@ -375,7 +375,7 @@ public class Role extends Common<Role> {
    * @return a non-null but possibly empty list of {@link TelephoneFax}
    *         instances
    */
-  public Collection<TelephoneFax> getTelephoneFax() {
+  public Set<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
       telephoneFax = new HashSet<>();
     }
@@ -405,7 +405,7 @@ public class Role extends Common<Role> {
    * <p>
    * @return a non-null but possibly empty list of {@link EMail} instances
    */
-  public Collection<EMail> getEMail() {
+  public Set<EMail> getEMail() {
     if (eMail == null) {
       eMail = new HashSet<>();
     }
@@ -438,7 +438,7 @@ public class Role extends Common<Role> {
    * {@link #getContact()} instead.
    */
   @Deprecated
-  public Collection<TString> getContactRef() {
+  public Set<TString> getContactRef() {
     if (contactRef == null) {
       contactRef = new HashSet<>();
     }
@@ -577,7 +577,7 @@ public class Role extends Common<Role> {
    */
   public Role withAddress(Address... values) {
     if (values != null) {
-      getAddress().addAll(Arrays.asList(values));
+      getAddress().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -591,7 +591,7 @@ public class Role extends Common<Role> {
    * @param values A collection of {@link Address} instances
    * @return The current Role object instance
    */
-  public Role withAddress(Collection<Address> values) {
+  public Role withAddress(Set<Address> values) {
     if (values != null) {
       getAddress().addAll(values);
     }
@@ -609,7 +609,7 @@ public class Role extends Common<Role> {
    */
   public Role withTelephoneFax(TelephoneFax... values) {
     if (values != null) {
-      getTelephoneFax().addAll(Arrays.asList(values));
+      getTelephoneFax().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -623,7 +623,7 @@ public class Role extends Common<Role> {
    * @param values A collection of {@link TelephoneFax} instances
    * @return The current Role object instance
    */
-  public Role withTelephoneFax(Collection<TelephoneFax> values) {
+  public Role withTelephoneFax(Set<TelephoneFax> values) {
     if (values != null) {
       getTelephoneFax().addAll(values);
     }
@@ -640,7 +640,7 @@ public class Role extends Common<Role> {
    */
   public Role withEMail(EMail... values) {
     if (values != null) {
-      getEMail().addAll(Arrays.asList(values));
+      getEMail().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -653,7 +653,7 @@ public class Role extends Common<Role> {
    * @param values A collection of {@link EMail Email} instances
    * @return The current Role object instance
    */
-  public Role withEMail(Collection<EMail> values) {
+  public Role withEMail(Set<EMail> values) {
     if (values != null) {
       getEMail().addAll(values);
     }
@@ -673,7 +673,7 @@ public class Role extends Common<Role> {
   @Deprecated
   public Role withContactRef(TString... values) {
     if (values != null) {
-      getContactRef().addAll(Arrays.asList(values));
+      getContactRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -689,7 +689,7 @@ public class Role extends Common<Role> {
    * {@link #withContact(Contact...)} instead.
    */
   @Deprecated
-  public Role withContactRef(Collection<TString> values) {
+  public Role withContactRef(Set<TString> values) {
     if (values != null) {
       getContactRef().addAll(values);
     }
@@ -743,7 +743,7 @@ public class Role extends Common<Role> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Contact> contact;
+  private Set<Contact> contact;
 
   /**
    * Get the ContactRef
@@ -753,7 +753,7 @@ public class Role extends Common<Role> {
    * @return a {@link Contact} instance
    * @since 3.1.0
    */
-  public Collection<Contact> getContact() {
+  public Set<Contact> getContact() {
     if (contact == null) {
       contact = new HashSet<>();
     }
@@ -779,7 +779,7 @@ public class Role extends Common<Role> {
    * @since 3.1.0
    */
   public Role withContact(Contact... values) {
-    return withContact(Arrays.asList(values));
+    return withContact(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -791,7 +791,7 @@ public class Role extends Common<Role> {
    * @return The current Role object instance
    * @since 3.1.0
    */
-  public Role withContact(Collection<Contact> values) {
+  public Role withContact(Set<Contact> values) {
     getContact().addAll(values);
     return this;
   }

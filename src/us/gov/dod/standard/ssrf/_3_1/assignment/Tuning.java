@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -134,7 +134,7 @@ public class Tuning {
    * RequestedFreq indicates a single frequency or a range of frequencies.
    */
   @XmlElement(name = "RequestedFreq")
-  private Collection<AsgnFreqBase> requestedFreq;
+  private Set<AsgnFreqBase> requestedFreq;
 
   /**
    * Get the tuning increment expressed of the requested frequency range. This
@@ -329,7 +329,7 @@ public class Tuning {
    * @return a non-null but possibly empty list of {@link AsgnFreqBase}
    *         instances
    */
-  public Collection<AsgnFreqBase> getRequestedFreq() {
+  public Set<AsgnFreqBase> getRequestedFreq() {
     if (requestedFreq == null) {
       requestedFreq = new HashSet<>();
     }
@@ -434,7 +434,7 @@ public class Tuning {
    */
   public Tuning withRequestedFreq(AsgnFreqBase... values) {
     if (values != null) {
-      getRequestedFreq().addAll(Arrays.asList(values));
+      getRequestedFreq().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -448,7 +448,7 @@ public class Tuning {
    * @param values A collection of {@link AsgnFreqBase} instances
    * @return The current Tuning object instance
    */
-  public Tuning withRequestedFreq(Collection<AsgnFreqBase> values) {
+  public Tuning withRequestedFreq(Set<AsgnFreqBase> values) {
     if (values != null) {
       getRequestedFreq().addAll(values);
     }

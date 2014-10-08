@@ -148,7 +148,7 @@ public class Contact extends Common<Contact> {
    * Address contains the address of a Contact, Organisation or Role.
    */
   @XmlElement(name = "Address")
-  private Collection<Address> address;
+  private Set<Address> address;
   /**
    * TelephoneFax (Optional)
    * <p>
@@ -156,14 +156,14 @@ public class Contact extends Common<Contact> {
    * Contact, Organisation or Role.
    */
   @XmlElement(name = "TelephoneFax")
-  private Collection<TelephoneFax> telephoneFax;
+  private Set<TelephoneFax> telephoneFax;
   /**
    * Email (Optional)
    * <p>
    * Email contains the email address of the Contact or Role.
    */
   @XmlElement(name = "EMail")
-  private Collection<EMail> eMail;
+  private Set<EMail> eMail;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -362,7 +362,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * @return a non-null but possibly empty list of {@link Address} instances
    */
-  public Collection<Address> getAddress() {
+  public Set<Address> getAddress() {
     if (address == null) {
       address = new HashSet<>();
     }
@@ -394,7 +394,7 @@ public class Contact extends Common<Contact> {
    * @return a non-null but possibly empty list of {@link TelephoneFax}
    *         instances
    */
-  public Collection<TelephoneFax> getTelephoneFax() {
+  public Set<TelephoneFax> getTelephoneFax() {
     if (telephoneFax == null) {
       telephoneFax = new HashSet<>();
     }
@@ -424,7 +424,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * @return a non-null but possibly empty list of {@link EMail} instances
    */
-  public Collection<EMail> getEMail() {
+  public Set<EMail> getEMail() {
     if (eMail == null) {
       eMail = new HashSet<>();
     }
@@ -569,7 +569,7 @@ public class Contact extends Common<Contact> {
    */
   public Contact withAddress(Address... values) {
     if (values != null) {
-      getAddress().addAll(Arrays.asList(values));
+      getAddress().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -583,7 +583,7 @@ public class Contact extends Common<Contact> {
    * @param values A collection of {@link Address} instances
    * @return The current Contact object instance
    */
-  public Contact withAddress(Collection<Address> values) {
+  public Contact withAddress(Set<Address> values) {
     if (values != null) {
       getAddress().addAll(values);
     }
@@ -601,7 +601,7 @@ public class Contact extends Common<Contact> {
    */
   public Contact withTelephoneFax(TelephoneFax... values) {
     if (values != null) {
-      getTelephoneFax().addAll(Arrays.asList(values));
+      getTelephoneFax().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -615,7 +615,7 @@ public class Contact extends Common<Contact> {
    * @param values A collection of {@link TelephoneFax} instances
    * @return The current Contact object instance
    */
-  public Contact withTelephoneFax(Collection<TelephoneFax> values) {
+  public Contact withTelephoneFax(Set<TelephoneFax> values) {
     if (values != null) {
       getTelephoneFax().addAll(values);
     }
@@ -632,7 +632,7 @@ public class Contact extends Common<Contact> {
    */
   public Contact withEMail(EMail... values) {
     if (values != null) {
-      getEMail().addAll(Arrays.asList(values));
+      getEMail().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -645,7 +645,7 @@ public class Contact extends Common<Contact> {
    * @param values A collection of {@link EMail Email} instances
    * @return The current Contact object instance
    */
-  public Contact withEMail(Collection<EMail> values) {
+  public Contact withEMail(Set<EMail> values) {
     if (values != null) {
       getEMail().addAll(values);
     }

@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -93,7 +93,7 @@ public class Deployment {
    * shelter, in a vehicle, aboard a helicopter, etc.
    */
   @XmlElement(name = "Installation", nillable = true)
-  private Collection<Installation> installation;
+  private Set<Installation> installation;
 
   /**
    * Get the type of deployment.
@@ -163,7 +163,7 @@ public class Deployment {
    * @return a non-null but possibly empty list of {@link Installation}
    *         instances
    */
-  public Collection<Installation> getInstallation() {
+  public Set<Installation> getInstallation() {
     if (installation == null) {
       installation = new HashSet<>();
     }
@@ -220,7 +220,7 @@ public class Deployment {
    */
   public Deployment withInstallation(Installation... values) {
     if (values != null) {
-      getInstallation().addAll(Arrays.asList(values));
+      getInstallation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -235,7 +235,7 @@ public class Deployment {
    * @param values A collection of {@link Installation} instances
    * @return The current Deployment object instance
    */
-  public Deployment withInstallation(Collection<Installation> values) {
+  public Deployment withInstallation(Set<Installation> values) {
     if (values != null) {
       getInstallation().addAll(values);
     }

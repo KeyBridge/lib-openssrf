@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -212,7 +212,7 @@ public class Loadset extends Common<Loadset> {
    * Divergence from SMADEF:
    */
   @XmlElement(name = "JammingChannelProfile", required = true)
-  private Collection<JammingChannelProfile> jammingChannelProfile;
+  private Set<JammingChannelProfile> jammingChannelProfile;
 
   /**
    * Get the sequence pattern for initializing the jamming equipment.
@@ -496,7 +496,7 @@ public class Loadset extends Common<Loadset> {
    * @return a non-null but possibly empty list of {@link JammingChannelProfile}
    *         instances
    */
-  public Collection<JammingChannelProfile> getJammingChannelProfile() {
+  public Set<JammingChannelProfile> getJammingChannelProfile() {
     if (jammingChannelProfile == null) {
       jammingChannelProfile = new HashSet<>();
     }
@@ -635,7 +635,7 @@ public class Loadset extends Common<Loadset> {
    */
   public Loadset withJammingChannelProfile(JammingChannelProfile... values) {
     if (values != null) {
-      getJammingChannelProfile().addAll(Arrays.asList(values));
+      getJammingChannelProfile().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -649,7 +649,7 @@ public class Loadset extends Common<Loadset> {
    * @param values A collection of {@link JammingChannelProfile} instances
    * @return The current Loadset object instance
    */
-  public Loadset withJammingChannelProfile(Collection<JammingChannelProfile> values) {
+  public Loadset withJammingChannelProfile(Set<JammingChannelProfile> values) {
     if (values != null) {
       getJammingChannelProfile().addAll(values);
     }

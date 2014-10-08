@@ -236,7 +236,7 @@ public class Location extends Common<Location> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
    * <p>
@@ -249,7 +249,7 @@ public class Location extends Common<Location> {
    * Format is SN(7,2) (m)
    */
   @XmlElement(name = "Point")
-  private Collection<Point> point;
+  private Set<Point> point;
   /**
    * Polygon (Optional)
    * <p>
@@ -258,7 +258,7 @@ public class Location extends Common<Location> {
    * area.
    */
   @XmlElement(name = "Polygon")
-  private Collection<Polygon> polygon;
+  private Set<Polygon> polygon;
   /**
    * Ellipse (Optional)
    * <p>
@@ -267,7 +267,7 @@ public class Location extends Common<Location> {
    * SHALL NOT be used to describe a satellite orbit.
    */
   @XmlElement(name = "Ellipse")
-  private Collection<Ellipse> ellipse;
+  private Set<Ellipse> ellipse;
   /**
    * LocationRef - Element Content (Required)
    * <p>
@@ -277,7 +277,7 @@ public class Location extends Common<Location> {
    */
   @XmlElement(name = "LocationRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> locationRef;
+  private Set<TString> locationRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -568,7 +568,7 @@ public class Location extends Common<Location> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -600,7 +600,7 @@ public class Location extends Common<Location> {
    * <p>
    * @return a non-null but possibly empty list of {@link Point} instances
    */
-  public Collection<Point> getPoint() {
+  public Set<Point> getPoint() {
     if (point == null) {
       point = new HashSet<>();
     }
@@ -632,7 +632,7 @@ public class Location extends Common<Location> {
    * <p>
    * @return a non-null but possibly empty list of {@link Polygon} instances
    */
-  public Collection<Polygon> getPolygon() {
+  public Set<Polygon> getPolygon() {
     if (polygon == null) {
       polygon = new HashSet<>();
     }
@@ -664,7 +664,7 @@ public class Location extends Common<Location> {
    * <p>
    * @return a non-null but possibly empty list of {@link Ellipse} instances
    */
-  public Collection<Ellipse> getEllipse() {
+  public Set<Ellipse> getEllipse() {
     if (ellipse == null) {
       ellipse = new HashSet<>();
     }
@@ -695,7 +695,7 @@ public class Location extends Common<Location> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public Collection<TString> getLocationRef() {
+  public Set<TString> getLocationRef() {
     if (locationRef == null) {
       locationRef = new HashSet<>();
     }
@@ -875,7 +875,7 @@ public class Location extends Common<Location> {
    */
   public Location withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -889,7 +889,7 @@ public class Location extends Common<Location> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Location object instance
    */
-  public Location withPOCInformation(Collection<POCInformation> values) {
+  public Location withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -908,7 +908,7 @@ public class Location extends Common<Location> {
    */
   public Location withPoint(Point... values) {
     if (values != null) {
-      getPoint().addAll(Arrays.asList(values));
+      getPoint().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -923,7 +923,7 @@ public class Location extends Common<Location> {
    * @param values A collection of {@link Point} instances
    * @return The current Location object instance
    */
-  public Location withPoint(Collection<Point> values) {
+  public Location withPoint(Set<Point> values) {
     if (values != null) {
       getPoint().addAll(values);
     }
@@ -942,7 +942,7 @@ public class Location extends Common<Location> {
    */
   public Location withPolygon(Polygon... values) {
     if (values != null) {
-      getPolygon().addAll(Arrays.asList(values));
+      getPolygon().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -957,7 +957,7 @@ public class Location extends Common<Location> {
    * @param values A collection of {@link Polygon} instances
    * @return The current Location object instance
    */
-  public Location withPolygon(Collection<Polygon> values) {
+  public Location withPolygon(Set<Polygon> values) {
     if (values != null) {
       getPolygon().addAll(values);
     }
@@ -976,7 +976,7 @@ public class Location extends Common<Location> {
    */
   public Location withEllipse(Ellipse... values) {
     if (values != null) {
-      getEllipse().addAll(Arrays.asList(values));
+      getEllipse().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -991,7 +991,7 @@ public class Location extends Common<Location> {
    * @param values A collection of {@link Ellipse} instances
    * @return The current Location object instance
    */
-  public Location withEllipse(Collection<Ellipse> values) {
+  public Location withEllipse(Set<Ellipse> values) {
     if (values != null) {
       getEllipse().addAll(values);
     }
@@ -1009,7 +1009,7 @@ public class Location extends Common<Location> {
   @Deprecated
   public Location withLocationRef(TString... values) {
     if (values != null) {
-      getLocationRef().addAll(Arrays.asList(values));
+      getLocationRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -1023,7 +1023,7 @@ public class Location extends Common<Location> {
    * {@link #withLocation(Location...)} instead.
    */
   @Deprecated
-  public Location withLocationRef(Collection<TString> values) {
+  public Location withLocationRef(Set<TString> values) {
     if (values != null) {
       getLocationRef().addAll(values);
     }
@@ -1086,7 +1086,7 @@ public class Location extends Common<Location> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Location> location;
+  private Set<Location> location;
 
   /**
    * Get the serial of the referenced Location.
@@ -1094,7 +1094,7 @@ public class Location extends Common<Location> {
    * @return a {@link Location} instance
    * @since 3.1.0
    */
-  public Collection<Location> getLocation() {
+  public Set<Location> getLocation() {
     if (location == null) {
       location = new HashSet<>();
     }
@@ -1118,7 +1118,7 @@ public class Location extends Common<Location> {
    * @since 3.1.0
    */
   public Location withLocation(Location... values) {
-    return withLocation(Arrays.asList(values));
+    return withLocation(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -1128,7 +1128,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    * @since 3.1.0
    */
-  public Location withLocation(Collection<Location> values) {
+  public Location withLocation(Set<Location> values) {
     getLocation().addAll(values);
     return this;
   }

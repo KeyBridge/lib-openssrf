@@ -105,7 +105,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * @since 3.1.0
    */
-  public void assemble() {
+  private void assemble() {
     SSRFUtility.build(this);
     if (ssrfProperties != null) {
       SSRFUtility.setProperties(ssrfProperties, this);
@@ -180,7 +180,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    *         the object instance validates OK.
    * @since 3.1.0
    */
-  public Collection<String> evaluate() {
+  public Set<String> evaluate() {
     assemble();
     return SSRFUtility.evaluate(this);
   }

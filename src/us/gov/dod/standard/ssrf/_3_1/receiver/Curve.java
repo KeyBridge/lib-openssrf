@@ -172,7 +172,7 @@ public class Curve implements Comparable<Curve> {
    * sensitivity for a Rx characteristic).
    */
   @XmlElement(name = "CurvePoint", required = true)
-  private Collection<CurvePoint> curvePoint;
+  private Set<CurvePoint> curvePoint;
   /**
    * idx - Index (Required)
    * <p>
@@ -418,7 +418,7 @@ public class Curve implements Comparable<Curve> {
    * <p>
    * @return a non-null but possibly empty list of {@link CurvePoint} instances
    */
-  public Collection<CurvePoint> getCurvePoint() {
+  public Set<CurvePoint> getCurvePoint() {
     if (curvePoint == null) {
       curvePoint = new HashSet<>();
     }
@@ -570,7 +570,7 @@ public class Curve implements Comparable<Curve> {
    */
   public Curve withCurvePoint(CurvePoint... values) {
     if (values != null) {
-      getCurvePoint().addAll(Arrays.asList(values));
+      getCurvePoint().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -586,7 +586,7 @@ public class Curve implements Comparable<Curve> {
    * @param values A collection of {@link CurvePoint} instances
    * @return The current Curve object instance
    */
-  public Curve withCurvePoint(Collection<CurvePoint> values) {
+  public Curve withCurvePoint(Set<CurvePoint> values) {
     if (values != null) {
       getCurvePoint().addAll(values);
     }

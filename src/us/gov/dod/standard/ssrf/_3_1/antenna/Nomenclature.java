@@ -23,9 +23,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Collection;
+import java.util.Set;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -109,7 +109,7 @@ public class Nomenclature {
    * country in which the equipment is manufactured may be included.
    */
   @XmlElement(name = "Manufacturer")
-  private Collection<Manufacturer> manufacturer;
+  private Set<Manufacturer> manufacturer;
 
   /**
    * Get the type of nomenclature (commercial, military, etc).
@@ -244,7 +244,7 @@ public class Nomenclature {
    * @return a non-null but possibly empty list of {@link Manufacturer}
    *         instances
    */
-  public Collection<Manufacturer> getManufacturer() {
+  public Set<Manufacturer> getManufacturer() {
     if (manufacturer == null) {
       manufacturer = new HashSet<>();
     }
@@ -327,7 +327,7 @@ public class Nomenclature {
    */
   public Nomenclature withManufacturer(Manufacturer... values) {
     if (values != null) {
-      getManufacturer().addAll(Arrays.asList(values));
+      getManufacturer().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -343,7 +343,7 @@ public class Nomenclature {
    * @param values A collection of {@link Manufacturer} instances
    * @return The current Nomenclature object instance
    */
-  public Nomenclature withManufacturer(Collection<Manufacturer> values) {
+  public Nomenclature withManufacturer(Set<Manufacturer> values) {
     if (values != null) {
       getManufacturer().addAll(values);
     }

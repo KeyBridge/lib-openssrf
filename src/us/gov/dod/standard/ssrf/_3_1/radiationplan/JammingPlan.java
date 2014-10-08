@@ -212,7 +212,7 @@ public class JammingPlan {
    * loadset to be used.
    */
   @XmlElement(name = "JammingTarget", required = true)
-  private Collection<JammingTarget> jammingTarget;
+  private Set<JammingTarget> jammingTarget;
 
   /**
    * Get Name (US), enter a unique name (within the parent RadiationPlan) for
@@ -663,7 +663,7 @@ public class JammingPlan {
    * @return a non-null but possibly empty list of {@link JammingTarget}
    *         instances
    */
-  public Collection<JammingTarget> getJammingTarget() {
+  public Set<JammingTarget> getJammingTarget() {
     if (jammingTarget == null) {
       jammingTarget = new HashSet<>();
     }
@@ -893,7 +893,7 @@ public class JammingPlan {
    */
   public JammingPlan withJammingTarget(JammingTarget... values) {
     if (values != null) {
-      getJammingTarget().addAll(Arrays.asList(values));
+      getJammingTarget().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -907,7 +907,7 @@ public class JammingPlan {
    * @param values A collection of {@link JammingTarget} instances
    * @return The current JammingPlan object instance
    */
-  public JammingPlan withJammingTarget(Collection<JammingTarget> values) {
+  public JammingPlan withJammingTarget(Set<JammingTarget> values) {
     if (values != null) {
       getJammingTarget().addAll(values);
     }

@@ -179,7 +179,7 @@ public class Allotment extends Common<Allotment> {
    * project name associated to the dataset.
    */
   @XmlElement(name = "Project")
-  private Collection<Project> project;
+  private Set<Project> project;
   /**
    * POCInformation (Optional)
    * <p>
@@ -187,7 +187,7 @@ public class Allotment extends Common<Allotment> {
    * dataset.
    */
   @XmlElement(name = "POCInformation")
-  private Collection<POCInformation> pocInformation;
+  private Set<POCInformation> pocInformation;
   /**
    * LocationRef (Required)
    * <p>
@@ -195,7 +195,7 @@ public class Allotment extends Common<Allotment> {
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Collection<TString> locationRef;
+  private Set<TString> locationRef;
   /**
    * Emission (Optional)
    * <p>
@@ -203,7 +203,7 @@ public class Allotment extends Common<Allotment> {
    * the allotment.
    */
   @XmlElement(name = "Emission")
-  private Collection<Emission> emission;
+  private Set<Emission> emission;
   /**
    * AllotFreq (Required)
    * <p>
@@ -211,7 +211,7 @@ public class Allotment extends Common<Allotment> {
    * Allotment.
    */
   @XmlElement(name = "AllotFreq", required = true)
-  private Collection<AllotFreq> allotFreq;
+  private Set<AllotFreq> allotFreq;
 
   /**
    * Get an identifying name for this Allotment or Assignment.
@@ -449,7 +449,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Project} instances
    */
-  public Collection<Project> getProject() {
+  public Set<Project> getProject() {
     if (project == null) {
       project = new HashSet<>();
     }
@@ -481,7 +481,7 @@ public class Allotment extends Common<Allotment> {
    * @return a non-null but possibly empty list of {@link POCInformation}
    *         instances
    */
-  public Collection<POCInformation> getPOCInformation() {
+  public Set<POCInformation> getPOCInformation() {
     if (pocInformation == null) {
       pocInformation = new HashSet<>();
     }
@@ -514,7 +514,7 @@ public class Allotment extends Common<Allotment> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public Collection<TString> getLocationRef() {
+  public Set<TString> getLocationRef() {
     if (locationRef == null) {
       locationRef = new HashSet<>();
     }
@@ -545,7 +545,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * @return a non-null but possibly empty list of {@link Emission} instances
    */
-  public Collection<Emission> getEmission() {
+  public Set<Emission> getEmission() {
     if (emission == null) {
       emission = new HashSet<>();
     }
@@ -576,7 +576,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * @return a non-null but possibly empty list of {@link AllotFreq} instances
    */
-  public Collection<AllotFreq> getAllotFreq() {
+  public Set<AllotFreq> getAllotFreq() {
     if (allotFreq == null) {
       allotFreq = new HashSet<>();
     }
@@ -749,7 +749,7 @@ public class Allotment extends Common<Allotment> {
    */
   public Allotment withProject(Project... values) {
     if (values != null) {
-      getProject().addAll(Arrays.asList(values));
+      getProject().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -763,7 +763,7 @@ public class Allotment extends Common<Allotment> {
    * @param values A collection of {@link Project} instances
    * @return The current Allotment object instance
    */
-  public Allotment withProject(Collection<Project> values) {
+  public Allotment withProject(Set<Project> values) {
     if (values != null) {
       getProject().addAll(values);
     }
@@ -781,7 +781,7 @@ public class Allotment extends Common<Allotment> {
    */
   public Allotment withPOCInformation(POCInformation... values) {
     if (values != null) {
-      getPOCInformation().addAll(Arrays.asList(values));
+      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -795,7 +795,7 @@ public class Allotment extends Common<Allotment> {
    * @param values A collection of {@link POCInformation} instances
    * @return The current Allotment object instance
    */
-  public Allotment withPOCInformation(Collection<POCInformation> values) {
+  public Allotment withPOCInformation(Set<POCInformation> values) {
     if (values != null) {
       getPOCInformation().addAll(values);
     }
@@ -815,7 +815,7 @@ public class Allotment extends Common<Allotment> {
   @Deprecated
   public Allotment withLocationRef(TString... values) {
     if (values != null) {
-      getLocationRef().addAll(Arrays.asList(values));
+      getLocationRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -831,7 +831,7 @@ public class Allotment extends Common<Allotment> {
    * {@link #withLocation(Location...)} instead.
    */
   @Deprecated
-  public Allotment withLocationRef(Collection<TString> values) {
+  public Allotment withLocationRef(Set<TString> values) {
     if (values != null) {
       getLocationRef().addAll(values);
     }
@@ -849,7 +849,7 @@ public class Allotment extends Common<Allotment> {
    */
   public Allotment withEmission(Emission... values) {
     if (values != null) {
-      getEmission().addAll(Arrays.asList(values));
+      getEmission().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -863,7 +863,7 @@ public class Allotment extends Common<Allotment> {
    * @param values A collection of {@link Emission} instances
    * @return The current Allotment object instance
    */
-  public Allotment withEmission(Collection<Emission> values) {
+  public Allotment withEmission(Set<Emission> values) {
     if (values != null) {
       getEmission().addAll(values);
     }
@@ -881,7 +881,7 @@ public class Allotment extends Common<Allotment> {
    */
   public Allotment withAllotFreq(AllotFreq... values) {
     if (values != null) {
-      getAllotFreq().addAll(Arrays.asList(values));
+      getAllotFreq().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -895,7 +895,7 @@ public class Allotment extends Common<Allotment> {
    * @param values A collection of {@link AllotFreq} instances
    * @return The current Allotment object instance
    */
-  public Allotment withAllotFreq(Collection<AllotFreq> values) {
+  public Allotment withAllotFreq(Set<AllotFreq> values) {
     if (values != null) {
       getAllotFreq().addAll(values);
     }
@@ -952,7 +952,7 @@ public class Allotment extends Common<Allotment> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Collection<Location> location;
+  private Set<Location> location;
 
   /**
    * Get the LocationRef
@@ -962,7 +962,7 @@ public class Allotment extends Common<Allotment> {
    * @return a {@link Location} instance
    * @since 3.1.0
    */
-  public Collection<Location> getLocation() {
+  public Set<Location> getLocation() {
     if (location == null) {
       location = new HashSet<>();
     }
@@ -988,7 +988,7 @@ public class Allotment extends Common<Allotment> {
    * @since 3.1.0
    */
   public Allotment withLocation(Location... values) {
-    return withLocation(Arrays.asList(values));
+    return withLocation(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -1000,7 +1000,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    * @since 3.1.0
    */
-  public Allotment withLocation(Collection<Location> values) {
+  public Allotment withLocation(Set<Location> values) {
     getLocation().addAll(values);
     return this;
   }

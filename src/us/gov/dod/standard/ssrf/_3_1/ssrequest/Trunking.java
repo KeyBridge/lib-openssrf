@@ -257,7 +257,7 @@ public class Trunking {
    * assignment to be relinquished or used in the trunked land mobile system.
    */
   @XmlElement(name = "TrunkingAssignment")
-  private Collection<TrunkingAssignment> trunkingAssignment;
+  private Set<TrunkingAssignment> trunkingAssignment;
 
   /**
    * Get a rationale for the additional channels (e.g., channel loading, queuing
@@ -707,7 +707,7 @@ public class Trunking {
    * @return a non-null but possibly empty list of {@link TrunkingAssignment}
    *         instances
    */
-  public Collection<TrunkingAssignment> getTrunkingAssignment() {
+  public Set<TrunkingAssignment> getTrunkingAssignment() {
     if (trunkingAssignment == null) {
       trunkingAssignment = new HashSet<>();
     }
@@ -921,7 +921,7 @@ public class Trunking {
    */
   public Trunking withTrunkingAssignment(TrunkingAssignment... values) {
     if (values != null) {
-      getTrunkingAssignment().addAll(Arrays.asList(values));
+      getTrunkingAssignment().addAll(new HashSet<>(Arrays.asList(values)));
     }
     return this;
   }
@@ -936,7 +936,7 @@ public class Trunking {
    * @param values A collection of {@link TrunkingAssignment} instances
    * @return The current Trunking object instance
    */
-  public Trunking withTrunkingAssignment(Collection<TrunkingAssignment> values) {
+  public Trunking withTrunkingAssignment(Set<TrunkingAssignment> values) {
     if (values != null) {
       getTrunkingAssignment().addAll(values);
     }
