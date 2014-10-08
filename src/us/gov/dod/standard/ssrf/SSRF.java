@@ -23,20 +23,11 @@
  */
 package us.gov.dod.standard.ssrf;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.Preferences;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.*;
 
 /**
@@ -53,25 +44,85 @@ import us.gov.dod.standard.ssrf._3_1.*;
 @XmlType(name = "SSRF")
 public class SSRF extends SchemaRoot<SSRF> {
 
-  public void loadProperties(File propertiesFile) throws IOException {
-//    Preferences prefs = Preferences.systemNodeForPackage(SSRF.class);
-    Preferences prefs = Preferences.userRoot();
-    Properties properties = new Properties();
-    properties.load(new FileReader(propertiesFile));
-    for (Map.Entry<Object, Object> entry : properties.entrySet()) {
-      prefs.put((String) entry.getKey(), (String) entry.getValue());
+  /**
+   * SSRF Properties associated with this SSRF instance.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private SSRFProperties ssrfProperties;
+
+  /**
+   * Set the SSRF Properties for this SSRF instance.
+   * <p>
+   * This method creates a local copy of the input SSRFProperties values. To
+   * edit this SSRF instance properties use
+   * {@link #setProperty(String, String, String)}
+   * <p>
+   * Use {@link #setProperty(String, String, String)} to set and update
+   * additional properties.
+   * <p>
+   * @param ssrfProperties a SSRFProperties instance
+   * @since 3.1.0
+   */
+  public void setProperties(SSRFProperties ssrfProperties) {
+    this.ssrfProperties = new SSRFProperties();
+    this.ssrfProperties.putAll(ssrfProperties);
+  }
+
+  /**
+   * Set a SSRF property. To unset a property simply set the field value to null
+   * or to an empty string "";
+   * <p>
+   * @param className  the SSRF class name (e.g. "ChannelPlan")
+   * @param fieldName  the SSRF field name within the named class (e.g. "name")
+   * @param fieldValue the value to set the SSRF field (e.g. "My Channel Plan")
+   * @since 3.1.0
+   */
+  public void setProperty(String className, String fieldName, String fieldValue) {
+    if (ssrfProperties == null) {
+      ssrfProperties = new SSRFProperties();
+    }
+    ssrfProperties.setProperty(className + "." + fieldName, fieldValue);
+  }
+
+  /**
+   * Unset (clear) a SSRF property.
+   * <p>
+   * @param className the SSRF class name (e.g. "ChannelPlan")
+   * @param fieldName the SSRF field name within the named class (e.g. "name").
+   *                  Set to null or an empty string to unset all properties
+   *                  with the indicated className.
+   */
+  public void unsetProperty(String className, String fieldName) {
+    if (ssrfProperties != null) {
+      List<String> remove = new ArrayList<>();
+      for (Map.Entry<Object, Object> entry : ssrfProperties.entrySet()) {
+        if (fieldName == null || fieldName.isEmpty()) {
+          if (((String) entry.getKey()).equals(className)) {
+            remove.add((String) entry.getKey());
+          }
+        } else if (((String) entry.getKey()).equals(className + "." + fieldName)) {
+          remove.add((String) entry.getKey());
+        }
+      }
+      for (String key : remove) {
+        ssrfProperties.remove(key);
+      }
     }
   }
 
-  public void foo() {
-    Preferences prefs = Preferences.userRoot();
-    System.out.println("SSRF PREFS ");
-    try {
-      for (String string : prefs.keys()) {
-        System.out.println("pref [" + string + "] , [" + prefs.get(string, "") + "]");
-      }
-    } catch (BackingStoreException ex) {
-      Logger.getLogger(SSRF.class.getName()).log(Level.SEVERE, null, ex);
+  /**
+   * Internal method to assemble the SSRF instance. This method applies
+   * properties and invokes build methods. This method supports the {@link #build()},
+   * {@link #isValid()} and {@link #evaluate()} methods.
+   * <p>
+   * @since 3.1.0
+   */
+  private void assemble() {
+    SSRFUtility.build(this);
+    if (ssrfProperties != null) {
+      SSRFUtility.setProperties(ssrfProperties, this);
     }
   }
 
@@ -82,10 +133,16 @@ public class SSRF extends SchemaRoot<SSRF> {
    * required data objects into their proper location and preparing the SSRF
    * destination instance for export.
    * <p>
-   * @return a copy of the current SSRF instance, prepared for export
+   * If the object instance is NOT valid then call {@link #evaluate(Object)} to
+   * re-inspect the SSRF object instance and retrieve a list of specific
+   * validation errors.
+   * <p>
+   * @throws Exception If this SSRF configuration fails to validate
+   * @since 3.1.0
    */
-  public SSRF build() {
-    return SSRFUtility.build(this);
+  public void prepare() throws Exception {
+    assemble();
+    SSRFUtility.validate(this);
   }
 
   /**
@@ -99,14 +156,16 @@ public class SSRF extends SchemaRoot<SSRF> {
    * It is expected that this method will only be called on the top-level SSRF
    * class. However it will just as easily validate any SSRF data type.
    * <p>
-   * If the object instance is NOT valid then call
-   * {@link #evaluate(java.lang.Object)} to re-inspect the SSRF object instance
-   * and retrieve a list of specific validation errors.
+   * If the object instance is NOT valid then call {@link #evaluate(Object)} to
+   * re-inspect the SSRF object instance and retrieve a list of specific
+   * validation errors.
    * <p>
    * @return TRUE the object instance validates OK; otherwise FALSE.
+   * @since 3.1.0
    */
-  public boolean validate() {
+  public boolean isValid() {
     try {
+      assemble();
       SSRFUtility.validate(this);
       return true;
     } catch (Exception exception) {
@@ -131,9 +190,10 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
+   * @since 3.1.0
    */
   public Collection<String> evaluate() {
+    assemble();
     return SSRFUtility.evaluate(this);
   }
-
 }
