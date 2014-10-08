@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -56,7 +56,7 @@ public class PairedFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "Freq", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freq;
   /**
    * US:AssignmentRef - Assignment Reference (Optional)
@@ -67,7 +67,7 @@ public class PairedFreq {
    * Format is pattern (S29)
    */
   @XmlElement(name = "AssignmentRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString assignmentRef;
   /**
    * US:PairedASN - Paired Agency Serial Number (Optional)
@@ -78,7 +78,7 @@ public class PairedFreq {
    * Format is S12
    */
   @XmlElement(name = "PairedASN", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS12.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS12.class)
   private TString pairedASN;
   /**
    * US:PairedType - Paired Type (Optional)
@@ -90,7 +90,7 @@ public class PairedFreq {
    * Format is L:UPU
    */
   @XmlElement(name = "PairedType", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString pairedType;
 
   /**

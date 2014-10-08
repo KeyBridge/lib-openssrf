@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.location;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -64,7 +64,7 @@ public class PolygonPoint {
    * Attribute group Coord (Optional)
    */
   @XmlElement(name = "Lon", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
   private TString lon;
   /**
    * Lat - Latitude (Required)
@@ -79,7 +79,7 @@ public class PolygonPoint {
    * Attribute group Coord (Optional)
    */
   @XmlElement(name = "Lat", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLAT.class)
   private TString lat;
   /**
    * sequence - Sequence index (Required)

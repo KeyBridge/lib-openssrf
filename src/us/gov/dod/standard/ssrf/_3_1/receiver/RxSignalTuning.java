@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -70,7 +70,7 @@ public class RxSignalTuning {
    * Attribute group FreqRangeGrp (Required)
    */
   @XmlElement(name = "FreqMin", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Maximum Frequency (Optional)
@@ -84,7 +84,7 @@ public class RxSignalTuning {
    * Attribute group FreqRangeGrp (Required)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * TuningStep - Tuning Step (Optional)
@@ -94,7 +94,7 @@ public class RxSignalTuning {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "TuningStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal tuningStep;
   /**
    * NumPresetChannels - Number of Preset Channels (Optional)
@@ -104,7 +104,7 @@ public class RxSignalTuning {
    * Format is UN(8)
    */
   @XmlElement(name = "NumPresetChannels", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN8.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN8.class)
   private TInteger numPresetChannels;
 
   /**

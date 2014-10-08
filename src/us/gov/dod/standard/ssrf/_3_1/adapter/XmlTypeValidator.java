@@ -29,60 +29,56 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;
 
 /**
- * Use an adapter that implements {@link XmlAdapter} for custom marshaling.
+ * XML Adapter that supports the use of standard {@link XmlAdapter} for field
+ * validation but is NOT recognized by JAXB during marshaling and unmarshaling.
  * <p>
  * <b> Usage: </b>
- * The <tt>@XmlJavaTypeAdapter</tt> annotation can be used with the following
+ * The <tt>@XmlTypeValidator</tt> annotation can be used with the following
  * program elements:
  * <ul>
  * <li> a JavaBean property </li>
  * <li> field </li>
  * <li> parameter </li>
  * <li> package </li>
- * <li> from within {@link XmlJavaTypeAdapters} </li>
+ * <li> from within {@link XmlTypeValidators} </li>
  * </ul>
  * <p>
- * When <tt>@XmlJavaTypeAdapter</tt> annotation is defined on a class, it
- * applies to all references to the class.
+ * When <tt>@XmlTypeValidator</tt> annotation is defined on a class, it applies
+ * to all references to the class.
+ * <br/>
+ * When <tt>@XmlTypeValidator</tt> annotation is defined at the package level it
+ * applies to all references from within the package to
+ * <tt>@XmlTypeValidator.type()</tt>.
+ * <br/>
+ * When <tt>@XmlTypeValidator</tt> annotation is defined on the field, property
+ * or parameter, then the annotation applies to the field, property or the
+ * parameter only.
+ * <br/>
+ * A <tt>@XmlTypeValidator</tt> annotation on a field, property or parameter
+ * overrides the <tt>@XmlTypeValidator</tt> annotation associated with the class
+ * being referenced by the field, property or parameter.
+ * <br/>
+ * A <tt>@XmlTypeValidator</tt> annotation on a class overrides the
+ * <tt>@XmlTypeValidator</tt> annotation specified at the package level for that
+ * class.
  * <p>
- * When <tt>@XmlJavaTypeAdapter</tt> annotation is defined at the package level
- * it applies to all references from within the package to
- * <tt>@XmlJavaTypeAdapter.type()</tt>.
- * <p>
- * When <tt>@XmlJavaTypeAdapter</tt> annotation is defined on the field,
- * property or parameter, then the annotation applies to the field, property or
- * the parameter only.
- * <p>
- * A <tt>@XmlJavaTypeAdapter</tt> annotation on a field, property or parameter
- * overrides the <tt>@XmlJavaTypeAdapter</tt> annotation associated with the
- * class being referenced by the field, property or parameter.
- * <p>
- * A <tt>@XmlJavaTypeAdapter</tt> annotation on a class overrides the
- * <tt>@XmlJavaTypeAdapter</tt> annotation specified at the package level for
- * that class.
- * <p>
- * <p>
- * This annotation can be used with the following other annotations: null {@link XmlElement}, {@link XmlAttribute}, {@link XmlElementRef},
+ * This is annotation can be used with any other valid annotation. e.g. {@link XmlElement}, {@link XmlAttribute}, {@link XmlElementRef},
  * {@link XmlElementRefs}, {@link XmlAnyElement}. This can also be used at the
- * package level with the following annotations: null {@link XmlAccessorType}, {@link XmlSchema}, {@link XmlSchemaType},
+ * package level with other valid annotations such as {@link XmlAccessorType}, {@link XmlSchema}, {@link XmlSchemaType},
  * {@link XmlSchemaTypes}.
  * <p>
+ * <b> Example: </b>
+ * <code>@XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)</code>
  * <p>
- * <b> Example: </b> See example in {@link XmlAdapter}
- * <p>
- * @author <ul><li>Sekhar Vajjhala, Sun Microsystems Inc.</li> <li> Kohsuke
- * Kawaguchi, Sun Microsystems Inc.</li></ul>
- * @since JAXB2.0
- * @see XmlAdapter
  * @author Jesse Caulfield <jesse@caulfield.org>
+ * @since SSRF 3.1.0
+ * @see XmlAdapter
  */
 @Retention(RUNTIME)
 @Target({PACKAGE, FIELD, METHOD, TYPE, PARAMETER})
-public @interface IXmlAdapter {
+public @interface XmlTypeValidator {
 
   /**
    * Points to the class that converts a value type to a bound type or vice
@@ -90,7 +86,7 @@ public @interface IXmlAdapter {
    * <p>
    * @return
    */
-  Class<? extends XmlAdapter<?, ?>> value();
+  Class<? extends XmlAdapter> value();
 
   /**
    * If this annotation is used at the package level, then value of the type()
@@ -101,8 +97,8 @@ public @interface IXmlAdapter {
   Class<?> type() default DEFAULT.class;
 
   /**
-   * Used in {@link XmlJavaTypeAdapter#type()} to signal that the type be
-   * inferred from the signature of the field, property, parameter or the class.
+   * Used in {@link XmlTypeValidator#type()} to signal that the type be inferred
+   * from the signature of the field, property, parameter or the class.
    */
   @SuppressWarnings("PublicInnerClass")
   static final class DEFAULT {

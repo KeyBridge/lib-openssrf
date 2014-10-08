@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.ForceElement;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -65,7 +65,7 @@ public class StockNum {
    * Format is S50
    */
   @XmlElement(name = "StockNum", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString stockNum;
   /**
    * US:Type - Stock Number Type (Optional)
@@ -75,7 +75,7 @@ public class StockNum {
    * Format is L:UNS
    */
   @XmlElement(name = "Type", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS25.class)
   private TString type;
 
   /**

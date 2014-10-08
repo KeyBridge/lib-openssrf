@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -148,7 +148,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) (MChip/s)
    */
   @XmlElement(name = "ChipRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMCHIPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMCHIPS.class)
   private TDecimal chipRate;
   /**
    * US:DwellTime - Dwell Time (Optional)
@@ -159,7 +159,7 @@ public class ObservedRFAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "DwellTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal dwellTime;
   /**
    * US:FreqMax - Maximum Frequency (Optional)
@@ -172,7 +172,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * US:FreqMin - Minimum Frequency (Optional)
@@ -183,7 +183,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * US:GuardBand - Guard Band (Optional)
@@ -194,7 +194,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "GuardBand", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal guardBand;
   /**
    * US:InstantRFBW03 - Instant RF BW 03 (Optional)
@@ -205,7 +205,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "InstantRFBW03", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal instantRFBW03;
   /**
    * US:InstantRFBW06 - Instant RF BW 06 (Optional)
@@ -216,7 +216,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "InstantRFBW06", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal instantRFBW06;
   /**
    * US:InstantRFBW10 - Instant RF BW 10 (Optional)
@@ -227,7 +227,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "InstantRFBW10", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal instantRFBW10;
   /**
    * US:InstantRFBW20 - Instant RF BW 20 (Optional)
@@ -238,7 +238,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "InstantRFBW20", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal instantRFBW20;
   /**
    * US:NumRFChannels - Num RF Channels (Optional)
@@ -248,7 +248,7 @@ public class ObservedRFAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumRFChannels", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numRFChannels;
   /**
    * US:NumRFElements - Num RF Elements (Optional)
@@ -258,7 +258,7 @@ public class ObservedRFAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumRFElements", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numRFElements;
   /**
    * US:NumRFPositions - Num RF Positions (Optional)
@@ -268,7 +268,7 @@ public class ObservedRFAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumRFPositions", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numRFPositions;
   /**
    * US:NumRFSimultaneous - Num RF Simultaneous (Optional)
@@ -278,7 +278,7 @@ public class ObservedRFAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumRFSimultaneous", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numRFSimultaneous;
   /**
    * US:OperationalRFBW - Operational RF Bandwidth (Optional)
@@ -292,7 +292,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "OperationalRFBW", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal operationalRFBW;
   /**
    * US:RFAdaptiveDriver - RF Adaptive Driver (Optional)
@@ -303,14 +303,14 @@ public class ObservedRFAnalysis {
    * Format is S500
    */
   @XmlElement(name = "RFAdaptiveDriver", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString rfAdaptiveDriver;
   /**
    * RFAdaptiveRule (US), indicate how the RF is chosen for Adaptive RF
    * variations.
    */
   @XmlElement(name = "RFAdaptiveRule", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString rfAdaptiveRule;
   /**
    * US:RFBasicClockPeriod - RF Basic Clock Period (Optional)
@@ -321,7 +321,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFBasicClockPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfBasicClockPeriod;
   /**
    * US:RFChangeRate - RF Change Rate (Optional)
@@ -332,7 +332,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) (MHz/sec)
    */
   @XmlElement(name = "RFChangeRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterRFCHGRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterRFCHGRATE.class)
   private TDecimal rfChangeRate;
   /**
    * US:RFChannelFreqMax - Maximum RF Channel Frequency (Optional)
@@ -345,7 +345,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFChannelFreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfChannelFreqMax;
   /**
    * US:RFChannelFreqMin - RF Channel Freq Min (Optional)
@@ -355,7 +355,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFChannelFreqMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfChannelFreqMin;
   /**
    * RFCoherent (US), indicate if the observed RF signal is coherent,
@@ -386,7 +386,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFFreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfFreqMax;
   /**
    * US:RFFreqMin - Minimum RF Frequency (Optional)
@@ -396,7 +396,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFFreqMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfFreqMin;
   /**
    * US:RFMean - RF Mean (Optional)
@@ -406,7 +406,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFMean", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfMean;
   /**
    * US:RFMedian - RF Median (Optional)
@@ -416,7 +416,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFMedian", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfMedian;
   /**
    * US:RFPatternPeriod - RF Pattern Period (Optional)
@@ -426,7 +426,7 @@ public class ObservedRFAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "RFPatternPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal rfPatternPeriod;
   /**
    * RFPatternType (US), Indicate whether RF is unmodulated or pulse-to-pulse RF
@@ -443,7 +443,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFRestFreq", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfRestFreq;
   /**
    * US:RFSequenceDesc - RF Sequence Description (Optional)
@@ -453,7 +453,7 @@ public class ObservedRFAnalysis {
    * Format is S500
    */
   @XmlElement(name = "RFSequenceDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString rfSequenceDesc;
   /**
    * US:RFSlotDuration - RF Slot Duration (Optional)
@@ -464,7 +464,7 @@ public class ObservedRFAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "RFSlotDuration", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal rfSlotDuration;
   /**
    * US:RFFreqTolerance - RF Frequency Tolerance (Optional)
@@ -476,7 +476,7 @@ public class ObservedRFAnalysis {
    * Format is UN(18,6)
    */
   @XmlElement(name = "RFFreqTolerance", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN18_6.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN18_6.class)
   private TDecimal rfFreqTolerance;
   /**
    * US:RFFreqToleranceUnit - Frequency Tolerance Units (Optional)
@@ -492,7 +492,7 @@ public class ObservedRFAnalysis {
    * the RF stability measurements were taken.
    */
   @XmlElement(name = "RFFreqToleranceInterval", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal rfFreqToleranceInterval;
   /**
    * US:RFStandardDeviation - RF Standard Deviation (Optional)
@@ -502,7 +502,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFStandardDeviation", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfStandardDeviation;
   /**
    * US:RFTuningStep - RF Tuning Step (Optional)
@@ -513,7 +513,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFTuningStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfTuningStep;
   /**
    * US:RFTuningStep - RF Tuning Step (Optional)
@@ -524,7 +524,7 @@ public class ObservedRFAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "TuningStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal tuningStep;
   /**
    * US:ObservedRFValues (Optional)

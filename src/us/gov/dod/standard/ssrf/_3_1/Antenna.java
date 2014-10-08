@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.antenna.AntHardware;
@@ -125,7 +125,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(3)
    */
   @XmlElement(name = "PhArrayNumMainBeams", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN3.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN3.class)
   private TInteger phArrayNumMainBeams;
   /**
    * PhArrayNumElements - Number of elements in the Phased Array (Optional)
@@ -135,7 +135,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(5)
    */
   @XmlElement(name = "PhArrayNumElements", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger phArrayNumElements;
   /**
    * Shape - Antenna Shape (Optional)
@@ -159,7 +159,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Aperture (Optional)
    */
   @XmlElement(name = "Diameter", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
   private TDecimal diameter;
   /**
    * HorzDimension - Horizontal Dimension (Optional)
@@ -171,7 +171,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Dimension (Optional)
    */
   @XmlElement(name = "HorzDimension", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
   private TDecimal horzDimension;
   /**
    * VertDimension - Vertical Dimension (Optional)
@@ -183,7 +183,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Dimension (Optional)
    */
   @XmlElement(name = "VertDimension", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
   private TDecimal vertDimension;
   /**
    * ApertureDiameter - Aperture Diameter (Optional)
@@ -196,7 +196,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Aperture (Optional)
    */
   @XmlElement(name = "ApertureDiameter", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
   private TDecimal apertureDiameter;
   /**
    * HorzAperture - Horizontal Aperture (Optional)
@@ -209,7 +209,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Aperture (Optional)
    */
   @XmlElement(name = "HorzAperture", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
   private TDecimal horzAperture;
   /**
    * VertAperture - Vertical Aperture (Optional)
@@ -222,7 +222,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Aperture (Optional)
    */
   @XmlElement(name = "VertAperture", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
   private TDecimal vertAperture;
   /**
    * HorzSidelobeSuppressed - Horizontal Sidelobe is Suppressed (Optional)
@@ -247,7 +247,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Sidelobe (Optional)
    */
   @XmlElement(name = "HorzSidelobeAz", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzSidelobeAz;
   /**
    * HorzSidelobeAttenuation - Horizontal Sidelobe Attenuation (Optional)
@@ -259,7 +259,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Sidelobe (Optional)
    */
   @XmlElement(name = "HorzSidelobeAttenuation", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
   private TDecimal horzSidelobeAttenuation;
   /**
    * VertSidelobeSuppressed - Vertical Sidelobe is Suppressed (Optional)
@@ -285,7 +285,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Sidelobe (Optional)
    */
   @XmlElement(name = "VertSidelobeElev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV180.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV180.class)
   private TDecimal vertSidelobeElev;
   /**
    * VertSidelobeAttenuation - Vertical Sidelobe Attenuation (Optional)
@@ -297,7 +297,7 @@ public class Antenna extends Common<Antenna> {
    * Attribute group Sidelobe (Optional)
    */
   @XmlElement(name = "VertSidelobeAttenuation", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
   private TDecimal vertSidelobeAttenuation;
   /**
    * POCInformation (Optional)

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Contact;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.Role;
@@ -76,7 +76,7 @@ public class Address {
    * Format is S100
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
    * Street - Street Address (Optional)
@@ -88,7 +88,7 @@ public class Address {
    * Attribute group Address Information (Required)
    */
   @XmlElement(name = "Street", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
   private TString street;
   /**
    * CityArea - City or Area (Optional)
@@ -100,7 +100,7 @@ public class Address {
    * Attribute group Address Information (Required)
    */
   @XmlElement(name = "CityArea", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString cityArea;
   /**
    * StateCounty - State or County (Optional)
@@ -112,7 +112,7 @@ public class Address {
    * Attribute group Address Information (Required)
    */
   @XmlElement(name = "StateCounty", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString stateCounty;
   /**
    * PostCode - Zip Code or Post Code (Optional)
@@ -124,7 +124,7 @@ public class Address {
    * Attribute group Address Information (Required)
    */
   @XmlElement(name = "PostCode", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
   private TString postCode;
   /**
    * Country - Country or Area (Required)

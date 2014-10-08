@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -196,7 +196,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "FallTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal fallTime;
   /**
    * US:NumPDPositions - Num PD Positions (Optional)
@@ -207,7 +207,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumPDPositions", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numPDPositions;
   /**
    * US:NumPDValues - Num PD Values (Optional)
@@ -218,7 +218,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumPDValues", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numPDValues;
   /**
    * US:NumPRIElements - Num PRI Elements (Optional)
@@ -228,7 +228,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumPRIElements", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numPRIElements;
   /**
    * US:NumPRIPositions - Num PRI Positions (Optional)
@@ -240,7 +240,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumPRIPositions", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numPRIPositions;
   /**
    * US:PDAdaptiveRuleDesc - PD Adaptive Rule Description (Optional)
@@ -250,7 +250,7 @@ public class ObservedPulseAnalysis {
    * Format is S500
    */
   @XmlElement(name = "PDAdaptiveRuleDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString pdAdaptiveRuleDesc;
   /**
    * PDContinuous (US), indicate whether pulse-to-pulse PD variations are
@@ -272,7 +272,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDDwellMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdDwellMax;
   /**
    * US:PDDwellMin - PD Dwell Min (Optional)
@@ -283,7 +283,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDDwellMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdDwellMin;
   /**
    * US:PDExtremeMax - Maximum PD Extreme (Optional)
@@ -296,7 +296,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDExtremeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdExtremeMax;
   /**
    * US:PDExtremeMin - Minimum PD Extreme (Optional)
@@ -306,7 +306,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDExtremeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdExtremeMin;
   /**
    * US:PDMax - Maximum PD (Optional)
@@ -319,7 +319,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdMax;
   /**
    * US:PDMean - Average PD (Optional)
@@ -330,7 +330,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDMean", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdMean;
   /**
    * US:PDMedian - PD Median (Optional)
@@ -340,7 +340,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDMedian", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdMedian;
   /**
    * US:PDMin - Minimum PD (Optional)
@@ -351,7 +351,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdMin;
   /**
    * US:PDPatternPeriod - PD Pattern Period (Optional)
@@ -363,7 +363,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDPatternPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdPatternPeriod;
   /**
    * PDPatternType (US), Indicate whether PD is unmodulated or pulse-to-pulse PD
@@ -379,7 +379,7 @@ public class ObservedPulseAnalysis {
    * Format is S500
    */
   @XmlElement(name = "PDSequenceDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString pdSequenceDesc;
   /**
    * US:PDStdDev - PD Standard Deviation (Optional)
@@ -389,7 +389,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDStdDev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdStdDev;
   /**
    * US:PDStep - PD Step (Optional)
@@ -399,7 +399,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdStep;
   /**
    * US:PDTypicalMax - Maximum PD Typical (Optional)
@@ -413,7 +413,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDTypicalMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdTypicalMax;
   /**
    * US:PDTypicalMin - Minimum PD Typical (Optional)
@@ -424,7 +424,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PDTypicalMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdTypicalMin;
   /**
    * US:PRFChangeRate - PRF Change Rate (Optional)
@@ -435,7 +435,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec/sec)
    */
   @XmlElement(name = "PRFChangeRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal prfChangeRate;
   /**
    * US:PRFExtremeMax - Maximum PRF Extreme (Optional)
@@ -448,7 +448,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "PRFExtremeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal prfExtremeMax;
   /**
    * US:PRFExtremeMin - Minimum PRF Extreme (Optional)
@@ -458,7 +458,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "PRFExtremeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal prfExtremeMin;
   /**
    * US:PRFMax - PRF Max (Optional)
@@ -472,7 +472,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "PRFMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal prfMax;
   /**
    * US:PRFMin - PRF Min (Optional)
@@ -484,7 +484,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "PRFMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal prfMin;
   /**
    * US:PRFTypicalMax - Maximum PRF Typical (Optional)
@@ -498,7 +498,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "PRFTypicalMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal prfTypicalMax;
   /**
    * US:PRFTypicalMin - Minimum PRF Typical (Optional)
@@ -509,7 +509,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "PRFTypicalMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal prfTypicalMin;
   /**
    * US:PRIAdaptiveDriverDesc - PRI Adaptive Driver Description (Optional)
@@ -520,7 +520,7 @@ public class ObservedPulseAnalysis {
    * Format is S500
    */
   @XmlElement(name = "PRIAdaptiveDriverDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString priAdaptiveDriverDesc;
   /**
    * US:PRIAdaptiveRuleDesc - PRI Adaptive Rule Description (Optional)
@@ -531,7 +531,7 @@ public class ObservedPulseAnalysis {
    * Format is S500
    */
   @XmlElement(name = "PRIAdaptiveRuleDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString priAdaptiveRuleDesc;
   /**
    * US:PRIAnomalousValues - PRI Anomalous Values (Optional)
@@ -545,7 +545,7 @@ public class ObservedPulseAnalysis {
    * Format is S500
    */
   @XmlElement(name = "PRIAnomalousValues", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString priAnomalousValues;
   /**
    * US:PRIBasicClockPeriod - PRI Basic Clock Period (Optional)
@@ -556,7 +556,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIBasicClockPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priBasicClockPeriod;
   /**
    * US:PRIChangeRate - PRI Change Rate (Optional)
@@ -567,7 +567,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec/sec)
    */
   @XmlElement(name = "PRIChangeRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal priChangeRate;
   /**
    * PRIContinuous (US), Indicate whether pulse-to-pulse PRI variations are
@@ -586,7 +586,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "PRICountdown", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger priCountdown;
   /**
    * US:PRICountdownKey - PRI Countdown Key (Optional)
@@ -597,7 +597,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(9)
    */
   @XmlElement(name = "PRICountdownKey", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger priCountdownKey;
   /**
    * US:PRIExtremeMax - PRI Extreme Max (Optional)
@@ -611,7 +611,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIExtremeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priExtremeMax;
   /**
    * US:PRIExtremeMin - PRI Extreme Min (Optional)
@@ -622,7 +622,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIExtremeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priExtremeMin;
   /**
    * US:PRIFramePeriod - PRI Frame Period (Optional)
@@ -635,7 +635,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIFramePeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priFramePeriod;
   /**
    * US:PRIFrameRate - PRI Frame Rate (Optional)
@@ -647,7 +647,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "PRIFrameRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal priFrameRate;
   /**
    * US:PRIGroupPulseSpacing - PRI Group Pulse Spacing (Optional)
@@ -660,7 +660,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIGroupPulseSpacing", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priGroupPulseSpacing;
   /**
    * US:PRIGroupSpacing - PRI Group Spacing (Optional)
@@ -671,7 +671,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIGroupSpacing", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priGroupSpacing;
   /**
    * US:PRIMean - Average PRI (Optional)
@@ -682,7 +682,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIMean", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priMean;
   /**
    * US:PRIMedian - PRI Median (Optional)
@@ -693,7 +693,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIMedian", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priMedian;
   /**
    * US:PRIMedianCountdowns - PRI Median Countdowns (Optional)
@@ -704,7 +704,7 @@ public class ObservedPulseAnalysis {
    * Format is S100
    */
   @XmlElement(name = "PRIMedianCountdowns", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString priMedianCountdowns;
   /**
    * US:PRIPatternPeriod - PRI Pattern Period (Optional)
@@ -714,7 +714,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIPatternPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priPatternPeriod;
   /**
    * US:PRIPatternType - PRI Pattern Type (Optional)
@@ -734,7 +734,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "PRIPulsesPerGroup", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger priPulsesPerGroup;
   /**
    * US:PRISequenceDesc - PRI Sequence Description (Optional)
@@ -744,7 +744,7 @@ public class ObservedPulseAnalysis {
    * Format is S500
    */
   @XmlElement(name = "PRISequenceDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString priSequenceDesc;
   /**
    * US:PRIStability - PRI Stability (Optional)
@@ -754,7 +754,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(18,6) (ppm)
    */
   @XmlElement(name = "PRIStability", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPM.class)
   private TDecimal priStability;
   /**
    * US:PRIStabilitySamplePeriod - PRI Stability Sample Period (Optional)
@@ -764,7 +764,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIStabilitySamplePeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priStabilitySamplePeriod;
   /**
    * US:PRIStdDev - PRI Standard Deviation (Optional)
@@ -775,7 +775,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIStdDev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priStdDev;
   /**
    * US:PRIStep - PRI Step (Optional)
@@ -786,7 +786,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRIStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priStep;
   /**
    * US:PRISubframePeriod - PRI Subframe Period (Optional)
@@ -799,7 +799,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRISubframePeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priSubframePeriod;
   /**
    * US:PRISubframeRate - PRI Subframe Rate (Optional)
@@ -809,7 +809,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "PRISubframeRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal priSubframeRate;
   /**
    * US:PRITimingShift - PRI Timing Shift (Optional)
@@ -820,7 +820,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRITimingShift", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priTimingShift;
   /**
    * US:PRITypicalMax - PRI Typical Max (Optional)
@@ -834,7 +834,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRITypicalMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priTypicalMax;
   /**
    * US:PRITypicalMin - PRI Typical Min (Optional)
@@ -845,7 +845,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PRITypicalMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal priTypicalMin;
   /**
    * US:RiseTime - RiseTime (Optional)
@@ -856,7 +856,7 @@ public class ObservedPulseAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "RiseTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal riseTime;
   /**
    * US:ObservedPulseValues (Optional)

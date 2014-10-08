@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -75,7 +75,7 @@ public class Message extends Common<Message> {
    * Format is S40
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS40.class)
   private TString name;
   /**
    * SecondaryDatasets, indicate if datasets referenced by the primary dataset
@@ -90,7 +90,7 @@ public class Message extends Common<Message> {
    * Message.
    */
   @XmlElement(name = "DatasetRef", required = true, nillable = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private List<TString> datasetRef;
 
   /**

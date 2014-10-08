@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -118,7 +118,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S100
    */
   @XmlElement(name = "Title", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString title;
   /**
    * CurrentStage - Current Stage (Optional)
@@ -143,7 +143,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Memo
    */
   @XmlElement(name = "Requirement", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString requirement;
   /**
    * Emergency - Emergency Indicator (Optional)
@@ -165,7 +165,7 @@ public class SSRequest extends Common<SSRequest> {
    * Attribute group NumUnits (Optional)
    */
   @XmlElement(name = "NumMobileUnits", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numMobileUnits;
   /**
    * NumAreaUnits - Number of Units in Area (Optional)
@@ -187,7 +187,7 @@ public class SSRequest extends Common<SSRequest> {
    * Attribute group NumUnits (Optional)
    */
   @XmlElement(name = "NumAreaUnits", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numAreaUnits;
   /**
    * NumCositedUnits - Number of Cosited Units (Optional)
@@ -201,7 +201,7 @@ public class SSRequest extends Common<SSRequest> {
    * Attribute group NumUnits (Optional)
    */
   @XmlElement(name = "NumCositedUnits", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numCositedUnits;
   /**
    * ApplicationDate - Application Date (Optional)
@@ -212,7 +212,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Date
    */
   @XmlElement(name = "ApplicationDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar applicationDate;
   /**
    * DateResponseRequired - Date Response Required (Optional)
@@ -224,7 +224,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Date
    */
   @XmlElement(name = "DateResponseRequired", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateResponseRequired;
   /**
    * ReplacementInfo - Replacement Info (Optional)
@@ -234,7 +234,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Memo
    */
   @XmlElement(name = "ReplacementInfo", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString replacementInfo;
   /**
    * US:ApplicationSPSNumber - Application SPS Number (Optional)
@@ -246,7 +246,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S11
    */
   @XmlElement(name = "ApplicationSPSNumber", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS11.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS11.class)
   private TString applicationSPSNumber;
   /**
    * US:CoordinationNum - Coordination Number (Optional)
@@ -261,7 +261,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S15
    */
   @XmlElement(name = "CoordinationNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
   private TString coordinationNum;
   /**
    * US:InfoTransferRequirement - Info Transfer Requirement (Optional)
@@ -272,7 +272,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Memo
    */
   @XmlElement(name = "InfoTransferRequirement", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString infoTransferRequirement;
   /**
    * US:InitialCost - Initial Cost (Optional)
@@ -282,7 +282,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S70
    */
   @XmlElement(name = "InitialCost", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS70.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS70.class)
   private TString initialCost;
   /**
    * US:InitialCostDesc - Initial Cost Description (Optional)
@@ -293,7 +293,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Memo
    */
   @XmlElement(name = "InitialCostDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString initialCostDesc;
   /**
    * US:ITUWaiver - ITU Waiver (Optional)
@@ -326,7 +326,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Memo
    */
   @XmlElement(name = "NTIASpaceData", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString ntiaSpaceData;
   /**
    * US:OperInvIntent - Operational Inventory Intent (Optional)
@@ -345,7 +345,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S80
    */
   @XmlElement(name = "OriginatingAgency", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS80.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS80.class)
   private TString originatingAgency;
   /**
    * US:RequestType - Request Type (Optional)
@@ -356,7 +356,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S50
    */
   @XmlElement(name = "RequestType", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString requestType;
   /**
    * RelatedAnalysisAndTestData (US), describe electromagnetic compatibility
@@ -365,11 +365,11 @@ public class SSRequest extends Common<SSRequest> {
    * appropriate.
    */
   @XmlElement(name = "RelatedAnalysisAndTestData", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString relatedAnalysisAndTestData;
 
   @XmlElement(name = "SysRelationEssential", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString sysRelationEssential;
   /**
    * US:TSPR - TSPR (Optional)
@@ -382,7 +382,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is S10
    */
   @XmlElement(name = "TSPR", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString tspr;
   /**
    * US:WartimeUse - Wartime Use (Optional)

@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCMO;
@@ -74,7 +74,7 @@ public class Baseband {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "ModFreqMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal modFreqMin;
   /**
    * ModFreqMax - Maximum Modulating Frequency (Optional)
@@ -91,7 +91,7 @@ public class Baseband {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "ModFreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal modFreqMax;
   /**
    * SignalType - Signal Type (Optional)
@@ -110,7 +110,7 @@ public class Baseband {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "BitDuration", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal bitDuration;
   /**
    * OOKPattern - On-Off Key Pattern (Optional)
@@ -121,7 +121,7 @@ public class Baseband {
    * Format is S100
    */
   @XmlElement(name = "OOKPattern", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString ookPattern;
   /**
    * US:SignalDurationMax - Maximum Signal Duration (Optional)
@@ -134,7 +134,7 @@ public class Baseband {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "SignalDurationMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal signalDurationMax;
   /**
    * US:SignalDurationMin - Minimum Signal Duration (Optional)
@@ -144,7 +144,7 @@ public class Baseband {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "SignalDurationMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal signalDurationMin;
   /**
    * US:SignalSequenceDesc - Signal Sequence Description (Optional)
@@ -156,7 +156,7 @@ public class Baseband {
    * Format is S100
    */
   @XmlElement(name = "SignalSequenceDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString signalSequenceDesc;
   /**
    * US:SignalShape - Signal Shape (Optional)

@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.AsgnFreqBase;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -71,7 +71,7 @@ public class Tuning {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "TuningStep", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal tuningStep;
   /**
    * NumFreq - Number of Frequencies (Required)
@@ -81,7 +81,7 @@ public class Tuning {
    * Format is UN(4)
    */
   @XmlElement(name = "NumFreq", required = true)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger numFreq;
   /**
    * Priority - Priority (Optional)
@@ -93,7 +93,7 @@ public class Tuning {
    * Format is UN(1)
    */
   @XmlElement(name = "Priority", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN1.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN1.class)
   private TInteger priority;
   /**
    * Exclusive - Exclusive Assignment (Optional)
@@ -115,7 +115,7 @@ public class Tuning {
    * Attribute group FreqSep (Optional)
    */
   @XmlElement(name = "FreqSep")
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqSep;
   /**
    * FreqSepType - Frequency Separation Type (Optional)

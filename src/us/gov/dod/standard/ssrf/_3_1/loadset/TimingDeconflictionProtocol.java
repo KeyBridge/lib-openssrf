@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Loadset;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -66,7 +66,7 @@ public class TimingDeconflictionProtocol {
    * Format is Memo
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString description;
   /**
    * US:Name - Protocol Name (Optional)
@@ -76,7 +76,7 @@ public class TimingDeconflictionProtocol {
    * Format is S50
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString name;
   /**
    * US:Period - Period (Optional)
@@ -86,7 +86,7 @@ public class TimingDeconflictionProtocol {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "Period", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal period;
   /**
    * US:Ranking - Ranking Level (Optional)
@@ -117,7 +117,7 @@ public class TimingDeconflictionProtocol {
    * Format is Memo
    */
   @XmlElement(name = "SyncMethod", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString syncMethod;
   /**
    * US:TriggerOff - Off Trigger (Optional)
@@ -127,7 +127,7 @@ public class TimingDeconflictionProtocol {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "TriggerOff", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal triggerOff;
   /**
    * US:TriggerOn - On Trigger (Optional)
@@ -137,7 +137,7 @@ public class TimingDeconflictionProtocol {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "TriggerOn", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal triggerOn;
 
   /**

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
@@ -78,7 +78,7 @@ public class Project {
    * Format is S30
    */
   @XmlElement(name = "Name", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
   private TString name;
   /**
    * Description - Description (Optional)
@@ -88,7 +88,7 @@ public class Project {
    * Format is Memo
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString description;
 
   /**

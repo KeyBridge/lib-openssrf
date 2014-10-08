@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -63,7 +63,7 @@ public class Blanking {
    * Format is UN(5,2) [0..360] (deg)
    */
   @XmlElement(name = "AzStart", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal azStart;
   /**
    * AzStop - Stop Azimuth (Optional)
@@ -74,7 +74,7 @@ public class Blanking {
    * Format is UN(5,2) [0..360] (deg)
    */
   @XmlElement(name = "AzStop", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal azStop;
   /**
    * ElevStart - Start Elevation (Optional)
@@ -85,7 +85,7 @@ public class Blanking {
    * Format is SN(4,2) [-90..90] (deg)
    */
   @XmlElement(name = "ElevStart", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal elevStart;
   /**
    * ElevStop - Stop Elevation (Optional)
@@ -96,7 +96,7 @@ public class Blanking {
    * Format is SN(4,2) [-90..90] (deg)
    */
   @XmlElement(name = "ElevStop", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal elevStop;
 
   /**

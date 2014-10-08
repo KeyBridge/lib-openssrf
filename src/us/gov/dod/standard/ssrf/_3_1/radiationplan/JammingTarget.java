@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Loadset;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -84,7 +84,7 @@ public class JammingTarget {
    * Format is UN(5,2) [0..360] (deg)
    */
   @XmlElement(name = "Bearing", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal bearing;
   /**
    * US:FreqMax - Maximum Frequency (Optional)
@@ -96,7 +96,7 @@ public class JammingTarget {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * US:FreqMin - Minimum Frequency (Required)
@@ -107,7 +107,7 @@ public class JammingTarget {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * US:Lat - Latitude (Optional)
@@ -123,14 +123,14 @@ public class JammingTarget {
    * Format is pattern (S10) (deg)
    */
   @XmlElement(name = "Lat", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLAT.class)
   private TString lat;
   /**
    * LoadsetRef (US), the serial of a Loadset dataset that contains the details
    * to be used for this jamming instance.
    */
   @XmlElement(name = "LoadsetRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString loadsetRef;
   /**
    * US:LocationRef - Target Location Serial (Optional)
@@ -141,7 +141,7 @@ public class JammingTarget {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString locationRef;
   /**
    * US:Lon - Longitude (Optional)
@@ -157,7 +157,7 @@ public class JammingTarget {
    * Format is pattern (S11) (deg)
    */
   @XmlElement(name = "Lon", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
   private TString lon;
   /**
    * US:PolarisationType - Polarisation (Optional)
@@ -176,7 +176,7 @@ public class JammingTarget {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "Power", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal power;
   /**
    * US:TargetID - Taget ID (Optional)
@@ -187,7 +187,7 @@ public class JammingTarget {
    * Format is UN(5)
    */
   @XmlElement(name = "TargetID", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger targetID;
   /**
    * US:JammingPerformance (Optional)

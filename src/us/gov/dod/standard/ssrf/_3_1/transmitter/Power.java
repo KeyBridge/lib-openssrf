@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterDBW;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -66,7 +66,7 @@ public class Power {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "PowerMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal powerMin;
   /**
    * PowerMax - Maximum Power (Optional)
@@ -78,7 +78,7 @@ public class Power {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "PowerMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal powerMax;
   /**
    * PowerType - Power Type (Optional)

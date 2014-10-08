@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS40;
@@ -53,7 +53,7 @@ public class CircuitRemarks extends AMetadata<CircuitRemarks> {
    * Format is S40
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS40.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS40.class)
   private String value;
 
   /**

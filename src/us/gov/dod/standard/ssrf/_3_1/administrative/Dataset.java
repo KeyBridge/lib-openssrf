@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.administrative;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Administrative;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -60,7 +60,7 @@ public class Dataset {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serial;
   /**
    * RetireDate - Retire Date (Optional)
@@ -70,7 +70,7 @@ public class Dataset {
    * Format is Date
    */
   @XmlElement(name = "RetireDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar retireDate;
   /**
    * Reason - Reason (Optional)
@@ -80,7 +80,7 @@ public class Dataset {
    * Format is Memo
    */
   @XmlElement(name = "Reason", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString reason;
   /**
    * MissingRef (Optional)
@@ -89,7 +89,7 @@ public class Dataset {
    * dataset referenced in the message was not known by the recipient.
    */
   @XmlElement(name = "MissingRef", nillable = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private List<TString> missingRef;
 
   /**

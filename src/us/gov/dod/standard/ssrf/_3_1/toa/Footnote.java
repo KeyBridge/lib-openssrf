@@ -26,7 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.TOA;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
@@ -96,7 +96,7 @@ public class Footnote implements Comparable<Footnote> {
    * Format is S255
    */
   @XmlElement(name = "Identifier", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
   private TString identifier;
   /**
    * Text - Footnote Text (Required)
@@ -106,7 +106,7 @@ public class Footnote implements Comparable<Footnote> {
    * Format is Memo
    */
   @XmlElement(name = "Text", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString text;
   /**
    * idx - Index (Required)
@@ -119,7 +119,7 @@ public class Footnote implements Comparable<Footnote> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

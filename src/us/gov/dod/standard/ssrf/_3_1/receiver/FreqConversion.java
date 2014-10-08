@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCLO;
@@ -68,7 +68,7 @@ public class FreqConversion {
    * Format is UN(1) [1..5]
    */
   @XmlElement(name = "StageNum", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterIFNUM.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterIFNUM.class)
   private TInteger stageNum;
   /**
    * OscillatorTuning - Oscillator Tuning (Optional)
@@ -88,7 +88,7 @@ public class FreqConversion {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "LOFreqMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal loFreqMin;
   /**
    * LOFreqMax - Maximum LO Frequency (Optional)
@@ -100,7 +100,7 @@ public class FreqConversion {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "LOFreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal loFreqMax;
   /**
    * IFMin - Nominal/Minimum Intermediate Frequency (Optional)
@@ -111,7 +111,7 @@ public class FreqConversion {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "IFMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal ifMin;
   /**
    * IFMax - Maximum Intermediate Frequency (Optional)
@@ -123,7 +123,7 @@ public class FreqConversion {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "IFMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal ifMax;
 
   /**

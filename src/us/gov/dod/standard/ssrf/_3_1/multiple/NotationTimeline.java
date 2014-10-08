@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -65,7 +65,7 @@ public class NotationTimeline {
    * Format is US(20)
    */
   @XmlElement(name = "Code", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS20.class)
   private TString code;
   /**
    * US:Status - Notation Status (Optional)
@@ -84,7 +84,7 @@ public class NotationTimeline {
    * Format is DateTime
    */
   @XmlElement(name = "StatusChangeDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar statusChangeDateTime;
   /**
    * US:Type - Notation Type (Optional)

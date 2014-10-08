@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -83,7 +83,7 @@ public class Assigned {
    * Format is UN(1)
    */
   @XmlElement(name = "Quality", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN1.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN1.class)
   private TInteger quality;
   /**
    * ColourWord - Colour Word (Optional)
@@ -98,7 +98,7 @@ public class Assigned {
    * Attribute group Colour (Optional)
    */
   @XmlElement(name = "ColourWord", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString colourWord;
   /**
    * ColourNum - Colour Number (Optional)
@@ -112,7 +112,7 @@ public class Assigned {
    * Attribute group Colour (Optional)
    */
   @XmlElement(name = "ColourNum", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN2.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN2.class)
   private TInteger colourNum;
   /**
    * ITURegStatus - ITU Registration Status (Optional)
@@ -140,7 +140,7 @@ public class Assigned {
    * Divergence from SMADEF:
    */
   @XmlElement(name = "ITURegDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar ituRegDate;
   /**
    * ITURegNum - ITU Registration Number (Optional)
@@ -155,7 +155,7 @@ public class Assigned {
    * Divergence from SMADEF:
    */
   @XmlElement(name = "ITURegNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS10.class)
   private TString ituRegNum;
   /**
    * NavAidsChannel, for TACAN and DME assignments, enter the channel number of
@@ -165,7 +165,7 @@ public class Assigned {
    * 017 through 119 "Z" Leading zeros are required.
    */
   @XmlElement(name = "NavAidsChannel", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterNAVAIDCHNL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterNAVAIDCHNL.class)
   private TString navAidsChannel;
   /**
    * NetNum - Net Number (Optional)
@@ -179,7 +179,7 @@ public class Assigned {
    * Format is S6
    */
   @XmlElement(name = "NetNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterNETNUMBER.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterNETNUMBER.class)
   private TString netNum;
   /**
    * US:ITURegComments - ITU Regulatory Comments (Optional)
@@ -194,7 +194,7 @@ public class Assigned {
    * Divergence from SMADEF:
    */
   @XmlElement(name = "ITURegComments", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString ituRegComments;
   /**
    * Freq (Optional)

@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -81,7 +81,7 @@ public class Pulse {
    * Attribute group PulseCycle (Optional)
    */
   @XmlElement(name = "PRRMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPULSERATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPULSERATE.class)
   private TDecimal prrMin;
   /**
    * PRRMax - Maximum Pulse Repetition Rate (Optional)
@@ -96,7 +96,7 @@ public class Pulse {
    * Attribute group PulseCycle (Optional)
    */
   @XmlElement(name = "PRRMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPULSERATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPULSERATE.class)
   private TDecimal prrMax;
   /**
    * PDMin - Minimum or Nominal Pulse Duration (Optional)
@@ -111,7 +111,7 @@ public class Pulse {
    * Attribute group PulseCycle (Optional)
    */
   @XmlElement(name = "PDMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdMin;
   /**
    * PDMax - Maximum Pulse Duration (Optional)
@@ -126,7 +126,7 @@ public class Pulse {
    * Attribute group PulseCycle (Optional)
    */
   @XmlElement(name = "PDMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pdMax;
   /**
    * DutyCycleMin - Minimum/Nominal Duty Cycle Ratio (Optional)
@@ -139,7 +139,7 @@ public class Pulse {
    * Attribute group PulseAvgCycle (Optional)
    */
   @XmlElement(name = "DutyCycleMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal dutyCycleMin;
   /**
    * DutyCycleMax - Maximum Duty Cycle Ratio (Optional)
@@ -155,7 +155,7 @@ public class Pulse {
    * Attribute group PulseAvgCycle (Optional)
    */
   @XmlElement(name = "DutyCycleMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal dutyCycleMax;
   /**
    * AvgPowerMin - Minimum/Nominal Average Power (Optional)
@@ -167,7 +167,7 @@ public class Pulse {
    * Attribute group PulseAvgCycle (Optional)
    */
   @XmlElement(name = "AvgPowerMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal avgPowerMin;
   /**
    * AvgPowerMax - Maximum Average Power (Optional)
@@ -182,7 +182,7 @@ public class Pulse {
    * Attribute group PulseAvgCycle (Optional)
    */
   @XmlElement(name = "AvgPowerMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal avgPowerMax;
   /**
    * CompRatio - Pulse Compression Ratio (Optional)
@@ -195,7 +195,7 @@ public class Pulse {
    * Attribute group PulseComp (Optional)
    */
   @XmlElement(name = "CompRatio", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN8_4.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN8_4.class)
   private TDecimal compRatio;
   /**
    * CompMethod - Pulse Compression Method (Optional)
@@ -207,7 +207,7 @@ public class Pulse {
    * Attribute group PulseComp (Optional)
    */
   @XmlElement(name = "CompMethod", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS40.class)
   private TString compMethod;
   /**
    * JustifyShortRiseTime - Justification for Short Rise Time (Optional)
@@ -223,7 +223,7 @@ public class Pulse {
    * Attribute group PulseForm (Optional)
    */
   @XmlElement(name = "RiseTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal riseTime;
   /**
    * FallTime - Fall Time (Optional)
@@ -235,7 +235,7 @@ public class Pulse {
    * Attribute group PulseForm (Optional)
    */
   @XmlElement(name = "FallTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal fallTime;
   /**
    * JustifyShortRiseTime - Justification for Short Rise Time (Optional)
@@ -251,7 +251,7 @@ public class Pulse {
    * Attribute group PulseForm (Optional)
    */
   @XmlElement(name = "JustifyShortRiseTime", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString justifyShortRiseTime;
   /**
    * RadarProcessingGainMax - Maximum Radar Processing Gain (Optional)
@@ -263,7 +263,7 @@ public class Pulse {
    * Format is SN(6,3) (dB)
    */
   @XmlElement(name = "RadarProcessingGainMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal radarProcessingGainMax;
   /**
    * NumSubpulses - Number of Subpulses (Optional)
@@ -274,7 +274,7 @@ public class Pulse {
    * Format is UN(10)
    */
   @XmlElement(name = "NumSubpulses", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN10.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN10.class)
   private TInteger numSubpulses;
 
   /**

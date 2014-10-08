@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -84,7 +84,7 @@ public class AntGain {
    * Format is SN(6.3) (dBi)
    */
   @XmlElement(name = "Gain", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBI.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBI.class)
   private TDecimal gain;
   /**
    * Freq - Frequency (Optional)
@@ -94,7 +94,7 @@ public class AntGain {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "Freq", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freq;
   /**
    * FrontToBackRatio - Front-to-back Ratio (Optional)
@@ -104,7 +104,7 @@ public class AntGain {
    * Format is UN(5,2) (dB)
    */
   @XmlElement(name = "FrontToBackRatio", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
   private TDecimal frontToBackRatio;
 
   /**

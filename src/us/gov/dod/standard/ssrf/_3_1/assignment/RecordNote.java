@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Note;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -55,7 +55,7 @@ public class RecordNote {
    * Format is pattern (S29)
    */
   @XmlElement(name = "NoteRef", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString noteRef;
   /**
    * US:Comments - Comments (Optional)
@@ -67,7 +67,7 @@ public class RecordNote {
    * Format is Memo
    */
   @XmlElement(name = "Comments", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString comments;
 
   /**

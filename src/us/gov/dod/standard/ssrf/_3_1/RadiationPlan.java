@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -125,7 +125,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * US:FreqMin - Minimum Frequency (Required)
@@ -135,7 +135,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * US:JCALevel - Authorisation Level (Optional)
@@ -146,7 +146,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is UN(2)
    */
   @XmlElement(name = "JCALevel", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN2.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN2.class)
   private TInteger jcaLevel;
   /**
    * US:LocationRef - Plan Location Serial (Optional)
@@ -156,13 +156,13 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString locationRef;
   /**
    * Name (US), enter a descriptive name for the Radiation Plan.
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
   /**
    * US:StartDateTime - Start Time (Optional)
@@ -172,7 +172,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is DateTime
    */
   @XmlElement(name = "StartDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar startDateTime;
   /**
    * US:StopDateTime - Stop Time (Optional)
@@ -182,7 +182,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is DateTime
    */
   @XmlElement(name = "StopDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar stopDateTime;
   /**
    * US:Version - Radiation Plan Version (Optional)
@@ -192,7 +192,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is S10
    */
   @XmlElement(name = "Version", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString version;
   /**
    * US:JammingAuthority (Optional)

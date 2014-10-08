@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -91,7 +91,7 @@ public class Configuration {
    * Format is S100
    */
   @XmlElement(name = "ConfigID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString configID;
   /**
    * Description - Configuration Description (Optional)
@@ -102,7 +102,7 @@ public class Configuration {
    * Format is S100
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
    * Repeater - Repeater Indicator (Optional)
@@ -123,7 +123,7 @@ public class Configuration {
    * Format is UN(9)
    */
   @XmlElement(name = "NumUsers", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numUsers;
   /**
    * EIRPMin - Minimum or Nominal EIRP (Optional)
@@ -137,7 +137,7 @@ public class Configuration {
    * Attribute group EIRP (Optional)
    */
   @XmlElement(name = "EIRPMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMin;
   /**
    * EIRPMax - Maximum EIRP (Optional)
@@ -153,7 +153,7 @@ public class Configuration {
    * Attribute group EIRP (Optional)
    */
   @XmlElement(name = "EIRPMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMax;
   /**
    * OOBJustification - Out-Of-Band Justification (Optional)
@@ -163,7 +163,7 @@ public class Configuration {
    * Format is Memo
    */
   @XmlElement(name = "OOBJustification", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString oobJustification;
   /**
    * US:PowerLimit - Power Limit (Optional)
@@ -173,7 +173,7 @@ public class Configuration {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "PowerLimit", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal powerLimit;
   /**
    * US:PowerType - Power Type (Optional)
@@ -198,11 +198,11 @@ public class Configuration {
   private TString spectrumLink;
 
   @XmlElement(name = "ConfigApprovedBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString configApprovedBy;
 
   @XmlElement(name = "ConfigApprovedDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar configApprovedDateTime;
   /**
    * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
@@ -213,7 +213,7 @@ public class Configuration {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedFirstDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar observedFirstDateTime;
   /**
    * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
@@ -224,7 +224,7 @@ public class Configuration {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedLastDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar observedLastDateTime;
   /**
    * US:LastObservedBy - Last Observed By (Optional)
@@ -235,7 +235,7 @@ public class Configuration {
    * Format is S50
    */
   @XmlElement(name = "LastObservedBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString lastObservedBy;
   /**
    * US:LastReviewedBy - Last Reviewed By (Optional)
@@ -245,7 +245,7 @@ public class Configuration {
    * Format is S50
    */
   @XmlElement(name = "LastReviewedBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString lastReviewedBy;
   /**
    * US:LastReviewedDateTime - Last ReviewedTimestamp (Optional)
@@ -256,7 +256,7 @@ public class Configuration {
    * Format is DateTime
    */
   @XmlElement(name = "LastReviewedDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar lastReviewedDateTime;
   /**
    * Notation (Optional)
@@ -325,7 +325,7 @@ public class Configuration {
    * target or targets.
    */
   @XmlElement(name = "LoadsetRef", nillable = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private List<TString> loadsetRef;
   /**
    * US:ObservedERPAnalysis (Optional)

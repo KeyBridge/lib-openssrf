@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
@@ -173,7 +173,7 @@ public class SSRFUtility {
         validate(fieldValue);
         /**
          * After the field validation status is completed try to validate the
-         * object instance configuration against an XmlJavaTypeAdapter, if
+         * object instance configuration against an XmlTypeValidator, if
          * present.
          */
         validateField(field, fieldValue);
@@ -296,7 +296,7 @@ public class SSRFUtility {
         evaluate(fieldValue, instance, field, messages);
         /**
          * After the field validation status is completed try to validate the
-         * object instance configuration against an XmlJavaTypeAdapter, if
+         * object instance configuration against an XmlTypeValidator, if
          * present.
          */
         try {
@@ -313,19 +313,19 @@ public class SSRFUtility {
   /**
    * Validate a field setting.
    * <p>
-   * This method inspects the field annotation for an XmlJavaTypeAdapter. If
-   * found then the XmlJavaTypeAdapter is instantiated and called against the
-   * provided field value.
+   * This method inspects the field annotation for an XmlTypeValidator. If found
+   * then the XmlTypeValidator is instantiated and called against the provided
+   * field value.
    * <p>
-   * If no XmlJavaTypeAdapter annotation is found then the field value is
-   * assumed to be valid.
+   * If no XmlTypeValidator annotation is found then the field value is assumed
+   * to be valid.
    * <p>
    * If the field value is null then NO VALIDATION is done.
    * <p>
    * <p>
    * @param field      the class field
    * @param fieldValue the class field configured value
-   * @throws Exception the XmlJavaTypeAdapter marshal error, thrown ONLY if the
+   * @throws Exception the XmlTypeValidator marshal error, thrown ONLY if the
    *                   field value is not valid
    */
   private static void validateField(Field field, Object fieldValue) throws Exception {
@@ -333,22 +333,23 @@ public class SSRFUtility {
       return;
     }
     /**
-     * Scan the field annotations, looking for an XmlJavaTypeAdapter instance.
+     * Scan the field annotations, looking for an XmlTypeValidator instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlJavaTypeAdapter) {
+      if (annotation instanceof XmlTypeValidator) {
         /**
-         * If an XmlJavaTypeAdapter annotation is found then instantiate it and
-         * attempt to marshal the field value. This action will complete
-         * silently if the field value is valid and throw an exception if the
-         * field value is not valid.
+         * If an XmlTypeValidator annotation is found then instantiate the
+         * XmlAdapter class referred to in the "value" field and attempt to
+         * marshal the field value. This action will complete silently if the
+         * field value is valid and throw an exception if the field value is not
+         * valid.
          */
         try {
           @SuppressWarnings("unchecked")
-          XmlAdapter<Object, Object> anInstance = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
+          XmlAdapter<Object, Object> anInstance = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
           anInstance.marshal(fieldValue);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-          System.err.println("XmlJavaTypeAdapter failed to instantiate: " + ex.getMessage());
+          System.err.println("XmlValidator failed to instantiate: " + ex.getMessage());
           Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
         }
       }
@@ -475,20 +476,20 @@ public class SSRFUtility {
    * tree and copies all required data objects into their proper location and
    * preparing the SSRF destination instance for export.
    * <p>
-   * @param sourceInstance      the SSRF working copy
-   * @param destinationInstance the root SSRF instance into which the components
-   *                            are copied into their proper destination
+   * @param sourceInstance the SSRF working copy
+   * @param rootInstance   the root SSRF instance into which the components are
+   *                       copied into their proper destination
    */
   @SuppressWarnings("AssignmentToMethodParameter")
-  private static void build(Object sourceInstance, Object destinationInstance) {
+  private static void build(Object sourceInstance, Object rootInstance) {
     /**
      * Return immediately if the source instance is null. Instantiate a new
      * destination instance if none is provided.
      */
     if (sourceInstance == null) {
       return;
-    } else if (destinationInstance == null) {
-      destinationInstance = sourceInstance;
+    } else if (rootInstance == null) {
+      rootInstance = sourceInstance;
     }
     /**
      * Assign the class type under study to a local variable for convenience.
@@ -561,12 +562,12 @@ public class SSRFUtility {
           /**
            * Recurse into the class instance.
            */
-          build(buildable, destinationInstance);
+          build(buildable, rootInstance);
           /**
            * After recursion try adding the value to the destination (root SSRF)
            * instance.
            */
-          addValueToDestinationInstance(buildable, destinationInstance);
+          addValueToDestinationInstance(buildable, rootInstance);
         }
       } else {
         if (isBuildable(fieldValue)) {
@@ -574,8 +575,8 @@ public class SSRFUtility {
            * Same process as above.
            */
           invokeBuild(fieldValue);
-          build(fieldValue, destinationInstance);
-          addValueToDestinationInstance(fieldValue, destinationInstance);
+          build(fieldValue, rootInstance);
+          addValueToDestinationInstance(fieldValue, rootInstance);
         }
       }
     }
@@ -585,10 +586,11 @@ public class SSRFUtility {
   }
 
   /**
-   * Add the object instance to the destination instance. This method tries to
-   * find a "with" setter in the destination instance that accepts the source
-   * object instance class type. If found the source object instance is added to
-   * the destination object instance.
+   * Try to add the source object instance to the destination object instance.
+   * <p>
+   * This method tries to find a "with" setter in the destination instance that
+   * accepts the source object instance class type. If found the source object
+   * instance is added to the destination object instance.
    * <p>
    * @param sourceInstance      the source object instance to add to the
    *                            destination object instance
@@ -617,9 +619,21 @@ public class SSRFUtility {
     if (instance == null) {
       return false;
     }
-    return instance.getClass().getName().startsWith("us.gov.dod.standard.ssrf")
-      && !instance.getClass().getName().contains(".adapter.")
-      && !instance.getClass().getName().contains(".metadata.");
+    String className = instance.getClass().getName();
+    /**
+     * Only inspect SSRF classes, but ignore ADAPTER and METADATA helpers.
+     */
+    if (className.startsWith("us.gov.dod.standard.ssrf") && !instance.getClass().getName().contains(".adapter.") && !instance.getClass().getName().contains(".metadata.")) {
+      try {
+        return instance.getClass().getMethod("build") != null;
+      } catch (NoSuchMethodException | SecurityException ex) {
+        /**
+         * Does not implement build().
+         */
+//      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
+    return false;
   }
 
   /**
@@ -637,9 +651,15 @@ public class SSRFUtility {
      * does not implement the build() method.
      */
     try {
-      instance.getClass().getMethod("build", null).invoke(instance, null);
+      instance.getClass().getMethod("build").invoke(instance);
     } catch (NoSuchMethodException | SecurityException ex) {
+      /**
+       * Does not implement build().
+       */
     } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+      /**
+       * build() is not accessible (e.g. private).
+       */
     }
   }
 

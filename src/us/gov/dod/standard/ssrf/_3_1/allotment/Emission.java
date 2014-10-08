@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -134,7 +134,7 @@ public class Emission {
    * Format is pattern (S5)
    */
   @XmlElement(name = "EmsClass", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterEMSDES.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterEMSDES.class)
   private TString emsClass;
   /**
    * NecessaryBw - Necessary Bandwidth (Optional)
@@ -148,7 +148,7 @@ public class Emission {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "NecessaryBw", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal necessaryBw;
   /**
    * Power - Maximum Power (Optional)
@@ -158,7 +158,7 @@ public class Emission {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "Power", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal power;
 
   /**

@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDF;
@@ -82,7 +82,7 @@ public class RxModulation {
    * Format is UN(10,3) (kbit/sec)
    */
   @XmlElement(name = "MaxBitRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterBITRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterBITRATE.class)
   private TDecimal maxBitRate;
   /**
    * NumStates - Number of Digital States (Optional)
@@ -95,7 +95,7 @@ public class RxModulation {
    * Attribute group DigitalFormat (Optional)
    */
   @XmlElement(name = "NumStates", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger numStates;
   /**
    * LineCoding - Line Coding (Optional)
@@ -119,7 +119,7 @@ public class RxModulation {
    * Attribute group DigitalFormat (Optional)
    */
   @XmlElement(name = "CodeRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterBITRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterBITRATE.class)
   private TDecimal codeRate;
   /**
    * CodePeriod - Pseudorandom Code Repetition Period (Optional)
@@ -131,7 +131,7 @@ public class RxModulation {
    * Attribute group DigitalFormat (Optional)
    */
   @XmlElement(name = "CodePeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal codePeriod;
 
   /**

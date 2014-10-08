@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
@@ -84,7 +84,7 @@ public class Organisation extends Common<Organisation> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -97,7 +97,7 @@ public class Organisation extends Common<Organisation> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
@@ -114,7 +114,7 @@ public class Organisation extends Common<Organisation> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * AlternateName - Alternate Name (Optional)
@@ -124,7 +124,7 @@ public class Organisation extends Common<Organisation> {
    * Format is S100
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
   /**
    * AlternateName - Alternate Name (Optional)
@@ -134,7 +134,7 @@ public class Organisation extends Common<Organisation> {
    * Format is S100
    */
   @XmlElement(name = "AlternateName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString alternateName;
   /**
    * Type - Type (Optional)
@@ -155,7 +155,7 @@ public class Organisation extends Common<Organisation> {
    * Format is S20
    */
   @XmlElement(name = "UIC", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString uic;
   /**
    * Address (Optional)
@@ -187,7 +187,7 @@ public class Organisation extends Common<Organisation> {
    * RoleRef contains the serial of a referenced Role.
    */
   @XmlElement(name = "RoleRef", nillable = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private List<TString> roleRef;
   /**
    * RelatedOrganisation (Optional)

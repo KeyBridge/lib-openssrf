@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -117,7 +117,7 @@ public class ObservedERPAnalysis {
    * Format is S500
    */
   @XmlElement(name = "ERPAdaptiveDriverDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString erpAdaptiveDriverDesc;
   /**
    * US:ERPAdaptiveRuleDesc - ERP Driver Rule Description (Optional)
@@ -127,7 +127,7 @@ public class ObservedERPAnalysis {
    * Format is S500
    */
   @XmlElement(name = "ERPAdaptiveRuleDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString erpAdaptiveRuleDesc;
   /**
    * US:ERPPatternPeriod - ERP Pattern Period (Optional)
@@ -137,7 +137,7 @@ public class ObservedERPAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ERPPatternPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal erpPatternPeriod;
   /**
    * ERPPatternType (US), indicate whether ERP is unmodulated ERP variations are
@@ -158,7 +158,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPActualMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpActualMax;
   /**
    * US:ERPActualMin - ERP Actual Min Value (Optional)
@@ -170,7 +170,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPActualMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpActualMin;
   /**
    * US:ERPChangeRate - ERP Change Rate (Optional)
@@ -181,7 +181,7 @@ public class ObservedERPAnalysis {
    * Format is UN(6,4) (dBW/sec)
    */
   @XmlElement(name = "ERPChangeRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DBWS.class)
   private TDecimal erpChangeRate;
   /**
    * US:ERPExtremeMax - ERP Extreme Max Value (Optional)
@@ -195,7 +195,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPExtremeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpExtremeMax;
   /**
    * US:ERPExtremeMin - ERP Extreme Min Value (Optional)
@@ -206,7 +206,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPExtremeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpExtremeMin;
   /**
    * US:ERPMean - ERP Mean Value (Optional)
@@ -217,7 +217,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPMean", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpMean;
   /**
    * US:ERPMedian - ERP Most Probable Value (Optional)
@@ -229,14 +229,14 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPMedian", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpMedian;
   /**
    * ERP SequenceDesc (US) - The textual description of the observed algorithm
    * for the sequence of variation for the ERP.
    */
   @XmlElement(name = "ERPSequenceDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString erpSequenceDesc;
   /**
    * US:ERPStdDev - ERP Standard Deviation (Optional)
@@ -247,7 +247,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPStdDev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpStdDev;
   /**
    * US:ERPStep - ERP Step (Optional)
@@ -258,7 +258,7 @@ public class ObservedERPAnalysis {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpStep;
   /**
    * US:NumObsPositions - Observed Position Count (Optional)
@@ -271,7 +271,7 @@ public class ObservedERPAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumObsPositions", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numObsPositions;
   /**
    * US:NumObsValues - Observed Value Count (Optional)
@@ -282,7 +282,7 @@ public class ObservedERPAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumObsValues", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numObsValues;
   /**
    * US:ObservedERPValues (Optional)

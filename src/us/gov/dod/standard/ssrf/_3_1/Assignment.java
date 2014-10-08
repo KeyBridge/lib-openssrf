@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -150,7 +150,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S100
    */
   @XmlElement(name = "Title", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString title;
   /**
    * UsageType - Type of Usage (Optional)
@@ -171,7 +171,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    */
   @XmlElement(name = "DateResponseRequired", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateResponseRequired;
   /**
    * EffectiveDateTime - Effective Date/Time (Required)
@@ -181,7 +181,7 @@ public class Assignment extends Common<Assignment> {
    * Format is DateTime
    */
   @XmlElement(name = "EffectiveDateTime", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar effectiveDateTime;
   /**
    * ExpirationDateTime - Expiration Date/Time (Optional)
@@ -194,7 +194,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group ExpireReviewDT (Required)
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar expirationDateTime;
   /**
    * ReviewDate - Review Date (Optional)
@@ -209,7 +209,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group ExpireReviewDT (Required)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * Period - Periodicity of Use (Optional)
@@ -232,7 +232,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Seconds", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString seconds;
   /**
    * Minutes - Minutes (Optional)
@@ -245,7 +245,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Minutes", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString minutes;
   /**
    * Hours - Hours (Optional)
@@ -258,7 +258,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Hours", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterHOURS.class)
   private TString hours;
   /**
    * DaysofMonth - Days Of Month (Optional)
@@ -271,7 +271,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "DaysOfMonth", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
   private TString daysOfMonth;
   /**
    * Months - Months (Optional)
@@ -284,7 +284,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Months", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMONTHS.class)
   private TString months;
   /**
    * DaysofWeek - Days Of Week (Optional)
@@ -297,7 +297,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "DaysOfWeek", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
   private TString daysOfWeek;
   /**
    * Years - Years (Optional)
@@ -310,7 +310,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Years", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterYEARS.class)
   private TString years;
   /**
    * Duration - Duration (Optional)
@@ -340,7 +340,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Duration", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterDURATION_UN4.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterDURATION_UN4.class)
   private TInteger duration;
   /**
    * Processing - Processing (Optional)
@@ -383,7 +383,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Memo
    */
   @XmlElement(name = "Requirement", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString requirement;
   /**
    * NumSystems - Number of Using Systems (Optional)
@@ -393,7 +393,7 @@ public class Assignment extends Common<Assignment> {
    * Format is UN(9)
    */
   @XmlElement(name = "NumSystems", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numSystems;
   /**
    * US:AgencyActionNum - Agency Action Number (Optional)
@@ -403,7 +403,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S12
    */
   @XmlElement(name = "AgencyActionNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS12.class)
   private TString agencyActionNum;
   /**
    * US:AgencyComments - Agency Comments (Optional)
@@ -415,7 +415,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Memo
    */
   @XmlElement(name = "AgencyComments", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString agencyComments;
   /**
    * US:AgencySerialNum - Agency Serial Number (Optional)
@@ -425,7 +425,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S12
    */
   @XmlElement(name = "AgencySerialNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS12.class)
   private TString agencySerialNum;
   /**
    * US:AssignmentDate - Assignment Date (Optional)
@@ -435,7 +435,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    */
   @XmlElement(name = "AssignmentDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar assignmentDate;
   /**
    * US:COCOMGroup - COCOM Group (Optional)
@@ -448,7 +448,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S8
    */
   @XmlElement(name = "COCOMGroup", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS8.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS8.class)
   private TString cocomGroup;
   /**
    * US:ControlRequestNum - Control Request Number (Optional)
@@ -459,7 +459,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S15
    */
   @XmlElement(name = "ControlRequestNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
   private TString controlRequestNum;
   /**
    * US:CoordinationComments - Coordination Comments (Optional)
@@ -470,7 +470,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Memo
    */
   @XmlElement(name = "CoordinationComments", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString coordinationComments;
   /**
    * US:DataSource - Data Source (Optional)
@@ -492,7 +492,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S22
    */
   @XmlElement(name = "FCCFileNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS22.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS22.class)
   private TString fccFileNum;
   /**
    * US:FMSCNum - FMSC Number (Optional)
@@ -503,7 +503,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S14
    */
   @XmlElement(name = "FMSCNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS14.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS14.class)
   private TString fmscNum;
   /**
    * US:FrequencyActionOfficer - Frequency Action Officer (Optional)
@@ -514,7 +514,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S3
    */
   @XmlElement(name = "FrequencyActionOfficer", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS3.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS3.class)
   private TString frequencyActionOfficer;
   /**
    * US:ListSerialNum - List Serial Number (Optional)
@@ -527,7 +527,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S12
    */
   @XmlElement(name = "ListSerialNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS12.class)
   private TString listSerialNum;
   /**
    * US:NATOPooledFrequencyCode - NATO Pooled Frequency Code (Optional)
@@ -547,7 +547,7 @@ public class Assignment extends Common<Assignment> {
    * Format is UN(4)
    */
   @XmlElement(name = "NATOPooledFrequencyNum", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger natoPooledFrequencyNum;
   /**
    * US:OriginalAssignmentDate - Original Assignment Date (Optional)
@@ -557,7 +557,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    */
   @XmlElement(name = "OriginalAssignmentDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar originalAssignmentDate;
   /**
    * US:RoutineAgendaItem - Routine Agenda Item (Optional)
@@ -586,7 +586,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Memo
    */
   @XmlElement(name = "SupplementaryDetails", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString supplementaryDetails;
   /**
    * US:TypeOfService - Type Of Service (Optional)
@@ -625,7 +625,7 @@ public class Assignment extends Common<Assignment> {
    * Format is UN(3) [0..100] (%)
    */
   @XmlElement(name = "UsagePercentage", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUS_PERCENT.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUS_PERCENT.class)
   private TInteger usagePercentage;
   /**
    * US:UserNetCode - User Net Code (Optional)
@@ -636,7 +636,7 @@ public class Assignment extends Common<Assignment> {
    * Format is S6
    */
   @XmlElement(name = "UserNetCode", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS6.class)
   private TString userNetCode;
   /**
    * US:PrimaryStation - Primary Station (Optional)
@@ -679,7 +679,7 @@ public class Assignment extends Common<Assignment> {
    * SSReply, ForceElement or FEDeployment.
    */
   @XmlElement(name = "RelatedRef", nillable = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private List<TString> relatedRef;
   /**
    * Configuration (Required)

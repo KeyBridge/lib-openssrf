@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Station;
@@ -77,7 +77,7 @@ public class POCInformation {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serial;
   /**
    * Description - POC Description (Optional)
@@ -89,7 +89,7 @@ public class POCInformation {
    * Format is Memo
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString description;
 
   /**

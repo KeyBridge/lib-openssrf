@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -49,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUOW;
 public class AsgnAllotOwner {
 
   @XmlElement(name = "Description ", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS18.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS18.class)
   private TString description;
   @XmlElement(name = "OwnerType ", required = true)
   private TString ownerType;
@@ -64,7 +64,7 @@ public class AsgnAllotOwner {
    * Format is pattern (S29)
    */
   @XmlElement(name = "OwnerOrgRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString ownerOrgRef;
 
   /**

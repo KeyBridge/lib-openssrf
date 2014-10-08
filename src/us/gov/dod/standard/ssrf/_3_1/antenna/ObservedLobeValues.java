@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -72,7 +72,7 @@ public class ObservedLobeValues {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "HorzBwMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal horzBwMax;
   /**
    * US:HorzBwMin - Minimum Horizontal Beamwidth (Optional)
@@ -83,7 +83,7 @@ public class ObservedLobeValues {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "HorzBwMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal horzBwMin;
   /**
    * US:LobeValueAngleAccuracy - Lobe Measurement Angle Accuracy (Optional)
@@ -94,7 +94,7 @@ public class ObservedLobeValues {
    * Format is SN(5,2) [0-90] (deg)
    */
   @XmlElement(name = "LobeValueAngleAccuracy", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES90.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES90.class)
   private TDecimal lobeValueAngleAccuracy;
   /**
    * US:LobeValueAngleHorz - Lobe Measurement Horizontal Angle (Optional)
@@ -105,7 +105,7 @@ public class ObservedLobeValues {
    * Format is SN(5,2) [0-180] (deg)
    */
   @XmlElement(name = "LobeValueAngleHorz", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ180.class)
   private TDecimal lobeValueAngleHorz;
   /**
    * US:LobeValueAngleVert - Lobe Measurement Vertical Angle (Optional)
@@ -116,7 +116,7 @@ public class ObservedLobeValues {
    * Format is SN(5,2) [0-180] (deg)
    */
   @XmlElement(name = "LobeValueAngleVert", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ180.class)
   private TDecimal lobeValueAngleVert;
   /**
    * US:LobeValueID - Lobe Measurement Identifier (Required)
@@ -126,7 +126,7 @@ public class ObservedLobeValues {
    * Format is S10
    */
   @XmlElement(name = "LobeValueID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString lobeValueID;
   /**
    * US:LobeValueLevel - Lobe Measurement Power Level (Optional)
@@ -137,7 +137,7 @@ public class ObservedLobeValues {
    * Format is UN(5,2) [0-150] (dB)
    */
   @XmlElement(name = "LobeValueLevel", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DB150.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DB150.class)
   private TDecimal lobeValueLevel;
   /**
    * US:LobeValueLevelAccuracy - Lobe Measurement Level Accuracy (Optional)
@@ -148,7 +148,7 @@ public class ObservedLobeValues {
    * Format is SN(4,2) [0-75] (dB)
    */
   @XmlElement(name = "LobeValueLevelAccuracy", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DB90.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DB90.class)
   private TDecimal lobeValueLevelAccuracy;
   /**
    * US:LobeValueName - Lobe Measurement Name (Optional)
@@ -158,7 +158,7 @@ public class ObservedLobeValues {
    * Format is S25
    */
   @XmlElement(name = "LobeValueName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS25.class)
   private TString lobeValueName;
   /**
    * US:VertBwMax - Maximum Vertical Beamwidth (Optional)
@@ -172,7 +172,7 @@ public class ObservedLobeValues {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "VertBwMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal vertBwMax;
   /**
    * US:VertBwMin - Minimum Vertical Beamwidth (Optional)
@@ -183,7 +183,7 @@ public class ObservedLobeValues {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "VertBwMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal vertBwMin;
 
   /**

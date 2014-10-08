@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -90,7 +90,7 @@ public class ForceElement extends Common<ForceElement> {
    * Format is Date
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * Type - Type (Required)
@@ -111,7 +111,7 @@ public class ForceElement extends Common<ForceElement> {
    * Format is S20
    */
   @XmlElement(name = "UIC", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString uic;
   /**
    * OwningCountry - Owning Country/Body (Optional)
@@ -130,7 +130,7 @@ public class ForceElement extends Common<ForceElement> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "OwningOrganisation", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString owningOrganisationRef;
   /**
    * Role - Role (Optional)

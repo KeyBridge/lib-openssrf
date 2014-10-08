@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -64,7 +64,7 @@ public class EarthStation {
    * Format is S50
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString name;
   /**
    * Type - Station Type (Optional)
@@ -83,7 +83,7 @@ public class EarthStation {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString locationRef;
 
   /**

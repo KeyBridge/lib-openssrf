@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFM;
@@ -87,7 +87,7 @@ public class TxModulation
    * Format is UN(5,3)
    */
   @XmlElement(name = "MaxDevRatio", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_3.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN5_3.class)
   private TDecimal maxDevRatio;
   /**
    * AMIdx - Amplitude Modulation Index (Optional)
@@ -104,7 +104,7 @@ public class TxModulation
    * Attribute group AM (Optional)
    */
   @XmlElement(name = "AMIdx", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_3.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN5_3.class)
   private TDecimal amIdx;
   /**
    * AMRMSIdx - RMS Amplitude Modulation Index (Optional)
@@ -120,7 +120,7 @@ public class TxModulation
    * Attribute group AM (Optional)
    */
   @XmlElement(name = "AMRMSIdx", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_3.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN5_3.class)
   private TDecimal amrmsIdx;
   /**
    * FMPeakFreqDev - Peak Frequency Deviation (Optional)
@@ -132,7 +132,7 @@ public class TxModulation
    * Attribute group FM (Optional)
    */
   @XmlElement(name = "FMPeakFreqDev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal fmPeakFreqDev;
   /**
    * FMRmsFreqDev - RMS Frequency Deviation (Optional)
@@ -146,7 +146,7 @@ public class TxModulation
    * Attribute group FM (Optional)
    */
   @XmlElement(name = "FMRMSFreqDev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal fmrmsFreqDev;
   /**
    * FMDeviationCode - Peak Frequency Deviation (Optional)
@@ -171,7 +171,7 @@ public class TxModulation
    * Attribute group FM (Optional)
    */
   @XmlElement(name = "FMPeakModulationIdx", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN5_3.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN5_3.class)
   private TDecimal fmPeakModulationIdx;
   /**
    * CarrierSuppression - Level of Carrier Suppression (Optional)
@@ -184,7 +184,7 @@ public class TxModulation
    * Attribute group Suppression (Optional)
    */
   @XmlElement(name = "CarrierSuppression", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal carrierSuppression;
   /**
    * SidebandSuppression - Level of Sideband Suppression (Optional)
@@ -198,7 +198,7 @@ public class TxModulation
    * Attribute group Suppression (Optional)
    */
   @XmlElement(name = "SidebandSuppression", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal sidebandSuppression;
   /**
    * SidebandSuppressed - Sideband Suppressed (Optional)
@@ -219,7 +219,7 @@ public class TxModulation
    * Format is UN(5,2) [0-180] (deg)
    */
   @XmlElement(name = "KeysAngle", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ180.class)
   private TDecimal keysAngle;
   /**
    * US:KeysDesc - Keying Format (Optional)
@@ -230,21 +230,21 @@ public class TxModulation
    * Format is S500
    */
   @XmlElement(name = "KeysDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString keysDesc;
   /**
    * US:MUXLevel (US) - The signal power in dB referenced to the baseband
    * carrier for the companding of the multiplexed signal.
    */
   @XmlElement(name = "MUXLevel", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal muxLevel;
   /**
    * US:MUXScheme (US), enter a freetext description of the multiplexing
    * algorithm.
    */
   @XmlElement(name = "MUXScheme", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString muxScheme;
   /**
    * US:SymbolSize - Symbol Size (Optional)
@@ -256,7 +256,7 @@ public class TxModulation
    * Format is UN(3) (bits)
    */
   @XmlElement(name = "SymbolSize", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_BITS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_BITS.class)
   private TDecimal symbolSize;
 
   /**

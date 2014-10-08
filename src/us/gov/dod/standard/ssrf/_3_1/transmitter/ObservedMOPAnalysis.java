@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -153,7 +153,7 @@ public class ObservedMOPAnalysis {
    * Format is S500
    */
   @XmlElement(name = "MOPAdaptiveDriverDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString mopAdaptiveDriverDesc;
   /**
    * US:MOPAdaptiveDriverRuleDesc - MOP Adaptive Driver Rule Description
@@ -164,7 +164,7 @@ public class ObservedMOPAnalysis {
    * Format is S500
    */
   @XmlElement(name = "MOPAdaptiveDriverRuleDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString mopAdaptiveDriverRuleDesc;
   /**
    * US:MOPAMPercentModulation - MOP AM Percent Modulation (Optional)
@@ -175,7 +175,7 @@ public class ObservedMOPAnalysis {
    * Format is UN(2,1) (%)
    */
   @XmlElement(name = "MOPAMPercentModulation", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PERCENT2.class)
   private TDecimal mopamPercentModulation;
   /**
    * US:MOPChangeRateAM (US) - The change in amplitude within the pulse. Use of
@@ -183,7 +183,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRateAM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPCHGAM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPCHGAM.class)
   private TDecimal mopChangeRateAM;
   /**
    * US:MOPChangeRateCW (US) - The change in continuous wave frequency within
@@ -191,7 +191,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRateCW", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPCHGFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPCHGFM.class)
   private TDecimal mopChangeRateCW;
   /**
    * US:MOPChangeRateFM (US) - The change in frequency within the pulse. Use of
@@ -199,7 +199,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRateFM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPCHGFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPCHGFM.class)
   private TDecimal mopChangeRateFM;
   /**
    * US:MOPChangeRatePM (US) - The change in phase angle within the pulse. Use
@@ -207,7 +207,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPChangeRatePM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLERATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLERATE.class)
   private TDecimal mopChangeRatePM;
   /**
    * US:MOPContinuous (US), indicate whether MOP or CW modulation is Discrete or
@@ -220,7 +220,7 @@ public class ObservedMOPAnalysis {
    * data.
    */
   @XmlElement(name = "MOPID", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString mopid;
   /**
    * US:MOPMeanValueAM (US) - The average amplitude for a signal which changes
@@ -228,7 +228,7 @@ public class ObservedMOPAnalysis {
    * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValueAM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopMeanValueAM;
   /**
    * US:MOPMeanValueCW (US) - The average continuous wave frequency for a signal
@@ -236,7 +236,7 @@ public class ObservedMOPAnalysis {
    * should agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValueCW", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopMeanValueCW;
   /**
    * US:MOPMeanValue (US) - The average frequency for a signal which changes on
@@ -244,7 +244,7 @@ public class ObservedMOPAnalysis {
    * the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValueFM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopMeanValueFM;
   /**
    * US:MOPMeanValue (US) - The average phase angle for a signal which changes
@@ -252,7 +252,7 @@ public class ObservedMOPAnalysis {
    * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPMeanValuePM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopMeanValuePM;
   /**
    * US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
@@ -260,28 +260,28 @@ public class ObservedMOPAnalysis {
    * each time)
    */
   @XmlElement(name = "MOPNumElements", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger mopNumElements;
   /**
    * US:MOPOffTime (US) - The duration of the state of the modulated waveform
    * with the absence of energy.
    */
   @XmlElement(name = "MOPOffTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopOffTime;
   /**
    * US:MOPOnTime (US) - The duration of the one on-time related to the binary
    * form of amplitude modulation called on-off keying.
    */
   @XmlElement(name = "MOPOnTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopOnTime;
   /**
    * MOPPatternName (US), enter a freeform text name for the pattern (e.g.,
    * Phase Alpha).
    */
   @XmlElement(name = "MOPPatternName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString mopPatternName;
   /**
    * US:MOPPatternPeriod (US) - The duration of one complete cycle of Frequency,
@@ -289,7 +289,7 @@ public class ObservedMOPAnalysis {
    * basis, within a pulse, for pulsed signals.
    */
   @XmlElement(name = "MOPPatternPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopPatternPeriod;
   /**
    * US:MOPPatternType (US), indicate whether MOP or CW characteristics are
@@ -302,14 +302,14 @@ public class ObservedMOPAnalysis {
    * with the selected MOP name (i.e., the name in the MOP Pattern List).
    */
   @XmlElement(name = "MOPPulseDurationLink", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopPulseDurationLink;
   /**
    * US:MOPTimeBWProduct (US) - The time-bandwidth product of the waveform
    * (actual PD times instantaneous bandwidth).
    */
   @XmlElement(name = "MOPTimeBWProduct", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_UN16_9.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_UN16_9.class)
   private TDecimal mopTimeBWProduct;
   /**
    * MOPType (US), indicate if the information imprinted on the pulse is
@@ -324,7 +324,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxAM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopValueMaxAM;
   /**
    * US:MOPValueMaxCW (US) - The maximum change in continuous wave frequency
@@ -332,7 +332,7 @@ public class ObservedMOPAnalysis {
    * in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxCW", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMaxCW;
   /**
    * US:MOPValueMaxFM (US) - The maximum change in frequency within the pulse.
@@ -340,7 +340,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxFM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMaxFM;
   /**
    * US:MOPValueMaxPM (US) - The maximum change in phase angle within the pulse.
@@ -348,7 +348,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMaxPM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopValueMaxPM;
   /**
    * US:MOPValueMinAM (US) - The minimum change in amplitude within the pulse.
@@ -356,7 +356,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinAM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopValueMinAM;
   /**
    * US:MOPValueMinCW (US) - The minimum change in continuous wave frequency
@@ -364,7 +364,7 @@ public class ObservedMOPAnalysis {
    * in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinCW", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMinCW;
   /**
    * US:MOPValueMinFM (US) - The minimum change in frequency within the pulse.
@@ -372,7 +372,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinFM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopValueMinFM;
   /**
    * US:MOPValueMinPM (US) - The minimum change in phase angle within the pulse.
@@ -380,7 +380,7 @@ public class ObservedMOPAnalysis {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueMinPM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopValueMinPM;
   /**
    * SignalType (US), indicate the specific type of modulation used/detected.

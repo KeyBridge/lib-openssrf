@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -53,7 +53,7 @@ public class ObservedRFValues {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "RFValue", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal rfValue;
   /**
    * StatisticalIndicator (US), indicate how this specific data observation was
@@ -61,7 +61,7 @@ public class ObservedRFValues {
    * then the value is assumed to be part of the 100% sample.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
   private TDecimal statisticalIndicator;
 
   /**

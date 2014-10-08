@@ -25,7 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -116,7 +116,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is DT
    */
   @XmlElement(name = "IntfStartDateTime", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar intfStartDateTime;
   /**
    * IntfStopDateTime - Interference Stop Date/Time (Optional)
@@ -126,7 +126,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is DT
    */
   @XmlElement(name = "IntfStopDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar intfStopDateTime;
   /**
    * IntfDescr, describe the interference. Provide as much information as
@@ -134,7 +134,7 @@ public class IntfReport extends Common<IntfReport> {
    * interference.
    */
   @XmlElement(name = "IntfDescr", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString intfDescr;
   /**
    * AffectedEquipment - Victim Equipment Description (Optional)
@@ -144,7 +144,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S100
    */
   @XmlElement(name = "AffectedEquipment", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString affectedEquipment;
   /**
    * SourceFieldStrength - Field Strength (Optional)
@@ -154,7 +154,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(6,1) (dB)
    */
   @XmlElement(name = "SourceFieldStrength", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFIELDSTRENGTH.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFIELDSTRENGTH.class)
   private TDecimal sourceFieldStrength;
   /**
    * SourceLon - Longitude of the Source (Optional)
@@ -173,7 +173,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is pattern (S11)
    */
   @XmlElement(name = "SourceLon", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
   private TString sourceLon;
   /**
    * SourceLat - Latitude of the Source (Optional)
@@ -189,7 +189,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is pattern (S10)
    */
   @XmlElement(name = "SourceLat", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLAT.class)
   private TString sourceLat;
   /**
    * SourceAz - Source Azimuth (Optional)
@@ -199,7 +199,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(5,2) [0..360] (deg)
    */
   @XmlElement(name = "SourceAz", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal sourceAz;
   /**
    * SourceLocDescr - Location Description of the Source (Optional)
@@ -209,7 +209,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S255
    */
   @XmlElement(name = "SourceLocDescr", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
   private TString sourceLocDescr;
   /**
    * SourceFreqMin - Minimum Source Frequency (Optional)
@@ -220,7 +220,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "SourceFreqMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal sourceFreqMin;
   /**
    * SourceFreqMax - Maximum Source Frequency (Optional)
@@ -230,7 +230,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "SourceFreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal sourceFreqMax;
   /**
    * SourceEmsClass, EmsClass, enter a three to five characters code, derived
@@ -298,7 +298,7 @@ public class IntfReport extends Common<IntfReport> {
    * W|X|-)(0|1|2|3|7|8|9|X|-)(A|B|C|D|E|F|N|W|X|-)(A|B|C|D|E|F|G|H|J|K|L|M|N|W|X)?(C|F|N|T|W|X)?"
    */
   @XmlElement(name = "SourceEmsClass", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterEMSDES.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterEMSDES.class)
   private TString sourceEmsClass;
   /**
    * SourceEmsBw - Emission Bandwidth of the interference source (Optional)
@@ -308,7 +308,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "SourceEmsBw", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal sourceEmsBw;
   /**
    * VictimAsgnRef - The serial number of the assignment victim of the
@@ -319,7 +319,7 @@ public class IntfReport extends Common<IntfReport> {
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    */
   @XmlElement(name = "VictimAsgnRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString victimAsgnRef;
   /**
    * VictimSystem - Victim System (Optional)
@@ -330,7 +330,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S100
    */
   @XmlElement(name = "VictimSystem", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString victimSystem;
   /**
    * VictimCountry - Country/Area of the Victim (Optional)
@@ -357,7 +357,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is pattern (S11)
    */
   @XmlElement(name = "VictimLon", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
   private TString victimLon;
   /**
    * VictimLat - Latitude of the Victim (Optional)
@@ -373,7 +373,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is pattern (S10)
    */
   @XmlElement(name = "VictimLat", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLAT.class)
   private TString victimLat;
   /**
    * VictimLocDescr - Location Description of the Victim (Optional)
@@ -384,7 +384,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S255
    */
   @XmlElement(name = "VictimLocDescr", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
   private TString victimLocDescr;
   /**
    * VictimFreqMin - Minimum Victim Frequency (Required)
@@ -394,7 +394,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "VictimFreqMin", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal victimFreqMin;
   /**
    * VictimFreqMax - Maximum Victim Frequency (Optional)
@@ -405,7 +405,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "VictimFreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal victimFreqMax;
   /**
    * SatelliteName - Victim Satellite Name (Optional)
@@ -415,7 +415,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S50
    */
   @XmlElement(name = "SatelliteName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString satelliteName;
   /**
    * SatelliteChannel - Victim Satellite Channel (Optional)
@@ -425,7 +425,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S50
    */
   @XmlElement(name = "SatelliteChannel", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString satelliteChannel;
   /**
    * SatelliteUplinkFreq - Victim Satellite Uplink Freq (Optional)
@@ -435,7 +435,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "SatelliteUplinkFreq", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal satelliteUplinkFreq;
   /**
    * PerformanceEffects - Effects On Performance (Optional)
@@ -445,7 +445,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is Memo
    */
   @XmlElement(name = "PerformanceEffects", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString performanceEffects;
   /**
    * Evaluation - Evaluation (Optional)
@@ -464,7 +464,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is Memo
    */
   @XmlElement(name = "Solution", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString solution;
   /**
    * US:AffectedCSA - Affected CSA (Optional)
@@ -502,7 +502,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S20
    */
   @XmlElement(name = "LocalEventID", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString localEventID;
   /**
    * US:NetCircuitsAffected - Net Circuits Affected (Optional)
@@ -512,7 +512,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is Memo
    */
   @XmlElement(name = "NetCircuitsAffected", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString netCircuitsAffected;
   /**
    * US:NetsAffected - Nets Affected (Optional)
@@ -522,7 +522,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is Memo
    */
   @XmlElement(name = "NetsAffected", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString netsAffected;
   /**
    * US:SATCOMPriority - SATCOM Priority (Optional)
@@ -573,7 +573,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is pattern (S11)
    */
   @XmlElement(name = "SatelliteLongitude", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
   private TString satelliteLongitude;
   /**
    * US:SatelliteTransponderID - Satellite Transponder ID (Optional)
@@ -583,7 +583,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is S50
    */
   @XmlElement(name = "SatelliteTransponderID", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString satelliteTransponderID;
   /**
    * US:SatelliteUplinkPolarisation - Satellite Uplink Polarisation (Optional)

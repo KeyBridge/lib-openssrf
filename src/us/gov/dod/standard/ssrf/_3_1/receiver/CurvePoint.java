@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -63,7 +63,7 @@ public class CurvePoint {
    * Format is SN(16,9) (MHz)
    */
   @XmlElement(name = "Offset", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQOFFSET.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQOFFSET.class)
   private TDecimal offset;
   /**
    * Level - Level (Required)
@@ -73,7 +73,7 @@ public class CurvePoint {
    * Format is SN(4,1) [-150..150] (dB)
    */
   @XmlElement(name = "Level", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterCURVEPOINTLEVEL.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterCURVEPOINTLEVEL.class)
   private TDecimal level;
 
   /**

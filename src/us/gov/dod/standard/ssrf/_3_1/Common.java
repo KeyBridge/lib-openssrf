@@ -26,7 +26,7 @@ package us.gov.dod.standard.ssrf._3_1;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
@@ -147,7 +147,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
@@ -160,7 +160,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "EntryDateTime", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar entryDateTime;
 
   //<editor-fold defaultstate="collapsed" desc="Class Fields (Optional)">
@@ -172,7 +172,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is S50
    */
   @XmlElement(name = "LastObservedBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString lastObservedBy;
   /**
    * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
@@ -183,7 +183,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedFirstDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar observedFirstDateTime;
   /**
    * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
@@ -194,7 +194,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedLastDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar observedLastDateTime;
   /**
    * US:ApprovedBy - Last Approval Person (Optional)
@@ -205,7 +205,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is S50
    */
   @XmlElement(name = "ApprovedBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString approvedBy;
   /**
    * US:ApprovedDateTime - Last Approval Timestamp (Optional)
@@ -216,7 +216,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    */
   @XmlElement(name = "ApprovedDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar approvedDateTime;
   /**
    * Redacted (US), indicate if any original, or authoritative, data was
@@ -236,7 +236,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "EntryBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString entryBy;
   /**
    * Owner - Role which Owns the Dataset (Optional)
@@ -249,7 +249,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "Owner", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString owner;
   /**
    * LastChangeDateTime - Latest Modification Date/Time (Optional)
@@ -261,7 +261,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastChange (Optional)
    */
   @XmlElement(name = "LastChangeDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar lastChangeDateTime;
   /**
    * LastChangeBy - Last Modifier Role (Optional)
@@ -273,7 +273,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastChange (Optional)
    */
   @XmlElement(name = "LastChangeBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString lastChangeBy;
   /**
    * LastReviewDate - Last Review Date (Optional)
@@ -285,7 +285,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastReview (Optional)
    */
   @XmlElement(name = "LastReviewDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar lastReviewDate;
   /**
    * LastReviewBy - Last Review Person RoleRef (Optional)
@@ -297,7 +297,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastReview (Optional)
    */
   @XmlElement(name = "LastReviewBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString lastReviewBy;
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
@@ -310,7 +310,7 @@ public abstract class Common<T> implements Comparable<T> {
    * permitted for use by USA systems.
    */
   @XmlElement(name = "ModAllowedBy", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString modAllowedBy;
   /**
    * State - Dataset Status (Optional)
@@ -329,7 +329,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is S500
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString description;
   /**
    * US:SecurityClass (Optional)

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -65,7 +65,7 @@ public class VSWR {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "Freq", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freq;
   /**
    * Ratio - Ratio (Required)
@@ -76,7 +76,7 @@ public class VSWR {
    * Format is UN(2,1)
    */
   @XmlElement(name = "Ratio", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN2_1.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN2_1.class)
   private TDecimal ratio;
 
   /**

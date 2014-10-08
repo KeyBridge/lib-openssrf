@@ -24,7 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.ssreply;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.SSReply;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -56,7 +56,7 @@ public class StageLocation {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocSatRef", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString locSatRef;
   /**
    * Excluded - Shape is Excluded (Optional)

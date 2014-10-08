@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_1.administrative.Dataset;
@@ -94,7 +94,7 @@ public class Administrative extends Common<Administrative> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "MessageRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString messageRef;
   /**
    * Dataset (Optional)
