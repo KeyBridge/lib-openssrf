@@ -40,7 +40,6 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TString", propOrder = {"value"})
-
 public class TString extends AMetadata<TString> implements IMetadataType, Comparable<TSerial> {
 
   /**

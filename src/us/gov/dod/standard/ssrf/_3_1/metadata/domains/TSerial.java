@@ -344,11 +344,13 @@ public class TSerial extends TString {
   /**
    * Gets the SSRF SERIAL number value.
    * <p>
+   * Call {@link #format()} first if you have made any changes to the serial
+   * components.
+   * <p>
    * @return the value of the value property.
    */
   @Override
   public String getValue() {
-    format();
     return value;
   }
 
@@ -416,7 +418,7 @@ public class TSerial extends TString {
    * @param value the serial number Organization
    * @return The current TSerial object instance
    */
-  public TSerial withOrganization(String value) {
+  public TSerial withOrganisation(String value) {
     setOrganisation(value != null ? value.toUpperCase(Locale.getDefault()) : "");
     return this;
   }
