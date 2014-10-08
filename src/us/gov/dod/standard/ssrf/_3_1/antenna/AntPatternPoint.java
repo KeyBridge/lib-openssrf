@@ -23,6 +23,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
   "dir",
   "gain"
 })
-public class AntPatternPoint {
+public class AntPatternPoint implements Comparable<AntPatternPoint> {
 
   /**
    * Dir - Antenna Radiation Pattern Direction (Required)
@@ -179,5 +180,52 @@ public class AntPatternPoint {
   public boolean isSet() {
     return isSetDir() && isSetGain();
   }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
+  /**
+   * Hash code is based upon the direction.
+   * <p>
+   * @return a hash code based upon the direction.
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 53 * hash + Objects.hashCode(this.dir);
+    return hash;
+  }
+
+  /**
+   * Equals is based upon the direction.
+   * <p>
+   * @param obj the other object
+   * @return TRUE if the direction is equal
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    return Objects.equals(this.dir, ((AntPatternPoint) obj).getDir());
+  }
+
+  /**
+   * Comparison is based upon the direction.
+   * <p>
+   * @param o the other object instance
+   * @return the numeric order
+   */
+  @Override
+  public int compareTo(AntPatternPoint o) {
+    if (o == null) {
+      return 1;
+    }
+    if (dir == null || !dir.isSet()) {
+      return -1;
+    }
+    return dir.compareTo(o.getDir());
+  }//</editor-fold>
 
 }
