@@ -681,6 +681,22 @@ public class SSRFUtility {
    *                   object as this method calls itself recursively.
    */
   public static void setProperties(SSRFProperties properties, Object instance) {
+    setProperties(properties, instance, "");
+  }
+
+  /**
+   * Assign a SSRF Properties configuration to a SSRF object instance.
+   * <p>
+   * This assigns default values declared in a SSRF configuration profile to a
+   * SSRF configuration.
+   * <p>
+   * @param properties a SSRF properties configuration
+   * @param instance   a SSRF object instance. The field type is a generic
+   *                   object as this method calls itself recursively.
+   * @param classPath  the current dot-delimited classPath going into this
+   *                   object instance
+   */
+  private static void setProperties(SSRFProperties properties, Object instance, String classPath) {
     if (instance == null) {
       return;
     }
@@ -688,6 +704,10 @@ public class SSRFUtility {
      * Assign the class type under study to a local variable for convenience.
      */
     Class<?> clazz = instance.getClass();
+    /**
+     * Append the object instance to the classPath.
+     */
+    String classPathInternal = classPath + "." + clazz.getSimpleName();
     /**
      * Important: NO NOT inspect classes that are not within the SSRF package.
      * Also and equally important: DO NOT inspect or try to validate enumerated
@@ -722,13 +742,22 @@ public class SSRFUtility {
       /**
        * If the field value is not set then inspect the properties to determine
        * if a user-defined setting exists for this field.
+       * <p>
+       * Special condition: Default values may be overwritten (only) in class
+       * type TSerial.
        */
-      if (fieldValue == null) {
+      if (fieldValue == null || clazz.getSimpleName().equals("TSerial")) {
         /**
-         * If a property is configured for this class and field try to set the
-         * value using the WITH setter.
+         * First try to get the most specific property value possible (e.g.
+         * "SSRF.Contact.TSerial.organisation"). If none is found then look for
+         * a less specific, class level value (e.g. "TSerial.organisation"). If
+         * a configured property is found for the classPath (or class) and the
+         * current field try to set the value using the WITH setter.
          */
-        String propertyValue = properties.getProperty(clazz, field);
+        String propertyValue = properties.getProperty(classPathInternal.replaceFirst("\\.", ""), field.getName());
+        if (propertyValue == null) {
+          propertyValue = properties.getProperty(clazz, field);
+        }
         if (propertyValue != null) {
           /**
            * Get the WITH setter.
@@ -772,10 +801,10 @@ public class SSRFUtility {
        */
       if (fieldValue instanceof Collection) {
         for (Object entry : (Collection) fieldValue) {
-          setProperties(properties, entry);
+          setProperties(properties, entry, classPathInternal);
         }
       } else {
-        setProperties(properties, fieldValue);
+        setProperties(properties, fieldValue, classPathInternal);
       }
     }
   }
