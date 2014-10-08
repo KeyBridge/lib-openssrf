@@ -24,9 +24,8 @@
 @javax.xml.bind.annotation.XmlSchema(location = "https://acc.dau.mil",
                                      elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED,
                                      xmlns = {
-                                       @javax.xml.bind.annotation.XmlNs(prefix = "ssrf",
-                                                                        namespaceURI = "urn:us:gov:dod:standard:ssrf:3.1.0"),
-                                       @javax.xml.bind.annotation.XmlNs(prefix = "xs",
-                                                                        namespaceURI = "http://www.w3.org/2001/XMLSchema")}
+                                       @javax.xml.bind.annotation.XmlNs(prefix = "ssrf", namespaceURI = "urn:us:gov:dod:standard:ssrf:3.1.0"),
+                                       @javax.xml.bind.annotation.XmlNs(prefix = "xs", namespaceURI = "http://www.w3.org/2001/XMLSchema"),
+                                       @javax.xml.bind.annotation.XmlNs(prefix = "xsi", namespaceURI = "http://www.w3.org/2001/XMLSchema-instance")}
 )
 package us.gov.dod.standard.ssrf;
