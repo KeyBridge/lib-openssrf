@@ -103,7 +103,67 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
 @SuppressWarnings("unchecked")
 public abstract class Common<T> implements Comparable<T> {
 
-  //<editor-fold defaultstate="collapsed" desc="Class Fields">
+  /**
+   * cls - Classification (Required)
+   * <p>
+   * The classification of the current data item. This attribute is REQUIRED on
+   * each data item, even if the classification is "U".
+   * <p>
+   * Format is L:CCL
+   */
+  @XmlAttribute(name = "cls", required = true)
+  private ListCCL cls;
+  /**
+   * Serial - Serial (Required)
+   * <p>
+   * A unique Dataset identifier.
+   * <p>
+   * Serial is composed of four parts separated by colons (":"). The maximum
+   * total length is 29 characters (5+1+4+1+2+1+15).
+   * <ul>
+   * <li>Part 1 is the Country and is always REQUIRED. It contains one to five
+   * alphabetic uppercase characters representing either the ITU country code or
+   * the NATO Command code identifying the originator or organisation
+   * responsible for maintaining the dataset, as listed in Code List CCY. </li>
+   * <li>Part 2 is the orgCode and is OPTIONAL. It may contain one to four
+   * alphanumeric characters (no spaces nor special characters) representing a
+   * code for an Organisation within the country or command. It will normally
+   * indicate the organisation responsible for maintaining the dataset. Domain
+   * naming is left at the discretion of each country, but should be managed by
+   * a central authority in the country to allow deconfliction and uniqueness.
+   * It should enable the location in the data repository where this dataset
+   * information is stored. </li>
+   * <li>Part 3 is the Dataset Type and MUST contain a two-character code from
+   * the table in the Introduction section identifying the type of dataset (LO
+   * for a Location, etc). </li>
+   * <li>Part 4 is a Serial Identifier and is always REQUIRED. It contains one
+   * to fifteen alphanumeric characters (including spaces and special
+   * characters), whose meaning is left at the discretion of each domain
+   * manager.</li>
+   * </ul>
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group Initial (Required)
+   */
+  @XmlElement(name = "Serial", required = true)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterSERIAL.class)
+  private TSerial serial;
+  /**
+   * EntryDateTime - Entry Date/Time (Required)
+   * <p>
+   * The date and UTC Time the dataset was initially entered into the data
+   * repository (e.g., FRRS for USA, SMIR for NATO).
+   * <p>
+   * Format is DateTime
+   * <p>
+   * Attribute group Initial (Required)
+   */
+  @XmlElement(name = "EntryDateTime", required = true)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  private TCalendar entryDateTime;
+
+  //<editor-fold defaultstate="collapsed" desc="Class Fields (Optional)">
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -165,56 +225,6 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "Redacted", required = false)
   private TString redacted;
-
-  /**
-   * Serial - Serial (Required)
-   * <p>
-   * A unique Dataset identifier.
-   * <p>
-   * Serial is composed of four parts separated by colons (":"). The maximum
-   * total length is 29 characters (5+1+4+1+2+1+15).
-   * <ul>
-   * <li>Part 1 is the Country and is always REQUIRED. It contains one to five
-   * alphabetic uppercase characters representing either the ITU country code or
-   * the NATO Command code identifying the originator or organisation
-   * responsible for maintaining the dataset, as listed in Code List CCY. </li>
-   * <li>Part 2 is the orgCode and is OPTIONAL. It may contain one to four
-   * alphanumeric characters (no spaces nor special characters) representing a
-   * code for an Organisation within the country or command. It will normally
-   * indicate the organisation responsible for maintaining the dataset. Domain
-   * naming is left at the discretion of each country, but should be managed by
-   * a central authority in the country to allow deconfliction and uniqueness.
-   * It should enable the location in the data repository where this dataset
-   * information is stored. </li>
-   * <li>Part 3 is the Dataset Type and MUST contain a two-character code from
-   * the table in the Introduction section identifying the type of dataset (LO
-   * for a Location, etc). </li>
-   * <li>Part 4 is a Serial Identifier and is always REQUIRED. It contains one
-   * to fifteen alphanumeric characters (including spaces and special
-   * characters), whose meaning is left at the discretion of each domain
-   * manager.</li>
-   * </ul>
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Attribute group Initial (Required)
-   */
-  @XmlElement(name = "Serial", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterSERIAL.class)
-  private TSerial serial;
-  /**
-   * EntryDateTime - Entry Date/Time (Required)
-   * <p>
-   * The date and UTC Time the dataset was initially entered into the data
-   * repository (e.g., FRRS for USA, SMIR for NATO).
-   * <p>
-   * Format is DateTime
-   * <p>
-   * Attribute group Initial (Required)
-   */
-  @XmlElement(name = "EntryDateTime", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar entryDateTime;
 
   /**
    * EntryBy - Creator Role (Optional)
@@ -356,16 +366,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "Remarks", nillable = true)
   private List<Remarks> remarks;
-  /**
-   * cls - Classification (Required)
-   * <p>
-   * The classification of the current data item. This attribute is REQUIRED on
-   * each data item, even if the classification is "U".
-   * <p>
-   * Format is L:CCL
-   */
-  @XmlAttribute(name = "cls", required = true)
-  private ListCCL cls;
+
   /**
    * releasability - Releasability Markings (Optional)
    * <p>
@@ -1671,6 +1672,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withSecurityClass(SecurityClass value) {
+    setSecurityClass(value);
     return (T) this;
   }
 
@@ -1774,6 +1776,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withCls(ListCCL value) {
+    setCls(value);
     return (T) this;
   }
 
@@ -1875,6 +1878,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return (T) this;
   }
 
@@ -1887,6 +1891,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withQuality(String value) {
+    setQuality(value);
     return (T) this;
   }
 
@@ -1897,6 +1902,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return (T) this;
   }
 
@@ -1912,6 +1918,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withIdref(String value) {
+    setIdref(value);
     return (T) this;
   }//</editor-fold>
 
@@ -1923,35 +1930,37 @@ public abstract class Common<T> implements Comparable<T> {
   @Override
   public String toString() {
     return "Common {"
-      + (serial != null ? "serial [" + serial + "]" : "")
-      + (cls != null ? " cls [" + cls + "]" : "")
-      + (redacted != null ? " redacted [" + redacted + "]" : "")
-      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-      + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
-      + (state != null ? " state [" + state + "]" : "")
-      + (remarks != null ? " remarks [" + remarks + "]" : "")
-      + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
-      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-      + (description != null ? " description [" + description + "]" : "")
-      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-      + (idref != null ? " idref [" + idref + "]" : "")
-      + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
-      + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
-      + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
-      + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
-      + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+      // Required
+      + (cls != null ? "cls [" + cls + "]" : "")
+      + (serial != null ? " serial [" + serial + "]" : "")
       + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
-      + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
-      + (releasability != null ? " releasability [" + releasability + "]" : "")
+      // Optional
+      + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
+      + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
       + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (owner != null ? " owner [" + owner + "]" : "")
-      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
       + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
       + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+      + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
+      + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+      + (owner != null ? " owner [" + owner + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (redacted != null ? " redacted [" + redacted + "]" : "")
+      + (releasability != null ? " releasability [" + releasability + "]" : "")
+      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+      + (remarks != null ? " remarks [" + remarks + "]" : "")
+      + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
+      + (state != null ? " state [" + state + "]" : "")
       + "}";
   }
 
