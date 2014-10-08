@@ -46,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * {@link CaseNum}, {@link ExtReferenceRef}, {@link Remarks}, {@link SecurityClass}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  * @param <T> The inheriting class type
  */
 @XmlAccessorType(XmlAccessType.FIELD)

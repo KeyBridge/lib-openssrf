@@ -36,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.*;
  * A SMADEF-XML message may contain any number of datasets.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/29/2014
+ * @version SSRF 3.1.0, 09/29/2014
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)

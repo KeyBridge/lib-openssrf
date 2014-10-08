@@ -44,14 +44,18 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
  *   &lt;FreqMin cls="U"&gt;30&lt;/FreqMin&gt;
  *   &lt;FreqMax cls="U"&gt;90&lt;/FreqMax&gt;
  * &lt;/AntFreqs&gt;
- * A bandwidth of 60 MHz is +/-30 MHz around FreqMin:* &lt;AntFreqs&gt;
+ * </pre>
+ * <p>
+ * A bandwidth of 60 MHz is +/-30 MHz around FreqMin:
+ * <pre>
+ * &lt;AntFreqs&gt;
  *   &lt;FreqMin cls="U"&gt;60&lt;/FreqMin&gt;
  *   &lt;Bandwidth cls="U"&gt;60&lt;/Bandwidth&gt;
  * &lt;/AntFreqs&gt;
  * </pre>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntFreqs", propOrder = {

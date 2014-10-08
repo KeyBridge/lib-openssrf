@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListUNS")
 @XmlEnum

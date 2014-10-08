@@ -44,8 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * Example: (Dummy classification for demonstration only). In this case, the
  * power value is Unclassified, but the associated remarks (index 12) is
  * Confidential releasable to three nations only.
- * <p>
- * <code><pre>
+ * <pre>
  * &lt;Transmitter cls="C"&gt;
  *   &lt;Serial cls="U"&gt;USA::TX:2011-00001&lt;/Serial&gt;
  *   &lt;ExtReferenceRef cls="U" idx="1"&gt;USA::EX:12&lt;/ExtReferenceRef&gt;
@@ -56,14 +55,14 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  *   &lt;Other_Transmitter_Elements/&gt;
  *   &lt;Power cls="U" <strong>extReferences="1 2"</strong> <strong>remarksarkReferences="1 12"</strong>&gt;23&lt;/Power&gt;
  * &lt;/Transmitter&gt;
- * </pre></code> This abstract class is extended by classes in the SSRF
+ * </pre> This abstract class is extended by classes in the SSRF
  * <em>metadata</em> attribute group.
  * <p>
  * Developer note: This abstract class is not part of SSRF and must be annotated
  * as XmlTransient to successfully marshal SSRF instances.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/29/2014
+ * @version SSRF 3.1.0, 09/29/2014
  * @param <T> The class type implementation
  */
 @XmlAccessorType(XmlAccessType.FIELD)

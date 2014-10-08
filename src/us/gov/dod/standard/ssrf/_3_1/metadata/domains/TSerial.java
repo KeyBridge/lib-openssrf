@@ -66,7 +66,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}: \S{1,15}"
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/02/14
+ * @version SSRF 3.1.0, 10/02/14
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TSerial", propOrder = {"value"})

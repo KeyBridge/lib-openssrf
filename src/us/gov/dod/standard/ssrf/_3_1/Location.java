@@ -25,7 +25,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -43,7 +42,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * Sub-Elements are
  * {@link Ellipse}, {@link POCInformation}, {@link Point}, {@link Polygon}
  * <p>
- * Example: A simple fixed location:
+ * Examples: A simple fixed location:
  * <pre>
  * &lt;Location cls="U"&gt;
  *   &lt;Serial cls="U"&gt;BEL::LO:111&lt;/Serial&gt;
@@ -56,7 +55,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *     &lt;TerrainElevation cls="U"&gt;50&lt;/TerrainElevation&gt;
  *   &lt;/Point&gt;
  * &lt;/Location&gt;
- * A triangle* &lt;Location cls="U"&gt;
+ * </pre> A triangle
+ * <pre>
+ * &lt;Location cls="U"&gt;
  *   &lt;Serial cls="U"&gt;BEL::LO:222&lt;/Serial&gt;
  *   &lt;EntryDateTime cls="U"&gt;2011-12-25T00:00:00Z&lt;/EntryDateTime&gt;
  *   &lt;Name cls="U"&gt;Melsbroek Approach&lt;/Name&gt;
@@ -76,7 +77,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *     &lt;/PolygonPoint&gt;
  *   &lt;/Polygon&gt;
  * &lt;/Location&gt;
- * A composite area with a hole (doughnut):* &lt;Location cls="U"&gt;
+ * </pre> A composite area with a hole (doughnut):
+ * <pre>
+ * &lt;Location cls="U"&gt;
  *   &lt;Serial cls="U"&gt;BEL::LO:333&lt;/Serial&gt;
  *   &lt;EntryDateTime cls="U"&gt;2011-12-25T00:00:00Z&lt;/EntryDateTime&gt;
  *   &lt;Name cls="U"&gt;BEL AF Training North&lt;/Name&gt;
@@ -94,7 +97,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * </pre>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Location", propOrder = {

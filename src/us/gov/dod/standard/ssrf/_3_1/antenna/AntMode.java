@@ -31,8 +31,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
@@ -53,11 +53,11 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *   &lt;PolarisationType cls="U"&gt;Vertical linear&lt;/PolarisationType&gt;
  *   &lt;RotationRateMin cls="U"&gt;30&lt;/RotationRateMin&gt;
  *   &lt;other_AntMode_elements/&gt;
- *   &lt;/AntMode&gt;
+ * &lt;/AntMode&gt;
  * </pre>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AntMode", propOrder = {

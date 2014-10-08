@@ -63,12 +63,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRS;
  *   &lt;/Nomenclature&gt;
  *   &lt;AntMode&gt;
  *     &lt;All_AntMode_elements/&gt;
- *     &lt;/AntMode&gt;
- *   &lt;/Antenna&gt;
+ *   &lt;/AntMode&gt;
+ * &lt;/Antenna&gt;
  * </pre>
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Antenna", propOrder = {

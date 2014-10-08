@@ -40,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWB;
  * Example: See {@link RadiationPlan}.
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "JammingPerformance", propOrder = {

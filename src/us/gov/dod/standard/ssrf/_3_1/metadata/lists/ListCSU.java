@@ -36,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.receiver.Deployment;
  * {@link Administrative}, {@link Allotment}, {@link Antenna}, {@link Assignment}, {@link ChannelPlan}, {@link Common}, {@link Contact}, {@link Deployment}, {@link ExternalReference}, {@link FEDeployment}, {@link ForceElement}, {@link IntfReport}, {@link JRFL}, {@link Loadset}, {@link Location}, {@link Message}, {@link Note}, {@link Organisation}, {@link RFSystem}, {@link RadiationPlan}, {@link Receiver}, {@link Role}, {@link SSReply}, {@link SSRequest}, {@link Satellite}, {@link TOA}, {@link Transmitter}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListCSU")
 @XmlEnum

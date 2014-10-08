@@ -36,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.Variance;
  * Used in {@link Allocation}, {@link ConfigFreq}, {@link Variance}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListCPS")
 @XmlEnum

@@ -60,7 +60,7 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.*;
  * {@link Administrative}, {@link Allocation}, {@link Allotment}, {@link AntGain}, {@link AntMode}, {@link AntPattern}, {@link Antenna}, {@link Assignment}, {@link ChannelPlan}, {@link Common}, {@link ConfigFreq}, {@link Configuration}, {@link Contact}, {@link Curve}, {@link DiagramEndpoint}, {@link EMail Email}, {@link Ellipse}, {@link EndpointLocation}, {@link ExternalReference}, {@link FEDeployment}, {@link ForceElement}, {@link IntfReport}, {@link JRFL}, {@link JammingChannelProfile}, {@link JammingPerformance}, {@link JammingPlan}, {@link Loadset}, {@link Location}, {@link Message}, {@link Note}, {@link ObservedERPAnalysis}, {@link ObservedLobeAnalysis}, {@link ObservedMOPAnalysis}, {@link ObservedPolarisationAnalysis}, {@link ObservedPulseAnalysis}, {@link ObservedRFAnalysis}, {@link ObservedScanAnalysis}, {@link Organisation}, {@link Point}, {@link Polygon}, {@link Power}, {@link RFSystem}, {@link RadiationPlan}, {@link Receiver}, {@link Role}, {@link SSReply}, {@link SSRequest}, {@link Satellite}, {@link SpreadSpectrum}, {@link StageLocation}, {@link Station}, {@link StationLoc}, {@link TOA}, {@link TelephoneFax}, {@link TimingDeconflictionProtocol}, {@link Transmitter}, {@link Trunking}, {@link TrunkingAssignment}, {@link Tuning}, {@link TxMode}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListCBO")
 @XmlEnum

@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.Country;
  * {@link Address}, {@link CaseNum}, {@link CodeList}, {@link Country}, {@link ForceElement}, {@link HostNation}, {@link IntfReport}, {@link Location}, {@link Manufacturer}, {@link Note}, {@link SSReply}, {@link ServiceArea}, {@link UsingCountries}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListCAO")
 @XmlEnum

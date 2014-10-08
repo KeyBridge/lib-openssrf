@@ -39,7 +39,7 @@ import us.gov.dod.standard.ssrf._3_1.ssrequest.Stage;
  * Element of {@link SSReply}, {@link Stage}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 09/30/2014
+ * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StageLocation", propOrder = {

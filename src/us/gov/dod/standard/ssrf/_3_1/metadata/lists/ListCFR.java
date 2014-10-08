@@ -35,7 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.rfsystem.RelatedSystem;
  * Used in {@link RelatedOrganisation}, {@link RelatedSystem}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListCFR")
 @XmlEnum

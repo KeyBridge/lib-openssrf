@@ -34,7 +34,7 @@ import us.gov.dod.standard.ssrf._3_1.receiver.RxMode;
  * Used in {@link RxMode}
  * <p>
  * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
- * @version 3.1.0, 10/01/2014
+ * @version SSRF 3.1.0, 10/01/2014
  */
 @XmlType(name = "ListCRT")
 @XmlEnum
