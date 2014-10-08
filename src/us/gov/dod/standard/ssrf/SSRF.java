@@ -41,6 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.*;
 @XmlType(name = "SSRF")
 public class SSRF extends SchemaRoot<SSRF> {
 
+  //<editor-fold defaultstate="collapsed" desc="Property Configuration">
   /**
    * SSRF Properties associated with this SSRF instance.
    * <p>
@@ -93,8 +94,9 @@ public class SSRF extends SchemaRoot<SSRF> {
     if (ssrfProperties != null) {
       ssrfProperties.remove(propertyName);
     }
-  }
+  }//</editor-fold>
 
+  //<editor-fold defaultstate="collapsed" desc="Export to XML">
   /**
    * Assemble the SSRF instance. This method applies properties and invokes
    * prepare() methods. This method supports the {@link #build()},
@@ -132,7 +134,6 @@ public class SSRF extends SchemaRoot<SSRF> {
      * configured) to those parameters.
      */
     assemble();
-    assemble();
     SSRFUtility.validate(this);
   }
 
@@ -160,7 +161,6 @@ public class SSRF extends SchemaRoot<SSRF> {
        * Call assemble() twice to add parameters and then to add metadata (if
        * configured) to those parameters.
        */
-      assemble();
       assemble();
       SSRFUtility.validate(this);
       return true;
@@ -191,5 +191,18 @@ public class SSRF extends SchemaRoot<SSRF> {
   public Set<String> evaluate() {
     assemble();
     return SSRFUtility.evaluate(this);
-  }
+  }//</editor-fold>
+
+  //<editor-fold defaultstate="collapsed" desc="Import from XML">
+  /**
+   * Process this SSRF instance object after reading from XML.
+   * <p>
+   * This method examines the class tree and copies all required data objects
+   * into their proper location and preparing the SSRF software class hierarchy
+   * for working.
+   */
+  public void postLoad() {
+    SSRFUtility.postLoad(this);
+  }//</editor-fold>
+
 }

@@ -617,8 +617,7 @@ public class SSRFUtility {
    * attempt to invoke the prepare() method should be made.
    * <p>
    * @param instance the object instance
-   * @return true if the object class name matches classes that _might_
-   *         implement the prepare() method.
+   * @return true if the object class implements the prepare() method.
    */
   private static boolean implementsPrepare(Object instance) {
     if (instance == null) {
@@ -667,6 +666,187 @@ public class SSRFUtility {
       /**
        * prepare() is not accessible (e.g. private).
        */
+    }
+  }
+
+  /**
+   * Process a SSRF instance object after reading from XML.
+   * <p>
+   * This method examines the class tree and copies all required data objects
+   * into their proper location and preparing the SSRF software class hierarchy
+   * for working.
+   * <p>
+   * @param rootInstance a {@link SSRF} instance
+   */
+  public static void postLoad(SSRF rootInstance) {
+    System.out.println("SSRFUtility.postLoad ");
+    postLoad(rootInstance, rootInstance);
+  }
+
+  /**
+   * Process a SSRF instance object after reading from XML.
+   * <p>
+   * This method examines the class tree and copies all required data objects
+   * into their proper location and preparing the SSRF software class hierarchy
+   * for working.
+   * <p>
+   * @param sourceInstance any of SSRF data type object instance
+   * @param rootInstance   a {@link SSRF} instance
+   */
+  @SuppressWarnings("AssignmentToMethodParameter")
+  private static void postLoad(Object sourceInstance, SSRF rootInstance) {
+    /**
+     * Return immediately if the source instance is null. Instantiate a new
+     * destination instance if none is provided.
+     */
+    if (sourceInstance == null) {
+      return;
+    }
+    /**
+     * Assign the class type under study to a local variable for convenience.
+     */
+    Class<?> clazz = sourceInstance.getClass();
+    /**
+     * Important: NO NOT inspect classes that are not within the SSRF package.
+     * Also and equally important: DO NOT inspect or try to validate enumerated
+     * classes.
+     */
+    if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
+      return;
+    }
+    /**
+     * Iterate through the list of declared fields (public, protected and
+     * private) and inspect each according to its annotated configuration and
+     * state.
+     */
+    for (Field field : findDeclaredAndInheritedFields(clazz)) {
+      /**
+       * Important: Enable access to the Object instance fields (public,
+       * protected and private).
+       */
+      field.setAccessible(true);
+      /**
+       * Get the instance field value. Skip (do not check and fail gracefully)
+       * if the field value is null (e.g. not configured) or (somehow) not
+       * accessible.
+       */
+      Object fieldValue;
+      try {
+        fieldValue = field.get(sourceInstance);
+      } catch (IllegalArgumentException | IllegalAccessException ex) {
+//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+        continue;
+      }
+      /**
+       * If the field value is not set then DO NOT try to test it.
+       */
+      if (fieldValue == null) {
+        continue;
+      }
+      /**
+       * If the field value object is a Collection then iterate through the
+       * collection to recursively test each entry object instance, otherwise
+       * recurse to test the field value object instance directly.
+       */
+      if (fieldValue instanceof Collection) {
+        /**
+         * To avoid a ConcurrentModificationException create a temporary list of
+         * objects that are loadable then proceed to call each in turn.
+         */
+        Set<Object> loadableObjects = new HashSet<>();
+        for (Object entryCandidate : (Collection) fieldValue) {
+          if (implementsPostLoad(entryCandidate)) {
+            loadableObjects.add(entryCandidate);
+          }
+        }
+        /**
+         * Now call and recurse into all of the preparable object instances.
+         */
+        for (Object loadable : loadableObjects) {
+          /**
+           * Try to invoke the postLoad method within the class instance. If
+           * available this will sync SSRF data types serial numbers with their
+           * respective reference containers.
+           */
+          invokePostLoad(loadable, rootInstance);
+          /**
+           * Recurse into the class instance.
+           */
+          postLoad(loadable, rootInstance);
+          /**
+           * After recursion try adding the value to the destination (root SSRF)
+           * instance.
+           */
+        }
+      } else {
+        if (implementsPostLoad(fieldValue)) {
+          /**
+           * Same process as above.
+           */
+          invokePostLoad(fieldValue, rootInstance);
+          postLoad(fieldValue, rootInstance);
+        }
+      }
+    }
+    /**
+     * This recursion branch is finished.
+     */
+  }
+
+  /**
+   * Test if the object instance class is loadable; that is, whether an attempt
+   * to invoke the postLoad(SSRF) or postLoad() method should be made.
+   * <p>
+   * @param instance the object instance
+   * @return true if the object class implements the postLoad(SSRF) or
+   *         postLoad() method.
+   */
+  private static boolean implementsPostLoad(Object instance) {
+    if (instance == null) {
+      return false;
+    }
+    String className = instance.getClass().getName();
+    /**
+     * Only inspect SSRF classes, but ignore ADAPTER and LIST helpers.
+     */
+    if (className.startsWith(SSRF_PACKAGE)
+      && !className.contains(".adapter.")
+      && !className.contains(".metadata.lists")) {
+      try {
+        return instance.getClass().getMethod("postLoad", SSRF.class) != null;
+      } catch (NoSuchMethodException | SecurityException ex) {
+        try {
+          return instance.getClass().getMethod("postLoad") != null;
+        } catch (NoSuchMethodException | SecurityException ex1) {
+        }
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Try to invoke the postLoad() method on the provided object instance. If the
+   * object does not implement postLoad() this method will fail gracefully.
+   * <p>
+   * @param instance the object instance
+   */
+  private static void invokePostLoad(Object instance, SSRF rootInstance) {
+    if (instance == null) {
+      return;
+    }
+    /**
+     * Try to invoke the postLoad(SSRF) or postLoad() methods. Fail gracefully
+     * if the instance class does not implement the prepare() method.
+     */
+    try {
+      instance.getClass().getMethod("postLoad", SSRF.class).invoke(instance, rootInstance);
+    } catch (NoSuchMethodException | SecurityException ex) {
+      try {
+        instance.getClass().getMethod("postLoad").invoke(instance);
+      } catch (NoSuchMethodException | SecurityException ex1) {
+      } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex1) {
+      }
+    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
     }
   }
 
