@@ -123,8 +123,7 @@ public class TDecimal extends AMetadata<TDecimal> implements IMetadataType, Comp
    */
   @Override
   public String toString() {
-    return value + super.toString();
-//    return value != null ? value.toString() : null;
+    return value != null ? value.toString() : null;
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">

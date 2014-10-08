@@ -143,7 +143,7 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Co
     if (value != null) {
       SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
       sdf.setCalendar(value);
-      return sdf.format(value.getTime()) + " " + super.toString();
+      return sdf.format(value.getTime());
     }
     return null;
   }

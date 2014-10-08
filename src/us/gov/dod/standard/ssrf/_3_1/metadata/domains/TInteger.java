@@ -113,8 +113,7 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comp
    */
   @Override
   public String toString() {
-//    return value != null ? value.toString() : null;
-    return value + super.toString();
+    return value != null ? value.toString() : null;
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
