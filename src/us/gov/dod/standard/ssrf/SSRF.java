@@ -100,13 +100,13 @@ public class SSRF extends SchemaRoot<SSRF> {
 
   /**
    * Internal method to assemble the SSRF instance. This method applies
-   * properties and invokes build methods. This method supports the {@link #build()},
+   * properties and invokes prepare() methods. This method supports the {@link #build()},
    * {@link #isValid()} and {@link #evaluate()} methods.
    * <p>
    * @since 3.1.0
    */
   private void assemble() {
-    SSRFUtility.build(this);
+    SSRFUtility.prepare(this);
     if (ssrfProperties != null) {
       SSRFUtility.setProperties(ssrfProperties, this);
     }

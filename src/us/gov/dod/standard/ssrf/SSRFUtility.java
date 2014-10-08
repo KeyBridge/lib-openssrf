@@ -472,8 +472,8 @@ public class SSRFUtility {
    * <p>
    * @param ssrf a SSRF working copy
    */
-  public static void build(SSRF ssrf) {
-    build(ssrf, null);
+  public static void prepare(SSRF ssrf) {
+    prepare(ssrf, null);
   }
 
   /**
@@ -486,7 +486,7 @@ public class SSRFUtility {
    *                       copied into their proper destination
    */
   @SuppressWarnings("AssignmentToMethodParameter")
-  private static void build(Object sourceInstance, Object rootInstance) {
+  private static void prepare(Object sourceInstance, Object rootInstance) {
     /**
      * Return immediately if the source instance is null. Instantiate a new
      * destination instance if none is provided.
@@ -567,7 +567,7 @@ public class SSRFUtility {
           /**
            * Recurse into the class instance.
            */
-          build(buildable, rootInstance);
+          prepare(buildable, rootInstance);
           /**
            * After recursion try adding the value to the destination (root SSRF)
            * instance.
@@ -580,7 +580,7 @@ public class SSRFUtility {
            * Same process as above.
            */
           invokeBuild(fieldValue);
-          build(fieldValue, rootInstance);
+          prepare(fieldValue, rootInstance);
           addValueToDestinationInstance(fieldValue, rootInstance);
         }
       }
@@ -613,12 +613,12 @@ public class SSRFUtility {
   }
 
   /**
-   * Test if the object instance class is buildable; that is, whether an attempt
-   * to invoke the build() method should be made.
+   * Test if the object instance class is prepareable; that is, whether an attempt
+ to invoke the prepare() method should be made.
    * <p>
    * @param instance the object instance
    * @return true if the object class name matches classes that _might_
-   *         implement the build() method.
+         implement the prepare() method.
    */
   private static boolean isBuildable(Object instance) {
     if (instance == null) {
@@ -644,9 +644,9 @@ public class SSRFUtility {
   }
 
   /**
-   * Try to invoke the build() method on the provided object instance. If the
-   * object does not implement build() this method will fail gracefully.
-   * <p>
+   * Try to invoke the prepare() method on the provided object instance. If the
+ object does not implement prepare() this method will fail gracefully.
+ <p>
    * @param instance the object instance
    */
   private static void invokeBuild(Object instance) {

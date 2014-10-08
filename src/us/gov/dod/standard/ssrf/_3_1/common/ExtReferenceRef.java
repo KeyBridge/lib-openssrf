@@ -26,11 +26,11 @@ package us.gov.dod.standard.ssrf._3_1.common;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ExternalReference;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -313,7 +313,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
   /**
    * Update the SSRF data type references in this ExtReferenceRef record.
    * <p>
-   * This method builds the exported {@link #value} field with values from the
+   * This method prepares the exported {@link #value} field with values from the
    * transient {@link #externalReference} field. This method should typically be
    * called after the ExtReferenceRef is configured and (optionally) before
    * exporting an SSRF message.

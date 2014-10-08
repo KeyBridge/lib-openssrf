@@ -57,13 +57,17 @@ public class SSRFProperties extends Properties {
   /**
    * Get an instance of the default SSRF properties configuration.
    * <p>
-   * The default configuration is a SSRF properties containing ONLY a global
-   * classification configuration set to U ("Unclassified").
+   * The default SSRF profile is a global classification Unclassified
+   * configuration
+   * <strong>cls=U</strong> ("Unclassified") suitable for general (public)
+   * distribution.
    * <p>
    * The returned SSRFProperties instance may be freely edited and updated
-   * before assigning it to a SSRF configuration.
+   * before assigning it to a SSRF configuration. Typically at minimum the
+   * "TSerial.organisation" property is set to a four-character organization
+   * code.
    * <p>
-   * @return the default SSRFProperties instance
+   * @return the default SSRFProperties "Unclassified" instance
    */
   public static SSRFProperties getDefault() {
     SSRFProperties p = new SSRFProperties();
