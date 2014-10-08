@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
@@ -803,17 +804,38 @@ public class Role extends Common<Role> {
    * called after the Role is configured and (optionally) before exporting an
    * SSRF message.
    * <p>
-   * @return The current Role object instance
    * @since 3.1.0
    */
   @Override
-  public Role prepare() {
+  public void prepare() {
     super.prepare();
     this.contactRef = new HashSet<>();
     for (Contact instance : getContact()) {
       this.contactRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Role record after loading from
+   * XML.
+   * <p>
+   * This method builds the transient {@link #contact} with values from the
+   * imported {@link #contactRef} field. This method should typically be called
+   * after the Role is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (contactRef == null || contactRef.isEmpty()) {
+      return;
+    }
+    for (Contact instance : root.getContact()) {
+      if (contactRef.contains(instance.getSerial())) {
+        contact.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

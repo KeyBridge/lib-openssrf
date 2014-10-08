@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -278,12 +279,32 @@ public class JRFLEntryLocation {
    * transient {@link #location} field. This method should typically be called
    * after the JRFLEntryLocation is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
-   * @return The current JRFLEntryLocation object instance
    */
-  public JRFLEntryLocation prepare() {
+  public void prepare() {
     this.serial = location != null ? location.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JRFLEntryLocation record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #location} with values from the
+   * imported {@link #serial} field. This method should typically be called
+   * after the JRFLEntryLocation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (serial.equals(instance.getSerial())) {
+        location = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

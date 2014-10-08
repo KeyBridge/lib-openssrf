@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -291,12 +292,32 @@ public class EarthStation {
    * the transient {@link #location} field. This method should typically be
    * called after the EarthStation is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current EarthStation object instance
    */
-  public EarthStation prepare() {
+  public void prepare() {
     this.locationRef = location != null ? location.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this EarthStation record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #location} with values from the
+   * imported {@link #locationRef} field. This method should typically be called
+   * after the EarthStation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (locationRef == null || !locationRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locationRef.equals(instance.getSerial())) {
+        location = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

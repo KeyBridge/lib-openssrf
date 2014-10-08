@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -1860,15 +1861,35 @@ public class Configuration {
    * called after the Configuration is configured and (optionally) before
    * exporting an SSRF message.
    * <p>
-   * @return The current Configuration object instance
    * @since 3.1.0
    */
-  public Configuration prepare() {
+  public void prepare() {
     this.loadsetRef = new HashSet<>();
     for (Loadset instance : getLoadset()) {
       this.loadsetRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Configuration record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #loadset} with values from the
+   * imported {@link #loadsetRef} field. This method should typically be called
+   * after the Configuration is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (loadsetRef == null || loadsetRef.isEmpty()) {
+      return;
+    }
+    for (Loadset instance : root.getLoadset()) {
+      if (loadsetRef.contains(instance.getSerial())) {
+        loadset.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

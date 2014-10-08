@@ -150,22 +150,6 @@ public class TxAntModeRef extends RxAntModeRef {
   }
 
   /**
-   * Update the SSRF data type references in this RxAntModeRef record.
-   * <p>
-   * This method builds the exported {@link #serial} field with values from the
-   * transient {@link #antenna} field. This method should typically be called
-   * after the RxAntModeRef is configured and (optionally) before exporting an
-   * SSRF message.
-   * <p>
-   * @return The current RxAntModeRef object instance
-   */
-  @Override
-  public TxAntModeRef prepare() {
-    super.prepare();
-    return this;
-  }
-
-  /**
    * Get a string representation of this TxAntModeRef instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
@@ -173,6 +157,7 @@ public class TxAntModeRef extends RxAntModeRef {
   @Override
   public String toString() {
     return "TxAntModeRef {"
+      + super.toString()
       + (spectralPowerDensity != null ? " spectralPowerDensity [" + spectralPowerDensity + "]" : "")
       + "}";
   }

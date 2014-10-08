@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
 import us.gov.dod.standard.ssrf._3_1.Location;
@@ -497,15 +498,35 @@ public class AllotFreq {
    * should typically be called after the AllotFreq is configured and
    * (optionally) before exporting an SSRF message.
    * <p>
-   * @return The current AllotFreq object instance
    * @since 3.1.0
    */
-  public AllotFreq prepare() {
+  public void prepare() {
     this.locationRestrictionRef = new HashSet<>();
     for (Location instance : getLocationRestriction()) {
       this.locationRestrictionRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this AllotFreq record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #locationRestriction} with values
+   * from the imported {@link #locationRestrictionRef} field. This method should
+   * typically be called after the AllotFreq is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (locationRestrictionRef == null || locationRestrictionRef.isEmpty()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locationRestrictionRef.contains(instance.getSerial())) {
+        locationRestriction.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

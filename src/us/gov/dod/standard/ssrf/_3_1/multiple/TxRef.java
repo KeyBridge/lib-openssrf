@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -352,12 +353,32 @@ public class TxRef {
    * transient {@link #transmitter} field. This method should typically be
    * called after the TxRef is configured and (optionally) before exporting an
    * SSRF message.
-   * <p>
-   * @return The current TxRef object instance
    */
-  public TxRef prepare() {
+  public void prepare() {
     this.serial = transmitter != null ? transmitter.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this TxRef record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #transmitter} with values from the
+   * imported {@link #serial} field. This method should typically be called
+   * after the TxRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (Transmitter instance : root.getTransmitter()) {
+      if (serial.equals(instance.getSerial())) {
+        transmitter = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

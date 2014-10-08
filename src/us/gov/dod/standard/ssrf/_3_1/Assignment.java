@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -4021,17 +4022,58 @@ public class Assignment extends Common<Assignment> {
    * called after the Assignment is configured and (optionally) before exporting
    * an SSRF message.
    * <p>
-   * @return The current Assignment object instance
    * @since 3.1.0
    */
   @Override
-  public Assignment prepare() {
+  public void prepare() {
     super.prepare();
     this.relatedRef = new HashSet<>();
     for (Common<?> instance : getRelated()) {
       this.relatedRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Assignment record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #related} with values from the
+   * imported {@link #relatedRef} field. This method should typically be called
+   * after the Assignment is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (relatedRef == null || relatedRef.isEmpty()) {
+      return;
+    }
+    for (Assignment instance : root.getAssignment()) {
+      if (relatedRef.contains(instance.getSerial())) {
+        related.add(instance);
+      }
+    }
+    for (Allotment instance : root.getAllotment()) {
+      if (relatedRef.contains(instance.getSerial())) {
+        related.add(instance);
+      }
+    }
+    for (SSReply instance : root.getSSReply()) {
+      if (relatedRef.contains(instance.getSerial())) {
+        related.add(instance);
+      }
+    }
+    for (ForceElement instance : root.getForceElement()) {
+      if (relatedRef.contains(instance.getSerial())) {
+        related.add(instance);
+      }
+    }
+    for (FEDeployment instance : root.getFEDeployment()) {
+      if (relatedRef.contains(instance.getSerial())) {
+        related.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

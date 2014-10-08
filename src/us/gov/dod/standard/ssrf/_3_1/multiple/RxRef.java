@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -348,12 +349,32 @@ public class RxRef {
    * transient {@link #receiver} field. This method should typically be called
    * after the RxRef is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
-   * @return The current RxRef object instance
    */
-  public RxRef prepare() {
+  public void prepare() {
     this.serial = receiver != null ? receiver.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RxRef record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #receiver} with values from the
+   * imported {@link #serial} field. This method should typically be called
+   * after the RxRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (Receiver instance : root.getReceiver()) {
+      if (serial.equals(instance.getSerial())) {
+        receiver = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

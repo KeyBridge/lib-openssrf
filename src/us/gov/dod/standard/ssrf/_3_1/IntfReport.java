@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -2854,14 +2855,35 @@ public class IntfReport extends Common<IntfReport> {
    * from the transient {@link #victimAssignment} field. This method should
    * typically be called after the IntfReport is configured and (optionally)
    * before exporting an SSRF message.
-   * <p>
-   * @return The current IntfReport object instance
    */
   @Override
-  public IntfReport prepare() {
+  public void prepare() {
     super.prepare();
     this.victimAsgnRef = victimAssignment != null ? victimAssignment.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this IntfReport record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #victimAssignment} with values from
+   * the imported {@link #victimAsgnRef} field. This method should typically be
+   * called after the IntfReport is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (victimAsgnRef == null || !victimAsgnRef.isSetValue()) {
+      return;
+    }
+    for (Assignment instance : root.getAssignment()) {
+      if (victimAsgnRef.equals(instance.getSerial())) {
+        victimAssignment = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

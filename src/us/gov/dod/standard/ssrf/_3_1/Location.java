@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -1141,17 +1142,38 @@ public class Location extends Common<Location> {
    * called after the Location is configured and (optionally) before exporting
    * an SSRF message.
    * <p>
-   * @return The current Location object instance
    * @since 3.1.0
    */
   @Override
-  public Location prepare() {
+  public void prepare() {
     super.prepare();
     this.locationRef = new HashSet<>();
     for (Location instance : getLocation()) {
       this.locationRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Location record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #location} with values from the
+   * imported {@link #locationRef} field. This method should typically be called
+   * after the Location is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (locationRef == null || locationRef.isEmpty()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locationRef.contains(instance.getSerial())) {
+        location.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

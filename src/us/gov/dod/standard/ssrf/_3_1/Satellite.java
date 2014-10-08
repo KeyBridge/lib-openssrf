@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.antenna.Nomenclature;
@@ -1425,14 +1426,35 @@ public class Satellite extends Common<Satellite> {
    * from the transient {@link #launchLoc} field. This method should typically
    * be called after the Satellite is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current Satellite object instance
    */
   @Override
-  public Satellite prepare() {
+  public void prepare() {
     super.prepare();
     this.launchLocRef = launchLoc != null ? launchLoc.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Satellite record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #launchLoc} with values from the
+   * imported {@link #launchLocRef} field. This method should typically be
+   * called after the Satellite is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (launchLocRef == null || !launchLocRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (launchLocRef.equals(instance.getSerial())) {
+        launchLoc = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

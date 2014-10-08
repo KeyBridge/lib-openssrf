@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Note;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -249,12 +250,32 @@ public class RecordNote {
    * transient {@link #note} field. This method should typically be called after
    * the RecordNote is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
-   * @return The current RecordNote object instance
    */
-  public RecordNote prepare() {
+  public void prepare() {
     this.noteRef = note != null ? note.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RecordNote record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #note} with values from the
+   * imported {@link #noteRef} field. This method should typically be called
+   * after the RecordNote is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (noteRef == null || !noteRef.isSetValue()) {
+      return;
+    }
+    for (Note instance : root.getNote()) {
+      if (noteRef.equals(instance.getSerial())) {
+        note = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

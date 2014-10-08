@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.rfsystem;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -242,12 +243,32 @@ public class RelatedSystem {
    * transient {@link #rfSystem} field. This method should typically be called
    * after the RelatedSystem is configured and (optionally) before exporting an
    * SSRF message.
-   * <p>
-   * @return The current RelatedSystem object instance
    */
-  public RelatedSystem prepare() {
+  public void prepare() {
     this.serial = rfSystem != null ? rfSystem.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RelatedSystem record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #rfSystem} with values from the
+   * imported {@link #serial} field. This method should typically be called
+   * after the RelatedSystem is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (RFSystem instance : root.getRFSystem()) {
+      if (serial.equals(instance.getSerial())) {
+        rfSystem = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

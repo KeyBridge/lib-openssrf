@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -309,12 +310,44 @@ public class POCInformation {
    * transient {@link #poc} field. This method should typically be called after
    * the POCInformation is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
-   * @return The current POCInformation object instance
    */
-  public POCInformation prepare() {
+  public void prepare() {
     this.serial = poc != null ? poc.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this POCInformation record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #poc} with values from the imported
+   * {@link #serial} field. This method should typically be called after the
+   * POCInformation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (Contact instance : root.getContact()) {
+      if (serial.equals(instance.getSerial())) {
+        poc = instance;
+        return;
+      }
+    }
+    for (Organisation instance : root.getOrganisation()) {
+      if (serial.equals(instance.getSerial())) {
+        poc = instance;
+        return;
+      }
+    }
+    for (Role instance : root.getRole()) {
+      if (serial.equals(instance.getSerial())) {
+        poc = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

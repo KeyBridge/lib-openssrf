@@ -26,9 +26,8 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.Common;
-import us.gov.dod.standard.ssrf._3_1.SSRequest;
+import us.gov.dod.standard.ssrf.SSRF;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -416,12 +415,44 @@ public class StatusLog {
    * transient {@link #poc} field. This method should typically be called after
    * the StatusLog is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
-   * @return The current StatusLog object instance
    */
-  public StatusLog prepare() {
+  public void prepare() {
     this.pocRef = poc != null ? poc.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this StatusLog record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #poc} with values from the imported
+   * {@link #pocRef} field. This method should typically be called after the
+   * StatusLog is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (pocRef == null || !pocRef.isSetValue()) {
+      return;
+    }
+    for (Contact instance : root.getContact()) {
+      if (pocRef.equals(instance.getSerial())) {
+        poc = instance;
+        return;
+      }
+    }
+    for (Organisation instance : root.getOrganisation()) {
+      if (pocRef.equals(instance.getSerial())) {
+        poc = instance;
+        return;
+      }
+    }
+    for (Role instance : root.getRole()) {
+      if (pocRef.equals(instance.getSerial())) {
+        poc = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

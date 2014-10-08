@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Loadset;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
@@ -864,12 +865,32 @@ public class JammingTarget {
    * the transient {@link #loadset} field. This method should typically be
    * called after the JammingTarget is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current JammingTarget object instance
    */
-  public JammingTarget prepare() {
+  public void prepare() {
     this.loadsetRef = loadset != null ? loadset.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JammingTarget record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #loadset} with values from the
+   * imported {@link #loadsetRef} field. This method should typically be called
+   * after the JammingTarget is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (loadsetRef == null || !loadsetRef.isSetValue()) {
+      return;
+    }
+    for (Loadset instance : root.getLoadset()) {
+      if (loadsetRef.equals(instance.getSerial())) {
+        loadset = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

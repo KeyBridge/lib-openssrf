@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -975,14 +976,35 @@ public class ForceElement extends Common<ForceElement> {
    * values from the transient {@link #owningOrganisation} field. This method
    * should typically be called after the ForceElement is configured and
    * (optionally) before exporting an SSRF message.
-   * <p>
-   * @return The current ForceElement object instance
    */
   @Override
-  public ForceElement prepare() {
+  public void prepare() {
     super.prepare();
     this.owningOrganisationRef = owningOrganisation != null ? owningOrganisation.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this ForceElement record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #owningOrganisation} with values
+   * from the imported {@link #owningOrganisationRef} field. This method should
+   * typically be called after the ForceElement is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (owningOrganisationRef == null || !owningOrganisationRef.isSetValue()) {
+      return;
+    }
+    for (Organisation instance : root.getOrganisation()) {
+      if (owningOrganisationRef.equals(instance.getSerial())) {
+        owningOrganisation = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

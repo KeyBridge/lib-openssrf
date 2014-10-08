@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -360,12 +361,32 @@ public class PairedFreq {
    * from the transient {@link #assignment} field. This method should typically
    * be called after the PairedFreq is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current PairedFreq object instance
    */
-  public PairedFreq prepare() {
+  public void prepare() {
     this.assignmentRef = assignment != null ? assignment.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this PairedFreq record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #assignment} with values from the
+   * imported {@link #assignmentRef} field. This method should typically be
+   * called after the PairedFreq is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (assignmentRef == null || !assignmentRef.isSetValue()) {
+      return;
+    }
+    for (Assignment instance : root.getAssignment()) {
+      if (assignmentRef.equals(instance.getSerial())) {
+        assignment = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

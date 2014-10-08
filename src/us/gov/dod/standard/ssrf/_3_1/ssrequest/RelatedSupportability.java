@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -293,12 +294,32 @@ public class RelatedSupportability {
    * from the transient {@link #ssRequest} field. This method should typically
    * be called after the RelatedSupportability is configured and (optionally)
    * before exporting an SSRF message.
-   * <p>
-   * @return The current RelatedSupportability object instance
    */
-  public RelatedSupportability prepare() {
+  public void prepare() {
     this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RelatedSupportability record
+   * after loading from XML.
+   * <p>
+   * This method builds the transient {@link #ssRequest} with values from the
+   * imported {@link #ssRequestRef} field. This method should typically be
+   * called after the RelatedSupportability is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (ssRequestRef == null || !ssRequestRef.isSetValue()) {
+      return;
+    }
+    for (SSRequest instance : root.getSSRequest()) {
+      if (ssRequestRef.equals(instance.getSerial())) {
+        ssRequest = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

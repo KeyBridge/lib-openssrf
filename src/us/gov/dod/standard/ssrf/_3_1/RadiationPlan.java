@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -793,14 +794,35 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * the transient {@link #location} field. This method should typically be
    * called after the RadiationPlan is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current RadiationPlan object instance
    */
   @Override
-  public RadiationPlan prepare() {
+  public void prepare() {
     super.prepare();
     this.locationRef = location != null ? location.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RadiationPlan record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #location} with values from the
+   * imported {@link #locationRef} field. This method should typically be called
+   * after the RadiationPlan is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (locationRef == null || !locationRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locationRef.equals(instance.getSerial())) {
+        location = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

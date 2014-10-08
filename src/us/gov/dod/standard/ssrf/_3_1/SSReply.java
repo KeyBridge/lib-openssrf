@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
@@ -1272,14 +1273,35 @@ public class SSReply extends Common<SSReply> {
    * from the transient {@link #ssRequest} field. This method should typically
    * be called after the SSReply is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
-   * @return The current SSReply object instance
    */
   @Override
-  public SSReply prepare() {
+  public void prepare() {
     super.prepare();
     this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this SSReply record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #ssRequest} with values from the
+   * imported {@link #ssRequestRef} field. This method should typically be
+   * called after the SSReply is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (ssRequestRef == null || !ssRequestRef.isSetValue()) {
+      return;
+    }
+    for (SSRequest instance : root.getSSRequest()) {
+      if (ssRequestRef.equals(instance.getSerial())) {
+        ssRequest = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

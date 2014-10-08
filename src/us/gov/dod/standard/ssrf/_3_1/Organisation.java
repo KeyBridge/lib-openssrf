@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
@@ -977,17 +978,38 @@ public class Organisation extends Common<Organisation> {
    * the Organisation is configured and (optionally) before exporting an SSRF
    * message.
    * <p>
-   * @return The current Organisation object instance
    * @since 3.1.0
    */
   @Override
-  public Organisation prepare() {
+  public void prepare() {
     super.prepare();
     this.roleRef = new HashSet<>();
     for (Role instance : getRole()) {
       this.roleRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Organisation record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #role} with values from the
+   * imported {@link #roleRef} field. This method should typically be called
+   * after the Organisation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (roleRef == null || roleRef.isEmpty()) {
+      return;
+    }
+    for (Role instance : root.getRole()) {
+      if (roleRef.contains(instance.getSerial())) {
+        role.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.administrative;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Administrative;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -406,15 +407,38 @@ public class Dataset {
    * called after the Dataset is configured and (optionally) before exporting an
    * SSRF message.
    * <p>
-   * @return The current Dataset object instance
    * @since 3.1.0
    */
-  public Dataset prepare() {
+  public void prepare() {
     this.missingRef = new HashSet<>();
     for (Common<?> instance : getMissing()) {
       this.missingRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Dataset record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #missing} with values from the
+   * imported {@link #missingRef} field. This method should typically be called
+   * after the Dataset is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (missingRef == null || missingRef.isEmpty()) {
+      return;
+    }
+    /**
+     * @TODO: Check ALL SSRF lists.
+     */
+//    for (Common<?> instance : root.getCommon < ?  > ()) {
+//      if (missingRef.contains(instance.getSerial())) {
+//        missing.add(instance);
+//      }
+//    }
   }//</editor-fold>
 
 }

@@ -24,7 +24,8 @@
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf.SSRF;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -425,12 +426,38 @@ public class EndpointLocation {
    * the transient {@link #locSat} field. This method should typically be called
    * after the EndpointLocation is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
-   * @return The current EndpointLocation object instance
    */
-  public EndpointLocation prepare() {
+  public void prepare() {
     this.locSatRef = locSat != null ? locSat.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this EndpointLocation record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #locSat} with values from the
+   * imported {@link #locSatRef} field. This method should typically be called
+   * after the EndpointLocation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (locSatRef == null || !locSatRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locSatRef.equals(instance.getSerial())) {
+        locSat = instance;
+        return;
+      }
+    }
+    for (Satellite instance : root.getSatellite()) {
+      if (locSatRef.equals(instance.getSerial())) {
+        locSat = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

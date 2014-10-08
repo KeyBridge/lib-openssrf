@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.organisation;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -304,12 +305,32 @@ public class RelatedOrganisation {
    * transient {@link #organisation} field. This method should typically be
    * called after the RelatedOrganisation is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current RelatedOrganisation object instance
    */
-  public RelatedOrganisation prepare() {
+  public void prepare() {
     this.serial = organisation != null ? organisation.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RelatedOrganisation record
+   * after loading from XML.
+   * <p>
+   * This method builds the transient {@link #organisation} with values from the
+   * imported {@link #serial} field. This method should typically be called
+   * after the RelatedOrganisation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (Organisation instance : root.getOrganisation()) {
+      if (serial.equals(instance.getSerial())) {
+        organisation = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

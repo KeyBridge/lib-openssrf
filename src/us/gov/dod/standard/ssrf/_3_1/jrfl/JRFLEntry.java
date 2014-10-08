@@ -24,12 +24,12 @@
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
-import us.gov.dod.standard.ssrf._3_1.Common;
-import us.gov.dod.standard.ssrf._3_1.JRFL;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
@@ -1390,12 +1390,38 @@ public class JRFLEntry {
    * from the transient {@link #assignmentAllotment} field. This method should
    * typically be called after the JRFLEntry is configured and (optionally)
    * before exporting an SSRF message.
-   * <p>
-   * @return The current JRFLEntry object instance
    */
-  public JRFLEntry prepare() {
+  public void prepare() {
     this.asgnAllotRef = assignmentAllotment != null ? assignmentAllotment.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JRFLEntry record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #assignmentAllotment} with values
+   * from the imported {@link #asgnAllotRef} field. This method should typically
+   * be called after the JRFLEntry is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (asgnAllotRef == null || !asgnAllotRef.isSetValue()) {
+      return;
+    }
+    for (Assignment instance : root.getAssignment()) {
+      if (asgnAllotRef.equals(instance.getSerial())) {
+        assignmentAllotment = instance;
+        return;
+      }
+    }
+    for (Allotment instance : root.getAllotment()) {
+      if (asgnAllotRef.equals(instance.getSerial())) {
+        assignmentAllotment = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

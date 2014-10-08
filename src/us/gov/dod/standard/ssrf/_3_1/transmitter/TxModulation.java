@@ -985,6 +985,7 @@ public class TxModulation
    * <p>
    * @return TRUE
    */
+  @Override
   public boolean isSet() {
     return true;
   }

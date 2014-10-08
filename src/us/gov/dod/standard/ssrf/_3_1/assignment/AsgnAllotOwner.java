@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -296,12 +297,32 @@ public class AsgnAllotOwner {
    * the transient {@link #ownerOrg} field. This method should typically be
    * called after the AsgnAllotOwner is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current AsgnAllotOwner object instance
    */
-  public AsgnAllotOwner prepare() {
+  public void prepare() {
     this.ownerOrgRef = ownerOrg != null ? ownerOrg.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this AsgnAllotOwner record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #ownerOrg} with values from the
+   * imported {@link #ownerOrgRef} field. This method should typically be called
+   * after the AsgnAllotOwner is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (ownerOrgRef == null || !ownerOrgRef.isSetValue()) {
+      return;
+    }
+    for (Organisation instance : root.getOrganisation()) {
+      if (ownerOrgRef.equals(instance.getSerial())) {
+        ownerOrg = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

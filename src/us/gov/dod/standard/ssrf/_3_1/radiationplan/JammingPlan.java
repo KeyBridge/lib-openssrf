@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -1008,12 +1009,32 @@ public class JammingPlan {
    * from the transient {@link #startLocation} field. This method should
    * typically be called after the JammingPlan is configured and (optionally)
    * before exporting an SSRF message.
-   * <p>
-   * @return The current JammingPlan object instance
    */
-  public JammingPlan prepare() {
+  public void prepare() {
     this.startLocationRef = startLocation != null ? startLocation.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this JammingPlan record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #startLocation} with values from
+   * the imported {@link #startLocationRef} field. This method should typically
+   * be called after the JammingPlan is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (startLocationRef == null || !startLocationRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (startLocationRef.equals(instance.getSerial())) {
+        startLocation = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

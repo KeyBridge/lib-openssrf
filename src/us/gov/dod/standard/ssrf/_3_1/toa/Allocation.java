@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.ChannelPlan;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
@@ -749,15 +750,35 @@ public class Allocation {
    * be called after the Allocation is configured and (optionally) before
    * exporting an SSRF message.
    * <p>
-   * @return The current Allocation object instance
    * @since 3.1.0
    */
-  public Allocation prepare() {
+  public void prepare() {
     this.channelPlanRef = new HashSet<>();
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Allocation record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #channelPlan} with values from the
+   * imported {@link #channelPlanRef} field. This method should typically be
+   * called after the Allocation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (channelPlanRef == null || channelPlanRef.isEmpty()) {
+      return;
+    }
+    for (ChannelPlan instance : root.getChannelPlan()) {
+      if (channelPlanRef.contains(instance.getSerial())) {
+        channelPlan.add(instance);
+      }
+    }
   }//</editor-fold>
 
 }

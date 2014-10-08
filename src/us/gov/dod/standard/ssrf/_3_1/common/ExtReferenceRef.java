@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1.common;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ExternalReference;
@@ -317,12 +318,32 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * transient {@link #externalReference} field. This method should typically be
    * called after the ExtReferenceRef is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current ExtReferenceRef object instance
    */
-  public ExtReferenceRef prepare() {
+  public void prepare() {
     this.value = externalReference != null ? externalReference.getSerial().getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this ExtReferenceRef record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #externalReference} with values
+   * from the imported {@link #value} field. This method should typically be
+   * called after the ExtReferenceRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (value == null || !value.isEmpty()) {
+      return;
+    }
+    for (ExternalReference instance : root.getExternalReference()) {
+      if (value.equals(instance.getSerial().getValue())) {
+        externalReference = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">

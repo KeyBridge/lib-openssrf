@@ -26,6 +26,7 @@ package us.gov.dod.standard.ssrf._3_1;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
@@ -2219,16 +2220,67 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * This method should typically be called after the Common is configured and
    * (optionally) before exporting an SSRF message.
-   * <p>
-   * @return The current Common object instance
    */
-  public T prepare() {
+  public void prepare() {
     this.entryBy = entryByRole != null ? entryByRole.getSerial() : null;
     this.owner = ownerRole != null ? ownerRole.getSerial() : null;
     this.lastChangeBy = lastChangeByRole != null ? lastChangeByRole.getSerial() : null;
     this.lastReviewBy = lastReviewByRole != null ? lastReviewByRole.getSerial() : null;
     this.modAllowedBy = modAllowedByRole != null ? modAllowedByRole.getSerial() : null;
-    return (T) this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Common record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #entryByRole} with values from the
+   * imported {@link #entryBy} field. This method should typically be called
+   * after the Common is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (entryBy != null && entryBy.isSetValue()) {
+      for (Role instance : root.getRole()) {
+        if (entryBy.equals(instance.getSerial())) {
+          entryByRole = instance;
+          return;
+        }
+      }
+    }
+    if (owner != null && owner.isSetValue()) {
+      for (Role instance : root.getRole()) {
+        if (owner.equals(instance.getSerial())) {
+          ownerRole = instance;
+          return;
+        }
+      }
+    }
+    if (lastChangeBy != null && lastChangeBy.isSetValue()) {
+      for (Role instance : root.getRole()) {
+        if (lastChangeBy.equals(instance.getSerial())) {
+          lastChangeByRole = instance;
+          return;
+        }
+      }
+    }
+    if (lastReviewBy != null && lastReviewBy.isSetValue()) {
+      for (Role instance : root.getRole()) {
+        if (lastReviewBy.equals(instance.getSerial())) {
+          lastReviewByRole = instance;
+          return;
+        }
+      }
+    }
+    if (modAllowedBy != null && modAllowedBy.isSetValue()) {
+      for (Role instance : root.getRole()) {
+        if (modAllowedBy.equals(instance.getSerial())) {
+          modAllowedByRole = instance;
+          return;
+        }
+      }
+    }
   }//</editor-fold>
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">

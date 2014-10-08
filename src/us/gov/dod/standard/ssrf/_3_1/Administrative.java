@@ -25,6 +25,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
@@ -412,14 +413,35 @@ public class Administrative extends Common<Administrative> {
    * the transient {@link #message} field. This method should typically be
    * called after the Administrative is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current Administrative object instance
    */
   @Override
-  public Administrative prepare() {
+  public void prepare() {
     super.prepare();
     this.messageRef = message != null ? message.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Administrative record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #message} with values from the
+   * imported {@link #messageRef} field. This method should typically be called
+   * after the Administrative is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (messageRef == null || !messageRef.isSetValue()) {
+      return;
+    }
+    for (Message instance : root.getMessage()) {
+      if (messageRef.equals(instance.getSerial())) {
+        message = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

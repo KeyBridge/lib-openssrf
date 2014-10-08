@@ -24,9 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
@@ -1042,14 +1043,35 @@ public class FEDeployment extends Common<FEDeployment> {
    * transient {@link #forceElement} field. This method should typically be
    * called after the FEDeployment is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
-   * @return The current FEDeployment object instance
    */
   @Override
-  public FEDeployment prepare() {
+  public void prepare() {
     super.prepare();
     this.feRef = forceElement != null ? forceElement.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this FEDeployment record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #forceElement} with values from the
+   * imported {@link #feRef} field. This method should typically be called after
+   * the FEDeployment is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (feRef == null || !feRef.isSetValue()) {
+      return;
+    }
+    for (ForceElement instance : root.getForceElement()) {
+      if (feRef.equals(instance.getSerial())) {
+        forceElement = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

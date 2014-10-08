@@ -24,6 +24,7 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -322,12 +323,32 @@ public class RxAntModeRef {
    * transient {@link #antenna} field. This method should typically be called
    * after the RxAntModeRef is configured and (optionally) before exporting an
    * SSRF message.
-   * <p>
-   * @return The current RxAntModeRef object instance
    */
-  public RxAntModeRef prepare() {
+  public void prepare() {
     this.serial = antenna != null ? antenna.getSerial() : null;
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this RxAntModeRef record after
+   * loading from XML.
+   * <p>
+   * This method builds the transient {@link #antenna} with values from the
+   * imported {@link #serial} field. This method should typically be called
+   * after the RxAntModeRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  public void postLoad(SSRF root) {
+    if (serial == null || !serial.isSetValue()) {
+      return;
+    }
+    for (Antenna instance : root.getAntenna()) {
+      if (serial.equals(instance.getSerial())) {
+        antenna = instance;
+        return;
+      }
+    }
   }//</editor-fold>
 
 }

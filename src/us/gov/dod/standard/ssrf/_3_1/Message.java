@@ -24,9 +24,10 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -335,17 +336,41 @@ public class Message extends Common<Message> {
    * after the Message is configured and (optionally) before exporting an SSRF
    * message.
    * <p>
-   * @return The current Message object instance
    * @since 3.1.0
    */
   @Override
-  public Message prepare() {
+  public void prepare() {
     super.prepare();
     this.datasetRef = new HashSet<>();
     for (Common<?> instance : getData()) {
       this.datasetRef.add(instance.getSerial());
     }
-    return this;
+  }
+
+  /**
+   * Update the SSRF data type references in this Message record after loading
+   * from XML.
+   * <p>
+   * This method builds the transient {@link #data} with values from the
+   * imported {@link #datasetRef} field. This method should typically be called
+   * after the Message is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0
+   */
+  @Override
+  public void postLoad(SSRF root) {
+    if (datasetRef == null || datasetRef.isEmpty()) {
+      return;
+    }
+    /**
+     * @TODO: Check ALL SSRF lists.
+     */
+//    for (Common<?> instance : root.getCommon < ?  > ()) {
+//      if (datasetRef.contains(instance.getSerial())) {
+//        data.add(instance);
+//      }
+//    }
   }//</editor-fold>
 
 }
