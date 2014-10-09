@@ -4,7 +4,7 @@ import us.gov.dod.standard.ssrf._3_1.location.Point;
 
 /**
  *
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC <developer@keybridgeglobal.com>
  */
 public class TestPoint {
 
