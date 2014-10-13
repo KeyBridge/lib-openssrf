@@ -2,6 +2,7 @@
 |  Open SSRF Software Library                                                  |
 +------------------------------------------------------------------------------+
 History
+  10/10/14 - change from MIT to Apache license: includes patent grants
   10/01/14 - complete upgrade to v3.1.0
                comprehensively documented
                implement isSet() method to validate required fields
