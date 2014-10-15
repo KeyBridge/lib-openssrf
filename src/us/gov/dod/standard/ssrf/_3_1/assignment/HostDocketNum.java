@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS35;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;

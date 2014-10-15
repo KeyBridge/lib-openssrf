@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.gov.dod.standard.ssrf._3_1.metadata.domains;
+package us.gov.dod.standard.ssrf._3_1.metadata;
 
 /**
  * An interface type to support XMLJavaTypeAdapters for the numeric types.

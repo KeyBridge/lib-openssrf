@@ -15,6 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**

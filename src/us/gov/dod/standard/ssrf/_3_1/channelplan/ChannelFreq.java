@@ -17,7 +17,7 @@ package us.gov.dod.standard.ssrf._3_1.channelplan;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterBigDecimalFREQM;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;

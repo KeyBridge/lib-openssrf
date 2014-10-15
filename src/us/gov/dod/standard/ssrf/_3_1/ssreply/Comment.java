@@ -18,7 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.ssreply;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;

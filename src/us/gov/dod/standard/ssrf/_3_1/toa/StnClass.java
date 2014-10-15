@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSC;
 

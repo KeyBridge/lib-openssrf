@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package us.gov.dod.standard.ssrf;
+package us.gov.dod.standard.ssrf._3_1.metadata;
 
 import java.math.BigInteger;
 import java.util.Arrays;

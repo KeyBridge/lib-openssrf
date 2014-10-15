@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.Satellite;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;

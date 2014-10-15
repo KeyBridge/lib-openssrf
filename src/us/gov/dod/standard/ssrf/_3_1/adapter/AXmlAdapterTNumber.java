@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.IMetadataType;
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TDecimal;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TDouble;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TInteger;
