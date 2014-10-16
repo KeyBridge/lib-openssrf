@@ -467,9 +467,11 @@ public class SSRFUtility {
   }
 
   /**
-   * Process a SSRF instance object for export. This method examines the class
-   * tree and copies all required data objects into their proper location and
-   * preparing the SSRF destination instance for export.
+   * Process a SSRF instance object for export.
+   * <p>
+   * This method examines the class tree and copies all required data objects
+   * into their proper location and prepares the SSRF destination instance for
+   * export.
    * <p>
    * @param ssrf a SSRF working copy
    */
@@ -478,9 +480,11 @@ public class SSRFUtility {
   }
 
   /**
-   * Process a SSRF instance object for export. This method examines the class
-   * tree and copies all required data objects into their proper location and
-   * preparing the SSRF destination instance for export.
+   * Process a SSRF instance object for export (recursive, internal).
+   * <p>
+   * This method examines the class tree and copies all required data objects
+   * into their proper location and prepares the SSRF destination instance for
+   * export.
    * <p>
    * @param sourceInstance the SSRF working copy
    * @param rootInstance   the root SSRF instance into which the components are
@@ -547,16 +551,24 @@ public class SSRFUtility {
       if (fieldValue instanceof Collection) {
         /**
          * To avoid a ConcurrentModificationException create a temporary list of
-         * objects that are preparable then proceed to call each in turn.
+         * objects that are preparable then invoke prepare() on each instance in
+         * turn.
+         * <p>
+         * If the instance does NOT implement prepare() then recurse into that
+         * object, then try to add it to the SSRF ROOT.
          */
         Set<Object> preparablObjects = new HashSet<>();
         for (Object entryCandidate : (Collection) fieldValue) {
           if (implementsPrepare(entryCandidate)) {
             preparablObjects.add(entryCandidate);
+          } else {
+            prepare(entryCandidate, rootInstance);
+            addValueToDestinationInstance(entryCandidate, rootInstance);
           }
         }
         /**
-         * Now call and recurse into all of the preparable object instances.
+         * Now call and recurse into all of the preparable object instances
+         * identified above.
          */
         for (Object preparableObject : preparablObjects) {
           /**
@@ -576,14 +588,15 @@ public class SSRFUtility {
           addValueToDestinationInstance(preparableObject, rootInstance);
         }
       } else {
+        /**
+         * Same process as above except working on single instances and not set
+         * entries. If the object instance implements prepare() then invoke it.
+         */
         if (implementsPrepare(fieldValue)) {
-          /**
-           * Same process as above.
-           */
           invokePrepare(fieldValue);
-          prepare(fieldValue, rootInstance);
-          addValueToDestinationInstance(fieldValue, rootInstance);
         }
+        prepare(fieldValue, rootInstance);
+        addValueToDestinationInstance(fieldValue, rootInstance);
       }
     }
     /**
