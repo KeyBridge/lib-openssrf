@@ -773,7 +773,6 @@ public class SSRFUtility {
    * @param rootInstance a {@link SSRF} instance
    */
   public static void postLoad(SSRF rootInstance) {
-    System.out.println("SSRFUtility.postLoad ");
     postLoad(rootInstance, rootInstance);
   }
 
