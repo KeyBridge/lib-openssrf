@@ -99,7 +99,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * @since 3.1.0
    */
-  public void assemble() {
+  private void assemble() {
     if (ssrfProperties != null) {
       SSRFUtility.setProperties(ssrfProperties, this);
     }
@@ -107,26 +107,24 @@ public class SSRF extends SchemaRoot<SSRF> {
   }
 
   /**
-   * Process this SSRF source instance for export.
+   * Export this SSRF source instance as an XML document.
    * <p>
-   * This method makes a copy of the source instance configuration, copying all
-   * required data objects into their proper location and preparing the SSRF
-   * destination instance for export.
+   * This method prepares the SSRF object hierarchy, copying all required data
+   * objects into their proper location, preparing the SSRF destination instance
+   * for export, then marshals the data type into an XML document.
    * <p>
    * If the object instance is NOT valid then call {@link #evaluate(Object)} to
    * re-inspect the SSRF object instance and retrieve a list of specific
    * validation errors.
    * <p>
+   * @return This SSRF instance as an XML document
    * @throws Exception If this SSRF configuration fails to validate
    * @since 3.1.0
    */
-  public void prepare() throws Exception {
-    /**
-     * Call assemble() twice to add parameters and then to add metadata (if
-     * configured) to those parameters.
-     */
+  public String toXML() throws Exception {
     assemble();
     SSRFUtility.validate(this);
+    return SSRFUtility.marshal(this);
   }
 
   /**
@@ -187,14 +185,39 @@ public class SSRF extends SchemaRoot<SSRF> {
 
   //<editor-fold defaultstate="collapsed" desc="Import from XML">
   /**
-   * Process this SSRF instance object after reading from XML.
+   * Standard method to get a fully qualified class instance.
    * <p>
-   * This method examines the class tree and copies all required data objects
-   * into their proper location and preparing the SSRF software class hierarchy
-   * for working.
+   * This is a shortcut to {@link #fromXml(String)}
+   * <p>
+   * @param xml A SSRF XML document
+   * @return A SSRF software object instance
+   * @throws Exception If this SSRF XML document fails to unmarshal; typically
+   *                   because the document is invalid or incomplete
    */
-  public void postLoad() {
-    SSRFUtility.postLoad(this);
+  public static SSRF getInstance(String xml) throws Exception {
+    return fromXml(xml);
+  }
+
+  /**
+   * Parse an import an XMl document into a SSRF object hierarchy.
+   * <p>
+   * This method reads and attempts to unmarshal a XML document into a SSRF
+   * software object tree. If successful the SSRF software instance is prepared
+   * for use, copying all required data objects into their proper location.
+   * <p>
+   * After reading the XML this method examines the class tree and copies all
+   * required data objects into their proper location and preparing the SSRF
+   * software class hierarchy for work.
+   * <p>
+   * @param xml A SSRF XML document
+   * @return A SSRF software object instance
+   * @throws Exception If this SSRF XML document fails to unmarshal; typically
+   *                   because the document is invalid or incomplete
+   */
+  public static SSRF fromXml(String xml) throws Exception {
+    SSRF ssrf = SSRFUtility.unmarshal(xml, SSRF.class);
+    SSRFUtility.postLoad(ssrf);
+    return ssrf;
   }//</editor-fold>
 
 }
