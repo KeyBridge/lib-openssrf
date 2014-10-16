@@ -1478,6 +1478,10 @@ public abstract class SchemaRoot<T> {
   /**
    * Get a string representation of this SchemaRoot instance configuration.
    * <p>
+   * NOTE: THIS DOES NOT PRODUCE XML. Use <code>toXML()</code> to generate an
+   * XML representation of your object instance. Use this method ONLY for
+   * development and debugging.
+   * <p>
    * @return The current object instance configuration as a non-null String
    */
   @Override
