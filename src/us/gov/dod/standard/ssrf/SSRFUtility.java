@@ -15,6 +15,8 @@
  */
 package us.gov.dod.standard.ssrf;
 
+import java.io.ByteArrayInputStream;
+import java.io.StringWriter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -24,6 +26,10 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
@@ -40,7 +46,10 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.Comment;
 import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 
 /**
- * A collection of useful SSRF Utility classes.
+ * A collection of useful SSRF and JAXB Utility classes.
+ * <p>
+ * These methods help to assemble, validate, serialize and un-serialize object
+ * representations to and from XML.
  * <p>
  * @author Jesse Caulfield
  * @version 1.0, 10/02/14
@@ -1023,6 +1032,47 @@ public class SSRFUtility {
       }
     }
     return null;
+  }
+
+  /**
+   * Marshal an entity class into a XML String representation.
+   * <p/>
+   * The output of this method is typically either written to a file or sent via
+   * a SOAP communication link.
+   * <p/>
+   * @param <T>   the entity class type
+   * @param clazz the entity class to be written
+   * @return the entity class serialized into XML form
+   * @throws JAXBException if the entity class cannot be marshaled (serialized)
+   */
+  public static <T> String marshal(T clazz) throws JAXBException {
+    JAXBContext jaxbContext = JAXBContext.newInstance(clazz.getClass());
+    Marshaller marshaller = jaxbContext.createMarshaller();
+    /**
+     * Add newlines to the output. This helps visually inspect the output.
+     */
+    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+    StringWriter stringWriter = new StringWriter();
+    marshaller.marshal(clazz, stringWriter);
+    return stringWriter.toString();
+  }
+
+  /**
+   * Parse an XML file into a container class. This method calls the JAXB
+   * un-marshaler and returns a class containing all of the content defined in
+   * the XML file.
+   * <p/>
+   * @param <T>   the class type to be returned
+   * @param xml   the XML source content
+   * @param clazz the parsed and populated class type; this is the same as the
+   *              class type that is returned
+   * @return the XML source file parsed into the identified class type
+   * @throws JAXBException if the XML source file does not match the input class
+   *                       type
+   */
+  public static <T> T unmarshal(String xml, Class<T> clazz) throws JAXBException {
+    Unmarshaller unmarshaller = JAXBContext.newInstance(clazz).createUnmarshaller();
+    return clazz.cast(unmarshaller.unmarshal(new ByteArrayInputStream(xml.getBytes())));
   }
 
 }
