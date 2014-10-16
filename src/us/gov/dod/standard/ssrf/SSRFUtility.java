@@ -40,6 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
 import us.gov.dod.standard.ssrf._3_1.location.Point;
 import us.gov.dod.standard.ssrf._3_1.location.Polygon;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.multiple.ConfigFreq;
 import us.gov.dod.standard.ssrf._3_1.receiver.Curve;
 import us.gov.dod.standard.ssrf._3_1.ssreply.Comment;
@@ -100,7 +101,7 @@ public class SSRFUtility {
   }
 
   /**
-   * Internal method to recursively validate an object instance.
+   * Validate a SSRF object instance.
    * <p>
    * This method keeps track of the instance parent instance, plus the field
    * within that parent instance where the current object instance is set. These
@@ -115,8 +116,31 @@ public class SSRFUtility {
    * @param instance the object instance to validate
    * @throws java.lang.Exception if the SSRF instance fails to validate
    */
-  @SuppressWarnings({"AssignmentToMethodParameter"})
   public static void validate(Object instance) throws Exception {
+    validate(instance, null);
+  }
+
+  /**
+   * Validate a SSRF object instance. (internal, recursive)
+   * <p>
+   * This method keeps track of the instance parent instance, plus the field
+   * within that parent instance where the current object instance is set. These
+   * are tracked to help produce a set of legible error messages.
+   * <p>
+   * Developer note: For more information about Java reflection see
+   * <a href="http://docs.oracle.com/javase/tutorial/reflect/index.html">The
+   * Reflection API</a> and <a
+   * href="http://tutorials.jenkov.com/java-reflection/index.html">Java
+   * Reflection Tutorial</a>.
+   * <p>
+   * @param instance the object instance to validate
+   * @param cls      The parent (maximum) classification. If set all subordinate
+   *                 classifications in the class tree must be less than or
+   *                 equal to this value.
+   * @throws java.lang.Exception if the SSRF instance fails to validate
+   */
+  @SuppressWarnings({"AssignmentToMethodParameter"})
+  public static void validate(Object instance, ListCCL cls) throws Exception {
     /**
      * Assign the class type under study to a local variable for convenience.
      */
@@ -130,11 +154,34 @@ public class SSRFUtility {
       return;
     }
     /**
+     * Test the classification order. SSRF requires that subordinate objects
+     * have a classification less than or equal to their parents.
+     */
+    Set<Field> fields = findDeclaredAndInheritedFields(clazz);
+    if (cls != null) {
+      for (Field field : fields) {
+        if (field.getType().equals(ListCCL.class)) {
+          field.setAccessible(true);
+          if (cls.compareTo((ListCCL) field.get(instance)) < 0) {
+            throw new Exception("Field classification \"" + field.get(instance) + "\" is less than parent \"" + cls + "\"");
+          }
+        }
+      }
+    } else {
+      for (Field field : fields) {
+        if (field.getType().equals(ListCCL.class)) {
+          field.setAccessible(true);
+          cls = (ListCCL) field.get(instance);
+        }
+      }
+    }
+
+    /**
      * Iterate through the list of declared fields (public, protected and
      * private) and inspect each according to its annotated configuration and
      * state.
      */
-    for (Field field : findDeclaredAndInheritedFields(clazz)) {
+    for (Field field : fields) {
       /**
        * Important: Enable access to the Object instance fields (public,
        * protected and private).
@@ -173,11 +220,11 @@ public class SSRFUtility {
       if (fieldValue instanceof Collection) {
         for (Object entry : (Collection) fieldValue) {
           if (entry != null) {
-            validate(entry);
+            validate(entry, cls);
           }
         }
       } else {
-        validate(fieldValue);
+        validate(fieldValue, cls);
         /**
          * After the field validation status is completed try to validate the
          * object instance configuration against an XmlTypeValidator, if
@@ -208,7 +255,7 @@ public class SSRFUtility {
    *         the object instance validates OK.
    */
   public static Set<String> evaluate(Object instance) {
-    return evaluate(instance, null, null, null);
+    return evaluate(instance, null, null, null, null);
   }
 
   /**
@@ -232,7 +279,7 @@ public class SSRFUtility {
    *         the object instance validates OK.
    */
   @SuppressWarnings({"AssignmentToMethodParameter"})
-  private static Set<String> evaluate(Object instance, Object parentInstance, Field parentField, Set<String> messages) {
+  private static Set<String> evaluate(Object instance, ListCCL cls, Object parentInstance, Field parentField, Set<String> messages) {
     /**
      * Initialize the messages collection if required. Use a TreeSet to
      * eliminate duplicates and provide a pretty-print output.
@@ -253,11 +300,44 @@ public class SSRFUtility {
       return messages;
     }
     /**
+     * Test the classification order. SSRF requires that subordinate objects
+     * have a classification less than or equal to their parents.
+     */
+    Set<Field> fields = findDeclaredAndInheritedFields(clazz);
+    if (cls != null) {
+      for (Field field : fields) {
+        if (field.getType().equals(ListCCL.class)) {
+          try {
+            field.setAccessible(true);
+            if (cls.compareTo((ListCCL) field.get(instance)) < 0) {
+              messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + "." + field.getName() + " classification \"" + field.get(instance) + "\" is less restrictive than parent classification \"" + cls + "\"");
+            }
+          } catch (SecurityException | IllegalArgumentException | IllegalAccessException exception) {
+            System.err.println("DEBUG SSRFUtility.evaluate: FAILED to compare CLS for " + instance.getClass().getSimpleName());
+            Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, exception);
+          }
+        }
+      }
+    } else {
+      for (Field field : fields) {
+        if (field.getType().equals(ListCCL.class)) {
+          try {
+            field.setAccessible(true);
+            cls = (ListCCL) field.get(instance);
+          } catch (SecurityException | IllegalArgumentException | IllegalAccessException exception) {
+            System.err.println("DEBUG SSRFUtility.evaluate: FAILED to set CLS for " + instance.getClass().getSimpleName());
+            Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, exception);
+          }
+        }
+      }
+    }
+
+    /**
      * Iterate through the list of declared fields (public, protected and
      * private) and inspect each according to its annotated configuration and
      * state.
      */
-    for (Field field : findDeclaredAndInheritedFields(clazz)) {
+    for (Field field : fields) {
       /**
        * Important: Enable access to the Object instance fields (public,
        * protected and private).
@@ -296,11 +376,11 @@ public class SSRFUtility {
       if (fieldValue instanceof Collection) {
         for (Object entry : (Collection) fieldValue) {
           if (entry != null) {
-            evaluate(entry, instance, field, messages);
+            evaluate(entry, cls, instance, field, messages);
           }
         }
       } else {
-        evaluate(fieldValue, instance, field, messages);
+        evaluate(fieldValue, cls, instance, field, messages);
         /**
          * After the field validation status is completed try to validate the
          * object instance configuration against an XmlTypeValidator, if
