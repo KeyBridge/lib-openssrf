@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SSRF xmlns:ssrf="urn:us:gov:dod:standard:ssrf:3.1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Organisation cls="U">
+      <Serial cls="U">CAN:IC:OR:98fc5af949ef4f</Serial>
+      <EntryDateTime cls="U">1986-01-23T05:00:00Z</EntryDateTime>
+      <Name cls="U">Bell Media Inc.</Name>
+      <AlternateName cls="U">CKCO-TV-3</AlternateName>
+      <Type cls="U">Civilian/Commercial</Type>
+      <Address>
+         <Street cls="U">299 Queen Street West </Street>
+         <CityArea cls="U">Toronto</CityArea>
+         <StateCounty cls="U">ON</StateCounty>
+         <Country cls="U">Canada</Country>
+      </Address>
+   </Organisation>
+   <Location cls="U">
+      <Serial cls="U">CAN:IC:LO:c33fae639b3348</Serial>
+      <EntryDateTime cls="U">1986-01-23T05:00:00Z</EntryDateTime>
+      <Name cls="U">CKCO-TV-3</Name>
+      <CityArea cls="U">Toronto</CityArea>
+      <StateCounty cls="U">ON</StateCounty>
+      <Country cls="U">Canada</Country>
+      <Point idx="2">
+         <Lon cls="U">0820811.00W</Lon>
+         <Lat cls="U">434253.00N</Lat>
+      </Point>
+   </Location>
+   <Transmitter cls="U">
+      <Serial cls="U">CAN:IC:TX:7b4b14cfbbb247</Serial>
+      <EntryDateTime cls="U">1986-01-23T05:00:00Z</EntryDateTime>
+      <Generic cls="U">Yes</Generic>
+      <OutputDeviceType cls="U">Klystron</OutputDeviceType>
+      <TxMode>
+         <ModeID cls="U">TV</ModeID>
+         <Description cls="U">Broadcast Television</Description>
+         <Power>
+            <PowerMin cls="U">59.27370363039024</PowerMin>
+            <PowerType cls="U">Carrier</PowerType>
+            <Calculated cls="U">No</Calculated>
+         </Power>
+      </TxMode>
+   </Transmitter>
+   <Antenna cls="U">
+      <Serial cls="U">CAN:IC:AN:445a528c364a46</Serial>
+      <EntryDateTime cls="U">1986-01-23T05:00:00Z</EntryDateTime>
+      <Generic cls="U">No</Generic>
+      <AntType cls="U">Other</AntType>
+      <Nomenclature>
+         <Type cls="U">Civilian/Commercial</Type>
+         <Name cls="U">MFR not declared</Name>
+      </Nomenclature>
+      <AntMode>
+         <ModeID cls="U">2005-PRECISE</ModeID>
+         <ModeUse cls="U">Transmit Only</ModeUse>
+         <MotionType cls="U">Directional</MotionType>
+         <SectBlanking cls="U">No</SectBlanking>
+         <PolarisationType cls="U">Horizontal linear</PolarisationType>
+         <BeamType cls="U">Shaped Beam</BeamType>
+         <AntPattern>
+            <Type cls="U">HH</Type>
+            <Calculated cls="U">No</Calculated>
+            <AntPatternPoint>
+               <Dir cls="U">359.0</Dir>
+               <Gain cls="U">-5.1032</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">357.0</Dir>
+               <Gain cls="U">-4.721</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">350.0</Dir>
+               <Gain cls="U">-1.6205</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">346.0</Dir>
+               <Gain cls="U">-0.5634</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">341.0</Dir>
+               <Gain cls="U">-0.1181</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">336.0</Dir>
+               <Gain cls="U">-0.0435</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">328.0</Dir>
+               <Gain cls="U">0.0</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">320.0</Dir>
+               <Gain cls="U">-0.1251</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">315.0</Dir>
+               <Gain cls="U">-0.5773</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">311.0</Dir>
+               <Gain cls="U">-1.7026</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">304.0</Dir>
+               <Gain cls="U">-4.3491</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">302.0</Dir>
+               <Gain cls="U">-4.849</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">299.0</Dir>
+               <Gain cls="U">-4.7225</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">297.0</Dir>
+               <Gain cls="U">-4.1158</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">294.0</Dir>
+               <Gain cls="U">-2.3975</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">290.0</Dir>
+               <Gain cls="U">-0.6229</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">286.0</Dir>
+               <Gain cls="U">-0.0217</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">283.0</Dir>
+               <Gain cls="U">-0.3537</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">279.0</Dir>
+               <Gain cls="U">-1.6247</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">273.0</Dir>
+               <Gain cls="U">-4.4515</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">270.0</Dir>
+               <Gain cls="U">-5.0192</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">270.0</Dir>
+               <Gain cls="U">-4.9729</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">267.0</Dir>
+               <Gain cls="U">-4.4849</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">262.0</Dir>
+               <Gain cls="U">-2.8052</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">258.0</Dir>
+               <Gain cls="U">-1.1658</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">254.0</Dir>
+               <Gain cls="U">-0.4227</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">248.0</Dir>
+               <Gain cls="U">-0.1207</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">239.0</Dir>
+               <Gain cls="U">-0.0444</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">231.0</Dir>
+               <Gain cls="U">-0.1622</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">226.0</Dir>
+               <Gain cls="U">-0.4611</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">222.0</Dir>
+               <Gain cls="U">-1.2476</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">217.0</Dir>
+               <Gain cls="U">-2.8004</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">214.0</Dir>
+               <Gain cls="U">-4.6539</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">210.0</Dir>
+               <Gain cls="U">-5.0782</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">208.0</Dir>
+               <Gain cls="U">-4.5448</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">204.0</Dir>
+               <Gain cls="U">-2.5978</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">200.0</Dir>
+               <Gain cls="U">-0.7403</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">196.0</Dir>
+               <Gain cls="U">-0.0785</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">194.0</Dir>
+               <Gain cls="U">-0.1383</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">190.0</Dir>
+               <Gain cls="U">-0.9007</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">188.0</Dir>
+               <Gain cls="U">-1.9089</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">182.0</Dir>
+               <Gain cls="U">-4.4689</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">179.0</Dir>
+               <Gain cls="U">-4.9991</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">177.0</Dir>
+               <Gain cls="U">-4.4631</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">173.0</Dir>
+               <Gain cls="U">-2.8136</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">169.0</Dir>
+               <Gain cls="U">-1.3363</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">166.0</Dir>
+               <Gain cls="U">-0.6042</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">160.0</Dir>
+               <Gain cls="U">-0.2226</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">152.0</Dir>
+               <Gain cls="U">-0.1277</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">143.0</Dir>
+               <Gain cls="U">-0.1666</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">139.0</Dir>
+               <Gain cls="U">-0.2574</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">134.0</Dir>
+               <Gain cls="U">-0.7337</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">130.0</Dir>
+               <Gain cls="U">-1.8324</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">127.0</Dir>
+               <Gain cls="U">-3.4474</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">123.0</Dir>
+               <Gain cls="U">-5.0192</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">120.0</Dir>
+               <Gain cls="U">-5.0829</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">118.0</Dir>
+               <Gain cls="U">-4.5082</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">115.0</Dir>
+               <Gain cls="U">-3.2155</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">110.0</Dir>
+               <Gain cls="U">-0.9985</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">106.0</Dir>
+               <Gain cls="U">-0.1808</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">104.0</Dir>
+               <Gain cls="U">-0.2333</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">101.0</Dir>
+               <Gain cls="U">-0.9016</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">98.0</Dir>
+               <Gain cls="U">-2.042</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">94.0</Dir>
+               <Gain cls="U">-3.7511</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">91.0</Dir>
+               <Gain cls="U">-5.1502</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">89.0</Dir>
+               <Gain cls="U">-5.1596</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">88.0</Dir>
+               <Gain cls="U">-4.6435</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">84.0</Dir>
+               <Gain cls="U">-3.1005</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">82.0</Dir>
+               <Gain cls="U">-2.107</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">76.0</Dir>
+               <Gain cls="U">-0.7148</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">69.0</Dir>
+               <Gain cls="U">-0.1516</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">57.0</Dir>
+               <Gain cls="U">-0.0864</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">47.0</Dir>
+               <Gain cls="U">-0.278</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">44.0</Dir>
+               <Gain cls="U">-0.6631</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">39.0</Dir>
+               <Gain cls="U">-1.948</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">33.0</Dir>
+               <Gain cls="U">-4.6243</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">30.0</Dir>
+               <Gain cls="U">-5.0285</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">25.0</Dir>
+               <Gain cls="U">-3.0498</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">16.0</Dir>
+               <Gain cls="U">-0.0847</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">15.0</Dir>
+               <Gain cls="U">-0.0619</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">11.0</Dir>
+               <Gain cls="U">-0.6033</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">9.0</Dir>
+               <Gain cls="U">-1.2376</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">7.0</Dir>
+               <Gain cls="U">-2.5382</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">2.0</Dir>
+               <Gain cls="U">-4.555</Gain>
+            </AntPatternPoint>
+         </AntPattern>
+      </AntMode>
+      <AntMode>
+         <ModeID cls="U">1398-BRIEF</ModeID>
+         <ModeUse cls="U">Transmit Only</ModeUse>
+         <MotionType cls="U">Directional</MotionType>
+         <SectBlanking cls="U">No</SectBlanking>
+         <PolarisationType cls="U">Horizontal linear</PolarisationType>
+         <BeamType cls="U">Shaped Beam</BeamType>
+         <AntPattern>
+            <Type cls="U">HH</Type>
+            <Calculated cls="U">No</Calculated>
+            <AntPatternPoint>
+               <Dir cls="U">315.0</Dir>
+               <Gain cls="U">-1.2597</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">270.0</Dir>
+               <Gain cls="U">-5.7519</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">225.0</Dir>
+               <Gain cls="U">-1.2597</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">180.0</Dir>
+               <Gain cls="U">-5.6001</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">135.0</Dir>
+               <Gain cls="U">-1.2597</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">90.0</Dir>
+               <Gain cls="U">-5.7519</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">45.0</Dir>
+               <Gain cls="U">-1.2597</Gain>
+            </AntPatternPoint>
+            <AntPatternPoint>
+               <Dir cls="U">0.0</Dir>
+               <Gain cls="U">-5.6001</Gain>
+            </AntPatternPoint>
+         </AntPattern>
+      </AntMode>
+   </Antenna>
+   <Assignment cls="U">
+      <Serial cls="U">CAN:IC:AS:8d7020c8df5c4c</Serial>
+      <EntryDateTime cls="U">1986-01-23T05:00:00Z</EntryDateTime>
+      <LastChangeDateTime cls="U">2012-03-21T04:00:00Z</LastChangeDateTime>
+      <CaseNum>
+         <Country cls="U">Canada</Country>
+         <Type cls="U">callsign</Type>
+         <Identifier cls="U">CKCO-TV-3</Identifier>
+      </CaseNum>
+      <UsageType cls="U">Approved Permanent</UsageType>
+      <EffectiveDateTime cls="U">1986-01-23T05:00:00Z</EffectiveDateTime>
+      <ExpirationDateTime cls="U">2012-03-21T04:00:00Z</ExpirationDateTime>
+      <AssignmentAuthority cls="U">User-assigned</AssignmentAuthority>
+      <DataSource cls="U">Industry Canada</DataSource>
+      <FCCFileNum cls="U">3897</FCCFileNum>
+      <OriginalAssignmentDate cls="U">1986-01-23T05:00:00Z</OriginalAssignmentDate>
+      <SupplementaryDetails cls="U">CTV</SupplementaryDetails>
+      <TypeOfService cls="U">Broadcast</TypeOfService>
+      <Configuration>
+         <ConfigID cls="U">OP:CKCO-TV-3</ConfigID>
+         <Description cls="U">Class C</Description>
+         <Usage>
+            <EqpFnct cls="U">Broadcast Radio/Television</EqpFnct>
+            <StnClass cls="U">BT</StnClass>
+            <RadioService cls="U">Broadcasting Service</RadioService>
+         </Usage>
+         <ConfigFreq idx="1">
+            <FreqMin cls="U">0.638</FreqMin>
+            <InBand cls="U">Yes</InBand>
+            <Priority cls="U">Primary</Priority>
+         </ConfigFreq>
+         <TxRef>
+            <Serial cls="U" xsi:type="TSerial">CAN:IC:TX:7b4b14cfbbb247</Serial>
+            <TxModeRef>
+               <ModeID cls="U">TV</ModeID>
+            </TxModeRef>
+            <TxAntModeRef>
+               <Serial cls="U" xsi:type="TSerial">CAN:IC:AN:445a528c364a46</Serial>
+               <ModeID cls="U">2005-PRECISE</ModeID>
+            </TxAntModeRef>
+         </TxRef>
+      </Configuration>
+      <Station>
+         <StationID cls="U">OP: Operational</StationID>
+         <CallSign cls="U">CKCO-TV-3</CallSign>
+         <AntStructureHeight cls="U">497</AntStructureHeight>
+         <POCInformation>
+            <Type cls="U">User</Type>
+            <Serial cls="U" xsi:type="TSerial">CAN:IC:OR:98fc5af949ef4f</Serial>
+         </POCInformation>
+         <StationLoc>
+            <LocSatRef cls="U" xsi:type="TSerial">CAN:IC:LO:c33fae639b3348</LocSatRef>
+         </StationLoc>
+      </Station>
+      <Link>
+         <LinkID cls="U">CKCO-TV-3</LinkID>
+         <IntermediateFunction cls="U">BROADCAST</IntermediateFunction>
+         <MajorFunction cls="U">BROADCAST</MajorFunction>
+         <StationConfig>
+            <Type cls="U">Transmit Only</Type>
+            <ConfigID cls="U">OP: Operational</ConfigID>
+            <StationID cls="U">CKCO-TV-3</StationID>
+            <EIRPMin cls="U">59.27370363039024</EIRPMin>
+            <AntFeedpointHeight cls="U">497</AntFeedpointHeight>
+         </StationConfig>
+      </Link>
+   </Assignment>
+</SSRF>
+
