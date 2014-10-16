@@ -286,7 +286,7 @@ public class POCInformation {
   /**
    * Set the dataset identifier of the Contact, Organisation, or Role.
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current POCInformation object instance
    * @since 3.1.0
    */

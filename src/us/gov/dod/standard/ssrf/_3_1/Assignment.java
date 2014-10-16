@@ -3983,7 +3983,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @param values An instances of type {@link Common<?>}
+   * @param values An instances of type {@link Common}
    * @return The current Assignment object instance
    * @since 3.1.0
    */
@@ -3997,7 +3997,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    * <p>
-   * @param values An instances of type {@link Common<?>}
+   * @param values An instances of type {@link Common}
    * @return The current Assignment object instance
    * @since 3.1.0
    */

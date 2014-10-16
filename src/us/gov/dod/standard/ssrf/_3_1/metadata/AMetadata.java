@@ -45,12 +45,14 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  *   &lt;Remarks cls="C" release="USA GBR CAN" idx="12"&gt;All modes are limited to 200W&lt;/Remarks&gt;
  *   &lt;Other_Transmitter_Elements/&gt;
  *   &lt;Power cls="U" <strong>extReferences="1 2"</strong> <strong>remarksarkReferences="1 12"</strong>&gt;23&lt;/Power&gt;
- * &lt;/Transmitter&gt;
- * </pre> This abstract class is extended by classes in the SSRF
+ * &lt;/Transmitter&gt;</pre>
+ * <p>
+ * This abstract class is extended by classes in the SSRF
  * <em>metadata</em> attribute group.
  * <p>
- * Developer note: This abstract class is not part of SSRF and must be annotated
- * as XmlTransient to successfully marshal SSRF instances.
+ * Developer note: This abstract class is not part of the SSRF specification and
+ * therefore must be annotated as XmlTransient to successfully marshal SSRF
+ * instances.
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014

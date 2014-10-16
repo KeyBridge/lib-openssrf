@@ -285,7 +285,7 @@ public class Assets {
    * ForceElement, or to a ForceElement carried by or belonging to this
    * ForceElement.
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current Assets object instance
    * @since 3.1.0
    */

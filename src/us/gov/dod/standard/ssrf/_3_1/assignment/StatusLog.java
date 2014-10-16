@@ -391,7 +391,7 @@ public class StatusLog {
    * Set the reference to a Contact, Organisation, or Role responsible for this
    * status log entry or the recipient of the action.
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current StatusLog object instance
    * @since 3.1.0
    */

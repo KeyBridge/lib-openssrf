@@ -53,6 +53,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * fifteen alphanumeric characters (including spaces and special characters),
  * whose meaning is left at the discretion of each domain manager.</li>
  * </ul>
+ * <p>
  * Format is pattern (S29) with validation type SERIAL
  * <p>
  * [XSD ERR REGEX] This data item MUST comply to the regular expression:

@@ -219,7 +219,7 @@ public class StageLocation {
   /**
    * Set the serial of a Location or satellite.
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current StageLocation object instance
    * @since 3.1.0
    */

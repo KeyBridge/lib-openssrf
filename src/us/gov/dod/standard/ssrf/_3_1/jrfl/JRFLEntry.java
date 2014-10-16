@@ -1366,7 +1366,7 @@ public class JRFLEntry {
    * or AL". [XSD ERR REGEX] This data item MUST comply to the regular
    * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current JRFLEntry object instance
    * @since 3.1.0
    */

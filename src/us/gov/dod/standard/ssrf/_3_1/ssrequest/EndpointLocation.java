@@ -402,7 +402,7 @@ public class EndpointLocation {
    * satellite ground stations, and satellite orbital characteristics are
    * required for space systems.
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current EndpointLocation object instance
    * @since 3.1.0
    */

@@ -25,22 +25,25 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <p>
  * The maximum and minimum digit lengths plus inclusive values are identified in
  * the constructor.
- * <p>
+ * <ul>
+ * <li>
  * UN(x) is an unsigned (positive) integer number of maximum x digits
- * <p>
+ * </li><li>
  * SN(x) is an integer number of maximum x digits (excluding minus sign)
- * <p>
+ * </li><li>
  * UN(x.y) is a unsigned (positive) decimal number of maximum x digits
  * (excluding decimal point as applicable) and with a maximum of y decimal
  * digits.
- * <p>
+ * </li><li>
  * SN(x.y) is a decimal number of maximum x digits (excluding minus sign and
  * decimal point as applicable) and with a maximum of y decimal digits.
- * <p>
+ * </li><li>
  * double is a number expressing either in floating point (e.g. 0.015) or
  * scientific notation or using scientific notation (decimal number followed by
  * an optional "E" for the power of 10, e.g. 1.5E-2 representing the same value
  * 0.015).
+ * </li>
+ * </ul>
  * <p>
  * Where applicable, the types UN and SN may be followed by an additional range
  * constraint in the form [a .. b] meaning that the value is restricted to be

@@ -300,7 +300,7 @@ public class Message extends Common<Message> {
   /**
    * Set
    * <p>
-   * @param values An instances of type {@link Common<?>}
+   * @param values An instances of type {@link Common}
    * @return The current Message object instance
    * @since 3.1.0
    */
@@ -311,7 +311,7 @@ public class Message extends Common<Message> {
   /**
    * Set
    * <p>
-   * @param values An instances of type {@link Common<?>}
+   * @param values An instances of type {@link Common}
    * @return The current Message object instance
    * @since 3.1.0
    */

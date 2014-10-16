@@ -493,7 +493,7 @@ public class StationLoc {
    * complex dataset (more than a single point), tthe assignment is mobile,
    * inside the Station location.
    * <p>
-   * @param value An instances of type {@link Common<?>}
+   * @param value An instances of type {@link Common}
    * @return The current StationLoc object instance
    * @since 3.1.0
    */
