@@ -33,13 +33,13 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.ObservedMOPAnalysis;
 public enum ListUSX {
 
   @XmlEnumValue("Amplitude Modulation (AM)")
-  AMPLITUDE_MODULATION__AM__("Amplitude Modulation (AM)"),
+  AMPLITUDE_MODULATION_AM("Amplitude Modulation (AM)"),
   @XmlEnumValue("Continuous Wave (CW)")
-  CONTINUOUS_WAVE__CW__("Continuous Wave (CW)"),
+  CONTINUOUS_WAVE_CW("Continuous Wave (CW)"),
   @XmlEnumValue("Frequency Modulation (FM)")
-  FREQUENCY_MODULATION__FM__("Frequency Modulation (FM)"),
+  FREQUENCY_MODULATION_FM("Frequency Modulation (FM)"),
   @XmlEnumValue("Phase Modulation (PM)")
-  PHASE_MODULATION__PM__("Phase Modulation (PM)");
+  PHASE_MODULATION_PM("Phase Modulation (PM)");
   private final String value;
 
   ListUSX(String v) {

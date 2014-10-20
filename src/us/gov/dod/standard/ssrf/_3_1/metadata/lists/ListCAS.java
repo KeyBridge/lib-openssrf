@@ -63,7 +63,7 @@ public enum ListCAS {
   @XmlEnumValue("Sector Scan")
   SECTOR_SCAN("Sector Scan"),
   @XmlEnumValue("Spiral ")
-  SPIRAL_("Spiral "),
+  SPIRAL("Spiral "),
   @XmlEnumValue("Tracker")
   TRACKER("Tracker"),
   @XmlEnumValue("Unidirectional Sector")

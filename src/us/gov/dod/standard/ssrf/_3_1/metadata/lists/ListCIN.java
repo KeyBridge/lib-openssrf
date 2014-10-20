@@ -53,15 +53,15 @@ public enum ListCIN {
   @XmlEnumValue("Non Synchronous Orbit")
   NON_SYNCHRONOUS_ORBIT("Non Synchronous Orbit"),
   @XmlEnumValue("Unmanned Aerial Vehicle (UAV)")
-  UNMANNED_AERIAL_VEHICLE__UAV__("Unmanned Aerial Vehicle (UAV)"),
+  UNMANNED_AERIAL_VEHICLE_UAV("Unmanned Aerial Vehicle (UAV)"),
   @XmlEnumValue("Unmanned Aircraft System (UAS)")
-  UNMANNED_AIRCRAFT_SYSTEM__UAS__("Unmanned Aircraft System (UAS)"),
+  UNMANNED_AIRCRAFT_SYSTEM_UAS("Unmanned Aircraft System (UAS)"),
   @XmlEnumValue("Unmanned Ground Vehicle (UGV)")
-  UNMANNED_GROUND_VEHICLE__UGV__("Unmanned Ground Vehicle (UGV)"),
+  UNMANNED_GROUND_VEHICLE_UGV("Unmanned Ground Vehicle (UGV)"),
   @XmlEnumValue("Unmanned Surface Vehicle (USV)")
-  UNMANNED_SURFACE_VEHICLE__USV__("Unmanned Surface Vehicle (USV)"),
+  UNMANNED_SURFACE_VEHICLE_USV("Unmanned Surface Vehicle (USV)"),
   @XmlEnumValue("Unmanned Underwater Vehicle (UUV)")
-  UNMANNED_UNDERWATER_VEHICLE__UUV__("Unmanned Underwater Vehicle (UUV)"),
+  UNMANNED_UNDERWATER_VEHICLE_UUV("Unmanned Underwater Vehicle (UUV)"),
   @XmlEnumValue("Satellite")
   SATELLITE("Satellite"),
   @XmlEnumValue("Shipboard")

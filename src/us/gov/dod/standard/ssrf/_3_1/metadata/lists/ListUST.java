@@ -46,19 +46,19 @@ public enum ListUST {
   COMMENT_BY("COMMENT BY"),
   COMPLIANCE("COMPLIANCE"),
   @XmlEnumValue("COORDINATION (from, to list)")
-  COORDINATION__FROM__TO_LIST__("COORDINATION (from, to list)"),
+  COORDINATION_FROM_TO_LIST("COORDINATION (from, to list)"),
   @XmlEnumValue("DELETED BY")
   DELETED_BY("DELETED BY"),
   @XmlEnumValue("EXPIRED BY")
   EXPIRED_BY("EXPIRED BY"),
   @XmlEnumValue("FORWARDED (from, to)")
-  FORWARDED__FROM__TO__("FORWARDED (from, to)"),
+  FORWARDED_FROM_TO("FORWARDED (from, to)"),
   @XmlEnumValue("IMPORTED BY")
   IMPORTED_BY("IMPORTED BY"),
   @XmlEnumValue("IN-PROCESS AT")
   IN_PROCESS_AT("IN-PROCESS AT"),
   @XmlEnumValue("INFO (from, to list)")
-  INFO__FROM__TO_LIST__("INFO (from, to list)"),
+  INFO_FROM_TO_LIST("INFO (from, to list)"),
   @XmlEnumValue("LATERAL COORDINATION")
   LATERAL_COORDINATION("LATERAL COORDINATION"),
   @XmlEnumValue("MODIFIED BY")
@@ -68,17 +68,17 @@ public enum ListUST {
   @XmlEnumValue("ORIGINATED BY")
   ORIGINATED_BY("ORIGINATED BY"),
   @XmlEnumValue("RECALLED (from, to)")
-  RECALLED__FROM__TO__("RECALLED (from, to)"),
+  RECALLED_FROM_TO("RECALLED (from, to)"),
   @XmlEnumValue("RECEIVED BY")
   RECEIVED_BY("RECEIVED BY"),
   @XmlEnumValue("REGISTERED WITH")
   REGISTERED_WITH("REGISTERED WITH"),
   @XmlEnumValue("REJECTED (from, to)")
-  REJECTED__FROM__TO__("REJECTED (from, to)"),
+  REJECTED_FROM_TO("REJECTED (from, to)"),
   @XmlEnumValue("RESOLVED (from, to)")
-  RESOLVED__FROM__TO__("RESOLVED (from, to)"),
+  RESOLVED_FROM_TO("RESOLVED (from, to)"),
   @XmlEnumValue("REVIEW REQUIRED (from, to)")
-  REVIEW_REQUIRED__FROM__TO__("REVIEW REQUIRED (from, to)"),
+  REVIEW_REQUIRED_FROM_TO("REVIEW REQUIRED (from, to)"),
   @XmlEnumValue("SUBMITTED TO")
   SUBMITTED_TO("SUBMITTED TO"),
   @XmlEnumValue("TABLED BY")

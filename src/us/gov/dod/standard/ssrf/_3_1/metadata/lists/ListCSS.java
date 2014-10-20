@@ -39,15 +39,15 @@ public enum ListCSS {
   @XmlEnumValue("Direct sequence")
   DIRECT_SEQUENCE("Direct sequence"),
   @XmlEnumValue("Direct sequence + Frequency hopped")
-  DIRECT_SEQUENCE___FREQUENCY_HOPPED("Direct sequence + Frequency hopped"),
+  DIRECT_SEQUENCE_FREQUENCY_HOPPED("Direct sequence + Frequency hopped"),
   @XmlEnumValue("Direct sequence + Time hopped")
-  DIRECT_SEQUENCE___TIME_HOPPED("Direct sequence + Time hopped"),
+  DIRECT_SEQUENCE_TIME_HOPPED("Direct sequence + Time hopped"),
   @XmlEnumValue("Diversity")
   DIVERSITY("Diversity"),
   @XmlEnumValue("Free Channel Search")
   FREE_CHANNEL_SEARCH("Free Channel Search"),
   @XmlEnumValue("Frequency + Time hopped")
-  FREQUENCY___TIME_HOPPED("Frequency + Time hopped"),
+  FREQUENCY_TIME_HOPPED("Frequency + Time hopped"),
   @XmlEnumValue("Frequency hopped")
   FREQUENCY_HOPPED("Frequency hopped"),
   @XmlEnumValue("Time hopped")

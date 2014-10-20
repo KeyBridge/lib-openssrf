@@ -37,7 +37,7 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxModulation;
 public enum ListCMO {
 
   @XmlEnumValue("8-Tone")
-  EIGHT__TONE("8-Tone"),
+  EIGHT_TONE("8-Tone"),
   @XmlEnumValue("16-Tone")
   TONE_16("16-Tone"),
   @XmlEnumValue("32-Tone")

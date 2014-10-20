@@ -34,23 +34,23 @@ import us.gov.dod.standard.ssrf._3_1.assignment.StationConfig;
 public enum ListCCO {
 
   @XmlEnumValue("Global ")
-  GLOBAL__("Global "),
+  GLOBAL("Global "),
   @XmlEnumValue("Eastern Hemisphere ")
-  EASTERN_HEMISPHERE__("Eastern Hemisphere "),
+  EASTERN_HEMISPHERE("Eastern Hemisphere "),
   @XmlEnumValue("Western Hemisphere ")
-  WESTERN_HEMISPHERE__("Western Hemisphere "),
+  WESTERN_HEMISPHERE("Western Hemisphere "),
   @XmlEnumValue("Northern Hemisphere ")
-  NORTHERN_HEMISPHERE__("Northern Hemisphere "),
+  NORTHERN_HEMISPHERE("Northern Hemisphere "),
   @XmlEnumValue("Southern Hemisphere ")
-  SOUTHERN_HEMISPHERE__("Southern Hemisphere "),
+  SOUTHERN_HEMISPHERE("Southern Hemisphere "),
   @XmlEnumValue("North-eastern Earth Quarter ")
-  NORTH_EASTERN_EARTH_QUARTER__("North-eastern Earth Quarter "),
+  NORTH_EASTERN_EARTH_QUARTER("North-eastern Earth Quarter "),
   @XmlEnumValue("North-western Earth Quarter ")
-  NORTH_WESTERN_EARTH_QUARTER__("North-western Earth Quarter "),
+  NORTH_WESTERN_EARTH_QUARTER("North-western Earth Quarter "),
   @XmlEnumValue("South-eastern Earth Quarter")
   SOUTH_EASTERN_EARTH_QUARTER("South-eastern Earth Quarter"),
   @XmlEnumValue("South-western Earth Quarter ")
-  SOUTH_WESTERN_EARTH_QUARTER__("South-western Earth Quarter "),
+  SOUTH_WESTERN_EARTH_QUARTER("South-western Earth Quarter "),
   @XmlEnumValue("Narrow Beam")
   NARROW_BEAM("Narrow Beam"),
   @XmlEnumValue("Other")

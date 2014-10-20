@@ -35,105 +35,105 @@ import us.gov.dod.standard.ssrf._3_1.toa.Variance;
 public enum ListCSN {
 
   @XmlEnumValue("Aeronautical Fixed Service")
-  AERONAUTICAL_FIXED_SERVICE("Aeronautical Fixed Service"),
+  AERONAUTICAL_FIXED("Aeronautical Fixed Service"),
   @XmlEnumValue("Aeronautical Mobile (Off Route) Service")
-  AERONAUTICAL_MOBILE__OFF_ROUTE__SERVICE("Aeronautical Mobile (Off Route) Service"),
+  AERONAUTICAL_MOBILE_OFF_ROUTE("Aeronautical Mobile (Off Route) Service"),
   @XmlEnumValue("Aeronautical Mobile (Route) Service")
-  AERONAUTICAL_MOBILE__ROUTE__SERVICE("Aeronautical Mobile (Route) Service"),
+  AERONAUTICAL_MOBILE_ROUTE("Aeronautical Mobile (Route) Service"),
   @XmlEnumValue("Aeronautical Mobile Service")
-  AERONAUTICAL_MOBILE_SERVICE("Aeronautical Mobile Service"),
+  AERONAUTICAL_MOBILE("Aeronautical Mobile Service"),
   @XmlEnumValue("Aeronautical Mobile-Satellite (OR) Service")
-  AERONAUTICAL_MOBILE_SATELLITE__OR__SERVICE("Aeronautical Mobile-Satellite (OR) Service"),
+  AERONAUTICAL_MOBILE_SATELLITE_OR("Aeronautical Mobile-Satellite (OR) Service"),
   @XmlEnumValue("Aeronautical Mobile-Satellite (R) Service")
-  AERONAUTICAL_MOBILE_SATELLITE__R__SERVICE("Aeronautical Mobile-Satellite (R) Service"),
+  AERONAUTICAL_MOBILE_SATELLITE_R("Aeronautical Mobile-Satellite (R) Service"),
   @XmlEnumValue("Aeronautical Mobile-Satellite Service")
-  AERONAUTICAL_MOBILE_SATELLITE_SERVICE("Aeronautical Mobile-Satellite Service"),
+  AERONAUTICAL_MOBILE_SATELLITE("Aeronautical Mobile-Satellite Service"),
   @XmlEnumValue("Aeronautical Radionavigation Service")
-  AERONAUTICAL_RADIONAVIGATION_SERVICE("Aeronautical Radionavigation Service"),
+  AERONAUTICAL_RADIONAVIGATION("Aeronautical Radionavigation Service"),
   @XmlEnumValue("Aeronautical Radionavigation-Satellite Service")
-  AERONAUTICAL_RADIONAVIGATION_SATELLITE_SERVICE("Aeronautical Radionavigation-Satellite Service"),
+  AERONAUTICAL_RADIONAVIGATION_SATELLITE("Aeronautical Radionavigation-Satellite Service"),
   @XmlEnumValue("Amateur Service")
-  AMATEUR_SERVICE("Amateur Service"),
+  AMATEUR("Amateur Service"),
   @XmlEnumValue("Amateur-Satellite Service")
-  AMATEUR_SATELLITE_SERVICE("Amateur-Satellite Service"),
+  AMATEUR_SATELLITE("Amateur-Satellite Service"),
   @XmlEnumValue("Broadcasting Service")
-  BROADCASTING_SERVICE("Broadcasting Service"),
+  BROADCASTING("Broadcasting Service"),
   @XmlEnumValue("Broadcasting-Satellite Service")
-  BROADCASTING_SATELLITE_SERVICE("Broadcasting-Satellite Service"),
+  BROADCASTING_SATELLITE("Broadcasting-Satellite Service"),
   @XmlEnumValue("Earth Exploration-Satellite (active)")
-  EARTH_EXPLORATION_SATELLITE__ACTIVE__("Earth Exploration-Satellite (active)"),
+  EARTH_EXPLORATION_SATELLITE_ACTIVE("Earth Exploration-Satellite (active)"),
   @XmlEnumValue("Earth Exploration-Satellite (passive)")
-  EARTH_EXPLORATION_SATELLITE__PASSIVE__("Earth Exploration-Satellite (passive)"),
+  EARTH_EXPLORATION_SATELLITE_PASSIVE("Earth Exploration-Satellite (passive)"),
   @XmlEnumValue("Earth Exploration-Satellite Service")
-  EARTH_EXPLORATION_SATELLITE_SERVICE("Earth Exploration-Satellite Service"),
+  EARTH_EXPLORATION_SATELLITE("Earth Exploration-Satellite Service"),
   @XmlEnumValue("Fixed Service")
-  FIXED_SERVICE("Fixed Service"),
+  FIXED("Fixed Service"),
   @XmlEnumValue("Fixed-Satellite Service")
-  FIXED_SATELLITE_SERVICE("Fixed-Satellite Service"),
+  FIXED_SATELLITE("Fixed-Satellite Service"),
   @XmlEnumValue("Inter-Satellite Service")
-  INTER_SATELLITE_SERVICE("Inter-Satellite Service"),
+  INTER_SATELLITE("Inter-Satellite Service"),
   @XmlEnumValue("Land Mobile Service")
-  LAND_MOBILE_SERVICE("Land Mobile Service"),
+  LAND_MOBILE("Land Mobile Service"),
   @XmlEnumValue("Land Mobile-Satellite Service")
-  LAND_MOBILE_SATELLITE_SERVICE("Land Mobile-Satellite Service"),
+  LAND_MOBILE_SATELLITE("Land Mobile-Satellite Service"),
   @XmlEnumValue("Maritime Mobile Service")
-  MARITIME_MOBILE_SERVICE("Maritime Mobile Service"),
+  MARITIME_MOBILE("Maritime Mobile Service"),
   @XmlEnumValue("Maritime Mobile-Satellite Service")
-  MARITIME_MOBILE_SATELLITE_SERVICE("Maritime Mobile-Satellite Service"),
+  MARITIME_MOBILE_SATELLITE("Maritime Mobile-Satellite Service"),
   @XmlEnumValue("Maritime Radionavigation Service")
-  MARITIME_RADIONAVIGATION_SERVICE("Maritime Radionavigation Service"),
+  MARITIME_RADIONAVIGATION("Maritime Radionavigation Service"),
   @XmlEnumValue("Maritime Radionavigation-Satellite Service")
-  MARITIME_RADIONAVIGATION_SATELLITE_SERVICE("Maritime Radionavigation-Satellite Service"),
+  MARITIME_RADIONAVIGATION_SATELLITE("Maritime Radionavigation-Satellite Service"),
   @XmlEnumValue("Meteorological Aids Service")
-  METEOROLOGICAL_AIDS_SERVICE("Meteorological Aids Service"),
+  METEOROLOGICAL_AIDS("Meteorological Aids Service"),
   @XmlEnumValue("Meteorological-Satellite Service")
-  METEOROLOGICAL_SATELLITE_SERVICE("Meteorological-Satellite Service"),
+  METEOROLOGICAL_SATELLITE("Meteorological-Satellite Service"),
   @XmlEnumValue("Mobile Service")
-  MOBILE_SERVICE("Mobile Service"),
+  MOBILE("Mobile Service"),
   @XmlEnumValue("Mobile-Satellite Service")
-  MOBILE_SATELLITE_SERVICE("Mobile-Satellite Service"),
+  MOBILE_SATELLITE("Mobile-Satellite Service"),
   @XmlEnumValue("Radio Astronomy Service")
-  RADIO_ASTRONOMY_SERVICE("Radio Astronomy Service"),
+  RADIO_ASTRONOMY("Radio Astronomy Service"),
   @XmlEnumValue("Radiodetermination Service")
-  RADIODETERMINATION_SERVICE("Radiodetermination Service"),
+  RADIODETERMINATION("Radiodetermination Service"),
   @XmlEnumValue("Radiodetermination-Satellite Service")
-  RADIODETERMINATION_SATELLITE_SERVICE("Radiodetermination-Satellite Service"),
+  RADIODETERMINATION_SATELLITE("Radiodetermination-Satellite Service"),
   @XmlEnumValue("Radiolocation Service")
-  RADIOLOCATION_SERVICE("Radiolocation Service"),
+  RADIOLOCATION("Radiolocation Service"),
   @XmlEnumValue("Radiolocation-Satellite Service")
-  RADIOLOCATION_SATELLITE_SERVICE("Radiolocation-Satellite Service"),
+  RADIOLOCATION_SATELLITE("Radiolocation-Satellite Service"),
   @XmlEnumValue("Radionavigation Service")
-  RADIONAVIGATION_SERVICE("Radionavigation Service"),
+  RADIONAVIGATION("Radionavigation Service"),
   @XmlEnumValue("Radionavigation-Satellite Service")
-  RADIONAVIGATION_SATELLITE_SERVICE("Radionavigation-Satellite Service"),
+  RADIONAVIGATION_SATELLITE("Radionavigation-Satellite Service"),
   @XmlEnumValue("Space Operation Service")
-  SPACE_OPERATION_SERVICE("Space Operation Service"),
+  SPACE_OPERATION("Space Operation Service"),
   @XmlEnumValue("Space Research (active)")
-  SPACE_RESEARCH__ACTIVE__("Space Research (active)"),
+  SPACE_RESEARCH_ACTIVE("Space Research (active)"),
   @XmlEnumValue("Space Research (passive)")
-  SPACE_RESEARCH__PASSIVE__("Space Research (passive)"),
+  SPACE_RESEARCH_PASSIVE("Space Research (passive)"),
   @XmlEnumValue("Space Research Service")
-  SPACE_RESEARCH_SERVICE("Space Research Service"),
+  SPACE_RESEARCH("Space Research Service"),
   @XmlEnumValue("Space Telecommand")
   SPACE_TELECOMMAND("Space Telecommand"),
   @XmlEnumValue("Space Telecommand (TT&C)")
-  SPACE_TELECOMMAND__TT_C__("Space Telecommand (TT&C)"),
+  SPACE_TELECOMMAND_TT_C("Space Telecommand (TT&C)"),
   @XmlEnumValue("Space Telemetering")
   SPACE_TELEMETERING("Space Telemetering"),
   @XmlEnumValue("Space Telemetering (TT&C)")
-  SPACE_TELEMETERING__TT_C__("Space Telemetering (TT&C)"),
+  SPACE_TELEMETERING_TT_C("Space Telemetering (TT&C)"),
   @XmlEnumValue("Space Tracking")
   SPACE_TRACKING("Space Tracking"),
   @XmlEnumValue("Space Tracking (TT&C)")
-  SPACE_TRACKING__TT_C__("Space Tracking (TT&C)"),
+  SPACE_TRACKING_TT_C("Space Tracking (TT&C)"),
   @XmlEnumValue("Special Service")
-  SPECIAL_SERVICE("Special Service"),
+  SPECIAL("Special Service"),
   @XmlEnumValue("Specialised Mobile Radio Service")
-  SPECIALISED_MOBILE_RADIO_SERVICE("Specialised Mobile Radio Service"),
+  SPECIALISED_MOBILE_RADIO("Specialised Mobile Radio Service"),
   @XmlEnumValue("Standard Frequency and Time Signal Service")
-  STANDARD_FREQUENCY_AND_TIME_SIGNAL_SERVICE("Standard Frequency and Time Signal Service"),
+  STANDARD_FREQUENCY_AND_TIME_SIGNAL("Standard Frequency and Time Signal Service"),
   @XmlEnumValue("Standard Frequency and Time Signal-Satellite Service")
-  STANDARD_FREQUENCY_AND_TIME_SIGNAL_SATELLITE_SERVICE("Standard Frequency and Time Signal-Satellite Service"),
+  STANDARD_FREQUENCY_AND_TIME_SIGNAL_SATELLITE("Standard Frequency and Time Signal-Satellite Service"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;
@@ -153,6 +153,30 @@ public enum ListCSN {
       }
     }
     throw new IllegalArgumentException(v);
+  }
+
+  /**
+   * match a ListCSN entry with a NAME candidate. This method is designed to
+   * match frequency table entries (with spaces, parentheses and dashes).
+   * <p>
+   * @param name the frequency table allocation name
+   * @return a match if found
+   */
+  public static ListCSN fromName(String name) {
+    if (name == null || name.isEmpty()) {
+      throw new IllegalArgumentException(name);
+    }
+    /**
+     * Replace all non-word and whitespace characters with underscore, then try
+     * to match the name.
+     */
+    for (ListCSN c : ListCSN.values()) {
+      if (c.name().equalsIgnoreCase(name.replaceAll("\\W", "_").replaceAll("\\s", "_"))) {
+        return c;
+      }
+
+    }
+    throw new IllegalArgumentException(name);
   }
 
 }

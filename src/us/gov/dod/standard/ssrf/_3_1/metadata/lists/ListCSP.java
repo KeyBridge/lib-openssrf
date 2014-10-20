@@ -53,7 +53,7 @@ public enum ListCSP {
   @XmlEnumValue("Heliocentric")
   HELIOCENTRIC("Heliocentric"),
   @XmlEnumValue("Highly Elliptic (HEO)")
-  HIGHLY_ELLIPTIC__HEO__("Highly Elliptic (HEO)"),
+  HIGHLY_ELLIPTIC_HEO("Highly Elliptic (HEO)"),
   LEO("LEO"),
   @XmlEnumValue("LEO Equatorial")
   LEO_EQUATORIAL("LEO Equatorial"),

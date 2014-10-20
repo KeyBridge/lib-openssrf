@@ -38,7 +38,7 @@ public enum ListCTO {
   @XmlEnumValue("Generic")
   GENERIC("Generic"),
   @XmlEnumValue("Government ")
-  GOVERNMENT__("Government "),
+  GOVERNMENT("Government "),
   @XmlEnumValue("Military")
   MILITARY("Military"),
   @XmlEnumValue("Other")

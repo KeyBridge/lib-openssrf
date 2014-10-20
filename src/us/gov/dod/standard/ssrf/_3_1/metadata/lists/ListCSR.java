@@ -81,11 +81,11 @@ public enum ListCSR {
   @XmlEnumValue("Medical")
   MEDICAL("Medical"),
   @XmlEnumValue("Military Intelligence (corps and below)")
-  MILITARY_INTELLIGENCE__CORPS_AND_BELOW__("Military Intelligence (corps and below)"),
+  MILITARY_INTELLIGENCE_CORPS_AND_BELOW("Military Intelligence (corps and below)"),
   @XmlEnumValue("Military intelligence (EAC)")
-  MILITARY_INTELLIGENCE__EAC__("Military intelligence (EAC)"),
+  MILITARY_INTELLIGENCE_EAC("Military intelligence (EAC)"),
   @XmlEnumValue("Military intelligence (SIGINT EAC)")
-  MILITARY_INTELLIGENCE__SIGINT_EAC__("Military intelligence (SIGINT EAC)"),
+  MILITARY_INTELLIGENCE_SIGINT_EAC("Military intelligence (SIGINT EAC)"),
   @XmlEnumValue("Military police")
   MILITARY_POLICE("Military police"),
   @XmlEnumValue("Ordnance")

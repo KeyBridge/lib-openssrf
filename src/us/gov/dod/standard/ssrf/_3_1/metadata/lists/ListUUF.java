@@ -33,13 +33,13 @@ import us.gov.dod.standard.ssrf._3_1.Assignment;
 public enum ListUUF {
 
   @XmlEnumValue("Regular, not limited to workweek")
-  REGULAR__NOT_LIMITED_TO_WORKWEEK("Regular, not limited to workweek"),
+  REGULAR_NOT_LIMITED_TO_WORKWEEK("Regular, not limited to workweek"),
   @XmlEnumValue("Regular, workweek")
-  REGULAR__WORKWEEK("Regular, workweek"),
+  REGULAR_WORKWEEK("Regular, workweek"),
   @XmlEnumValue("Occasional, not limited to workweek")
-  OCCASIONAL__NOT_LIMITED_TO_WORKWEEK("Occasional, not limited to workweek"),
+  OCCASIONAL_NOT_LIMITED_TO_WORKWEEK("Occasional, not limited to workweek"),
   @XmlEnumValue("Occasional, workweek")
-  OCCASIONAL__WORKWEEK("Occasional, workweek"),
+  OCCASIONAL_WORKWEEK("Occasional, workweek"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

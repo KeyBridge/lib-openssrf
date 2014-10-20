@@ -41,7 +41,7 @@ public enum ListUNS {
   @XmlEnumValue("National Stock Number")
   NATIONAL_STOCK_NUMBER("National Stock Number"),
   @XmlEnumValue("NATO  Stock Number")
-  NATO__STOCK_NUMBER("NATO  Stock Number"),
+  NATO_STOCK_NUMBER("NATO  Stock Number"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;

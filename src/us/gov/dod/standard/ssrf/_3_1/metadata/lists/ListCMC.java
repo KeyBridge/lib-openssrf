@@ -37,7 +37,7 @@ public enum ListCMC {
   @XmlEnumValue("Armor/Antitank")
   ARMOR_ANTITANK("Armor/Antitank"),
   @XmlEnumValue("Artillery /Air and Space Defense")
-  ARTILLERY__AIR_AND_SPACE_DEFENSE("Artillery /Air and Space Defense"),
+  ARTILLERY_AIR_AND_SPACE_DEFENSE("Artillery /Air and Space Defense"),
   @XmlEnumValue("Aviation Support")
   AVIATION_SUPPORT("Aviation Support"),
   @XmlEnumValue("Aviation/Anti-Aircraft")
@@ -61,9 +61,9 @@ public enum ListCMC {
   @XmlEnumValue("Infantry")
   INFANTRY("Infantry"),
   @XmlEnumValue("Intelligence / Psychological Ops")
-  INTELLIGENCE___PSYCHOLOGICAL_OPS("Intelligence / Psychological Ops"),
+  INTELLIGENCE_PSYCHOLOGICAL_OPS("Intelligence / Psychological Ops"),
   @XmlEnumValue("Law enforcement / Security")
-  LAW_ENFORCEMENT___SECURITY("Law enforcement / Security"),
+  LAW_ENFORCEMENT_SECURITY("Law enforcement / Security"),
   @XmlEnumValue("Maintenance")
   MAINTENANCE("Maintenance"),
   @XmlEnumValue("Major Command")
@@ -91,7 +91,7 @@ public enum ListCMC {
   @XmlEnumValue("Training")
   TRAINING("Training"),
   @XmlEnumValue("Transportation / Fleet Auxiliaries")
-  TRANSPORTATION___FLEET_AUXILIARIES("Transportation / Fleet Auxiliaries"),
+  TRANSPORTATION_FLEET_AUXILIARIES("Transportation / Fleet Auxiliaries"),
   @XmlEnumValue("Warships")
   WARSHIPS("Warships"),
   @XmlEnumValue("Other")
