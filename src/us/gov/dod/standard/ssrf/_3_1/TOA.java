@@ -22,6 +22,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_1.toa.Allocation;
 import us.gov.dod.standard.ssrf._3_1.toa.Country;
 import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
@@ -660,7 +661,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    * <p>
-   * @return a {@link ChannelPlan} instance
+   * @return a non-null {@link HashSet} instance.
    * @since 3.1.0
    */
   public Set<ChannelPlan> getChannelPlan() {
@@ -710,9 +711,13 @@ public class TOA extends Common<TOA> {
    * Update the SSRF data type references in this TOA record.
    * <p>
    * This method builds the exported {@link #channelPlanRef} field with values
-   * from the transient {@link #channelPlan} field. This method should typically
-   * be called after the TOA is configured and (optionally) before exporting an
-   * SSRF message.
+   * from the transient {@link #channelPlan} field.
+   * <p>
+   * This method also copies all footnotes from the FreqBand and Allocation
+   * records.
+   * <p>
+   * This method should typically be called after the TOA is configured and
+   * (optionally) before exporting an SSRF message.
    * <p>
    * @since 3.1.0
    */
@@ -723,6 +728,13 @@ public class TOA extends Common<TOA> {
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());
     }
+    for (FreqBand fb : getFreqBand()) {
+      getFootnote().addAll(fb.getFootnote());
+      for (Allocation allocation : fb.getAllocation()) {
+        footnote.addAll(allocation.getFootnote());
+      }
+    }
+
   }
 
   /**
@@ -747,5 +759,4 @@ public class TOA extends Common<TOA> {
       }
     }
   }//</editor-fold>
-
 }
