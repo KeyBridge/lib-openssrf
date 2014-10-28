@@ -15,11 +15,11 @@
  */
 package us.gov.dod.standard.ssrf._3_1.rfsystem;
 
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFR;
 

@@ -15,6 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;

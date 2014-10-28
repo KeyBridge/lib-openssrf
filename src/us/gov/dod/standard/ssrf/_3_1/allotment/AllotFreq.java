@@ -15,6 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

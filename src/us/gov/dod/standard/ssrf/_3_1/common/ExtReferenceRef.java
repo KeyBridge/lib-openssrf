@@ -23,8 +23,8 @@ import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ExternalReference;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
