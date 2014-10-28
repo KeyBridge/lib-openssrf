@@ -318,7 +318,7 @@ public class Configuration {
    */
   @XmlElement(name = "LoadsetRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> loadsetRef;
+  private Set<TSerial> loadsetRef;
   /**
    * US:ObservedERPAnalysis (Optional)
    * <p>
@@ -1118,7 +1118,7 @@ public class Configuration {
    * {@link #getLoadset()} instead.
    */
   @Deprecated
-  public Set<TString> getLoadsetRef() {
+  public Set<TSerial> getLoadsetRef() {
     if (loadsetRef == null) {
       loadsetRef = new HashSet<>();
     }
@@ -1670,7 +1670,7 @@ public class Configuration {
    * {@link #withLoadset(Loadset...)} instead.
    */
   @Deprecated
-  public Configuration withLoadsetRef(TString... values) {
+  public Configuration withLoadsetRef(TSerial... values) {
     if (values != null) {
       getLoadsetRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -1689,7 +1689,7 @@ public class Configuration {
    * {@link #withLoadset(Loadset...)} instead.
    */
   @Deprecated
-  public Configuration withLoadsetRef(Set<TString> values) {
+  public Configuration withLoadsetRef(Set<TSerial> values) {
     if (values != null) {
       getLoadsetRef().addAll(values);
     }

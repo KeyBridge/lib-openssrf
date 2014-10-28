@@ -83,7 +83,7 @@ public class Message extends Common<Message> {
    */
   @XmlElement(name = "DatasetRef", required = true, nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> datasetRef;
+  private Set<TSerial> datasetRef;
 
   /**
    * Get a human-readable name for the message.
@@ -156,7 +156,7 @@ public class Message extends Common<Message> {
    * {@link #getData()} instead.
    */
   @Deprecated
-  public Set<TString> getDatasetRef() {
+  public Set<TSerial> getDatasetRef() {
     if (datasetRef == null) {
       datasetRef = new HashSet<>();
     }
@@ -214,7 +214,7 @@ public class Message extends Common<Message> {
    * {@link #withData(Common...)} instead.
    */
   @Deprecated
-  public Message withDatasetRef(TString... values) {
+  public Message withDatasetRef(TSerial... values) {
     if (values != null) {
       getDatasetRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -233,7 +233,7 @@ public class Message extends Common<Message> {
    * {@link #withData(Common...)} instead.
    */
   @Deprecated
-  public Message withDatasetRef(Set<TString> values) {
+  public Message withDatasetRef(Set<TSerial> values) {
     if (values != null) {
       getDatasetRef().addAll(values);
     }

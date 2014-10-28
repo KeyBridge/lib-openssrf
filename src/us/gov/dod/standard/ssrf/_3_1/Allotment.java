@@ -187,7 +187,7 @@ public class Allotment extends Common<Allotment> {
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> locationRef;
+  private Set<TSerial> locationRef;
   /**
    * Emission (Optional)
    * <p>
@@ -506,7 +506,7 @@ public class Allotment extends Common<Allotment> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public Set<TString> getLocationRef() {
+  public Set<TSerial> getLocationRef() {
     if (locationRef == null) {
       locationRef = new HashSet<>();
     }
@@ -805,7 +805,7 @@ public class Allotment extends Common<Allotment> {
    * {@link #withLocation(Location...)} instead.
    */
   @Deprecated
-  public Allotment withLocationRef(TString... values) {
+  public Allotment withLocationRef(TSerial... values) {
     if (values != null) {
       getLocationRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -823,7 +823,7 @@ public class Allotment extends Common<Allotment> {
    * {@link #withLocation(Location...)} instead.
    */
   @Deprecated
-  public Allotment withLocationRef(Set<TString> values) {
+  public Allotment withLocationRef(Set<TSerial> values) {
     if (values != null) {
       getLocationRef().addAll(values);
     }

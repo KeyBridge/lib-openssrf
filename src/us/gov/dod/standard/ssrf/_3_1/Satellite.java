@@ -129,7 +129,7 @@ public class Satellite extends Common<Satellite> {
    */
   @XmlElement(name = "LaunchLocRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString launchLocRef;
+  private TSerial launchLocRef;
   /**
    * LaunchDate - Launch Date (Optional)
    * <p>
@@ -433,7 +433,7 @@ public class Satellite extends Common<Satellite> {
    * {@link #getLaunchLoc()} instead.
    */
   @Deprecated
-  public TString getLaunchLocRef() {
+  public TSerial getLaunchLocRef() {
     return launchLocRef;
   }
 
@@ -446,7 +446,7 @@ public class Satellite extends Common<Satellite> {
    * {@link #setLaunchLoc(Location)} instead.
    */
   @Deprecated
-  public void setLaunchLocRef(TString value) {
+  public void setLaunchLocRef(TSerial value) {
     this.launchLocRef = value;
   }
 
@@ -1029,8 +1029,8 @@ public class Satellite extends Common<Satellite> {
    * {@link #withLaunchLoc(Location)} instead.
    */
   @Deprecated
-  public Satellite withLaunchLocRef(String value) {
-    setLaunchLocRef(new TString(value));
+  public Satellite withLaunchLocRef(TSerial value) {
+    setLaunchLocRef(value);
     return this;
   }
 

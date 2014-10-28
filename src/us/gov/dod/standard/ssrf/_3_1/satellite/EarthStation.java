@@ -77,7 +77,7 @@ public class EarthStation {
    */
   @XmlElement(name = "LocationRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString locationRef;
+  private TSerial locationRef;
 
   /**
    * Get the name of an associated earth station.
@@ -145,7 +145,7 @@ public class EarthStation {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public TString getLocationRef() {
+  public TSerial getLocationRef() {
     return locationRef;
   }
 
@@ -157,7 +157,7 @@ public class EarthStation {
    * {@link #setLocation(Location)} instead.
    */
   @Deprecated
-  public void setLocationRef(TString value) {
+  public void setLocationRef(TSerial value) {
     this.locationRef = value;
   }
 
@@ -203,8 +203,8 @@ public class EarthStation {
    * {@link #withLocation(Location)} instead.
    */
   @Deprecated
-  public EarthStation withLocationRef(String value) {
-    setLocationRef(new TString(value));
+  public EarthStation withLocationRef(TSerial value) {
+    setLocationRef(value);
     return this;
   }
 

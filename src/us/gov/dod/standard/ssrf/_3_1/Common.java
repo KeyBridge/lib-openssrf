@@ -229,7 +229,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "EntryBy", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString entryBy;
+  private TSerial entryBy;
   /**
    * Owner - Role which Owns the Dataset (Optional)
    * <p>
@@ -242,7 +242,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "Owner", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString owner;
+  private TSerial owner;
   /**
    * LastChangeDateTime - Latest Modification Date/Time (Optional)
    * <p>
@@ -266,7 +266,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "LastChangeBy", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString lastChangeBy;
+  private TSerial lastChangeBy;
   /**
    * LastReviewDate - Last Review Date (Optional)
    * <p>
@@ -290,7 +290,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "LastReviewBy", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString lastReviewBy;
+  private TSerial lastReviewBy;
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
    * <p>
@@ -303,7 +303,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "ModAllowedBy", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString modAllowedBy;
+  private TSerial modAllowedBy;
   /**
    * State - Dataset Status (Optional)
    * <p>
@@ -712,7 +712,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #getEntryByRole()} instead.
    */
   @Deprecated
-  public TString getEntryBy() {
+  public TSerial getEntryBy() {
     return entryBy;
   }
 
@@ -724,7 +724,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #setEntryByRole(Role)} instead.
    */
   @Deprecated
-  public void setEntryBy(TString value) {
+  public void setEntryBy(TSerial value) {
     this.entryBy = value;
   }
 
@@ -748,7 +748,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #getOwnerRole()} instead.
    */
   @Deprecated
-  public TString getOwner() {
+  public TSerial getOwner() {
     return owner;
   }
 
@@ -761,7 +761,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #setOwnerRole(Role)} instead.
    */
   @Deprecated
-  public void setOwner(TString value) {
+  public void setOwner(TSerial value) {
     this.owner = value;
   }
 
@@ -814,7 +814,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #getLastChangeByRole()} instead.
    */
   @Deprecated
-  public TString getLastChangeBy() {
+  public TSerial getLastChangeBy() {
     return lastChangeBy;
   }
 
@@ -826,7 +826,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #setLastChangeByRole(Role)} instead.
    */
   @Deprecated
-  public void setLastChangeBy(TString value) {
+  public void setLastChangeBy(TSerial value) {
     this.lastChangeBy = value;
   }
 
@@ -879,7 +879,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #getLastReviewByRole()} instead.
    */
   @Deprecated
-  public TString getLastReviewBy() {
+  public TSerial getLastReviewBy() {
     return lastReviewBy;
   }
 
@@ -891,7 +891,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #setLastReviewByRole(Role)} instead.
    */
   @Deprecated
-  public void setLastReviewBy(TString value) {
+  public void setLastReviewBy(TSerial value) {
     this.lastReviewBy = value;
   }
 
@@ -915,7 +915,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #getModAllowedByRole()} instead.
    */
   @Deprecated
-  public TString getModAllowedBy() {
+  public TSerial getModAllowedBy() {
     return modAllowedBy;
   }
 
@@ -928,7 +928,7 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #setModAllowedByRole(Role)} instead.
    */
   @Deprecated
-  public void setModAllowedBy(TString value) {
+  public void setModAllowedBy(TSerial value) {
     this.modAllowedBy = value;
   }
 
@@ -1525,8 +1525,8 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #withEntryByRole(Role)} instead.
    */
   @Deprecated
-  public T withEntryBy(String value) {
-    setEntryBy(new TString(value));
+  public T withEntryBy(TSerial value) {
+    setEntryBy(value);
     return (T) this;
   }
 
@@ -1540,8 +1540,8 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #withOwnerRole(Role)} instead.
    */
   @Deprecated
-  public T withOwner(String value) {
-    setOwner(new TString(value));
+  public T withOwner(TSerial value) {
+    setOwner(value);
     return (T) this;
   }
 
@@ -1576,8 +1576,8 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #withLastChangeByRole(Role)} instead.
    */
   @Deprecated
-  public T withLastChangeBy(String value) {
-    setLastChangeBy(new TString(value));
+  public T withLastChangeBy(TSerial value) {
+    setLastChangeBy(value);
     return (T) this;
   }
 
@@ -1612,8 +1612,8 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #withLastReviewByRole(Role)} instead.
    */
   @Deprecated
-  public T withLastReviewBy(String value) {
-    setLastReviewBy(new TString(value));
+  public T withLastReviewBy(TSerial value) {
+    setLastReviewBy(value);
     return (T) this;
   }
 
@@ -1627,8 +1627,8 @@ public abstract class Common<T> implements Comparable<T> {
    * {@link #withModAllowedByRole(Role)} instead.
    */
   @Deprecated
-  public T withModAllowedBy(String value) {
-    setModAllowedBy(new TString(value));
+  public T withModAllowedBy(TSerial value) {
+    setModAllowedBy(value);
     return (T) this;
   }
 

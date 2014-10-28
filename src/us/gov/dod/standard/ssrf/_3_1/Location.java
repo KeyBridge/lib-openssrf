@@ -270,7 +270,7 @@ public class Location extends Common<Location> {
    */
   @XmlElement(name = "LocationRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> locationRef;
+  private Set<TSerial> locationRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -688,7 +688,7 @@ public class Location extends Common<Location> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public Set<TString> getLocationRef() {
+  public Set<TSerial> getLocationRef() {
     if (locationRef == null) {
       locationRef = new HashSet<>();
     }
@@ -1000,7 +1000,7 @@ public class Location extends Common<Location> {
    * {@link #withLocation(Location...)} instead.
    */
   @Deprecated
-  public Location withLocationRef(TString... values) {
+  public Location withLocationRef(TSerial... values) {
     if (values != null) {
       getLocationRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -1016,7 +1016,7 @@ public class Location extends Common<Location> {
    * {@link #withLocation(Location...)} instead.
    */
   @Deprecated
-  public Location withLocationRef(Set<TString> values) {
+  public Location withLocationRef(Set<TSerial> values) {
     if (values != null) {
       getLocationRef().addAll(values);
     }

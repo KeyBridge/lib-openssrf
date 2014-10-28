@@ -85,7 +85,7 @@ public class Administrative extends Common<Administrative> {
    */
   @XmlElement(name = "MessageRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString messageRef;
+  private TSerial messageRef;
   /**
    * Dataset (Optional)
    * <p>
@@ -142,7 +142,7 @@ public class Administrative extends Common<Administrative> {
    * {@link #getMessage()} instead.
    */
   @Deprecated
-  public TString getMessageRef() {
+  public TSerial getMessageRef() {
     return messageRef;
   }
 
@@ -154,7 +154,7 @@ public class Administrative extends Common<Administrative> {
    * {@link #setMessage(Message)} instead.
    */
   @Deprecated
-  public void setMessageRef(TString value) {
+  public void setMessageRef(TSerial value) {
     this.messageRef = value;
   }
 
@@ -252,8 +252,8 @@ public class Administrative extends Common<Administrative> {
    * {@link #withMessage(Message)} instead.
    */
   @Deprecated
-  public Administrative withMessageRef(String value) {
-    setMessageRef(new TString(value));
+  public Administrative withMessageRef(TSerial value) {
+    setMessageRef(value);
     return this;
   }
 

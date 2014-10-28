@@ -126,7 +126,7 @@ public class Allocation {
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> channelPlanRef;
+  private Set<TSerial> channelPlanRef;
   /**
    * footnotes - Link to allocation usage notes (Optional)
    * <p>
@@ -369,7 +369,7 @@ public class Allocation {
    * {@link #getChannelPlan()} instead.
    */
   @Deprecated
-  public Set<TString> getChannelPlanRef() {
+  public Set<TSerial> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new HashSet<>();
     }
@@ -431,6 +431,18 @@ public class Allocation {
    */
   public Allocation withAllocatedService(ListCSN value) {
     setAllocatedService(new TString(value.value()));
+    return this;
+  }
+
+  /**
+   * Set a radiocommunication service recognized by an administration that is
+   * allocated to this frequency band (e.g., "Fixed Service").
+   * <p>
+   * @param value An instances of type {@link String}
+   * @return The current Allocation object instance
+   */
+  public Allocation withAllocatedService(String value) {
+    setAllocatedService(new TString(value));
     return this;
   }
 
@@ -582,7 +594,7 @@ public class Allocation {
    * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
   @Deprecated
-  public Allocation withChannelPlanRef(TString... values) {
+  public Allocation withChannelPlanRef(TSerial... values) {
     if (values != null) {
       getChannelPlanRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -600,7 +612,7 @@ public class Allocation {
    * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
   @Deprecated
-  public Allocation withChannelPlanRef(Set<TString> values) {
+  public Allocation withChannelPlanRef(Set<TSerial> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }

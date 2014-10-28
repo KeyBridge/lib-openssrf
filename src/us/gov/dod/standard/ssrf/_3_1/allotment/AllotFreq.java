@@ -116,7 +116,7 @@ public class AllotFreq {
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> locationRestrictionRef;
+  private Set<TSerial> locationRestrictionRef;
 
   /**
    * Get the nominal frequency or minimum value of the frequency range.
@@ -282,7 +282,7 @@ public class AllotFreq {
    * {@link #getLocationRestriction()} instead.
    */
   @Deprecated
-  public Set<TString> getLocationRestrictionRef() {
+  public Set<TSerial> getLocationRestrictionRef() {
     if (locationRestrictionRef == null) {
       locationRestrictionRef = new HashSet<>();
     }
@@ -373,7 +373,7 @@ public class AllotFreq {
    * @param values One or more instances of type {@link TString}
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestrictionRef(TString... values) {
+  public AllotFreq withLocationRestrictionRef(TSerial... values) {
     if (values != null) {
       getLocationRestrictionRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -389,7 +389,7 @@ public class AllotFreq {
    * @param values A collection of {@link TString} instances
    * @return The current AllotFreq object instance
    */
-  public AllotFreq withLocationRestrictionRef(Set<TString> values) {
+  public AllotFreq withLocationRestrictionRef(Set<TSerial> values) {
     if (values != null) {
       getLocationRestrictionRef().addAll(values);
     }

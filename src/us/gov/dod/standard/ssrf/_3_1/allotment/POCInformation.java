@@ -71,7 +71,7 @@ public class POCInformation {
    */
   @XmlElement(name = "Serial", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * Description - POC Description (Optional)
    * <p>
@@ -124,7 +124,7 @@ public class POCInformation {
    * {@link #getPoc()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -136,7 +136,7 @@ public class POCInformation {
    * {@link #setPoc(Common)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -205,8 +205,8 @@ public class POCInformation {
    * {@link #withPoc(Common)} instead.
    */
   @Deprecated
-  public POCInformation withSerial(String value) {
-    setSerial(new TString(value));
+  public POCInformation withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

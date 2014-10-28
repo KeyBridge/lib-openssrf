@@ -15,13 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
-import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -33,7 +33,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TString", propOrder = {"value"})
-public class TString extends AMetadata<TString> implements IMetadataType, Comparable<TSerial> {
+public class TString extends AMetadata<TString> implements IMetadataType, Comparable<TString> {
 
   /**
    * The value to which the metadata attributes are associated.
@@ -82,6 +82,17 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    */
   public boolean isSetValue() {
     return (this.value != null);
+  }
+
+  /**
+   * Sets the value of the value property.
+   * <p>
+   * @param value the value to set
+   * @return this TString instance
+   */
+  public TString withValue(String value) {
+    setValue(value);
+    return this;
   }
 
   /**
@@ -146,7 +157,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    * @return alphabetical sort order
    */
   @Override
-  public int compareTo(TSerial o) {
+  public int compareTo(TString o) {
     if (o == null) {
       return 1;
     }

@@ -78,7 +78,7 @@ public class StationLoc {
    */
   @XmlElement(name = "LocSatRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString locSatRef;
+  private TSerial locSatRef;
   /**
    * US:LocationRadius - Location Radius (Optional)
    * <p>
@@ -179,7 +179,7 @@ public class StationLoc {
    * {@link #getLocSat()} instead.
    */
   @Deprecated
-  public TString getLocSatRef() {
+  public TSerial getLocSatRef() {
     return locSatRef;
   }
 
@@ -193,7 +193,7 @@ public class StationLoc {
    * {@link #setLocSat(Common)} instead.
    */
   @Deprecated
-  public void setLocSatRef(TString value) {
+  public void setLocSatRef(TSerial value) {
     this.locSatRef = value;
   }
 
@@ -366,8 +366,8 @@ public class StationLoc {
    * {@link #withLocSat(Common)} instead.
    */
   @Deprecated
-  public StationLoc withLocSatRef(String value) {
-    setLocSatRef(new TString(value));
+  public StationLoc withLocSatRef(TSerial value) {
+    setLocSatRef(value);
     return this;
   }
 

@@ -53,7 +53,7 @@ public class Dataset {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * RetireDate - Retire Date (Optional)
    * <p>
@@ -82,14 +82,14 @@ public class Dataset {
    */
   @XmlElement(name = "MissingRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> missingRef;
+  private Set<TSerial> missingRef;
 
   /**
    * Get the serial of the referenced Dataset.
    * <p>
    * @return the Serial value in a {@link TString} data type
    */
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -98,7 +98,7 @@ public class Dataset {
    * <p>
    * @param value the Serial value in a {@link TString} data type
    */
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -184,7 +184,7 @@ public class Dataset {
    * {@link #getMissing()} instead.
    */
   @Deprecated
-  public Set<TString> getMissingRef() {
+  public Set<TSerial> getMissingRef() {
     if (missingRef == null) {
       missingRef = new HashSet<>();
     }
@@ -213,8 +213,8 @@ public class Dataset {
    * @param value An instances of type {@link String}
    * @return The current Dataset object instance
    */
-  public Dataset withSerial(String value) {
-    setSerial(new TString(value));
+  public Dataset withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 
@@ -264,7 +264,7 @@ public class Dataset {
    * {@link #withMissing(Common...)} instead.
    */
   @Deprecated
-  public Dataset withMissingRef(TString... values) {
+  public Dataset withMissingRef(TSerial... values) {
     if (values != null) {
       getMissingRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -284,7 +284,7 @@ public class Dataset {
    * {@link #withMissing(Common...)} instead.
    */
   @Deprecated
-  public Dataset withMissingRef(Set<TString> values) {
+  public Dataset withMissingRef(Set<TSerial> values) {
     if (values != null) {
       getMissingRef().addAll(values);
     }

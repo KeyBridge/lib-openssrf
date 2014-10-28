@@ -49,7 +49,7 @@ public class RecordNote {
    */
   @XmlElement(name = "NoteRef", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString noteRef;
+  private TSerial noteRef;
   /**
    * US:Comments - Comments (Optional)
    * <p>
@@ -72,7 +72,7 @@ public class RecordNote {
    * {@link #getNote()} instead.
    */
   @Deprecated
-  public TString getNoteRef() {
+  public TSerial getNoteRef() {
     return noteRef;
   }
 
@@ -85,7 +85,7 @@ public class RecordNote {
    * {@link #setNote(Note)} instead.
    */
   @Deprecated
-  public void setNoteRef(TString value) {
+  public void setNoteRef(TSerial value) {
     this.noteRef = value;
   }
 
@@ -143,8 +143,8 @@ public class RecordNote {
    * {@link #withNote(Note)} instead.
    */
   @Deprecated
-  public RecordNote withNoteRef(String value) {
-    setNoteRef(new TString(value));
+  public RecordNote withNoteRef(TSerial value) {
+    setNoteRef(value);
     return this;
   }
 

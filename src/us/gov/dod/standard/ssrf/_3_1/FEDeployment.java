@@ -79,7 +79,7 @@ public class FEDeployment extends Common<FEDeployment> {
    */
   @XmlElement(name = "FERef", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString feRef;
+  private TSerial feRef;
   /**
    * Type - Deployment Type (Required)
    * <p>
@@ -250,7 +250,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @return the FERef value in a {@link TString} data type
    */
-  public TString getFERef() {
+  public TSerial getFERef() {
     return feRef;
   }
 
@@ -259,7 +259,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * @param value the FERef value in a {@link TString} data type
    */
-  public void setFERef(TString value) {
+  public void setFERef(TSerial value) {
     this.feRef = value;
   }
 
@@ -721,8 +721,8 @@ public class FEDeployment extends Common<FEDeployment> {
    * @param value An instances of type {@link String}
    * @return The current FEDeployment object instance
    */
-  public FEDeployment withFERef(String value) {
-    setFERef(new TString(value));
+  public FEDeployment withFERef(TSerial value) {
+    setFERef(value);
     return this;
   }
 

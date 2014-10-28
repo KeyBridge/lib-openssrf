@@ -155,7 +155,7 @@ public class Role extends Common<Role> {
    */
   @XmlElement(name = "ContactRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> contactRef;
+  private Set<TSerial> contactRef;
 
   /**
    * Get the date by which the dataset is to be operational or effective.
@@ -430,7 +430,7 @@ public class Role extends Common<Role> {
    * {@link #getContact()} instead.
    */
   @Deprecated
-  public Set<TString> getContactRef() {
+  public Set<TSerial> getContactRef() {
     if (contactRef == null) {
       contactRef = new HashSet<>();
     }
@@ -663,7 +663,7 @@ public class Role extends Common<Role> {
    * {@link #withContact(Contact...)} instead.
    */
   @Deprecated
-  public Role withContactRef(TString... values) {
+  public Role withContactRef(TSerial... values) {
     if (values != null) {
       getContactRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -681,7 +681,7 @@ public class Role extends Common<Role> {
    * {@link #withContact(Contact...)} instead.
    */
   @Deprecated
-  public Role withContactRef(Set<TString> values) {
+  public Role withContactRef(Set<TSerial> values) {
     if (values != null) {
       getContactRef().addAll(values);
     }

@@ -123,7 +123,7 @@ public class JammingTarget {
    */
   @XmlElement(name = "LoadsetRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString loadsetRef;
+  private TSerial loadsetRef;
   /**
    * US:LocationRef - Target Location Serial (Optional)
    * <p>
@@ -367,7 +367,7 @@ public class JammingTarget {
    * {@link #getLoadset()} instead.
    */
   @Deprecated
-  public TString getLoadsetRef() {
+  public TSerial getLoadsetRef() {
     return loadsetRef;
   }
 
@@ -380,7 +380,7 @@ public class JammingTarget {
    * {@link #setLoadset(Loadset)} instead.
    */
   @Deprecated
-  public void setLoadsetRef(TString value) {
+  public void setLoadsetRef(TSerial value) {
     this.loadsetRef = value;
   }
 
@@ -666,8 +666,8 @@ public class JammingTarget {
    * {@link #withLoadset(Loadset)} instead.
    */
   @Deprecated
-  public JammingTarget withLoadsetRef(String value) {
-    setLoadsetRef(new TString(value));
+  public JammingTarget withLoadsetRef(TSerial value) {
+    setLoadsetRef(value);
     return this;
   }
 

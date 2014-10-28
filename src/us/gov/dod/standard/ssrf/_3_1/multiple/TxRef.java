@@ -56,7 +56,7 @@ public class TxRef {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * TxModeRef (Optional)
    * <p>
@@ -88,7 +88,7 @@ public class TxRef {
    * {@link #getTransmitter()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -102,7 +102,7 @@ public class TxRef {
    * {@link #setTransmitter(Transmitter)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -191,8 +191,8 @@ public class TxRef {
    * {@link #withTransmitter(Transmitter)} instead.
    */
   @Deprecated
-  public TxRef withSerial(String value) {
-    setSerial(new TString(value));
+  public TxRef withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

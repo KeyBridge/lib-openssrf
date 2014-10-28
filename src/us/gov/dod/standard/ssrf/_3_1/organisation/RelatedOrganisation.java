@@ -79,7 +79,7 @@ public class RelatedOrganisation {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
 
   /**
    * Get the type of relationship.
@@ -148,7 +148,7 @@ public class RelatedOrganisation {
    * {@link #getOrganisation()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -161,7 +161,7 @@ public class RelatedOrganisation {
    * {@link #setOrganisation(Organisation)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -208,8 +208,8 @@ public class RelatedOrganisation {
    * {@link #withOrganisation(Organisation)} instead.
    */
   @Deprecated
-  public RelatedOrganisation withSerial(String value) {
-    setSerial(new TString(value));
+  public RelatedOrganisation withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

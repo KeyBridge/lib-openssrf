@@ -75,7 +75,7 @@ public class EndpointLocation {
    */
   @XmlElement(name = "LocSatRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString locSatRef;
+  private TSerial locSatRef;
   /**
    * MinPointAngle - Minimum Pointing Angle (Optional)
    * <p>
@@ -169,7 +169,7 @@ public class EndpointLocation {
    * {@link #getLocSat()} instead.
    */
   @Deprecated
-  public TString getLocSatRef() {
+  public TSerial getLocSatRef() {
     return locSatRef;
   }
 
@@ -185,7 +185,7 @@ public class EndpointLocation {
    * {@link #setLocSat(Common)} instead.
    */
   @Deprecated
-  public void setLocSatRef(TString value) {
+  public void setLocSatRef(TSerial value) {
     this.locSatRef = value;
   }
 
@@ -298,8 +298,8 @@ public class EndpointLocation {
    * {@link #withLocSat(Common)} instead.
    */
   @Deprecated
-  public EndpointLocation withLocSatRef(String value) {
-    setLocSatRef(new TString(value));
+  public EndpointLocation withLocSatRef(TSerial value) {
+    setLocSatRef(value);
     return this;
   }
 

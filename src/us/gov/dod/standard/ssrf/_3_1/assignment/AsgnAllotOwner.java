@@ -58,7 +58,7 @@ public class AsgnAllotOwner {
    */
   @XmlElement(name = "OwnerOrgRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString ownerOrgRef;
+  private TSerial ownerOrgRef;
 
   /**
    * Get the name of an individual or organization related to the frequency
@@ -133,7 +133,7 @@ public class AsgnAllotOwner {
    * {@link #getOwnerOrg()} instead.
    */
   @Deprecated
-  public TString getOwnerOrgRef() {
+  public TSerial getOwnerOrgRef() {
     return ownerOrgRef;
   }
 
@@ -148,7 +148,7 @@ public class AsgnAllotOwner {
    * {@link #setOwnerOrg(Organisation)} instead.
    */
   @Deprecated
-  public void setOwnerOrgRef(TString value) {
+  public void setOwnerOrgRef(TSerial value) {
     this.ownerOrgRef = value;
   }
 
@@ -199,8 +199,8 @@ public class AsgnAllotOwner {
    * {@link #withOwnerOrg(Organisation)} instead.
    */
   @Deprecated
-  public AsgnAllotOwner withOwnerOrgRef(String value) {
-    setOwnerOrgRef(new TString(value));
+  public AsgnAllotOwner withOwnerOrgRef(TSerial value) {
+    setOwnerOrgRef(value);
     return this;
   }
 

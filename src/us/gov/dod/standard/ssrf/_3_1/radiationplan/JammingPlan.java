@@ -128,7 +128,7 @@ public class JammingPlan {
    */
   @XmlElement(name = "StartLocationRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString startLocationRef;
+  private TSerial startLocationRef;
   /**
    * US:StartTrigger - Start Trigger (Required)
    * <p>
@@ -404,7 +404,7 @@ public class JammingPlan {
    * {@link #getStartLocation()} instead.
    */
   @Deprecated
-  public TString getStartLocationRef() {
+  public TSerial getStartLocationRef() {
     return startLocationRef;
   }
 
@@ -417,7 +417,7 @@ public class JammingPlan {
    * {@link #setStartLocation(Location)} instead.
    */
   @Deprecated
-  public void setStartLocationRef(TString value) {
+  public void setStartLocationRef(TSerial value) {
     this.startLocationRef = value;
   }
 
@@ -774,8 +774,8 @@ public class JammingPlan {
    * {@link #withStartLocation(Location)} instead.
    */
   @Deprecated
-  public JammingPlan withStartLocationRef(String value) {
-    setStartLocationRef(new TString(value));
+  public JammingPlan withStartLocationRef(TSerial value) {
+    setStartLocationRef(value);
     return this;
   }
 

@@ -49,7 +49,7 @@ public class StageLocation {
    */
   @XmlElement(name = "LocSatRef", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString locSatRef;
+  private TSerial locSatRef;
   /**
    * Excluded - Shape is Excluded (Optional)
    * <p>
@@ -70,7 +70,7 @@ public class StageLocation {
    * {@link #getLocSat()} instead.
    */
   @Deprecated
-  public TString getLocSatRef() {
+  public TSerial getLocSatRef() {
     return locSatRef;
   }
 
@@ -82,7 +82,7 @@ public class StageLocation {
    * {@link #setLocSat(Common)} instead.
    */
   @Deprecated
-  public void setLocSatRef(TString value) {
+  public void setLocSatRef(TSerial value) {
     this.locSatRef = value;
   }
 
@@ -139,8 +139,8 @@ public class StageLocation {
    * {@link #withLocSat(Common)} instead.
    */
   @Deprecated
-  public StageLocation withLocSatRef(String value) {
-    setLocSatRef(new TString(value));
+  public StageLocation withLocSatRef(TSerial value) {
+    setLocSatRef(value);
     return this;
   }
 

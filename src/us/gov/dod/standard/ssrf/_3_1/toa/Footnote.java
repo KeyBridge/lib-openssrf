@@ -257,6 +257,17 @@ public class Footnote implements Comparable<Footnote> {
   }
 
   /**
+   * Set the type or source of the Footnote.
+   * <p>
+   * @param value An instances of type {@link String}
+   * @return The current Footnote object instance
+   */
+  public Footnote withFootnoteType(String value) {
+    setFootnoteType(new TString(value));
+    return this;
+  }
+
+  /**
    * Set an identifier for this Footnote (e.g., US2, 5.441). This Data Item is
    * optional if NoteType is Band User or Band Application.
    * <p>
@@ -326,19 +337,20 @@ public class Footnote implements Comparable<Footnote> {
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
   /**
-   * Hash code is based upon the index "idx" number.
+   * Hash code is based upon the type and identifier (e.g. primary key).
    * <p>
    * @return an object hash code value
    */
   @Override
   public int hashCode() {
     int hash = 7;
-    hash = 83 * hash + Objects.hashCode(this.idx);
+    hash = 97 * hash + Objects.hashCode(this.footnoteType);
+    hash = 97 * hash + Objects.hashCode(this.identifier);
     return hash;
   }
 
   /**
-   * Equality is based upon the index "idx" number.
+   * Equality is based upon the type and identifier.
    * <p>
    * @param obj the other object
    * @return TRUE if the objects are the same class and have a matching index
@@ -352,18 +364,31 @@ public class Footnote implements Comparable<Footnote> {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    return Objects.equals(this.idx, ((Footnote) obj).getIdx());
+    final Footnote other = (Footnote) obj;
+    if (!Objects.equals(this.footnoteType, other.getFootnoteType())) {
+      return false;
+    }
+    return Objects.equals(this.identifier, other.getIdentifier());
   }
 
   /**
-   * Comparison and sorting are based upon the index "idx" number.
+   * Comparison and sorting are based upon the type and identifier.
    * <p>
    * @param o the other object
    * @return the object order
    */
   @Override
   public int compareTo(Footnote o) {
-    return idx.compareTo(o.getIdx());
+    if (o == null) {
+      return 1;
+    }
+    if (footnoteType == null || identifier == null) {
+      return -1;
+    }
+    if (footnoteType.compareTo(o.getFootnoteType()) == 0) {
+      return identifier.compareTo(o.getIdentifier());
+    }
+    return footnoteType.compareTo(o.getFootnoteType());
   }//</editor-fold>
 
 }

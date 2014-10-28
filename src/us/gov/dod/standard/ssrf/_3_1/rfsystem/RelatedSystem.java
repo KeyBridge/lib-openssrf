@@ -65,7 +65,7 @@ public class RelatedSystem {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
 
   /**
    * Get the relationship between the two systems.
@@ -104,7 +104,7 @@ public class RelatedSystem {
    * {@link #getRfSystem()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -116,7 +116,7 @@ public class RelatedSystem {
    * {@link #setRfSystem(RFSystem)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -151,8 +151,8 @@ public class RelatedSystem {
    * {@link #withRfSystem(RFSystem)} instead.
    */
   @Deprecated
-  public RelatedSystem withSerial(String value) {
-    setSerial(new TString(value));
+  public RelatedSystem withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

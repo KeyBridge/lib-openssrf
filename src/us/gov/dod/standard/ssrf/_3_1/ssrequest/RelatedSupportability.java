@@ -67,7 +67,7 @@ public class RelatedSupportability {
    */
   @XmlElement(name = "SSRequestRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString ssRequestRef;
+  private TSerial ssRequestRef;
   /**
    * US:J12Number - J/F 12 Number (Optional)
    * <p>
@@ -116,7 +116,7 @@ public class RelatedSupportability {
    * <p>
    * @return the SSRequestRef value in a {@link TString} data type
    */
-  public TString getSSRequestRef() {
+  public TSerial getSSRequestRef() {
     return ssRequestRef;
   }
 
@@ -125,7 +125,7 @@ public class RelatedSupportability {
    * <p>
    * @param value the SSRequestRef value in a {@link TString} data type
    */
-  public void setSSRequestRef(TString value) {
+  public void setSSRequestRef(TSerial value) {
     this.ssRequestRef = value;
   }
 
@@ -189,8 +189,8 @@ public class RelatedSupportability {
    * @param value An instances of type {@link String}
    * @return The current RelatedSupportability object instance
    */
-  public RelatedSupportability withSSRequestRef(String value) {
-    setSSRequestRef(new TString(value));
+  public RelatedSupportability withSSRequestRef(TSerial value) {
+    setSSRequestRef(value);
     return this;
   }
 

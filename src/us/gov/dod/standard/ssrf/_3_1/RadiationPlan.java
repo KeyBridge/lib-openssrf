@@ -149,7 +149,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    */
   @XmlElement(name = "LocationRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString locationRef;
+  private TSerial locationRef;
   /**
    * Name (US), enter a descriptive name for the Radiation Plan.
    */
@@ -305,7 +305,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public TString getLocationRef() {
+  public TSerial getLocationRef() {
     return locationRef;
   }
 
@@ -317,7 +317,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * {@link #setLocation(Location)} instead.
    */
   @Deprecated
-  public void setLocationRef(TString value) {
+  public void setLocationRef(TSerial value) {
     this.locationRef = value;
   }
 
@@ -559,8 +559,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * {@link #withLocation(Location)} instead.
    */
   @Deprecated
-  public RadiationPlan withLocationRef(String value) {
-    setLocationRef(new TString(value));
+  public RadiationPlan withLocationRef(TSerial value) {
+    setLocationRef(value);
     return this;
   }
 

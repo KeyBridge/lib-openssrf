@@ -672,7 +672,7 @@ public class Assignment extends Common<Assignment> {
    */
   @XmlElement(name = "RelatedRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> relatedRef;
+  private Set<TSerial> relatedRef;
   /**
    * Configuration (Required)
    * <p>
@@ -2286,7 +2286,7 @@ public class Assignment extends Common<Assignment> {
    * {@link #getRelated()} instead.
    */
   @Deprecated
-  public Set<TString> getRelatedRef() {
+  public Set<TSerial> getRelatedRef() {
     if (relatedRef == null) {
       relatedRef = new HashSet<>();
     }
@@ -3425,7 +3425,7 @@ public class Assignment extends Common<Assignment> {
    * {@link #withRelated(Common...)} instead.
    */
   @Deprecated
-  public Assignment withRelatedRef(TString... values) {
+  public Assignment withRelatedRef(TSerial... values) {
     if (values != null) {
       getRelatedRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -3444,7 +3444,7 @@ public class Assignment extends Common<Assignment> {
    * {@link #withRelated(Common...)} instead.
    */
   @Deprecated
-  public Assignment withRelatedRef(Set<TString> values) {
+  public Assignment withRelatedRef(Set<TSerial> values) {
     if (values != null) {
       getRelatedRef().addAll(values);
     }

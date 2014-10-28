@@ -63,6 +63,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
   "country",
   "freqBand"
 })
+@XmlRootElement
 public class TOA extends Common<TOA> {
 
   /**
@@ -122,7 +123,7 @@ public class TOA extends Common<TOA> {
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> channelPlanRef;
+  private Set<TSerial> channelPlanRef;
   /**
    * Country (Optional)
    * <p>
@@ -140,6 +141,13 @@ public class TOA extends Common<TOA> {
    */
   @XmlElement(name = "FreqBand", required = true)
   private Set<FreqBand> freqBand;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public TOA() {
+    super();
+  }
 
   /**
    * Get the nation or regulatory body that administers this Table of
@@ -305,7 +313,7 @@ public class TOA extends Common<TOA> {
    * {@link #getChannelPlan()} instead.
    */
   @Deprecated
-  public Set<TString> getChannelPlanRef() {
+  public Set<TSerial> getChannelPlanRef() {
     if (channelPlanRef == null) {
       channelPlanRef = new HashSet<>();
     }
@@ -506,7 +514,7 @@ public class TOA extends Common<TOA> {
    * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
   @Deprecated
-  public TOA withChannelPlanRef(TString... values) {
+  public TOA withChannelPlanRef(TSerial... values) {
     if (values != null) {
       getChannelPlanRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -524,7 +532,7 @@ public class TOA extends Common<TOA> {
    * {@link #withChannelPlan(ChannelPlan...)} instead.
    */
   @Deprecated
-  public TOA withChannelPlanRef(Set<TString> values) {
+  public TOA withChannelPlanRef(Set<TSerial> values) {
     if (values != null) {
       getChannelPlanRef().addAll(values);
     }

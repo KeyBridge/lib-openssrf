@@ -229,7 +229,7 @@ public class JRFLEntry {
    */
   @XmlElement(name = "AsgnAllotRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString asgnAllotRef;
+  private TSerial asgnAllotRef;
   /**
    * FreqMin - Nominal or Minimum Frequency (Optional)
    * <p>
@@ -710,7 +710,7 @@ public class JRFLEntry {
    * {@link #getAssignmentAllotment()} instead.
    */
   @Deprecated
-  public TString getAsgnAllotRef() {
+  public TSerial getAsgnAllotRef() {
     return asgnAllotRef;
   }
 
@@ -726,7 +726,7 @@ public class JRFLEntry {
    * {@link #setAssignmentAllotment(Common)} instead.
    */
   @Deprecated
-  public void setAsgnAllotRef(TString value) {
+  public void setAsgnAllotRef(TSerial value) {
     this.asgnAllotRef = value;
   }
 
@@ -1126,8 +1126,8 @@ public class JRFLEntry {
    * {@link #withAssignmentAllotment(Common)} instead.
    */
   @Deprecated
-  public JRFLEntry withAsgnAllotRef(String value) {
-    setAsgnAllotRef(new TString(value));
+  public JRFLEntry withAsgnAllotRef(TSerial value) {
+    setAsgnAllotRef(value);
     return this;
   }
 

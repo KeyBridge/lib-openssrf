@@ -123,7 +123,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   @XmlElement(name = "OwningOrganisation", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString owningOrganisationRef;
+  private TSerial owningOrganisationRef;
   /**
    * Role - Role (Optional)
    * <p>
@@ -341,7 +341,7 @@ public class ForceElement extends Common<ForceElement> {
    * {@link #getOwningOrganisation()} instead.
    */
   @Deprecated
-  public TString getOwningOrganisationRef() {
+  public TSerial getOwningOrganisationRef() {
     return owningOrganisationRef;
   }
 
@@ -353,7 +353,7 @@ public class ForceElement extends Common<ForceElement> {
    * {@link #setOwningOrganisation(Organisation)} instead.
    */
   @Deprecated
-  public void setOwningOrganisationRef(TString value) {
+  public void setOwningOrganisationRef(TSerial value) {
     this.owningOrganisationRef = value;
   }
 
@@ -696,8 +696,8 @@ public class ForceElement extends Common<ForceElement> {
    * @param value An instances of type {@link String}
    * @return The current ForceElement object instance
    */
-  public ForceElement withOwningOrganisation(String value) {
-    setOwningOrganisationRef(new TString(value));
+  public ForceElement withOwningOrganisation(TSerial value) {
+    setOwningOrganisationRef(value);
     return this;
   }
 

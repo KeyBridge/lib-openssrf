@@ -312,7 +312,7 @@ public class IntfReport extends Common<IntfReport> {
    */
   @XmlElement(name = "VictimAsgnRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString victimAsgnRef;
+  private TSerial victimAsgnRef;
   /**
    * VictimSystem - Victim System (Optional)
    * <p>
@@ -1213,7 +1213,7 @@ public class IntfReport extends Common<IntfReport> {
    * {@link #getVictimAssignment()} instead.
    */
   @Deprecated
-  public TString getVictimAsgnRef() {
+  public TSerial getVictimAsgnRef() {
     return victimAsgnRef;
   }
 
@@ -1230,7 +1230,7 @@ public class IntfReport extends Common<IntfReport> {
    * {@link #setVictimAssignment(Assignment)} instead.
    */
   @Deprecated
-  public void setVictimAsgnRef(TString value) {
+  public void setVictimAsgnRef(TSerial value) {
     this.victimAsgnRef = value;
   }
 
@@ -2367,8 +2367,8 @@ public class IntfReport extends Common<IntfReport> {
    * {@link #withVictimAssignment(Assignment)} instead.
    */
   @Deprecated
-  public IntfReport withVictimAsgnRef(String value) {
-    setVictimAsgnRef(new TString(value));
+  public IntfReport withVictimAsgnRef(TSerial value) {
+    setVictimAsgnRef(value);
     return this;
   }
 

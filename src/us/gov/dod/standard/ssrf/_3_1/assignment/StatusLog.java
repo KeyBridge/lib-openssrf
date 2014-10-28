@@ -105,7 +105,7 @@ public class StatusLog {
    */
   @XmlElement(name = "POCRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString pocRef;
+  private TSerial pocRef;
 
   /**
    * Get the date and UTC time of this status log entry.
@@ -230,7 +230,7 @@ public class StatusLog {
    * <p>
    * @return the POCRef value in a {@link TString} data type
    */
-  public TString getPOCRef() {
+  public TSerial getPOCRef() {
     return pocRef;
   }
 
@@ -240,7 +240,7 @@ public class StatusLog {
    * <p>
    * @param value the POCRef value in a {@link TString} data type
    */
-  public void setPOCRef(TString value) {
+  public void setPOCRef(TSerial value) {
     this.pocRef = value;
   }
 
@@ -317,8 +317,8 @@ public class StatusLog {
    * @param value An instances of type {@link String}
    * @return The current StatusLog object instance
    */
-  public StatusLog withPOCRef(String value) {
-    setPOCRef(new TString(value));
+  public StatusLog withPOCRef(TSerial value) {
+    setPOCRef(value);
     return this;
   }
 

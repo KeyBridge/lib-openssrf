@@ -59,7 +59,7 @@ public class Assets {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * Authorised - Authorised Quantity (Optional)
    * <p>
@@ -91,7 +91,7 @@ public class Assets {
    * {@link #getAsset()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -105,7 +105,7 @@ public class Assets {
    * {@link #setAsset(Common)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -189,8 +189,8 @@ public class Assets {
    * {@link #withAsset(Common)} instead.
    */
   @Deprecated
-  public Assets withSerial(String value) {
-    setSerial(new TString(value));
+  public Assets withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

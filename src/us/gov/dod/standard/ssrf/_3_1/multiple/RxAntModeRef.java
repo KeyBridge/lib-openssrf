@@ -61,7 +61,7 @@ public class RxAntModeRef {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * ModeID - Antenna Mode Identifier (Optional)
    * <p>
@@ -96,7 +96,7 @@ public class RxAntModeRef {
    * {@link #getAntenna()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -110,7 +110,7 @@ public class RxAntModeRef {
    * {@link #setAntenna(Antenna)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -200,8 +200,8 @@ public class RxAntModeRef {
    * {@link #withAntenna(Antenna)} instead.
    */
   @Deprecated
-  public RxAntModeRef withSerial(String value) {
-    setSerial(new TString(value));
+  public RxAntModeRef withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

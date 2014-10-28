@@ -180,7 +180,7 @@ public class Organisation extends Common<Organisation> {
    */
   @XmlElement(name = "RoleRef", nillable = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private Set<TString> roleRef;
+  private Set<TSerial> roleRef;
   /**
    * RelatedOrganisation (Optional)
    * <p>
@@ -516,7 +516,7 @@ public class Organisation extends Common<Organisation> {
    * {@link #getRole()} instead.
    */
   @Deprecated
-  public Set<TString> getRoleRef() {
+  public Set<TSerial> getRoleRef() {
     if (roleRef == null) {
       roleRef = new HashSet<>();
     }
@@ -801,7 +801,7 @@ public class Organisation extends Common<Organisation> {
    * {@link #withRole(Role...)} instead.
    */
   @Deprecated
-  public Organisation withRoleRef(TString... values) {
+  public Organisation withRoleRef(TSerial... values) {
     if (values != null) {
       getRoleRef().addAll(new HashSet<>(Arrays.asList(values)));
     }
@@ -819,7 +819,7 @@ public class Organisation extends Common<Organisation> {
    * {@link #withRole(Role...)} instead.
    */
   @Deprecated
-  public Organisation withRoleRef(Set<TString> values) {
+  public Organisation withRoleRef(Set<TSerial> values) {
     if (values != null) {
       getRoleRef().addAll(values);
     }

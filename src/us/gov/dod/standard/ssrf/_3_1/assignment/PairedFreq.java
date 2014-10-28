@@ -61,7 +61,7 @@ public class PairedFreq {
    */
   @XmlElement(name = "AssignmentRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString assignmentRef;
+  private TSerial assignmentRef;
   /**
    * US:PairedASN - Paired Agency Serial Number (Optional)
    * <p>
@@ -126,7 +126,7 @@ public class PairedFreq {
    * {@link #getAssignment()} instead.
    */
   @Deprecated
-  public TString getAssignmentRef() {
+  public TSerial getAssignmentRef() {
     return assignmentRef;
   }
 
@@ -139,7 +139,7 @@ public class PairedFreq {
    * {@link #setAssignment(Assignment)} instead.
    */
   @Deprecated
-  public void setAssignmentRef(TString value) {
+  public void setAssignmentRef(TSerial value) {
     this.assignmentRef = value;
   }
 
@@ -240,8 +240,8 @@ public class PairedFreq {
    * {@link #withAssignment(Assignment)} instead.
    */
   @Deprecated
-  public PairedFreq withAssignmentRef(String value) {
-    setAssignmentRef(new TString(value));
+  public PairedFreq withAssignmentRef(TSerial value) {
+    setAssignmentRef(value);
     return this;
   }
 

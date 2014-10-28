@@ -51,7 +51,7 @@ public class JRFLEntryLocation {
    */
   @XmlElement(name = "Serial", required = true)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString serial;
+  private TSerial serial;
   /**
    * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
    * <p>
@@ -79,7 +79,7 @@ public class JRFLEntryLocation {
    * {@link #getLocation()} instead.
    */
   @Deprecated
-  public TString getSerial() {
+  public TSerial getSerial() {
     return serial;
   }
 
@@ -95,7 +95,7 @@ public class JRFLEntryLocation {
    * {@link #setLocation(Location)} instead.
    */
   @Deprecated
-  public void setSerial(TString value) {
+  public void setSerial(TSerial value) {
     this.serial = value;
   }
 
@@ -160,8 +160,8 @@ public class JRFLEntryLocation {
    * {@link #withLocation(Location)} instead.
    */
   @Deprecated
-  public JRFLEntryLocation withSerial(String value) {
-    setSerial(new TString(value));
+  public JRFLEntryLocation withSerial(TSerial value) {
+    setSerial(value);
     return this;
   }
 

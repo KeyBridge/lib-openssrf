@@ -24,6 +24,8 @@ import java.util.regex.Pattern;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.EDatasetType;
 import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 
 /**
@@ -64,12 +66,18 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TSerial", propOrder = {"value"})
-public class TSerial extends TString {
+public class TSerial extends AMetadata<TSerial> implements IMetadataType, Comparable<TSerial> {
 
   /**
    * The SERIAL number string pattern.
    */
   private static final String PATTERN = "^([A-Z0-9-]{1,5}):(\\w{0,4}):([A-Z]{2}):(\\S{1,15})$";
+
+  /**
+   * The value to which the metadata attributes are associated.
+   */
+  @XmlValue
+  protected String value;
 
   /**
    * The Serial number Country part (REQUIRED).
@@ -125,11 +133,13 @@ public class TSerial extends TString {
   /**
    * Construct a new data type instance with the indicated value.
    * <p>
-   * @param ssrfSerial a valid SSRF SERIAL string
+   * @param ssrfSerial a valid SSRF SERIAL string. Format is pattern (S29) with
+   *                   validation type SERIAL: "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}:
+   *                   \S{1,15}"
    * @throws IllegalArgumentException if the value does not conform to the
    *                                  SERIAL format
    */
-  private TSerial(String ssrfSerial) throws IllegalArgumentException {
+  public TSerial(String ssrfSerial) throws IllegalArgumentException {
     parse();
     this.value = ssrfSerial;
   }
@@ -354,7 +364,6 @@ public class TSerial extends TString {
    * <p>
    * @return the value of the value property.
    */
-  @Override
   public String getValue() {
     return value;
   }
@@ -365,14 +374,37 @@ public class TSerial extends TString {
    * If the input value is not null this method attempts to parse the serial
    * number into its component parts and set the internal fields accordingly.
    * <p>
-   * @param value a formatted SERIAL number String
+   * @param value a valid SSRF SERIAL string. Format is pattern (S29) with
+   *              validation type SERIAL: "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}:
+   *              \S{1,15}"
    * @throws IllegalArgumentException if the value does not conform to the
    *                                  SERIAL format
    */
-  @Override
   public void setValue(String value) {
     this.value = value;
     parse();
+  }
+
+  /**
+   * Determine if the Value is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetValue() {
+    return (this.value != null);
+  }
+
+  /**
+   * Sets the SSRF SERIAL number value.
+   * <p>
+   * @param value a valid SSRF SERIAL string. Format is pattern (S29) with
+   *              validation type SERIAL: "[A-Z0-9-]{1,5}:\w{0,4}:[A-Z]{2}:
+   *              \S{1,15}"
+   * @return this TSerial instance
+   */
+  public TSerial withValue(String value) {
+    setValue(value);
+    return this;
   }
 
   /**
@@ -471,7 +503,32 @@ public class TSerial extends TString {
     return digitCount;
   }
 
-  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals">
+  /**
+   * Determine if the required fields in this SSRF data type instance are set.
+   * <p>
+   * {@link TString} requires {@link ListCCL cls} and {@link String value}
+   * <p>
+   * Note that this method only checks for the presence of required information;
+   * this method does not validate the information format.
+   * <p>
+   * @return TRUE if required fields are set, otherwise FALSE
+   */
+  @Override
+  public boolean isSet() {
+    return super.isSet() && isSetValue();
+  }
+
+  /**
+   * Get the configured value.
+   * <p>
+   * @return the value.
+   */
+  @Override
+  public String toString() {
+    return value;
+  }
+
+  //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
   /**
    * Hash code is based upon the user-configured serial number portion of the
    * value.
@@ -507,6 +564,23 @@ public class TSerial extends TString {
       return super.equals(obj);
     }
     return Objects.equals(this.serial, ((TSerial) obj).serial);
+  }
+
+  /**
+   * Comparison and sorting is alphabetical based upon the String value.
+   * <p>
+   * @param o the other TString value
+   * @return alphabetical sort order
+   */
+  @Override
+  public int compareTo(TSerial o) {
+    if (o == null) {
+      return 1;
+    }
+    if (value == null) {
+      return -1;
+    }
+    return value.compareTo(o.getValue());
   }//</editor-fold>
 
 }

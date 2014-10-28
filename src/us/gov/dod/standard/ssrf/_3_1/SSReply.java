@@ -87,7 +87,7 @@ public class SSReply extends Common<SSReply> {
    */
   @XmlElement(name = "SSRequestRef", required = false)
   @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
-  private TString ssRequestRef;
+  private TSerial ssRequestRef;
   /**
    * ReplyingCountry - Replying Country (Required)
    * <p>
@@ -276,7 +276,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * @return the SSRequestRef value in a {@link TString} data type
    */
-  public TString getSSRequestRef() {
+  public TSerial getSSRequestRef() {
     return ssRequestRef;
   }
 
@@ -285,7 +285,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * @param value the SSRequestRef value in a {@link TString} data type
    */
-  public void setSSRequestRef(TString value) {
+  public void setSSRequestRef(TSerial value) {
     this.ssRequestRef = value;
   }
 
@@ -838,8 +838,8 @@ public class SSReply extends Common<SSReply> {
    * @param value An instances of type {@link String}
    * @return The current SSReply object instance
    */
-  public SSReply withSSRequestRef(String value) {
-    setSSRequestRef(new TString(value));
+  public SSReply withSSRequestRef(TSerial value) {
+    setSSRequestRef(value);
     return this;
   }
 
