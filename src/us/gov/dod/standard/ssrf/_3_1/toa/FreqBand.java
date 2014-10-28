@@ -17,11 +17,12 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.TOA;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -393,4 +394,123 @@ public class FreqBand {
     return isSetFreqMax() && isSetFreqMin();
   }
 
+  //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
+  /**
+   * Footnote (Optional)
+   * <p>
+   * Footnote contains the text and identifier of a Footnote, FCC Rule Part
+   * Number, Band User (e.g., "Military", "Civil Support Team"). or Band
+   * Application (e.g., "Wind Profiler").
+   * <p>
+   * @since 3.1.0rc2
+   */
+  @XmlTransient
+  private Set<Footnote> footnote;
+
+  /**
+   * Get the Footnote
+   * <p>
+   * Complex element Footnote contains the text and identifier of a Footnote,
+   * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
+   * or Band Application (e.g., "Wind Profiler").
+   * <p>
+   * @return a non-null but possibly empty list of {@link Footnote} instances
+   */
+  public Set<Footnote> getFootnote() {
+    if (footnote == null) {
+      footnote = new HashSet<>();
+    }
+    return this.footnote;
+  }
+
+  /**
+   * Determine if the Footnote is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetFootnote() {
+    return ((this.footnote != null) && (!this.footnote.isEmpty()));
+  }
+
+  /**
+   * Clear the Footnote field. This sets the field to null.
+   */
+  public void unsetFootnote() {
+    this.footnote = null;
+  }
+
+  /**
+   * Set the Footnote
+   * <p>
+   * Complex element Footnote contains the text and identifier of a Footnote,
+   * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
+   * or Band Application (e.g., "Wind Profiler").
+   * <p>
+   * @param values One or more instances of type {@link Footnote}
+   * @return The current TOA object instance
+   */
+  public FreqBand withFootnote(Footnote... values) {
+    if (values != null) {
+      getFootnote().addAll(new HashSet<>(Arrays.asList(values)));
+    }
+    return this;
+  }
+
+  /**
+   * Set the Footnote
+   * <p>
+   * Complex element Footnote contains the text and identifier of a Footnote,
+   * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
+   * or Band Application (e.g., "Wind Profiler").
+   * <p>
+   * @param values A collection of {@link Footnote} instances
+   * @return The current TOA object instance
+   */
+  public FreqBand withFootnote(Set<Footnote> values) {
+    if (values != null) {
+      getFootnote().addAll(values);
+    }
+    return this;
+  }
+
+  /**
+   * Update the Footnote data type references in this Freqband record.
+   * <p>
+   * This method builds the exported {@link #footnotes} field with values from
+   * the transient {@link #footnote} field. This method should typically be
+   * called after the SSRF is configured and (optionally) before exporting an
+   * SSRF message.
+   * <p>
+   * @since 3.1.0rc2
+   */
+  public void prepare() {
+    footnotes = new HashSet<>();
+    for (Footnote fn : getFootnote()) {
+      footnotes.add(fn.getIdx());
+    }
+  }
+
+  /**
+   * Update the Footnote data type references in this FreqBand record after
+   * loading from XML.
+   * <p>
+   * This method copies the transient {@link #footnote} with values from the
+   * imported {@link #footnotes} field. This method should typically be called
+   * after a SSRF is imported from XML.
+   * <p>
+   * @param root the SSRF root instance
+   * @since 3.1.0rc2
+   */
+  public void postLoad(SSRF root) {
+    if (footnotes == null || footnotes.isEmpty()) {
+      return;
+    }
+    for (TOA toa : root.getTOA()) {
+      for (Footnote fn : toa.getFootnote()) {
+        if (footnotes.contains(fn.getIdx())) {
+          getFootnote().add(fn);
+        }
+      }
+    }
+  }//</editor-fold>
 }
