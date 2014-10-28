@@ -20,8 +20,8 @@ import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.ChannelPlan;
+import us.gov.dod.standard.ssrf._3_1.TOA;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPS;
@@ -577,7 +577,7 @@ public class Allocation {
    * @return The current Allocation object instance
    */
   public Allocation withStnClass(Set<StnClass> values) {
-    if (values != null) {
+    if (values != null && !values.isEmpty()) {
       getStnClass().addAll(values);
     }
     return this;
@@ -696,6 +696,18 @@ public class Allocation {
   private Set<ChannelPlan> channelPlan;
 
   /**
+   * Footnote (Optional)
+   * <p>
+   * Footnote contains the text and identifier of a Footnote, FCC Rule Part
+   * Number, Band User (e.g., "Military", "Civil Support Team"). or Band
+   * Application (e.g., "Wind Profiler").
+   * <p>
+   * @since 3.1.0rc2
+   */
+  @XmlTransient
+  private Set<Footnote> footnote;
+
+  /**
    * Get the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
@@ -747,6 +759,72 @@ public class Allocation {
   }
 
   /**
+   * Get the Footnote
+   * <p>
+   * Complex element Footnote contains the text and identifier of a Footnote,
+   * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
+   * or Band Application (e.g., "Wind Profiler").
+   * <p>
+   * @return a non-null but possibly empty list of {@link Footnote} instances
+   */
+  public Set<Footnote> getFootnote() {
+    if (footnote == null) {
+      footnote = new HashSet<>();
+    }
+    return this.footnote;
+  }
+
+  /**
+   * Determine if the Footnote is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetFootnote() {
+    return ((this.footnote != null) && (!this.footnote.isEmpty()));
+  }
+
+  /**
+   * Clear the Footnote field. This sets the field to null.
+   */
+  public void unsetFootnote() {
+    this.footnote = null;
+  }
+
+  /**
+   * Set the Footnote
+   * <p>
+   * Complex element Footnote contains the text and identifier of a Footnote,
+   * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
+   * or Band Application (e.g., "Wind Profiler").
+   * <p>
+   * @param values One or more instances of type {@link Footnote}
+   * @return The current TOA object instance
+   */
+  public Allocation withFootnote(Footnote... values) {
+    if (values != null) {
+      getFootnote().addAll(new HashSet<>(Arrays.asList(values)));
+    }
+    return this;
+  }
+
+  /**
+   * Set the Footnote
+   * <p>
+   * Complex element Footnote contains the text and identifier of a Footnote,
+   * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
+   * or Band Application (e.g., "Wind Profiler").
+   * <p>
+   * @param values A collection of {@link Footnote} instances
+   * @return The current TOA object instance
+   */
+  public Allocation withFootnote(Set<Footnote> values) {
+    if (values != null) {
+      getFootnote().addAll(values);
+    }
+    return this;
+  }
+
+  /**
    * Update the SSRF data type references in this Allocation record.
    * <p>
    * This method builds the exported {@link #channelPlanRef} field with values
@@ -761,6 +839,10 @@ public class Allocation {
     for (ChannelPlan instance : getChannelPlan()) {
       this.channelPlanRef.add(instance.getSerial());
     }
+    footnotes = new HashSet<>();
+    for (Footnote fn : getFootnote()) {
+      footnotes.add(fn.getIdx());
+    }
   }
 
   /**
@@ -768,21 +850,31 @@ public class Allocation {
    * loading from XML.
    * <p>
    * This method builds the transient {@link #channelPlan} with values from the
-   * imported {@link #channelPlanRef} field. This method should typically be
-   * called after the Allocation is imported from XML.
+   * imported {@link #channelPlanRef} field. This method copies the transient
+   * {@link #footnote} with values from the imported {@link #footnotes} field.
+   * <p>
+   * This method should typically be called after the Allocation is imported
+   * from XML.
    * <p>
    * @param root the SSRF root instance
    * @since 3.1.0
    */
   public void postLoad(SSRF root) {
-    if (channelPlanRef == null || channelPlanRef.isEmpty()) {
-      return;
+    if (channelPlanRef != null && !channelPlanRef.isEmpty()) {
+      for (ChannelPlan instance : root.getChannelPlan()) {
+        if (channelPlanRef.contains(instance.getSerial())) {
+          channelPlan.add(instance);
+        }
+      }
     }
-    for (ChannelPlan instance : root.getChannelPlan()) {
-      if (channelPlanRef.contains(instance.getSerial())) {
-        channelPlan.add(instance);
+    if (footnotes != null && !footnotes.isEmpty()) {
+      for (TOA toa : root.getTOA()) {
+        for (Footnote fn : toa.getFootnote()) {
+          if (footnotes.contains(fn.getIdx())) {
+            getFootnote().add(fn);
+          }
+        }
       }
     }
   }//</editor-fold>
-
 }
