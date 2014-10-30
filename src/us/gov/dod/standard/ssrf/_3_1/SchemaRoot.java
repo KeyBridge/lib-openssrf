@@ -22,20 +22,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * SchemaRoot is the root element for any SSRF-XML message. It contains
- * attributes defining the namespace used. Any SSRF-XML message may contain any
- * number of datasets.
- * <p>
- * Example:
- * <pre>
- * &lt;SSRF&gt;
- *   &lt;Datasets_here/&gt;
- *   &lt;/SSRF&gt;
- * </pre>
+ * SchemaRoot is an abstract class extended by {@link SSRF} and {@link SMADEF}
+ * containing common attributes for both types.
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/30/2014
- * @param <T> the root class type implementing this schema
+ * @param <T> The desired message class type implementation. Must be either
+ *            {@link SSRF} or {@link SMADEF}.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SchemaRoot", propOrder = {
