@@ -23,6 +23,8 @@ import us.gov.dod.standard.ssrf._3_1.toa.Variance;
 /**
  * Enumerated values for fields using the ListCAV type.
  * <p>
+ * This is used to identify a Variance TYPE.
+ * <p>
  * Used in {@link Variance}
  * <p>
  * @author Jesse Caulfield
@@ -32,10 +34,24 @@ import us.gov.dod.standard.ssrf._3_1.toa.Variance;
 @XmlEnum
 public enum ListCAV {
 
+  /**
+   * Addition. Indicates that this variance service type extends (e.g.
+   * supplements) the parent allocation.
+   */
   @XmlEnumValue("Additional")
   ADDITIONAL("Additional"),
+  /**
+   * Modification. Indicates that this variance service type changes (e.g.
+   * modifies) the parent allocation.
+   */
   @XmlEnumValue("Different")
   DIFFERENT("Different");
+  /**
+   * Exclude. (Unofficial). Indicates that this variance service type is NOT
+   * allowed (e.g. excluded) from the parent allocation.
+   */
+//  @XmlEnumValue("Exclude")  EXCLUDE("Exclude");
+
   private final String value;
 
   ListCAV(String v) {
