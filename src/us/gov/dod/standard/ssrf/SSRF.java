@@ -20,10 +20,31 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.*;
 
 /**
- * This is the ROOT element for any SSRF message. It contains all SSRF
- * attributes and content.
+ * Standard Spectrum Resource Format (SSRF).
  * <p>
- * A SSRF message may contain any number of datasets.
+ * SSRF is based on the NATO Spectrum Management Allied Data Exchange
+ * Format-eXtensible Markup Language (SMADEF-XML) data standard. NTIA's Office
+ * of Spectrum Management Data Dictionary (OSMDD) is expected to also be
+ * compatible with SSRF and SMADEF-XML. (See {@link SMADEF})
+ * <p>
+ * SSRF is the ROOT element for any SSRF-formatted message. It contains all the
+ * message attributes and content. Example:
+ * <pre>
+ * &lt;SSRF&gt;
+ *   &lt;List of Dataset A/&gt;
+ *   &lt;List of Dataset B/&gt;
+ *   &lt;List of Dataset C/&gt;
+ *   ...
+ * &lt;/SSRF&gt;
+ * </pre> A SSRF message is essentially a flexible container and may contain any
+ * number of datasets. While each respective data element within a SSRF
+ * container may have a minimum required configuration actual SSRF message
+ * content and (extended) dataset configuration requirements are determined by
+ * the using business process and must be externally implemented by the
+ * developer.
+ * <p>
+ * Use the {@link SSRFProperties} and {@link SSRFUtility} classes to streamline
+ * SSRF message configuration and processing.
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
