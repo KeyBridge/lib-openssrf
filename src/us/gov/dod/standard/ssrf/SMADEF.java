@@ -22,17 +22,21 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.*;
 
 /**
- * This is the ROOT element for any SMADEF-XML message. It contains all
- * SMADEF-XML attributes and content.
+ * SMADEF-XML. This is the ROOT element for any SMADEF-XML message. It contains
+ * all SMADEF-XML attributes and content.
  * <p>
  * A SMADEF-XML message may contain any number of datasets.
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
+ * @deprecated Since 3.1.0rc1 SMADEF is not not implemented. Contact Key Bridge
+ * to request this data type and associated utilities are added to the
+ * development road map.
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SMADEF")
+@Deprecated
 public class SMADEF extends SchemaRoot<SMADEF> {
 
 }
