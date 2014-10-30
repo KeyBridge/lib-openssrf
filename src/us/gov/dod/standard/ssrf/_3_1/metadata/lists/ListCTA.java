@@ -39,9 +39,9 @@ public enum ListCTA {
   @XmlEnumValue("FCC Part")
   FCC_PART("FCC Part"),
   @XmlEnumValue("Footnote-ITU")
-  FOOTNOTE_ITU("Footnote-ITU"),
+  ITU("Footnote-ITU"),
   @XmlEnumValue("Footnote-National")
-  FOOTNOTE_NATIONAL("Footnote-National"),
+  NATIONAL("Footnote-National"),
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;
