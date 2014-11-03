@@ -116,15 +116,6 @@ public class Footnote implements Comparable<Footnote> {
   private BigInteger idx;
 
   /**
-   * The footnote TEXT locale. (Optional) (Unofficial)
-   * <p>
-   * This is a java.util.Locale BCP47 language TAG. e.g. 'en_US' used to
-   * identify the TEXT language and (possibly) support automated translation.
-   */
-  @XmlAttribute(name = "x-locale", required = false)
-  private String locale;
-
-  /**
    * Footnote constructor. Automatically sets the {@link #idx} value.
    */
   public Footnote() {
@@ -147,30 +138,6 @@ public class Footnote implements Comparable<Footnote> {
    */
   public void setFootnoteType(TString value) {
     this.footnoteType = value;
-  }
-
-  /**
-   * Get the footnote TEXT locale. This is a java.util.Locale BCP47 language
-   * TAG. e.g. 'en_US' used to identify the TEXT language and (possibly) support
-   * automated translation.
-   * <p>
-   * Defaults to the system default (typically "en_US") if not set.
-   * <p>
-   * @return A non-null {@link Locale} instance
-   */
-  public Locale getLocale() {
-    return locale != null ? Locale.forLanguageTag(locale) : Locale.getDefault();
-  }
-
-  /**
-   * Set the footnote TEXT locale. This is a java.util.Locale BCP47 language
-   * TAG. e.g. 'en_US' used to identify the TEXT language and (possibly) support
-   * automated translation.
-   * <p>
-   * @param locale A {@link Locale} instance
-   */
-  public void setLocale(Locale locale) {
-    this.locale = locale != null ? locale.toLanguageTag() : null;
   }
 
   /**
@@ -340,15 +307,17 @@ public class Footnote implements Comparable<Footnote> {
   }
 
   /**
-   * Set the footnote TEXT locale. This is a java.util.Locale BCP47 language
-   * TAG. e.g. 'en_US' used to identify the TEXT language and (possibly) support
-   * automated translation.
+   * Set the TEXT locale. This is a java.util.Locale BCP47 language TAG. e.g.
+   * 'en_US' used to identify the TEXT language and (possibly) support automated
+   * translation.
    * <p>
    * @param locale A {@link Locale} instance
    * @return The current Footnote object instance
    */
   public Footnote withLocale(Locale locale) {
-    setLocale(locale);
+    if (text != null) {
+      text.withLocale(locale);
+    }
     return this;
   }
 
@@ -364,7 +333,6 @@ public class Footnote implements Comparable<Footnote> {
       + (idx != null ? " idx [" + idx + "]" : "")
       + (footnoteType != null ? " footnoteType [" + footnoteType + "]" : "")
       + (identifier != null ? " identifier [" + identifier + "]" : "")
-      + (locale != null ? " locale [" + locale + "]" : "")
       + "}";
   }
 
