@@ -15,7 +15,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
-import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,6 +22,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -97,6 +97,46 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comp
   @Override
   public boolean isSet() {
     return super.isSet() && isSetValue();
+  }
+
+  /**
+   * Less than.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is less than the other value.
+   */
+  public boolean lt(Double value) {
+    return this.value.intValue() < value;
+  }
+
+  /**
+   * Less than or Equal.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is less than or Equal to the other value.
+   */
+  public boolean ltequal(Double value) {
+    return this.value.intValue() <= value;
+  }
+
+  /**
+   * Greater than.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is Greater than the other value.
+   */
+  public boolean gt(Double value) {
+    return this.value.intValue() > value;
+  }
+
+  /**
+   * Greater than or Equal.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is Greater than or Equal to the other value.
+   */
+  public boolean gtequal(Double value) {
+    return this.value.intValue() >= value;
   }
 
   /**

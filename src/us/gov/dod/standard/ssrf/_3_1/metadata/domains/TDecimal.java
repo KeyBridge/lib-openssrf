@@ -15,7 +15,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
-import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import java.math.BigDecimal;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,6 +22,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -110,6 +110,46 @@ public class TDecimal extends AMetadata<TDecimal> implements IMetadataType, Comp
   }
 
   /**
+   * Less than.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is less than the other value.
+   */
+  public boolean lt(Double value) {
+    return this.value.doubleValue() < value;
+  }
+
+  /**
+   * Less than or Equal.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is less than or Equal to the other value.
+   */
+  public boolean ltequal(Double value) {
+    return this.value.doubleValue() <= value;
+  }
+
+  /**
+   * Greater than.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is Greater than the other value.
+   */
+  public boolean gt(Double value) {
+    return this.value.doubleValue() > value;
+  }
+
+  /**
+   * Greater than or Equal.
+   * <p>
+   * @param value the other value
+   * @return TRUE if this value is Greater than or Equal to the other value.
+   */
+  public boolean gtequal(Double value) {
+    return this.value.doubleValue() >= value;
+  }
+
+  /**
    * Get the configured value.
    * <p>
    * @return the value.
@@ -163,7 +203,7 @@ public class TDecimal extends AMetadata<TDecimal> implements IMetadataType, Comp
     if (value == null) {
       return -1;
     }
-    return value.compareTo(o.getValue());
+    return this.value.compareTo(o.getValue());
   }//</editor-fold>
 
 }
