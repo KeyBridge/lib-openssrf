@@ -15,6 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.lists;
 
+import java.util.*;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
@@ -146,37 +147,130 @@ public enum ListCSN {
     return value;
   }
 
-  public static ListCSN fromValue(String v) {
-    for (ListCSN c : ListCSN.values()) {
-      if (c.value.equals(v)) {
-        return c;
-      }
+  /**
+   * Get a allocated service from a service name.
+   * <p>
+   * e.g. "RADIONAVIGATION-SATELLITE (space-to-Earth) (space-to-space)" will
+   * return "RADIONAVIGATION-SATELLITE".
+   * <p>
+   * Use the {@link qualifier} method for "except" or other qualifying
+   * statements.
+   * <p>
+   * @param value a frequency table allocation name
+   * @return a CSN entry if found
+   */
+  public static ListCSN fromValue(String value) {
+    /**
+     * Expect a pattern of A (extraA) except B (extraB)
+     * <p>
+     * Parse this by splitting on "extra" if present, then processing the left.
+     */
+    if (value.contains("except")) {
+      return parse(value.split("except")[0]);
     }
-    throw new IllegalArgumentException(v);
+    StringTokenizer st = new StringTokenizer(value, "[()]", false);
+    while (st.hasMoreTokens()) {
+      return parse(st.nextToken());
+    }
+    throw new IllegalArgumentException(value);
   }
 
   /**
-   * match a ListCSN entry with a NAME candidate. This method is designed to
+   * Match a ListCSN entry with a NAME candidate. This method is designed to
    * match frequency table entries (with spaces, parentheses and dashes).
    * <p>
    * @param name the frequency table allocation name
    * @return a match if found
    */
-  public static ListCSN fromName(String name) {
+  private static ListCSN parse(String name) {
     if (name == null || name.isEmpty()) {
       throw new IllegalArgumentException(name);
     }
     /**
+     * First try to match the name directly.
+     */
+    for (ListCSN csn : ListCSN.values()) {
+      if (csn.name().equalsIgnoreCase(name.trim().replaceAll("[\\W\\s]", "_"))) {
+        return csn;
+      }
+    }
+    /**
+     * If a name match fails then search for a match from longest to shortest.
+     * This assumes the "name" field contains extra junk descriptions and the
+     * allocation is buried somewhere within. Sort by reverse name length
+     */
+    List<ListCSN> csn = new ArrayList<>(Arrays.asList(ListCSN.values()));
+    Collections.sort(csn, new Comparator<ListCSN>() {
+
+      @Override
+      public int compare(ListCSN o1, ListCSN o2) {
+        return o1.name().length() > o2.name().length() ? -1 : 1;
+      }
+    });
+    /**
      * Replace all non-word and whitespace characters with underscore, then try
      * to match the name.
      */
-    for (ListCSN c : ListCSN.values()) {
-      if (c.name().equalsIgnoreCase(name.replaceAll("\\W", "_").replaceAll("\\s", "_"))) {
+    String query = name.replaceAll("[\\W\\s]", "_");
+    for (ListCSN c : csn) {
+      if (query.toLowerCase().matches("^" + c.name().toLowerCase() + ".*$")) {
         return c;
       }
-
     }
-    throw new IllegalArgumentException(name);
+    throw new IllegalArgumentException("ListCSN name not recognized: \"" + name + "\"");
+  }
+
+  /**
+   * Get a allocated service qualifying statement from a service name.
+   * <p>
+   * e.g. "RADIONAVIGATION-SATELLITE (space-to-Earth) (space-to-space)" will
+   * return "(space-to-Earth) (space-to-space)".
+   * <p>
+   * @param name a frequency table allocation name
+   * @return a CSN entry if found
+   */
+  public static String qualifier(String name) {
+    /**
+     * Try to match the first portion of the name, before any parentheses.
+     */
+    if (name.contains("except")) {
+      return "Except" + name.split("except")[1];
+    }
+    /**
+     * Try to match the first portion of the name, before any parentheses.
+     */
+    Set<String> qualifier = new HashSet<>();
+    StringTokenizer st = new StringTokenizer(name, "[()]", false);
+    while (st.hasMoreTokens()) {
+      String token = st.nextToken();
+      if (token != null && !token.trim().isEmpty()) {
+        /**
+         * If the token is NOT a service name then add it.
+         */
+        try {
+          parse(token);
+        } catch (Exception e) {
+          qualifier.add("(" + token.replaceAll("\\s+", " ") + ")");
+        }
+      }
+    }
+    /**
+     * If one or more qualifier were found then assemble a String.
+     */
+    if (!qualifier.isEmpty()) {
+      StringBuilder sb = new StringBuilder();
+      boolean first = true;
+      for (String entry : qualifier) {
+        if (first) {
+          sb.append(entry);
+          first = false;
+        } else {
+          sb.append(" ").append(entry);
+        }
+      }
+      return sb.toString();
+    }
+    return null;
   }
 
 }

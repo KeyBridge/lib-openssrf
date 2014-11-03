@@ -15,6 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.lists;
 
+import java.util.StringTokenizer;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
@@ -59,6 +60,39 @@ public enum ListCPS {
       }
     }
     throw new IllegalArgumentException(v);
+  }
+
+  /**
+   * Get a priority by analyzing the allocated service line. This method only
+   * examines the service case.
+   * <p>
+   * @param allocatedService an allocated service name.
+   * @return whether the allocated service name is primary or secondary
+   */
+  public static ListCPS fromName(String allocatedService) {
+    /**
+     * If the service name contains "except" then only parse the left portion of
+     * the string.
+     */
+    if (allocatedService.contains("except")) {
+      return fromName(allocatedService.split("except")[0]);
+    }
+    /**
+     * Tokenize the service on parentheses and analyze each entry. If a service
+     * type is found then analyze the name to look for upper/lower case
+     * characters.
+     */
+    StringTokenizer st = new StringTokenizer(allocatedService, "[()]", false);
+    while (st.hasMoreTokens()) {
+      String token = st.nextToken();
+      try {
+        if (ListCSN.fromValue(token) != null) {
+          return token.trim().matches("[A-Z\\W\\s&&[^a-z]]+") ? ListCPS.PRIMARY : ListCPS.SECONDARY;
+        }
+      } catch (Exception e) {
+      }
+    }
+    throw new IllegalArgumentException(allocatedService);
   }
 
 }
