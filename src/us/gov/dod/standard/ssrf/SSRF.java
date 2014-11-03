@@ -99,6 +99,41 @@ public class SSRF extends SchemaRoot<SSRF> {
   }
 
   /**
+   * Set the SSRF Properties for this SSRF instance.
+   * <p>
+   * This method creates a local copy of the input SSRFProperties values. To
+   * edit this SSRF instance properties use
+   * {@link #setProperty(String, String, String)}
+   * <p>
+   * Use {@link #setProperty(String, String, String)} to set and update
+   * additional properties.
+   * <p>
+   * @param ssrfProperties a SSRFProperties instance
+   * @return the current SSRF instance
+   * @since 3.1.0rc2
+   */
+  public SSRF withProperties(SSRFProperties ssrfProperties) {
+    setProperties(ssrfProperties);
+    return this;
+  }
+
+  /**
+   * Set a SSRF property. To unset a property simply set the field value to null
+   * or to an empty string "";
+   * <p>
+   * @param propertyName  A dot-delimited SSRF class and field name (e.g.
+   *                      "ChannelPlan.name")
+   * @param propertyValue the value to set the SSRF field (e.g. "My Channel
+   *                      Plan")
+   * @return the current SSRF instance
+   * @since 3.1.0rc2
+   */
+  public SSRF withProperty(String propertyName, String propertyValue) {
+    setProperty(propertyName, propertyValue);
+    return this;
+  }
+
+  /**
    * Unset (clear) a SSRF property.
    * <p>
    * @param propertyName a SSRF property name (e.g. "ChannelPlan.name")
