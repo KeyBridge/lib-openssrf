@@ -97,6 +97,15 @@ public class SSRFUtility {
    *         instance.
    */
   public static BigInteger nextIndex() {
+    /**
+     * Index values are UN6 and must remain below 100,000. Reset the atomic
+     * index counter to zero if the index value climbs above 10,000. This is
+     * somewhat conservative, but we NEVER expect to see more than a few indices
+     * in any given SSRF document.
+     */
+    if (atomicIndex.get() >= 1e4) {
+      atomicIndex.set(0);
+    }
     return new BigInteger(String.valueOf(Math.abs(atomicIndex.incrementAndGet())));
   }
 
@@ -553,10 +562,13 @@ public class SSRFUtility {
    * into their proper location and prepares the SSRF destination instance for
    * export.
    * <p>
-   * @param ssrf a SSRF working copy
+   * @param ssrf A SSRF working copy
+   * @return The input SSRF instance after preparation. The live object is
+   *         returned to support method chaining.
    */
-  public static void prepare(SSRF ssrf) {
+  public static SSRF prepare(SSRF ssrf) {
     prepare(ssrf, null);
+    return ssrf;
   }
 
   /**
@@ -770,10 +782,13 @@ public class SSRFUtility {
    * into their proper location and preparing the SSRF software class hierarchy
    * for working.
    * <p>
-   * @param rootInstance a {@link SSRF} instance
+   * @param ssrf a {@link SSRF} instance
+   * @return The input SSRF instance after post-load. The live object is
+   *         returned to support method chaining.
    */
-  public static void postLoad(SSRF rootInstance) {
-    postLoad(rootInstance, rootInstance);
+  public static SSRF postLoad(SSRF ssrf) {
+    postLoad(ssrf, ssrf);
+    return ssrf;
   }
 
   /**
