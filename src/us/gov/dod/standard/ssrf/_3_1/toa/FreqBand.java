@@ -19,6 +19,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.TOA;
@@ -57,7 +58,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
   "useIndicator",
   "allocation"
 })
-public class FreqBand {
+public class FreqBand implements Comparable<FreqBand> {
 
   /**
    * FreqMin - Minimum Frequency (Required)
@@ -214,7 +215,7 @@ public class FreqBand {
    */
   public Set<Allocation> getAllocation() {
     if (allocation == null) {
-      allocation = new HashSet<>();
+      allocation = new TreeSet<>();
     }
     return this.allocation;
   }
@@ -297,7 +298,9 @@ public class FreqBand {
    * @return The current FreqBand object instance
    */
   public FreqBand withUseIndicator(String value) {
-    setUseIndicator(new TString(value));
+    if (value != null && !value.isEmpty()) {
+      setUseIndicator(new TString(value));
+    }
     return this;
   }
 
@@ -364,6 +367,33 @@ public class FreqBand {
   }
 
   /**
+   * Test if this FreqBand record contains the indicated frequency.
+   * <p>
+   * @param frequency a frequency value (MHz)
+   * @return TRUE if freqMin &lt;= frequency AND freqMax &gt; frequency
+   */
+  public boolean contains(Double frequency) {
+    return this.freqMin.ltequal(frequency) && this.freqMax.gt(frequency);
+  }
+
+  /**
+   * Test if this FreqBand intersects the indicated frequency range.
+   * <p>
+   * This tests if EITHER the freqMin OR freqMax lie within the frequency range.
+   * <p>
+   * Intersection may not be complete - e.g. this freqBand record may extend
+   * beyond the Range.
+   * <p>
+   * @param rangeMin the range minimum frequency (MHz)
+   * @param rangeMax the range maximum frequency (MHz)
+   * @return TRUE if this frequency band intersects the range.
+   */
+  public boolean intersects(Double rangeMin, Double rangeMax) {
+    return (freqMin.gtequal(rangeMin) && freqMin.ltequal(rangeMax))
+      || (freqMax.gtequal(rangeMin) && freqMax.ltequal(rangeMax));
+  }
+
+  /**
    * Get a string representation of this FreqBand instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
@@ -392,6 +422,23 @@ public class FreqBand {
    */
   public boolean isSet() {
     return isSetFreqMax() && isSetFreqMin();
+  }
+
+  /**
+   * Comparable interface allows numerical sorting based upon the FreqMin value.
+   * <p>
+   * @param o the other object
+   * @return numerical sort order.
+   */
+  @Override
+  public int compareTo(FreqBand o) {
+    if (o == null) {
+      return 1;
+    }
+    if (freqMin == null || !freqMin.isSetValue()) {
+      return -1;
+    }
+    return freqMin.compareTo(o.getFreqMin());
   }
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
@@ -484,9 +531,11 @@ public class FreqBand {
    * @since 3.1.0rc2
    */
   public void prepare() {
-    footnotes = new HashSet<>();
-    for (Footnote fn : getFootnote()) {
-      footnotes.add(fn.getIdx());
+    if (footnote != null && !footnote.isEmpty()) {
+      footnotes = new HashSet<>();
+      for (Footnote fn : getFootnote()) {
+        footnotes.add(fn.getIdx());
+      }
     }
   }
 
