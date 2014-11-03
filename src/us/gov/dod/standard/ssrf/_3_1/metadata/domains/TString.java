@@ -15,11 +15,9 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
+import java.util.Locale;
 import java.util.Objects;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -40,6 +38,15 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    */
   @XmlValue
   protected String value;
+
+  /**
+   * The TEXT locale. (Optional) (Unofficial)
+   * <p>
+   * This is a java.util.Locale BCP47 language TAG. e.g. 'en_US' used to
+   * identify the TEXT language and (possibly) support automated translation.
+   */
+  @XmlAttribute(name = "x-locale", required = false)
+  private String locale;
 
   /**
    * Construct a new data type instance with the indicated value.
@@ -85,6 +92,30 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
   }
 
   /**
+   * Get the TEXT locale. This is a java.util.Locale BCP47 language TAG. e.g.
+   * 'en_US' used to identify the TEXT language and (possibly) support automated
+   * translation.
+   * <p>
+   * Defaults to the system default (typically "en_US") if not set.
+   * <p>
+   * @return A non-null {@link Locale} instance
+   */
+  public Locale getLocale() {
+    return locale != null ? Locale.forLanguageTag(locale) : Locale.getDefault();
+  }
+
+  /**
+   * Set the TEXT locale. This is a java.util.Locale BCP47 language TAG. e.g.
+   * 'en_US' used to identify the TEXT language and (possibly) support automated
+   * translation.
+   * <p>
+   * @param locale A {@link Locale} instance
+   */
+  public void setLocale(Locale locale) {
+    this.locale = locale != null ? locale.toLanguageTag() : null;
+  }
+
+  /**
    * Sets the value of the value property.
    * <p>
    * @param value the value to set
@@ -92,6 +123,19 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    */
   public TString withValue(String value) {
     setValue(value);
+    return this;
+  }
+
+  /**
+   * Set the TEXT locale. This is a java.util.Locale BCP47 language TAG. e.g.
+   * 'en_US' used to identify the TEXT language and (possibly) support automated
+   * translation.
+   * <p>
+   * @param locale A {@link Locale} instance
+   * @return The current Footnote object instance
+   */
+  public TString withLocale(Locale locale) {
+    setLocale(locale);
     return this;
   }
 
