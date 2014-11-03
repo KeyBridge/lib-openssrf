@@ -41,6 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Allocation", propOrder = {
   "allocatedService",
+  "qualifier",
   "priority",
   "effectiveDate",
   "expirationDate",
@@ -49,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
   "stnClass",
   "channelPlanRef"
 })
-public class Allocation {
+public class Allocation implements Comparable<Allocation> {
 
   /**
    * AllocatedService - Allocated Service (Required)
@@ -140,6 +141,14 @@ public class Allocation {
   private Set<BigInteger> footnotes;
 
   /**
+   * A modifier to the allocated service entry. (e.g. "Earth-to-Space"). This
+   * allows national regulators to customize or qualify a standard Allocated
+   * Service type to their local jurisdiction.
+   */
+  @XmlElement(name = "X-ServiceQualifier", required = false)
+  private TString qualifier;
+
+  /**
    * Get a radiocommunication service recognized by an administration that is
    * allocated to this frequency band (e.g., "Fixed Service").
    * <p>
@@ -157,6 +166,24 @@ public class Allocation {
    */
   public void setAllocatedService(TString value) {
     this.allocatedService = value;
+  }
+
+  /**
+   * Get a modifier to the allocated service entry. (e.g. "Earth-to-Space").
+   * <p>
+   * @return the service modifier String
+   */
+  public TString getQualifier() {
+    return qualifier;
+  }
+
+  /**
+   * Set modifier to the allocated service entry. (e.g. "Earth-to-Space").
+   * <p>
+   * @param qualifier a service modifier String
+   */
+  public void setQualifier(TString qualifier) {
+    this.qualifier = qualifier;
   }
 
   /**
@@ -442,7 +469,19 @@ public class Allocation {
    * @return The current Allocation object instance
    */
   public Allocation withAllocatedService(String value) {
-    setAllocatedService(new TString(value));
+    /**
+     * Intercept the scenario where the developer is trying to pass a ListCSN
+     * instance by NAME instead of value.
+     */
+    if (ListCSN.fromValue(value) != null) {
+      setAllocatedService(new TString(ListCSN.fromValue(value).value()));
+    } else {
+      try {
+        ListCSN.valueOf(value);
+        setAllocatedService(new TString(ListCSN.valueOf(value).value()));
+      } catch (Exception e) {
+      }
+    }
     return this;
   }
 
@@ -455,6 +494,18 @@ public class Allocation {
    */
   public Allocation withPriority(ListCPS value) {
     setPriority(new TString(value.value()));
+    return this;
+  }
+
+  /**
+   * Set if this service is a primary or secondary use of this band.
+   * ("Permitted" SHOULD only be used if the priority is unknown.)
+   * <p>
+   * @param value An instances of type {@link ListCPS} name()
+   * @return The current Allocation object instance
+   */
+  public Allocation withPriority(String value) {
+    setPriority(new TString(value));
     return this;
   }
 
@@ -650,6 +701,17 @@ public class Allocation {
   }
 
   /**
+   * Set modifier to the allocated service entry. (e.g. "Earth-to-Space").
+   * <p>
+   * @param qualifier a service modifier String
+   * @return this current Allocation instance.
+   */
+  public Allocation withQualifier(String qualifier) {
+    setQualifier(qualifier != null && !qualifier.isEmpty() ? new TString(qualifier) : null);
+    return this;
+  }
+
+  /**
    * Get a string representation of this Allocation instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
@@ -657,12 +719,12 @@ public class Allocation {
   @Override
   public String toString() {
     return "Allocation {"
+      + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
       + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
       + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
       + (priority != null ? " priority [" + priority + "]" : "")
       + (variance != null ? " variance [" + variance + "]" : "")
       + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
-      + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
       + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
       + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
       + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
@@ -682,6 +744,23 @@ public class Allocation {
    */
   public boolean isSet() {
     return isSetAllocatedService() && isSetPriority();
+  }
+
+  /**
+   * Comparison supports alphabetical sorting by allocated service name.
+   * <p>
+   * @param o the other record to compare
+   * @return alphabetical sort order
+   */
+  @Override
+  public int compareTo(Allocation o) {
+    if (o == null) {
+      return 1;
+    }
+    if (allocatedService == null || !allocatedService.isSetValue()) {
+      return -1;
+    }
+    return allocatedService.compareTo(o.getAllocatedService());
   }
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
@@ -801,9 +880,7 @@ public class Allocation {
    * @return The current TOA object instance
    */
   public Allocation withFootnote(Footnote... values) {
-    if (values != null) {
-      getFootnote().addAll(new HashSet<>(Arrays.asList(values)));
-    }
+    withFootnote(new HashSet<>(Arrays.asList(values)));
     return this;
   }
 
@@ -818,7 +895,7 @@ public class Allocation {
    * @return The current TOA object instance
    */
   public Allocation withFootnote(Set<Footnote> values) {
-    if (values != null) {
+    if (values != null && !values.isEmpty()) {
       getFootnote().addAll(values);
     }
     return this;
@@ -835,13 +912,17 @@ public class Allocation {
    * @since 3.1.0
    */
   public void prepare() {
-    this.channelPlanRef = new HashSet<>();
-    for (ChannelPlan instance : getChannelPlan()) {
-      this.channelPlanRef.add(instance.getSerial());
+    if (channelPlan != null && !channelPlan.isEmpty()) {
+      this.channelPlanRef = new HashSet<>();
+      for (ChannelPlan instance : getChannelPlan()) {
+        this.channelPlanRef.add(instance.getSerial());
+      }
     }
-    footnotes = new HashSet<>();
-    for (Footnote fn : getFootnote()) {
-      footnotes.add(fn.getIdx());
+    if (footnote != null && !footnote.isEmpty()) {
+      footnotes = new HashSet<>();
+      for (Footnote fn : getFootnote()) {
+        footnotes.add(fn.getIdx());
+      }
     }
   }
 
