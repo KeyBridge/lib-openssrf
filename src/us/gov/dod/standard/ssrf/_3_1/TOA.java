@@ -283,7 +283,7 @@ public class TOA extends Common<TOA> {
    */
   public Set<Footnote> getFootnote() {
     if (footnote == null) {
-      footnote = new HashSet<>();
+      footnote = new TreeSet<>();
     }
     return this.footnote;
   }
@@ -380,7 +380,7 @@ public class TOA extends Common<TOA> {
    */
   public Set<FreqBand> getFreqBand() {
     if (freqBand == null) {
-      freqBand = new HashSet<>();
+      freqBand = new TreeSet<>();
     }
     return this.freqBand;
   }
@@ -481,9 +481,7 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    */
   public TOA withFootnote(Footnote... values) {
-    if (values != null) {
-      getFootnote().addAll(new HashSet<>(Arrays.asList(values)));
-    }
+    withFootnote(new HashSet<>(Arrays.asList(values)));
     return this;
   }
 
@@ -498,7 +496,7 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    */
   public TOA withFootnote(Set<Footnote> values) {
-    if (values != null) {
+    if (values != null && !values.isEmpty()) {
       getFootnote().addAll(values);
     }
     return this;
@@ -724,9 +722,11 @@ public class TOA extends Common<TOA> {
   @Override
   public void prepare() {
     super.prepare();
-    this.channelPlanRef = new HashSet<>();
-    for (ChannelPlan instance : getChannelPlan()) {
-      this.channelPlanRef.add(instance.getSerial());
+    if (channelPlan != null && !channelPlan.isEmpty()) {
+      this.channelPlanRef = new HashSet<>();
+      for (ChannelPlan instance : getChannelPlan()) {
+        this.channelPlanRef.add(instance.getSerial());
+      }
     }
     for (FreqBand fb : getFreqBand()) {
       getFootnote().addAll(fb.getFootnote());
@@ -734,7 +734,6 @@ public class TOA extends Common<TOA> {
         footnote.addAll(allocation.getFootnote());
       }
     }
-
   }
 
   /**
