@@ -541,6 +541,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
       return super.hashCode();
     }
     int hash = 5;
+    hash = 47 * hash + Objects.hashCode(this.value);
     hash = 47 * hash + Objects.hashCode(this.serial);
     return hash;
   }
@@ -560,10 +561,19 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
     if (getClass() != obj.getClass()) {
       return false;
     }
-    if (this.serial == null) {
-      return super.equals(obj);
+    /**
+     * If the whole value matches then confirm equality. This is triggered when
+     * unmarshaling from XML.
+     */
+    if (Objects.equals(this.value, ((TSerial) obj).getValue())) {
+      return true;
     }
-    return Objects.equals(this.serial, ((TSerial) obj).serial);
+    /**
+     * If the serial-component matches then also confirm equality. This is
+     * triggerd when marshaling TO xml AND also accommodates resetting the
+     * country code.
+     */
+    return Objects.equals(this.serial, ((TSerial) obj).getSerial());
   }
 
   /**
@@ -582,5 +592,4 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
     }
     return value.compareTo(o.getValue());
   }//</editor-fold>
-
 }
