@@ -625,7 +625,6 @@ public class SSRFUtility {
       try {
         fieldValue = field.get(sourceInstance);
       } catch (IllegalArgumentException | IllegalAccessException ex) {
-//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
         continue;
       }
       /**
@@ -1024,7 +1023,6 @@ public class SSRFUtility {
       try {
         fieldValue = field.get(instance);
       } catch (IllegalArgumentException | IllegalAccessException ex) {
-//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
         continue;
       }
       /**
