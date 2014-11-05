@@ -140,8 +140,8 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
    *                                  SERIAL format
    */
   public TSerial(String ssrfSerial) throws IllegalArgumentException {
-    parse();
     this.value = ssrfSerial;
+    parse();
   }
 
   /**
