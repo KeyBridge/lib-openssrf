@@ -161,6 +161,16 @@ public enum ListCSN {
    */
   public static ListCSN fromValue(String value) {
     /**
+     * First try an exact match with the provided VALUE (also try NAME for
+     * maximum flexibility).
+     */
+    for (ListCSN listCSN : ListCSN.values()) {
+      if (listCSN.value().equalsIgnoreCase(value) || listCSN.name().equalsIgnoreCase(value)) {
+        return listCSN;
+      }
+    }
+    /**
+     * Next try to match a longer name, possibly with a qualifier attached.
      * Expect a pattern of A (extraA) except B (extraB)
      * <p>
      * Parse this by splitting on "extra" if present, then processing the left.
