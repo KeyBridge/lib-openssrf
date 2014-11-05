@@ -570,7 +570,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
     }
     /**
      * If the serial-component matches then also confirm equality. This is
-     * triggerd when marshaling TO xml AND also accommodates resetting the
+     * triggered when marshaling TO xml AND also accommodates resetting the
      * country code.
      */
     return Objects.equals(this.serial, ((TSerial) obj).getSerial());
