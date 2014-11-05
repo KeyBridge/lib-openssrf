@@ -169,6 +169,26 @@ public class Allocation implements Comparable<Allocation> {
   }
 
   /**
+   * Get a radiocommunication service recognized by an administration that is
+   * allocated to this frequency band (e.g., "Fixed Service").
+   * <p>
+   * This method adjusts the name to upper (PRIMARY) or lower (SECONDARY) case
+   * depending upon the allocation priority setting.
+   * <p>
+   * @return the AllocatedService value in a {@link TString} data type
+   */
+  public String getAllocatedServiceName() {
+    try {
+      ListCSN csn = ListCSN.fromValue(allocatedService.getValue());
+      return isPrimary()
+        ? csn.name().replaceAll("_", " ")
+        : csn.name().substring(0, 1) + csn.name().toLowerCase().substring(1).replaceAll("_", " ");
+    } catch (Exception e) {
+      return isPrimary() ? allocatedService.getValue() : allocatedService.getValue().toUpperCase();
+    }
+  }
+
+  /**
    * Get a modifier to the allocated service entry. (e.g. "Earth-to-Space").
    * <p>
    * @return the service modifier String
@@ -226,6 +246,21 @@ public class Allocation implements Comparable<Allocation> {
    */
   public boolean isSetPriority() {
     return (this.priority != null ? this.priority.isSetValue() : false);
+  }
+
+  /**
+   * Helper method to determine if this Allocation priority is PRIMARY.
+   * <p>
+   * @return TRUE if the priority is PRIMARY, otherwise FALSE.
+   */
+  public boolean isPrimary() {
+    try {
+      return priority != null
+        ? ListCPS.PRIMARY.equals(ListCPS.fromValue(priority.getValue()))
+        : false;
+    } catch (Exception e) {
+      return false;
+    }
   }
 
   /**
