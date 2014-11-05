@@ -47,7 +47,16 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comp
   }
 
   public TInteger(Integer value) {
-    this.value = value != null ? BigInteger.valueOf(value.intValue()) : null;
+    this.value = value != null ? BigInteger.valueOf(value.longValue()) : null;
+  }
+
+  /**
+   * Construct a new TInteger instance from a Double value.
+   * <p>
+   * @param value the value - only the whole number value is used.
+   */
+  public TInteger(Double value) {
+    this.value = value != null ? BigInteger.valueOf(value.longValue()) : null;
   }
 
   /**
