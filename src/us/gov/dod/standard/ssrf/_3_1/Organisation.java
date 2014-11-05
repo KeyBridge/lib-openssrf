@@ -994,6 +994,7 @@ public class Organisation extends Common<Organisation> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (roleRef == null || roleRef.isEmpty()) {
       return;
     }

@@ -2337,5 +2337,4 @@ public abstract class Common<T> implements Comparable<T> {
      */
     return this.getClass().getSimpleName().compareTo(o.getClass().getSimpleName());
   }//</editor-fold>
-
 }

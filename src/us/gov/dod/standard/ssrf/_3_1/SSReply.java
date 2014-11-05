@@ -1285,6 +1285,7 @@ public class SSReply extends Common<SSReply> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (ssRequestRef == null || !ssRequestRef.isSetValue()) {
       return;
     }

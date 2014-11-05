@@ -2867,6 +2867,7 @@ public class IntfReport extends Common<IntfReport> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (victimAsgnRef == null || !victimAsgnRef.isSetValue()) {
       return;
     }

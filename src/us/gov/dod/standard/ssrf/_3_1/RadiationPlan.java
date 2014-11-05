@@ -806,6 +806,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (locationRef == null || !locationRef.isSetValue()) {
       return;
     }

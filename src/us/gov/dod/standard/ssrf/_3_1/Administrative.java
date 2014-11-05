@@ -425,6 +425,7 @@ public class Administrative extends Common<Administrative> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (messageRef == null || !messageRef.isSetValue()) {
       return;
     }

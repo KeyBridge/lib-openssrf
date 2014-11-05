@@ -820,6 +820,7 @@ public class Role extends Common<Role> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (contactRef == null || contactRef.isEmpty()) {
       return;
     }

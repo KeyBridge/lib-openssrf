@@ -15,7 +15,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
@@ -4039,6 +4038,7 @@ public class Assignment extends Common<Assignment> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (relatedRef == null || relatedRef.isEmpty()) {
       return;
     }

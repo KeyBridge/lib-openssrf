@@ -1056,6 +1056,7 @@ public class FEDeployment extends Common<FEDeployment> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (feRef == null || !feRef.isSetValue()) {
       return;
     }

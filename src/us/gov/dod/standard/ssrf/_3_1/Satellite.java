@@ -1438,6 +1438,7 @@ public class Satellite extends Common<Satellite> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (launchLocRef == null || !launchLocRef.isSetValue()) {
       return;
     }

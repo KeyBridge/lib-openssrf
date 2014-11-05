@@ -1158,6 +1158,7 @@ public class Location extends Common<Location> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (locationRef == null || locationRef.isEmpty()) {
       return;
     }

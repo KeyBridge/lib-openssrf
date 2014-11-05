@@ -749,6 +749,7 @@ public class TOA extends Common<TOA> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (channelPlanRef == null || channelPlanRef.isEmpty()) {
       return;
     }

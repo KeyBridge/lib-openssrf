@@ -988,6 +988,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (owningOrganisationRef == null || !owningOrganisationRef.isSetValue()) {
       return;
     }

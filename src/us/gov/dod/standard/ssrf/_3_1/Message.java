@@ -353,6 +353,7 @@ public class Message extends Common<Message> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (datasetRef == null || datasetRef.isEmpty()) {
       return;
     }

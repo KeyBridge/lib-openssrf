@@ -1029,6 +1029,7 @@ public class Allotment extends Common<Allotment> {
    */
   @Override
   public void postLoad(SSRF root) {
+    super.postLoad(root);
     if (locationRef == null || locationRef.isEmpty()) {
       return;
     }
