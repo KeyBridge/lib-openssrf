@@ -16,14 +16,14 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -929,6 +929,18 @@ public class Station {
    * @return The current Station object instance
    */
   public Station withAntStructureHeight(Integer value) {
+    setAntStructureHeight(new TInteger(value));
+    return this;
+  }
+
+  /**
+   * Set the overall height, of the antenna support structure above ground
+   * level.
+   * <p>
+   * @param value An instances of type {@link Integer}
+   * @return The current Station object instance
+   */
+  public Station withAntStructureHeight(Double value) {
     setAntStructureHeight(new TInteger(value));
     return this;
   }
