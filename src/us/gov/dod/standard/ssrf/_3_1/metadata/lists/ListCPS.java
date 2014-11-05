@@ -26,6 +26,8 @@ import us.gov.dod.standard.ssrf._3_1.toa.Variance;
 /**
  * Enumerated values for fields using the ListCPS type.
  * <p>
+ * This is an Allocated Service PRIMARY/SECONDARY use type identifier.
+ * <p>
  * Used in {@link Allocation}, {@link ConfigFreq}, {@link Variance}
  * <p>
  * @author Jesse Caulfield
