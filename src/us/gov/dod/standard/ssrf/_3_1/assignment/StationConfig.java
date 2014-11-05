@@ -16,8 +16,8 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -819,6 +819,21 @@ public class StationConfig {
    * @return The current StationConfig object instance
    */
   public StationConfig withAntFeedpointHeight(Integer value) {
+    setAntFeedpointHeight(new TInteger(value));
+    return this;
+  }
+
+  /**
+   * Set the antenna feed point height above the terrain, in metres. In Data
+   * Item the case where the antenna is mounted pointing vertically to a
+   * reflector on the same structure, enter the height of the reflector above
+   * ground. If the Station is a flying object, this data represents the maximum
+   * altitude of the object above ground.
+   * <p>
+   * @param value An instances of type {@link Integer}
+   * @return The current StationConfig object instance
+   */
+  public StationConfig withAntFeedpointHeight(Double value) {
     setAntFeedpointHeight(new TInteger(value));
     return this;
   }
