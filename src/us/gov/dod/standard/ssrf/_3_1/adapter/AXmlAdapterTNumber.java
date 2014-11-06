@@ -18,6 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TDecimal;
@@ -85,6 +86,11 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
   private final Integer maxInclusive;
 
   /**
+   * The decimal format pattern defined by the total and fraction digit count.
+   */
+  private DecimalFormat df;
+
+  /**
    * Construct a new Number adapter. The minimum and maximum inclusive values
    * are not set, supporting unsigned, unbound numbers within the digit count.
    * <p>
@@ -96,10 +102,7 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
    *                       contains 3 fraction digits.
    */
   public AXmlAdapterTNumber(Integer totalDigits, Integer fractionDigits) {
-    this.totalDigits = totalDigits;
-    this.fractionDigits = fractionDigits;
-    this.minInclusive = null;
-    this.maxInclusive = null;
+    this(totalDigits, fractionDigits, null, null);
   }
 
   /**
@@ -119,6 +122,19 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
     this.fractionDigits = fractionDigits;
     this.minInclusive = minInclusive;
     this.maxInclusive = maxInclusive;
+    /**
+     * Build a DecimalFormat if configured.
+     */
+    if (totalDigits != null && fractionDigits != null) {
+      StringBuilder sb = new StringBuilder();
+      for (int i = 0; i < totalDigits; i++) {
+        sb.append("#");
+        if (i == (totalDigits - fractionDigits - 1)) {
+          sb.append(".");
+        }
+      }
+      this.df = new DecimalFormat(sb.toString());
+    }
   }
 
   /**
@@ -134,7 +150,9 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
    */
   @Override
   public String marshal(IMetadataType v) throws Exception {
-    return convert((Number) v.getValue()).getValue().toString();
+    return df != null
+      ? df.format(convert((Number) v.getValue()).getValue())
+      : convert((Number) v.getValue()).getValue().toString();
   }
 
   /**

@@ -18,6 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
@@ -84,6 +85,11 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
   private final Integer maxInclusive;
 
   /**
+   * The decimal format pattern defined by the total and fraction digit count.
+   */
+  private DecimalFormat df;
+
+  /**
    * Construct a new Number adapter. The minimum and maximum inclusive values
    * are not set, supporting unsigned, unbound numbers within the digit count.
    * <p>
@@ -95,10 +101,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                       contains 3 fraction digits.
    */
   public AXmlAdapterNumber(Integer totalDigits, Integer fractionDigits) {
-    this.totalDigits = totalDigits;
-    this.fractionDigits = fractionDigits;
-    this.minInclusive = null;
-    this.maxInclusive = null;
+    this(totalDigits, fractionDigits, null, null);
   }
 
   /**
@@ -118,6 +121,19 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
     this.fractionDigits = fractionDigits;
     this.minInclusive = minInclusive;
     this.maxInclusive = maxInclusive;
+    /**
+     * Build a DecimalFormat if configured.
+     */
+    if (totalDigits != null && fractionDigits != null) {
+      StringBuilder sb = new StringBuilder();
+      for (int i = 0; i < totalDigits; i++) {
+        sb.append("#");
+        if (i == (totalDigits - fractionDigits - 1)) {
+          sb.append(".");
+        }
+      }
+      this.df = new DecimalFormat(sb.toString());
+    }
   }
 
   /**
@@ -133,7 +149,9 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    */
   @Override
   public String marshal(Number v) throws Exception {
-    return v != null ? convert(v).toString() : null;
+    return v != null
+      ? df != null ? df.format(convert(v)) : convert(v).toString()
+      : null;
   }
 
   /**
