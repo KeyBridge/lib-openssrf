@@ -133,7 +133,10 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
           sb.append(".");
         }
       }
-      this.df = new DecimalFormat(sb.toString());
+      /**
+       * Require zeros on either side of the decimal point.
+       */
+      this.df = new DecimalFormat(sb.toString().replace("#.#", "0.0"));
     }
   }
 
