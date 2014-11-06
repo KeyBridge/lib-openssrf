@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
@@ -90,7 +90,7 @@ public class JRFLEntry {
    * Format is US2
    */
   @XmlElement(name = "Priority", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS2.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS2.class)
   private TString priority;
   /**
    * Justification - Justification (Required)
@@ -101,7 +101,7 @@ public class JRFLEntry {
    * Format is s255
    */
   @XmlElement(name = "Justification", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString justification;
   /**
    * ApprovalLevel - Approval Level (Optional)
@@ -116,7 +116,7 @@ public class JRFLEntry {
    * Seconds,enter the seconds of hour [0-59]
    */
   @XmlElement(name = "Seconds", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMINSEC.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString seconds;
   /**
    * Minutes - Minutes (Optional)
@@ -128,7 +128,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Minutes", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMINSEC.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString minutes;
   /**
    * Hours - Hours (Optional)
@@ -140,7 +140,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Hours", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterHOURS.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
   private TString hours;
   /**
    * DaysOfMonth - Days Of Month (Optional)
@@ -152,7 +152,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "DaysOfMonth", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
   private TString daysOfMonth;
   /**
    * Months - Months (Optional)
@@ -164,7 +164,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Months", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMONTHS.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
   private TString months;
   /**
    * DaysOfWeek - Days of Week (Optional)
@@ -176,7 +176,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "DaysOfWeek", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
   private TString daysOfWeek;
   /**
    * Years - Years (Optional)
@@ -188,7 +188,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Years", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterYEARS.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
   private TString years;
   /**
    * Duration - Duration (Optional)
@@ -215,7 +215,7 @@ public class JRFLEntry {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Duration", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterDURATION_UN4.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterDURATION_UN4.class)
   private TInteger duration;
   /**
    * AsgnAllotRef - Assignment or Allotment Serial (Optional)
@@ -229,7 +229,7 @@ public class JRFLEntry {
    * Format is pattern (S29)
    */
   @XmlElement(name = "AsgnAllotRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial asgnAllotRef;
   /**
    * FreqMin - Nominal or Minimum Frequency (Optional)
@@ -241,7 +241,7 @@ public class JRFLEntry {
    * Attribute group FreqRangeGrp (Optional)
    */
   @XmlElement(name = "FreqMin")
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Maximum Frequency (Optional)
@@ -255,7 +255,7 @@ public class JRFLEntry {
    * Attribute group FreqRangeGrp (Optional)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * Bandwidth - Bandwidth (Optional)
@@ -265,7 +265,7 @@ public class JRFLEntry {
    * Format is UN(16,9) [0..1.0E9] (MHz)
    */
   @XmlElement(name = "Bandwidth", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal bandwidth;
   /**
    * FreqUse - Frequency Use (Optional)

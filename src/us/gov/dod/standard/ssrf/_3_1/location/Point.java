@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -90,7 +90,7 @@ public class Point implements Comparable<Point> {
    * Attribute group Coord (Optional)
    */
   @XmlElement(name = "Lon", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
   private TString lon;
   /**
    * Lat - Latitude (Required)
@@ -105,7 +105,7 @@ public class Point implements Comparable<Point> {
    * Attribute group Coord (Optional)
    */
   @XmlElement(name = "Lat", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterLAT.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
   private TString lat;
   /**
    * TerrainElevation - Terrain Elevation (Optional)
@@ -116,7 +116,7 @@ public class Point implements Comparable<Point> {
    * Format is SN(7,2) (m)
    */
   @XmlElement(name = "TerrainElevation", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal terrainElevation;
   /**
    * AltitudeMin - Minimum Altitude Above Ground Level (Optional)
@@ -129,7 +129,7 @@ public class Point implements Comparable<Point> {
    * Attribute group Altitude (Optional)
    */
   @XmlElement(name = "AltitudeMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMin;
   /**
    * AltitudeMax - Maximum Altitude Above Ground Level (Optional)
@@ -145,7 +145,7 @@ public class Point implements Comparable<Point> {
    * Attribute group Altitude (Optional)
    */
   @XmlElement(name = "AltitudeMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMax;
   /**
    * WayPointIdx - Waypoint Index (Required)
@@ -159,7 +159,7 @@ public class Point implements Comparable<Point> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

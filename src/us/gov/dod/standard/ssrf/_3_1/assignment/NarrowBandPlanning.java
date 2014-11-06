@@ -18,6 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -47,7 +48,7 @@ public class NarrowBandPlanning {
    * Format is Date
    */
   @XmlElement(name = "ChangeDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar changeDate;
   /**
    * US:NBFreq - Narrow Band Frequency (Optional)
@@ -57,7 +58,7 @@ public class NarrowBandPlanning {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "NBFreq", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal nbFreq;
 
   /**

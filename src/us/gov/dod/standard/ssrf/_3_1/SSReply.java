@@ -17,6 +17,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -86,7 +87,7 @@ public class SSReply extends Common<SSReply> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "SSRequestRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial ssRequestRef;
   /**
    * ReplyingCountry - Replying Country (Required)
@@ -119,7 +120,7 @@ public class SSReply extends Common<SSReply> {
    * Format is Date
    */
   @XmlElement(name = "DateReceivedByCountry", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateReceivedByCountry;
   /**
    * EffectiveDate - Effective Date (Required)
@@ -129,7 +130,7 @@ public class SSReply extends Common<SSReply> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -142,7 +143,7 @@ public class SSReply extends Common<SSReply> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
@@ -158,7 +159,7 @@ public class SSReply extends Common<SSReply> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * US:ApprovalSPSNum - Approval SPS Number (Optional)
@@ -170,7 +171,7 @@ public class SSReply extends Common<SSReply> {
    * Format is S11
    */
   @XmlElement(name = "ApprovalSPSNum", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS11.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS11.class)
   private TString approvalSPSNum;
   /**
    * US:ERPNumber - ERP Number (Optional)
@@ -183,7 +184,7 @@ public class SSReply extends Common<SSReply> {
    * Format is S50
    */
   @XmlElement(name = "ERPNumber", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString erpNumber;
   /**
    * US:FASNumber - FAS Number (Optional)
@@ -194,7 +195,7 @@ public class SSReply extends Common<SSReply> {
    * Format is S50
    */
   @XmlElement(name = "FASNumber", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString fasNumber;
   /**
    * US:IRACNumber - IRAC Number (Optional)
@@ -206,7 +207,7 @@ public class SSReply extends Common<SSReply> {
    * Format is S50
    */
   @XmlElement(name = "IRACNumber", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString iracNumber;
   /**
    * US:ReplyingAuthority - Replying Authority (Optional)
@@ -216,14 +217,14 @@ public class SSReply extends Common<SSReply> {
    * Format is S100
    */
   @XmlElement(name = "ReplyingAuthority", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString replyingAuthority;
   /**
    * DistributionGroups (US), identify to whom the signed certification should
    * be distributed (e.g., "J-12 Holders").
    */
   @XmlElement(name = "DistributionGroups", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString distributionGroups;
   /**
    * US:CoordinationNum - Coordination Number (Optional)
@@ -238,7 +239,7 @@ public class SSReply extends Common<SSReply> {
    * Format is S15
    */
   @XmlElement(name = "CoordinationNum", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString coordinationNum;
   /**
    * CommentSource (Optional)

@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -46,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class SubcarrierFreq {
 
   @XmlElement(name = "Freq ", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freq;
   /**
    * FreqOffset - Subcarrier Frequency Offset (Optional)
@@ -56,7 +56,7 @@ public class SubcarrierFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqOffset", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqOffset;
   /**
    * FreqRest - Rest Frequency (Optional)
@@ -67,7 +67,7 @@ public class SubcarrierFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqRest", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqRest;
   /**
    * SubcarrierTone (Optional)

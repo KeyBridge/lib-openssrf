@@ -24,7 +24,7 @@ import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ExternalReference;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -62,7 +62,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * programmatically validated.
    */
   @XmlValue
-  @XmlTypeValidator(type = String.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterSERIAL.class)
   private String value;
   /**
    * cls - Classification (Required)
@@ -85,7 +85,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

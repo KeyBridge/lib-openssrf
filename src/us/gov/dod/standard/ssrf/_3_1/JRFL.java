@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
@@ -74,7 +75,7 @@ public class JRFL extends Common<JRFL> {
    * Format is DT
    */
   @XmlElement(name = "EffectiveDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar effectiveDateTime;
   /**
    * ExpirationDateTime - Expiration Date/Time (Optional)
@@ -86,7 +87,7 @@ public class JRFL extends Common<JRFL> {
    * Expiration date should be less than five years from the effective date.
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar expirationDateTime;
   /**
    * ReviewDate - Review Date (Optional)
@@ -99,7 +100,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group ExpireReviewDT (Required)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * Seconds - Seconds (Optionsl)
@@ -107,7 +108,7 @@ public class JRFL extends Common<JRFL> {
    * The seconds of hour [0-59]
    */
   @XmlElement(name = "Seconds", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMINSEC.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString seconds;
   /**
    * Minutes - Minutes (Optional)
@@ -119,7 +120,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Minutes", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMINSEC.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMINSEC.class)
   private TString minutes;
   /**
    * Hours - Hours (Optional)
@@ -131,7 +132,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Hours", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterHOURS.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterHOURS.class)
   private TString hours;
   /**
    * DaysOfMonth - Days Of Month (Optional)
@@ -143,7 +144,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "DaysOfMonth", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFMONTH.class)
   private TString daysOfMonth;
   /**
    * Months - Months (Optional)
@@ -155,7 +156,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Months", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMONTHS.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMONTHS.class)
   private TString months;
   /**
    * DaysOfWeek - Days of Week (Optional)
@@ -167,7 +168,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "DaysOfWeek", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterDAYSOFWEEK.class)
   private TString daysOfWeek;
   /**
    * Years - Years (Optional)
@@ -179,7 +180,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Years", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterYEARS.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterYEARS.class)
   private TString years;
   /**
    * Duration - Duration (Optional)
@@ -213,7 +214,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group TimeFrame (Optional)
    */
   @XmlElement(name = "Duration", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterDURATION_UN4.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterDURATION_UN4.class)
   private TInteger duration;
   /**
    * JRFLEntryLocation (Optional)

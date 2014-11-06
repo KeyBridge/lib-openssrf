@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEN;
@@ -58,7 +58,7 @@ public class PotentialVictims {
    * Format is S50
    */
   @XmlElement(name = "VictimName", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString victimName;
   /**
    * US:VictimNotation - Victim Notation (Optional)
@@ -69,7 +69,7 @@ public class PotentialVictims {
    * Format is US(20)
    */
   @XmlElement(name = "VictimNotation", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS20.class)
   private TString victimNotation;
 
   /**

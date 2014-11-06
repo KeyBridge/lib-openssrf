@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -59,7 +60,7 @@ public class ClsDerived {
    * Format is Date
    */
   @XmlElement(name = "Date", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar date;
   /**
    * US:Title - Derivative Classification Document Title (Required)
@@ -69,7 +70,7 @@ public class ClsDerived {
    * Format is S30
    */
   @XmlElement(name = "Title", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
   private TString title;
   /**
    * US:Org - Derivative Classification Publishing Organisa (Required)
@@ -79,7 +80,7 @@ public class ClsDerived {
    * Format is S30
    */
   @XmlElement(name = "Org", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
   private TString org;
 
   /**

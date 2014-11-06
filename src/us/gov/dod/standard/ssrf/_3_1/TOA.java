@@ -17,6 +17,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -75,7 +76,7 @@ public class TOA extends Common<TOA> {
    * Format is S50
    */
   @XmlElement(name = "Administration", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString administration;
   /**
    * EffectiveDate - Effective Date (Optional)
@@ -85,7 +86,7 @@ public class TOA extends Common<TOA> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -96,7 +97,7 @@ public class TOA extends Common<TOA> {
    * Format is Date
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * Title - Title (Optional)
@@ -106,7 +107,7 @@ public class TOA extends Common<TOA> {
    * Format is S100
    */
   @XmlElement(name = "Title", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString title;
   /**
    * Footnote (Optional)
@@ -123,7 +124,7 @@ public class TOA extends Common<TOA> {
    * ChannelPlanRef refers to a ChannelPlan.
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> channelPlanRef;
   /**
    * Country (Optional)

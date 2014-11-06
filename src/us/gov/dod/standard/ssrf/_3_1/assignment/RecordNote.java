@@ -20,7 +20,7 @@ import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.Note;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -49,7 +49,7 @@ public class RecordNote {
    * Format is pattern (S29)
    */
   @XmlElement(name = "NoteRef", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial noteRef;
   /**
    * US:Comments - Comments (Optional)
@@ -61,7 +61,7 @@ public class RecordNote {
    * Format is Memo
    */
   @XmlElement(name = "Comments", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString comments;
 
   /**

@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -121,7 +121,7 @@ public class SpreadSpectrum {
    * Attribute group FreqRangeGrp (Optional)
    */
   @XmlElement(name = "FreqMin")
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Maximum Frequency (Optional)
@@ -135,7 +135,7 @@ public class SpreadSpectrum {
    * Attribute group FreqRangeGrp (Optional)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * MaxGain - Spread Spectrum Processing Gain (Optional)
@@ -145,14 +145,14 @@ public class SpreadSpectrum {
    * Format is SN(6,3) (dB)
    */
   @XmlElement(name = "MaxGain", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal maxGain;
   /**
    * PulseFreqDev, Enter, for FM pulse radars, the total frequency shift during
    * the pulse width.
    */
   @XmlElement(name = "PulseFreqDev", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal pulseFreqDev;
   /**
    * InfoDataRate - Information Data Rate (Optional)
@@ -162,7 +162,7 @@ public class SpreadSpectrum {
    * Format is UN(10,3) (bits/sec)
    */
   @XmlElement(name = "InfoDataRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterINFODATARATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterINFODATARATE.class)
   private TDecimal infoDataRate;
   /**
    * ChipRate - Direct Sequence Chip Rate (Optional)
@@ -173,7 +173,7 @@ public class SpreadSpectrum {
    * Format is UN(16,9) (Mchips/sec)
    */
   @XmlElement(name = "ChipRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMCHIPS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMCHIPS.class)
   private TDecimal chipRate;
   /**
    * CodeRate - Code Rate (Optional)
@@ -185,7 +185,7 @@ public class SpreadSpectrum {
    * Format is UN(10,3) (symbols/bit)
    */
   @XmlElement(name = "CodeRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterCODERATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterCODERATE.class)
   private TDecimal codeRate;
   /**
    * PulseChirpRate - Chirp Rate (Optional)
@@ -196,7 +196,7 @@ public class SpreadSpectrum {
    * Format is UN(9,6) (Hz/sec)
    */
   @XmlElement(name = "PulseChirpRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterRFCHGRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterRFCHGRATE.class)
   private TDecimal pulseChirpRate;
   /**
    * PulseChirpFreqShift - Chirp Frequency Shift (Optional)
@@ -207,7 +207,7 @@ public class SpreadSpectrum {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "PulseChirpFreqShift", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal pulseChirpFreqShift;
   /**
    * PulseChirpDurationMin - Minimum Chirp Duration (Optional)
@@ -217,7 +217,7 @@ public class SpreadSpectrum {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PulseChirpDurationMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pulseChirpDurationMin;
   /**
    * PulseChirpDurationMax - Maximum Chirp Duration (Optional)
@@ -230,7 +230,7 @@ public class SpreadSpectrum {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PulseChirpDurationMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pulseChirpDurationMax;
   /**
    * TimeHopNumSlots - Number of Time Hop Slots (Optional)
@@ -242,7 +242,7 @@ public class SpreadSpectrum {
    * Attribute group TimeHop (Optional)
    */
   @XmlElement(name = "TimeHopNumSlots", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger timeHopNumSlots;
   /**
    * TimeHopPulsesPerDwell - Number of Pulses Per Dwell (Optional)
@@ -254,7 +254,7 @@ public class SpreadSpectrum {
    * Attribute group TimeHop (Optional)
    */
   @XmlElement(name = "TimeHopPulsesPerDwell", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN12.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN12.class)
   private TInteger timeHopPulsesPerDwell;
   /**
    * HopRate - Hopping Rate (Optional)
@@ -267,7 +267,7 @@ public class SpreadSpectrum {
    * Attribute group Hopset (Optional)
    */
   @XmlElement(name = "HopRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterHOPS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterHOPS.class)
   private TDecimal hopRate;
   /**
    * HopDwell - Hop Dwell Time (Optional)
@@ -279,7 +279,7 @@ public class SpreadSpectrum {
    * Attribute group Hopset (Optional)
    */
   @XmlElement(name = "HopDwell", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal hopDwell;
   /**
    * NumFreqsPerHopset - Number of Frequencies in the Hopset (Optional)
@@ -291,7 +291,7 @@ public class SpreadSpectrum {
    * Attribute group Hopset (Optional)
    */
   @XmlElement(name = "NumFreqsPerHopset", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN4.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger numFreqsPerHopset;
   /**
    * NumHopsets - Number of Hopsets (Optional)
@@ -305,7 +305,7 @@ public class SpreadSpectrum {
    * Attribute group Hopset (Optional)
    */
   @XmlElement(name = "NumHopsets", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN4.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger numHopsets;
   /**
    * FreqBlocking - Hopset Frequency Blocking Indicator (Optional)

@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -61,7 +61,7 @@ public class AllotFreq {
    * Attribute group FreqRangeGrp (Required)
    */
   @XmlElement(name = "FreqMin", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Maximum Frequency (Optional)
@@ -75,7 +75,7 @@ public class AllotFreq {
    * Attribute group FreqRangeGrp (Required)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * PairedFreqMin - Paired Nominal or Minimum Frequency (Optional)
@@ -87,7 +87,7 @@ public class AllotFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "PairedFreqMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal pairedFreqMin;
   /**
    * TuningStep - Tuning Step (Optional)
@@ -97,7 +97,7 @@ public class AllotFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "TuningStep", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal tuningStep;
   /**
    * AllotChannel - Frequency Identifier (Optional)
@@ -107,7 +107,7 @@ public class AllotFreq {
    * Format is S6
    */
   @XmlElement(name = "AllotChannel", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS6.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
   private TString allotChannel;
   /**
    * LocationRestriction (Optional)
@@ -116,7 +116,7 @@ public class AllotFreq {
    * forbidden.
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> locationRestrictionRef;
 
   /**

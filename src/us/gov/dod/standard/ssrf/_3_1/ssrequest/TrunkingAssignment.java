@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -75,7 +76,7 @@ public class TrunkingAssignment {
    * Format is S12
    */
   @XmlElement(name = "AgencySerialNum", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS12.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
   private TString agencySerialNum;
   /**
    * US:FreqMax - Frequency Maximum (Optional)
@@ -87,7 +88,7 @@ public class TrunkingAssignment {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * US:FreqMin - Frequency Minimum (Optional)
@@ -97,7 +98,7 @@ public class TrunkingAssignment {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * US:RelinquishmentDate - Relinquishment Date (Optional)
@@ -108,7 +109,7 @@ public class TrunkingAssignment {
    * Format is Date
    */
   @XmlElement(name = "RelinquishmentDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar relinquishmentDate;
 
   /**

@@ -20,7 +20,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -49,7 +50,7 @@ public class AntPatternPoint implements Comparable<AntPatternPoint> {
    * Format is UN(5,2) [0..360] (deg)
    */
   @XmlElement(name = "Dir", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal dir;
   /**
    * Gain - Antenna Radiation Pattern Gain (Required)
@@ -59,7 +60,7 @@ public class AntPatternPoint implements Comparable<AntPatternPoint> {
    * Format is SN(5,2) (dB)
    */
   @XmlElement(name = "Gain", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal gain;
 
   /**

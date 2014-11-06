@@ -20,7 +20,7 @@ import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -78,7 +78,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * Attribute group FreqRangeGrp (Required)
    */
   @XmlElement(name = "FreqMin", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Maximum Frequency (Optional)
@@ -92,7 +92,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * Attribute group FreqRangeGrp (Required)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * InBand - In Band Indicator (Optional)
@@ -122,7 +122,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * wavelengths) of adjacent channels.
    */
   @XmlElement(name = "ChannelSpacing", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal channelSpacing;
   /**
    * US:Duration - Frequency Dwell (Optional)
@@ -132,7 +132,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "Duration", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal duration;
   /**
    * US:ConfigFreqUse - Primary Usage (Optional)
@@ -148,7 +148,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * Period (US),- enter how often the frequency is being monitored or jammed.
    */
   @XmlElement(name = "Period", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal period;
   /**
    * US:PulseWidth - Pulse Width (Optional)
@@ -158,7 +158,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "PulseWidth", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal pulseWidth;
   /**
    * idx - Index (Required)
@@ -170,7 +170,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * parent element.
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

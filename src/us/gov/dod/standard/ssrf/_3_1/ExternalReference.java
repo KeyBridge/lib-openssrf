@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -84,7 +85,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is Date
    */
   @XmlElement(name = "Date", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar date;
   /**
    * AlternateIdentifier - Alternate Identifier (Optional)
@@ -94,7 +95,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is S50
    */
   @XmlElement(name = "Identifier", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString identifier;
   /**
    * AlternateIdentifier - Alternate Identifier (Optional)
@@ -104,7 +105,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is S50
    */
   @XmlElement(name = "AlternateIdentifier", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString alternateIdentifier;
   /**
    * Title - Full Title (Optional)
@@ -114,7 +115,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is S255
    */
   @XmlElement(name = "Title", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString title;
   /**
    * Author - Author of the Reference (Optional)
@@ -125,7 +126,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is S255
    */
   @XmlElement(name = "Author", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString author;
   /**
    * Organisation - Organisation that published the Reference (Optional)
@@ -136,7 +137,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is S50
    */
   @XmlElement(name = "Organisation", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString organisation;
   /**
    * DocumentCls - Document Classification (Optional)
@@ -157,7 +158,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is S255
    */
   @XmlElement(name = "ResourceLocator", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString resourceLocator;
   /**
    * US:IsAttached - Is Attached (Required)

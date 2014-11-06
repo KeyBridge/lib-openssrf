@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWC;
@@ -51,20 +51,20 @@ public class JammingAuthority {
    * JCEOI is in effect, it SHOULD take precedence.
    */
   @XmlElement(name = "JCACallSign", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString jcaCallSign;
   /**
    * JCAFreq (US) - The frequency assigned to the JCA. If an active JCEOI is in
    * effect, it SHOULD take precedence.
    */
   @XmlElement(name = "JCAFreq", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal jcaFreq;
   /**
    * JCALevel (US) - The required level of authorisation for the jamming plan.
    */
   @XmlElement(name = "JCALevel", required = true)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN2.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN2.class)
   private TInteger jcaLevel;
   /**
    * US:JCAState - Authorisation State (Required)

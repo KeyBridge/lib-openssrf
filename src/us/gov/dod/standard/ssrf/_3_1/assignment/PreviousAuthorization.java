@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -52,10 +53,10 @@ public class PreviousAuthorization {
    * Format is S8
    */
   @XmlElement(name = "DocketNum", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS8.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS8.class)
   private TString docketNum;
   @XmlElement(name = "Date ", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar date;
   /**
    * US:AgencySerialNum - Agency Serial Number (Optional)
@@ -65,7 +66,7 @@ public class PreviousAuthorization {
    * Format is S12
    */
   @XmlElement(name = "AgencySerialNum", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS12.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
   private TString agencySerialNum;
 
   /**

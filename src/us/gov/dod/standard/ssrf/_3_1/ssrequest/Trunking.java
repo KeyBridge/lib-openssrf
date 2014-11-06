@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -88,7 +89,7 @@ public class Trunking {
    * Attribute group (Optional)
    */
   @XmlElement(name = "AdditionalChannelsRationale", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString additionalChannelsRationale;
   /**
    * US:Dispatcher - Dispatcher Access (Optional)
@@ -99,7 +100,7 @@ public class Trunking {
    * Format is L:CBO
    */
   @XmlElement(name = "Dispatcher", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS1.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS1.class)
   private TString dispatcher;
   /**
    * US:DispatcherExplanation - Dispatcher Explanation (Optional)
@@ -109,7 +110,7 @@ public class Trunking {
    * Format is Memo
    */
   @XmlElement(name = "DispatcherExplanation", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString dispatcherExplanation;
   /**
    * US:EstimatedExpansionCost - Estimated Expansion Cost (Optional)
@@ -121,7 +122,7 @@ public class Trunking {
    * Attribute group (Optional)
    */
   @XmlElement(name = "EstimatedExpansionCost", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS70.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS70.class)
   private TString estimatedExpansionCost;
   /**
    * US:ExpansionTargetDate - Expansion Target Date (Optional)
@@ -134,7 +135,7 @@ public class Trunking {
    * Attribute group (Optional)
    */
   @XmlElement(name = "ExpansionTargetDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expansionTargetDate;
   /**
    * US:FreqMax - Frequency Maximum (Optional)
@@ -146,7 +147,7 @@ public class Trunking {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * US:NSEPUse - NSEP Use (Optional)
@@ -159,7 +160,7 @@ public class Trunking {
    * Format is Memo
    */
   @XmlElement(name = "NSEPUse", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString nsepUse;
   /**
    * US:NumFreqsRequired - Number of Frequencies Required (Optional)
@@ -171,7 +172,7 @@ public class Trunking {
    * Attribute group (Optional)
    */
   @XmlElement(name = "NumFreqsRequired", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN10.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN10.class)
   private TInteger numFreqsRequired;
   /**
    * US:NumRepeaters - Number of Repeaters (Optional)
@@ -181,7 +182,7 @@ public class Trunking {
    * Format is UN(7)
    */
   @XmlElement(name = "NumRepeaters", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN7.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN7.class)
   private TInteger numRepeaters;
   /**
    * US:NumUsers - Number of Users (Optional)
@@ -191,7 +192,7 @@ public class Trunking {
    * Format is UN(10)
    */
   @XmlElement(name = "NumUsers", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN10.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN10.class)
   private TInteger numUsers;
   /**
    * US:PreviousSPSDocketNum - Previous SPS Docket Number (Optional)
@@ -204,7 +205,7 @@ public class Trunking {
    * Attribute group (Optional)
    */
   @XmlElement(name = "PreviousSPSDocketNum", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS12.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS12.class)
   private TString previousSPSDocketNum;
   /**
    * US:RequestForExpansion - Request For Expansion (Optional)
@@ -229,7 +230,7 @@ public class Trunking {
    * Format is Memo
    */
   @XmlElement(name = "SeparateSystemJustification", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString separateSystemJustification;
   /**
    * US:FreqMin - Frequency Minimum (Optional)
@@ -239,7 +240,7 @@ public class Trunking {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * US:TrunkingAssignment (Optional)

@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -44,7 +44,7 @@ public class ObservedPolarisationValues {
    * then the value is assumed to be part of the 100% sample.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
   private TDecimal statisticalIndicator;
   /**
    * US:TiltAngleValue - Tilt Angle Value (Optional)
@@ -55,7 +55,7 @@ public class ObservedPolarisationValues {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleValue", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleValue;
 
   /**

@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -48,7 +48,7 @@ public class ObservedPulseValues {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ObservedPDValue", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal observedPDValue;
   /**
    * US:ObservedPRFValue - Observed PRF Value (Optional)
@@ -58,7 +58,7 @@ public class ObservedPulseValues {
    * Format is UN(7,2) (pps)
    */
   @XmlElement(name = "ObservedPRFValue", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PPS.class)
   private TDecimal observedPRFValue;
   /**
    * US:ObservedPRIValue - Observed PRI Value (Optional)
@@ -68,7 +68,7 @@ public class ObservedPulseValues {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ObservedPRIValue", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal observedPRIValue;
   /**
    * StatisticalIndicator (US), indicate how this specific data observation was
@@ -76,7 +76,7 @@ public class ObservedPulseValues {
    * then the value is assumed to be part of the 100% sample.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
   private TDecimal statisticalIndicator;
 
   /**

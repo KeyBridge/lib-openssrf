@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -72,7 +73,7 @@ public class SecurityClass {
    * Format is S30
    */
   @XmlElement(name = "ClsAuthority", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
   private TString clsAuthority;
   /**
    * US:SourceClsDate - Source Classification Date (Optional)
@@ -83,7 +84,7 @@ public class SecurityClass {
    * Format is Date
    */
   @XmlElement(name = "SourceClsDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar sourceClsDate;
   /**
    * US:ClsOrg - Original Classification Authority Organizatio (Optional)
@@ -93,7 +94,7 @@ public class SecurityClass {
    * Format is S30
    */
   @XmlElement(name = "ClsOrg", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
   private TString clsOrg;
   /**
    * US:ClsReason - Reason for Classification (Optional)
@@ -114,7 +115,7 @@ public class SecurityClass {
    * Format is S15
    */
   @XmlElement(name = "ClsReason", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString clsReason;
   /**
    * US:DeclsType - Declassification Instructions (Optional)
@@ -125,7 +126,7 @@ public class SecurityClass {
    * Format is S10
    */
   @XmlElement(name = "DeclsType", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
   private TString declsType;
   /**
    * US:DeclsDate - Declassification Date (Optional)
@@ -136,7 +137,7 @@ public class SecurityClass {
    * Format is Date
    */
   @XmlElement(name = "DeclsDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar declsDate;
   /**
    * US:DeclsEvent - Declassification Event (Optional)
@@ -147,7 +148,7 @@ public class SecurityClass {
    * Format is S200
    */
   @XmlElement(name = "DeclsEvent", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS200.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS200.class)
   private TString declsEvent;
   /**
    * US:Downgrade (Optional)

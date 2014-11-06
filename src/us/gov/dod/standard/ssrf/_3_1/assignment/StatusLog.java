@@ -15,10 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -64,7 +64,7 @@ public class StatusLog {
    * Format is DateTime
    */
   @XmlElement(name = "DateTime", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar dateTime;
   /**
    * US:State - State (Required)
@@ -74,7 +74,7 @@ public class StatusLog {
    * Format is L:UST
    */
   @XmlElement(name = "State", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString state;
   /**
    * US:AgencyCode - Agency Code (Optional)
@@ -84,7 +84,7 @@ public class StatusLog {
    * Format is S80
    */
   @XmlElement(name = "AgencyCode", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS80.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS80.class)
   private TString agencyCode;
   /**
    * US:Comment - Comment (Optional)
@@ -94,7 +94,7 @@ public class StatusLog {
    * Format is S255
    */
   @XmlElement(name = "Comment", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString comment;
   /**
    * US:POCRef - Point Of Contact Reference (Optional)
@@ -105,7 +105,7 @@ public class StatusLog {
    * Format is pattern (S29)
    */
   @XmlElement(name = "POCRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial pocRef;
 
   /**

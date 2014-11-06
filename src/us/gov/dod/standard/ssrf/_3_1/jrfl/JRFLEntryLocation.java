@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -51,7 +51,7 @@ public class JRFLEntryLocation {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
@@ -65,7 +65,7 @@ public class JRFLEntryLocation {
    * Format is SN(7,2) (m)
    */
   @XmlElement(name = "AntFeedpointHeight", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterHEIGHT_UN4.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterHEIGHT_UN4.class)
   private TInteger antFeedpointHeight;
 
   /**

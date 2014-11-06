@@ -17,7 +17,7 @@ package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTI;
@@ -47,7 +47,7 @@ public class Time {
   @XmlElement(name = "Period", required = false)
   private TString period;
   @XmlElement(name = "UsageDescription ", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString usageDescription;
 
   /**

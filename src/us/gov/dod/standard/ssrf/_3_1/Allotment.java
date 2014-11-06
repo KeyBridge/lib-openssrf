@@ -17,6 +17,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -89,7 +90,7 @@ public class Allotment extends Common<Allotment> {
    * Format is S100
    */
   @XmlElement(name = "Title", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString title;
   /**
    * UsageType - Type of Usage (Optional)
@@ -112,7 +113,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Date
    */
   @XmlElement(name = "DateResponseRequired", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateResponseRequired;
   /**
    * EffectiveDate - Effective Date (Required)
@@ -122,7 +123,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -135,7 +136,7 @@ public class Allotment extends Common<Allotment> {
    * Attribute group ExpireReview (Required)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
@@ -152,7 +153,7 @@ public class Allotment extends Common<Allotment> {
    * Attribute group ExpireReview (Required)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * Requirement - Description of Requirement (Optional)
@@ -162,7 +163,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Memo
    */
   @XmlElement(name = "Requirement", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString requirement;
   /**
    * Project (Optional)
@@ -186,7 +187,7 @@ public class Allotment extends Common<Allotment> {
    * LocationRef references a Location dataset.
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> locationRef;
   /**
    * Emission (Optional)

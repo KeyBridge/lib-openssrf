@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -51,7 +51,7 @@ public class ObservedERPValues {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ERPDwell", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal erpDwell;
   /**
    * US:ERPValue - Observed ERP Value (Required)
@@ -63,7 +63,7 @@ public class ObservedERPValues {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "ERPValue", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal erpValue;
   /**
    * StatisticalIndicator (US), indicate how this specific data observation was
@@ -71,7 +71,7 @@ public class ObservedERPValues {
    * value is assumed to be part of the 100% sample size.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
   private TDecimal statisticalIndicator;
 
   /**

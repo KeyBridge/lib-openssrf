@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -144,7 +144,7 @@ public class ObservedScanAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "AzBoresightAngle", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal azBoresightAngle;
   /**
    * US:AzScanChangeRate - Azimuth Scan Change Rate (Optional)
@@ -155,7 +155,7 @@ public class ObservedScanAnalysis {
    * Format is UN(12,6) (μsec/sec)
    */
   @XmlElement(name = "AzScanChangeRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal azScanChangeRate;
   /**
    * US:AzScanRateExtremeMax - Extreme Horizontal Scan Rate Max (Optional)
@@ -169,7 +169,7 @@ public class ObservedScanAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "AzScanRateExtremeMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal azScanRateExtremeMax;
   /**
    * US:AzScanRateExtremeMin - Extreme Horizontal Scan Rate Min (Optional)
@@ -180,7 +180,7 @@ public class ObservedScanAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "AzScanRateExtremeMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal azScanRateExtremeMin;
   /**
    * US:AzScanRateMean - Mean Horizontal Scan Rate (Optional)
@@ -191,7 +191,7 @@ public class ObservedScanAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "AzScanRateMean", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal azScanRateMean;
   /**
    * US:AzScanRateMedian - Most Probable Horizontal Scan Rate (Optional)
@@ -202,7 +202,7 @@ public class ObservedScanAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "AzScanRateMedian", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal azScanRateMedian;
   /**
    * US:AzScanSector - Azimuth ScanSector (Optional)
@@ -213,7 +213,7 @@ public class ObservedScanAnalysis {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "AzScanSector", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal azScanSector;
   /**
    * US:AzScanSectorMax - Azimuth ScanSectorMax (Optional)
@@ -224,7 +224,7 @@ public class ObservedScanAnalysis {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "AzScanSectorMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal azScanSectorMax;
   /**
    * US:AzScanVelocity - Azimuth ScanVelocity (Optional)
@@ -235,14 +235,14 @@ public class ObservedScanAnalysis {
    * Format is UN(6,2) (deg/sec)
    */
   @XmlElement(name = "AzScanVelocity", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
   private TDecimal azScanVelocity;
   /**
    * Vertical Scan Change Rate (US) - The rate of change for vertical Scan
    * Period variations expressed in Scan Period change per unit of time
    */
   @XmlElement(name = "ElevScanChangeRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal elevScanChangeRate;
   /**
    * Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
@@ -253,7 +253,7 @@ public class ObservedScanAnalysis {
    * than US:ElevScanRateExtremeMin.
    */
   @XmlElement(name = "ElevScanRateExtremeMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal elevScanRateExtremeMax;
   /**
    * Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
@@ -261,7 +261,7 @@ public class ObservedScanAnalysis {
    * a statistical study of a data set.
    */
   @XmlElement(name = "ElevScanRateExtremeMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal elevScanRateExtremeMin;
   /**
    * US:ElevScanRateMean - Mean Vertical Scan Rate (Optional)
@@ -272,7 +272,7 @@ public class ObservedScanAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "ElevScanRateMean", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal elevScanRateMean;
   /**
    * US:ElevScanRateMedian - Most Probable Vertical Scan Rate (Optional)
@@ -283,7 +283,7 @@ public class ObservedScanAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "ElevScanRateMedian", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal elevScanRateMedian;
   /**
    * US:ElevScanSector - Vertical Scan Sector (Optional)
@@ -294,7 +294,7 @@ public class ObservedScanAnalysis {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "ElevScanSector", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal elevScanSector;
   /**
    * US:ElevScanSectorMax - Vertical Scan Sector Max (Optional)
@@ -305,7 +305,7 @@ public class ObservedScanAnalysis {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "ElevScanSectorMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal elevScanSectorMax;
   /**
    * US:ElevScanVelocity - Vertical Scan Velocity (Optional)
@@ -316,7 +316,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6,2) (deg/sec)
    */
   @XmlElement(name = "ElevScanVelocity", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
   private TDecimal elevScanVelocity;
   /**
    * US:NumBeamPositionsPerScan - Num Beam Positions Per Scan (Optional)
@@ -326,7 +326,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumBeamPositionsPerScan", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numBeamPositionsPerScan;
   /**
    * US:NumBeamPositionsTotal - Total Number of Beam Positions (Optional)
@@ -338,7 +338,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumBeamPositionsTotal", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numBeamPositionsTotal;
   /**
    * US:NumBeamsPerRaster - Num Beams Per Raster (Optional)
@@ -349,7 +349,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumBeamsPerRaster", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numBeamsPerRaster;
   /**
    * US:NumRastersPerCycle - Num Rasters Per Cycle (Optional)
@@ -360,7 +360,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumRastersPerCycle", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numRastersPerCycle;
   /**
    * US:NumScanPositions - Number of Scan Positions (Optional)
@@ -371,7 +371,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumScanPositions", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numScanPositions;
   /**
    * US:NumScanValues - Number of Scan Values (Optional)
@@ -382,7 +382,7 @@ public class ObservedScanAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumScanValues", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numScanValues;
   /**
    * US:ScanAdaptiveDriverDesc - Scan Adaptive Driver Description (Optional)
@@ -393,7 +393,7 @@ public class ObservedScanAnalysis {
    * Format is S500
    */
   @XmlElement(name = "ScanAdaptiveDriverDesc", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString scanAdaptiveDriverDesc;
   /**
    * US:ScanAdaptiveRuleDesc - Scan Adaptive Rule Description (Optional)
@@ -403,7 +403,7 @@ public class ObservedScanAnalysis {
    * Format is S500
    */
   @XmlElement(name = "ScanAdaptiveRuleDesc", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString scanAdaptiveRuleDesc;
   /**
    * US:ScanAngleAzStart - Scan Angle Azimuth Start (Optional)
@@ -414,7 +414,7 @@ public class ObservedScanAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "ScanAngleAzStart", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal scanAngleAzStart;
   /**
    * US:ScanAngleAzStop - Scan Angle Azimuth Stop (Optional)
@@ -425,7 +425,7 @@ public class ObservedScanAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "ScanAngleAzStop", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal scanAngleAzStop;
   /**
    * US:ScanAngleElevStart - Scan Angle Elevation Start (Optional)
@@ -436,7 +436,7 @@ public class ObservedScanAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "ScanAngleElevStart", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal scanAngleElevStart;
   /**
    * US:ScanAngleElevStop - Scan Angle Elevation Stop (Optional)
@@ -447,7 +447,7 @@ public class ObservedScanAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "ScanAngleElevStop", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal scanAngleElevStop;
   /**
    * US:ScanDwell - Scan Dwell (Optional)
@@ -457,7 +457,7 @@ public class ObservedScanAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ScanDwell", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal scanDwell;
   /**
    * US:ScanDwellSequence - Scan Dwell Sequence (Optional)
@@ -468,7 +468,7 @@ public class ObservedScanAnalysis {
    * Format is S500
    */
   @XmlElement(name = "ScanDwellSequence", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString scanDwellSequence;
   /**
    * US:ScanDwellTime - Scan Dwell Time (Optional)
@@ -479,7 +479,7 @@ public class ObservedScanAnalysis {
    * Format is UN(12,6) (μsec/sec)
    */
   @XmlElement(name = "ScanDwellTime", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
   private TDecimal scanDwellTime;
   /**
    * ScanElevContinuous (US), indicate the if the scan elevation progression is

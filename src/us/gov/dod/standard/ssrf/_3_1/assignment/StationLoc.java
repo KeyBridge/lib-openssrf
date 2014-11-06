@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -78,7 +78,7 @@ public class StationLoc {
    * Format is SERIAL (S29)
    */
   @XmlElement(name = "LocSatRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial locSatRef;
   /**
    * US:LocationRadius - Location Radius (Optional)
@@ -90,7 +90,7 @@ public class StationLoc {
    * Format is UN(9,4) (km)
    */
   @XmlElement(name = "LocationRadius", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
   private TDecimal locationRadius;
   /**
    * US:ServiceVolumeLocRef - Service Volume Identifier (Optional)
@@ -105,7 +105,7 @@ public class StationLoc {
    * Attribute group SV (Optional)
    */
   @XmlElement(name = "ServiceVolumeLocRef")
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString serviceVolumeLocRef;
   /**
    * US:ServiceVolumeRadius - Service Volume Radius (Optional)
@@ -119,7 +119,7 @@ public class StationLoc {
    * Attribute group SV (Optional)
    */
   @XmlElement(name = "ServiceVolumeRadius", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTEARTH.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTEARTH.class)
   private TDecimal serviceVolumeRadius;
   /**
    * US:ServiceVolumeHeight - Service Volume Height (Optional)
@@ -134,7 +134,7 @@ public class StationLoc {
    * Attribute group SV (Optional)
    */
   @XmlElement(name = "ServiceVolumeHeight", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal serviceVolumeHeight;
 
   /**

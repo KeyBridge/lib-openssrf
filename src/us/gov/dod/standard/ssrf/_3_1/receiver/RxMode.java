@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -96,7 +96,7 @@ public class RxMode {
    * Attribute group ModeInfo (Required)
    */
   @XmlElement(name = "ModeID", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
   /**
    * Description - Mode Description (Optional)
@@ -109,7 +109,7 @@ public class RxMode {
    * Attribute group ModeInfo (Required)
    */
   @XmlElement(name = "Description", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
    * RxType - Receiver Type (Optional)
@@ -132,7 +132,7 @@ public class RxMode {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "NecessaryBw", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal necessaryBw;
   /**
    * Tunability - Tunability (Optional)
@@ -158,11 +158,11 @@ public class RxMode {
   private TString tuningMethod;
 
   @XmlElement(name = "IntermodPct", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal intermodPct;
 
   @XmlElement(name = "IntermodEffect", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString intermodEffect;
   /**
    * SensitivityLevel - Sensitivity Level (Optional)
@@ -177,7 +177,7 @@ public class RxMode {
    * Attribute group Sensitivity (Optional)
    */
   @XmlElement(name = "SensitivityLevel", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBM.class)
   private TDecimal sensitivityLevel;
   /**
    * NoiseFigure - Noise Figure (Optional)
@@ -192,7 +192,7 @@ public class RxMode {
    * Attribute group Sensitivity (Optional)
    */
   @XmlElement(name = "NoiseFigure", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal noiseFigure;
   /**
    * NoiseTemp - Noise Temperature (Optional)
@@ -208,7 +208,7 @@ public class RxMode {
    * Attribute group Sensitivity (Optional)
    */
   @XmlElement(name = "NoiseTemp", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterKELVINS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterKELVINS.class)
   private TDecimal noiseTemp;
   /**
    * SensitivityCriteriaType - Type of Sensitivity Criteria (Optional)
@@ -234,7 +234,7 @@ public class RxMode {
    * Attribute group Sensitivity (Optional)
    */
   @XmlElement(name = "SensitivityCriteriaLevel", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSCLEVEL.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCLEVEL.class)
   private TDecimal sensitivityCriteriaLevel;
   /**
    * SensitivityCriteriaText - Sensitivity Criteria Description (Optional)
@@ -246,7 +246,7 @@ public class RxMode {
    * Attribute group Sensitivity (Optional)
    */
   @XmlElement(name = "SensitivityCriteriaText", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString sensitivityCriteriaText;
   /**
    * PostDetectionFreqMin - Minimum Post Detection Frequency (Optional)
@@ -258,7 +258,7 @@ public class RxMode {
    * Attribute group PostDetection (Optional)
    */
   @XmlElement(name = "PostDetectionFreqMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal postDetectionFreqMin;
   /**
    * PostDetectionFreqMax - Maximum Post Detection Frequency (Optional)
@@ -273,10 +273,10 @@ public class RxMode {
    * Attribute group PostDetection (Optional)
    */
   @XmlElement(name = "PostDetectionFreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal postDetectionFreqMax;
   @XmlElement(name = "ProcessingGainMin ", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal processingGainMin;
   /**
    * ProcessingGainMax - Maximum Processing Gain (Optional)
@@ -290,7 +290,7 @@ public class RxMode {
    * Format is SN(6,3) (dB)
    */
   @XmlElement(name = "ProcessingGainMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal processingGainMax;
   /**
    * SpuriousRejection - Rejection of Spurious Emissions (Optional)
@@ -305,7 +305,7 @@ public class RxMode {
    * Format is UN(5,2) [0..150] (dB)
    */
   @XmlElement(name = "SpuriousRejection", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterREJECTION_DB1.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterREJECTION_DB1.class)
   private TDecimal spuriousRejection;
   /**
    * ImageRejection - Rejection on Image Frequency (Optional)
@@ -320,7 +320,7 @@ public class RxMode {
    * Format is UN(5,2) [0..150] (dB)
    */
   @XmlElement(name = "ImageRejection", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterREJECTION_DB1.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterREJECTION_DB1.class)
   private TDecimal imageRejection;
   /**
    * IntermodRejection - Rejection of Intermodulation (Optional)
@@ -333,7 +333,7 @@ public class RxMode {
    * Format is UN(5,2) [0..200] (dB)
    */
   @XmlElement(name = "IntermodRejection", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterREJECTION_DB2.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterREJECTION_DB2.class)
   private TDecimal intermodRejection;
   /**
    * AdjacentChannelSelectivity - Adjacent Channel Selectivity (Optional)
@@ -345,7 +345,7 @@ public class RxMode {
    * Format is SN(6,3) (dBm)
    */
   @XmlElement(name = "AdjacentChannelSelectivity", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal adjacentChannelSelectivity;
   /**
    * FreqTolerance - Frequency Tolerance (Required)
@@ -359,7 +359,7 @@ public class RxMode {
    * Attribute group FreqTolerance (Optional)
    */
   @XmlElement(name = "FreqTolerance")
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN18_6.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN18_6.class)
   private TDecimal freqTolerance;
   /**
    * FreqToleranceUnit - Frequency Tolerance Unit (Required)
@@ -380,7 +380,7 @@ public class RxMode {
    * Format is S40
    */
   @XmlElement(name = "ModeName", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS40.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
   private TString modeName;
   /**
    * EmsClass (Optional)

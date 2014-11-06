@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -106,7 +106,7 @@ public class ConfigEmission {
    * Format is pattern (S5)
    */
   @XmlElement(name = "EmsClass", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterEMSDES.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterEMSDES.class)
   private TString emsClass;
   /**
    * US:NecessaryBwMax - Maximum Necessary Bandwidth (Optional)
@@ -119,7 +119,7 @@ public class ConfigEmission {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "NecessaryBwMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal necessaryBwMax;
   /**
    * US:NecessaryBwMin - Minimum Necessary Bandwidth (Optional)
@@ -134,7 +134,7 @@ public class ConfigEmission {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "NecessaryBwMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal necessaryBwMin;
 
   /**

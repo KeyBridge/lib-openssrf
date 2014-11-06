@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -79,7 +79,7 @@ public class Station {
    * Format is S100
    */
   @XmlElement(name = "StationID", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString stationID;
   /**
    * CallSign - Call Sign (Optional)
@@ -92,7 +92,7 @@ public class Station {
    * Format is S20
    */
   @XmlElement(name = "CallSign", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString callSign;
   /**
    * CositeSep - Cosite Separation (Optional)
@@ -114,7 +114,7 @@ public class Station {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "CositeSep", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal cositeSep;
   /**
    * CositeSepDescription - Cosite Separation Description (Optional)
@@ -126,7 +126,7 @@ public class Station {
    * Format is Memo
    */
   @XmlElement(name = "CositeSepDescription", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
   private TString cositeSepDescription;
   /**
    * NumMobileUnits - Number of Mobile Units (Optional)
@@ -139,7 +139,7 @@ public class Station {
    * Attribute group NumUnits (Optional)
    */
   @XmlElement(name = "NumMobileUnits", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numMobileUnits;
   /**
    * NumAreaUnits - Number of Units in Area (Optional)
@@ -161,7 +161,7 @@ public class Station {
    * Attribute group NumUnits (Optional)
    */
   @XmlElement(name = "NumAreaUnits", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numAreaUnits;
   /**
    * NumCositedUnits - Number of Cosited Units (Optional)
@@ -175,7 +175,7 @@ public class Station {
    * Attribute group NumUnits (Optional)
    */
   @XmlElement(name = "NumCositedUnits", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numCositedUnits;
   /**
    * TSDF - Time Slot Duty Factor (Optional)
@@ -206,7 +206,7 @@ public class Station {
    * Format is S6
    */
   @XmlElement(name = "TSDF", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterTSDFVALUE.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterTSDFVALUE.class)
   private TString tsdf;
   /**
    * UserCode - User Code (Optional)
@@ -216,7 +216,7 @@ public class Station {
    * Format is S6
    */
   @XmlElement(name = "UserCode", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS6.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS6.class)
   private TString userCode;
   /**
    * US:AntStructureHeight - Antenna Structure Height (Optional)
@@ -226,7 +226,7 @@ public class Station {
    * Format is UN(3) (m)
    */
   @XmlElement(name = "AntStructureHeight", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterANTHEIGHT.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterANTHEIGHT.class)
   private TInteger antStructureHeight;
   /**
    * US:StationName - Station Name (Optional)
@@ -237,7 +237,7 @@ public class Station {
    * Format is S100
    */
   @XmlElement(name = "StationName", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString stationName;
   /**
    * US:StationControl - Station Control (Optional)
@@ -248,7 +248,7 @@ public class Station {
    * Format is S18
    */
   @XmlElement(name = "StationControl", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS18.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS18.class)
   private TString stationControl;
   /**
    * US:PrimaryStation - Primary Station (Optional)

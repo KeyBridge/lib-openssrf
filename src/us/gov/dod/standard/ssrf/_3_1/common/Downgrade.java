@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -68,7 +69,7 @@ public class Downgrade {
    * Format is Date
    */
   @XmlElement(name = "Date", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar date;
   /**
    * US:DowngradeInfo - Downgrading Information (Optional)
@@ -78,7 +79,7 @@ public class Downgrade {
    * Format is S200
    */
   @XmlElement(name = "DowngradeInfo", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS200.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS200.class)
   private TString downgradeInfo;
 
   /**

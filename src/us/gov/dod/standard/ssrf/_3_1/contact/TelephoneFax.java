@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Contact;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.Role;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -73,7 +73,7 @@ public class TelephoneFax {
    * Format is S20
    */
   @XmlElement(name = "Type", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString type;
   /**
    * Fax - Telefax Indicator (Optional)
@@ -104,7 +104,7 @@ public class TelephoneFax {
    * Format is S50
    */
   @XmlElement(name = "Number", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString number;
 
   /**

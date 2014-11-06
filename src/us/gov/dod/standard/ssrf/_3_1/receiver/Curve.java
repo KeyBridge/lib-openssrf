@@ -22,7 +22,7 @@ import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -111,7 +111,7 @@ public class Curve implements Comparable<Curve> {
    * Format is UN(3,1)
    */
   @XmlElement(name = "FreqFactor", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN3_1.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN3_1.class)
   private TDecimal freqFactor;
   /**
    * FreqConst - Curve Frequency Constant (Required)
@@ -121,7 +121,7 @@ public class Curve implements Comparable<Curve> {
    * Format is SN(16,9) (MHz)
    */
   @XmlElement(name = "FreqConst", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQOFFSET.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQOFFSET.class)
   private TDecimal freqConst;
   /**
    * Bw - Curve Measurement Bandwidth (Optional)
@@ -131,7 +131,7 @@ public class Curve implements Comparable<Curve> {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "Bw", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal bw;
   /**
    * FreqMin - Lowest Frequency of the Curve (Optional)
@@ -141,7 +141,7 @@ public class Curve implements Comparable<Curve> {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Highest Frequency (Optional)
@@ -153,7 +153,7 @@ public class Curve implements Comparable<Curve> {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * CurvePoint (Required)
@@ -175,7 +175,7 @@ public class Curve implements Comparable<Curve> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

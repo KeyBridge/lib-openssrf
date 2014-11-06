@@ -17,6 +17,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -87,7 +88,7 @@ public class Satellite extends Common<Satellite> {
    * Format is Date
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * CallSign - Call Sign (Optional)
@@ -100,7 +101,7 @@ public class Satellite extends Common<Satellite> {
    * Format is S20
    */
   @XmlElement(name = "CallSign", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString callSign;
   /**
    * OrbitType - Orbit Type (Optional)
@@ -128,7 +129,7 @@ public class Satellite extends Common<Satellite> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LaunchLocRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial launchLocRef;
   /**
    * LaunchDate - Launch Date (Optional)
@@ -138,7 +139,7 @@ public class Satellite extends Common<Satellite> {
    * Format is Date
    */
   @XmlElement(name = "LaunchDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar launchDate;
   /**
    * GeoNominalLon - Geostationary Nominal Longitude (Optional)
@@ -149,7 +150,7 @@ public class Satellite extends Common<Satellite> {
    * Format is pattern (S11) (deg)
    */
   @XmlElement(name = "GeoNominalLon", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
   private TString geoNominalLon;
   /**
    * GeoAltitude - Geostationary Altitude (Optional)
@@ -160,7 +161,7 @@ public class Satellite extends Common<Satellite> {
    * Format is UN(9,4) (km)
    */
   @XmlElement(name = "GeoAltitude", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
   private TDecimal geoAltitude;
   /**
    * NonGeoPeriod - Non-Geostationary Period (Optional)
@@ -171,7 +172,7 @@ public class Satellite extends Common<Satellite> {
    * Format is UN(10,4) (min)
    */
   @XmlElement(name = "NonGeoPeriod", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMINUTES.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMINUTES.class)
   private TDecimal nonGeoPeriod;
   /**
    * NonGeoNumSatellites - Number of Non-Geostationary Satellites (Optional)
@@ -182,7 +183,7 @@ public class Satellite extends Common<Satellite> {
    * Format is UN(4)
    */
   @XmlElement(name = "NonGeoNumSatellites", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN4.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN4.class)
   private TInteger nonGeoNumSatellites;
   /**
    * NonGeoApogee - Non-Geostationary Apogee (Optional)
@@ -193,7 +194,7 @@ public class Satellite extends Common<Satellite> {
    * Format is UN(9,4) (km)
    */
   @XmlElement(name = "NonGeoApogee", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
   private TDecimal nonGeoApogee;
   /**
    * NonGeoPerigee - Non-Geostationary Perigee (Optional)
@@ -204,7 +205,7 @@ public class Satellite extends Common<Satellite> {
    * Format is UN(9,4) (km)
    */
   @XmlElement(name = "NonGeoPerigee", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
   private TDecimal nonGeoPerigee;
   /**
    * NonGeoInclination - Non-Geostationary Inclination (Optional)
@@ -215,7 +216,7 @@ public class Satellite extends Common<Satellite> {
    * Format is SN(4,2) [-90..90] (deg)
    */
   @XmlElement(name = "NonGeoInclination", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal nonGeoInclination;
   /**
    * InternationalDesignator - International Designator (Optional)
@@ -225,7 +226,7 @@ public class Satellite extends Common<Satellite> {
    * Format is S20
    */
   @XmlElement(name = "InternationalDesignator", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString internationalDesignator;
   /**
    * ObjectNum - Object Number (Optional)
@@ -235,7 +236,7 @@ public class Satellite extends Common<Satellite> {
    * Format is S20
    */
   @XmlElement(name = "ObjectNum", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString objectNum;
   /**
    * Administration - Notifying Administration (Optional)
@@ -245,7 +246,7 @@ public class Satellite extends Common<Satellite> {
    * Format is S100
    */
   @XmlElement(name = "Administration", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString administration;
   /**
    * NetworkName - Network Name (Optional)
@@ -255,7 +256,7 @@ public class Satellite extends Common<Satellite> {
    * Format is S50
    */
   @XmlElement(name = "NetworkName", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString networkName;
   /**
    * RFSystemRef (Optional)
@@ -263,7 +264,7 @@ public class Satellite extends Common<Satellite> {
    * RFSystemRef contains a reference to a RF System used on the satellite.
    */
   @XmlElement(name = "RFSystemRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private Set<TString> rfSystemRef;
   /**
    * EarthStation (Optional)

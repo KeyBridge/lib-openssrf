@@ -17,7 +17,7 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -53,7 +53,7 @@ public class TxAntModeRef extends RxAntModeRef {
    * Format is SN(6,3) (dBW/Hz)
    */
   @XmlElement(name = "SpectralPowerDensity", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBWHZ.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBWHZ.class)
   private TDecimal spectralPowerDensity;
 
   /**

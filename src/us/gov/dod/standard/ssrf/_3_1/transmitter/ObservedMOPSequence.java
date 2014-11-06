@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -59,7 +59,7 @@ public class ObservedMOPSequence {
    * of the pulse duration to the pulse period.
    */
   @XmlElement(name = "MOPDutyCycle", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal mopDutyCycle;
   /**
    * US:MOPNumElements (US) - The number of discrete FREQ/PHASE/AMP values
@@ -67,7 +67,7 @@ public class ObservedMOPSequence {
    * each time)
    */
   @XmlElement(name = "MOPNumElements", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger mopNumElements;
   /**
    * US:MOPStepAM (US) - The difference between adjacent amplitude discrete
@@ -75,7 +75,7 @@ public class ObservedMOPSequence {
    * selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepAM", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
   private TDecimal mopStepAM;
   /**
    * US:MOPStepCW(US) - The difference between adjacent continuous wave
@@ -83,7 +83,7 @@ public class ObservedMOPSequence {
    * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepCW", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopStepCW;
   /**
    * US:MOPStepFM (US) - The difference between adjacent frequency discrete
@@ -91,7 +91,7 @@ public class ObservedMOPSequence {
    * made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepFM", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_MOPFM.class)
   private TDecimal mopStepFM;
   /**
    * US:MOPStepPM (US) - The difference between adjacent phase discrete values,
@@ -99,20 +99,20 @@ public class ObservedMOPSequence {
    * US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPStepPM", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PHASEANGLE.class)
   private TDecimal mopStepPM;
   /**
    * US: SequenceBitLength (US) - The length of one sequence of a pattern of
    * bits that been observed repeating.
    */
   @XmlElement(name = "SequenceBitLength", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger sequenceBitLength;
   /**
    * US:MOPSequenceDesc (US), enter a text description of the MOP sequence.
    */
   @XmlElement(name = "MOPSequenceDesc", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
   private TString mopSequenceDesc;
   /**
    * US:MOPRepetionInterval - MOP Repetion Interval (Optional)
@@ -123,7 +123,7 @@ public class ObservedMOPSequence {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "MOPRepetionInterval", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal mopRepetionInterval;
 
   @XmlElement(name = "ObservedMOPBits")

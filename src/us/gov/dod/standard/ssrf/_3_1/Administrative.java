@@ -19,7 +19,7 @@ import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_1.administrative.Dataset;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -84,7 +84,7 @@ public class Administrative extends Common<Administrative> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "MessageRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial messageRef;
   /**
    * Dataset (Optional)

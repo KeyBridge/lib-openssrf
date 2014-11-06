@@ -17,6 +17,7 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -119,7 +120,7 @@ public class Location extends Common<Location> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -132,7 +133,7 @@ public class Location extends Common<Location> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
@@ -149,7 +150,7 @@ public class Location extends Common<Location> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * Name - Location Name (Required)
@@ -159,7 +160,7 @@ public class Location extends Common<Location> {
    * Format is S100
    */
   @XmlElement(name = "Name", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
   /**
    * Street - Street Address (Optional)
@@ -171,7 +172,7 @@ public class Location extends Common<Location> {
    * Attribute group Address (Optional)
    */
   @XmlElement(name = "Street", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS255.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS255.class)
   private TString street;
   /**
    * CityArea - City or Area (Optional)
@@ -183,7 +184,7 @@ public class Location extends Common<Location> {
    * Attribute group Address (Optional)
    */
   @XmlElement(name = "CityArea", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString cityArea;
   /**
    * StateCounty - State/County (Optional)
@@ -195,7 +196,7 @@ public class Location extends Common<Location> {
    * Attribute group Address (Optional)
    */
   @XmlElement(name = "StateCounty", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
   private TString stateCounty;
   /**
    * PostCode - Zip Code/Post Code (Optional)
@@ -207,7 +208,7 @@ public class Location extends Common<Location> {
    * Attribute group Address (Optional)
    */
   @XmlElement(name = "PostCode", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString postCode;
   /**
    * Country - Country/Area (Optional)
@@ -269,7 +270,7 @@ public class Location extends Common<Location> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> locationRef;
 
   /**

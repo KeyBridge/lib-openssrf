@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
@@ -429,19 +429,19 @@ public class SSRFUtility {
       return;
     }
     /**
-     * Scan the field annotations, looking for an XmlTypeValidator instance.
+     * Scan the field annotations, looking for an XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlTypeValidator) {
+      if (annotation instanceof XmlJavaTypeAdapter) {
         /**
-         * If an XmlTypeValidator annotation is found then instantiate the
+         * If an XmlJavaTypeAdapter annotation is found then instantiate the
          * XmlAdapter class referred to in the "value" field and attempt to
          * marshal the field value. This action will complete silently if the
          * field value is valid and throw an exception if the field value is not
          * valid.
          */
         try {
-          XmlAdapter<Object, Object> anInstance = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
+          XmlAdapter<Object, Object> anInstance = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
           anInstance.marshal(fieldValue);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
           System.err.println("XmlValidator failed to instantiate: " + ex.getMessage());

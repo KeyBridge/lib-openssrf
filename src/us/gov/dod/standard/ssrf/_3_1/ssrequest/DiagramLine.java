@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -51,7 +51,7 @@ public class DiagramLine {
    * Format is S20
    */
   @XmlElement(name = "TxEndpointID", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString txEndpointID;
   /**
    * RxEndpointID - Rx Endpoint ID (Required)
@@ -64,7 +64,7 @@ public class DiagramLine {
    * Format is S20
    */
   @XmlElement(name = "RxEndpointID", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
   private TString rxEndpointID;
   /**
    * ConfigID - Configuration ID (Optional)
@@ -74,7 +74,7 @@ public class DiagramLine {
    * Format is S100
    */
   @XmlElement(name = "ConfigID", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
+  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString configID;
 
   /**

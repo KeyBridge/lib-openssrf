@@ -22,7 +22,7 @@ import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -49,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class Remarks implements Comparable<Remarks> {
 
   @XmlValue
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringMEMO.class)
   private String value;
   /**
    * cls - Classification (Required)
@@ -71,7 +71,7 @@ public class Remarks implements Comparable<Remarks> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -65,7 +65,7 @@ public class Polygon implements Comparable<Polygon> {
    * "above ground level" AGL).
    */
   @XmlElement(name = "AltitudeMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMin;
   /**
    * AltitudeMax - Maximum or nominal height of the point (Optional)
@@ -76,7 +76,7 @@ public class Polygon implements Comparable<Polygon> {
    * If AltitudeMax is used, it MUST be greater than AltitudeMin.
    */
   @XmlElement(name = "AltitudeMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMax;
   /**
    * PolygonPoint (Optional)
@@ -96,7 +96,7 @@ public class Polygon implements Comparable<Polygon> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
