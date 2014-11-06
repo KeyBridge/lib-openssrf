@@ -126,7 +126,7 @@ public class AntPatternPoint implements Comparable<AntPatternPoint> {
    * Set the direction in degrees in reference to the pointing angle of the
    * antenna set to zero.
    * <p>
-   * @param value An instances of type {@link Double}
+   * @param value An instances of type {@link Double} (deg)
    * @return The current AntPatternPoint object instance
    */
   public AntPatternPoint withDir(Double value) {
@@ -137,7 +137,7 @@ public class AntPatternPoint implements Comparable<AntPatternPoint> {
   /**
    * Set the amount of gain for the direction relative to the main beam gain.
    * <p>
-   * @param value An instances of type {@link Double}
+   * @param value An instances of type {@link Double} (dB)
    * @return The current AntPatternPoint object instance
    */
   public AntPatternPoint withGain(Double value) {
