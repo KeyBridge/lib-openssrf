@@ -178,9 +178,13 @@ public class SSRF extends SchemaRoot<SSRF> {
    * @since 3.1.0
    */
   public String toXML() throws Exception {
-    assemble();
-    SSRFUtility.validate(this);
-    return SSRFUtility.marshal(this);
+    if (isValid()) {
+      assemble();
+      SSRFUtility.validate(this);
+      return SSRFUtility.marshal(this);
+    } else {
+      throw new Exception("Invalid SSRF configuration. Evaluate for details.");
+    }
   }
 
   /**
