@@ -15,10 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -399,6 +396,36 @@ public class AntPattern {
    */
   public boolean isSet() {
     return isSetAntPatternPoint();
+  }
+
+  /**
+   * Hashcode is determined by {@link #type}
+   * <p>
+   * @return a hash code
+   */
+  @Override
+  public int hashCode() {
+    int hash = 3;
+    hash = 79 * hash + Objects.hashCode(this.type);
+    return hash;
+  }
+
+  /**
+   * Equality is determined by {@link #type}
+   * <p>
+   * @param obj the other object
+   * @return TRUE if equal
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final AntPattern other = (AntPattern) obj;
+    return Objects.equals(this.type, other.getType());
   }
 
 }
