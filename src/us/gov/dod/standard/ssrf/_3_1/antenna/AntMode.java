@@ -16,20 +16,23 @@
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
 
 /**
  * AntMode contains the technical characteristics of one antenna mode.
+ * <p>
+ * A antenna mode USE is described in the {@link ListCAU modeUse} field as one
+ * of [Transmit Only, Receive Only or Transmit-Receive]
  * <p>
  * Element of {@link Antenna}
  * <p>
@@ -1948,10 +1951,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withAntGain(AntGain... values) {
-    if (values != null) {
-      getAntGain().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withAntGain(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -1981,10 +1981,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withAntFreqs(AntFreqs... values) {
-    if (values != null) {
-      getAntFreqs().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withAntFreqs(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2017,10 +2014,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withAntPattern(AntPattern... values) {
-    if (values != null) {
-      getAntPattern().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withAntPattern(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2053,10 +2047,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withAntEfficiency(AntEfficiency... values) {
-    if (values != null) {
-      getAntEfficiency().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withAntEfficiency(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2086,10 +2077,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withVSWR(VSWR... values) {
-    if (values != null) {
-      getVSWR().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withVSWR(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2119,10 +2107,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withObservedLobeAnalysis(ObservedLobeAnalysis... values) {
-    if (values != null) {
-      getObservedLobeAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withObservedLobeAnalysis(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2152,10 +2137,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withObservedPolarisationAnalysis(ObservedPolarisationAnalysis... values) {
-    if (values != null) {
-      getObservedPolarisationAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withObservedPolarisationAnalysis(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2186,10 +2168,7 @@ public class AntMode {
    * @return The current AntMode object instance
    */
   public AntMode withObservedScanAnalysis(ObservedScanAnalysis... values) {
-    if (values != null) {
-      getObservedScanAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return this;
+    return withObservedScanAnalysis(new HashSet<>(Arrays.asList(values)));
   }
 
   /**
@@ -2217,41 +2196,41 @@ public class AntMode {
   @Override
   public String toString() {
     return "AntMode {"
-      + (polarisationType != null ? " polarisationType [" + polarisationType + "]" : "")
-      + (horzBwMin != null ? " horzBwMin [" + horzBwMin + "]" : "")
-      + (modeID != null ? " modeID [" + modeID + "]" : "")
-      + (vertScanType != null ? " vertScanType [" + vertScanType + "]" : "")
-      + (observedScanAnalysis != null ? " observedScanAnalysis [" + observedScanAnalysis + "]" : "")
-      + (modeName != null ? " modeName [" + modeName + "]" : "")
-      + (observedLobeAnalysis != null ? " observedLobeAnalysis [" + observedLobeAnalysis + "]" : "")
-      + (vertScanAngleMin != null ? " vertScanAngleMin [" + vertScanAngleMin + "]" : "")
-      + (vertScanAngleMax != null ? " vertScanAngleMax [" + vertScanAngleMax + "]" : "")
-      + (horzScanType != null ? " horzScanType [" + horzScanType + "]" : "")
-      + (horzScanRate != null ? " horzScanRate [" + horzScanRate + "]" : "")
-      + (description != null ? " description [" + description + "]" : "")
-      + (rotationRateMax != null ? " rotationRateMax [" + rotationRateMax + "]" : "")
-      + (beamType != null ? " beamType [" + beamType + "]" : "")
       + (antEfficiency != null ? " antEfficiency [" + antEfficiency + "]" : "")
-      + (antPattern != null ? " antPattern [" + antPattern + "]" : "")
-      + (horzScanSpeed != null ? " horzScanSpeed [" + horzScanSpeed + "]" : "")
-      + (vertScanSpeed != null ? " vertScanSpeed [" + vertScanSpeed + "]" : "")
-      + (portIsolation != null ? " portIsolation [" + portIsolation + "]" : "")
-      + (sectBlanking != null ? " sectBlanking [" + sectBlanking + "]" : "")
-      + (observedPolarisationAnalysis != null ? " observedPolarisationAnalysis [" + observedPolarisationAnalysis + "]" : "")
-      + (vertScanRate != null ? " vertScanRate [" + vertScanRate + "]" : "")
-      + (polarisationAngle != null ? " polarisationAngle [" + polarisationAngle + "]" : "")
-      + (motionType != null ? " motionType [" + motionType + "]" : "")
-      + (rotationRateMin != null ? " rotationRateMin [" + rotationRateMin + "]" : "")
-      + (maxPower != null ? " maxPower [" + maxPower + "]" : "")
-      + (horzBwMax != null ? " horzBwMax [" + horzBwMax + "]" : "")
-      + (vertBwMax != null ? " vertBwMax [" + vertBwMax + "]" : "")
       + (antFreqs != null ? " antFreqs [" + antFreqs + "]" : "")
-      + (horzScanSector != null ? " horzScanSector [" + horzScanSector + "]" : "")
-      + (vertBwMin != null ? " vertBwMin [" + vertBwMin + "]" : "")
       + (antGain != null ? " antGain [" + antGain + "]" : "")
+      + (antPattern != null ? " antPattern [" + antPattern + "]" : "")
+      + (beamType != null ? " beamType [" + beamType + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (horzBwMax != null ? " horzBwMax [" + horzBwMax + "]" : "")
+      + (horzBwMin != null ? " horzBwMin [" + horzBwMin + "]" : "")
+      + (horzScanRate != null ? " horzScanRate [" + horzScanRate + "]" : "")
+      + (horzScanSector != null ? " horzScanSector [" + horzScanSector + "]" : "")
+      + (horzScanSpeed != null ? " horzScanSpeed [" + horzScanSpeed + "]" : "")
+      + (horzScanType != null ? " horzScanType [" + horzScanType + "]" : "")
+      + (maxPower != null ? " maxPower [" + maxPower + "]" : "")
+      + (modeID != null ? " modeID [" + modeID + "]" : "")
+      + (modeName != null ? " modeName [" + modeName + "]" : "")
       + (modeUse != null ? " modeUse [" + modeUse + "]" : "")
-      + (vswr != null ? " vswr [" + vswr + "]" : "")
+      + (motionType != null ? " motionType [" + motionType + "]" : "")
+      + (observedLobeAnalysis != null ? " observedLobeAnalysis [" + observedLobeAnalysis + "]" : "")
+      + (observedPolarisationAnalysis != null ? " observedPolarisationAnalysis [" + observedPolarisationAnalysis + "]" : "")
+      + (observedScanAnalysis != null ? " observedScanAnalysis [" + observedScanAnalysis + "]" : "")
+      + (polarisationAngle != null ? " polarisationAngle [" + polarisationAngle + "]" : "")
+      + (polarisationType != null ? " polarisationType [" + polarisationType + "]" : "")
+      + (portIsolation != null ? " portIsolation [" + portIsolation + "]" : "")
       + (rotationDirection != null ? " rotationDirection [" + rotationDirection + "]" : "")
+      + (rotationRateMax != null ? " rotationRateMax [" + rotationRateMax + "]" : "")
+      + (rotationRateMin != null ? " rotationRateMin [" + rotationRateMin + "]" : "")
+      + (sectBlanking != null ? " sectBlanking [" + sectBlanking + "]" : "")
+      + (vertBwMax != null ? " vertBwMax [" + vertBwMax + "]" : "")
+      + (vertBwMin != null ? " vertBwMin [" + vertBwMin + "]" : "")
+      + (vertScanAngleMax != null ? " vertScanAngleMax [" + vertScanAngleMax + "]" : "")
+      + (vertScanAngleMin != null ? " vertScanAngleMin [" + vertScanAngleMin + "]" : "")
+      + (vertScanRate != null ? " vertScanRate [" + vertScanRate + "]" : "")
+      + (vertScanSpeed != null ? " vertScanSpeed [" + vertScanSpeed + "]" : "")
+      + (vertScanType != null ? " vertScanType [" + vertScanType + "]" : "")
+      + (vswr != null ? " vswr [" + vswr + "]" : "")
       + "}";
   }
 
