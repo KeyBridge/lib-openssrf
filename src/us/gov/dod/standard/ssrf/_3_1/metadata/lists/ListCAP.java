@@ -21,9 +21,11 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.antenna.AntPattern;
 
 /**
+ * Antenna Pattern polarization types. e.g. HH, VV, etc.
+ * <p>
  * Enumerated values for fields using the ListCAP type.
  * <p>
- * Used in {@link AntPattern}
+ * Used in {@link AntPattern} type field.
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 10/01/2014
@@ -56,9 +58,16 @@ public enum ListCAP {
     return value;
   }
 
+  /**
+   * Get a ListCAP from a SSRF enumerated value. The match strategy is NOT case
+   * sensitive.
+   * <p>
+   * @param v the SSRF label. e.g. "Elevation" or "HH"
+   * @return the matching ListCAP value
+   */
   public static ListCAP fromValue(String v) {
     for (ListCAP c : ListCAP.values()) {
-      if (c.value.equals(v)) {
+      if (c.value.equalsIgnoreCase(v)) {
         return c;
       }
     }

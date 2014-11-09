@@ -21,9 +21,11 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
 
 /**
+ * Enumerated Antenna Types.
+ * <p>
  * Enumerated values for fields using the ListCAT type.
  * <p>
- * Used in {@link Antenna}
+ * Used in {@link Antenna} antenna type field.
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 10/01/2014
@@ -420,7 +422,7 @@ public enum ListCAT {
 
   public static ListCAT fromValue(String v) {
     for (ListCAT c : ListCAT.values()) {
-      if (c.value.equals(v)) {
+      if (c.value.equalsIgnoreCase(v)) {
         return c;
       }
     }
