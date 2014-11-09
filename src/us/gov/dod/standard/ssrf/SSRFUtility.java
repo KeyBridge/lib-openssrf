@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
@@ -650,6 +651,18 @@ public class SSRFUtility {
          */
         Set<Object> preparablObjects = new HashSet<>();
         for (Object entryCandidate : (Collection) fieldValue) {
+          /**
+           * The fluent "WITH" setters tend to add null entries to various
+           * collections. Skip and ignore all null collection entries.
+           */
+          if (entryCandidate == null) {
+            continue;
+          }
+          /**
+           * If the entry candidate implements the prepare() method then store
+           * it for later processing. Else recurse into the candidate to examine
+           * its components and try to add the candidate to the root instance.
+           */
           if (implementsPrepare(entryCandidate)) {
             preparablObjects.add(entryCandidate);
           } else {
@@ -708,11 +721,20 @@ public class SSRFUtility {
    *                            source object instance is to be added
    */
   private static void addValueToDestinationInstance(Object sourceInstance, Object destinationInstance) {
+    /**
+     * SchemaRoot only contains sets of object instances that extend Common.
+     * Simplify and speed up processing by only trying to add SSRF object
+     * instances to the ROOT instance (the SSRF message) that extend Common.
+     * <p>
+     * Important - This method should fail gracefully and silently: Catch a
+     * NullPointerException here just in case the sourceInstance is null.
+     */
     try {
-      Method method = destinationInstance.getClass().getMethod("with" + sourceInstance.getClass().getSimpleName(), Set.class);
-      method.invoke(destinationInstance, new HashSet<>(Arrays.asList(new Object[]{sourceInstance})));
-    } catch (NoSuchMethodException | SecurityException ex) {
-    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+      if (Common.class.equals(sourceInstance.getClass().getSuperclass())) {
+        Method method = destinationInstance.getClass().getMethod("with" + sourceInstance.getClass().getSimpleName(), Set.class);
+        method.invoke(destinationInstance, new HashSet<>(Arrays.asList(new Object[]{sourceInstance})));
+      }
+    } catch (NullPointerException | NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
       //      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex );
     }
   }
