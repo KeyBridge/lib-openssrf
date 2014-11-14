@@ -477,10 +477,10 @@ public enum ListCAO {
   @XmlEnumValue("CUW")
   CUW("Curaçao"),
   /**
-   * Cyprus (See footnote 1)
+   * Cyprus
    */
   @XmlEnumValue("CYP")
-  CYP("Cyprus (See footnote 1)"),
+  CYP("Cyprus"),
   /**
    * Czech Republic
    */
@@ -1919,10 +1919,10 @@ public enum ListCAO {
   @XmlEnumValue("THA")
   THA("Thailand"),
   /**
-   * The former Yugoslav Republic of Macedonia (See footnote 2)
+   * The former Yugoslav Republic of Macedonia
    */
   @XmlEnumValue("FYR")
-  FYR("The former Yugoslav Republic of Macedonia (See footnote 2)"),
+  FYR("The former Yugoslav Republic of Macedonia"),
   /**
    * THREE EYES (USA, CAN, GBR)
    */
@@ -2226,7 +2226,7 @@ public enum ListCAO {
 
   public static ListCAO fromValue(String v) {
     for (ListCAO c : ListCAO.values()) {
-      if (c.value.equals(v)) {
+      if (c.value.equalsIgnoreCase(v)) {
         return c;
       }
     }
