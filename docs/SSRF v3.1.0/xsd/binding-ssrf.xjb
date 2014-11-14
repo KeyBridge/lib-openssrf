@@ -105,9 +105,12 @@
   
   <!-- Name Clash
   JAXB does not implement case-sensitive differentiation. This causes a clash
-  between the 'Remarks' complex type and 'remarks' attribute. Rename the internal
-  'remarks' attribute field value to accommodate. -->
-  
+  between complex types and attributes having the same name and differentiated by 
+  case. For example "Remarks" and "remarks". 
+  Handle this by prepending the attribute field name with "attribute".
+  This does not affect the marshaled XML result.
+   -->
+
   <jxb:bindings schemaLocation="ssrf.xsd">
     <jxb:bindings node="//xs:complexType//xs:attribute[@name='remarks']">
       <jxb:property name="attributeRemarks"/>
