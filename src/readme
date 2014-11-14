@@ -34,10 +34,6 @@ Updates and improvements in this release
   within the XSD
 * Field validation added to medadata group and reference class containers
 
-  
-
-
-
 09/15/14 V0.2
 
 This updates and supercedes the May 26, 2014 software release.
@@ -136,49 +132,11 @@ Compilation (Maven):
   Step 2b) Reconfigure the compiler plugin to use at least Java 1.5: 
   Step 3)  Clean and build the new project using Maven.
 
+
 License:
 +------------------------------------------------------------------------------+
 
-This software is provided AS-IS under the MIT license; reuse is permitted within 
-proprietary software provided all copies of the licensed software include a copy 
-of the MIT License terms. Such proprietary software retains its proprietary nature 
-even though it incorporates software under the MIT License.
+This software is provided AS-IS under the APACHE license, a copy of which in 
+included in the source tree.
 
-TERMS, CONDITIONS & NOTICES
-+------------------------------------------------------------------------------+
-			
-This document and associated software source code package (the “reference design”) 
-have been prepared by Key Bridge Global LLC to assist The Software Defined Radio 
-Forum Inc. (or its successors or assigns, hereafter “the Forum”). It may be amended 
-or withdrawn at a later time and it is not binding on any member of the Forum or 
-of Key Bridge Global LLC.
-
-Contributors to this reference designhave submitted copyrighted materials (the 
-Submission) to the Forum for use in this reference design retain copyright 
-ownership of their original work, while at the same time granting the Forum a 
-non-exclusive, irrevocable, worldwide, perpetual, royalty-free license under 
-the Submitter’s copyrights in the Submission to reproduce, distribute, publish, 
-display, perform, and create derivative works of the Submission based on that
-original work for under the Forum's own copyright.
-
-Permission is granted to the Forum’s participants by Key Bridge Global to reuse 
-the reference design royalty free under the MIT License. Reuse is permitted 
-within other proprietary software developed by participants provided all copies 
-of the licensed software include a copy of the MIT License terms. Such proprietary 
-software retains its proprietary nature even though it incorporates software 
-under the MIT License.
-
-THIS DOCUMENTAND ASSOCIATED SOFWARE PACKAGE ARE BEING OFFERED WITHOUT ANY WARRANTY 
-WHATSOEVER, AND IN PARTICULAR, ANY WARRANTY OF NON-INFRINGEMENT IS EXPRESSLY 
-DISCLAIMED.  ANY USE OF THIS SPECIFICATION SHALL BE MADE ENTIRELY AT THE 
-IMPLEMENTER'S OWN RISK, AND NEITHER THE FORUM, NOR ANY OF ITS MEMBERS OR 
-SUBMITTERS, SHALL HAVE ANY LIABILITY WHATSOEVER TO ANY IMPLEMENTER OR THIRD 
-PARTY FOR ANY DAMAGES OF ANY NATURE WHATSOEVER, DIRECTLY OR INDIRECTLY, ARISING 
-FROM THE USE OF THIS DOCUMENT.
-
-Recipients of this document are requested to submit, with their comments, 
-notification of any relevant patent claims or other intellectual property 
-rights of which they may be aware that might be infringed by any implementation 
-of the reference design and to provide supporting documentation.
-
-+------------------------------------------------------------------------------+
+__END
