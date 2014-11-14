@@ -135,6 +135,15 @@ public enum ListCSN {
   STANDARD_FREQUENCY_AND_TIME_SIGNAL("Standard Frequency and Time Signal Service"),
   @XmlEnumValue("Standard Frequency and Time Signal-Satellite Service")
   STANDARD_FREQUENCY_AND_TIME_SIGNAL_SATELLITE("Standard Frequency and Time Signal-Satellite Service"),
+  /**
+   * Not allocated. This is used in ECC TOA records for bands below 9kHz and
+   * above 270GHz.
+   * <p>
+   * 11/13/14 - request to be added to spec. Until the spec is amended use OTHER
+   * and add a Remark.
+   */
+  //  @XmlEnumValue("Not allocated")  NOT_ALLOCATED("Not allocated"),
+
   @XmlEnumValue("Other")
   OTHER("Other");
   private final String value;
@@ -244,7 +253,7 @@ public enum ListCSN {
      * Try to match the first portion of the name, before any parentheses.
      */
     if (name.contains("except")) {
-      return "Except" + name.split("except")[1];
+      return "except" + name.split("except")[1];
     }
     /**
      * Try to match the first portion of the name, before any parentheses.
