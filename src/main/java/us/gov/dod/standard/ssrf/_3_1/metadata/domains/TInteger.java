@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,16 +46,12 @@ public class TInteger extends AMetadata<TInteger> implements IMetadataType, Comp
     this.value = value;
   }
 
-  public TInteger(Integer value) {
-    this.value = value != null ? BigInteger.valueOf(value.longValue()) : null;
-  }
-
   /**
    * Construct a new TInteger instance from a Double value.
    * <p>
    * @param value the value - only the whole number value is used.
    */
-  public TInteger(Double value) {
+  public TInteger(Number value) {
     this.value = value != null ? BigInteger.valueOf(value.longValue()) : null;
   }
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,6 +48,10 @@ public class TDouble extends AMetadata<TDouble> implements IMetadataType, Compar
    */
   public TDouble(Double value) {
     this.value = value;
+  }
+
+  public TDouble(Number value) {
+    this.value = value.doubleValue();
   }
 
   /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,8 +56,8 @@ public class TDecimal extends AMetadata<TDecimal> implements IMetadataType, Comp
    * <p>
    * @param value the value
    */
-  public TDecimal(Double value) {
-    this.value = value != null ? BigDecimal.valueOf(value) : null;
+  public TDecimal(Number value) {
+    this.value = value != null ? BigDecimal.valueOf(value.doubleValue()) : null;
   }
 
   /**
