@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,8 @@
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import java.util.Arrays;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,6 +67,8 @@ public class DiagramEndpoint {
    * An identifier for each icon on the diagram. Within a diagram, all
    * EndPointIDs must be unique.
    * <p>
+   * This is mapped from the v3.0 Name field.
+   * <p>
    * Format is S20
    */
   @XmlElement(name = "EndpointID", required = true)
@@ -78,10 +80,15 @@ public class DiagramEndpoint {
    * A human-readable description of a diagram endpoint.
    * <p>
    * Format is S100
+   * <p>
+   * @since v3.1.0
    */
   @XmlElement(name = "Description", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
+  /**
+   * Repurposed in v3.1.0 to be a short text endpoint description.
+   */
   @XmlElement(name = "Name ", required = false)
   @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
   private TString name;
@@ -499,15 +506,15 @@ public class DiagramEndpoint {
   @Override
   public String toString() {
     return "DiagramEndpoint {"
-      + (endpointID != null ? " endpointID [" + endpointID + "]" : "")
-      + (description != null ? " description [" + description + "]" : "")
-      + (pointToMultiPoint != null ? " pointToMultiPoint [" + pointToMultiPoint + "]" : "")
-      + (name != null ? " name [" + name + "]" : "")
-      + (iconPosLeft != null ? " iconPosLeft [" + iconPosLeft + "]" : "")
-      + (endpointLocation != null ? " endpointLocation [" + endpointLocation + "]" : "")
-      + (iconPosTop != null ? " iconPosTop [" + iconPosTop + "]" : "")
-      + (iconType != null ? " iconType [" + iconType + "]" : "")
-      + "}";
+           + (endpointID != null ? " endpointID [" + endpointID + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (pointToMultiPoint != null ? " pointToMultiPoint [" + pointToMultiPoint + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (iconPosLeft != null ? " iconPosLeft [" + iconPosLeft + "]" : "")
+           + (endpointLocation != null ? " endpointLocation [" + endpointLocation + "]" : "")
+           + (iconPosTop != null ? " iconPosTop [" + iconPosTop + "]" : "")
+           + (iconType != null ? " iconType [" + iconType + "]" : "")
+           + "}";
   }
 
   /**
