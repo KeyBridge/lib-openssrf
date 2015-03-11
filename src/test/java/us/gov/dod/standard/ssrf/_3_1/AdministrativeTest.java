@@ -16,36 +16,18 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import org.junit.Test;
-import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf.SSRFProperties;
-import us.gov.dod.standard.ssrf.SSRFTestUtility;
 
 /**
  *
  * @author jesse
  */
-public class TOATest {
+public class AdministrativeTest {
 
-  public TOATest() {
+  public AdministrativeTest() {
   }
 
   @Test
-  public void testMinimumPositiveFill() throws Exception {
-
-    TOA t = new TOA();
-    System.out.println("t.serial " + t.getSerial());
-
-    SSRFTestUtility.minfill(t);
-
-    System.out.println("  test Minimum Positive Fill OK");
-
-    SSRF ssrf = new SSRF().withProperties(SSRFProperties.getDefault()).withTOA(t);
-
-    System.out.println(ssrf);
-
-    System.out.println(ssrf.evaluate());
-    System.out.println(ssrf.toXML());
-
+  public void testSomeMethod() {
   }
 
 }

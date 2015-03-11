@@ -60,6 +60,8 @@ import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
 @SuppressWarnings({"unchecked"})
 public class SSRFUtility {
 
+  private static final Logger logger = Logger.getLogger(SSRFUtility.class.getName());
+
   /**
    * 33 characters. The maximum string length to be extracted from a class field
    * configuration and reported in an error message. String values longer than
@@ -228,7 +230,7 @@ public class SSRFUtility {
        * otherwise recurse to validate the field value object instance directly.
        */
       if (fieldValue instanceof Collection) {
-        for (Object entry : (Collection) fieldValue) {
+        for (Object entry : (Iterable<? extends Object>) fieldValue) {
           if (entry != null) {
             validate(entry, cls);
           }
@@ -323,8 +325,8 @@ public class SSRFUtility {
               messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + "." + field.getName() + " classification \"" + field.get(instance) + "\" is less restrictive than parent classification \"" + cls + "\"");
             }
           } catch (SecurityException | IllegalArgumentException | IllegalAccessException exception) {
-            System.err.println("DEBUG SSRFUtility.evaluate: FAILED to compare CLS for " + instance.getClass().getSimpleName());
-            Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, exception);
+            logger.log(Level.WARNING, "CLS comparison failed for {0}", instance.getClass().getSimpleName());
+            logger.log(Level.SEVERE, null, exception);
           }
         }
       }
@@ -335,13 +337,12 @@ public class SSRFUtility {
             field.setAccessible(true);
             cls = (ListCCL) field.get(instance);
           } catch (SecurityException | IllegalArgumentException | IllegalAccessException exception) {
-            System.err.println("DEBUG SSRFUtility.evaluate: FAILED to set CLS for " + instance.getClass().getSimpleName());
-            Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, exception);
+            logger.log(Level.WARNING, "CLS comparison failed for {0}", instance.getClass().getSimpleName());
+            logger.log(Level.SEVERE, null, exception);
           }
         }
       }
     }
-
     /**
      * Iterate through the list of declared fields (public, protected and
      * private) and inspect each according to its annotated configuration and
@@ -362,14 +363,13 @@ public class SSRFUtility {
       try {
         fieldValue = field.get(instance);
       } catch (IllegalArgumentException | IllegalAccessException ex) {
-//        Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
         continue;
       }
       /**
        * Report an ERROR if the field is required and not configured.
        */
       if (isRequired(field) && fieldValue == null) {
-        messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + " " + getErrorLabel(parentField, parentInstance) + " requires (" + field.getType().getSimpleName() + ") " + field.getName());
+        messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + " " + getErrorLabel(parentField, parentInstance) + " requires a non-null (" + field.getType().getSimpleName() + ") " + field.getName());
       }
       /**
        * If the field value is not required and NULL then DO NOT try to validate
@@ -384,7 +384,7 @@ public class SSRFUtility {
        * otherwise recurse to validate the field value object instance directly.
        */
       if (fieldValue instanceof Collection) {
-        for (Object entry : (Collection) fieldValue) {
+        for (Object entry : (Iterable<? extends Object>) fieldValue) {
           if (entry != null) {
             evaluate(entry, cls, instance, field, messages);
           }
@@ -399,7 +399,7 @@ public class SSRFUtility {
         try {
           validateField(field, fieldValue);
         } catch (Exception exception) {
-//          System.err.println(instance.getClass().getSimpleName() + "." + field.getName() + " " + exception.getMessage());
+//          logger.log(Level.WARNING, "{0}.{1} failed XML type validation: {2}", new Object[]{instance.getClass().getSimpleName(), field.getName(), exception.getMessage()});
           messages.add(clazz.getSimpleName() + "." + field.getName() + " " + exception.getMessage());
         }
       }
@@ -426,11 +426,14 @@ public class SSRFUtility {
    *                   field value is not valid
    */
   private static void validateField(Field field, Object fieldValue) throws Exception {
+    /**
+     * Do not validate fields with null values.
+     */
     if (fieldValue == null) {
       return;
     }
     /**
-     * Scan the field annotations, looking for an XmlJavaTypeAdapter instance.
+     * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
       if (annotation instanceof XmlJavaTypeAdapter) {
@@ -439,14 +442,14 @@ public class SSRFUtility {
          * XmlAdapter class referred to in the "value" field and attempt to
          * marshal the field value. This action will complete silently if the
          * field value is valid and throw an exception if the field value is not
-         * valid.
+         * valid (as determined by the marshal method).
          */
         try {
           XmlAdapter<Object, Object> anInstance = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
           anInstance.marshal(fieldValue);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-          System.err.println("XmlValidator failed to instantiate: " + ex.getMessage());
-          Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+          logger.log(Level.WARNING, "XmlValidator failed to instantiate: {0}", ex.getMessage());
+          logger.log(Level.SEVERE, null, ex);
         }
       }
     }
@@ -650,7 +653,7 @@ public class SSRFUtility {
          * object, then try to add it to the SSRF ROOT.
          */
         Set<Object> preparablObjects = new HashSet<>();
-        for (Object entryCandidate : (Collection) fieldValue) {
+        for (Object entryCandidate : (Iterable<? extends Object>) fieldValue) {
           /**
            * The fluent "WITH" setters tend to add null entries to various
            * collections. Skip and ignore all null collection entries.
@@ -883,7 +886,7 @@ public class SSRFUtility {
          * objects that are loadable then proceed to call each in turn.
          */
         Set<Object> loadableObjects = new HashSet<>();
-        for (Object entryCandidate : (Collection) fieldValue) {
+        for (Object entryCandidate : (Iterable<? extends Object>) fieldValue) {
           if (implementsPostLoad(entryCandidate)) {
             loadableObjects.add(entryCandidate);
           }
@@ -1108,7 +1111,7 @@ public class SSRFUtility {
        * recurse to set the field value object instance directly.
        */
       if (fieldValue instanceof Collection) {
-        for (Object entry : (Collection) fieldValue) {
+        for (Object entry : (Iterable<? extends Object>) fieldValue) {
           setProperties(properties, entry, classPathInternal);
         }
       } else {
@@ -1118,10 +1121,11 @@ public class SSRFUtility {
   }
 
   /**
-   * Internal helper method supporting the
-   * {@link #setProperties(SSRFProperties, java.lang.Object)} method. This
-   * method inspects the indicated Class to find the first declared or inherited
-   * WITH setter method for the indicated field type.
+   * Helper method to inspect the indicated Class to find the first declared or
+   * inherited WITH setter method for the indicated field type.
+   * <p>
+   * This method supports
+   * {@link #setProperties(SSRFProperties, java.lang.Object)}.
    * <p>
    * @param clazz the class type to inspect
    * @param field the field to look for
@@ -1140,10 +1144,8 @@ public class SSRFUtility {
   }
 
   /**
-   * Internal helper method supporting the
-   * {@link #setProperties(SSRFProperties, java.lang.Object)} method. This
-   * method inspects the indicated Class to find the first declared or inherited
-   * SET setter method for the indicated field type.
+   * Helper method to inspect the indicated Class to find the first declared or
+   * inherited SET setter method for the indicated field type.
    * <p>
    * @param clazz the class type to inspect
    * @param field the field to look for
@@ -1162,10 +1164,8 @@ public class SSRFUtility {
   }
 
   /**
-   * Internal helper method supporting the
-   * {@link #setProperties(SSRFProperties, java.lang.Object)} method. This
-   * method inspects the indicated Class to find the first declared or inherited
-   * SET setter method for the indicated field type.
+   * Helper method to inspect the indicated Class to find the first declared or
+   * inherited GET setter method for the indicated field type.
    * <p>
    * @param clazz the class type to inspect
    * @param field the field to look for
@@ -1195,7 +1195,7 @@ public class SSRFUtility {
    * @throws JAXBException if the entity class cannot be marshaled (serialized)
    */
   public static <T> String marshal(T clazz) throws JAXBException {
-    JAXBContext jaxbContext = JAXBContext.newInstance(clazz.getClass());
+    JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContext.newInstance(clazz.getClass());
     Marshaller marshaller = jaxbContext.createMarshaller();
     /**
      * Add newlines to the output. This helps visually inspect the output.
