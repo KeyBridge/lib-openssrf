@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,6 +60,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AMetadata", propOrder = {"cls"})
+@XmlTransient
 @SuppressWarnings("unchecked")
 public abstract class AMetadata<T> {
 
@@ -455,12 +456,12 @@ public abstract class AMetadata<T> {
   @Override
   public String toString() {
     return (cls != null ? " cls [" + cls + "]" : "")
-      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-      + (releasability != null ? " releasability [" + releasability + "]" : "")
-      + (remarkRef != null ? " rem [" + remarkRef + "]" : "");
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           + (releasability != null ? " releasability [" + releasability + "]" : "")
+           + (remarkRef != null ? " rem [" + remarkRef + "]" : "");
   }
 
   /**
