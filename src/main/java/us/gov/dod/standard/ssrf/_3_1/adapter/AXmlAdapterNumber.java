@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -153,8 +153,8 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
   @Override
   public String marshal(Number v) throws Exception {
     return v != null
-      ? df != null ? df.format(convert(v)) : convert(v).toString()
-      : null;
+           ? df != null ? df.format(convert(v)) : convert(v).toString()
+           : null;
   }
 
   /**
@@ -230,5 +230,31 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
       return digitCount - 1;
     }
     return digitCount;
+  }
+
+  /**
+   * Get the maximum value allowed by this adapter.
+   * <p>
+   * @return the maximum allowed value. Integer.MAX_VALUE if not set.
+   */
+  public Number getMaxValue() {
+    if (totalDigits != null && fractionDigits != null) {
+      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits - fractionDigits));
+    } else {
+      return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
+    }
+  }
+
+  /**
+   * Get the minimum value allowed by this adapter.
+   * <p>
+   * @return the minimum allowed value. Integer.MIN_VALUE if not set.
+   */
+  public Number getMinValue() {
+    if (totalDigits != null && fractionDigits != null) {
+      return maxInclusive != null ? maxInclusive : -Math.pow(10, (totalDigits - fractionDigits));
+    } else {
+      return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
+    }
   }
 }

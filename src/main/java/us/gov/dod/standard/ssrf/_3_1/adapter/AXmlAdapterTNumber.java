@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -154,8 +154,8 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
   @Override
   public String marshal(IMetadataType v) throws Exception {
     return df != null
-      ? df.format(convert((Number) v.getValue()).getValue())
-      : convert((Number) v.getValue()).getValue().toString();
+           ? df.format(convert((Number) v.getValue()).getValue())
+           : convert((Number) v.getValue()).getValue().toString();
   }
 
   /**
@@ -228,5 +228,23 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
       return digitCount - 1;
     }
     return digitCount;
+  }
+
+  /**
+   * Get the maximum value allowed by this adapter.
+   * <p>
+   * @return the maximum allowed value. Integer.MAX_VALUE if not set.
+   */
+  public Number getMaxValue() {
+    return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
+  }
+
+  /**
+   * Get the minimum value allowed by this adapter.
+   * <p>
+   * @return the minimum allowed value. Integer.MIN_VALUE if not set.
+   */
+  public Number getMinValue() {
+    return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
   }
 }

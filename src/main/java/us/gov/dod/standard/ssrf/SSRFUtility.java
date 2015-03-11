@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -491,7 +491,7 @@ public class SSRFUtility {
    * @param clazz the class type to inspect
    * @return a non-null {@link HashSet} instance of Fields
    */
-  private static Set<Field> findDeclaredAndInheritedFields(Class<?> clazz) {
+  protected static Set<Field> findDeclaredAndInheritedFields(Class<?> clazz) {
     Set<Field> fieldSet = new HashSet<>();
     Class<?> clazzType = clazz;
     while (clazzType != null && clazzType != Object.class) {
@@ -511,7 +511,7 @@ public class SSRFUtility {
    * @param clazz the class type to inspect
    * @return a non-null {@link HashSet} instance of Methods
    */
-  private static Set<Method> findDeclaredAndInheritedMethods(Class<?> clazz) {
+  protected static Set<Method> findDeclaredAndInheritedMethods(Class<?> clazz) {
     Set<Method> methodSet = new HashSet<>();
     Class<?> clazzType = clazz;
     while (clazzType != null && clazzType != Object.class) {
@@ -530,7 +530,7 @@ public class SSRFUtility {
    * @param field the field to inspect
    * @return TRUE if and only if the XML annotation is marked "required = true"
    */
-  private static boolean isRequired(Field field) {
+  protected static boolean isRequired(Field field) {
     for (Annotation annotation : field.getAnnotations()) {
       if (annotation instanceof XmlAttribute) {
         return ((XmlAttribute) annotation).required();
@@ -552,8 +552,8 @@ public class SSRFUtility {
    */
   private static String trimString(String value, int maxLength) {
     return value.length() <= maxLength
-      ? value
-      : value.substring(0, maxLength - 3) + "...";
+           ? value
+           : value.substring(0, maxLength - 3) + "...";
   }
 
   /**
@@ -755,8 +755,8 @@ public class SSRFUtility {
      * Only inspect SSRF classes, but ignore ADAPTER and METADATA helpers.
      */
     if (className.startsWith(SSRF_PACKAGE)
-      && !className.contains(".adapter.")
-      && !className.contains(".metadata.")) {
+        && !className.contains(".adapter.")
+        && !className.contains(".metadata.")) {
       try {
         return instance.getClass().getMethod("prepare") != null;
       } catch (NoSuchMethodException | SecurityException ex) {
@@ -939,8 +939,8 @@ public class SSRFUtility {
      * Only inspect SSRF classes, but ignore ADAPTER and LIST helpers.
      */
     if (className.startsWith(SSRF_PACKAGE)
-      && !className.contains(".adapter.")
-      && !className.contains(".metadata.lists")) {
+        && !className.contains(".adapter.")
+        && !className.contains(".metadata.lists")) {
       try {
         return instance.getClass().getMethod("postLoad", SSRF.class) != null;
       } catch (NoSuchMethodException | SecurityException ex) {
@@ -1127,12 +1127,12 @@ public class SSRFUtility {
    * @param field the field to look for
    * @return a WITH setter method, if present
    */
-  private static Method findWithMethod(Class<?> clazz, Field field) {
+  protected static Method findWithMethod(Class<?> clazz, Field field) {
     /**
      * Push all names to lower case to perform a case-insensitive search.
      */
     for (Method method : findDeclaredAndInheritedMethods(clazz)) {
-      if (method.getName().toLowerCase().contains("with" + field.getName().toLowerCase())) {
+      if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())) {
         return method;
       }
     }
@@ -1149,12 +1149,34 @@ public class SSRFUtility {
    * @param field the field to look for
    * @return a SET setter method, if present
    */
-  private static Method findSetMethod(Class<?> clazz, Field field) {
+  protected static Method findSetMethod(Class<?> clazz, Field field) {
     /**
      * Push all names to lower case to perform a case-insensitive search.
      */
     for (Method method : findDeclaredAndInheritedMethods(clazz)) {
-      if (method.getName().toLowerCase().contains("set" + field.getName().toLowerCase())) {
+      if (method.getName().toLowerCase().startsWith("set" + field.getName().toLowerCase())) {
+        return method;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Internal helper method supporting the
+   * {@link #setProperties(SSRFProperties, java.lang.Object)} method. This
+   * method inspects the indicated Class to find the first declared or inherited
+   * SET setter method for the indicated field type.
+   * <p>
+   * @param clazz the class type to inspect
+   * @param field the field to look for
+   * @return a SET setter method, if present
+   */
+  protected static Method findGetMethod(Class<?> clazz, Field field) {
+    /**
+     * Push all names to lower case to perform a case-insensitive search.
+     */
+    for (Method method : findDeclaredAndInheritedMethods(clazz)) {
+      if (method.getName().toLowerCase().startsWith("get" + field.getName().toLowerCase())) {
         return method;
       }
     }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -142,4 +142,21 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
     return upperCase ? v.toUpperCase(Locale.getDefault()) : v;
   }
 
+  /**
+   * Get the maximum string length.
+   * <p>
+   * @return the maximum string length.
+   */
+  public Integer getMaxLength() {
+    return maxLength;
+  }
+
+  /**
+   * Get the minimum string length.
+   * <p>
+   * @return the minimum string length.
+   */
+  public Integer getMinLength() {
+    return minLength;
+  }
 }
