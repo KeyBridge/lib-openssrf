@@ -43,7 +43,6 @@ public class TOATest {
 
     System.out.println(ssrf);
 
-    System.out.println(ssrf.evaluate());
     System.out.println(ssrf.toXML());
 
   }

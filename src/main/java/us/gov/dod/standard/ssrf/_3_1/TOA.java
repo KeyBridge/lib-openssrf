@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,7 +65,6 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
   "country",
   "freqBand"
 })
-@XmlRootElement
 public class TOA extends Common<TOA> {
 
   /**
@@ -615,16 +614,16 @@ public class TOA extends Common<TOA> {
   @Override
   public String toString() {
     return "TOA {"
-      + (title != null ? " title [" + title + "]" : "")
-      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-      + (footnote != null ? " footnote [" + footnote + "]" : "")
-      + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
-      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-      + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
-      + (administration != null ? " administration [" + administration + "]" : "")
-      + (country != null ? " country [" + country + "]" : "")
-      + "\n  TOA." + super.toString() + "\n"
-      + "}";
+           + (title != null ? " title [" + title + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (footnote != null ? " footnote [" + footnote + "]" : "")
+           + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
+           + (administration != null ? " administration [" + administration + "]" : "")
+           + (country != null ? " country [" + country + "]" : "")
+           + "\n  TOA." + super.toString() + "\n"
+           + "}";
   }
 
   /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -99,6 +99,16 @@ public class SSRF extends SchemaRoot<SSRF> {
   }
 
   /**
+   * Inspect this SSRF instance to determine if the SSRF Properties field is
+   * configured.
+   * <p>
+   * @return TRUE if the internal SSRF Properties configuration is not null;
+   */
+  public boolean isSetProperties() {
+    return this.ssrfProperties != null;
+  }
+
+  /**
    * Set the SSRF Properties for this SSRF instance.
    * <p>
    * This method creates a local copy of the input SSRFProperties values. To
@@ -142,6 +152,19 @@ public class SSRF extends SchemaRoot<SSRF> {
     if (ssrfProperties != null) {
       ssrfProperties.remove(propertyName);
     }
+  }
+
+  /**
+   * Searches for the property with the specified key in this property list. If
+   * the key is not found in this property list, the default property list, and
+   * its defaults, recursively, are then checked. The method returns null if the
+   * property is not found.
+   * <p>
+   * @param propertyName the property key.
+   * @return the value in this property list with the specified key value.
+   */
+  public String getProperty(String propertyName) {
+    return ssrfProperties != null ? ssrfProperties.getProperty(propertyName) : null;
   }//</editor-fold>
 
   //<editor-fold defaultstate="collapsed" desc="Export to XML">

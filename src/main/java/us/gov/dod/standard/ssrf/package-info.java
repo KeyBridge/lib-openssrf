@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@javax.xml.bind.annotation.XmlSchema(location = "https://acc.dau.mil",
-                                     elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED,
-                                     xmlns = {
-                                       @javax.xml.bind.annotation.XmlNs(prefix = "ssrf", namespaceURI = "urn:us:gov:dod:standard:ssrf:3.1.0"),
-                                       @javax.xml.bind.annotation.XmlNs(prefix = "xs", namespaceURI = "http://www.w3.org/2001/XMLSchema"),
-                                       @javax.xml.bind.annotation.XmlNs(prefix = "xsi", namespaceURI = "http://www.w3.org/2001/XMLSchema-instance")}
+@javax.xml.bind.annotation.XmlSchema(
+        namespace = "urn:us:gov:dod:standard:ssrf:3.1.0",
+        location = "https://acc.dau.mil",
+        elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED,
+        xmlns = {
+          @javax.xml.bind.annotation.XmlNs(prefix = "s", namespaceURI = "urn:us:gov:dod:standard:ssrf:3.1.0"),
+          @javax.xml.bind.annotation.XmlNs(prefix = "xs", namespaceURI = "http://www.w3.org/2001/XMLSchema"),
+          @javax.xml.bind.annotation.XmlNs(prefix = "xsi", namespaceURI = "http://www.w3.org/2001/XMLSchema-instance")
+        }
 )
 package us.gov.dod.standard.ssrf;

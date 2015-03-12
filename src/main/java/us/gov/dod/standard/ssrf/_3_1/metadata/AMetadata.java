@@ -60,7 +60,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AMetadata", propOrder = {"cls"})
-@XmlTransient
+//@XmlTransient
 @SuppressWarnings("unchecked")
 public abstract class AMetadata<T> {
 

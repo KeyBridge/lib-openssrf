@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -83,7 +83,7 @@ public class SSRFProperties extends Properties {
   public boolean containsClass(Class<?> clazz) {
     Pattern p = Pattern.compile("^(\\w+)\\.(\\w+)$");
     for (Map.Entry<Object, Object> entry : entrySet()) {
-      Matcher m = p.matcher((String) entry.getKey());
+      Matcher m = p.matcher(entry.getKey().toString());
       if (m.find()) {
         return true;
       }
@@ -141,7 +141,7 @@ public class SSRFProperties extends Properties {
      */
     Pattern p = Pattern.compile(classPath + "\\." + fieldName + "$");
     for (Map.Entry<Object, Object> entry : entrySet()) {
-      Matcher m = p.matcher((String) entry.getKey());
+      Matcher m = p.matcher(entry.getKey().toString());
       if (m.find()) {
         return (String) entry.getValue();
       }

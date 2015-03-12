@@ -1008,6 +1008,7 @@ public class SSRFUtility {
    * @param classPath  the current dot-delimited classPath going into this
    *                   object instance
    */
+  @SuppressWarnings("unchecked")
   private static void setProperties(SSRFProperties properties, Object instance, String classPath) {
     if (instance == null) {
       return;
@@ -1065,15 +1066,17 @@ public class SSRFUtility {
          * a configured property is found for the classPath (or class) and the
          * current field try to set the value using the WITH setter.
          */
+
         String propertyValue = properties.getProperty(classPathInternal.replaceFirst("\\.", ""), field.getName());
+
         if (propertyValue == null) {
           propertyValue = properties.getProperty(clazz, field);
         }
         if (propertyValue != null) {
           /**
-           * Get the WITH setter.
+           * Get the SET setter.
            */
-          Method method = findWithMethod(clazz, field);
+          Method method = findSetMethod(clazz, field);
 //          if (method == null) {            method = findSetMethod(clazz, field);          }
           if (method != null && method.getParameterTypes().length != 0) {
             Class<?> paramType = method.getParameterTypes()[0];
@@ -1087,20 +1090,21 @@ public class SSRFUtility {
               objectValue = propertyValue;
             }
             /**
-             * Try to invoke the WITH setter with the user-defined properties
+             * Try to invoke the SET setter with the user-defined properties
              * configuration (either an ENUM or String). Ignore all errors to
              * fail gracefully.
              */
             try {
               method.invoke(instance, objectValue);
             } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-              Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
+              logger.log(Level.SEVERE, "Failed to set SSRF property {0} as {1}:  {2}",
+                         new Object[]{field, objectValue, ex.getMessage()});
             }
           }
         } else {
           /**
-           * If the field is null and the no SSRF Property is configured for
-           * this field then skip it.
+           * If the field is null and no SSRF Property is configured for this
+           * field then skip it.
            */
           continue;
         }
