@@ -31,6 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TDecimal")
+@XmlRootElement
 public class TDecimal extends AMetadata<TDecimal> implements IMetadataType, Comparable<TDecimal> {
 
   /**

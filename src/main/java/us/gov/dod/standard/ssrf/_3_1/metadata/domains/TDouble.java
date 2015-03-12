@@ -16,10 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
 import java.util.Objects;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;

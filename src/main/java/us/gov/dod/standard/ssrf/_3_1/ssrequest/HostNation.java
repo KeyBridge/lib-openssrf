@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,8 @@
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -100,8 +100,8 @@ public class HostNation extends AMetadata<HostNation> {
   @Override
   public String toString() {
     return "HostNation {"
-      + value + super.toString()
-      + "}";
+           + value + super.toString()
+           + "}";
   }
 
   /**

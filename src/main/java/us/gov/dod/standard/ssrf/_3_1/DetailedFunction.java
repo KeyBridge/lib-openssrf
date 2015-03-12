@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -89,8 +89,8 @@ public class DetailedFunction extends AMetadata<DetailedFunction> {
   @Override
   public String toString() {
     return "DetailedFunction {"
-      + value + super.toString()
-      + "}";
+           + value + super.toString()
+           + "}";
   }
 
   /**

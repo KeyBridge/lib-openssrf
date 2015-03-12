@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,17 +15,14 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
-import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 import java.util.TimeZone;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
+import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**

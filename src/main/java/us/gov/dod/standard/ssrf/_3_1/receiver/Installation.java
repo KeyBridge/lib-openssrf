@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,9 +16,9 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS40;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS40;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -104,8 +104,8 @@ public class Installation extends AMetadata<Installation> {
   @Override
   public String toString() {
     return "Installation {"
-      + value + super.toString()
-      + "}";
+           + value + super.toString()
+           + "}";
   }
 
   /**

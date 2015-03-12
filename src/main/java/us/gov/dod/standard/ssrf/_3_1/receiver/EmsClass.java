@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,9 +16,9 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS5;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS5;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
 
@@ -355,12 +355,12 @@ public class EmsClass extends AMetadata<EmsClass> {
   @Override
   public String toString() {
     return "EmsClass {"
-      + value
-      + (explainInformationTypeX != null ? " explainInformationTypeX [" + explainInformationTypeX + "]" : "")
-      + (explainModulationTypeX != null ? " explainModulationTypeX [" + explainModulationTypeX + "]" : "")
-      + (explainNatureOfSignalX != null ? " explainNatureOfSignalX [" + explainNatureOfSignalX + "]" : "")
-      + super.toString()
-      + "}";
+           + value
+           + (explainInformationTypeX != null ? " explainInformationTypeX [" + explainInformationTypeX + "]" : "")
+           + (explainModulationTypeX != null ? " explainModulationTypeX [" + explainModulationTypeX + "]" : "")
+           + (explainNatureOfSignalX != null ? " explainNatureOfSignalX [" + explainNatureOfSignalX + "]" : "")
+           + super.toString()
+           + "}";
   }
 
   /**

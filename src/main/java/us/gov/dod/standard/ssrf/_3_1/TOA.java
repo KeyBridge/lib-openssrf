@@ -65,6 +65,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
   "country",
   "freqBand"
 })
+@XmlRootElement
 public class TOA extends Common<TOA> {
 
   /**

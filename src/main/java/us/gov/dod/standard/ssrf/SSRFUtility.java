@@ -587,7 +587,7 @@ public class SSRFUtility {
    *                       copied into their proper destination
    */
   @SuppressWarnings("AssignmentToMethodParameter")
-  private static void prepare(Object sourceInstance, Object rootInstance) {
+  public static void prepare(Object sourceInstance, Object rootInstance) {
     /**
      * Return immediately if the source instance is null. Instantiate a new
      * destination instance if none is provided.
@@ -1148,6 +1148,31 @@ public class SSRFUtility {
   }
 
   /**
+   * Helper method to inspect the indicated Class to find the declared or
+   * inherited WITH setter method for the indicated field type that accepts a
+   * SET.
+   * <p>
+   * This method supports
+   * {@link #setProperties(SSRFProperties, java.lang.Object)}.
+   * <p>
+   * @param clazz the class type to inspect
+   * @param field the field to look for
+   * @return a WITH setter method, if present
+   */
+  protected static Method findWithSetMethod(Class<?> clazz, Field field) {
+    /**
+     * Push all names to lower case to perform a case-insensitive search.
+     */
+    for (Method method : findDeclaredAndInheritedMethods(clazz)) {
+      if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())
+          && Arrays.asList(method.getParameterTypes()).contains(Set.class)) {
+        return method;
+      }
+    }
+    return null;
+  }
+
+  /**
    * Helper method to inspect the indicated Class to find the first declared or
    * inherited SET setter method for the indicated field type.
    * <p>
@@ -1199,7 +1224,8 @@ public class SSRFUtility {
    * @throws JAXBException if the entity class cannot be marshaled (serialized)
    */
   public static <T> String marshal(T clazz) throws JAXBException {
-    JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContext.newInstance(clazz.getClass());
+    JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory.createContext(new Class<?>[]{clazz.getClass()}, null, null);
+//    JAXBContext jaxbContext = org.eclipse.persistence.jaxb.JAXBContext.newInstance(clazz.getClass());
     Marshaller marshaller = jaxbContext.createMarshaller();
     /**
      * Add newlines to the output. This helps visually inspect the output.

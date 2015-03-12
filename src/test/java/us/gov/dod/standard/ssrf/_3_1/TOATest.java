@@ -16,9 +16,11 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import org.junit.Test;
-import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf.SSRFProperties;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
+import us.gov.dod.standard.ssrf.SSRFUtility;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TDecimal;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
 
 /**
  *
@@ -37,13 +39,26 @@ public class TOATest {
 
     SSRFTestUtility.minfill(t);
 
+    SSRFUtility.prepare(t, null);
+
+    System.out.println(SSRFUtility.marshal(t));
+
+    for (FreqBand freqBand : t.getFreqBand()) {
+      freqBand.getFreqMin().setCls(ListCCL.S);
+      freqBand.getFreqMax().setCls(ListCCL.R);
+    }
+
+    System.out.println(SSRFUtility.marshal(t));
+
     System.out.println("  test Minimum Positive Fill OK");
 
-    SSRF ssrf = new SSRF().withProperties(SSRFProperties.getDefault()).withTOA(t);
-
-    System.out.println(ssrf);
-
-    System.out.println(ssrf.toXML());
+//    SSRF ssrf = new SSRF().withProperties(SSRFProperties.getDefault()).withTOA(t);
+//    System.out.println(ssrf);
+//    System.out.println(ssrf.toXML());
+    TDecimal td = new TDecimal(12093812.1023810938);
+    td.setCls(ListCCL.U);
+    System.out.println("TD " + td);
+    System.out.println(SSRFUtility.marshal(td));
 
   }
 

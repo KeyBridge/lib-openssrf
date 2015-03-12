@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -164,9 +164,9 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
    */
   public static TSerial getInstance(Class<? extends Common<?>> clazz) {
     return new TSerial()
-      .withLocale(Locale.getDefault())
-      .withDatasetType(clazz)
-      .withSerial(uuidSnippet());
+            .withLocale(Locale.getDefault())
+            .withDatasetType(clazz)
+            .withSerial(uuidSnippet());
   }
 
   /**
@@ -185,12 +185,12 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
   private void format() {
     StringBuilder sb = new StringBuilder();
     sb.append(country != null ? country.name() : "")
-      .append(":")
-      .append(organisation != null ? organisation : "")
-      .append(":")
-      .append(datasetType != null ? datasetType.name() : "")
-      .append(":")
-      .append(serial != null ? serial : uuidSnippet());
+            .append(":")
+            .append(organisation != null ? organisation : "")
+            .append(":")
+            .append(datasetType != null ? datasetType.name() : "")
+            .append(":")
+            .append(serial != null ? serial : uuidSnippet());
     this.value = sb.toString();
   }
 

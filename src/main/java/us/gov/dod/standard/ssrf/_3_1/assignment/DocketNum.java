@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,10 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS12;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -97,8 +97,8 @@ public class DocketNum extends AMetadata<DocketNum> {
   @Override
   public String toString() {
     return "DocketNum {"
-      + value + super.toString()
-      + "}";
+           + value + super.toString()
+           + "}";
   }
 
   /**

@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -114,7 +115,14 @@ public class SSRFTestUtility {
            */
           minfill(fieldInstance);
           Set tempSet = new HashSet<>(Arrays.asList(new Object[]{fieldInstance}));
-          SSRFUtility.findWithMethod(clazz, field).invoke(instance, tempSet);
+          Method withMethod = SSRFUtility.findWithSetMethod(clazz, field);
+          try {
+            withMethod.invoke(instance, tempSet);
+//            SSRFUtility.findWithMethod(clazz, field).invoke(instance, tempSet);
+          } catch (Exception exception) {
+            logger.log(Level.SEVERE, "Failed to invoke setter on {0} {1}: {2} ",
+                       new Object[]{withMethod, fieldClass, exception.getMessage()});
+          }
         } else {
           Object minFill = getMinfill(field);
           /**
