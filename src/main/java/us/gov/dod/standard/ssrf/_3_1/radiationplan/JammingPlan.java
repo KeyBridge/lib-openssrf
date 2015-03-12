@@ -17,7 +17,7 @@ package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
@@ -64,7 +64,7 @@ public class JammingPlan {
    * Jamming Plan.
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
   /**
    * US:NumFreqs - Frequency Count (Optional)
@@ -76,7 +76,7 @@ public class JammingPlan {
    * Format is UN(6)
    */
   @XmlElement(name = "NumFreqs", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numFreqs;
   /**
    * US:Priority - Plan Priority (Required)
@@ -117,7 +117,7 @@ public class JammingPlan {
    * Format is DateTime
    */
   @XmlElement(name = "StartDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar startDateTime;
   /**
    * US:StartLocationRef - Start Location Serial (Optional)
@@ -128,7 +128,7 @@ public class JammingPlan {
    * Format is pattern (S29)
    */
   @XmlElement(name = "StartLocationRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial startLocationRef;
   /**
    * US:StartTrigger - Start Trigger (Required)
@@ -149,7 +149,7 @@ public class JammingPlan {
    * Format is DateTime
    */
   @XmlElement(name = "StopDateTime", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar stopDateTime;
   /**
    * US:StopLocationRef - Stop Location Serial (Optional)
@@ -160,7 +160,7 @@ public class JammingPlan {
    * Format is pattern (S29)
    */
   @XmlElement(name = "StopLocationRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TString stopLocationRef;
   /**
    * US:StopTrigger - Stop Trigger (Required)
@@ -179,7 +179,7 @@ public class JammingPlan {
    * Format is S10
    */
   @XmlElement(name = "Version", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString version;
   /**
    * Level3Auth (US), indicate if a request should go directly to third-level
@@ -196,7 +196,7 @@ public class JammingPlan {
    * Format is UN(9,4) (km)
    */
   @XmlElement(name = "StandOffDist", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTSPACE.class)
   private TDecimal standOffDist;
   /**
    * US:JammingTarget (Required)

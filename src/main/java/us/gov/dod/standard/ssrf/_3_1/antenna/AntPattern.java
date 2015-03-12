@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAP;
@@ -106,7 +106,7 @@ public class AntPattern {
    * Format is UN(5,2) [0..180] (deg)
    */
   @XmlElement(name = "CutAngle", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ180.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ180.class)
   private TDecimal cutAngle;
   /**
    * AntPatternPoint (Required)

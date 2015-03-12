@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.antenna.Nomenclature;
@@ -106,7 +106,7 @@ public class Transmitter extends Common<Transmitter> {
    * Attribute group Duplex (Optional)
    */
   @XmlElement(name = "DuplexSep")
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal duplexSep;
   /**
    * DuplexSepType - Duplex Separation Type (Optional)
@@ -142,7 +142,7 @@ public class Transmitter extends Common<Transmitter> {
    * Attribute group Output (Optional)
    */
   @XmlElement(name = "OutputDevice", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS40.class)
   private TString outputDevice;
   /**
    * Filter - Filter Type Description (Optional)
@@ -152,7 +152,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is Memo
    */
   @XmlElement(name = "Filter", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString filter;
   /**
    * US:FCCAcceptanceNum - FCC Acceptance Number (Optional)
@@ -162,7 +162,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is S50
    */
   @XmlElement(name = "FCCAcceptanceNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString fccAcceptanceNum;
   /**
    * US:TSPR - TSPR (Optional)
@@ -175,7 +175,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is S10
    */
   @XmlElement(name = "TSPR", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString tspr;
   /**
    * POCInformation (Optional)

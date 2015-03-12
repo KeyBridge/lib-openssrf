@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.FEDeployment;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -64,7 +64,7 @@ public class AtWaypoint {
    * Format is UN(6)
    */
   @XmlElement(name = "WaypointIdx", required = true)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger waypointIdx;
   /**
    * DateTime - Date/Time (Required)
@@ -74,7 +74,7 @@ public class AtWaypoint {
    * Format is DateTime
    */
   @XmlElement(name = "DateTime", required = true)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATETIME.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
   private TCalendar dateTime;
   /**
    * Speed - Speed at Waypoint (Optional)
@@ -85,7 +85,7 @@ public class AtWaypoint {
    * Format is UN(7,2) (km/h)
    */
   @XmlElement(name = "Speed", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSPEED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSPEED.class)
   private TDecimal speed;
 
   /**

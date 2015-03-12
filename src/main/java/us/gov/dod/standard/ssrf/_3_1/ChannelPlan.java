@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.channelplan.Channel;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -68,7 +68,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * Format is S100
    */
   @XmlElement(name = "Name", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString name;
   /**
    * ChannelPlanRef - Element Content (Required)

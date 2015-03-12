@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBD;
@@ -90,7 +90,7 @@ public class ObservedLobeAnalysis {
    * Format is S10
    */
   @XmlElement(name = "LobeID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString lobeID;
   /**
    * US:LobeName - Lobe Name (Optional)
@@ -100,7 +100,7 @@ public class ObservedLobeAnalysis {
    * Format is S25
    */
   @XmlElement(name = "LobeName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS25.class)
   private TString lobeName;
   /**
    * LobeSymmetric (US), indicate whether the sidelobe is symmetric.

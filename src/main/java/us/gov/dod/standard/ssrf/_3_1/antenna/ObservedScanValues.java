@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -46,7 +46,7 @@ public class ObservedScanValues {
    * Format is UN(6,2) (deg/sec)
    */
   @XmlElement(name = "ScanValue", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
   private TDecimal scanValue;
   /**
    * StatisticalIndicator (US), indicate how this specific data observation was
@@ -54,7 +54,7 @@ public class ObservedScanValues {
    * value is assumed to be part of the 100% sample size.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal statisticalIndicator;
 
   /**

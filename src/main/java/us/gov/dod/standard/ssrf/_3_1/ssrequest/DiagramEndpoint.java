@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -72,7 +72,7 @@ public class DiagramEndpoint {
    * Format is S20
    */
   @XmlElement(name = "EndpointID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString endpointID;
   /**
    * Description - Endpoint Description (Optional)
@@ -84,19 +84,19 @@ public class DiagramEndpoint {
    * @since v3.1.0
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
    * Repurposed in v3.1.0 to be a short text endpoint description.
    */
   @XmlElement(name = "Name ", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
   private TString name;
   @XmlElement(name = "IconPosLeft ", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUS_TWIPS.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUS_TWIPS.class)
   private TInteger iconPosLeft;
   @XmlElement(name = "IconPosTop ", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUS_TWIPS.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUS_TWIPS.class)
   private TInteger iconPosTop;
   /**
    * PointToMultiPoint - Point to Multipoint Indicator (Optional)

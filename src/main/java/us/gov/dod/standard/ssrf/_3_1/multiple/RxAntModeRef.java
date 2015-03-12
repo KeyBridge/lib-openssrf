@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -61,7 +61,7 @@ public class RxAntModeRef {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * ModeID - Antenna Mode Identifier (Optional)
@@ -73,7 +73,7 @@ public class RxAntModeRef {
    * Format is S20
    */
   @XmlElement(name = "ModeID", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
   /**
    * CouplingLoss - Coupling Loss (Optional)
@@ -84,7 +84,7 @@ public class RxAntModeRef {
    * Format is SN(6,3) (dB)
    */
   @XmlElement(name = "CouplingLoss", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal couplingLoss;
 
   /**

@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -106,7 +106,7 @@ public class AntMode {
    * Attribute group ModeInfo (Required)
    */
   @XmlElement(name = "ModeID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
   /**
    * Description - Mode Description (Optional)
@@ -119,7 +119,7 @@ public class AntMode {
    * Attribute group ModeInfo (Required)
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
    * ModeUse, indicate if the mode is used for transmit, receive, or both
@@ -169,7 +169,7 @@ public class AntMode {
    * Attribute group Pol (Optional)
    */
   @XmlElement(name = "PolarisationAngle", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal polarisationAngle;
   /**
    * HorzScanSpeed - Horizontal Scan Speed (Optional)
@@ -185,7 +185,7 @@ public class AntMode {
    * Attribute group HorzScan (Optional)
    */
   @XmlElement(name = "HorzScanSpeed", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
   private TDecimal horzScanSpeed;
   /**
    * HorzScanRate - Horizontal Scan Rate (Optional)
@@ -197,7 +197,7 @@ public class AntMode {
    * Attribute group HorzScan (Optional)
    */
   @XmlElement(name = "HorzScanRate", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterSCANRATE.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterSCANRATE.class)
   private TInteger horzScanRate;
   /**
    * HorzScanType - Horizontal Scan Type (Optional)
@@ -221,7 +221,7 @@ public class AntMode {
    * Attribute group HorzScan (Optional)
    */
   @XmlElement(name = "HorzScanSector", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzScanSector;
   /**
    * VertScanSpeed - Vertical Scan Speed (Optional)
@@ -237,7 +237,7 @@ public class AntMode {
    * Attribute group VertScan (Optional)
    */
   @XmlElement(name = "VertScanSpeed", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSCANSPEED.class)
   private TDecimal vertScanSpeed;
   /**
    * VertScanRate - Vertical Scan Rate (Optional)
@@ -253,7 +253,7 @@ public class AntMode {
    * Attribute group VertScan (Optional)
    */
   @XmlElement(name = "VertScanRate", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterSCANRATE.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterSCANRATE.class)
   private TInteger vertScanRate;
   /**
    * VertScanType - Vertical Scan Type (Optional)
@@ -276,7 +276,7 @@ public class AntMode {
    * Attribute group VertScan (Optional)
    */
   @XmlElement(name = "VertScanAngleMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal vertScanAngleMin;
   /**
    * VertScanAngleMax - Vertical Scan Maximum Angle (Optional)
@@ -291,7 +291,7 @@ public class AntMode {
    * Attribute group VertScan (Optional)
    */
   @XmlElement(name = "VertScanAngleMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal vertScanAngleMax;
   /**
    * RotationDirection - Rotation Direction (Optional)
@@ -312,7 +312,7 @@ public class AntMode {
    * Attribute group RotationRate (Optional)
    */
   @XmlElement(name = "RotationRateMin")
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterROTATIONRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterROTATIONRATE.class)
   private TDecimal rotationRateMin;
   /**
    * RotationRateMax - Maximum Rotation Rate (Optional)
@@ -327,7 +327,7 @@ public class AntMode {
    * Attribute group RotationRate (Optional)
    */
   @XmlElement(name = "RotationRateMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterROTATIONRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterROTATIONRATE.class)
   private TDecimal rotationRateMax;
   /**
    * HorzBwMin - Minimum or Nominal Horizontal Beamwidth (Optional)
@@ -339,7 +339,7 @@ public class AntMode {
    * Attribute group Beamwidth (Optional)
    */
   @XmlElement(name = "HorzBwMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzBwMin;
   /**
    * HorzBwMax - Maximum Horizontal Beamwidth (Optional)
@@ -354,7 +354,7 @@ public class AntMode {
    * Attribute group Beamwidth (Optional)
    */
   @XmlElement(name = "HorzBwMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal horzBwMax;
   /**
    * VertBwMin - Minimum or Nominal Vertical Beamwidth (Optional)
@@ -366,7 +366,7 @@ public class AntMode {
    * Attribute group Beamwidth (Optional)
    */
   @XmlElement(name = "VertBwMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal vertBwMin;
   /**
    * VertBwMax - Maximum Vertical Beamwidth (Optional)
@@ -381,7 +381,7 @@ public class AntMode {
    * Attribute group Beamwidth (Optional)
    */
   @XmlElement(name = "VertBwMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal vertBwMax;
   /**
    * BeamType - Beam Type (Optional)
@@ -402,7 +402,7 @@ public class AntMode {
    * Format is SN(10,7) (dBW)
    */
   @XmlElement(name = "MaxPower", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal maxPower;
   /**
    * PortIsolation - Port Isolation (Optional)
@@ -413,11 +413,11 @@ public class AntMode {
    * Format is SN(6,3) (dB)
    */
   @XmlElement(name = "PortIsolation", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal portIsolation;
 
   @XmlElement(name = "ModeName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS40.class)
   private TString modeName;
   /**
    * AntGain (Optional)

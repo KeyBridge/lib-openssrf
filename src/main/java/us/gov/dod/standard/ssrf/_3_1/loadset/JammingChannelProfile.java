@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Loadset;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -76,7 +76,7 @@ public class JammingChannelProfile {
    * Format is SN(6,3) (dBm)
    */
   @XmlElement(name = "ActivationPower", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBM.class)
   private TDecimal activationPower;
   /**
    * US:ActivationTime - Activation Time (Optional)
@@ -87,7 +87,7 @@ public class JammingChannelProfile {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ActivationTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal activationTime;
   /**
    * US:CarrierWaveform - Carrier Waveform (Required)
@@ -97,7 +97,7 @@ public class JammingChannelProfile {
    * Format is S100
    */
   @XmlElement(name = "CarrierWaveform", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString carrierWaveform;
   /**
    * US:CenterFreq - Center Frequency (Optional)
@@ -107,7 +107,7 @@ public class JammingChannelProfile {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "CenterFreq", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal centerFreq;
   /**
    * US:ChannelSpacing - Channel Spacing (Optional)
@@ -117,7 +117,7 @@ public class JammingChannelProfile {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "ChannelSpacing", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal channelSpacing;
   /**
    * US:Direction - Sweep Direction (Optional)
@@ -137,7 +137,7 @@ public class JammingChannelProfile {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "Dwell", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal dwell;
   /**
    * ExBlankingOn (US), indicate if external blanking is enabled.
@@ -153,7 +153,7 @@ public class JammingChannelProfile {
    * Format is S20
    */
   @XmlElement(name = "FFTType", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString fftType;
   /**
    * US:FreqMax - Maximum Frequency (Optional)
@@ -165,7 +165,7 @@ public class JammingChannelProfile {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * US:FreqMin - Minimum Frequency (Required)
@@ -175,7 +175,7 @@ public class JammingChannelProfile {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "FreqMin", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * US:ObserveTime - Observe Time (Optional)
@@ -188,7 +188,7 @@ public class JammingChannelProfile {
    * Format is pattern (S16)
    */
   @XmlElement(name = "ObserveTime", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS_DURATION.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS_DURATION.class)
   private TString observeTime;
   /**
    * US:OffsetFreq - Offset Frequency (Optional)
@@ -198,7 +198,7 @@ public class JammingChannelProfile {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "OffsetFreq", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal offsetFreq;
   /**
    * US:RxDuration - Receive Duration (Optional)
@@ -211,7 +211,7 @@ public class JammingChannelProfile {
    * Format is pattern (S16)
    */
   @XmlElement(name = "RxDuration", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS_DURATION.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS_DURATION.class)
   private TString rxDuration;
   /**
    * US:Signal - Signal (Required)
@@ -221,7 +221,7 @@ public class JammingChannelProfile {
    * Format is S100
    */
   @XmlElement(name = "Signal", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString signal;
   /**
    * US:Techniques - Techniques (Optional)
@@ -232,7 +232,7 @@ public class JammingChannelProfile {
    * Format is UN(5)
    */
   @XmlElement(name = "Techniques", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger techniques;
   /**
    * US:Threat - Threat (Optional)
@@ -242,7 +242,7 @@ public class JammingChannelProfile {
    * Format is S100
    */
   @XmlElement(name = "Threat", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString threat;
   /**
    * US:TxDuration - Transmit Duration (Optional)
@@ -255,7 +255,7 @@ public class JammingChannelProfile {
    * Format is pattern (S16)
    */
   @XmlElement(name = "TxDuration", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS_DURATION.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS_DURATION.class)
   private TString txDuration;
   /**
    * US:TimingDeconflictionProtocol (Optional)

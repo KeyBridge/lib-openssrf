@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
@@ -88,7 +88,7 @@ public class StationConfig {
    * Format is S100
    */
   @XmlElement(name = "ConfigID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString configID;
   /**
    * StationID - Station Reference (Required)
@@ -100,7 +100,7 @@ public class StationConfig {
    * Format is S100
    */
   @XmlElement(name = "StationID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString stationID;
   /**
    * EIRPMin - Minimum or Nominal EIRP (Optional)
@@ -114,7 +114,7 @@ public class StationConfig {
    * Attribute group EIRP (Optional)
    */
   @XmlElement(name = "EIRPMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMin;
   /**
    * EIRPMax - Maximum EIRP (Optional)
@@ -130,7 +130,7 @@ public class StationConfig {
    * Attribute group EIRP (Optional)
    */
   @XmlElement(name = "EIRPMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
   private TDecimal eirpMax;
   /**
    * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
@@ -144,7 +144,7 @@ public class StationConfig {
    * Format is UN(5) (m)
    */
   @XmlElement(name = "AntFeedpointHeight", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterHEIGHT_UN4.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterHEIGHT_UN4.class)
   private TInteger antFeedpointHeight;
   /**
    * FeedlineLength - Feedline length (Optional)
@@ -154,7 +154,7 @@ public class StationConfig {
    * Format is SN(7,2) (m)
    */
   @XmlElement(name = "FeedlineLength", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal feedlineLength;
   /**
    * FeedlineLoss - Feedline total loss (Optional)
@@ -164,7 +164,7 @@ public class StationConfig {
    * Format is SN(6,3) (dB)
    */
   @XmlElement(name = "FeedlineLoss", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal feedlineLoss;
   /**
    * EarthCoverage - Satellite Earth Coverage (Optional)
@@ -185,7 +185,7 @@ public class StationConfig {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "PointingAzMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal pointingAzMin;
   /**
    * PointingAzMax - Pointing Maximum Azimuth (Optional)
@@ -199,7 +199,7 @@ public class StationConfig {
    * Format is UN(5,2) (deg)
    */
   @XmlElement(name = "PointingAzMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal pointingAzMax;
   /**
    * PointingElevMin - Pointing Minimum/Nominal Elevation (Optional)
@@ -211,7 +211,7 @@ public class StationConfig {
    * Format is SN(4,2) (deg)
    */
   @XmlElement(name = "PointingElevMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal pointingElevMin;
   /**
    * PointingElevMax - Pointing Maximum Elevation (Optional)
@@ -226,7 +226,7 @@ public class StationConfig {
    * Format is SN(4,2) (deg)
    */
   @XmlElement(name = "PointingElevMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterELEV.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV.class)
   private TDecimal pointingElevMax;
   /**
    * US:CoordinationNum - Coordination Number (Optional)
@@ -237,7 +237,7 @@ public class StationConfig {
    * Format is S15
    */
   @XmlElement(name = "CoordinationNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
   private TString coordinationNum;
   /**
    * Blanking (Optional)

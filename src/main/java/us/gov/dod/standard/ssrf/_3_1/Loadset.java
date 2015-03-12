@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.loadset.JammingChannelProfile;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -107,7 +107,7 @@ public class Loadset extends Common<Loadset> {
    * Format is Memo
    */
   @XmlElement(name = "KeyLoadProcedure", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString keyLoadProcedure;
   /**
    * US:MaxActiveFrames - Maximum Active Frames (Optional)
@@ -118,7 +118,7 @@ public class Loadset extends Common<Loadset> {
    * Format is UN(6)
    */
   @XmlElement(name = "MaxActiveFrames", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger maxActiveFrames;
   /**
    * US:MaxReactiveFrames - Maximum Reactive Frames (Optional)
@@ -129,7 +129,7 @@ public class Loadset extends Common<Loadset> {
    * Format is UN(6)
    */
   @XmlElement(name = "MaxReactiveFrames", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger maxReactiveFrames;
   /**
    * US:Mission - Threat Load Mission (Optional)
@@ -139,7 +139,7 @@ public class Loadset extends Common<Loadset> {
    * Format is S100
    */
   @XmlElement(name = "Mission", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString mission;
   /**
    * US:Name - Loadset Name (Required)
@@ -149,7 +149,7 @@ public class Loadset extends Common<Loadset> {
    * Format is S50
    */
   @XmlElement(name = "Name", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString name;
   /**
    * US:PrimaryFirmware - Primary Firmware (Optional)
@@ -160,7 +160,7 @@ public class Loadset extends Common<Loadset> {
    * Format is S50
    */
   @XmlElement(name = "PrimaryFirmware", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString primaryFirmware;
   /**
    * US:ResetProcedure - Reset Procedure (Optional)
@@ -171,7 +171,7 @@ public class Loadset extends Common<Loadset> {
    * Format is Memo
    */
   @XmlElement(name = "ResetProcedure", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString resetProcedure;
   /**
    * US:SecondaryFirmware - Secondary Firmware (Optional)
@@ -182,7 +182,7 @@ public class Loadset extends Common<Loadset> {
    * Format is S50
    */
   @XmlElement(name = "SecondaryFirmware", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString secondaryFirmware;
   /**
    * US:Software - Software (Optional)
@@ -192,7 +192,7 @@ public class Loadset extends Common<Loadset> {
    * Format is S50
    */
   @XmlElement(name = "Software", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS50.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
   private TString software;
   /**
    * US:JammingChannelProfile (Required)

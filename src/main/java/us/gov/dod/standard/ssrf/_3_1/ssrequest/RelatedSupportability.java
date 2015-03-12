@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDD;
@@ -67,7 +67,7 @@ public class RelatedSupportability {
    * Format is pattern (S29)
    */
   @XmlElement(name = "SSRequestRef", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial ssRequestRef;
   /**
    * US:J12Number - J/F 12 Number (Optional)
@@ -78,7 +78,7 @@ public class RelatedSupportability {
    * Format is S15
    */
   @XmlElement(name = "J12Number", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS15.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
   private TString j12Number;
 
   /**

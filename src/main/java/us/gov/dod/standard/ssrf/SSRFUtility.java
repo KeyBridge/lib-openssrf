@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
@@ -436,7 +436,7 @@ public class SSRFUtility {
      * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlJavaTypeAdapter) {
+      if (annotation instanceof XmlTypeValidator) {
         /**
          * If an XmlJavaTypeAdapter annotation is found then instantiate the
          * XmlAdapter class referred to in the "value" field and attempt to
@@ -445,7 +445,7 @@ public class SSRFUtility {
          * valid (as determined by the marshal method).
          */
         try {
-          XmlAdapter<Object, Object> anInstance = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
+          XmlAdapter<Object, Object> anInstance = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
           anInstance.marshal(fieldValue);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
           logger.log(Level.WARNING, "XmlValidator failed to instantiate: {0}", ex.getMessage());

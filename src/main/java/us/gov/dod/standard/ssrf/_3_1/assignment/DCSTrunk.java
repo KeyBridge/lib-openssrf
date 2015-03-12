@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS6;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -49,7 +49,7 @@ public class DCSTrunk extends AMetadata<DCSTrunk> {
    * Format is S6
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS6.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS6.class)
   private String value;
 
   /**

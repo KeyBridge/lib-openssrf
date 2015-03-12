@@ -18,7 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.ssreply;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
@@ -51,7 +51,7 @@ public class Comment extends AMetadata<Comment> implements Comparable<Comment> {
    * Format is MEMO
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringMEMO.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   private String value;
   /**
    * idx - Index (Required)
@@ -65,7 +65,7 @@ public class Comment extends AMetadata<Comment> implements Comparable<Comment> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**

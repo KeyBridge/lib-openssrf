@@ -18,7 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.ChannelPlan;
 import us.gov.dod.standard.ssrf._3_1.TOA;
@@ -81,7 +81,7 @@ public class Allocation implements Comparable<Allocation> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -92,7 +92,7 @@ public class Allocation implements Comparable<Allocation> {
    * Format is Date
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * AllocatedByFootnote - Allocated By Footnote (Optional)
@@ -127,7 +127,7 @@ public class Allocation implements Comparable<Allocation> {
    * ChannelPlanRef references the ChannelPlan.
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> channelPlanRef;
   /**
    * footnotes - Link to allocation usage notes (Optional)

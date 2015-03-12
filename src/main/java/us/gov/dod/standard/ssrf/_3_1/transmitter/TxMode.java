@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -134,7 +134,7 @@ public class TxMode {
    * Format is S20
    */
   @XmlElement(name = "ModeID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString modeID;
   /**
    * Description - Mode Description (Optional)
@@ -147,7 +147,7 @@ public class TxMode {
    * Attribute group ModeInfo (Required)
    */
   @XmlElement(name = "Description", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString description;
   /**
    * NecessaryBw - Necessary Bandwidth (Optional)
@@ -160,7 +160,7 @@ public class TxMode {
    * Format is UN(16,9) [0..1E9] (MHz)
    */
   @XmlElement(name = "NecessaryBw", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal necessaryBw;
   /**
    * Tunability - Tunability (Optional)
@@ -186,11 +186,11 @@ public class TxMode {
   private TString tuningMethod;
 
   @XmlElement(name = "IntermodPct", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterPERCENT.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterPERCENT.class)
   private TDecimal intermodPct;
 
   @XmlElement(name = "IntermodEffect", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString intermodEffect;
   /**
    * BurstRate - Burst Rate (Optional)
@@ -202,7 +202,7 @@ public class TxMode {
    * Attribute group Burst (Optional)
    */
   @XmlElement(name = "BurstRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterBURSTRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterBURSTRATE.class)
   private TDecimal burstRate;
   /**
    * BurstDuration - Burst Duration (Optional)
@@ -214,7 +214,7 @@ public class TxMode {
    * Attribute group Burst (Optional)
    */
   @XmlElement(name = "BurstDuration", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal burstDuration;
   /**
    * BurstNumPulses - Number of Pulses in Burst (Optional)
@@ -226,7 +226,7 @@ public class TxMode {
    * Attribute group Burst (Optional)
    */
   @XmlElement(name = "BurstNumPulses", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN8.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN8.class)
   private TInteger burstNumPulses;
   /**
    * BurstOffTime - Burst Off-Time (Optional)
@@ -239,7 +239,7 @@ public class TxMode {
    * Attribute group Burst (Optional)
    */
   @XmlElement(name = "BurstOffTime", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal burstOffTime;
   /**
    * OccBw - Occupied Bandwidth (Optional)
@@ -251,7 +251,7 @@ public class TxMode {
    * Attribute group OccupiedBw (Optional)
    */
   @XmlElement(name = "OccBw")
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal occBw;
   /**
    * OccBwCalculated - Calculated Occupied Bandwidth Indicator (Optional)
@@ -277,7 +277,7 @@ public class TxMode {
    * Attribute group Spurious (Optional)
    */
   @XmlElement(name = "SecondHarmonicLevel", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal secondHarmonicLevel;
   /**
    * ThirdHarmonicLevel - Third Harmonic Level (Optional)
@@ -291,7 +291,7 @@ public class TxMode {
    * Attribute group Spurious (Optional)
    */
   @XmlElement(name = "ThirdHarmonicLevel", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal thirdHarmonicLevel;
   /**
    * OtherHarmonicLevel - Other Harmonic Level (Optional)
@@ -306,7 +306,7 @@ public class TxMode {
    * Attribute group Spurious (Optional)
    */
   @XmlElement(name = "OtherHarmonicLevel", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal otherHarmonicLevel;
   /**
    * SpuriousLevel - Spurious Emissions Level (Optional)
@@ -321,7 +321,7 @@ public class TxMode {
    * Attribute group Spurious (Optional)
    */
   @XmlElement(name = "SpuriousLevel", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDB.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDB.class)
   private TDecimal spuriousLevel;
   /**
    * FreqTolerance - Frequency Tolerance (Optional)
@@ -335,7 +335,7 @@ public class TxMode {
    * Attribute group FreqTolerance (Optional)
    */
   @XmlElement(name = "FreqTolerance")
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUN18_6.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUN18_6.class)
   private TDecimal freqTolerance;
   /**
    * FreqToleranceUnit - Frequency Tolerance Unit (Optional)
@@ -365,7 +365,7 @@ public class TxMode {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "ChannelDwell", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal channelDwell;
   /**
    * NumSubCarriers - Number of Subcarriers (Optional)
@@ -376,7 +376,7 @@ public class TxMode {
    * Format is UN(5)
    */
   @XmlElement(name = "NumSubCarriers", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger numSubCarriers;
   /**
    * NumSideTones - Number of Side Tones (Optional)
@@ -387,7 +387,7 @@ public class TxMode {
    * Format is UN(5)
    */
   @XmlElement(name = "NumSideTones", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN5.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
   private TInteger numSideTones;
   /**
    * US:GpsNBL1Level - GPS NBL1 Level (Optional)
@@ -400,7 +400,7 @@ public class TxMode {
    * Attribute group (Optional)
    */
   @XmlElement(name = "GpsNBL1Level", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
   private TDecimal gpsNBL1Level;
   /**
    * US:GpsNBL2Level - GPS NBL2 Level (Optional)
@@ -413,7 +413,7 @@ public class TxMode {
    * Attribute group (Optional)
    */
   @XmlElement(name = "GpsNBL2Level", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DBW.class)
   private TDecimal gpsNBL2Level;
   /**
    * US:GpsWBL1Level - GpsWBL1Level (Optional)
@@ -426,7 +426,7 @@ public class TxMode {
    * Attribute group (Optional)
    */
   @XmlElement(name = "GpsWBL1Level", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
   private TDecimal gpsWBL1Level;
   /**
    * US:GpsWBL2Level - GpsWBL1Level (Optional)
@@ -439,7 +439,7 @@ public class TxMode {
    * Attribute group (Optional)
    */
   @XmlElement(name = "GpsWBL2Level", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DBWHZ.class)
   private TDecimal gpsWBL2Level;
   /**
    * US:ModulationType - Modulation Type (Optional)
@@ -458,7 +458,7 @@ public class TxMode {
    * Format is S40
    */
   @XmlElement(name = "ModeName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS40.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS40.class)
   private TString modeName;
   /**
    * JitterCapable (US), indicate whether the mode of the pulse stream is jitter

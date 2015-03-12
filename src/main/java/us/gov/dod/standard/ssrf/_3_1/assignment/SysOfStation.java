@@ -17,7 +17,7 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -55,7 +55,7 @@ public class SysOfStation {
    * Format is S30
    */
   @XmlElement(name = "SysName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
   private TString sysName;
   /**
    * NumStations - Number of Stations (Optional)
@@ -65,7 +65,7 @@ public class SysOfStation {
    * Format is UN(9)
    */
   @XmlElement(name = "NumStations", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numStations;
 
   /**

@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -59,7 +59,7 @@ public class Assets {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * Authorised - Authorised Quantity (Optional)
@@ -69,7 +69,7 @@ public class Assets {
    * Format is UN(9)
    */
   @XmlElement(name = "Authorised", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger authorised;
   /**
    * Available - Available Quantity (Optional)
@@ -79,7 +79,7 @@ public class Assets {
    * Format is UN(9)
    */
   @XmlElement(name = "Available", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger available;
 
   /**

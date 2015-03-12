@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.DetailedFunction;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -87,7 +87,7 @@ public class Link {
    * Format is S100
    */
   @XmlElement(name = "LinkID", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString linkID;
   /**
    * Data item Function is not used by US except when exchanging with NATO.
@@ -133,7 +133,7 @@ public class Link {
    * Format is S25
    */
   @XmlElement(name = "LinkName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS25.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS25.class)
   private TString linkName;
   /**
    * Tuning (Optional)

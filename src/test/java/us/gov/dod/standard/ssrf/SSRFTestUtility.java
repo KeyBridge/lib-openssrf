@@ -29,7 +29,6 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 
@@ -141,7 +140,7 @@ public class SSRFTestUtility {
      * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlJavaTypeAdapter) {
+      if (annotation instanceof XmlTypeValidator) {
         /**
          * If an XmlJavaTypeAdapter annotation is found then instantiate the
          * XmlAdapter class referred to in the "value" field and attempt to
@@ -150,10 +149,10 @@ public class SSRFTestUtility {
          * valid (as determined by the marshal method).
          */
         try {
-          Class<?> type = ((XmlJavaTypeAdapter) annotation).type();
+          Class<?> type = ((XmlTypeValidator) annotation).type();
 
           @SuppressWarnings("unchecked")
-          XmlAdapter anInstance = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
+          XmlAdapter anInstance = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
           System.out.println("field " + field.getName() + " has xmladapter type " + anInstance.getClass().getSimpleName());
 
           if (anInstance instanceof AXmlAdapterNumber) {

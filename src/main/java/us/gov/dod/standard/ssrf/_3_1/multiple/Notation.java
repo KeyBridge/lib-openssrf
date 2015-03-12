@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.antenna.UsingCountries;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
@@ -87,7 +87,7 @@ public class Notation {
    * Format is US(20)
    */
   @XmlElement(name = "Code", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS20.class)
   private TString code;
   /**
    * US:Type - Notation Type (Optional)

@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.AsgnFreqBase;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -66,7 +66,7 @@ public class Freq extends AsgnFreqBase {
    * Format is US5
    */
   @XmlElement(name = "TAD", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterUS5.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS5.class)
   private TString tad;
   /**
    * LegacyNum - Legacy Number (Optional)
@@ -76,7 +76,7 @@ public class Freq extends AsgnFreqBase {
    * Format is S20
    */
   @XmlElement(name = "LegacyNum", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString legacyNum;
   /**
    * PairedFreqMin - Paired Nominal or Minimum Frequency (Optional)

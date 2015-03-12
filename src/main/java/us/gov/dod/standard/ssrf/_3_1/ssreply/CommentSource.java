@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.SSReply;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -78,7 +78,7 @@ public class CommentSource {
    * Format is S100
    */
   @XmlElement(name = "Source", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString source;
   /**
    * Author - Comment Author (Optional)
@@ -89,7 +89,7 @@ public class CommentSource {
    * Format is S100
    */
   @XmlElement(name = "Author", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString author;
   /**
    * JobTitle - Author Job Title (Optional)
@@ -99,7 +99,7 @@ public class CommentSource {
    * Format is S100
    */
   @XmlElement(name = "JobTitle", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS100.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
   private TString jobTitle;
   /**
    * Date - Comment Date (Optional)
@@ -109,7 +109,7 @@ public class CommentSource {
    * Format is Date
    */
   @XmlElement(name = "Date", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar date;
   /**
    * Comment (Optional)

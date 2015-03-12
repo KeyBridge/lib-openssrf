@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUCJ;
@@ -57,7 +57,7 @@ public class CoordinationData {
    * Format is Memo
    */
   @XmlElement(name = "HostComments", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString hostComments;
 
   /**

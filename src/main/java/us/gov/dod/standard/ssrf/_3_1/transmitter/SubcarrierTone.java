@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -51,7 +51,7 @@ public class SubcarrierTone {
    * Attribute group FreqRangeGrp (Optional)
    */
   @XmlElement(name = "FreqMin")
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMin;
   /**
    * FreqMax - Maximum Subcarrier Tone Frequency (Optional)
@@ -65,7 +65,7 @@ public class SubcarrierTone {
    * Attribute group FreqRangeGrp (Optional)
    */
   @XmlElement(name = "FreqMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal freqMax;
   /**
    * Duration - Subcarrier Tone Dwell (Optional)
@@ -76,7 +76,7 @@ public class SubcarrierTone {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "Duration", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal duration;
   /**
    * Name - Tone Name (Optional)
@@ -87,7 +87,7 @@ public class SubcarrierTone {
    * Format is S10
    */
   @XmlElement(name = "Name", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString name;
 
   /**

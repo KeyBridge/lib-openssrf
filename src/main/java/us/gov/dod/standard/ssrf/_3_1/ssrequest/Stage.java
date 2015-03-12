@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -80,7 +80,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "StartDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar startDate;
   /**
    * TargetDate - Target Date (Optional)
@@ -91,7 +91,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "TargetDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar targetDate;
   /**
    * DateApprovalRequired - Desired Approval Date (Optional)
@@ -101,7 +101,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "DateApprovalRequired", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar dateApprovalRequired;
   /**
    * TerminationDate - Termination Date (Optional)
@@ -113,7 +113,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "TerminationDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar terminationDate;
   /**
    * NumEquip - Number of Equipment (Optional)
@@ -123,7 +123,7 @@ public class Stage {
    * Format is UN(9)
    */
   @XmlElement(name = "NumEquip", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN9.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
   private TInteger numEquip;
   /**
    * US:GeoDescription - Geographic Description (Optional)
@@ -134,7 +134,7 @@ public class Stage {
    * Format is Memo
    */
   @XmlElement(name = "GeoDescription", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterMEMO.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
   private TString geoDescription;
   /**
    * StageLocation (Optional)

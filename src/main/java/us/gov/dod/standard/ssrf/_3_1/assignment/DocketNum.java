@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS12;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
@@ -44,7 +44,7 @@ public class DocketNum extends AMetadata<DocketNum> {
    * Format is S12
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS12.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS12.class)
   private String value;
 
   /**

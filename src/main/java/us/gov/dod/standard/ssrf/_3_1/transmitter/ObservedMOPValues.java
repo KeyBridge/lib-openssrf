@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
@@ -48,7 +48,7 @@ public class ObservedMOPValues {
    * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueAM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterSIGNED_DB_5_2.class)
   private TDecimal mopValueAM;
   /**
    * US:MOPValueCW (US), enter specific data that describes the Continuous Wave
@@ -56,7 +56,7 @@ public class ObservedMOPValues {
    * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueCW", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal mopValueCW;
   /**
    * US:MOPValueFM (US), enter specific data that describes the Frequency (FM)
@@ -64,7 +64,7 @@ public class ObservedMOPValues {
    * with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValueFM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterFREQM.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
   private TDecimal mopValueFM;
   /**
    * US:MOPValuePM (US), enter specific data that describes the Phase
@@ -72,7 +72,7 @@ public class ObservedMOPValues {
    * agree with the selection made in US:ObservedMOPAnalysis.MOPType.
    */
   @XmlElement(name = "MOPValuePM", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
   private TDecimal mopValuePM;
   /**
    * StatisticalIndicator (US), indicate how this specific data observation was
@@ -80,7 +80,7 @@ public class ObservedMOPValues {
    * then the value is assumed to be part of the 100% sample.
    */
   @XmlElement(name = "StatisticalIndicator", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PERCENT3.class)
   private TDecimal statisticalIndicator;
 
   /**

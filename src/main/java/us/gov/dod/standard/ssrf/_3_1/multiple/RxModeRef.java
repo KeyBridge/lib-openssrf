@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringS20;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -45,7 +45,7 @@ public class RxModeRef extends AMetadata<RxModeRef> {
    * refer to an existing Receiver/RxMode in the data repository.
    */
   @XmlValue
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterStringS20.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS20.class)
   private String value;
 
   /**

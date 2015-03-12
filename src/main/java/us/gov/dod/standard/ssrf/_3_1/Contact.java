@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
@@ -72,7 +72,7 @@ public class Contact extends Common<Contact> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
@@ -85,7 +85,7 @@ public class Contact extends Common<Contact> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
@@ -102,7 +102,7 @@ public class Contact extends Common<Contact> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlJavaTypeAdapter(type = TCalendar.class, value = XmlAdapterDATE.class)
+  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
   private TCalendar reviewDate;
   /**
    * TitleRank - Title or Rank (Optional)
@@ -112,7 +112,7 @@ public class Contact extends Common<Contact> {
    * Format is S10
    */
   @XmlElement(name = "TitleRank", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS10.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
   private TString titleRank;
   /**
    * FirstName - First Name (Optional)
@@ -122,7 +122,7 @@ public class Contact extends Common<Contact> {
    * Format is S30
    */
   @XmlElement(name = "FirstName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
   private TString firstName;
   /**
    * LastName - Last Name (Optional)
@@ -132,7 +132,7 @@ public class Contact extends Common<Contact> {
    * Format is S30
    */
   @XmlElement(name = "LastName", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS30.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS30.class)
   private TString lastName;
   /**
    * Address (Optional)

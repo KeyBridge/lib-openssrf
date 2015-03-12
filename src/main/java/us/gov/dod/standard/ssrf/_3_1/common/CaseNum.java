@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Common;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -68,7 +68,7 @@ public class CaseNum {
    * Format is S20
    */
   @XmlElement(name = "Type", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString type;
   /**
    * Identifier - Case Number (Required)
@@ -78,7 +78,7 @@ public class CaseNum {
    * Format is S20
    */
   @XmlElement(name = "Identifier", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS20.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
   private TString identifier;
 
   /**

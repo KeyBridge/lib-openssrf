@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -112,7 +112,7 @@ public class ObservedPolarisationAnalysis {
    * Format is UN(5,2) (dB)
    */
   @XmlElement(name = "AxialRatio", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
   private TDecimal axialRatio;
   /**
    * US:NumTiltAngleElements - Num Tilt Angle Elements (Optional)
@@ -122,7 +122,7 @@ public class ObservedPolarisationAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumTiltAngleElements", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numTiltAngleElements;
   /**
    * US:NumTiltAnglePositions - Num Tilt Angle Positions (Optional)
@@ -133,7 +133,7 @@ public class ObservedPolarisationAnalysis {
    * Format is UN(6)
    */
   @XmlElement(name = "NumTiltAnglePositions", required = false)
-  @XmlJavaTypeAdapter(type = TInteger.class, value = XmlAdapterUN6.class)
+  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
   private TInteger numTiltAnglePositions;
   /**
    * US:PolarisationRotationRate - Polarisation Rotation Rate (Optional)
@@ -144,7 +144,7 @@ public class ObservedPolarisationAnalysis {
    * Format is UN(7,2) (scans/min)
    */
   @XmlElement(name = "PolarisationRotationRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
   private TDecimal polarisationRotationRate;
   /**
    * US:PolarisationType - Polarisation Type (Optional)
@@ -188,7 +188,7 @@ public class ObservedPolarisationAnalysis {
    * Format is S500
    */
   @XmlElement(name = "TiltAngleAdaptiveDriverDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString tiltAngleAdaptiveDriverDesc;
   /**
    * US:TiltAngleAdaptiveRuleDesc - Tilt Angle Adaptive Rule Description
@@ -199,7 +199,7 @@ public class ObservedPolarisationAnalysis {
    * Format is S500
    */
   @XmlElement(name = "TiltAngleAdaptiveRuleDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString tiltAngleAdaptiveRuleDesc;
   /**
    * US:TiltAngleContinuous - Tilt Angle Continuous (Optional)
@@ -223,7 +223,7 @@ public class ObservedPolarisationAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "TiltAngleDuration", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal tiltAngleDuration;
   /**
    * US:TiltAngleExtremeMax - Maximum Tilt Angle Extreme (Optional)
@@ -238,7 +238,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleExtremeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleExtremeMax;
   /**
    * US:TiltAngleExtremeMin - Minimum Tilt Angle Extreme (Optional)
@@ -250,7 +250,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleExtremeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleExtremeMin;
   /**
    * US:TiltAngleMean - Average Tilt Angle (Optional)
@@ -261,7 +261,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleMean", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleMean;
   /**
    * US:TiltAngleMedian - Most Probable Tilt Angle (Optional)
@@ -272,7 +272,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleMedian", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleMedian;
   /**
    * US:TiltAnglePatternPeriod - Tilt Angle Pattern Period (Optional)
@@ -283,7 +283,7 @@ public class ObservedPolarisationAnalysis {
    * Format is UN(12,6) (μsec)
    */
   @XmlElement(name = "TiltAnglePatternPeriod", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
   private TDecimal tiltAnglePatternPeriod;
   /**
    * TiltAnglePatternType (US), indicate whether Tilt Angle is unmodulated or
@@ -304,7 +304,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleRangeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleRangeMax;
   /**
    * US:TiltAngleRangeMin - Tilt Angle Range Min (Optional)
@@ -316,7 +316,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleRangeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleRangeMin;
   /**
    * US:TiltAngleRate - TiltAngle Rate (Optional)
@@ -327,7 +327,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg/sec)
    */
   @XmlElement(name = "TiltAngleRate", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_TILTANGRATE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_TILTANGRATE.class)
   private TDecimal tiltAngleRate;
   /**
    * US:TiltAngleSequenceDesc - Tilt Angle Sequence Description (Optional)
@@ -337,7 +337,7 @@ public class ObservedPolarisationAnalysis {
    * Format is S500
    */
   @XmlElement(name = "TiltAngleSequenceDesc", required = false)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterS500.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
   private TString tiltAngleSequenceDesc;
   /**
    * US:TiltAngleStdDev - Tilt Angle Standard Deviation (Optional)
@@ -348,7 +348,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleStdDev", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleStdDev;
   /**
    * US:TiltAngleStep - Tilt Angle Step (Optional)
@@ -359,7 +359,7 @@ public class ObservedPolarisationAnalysis {
    * Format is SN(5,2) (deg)
    */
   @XmlElement(name = "TiltAngleStep", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
   private TDecimal tiltAngleStep;
   /**
    * US:ObservedPolarisationValues (Optional)

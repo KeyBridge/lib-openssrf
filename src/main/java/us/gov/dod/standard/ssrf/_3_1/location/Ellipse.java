@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
@@ -92,7 +92,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Attribute group Coord (Optional)
    */
   @XmlElement(name = "Lon", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLON.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLON.class)
   private TString lon;
   /**
    * Lat - Latitude (Required)
@@ -107,7 +107,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Attribute group Coord (Optional)
    */
   @XmlElement(name = "Lat", required = true)
-  @XmlJavaTypeAdapter(type = TString.class, value = XmlAdapterLAT.class)
+  @XmlTypeValidator(type = TString.class, value = XmlAdapterLAT.class)
   private TString lat;
   /**
    * SemiMajorAxis - Semi Major Axis (Required)
@@ -120,7 +120,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Format is UN(9,4) [0..10000] (km)
    */
   @XmlElement(name = "SemiMajorAxis", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTEARTH.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTEARTH.class)
   private TDecimal semiMajorAxis;
   /**
    * SemiMinorAxis - Semi Minor Axis (Required)
@@ -130,7 +130,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Format is UN(9,4) [0..10000] (km)
    */
   @XmlElement(name = "SemiMinorAxis", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterDISTEARTH.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDISTEARTH.class)
   private TDecimal semiMinorAxis;
   /**
    * Azimuth - Azimuth of the Major Axis (Required)
@@ -141,7 +141,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Format is UN(5,2) [0..360] (deg)
    */
   @XmlElement(name = "Azimuth", required = true)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterAZ.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
   private TDecimal azimuth;
   /**
    * AltitudeMin - Minimum Altitude Above Ground Level (Optional)
@@ -154,7 +154,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Attribute group Altitude (Optional)
    */
   @XmlElement(name = "AltitudeMin", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMin;
   /**
    * AltitudeMax - Maximum Altitude Above Ground Level (Optional)
@@ -170,7 +170,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Attribute group Altitude (Optional)
    */
   @XmlElement(name = "AltitudeMax", required = false)
-  @XmlJavaTypeAdapter(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
+  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterALTITUDE.class)
   private TDecimal altitudeMax;
   /**
    * idx - Index (Required)
@@ -180,7 +180,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlJavaTypeAdapter(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
