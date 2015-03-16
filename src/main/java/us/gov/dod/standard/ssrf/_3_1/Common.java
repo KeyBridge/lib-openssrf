@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,53 +43,53 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
-  "lastObservedBy",
-  "observedFirstDateTime",
-  "observedLastDateTime",
   "approvedBy",
   "approvedDateTime",
-  "redacted",
-  "serial",
-  "entryDateTime",
-  "entryBy",
-  "owner",
-  "lastChangeDateTime",
-  "lastChangeBy",
-  "lastReviewDate",
-  "lastReviewBy",
-  "modAllowedBy",
-  "state",
-  "description",
-  "securityClass",
   "caseNum",
+  "description",
+  "entryBy",
+  "entryDateTime",
   "extReferenceRef",
-  "remarks"})
+  "lastChangeBy",
+  "lastChangeDateTime",
+  "lastObservedBy",
+  "lastReviewBy",
+  "lastReviewDate",
+  "modAllowedBy",
+  "observedFirstDateTime",
+  "observedLastDateTime",
+  "owner",
+  "redacted",
+  "remarks",
+  "securityClass",
+  "serial",
+  "state"})
 @XmlSeeAlso({
-  Receiver.class,
-  ChannelPlan.class,
   Administrative.class,
-  Antenna.class,
-  JRFL.class,
-  Location.class,
-  IntfReport.class,
-  RadiationPlan.class,
-  RFSystem.class,
-  SSRequest.class,
-  SSReply.class,
-  Transmitter.class,
-  TOA.class,
-  Organisation.class,
-  Role.class,
-  Satellite.class,
   Allotment.class,
-  Loadset.class,
-  Message.class,
+  Antenna.class,
+  Assignment.class,
+  ChannelPlan.class,
+  Contact.class,
   ExternalReference.class,
-  Note.class,
   FEDeployment.class,
   ForceElement.class,
-  Assignment.class,
-  Contact.class
+  IntfReport.class,
+  JRFL.class,
+  Loadset.class,
+  Location.class,
+  Message.class,
+  Note.class,
+  Organisation.class,
+  RadiationPlan.class,
+  Receiver.class,
+  RFSystem.class,
+  Role.class,
+  Satellite.class,
+  SSReply.class,
+  SSRequest.class,
+  TOA.class,
+  Transmitter.class
 })
 @SuppressWarnings("unchecked")
 public abstract class Common<T> implements Comparable<T> {
@@ -1932,35 +1932,35 @@ public abstract class Common<T> implements Comparable<T> {
     return "Common {"
            // Required
            + (cls != null ? "cls [" + cls + "]" : "")
-           + (serial != null ? " serial [" + serial + "]" : "")
-           + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
+           + (serial != null ? "\n      serial [" + serial + "]" : "")
+           + (entryDateTime != null ? "\n      entryDateTime [" + entryDateTime + "]" : "")
            // Optional
-           + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
-           + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
-           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-           + (description != null ? " description [" + description + "]" : "")
-           + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
-           + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (idref != null ? " idref [" + idref + "]" : "")
-           + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
-           + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
-           + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
-           + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-           + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
-           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-           + (owner != null ? " owner [" + owner + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           + (redacted != null ? " redacted [" + redacted + "]" : "")
-           + (releasability != null ? " releasability [" + releasability + "]" : "")
-           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-           + (remarks != null ? " remarks [" + remarks + "]" : "")
-           + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
-           + (state != null ? " state [" + state + "]" : "")
+           + (approvedBy != null ? "\n      approvedBy [" + approvedBy + "]" : "")
+           + (approvedDateTime != null ? "\n      approvedDateTime [" + approvedDateTime + "]" : "")
+           + (caseNum != null ? "\n      caseNum [" + caseNum + "]" : "")
+           + (description != null ? "\n      description [" + description + "]" : "")
+           + (entryBy != null ? "\n      entryBy [" + entryBy + "]" : "")
+           + (extReferenceRef != null ? "\n      extReferenceRef [" + extReferenceRef + "]" : "")
+           + (extReferences != null ? "\n      extReferences [" + extReferences + "]" : "")
+           + (idref != null ? "\n      idref [" + idref + "]" : "")
+           + (lastChangeBy != null ? "\n      lastChangeBy [" + lastChangeBy + "]" : "")
+           + (lastChangeDateTime != null ? "\n      lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+           + (lastObservedBy != null ? "\n      lastObservedBy [" + lastObservedBy + "]" : "")
+           + (lastReviewBy != null ? "\n      lastReviewBy [" + lastReviewBy + "]" : "")
+           + (lastReviewDate != null ? "\n      lastReviewDate [" + lastReviewDate + "]" : "")
+           + (legacyReleasability != null ? "\n      legacyReleasability [" + legacyReleasability + "]" : "")
+           + (modAllowedBy != null ? "\n      modAllowedBy [" + modAllowedBy + "]" : "")
+           + (observedFirstDateTime != null ? "\n      observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+           + (observedLastDateTime != null ? "\n      observedLastDateTime [" + observedLastDateTime + "]" : "")
+           + (owner != null ? "\n      owner [" + owner + "]" : "")
+           + (quality != null ? "\n      quality [" + quality + "]" : "")
+           + (recommendedValue != null ? "\n      recommendedValue [" + recommendedValue + "]" : "")
+           + (redacted != null ? "\n      redacted [" + redacted + "]" : "")
+           + (releasability != null ? "\n      releasability [" + releasability + "]" : "")
+           + (remarkRef != null ? "\n      remarkRef [" + remarkRef + "]" : "")
+           + (remarks != null ? "\n      remarks [" + remarks + "]" : "")
+           + (securityClass != null ? "\n      securityClass [" + securityClass + "]" : "")
+           + (state != null ? "\n      state [" + state + "]" : "")
            + "}";
   }
 

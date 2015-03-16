@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -658,16 +657,16 @@ public class SecurityClass {
   @Override
   public String toString() {
     return "SecurityClass {"
-      + (clsAuthority != null ? " clsAuthority [" + clsAuthority + "]" : "")
-      + (clsReason != null ? " clsReason [" + clsReason + "]" : "")
-      + (sourceClsDate != null ? " sourceClsDate [" + sourceClsDate + "]" : "")
-      + (clsOrg != null ? " clsOrg [" + clsOrg + "]" : "")
-      + (clsDerived != null ? " clsDerived [" + clsDerived + "]" : "")
-      + (declsEvent != null ? " declsEvent [" + declsEvent + "]" : "")
-      + (declsDate != null ? " declsDate [" + declsDate + "]" : "")
-      + (downgrade != null ? " downgrade [" + downgrade + "]" : "")
-      + (declsType != null ? " declsType [" + declsType + "]" : "")
-      + "}";
+           + (clsAuthority != null ? "\n    clsAuthority [" + clsAuthority + "]" : "")
+           + (clsReason != null ? "\n    clsReason [" + clsReason + "]" : "")
+           + (sourceClsDate != null ? "\n    sourceClsDate [" + sourceClsDate + "]" : "")
+           + (clsOrg != null ? "\n    clsOrg [" + clsOrg + "]" : "")
+           + (clsDerived != null ? "\n    clsDerived [" + clsDerived + "]" : "")
+           + (declsEvent != null ? "\n    declsEvent [" + declsEvent + "]" : "")
+           + (declsDate != null ? "\n    declsDate [" + declsDate + "]" : "")
+           + (downgrade != null ? "\n    downgrade [" + downgrade + "]" : "")
+           + (declsType != null ? "\n    declsType [" + declsType + "]" : "")
+           + "}";
   }
 
   /**

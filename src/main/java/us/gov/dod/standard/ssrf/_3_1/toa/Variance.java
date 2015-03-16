@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,8 @@
  */
 package us.gov.dod.standard.ssrf._3_1.toa;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,10 +50,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Variance", propOrder = {
-  "type",
+  "administration",
   "allocatedService",
-  "priority",
-  "administration"
+  "type",
+  "priority"
 })
 public class Variance {
 
@@ -296,11 +296,11 @@ public class Variance {
   @Override
   public String toString() {
     return "Variance {"
-      + (priority != null ? " priority [" + priority + "]" : "")
-      + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (administration != null ? " administration [" + administration + "]" : "")
-      + "}";
+           + (priority != null ? " priority [" + priority + "]" : "")
+           + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (administration != null ? " administration [" + administration + "]" : "")
+           + "}";
   }
 
   /**

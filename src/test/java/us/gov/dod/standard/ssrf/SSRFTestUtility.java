@@ -112,67 +112,33 @@ public class SSRFTestUtility {
          */
         if (c.equals(Set.class)) {
           /**
-           * Get the Parameterized Type object that represents the declared type
-           * for the field represented by this Field object. For SSRF sets the
-           * Type is a parameterized type and the Type object identifies the
-           * actual type parameters used in the source code.
+           * The field is a SET. Inspect the WITH setter to identify the
+           * preferred object type for this field.
            */
-          ParameterizedTypeImpl type = (ParameterizedTypeImpl) field.getGenericType();
-          /**
-           * Get the (only) Type objects representing the actual type argument.
-           */
-          Type fieldType = type.getActualTypeArguments()[0];
-          /**
-           * The fieldType is a (very) generic Type and apparently cannot be
-           * used to instantiate an instance. Instead use its name, which must
-           * be processed to strip the 'class ' prefix that Java classes prepend
-           * in the default toString.
-           */
-          String fieldClassName = fieldType.toString().replace("class ", "").trim();
-          Class<?> fieldClass = Class.forName(fieldClassName);
-          /**
-           * Handle the case where the class is an enumerated type.
-           */
-          Object fieldInstance = null;
-          if (fieldClass.isEnum()) {
-            /**
-             * If the field class is an enumerated instance then get a random
-             * enumerated value.
-             */
-            fieldInstance = fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
-          } else {
-            /**
-             * Otherwise get a new instance of the class object.
-             */
-            try {
-              fieldInstance = fieldClass.getConstructor().newInstance();
-            } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException noSuchMethodException) {
-            }
-          }
-          /**
-           * RECURSE: Call fill on the new instance, then add it to the set by
-           * calling invoke on the setter method with a new HashHet.
-           */
-          if (fieldInstance != null) {
-            SSRFTestUtility.fill(fieldInstance, maximum);
-            try {
-              Set tempSet = new HashSet<>(Arrays.asList(new Object[]{fieldInstance}));
-              field.set(instance, tempSet);
-//            System.out.println("    set " + clazz.getSimpleName() + "." + field.getName() + " to " + tempSet);
-//            SSRFUtility.findWithSetMethod(clazz, field).invoke(instance, tempSet);
-            } catch (Exception exception) {
-              logger.log(Level.SEVERE, "Failed to invoke setter on {0} {1}: {2} ",
-                         new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass, exception.getMessage()});
-            }
-          }
+          Object fieldInstance = getFillSet(clazz, field, maximum);
+
+          field.set(instance, fieldInstance);
+//
         } else {
-          Object fillObject = getFillValue(field);
+          /**
+           * The field is a single instance.
+           */
+          Object fillObject = getFillObject(field);
           /**
            * Try to populate the field.
            */
           if (fillObject != null) {
+            /**
+             * The field was easily populated: it either had an annotation or
+             * was another object.
+             */
             field.set(instance, fillObject);
           } else {
+            /**
+             * The field is not easily accommodated and must be examined
+             * further. It is either a serial number reference or an enumerated
+             * type.
+             */
             String fieldClassName = field.getType().toString().replace("class ", "").trim();
             Class<?> fieldClass = Class.forName(fieldClassName);
             if (fieldClass.equals(TSerial.class)) {
@@ -215,14 +181,99 @@ public class SSRFTestUtility {
   }
 
   /**
-   * Inspect the field class type and annotations to generate a MINIMUM fill
-   * value.
+   * Inspect the field class type and annotations to generate a SET fill value.
+   * <p>
+   * @param clazz
+   * @param field
+   * @param maximum
+   * @return
+   * @throws ClassNotFoundException
+   * @throws Exception
+   */
+  private static Object getFillSet(Class<?> clazz, Field field, boolean maximum) throws ClassNotFoundException, Exception {
+
+    Method with = SSRFUtility.findWithSetMethod(clazz, field);
+    Type type;
+    if (with != null) {
+      /**
+       * Returns an array of Type objects that represent the formal parameter
+       * types, in declaration order, of the method represented by this Method
+       * object. Returns an array of length 0 if the underlying method takes no
+       * parameters. If a formal parameter type is a parameterized type, the
+       * Type object returned for it must accurately reflect the actual type
+       * parameters used in the source code.
+       */
+      type = with.getGenericParameterTypes()[0];
+    } else {
+      /**
+       * Get the Parameterized Type object that represents the declared type for
+       * the field represented by this Field object. For SSRF sets the Type is a
+       * parameterized type and the Type object identifies the actual type
+       * parameters used in the source code.
+       */
+      type = field.getGenericType();
+    }
+    /**
+     * Get the (only) Type objects representing the actual type argument.
+     */
+    Type fieldType = ((ParameterizedTypeImpl) type).getActualTypeArguments()[0];
+    /**
+     * The fieldType is a (very) generic Type and apparently cannot be used to
+     * instantiate an instance. Instead use its name, which must be processed to
+     * strip the 'class ' prefix that Java classes prepend in the default
+     * toString.
+     */
+    String fieldClassName = fieldType.toString().replace("class ", "").trim();
+    Class<?> fieldClass = Class.forName(fieldClassName);
+
+    /**
+     * Handle the case where the class is an enumerated type.
+     */
+    Object fieldInstance = null;
+    if (fieldClass.isEnum()) {
+      /**
+       * If the field class is an enumerated instance then get a random
+       * enumerated value.
+       */
+      fieldInstance = fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
+    } else {
+      /**
+       * Otherwise get a new instance of the class object.
+       */
+      try {
+        fieldInstance = fieldClass.getConstructor().newInstance();
+      } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException noSuchMethodException) {
+      }
+    }
+    /**
+     * RECURSE: Call fill on the new instance, then add it to the set by calling
+     * invoke on the setter method with a new HashHet.
+     */
+    if (fieldInstance != null) {
+      SSRFTestUtility.fill(fieldInstance, maximum);
+      try {
+        return new HashSet<>(Arrays.asList(new Object[]{fieldInstance}));
+//        field.set(instance, tempSet);
+//            System.out.println("    set " + clazz.getSimpleName() + "." + field.getName() + " to " + tempSet);
+//            SSRFUtility.findWithSetMethod(clazz, field).invoke(instance, tempSet);
+      } catch (Exception exception) {
+        logger.log(Level.SEVERE, "Failed to invoke setter on {0} {1}: {2} ",
+                   new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass, exception.getMessage()});
+      }
+    }
+    logger.log(Level.SEVERE, "Failed to build Set on {0} {1}: {2} ",
+               new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass});
+    return null;
+  }
+
+  /**
+   * Inspect the field class type and annotations to generate a fill value.
    * <p>
    * @param field the field to inspect
    * @return a minimum fill value
    * @throws Exception on error
    */
-  private static Object getFillValue(Field field) throws Exception {
+  private static Object getFillObject(Field field) throws Exception {
 //    System.out.println("DEBUG getFillValue for " + field.getDeclaringClass().getSimpleName() + " " + field.getName());
 
     /**

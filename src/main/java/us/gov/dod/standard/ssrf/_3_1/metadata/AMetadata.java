@@ -416,12 +416,12 @@ public abstract class AMetadata<T> {
    */
   @Override
   public String toString() {
-    return (cls != null ? " cls [" + cls + "]" : "")
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           + (remarkRef != null ? " rem [" + remarkRef + "]" : "");
+    return (cls != null ? "\n    cls [" + cls + "]" : "")
+           + (extReferences != null ? "\n    extReferences [" + extReferences + "]" : "")
+           + (legacyReleasability != null ? "\n    legacyReleasability [" + legacyReleasability + "]" : "")
+           + (quality != null ? "\n    quality [" + quality + "]" : "")
+           + (recommendedValue != null ? "\n    recommendedValue [" + recommendedValue + "]" : "")
+           + (remarkRef != null ? "\n    rem [" + remarkRef + "]" : "");
   }
 
   /**

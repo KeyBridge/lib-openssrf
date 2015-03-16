@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -57,13 +56,13 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TOA", propOrder = {
   "administration",
-  "effectiveDate",
-  "expirationDate",
-  "title",
-  "footnote",
   "channelPlanRef",
   "country",
-  "freqBand"
+  "effectiveDate",
+  "expirationDate",
+  "footnote",
+  "freqBand",
+  "title"
 })
 @XmlRootElement
 public class TOA extends Common<TOA> {
@@ -615,14 +614,14 @@ public class TOA extends Common<TOA> {
   @Override
   public String toString() {
     return "TOA {"
-           + (title != null ? " title [" + title + "]" : "")
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (footnote != null ? " footnote [" + footnote + "]" : "")
-           + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
-           + (administration != null ? " administration [" + administration + "]" : "")
-           + (country != null ? " country [" + country + "]" : "")
+           + (title != null ? "\n  title [" + title + "]" : "")
+           + (expirationDate != null ? "\n  expirationDate [" + expirationDate + "]" : "")
+           + (footnote != null ? "\n  footnote [" + footnote + "]" : "")
+           + (channelPlanRef != null ? "\n  channelPlanRef [" + channelPlanRef + "]" : "")
+           + (effectiveDate != null ? "\n  effectiveDate [" + effectiveDate + "]" : "")
+           + (freqBand != null ? "\n  freqBand [" + freqBand + "]" : "")
+           + (administration != null ? "\n  administration [" + administration + "]" : "")
+           + (country != null ? "\n  country [" + country + "]" : "")
            + "\n  TOA." + super.toString() + "\n"
            + "}";
   }

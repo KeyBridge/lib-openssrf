@@ -329,10 +329,10 @@ public class Footnote implements Comparable<Footnote> {
   @Override
   public String toString() {
     return "Footnote {"
-           + (text != null ? " text [" + text + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (footnoteType != null ? " footnoteType [" + footnoteType + "]" : "")
-           + (identifier != null ? " identifier [" + identifier + "]" : "")
+           + (text != null ? "\n    text [" + text + "]" : "")
+           + (idx != null ? "\n    idx [" + idx + "]" : "")
+           + (footnoteType != null ? "\n    footnoteType [" + footnoteType + "]" : "")
+           + (identifier != null ? "\n    identifier [" + identifier + "]" : "")
            + "}";
   }
 

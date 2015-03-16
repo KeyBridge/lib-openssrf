@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,10 +53,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FreqBand", propOrder = {
-  "freqMin",
   "freqMax",
-  "useIndicator",
-  "allocation"
+  "freqMin"
 })
 public class FreqBand implements Comparable<FreqBand> {
 
@@ -390,7 +388,7 @@ public class FreqBand implements Comparable<FreqBand> {
    */
   public boolean intersects(Double rangeMin, Double rangeMax) {
     return (freqMin.gtequal(rangeMin) && freqMin.ltequal(rangeMax))
-      || (freqMax.gtequal(rangeMin) && freqMax.ltequal(rangeMax));
+           || (freqMax.gtequal(rangeMin) && freqMax.ltequal(rangeMax));
   }
 
   /**
@@ -401,12 +399,12 @@ public class FreqBand implements Comparable<FreqBand> {
   @Override
   public String toString() {
     return "FreqBand {"
-      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-      + (allocation != null ? " allocation [" + allocation + "]" : "")
-      + (useIndicator != null ? " useIndicator [" + useIndicator + "]" : "")
-      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-      + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
-      + "}";
+           + (freqMax != null ? "\n    freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n    freqMin [" + freqMin + "]" : "")
+           + (allocation != null ? "\n    allocation [" + allocation + "]" : "")
+           + (useIndicator != null ? "\n    useIndicator [" + useIndicator + "]" : "")
+           + (footnotes != null ? "\n    footnotes [" + footnotes + "]" : "")
+           + "}";
   }
 
   /**

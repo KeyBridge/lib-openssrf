@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,31 +32,31 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SchemaRoot", propOrder = {
-  "contact",
-  "role",
-  "organisation",
-  "externalReference",
   "administrative",
-  "location",
-  "channelPlan",
-  "toa",
-  "transmitter",
-  "receiver",
-  "antenna",
-  "rfSystem",
-  "ssRequest",
-  "ssReply",
   "allotment",
+  "antenna",
   "assignment",
-  "satellite",
+  "channelPlan",
+  "contact",
+  "externalReference",
+  "feDeployment",
+  "forceElement",
   "intfReport",
   "jrfl",
-  "forceElement",
-  "feDeployment",
+  "loadset",
+  "location",
   "message",
   "note",
-  "loadset",
-  "radiationPlan"
+  "organisation",
+  "radiationPlan",
+  "receiver",
+  "rfSystem",
+  "role",
+  "satellite",
+  "ssReply",
+  "ssRequest",
+  "toa",
+  "transmitter"
 })
 @SuppressWarnings("unchecked")
 public abstract class SchemaRoot<T> {
@@ -1480,32 +1480,32 @@ public abstract class SchemaRoot<T> {
   @Override
   public String toString() {
     return "SchemaRoot {"
-      + (transmitter != null ? " transmitter [" + transmitter + "]" : "")
-      + (feDeployment != null ? " feDeployment [" + feDeployment + "]" : "")
-      + (satellite != null ? " satellite [" + satellite + "]" : "")
-      + (receiver != null ? " receiver [" + receiver + "]" : "")
-      + (ssRequest != null ? " ssRequest [" + ssRequest + "]" : "")
-      + (location != null ? " location [" + location + "]" : "")
-      + (organisation != null ? " organisation [" + organisation + "]" : "")
-      + (externalReference != null ? " externalReference [" + externalReference + "]" : "")
-      + (contact != null ? " contact [" + contact + "]" : "")
-      + (toa != null ? " toa [" + toa + "]" : "")
-      + (antenna != null ? " antenna [" + antenna + "]" : "")
-      + (message != null ? " message [" + message + "]" : "")
-      + (forceElement != null ? " forceElement [" + forceElement + "]" : "")
-      + (assignment != null ? " assignment [" + assignment + "]" : "")
-      + (rfSystem != null ? " rfSystem [" + rfSystem + "]" : "")
-      + (ssReply != null ? " ssReply [" + ssReply + "]" : "")
-      + (jrfl != null ? " jrfl [" + jrfl + "]" : "")
-      + (radiationPlan != null ? " radiationPlan [" + radiationPlan + "]" : "")
-      + (allotment != null ? " allotment [" + allotment + "]" : "")
-      + (loadset != null ? " loadset [" + loadset + "]" : "")
-      + (role != null ? " role [" + role + "]" : "")
-      + (channelPlan != null ? " channelPlan [" + channelPlan + "]" : "")
-      + (administrative != null ? " administrative [" + administrative + "]" : "")
-      + (intfReport != null ? " intfReport [" + intfReport + "]" : "")
-      + (note != null ? " note [" + note + "]" : "")
-      + "}";
+           + (administrative != null ? " administrative [" + administrative + "]" : "")
+           + (allotment != null ? " allotment [" + allotment + "]" : "")
+           + (antenna != null ? " antenna [" + antenna + "]" : "")
+           + (assignment != null ? " assignment [" + assignment + "]" : "")
+           + (channelPlan != null ? " channelPlan [" + channelPlan + "]" : "")
+           + (contact != null ? " contact [" + contact + "]" : "")
+           + (externalReference != null ? " externalReference [" + externalReference + "]" : "")
+           + (feDeployment != null ? " feDeployment [" + feDeployment + "]" : "")
+           + (forceElement != null ? " forceElement [" + forceElement + "]" : "")
+           + (intfReport != null ? " intfReport [" + intfReport + "]" : "")
+           + (jrfl != null ? " jrfl [" + jrfl + "]" : "")
+           + (loadset != null ? " loadset [" + loadset + "]" : "")
+           + (location != null ? " location [" + location + "]" : "")
+           + (message != null ? " message [" + message + "]" : "")
+           + (note != null ? " note [" + note + "]" : "")
+           + (organisation != null ? " organisation [" + organisation + "]" : "")
+           + (radiationPlan != null ? " radiationPlan [" + radiationPlan + "]" : "")
+           + (receiver != null ? " receiver [" + receiver + "]" : "")
+           + (rfSystem != null ? " rfSystem [" + rfSystem + "]" : "")
+           + (role != null ? " role [" + role + "]" : "")
+           + (satellite != null ? " satellite [" + satellite + "]" : "")
+           + (ssReply != null ? " ssReply [" + ssReply + "]" : "")
+           + (ssRequest != null ? " ssRequest [" + ssRequest + "]" : "")
+           + (toa != null ? " toa [" + toa + "]" : "")
+           + (transmitter != null ? " transmitter [" + transmitter + "]" : "")
+           + "}";
   }
 
   /**

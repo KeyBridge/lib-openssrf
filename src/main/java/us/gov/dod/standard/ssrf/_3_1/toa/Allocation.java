@@ -40,15 +40,15 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Allocation", propOrder = {
+  "allocatedByFootnote",
   "allocatedService",
-  "qualifier",
-  "priority",
+  "channelPlanRef",
   "effectiveDate",
   "expirationDate",
-  "allocatedByFootnote",
-  "variance",
+  "priority",
+  "qualifier",
   "stnClass",
-  "channelPlanRef"
+  "variance"
 })
 public class Allocation implements Comparable<Allocation> {
 
@@ -717,15 +717,15 @@ public class Allocation implements Comparable<Allocation> {
   @Override
   public String toString() {
     return "Allocation {"
-           + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
-           + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (priority != null ? " priority [" + priority + "]" : "")
-           + (variance != null ? " variance [" + variance + "]" : "")
-           + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
-           + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
+           + (allocatedByFootnote != null ? "\n      allocatedByFootnote [" + allocatedByFootnote + "]" : "")
+           + (allocatedService != null ? "\n      allocatedService [" + allocatedService + "]" : "")
+           + (channelPlanRef != null ? "\n      channelPlanRef [" + channelPlanRef + "]" : "")
+           + (effectiveDate != null ? "\n      effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? "\n      expirationDate [" + expirationDate + "]" : "")
+           + (footnotes != null ? "\n      footnotes [" + footnotes + "]" : "")
+           + (priority != null ? "\n      priority [" + priority + "]" : "")
+           + (stnClass != null ? "\n      stnClass [" + stnClass + "]" : "")
+           + (variance != null ? "\n      variance [" + variance + "]" : "")
            + "}";
   }
 
