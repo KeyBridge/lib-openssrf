@@ -20,8 +20,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 
 /**
  * Abstract class representing the SSRF Standard Metadata Attributes complement.
@@ -75,35 +75,24 @@ public abstract class AMetadata<T> {
   protected ListCCL cls;
 
   /**
-   * releasability - Releasability Markings (Optional)
-   * <p>
-   * A list of country codes for which the current data item is releasable. For
-   * NATO, if this element is omitted, there is no releasability restriction for
-   * the data item. For the US, if this data item AND attribute US:legacy
-   * Releasability are both blank, there is no releasability restriction for the
-   * data item.
-   * <p>
-   * Format is List of L:CCY
-   */
-  @XmlAttribute(name = "releasability")
-  protected Set<ListCCY> releasability;
-  /**
    * remark References - Links to Data Item Remarks (Optional)
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * Format is List of UN6
    */
+  @XmlList
   @XmlAttribute(name = "remarks")
   protected Set<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
+   * A list of Common/ExtReferenceRef idx values applicable to the current data
    * item.
    * <p>
    * Format is List of UN6
    */
+  @XmlList
   @XmlAttribute(name = "extReferences")
   protected Set<BigInteger> extReferences;
   /**
@@ -117,6 +106,7 @@ public abstract class AMetadata<T> {
    * Format is Memo
    */
   @XmlAttribute(name = "legacyReleasability")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   protected String legacyReleasability;
   /**
    * US:quality - Data Quality (Optional)
@@ -128,6 +118,7 @@ public abstract class AMetadata<T> {
    * Format is S255
    */
   @XmlAttribute(name = "quality")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS255.class)
   protected String quality;
   /**
    * US:recommendedValue - Recommended Value (Optional)
@@ -137,6 +128,7 @@ public abstract class AMetadata<T> {
    * Format is Memo
    */
   @XmlAttribute(name = "recommendedValue")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   protected String recommendedValue;
   /**
    * idref - Data Item ID (Optional)
@@ -151,6 +143,7 @@ public abstract class AMetadata<T> {
    * Format is S10
    */
   @XmlAttribute(name = "idref")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS10.class)
   protected String idref;
   /**
    * US:availability - data supporting legacy equipment certification business
@@ -160,6 +153,7 @@ public abstract class AMetadata<T> {
    * "Not Applicable", when data is not available.
    */
   @XmlAttribute(name = "availability")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS30.class)
   protected String availability;
 
   /**
@@ -225,38 +219,6 @@ public abstract class AMetadata<T> {
    */
   public boolean isSetCls() {
     return (this.cls != null);
-  }
-
-  /**
-   * Get a list of country codes for which the current data item is releasable.
-   * For NATO, if this element is omitted, there is no releasability restriction
-   * for the data item. For the US, if this data item AND attribute US:legacy
-   * Releasability are both blank, there is no releasability restriction for the
-   * data item.
-   * <p>
-   * @return a non-null list of {@link ListCCY} instances
-   */
-  public Set<ListCCY> getReleasability() {
-    if (releasability == null) {
-      releasability = new HashSet<>();
-    }
-    return this.releasability;
-  }
-
-  /**
-   * Determine if the Releasability is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetReleasability() {
-    return ((this.releasability != null) && (!this.releasability.isEmpty()));
-  }
-
-  /**
-   * Clear the Releasability field. This sets the field to null.
-   */
-  public void unsetReleasability() {
-    this.releasability = null;
   }
 
   /**
@@ -328,7 +290,7 @@ public abstract class AMetadata<T> {
   }
 
   /**
-   * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Get a list of Common/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
    * @return a non-null list of {@link BigInteger} instances
@@ -459,7 +421,6 @@ public abstract class AMetadata<T> {
            + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
            + (quality != null ? " quality [" + quality + "]" : "")
            + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           + (releasability != null ? " releasability [" + releasability + "]" : "")
            + (remarkRef != null ? " rem [" + remarkRef + "]" : "");
   }
 
@@ -476,7 +437,7 @@ public abstract class AMetadata<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of Common/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
    * @param values One or more instances of type {@link BigInteger}
@@ -490,7 +451,7 @@ public abstract class AMetadata<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of Common/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
    * @param values A collection of {@link BigInteger} instances
@@ -538,40 +499,6 @@ public abstract class AMetadata<T> {
    */
   public T withRecommendedValue(String value) {
     setRecommendedValue(value);
-    return (T) this;
-  }
-
-  /**
-   * Set a list of country codes for which the current data item is releasable.
-   * For NATO, if this element is omitted, there is no releasability restriction
-   * for the data item. For the US, if this data item AND attribute US:legacy
-   * Releasability are both blank, there is no releasability restriction for the
-   * data item.
-   * <p>
-   * @param values One or more instances of type {@link ListCCY}
-   * @return The current Common object instance
-   */
-  public T withReleasability(ListCCY... values) {
-    if (values != null) {
-      getReleasability().addAll(new HashSet<>(Arrays.asList(values)));
-    }
-    return (T) this;
-  }
-
-  /**
-   * Set a list of country codes for which the current data item is releasable.
-   * For NATO, if this element is omitted, there is no releasability restriction
-   * for the data item. For the US, if this data item AND attribute US:legacy
-   * Releasability are both blank, there is no releasability restriction for the
-   * data item.
-   * <p>
-   * @param values A collection of {@link ListCCY} instances
-   * @return The current Common object instance
-   */
-  public T withReleasability(Set<ListCCY> values) {
-    if (values != null) {
-      getReleasability().addAll(values);
-    }
     return (T) this;
   }
 
@@ -624,11 +551,11 @@ public abstract class AMetadata<T> {
    * business practice of entering "Unknown", "N/A", "Not Available" or "Not
    * Applicable", when data is not available.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link ListAvailability}
    * @return The current DCSTrunk object instance
    */
-  public T withAvailability(String value) {
-    setAvailability(value);
+  public T withAvailability(ListAvailability value) {
+    setAvailability(value.name());
     return (T) this;
   }
 
