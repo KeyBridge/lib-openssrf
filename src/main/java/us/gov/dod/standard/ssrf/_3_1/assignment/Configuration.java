@@ -318,7 +318,7 @@ public class Configuration {
    * target or targets.
    */
   @XmlElement(name = "LoadsetRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> loadsetRef;
   /**
    * US:ObservedERPAnalysis (Optional)

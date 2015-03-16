@@ -61,7 +61,7 @@ public class PairedFreq {
    * Format is pattern (S29)
    */
   @XmlElement(name = "AssignmentRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial assignmentRef;
   /**
    * US:PairedASN - Paired Agency Serial Number (Optional)

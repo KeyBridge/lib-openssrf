@@ -18,10 +18,10 @@ package us.gov.dod.standard.ssrf._3_1.ssreply;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterStringMEMO;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -65,7 +65,7 @@ public class Comment extends AMetadata<Comment> implements Comparable<Comment> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -151,8 +151,8 @@ public class Comment extends AMetadata<Comment> implements Comparable<Comment> {
    * @param value An instances of type {@link BigInteger}
    * @return The current Comment object instance
    */
-  public Comment withIdx(BigInteger value) {
-    setIdx(value);
+  public Comment withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 

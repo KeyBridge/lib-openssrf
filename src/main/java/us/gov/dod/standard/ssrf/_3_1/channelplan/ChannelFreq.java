@@ -17,8 +17,8 @@ package us.gov.dod.standard.ssrf._3_1.channelplan;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterBigDecimalFREQM;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -42,7 +42,7 @@ public class ChannelFreq extends AMetadata<ChannelFreq> {
    * Format is FREQ / UN(16,9) [0..1.0E9](MHz)
    */
   @XmlValue
-  @XmlTypeValidator(type = String.class, value = XmlAdapterBigDecimalFREQM.class)
+  @XmlTypeValidator(type = BigDecimal.class, value = XmlAdapterBigDecimalFREQM.class)
   private BigDecimal value;
 
   /**
@@ -82,8 +82,8 @@ public class ChannelFreq extends AMetadata<ChannelFreq> {
    * @param value An instances of type {@link BigDecimal}
    * @return The current ChannelFreq object instance
    */
-  public ChannelFreq withValue(BigDecimal value) {
-    setValue(value);
+  public ChannelFreq withValue(Number value) {
+    setValue(new BigDecimal(value.toString()));
     return this;
   }
 

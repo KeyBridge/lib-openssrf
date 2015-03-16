@@ -116,7 +116,7 @@ public class AllotFreq {
    * forbidden.
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> locationRestrictionRef;
 
   /**

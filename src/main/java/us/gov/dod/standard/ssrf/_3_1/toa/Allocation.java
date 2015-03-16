@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,6 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.ChannelPlan;
 import us.gov.dod.standard.ssrf._3_1.TOA;
@@ -127,7 +126,7 @@ public class Allocation implements Comparable<Allocation> {
    * ChannelPlanRef references the ChannelPlan.
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> channelPlanRef;
   /**
    * footnotes - Link to allocation usage notes (Optional)
@@ -140,14 +139,6 @@ public class Allocation implements Comparable<Allocation> {
    */
   @XmlAttribute(name = "footnotes")
   private Set<BigInteger> footnotes;
-
-  /**
-   * A modifier to the allocated service entry. (e.g. "Earth-to-Space"). This
-   * allows national regulators to customize or qualify a standard Allocated
-   * Service type to their local jurisdiction.
-   */
-  @XmlElement(name = "X-ServiceQualifier", required = false)
-  private TString qualifier;
 
   /**
    * Get a radiocommunication service recognized by an administration that is
@@ -182,29 +173,11 @@ public class Allocation implements Comparable<Allocation> {
     try {
       ListCSN csn = ListCSN.fromValue(allocatedService.getValue());
       return isPrimary()
-        ? csn.name().replaceAll("_", " ")
-        : csn.name().substring(0, 1) + csn.name().toLowerCase().substring(1).replaceAll("_", " ");
+             ? csn.name().replaceAll("_", " ")
+             : csn.name().substring(0, 1) + csn.name().toLowerCase().substring(1).replaceAll("_", " ");
     } catch (Exception e) {
       return isPrimary() ? allocatedService.getValue() : allocatedService.getValue().toUpperCase();
     }
-  }
-
-  /**
-   * Get a modifier to the allocated service entry. (e.g. "Earth-to-Space").
-   * <p>
-   * @return the service modifier String
-   */
-  public TString getQualifier() {
-    return qualifier;
-  }
-
-  /**
-   * Set modifier to the allocated service entry. (e.g. "Earth-to-Space").
-   * <p>
-   * @param qualifier a service modifier String
-   */
-  public void setQualifier(TString qualifier) {
-    this.qualifier = qualifier;
   }
 
   /**
@@ -257,8 +230,8 @@ public class Allocation implements Comparable<Allocation> {
   public boolean isPrimary() {
     try {
       return priority != null
-        ? ListCPS.PRIMARY.equals(ListCPS.fromValue(priority.getValue()))
-        : false;
+             ? ListCPS.PRIMARY.equals(ListCPS.fromValue(priority.getValue()))
+             : false;
     } catch (Exception e) {
       return false;
     }
@@ -737,17 +710,6 @@ public class Allocation implements Comparable<Allocation> {
   }
 
   /**
-   * Set modifier to the allocated service entry. (e.g. "Earth-to-Space").
-   * <p>
-   * @param qualifier a service modifier String
-   * @return this current Allocation instance.
-   */
-  public Allocation withQualifier(String qualifier) {
-    setQualifier(qualifier != null && !qualifier.isEmpty() ? new TString(qualifier) : null);
-    return this;
-  }
-
-  /**
    * Get a string representation of this Allocation instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
@@ -755,16 +717,16 @@ public class Allocation implements Comparable<Allocation> {
   @Override
   public String toString() {
     return "Allocation {"
-      + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
-      + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
-      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-      + (priority != null ? " priority [" + priority + "]" : "")
-      + (variance != null ? " variance [" + variance + "]" : "")
-      + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
-      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-      + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
-      + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
-      + "}";
+           + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
+           + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (priority != null ? " priority [" + priority + "]" : "")
+           + (variance != null ? " variance [" + variance + "]" : "")
+           + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
+           + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
+           + "}";
   }
 
   /**

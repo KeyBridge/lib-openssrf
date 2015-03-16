@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -112,7 +112,7 @@ public class Footnote implements Comparable<Footnote> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -301,8 +301,8 @@ public class Footnote implements Comparable<Footnote> {
    * @param value An instances of type {@link BigInteger}
    * @return The current Footnote object instance
    */
-  public Footnote withIdx(BigInteger value) {
-    setIdx(value);
+  public Footnote withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -329,11 +329,11 @@ public class Footnote implements Comparable<Footnote> {
   @Override
   public String toString() {
     return "Footnote {"
-      + (text != null ? " text [" + text + "]" : "")
-      + (idx != null ? " idx [" + idx + "]" : "")
-      + (footnoteType != null ? " footnoteType [" + footnoteType + "]" : "")
-      + (identifier != null ? " identifier [" + identifier + "]" : "")
-      + "}";
+           + (text != null ? " text [" + text + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (footnoteType != null ? " footnoteType [" + footnoteType + "]" : "")
+           + (identifier != null ? " identifier [" + identifier + "]" : "")
+           + "}";
   }
 
   /**

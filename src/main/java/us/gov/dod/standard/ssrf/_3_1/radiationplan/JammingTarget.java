@@ -123,7 +123,7 @@ public class JammingTarget {
    * to be used for this jamming instance.
    */
   @XmlElement(name = "LoadsetRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial loadsetRef;
   /**
    * US:LocationRef - Target Location Serial (Optional)
@@ -134,7 +134,7 @@ public class JammingTarget {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TString locationRef;
   /**
    * US:Lon - Longitude (Optional)

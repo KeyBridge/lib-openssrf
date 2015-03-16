@@ -78,7 +78,7 @@ public class StationLoc {
    * Format is SERIAL (S29)
    */
   @XmlElement(name = "LocSatRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial locSatRef;
   /**
    * US:LocationRadius - Location Radius (Optional)
@@ -105,7 +105,7 @@ public class StationLoc {
    * Attribute group SV (Optional)
    */
   @XmlElement(name = "ServiceVolumeLocRef")
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TString serviceVolumeLocRef;
   /**
    * US:ServiceVolumeRadius - Service Volume Radius (Optional)

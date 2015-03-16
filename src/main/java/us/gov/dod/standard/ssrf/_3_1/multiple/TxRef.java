@@ -55,7 +55,7 @@ public class TxRef {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * TxModeRef (Optional)

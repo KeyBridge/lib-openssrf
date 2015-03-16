@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -96,7 +96,7 @@ public class Polygon implements Comparable<Polygon> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -338,8 +338,8 @@ public class Polygon implements Comparable<Polygon> {
    * @param value An instances of type {@link BigInteger}
    * @return The current Polygon object instance
    */
-  public Polygon withIdx(BigInteger value) {
-    setIdx(value);
+  public Polygon withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -351,12 +351,12 @@ public class Polygon implements Comparable<Polygon> {
   @Override
   public String toString() {
     return "Polygon {"
-      + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
-      + (idx != null ? " idx [" + idx + "]" : "")
-      + (excluded != null ? " excluded [" + excluded + "]" : "")
-      + (polygonPoint != null ? " polygonPoint [" + polygonPoint + "]" : "")
-      + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
-      + "}";
+           + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (excluded != null ? " excluded [" + excluded + "]" : "")
+           + (polygonPoint != null ? " polygonPoint [" + polygonPoint + "]" : "")
+           + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
+           + "}";
   }
 
   /**

@@ -53,7 +53,7 @@ public class Dataset {
    * Format is pattern (S29)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * RetireDate - Retire Date (Optional)
@@ -82,7 +82,7 @@ public class Dataset {
    * dataset referenced in the message was not known by the recipient.
    */
   @XmlElement(name = "MissingRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> missingRef;
 
   /**

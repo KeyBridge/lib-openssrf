@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -170,7 +170,7 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * parent element.
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -600,8 +600,8 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
    * @param value An instances of type {@link BigInteger}
    * @return The current ConfigFreq object instance
    */
-  public ConfigFreq withIdx(BigInteger value) {
-    setIdx(value);
+  public ConfigFreq withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -613,17 +613,17 @@ public class ConfigFreq implements Comparable<ConfigFreq> {
   @Override
   public String toString() {
     return "ConfigFreq {"
-      + (configFreqUse != null ? " configFreqUse [" + configFreqUse + "]" : "")
-      + (inBand != null ? " inBand [" + inBand + "]" : "")
-      + (duration != null ? " duration [" + duration + "]" : "")
-      + (idx != null ? " idx [" + idx + "]" : "")
-      + (channelSpacing != null ? " channelSpacing [" + channelSpacing + "]" : "")
-      + (priority != null ? " priority [" + priority + "]" : "")
-      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-      + (pulseWidth != null ? " pulseWidth [" + pulseWidth + "]" : "")
-      + (period != null ? " period [" + period + "]" : "")
-      + "}";
+           + (configFreqUse != null ? " configFreqUse [" + configFreqUse + "]" : "")
+           + (inBand != null ? " inBand [" + inBand + "]" : "")
+           + (duration != null ? " duration [" + duration + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (channelSpacing != null ? " channelSpacing [" + channelSpacing + "]" : "")
+           + (priority != null ? " priority [" + priority + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (pulseWidth != null ? " pulseWidth [" + pulseWidth + "]" : "")
+           + (period != null ? " period [" + period + "]" : "")
+           + "}";
   }
 
   /**

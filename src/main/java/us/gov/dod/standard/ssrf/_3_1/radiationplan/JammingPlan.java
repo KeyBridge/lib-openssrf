@@ -128,7 +128,7 @@ public class JammingPlan {
    * Format is pattern (S29)
    */
   @XmlElement(name = "StartLocationRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial startLocationRef;
   /**
    * US:StartTrigger - Start Trigger (Required)
@@ -160,7 +160,7 @@ public class JammingPlan {
    * Format is pattern (S29)
    */
   @XmlElement(name = "StopLocationRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TString stopLocationRef;
   /**
    * US:StopTrigger - Stop Trigger (Required)

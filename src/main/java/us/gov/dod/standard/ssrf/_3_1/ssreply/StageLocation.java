@@ -48,7 +48,7 @@ public class StageLocation {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocSatRef", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial locSatRef;
   /**
    * Excluded - Shape is Excluded (Optional)

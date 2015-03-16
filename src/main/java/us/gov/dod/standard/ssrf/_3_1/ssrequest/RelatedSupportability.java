@@ -67,7 +67,7 @@ public class RelatedSupportability {
    * Format is pattern (S29)
    */
   @XmlElement(name = "SSRequestRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial ssRequestRef;
   /**
    * US:J12Number - J/F 12 Number (Optional)

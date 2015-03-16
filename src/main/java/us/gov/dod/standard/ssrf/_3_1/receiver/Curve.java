@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -175,7 +175,7 @@ public class Curve implements Comparable<Curve> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -594,8 +594,8 @@ public class Curve implements Comparable<Curve> {
    * @param value An instances of type {@link BigInteger}
    * @return The current Curve object instance
    */
-  public Curve withIdx(BigInteger value) {
-    setIdx(value);
+  public Curve withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -607,16 +607,16 @@ public class Curve implements Comparable<Curve> {
   @Override
   public String toString() {
     return "Curve {"
-      + (curvePoint != null ? " curvePoint [" + curvePoint + "]" : "")
-      + (idx != null ? " idx [" + idx + "]" : "")
-      + (freqConst != null ? " freqConst [" + freqConst + "]" : "")
-      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-      + (bw != null ? " bw [" + bw + "]" : "")
-      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (freqFactor != null ? " freqFactor [" + freqFactor + "]" : "")
-      + (calculated != null ? " calculated [" + calculated + "]" : "")
-      + "}";
+           + (curvePoint != null ? " curvePoint [" + curvePoint + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (freqConst != null ? " freqConst [" + freqConst + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (bw != null ? " bw [" + bw + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (freqFactor != null ? " freqFactor [" + freqFactor + "]" : "")
+           + (calculated != null ? " calculated [" + calculated + "]" : "")
+           + "}";
   }
 
   /**

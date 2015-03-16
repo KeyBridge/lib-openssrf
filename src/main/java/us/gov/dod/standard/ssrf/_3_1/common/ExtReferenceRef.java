@@ -18,13 +18,14 @@ package us.gov.dod.standard.ssrf._3_1.common;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.ExternalReference;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterNumberUN6;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -62,8 +63,8 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * programmatically validated.
    */
   @XmlValue
-  @XmlTypeValidator(type = String.class, value = XmlAdapterSERIAL.class)
-  private String value;
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
+  private TSerial value;
   /**
    * cls - Classification (Required)
    * <p>
@@ -71,8 +72,14 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * each data item, even if the classification is "U".
    * <p>
    * Format is L:CCL
+   * <p>
+   * Developer note: Marked as XMLTransient because, for reasons unknown, the
+   * XML Marshaler duplicates this field.(!)
+   * <p>
+   * @TODO: correct annotation
    */
-  @XmlAttribute(name = "cls", required = true)
+//  @XmlAttribute(name = "cls", required = true)
+  @XmlTransient
   private ListCCL cls;
   /**
    * idx - Index (Required)
@@ -85,7 +92,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -103,7 +110,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * {@link #getExternalReference()} instead.
    */
   @Deprecated
-  public String getValue() {
+  public TSerial getValue() {
     return value;
   }
 
@@ -115,7 +122,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * {@link #setExternalReference(ExternalReference)} instead.
    */
   @Deprecated
-  public void setValue(String value) {
+  public void setValue(TSerial value) {
     this.value = value;
   }
 
@@ -199,7 +206,7 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * {@link #withExternalReference(ExternalReference)} instead.
    */
   @Deprecated
-  public ExtReferenceRef withValue(String value) {
+  public ExtReferenceRef withValue(TSerial value) {
     setValue(value);
     return this;
   }
@@ -225,8 +232,8 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * @param value An instances of type {@link BigInteger}
    * @return The current ExtReferenceRef object instance
    */
-  public ExtReferenceRef withIdx(BigInteger value) {
-    setIdx(value);
+  public ExtReferenceRef withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -310,9 +317,16 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * transient {@link #externalReference} field. This method should typically be
    * called after the ExtReferenceRef is configured and (optionally) before
    * exporting an SSRF message.
+   * <p>
+   * Developer note: If the externalReference object is NOT configured but a
+   * (presumably hand coded) serial number value IS configured then that serial
+   * number value is preserved. This is to preserve legacy compatibility with
+   * systems or software that externally manage the reference linkage.
    */
   public void prepare() {
-    this.value = externalReference != null ? externalReference.getSerial().getSerial() : null;
+    this.value = externalReference != null
+                 ? externalReference.getSerial()
+                 : this.value != null ? this.value : null;
   }
 
   /**
@@ -327,11 +341,11 @@ public class ExtReferenceRef implements Comparable<ExtReferenceRef> {
    * @since 3.1.0
    */
   public void postLoad(SSRF root) {
-    if (value == null || !value.isEmpty()) {
+    if (value == null) {
       return;
     }
     for (ExternalReference instance : root.getExternalReference()) {
-      if (value.equals(instance.getSerial().getValue())) {
+      if (value.equals(instance.getSerial())) {
         externalReference = instance;
         return;
       }

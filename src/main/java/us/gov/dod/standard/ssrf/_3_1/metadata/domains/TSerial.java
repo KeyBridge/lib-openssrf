@@ -359,12 +359,14 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
   /**
    * Gets the SSRF SERIAL number value.
    * <p>
-   * Call {@link #format()} first if you have made any changes to the serial
-   * components.
+   * Calls {@link #format()} first to ensure the returned value reflects the
+   * most recent changes to the serial components.
    * <p>
    * @return the value of the value property.
    */
+  @Override
   public String getValue() {
+    format();
     return value;
   }
 
@@ -519,13 +521,18 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
   }
 
   /**
-   * Get the configured value.
+   * Gets the SSRF SERIAL number value.
    * <p>
-   * @return the value.
+   * Calls {@link #format()} first to ensure the returned value reflects the
+   * most recent changes to the serial components.
+   * <p>
+   * This is a shortcut to {@link #getValue()}.
+   * <p>
+   * @return the formatted SSRF SERIAL number value.
    */
   @Override
   public String toString() {
-    return value;
+    return getValue();
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">

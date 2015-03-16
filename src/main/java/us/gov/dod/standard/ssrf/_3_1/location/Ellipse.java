@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -180,7 +180,7 @@ public class Ellipse implements Comparable<Ellipse> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -609,8 +609,8 @@ public class Ellipse implements Comparable<Ellipse> {
    * @param value An instances of type {@link BigInteger}
    * @return The current Ellipse object instance
    */
-  public Ellipse withIdx(BigInteger value) {
-    setIdx(value);
+  public Ellipse withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -622,16 +622,16 @@ public class Ellipse implements Comparable<Ellipse> {
   @Override
   public String toString() {
     return "Ellipse {"
-      + (semiMinorAxis != null ? " semiMinorAxis [" + semiMinorAxis + "]" : "")
-      + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
-      + (lon != null ? " lon [" + lon + "]" : "")
-      + (idx != null ? " idx [" + idx + "]" : "")
-      + (excluded != null ? " excluded [" + excluded + "]" : "")
-      + (semiMajorAxis != null ? " semiMajorAxis [" + semiMajorAxis + "]" : "")
-      + (azimuth != null ? " azimuth [" + azimuth + "]" : "")
-      + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
-      + (lat != null ? " lat [" + lat + "]" : "")
-      + "}";
+           + (semiMinorAxis != null ? " semiMinorAxis [" + semiMinorAxis + "]" : "")
+           + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+           + (lon != null ? " lon [" + lon + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (excluded != null ? " excluded [" + excluded + "]" : "")
+           + (semiMajorAxis != null ? " semiMajorAxis [" + semiMajorAxis + "]" : "")
+           + (azimuth != null ? " azimuth [" + azimuth + "]" : "")
+           + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
+           + (lat != null ? " lat [" + lat + "]" : "")
+           + "}";
   }
 
   /**

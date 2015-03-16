@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -159,7 +159,7 @@ public class Point implements Comparable<Point> {
    * Format is UN(6)
    */
   @XmlAttribute(name = "idx", required = true)
-  @XmlTypeValidator(type = String.class, value = XmlAdapterNumberUN6.class)
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private BigInteger idx;
 
   /**
@@ -461,9 +461,9 @@ public class Point implements Comparable<Point> {
       DecimalFormat dfS = new DecimalFormat("00.00");
       StringBuilder sb = new StringBuilder();
       sb.append(dfD.format(Math.abs(longitude)))
-        .append(dfM.format(Math.floor(Math.abs(longitude) * 60 % 60)))
-        .append(dfS.format(Math.abs(longitude) * 3600 % 60))
-        .append(longitude > 0 ? "E" : "W");
+              .append(dfM.format(Math.floor(Math.abs(longitude) * 60 % 60)))
+              .append(dfS.format(Math.abs(longitude) * 3600 % 60))
+              .append(longitude > 0 ? "E" : "W");
       this.lon = new TString(sb.toString());
     } else {
       this.lon = null;
@@ -511,9 +511,9 @@ public class Point implements Comparable<Point> {
       DecimalFormat dfS = new DecimalFormat("00.00");
       StringBuilder sb = new StringBuilder();
       sb.append(dfDM.format(Math.abs(latitude)))
-        .append(dfDM.format(Math.floor(Math.abs(latitude) * 60 % 60)))
-        .append(dfS.format(Math.abs(latitude) * 3600 % 60))
-        .append(latitude > 0 ? "N" : "S");
+              .append(dfDM.format(Math.floor(Math.abs(latitude) * 60 % 60)))
+              .append(dfS.format(Math.abs(latitude) * 3600 % 60))
+              .append(latitude > 0 ? "N" : "S");
       this.lat = new TString(sb.toString());
     } else {
       this.lat = null;
@@ -636,8 +636,8 @@ public class Point implements Comparable<Point> {
    * @param value An instances of type {@link BigInteger}
    * @return The current Point object instance
    */
-  public Point withIdx(BigInteger value) {
-    setIdx(value);
+  public Point withIdx(Number value) {
+    setIdx(new BigInteger(value.toString()));
     return this;
   }
 
@@ -649,14 +649,14 @@ public class Point implements Comparable<Point> {
   @Override
   public String toString() {
     return "Point {"
-      + (idx != null ? " idx [" + idx + "]" : "")
-      + (lon != null ? " lon [" + lon + "]" : "")
-      + (lat != null ? " lat [" + lat + "]" : "")
-      + (terrainElevation != null ? " terrainElevation [" + terrainElevation + "]" : "")
-      + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
-      + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
-      + (excluded != null ? " excluded [" + excluded + "]" : "")
-      + "}";
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (lon != null ? " lon [" + lon + "]" : "")
+           + (lat != null ? " lat [" + lat + "]" : "")
+           + (terrainElevation != null ? " terrainElevation [" + terrainElevation + "]" : "")
+           + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+           + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
+           + (excluded != null ? " excluded [" + excluded + "]" : "")
+           + "}";
   }
 
   /**

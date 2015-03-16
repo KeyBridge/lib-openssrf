@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -2217,7 +2217,7 @@ public enum ListCAO {
   private final String value;
 
   ListCAO(String v) {
-    value = v;
+    value = name().replace("_", "-");
   }
 
   public String value() {
@@ -2225,12 +2225,7 @@ public enum ListCAO {
   }
 
   public static ListCAO fromValue(String v) {
-    for (ListCAO c : ListCAO.values()) {
-      if (c.value.equalsIgnoreCase(v)) {
-        return c;
-      }
-    }
-    throw new IllegalArgumentException(v);
+    return valueOf(v);
   }
 
 }

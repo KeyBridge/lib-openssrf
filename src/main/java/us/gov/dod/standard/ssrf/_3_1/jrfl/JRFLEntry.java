@@ -229,7 +229,7 @@ public class JRFLEntry {
    * Format is pattern (S29)
    */
   @XmlElement(name = "AsgnAllotRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial asgnAllotRef;
   /**
    * FreqMin - Nominal or Minimum Frequency (Optional)
