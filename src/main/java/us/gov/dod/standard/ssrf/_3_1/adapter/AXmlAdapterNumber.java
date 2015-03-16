@@ -252,7 +252,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    */
   public Number getMinValue() {
     if (totalDigits != null) {
-      return maxInclusive != null ? maxInclusive : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+      return minInclusive != null ? minInclusive : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
     } else {
       return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
     }
