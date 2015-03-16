@@ -236,7 +236,11 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
    * @return the maximum allowed value. Integer.MAX_VALUE if not set.
    */
   public Number getMaxValue() {
-    return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
+    if (totalDigits != null) {
+      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+    } else {
+      return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
+    }
   }
 
   /**
@@ -245,6 +249,10 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, IMetadataType> {
    * @return the minimum allowed value. Integer.MIN_VALUE if not set.
    */
   public Number getMinValue() {
-    return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
+    if (totalDigits != null) {
+      return maxInclusive != null ? maxInclusive : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+    } else {
+      return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
+    }
   }
 }

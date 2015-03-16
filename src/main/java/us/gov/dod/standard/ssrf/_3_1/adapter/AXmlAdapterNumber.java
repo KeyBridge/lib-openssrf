@@ -238,8 +238,8 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * @return the maximum allowed value. Integer.MAX_VALUE if not set.
    */
   public Number getMaxValue() {
-    if (totalDigits != null && fractionDigits != null) {
-      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits - fractionDigits));
+    if (totalDigits != null) {
+      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
     } else {
       return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
     }
@@ -251,8 +251,8 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * @return the minimum allowed value. Integer.MIN_VALUE if not set.
    */
   public Number getMinValue() {
-    if (totalDigits != null && fractionDigits != null) {
-      return maxInclusive != null ? maxInclusive : -Math.pow(10, (totalDigits - fractionDigits));
+    if (totalDigits != null) {
+      return maxInclusive != null ? maxInclusive : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
     } else {
       return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
     }
