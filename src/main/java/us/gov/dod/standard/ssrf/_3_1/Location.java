@@ -270,7 +270,7 @@ public class Location extends Common<Location> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> locationRef;
 
   /**

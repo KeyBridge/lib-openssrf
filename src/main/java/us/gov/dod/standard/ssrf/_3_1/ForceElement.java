@@ -123,7 +123,7 @@ public class ForceElement extends Common<ForceElement> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "OwningOrganisation", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial owningOrganisationRef;
   /**
    * Role - Role (Optional)

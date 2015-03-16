@@ -30,9 +30,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
@@ -528,7 +526,8 @@ public class SSRFUtility {
    * Inspect a class field and determine if it is required.
    * <p>
    * This method looks for and inspects {@link XmlAttribute}, {@link XmlElement}
-   * and {@link XmlElementRef} field annotation types marked as REQUIRED.
+   * and {@link XmlElementRef} field annotation types marked as REQUIRED; also,
+   * {@link XmlValue}.
    * <p>
    * @param field the field to inspect
    * @return TRUE if and only if the XML annotation is marked "required = true"
@@ -541,6 +540,26 @@ public class SSRFUtility {
         return ((XmlElement) annotation).required();
       } else if (annotation instanceof XmlElementRef) {
         return ((XmlElementRef) annotation).required();
+      } else if (annotation instanceof XmlValue) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Inspect a class field and determine if it is TRANSIENT - e.g. should NOT be
+   * processed .
+   * <p>
+   * This method looks for a {@link XmlTransient} field annotation.
+   * <p>
+   * @param field the field to inspect
+   * @return TRUE if and only if the XML annotation is marked "required = true"
+   */
+  protected static boolean isTransient(Field field) {
+    for (Annotation annotation : field.getAnnotations()) {
+      if (annotation instanceof XmlTransient) {
+        return true;
       }
     }
     return false;
@@ -1081,7 +1100,7 @@ public class SSRFUtility {
           if (method != null && method.getParameterTypes().length != 0) {
             Class<?> paramType = method.getParameterTypes()[0];
             /**
-             * Handle the case where the object instance is an enumerated type.
+             * Handle the case where the class is an enumerated type.
              */
             Object objectValue;
             if (paramType.isEnum()) {
@@ -1170,6 +1189,31 @@ public class SSRFUtility {
       }
     }
     return null;
+  }
+
+  /**
+   * Helper method to inspect the indicated Class to find the declared or
+   * inherited WITH setter method for the indicated field type that accepts a
+   * SET.
+   * <p>
+   * This method supports
+   * {@link #setProperties(SSRFProperties, java.lang.Object)}.
+   * <p>
+   * @param clazz the class type to inspect
+   * @param field the field to look for
+   * @return a WITH setter method, if present
+   */
+  protected static Method findWithEnumMethod(Class<?> clazz, Field field) {
+    /**
+     * Push all names to lower case to perform a case-insensitive search.
+     */
+    for (Method method : findDeclaredAndInheritedMethods(clazz)) {
+      if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())
+          && Arrays.asList(method.getParameterTypes()).contains(Enum.class)) {
+        return method;
+      }
+    }
+    return findWithMethod(clazz, field);
   }
 
   /**

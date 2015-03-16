@@ -180,7 +180,7 @@ public class Organisation extends Common<Organisation> {
    * RoleRef contains the serial of a referenced Role.
    */
   @XmlElement(name = "RoleRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> roleRef;
   /**
    * RelatedOrganisation (Optional)

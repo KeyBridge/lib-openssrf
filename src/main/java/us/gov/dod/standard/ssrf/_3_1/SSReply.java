@@ -87,7 +87,7 @@ public class SSReply extends Common<SSReply> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "SSRequestRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial ssRequestRef;
   /**
    * ReplyingCountry - Replying Country (Required)

@@ -672,7 +672,7 @@ public class Assignment extends Common<Assignment> {
    * SSReply, ForceElement or FEDeployment.
    */
   @XmlElement(name = "RelatedRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> relatedRef;
   /**
    * Configuration (Required)

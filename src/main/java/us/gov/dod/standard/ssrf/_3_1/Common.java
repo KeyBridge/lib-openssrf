@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,6 @@ package us.gov.dod.standard.ssrf._3_1;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -64,8 +63,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
   "securityClass",
   "caseNum",
   "extReferenceRef",
-  "remarks"
-})
+  "remarks"})
 @XmlSeeAlso({
   Receiver.class,
   ChannelPlan.class,
@@ -140,7 +138,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
@@ -229,7 +227,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "EntryBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial entryBy;
   /**
    * Owner - Role which Owns the Dataset (Optional)
@@ -242,7 +240,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "Owner", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial owner;
   /**
    * LastChangeDateTime - Latest Modification Date/Time (Optional)
@@ -266,7 +264,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastChange (Optional)
    */
   @XmlElement(name = "LastChangeBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial lastChangeBy;
   /**
    * LastReviewDate - Last Review Date (Optional)
@@ -290,7 +288,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastReview (Optional)
    */
   @XmlElement(name = "LastReviewBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial lastReviewBy;
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
@@ -303,7 +301,7 @@ public abstract class Common<T> implements Comparable<T> {
    * permitted for use by USA systems.
    */
   @XmlElement(name = "ModAllowedBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial modAllowedBy;
   /**
    * State - Dataset Status (Optional)
@@ -371,6 +369,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Format is List of L:CCY
    */
+  @XmlList
   @XmlAttribute(name = "releasability")
   private Set<ListCCY> releasability;
   /**
@@ -380,17 +379,21 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Format is List of UN6
    */
+  @XmlList
   @XmlAttribute(name = "remarks")
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private Set<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
+   * A list of Common/ExtReferenceRef idx values applicable to the current data
    * item.
    * <p>
    * Format is List of UN6
    */
+  @XmlList
   @XmlAttribute(name = "extReferences")
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private Set<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
@@ -403,6 +406,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is Memo
    */
   @XmlAttribute(name = "legacyReleasability")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   private String legacyReleasability;
   /**
    * US:quality - Data Quality (Optional)
@@ -414,6 +418,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is S255
    */
   @XmlAttribute(name = "quality")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS255.class)
   private String quality;
   /**
    * US:recommendedValue - Recommended Value (Optional)
@@ -423,6 +428,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is Memo
    */
   @XmlAttribute(name = "recommendedValue")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   private String recommendedValue;
   /**
    * idref - Data Item ID (Optional)
@@ -437,6 +443,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is S10
    */
   @XmlAttribute(name = "idref")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS10.class)
   private String idref;//</editor-fold>
 
   /**
@@ -1217,7 +1224,7 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Get a list of Common/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
    * @return a non-null but possibly empty list of {@link BigInteger} instances
@@ -1834,7 +1841,7 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of Common/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
    * @param values One or more instances of type {@link BigInteger}
@@ -1848,7 +1855,7 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of Common/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
    * @param values A collection of {@link BigInteger} instances
@@ -1923,38 +1930,38 @@ public abstract class Common<T> implements Comparable<T> {
   @Override
   public String toString() {
     return "Common {"
-      // Required
-      + (cls != null ? "cls [" + cls + "]" : "")
-      + (serial != null ? " serial [" + serial + "]" : "")
-      + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
-      // Optional
-      + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
-      + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
-      + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-      + (description != null ? " description [" + description + "]" : "")
-      + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
-      + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
-      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-      + (idref != null ? " idref [" + idref + "]" : "")
-      + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
-      + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
-      + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
-      + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
-      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-      + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
-      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-      + (owner != null ? " owner [" + owner + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-      + (redacted != null ? " redacted [" + redacted + "]" : "")
-      + (releasability != null ? " releasability [" + releasability + "]" : "")
-      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-      + (remarks != null ? " remarks [" + remarks + "]" : "")
-      + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
-      + (state != null ? " state [" + state + "]" : "")
-      + "}";
+           // Required
+           + (cls != null ? "cls [" + cls + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
+           + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
+           // Optional
+           + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
+           + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
+           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
+           + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (idref != null ? " idref [" + idref + "]" : "")
+           + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
+           + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+           + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
+           + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+           + (owner != null ? " owner [" + owner + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           + (redacted != null ? " redacted [" + redacted + "]" : "")
+           + (releasability != null ? " releasability [" + releasability + "]" : "")
+           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+           + (remarks != null ? " remarks [" + remarks + "]" : "")
+           + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
+           + (state != null ? " state [" + state + "]" : "")
+           + "}";
   }
 
   /**

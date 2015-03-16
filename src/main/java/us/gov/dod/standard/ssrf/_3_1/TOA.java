@@ -124,7 +124,7 @@ public class TOA extends Common<TOA> {
    * ChannelPlanRef refers to a ChannelPlan.
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> channelPlanRef;
   /**
    * Country (Optional)

@@ -84,7 +84,7 @@ public class Administrative extends Common<Administrative> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "MessageRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial messageRef;
   /**
    * Dataset (Optional)

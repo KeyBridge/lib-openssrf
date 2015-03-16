@@ -187,7 +187,7 @@ public class Allotment extends Common<Allotment> {
    * LocationRef references a Location dataset.
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TSerial> locationRef;
   /**
    * Emission (Optional)

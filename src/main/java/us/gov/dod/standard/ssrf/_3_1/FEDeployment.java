@@ -79,7 +79,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "FERef", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial feRef;
   /**
    * Type - Deployment Type (Required)
@@ -227,7 +227,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TString locationRef;
   /**
    * Project (Optional)

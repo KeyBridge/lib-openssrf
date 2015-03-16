@@ -149,7 +149,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LocationRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial locationRef;
   /**
    * Name (US), enter a descriptive name for the Radiation Plan.

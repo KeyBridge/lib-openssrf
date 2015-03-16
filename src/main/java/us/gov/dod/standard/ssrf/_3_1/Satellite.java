@@ -129,7 +129,7 @@ public class Satellite extends Common<Satellite> {
    * Format is pattern (S29)
    */
   @XmlElement(name = "LaunchLocRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial launchLocRef;
   /**
    * LaunchDate - Launch Date (Optional)
@@ -264,7 +264,7 @@ public class Satellite extends Common<Satellite> {
    * RFSystemRef contains a reference to a RF System used on the satellite.
    */
   @XmlElement(name = "RFSystemRef", nillable = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private Set<TString> rfSystemRef;
   /**
    * EarthStation (Optional)

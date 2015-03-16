@@ -312,7 +312,7 @@ public class IntfReport extends Common<IntfReport> {
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    */
   @XmlElement(name = "VictimAsgnRef", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterSERIAL.class)
+  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
   private TSerial victimAsgnRef;
   /**
    * VictimSystem - Victim System (Optional)
