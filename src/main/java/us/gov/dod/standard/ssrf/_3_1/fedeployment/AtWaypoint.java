@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.FEDeployment;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -74,8 +73,7 @@ public class AtWaypoint {
    * Format is DateTime
    */
   @XmlElement(name = "DateTime", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar dateTime;
+  private TDateTime dateTime;
   /**
    * Speed - Speed at Waypoint (Optional)
    * <p>
@@ -128,25 +126,25 @@ public class AtWaypoint {
   /**
    * Get the date and time that the force element is at the selected waypoint.
    * <p>
-   * @return the DateTime value in a {@link TCalendar} data type
+   * @return the DateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getDateTime() {
+  public TDateTime getDateTime() {
     return dateTime;
   }
 
   /**
    * Set the date and time that the force element is at the selected waypoint.
    * <p>
-   * @param value the DateTime value in a {@link TCalendar} data type
+   * @param value the DateTime value in a {@link TDateTime} data type
    */
-  public void setDateTime(TCalendar value) {
+  public void setDateTime(TDateTime value) {
     this.dateTime = value;
   }
 
   /**
    * Determine if the DateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -208,7 +206,7 @@ public class AtWaypoint {
    * @return The current AtWaypoint object instance
    */
   public AtWaypoint withDateTime(Calendar value) {
-    setDateTime(new TCalendar(value));
+    setDateTime(new TDateTime(value));
     return this;
   }
 
@@ -219,7 +217,7 @@ public class AtWaypoint {
    * @return The current AtWaypoint object instance
    */
   public AtWaypoint withDateTime(Date value) {
-    setDateTime(new TCalendar(value));
+    setDateTime(new TDateTime(value));
     return this;
   }
 
@@ -243,17 +241,17 @@ public class AtWaypoint {
   @Override
   public String toString() {
     return "AtWaypoint {"
-      + (speed != null ? " speed [" + speed + "]" : "")
-      + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
-      + (waypointIdx != null ? " waypointIdx [" + waypointIdx + "]" : "")
-      + "}";
+           + (speed != null ? " speed [" + speed + "]" : "")
+           + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
+           + (waypointIdx != null ? " waypointIdx [" + waypointIdx + "]" : "")
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link AtWaypoint} requires
-   * {@link TCalendar DateTime}, {@link TInteger WaypointIdx}.
+   * {@link TDateTime DateTime}, {@link TInteger WaypointIdx}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

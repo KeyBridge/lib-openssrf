@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
@@ -75,8 +74,7 @@ public class JRFL extends Common<JRFL> {
    * Format is DT
    */
   @XmlElement(name = "EffectiveDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar effectiveDateTime;
+  private TDateTime effectiveDateTime;
   /**
    * ExpirationDateTime - Expiration Date/Time (Optional)
    * <p>
@@ -87,8 +85,7 @@ public class JRFL extends Common<JRFL> {
    * Expiration date should be less than five years from the effective date.
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar expirationDateTime;
+  private TDateTime expirationDateTime;
   /**
    * ReviewDate - Review Date (Optional)
    * <p>
@@ -100,8 +97,7 @@ public class JRFL extends Common<JRFL> {
    * Attribute group ExpireReviewDT (Required)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * Seconds - Seconds (Optionsl)
    * <p>
@@ -228,26 +224,25 @@ public class JRFL extends Common<JRFL> {
   /**
    * Get the width of the range (or band) of restricted frequency(s).
    * <p>
-   * @return the EffectiveDateTime value in a {@link TCalendar} data type
+   * @return the EffectiveDateTime value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDateTime() {
+  public TDateTime getEffectiveDateTime() {
     return effectiveDateTime;
   }
 
   /**
    * Set the width of the range (or band) of restricted frequency(s).
    * <p>
-   * @param value the EffectiveDateTime value in a {@link TCalendar} data type
+   * @param value the EffectiveDateTime value in a {@link TDate} data type
    */
-  public void setEffectiveDateTime(TCalendar value) {
+  public void setEffectiveDateTime(TDateTime value) {
     this.effectiveDateTime = value;
   }
 
   /**
    * Determine if the EffectiveDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -259,9 +254,9 @@ public class JRFL extends Common<JRFL> {
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from the effective date.
    * <p>
-   * @return the ExpirationDateTime value in a {@link TCalendar} data type
+   * @return the ExpirationDateTime value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDateTime() {
+  public TDateTime getExpirationDateTime() {
     return expirationDateTime;
   }
 
@@ -269,17 +264,16 @@ public class JRFL extends Common<JRFL> {
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from the effective date.
    * <p>
-   * @param value the ExpirationDateTime value in a {@link TCalendar} data type
+   * @param value the ExpirationDateTime value in a {@link TDate} data type
    */
-  public void setExpirationDateTime(TCalendar value) {
+  public void setExpirationDateTime(TDateTime value) {
     this.expirationDateTime = value;
   }
 
   /**
    * Determine if the ExpirationDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -291,9 +285,9 @@ public class JRFL extends Common<JRFL> {
    * Get a description of the justification of why the JRFL entry is required,
    * to support the spectrum manager.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -301,17 +295,16 @@ public class JRFL extends Common<JRFL> {
    * Set a description of the justification of why the JRFL entry is required,
    * to support the spectrum manager.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -589,7 +582,7 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withEffectiveDateTime(Calendar value) {
-    setEffectiveDateTime(new TCalendar(value));
+    setEffectiveDateTime(new TDateTime(value));
     return this;
   }
 
@@ -600,7 +593,7 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withEffectiveDateTime(Date value) {
-    setEffectiveDateTime(new TCalendar(value));
+    setEffectiveDateTime(new TDateTime(value));
     return this;
   }
 
@@ -611,7 +604,7 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withExpirationDateTime(Calendar value) {
-    setExpirationDateTime(new TCalendar(value));
+    setExpirationDateTime(new TDateTime(value));
     return this;
   }
 
@@ -622,7 +615,7 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withExpirationDateTime(Date value) {
-    setExpirationDateTime(new TCalendar(value));
+    setExpirationDateTime(new TDateTime(value));
     return this;
   }
 
@@ -634,7 +627,7 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -646,7 +639,7 @@ public class JRFL extends Common<JRFL> {
    * @return The current JRFL object instance
    */
   public JRFL withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -778,27 +771,27 @@ public class JRFL extends Common<JRFL> {
   @Override
   public String toString() {
     return "JRFL {"
-      + (duration != null ? " duration [" + duration + "]" : "")
-      + (months != null ? " months [" + months + "]" : "")
-      + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
-      + (minutes != null ? " minutes [" + minutes + "]" : "")
-      + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
-      + (seconds != null ? " seconds [" + seconds + "]" : "")
-      + (hours != null ? " hours [" + hours + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (years != null ? " years [" + years + "]" : "")
-      + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
-      + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
-      + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
-      + "\n  JRFL." + super.toString() + "\n"
-      + "}";
+           + (duration != null ? " duration [" + duration + "]" : "")
+           + (months != null ? " months [" + months + "]" : "")
+           + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
+           + (minutes != null ? " minutes [" + minutes + "]" : "")
+           + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
+           + (seconds != null ? " seconds [" + seconds + "]" : "")
+           + (hours != null ? " hours [" + hours + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (years != null ? " years [" + years + "]" : "")
+           + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
+           + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+           + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+           + "\n  JRFL." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link JRFL} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link JRFLEntry JRFLEntry}.
    * <p>
    * Note that this method only checks for the presence of required information;

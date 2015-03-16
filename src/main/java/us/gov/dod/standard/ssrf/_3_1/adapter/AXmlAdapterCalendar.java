@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,8 @@
 package us.gov.dod.standard.ssrf._3_1.adapter;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TCalendar;
 
 /**
  * Abstract Calendar type XmlAdapter. This supports Date and DataTime string
@@ -25,14 +25,14 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TCalendar;
  * <p>
  * @author Jesse Caulfield
  */
-public abstract class AXmlAdapterTCalendar extends XmlAdapter<String, TCalendar> {
+public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
 
   /**
    * The date or dateTime conversion pattern.
    */
   private final String PATTERN;
 
-  public AXmlAdapterTCalendar(String PATTERN) {
+  public AXmlAdapterCalendar(String PATTERN) {
     this.PATTERN = PATTERN;
   }
 
@@ -43,13 +43,13 @@ public abstract class AXmlAdapterTCalendar extends XmlAdapter<String, TCalendar>
    * @return the converted value
    */
   @Override
-  public String marshal(TCalendar v) {
+  public String marshal(Calendar v) {
     if (v == null) {
       return null;
     }
     SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
-    sdf.setTimeZone(v.getValue().getTimeZone());
-    return sdf.format(v.getValue().getTime());
+    sdf.setTimeZone(v.getTimeZone());
+    return sdf.format(v.getTime());
   }
 
   /**
@@ -59,8 +59,8 @@ public abstract class AXmlAdapterTCalendar extends XmlAdapter<String, TCalendar>
    * @return the converted value
    */
   @Override
-  public TCalendar unmarshal(String v) {
-    return new TCalendar(javax.xml.bind.DatatypeConverter.parseDate(v));
+  public Calendar unmarshal(String v) {
+    return javax.xml.bind.DatatypeConverter.parseDate(v);
   }
 
 }

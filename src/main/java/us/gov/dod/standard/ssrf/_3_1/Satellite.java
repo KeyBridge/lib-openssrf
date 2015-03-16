@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -88,8 +87,7 @@ public class Satellite extends Common<Satellite> {
    * Format is Date
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * CallSign - Call Sign (Optional)
    * <p>
@@ -139,8 +137,7 @@ public class Satellite extends Common<Satellite> {
    * Format is Date
    */
   @XmlElement(name = "LaunchDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar launchDate;
+  private TDate launchDate;
   /**
    * GeoNominalLon - Geostationary Nominal Longitude (Optional)
    * <p>
@@ -301,9 +298,9 @@ public class Satellite extends Common<Satellite> {
    * re-initiating host coordination plans to resubmit a Spectrum Supportability
    * request to the host nation for continued use of the equipment.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -314,17 +311,16 @@ public class Satellite extends Common<Satellite> {
    * re-initiating host coordination plans to resubmit a Spectrum Supportability
    * request to the host nation for continued use of the equipment.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -465,26 +461,25 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the date of the satellite launch.
    * <p>
-   * @return the LaunchDate value in a {@link TCalendar} data type
+   * @return the LaunchDate value in a {@link TDate} data type
    */
-  public TCalendar getLaunchDate() {
+  public TDate getLaunchDate() {
     return launchDate;
   }
 
   /**
    * Set the date of the satellite launch.
    * <p>
-   * @param value the LaunchDate value in a {@link TCalendar} data type
+   * @param value the LaunchDate value in a {@link TDate} data type
    */
-  public void setLaunchDate(TCalendar value) {
+  public void setLaunchDate(TDate value) {
     this.launchDate = value;
   }
 
   /**
    * Determine if the LaunchDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -965,7 +960,7 @@ public class Satellite extends Common<Satellite> {
    * @return The current Satellite object instance
    */
   public Satellite withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -980,7 +975,7 @@ public class Satellite extends Common<Satellite> {
    * @return The current Satellite object instance
    */
   public Satellite withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -1042,7 +1037,7 @@ public class Satellite extends Common<Satellite> {
    * @return The current Satellite object instance
    */
   public Satellite withLaunchDate(Calendar value) {
-    setLaunchDate(new TCalendar(value));
+    setLaunchDate(new TDate(value));
     return this;
   }
 
@@ -1053,7 +1048,7 @@ public class Satellite extends Common<Satellite> {
    * @return The current Satellite object instance
    */
   public Satellite withLaunchDate(Date value) {
-    setLaunchDate(new TCalendar(value));
+    setLaunchDate(new TDate(value));
     return this;
   }
 
@@ -1325,36 +1320,36 @@ public class Satellite extends Common<Satellite> {
   @Override
   public String toString() {
     return "Satellite {"
-      + (launchLocRef != null ? " launchLocRef [" + launchLocRef + "]" : "")
-      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-      + (geoAltitude != null ? " geoAltitude [" + geoAltitude + "]" : "")
-      + (internationalDesignator != null ? " internationalDesignator [" + internationalDesignator + "]" : "")
-      + (objectNum != null ? " objectNum [" + objectNum + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (orbitType != null ? " orbitType [" + orbitType + "]" : "")
-      + (nonGeoInclination != null ? " nonGeoInclination [" + nonGeoInclination + "]" : "")
-      + (nonGeoPeriod != null ? " nonGeoPeriod [" + nonGeoPeriod + "]" : "")
-      + (nonGeoNumSatellites != null ? " nonGeoNumSatellites [" + nonGeoNumSatellites + "]" : "")
-      + (rfSystemRef != null ? " rfSystemRef [" + rfSystemRef + "]" : "")
-      + (nonGeoApogee != null ? " nonGeoApogee [" + nonGeoApogee + "]" : "")
-      + (earthStation != null ? " earthStation [" + earthStation + "]" : "")
-      + (callSign != null ? " callSign [" + callSign + "]" : "")
-      + (launchStatus != null ? " launchStatus [" + launchStatus + "]" : "")
-      + (geoNominalLon != null ? " geoNominalLon [" + geoNominalLon + "]" : "")
-      + (networkName != null ? " networkName [" + networkName + "]" : "")
-      + (serviceArea != null ? " serviceArea [" + serviceArea + "]" : "")
-      + (launchDate != null ? " launchDate [" + launchDate + "]" : "")
-      + (administration != null ? " administration [" + administration + "]" : "")
-      + (nonGeoPerigee != null ? " nonGeoPerigee [" + nonGeoPerigee + "]" : "")
-      + "\n  Satellite." + super.toString() + "\n"
-      + "}";
+           + (launchLocRef != null ? " launchLocRef [" + launchLocRef + "]" : "")
+           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+           + (geoAltitude != null ? " geoAltitude [" + geoAltitude + "]" : "")
+           + (internationalDesignator != null ? " internationalDesignator [" + internationalDesignator + "]" : "")
+           + (objectNum != null ? " objectNum [" + objectNum + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (orbitType != null ? " orbitType [" + orbitType + "]" : "")
+           + (nonGeoInclination != null ? " nonGeoInclination [" + nonGeoInclination + "]" : "")
+           + (nonGeoPeriod != null ? " nonGeoPeriod [" + nonGeoPeriod + "]" : "")
+           + (nonGeoNumSatellites != null ? " nonGeoNumSatellites [" + nonGeoNumSatellites + "]" : "")
+           + (rfSystemRef != null ? " rfSystemRef [" + rfSystemRef + "]" : "")
+           + (nonGeoApogee != null ? " nonGeoApogee [" + nonGeoApogee + "]" : "")
+           + (earthStation != null ? " earthStation [" + earthStation + "]" : "")
+           + (callSign != null ? " callSign [" + callSign + "]" : "")
+           + (launchStatus != null ? " launchStatus [" + launchStatus + "]" : "")
+           + (geoNominalLon != null ? " geoNominalLon [" + geoNominalLon + "]" : "")
+           + (networkName != null ? " networkName [" + networkName + "]" : "")
+           + (serviceArea != null ? " serviceArea [" + serviceArea + "]" : "")
+           + (launchDate != null ? " launchDate [" + launchDate + "]" : "")
+           + (administration != null ? " administration [" + administration + "]" : "")
+           + (nonGeoPerigee != null ? " nonGeoPerigee [" + nonGeoPerigee + "]" : "")
+           + "\n  Satellite." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Satellite} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

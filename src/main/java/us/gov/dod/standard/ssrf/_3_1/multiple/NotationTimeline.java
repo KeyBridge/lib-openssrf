@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -76,8 +75,7 @@ public class NotationTimeline {
    * Format is DateTime
    */
   @XmlElement(name = "StatusChangeDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar statusChangeDateTime;
+  private TDateTime statusChangeDateTime;
   /**
    * US:Type - Notation Type (Optional)
    * <p>
@@ -152,9 +150,9 @@ public class NotationTimeline {
    * Get the timestamp when the prior, or associated, Notation achieved this
    * Status.
    * <p>
-   * @return the StatusChangeDateTime value in a {@link TCalendar} data type
+   * @return the StatusChangeDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getStatusChangeDateTime() {
+  public TDateTime getStatusChangeDateTime() {
     return statusChangeDateTime;
   }
 
@@ -162,17 +160,17 @@ public class NotationTimeline {
    * Set the timestamp when the prior, or associated, Notation achieved this
    * Status.
    * <p>
-   * @param value the StatusChangeDateTime value in a {@link TCalendar} data
+   * @param value the StatusChangeDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setStatusChangeDateTime(TCalendar value) {
+  public void setStatusChangeDateTime(TDateTime value) {
     this.statusChangeDateTime = value;
   }
 
   /**
    * Determine if the StatusChangeDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -241,7 +239,7 @@ public class NotationTimeline {
    * @return The current NotationTimeline object instance
    */
   public NotationTimeline withStatusChangeDateTime(Calendar value) {
-    setStatusChangeDateTime(new TCalendar(value));
+    setStatusChangeDateTime(new TDateTime(value));
     return this;
   }
 
@@ -253,7 +251,7 @@ public class NotationTimeline {
    * @return The current NotationTimeline object instance
    */
   public NotationTimeline withStatusChangeDateTime(Date value) {
-    setStatusChangeDateTime(new TCalendar(value));
+    setStatusChangeDateTime(new TDateTime(value));
     return this;
   }
 
@@ -277,11 +275,11 @@ public class NotationTimeline {
   @Override
   public String toString() {
     return "NotationTimeline {"
-      + (status != null ? " status [" + status + "]" : "")
-      + (code != null ? " code [" + code + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (statusChangeDateTime != null ? " statusChangeDateTime [" + statusChangeDateTime + "]" : "")
-      + "}";
+           + (status != null ? " status [" + status + "]" : "")
+           + (code != null ? " code [" + code + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (statusChangeDateTime != null ? " statusChangeDateTime [" + statusChangeDateTime + "]" : "")
+           + "}";
   }
 
   /**

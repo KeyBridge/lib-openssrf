@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -60,8 +59,7 @@ public class ClsDerived {
    * Format is Date
    */
   @XmlElement(name = "Date", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar date;
+  private TDate date;
   /**
    * US:Title - Derivative Classification Document Title (Required)
    * <p>
@@ -86,26 +84,25 @@ public class ClsDerived {
   /**
    * Get the date of the source document.
    * <p>
-   * @return the Date value in a {@link TCalendar} data type
+   * @return the Date value in a {@link TDate} data type
    */
-  public TCalendar getDate() {
+  public TDate getDate() {
     return date;
   }
 
   /**
    * Set the date of the source document.
    * <p>
-   * @param value the Date value in a {@link TCalendar} data type
+   * @param value the Date value in a {@link TDate} data type
    */
-  public void setDate(TCalendar value) {
+  public void setDate(TDate value) {
     this.date = value;
   }
 
   /**
    * Determine if the Date is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -178,7 +175,7 @@ public class ClsDerived {
    * @return The current ClsDerived object instance
    */
   public ClsDerived withDate(Calendar value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -189,7 +186,7 @@ public class ClsDerived {
    * @return The current ClsDerived object instance
    */
   public ClsDerived withDate(Date value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -223,17 +220,17 @@ public class ClsDerived {
   @Override
   public String toString() {
     return "ClsDerived {"
-      + (title != null ? " title [" + title + "]" : "")
-      + (org != null ? " org [" + org + "]" : "")
-      + (date != null ? " date [" + date + "]" : "")
-      + "}";
+           + (title != null ? " title [" + title + "]" : "")
+           + (org != null ? " org [" + org + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link ClsDerived} requires
-   * {@link TCalendar Date}, {@link TString Org}, {@link TString Title}.
+   * {@link TDate Date}, {@link TString Org}, {@link TString Title}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

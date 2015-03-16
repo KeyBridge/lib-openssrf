@@ -20,7 +20,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
  * <p>
  * @author Jesse Caulfield
  */
-public class XmlAdapterDATETIME extends AXmlAdapterTCalendar {
+public class XmlAdapterDATETIME extends AXmlAdapterCalendar {
 
   /**
    * The DateTime pattern.

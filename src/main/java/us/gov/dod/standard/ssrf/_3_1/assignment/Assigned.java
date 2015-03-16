@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -132,8 +131,7 @@ public class Assigned {
    * Divergence from SMADEF:
    */
   @XmlElement(name = "ITURegDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar ituRegDate;
+  private TDate ituRegDate;
   /**
    * ITURegNum - ITU Registration Number (Optional)
    * <p>
@@ -343,9 +341,9 @@ public class Assigned {
    * Get the date the frequency assignment was registered with the International
    * Telecommunication Union (ITU) Radiocommunication Bureau (BR).
    * <p>
-   * @return the ITURegDate value in a {@link TCalendar} data type
+   * @return the ITURegDate value in a {@link TDate} data type
    */
-  public TCalendar getITURegDate() {
+  public TDate getITURegDate() {
     return ituRegDate;
   }
 
@@ -353,17 +351,16 @@ public class Assigned {
    * Set the date the frequency assignment was registered with the International
    * Telecommunication Union (ITU) Radiocommunication Bureau (BR).
    * <p>
-   * @param value the ITURegDate value in a {@link TCalendar} data type
+   * @param value the ITURegDate value in a {@link TDate} data type
    */
-  public void setITURegDate(TCalendar value) {
+  public void setITURegDate(TDate value) {
     this.ituRegDate = value;
   }
 
   /**
    * Determine if the ITURegDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -631,7 +628,7 @@ public class Assigned {
    * @return The current Assigned object instance
    */
   public Assigned withITURegDate(Calendar value) {
-    setITURegDate(new TCalendar(value));
+    setITURegDate(new TDate(value));
     return this;
   }
 
@@ -643,7 +640,7 @@ public class Assigned {
    * @return The current Assigned object instance
    */
   public Assigned withITURegDate(Date value) {
-    setITURegDate(new TCalendar(value));
+    setITURegDate(new TDate(value));
     return this;
   }
 
@@ -775,18 +772,18 @@ public class Assigned {
   @Override
   public String toString() {
     return "Assigned {"
-      + (freqOld != null ? " freqOld [" + freqOld + "]" : "")
-      + (colourNum != null ? " colourNum [" + colourNum + "]" : "")
-      + (ituRegStatus != null ? " ituRegStatus [" + ituRegStatus + "]" : "")
-      + (freq != null ? " freq [" + freq + "]" : "")
-      + (navAidsChannel != null ? " navAidsChannel [" + navAidsChannel + "]" : "")
-      + (ituRegNum != null ? " ituRegNum [" + ituRegNum + "]" : "")
-      + (quality != null ? " quality [" + quality + "]" : "")
-      + (ituRegDate != null ? " ituRegDate [" + ituRegDate + "]" : "")
-      + (colourWord != null ? " colourWord [" + colourWord + "]" : "")
-      + (netNum != null ? " netNum [" + netNum + "]" : "")
-      + (ituRegComments != null ? " ituRegComments [" + ituRegComments + "]" : "")
-      + "}";
+           + (freqOld != null ? " freqOld [" + freqOld + "]" : "")
+           + (colourNum != null ? " colourNum [" + colourNum + "]" : "")
+           + (ituRegStatus != null ? " ituRegStatus [" + ituRegStatus + "]" : "")
+           + (freq != null ? " freq [" + freq + "]" : "")
+           + (navAidsChannel != null ? " navAidsChannel [" + navAidsChannel + "]" : "")
+           + (ituRegNum != null ? " ituRegNum [" + ituRegNum + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (ituRegDate != null ? " ituRegDate [" + ituRegDate + "]" : "")
+           + (colourWord != null ? " colourWord [" + colourWord + "]" : "")
+           + (netNum != null ? " netNum [" + netNum + "]" : "")
+           + (ituRegComments != null ? " ituRegComments [" + ituRegComments + "]" : "")
+           + "}";
   }
 
   /**

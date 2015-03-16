@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -85,8 +84,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Format is Date
    */
   @XmlElement(name = "Date", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar date;
+  private TDate date;
   /**
    * AlternateIdentifier - Alternate Identifier (Optional)
    * <p>
@@ -227,26 +225,25 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Get the publication date of the external reference
    * <p>
-   * @return the Date value in a {@link TCalendar} data type
+   * @return the Date value in a {@link TDate} data type
    */
-  public TCalendar getDate() {
+  public TDate getDate() {
     return date;
   }
 
   /**
    * Set the publication date of the external reference
    * <p>
-   * @param value the Date value in a {@link TCalendar} data type
+   * @param value the Date value in a {@link TDate} data type
    */
-  public void setDate(TCalendar value) {
+  public void setDate(TDate value) {
     this.date = value;
   }
 
   /**
    * Determine if the Date is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -603,7 +600,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * @return The current ExternalReference object instance
    */
   public ExternalReference withDate(Calendar value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -614,7 +611,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * @return The current ExternalReference object instance
    */
   public ExternalReference withDate(Date value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -754,28 +751,28 @@ public class ExternalReference extends Common<ExternalReference> {
   @Override
   public String toString() {
     return "ExternalReference {"
-      + (author != null ? " author [" + author + "]" : "")
-      + (title != null ? " title [" + title + "]" : "")
-      + (documentCls != null ? " documentCls [" + documentCls + "]" : "")
-      + (referencedStage != null ? " referencedStage [" + referencedStage + "]" : "")
-      + (isAttached != null ? " isAttached [" + isAttached + "]" : "")
-      + (organisation != null ? " organisation [" + organisation + "]" : "")
-      + (isClassified != null ? " isClassified [" + isClassified + "]" : "")
-      + (resourceLocator != null ? " resourceLocator [" + resourceLocator + "]" : "")
-      + (alternateIdentifier != null ? " alternateIdentifier [" + alternateIdentifier + "]" : "")
-      + (repeat != null ? " repeat [" + repeat + "]" : "")
-      + (date != null ? " date [" + date + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (identifier != null ? " identifier [" + identifier + "]" : "")
-      + "\n  ExternalReference." + super.toString() + "\n"
-      + "}";
+           + (author != null ? " author [" + author + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
+           + (documentCls != null ? " documentCls [" + documentCls + "]" : "")
+           + (referencedStage != null ? " referencedStage [" + referencedStage + "]" : "")
+           + (isAttached != null ? " isAttached [" + isAttached + "]" : "")
+           + (organisation != null ? " organisation [" + organisation + "]" : "")
+           + (isClassified != null ? " isClassified [" + isClassified + "]" : "")
+           + (resourceLocator != null ? " resourceLocator [" + resourceLocator + "]" : "")
+           + (alternateIdentifier != null ? " alternateIdentifier [" + alternateIdentifier + "]" : "")
+           + (repeat != null ? " repeat [" + repeat + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (identifier != null ? " identifier [" + identifier + "]" : "")
+           + "\n  ExternalReference." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link ExternalReference} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link TString IsAttached}.
    * <p>
    * Note that this method only checks for the presence of required information;

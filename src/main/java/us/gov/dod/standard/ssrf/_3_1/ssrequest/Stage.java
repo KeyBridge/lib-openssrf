@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -80,8 +79,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "StartDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar startDate;
+  private TDate startDate;
   /**
    * TargetDate - Target Date (Optional)
    * <p>
@@ -91,8 +89,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "TargetDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar targetDate;
+  private TDate targetDate;
   /**
    * DateApprovalRequired - Desired Approval Date (Optional)
    * <p>
@@ -101,8 +98,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "DateApprovalRequired", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar dateApprovalRequired;
+  private TDate dateApprovalRequired;
   /**
    * TerminationDate - Termination Date (Optional)
    * <p>
@@ -113,8 +109,7 @@ public class Stage {
    * Format is Date
    */
   @XmlElement(name = "TerminationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar terminationDate;
+  private TDate terminationDate;
   /**
    * NumEquip - Number of Equipment (Optional)
    * <p>
@@ -177,26 +172,25 @@ public class Stage {
   /**
    * Get the date upon which work will commence on this stage.
    * <p>
-   * @return the StartDate value in a {@link TCalendar} data type
+   * @return the StartDate value in a {@link TDate} data type
    */
-  public TCalendar getStartDate() {
+  public TDate getStartDate() {
     return startDate;
   }
 
   /**
    * Set the date upon which work will commence on this stage.
    * <p>
-   * @param value the StartDate value in a {@link TCalendar} data type
+   * @param value the StartDate value in a {@link TDate} data type
    */
-  public void setStartDate(TCalendar value) {
+  public void setStartDate(TDate value) {
     this.startDate = value;
   }
 
   /**
    * Determine if the StartDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -208,9 +202,9 @@ public class Stage {
    * Get the date by which a usable version of the system is expected to be
    * available for testing or deployment.
    * <p>
-   * @return the TargetDate value in a {@link TCalendar} data type
+   * @return the TargetDate value in a {@link TDate} data type
    */
-  public TCalendar getTargetDate() {
+  public TDate getTargetDate() {
     return targetDate;
   }
 
@@ -218,17 +212,16 @@ public class Stage {
    * Set the date by which a usable version of the system is expected to be
    * available for testing or deployment.
    * <p>
-   * @param value the TargetDate value in a {@link TCalendar} data type
+   * @param value the TargetDate value in a {@link TDate} data type
    */
-  public void setTargetDate(TCalendar value) {
+  public void setTargetDate(TDate value) {
     this.targetDate = value;
   }
 
   /**
    * Determine if the TargetDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -239,27 +232,25 @@ public class Stage {
   /**
    * Get the date by which the approval of the application is desired
    * <p>
-   * @return the DateApprovalRequired value in a {@link TCalendar} data type
+   * @return the DateApprovalRequired value in a {@link TDate} data type
    */
-  public TCalendar getDateApprovalRequired() {
+  public TDate getDateApprovalRequired() {
     return dateApprovalRequired;
   }
 
   /**
    * Set the date by which the approval of the application is desired
    * <p>
-   * @param value the DateApprovalRequired value in a {@link TCalendar} data
-   *              type
+   * @param value the DateApprovalRequired value in a {@link TDate} data type
    */
-  public void setDateApprovalRequired(TCalendar value) {
+  public void setDateApprovalRequired(TDate value) {
     this.dateApprovalRequired = value;
   }
 
   /**
    * Determine if the DateApprovalRequired is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -272,9 +263,9 @@ public class Stage {
    * the date entered is the date when the system is expected to enter stage 3.
    * The date may be an estimate.
    * <p>
-   * @return the TerminationDate value in a {@link TCalendar} data type
+   * @return the TerminationDate value in a {@link TDate} data type
    */
-  public TCalendar getTerminationDate() {
+  public TDate getTerminationDate() {
     return terminationDate;
   }
 
@@ -283,17 +274,16 @@ public class Stage {
    * the date entered is the date when the system is expected to enter stage 3.
    * The date may be an estimate.
    * <p>
-   * @param value the TerminationDate value in a {@link TCalendar} data type
+   * @param value the TerminationDate value in a {@link TDate} data type
    */
-  public void setTerminationDate(TCalendar value) {
+  public void setTerminationDate(TDate value) {
     this.terminationDate = value;
   }
 
   /**
    * Determine if the TerminationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -413,7 +403,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withStartDate(Calendar value) {
-    setStartDate(new TCalendar(value));
+    setStartDate(new TDate(value));
     return this;
   }
 
@@ -424,7 +414,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withStartDate(Date value) {
-    setStartDate(new TCalendar(value));
+    setStartDate(new TDate(value));
     return this;
   }
 
@@ -436,7 +426,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withTargetDate(Calendar value) {
-    setTargetDate(new TCalendar(value));
+    setTargetDate(new TDate(value));
     return this;
   }
 
@@ -448,7 +438,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withTargetDate(Date value) {
-    setTargetDate(new TCalendar(value));
+    setTargetDate(new TDate(value));
     return this;
   }
 
@@ -459,7 +449,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withDateApprovalRequired(Calendar value) {
-    setDateApprovalRequired(new TCalendar(value));
+    setDateApprovalRequired(new TDate(value));
     return this;
   }
 
@@ -470,7 +460,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withDateApprovalRequired(Date value) {
-    setDateApprovalRequired(new TCalendar(value));
+    setDateApprovalRequired(new TDate(value));
     return this;
   }
 
@@ -483,7 +473,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withTerminationDate(Calendar value) {
-    setTerminationDate(new TCalendar(value));
+    setTerminationDate(new TDate(value));
     return this;
   }
 
@@ -496,7 +486,7 @@ public class Stage {
    * @return The current Stage object instance
    */
   public Stage withTerminationDate(Date value) {
-    setTerminationDate(new TCalendar(value));
+    setTerminationDate(new TDate(value));
     return this;
   }
 
@@ -564,15 +554,15 @@ public class Stage {
   @Override
   public String toString() {
     return "Stage {"
-      + (startDate != null ? " startDate [" + startDate + "]" : "")
-      + (terminationDate != null ? " terminationDate [" + terminationDate + "]" : "")
-      + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
-      + (dateApprovalRequired != null ? " dateApprovalRequired [" + dateApprovalRequired + "]" : "")
-      + (targetDate != null ? " targetDate [" + targetDate + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (geoDescription != null ? " geoDescription [" + geoDescription + "]" : "")
-      + (numEquip != null ? " numEquip [" + numEquip + "]" : "")
-      + "}";
+           + (startDate != null ? " startDate [" + startDate + "]" : "")
+           + (terminationDate != null ? " terminationDate [" + terminationDate + "]" : "")
+           + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
+           + (dateApprovalRequired != null ? " dateApprovalRequired [" + dateApprovalRequired + "]" : "")
+           + (targetDate != null ? " targetDate [" + targetDate + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (geoDescription != null ? " geoDescription [" + geoDescription + "]" : "")
+           + (numEquip != null ? " numEquip [" + numEquip + "]" : "")
+           + "}";
   }
 
   /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -120,8 +119,7 @@ public class SSReply extends Common<SSReply> {
    * Format is Date
    */
   @XmlElement(name = "DateReceivedByCountry", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar dateReceivedByCountry;
+  private TDate dateReceivedByCountry;
   /**
    * EffectiveDate - Effective Date (Required)
    * <p>
@@ -130,8 +128,7 @@ public class SSReply extends Common<SSReply> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar effectiveDate;
+  private TDate effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
    * <p>
@@ -143,8 +140,7 @@ public class SSReply extends Common<SSReply> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar expirationDate;
+  private TDate expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
    * <p>
@@ -159,8 +155,7 @@ public class SSReply extends Common<SSReply> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * US:ApprovalSPSNum - Approval SPS Number (Optional)
    * <p>
@@ -372,27 +367,25 @@ public class SSReply extends Common<SSReply> {
   /**
    * Get the date the request was received by the Host Nation Administration.
    * <p>
-   * @return the DateReceivedByCountry value in a {@link TCalendar} data type
+   * @return the DateReceivedByCountry value in a {@link TDate} data type
    */
-  public TCalendar getDateReceivedByCountry() {
+  public TDate getDateReceivedByCountry() {
     return dateReceivedByCountry;
   }
 
   /**
    * Set the date the request was received by the Host Nation Administration.
    * <p>
-   * @param value the DateReceivedByCountry value in a {@link TCalendar} data
-   *              type
+   * @param value the DateReceivedByCountry value in a {@link TDate} data type
    */
-  public void setDateReceivedByCountry(TCalendar value) {
+  public void setDateReceivedByCountry(TDate value) {
     this.dateReceivedByCountry = value;
   }
 
   /**
    * Determine if the DateReceivedByCountry is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -403,26 +396,25 @@ public class SSReply extends Common<SSReply> {
   /**
    * Get the date by which the dataset is to be operational or effective.
    * <p>
-   * @return the EffectiveDate value in a {@link TCalendar} data type
+   * @return the EffectiveDate value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDate() {
+  public TDate getEffectiveDate() {
     return effectiveDate;
   }
 
   /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
-   * @param value the EffectiveDate value in a {@link TCalendar} data type
+   * @param value the EffectiveDate value in a {@link TDate} data type
    */
-  public void setEffectiveDate(TCalendar value) {
+  public void setEffectiveDate(TDate value) {
     this.effectiveDate = value;
   }
 
   /**
    * Determine if the EffectiveDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -434,9 +426,9 @@ public class SSReply extends Common<SSReply> {
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @return the ExpirationDate value in a {@link TCalendar} data type
+   * @return the ExpirationDate value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDate() {
+  public TDate getExpirationDate() {
     return expirationDate;
   }
 
@@ -444,17 +436,16 @@ public class SSReply extends Common<SSReply> {
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @param value the ExpirationDate value in a {@link TCalendar} data type
+   * @param value the ExpirationDate value in a {@link TDate} data type
    */
-  public void setExpirationDate(TCalendar value) {
+  public void setExpirationDate(TDate value) {
     this.expirationDate = value;
   }
 
   /**
    * Determine if the ExpirationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -469,9 +460,9 @@ public class SSReply extends Common<SSReply> {
    * re-initiating host coordination plans to resubmit a Spectrum Supportability
    * request to the host nation for continued use of the equipment.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -482,17 +473,16 @@ public class SSReply extends Common<SSReply> {
    * re-initiating host coordination plans to resubmit a Spectrum Supportability
    * request to the host nation for continued use of the equipment.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -878,7 +868,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withDateReceivedByCountry(Calendar value) {
-    setDateReceivedByCountry(new TCalendar(value));
+    setDateReceivedByCountry(new TDate(value));
     return this;
   }
 
@@ -889,7 +879,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withDateReceivedByCountry(Date value) {
-    setDateReceivedByCountry(new TCalendar(value));
+    setDateReceivedByCountry(new TDate(value));
     return this;
   }
 
@@ -900,7 +890,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -911,7 +901,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withEffectiveDate(Date value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -923,7 +913,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withExpirationDate(Calendar value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -935,7 +925,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withExpirationDate(Date value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -950,7 +940,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -965,7 +955,7 @@ public class SSReply extends Common<SSReply> {
    * @return The current SSReply object instance
    */
   public SSReply withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -1176,34 +1166,34 @@ public class SSReply extends Common<SSReply> {
   @Override
   public String toString() {
     return "SSReply {"
-      + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
-      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-      + (replyingCountry != null ? " replyingCountry [" + replyingCountry + "]" : "")
-      + (erpNumber != null ? " erpNumber [" + erpNumber + "]" : "")
-      + (replyingAuthority != null ? " replyingAuthority [" + replyingAuthority + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (distributionGroups != null ? " distributionGroups [" + distributionGroups + "]" : "")
-      + (supportabilityCode != null ? " supportabilityCode [" + supportabilityCode + "]" : "")
-      + (approvalSPSNum != null ? " approvalSPSNum [" + approvalSPSNum + "]" : "")
-      + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
-      + (ssRequestRef != null ? " ssRequestRef [" + ssRequestRef + "]" : "")
-      + (iracNumber != null ? " iracNumber [" + iracNumber + "]" : "")
-      + (dateReceivedByCountry != null ? " dateReceivedByCountry [" + dateReceivedByCountry + "]" : "")
-      + (configuration != null ? " configuration [" + configuration + "]" : "")
-      + (commentSource != null ? " commentSource [" + commentSource + "]" : "")
-      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-      + (fasNumber != null ? " fasNumber [" + fasNumber + "]" : "")
-      + "\n  SSReply." + super.toString() + "\n"
-      + "}";
+           + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (replyingCountry != null ? " replyingCountry [" + replyingCountry + "]" : "")
+           + (erpNumber != null ? " erpNumber [" + erpNumber + "]" : "")
+           + (replyingAuthority != null ? " replyingAuthority [" + replyingAuthority + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (distributionGroups != null ? " distributionGroups [" + distributionGroups + "]" : "")
+           + (supportabilityCode != null ? " supportabilityCode [" + supportabilityCode + "]" : "")
+           + (approvalSPSNum != null ? " approvalSPSNum [" + approvalSPSNum + "]" : "")
+           + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
+           + (ssRequestRef != null ? " ssRequestRef [" + ssRequestRef + "]" : "")
+           + (iracNumber != null ? " iracNumber [" + iracNumber + "]" : "")
+           + (dateReceivedByCountry != null ? " dateReceivedByCountry [" + dateReceivedByCountry + "]" : "")
+           + (configuration != null ? " configuration [" + configuration + "]" : "")
+           + (commentSource != null ? " commentSource [" + commentSource + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (fasNumber != null ? " fasNumber [" + fasNumber + "]" : "")
+           + "\n  SSReply." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link SSReply} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and
-   * {@link TCalendar EffectiveDate}, {@link TString ReplyingCountry}, {@link TString SupportabilityCode}.
+   * {@link TDate EffectiveDate}, {@link TString ReplyingCountry}, {@link TString SupportabilityCode}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

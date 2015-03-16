@@ -21,6 +21,8 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.TimeZone;
 import javax.xml.bind.annotation.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterDATETIME;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -33,15 +35,21 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * @version SSRF 3.1.0, 09/29/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TCalendar")
-public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Comparable<TCalendar> {
+@XmlType(name = "TDateTime", propOrder = {"value"})
+public class TDateTime extends AMetadata<TDateTime> implements IMetadataType, Comparable<TDateTime> {
 
   /**
    * UTC. The default time zone.
    */
   private static final TimeZone TIMEZONE = TimeZone.getTimeZone("UTC");
   /**
-   * "yyyy-MM-dd'T'HH:mm:ss.SSSZ". The default DATETIME pattern.
+   * "yyyy-MM-dd'T'HH:mm:ss.SSSZ". The DateTime pattern.
+   * <p>
+   * DT is a date / time value formatted in 20 to 24 characters as
+   * YYYY-MM-DDThh:mm:ss[.ddd]Z (year-
+   * month-day"T"hours:minutes:seconds.milliseconds"Z"), where the milliseconds
+   * part is optional. This format is compliant with the W3C Recommendation on
+   * XML Schema.
    */
   private static final String PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
@@ -49,20 +57,21 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Co
    * The value to which the metadata attributes are associated.
    */
   @XmlValue
+  @XmlTypeValidator(type = Calendar.class, value = XmlAdapterDATETIME.class)
   protected Calendar value;
 
-  public TCalendar(Calendar value) {
+  public TDateTime(Calendar value) {
     setValue(value);
   }
 
-  public TCalendar(Date value) {
+  public TDateTime(Date value) {
     setValue(value);
   }
 
   /**
    * Zero argument constructor.
    */
-  public TCalendar() {
+  public TDateTime() {
   }
 
   /**
@@ -165,7 +174,7 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Co
     if (getClass() != obj.getClass()) {
       return false;
     }
-    return Objects.equals(this.value, ((TCalendar) obj).getValue());
+    return Objects.equals(this.value, ((IMetadataType) obj).getValue());
   }
 
   /**
@@ -175,7 +184,7 @@ public class TCalendar extends AMetadata<TCalendar> implements IMetadataType, Co
    * @return the reverse chronological order
    */
   @Override
-  public int compareTo(TCalendar o) {
+  public int compareTo(TDateTime o) {
     if (o == null) {
       return 1;
     }

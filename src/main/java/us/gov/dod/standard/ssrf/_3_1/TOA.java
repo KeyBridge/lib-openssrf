@@ -22,6 +22,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 import us.gov.dod.standard.ssrf._3_1.toa.Allocation;
 import us.gov.dod.standard.ssrf._3_1.toa.Country;
 import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
@@ -85,8 +86,7 @@ public class TOA extends Common<TOA> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar effectiveDate;
+  private TDate effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
    * <p>
@@ -96,8 +96,7 @@ public class TOA extends Common<TOA> {
    * Format is Date
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar expirationDate;
+  private TDate expirationDate;
   /**
    * Title - Title (Optional)
    * <p>
@@ -184,26 +183,25 @@ public class TOA extends Common<TOA> {
   /**
    * Get the date by which the dataset is to be operational or effective.
    * <p>
-   * @return the EffectiveDate value in a {@link TCalendar} data type
+   * @return the EffectiveDate value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDate() {
+  public TDate getEffectiveDate() {
     return effectiveDate;
   }
 
   /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
-   * @param value the EffectiveDate value in a {@link TCalendar} data type
+   * @param value the EffectiveDate value in a {@link TDate} data type
    */
-  public void setEffectiveDate(TCalendar value) {
+  public void setEffectiveDate(TDate value) {
     this.effectiveDate = value;
   }
 
   /**
    * Determine if the EffectiveDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -215,9 +213,9 @@ public class TOA extends Common<TOA> {
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @return the ExpirationDate value in a {@link TCalendar} data type
+   * @return the ExpirationDate value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDate() {
+  public TDate getExpirationDate() {
     return expirationDate;
   }
 
@@ -225,17 +223,16 @@ public class TOA extends Common<TOA> {
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @param value the ExpirationDate value in a {@link TCalendar} data type
+   * @param value the ExpirationDate value in a {@link TDate} data type
    */
-  public void setExpirationDate(TCalendar value) {
+  public void setExpirationDate(TDate value) {
     this.expirationDate = value;
   }
 
   /**
    * Determine if the ExpirationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -414,13 +411,25 @@ public class TOA extends Common<TOA> {
   }
 
   /**
+   * Set the nation or regulatory body that administers this Table of
+   * Allocations.
+   * <p>
+   * @param value An instances of type {@link ListCCY}
+   * @return The current TOA object instance
+   */
+  public TOA withAdministration(ListCCY value) {
+    setAdministration(new TString(value.name()));
+    return this;
+  }
+
+  /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current TOA object instance
    */
   public TOA withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -431,7 +440,7 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    */
   public TOA withEffectiveDate(Date value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -443,7 +452,7 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    */
   public TOA withExpirationDate(Calendar value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -455,7 +464,7 @@ public class TOA extends Common<TOA> {
    * @return The current TOA object instance
    */
   public TOA withExpirationDate(Date value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -630,7 +639,7 @@ public class TOA extends Common<TOA> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link TOA} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link TString Administration}, {@link FreqBand FreqBand}.
    * <p>
    * Note that this method only checks for the presence of required information;

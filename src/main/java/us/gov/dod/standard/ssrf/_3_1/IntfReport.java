@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -109,8 +108,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is DT
    */
   @XmlElement(name = "IntfStartDateTime", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar intfStartDateTime;
+  private TDateTime intfStartDateTime;
   /**
    * IntfStopDateTime - Interference Stop Date/Time (Optional)
    * <p>
@@ -119,8 +117,7 @@ public class IntfReport extends Common<IntfReport> {
    * Format is DT
    */
   @XmlElement(name = "IntfStopDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar intfStopDateTime;
+  private TDateTime intfStopDateTime;
   /**
    * IntfDescr, describe the interference. Provide as much information as
    * possible. State what actions you have taken so far to resolve the
@@ -659,26 +656,25 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the date/time the interference was first perceived.
    * <p>
-   * @return the IntfStartDateTime value in a {@link TCalendar} data type
+   * @return the IntfStartDateTime value in a {@link TDate} data type
    */
-  public TCalendar getIntfStartDateTime() {
+  public TDateTime getIntfStartDateTime() {
     return intfStartDateTime;
   }
 
   /**
    * Set the date/time the interference was first perceived.
    * <p>
-   * @param value the IntfStartDateTime value in a {@link TCalendar} data type
+   * @param value the IntfStartDateTime value in a {@link TDate} data type
    */
-  public void setIntfStartDateTime(TCalendar value) {
+  public void setIntfStartDateTime(TDateTime value) {
     this.intfStartDateTime = value;
   }
 
   /**
    * Determine if the IntfStartDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -689,26 +685,25 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the date/time the interference ceased.
    * <p>
-   * @return the IntfStopDateTime value in a {@link TCalendar} data type
+   * @return the IntfStopDateTime value in a {@link TDate} data type
    */
-  public TCalendar getIntfStopDateTime() {
+  public TDateTime getIntfStopDateTime() {
     return intfStopDateTime;
   }
 
   /**
    * Set the date/time the interference ceased.
    * <p>
-   * @param value the IntfStopDateTime value in a {@link TCalendar} data type
+   * @param value the IntfStopDateTime value in a {@link TDate} data type
    */
-  public void setIntfStopDateTime(TCalendar value) {
+  public void setIntfStopDateTime(TDateTime value) {
     this.intfStopDateTime = value;
   }
 
   /**
    * Determine if the IntfStopDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -2113,7 +2108,7 @@ public class IntfReport extends Common<IntfReport> {
    * @return The current IntfReport object instance
    */
   public IntfReport withIntfStartDateTime(Calendar value) {
-    setIntfStartDateTime(new TCalendar(value));
+    setIntfStartDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2124,7 +2119,7 @@ public class IntfReport extends Common<IntfReport> {
    * @return The current IntfReport object instance
    */
   public IntfReport withIntfStartDateTime(Date value) {
-    setIntfStartDateTime(new TCalendar(value));
+    setIntfStartDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2135,7 +2130,7 @@ public class IntfReport extends Common<IntfReport> {
    * @return The current IntfReport object instance
    */
   public IntfReport withIntfStopDateTime(Calendar value) {
-    setIntfStopDateTime(new TCalendar(value));
+    setIntfStopDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2146,7 +2141,7 @@ public class IntfReport extends Common<IntfReport> {
    * @return The current IntfReport object instance
    */
   public IntfReport withIntfStopDateTime(Date value) {
-    setIntfStopDateTime(new TCalendar(value));
+    setIntfStopDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2722,59 +2717,59 @@ public class IntfReport extends Common<IntfReport> {
   @Override
   public String toString() {
     return "IntfReport {"
-      + (satelliteDownlinkPolarisation != null ? " satelliteDownlinkPolarisation [" + satelliteDownlinkPolarisation + "]" : "")
-      + (victimLat != null ? " victimLat [" + victimLat + "]" : "")
-      + (satelliteLongitude != null ? " satelliteLongitude [" + satelliteLongitude + "]" : "")
-      + (intfStartDateTime != null ? " intfStartDateTime [" + intfStartDateTime + "]" : "")
-      + (satelliteName != null ? " satelliteName [" + satelliteName + "]" : "")
-      + (sourceLon != null ? " sourceLon [" + sourceLon + "]" : "")
-      + (sourceFreqMax != null ? " sourceFreqMax [" + sourceFreqMax + "]" : "")
-      + (sourceLat != null ? " sourceLat [" + sourceLat + "]" : "")
-      + (solution != null ? " solution [" + solution + "]" : "")
-      + (evaluation != null ? " evaluation [" + evaluation + "]" : "")
-      + (performanceEffects != null ? " performanceEffects [" + performanceEffects + "]" : "")
-      + (satelliteHemisphere != null ? " satelliteHemisphere [" + satelliteHemisphere + "]" : "")
-      + (victimLocDescr != null ? " victimLocDescr [" + victimLocDescr + "]" : "")
-      + (sourceFieldStrength != null ? " sourceFieldStrength [" + sourceFieldStrength + "]" : "")
-      + (sourceEmsClass != null ? " sourceEmsClass [" + sourceEmsClass + "]" : "")
-      + (satelliteUplinkPolarisation != null ? " satelliteUplinkPolarisation [" + satelliteUplinkPolarisation + "]" : "")
-      + (gpsAffected != null ? " gpsAffected [" + gpsAffected + "]" : "")
-      + (satelliteChannel != null ? " satelliteChannel [" + satelliteChannel + "]" : "")
-      + (sourceAz != null ? " sourceAz [" + sourceAz + "]" : "")
-      + (satelliteTransponderID != null ? " satelliteTransponderID [" + satelliteTransponderID + "]" : "")
-      + (victimFreqMax != null ? " victimFreqMax [" + victimFreqMax + "]" : "")
-      + (satelliteUplinkFreq != null ? " satelliteUplinkFreq [" + satelliteUplinkFreq + "]" : "")
-      + (satelliteAffected != null ? " satelliteAffected [" + satelliteAffected + "]" : "")
-      + (sourceLocDescr != null ? " sourceLocDescr [" + sourceLocDescr + "]" : "")
-      + (affectedEquipment != null ? " affectedEquipment [" + affectedEquipment + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (intfPeriod != null ? " intfPeriod [" + intfPeriod + "]" : "")
-      + (satcomPriority != null ? " satcomPriority [" + satcomPriority + "]" : "")
-      + (victimAsgnRef != null ? " victimAsgnRef [" + victimAsgnRef + "]" : "")
-      + (netsAffected != null ? " netsAffected [" + netsAffected + "]" : "")
-      + (characteristics != null ? " characteristics [" + characteristics + "]" : "")
-      + (victimCountry != null ? " victimCountry [" + victimCountry + "]" : "")
-      + (sourceFreqMin != null ? " sourceFreqMin [" + sourceFreqMin + "]" : "")
-      + (netCircuitsAffected != null ? " netCircuitsAffected [" + netCircuitsAffected + "]" : "")
-      + (victimLon != null ? " victimLon [" + victimLon + "]" : "")
-      + (intfStopDateTime != null ? " intfStopDateTime [" + intfStopDateTime + "]" : "")
-      + (helpRequired != null ? " helpRequired [" + helpRequired + "]" : "")
-      + (intfDescr != null ? " intfDescr [" + intfDescr + "]" : "")
-      + (victimSystem != null ? " victimSystem [" + victimSystem + "]" : "")
-      + (affectedCSA != null ? " affectedCSA [" + affectedCSA + "]" : "")
-      + (victimFreqMin != null ? " victimFreqMin [" + victimFreqMin + "]" : "")
-      + (sourceEmsBw != null ? " sourceEmsBw [" + sourceEmsBw + "]" : "")
-      + (localEventID != null ? " localEventID [" + localEventID + "]" : "")
-      + "\n  IntfReport." + super.toString() + "\n"
-      + "}";
+           + (satelliteDownlinkPolarisation != null ? " satelliteDownlinkPolarisation [" + satelliteDownlinkPolarisation + "]" : "")
+           + (victimLat != null ? " victimLat [" + victimLat + "]" : "")
+           + (satelliteLongitude != null ? " satelliteLongitude [" + satelliteLongitude + "]" : "")
+           + (intfStartDateTime != null ? " intfStartDateTime [" + intfStartDateTime + "]" : "")
+           + (satelliteName != null ? " satelliteName [" + satelliteName + "]" : "")
+           + (sourceLon != null ? " sourceLon [" + sourceLon + "]" : "")
+           + (sourceFreqMax != null ? " sourceFreqMax [" + sourceFreqMax + "]" : "")
+           + (sourceLat != null ? " sourceLat [" + sourceLat + "]" : "")
+           + (solution != null ? " solution [" + solution + "]" : "")
+           + (evaluation != null ? " evaluation [" + evaluation + "]" : "")
+           + (performanceEffects != null ? " performanceEffects [" + performanceEffects + "]" : "")
+           + (satelliteHemisphere != null ? " satelliteHemisphere [" + satelliteHemisphere + "]" : "")
+           + (victimLocDescr != null ? " victimLocDescr [" + victimLocDescr + "]" : "")
+           + (sourceFieldStrength != null ? " sourceFieldStrength [" + sourceFieldStrength + "]" : "")
+           + (sourceEmsClass != null ? " sourceEmsClass [" + sourceEmsClass + "]" : "")
+           + (satelliteUplinkPolarisation != null ? " satelliteUplinkPolarisation [" + satelliteUplinkPolarisation + "]" : "")
+           + (gpsAffected != null ? " gpsAffected [" + gpsAffected + "]" : "")
+           + (satelliteChannel != null ? " satelliteChannel [" + satelliteChannel + "]" : "")
+           + (sourceAz != null ? " sourceAz [" + sourceAz + "]" : "")
+           + (satelliteTransponderID != null ? " satelliteTransponderID [" + satelliteTransponderID + "]" : "")
+           + (victimFreqMax != null ? " victimFreqMax [" + victimFreqMax + "]" : "")
+           + (satelliteUplinkFreq != null ? " satelliteUplinkFreq [" + satelliteUplinkFreq + "]" : "")
+           + (satelliteAffected != null ? " satelliteAffected [" + satelliteAffected + "]" : "")
+           + (sourceLocDescr != null ? " sourceLocDescr [" + sourceLocDescr + "]" : "")
+           + (affectedEquipment != null ? " affectedEquipment [" + affectedEquipment + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (intfPeriod != null ? " intfPeriod [" + intfPeriod + "]" : "")
+           + (satcomPriority != null ? " satcomPriority [" + satcomPriority + "]" : "")
+           + (victimAsgnRef != null ? " victimAsgnRef [" + victimAsgnRef + "]" : "")
+           + (netsAffected != null ? " netsAffected [" + netsAffected + "]" : "")
+           + (characteristics != null ? " characteristics [" + characteristics + "]" : "")
+           + (victimCountry != null ? " victimCountry [" + victimCountry + "]" : "")
+           + (sourceFreqMin != null ? " sourceFreqMin [" + sourceFreqMin + "]" : "")
+           + (netCircuitsAffected != null ? " netCircuitsAffected [" + netCircuitsAffected + "]" : "")
+           + (victimLon != null ? " victimLon [" + victimLon + "]" : "")
+           + (intfStopDateTime != null ? " intfStopDateTime [" + intfStopDateTime + "]" : "")
+           + (helpRequired != null ? " helpRequired [" + helpRequired + "]" : "")
+           + (intfDescr != null ? " intfDescr [" + intfDescr + "]" : "")
+           + (victimSystem != null ? " victimSystem [" + victimSystem + "]" : "")
+           + (affectedCSA != null ? " affectedCSA [" + affectedCSA + "]" : "")
+           + (victimFreqMin != null ? " victimFreqMin [" + victimFreqMin + "]" : "")
+           + (sourceEmsBw != null ? " sourceEmsBw [" + sourceEmsBw + "]" : "")
+           + (localEventID != null ? " localEventID [" + localEventID + "]" : "")
+           + "\n  IntfReport." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link IntfReport} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link TCalendar IntfStartDateTime}, {@link TDecimal VictimFreqMin}.
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
+   * and {@link TDate IntfStartDateTime}, {@link TDecimal VictimFreqMin}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

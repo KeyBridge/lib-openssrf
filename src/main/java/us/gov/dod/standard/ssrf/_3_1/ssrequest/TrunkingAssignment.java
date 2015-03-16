@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -109,8 +108,7 @@ public class TrunkingAssignment {
    * Format is Date
    */
   @XmlElement(name = "RelinquishmentDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar relinquishmentDate;
+  private TDate relinquishmentDate;
 
   /**
    * Get the Yes if this is an existing assignment to be relinquished by the
@@ -240,9 +238,9 @@ public class TrunkingAssignment {
    * Get the expected date the existing assignment will be relinquished by the
    * trunked land mobile system.
    * <p>
-   * @return the RelinquishmentDate value in a {@link TCalendar} data type
+   * @return the RelinquishmentDate value in a {@link TDate} data type
    */
-  public TCalendar getRelinquishmentDate() {
+  public TDate getRelinquishmentDate() {
     return relinquishmentDate;
   }
 
@@ -250,17 +248,16 @@ public class TrunkingAssignment {
    * Set the expected date the existing assignment will be relinquished by the
    * trunked land mobile system.
    * <p>
-   * @param value the RelinquishmentDate value in a {@link TCalendar} data type
+   * @param value the RelinquishmentDate value in a {@link TDate} data type
    */
-  public void setRelinquishmentDate(TCalendar value) {
+  public void setRelinquishmentDate(TDate value) {
     this.relinquishmentDate = value;
   }
 
   /**
    * Determine if the RelinquishmentDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -324,7 +321,7 @@ public class TrunkingAssignment {
    * @return The current TrunkingAssignment object instance
    */
   public TrunkingAssignment withRelinquishmentDate(Calendar value) {
-    setRelinquishmentDate(new TCalendar(value));
+    setRelinquishmentDate(new TDate(value));
     return this;
   }
 
@@ -336,7 +333,7 @@ public class TrunkingAssignment {
    * @return The current TrunkingAssignment object instance
    */
   public TrunkingAssignment withRelinquishmentDate(Date value) {
-    setRelinquishmentDate(new TCalendar(value));
+    setRelinquishmentDate(new TDate(value));
     return this;
   }
 
@@ -349,12 +346,12 @@ public class TrunkingAssignment {
   @Override
   public String toString() {
     return "TrunkingAssignment {"
-      + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
-      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-      + (isRelinquished != null ? " isRelinquished [" + isRelinquished + "]" : "")
-      + (relinquishmentDate != null ? " relinquishmentDate [" + relinquishmentDate + "]" : "")
-      + "}";
+           + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (isRelinquished != null ? " isRelinquished [" + isRelinquished + "]" : "")
+           + (relinquishmentDate != null ? " relinquishmentDate [" + relinquishmentDate + "]" : "")
+           + "}";
   }
 
   /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -83,8 +82,7 @@ public class ForceElement extends Common<ForceElement> {
    * Format is Date
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * Type - Type (Required)
    * <p>
@@ -211,9 +209,9 @@ public class ForceElement extends Common<ForceElement> {
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -225,17 +223,16 @@ public class ForceElement extends Common<ForceElement> {
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -636,7 +633,7 @@ public class ForceElement extends Common<ForceElement> {
    * @return The current ForceElement object instance
    */
   public ForceElement withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -652,7 +649,7 @@ public class ForceElement extends Common<ForceElement> {
    * @return The current ForceElement object instance
    */
   public ForceElement withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -893,28 +890,28 @@ public class ForceElement extends Common<ForceElement> {
   @Override
   public String toString() {
     return "ForceElement {"
-      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-      + (assets != null ? " assets [" + assets + "]" : "")
-      + (platform != null ? " platform [" + platform + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
-      + (owningCountry != null ? " owningCountry [" + owningCountry + "]" : "")
-      + (role != null ? " role [" + role + "]" : "")
-      + (owningOrganisationRef != null ? " owningOrganisation [" + owningOrganisationRef + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (cmdLevel != null ? " cmdLevel [" + cmdLevel + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (missionCode != null ? " missionCode [" + missionCode + "]" : "")
-      + (uic != null ? " uic [" + uic + "]" : "")
-      + "\n  ForceElement." + super.toString() + "\n"
-      + "}";
+           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+           + (assets != null ? " assets [" + assets + "]" : "")
+           + (platform != null ? " platform [" + platform + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
+           + (owningCountry != null ? " owningCountry [" + owningCountry + "]" : "")
+           + (role != null ? " role [" + role + "]" : "")
+           + (owningOrganisationRef != null ? " owningOrganisation [" + owningOrganisationRef + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (cmdLevel != null ? " cmdLevel [" + cmdLevel + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (missionCode != null ? " missionCode [" + missionCode + "]" : "")
+           + (uic != null ? " uic [" + uic + "]" : "")
+           + "\n  ForceElement." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link ForceElement} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link Nomenclature Nomenclature}, {@link TString Type}.
    * <p>
    * Note that this method only checks for the presence of required information;

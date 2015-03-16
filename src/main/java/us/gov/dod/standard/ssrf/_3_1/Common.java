@@ -43,27 +43,28 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
-  "approvedBy",
-  "approvedDateTime",
-  "caseNum",
-  "description",
-  "entryBy",
-  "entryDateTime",
-  "extReferenceRef",
-  "lastChangeBy",
-  "lastChangeDateTime",
   "lastObservedBy",
-  "lastReviewBy",
-  "lastReviewDate",
-  "modAllowedBy",
   "observedFirstDateTime",
   "observedLastDateTime",
-  "owner",
+  "approvedBy",
+  "approvedDateTime",
   "redacted",
-  "remarks",
-  "securityClass",
   "serial",
-  "state"})
+  "entryDateTime",
+  "entryBy",
+  "owner",
+  "lastChangeDateTime",
+  "lastChangeBy",
+  "lastReviewDate",
+  "lastReviewBy",
+  "modAllowedBy",
+  "state",
+  "description",
+  "securityClass",
+  "caseNum",
+  "extReferenceRef",
+  "remarks"
+})
 @XmlSeeAlso({
   Administrative.class,
   Allotment.class,
@@ -151,8 +152,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group Initial (Required)
    */
   @XmlElement(name = "EntryDateTime", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar entryDateTime;
+  private TDateTime entryDateTime;
 
   //<editor-fold defaultstate="collapsed" desc="Class Fields (Optional)">
   /**
@@ -174,8 +174,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedFirstDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar observedFirstDateTime;
+  private TDateTime observedFirstDateTime;
   /**
    * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
    * <p>
@@ -185,8 +184,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedLastDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar observedLastDateTime;
+  private TDateTime observedLastDateTime;
   /**
    * US:ApprovedBy - Last Approval Person (Optional)
    * <p>
@@ -207,8 +205,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    */
   @XmlElement(name = "ApprovedDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar approvedDateTime;
+  private TDateTime approvedDateTime;
   /**
    * Redacted (US), indicate if any original, or authoritative, data was
    * omitted. Supports datasets which have some data withheld by the submitting
@@ -252,8 +249,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastChange (Optional)
    */
   @XmlElement(name = "LastChangeDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar lastChangeDateTime;
+  private TDateTime lastChangeDateTime;
   /**
    * LastChangeBy - Last Modifier Role (Optional)
    * <p>
@@ -276,8 +272,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Attribute group LastReview (Optional)
    */
   @XmlElement(name = "LastReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar lastReviewDate;
+  private TDate lastReviewDate;
   /**
    * LastReviewBy - Last Review Person RoleRef (Optional)
    * <p>
@@ -456,7 +451,7 @@ public abstract class Common<T> implements Comparable<T> {
   @SuppressWarnings("unchecked")
   public Common() {
     this.serial = TSerial.getInstance((Class<? extends Common<?>>) this.getClass());
-    this.entryDateTime = new TCalendar(Calendar.getInstance());
+    this.entryDateTime = new TDateTime(Calendar.getInstance());
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
@@ -493,9 +488,9 @@ public abstract class Common<T> implements Comparable<T> {
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
-   * @return the ObservedFirstDateTime value in a {@link TCalendar} data type
+   * @return the ObservedFirstDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getObservedFirstDateTime() {
+  public TDateTime getObservedFirstDateTime() {
     return observedFirstDateTime;
   }
 
@@ -503,17 +498,17 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
-   * @param value the ObservedFirstDateTime value in a {@link TCalendar} data
+   * @param value the ObservedFirstDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setObservedFirstDateTime(TCalendar value) {
+  public void setObservedFirstDateTime(TDateTime value) {
     this.observedFirstDateTime = value;
   }
 
   /**
    * Determine if the ObservedFirstDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -526,9 +521,9 @@ public abstract class Common<T> implements Comparable<T> {
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
-   * @return the ObservedLastDateTime value in a {@link TCalendar} data type
+   * @return the ObservedLastDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getObservedLastDateTime() {
+  public TDateTime getObservedLastDateTime() {
     return observedLastDateTime;
   }
 
@@ -536,17 +531,17 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
-   * @param value the ObservedLastDateTime value in a {@link TCalendar} data
+   * @param value the ObservedLastDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setObservedLastDateTime(TCalendar value) {
+  public void setObservedLastDateTime(TDateTime value) {
     this.observedLastDateTime = value;
   }
 
   /**
    * Determine if the ObservedLastDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -590,9 +585,9 @@ public abstract class Common<T> implements Comparable<T> {
    * Get the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
    * <p>
-   * @return the ApprovedDateTime value in a {@link TCalendar} data type
+   * @return the ApprovedDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getApprovedDateTime() {
+  public TDateTime getApprovedDateTime() {
     return approvedDateTime;
   }
 
@@ -600,16 +595,16 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
    * <p>
-   * @param value the ApprovedDateTime value in a {@link TCalendar} data type
+   * @param value the ApprovedDateTime value in a {@link TDateTime} data type
    */
-  public void setApprovedDateTime(TCalendar value) {
+  public void setApprovedDateTime(TDateTime value) {
     this.approvedDateTime = value;
   }
 
   /**
    * Determine if the ApprovedDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -684,9 +679,9 @@ public abstract class Common<T> implements Comparable<T> {
    * Get the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
    * <p>
-   * @return the EntryDateTime value in a {@link TCalendar} data type
+   * @return the EntryDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getEntryDateTime() {
+  public TDateTime getEntryDateTime() {
     return entryDateTime;
   }
 
@@ -694,16 +689,16 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
    * <p>
-   * @param value the EntryDateTime value in a {@link TCalendar} data type
+   * @param value the EntryDateTime value in a {@link TDateTime} data type
    */
-  public void setEntryDateTime(TCalendar value) {
+  public void setEntryDateTime(TDateTime value) {
     this.entryDateTime = value;
   }
 
   /**
    * Determine if the EntryDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -787,25 +782,25 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the date and UTC Time the dataset was last modified.
    * <p>
-   * @return the LastChangeDateTime value in a {@link TCalendar} data type
+   * @return the LastChangeDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getLastChangeDateTime() {
+  public TDateTime getLastChangeDateTime() {
     return lastChangeDateTime;
   }
 
   /**
    * Set the date and UTC Time the dataset was last modified.
    * <p>
-   * @param value the LastChangeDateTime value in a {@link TCalendar} data type
+   * @param value the LastChangeDateTime value in a {@link TDateTime} data type
    */
-  public void setLastChangeDateTime(TCalendar value) {
+  public void setLastChangeDateTime(TDateTime value) {
     this.lastChangeDateTime = value;
   }
 
   /**
    * Determine if the LastChangeDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -852,25 +847,25 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the last date that the dataset was reviewed.
    * <p>
-   * @return the LastReviewDate value in a {@link TCalendar} data type
+   * @return the LastReviewDate value in a {@link TDateTime} data type
    */
-  public TCalendar getLastReviewDate() {
+  public TDate getLastReviewDate() {
     return lastReviewDate;
   }
 
   /**
    * Set the last date that the dataset was reviewed.
    * <p>
-   * @param value the LastReviewDate value in a {@link TCalendar} data type
+   * @param value the LastReviewDate value in a {@link TDateTime} data type
    */
-  public void setLastReviewDate(TCalendar value) {
+  public void setLastReviewDate(TDate value) {
     this.lastReviewDate = value;
   }
 
   /**
    * Determine if the LastReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -1400,7 +1395,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withObservedFirstDateTime(Calendar value) {
-    setObservedFirstDateTime(new TCalendar(value));
+    setObservedFirstDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1412,7 +1407,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withObservedFirstDateTime(Date value) {
-    setObservedFirstDateTime(new TCalendar(value));
+    setObservedFirstDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1424,7 +1419,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withObservedLastDateTime(Calendar value) {
-    setObservedLastDateTime(new TCalendar(value));
+    setObservedLastDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1436,7 +1431,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withObservedLastDateTime(Date value) {
-    setObservedLastDateTime(new TCalendar(value));
+    setObservedLastDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1460,7 +1455,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withApprovedDateTime(Calendar value) {
-    setApprovedDateTime(new TCalendar(value));
+    setApprovedDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1472,7 +1467,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withApprovedDateTime(Date value) {
-    setApprovedDateTime(new TCalendar(value));
+    setApprovedDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1508,7 +1503,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withEntryDateTime(Calendar value) {
-    setEntryDateTime(new TCalendar(value));
+    setEntryDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1520,7 +1515,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withEntryDateTime(Date value) {
-    setEntryDateTime(new TCalendar(value));
+    setEntryDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1560,7 +1555,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withLastChangeDateTime(Calendar value) {
-    setLastChangeDateTime(new TCalendar(value));
+    setLastChangeDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1571,7 +1566,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withLastChangeDateTime(Date value) {
-    setLastChangeDateTime(new TCalendar(value));
+    setLastChangeDateTime(new TDateTime(value));
     return (T) this;
   }
 
@@ -1596,7 +1591,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withLastReviewDate(Calendar value) {
-    setLastReviewDate(new TCalendar(value));
+    setLastReviewDate(new TDate(value));
     return (T) this;
   }
 
@@ -1607,7 +1602,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @return The current Common object instance
    */
   public T withLastReviewDate(Date value) {
-    setLastReviewDate(new TCalendar(value));
+    setLastReviewDate(new TDate(value));
     return (T) this;
   }
 
@@ -1968,7 +1963,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Common} requires
-   * {@link TCalendar EntryDateTime}, {@link TString Serial}, {@link ListCCL cls}.
+   * {@link TDateTime EntryDateTime}, {@link TString Serial}, {@link ListCCL cls}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

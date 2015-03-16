@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Location;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
@@ -117,8 +116,7 @@ public class JammingPlan {
    * Format is DateTime
    */
   @XmlElement(name = "StartDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar startDateTime;
+  private TDateTime startDateTime;
   /**
    * US:StartLocationRef - Start Location Serial (Optional)
    * <p>
@@ -149,8 +147,7 @@ public class JammingPlan {
    * Format is DateTime
    */
   @XmlElement(name = "StopDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar stopDateTime;
+  private TDateTime stopDateTime;
   /**
    * US:StopLocationRef - Stop Location Serial (Optional)
    * <p>
@@ -367,9 +364,9 @@ public class JammingPlan {
    * used in element StartTrigger. Entries must be equal to or later than
    * RadiationPlan.StartDateTime, and less than RadiationPlan.StopDateTime.
    * <p>
-   * @return the StartDateTime value in a {@link TCalendar} data type
+   * @return the StartDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getStartDateTime() {
+  public TDateTime getStartDateTime() {
     return startDateTime;
   }
 
@@ -378,16 +375,16 @@ public class JammingPlan {
    * used in element StartTrigger. Entries must be equal to or later than
    * RadiationPlan.StartDateTime, and less than RadiationPlan.StopDateTime.
    * <p>
-   * @param value the StartDateTime value in a {@link TCalendar} data type
+   * @param value the StartDateTime value in a {@link TDateTime} data type
    */
-  public void setStartDateTime(TCalendar value) {
+  public void setStartDateTime(TDateTime value) {
     this.startDateTime = value;
   }
 
   /**
    * Determine if the StartDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -467,9 +464,9 @@ public class JammingPlan {
    * element StopTrigger. Entries must be after RadiationPlan.StartDateTime, and
    * be equal to or less than RadiationPlan.StopDateTime.
    * <p>
-   * @return the StopDateTime value in a {@link TCalendar} data type
+   * @return the StopDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getStopDateTime() {
+  public TDateTime getStopDateTime() {
     return stopDateTime;
   }
 
@@ -478,16 +475,16 @@ public class JammingPlan {
    * element StopTrigger. Entries must be after RadiationPlan.StartDateTime, and
    * be equal to or less than RadiationPlan.StopDateTime.
    * <p>
-   * @param value the StopDateTime value in a {@link TCalendar} data type
+   * @param value the StopDateTime value in a {@link TDateTime} data type
    */
-  public void setStopDateTime(TCalendar value) {
+  public void setStopDateTime(TDateTime value) {
     this.stopDateTime = value;
   }
 
   /**
    * Determine if the StopDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -748,7 +745,7 @@ public class JammingPlan {
    * @return The current JammingPlan object instance
    */
   public JammingPlan withStartDateTime(Calendar value) {
-    setStartDateTime(new TCalendar(value));
+    setStartDateTime(new TDateTime(value));
     return this;
   }
 
@@ -761,7 +758,7 @@ public class JammingPlan {
    * @return The current JammingPlan object instance
    */
   public JammingPlan withStartDateTime(Date value) {
-    setStartDateTime(new TCalendar(value));
+    setStartDateTime(new TDateTime(value));
     return this;
   }
 
@@ -800,7 +797,7 @@ public class JammingPlan {
    * @return The current JammingPlan object instance
    */
   public JammingPlan withStopDateTime(Calendar value) {
-    setStopDateTime(new TCalendar(value));
+    setStopDateTime(new TDateTime(value));
     return this;
   }
 
@@ -813,7 +810,7 @@ public class JammingPlan {
    * @return The current JammingPlan object instance
    */
   public JammingPlan withStopDateTime(Date value) {
-    setStopDateTime(new TCalendar(value));
+    setStopDateTime(new TDateTime(value));
     return this;
   }
 
@@ -915,22 +912,22 @@ public class JammingPlan {
   @Override
   public String toString() {
     return "JammingPlan {"
-      + (stopLocationRef != null ? " stopLocationRef [" + stopLocationRef + "]" : "")
-      + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
-      + (standOffDist != null ? " standOffDist [" + standOffDist + "]" : "")
-      + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
-      + (jammingTarget != null ? " jammingTarget [" + jammingTarget + "]" : "")
-      + (requiredEffect != null ? " requiredEffect [" + requiredEffect + "]" : "")
-      + (stopTrigger != null ? " stopTrigger [" + stopTrigger + "]" : "")
-      + (version != null ? " version [" + version + "]" : "")
-      + (numFreqs != null ? " numFreqs [" + numFreqs + "]" : "")
-      + (priority != null ? " priority [" + priority + "]" : "")
-      + (name != null ? " name [" + name + "]" : "")
-      + (level3Auth != null ? " level3Auth [" + level3Auth + "]" : "")
-      + (startLocationRef != null ? " startLocationRef [" + startLocationRef + "]" : "")
-      + (requiredPerformance != null ? " requiredPerformance [" + requiredPerformance + "]" : "")
-      + (startTrigger != null ? " startTrigger [" + startTrigger + "]" : "")
-      + "}";
+           + (stopLocationRef != null ? " stopLocationRef [" + stopLocationRef + "]" : "")
+           + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
+           + (standOffDist != null ? " standOffDist [" + standOffDist + "]" : "")
+           + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
+           + (jammingTarget != null ? " jammingTarget [" + jammingTarget + "]" : "")
+           + (requiredEffect != null ? " requiredEffect [" + requiredEffect + "]" : "")
+           + (stopTrigger != null ? " stopTrigger [" + stopTrigger + "]" : "")
+           + (version != null ? " version [" + version + "]" : "")
+           + (numFreqs != null ? " numFreqs [" + numFreqs + "]" : "")
+           + (priority != null ? " priority [" + priority + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (level3Auth != null ? " level3Auth [" + level3Auth + "]" : "")
+           + (startLocationRef != null ? " startLocationRef [" + startLocationRef + "]" : "")
+           + (requiredPerformance != null ? " requiredPerformance [" + requiredPerformance + "]" : "")
+           + (startTrigger != null ? " startTrigger [" + startTrigger + "]" : "")
+           + "}";
   }
 
   /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -164,8 +163,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    */
   @XmlElement(name = "DateResponseRequired", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar dateResponseRequired;
+  private TDate dateResponseRequired;
   /**
    * EffectiveDateTime - Effective Date/Time (Required)
    * <p>
@@ -174,8 +172,7 @@ public class Assignment extends Common<Assignment> {
    * Format is DateTime
    */
   @XmlElement(name = "EffectiveDateTime", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar effectiveDateTime;
+  private TDateTime effectiveDateTime;
   /**
    * ExpirationDateTime - Expiration Date/Time (Optional)
    * <p>
@@ -187,8 +184,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group ExpireReviewDT (Required)
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar expirationDateTime;
+  private TDateTime expirationDateTime;
   /**
    * ReviewDate - Review Date (Optional)
    * <p>
@@ -202,8 +198,7 @@ public class Assignment extends Common<Assignment> {
    * Attribute group ExpireReviewDT (Required)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * Period - Periodicity of Use (Optional)
    * <p>
@@ -428,8 +423,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    */
   @XmlElement(name = "AssignmentDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar assignmentDate;
+  private TDate assignmentDate;
   /**
    * US:COCOMGroup - COCOM Group (Optional)
    * <p>
@@ -550,8 +544,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    */
   @XmlElement(name = "OriginalAssignmentDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar originalAssignmentDate;
+  private TDate originalAssignmentDate;
   /**
    * US:RoutineAgendaItem - Routine Agenda Item (Optional)
    * <p>
@@ -841,9 +834,9 @@ public class Assignment extends Common<Assignment> {
    * Get the date by which the Assignment or SSReply is required by the
    * requestor.
    * <p>
-   * @return the DateResponseRequired value in a {@link TCalendar} data type
+   * @return the DateResponseRequired value in a {@link TDate} data type
    */
-  public TCalendar getDateResponseRequired() {
+  public TDate getDateResponseRequired() {
     return dateResponseRequired;
   }
 
@@ -851,18 +844,16 @@ public class Assignment extends Common<Assignment> {
    * Set the date by which the Assignment or SSReply is required by the
    * requestor.
    * <p>
-   * @param value the DateResponseRequired value in a {@link TCalendar} data
-   *              type
+   * @param value the DateResponseRequired value in a {@link TDate} data type
    */
-  public void setDateResponseRequired(TCalendar value) {
+  public void setDateResponseRequired(TDate value) {
     this.dateResponseRequired = value;
   }
 
   /**
    * Determine if the DateResponseRequired is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -873,26 +864,25 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the date and UTC time when the Assignment will be operational.
    * <p>
-   * @return the EffectiveDateTime value in a {@link TCalendar} data type
+   * @return the EffectiveDateTime value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDateTime() {
+  public TDateTime getEffectiveDateTime() {
     return effectiveDateTime;
   }
 
   /**
    * Set the date and UTC time when the Assignment will be operational.
    * <p>
-   * @param value the EffectiveDateTime value in a {@link TCalendar} data type
+   * @param value the EffectiveDateTime value in a {@link TDate} data type
    */
-  public void setEffectiveDateTime(TCalendar value) {
+  public void setEffectiveDateTime(TDateTime value) {
     this.effectiveDateTime = value;
   }
 
   /**
    * Determine if the EffectiveDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -904,9 +894,9 @@ public class Assignment extends Common<Assignment> {
    * Get the date and UTC time that this Assignment will expire. The Expiration
    * date should be less than five years from the effective date.
    * <p>
-   * @return the ExpirationDateTime value in a {@link TCalendar} data type
+   * @return the ExpirationDateTime value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDateTime() {
+  public TDateTime getExpirationDateTime() {
     return expirationDateTime;
   }
 
@@ -914,17 +904,16 @@ public class Assignment extends Common<Assignment> {
    * Set the date and UTC time that this Assignment will expire. The Expiration
    * date should be less than five years from the effective date.
    * <p>
-   * @param value the ExpirationDateTime value in a {@link TCalendar} data type
+   * @param value the ExpirationDateTime value in a {@link TDate} data type
    */
-  public void setExpirationDateTime(TCalendar value) {
+  public void setExpirationDateTime(TDateTime value) {
     this.expirationDateTime = value;
   }
 
   /**
    * Determine if the ExpirationDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -938,9 +927,9 @@ public class Assignment extends Common<Assignment> {
    * Supportability datasets, this date indicates when the request should be
    * resubmitted to the host nation for continued equipment use.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -950,17 +939,16 @@ public class Assignment extends Common<Assignment> {
    * Supportability datasets, this date indicates when the request should be
    * resubmitted to the host nation for continued equipment use.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -1542,26 +1530,25 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the date the assignment was most recently authorized.
    * <p>
-   * @return the AssignmentDate value in a {@link TCalendar} data type
+   * @return the AssignmentDate value in a {@link TDate} data type
    */
-  public TCalendar getAssignmentDate() {
+  public TDate getAssignmentDate() {
     return assignmentDate;
   }
 
   /**
    * Set the date the assignment was most recently authorized.
    * <p>
-   * @param value the AssignmentDate value in a {@link TCalendar} data type
+   * @param value the AssignmentDate value in a {@link TDate} data type
    */
-  public void setAssignmentDate(TCalendar value) {
+  public void setAssignmentDate(TDate value) {
     this.assignmentDate = value;
   }
 
   /**
    * Determine if the AssignmentDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -1893,27 +1880,25 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the date the frequency assignment was originally authorized.
    * <p>
-   * @return the OriginalAssignmentDate value in a {@link TCalendar} data type
+   * @return the OriginalAssignmentDate value in a {@link TDate} data type
    */
-  public TCalendar getOriginalAssignmentDate() {
+  public TDate getOriginalAssignmentDate() {
     return originalAssignmentDate;
   }
 
   /**
    * Set the date the frequency assignment was originally authorized.
    * <p>
-   * @param value the OriginalAssignmentDate value in a {@link TCalendar} data
-   *              type
+   * @param value the OriginalAssignmentDate value in a {@link TDate} data type
    */
-  public void setOriginalAssignmentDate(TCalendar value) {
+  public void setOriginalAssignmentDate(TDate value) {
     this.originalAssignmentDate = value;
   }
 
   /**
    * Determine if the OriginalAssignmentDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -2729,7 +2714,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withDateResponseRequired(Calendar value) {
-    setDateResponseRequired(new TCalendar(value));
+    setDateResponseRequired(new TDate(value));
     return this;
   }
 
@@ -2741,7 +2726,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withDateResponseRequired(Date value) {
-    setDateResponseRequired(new TCalendar(value));
+    setDateResponseRequired(new TDate(value));
     return this;
   }
 
@@ -2752,7 +2737,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withEffectiveDateTime(Calendar value) {
-    setEffectiveDateTime(new TCalendar(value));
+    setEffectiveDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2763,7 +2748,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withEffectiveDateTime(Date value) {
-    setEffectiveDateTime(new TCalendar(value));
+    setEffectiveDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2775,7 +2760,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withExpirationDateTime(Calendar value) {
-    setExpirationDateTime(new TCalendar(value));
+    setExpirationDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2787,7 +2772,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withExpirationDateTime(Date value) {
-    setExpirationDateTime(new TCalendar(value));
+    setExpirationDateTime(new TDateTime(value));
     return this;
   }
 
@@ -2801,7 +2786,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -2815,7 +2800,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -3052,7 +3037,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withAssignmentDate(Calendar value) {
-    setAssignmentDate(new TCalendar(value));
+    setAssignmentDate(new TDate(value));
     return this;
   }
 
@@ -3063,7 +3048,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withAssignmentDate(Date value) {
-    setAssignmentDate(new TCalendar(value));
+    setAssignmentDate(new TDate(value));
     return this;
   }
 
@@ -3198,7 +3183,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withOriginalAssignmentDate(Calendar value) {
-    setOriginalAssignmentDate(new TCalendar(value));
+    setOriginalAssignmentDate(new TDate(value));
     return this;
   }
 
@@ -3209,7 +3194,7 @@ public class Assignment extends Common<Assignment> {
    * @return The current Assignment object instance
    */
   public Assignment withOriginalAssignmentDate(Date value) {
-    setOriginalAssignmentDate(new TCalendar(value));
+    setOriginalAssignmentDate(new TDate(value));
     return this;
   }
 
@@ -3860,76 +3845,76 @@ public class Assignment extends Common<Assignment> {
   @Override
   public String toString() {
     return "Assignment {"
-      + (offTheShelfEquipment != null ? " offTheShelfEquipment [" + offTheShelfEquipment + "]" : "")
-      + (emergency != null ? " emergency [" + emergency + "]" : "")
-      + (usageType != null ? " usageType [" + usageType + "]" : "")
-      + (listSerialNum != null ? " listSerialNum [" + listSerialNum + "]" : "")
-      + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
-      + (frequencyActionOfficer != null ? " frequencyActionOfficer [" + frequencyActionOfficer + "]" : "")
-      + (sysOfStation != null ? " sysOfStation [" + sysOfStation + "]" : "")
-      + (asgnAllotOwner != null ? " asgnAllotOwner [" + asgnAllotOwner + "]" : "")
-      + (processing != null ? " processing [" + processing + "]" : "")
-      + (assignmentDate != null ? " assignmentDate [" + assignmentDate + "]" : "")
-      + (natoPooledFrequencyNum != null ? " natoPooledFrequencyNum [" + natoPooledFrequencyNum + "]" : "")
-      + (docketNum != null ? " docketNum [" + docketNum + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (station != null ? " station [" + station + "]" : "")
-      + (hours != null ? " hours [" + hours + "]" : "")
-      + (cocomGroup != null ? " cocomGroup [" + cocomGroup + "]" : "")
-      + (typeOfService != null ? " typeOfService [" + typeOfService + "]" : "")
-      + (natoPooledFrequencyCode != null ? " natoPooledFrequencyCode [" + natoPooledFrequencyCode + "]" : "")
-      + (period != null ? " period [" + period + "]" : "")
-      + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
-      + (numSystems != null ? " numSystems [" + numSystems + "]" : "")
-      + (agencyComments != null ? " agencyComments [" + agencyComments + "]" : "")
-      + (relatedRef != null ? " relatedRef [" + relatedRef + "]" : "")
-      + (project != null ? " project [" + project + "]" : "")
-      + (routineAgendaItem != null ? " routineAgendaItem [" + routineAgendaItem + "]" : "")
-      + (coordinationData != null ? " coordinationData [" + coordinationData + "]" : "")
-      + (years != null ? " years [" + years + "]" : "")
-      + (supplementaryDetails != null ? " supplementaryDetails [" + supplementaryDetails + "]" : "")
-      + (usageFrequency != null ? " usageFrequency [" + usageFrequency + "]" : "")
-      + (coordinationComments != null ? " coordinationComments [" + coordinationComments + "]" : "")
-      + (dataSource != null ? " dataSource [" + dataSource + "]" : "")
-      + (usagePercentage != null ? " usagePercentage [" + usagePercentage + "]" : "")
-      + (link != null ? " link [" + link + "]" : "")
-      + (controlRequestNum != null ? " controlRequestNum [" + controlRequestNum + "]" : "")
-      + (usageCode != null ? " usageCode [" + usageCode + "]" : "")
-      + (previousAuthorization != null ? " previousAuthorization [" + previousAuthorization + "]" : "")
-      + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
-      + (circuitRemarks != null ? " circuitRemarks [" + circuitRemarks + "]" : "")
-      + (title != null ? " title [" + title + "]" : "")
-      + (primaryStation != null ? " primaryStation [" + primaryStation + "]" : "")
-      + (hostDocketNum != null ? " hostDocketNum [" + hostDocketNum + "]" : "")
-      + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
-      + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
-      + (fccFileNum != null ? " fccFileNum [" + fccFileNum + "]" : "")
-      + (requirement != null ? " requirement [" + requirement + "]" : "")
-      + (minutes != null ? " minutes [" + minutes + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (recordNote != null ? " recordNote [" + recordNote + "]" : "")
-      + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
-      + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
-      + (fmscNum != null ? " fmscNum [" + fmscNum + "]" : "")
-      + (assignmentAuthority != null ? " assignmentAuthority [" + assignmentAuthority + "]" : "")
-      + (duration != null ? " duration [" + duration + "]" : "")
-      + (months != null ? " months [" + months + "]" : "")
-      + (originalAssignmentDate != null ? " originalAssignmentDate [" + originalAssignmentDate + "]" : "")
-      + (seconds != null ? " seconds [" + seconds + "]" : "")
-      + (userNetCode != null ? " userNetCode [" + userNetCode + "]" : "")
-      + (agencyActionNum != null ? " agencyActionNum [" + agencyActionNum + "]" : "")
-      + (configuration != null ? " configuration [" + configuration + "]" : "")
-      + "\n  Assignment." + super.toString() + "\n"
-      + "}";
+           + (offTheShelfEquipment != null ? " offTheShelfEquipment [" + offTheShelfEquipment + "]" : "")
+           + (emergency != null ? " emergency [" + emergency + "]" : "")
+           + (usageType != null ? " usageType [" + usageType + "]" : "")
+           + (listSerialNum != null ? " listSerialNum [" + listSerialNum + "]" : "")
+           + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
+           + (frequencyActionOfficer != null ? " frequencyActionOfficer [" + frequencyActionOfficer + "]" : "")
+           + (sysOfStation != null ? " sysOfStation [" + sysOfStation + "]" : "")
+           + (asgnAllotOwner != null ? " asgnAllotOwner [" + asgnAllotOwner + "]" : "")
+           + (processing != null ? " processing [" + processing + "]" : "")
+           + (assignmentDate != null ? " assignmentDate [" + assignmentDate + "]" : "")
+           + (natoPooledFrequencyNum != null ? " natoPooledFrequencyNum [" + natoPooledFrequencyNum + "]" : "")
+           + (docketNum != null ? " docketNum [" + docketNum + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (station != null ? " station [" + station + "]" : "")
+           + (hours != null ? " hours [" + hours + "]" : "")
+           + (cocomGroup != null ? " cocomGroup [" + cocomGroup + "]" : "")
+           + (typeOfService != null ? " typeOfService [" + typeOfService + "]" : "")
+           + (natoPooledFrequencyCode != null ? " natoPooledFrequencyCode [" + natoPooledFrequencyCode + "]" : "")
+           + (period != null ? " period [" + period + "]" : "")
+           + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
+           + (numSystems != null ? " numSystems [" + numSystems + "]" : "")
+           + (agencyComments != null ? " agencyComments [" + agencyComments + "]" : "")
+           + (relatedRef != null ? " relatedRef [" + relatedRef + "]" : "")
+           + (project != null ? " project [" + project + "]" : "")
+           + (routineAgendaItem != null ? " routineAgendaItem [" + routineAgendaItem + "]" : "")
+           + (coordinationData != null ? " coordinationData [" + coordinationData + "]" : "")
+           + (years != null ? " years [" + years + "]" : "")
+           + (supplementaryDetails != null ? " supplementaryDetails [" + supplementaryDetails + "]" : "")
+           + (usageFrequency != null ? " usageFrequency [" + usageFrequency + "]" : "")
+           + (coordinationComments != null ? " coordinationComments [" + coordinationComments + "]" : "")
+           + (dataSource != null ? " dataSource [" + dataSource + "]" : "")
+           + (usagePercentage != null ? " usagePercentage [" + usagePercentage + "]" : "")
+           + (link != null ? " link [" + link + "]" : "")
+           + (controlRequestNum != null ? " controlRequestNum [" + controlRequestNum + "]" : "")
+           + (usageCode != null ? " usageCode [" + usageCode + "]" : "")
+           + (previousAuthorization != null ? " previousAuthorization [" + previousAuthorization + "]" : "")
+           + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
+           + (circuitRemarks != null ? " circuitRemarks [" + circuitRemarks + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
+           + (primaryStation != null ? " primaryStation [" + primaryStation + "]" : "")
+           + (hostDocketNum != null ? " hostDocketNum [" + hostDocketNum + "]" : "")
+           + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+           + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
+           + (fccFileNum != null ? " fccFileNum [" + fccFileNum + "]" : "")
+           + (requirement != null ? " requirement [" + requirement + "]" : "")
+           + (minutes != null ? " minutes [" + minutes + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (recordNote != null ? " recordNote [" + recordNote + "]" : "")
+           + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+           + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+           + (fmscNum != null ? " fmscNum [" + fmscNum + "]" : "")
+           + (assignmentAuthority != null ? " assignmentAuthority [" + assignmentAuthority + "]" : "")
+           + (duration != null ? " duration [" + duration + "]" : "")
+           + (months != null ? " months [" + months + "]" : "")
+           + (originalAssignmentDate != null ? " originalAssignmentDate [" + originalAssignmentDate + "]" : "")
+           + (seconds != null ? " seconds [" + seconds + "]" : "")
+           + (userNetCode != null ? " userNetCode [" + userNetCode + "]" : "")
+           + (agencyActionNum != null ? " agencyActionNum [" + agencyActionNum + "]" : "")
+           + (configuration != null ? " configuration [" + configuration + "]" : "")
+           + "\n  Assignment." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Assignment} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and
-   * {@link Configuration Configuration}, {@link TCalendar EffectiveDateTime}, {@link Link Link}, {@link Station Station}.
+   * {@link Configuration Configuration}, {@link TDate EffectiveDateTime}, {@link Link Link}, {@link Station Station}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

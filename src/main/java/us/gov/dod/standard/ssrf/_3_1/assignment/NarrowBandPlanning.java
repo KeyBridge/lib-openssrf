@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,6 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -48,8 +47,7 @@ public class NarrowBandPlanning {
    * Format is Date
    */
   @XmlElement(name = "ChangeDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar changeDate;
+  private TDate changeDate;
   /**
    * US:NBFreq - Narrow Band Frequency (Optional)
    * <p>
@@ -65,9 +63,9 @@ public class NarrowBandPlanning {
    * Get the date this record is expected to be updated to comply with narrow
    * band transition plans.
    * <p>
-   * @return the ChangeDate value in a {@link TCalendar} data type
+   * @return the ChangeDate value in a {@link TDate} data type
    */
-  public TCalendar getChangeDate() {
+  public TDate getChangeDate() {
     return changeDate;
   }
 
@@ -75,17 +73,16 @@ public class NarrowBandPlanning {
    * Set the date this record is expected to be updated to comply with narrow
    * band transition plans.
    * <p>
-   * @param value the ChangeDate value in a {@link TCalendar} data type
+   * @param value the ChangeDate value in a {@link TDate} data type
    */
-  public void setChangeDate(TCalendar value) {
+  public void setChangeDate(TDate value) {
     this.changeDate = value;
   }
 
   /**
    * Determine if the ChangeDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -130,7 +127,7 @@ public class NarrowBandPlanning {
    * @return The current NarrowBandPlanning object instance
    */
   public NarrowBandPlanning withChangeDate(Calendar value) {
-    setChangeDate(new TCalendar(value));
+    setChangeDate(new TDate(value));
     return this;
   }
 
@@ -142,7 +139,7 @@ public class NarrowBandPlanning {
    * @return The current NarrowBandPlanning object instance
    */
   public NarrowBandPlanning withChangeDate(Date value) {
-    setChangeDate(new TCalendar(value));
+    setChangeDate(new TDate(value));
     return this;
   }
 
@@ -166,9 +163,9 @@ public class NarrowBandPlanning {
   @Override
   public String toString() {
     return "NarrowBandPlanning {"
-      + (changeDate != null ? " changeDate [" + changeDate + "]" : "")
-      + (nbFreq != null ? " nbFreq [" + nbFreq + "]" : "")
-      + "}";
+           + (changeDate != null ? " changeDate [" + changeDate + "]" : "")
+           + (nbFreq != null ? " nbFreq [" + nbFreq + "]" : "")
+           + "}";
   }
 
   /**

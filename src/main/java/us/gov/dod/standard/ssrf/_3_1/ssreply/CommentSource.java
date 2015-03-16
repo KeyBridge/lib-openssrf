@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.SSReply;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -109,8 +108,7 @@ public class CommentSource {
    * Format is Date
    */
   @XmlElement(name = "Date", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar date;
+  private TDate date;
   /**
    * Comment (Optional)
    * <p>
@@ -214,26 +212,25 @@ public class CommentSource {
   /**
    * Get the date the comment was provided.
    * <p>
-   * @return the Date value in a {@link TCalendar} data type
+   * @return the Date value in a {@link TDate} data type
    */
-  public TCalendar getDate() {
+  public TDate getDate() {
     return date;
   }
 
   /**
    * Set the date the comment was provided.
    * <p>
-   * @param value the Date value in a {@link TCalendar} data type
+   * @param value the Date value in a {@link TDate} data type
    */
-  public void setDate(TCalendar value) {
+  public void setDate(TDate value) {
     this.date = value;
   }
 
   /**
    * Determine if the Date is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -314,7 +311,7 @@ public class CommentSource {
    * @return The current CommentSource object instance
    */
   public CommentSource withDate(Calendar value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -325,7 +322,7 @@ public class CommentSource {
    * @return The current CommentSource object instance
    */
   public CommentSource withDate(Date value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -369,12 +366,12 @@ public class CommentSource {
   @Override
   public String toString() {
     return "CommentSource {"
-      + (author != null ? " author [" + author + "]" : "")
-      + (source != null ? " source [" + source + "]" : "")
-      + (comment != null ? " comment [" + comment + "]" : "")
-      + (date != null ? " date [" + date + "]" : "")
-      + (jobTitle != null ? " jobTitle [" + jobTitle + "]" : "")
-      + "}";
+           + (author != null ? " author [" + author + "]" : "")
+           + (source != null ? " source [" + source + "]" : "")
+           + (comment != null ? " comment [" + comment + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + (jobTitle != null ? " jobTitle [" + jobTitle + "]" : "")
+           + "}";
   }
 
   /**

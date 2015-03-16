@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -135,8 +134,7 @@ public class Trunking {
    * Attribute group (Optional)
    */
   @XmlElement(name = "ExpansionTargetDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar expansionTargetDate;
+  private TDate expansionTargetDate;
   /**
    * US:FreqMax - Frequency Maximum (Optional)
    * <p>
@@ -378,9 +376,9 @@ public class Trunking {
    * Get the date this expansion will be activated (i.e., the date the system
    * will require the additional radio frequencies).
    * <p>
-   * @return the ExpansionTargetDate value in a {@link TCalendar} data type
+   * @return the ExpansionTargetDate value in a {@link TDate} data type
    */
-  public TCalendar getExpansionTargetDate() {
+  public TDate getExpansionTargetDate() {
     return expansionTargetDate;
   }
 
@@ -388,17 +386,16 @@ public class Trunking {
    * Set the date this expansion will be activated (i.e., the date the system
    * will require the additional radio frequencies).
    * <p>
-   * @param value the ExpansionTargetDate value in a {@link TCalendar} data type
+   * @param value the ExpansionTargetDate value in a {@link TDate} data type
    */
-  public void setExpansionTargetDate(TCalendar value) {
+  public void setExpansionTargetDate(TDate value) {
     this.expansionTargetDate = value;
   }
 
   /**
    * Determine if the ExpansionTargetDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -776,7 +773,7 @@ public class Trunking {
    * @return The current Trunking object instance
    */
   public Trunking withExpansionTargetDate(Calendar value) {
-    setExpansionTargetDate(new TCalendar(value));
+    setExpansionTargetDate(new TDate(value));
     return this;
   }
 
@@ -788,7 +785,7 @@ public class Trunking {
    * @return The current Trunking object instance
    */
   public Trunking withExpansionTargetDate(Date value) {
-    setExpansionTargetDate(new TCalendar(value));
+    setExpansionTargetDate(new TDate(value));
     return this;
   }
 
@@ -943,22 +940,22 @@ public class Trunking {
   @Override
   public String toString() {
     return "Trunking {"
-      + (numRepeaters != null ? " numRepeaters [" + numRepeaters + "]" : "")
-      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-      + (expansionTargetDate != null ? " expansionTargetDate [" + expansionTargetDate + "]" : "")
-      + (dispatcher != null ? " dispatcher [" + dispatcher + "]" : "")
-      + (estimatedExpansionCost != null ? " estimatedExpansionCost [" + estimatedExpansionCost + "]" : "")
-      + (numFreqsRequired != null ? " numFreqsRequired [" + numFreqsRequired + "]" : "")
-      + (requestForExpansion != null ? " requestForExpansion [" + requestForExpansion + "]" : "")
-      + (trunkingAssignment != null ? " trunkingAssignment [" + trunkingAssignment + "]" : "")
-      + (dispatcherExplanation != null ? " dispatcherExplanation [" + dispatcherExplanation + "]" : "")
-      + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
-      + (separateSystemJustification != null ? " separateSystemJustification [" + separateSystemJustification + "]" : "")
-      + (previousSPSDocketNum != null ? " previousSPSDocketNum [" + previousSPSDocketNum + "]" : "")
-      + (nsepUse != null ? " nsepUse [" + nsepUse + "]" : "")
-      + (additionalChannelsRationale != null ? " additionalChannelsRationale [" + additionalChannelsRationale + "]" : "")
-      + "}";
+           + (numRepeaters != null ? " numRepeaters [" + numRepeaters + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (expansionTargetDate != null ? " expansionTargetDate [" + expansionTargetDate + "]" : "")
+           + (dispatcher != null ? " dispatcher [" + dispatcher + "]" : "")
+           + (estimatedExpansionCost != null ? " estimatedExpansionCost [" + estimatedExpansionCost + "]" : "")
+           + (numFreqsRequired != null ? " numFreqsRequired [" + numFreqsRequired + "]" : "")
+           + (requestForExpansion != null ? " requestForExpansion [" + requestForExpansion + "]" : "")
+           + (trunkingAssignment != null ? " trunkingAssignment [" + trunkingAssignment + "]" : "")
+           + (dispatcherExplanation != null ? " dispatcherExplanation [" + dispatcherExplanation + "]" : "")
+           + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
+           + (separateSystemJustification != null ? " separateSystemJustification [" + separateSystemJustification + "]" : "")
+           + (previousSPSDocketNum != null ? " previousSPSDocketNum [" + previousSPSDocketNum + "]" : "")
+           + (nsepUse != null ? " nsepUse [" + nsepUse + "]" : "")
+           + (additionalChannelsRationale != null ? " additionalChannelsRationale [" + additionalChannelsRationale + "]" : "")
+           + "}";
   }
 
   /**

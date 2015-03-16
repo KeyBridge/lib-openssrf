@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -195,8 +194,7 @@ public class Configuration {
   private TString configApprovedBy;
 
   @XmlElement(name = "ConfigApprovedDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar configApprovedDateTime;
+  private TDateTime configApprovedDateTime;
   /**
    * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
    * <p>
@@ -206,8 +204,7 @@ public class Configuration {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedFirstDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar observedFirstDateTime;
+  private TDateTime observedFirstDateTime;
   /**
    * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
    * <p>
@@ -217,8 +214,7 @@ public class Configuration {
    * Format is DateTime
    */
   @XmlElement(name = "ObservedLastDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar observedLastDateTime;
+  private TDateTime observedLastDateTime;
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -249,8 +245,7 @@ public class Configuration {
    * Format is DateTime
    */
   @XmlElement(name = "LastReviewedDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar lastReviewedDateTime;
+  private TDateTime lastReviewedDateTime;
   /**
    * Notation (Optional)
    * <p>
@@ -699,26 +694,26 @@ public class Configuration {
   /**
    * Get
    * <p>
-   * @return the ConfigApprovedDateTime value in a {@link TCalendar} data type
+   * @return the ConfigApprovedDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getConfigApprovedDateTime() {
+  public TDateTime getConfigApprovedDateTime() {
     return configApprovedDateTime;
   }
 
   /**
    * Set
    * <p>
-   * @param value the ConfigApprovedDateTime value in a {@link TCalendar} data
+   * @param value the ConfigApprovedDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setConfigApprovedDateTime(TCalendar value) {
+  public void setConfigApprovedDateTime(TDateTime value) {
     this.configApprovedDateTime = value;
   }
 
   /**
    * Determine if the ConfigApprovedDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -731,9 +726,9 @@ public class Configuration {
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
-   * @return the ObservedFirstDateTime value in a {@link TCalendar} data type
+   * @return the ObservedFirstDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getObservedFirstDateTime() {
+  public TDateTime getObservedFirstDateTime() {
     return observedFirstDateTime;
   }
 
@@ -741,17 +736,17 @@ public class Configuration {
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
-   * @param value the ObservedFirstDateTime value in a {@link TCalendar} data
+   * @param value the ObservedFirstDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setObservedFirstDateTime(TCalendar value) {
+  public void setObservedFirstDateTime(TDateTime value) {
     this.observedFirstDateTime = value;
   }
 
   /**
    * Determine if the ObservedFirstDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -764,9 +759,9 @@ public class Configuration {
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
-   * @return the ObservedLastDateTime value in a {@link TCalendar} data type
+   * @return the ObservedLastDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getObservedLastDateTime() {
+  public TDateTime getObservedLastDateTime() {
     return observedLastDateTime;
   }
 
@@ -774,17 +769,17 @@ public class Configuration {
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
-   * @param value the ObservedLastDateTime value in a {@link TCalendar} data
+   * @param value the ObservedLastDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setObservedLastDateTime(TCalendar value) {
+  public void setObservedLastDateTime(TDateTime value) {
     this.observedLastDateTime = value;
   }
 
   /**
    * Determine if the ObservedLastDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -857,9 +852,9 @@ public class Configuration {
    * Get the date and time, based on Greenwich Mean Time (GMT), the
    * configuration was thoroughly reviewed.
    * <p>
-   * @return the LastReviewedDateTime value in a {@link TCalendar} data type
+   * @return the LastReviewedDateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getLastReviewedDateTime() {
+  public TDateTime getLastReviewedDateTime() {
     return lastReviewedDateTime;
   }
 
@@ -867,17 +862,17 @@ public class Configuration {
    * Set the date and time, based on Greenwich Mean Time (GMT), the
    * configuration was thoroughly reviewed.
    * <p>
-   * @param value the LastReviewedDateTime value in a {@link TCalendar} data
+   * @param value the LastReviewedDateTime value in a {@link TDateTime} data
    *              type
    */
-  public void setLastReviewedDateTime(TCalendar value) {
+  public void setLastReviewedDateTime(TDateTime value) {
     this.lastReviewedDateTime = value;
   }
 
   /**
    * Determine if the LastReviewedDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -1317,7 +1312,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withConfigApprovedDateTime(Calendar value) {
-    setConfigApprovedDateTime(new TCalendar(value));
+    setConfigApprovedDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1328,7 +1323,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withConfigApprovedDateTime(Date value) {
-    setConfigApprovedDateTime(new TCalendar(value));
+    setConfigApprovedDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1340,7 +1335,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withObservedFirstDateTime(Calendar value) {
-    setObservedFirstDateTime(new TCalendar(value));
+    setObservedFirstDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1352,7 +1347,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withObservedFirstDateTime(Date value) {
-    setObservedFirstDateTime(new TCalendar(value));
+    setObservedFirstDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1364,7 +1359,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withObservedLastDateTime(Calendar value) {
-    setObservedLastDateTime(new TCalendar(value));
+    setObservedLastDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1376,7 +1371,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withObservedLastDateTime(Date value) {
-    setObservedLastDateTime(new TCalendar(value));
+    setObservedLastDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1411,7 +1406,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withLastReviewedDateTime(Calendar value) {
-    setLastReviewedDateTime(new TCalendar(value));
+    setLastReviewedDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1423,7 +1418,7 @@ public class Configuration {
    * @return The current Configuration object instance
    */
   public Configuration withLastReviewedDateTime(Date value) {
-    setLastReviewedDateTime(new TCalendar(value));
+    setLastReviewedDateTime(new TDateTime(value));
     return this;
   }
 
@@ -1737,33 +1732,33 @@ public class Configuration {
   @Override
   public String toString() {
     return "Configuration {"
-      + (observedERPAnalysis != null ? " observedERPAnalysis [" + observedERPAnalysis + "]" : "")
-      + (eirpMax != null ? " eirpMax [" + eirpMax + "]" : "")
-      + (configApprovedBy != null ? " configApprovedBy [" + configApprovedBy + "]" : "")
-      + (configID != null ? " configID [" + configID + "]" : "")
-      + (configEmission != null ? " configEmission [" + configEmission + "]" : "")
-      + (repeater != null ? " repeater [" + repeater + "]" : "")
-      + (powerLimit != null ? " powerLimit [" + powerLimit + "]" : "")
-      + (lastReviewedBy != null ? " lastReviewedBy [" + lastReviewedBy + "]" : "")
-      + (description != null ? " description [" + description + "]" : "")
-      + (rxRef != null ? " rxRef [" + rxRef + "]" : "")
-      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-      + (notation != null ? " notation [" + notation + "]" : "")
-      + (eirpMin != null ? " eirpMin [" + eirpMin + "]" : "")
-      + (configFreq != null ? " configFreq [" + configFreq + "]" : "")
-      + (oobJustification != null ? " oobJustification [" + oobJustification + "]" : "")
-      + (spectrumLink != null ? " spectrumLink [" + spectrumLink + "]" : "")
-      + (configApprovedDateTime != null ? " configApprovedDateTime [" + configApprovedDateTime + "]" : "")
-      + (loadsetRef != null ? " loadsetRef [" + loadsetRef + "]" : "")
-      + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-      + (powerType != null ? " powerType [" + powerType + "]" : "")
-      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-      + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
-      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
-      + (lastReviewedDateTime != null ? " lastReviewedDateTime [" + lastReviewedDateTime + "]" : "")
-      + (usage != null ? " usage [" + usage + "]" : "")
-      + (txRef != null ? " txRef [" + txRef + "]" : "")
-      + "}";
+           + (observedERPAnalysis != null ? " observedERPAnalysis [" + observedERPAnalysis + "]" : "")
+           + (eirpMax != null ? " eirpMax [" + eirpMax + "]" : "")
+           + (configApprovedBy != null ? " configApprovedBy [" + configApprovedBy + "]" : "")
+           + (configID != null ? " configID [" + configID + "]" : "")
+           + (configEmission != null ? " configEmission [" + configEmission + "]" : "")
+           + (repeater != null ? " repeater [" + repeater + "]" : "")
+           + (powerLimit != null ? " powerLimit [" + powerLimit + "]" : "")
+           + (lastReviewedBy != null ? " lastReviewedBy [" + lastReviewedBy + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (rxRef != null ? " rxRef [" + rxRef + "]" : "")
+           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+           + (notation != null ? " notation [" + notation + "]" : "")
+           + (eirpMin != null ? " eirpMin [" + eirpMin + "]" : "")
+           + (configFreq != null ? " configFreq [" + configFreq + "]" : "")
+           + (oobJustification != null ? " oobJustification [" + oobJustification + "]" : "")
+           + (spectrumLink != null ? " spectrumLink [" + spectrumLink + "]" : "")
+           + (configApprovedDateTime != null ? " configApprovedDateTime [" + configApprovedDateTime + "]" : "")
+           + (loadsetRef != null ? " loadsetRef [" + loadsetRef + "]" : "")
+           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+           + (powerType != null ? " powerType [" + powerType + "]" : "")
+           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+           + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
+           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+           + (lastReviewedDateTime != null ? " lastReviewedDateTime [" + lastReviewedDateTime + "]" : "")
+           + (usage != null ? " usage [" + usage + "]" : "")
+           + (txRef != null ? " txRef [" + txRef + "]" : "")
+           + "}";
   }
 
   /**

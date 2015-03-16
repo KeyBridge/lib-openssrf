@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,6 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -64,8 +63,7 @@ public class StatusLog {
    * Format is DateTime
    */
   @XmlElement(name = "DateTime", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar dateTime;
+  private TDateTime dateTime;
   /**
    * US:State - State (Required)
    * <p>
@@ -111,25 +109,25 @@ public class StatusLog {
   /**
    * Get the date and UTC time of this status log entry.
    * <p>
-   * @return the DateTime value in a {@link TCalendar} data type
+   * @return the DateTime value in a {@link TDateTime} data type
    */
-  public TCalendar getDateTime() {
+  public TDateTime getDateTime() {
     return dateTime;
   }
 
   /**
    * Set the date and UTC time of this status log entry.
    * <p>
-   * @param value the DateTime value in a {@link TCalendar} data type
+   * @param value the DateTime value in a {@link TDateTime} data type
    */
-  public void setDateTime(TCalendar value) {
+  public void setDateTime(TDateTime value) {
     this.dateTime = value;
   }
 
   /**
    * Determine if the DateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
+   * If configured this method also inspects the {@link TDateTime} wrapped
    * value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
@@ -263,7 +261,7 @@ public class StatusLog {
    * @return The current StatusLog object instance
    */
   public StatusLog withDateTime(Calendar value) {
-    setDateTime(new TCalendar(value));
+    setDateTime(new TDateTime(value));
     return this;
   }
 
@@ -274,7 +272,7 @@ public class StatusLog {
    * @return The current StatusLog object instance
    */
   public StatusLog withDateTime(Date value) {
-    setDateTime(new TCalendar(value));
+    setDateTime(new TDateTime(value));
     return this;
   }
 
@@ -331,19 +329,19 @@ public class StatusLog {
   @Override
   public String toString() {
     return "StatusLog {"
-      + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
-      + (pocRef != null ? " pocRef [" + pocRef + "]" : "")
-      + (agencyCode != null ? " agencyCode [" + agencyCode + "]" : "")
-      + (state != null ? " state [" + state + "]" : "")
-      + (comment != null ? " comment [" + comment + "]" : "")
-      + "}";
+           + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
+           + (pocRef != null ? " pocRef [" + pocRef + "]" : "")
+           + (agencyCode != null ? " agencyCode [" + agencyCode + "]" : "")
+           + (state != null ? " state [" + state + "]" : "")
+           + (comment != null ? " comment [" + comment + "]" : "")
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link StatusLog} requires
-   * {@link TCalendar DateTime}, {@link TString State}.
+   * {@link TDateTime DateTime}, {@link TString State}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

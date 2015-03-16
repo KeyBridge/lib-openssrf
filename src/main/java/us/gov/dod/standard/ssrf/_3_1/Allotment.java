@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -113,8 +112,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Date
    */
   @XmlElement(name = "DateResponseRequired", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar dateResponseRequired;
+  private TDate dateResponseRequired;
   /**
    * EffectiveDate - Effective Date (Required)
    * <p>
@@ -123,8 +121,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = true)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar effectiveDate;
+  private TDate effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
    * <p>
@@ -136,8 +133,7 @@ public class Allotment extends Common<Allotment> {
    * Attribute group ExpireReview (Required)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar expirationDate;
+  private TDate expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
    * <p>
@@ -153,8 +149,7 @@ public class Allotment extends Common<Allotment> {
    * Attribute group ExpireReview (Required)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * Requirement - Description of Requirement (Optional)
    * <p>
@@ -273,9 +268,9 @@ public class Allotment extends Common<Allotment> {
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
    * <p>
-   * @return the DateResponseRequired value in a {@link TCalendar} data type
+   * @return the DateResponseRequired value in a {@link TDate} data type
    */
-  public TCalendar getDateResponseRequired() {
+  public TDate getDateResponseRequired() {
     return dateResponseRequired;
   }
 
@@ -284,18 +279,16 @@ public class Allotment extends Common<Allotment> {
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
    * <p>
-   * @param value the DateResponseRequired value in a {@link TCalendar} data
-   *              type
+   * @param value the DateResponseRequired value in a {@link TDate} data type
    */
-  public void setDateResponseRequired(TCalendar value) {
+  public void setDateResponseRequired(TDate value) {
     this.dateResponseRequired = value;
   }
 
   /**
    * Determine if the DateResponseRequired is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -306,26 +299,25 @@ public class Allotment extends Common<Allotment> {
   /**
    * Get the date by which the dataset is to be operational or effective.
    * <p>
-   * @return the EffectiveDate value in a {@link TCalendar} data type
+   * @return the EffectiveDate value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDate() {
+  public TDate getEffectiveDate() {
     return effectiveDate;
   }
 
   /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
-   * @param value the EffectiveDate value in a {@link TCalendar} data type
+   * @param value the EffectiveDate value in a {@link TDate} data type
    */
-  public void setEffectiveDate(TCalendar value) {
+  public void setEffectiveDate(TDate value) {
     this.effectiveDate = value;
   }
 
   /**
    * Determine if the EffectiveDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -337,9 +329,9 @@ public class Allotment extends Common<Allotment> {
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @return the ExpirationDate value in a {@link TCalendar} data type
+   * @return the ExpirationDate value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDate() {
+  public TDate getExpirationDate() {
     return expirationDate;
   }
 
@@ -347,17 +339,16 @@ public class Allotment extends Common<Allotment> {
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @param value the ExpirationDate value in a {@link TCalendar} data type
+   * @param value the ExpirationDate value in a {@link TDate} data type
    */
-  public void setExpirationDate(TCalendar value) {
+  public void setExpirationDate(TDate value) {
     this.expirationDate = value;
   }
 
   /**
    * Determine if the ExpirationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -373,9 +364,9 @@ public class Allotment extends Common<Allotment> {
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -387,17 +378,16 @@ public class Allotment extends Common<Allotment> {
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -625,7 +615,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withDateResponseRequired(Calendar value) {
-    setDateResponseRequired(new TCalendar(value));
+    setDateResponseRequired(new TDate(value));
     return this;
   }
 
@@ -638,7 +628,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withDateResponseRequired(Date value) {
-    setDateResponseRequired(new TCalendar(value));
+    setDateResponseRequired(new TDate(value));
     return this;
   }
 
@@ -649,7 +639,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -660,7 +650,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withEffectiveDate(Date value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -672,7 +662,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withExpirationDate(Calendar value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -684,7 +674,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withExpirationDate(Date value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -700,7 +690,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -716,7 +706,7 @@ public class Allotment extends Common<Allotment> {
    * @return The current Allotment object instance
    */
   public Allotment withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -903,28 +893,28 @@ public class Allotment extends Common<Allotment> {
   @Override
   public String toString() {
     return "Allotment {"
-      + (project != null ? " project [" + project + "]" : "")
-      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-      + (requirement != null ? " requirement [" + requirement + "]" : "")
-      + (title != null ? " title [" + title + "]" : "")
-      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
-      + (emission != null ? " emission [" + emission + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (usageType != null ? " usageType [" + usageType + "]" : "")
-      + (allotFreq != null ? " allotFreq [" + allotFreq + "]" : "")
-      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-      + "\n  Allotment." + super.toString() + "\n"
-      + "}";
+           + (project != null ? " project [" + project + "]" : "")
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (requirement != null ? " requirement [" + requirement + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+           + (emission != null ? " emission [" + emission + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (usageType != null ? " usageType [" + usageType + "]" : "")
+           + (allotFreq != null ? " allotFreq [" + allotFreq + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + "\n  Allotment." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Allotment} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link AllotFreq AllotFreq}, {@link TCalendar EffectiveDate}.
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
+   * and {@link AllotFreq AllotFreq}, {@link TDate EffectiveDate}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

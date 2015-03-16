@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,6 @@ package us.gov.dod.standard.ssrf._3_1;
 import java.util.Calendar;
 import java.util.Date;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
@@ -69,8 +68,7 @@ public class Note extends Common<Note> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar effectiveDate;
+  private TDate effectiveDate;
   /**
    * US:ExpirationDate - Expiration Date (Optional)
    * <p>
@@ -79,8 +77,7 @@ public class Note extends Common<Note> {
    * Format is Date
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar expirationDate;
+  private TDate expirationDate;
   /**
    * US:Name - Name (Optional)
    * <p>
@@ -134,26 +131,25 @@ public class Note extends Common<Note> {
   /**
    * Get the date this note comes in force.
    * <p>
-   * @return the EffectiveDate value in a {@link TCalendar} data type
+   * @return the EffectiveDate value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDate() {
+  public TDate getEffectiveDate() {
     return effectiveDate;
   }
 
   /**
    * Set the date this note comes in force.
    * <p>
-   * @param value the EffectiveDate value in a {@link TCalendar} data type
+   * @param value the EffectiveDate value in a {@link TDate} data type
    */
-  public void setEffectiveDate(TCalendar value) {
+  public void setEffectiveDate(TDate value) {
     this.effectiveDate = value;
   }
 
   /**
    * Determine if the EffectiveDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -164,26 +160,25 @@ public class Note extends Common<Note> {
   /**
    * Get the date this note goes out of force.
    * <p>
-   * @return the ExpirationDate value in a {@link TCalendar} data type
+   * @return the ExpirationDate value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDate() {
+  public TDate getExpirationDate() {
     return expirationDate;
   }
 
   /**
    * Set the date this note goes out of force.
    * <p>
-   * @param value the ExpirationDate value in a {@link TCalendar} data type
+   * @param value the ExpirationDate value in a {@link TDate} data type
    */
-  public void setExpirationDate(TCalendar value) {
+  public void setExpirationDate(TDate value) {
     this.expirationDate = value;
   }
 
   /**
    * Determine if the ExpirationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -267,7 +262,7 @@ public class Note extends Common<Note> {
    * @return The current Note object instance
    */
   public Note withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -278,7 +273,7 @@ public class Note extends Common<Note> {
    * @return The current Note object instance
    */
   public Note withEffectiveDate(Date value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -289,7 +284,7 @@ public class Note extends Common<Note> {
    * @return The current Note object instance
    */
   public Note withExpirationDate(Calendar value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -300,7 +295,7 @@ public class Note extends Common<Note> {
    * @return The current Note object instance
    */
   public Note withExpirationDate(Date value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -334,20 +329,20 @@ public class Note extends Common<Note> {
   @Override
   public String toString() {
     return "Note {"
-      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-      + (source != null ? " source [" + source + "]" : "")
-      + (name != null ? " name [" + name + "]" : "")
-      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-      + (administration != null ? " administration [" + administration + "]" : "")
-      + "\n  Note." + super.toString() + "\n"
-      + "}";
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (source != null ? " source [" + source + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (administration != null ? " administration [" + administration + "]" : "")
+           + "\n  Note." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Note} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

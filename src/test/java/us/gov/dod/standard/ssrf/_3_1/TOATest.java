@@ -41,7 +41,6 @@ public class TOATest {
     SSRFUtility.prepare(t, null);
 
     System.out.println(t);
-
     System.out.println(SSRFUtility.marshal(t));
 //    for (FreqBand freqBand : t.getFreqBand()) {      freqBand.getFreqMin().setCls(ListCCL.S);      freqBand.getFreqMax().setCls(ListCCL.R);    }
 //    System.out.println(SSRFUtility.marshal(t));

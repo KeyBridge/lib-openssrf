@@ -53,8 +53,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FreqBand", propOrder = {
+  "freqMin",
   "freqMax",
-  "freqMin"
+  "useIndicator",
+  "allocation"
 })
 public class FreqBand implements Comparable<FreqBand> {
 

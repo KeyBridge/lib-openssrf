@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -165,8 +164,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is DateTime
    */
   @XmlElement(name = "StartDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar startDateTime;
+  private TDateTime startDateTime;
   /**
    * US:StopDateTime - Stop Time (Optional)
    * <p>
@@ -175,8 +173,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Format is DateTime
    */
   @XmlElement(name = "StopDateTime", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATETIME.class)
-  private TCalendar stopDateTime;
+  private TDateTime stopDateTime;
   /**
    * US:Version - Radiation Plan Version (Optional)
    * <p>
@@ -365,26 +362,25 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Get the timestamp when the denial of spectrum use is planned to begin.
    * <p>
-   * @return the StartDateTime value in a {@link TCalendar} data type
+   * @return the StartDateTime value in a {@link TDate} data type
    */
-  public TCalendar getStartDateTime() {
+  public TDateTime getStartDateTime() {
     return startDateTime;
   }
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to begin.
    * <p>
-   * @param value the StartDateTime value in a {@link TCalendar} data type
+   * @param value the StartDateTime value in a {@link TDate} data type
    */
-  public void setStartDateTime(TCalendar value) {
+  public void setStartDateTime(TDateTime value) {
     this.startDateTime = value;
   }
 
   /**
    * Determine if the StartDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -395,26 +391,25 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Get the timestamp when the denial of spectrum use is planned to be halted.
    * <p>
-   * @return the StopDateTime value in a {@link TCalendar} data type
+   * @return the StopDateTime value in a {@link TDate} data type
    */
-  public TCalendar getStopDateTime() {
+  public TDateTime getStopDateTime() {
     return stopDateTime;
   }
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to be halted.
    * <p>
-   * @param value the StopDateTime value in a {@link TCalendar} data type
+   * @param value the StopDateTime value in a {@link TDate} data type
    */
-  public void setStopDateTime(TCalendar value) {
+  public void setStopDateTime(TDateTime value) {
     this.stopDateTime = value;
   }
 
   /**
    * Determine if the StopDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -583,7 +578,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return The current RadiationPlan object instance
    */
   public RadiationPlan withStartDateTime(Calendar value) {
-    setStartDateTime(new TCalendar(value));
+    setStartDateTime(new TDateTime(value));
     return this;
   }
 
@@ -594,7 +589,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return The current RadiationPlan object instance
    */
   public RadiationPlan withStartDateTime(Date value) {
-    setStartDateTime(new TCalendar(value));
+    setStartDateTime(new TDateTime(value));
     return this;
   }
 
@@ -605,7 +600,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return The current RadiationPlan object instance
    */
   public RadiationPlan withStopDateTime(Calendar value) {
-    setStopDateTime(new TCalendar(value));
+    setStopDateTime(new TDateTime(value));
     return this;
   }
 
@@ -616,7 +611,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @return The current RadiationPlan object instance
    */
   public RadiationPlan withStopDateTime(Date value) {
-    setStopDateTime(new TCalendar(value));
+    setStopDateTime(new TDateTime(value));
     return this;
   }
 
@@ -705,25 +700,25 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @Override
   public String toString() {
     return "RadiationPlan {"
-      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-      + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
-      + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-      + (name != null ? " name [" + name + "]" : "")
-      + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
-      + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-      + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
-      + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
-      + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
-      + (version != null ? " version [" + version + "]" : "")
-      + "\n  RadiationPlan." + super.toString() + "\n"
-      + "}";
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
+           + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
+           + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
+           + (version != null ? " version [" + version + "]" : "")
+           + "\n  RadiationPlan." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link RadiationPlan} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link TDecimal FreqMin}.
    * <p>
    * Note that this method only checks for the presence of required information;

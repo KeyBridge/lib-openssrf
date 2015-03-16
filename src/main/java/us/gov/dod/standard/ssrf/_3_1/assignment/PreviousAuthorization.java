@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -56,8 +55,7 @@ public class PreviousAuthorization {
   @XmlTypeValidator(type = TString.class, value = XmlAdapterS8.class)
   private TString docketNum;
   @XmlElement(name = "Date ", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar date;
+  private TDate date;
   /**
    * US:AgencySerialNum - Agency Serial Number (Optional)
    * <p>
@@ -104,9 +102,9 @@ public class PreviousAuthorization {
    * Get the previous frequency assignment Government Master File (GMF)
    * authorization date.
    * <p>
-   * @return the Date value in a {@link TCalendar} data type
+   * @return the Date value in a {@link TDate} data type
    */
-  public TCalendar getDate() {
+  public TDate getDate() {
     return date;
   }
 
@@ -114,17 +112,16 @@ public class PreviousAuthorization {
    * Set the previous frequency assignment Government Master File (GMF)
    * authorization date.
    * <p>
-   * @param value the Date value in a {@link TCalendar} data type
+   * @param value the Date value in a {@link TDate} data type
    */
-  public void setDate(TCalendar value) {
+  public void setDate(TDate value) {
     this.date = value;
   }
 
   /**
    * Determine if the Date is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -181,7 +178,7 @@ public class PreviousAuthorization {
    * @return The current PreviousAuthorization object instance
    */
   public PreviousAuthorization withDate(Calendar value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -193,7 +190,7 @@ public class PreviousAuthorization {
    * @return The current PreviousAuthorization object instance
    */
   public PreviousAuthorization withDate(Date value) {
-    setDate(new TCalendar(value));
+    setDate(new TDate(value));
     return this;
   }
 
@@ -217,10 +214,10 @@ public class PreviousAuthorization {
   @Override
   public String toString() {
     return "PreviousAuthorization {"
-      + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
-      + (docketNum != null ? " docketNum [" + docketNum + "]" : "")
-      + (date != null ? " date [" + date + "]" : "")
-      + "}";
+           + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
+           + (docketNum != null ? " docketNum [" + docketNum + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + "}";
   }
 
   /**

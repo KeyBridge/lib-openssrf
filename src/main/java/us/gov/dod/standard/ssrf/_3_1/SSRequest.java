@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
@@ -204,8 +203,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Date
    */
   @XmlElement(name = "ApplicationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar applicationDate;
+  private TDate applicationDate;
   /**
    * DateResponseRequired - Date Response Required (Optional)
    * <p>
@@ -216,8 +214,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is Date
    */
   @XmlElement(name = "DateResponseRequired", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar dateResponseRequired;
+  private TDate dateResponseRequired;
   /**
    * ReplacementInfo - Replacement Info (Optional)
    * <p>
@@ -738,9 +735,9 @@ public class SSRequest extends Common<SSRequest> {
    * Get the date on which the application will be submitted to the appropriate
    * spectrum management office.
    * <p>
-   * @return the ApplicationDate value in a {@link TCalendar} data type
+   * @return the ApplicationDate value in a {@link TDate} data type
    */
-  public TCalendar getApplicationDate() {
+  public TDate getApplicationDate() {
     return applicationDate;
   }
 
@@ -748,17 +745,16 @@ public class SSRequest extends Common<SSRequest> {
    * Set the date on which the application will be submitted to the appropriate
    * spectrum management office.
    * <p>
-   * @param value the ApplicationDate value in a {@link TCalendar} data type
+   * @param value the ApplicationDate value in a {@link TDate} data type
    */
-  public void setApplicationDate(TCalendar value) {
+  public void setApplicationDate(TDate value) {
     this.applicationDate = value;
   }
 
   /**
    * Determine if the ApplicationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -771,9 +767,9 @@ public class SSRequest extends Common<SSRequest> {
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
    * <p>
-   * @return the DateResponseRequired value in a {@link TCalendar} data type
+   * @return the DateResponseRequired value in a {@link TDate} data type
    */
-  public TCalendar getDateResponseRequired() {
+  public TDate getDateResponseRequired() {
     return dateResponseRequired;
   }
 
@@ -782,18 +778,16 @@ public class SSRequest extends Common<SSRequest> {
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
    * <p>
-   * @param value the DateResponseRequired value in a {@link TCalendar} data
-   *              type
+   * @param value the DateResponseRequired value in a {@link TDate} data type
    */
-  public void setDateResponseRequired(TCalendar value) {
+  public void setDateResponseRequired(TDate value) {
     this.dateResponseRequired = value;
   }
 
   /**
    * Determine if the DateResponseRequired is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -1799,7 +1793,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return The current SSRequest object instance
    */
   public SSRequest withApplicationDate(Calendar value) {
-    setApplicationDate(new TCalendar(value));
+    setApplicationDate(new TDate(value));
     return this;
   }
 
@@ -1811,7 +1805,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return The current SSRequest object instance
    */
   public SSRequest withApplicationDate(Date value) {
-    setApplicationDate(new TCalendar(value));
+    setApplicationDate(new TDate(value));
     return this;
   }
 
@@ -1824,7 +1818,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return The current SSRequest object instance
    */
   public SSRequest withDateResponseRequired(Calendar value) {
-    setDateResponseRequired(new TCalendar(value));
+    setDateResponseRequired(new TDate(value));
     return this;
   }
 
@@ -1837,7 +1831,7 @@ public class SSRequest extends Common<SSRequest> {
    * @return The current SSRequest object instance
    */
   public SSRequest withDateResponseRequired(Date value) {
-    setDateResponseRequired(new TCalendar(value));
+    setDateResponseRequired(new TDate(value));
     return this;
   }
 
@@ -2415,52 +2409,52 @@ public class SSRequest extends Common<SSRequest> {
   @Override
   public String toString() {
     return "SSRequest {"
-      + (relatedSupportability != null ? " relatedSupportability [" + relatedSupportability + "]" : "")
-      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-      + (numCositedUnits != null ? " numCositedUnits [" + numCositedUnits + "]" : "")
-      + (emergency != null ? " emergency [" + emergency + "]" : "")
-      + (stage != null ? " stage [" + stage + "]" : "")
-      + (ntiaSpaceData != null ? " ntiaSpaceData [" + ntiaSpaceData + "]" : "")
-      + (initialCostDesc != null ? " initialCostDesc [" + initialCostDesc + "]" : "")
-      + (replacementInfo != null ? " replacementInfo [" + replacementInfo + "]" : "")
-      + (time != null ? " time [" + time + "]" : "")
-      + (title != null ? " title [" + title + "]" : "")
-      + (sysRelationEssential != null ? " sysRelationEssential [" + sysRelationEssential + "]" : "")
-      + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
-      + (originatingAgency != null ? " originatingAgency [" + originatingAgency + "]" : "")
-      + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
-      + (ituWaiver != null ? " ituWaiver [" + ituWaiver + "]" : "")
-      + (diagramLine != null ? " diagramLine [" + diagramLine + "]" : "")
-      + (requirement != null ? " requirement [" + requirement + "]" : "")
-      + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
-      + (applicationSPSNumber != null ? " applicationSPSNumber [" + applicationSPSNumber + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (currentStage != null ? " currentStage [" + currentStage + "]" : "")
-      + (diagramEndpoint != null ? " diagramEndpoint [" + diagramEndpoint + "]" : "")
-      + (relatedAnalysisAndTestData != null ? " relatedAnalysisAndTestData [" + relatedAnalysisAndTestData + "]" : "")
-      + (tspr != null ? " tspr [" + tspr + "]" : "")
-      + (requestType != null ? " requestType [" + requestType + "]" : "")
-      + (numAreaUnits != null ? " numAreaUnits [" + numAreaUnits + "]" : "")
-      + (operInvIntent != null ? " operInvIntent [" + operInvIntent + "]" : "")
-      + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
-      + (ntiaCoordinationRequired != null ? " ntiaCoordinationRequired [" + ntiaCoordinationRequired + "]" : "")
-      + (project != null ? " project [" + project + "]" : "")
-      + (trunking != null ? " trunking [" + trunking + "]" : "")
-      + (hostNation != null ? " hostNation [" + hostNation + "]" : "")
-      + (numMobileUnits != null ? " numMobileUnits [" + numMobileUnits + "]" : "")
-      + (wartimeUse != null ? " wartimeUse [" + wartimeUse + "]" : "")
-      + (applicationDate != null ? " applicationDate [" + applicationDate + "]" : "")
-      + (configuration != null ? " configuration [" + configuration + "]" : "")
-      + (infoTransferRequirement != null ? " infoTransferRequirement [" + infoTransferRequirement + "]" : "")
-      + "\n  SSRequest." + super.toString() + "\n"
-      + "}";
+           + (relatedSupportability != null ? " relatedSupportability [" + relatedSupportability + "]" : "")
+           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+           + (numCositedUnits != null ? " numCositedUnits [" + numCositedUnits + "]" : "")
+           + (emergency != null ? " emergency [" + emergency + "]" : "")
+           + (stage != null ? " stage [" + stage + "]" : "")
+           + (ntiaSpaceData != null ? " ntiaSpaceData [" + ntiaSpaceData + "]" : "")
+           + (initialCostDesc != null ? " initialCostDesc [" + initialCostDesc + "]" : "")
+           + (replacementInfo != null ? " replacementInfo [" + replacementInfo + "]" : "")
+           + (time != null ? " time [" + time + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
+           + (sysRelationEssential != null ? " sysRelationEssential [" + sysRelationEssential + "]" : "")
+           + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+           + (originatingAgency != null ? " originatingAgency [" + originatingAgency + "]" : "")
+           + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
+           + (ituWaiver != null ? " ituWaiver [" + ituWaiver + "]" : "")
+           + (diagramLine != null ? " diagramLine [" + diagramLine + "]" : "")
+           + (requirement != null ? " requirement [" + requirement + "]" : "")
+           + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
+           + (applicationSPSNumber != null ? " applicationSPSNumber [" + applicationSPSNumber + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (currentStage != null ? " currentStage [" + currentStage + "]" : "")
+           + (diagramEndpoint != null ? " diagramEndpoint [" + diagramEndpoint + "]" : "")
+           + (relatedAnalysisAndTestData != null ? " relatedAnalysisAndTestData [" + relatedAnalysisAndTestData + "]" : "")
+           + (tspr != null ? " tspr [" + tspr + "]" : "")
+           + (requestType != null ? " requestType [" + requestType + "]" : "")
+           + (numAreaUnits != null ? " numAreaUnits [" + numAreaUnits + "]" : "")
+           + (operInvIntent != null ? " operInvIntent [" + operInvIntent + "]" : "")
+           + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
+           + (ntiaCoordinationRequired != null ? " ntiaCoordinationRequired [" + ntiaCoordinationRequired + "]" : "")
+           + (project != null ? " project [" + project + "]" : "")
+           + (trunking != null ? " trunking [" + trunking + "]" : "")
+           + (hostNation != null ? " hostNation [" + hostNation + "]" : "")
+           + (numMobileUnits != null ? " numMobileUnits [" + numMobileUnits + "]" : "")
+           + (wartimeUse != null ? " wartimeUse [" + wartimeUse + "]" : "")
+           + (applicationDate != null ? " applicationDate [" + applicationDate + "]" : "")
+           + (configuration != null ? " configuration [" + configuration + "]" : "")
+           + (infoTransferRequirement != null ? " infoTransferRequirement [" + infoTransferRequirement + "]" : "")
+           + "\n  SSRequest." + super.toString() + "\n"
+           + "}";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link SSRequest} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link TString Title}.
    * <p>
    * Note that this method only checks for the presence of required information;

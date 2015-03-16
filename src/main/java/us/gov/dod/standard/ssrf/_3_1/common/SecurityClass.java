@@ -50,17 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SecurityClass", propOrder = {
-  "clsAuthority",
-  "sourceClsDate",
-  "clsOrg",
-  "clsReason",
-  "declsType",
-  "declsDate",
-  "declsEvent",
-  "downgrade",
-  "clsDerived"
-})
+@XmlType(name = "SecurityClass")
 public class SecurityClass {
 
   /**
@@ -83,8 +73,7 @@ public class SecurityClass {
    * Format is Date
    */
   @XmlElement(name = "SourceClsDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar sourceClsDate;
+  private TDate sourceClsDate;
   /**
    * US:ClsOrg - Original Classification Authority Organizatio (Optional)
    * <p>
@@ -136,8 +125,7 @@ public class SecurityClass {
    * Format is Date
    */
   @XmlElement(name = "DeclsDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar declsDate;
+  private TDate declsDate;
   /**
    * US:DeclsEvent - Declassification Event (Optional)
    * <p>
@@ -201,9 +189,9 @@ public class SecurityClass {
    * Get the date this classified dataset was prepared, i.e., the Original
    * Classification Date.
    * <p>
-   * @return the SourceClsDate value in a {@link TCalendar} data type
+   * @return the SourceClsDate value in a {@link TDate} data type
    */
-  public TCalendar getSourceClsDate() {
+  public TDate getSourceClsDate() {
     return sourceClsDate;
   }
 
@@ -211,17 +199,16 @@ public class SecurityClass {
    * Set the date this classified dataset was prepared, i.e., the Original
    * Classification Date.
    * <p>
-   * @param value the SourceClsDate value in a {@link TCalendar} data type
+   * @param value the SourceClsDate value in a {@link TDate} data type
    */
-  public void setSourceClsDate(TCalendar value) {
+  public void setSourceClsDate(TDate value) {
     this.sourceClsDate = value;
   }
 
   /**
    * Determine if the SourceClsDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -346,9 +333,9 @@ public class SecurityClass {
    * Get the declassification date for DEDATE and DE25Xn-based declassification
    * instructions.
    * <p>
-   * @return the DeclsDate value in a {@link TCalendar} data type
+   * @return the DeclsDate value in a {@link TDate} data type
    */
-  public TCalendar getDeclsDate() {
+  public TDate getDeclsDate() {
     return declsDate;
   }
 
@@ -356,17 +343,16 @@ public class SecurityClass {
    * Set the declassification date for DEDATE and DE25Xn-based declassification
    * instructions.
    * <p>
-   * @param value the DeclsDate value in a {@link TCalendar} data type
+   * @param value the DeclsDate value in a {@link TDate} data type
    */
-  public void setDeclsDate(TCalendar value) {
+  public void setDeclsDate(TDate value) {
     this.declsDate = value;
   }
 
   /**
    * Determine if the DeclsDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -487,7 +473,7 @@ public class SecurityClass {
    * @return The current SecurityClass object instance
    */
   public SecurityClass withSourceClsDate(Calendar value) {
-    setSourceClsDate(new TCalendar(value));
+    setSourceClsDate(new TDate(value));
     return this;
   }
 
@@ -499,7 +485,7 @@ public class SecurityClass {
    * @return The current SecurityClass object instance
    */
   public SecurityClass withSourceClsDate(Date value) {
-    setSourceClsDate(new TCalendar(value));
+    setSourceClsDate(new TDate(value));
     return this;
   }
 
@@ -557,7 +543,7 @@ public class SecurityClass {
    * @return The current SecurityClass object instance
    */
   public SecurityClass withDeclsDate(Calendar value) {
-    setDeclsDate(new TCalendar(value));
+    setDeclsDate(new TDate(value));
     return this;
   }
 
@@ -569,7 +555,7 @@ public class SecurityClass {
    * @return The current SecurityClass object instance
    */
   public SecurityClass withDeclsDate(Date value) {
-    setDeclsDate(new TCalendar(value));
+    setDeclsDate(new TDate(value));
     return this;
   }
 

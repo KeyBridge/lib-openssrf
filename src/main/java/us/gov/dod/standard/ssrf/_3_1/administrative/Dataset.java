@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1.administrative;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.Administrative;
 import us.gov.dod.standard.ssrf._3_1.Common;
@@ -63,8 +62,7 @@ public class Dataset {
    * Format is Date
    */
   @XmlElement(name = "RetireDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar retireDate;
+  private TDate retireDate;
   /**
    * Reason - Reason (Optional)
    * <p>
@@ -117,26 +115,25 @@ public class Dataset {
   /**
    * Get the date this Dataset goes out of force.
    * <p>
-   * @return the RetireDate value in a {@link TCalendar} data type
+   * @return the RetireDate value in a {@link TDate} data type
    */
-  public TCalendar getRetireDate() {
+  public TDate getRetireDate() {
     return retireDate;
   }
 
   /**
    * Set the date this Dataset goes out of force.
    * <p>
-   * @param value the RetireDate value in a {@link TCalendar} data type
+   * @param value the RetireDate value in a {@link TDate} data type
    */
-  public void setRetireDate(TCalendar value) {
+  public void setRetireDate(TDate value) {
     this.retireDate = value;
   }
 
   /**
    * Determine if the RetireDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -226,7 +223,7 @@ public class Dataset {
    * @return The current Dataset object instance
    */
   public Dataset withRetireDate(Calendar value) {
-    setRetireDate(new TCalendar(value));
+    setRetireDate(new TDate(value));
     return this;
   }
 
@@ -237,7 +234,7 @@ public class Dataset {
    * @return The current Dataset object instance
    */
   public Dataset withRetireDate(Date value) {
-    setRetireDate(new TCalendar(value));
+    setRetireDate(new TDate(value));
     return this;
   }
 
@@ -300,11 +297,11 @@ public class Dataset {
   @Override
   public String toString() {
     return "Dataset {"
-      + (reason != null ? " reason [" + reason + "]" : "")
-      + (missingRef != null ? " missingRef [" + missingRef + "]" : "")
-      + (retireDate != null ? " retireDate [" + retireDate + "]" : "")
-      + (serial != null ? " serial [" + serial + "]" : "")
-      + "}";
+           + (reason != null ? " reason [" + reason + "]" : "")
+           + (missingRef != null ? " missingRef [" + missingRef + "]" : "")
+           + (retireDate != null ? " retireDate [" + retireDate + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
+           + "}";
   }
 
   /**

@@ -36,9 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * @version SSRF 3.1.0, 09/30/2014
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Country", propOrder = {
-  "value"
-})
+@XmlType(name = "Country", propOrder = {"value"})
 public class Country extends AMetadata<Country> {
 
   /**

@@ -35,9 +35,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 import us.gov.dod.standard.ssrf._3_1.Contact;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TCalendar;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -123,7 +121,7 @@ public class SSRFTestUtility {
           /**
            * The field is a single instance.
            */
-          Object fillObject = getFillObject(field);
+          Object fillObject = getFillObject(clazz, field);
           /**
            * Try to populate the field.
            */
@@ -191,7 +189,9 @@ public class SSRFTestUtility {
    * @throws Exception
    */
   private static Object getFillSet(Class<?> clazz, Field field, boolean maximum) throws ClassNotFoundException, Exception {
-
+    /**
+     * Look for a WITH method to try setting the field with the preferred type.
+     */
     Method with = SSRFUtility.findWithSetMethod(clazz, field);
     Type type;
     if (with != null) {
@@ -236,6 +236,9 @@ public class SSRFTestUtility {
        * enumerated value.
        */
       fieldInstance = fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
+//    } else if (fieldType.equals(TSerial.class)) {      fieldInstance = new ChannelPlan().getSerial();
+    } else if (fieldType.equals(BigInteger.class)) {
+      fieldInstance = new BigInteger(String.valueOf(new Random().nextInt(1024)));
     } else {
       /**
        * Otherwise get a new instance of the class object.
@@ -273,14 +276,51 @@ public class SSRFTestUtility {
    * @return a minimum fill value
    * @throws Exception on error
    */
-  private static Object getFillObject(Field field) throws Exception {
+  private static Object getFillObject(Class<?> clazz, Field field) throws Exception {
 //    System.out.println("DEBUG getFillValue for " + field.getDeclaringClass().getSimpleName() + " " + field.getName());
-
     /**
      * Set all CLS to U for testing.
      */
     if (field.getName().equals("cls")) {
       return ListCCL.UNCLASSIFIED;
+    }
+
+    /**
+     * Look for a WITH method to try setting the field with the preferred type.
+     */
+//    System.out.println("  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + "  ");
+    Class<?> type = field.getType();
+
+    if (type.equals(String.class)) {
+      /**
+       * If the field is a TString then inspect the WITH setter to determine if
+       * the field expects an enumerated input.
+       */
+      Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
+      return enumInstance != null ? enumInstance : getTestString(32, 32);
+    } else if (type.equals(TString.class)) {
+      /**
+       * If the field is a TString then inspect the WITH setter to determine if
+       * the field expects an enumerated input.
+       */
+      Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
+      return enumInstance != null
+             ? new TString(enumInstance.toString())
+             : new TString(getTestString(32, 32));
+    } else if (type.equals(BigDecimal.class)) {
+      return new BigDecimal(new Random().nextInt(1024000) * new Random().nextDouble());
+    } else if (type.equals(BigInteger.class)) {
+      return new BigInteger(String.valueOf(new Random().nextInt(1024)));
+    } else if (type.equals(Double.class)) {
+      return new Double(new Random().nextInt(1024000) * new Random().nextDouble());
+    } else if (type.equals(TDate.class)) {
+      return new TDate(Calendar.getInstance());
+    } else if (type.equals(TDateTime.class)) {
+      return new TDateTime(Calendar.getInstance());
+    } else if (type.isEnum()) {
+      String fieldClassName = type.toString().replace("class ", "").trim();
+      Class<?> fieldClass = Class.forName(fieldClassName);
+      return fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
     }
 
     /**
@@ -297,7 +337,7 @@ public class SSRFTestUtility {
          * valid (as determined by the marshal method).
          */
         try {
-          Class<?> type = ((XmlTypeValidator) annotation).type();
+          type = ((XmlTypeValidator) annotation).type();
           XmlAdapter adapter = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
 
           if (adapter instanceof AXmlAdapterNumber) {
@@ -364,49 +404,12 @@ public class SSRFTestUtility {
         }
       }
     }
-    /**
-     * The field does not have an XmlTypeValidator. Try to return a value based
-     * upon its primitive type.
-     */
-    System.out.println("  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + "  ");
 
-    Class<?> type = field.getType();
-
-    if (type.equals(String.class)) {
-      /**
-       * If the field is a TString then inspect the WITH setter to determine if
-       * the field expects an enumerated input.
-       */
-      Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
-      return enumInstance != null ? enumInstance : getTestString(32, 32);
-    } else if (type.equals(TString.class)) {
-      /**
-       * If the field is a TString then inspect the WITH setter to determine if
-       * the field expects an enumerated input.
-       */
-      Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
-      return enumInstance != null
-             ? new TString(enumInstance.toString())
-             : new TString(getTestString(32, 32));
-    } else if (type.equals(BigDecimal.class)) {
-      return new BigDecimal(new Random().nextInt(1024000) * new Random().nextDouble());
-    } else if (type.equals(BigInteger.class)) {
-      return new BigInteger(String.valueOf(new Random().nextInt(1024)));
-    } else if (type.equals(Double.class)) {
-      return new Double(new Random().nextInt(1024000) * new Random().nextDouble());
-    } else if (type.equals(TCalendar.class)) {
-      return new TCalendar(Calendar.getInstance());
-    } else if (type.isEnum()) {
-      String fieldClassName = type.toString().replace("class ", "").trim();
-      Class<?> fieldClass = Class.forName(fieldClassName);
-      return fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
-    }
     /**
      * Assume the field is an object type. Return NULL to indicate to the
      * calling method that it should try to instantiate and populate a new
      * object instance.
      */
-
 //    System.out.println("  NULL FILL for " + field);
     return null;
   }
@@ -417,9 +420,7 @@ public class SSRFTestUtility {
      * input.
      */
     Method with = SSRFUtility.findWithEnumMethod(type, field);
-    if (with == null) {
-      System.err.println("ERROR: " + type.getSimpleName() + " : " + field.getName() + " has no WITH method");
-    } else {
+    if (with != null) {
       for (Class<?> parameterType : with.getParameterTypes()) {
 //        System.out.println("getEnumEntry  " + field.getName() + " looking for an enumerated input of type " + parameterType);
         if (parameterType.isEnum()) {
@@ -432,13 +433,11 @@ public class SSRFTestUtility {
 
           XmlEnumValue xmlEnumValue = fieldInstance.getClass().getAnnotation(XmlEnumValue.class);
           if (xmlEnumValue != null) {
-            System.out.println("xmlEnumValue: " + xmlEnumValue.value());
             return xmlEnumValue.value();
           }
 
           for (Method method : fieldClass.getDeclaredMethods()) {
             if (method.getName().equals("value")) {
-              System.out.println("ENUMERATED : " + type.getSimpleName() + " : " + field.getName() + " returning " + method.invoke(fieldInstance));
               return method.invoke(fieldInstance);
             }
           }

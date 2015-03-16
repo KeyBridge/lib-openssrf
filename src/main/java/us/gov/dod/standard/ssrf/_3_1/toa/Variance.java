@@ -50,10 +50,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Variance", propOrder = {
-  "administration",
-  "allocatedService",
   "type",
-  "priority"
+  "allocatedService",
+  "priority",
+  "administration"
 })
 public class Variance {
 

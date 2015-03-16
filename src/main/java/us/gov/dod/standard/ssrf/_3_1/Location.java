@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -120,8 +119,7 @@ public class Location extends Common<Location> {
    * Format is Date
    */
   @XmlElement(name = "EffectiveDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar effectiveDate;
+  private TDate effectiveDate;
   /**
    * ExpirationDate - Expiration Date (Optional)
    * <p>
@@ -133,8 +131,7 @@ public class Location extends Common<Location> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ExpirationDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar expirationDate;
+  private TDate expirationDate;
   /**
    * ReviewDate - Review Date (Optional)
    * <p>
@@ -150,8 +147,7 @@ public class Location extends Common<Location> {
    * Attribute group ExpireReview (Optional)
    */
   @XmlElement(name = "ReviewDate", required = false)
-  @XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)
-  private TCalendar reviewDate;
+  private TDate reviewDate;
   /**
    * Name - Location Name (Required)
    * <p>
@@ -276,26 +272,25 @@ public class Location extends Common<Location> {
   /**
    * Get the date by which the dataset is to be operational or effective.
    * <p>
-   * @return the EffectiveDate value in a {@link TCalendar} data type
+   * @return the EffectiveDate value in a {@link TDate} data type
    */
-  public TCalendar getEffectiveDate() {
+  public TDate getEffectiveDate() {
     return effectiveDate;
   }
 
   /**
    * Set the date by which the dataset is to be operational or effective.
    * <p>
-   * @param value the EffectiveDate value in a {@link TCalendar} data type
+   * @param value the EffectiveDate value in a {@link TDate} data type
    */
-  public void setEffectiveDate(TCalendar value) {
+  public void setEffectiveDate(TDate value) {
     this.effectiveDate = value;
   }
 
   /**
    * Determine if the EffectiveDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -307,9 +302,9 @@ public class Location extends Common<Location> {
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @return the ExpirationDate value in a {@link TCalendar} data type
+   * @return the ExpirationDate value in a {@link TDate} data type
    */
-  public TCalendar getExpirationDate() {
+  public TDate getExpirationDate() {
     return expirationDate;
   }
 
@@ -317,17 +312,16 @@ public class Location extends Common<Location> {
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
    * <p>
-   * @param value the ExpirationDate value in a {@link TCalendar} data type
+   * @param value the ExpirationDate value in a {@link TDate} data type
    */
-  public void setExpirationDate(TCalendar value) {
+  public void setExpirationDate(TDate value) {
     this.expirationDate = value;
   }
 
   /**
    * Determine if the ExpirationDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -343,9 +337,9 @@ public class Location extends Common<Location> {
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
    * <p>
-   * @return the ReviewDate value in a {@link TCalendar} data type
+   * @return the ReviewDate value in a {@link TDate} data type
    */
-  public TCalendar getReviewDate() {
+  public TDate getReviewDate() {
     return reviewDate;
   }
 
@@ -357,17 +351,16 @@ public class Location extends Common<Location> {
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
    * <p>
-   * @param value the ReviewDate value in a {@link TCalendar} data type
+   * @param value the ReviewDate value in a {@link TDate} data type
    */
-  public void setReviewDate(TCalendar value) {
+  public void setReviewDate(TDate value) {
     this.reviewDate = value;
   }
 
   /**
    * Determine if the ReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TCalendar} wrapped
-   * value.
+   * If configured this method also inspects the {@link TDate} wrapped value.
    * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
@@ -719,7 +712,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    */
   public Location withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -730,7 +723,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    */
   public Location withEffectiveDate(Date value) {
-    setEffectiveDate(new TCalendar(value));
+    setEffectiveDate(new TDate(value));
     return this;
   }
 
@@ -742,7 +735,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    */
   public Location withExpirationDate(Calendar value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -754,7 +747,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    */
   public Location withExpirationDate(Date value) {
-    setExpirationDate(new TCalendar(value));
+    setExpirationDate(new TDate(value));
     return this;
   }
 
@@ -770,7 +763,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    */
   public Location withReviewDate(Calendar value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -786,7 +779,7 @@ public class Location extends Common<Location> {
    * @return The current Location object instance
    */
   public Location withReviewDate(Date value) {
-    setReviewDate(new TCalendar(value));
+    setReviewDate(new TDate(value));
     return this;
   }
 
@@ -1032,31 +1025,31 @@ public class Location extends Common<Location> {
   @Override
   public String toString() {
     return "Location {"
-      + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-      + (ellipse != null ? " ellipse [" + ellipse + "]" : "")
-      + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (street != null ? " street [" + street + "]" : "")
-      + (postCode != null ? " postCode [" + postCode + "]" : "")
-      + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-      + (country != null ? " country [" + country + "]" : "")
-      + (polygon != null ? " polygon [" + polygon + "]" : "")
-      + (point != null ? " point [" + point + "]" : "")
-      + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
-      + (name != null ? " name [" + name + "]" : "")
-      + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
-      + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-      + "\n  "
-      + super.toString()
-      + "\n  Location." + super.toString() + "\n"
-      + " }";
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (ellipse != null ? " ellipse [" + ellipse + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (street != null ? " street [" + street + "]" : "")
+           + (postCode != null ? " postCode [" + postCode + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (country != null ? " country [" + country + "]" : "")
+           + (polygon != null ? " polygon [" + polygon + "]" : "")
+           + (point != null ? " point [" + point + "]" : "")
+           + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + "\n  "
+           + super.toString()
+           + "\n  Location." + super.toString() + "\n"
+           + " }";
   }
 
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Location} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
    * and {@link TString Name}.
    * <p>
    * Note that this method only checks for the presence of required information;
