@@ -15,12 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.toa;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAV;
@@ -92,7 +90,7 @@ public class Variance {
    * Administration contains the country for which this variance applies.
    */
   @XmlElement(name = "Administration", nillable = true)
-  private Set<TString> administration;
+  private Set<Country> administration;
 
   /**
    * Get the type of variance.
@@ -194,7 +192,7 @@ public class Variance {
    * @return a non-null but possibly empty list of {@link Administration}
    *         instances
    */
-  public Set<TString> getAdministration() {
+  public Set<Country> getAdministration() {
     if (administration == null) {
       administration = new HashSet<>();
     }
@@ -264,8 +262,24 @@ public class Variance {
   public Variance withAdministration(ListCAO... values) {
     if (values != null) {
       for (ListCAO listCAO : values) {
-        getAdministration().add(new TString(listCAO.name()));
+        getAdministration().add(new Country(listCAO));
       }
+    }
+    return this;
+  }
+
+  /**
+   * Set the Administration
+   * <p>
+   * Complex element Administration contains the country for which this variance
+   * applies.
+   * <p>
+   * @param values One or more instances of type {@link Administration}
+   * @return The current Variance object instance
+   */
+  public Variance withAdministration(Country... values) {
+    if (values != null) {
+      getAdministration().addAll(Arrays.asList(values));
     }
     return this;
   }
@@ -279,10 +293,10 @@ public class Variance {
    * @param values A collection of {@link Administration} instances
    * @return The current Variance object instance
    */
-  public Variance withAdministration(Set<ListCAO> values) {
+  public Variance withAdministration(Set<Country> values) {
     if (values != null) {
-      for (ListCAO listCAO : values) {
-        getAdministration().add(new TString(listCAO.name()));
+      for (Country country : values) {
+        getAdministration().add(country);
       }
     }
     return this;
