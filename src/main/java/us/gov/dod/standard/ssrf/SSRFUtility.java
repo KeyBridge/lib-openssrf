@@ -1085,9 +1085,7 @@ public class SSRFUtility {
          * a configured property is found for the classPath (or class) and the
          * current field try to set the value using the WITH setter.
          */
-
         String propertyValue = properties.getProperty(classPathInternal.replaceFirst("\\.", ""), field.getName());
-
         if (propertyValue == null) {
           propertyValue = properties.getProperty(clazz, field);
         }
@@ -1182,13 +1180,22 @@ public class SSRFUtility {
     /**
      * Push all names to lower case to perform a case-insensitive search.
      */
+    Set<Method> methods = new HashSet<>();
     for (Method method : findDeclaredAndInheritedMethods(clazz)) {
       if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())
           && Arrays.asList(method.getParameterTypes()).contains(Set.class)) {
-        return method;
+        methods.add(method);
       }
     }
-    return null;
+    for (Method method : methods) {
+      for (Class<?> parameterType : method.getParameterTypes()) {
+        if (parameterType.isEnum()) {
+          return method;
+        }
+      }
+    }
+    return !methods.isEmpty() ? methods.toArray(new Method[methods.size()])[0] : null;
+//    return null;
   }
 
   /**
@@ -1208,9 +1215,12 @@ public class SSRFUtility {
      * Push all names to lower case to perform a case-insensitive search.
      */
     for (Method method : findDeclaredAndInheritedMethods(clazz)) {
-      if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())
-          && Arrays.asList(method.getParameterTypes()).contains(Enum.class)) {
-        return method;
+      if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())) {
+        for (Class<?> parameterType : method.getParameterTypes()) {
+          if (parameterType.isEnum()) {
+            return method;
+          }
+        }
       }
     }
     return findWithMethod(clazz, field);
