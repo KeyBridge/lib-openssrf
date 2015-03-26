@@ -85,6 +85,8 @@ public class Polygon implements Comparable<Polygon> {
    * vertex of the polygon. Polygon points are described in a clockwise
    * direction. If the last point is different from the first point, it is
    * assumed that they are connected to complete the boundary of the polygon.
+   * <p>
+   * Requires at minimum three points: [3..n].
    */
   @XmlElement(name = "PolygonPoint", required = true)
   private Set<PolygonPoint> polygonPoint;

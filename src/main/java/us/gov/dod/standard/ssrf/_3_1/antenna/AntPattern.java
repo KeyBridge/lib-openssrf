@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -113,6 +113,8 @@ public class AntPattern {
    * <p>
    * AntPatternPoint contains a single point of the antenna radiation pattern,
    * defined by a direction and gain.
+   * <p>
+   * Requires at least one entry: [1..n]
    */
   @XmlElement(name = "AntPatternPoint", required = true)
   private Set<AntPatternPoint> antPatternPoint;
@@ -376,12 +378,12 @@ public class AntPattern {
   @Override
   public String toString() {
     return "AntPattern {"
-      + (cutType != null ? " cutType [" + cutType + "]" : "")
-      + (cutAngle != null ? " cutAngle [" + cutAngle + "]" : "")
-      + (antPatternPoint != null ? " antPatternPoint [" + antPatternPoint + "]" : "")
-      + (type != null ? " type [" + type + "]" : "")
-      + (calculated != null ? " calculated [" + calculated + "]" : "")
-      + "}";
+           + (cutType != null ? " cutType [" + cutType + "]" : "")
+           + (cutAngle != null ? " cutAngle [" + cutAngle + "]" : "")
+           + (antPatternPoint != null ? " antPatternPoint [" + antPatternPoint + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (calculated != null ? " calculated [" + calculated + "]" : "")
+           + "}";
   }
 
   /**
