@@ -75,7 +75,7 @@ public class SSRFTestUtility {
      * classes.
      */
     if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
-      System.err.println("ENUM OR NON_SSRF " + clazz.getSimpleName() + " skipping ...");
+//      System.err.println("ENUM OR NON_SSRF " + clazz.getSimpleName() + " skipping ...");
       return;
     }
 
@@ -116,7 +116,6 @@ public class SSRFTestUtility {
           Object fieldInstance = getFillSet(clazz, field, maximum);
 
           field.set(instance, fieldInstance);
-//
         } else {
           /**
            * The field is a single instance.
@@ -140,7 +139,7 @@ public class SSRFTestUtility {
             String fieldClassName = field.getType().toString().replace("class ", "").trim();
             Class<?> fieldClass = Class.forName(fieldClassName);
             if (fieldClass.equals(TSerial.class)) {
-              System.out.println("  TSerial " + field.getName() + "  skipping ...");
+//              System.out.println("  TSerial " + field.getName() + "  skipping ...");
               continue;
             }
             /**
@@ -225,26 +224,50 @@ public class SSRFTestUtility {
      */
     String fieldClassName = fieldType.toString().replace("class ", "").trim();
     Class<?> fieldClass = Class.forName(fieldClassName);
-
+    /**
+     * Initialize a new HashSet, then fill it with a random number of entries.
+     */
+    Set response = new HashSet<>();
+    int responseSize = new Random().nextInt(10);
+    responseSize = responseSize == 0 ? 1 : responseSize;
+    System.out.println("RESPONSE  SIZE is " + responseSize);
     /**
      * Handle the case where the class is an enumerated type.
      */
-    Object fieldInstance = null;
+//    Object fieldInstance = null;
     if (fieldClass.isEnum()) {
       /**
        * If the field class is an enumerated instance then get a random
        * enumerated value.
        */
-      fieldInstance = fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
+      for (int i = 0; i < responseSize; i++) {
+        Object fieldInstance = fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
+        if (fieldInstance != null) {
+          SSRFTestUtility.fill(fieldInstance, maximum);
+        }
+        response.add(fieldInstance);
+      }
 //    } else if (fieldType.equals(TSerial.class)) {      fieldInstance = new ChannelPlan().getSerial();
     } else if (fieldType.equals(BigInteger.class)) {
-      fieldInstance = new BigInteger(String.valueOf(new Random().nextInt(1024)));
+      for (int i = 0; i < responseSize; i++) {
+        Object fieldInstance = new BigInteger(String.valueOf(new Random().nextInt(1024)));
+        if (fieldInstance != null) {
+          SSRFTestUtility.fill(fieldInstance, maximum);
+        }
+        response.add(fieldInstance);
+      }
     } else {
       /**
        * Otherwise get a new instance of the class object.
        */
       try {
-        fieldInstance = fieldClass.getConstructor().newInstance();
+        for (int i = 0; i < responseSize; i++) {
+          Object fieldInstance = fieldClass.getConstructor().newInstance();
+          if (fieldInstance != null) {
+            SSRFTestUtility.fill(fieldInstance, maximum);
+          }
+          response.add(fieldInstance);
+        }
       } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException noSuchMethodException) {
       }
     }
@@ -252,21 +275,19 @@ public class SSRFTestUtility {
      * RECURSE: Call fill on the new instance, then add it to the set by calling
      * invoke on the setter method with a new HashHet.
      */
-    if (fieldInstance != null) {
-      SSRFTestUtility.fill(fieldInstance, maximum);
-      try {
-        return new HashSet<>(Arrays.asList(new Object[]{fieldInstance}));
-//        field.set(instance, tempSet);
-//            System.out.println("    set " + clazz.getSimpleName() + "." + field.getName() + " to " + tempSet);
-//            SSRFUtility.findWithSetMethod(clazz, field).invoke(instance, tempSet);
-      } catch (Exception exception) {
-        logger.log(Level.SEVERE, "Failed to invoke setter on {0} {1}: {2} ",
-                   new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass, exception.getMessage()});
-      }
-    }
-    logger.log(Level.SEVERE, "Failed to build Set on {0} {1}: {2} ",
-               new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass});
-    return null;
+//    if (fieldInstance != null) {
+//      SSRFTestUtility.fill(fieldInstance, maximum);
+//      try {
+//        return new HashSet<>(Arrays.asList(new Object[]{fieldInstance}));
+//      } catch (Exception exception) {
+//        logger.log(Level.SEVERE, "Failed to invoke setter on {0} {1}: {2} ",
+//                   new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass, exception.getMessage()});
+//      }
+//    }
+//    logger.log(Level.SEVERE, "Failed to build Set on {0} {1}: {2} ",
+//               new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass});
+//    return null;
+    return response;
   }
 
   /**
@@ -286,11 +307,94 @@ public class SSRFTestUtility {
     }
 
     /**
-     * Look for a WITH method to try setting the field with the preferred type.
+     * Get the field type.
      */
 //    System.out.println("  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + "  ");
-    Class<?> type = field.getType();
+    /**
+     * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
+     */
+    for (Annotation annotation : field.getAnnotations()) {
+      if (annotation instanceof XmlTypeValidator) {
+//        System.out.println("getFillValue  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + " with annotation ");
+        /**
+         * If an XmlJavaTypeAdapter annotation is found then instantiate the
+         * XmlAdapter class referred to in the "value" field and attempt to
+         * marshal the field value. This action will complete silently if the
+         * field value is valid and throw an exception if the field value is not
+         * valid (as determined by the marshal method).
+         */
+        try {
+          Class<?> adapterType = ((XmlTypeValidator) annotation).type();
+          XmlAdapter adapter = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
 
+          if (adapter instanceof AXmlAdapterNumber) {
+            Number value = getTestNumber(((AXmlAdapterNumber) adapter).getMaxValue(),
+                                         ((AXmlAdapterNumber) adapter).getMinValue());
+            /**
+             * Try to build a new number. If that fails try with the string
+             * value, which is required for BigInteger, BigDecimal, etc.
+             */
+            try {
+              return adapterType.getConstructor(Number.class).newInstance(value);
+            } catch (Exception exception) {
+              return adapterType.getConstructor(String.class).newInstance(value.toString());
+            }
+          } else if (adapter instanceof AXmlAdapterTNumber) {
+            Number value = getTestNumber(((AXmlAdapterTNumber) adapter).getMaxValue(),
+                                         ((AXmlAdapterTNumber) adapter).getMinValue());
+            /**
+             * Try to build a new number. If that fails try with the string
+             * value, which is required for BigInteger, BigDecimal, etc.
+             */
+            try {
+              return adapterType.getConstructor(Number.class).newInstance(value);
+            } catch (Exception exception) {
+              return adapterType.getConstructor(String.class).newInstance(value.toString());
+            }
+          } else if (adapter instanceof AXmlAdapterString) {
+            /**
+             * If the field is a TString then inspect the WITH setter to
+             * determine if the field expects an enumerated input.
+             */
+            String value = getTestString(((AXmlAdapterString) adapter).getMaxLength(),
+                                         ((AXmlAdapterString) adapter).getMinLength());
+            return adapterType.getConstructor(String.class).newInstance(value);
+          } else if (adapter instanceof AXmlAdapterTString) {
+            String value = getTestString(((AXmlAdapterTString) adapter).getMaxLength(),
+                                         ((AXmlAdapterTString) adapter).getMinLength());
+            return adapterType.getConstructor(String.class).newInstance(value);
+          } else if (adapter instanceof XmlAdapterDATE) {
+            return adapterType.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
+          } else if (adapter instanceof XmlAdapterDATETIME) {
+            return adapterType.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
+          } else if (adapter instanceof XmlAdapterSERIAL) {
+            /**
+             * If the field has an XmlAdapterSERIAL then inspect the field name.
+             * <p>
+             * If the name is NOT 'serial' then assume the field is a reference
+             * and provide a (bogus) temporary serial number. Otherwise the
+             * (serial) field should be ignored.
+             */
+            if (!"serial".equals(field.getName())) {
+              return new Contact().getSerial();
+            } else {
+              System.out.println("NOOP for serial field " + field.getName());
+              return null;
+            }
+          } else {
+            System.err.println("UNKNOWN annotation " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " : " + field.getName() + "  ");
+          }
+
+        } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
+          logger.log(Level.WARNING, "XmlValidator failed to instantiate for field {0}: {1}", new Object[]{field, ex.getMessage()});
+          logger.log(Level.SEVERE, null, ex);
+        }
+      }
+    }
+    /**
+     * NO XmlTypeValidator annotation. Fill with a basic type.
+     */
+    Class<?> type = field.getType();
     if (type.equals(String.class)) {
       /**
        * If the field is a TString then inspect the WITH setter to determine if
@@ -321,88 +425,6 @@ public class SSRFTestUtility {
       String fieldClassName = type.toString().replace("class ", "").trim();
       Class<?> fieldClass = Class.forName(fieldClassName);
       return fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
-    }
-
-    /**
-     * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
-     */
-    for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlTypeValidator) {
-//        System.out.println("getFillValue  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + " with annotation ");
-        /**
-         * If an XmlJavaTypeAdapter annotation is found then instantiate the
-         * XmlAdapter class referred to in the "value" field and attempt to
-         * marshal the field value. This action will complete silently if the
-         * field value is valid and throw an exception if the field value is not
-         * valid (as determined by the marshal method).
-         */
-        try {
-          type = ((XmlTypeValidator) annotation).type();
-          XmlAdapter adapter = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
-
-          if (adapter instanceof AXmlAdapterNumber) {
-            Number value = getTestNumber(((AXmlAdapterNumber) adapter).getMaxValue(),
-                                         ((AXmlAdapterNumber) adapter).getMinValue());
-            /**
-             * Try to build a new number. If that fails try with the string
-             * value, which is required for BigInteger, BigDecimal, etc.
-             */
-            try {
-              return type.getConstructor(Number.class).newInstance(value);
-            } catch (Exception exception) {
-              return type.getConstructor(String.class).newInstance(value.toString());
-            }
-          } else if (adapter instanceof AXmlAdapterTNumber) {
-            Number value = getTestNumber(((AXmlAdapterTNumber) adapter).getMaxValue(),
-                                         ((AXmlAdapterTNumber) adapter).getMinValue());
-            /**
-             * Try to build a new number. If that fails try with the string
-             * value, which is required for BigInteger, BigDecimal, etc.
-             */
-            try {
-              return type.getConstructor(Number.class).newInstance(value);
-            } catch (Exception exception) {
-              return type.getConstructor(String.class).newInstance(value.toString());
-            }
-          } else if (adapter instanceof AXmlAdapterString) {
-            /**
-             * If the field is a TString then inspect the WITH setter to
-             * determine if the field expects an enumerated input.
-             */
-            String value = getTestString(((AXmlAdapterString) adapter).getMaxLength(),
-                                         ((AXmlAdapterString) adapter).getMinLength());
-            return type.getConstructor(String.class).newInstance(value);
-          } else if (adapter instanceof AXmlAdapterTString) {
-            String value = getTestString(((AXmlAdapterTString) adapter).getMaxLength(),
-                                         ((AXmlAdapterTString) adapter).getMinLength());
-            return type.getConstructor(String.class).newInstance(value);
-          } else if (adapter instanceof XmlAdapterDATE) {
-            return type.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
-          } else if (adapter instanceof XmlAdapterDATETIME) {
-            return type.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
-          } else if (adapter instanceof XmlAdapterSERIAL) {
-            /**
-             * If the field has an XmlAdapterSERIAL then inspect the field name.
-             * <p>
-             * If the name is NOT 'serial' then assume the field is a reference
-             * and provide a (bogus) temporary serial number. Otherwise the
-             * (serial) field should be ignored.
-             */
-            if (!"serial".equals(field.getName())) {
-              return new Contact().getSerial();
-            } else {
-              System.out.println("NOOP for serial field " + field.getName());
-              return null;
-            }
-          } else {
-            System.err.println("UNKNOWN annotation " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " : " + field.getName() + "  ");
-          }
-
-        } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-          logger.log(Level.WARNING, "XmlValidator failed to instantiate for field {0}: {1}", new Object[]{field, ex.getMessage()});
-          logger.log(Level.SEVERE, null, ex);
-        }
-      }
     }
 
     /**

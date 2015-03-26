@@ -19,7 +19,6 @@ import org.junit.Test;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFProperties;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
-import us.gov.dod.standard.ssrf.SSRFUtility;
 
 /**
  *
@@ -36,12 +35,10 @@ public class TOATest {
     TOA t = new TOA();
     System.out.println("t.serial " + t.getSerial());
 
-    SSRFTestUtility.fill(t, false);
+    SSRFTestUtility.fill(t, true);
 
-    SSRFUtility.prepare(t, null);
-
-    System.out.println(t);
-    System.out.println(SSRFUtility.marshal(t));
+//    System.out.println(t);
+//    System.out.println(SSRFUtility.marshal(t));
 //    for (FreqBand freqBand : t.getFreqBand()) {      freqBand.getFreqMin().setCls(ListCCL.S);      freqBand.getFreqMax().setCls(ListCCL.R);    }
 //    System.out.println(SSRFUtility.marshal(t));
 //    System.out.println("  test Minimum Positive Fill OK");
@@ -53,7 +50,7 @@ public class TOATest {
     }
 
 //    System.out.println(ssrf.getTOA());
-//    System.out.println(ssrf.toXML());
+    System.out.println(ssrf.toXML());
 //    TDecimal td = new TDecimal(12093812.1023810938);    td.setCls(ListCCL.U);    System.out.println("TD " + td);    System.out.println(SSRFUtility.marshal(td));
   }
 
