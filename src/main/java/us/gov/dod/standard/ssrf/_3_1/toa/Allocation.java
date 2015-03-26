@@ -41,7 +41,6 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Allocation", propOrder = {
   "allocatedService",
-  "qualifier",
   "priority",
   "effectiveDate",
   "expirationDate",
@@ -135,6 +134,7 @@ public class Allocation implements Comparable<Allocation> {
    * <p>
    * Format is List of UN(6)
    */
+  @XmlList
   @XmlAttribute(name = "footnotes")
   private Set<BigInteger> footnotes;
 
