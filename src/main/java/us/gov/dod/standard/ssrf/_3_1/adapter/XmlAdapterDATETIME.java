@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge Global LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 public class XmlAdapterDATETIME extends AXmlAdapterCalendar {
 
   /**
-   * The DateTime pattern.
+   * "yyyy-MM-dd'T'HH:mm:ss.SSSZ". The DateTime pattern.
    * <p>
    * DT is a date / time value formatted in 20 to 24 characters as
    * YYYY-MM-DDThh:mm:ss[.ddd]Z (year-
@@ -31,7 +31,7 @@ public class XmlAdapterDATETIME extends AXmlAdapterCalendar {
    * part is optional. This format is compliant with the W3C Recommendation on
    * XML Schema.
    */
-  private static final String PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+  private static final String PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
   public XmlAdapterDATETIME() {
     super(PATTERN);
