@@ -57,13 +57,13 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TOA", propOrder = {
   "administration",
-  "channelPlanRef",
-  "country",
   "effectiveDate",
   "expirationDate",
+  "title",
   "footnote",
-  "freqBand",
-  "title"
+  "channelPlanRef",
+  "country",
+  "freqBand"
 })
 @XmlRootElement
 public class TOA extends Common<TOA> {
