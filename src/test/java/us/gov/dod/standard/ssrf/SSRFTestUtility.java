@@ -45,7 +45,6 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class SSRFTestUtility {
 
   private static final Logger logger = Logger.getLogger(SSRFTestUtility.class.getName());
-
   /**
    * "us.gov.dod.standard.ssrf". The SSRF top level package.
    */
@@ -75,16 +74,10 @@ public class SSRFTestUtility {
      * classes.
      */
     if (clazz.isEnum() || !clazz.getName().startsWith(SSRF_PACKAGE)) {
-//      System.err.println("ENUM OR NON_SSRF " + clazz.getSimpleName() + " skipping ...");
       return;
     }
-
-    System.out.println(">>> ----------------- " + clazz.getSimpleName());
-
+//    System.out.println(">>> ----------------- " + clazz.getSimpleName());
     Set<Field> fields = SSRFUtility.findDeclaredAndInheritedFields(clazz);
-
-    // print the field name
-//    for (Field field : fields) {      System.out.println("  FIELD " + clazz.getSimpleName() + " : " + field.getName());    }
     /**
      * Iterate through the list of declared fields (public, protected and
      * private) and populate each according to its annotated configuration.
@@ -99,7 +92,7 @@ public class SSRFTestUtility {
        * Populate if the field is required.
        */
       if ((SSRFUtility.isRequired(field) || maximum) && !SSRFUtility.isTransient(field)) {
-        System.out.println("  FIELD " + clazz.getSimpleName() + " : " + field.getName());
+//        System.out.println("  FIELD " + clazz.getSimpleName() + " : " + field.getName());
         /**
          * Get the field class type.
          */
@@ -139,7 +132,6 @@ public class SSRFTestUtility {
             String fieldClassName = field.getType().toString().replace("class ", "").trim();
             Class<?> fieldClass = Class.forName(fieldClassName);
             if (fieldClass.equals(TSerial.class)) {
-//              System.out.println("  TSerial " + field.getName() + "  skipping ...");
               continue;
             }
             /**
@@ -169,12 +161,11 @@ public class SSRFTestUtility {
               SSRFTestUtility.fill(fieldInstance, maximum);
               field.set(instance, fieldInstance);
             }
-//            System.out.println("    set " + clazz.getSimpleName() + "." + field.getName() + " to instance " + fieldInstance);
           }
         }
       }
     }
-    System.out.println("<<< ----------------- " + clazz.getSimpleName());
+//    System.out.println("<<< ----------------- " + clazz.getSimpleName());
   }
 
   /**
@@ -226,15 +217,31 @@ public class SSRFTestUtility {
     Class<?> fieldClass = Class.forName(fieldClassName);
     /**
      * Initialize a new HashSet, then fill it with a random number of entries.
+     * Set the response set size to 1 if MIN, else to a random number greater
+     * than zero for MAX.
      */
     Set response = new HashSet<>();
     int responseSize = new Random().nextInt(10);
-    responseSize = responseSize == 0 ? 1 : responseSize;
-    System.out.println("RESPONSE  SIZE is " + responseSize);
+    responseSize = maximum
+                   ? responseSize == 0 ? 1 : responseSize
+                   : 1;
+    /**
+     * Special handling:
+     * <p>
+     * The SecurityClass.downgrade field is limited to 3 entries. <br/>
+     * The SSRequest.stage field is limited to 4 entries. <br/>
+     * The Polygon.polygonPoint field is required at least 3 entries. <br/>
+     */
+    if (maximum && field.getName().equals("downgrade")) {
+      responseSize = 3;
+    } else if (maximum && field.getName().equals("stage")) {
+      responseSize = 4;
+    } else if (maximum && field.getName().equals("polygonPoint")) {
+      responseSize = 10;
+    }
     /**
      * Handle the case where the class is an enumerated type.
      */
-//    Object fieldInstance = null;
     if (fieldClass.isEnum()) {
       /**
        * If the field class is an enumerated instance then get a random
@@ -247,7 +254,6 @@ public class SSRFTestUtility {
         }
         response.add(fieldInstance);
       }
-//    } else if (fieldType.equals(TSerial.class)) {      fieldInstance = new ChannelPlan().getSerial();
     } else if (fieldType.equals(BigInteger.class)) {
       for (int i = 0; i < responseSize; i++) {
         Object fieldInstance = new BigInteger(String.valueOf(new Random().nextInt(1024)));
@@ -271,22 +277,6 @@ public class SSRFTestUtility {
       } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException noSuchMethodException) {
       }
     }
-    /**
-     * RECURSE: Call fill on the new instance, then add it to the set by calling
-     * invoke on the setter method with a new HashHet.
-     */
-//    if (fieldInstance != null) {
-//      SSRFTestUtility.fill(fieldInstance, maximum);
-//      try {
-//        return new HashSet<>(Arrays.asList(new Object[]{fieldInstance}));
-//      } catch (Exception exception) {
-//        logger.log(Level.SEVERE, "Failed to invoke setter on {0} {1}: {2} ",
-//                   new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass, exception.getMessage()});
-//      }
-//    }
-//    logger.log(Level.SEVERE, "Failed to build Set on {0} {1}: {2} ",
-//               new Object[]{SSRFUtility.findWithSetMethod(clazz, field), fieldClass});
-//    return null;
     return response;
   }
 
@@ -307,15 +297,11 @@ public class SSRFTestUtility {
     }
 
     /**
-     * Get the field type.
-     */
-//    System.out.println("  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + "  ");
-    /**
-     * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
+     * Get the field type. Scan the field annotations looking for an
+     * XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
       if (annotation instanceof XmlTypeValidator) {
-//        System.out.println("getFillValue  " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " " + field.getName() + " with annotation ");
         /**
          * If an XmlJavaTypeAdapter annotation is found then instantiate the
          * XmlAdapter class referred to in the "value" field and attempt to
@@ -356,11 +342,11 @@ public class SSRFTestUtility {
              * If the field is a TString then inspect the WITH setter to
              * determine if the field expects an enumerated input.
              */
-            String value = getTestString(((AXmlAdapterString) adapter).getMaxLength(),
+            String value = getTextString(((AXmlAdapterString) adapter).getMaxLength(),
                                          ((AXmlAdapterString) adapter).getMinLength());
             return adapterType.getConstructor(String.class).newInstance(value);
           } else if (adapter instanceof AXmlAdapterTString) {
-            String value = getTestString(((AXmlAdapterTString) adapter).getMaxLength(),
+            String value = getTextString(((AXmlAdapterTString) adapter).getMaxLength(),
                                          ((AXmlAdapterTString) adapter).getMinLength());
             return adapterType.getConstructor(String.class).newInstance(value);
           } else if (adapter instanceof XmlAdapterDATE) {
@@ -378,11 +364,10 @@ public class SSRFTestUtility {
             if (!"serial".equals(field.getName())) {
               return new Contact().getSerial();
             } else {
-              System.out.println("NOOP for serial field " + field.getName());
               return null;
             }
           } else {
-            System.err.println("UNKNOWN annotation " + field.getType() + "  " + field.getDeclaringClass().getSimpleName() + " : " + field.getName() + "  ");
+            logger.log(Level.WARNING, "UNKNOWN annotation {0}  {1} : {2}  ", new Object[]{field.getType(), field.getDeclaringClass().getSimpleName(), field.getName()});
           }
 
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
@@ -401,7 +386,7 @@ public class SSRFTestUtility {
        * the field expects an enumerated input.
        */
       Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
-      return enumInstance != null ? enumInstance : getTestString(32, 32);
+      return enumInstance != null ? enumInstance : getTextString(32, 32);
     } else if (type.equals(TString.class)) {
       /**
        * If the field is a TString then inspect the WITH setter to determine if
@@ -410,13 +395,13 @@ public class SSRFTestUtility {
       Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
       return enumInstance != null
              ? new TString(enumInstance.toString())
-             : new TString(getTestString(32, 32));
+             : new TString(getTextString(32, 32));
     } else if (type.equals(BigDecimal.class)) {
       return new BigDecimal(new Random().nextInt(1024000) * new Random().nextDouble());
     } else if (type.equals(BigInteger.class)) {
       return new BigInteger(String.valueOf(new Random().nextInt(1024)));
     } else if (type.equals(Double.class)) {
-      return new Double(new Random().nextInt(1024000) * new Random().nextDouble());
+      return new Random().nextInt(1024000) * new Random().nextDouble();
     } else if (type.equals(TDate.class)) {
       return new TDate(Calendar.getInstance());
     } else if (type.equals(TDateTime.class)) {
@@ -426,13 +411,11 @@ public class SSRFTestUtility {
       Class<?> fieldClass = Class.forName(fieldClassName);
       return fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
     }
-
     /**
      * Assume the field is an object type. Return NULL to indicate to the
      * calling method that it should try to instantiate and populate a new
      * object instance.
      */
-//    System.out.println("  NULL FILL for " + field);
     return null;
   }
 
@@ -444,20 +427,14 @@ public class SSRFTestUtility {
     Method with = SSRFUtility.findWithEnumMethod(type, field);
     if (with != null) {
       for (Class<?> parameterType : with.getParameterTypes()) {
-//        System.out.println("getEnumEntry  " + field.getName() + " looking for an enumerated input of type " + parameterType);
         if (parameterType.isEnum()) {
-//          System.out.println("  " + type.getSimpleName() + " : " + field.getName() + " type " + parameterType + " is an ENUM");
           String fieldClassName = parameterType.toString().replace("class ", "").trim();
           Class<?> fieldClass = Class.forName(fieldClassName); // throws ClassNotFoundException
-//            System.out.println("  " + field.getName() + " expect an enumerated input of type " + fieldClassName);
           Enum fieldInstance = (Enum) fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
-//          System.out.println("  " + field.getName() + " expect an enumerated input of type " + fieldClassName + " returning " + fieldInstance);
-
           XmlEnumValue xmlEnumValue = fieldInstance.getClass().getAnnotation(XmlEnumValue.class);
           if (xmlEnumValue != null) {
             return xmlEnumValue.value();
           }
-
           for (Method method : fieldClass.getDeclaredMethods()) {
             if (method.getName().equals("value")) {
               return method.invoke(fieldInstance);
@@ -465,7 +442,6 @@ public class SSRFTestUtility {
           }
           return fieldInstance.name();
         }
-//        else {          System.out.println("  " + type.getSimpleName() + " : " + field.getName() + " type " + parameterType + " is NOT ENUM");        }
       }
     }
     /**
@@ -477,7 +453,9 @@ public class SSRFTestUtility {
   /**
    * Get a TEST value. This is useful only for testing.
    * <p>
-   * @return
+   * @param max the maximum number value
+   * @param min the minimum number value
+   * @return a random number ranging between the maximum and minimum values
    */
   private static Number getTestNumber(Number max, Number min) {
     Number maxValue = max != null ? max : 1024.0;
@@ -489,40 +467,56 @@ public class SSRFTestUtility {
         return candidate;
       }
     }
-    System.err.println("ERROR getTestNumber timeout for " + max + "/" + min);
-    return 0.0;
+    return minValue;
   }
 
   /**
-   * Get a TEST value. This is useful only for testing.
+   * Get a text string guaranteed to range between the maximum and minimum
+   * length.
    * <p>
-   * @return
+   * @param maxLength the maximum string length
+   * @param minLength the minimum string length
+   * @return a non-null text string containing random LATIN text.
    */
-  private static String getTestString(Integer maxLength, Integer minLength) {
+  private static String getTextLatin(Integer maxLength, Integer minLength) {
     int lengthMin = minLength != null ? minLength : new Random().nextInt(8);
     int lengthMax = maxLength != null ? maxLength : minLength + new Random().nextInt(64);
 
-//    String text = loadText();
-//    if (text != null) {
-//      /**
-//       * Generate a random offset so that the text substring will be somewhat
-//       * randomly unique.
-//       */
-//      int start = new Random().nextInt(text.length() - lengthMax);
-//      String candidate = text.substring(start, start + lengthMax);
-//      if (candidate.length() < lengthMin) {
-//        StringBuilder sb = new StringBuilder();
-//        for (int i = 0; i <= lengthMin; i++) {
-//          sb.append("#");
-//        }
-//        return sb.toString();
-//      } else {
-//        return candidate;
-//      }
-//    }
+    String text = loadText();
+    if (text != null) {
+      /**
+       * Generate a random offset so that the text substring will be somewhat
+       * randomly unique.
+       */
+      int start = new Random().nextInt(text.length() - lengthMax);
+      String candidate = text.substring(start, start + lengthMax);
+      if (candidate.length() < lengthMin) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <= lengthMin; i++) {
+          sb.append("#");
+        }
+        return sb.toString();
+      } else {
+        return candidate;
+      }
+    }
     /**
      * Finally, if the text fails to load then build a placeholder.
      */
+    return getTextString(maxLength, minLength);
+  }
+
+  /**
+   * Get a text string guaranteed to range between the maximum and minimum
+   * length.
+   * <p>
+   * @param maxLength the maximum string length
+   * @param minLength the minimum string length
+   * @return a non-null text string containing hash (#) characters.
+   */
+  private static String getTextString(Integer maxLength, Integer minLength) {
+    int lengthMin = minLength != null ? minLength : new Random().nextInt(8);
+    int lengthMax = maxLength != null ? maxLength : minLength + new Random().nextInt(64);
     StringBuilder sb = new StringBuilder();
     for (int i = lengthMin; i <= lengthMax; i++) {
       sb.append("#");
@@ -530,6 +524,11 @@ public class SSRFTestUtility {
     return sb.toString();
   }
 
+  /**
+   * Internal method to load latin text from a resource file.
+   * <p>
+   * @return the entire latin text file.
+   */
   private static String loadText() {
     try {
       URL resource = SSRFTestUtility.class.getClassLoader().getResource("text/lorem-ipsum.txt");
