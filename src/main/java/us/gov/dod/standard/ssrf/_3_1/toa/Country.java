@@ -47,6 +47,13 @@ public class Country extends AMetadata<Country> {
   @XmlValue
   private ListCAO value;
 
+  public Country() {
+  }
+
+  public Country(ListCAO value) {
+    this.value = value;
+  }
+
   /**
    * Get the country or area code.
    * <p>
