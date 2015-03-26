@@ -21,8 +21,8 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.TimeZone;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterDATETIME;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 import us.gov.dod.standard.ssrf._3_1.metadata.IMetadataType;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -51,13 +51,13 @@ public class TDateTime extends AMetadata<TDateTime> implements IMetadataType, Co
    * part is optional. This format is compliant with the W3C Recommendation on
    * XML Schema.
    */
-  private static final String PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+  private static final String PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
   /**
    * The value to which the metadata attributes are associated.
    */
   @XmlValue
-  @XmlTypeValidator(type = Calendar.class, value = XmlAdapterDATETIME.class)
+  @XmlJavaTypeAdapter(type = Calendar.class, value = XmlAdapterDATETIME.class)
   protected Calendar value;
 
   public TDateTime(Calendar value) {
