@@ -60,6 +60,10 @@ public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
    */
   @Override
   public Calendar unmarshal(String v) {
+//    SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+//    Calendar c = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+//    c.setTime(sdf.parse(v));
+//    return c;
     return javax.xml.bind.DatatypeConverter.parseDate(v);
   }
 
