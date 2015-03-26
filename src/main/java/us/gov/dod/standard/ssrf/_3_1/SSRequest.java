@@ -395,7 +395,9 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * The current stage of the system.
    * <p>
-   * Format is L:CSG
+   * Format is L:CSG.
+   * <p>
+   * Maximum number of entries is four: [0..4]
    */
   @XmlElement(name = "Stage")
   private Set<Stage> stage;
