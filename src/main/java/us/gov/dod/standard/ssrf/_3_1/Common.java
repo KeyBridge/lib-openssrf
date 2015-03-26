@@ -154,7 +154,96 @@ public abstract class Common<T> implements Comparable<T> {
   @XmlElement(name = "EntryDateTime", required = true)
   private TDateTime entryDateTime;
 
-  //<editor-fold defaultstate="collapsed" desc="Class Fields (Optional)">
+  //<editor-fold defaultstate="collapsed" desc="Class Attribute Fields (Optional)">
+  /**
+   * releasability - Releasability Markings (Optional)
+   * <p>
+   * A list of country codes for which the current data item is releasable. For
+   * NATO, if this element is omitted, there is no releasability restriction for
+   * the data item. For the US, if this data item AND attribute US:legacy
+   * Releasability are both blank, there is no releasability restriction for the
+   * data item.
+   * <p>
+   * Format is List of L:CCY
+   */
+  @XmlList
+  @XmlAttribute(name = "releasability")
+  private Set<ListCCY> releasability;
+  /**
+   * remarks - Index reference to Data Item Remarks (Optional)
+   * <p>
+   * A list of Common/Remarks idx values applicable to the current data item.
+   * <p>
+   * Format is List of UN6
+   */
+  @XmlList
+  @XmlAttribute(name = "remarks")
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
+  private Set<BigInteger> remarkRef;
+  /**
+   * extReferences - Links to External References (Optional)
+   * <p>
+   * A list of Common/ExtReferenceRef idx values applicable to the current data
+   * item.
+   * <p>
+   * Format is List of UN6
+   */
+  @XmlList
+  @XmlAttribute(name = "extReferences")
+  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
+  private Set<BigInteger> extReferences;
+  /**
+   * US:legacyReleasability - Legacy Releasability (Optional)
+   * <p>
+   * One or more special handling instructions in sentence format, not code
+   * format. For example, "Approved for public release; distribution is
+   * unlimited". Multiple special handling instructions are separated by "|”
+   * (i.e., ASCII character #124).
+   * <p>
+   * Format is Memo
+   */
+  @XmlAttribute(name = "legacyReleasability")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
+  private String legacyReleasability;
+  /**
+   * US:quality - Data Quality (Optional)
+   * <p>
+   * One or more data quality indicator(s), separated by "|” (i.e., ASCII
+   * character #124), for the contents of the associated Data Item For example,
+   * "Outlier" | "Non-CodeList".
+   * <p>
+   * Format is S255
+   */
+  @XmlAttribute(name = "quality")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS255.class)
+  private String quality;
+  /**
+   * US:recommendedValue - Recommended Value (Optional)
+   * <p>
+   * A value that is most probably correct.
+   * <p>
+   * Format is Memo
+   */
+  @XmlAttribute(name = "recommendedValue")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
+  private String recommendedValue;
+  /**
+   * idref - Data Item ID (Optional)
+   * <p>
+   * A unique identifier for each Data Item in the Dataset. Within each Dataset,
+   * the idref value must be unique for every occurrence. If a received Dataset
+   * uses idrefs and it is expected that the Dataset will be exchanged, the
+   * idrefs should be considered required. If the receiving system is the
+   * permanent end of the line for the Dataset, the idrefs may be considered
+   * optional.
+   * <p>
+   * Format is S10
+   */
+  @XmlAttribute(name = "idref")
+  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS10.class)
+  private String idref;//</editor-fold>
+
+  //<editor-fold defaultstate="collapsed" desc="Class Element Fields (Optional)">
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -213,7 +302,6 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "Redacted", required = false)
   private TString redacted;
-
   /**
    * EntryBy - Creator Role (Optional)
    * <p>
@@ -351,95 +439,7 @@ public abstract class Common<T> implements Comparable<T> {
    * specifically established for it.
    */
   @XmlElement(name = "Remarks", nillable = true)
-  private Set<Remarks> remarks;
-
-  /**
-   * releasability - Releasability Markings (Optional)
-   * <p>
-   * A list of country codes for which the current data item is releasable. For
-   * NATO, if this element is omitted, there is no releasability restriction for
-   * the data item. For the US, if this data item AND attribute US:legacy
-   * Releasability are both blank, there is no releasability restriction for the
-   * data item.
-   * <p>
-   * Format is List of L:CCY
-   */
-  @XmlList
-  @XmlAttribute(name = "releasability")
-  private Set<ListCCY> releasability;
-  /**
-   * remarks - Index reference to Data Item Remarks (Optional)
-   * <p>
-   * A list of Common/Remarks idx values applicable to the current data item.
-   * <p>
-   * Format is List of UN6
-   */
-  @XmlList
-  @XmlAttribute(name = "remarks")
-  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
-  private Set<BigInteger> remarkRef;
-  /**
-   * extReferences - Links to External References (Optional)
-   * <p>
-   * A list of Common/ExtReferenceRef idx values applicable to the current data
-   * item.
-   * <p>
-   * Format is List of UN6
-   */
-  @XmlList
-  @XmlAttribute(name = "extReferences")
-  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
-  private Set<BigInteger> extReferences;
-  /**
-   * US:legacyReleasability - Legacy Releasability (Optional)
-   * <p>
-   * One or more special handling instructions in sentence format, not code
-   * format. For example, "Approved for public release; distribution is
-   * unlimited". Multiple special handling instructions are separated by "|”
-   * (i.e., ASCII character #124).
-   * <p>
-   * Format is Memo
-   */
-  @XmlAttribute(name = "legacyReleasability")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
-  private String legacyReleasability;
-  /**
-   * US:quality - Data Quality (Optional)
-   * <p>
-   * One or more data quality indicator(s), separated by "|” (i.e., ASCII
-   * character #124), for the contents of the associated Data Item For example,
-   * "Outlier" | "Non-CodeList".
-   * <p>
-   * Format is S255
-   */
-  @XmlAttribute(name = "quality")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS255.class)
-  private String quality;
-  /**
-   * US:recommendedValue - Recommended Value (Optional)
-   * <p>
-   * A value that is most probably correct.
-   * <p>
-   * Format is Memo
-   */
-  @XmlAttribute(name = "recommendedValue")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
-  private String recommendedValue;
-  /**
-   * idref - Data Item ID (Optional)
-   * <p>
-   * A unique identifier for each Data Item in the Dataset. Within each Dataset,
-   * the idref value must be unique for every occurrence. If a received Dataset
-   * uses idrefs and it is expected that the Dataset will be exchanged, the
-   * idrefs should be considered required. If the receiving system is the
-   * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.
-   * <p>
-   * Format is S10
-   */
-  @XmlAttribute(name = "idref")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS10.class)
-  private String idref;//</editor-fold>
+  private Set<Remarks> remarks;//</editor-fold>
 
   /**
    * Abstract constructor for the Common class type.
