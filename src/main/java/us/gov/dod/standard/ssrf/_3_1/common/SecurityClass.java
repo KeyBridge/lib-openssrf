@@ -142,6 +142,10 @@ public class SecurityClass {
    * <p>
    * Downgrade (US) contains the downgrade security classification from one or
    * more data information sources.
+   * <p>
+   * Limited to three entries. The WITH setter methods provide a double-ended
+   * queue ensure only three entries are present: If a fourth entry is added the
+   * first entry is removed.
    */
   @XmlElement(name = "Downgrade")
   private Set<Downgrade> downgrade;
@@ -582,7 +586,14 @@ public class SecurityClass {
    */
   public SecurityClass withDowngrade(Downgrade... values) {
     if (values != null) {
-      getDowngrade().addAll(new HashSet<>(Arrays.asList(values)));
+      Deque<Downgrade> queue = new ArrayDeque<>();
+      for (Downgrade value : values) {
+        queue.add(value);
+        if (queue.size() > 3) {
+          queue.removeFirst();
+        }
+      }
+      getDowngrade().addAll(queue);
     }
     return this;
   }
@@ -598,7 +609,14 @@ public class SecurityClass {
    */
   public SecurityClass withDowngrade(Set<Downgrade> values) {
     if (values != null) {
-      getDowngrade().addAll(values);
+      Deque<Downgrade> queue = new ArrayDeque<>();
+      for (Downgrade value : values) {
+        queue.add(value);
+        if (queue.size() > 3) {
+          queue.removeFirst();
+        }
+      }
+      getDowngrade().addAll(queue);
     }
     return this;
   }
