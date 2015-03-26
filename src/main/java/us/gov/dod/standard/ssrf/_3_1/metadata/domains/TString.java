@@ -15,7 +15,6 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
-import java.util.Locale;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
@@ -45,9 +44,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    * This is a java.util.Locale BCP47 language TAG. e.g. 'en_US' used to
    * identify the TEXT language and (possibly) support automated translation.
    */
-  @XmlAttribute(name = "x-locale", required = false)
-  private String locale;
-
+//  @XmlAttribute(name = "x-locale", required = false)  private String locale;
   /**
    * Construct a new data type instance with the indicated value.
    * <p>
@@ -100,10 +97,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    * <p>
    * @return A non-null {@link Locale} instance
    */
-  public Locale getLocale() {
-    return locale != null ? Locale.forLanguageTag(locale) : Locale.getDefault();
-  }
-
+//  public Locale getLocale() {    return locale != null ? Locale.forLanguageTag(locale) : Locale.getDefault();  }
   /**
    * Set the TEXT locale. This is a java.util.Locale BCP47 language TAG. e.g.
    * 'en_US' used to identify the TEXT language and (possibly) support automated
@@ -111,10 +105,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    * <p>
    * @param locale A {@link Locale} instance
    */
-  public void setLocale(Locale locale) {
-    this.locale = locale != null ? locale.toLanguageTag() : null;
-  }
-
+//  public void setLocale(Locale locale) {    this.locale = locale != null ? locale.toLanguageTag() : null;  }
   /**
    * Sets the value of the value property.
    * <p>
@@ -134,11 +125,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
    * @param locale A {@link Locale} instance
    * @return The current Footnote object instance
    */
-  public TString withLocale(Locale locale) {
-    setLocale(locale);
-    return this;
-  }
-
+//  public TString withLocale(Locale locale) {    setLocale(locale);    return this;  }
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
@@ -191,7 +178,7 @@ public class TString extends AMetadata<TString> implements IMetadataType, Compar
     if (getClass() != obj.getClass()) {
       return false;
     }
-    return Objects.equals(this.value, ((TString) obj).getValue());
+    return Objects.equals(this.value, ((IMetadataType) obj).getValue());
   }
 
   /**
