@@ -589,7 +589,7 @@ public class SecurityClass {
       Deque<Downgrade> queue = new ArrayDeque<>();
       for (Downgrade value : values) {
         queue.add(value);
-        if (queue.size() > 3) {
+        if (queue.size() >= 3) {
           queue.removeFirst();
         }
       }
@@ -612,7 +612,7 @@ public class SecurityClass {
       Deque<Downgrade> queue = new ArrayDeque<>();
       for (Downgrade value : values) {
         queue.add(value);
-        if (queue.size() > 3) {
+        if (queue.size() >= 3) {
           queue.removeFirst();
         }
       }
