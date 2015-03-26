@@ -16,7 +16,6 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.math.BigInteger;
-import java.util.Locale;
 import java.util.Objects;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRFUtility;
@@ -314,13 +313,12 @@ public class Footnote implements Comparable<Footnote> {
    * @param locale A {@link Locale} instance
    * @return The current Footnote object instance
    */
-  public Footnote withLocale(Locale locale) {
-    if (text != null) {
-      text.withLocale(locale);
-    }
-    return this;
-  }
-
+//  public Footnote withLocale(Locale locale) {
+//    if (text != null) {
+//      text.withLocale(locale);
+//    }
+//    return this;
+//  }
   /**
    * Get a string representation of this Footnote instance configuration.
    * <p>
