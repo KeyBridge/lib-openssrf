@@ -30,28 +30,27 @@ public class TOATest {
   }
 
   @Test
-  public void testMinimumPositiveFill() throws Exception {
-
+  public void testMaximumPositiveFill() throws Exception {
     TOA t = new TOA();
-    System.out.println("t.serial " + t.getSerial());
-
     SSRFTestUtility.fill(t, true);
 
-//    System.out.println(t);
-//    System.out.println(SSRFUtility.marshal(t));
-//    for (FreqBand freqBand : t.getFreqBand()) {      freqBand.getFreqMin().setCls(ListCCL.S);      freqBand.getFreqMax().setCls(ListCCL.R);    }
-//    System.out.println(SSRFUtility.marshal(t));
-//    System.out.println("  test Minimum Positive Fill OK");
     SSRF ssrf = new SSRF().withProperties(SSRFProperties.getDefault()).withTOA(t);
-//    System.out.println(ssrf);
-
     for (String error : ssrf.evaluate()) {
       System.err.println("ERROR  " + error);
     }
-
-//    System.out.println(ssrf.getTOA());
     System.out.println(ssrf.toXML());
-//    TDecimal td = new TDecimal(12093812.1023810938);    td.setCls(ListCCL.U);    System.out.println("TD " + td);    System.out.println(SSRFUtility.marshal(td));
+  }
+
+  @Test
+  public void testMinimumPositiveFill() throws Exception {
+    TOA t = new TOA();
+    SSRFTestUtility.fill(t, false);
+
+    SSRF ssrf = new SSRF().withProperties(SSRFProperties.getDefault()).withTOA(t);
+    for (String error : ssrf.evaluate()) {
+      System.err.println("ERROR  " + error);
+    }
+    System.out.println(ssrf.toXML());
   }
 
 }
