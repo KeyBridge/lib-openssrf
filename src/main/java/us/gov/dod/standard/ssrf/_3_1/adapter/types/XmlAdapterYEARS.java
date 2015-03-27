@@ -1,5 +1,5 @@
-/* 
- * Copyright 2014 Key Bridge Global LLC.
+/*
+ * Copyright 2014 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
 
 /**
  * XML data type adapter for the SSRF YEARS data type.
+ * <p>
+ * Years: In Data Item Years, enter the 4-digit year [1900..2100].
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
