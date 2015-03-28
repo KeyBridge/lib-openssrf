@@ -1,388 +1,362 @@
-/*
- * Copyright 2014 Key Bridge Global LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1.ssreply;
 
-import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.SSReply;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * CommentSource is used to provide comments to a SSRequest. It can also be used
- * to certify supportability.
- * <p>
- * Notes (US)
- * <ul>
- * <li>The Date for a Source of "SPS" is also the date the SPS official signed
- * the Certification of Spectrum Support. The date for a Source of "NTIA" is the
- * date the NTIA Certifying Official signed the Certification of Spectrum
- * Support.</li>
- * <li>For NTIA and the Spectrum Planning Subcommittee (SPS), the first Comment
- * is the signing statement in the corresponding Section 4 or 5 respectively of
- * the Certification of Spectrum Support page.</li>
- * </ul>
- * <p>
- * Element of {@link SSReply}
- * <p>
- * Sub-Element is {@link Comment}
- * <p>
- * Example:
- * <pre>
- * &lt;Comment Source&gt;
- *   &lt;Author  cls="U"&gt;Barry Commenter&lt;/Author &gt;
- *   &lt;Date  cls="U"&gt;2014-01-01&lt;/Date &gt;
- *   &lt;JobTitle  cls="U"&gt;Big Kahuna&lt;/JobTitle &gt;
- *    &lt;Source cls=”U”&gt;NTIA Redbook page 235&lt;/Source&gt;
- *   &lt;Comment cls="U" idx="1"&gt;Assignments will be granted on case-by-case basis.&lt;/Comment&gt;
- * &lt;/Comment Source&gt;
- * </pre>
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+CommentSource is used to provide comments to a SSRequest. It can also be used to certify supportability.
+
+Element of {@link SSReply}
+
+Sub-Element is {@link Comment}
+
+Example: <pre>
+* &lt;Comment Source&gt;
+*   &lt;Author  cls="U"&gt;Barry Commenter&lt;/Author &gt;
+*   &lt;Date  cls="U"&gt;2014-01-01&lt;/Date &gt;
+*   &lt;JobTitle  cls="U"&gt;Big Kahuna&lt;/JobTitle &gt;
+*    &lt;Source cls=”U”&gt;NTIA Redbook page 235&lt;/Source&gt;
+*   &lt;Comment cls="U" idx="1"&gt;Assignments will be granted on case-by-case basis.&lt;/Comment&gt;
+* &lt;/Comment Source&gt;
+</pre>
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CommentSource", propOrder = {
-  "source",
-  "author",
-  "jobTitle",
-  "date",
-  "comment"
+    "source",
+    "author",
+    "jobTitle",
+    "date",
+    "comment"
 })
 public class CommentSource {
 
-  /**
-   * Source - Comment Source (Optional)
-   * <p>
-   * The name of the organisation or authority that is the source of the
-   * comment. For example, MCEB, SPS or NTIA.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "Source", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString source;
-  /**
-   * Author - Comment Author (Optional)
-   * <p>
-   * The title (e.g., Ms., Dr.) and name of the individual that is the source of
-   * the comment.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "Author", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString author;
-  /**
-   * JobTitle - Author Job Title (Optional)
-   * <p>
-   * The title or position of the comment author.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "JobTitle", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString jobTitle;
-  /**
-   * Date - Comment Date (Optional)
-   * <p>
-   * The date the comment was provided.
-   * <p>
-   * Format is Date
-   */
-  @XmlElement(name = "Date", required = false)
-  private TDate date;
-  /**
-   * Comment (Optional)
-   * <p>
-   * Comment contains the comment provided by the Host Nation or Administration
-   * regarding an equipment supportability.
-   */
-  @XmlElement(name = "Comment", nillable = true)
-  private Set<Comment> comment;
+/**
+Source  - Comment Source (Optional) 
 
-  /**
-   * Get the name of the organisation or authority that is the source of the
-   * comment. For example, MCEB, SPS or NTIA.
-   * <p>
-   * @return the Source value in a {@link TString} data type
-   */
-  public TString getSource() {
-    return source;
-  }
+The name of the organisation or authority that is the source of the comment. For example, MCEB, SPS or NTIA.
 
-  /**
-   * Set the name of the organisation or authority that is the source of the
-   * comment. For example, MCEB, SPS or NTIA.
-   * <p>
-   * @param value the Source value in a {@link TString} data type
-   */
-  public void setSource(TString value) {
-    this.source = value;
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "Source", required = false)
+    private S100 source;
+/**
+Author  - Comment Author (Optional) 
 
-  /**
-   * Determine if the Source is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetSource() {
-    return (this.source != null ? this.source.isSetValue() : false);
-  }
+The title (e.g., Ms., Dr.) and name of the individual that is the source of the comment.
 
-  /**
-   * Get the title (e.g., Ms., Dr.) and name of the individual that is the
-   * source of the comment.
-   * <p>
-   * @return the Author value in a {@link TString} data type
-   */
-  public TString getAuthor() {
-    return author;
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "Author", required = false)
+    private S100 author;
+/**
+JobTitle  - Author Job Title (Optional) 
 
-  /**
-   * Set the title (e.g., Ms., Dr.) and name of the individual that is the
-   * source of the comment.
-   * <p>
-   * @param value the Author value in a {@link TString} data type
-   */
-  public void setAuthor(TString value) {
-    this.author = value;
-  }
+The title or position of the comment author.
 
-  /**
-   * Determine if the Author is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAuthor() {
-    return (this.author != null ? this.author.isSetValue() : false);
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "JobTitle", required = false)
+    private S100 jobTitle;
+/**
+Date  - Comment Date (Optional) 
 
-  /**
-   * Get the title or position of the comment author.
-   * <p>
-   * @return the JobTitle value in a {@link TString} data type
-   */
-  public TString getJobTitle() {
-    return jobTitle;
-  }
+The date the comment was provided.
 
-  /**
-   * Set the title or position of the comment author.
-   * <p>
-   * @param value the JobTitle value in a {@link TString} data type
-   */
-  public void setJobTitle(TString value) {
-    this.jobTitle = value;
-  }
+Format is Date
+@since 3.1.0
+*/
+    @XmlElement(name = "Date", required = false)
+    private D date;
+/**
+Comment (Optional)
 
-  /**
-   * Determine if the JobTitle is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetJobTitle() {
-    return (this.jobTitle != null ? this.jobTitle.isSetValue() : false);
-  }
+Comment contains the comment provided by the Host Nation or Administration regarding an equipment supportability.
+@since 3.1.0
+*/
+    @XmlElement(name = "Comment", nillable = true)
+      private  Set<Comment> comment;
 
-  /**
-   * Get the date the comment was provided.
-   * <p>
-   * @return the Date value in a {@link TDate} data type
-   */
-  public TDate getDate() {
-    return date;
-  }
+/**
+Get the name of the organisation or authority that is the source of the comment. For example, MCEB, SPS or NTIA.
 
-  /**
-   * Set the date the comment was provided.
-   * <p>
-   * @param value the Date value in a {@link TDate} data type
-   */
-  public void setDate(TDate value) {
-    this.date = value;
-  }
-
-  /**
-   * Determine if the Date is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetDate() {
-    return (this.date != null ? this.date.isSetValue() : false);
-  }
-
-  /**
-   * Get the Comment
-   * <p>
-   * Complex element Comment contains the comment provided by the Host Nation or
-   * Administration regarding an equipment supportability.
-   * <p>
-   * @return a non-null but possibly empty list of {@link Comment} instances
-   */
-  public Set<Comment> getComment() {
-    if (comment == null) {
-      comment = new HashSet<>();
+@return the Source value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getSource() {
+        return source;
     }
-    return this.comment;
-  }
 
-  /**
-   * Determine if the Comment is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetComment() {
-    return ((this.comment != null) && (!this.comment.isEmpty()));
-  }
+/**
+Set the name of the organisation or authority that is the source of the comment. For example, MCEB, SPS or NTIA.
 
-  /**
-   * Clear the Comment field. This sets the field to null.
-   */
-  public void unsetComment() {
-    this.comment = null;
-  }
-
-  /**
-   * Set the name of the organisation or authority that is the source of the
-   * comment. For example, MCEB, SPS or NTIA.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withSource(String value) {
-    setSource(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the title (e.g., Ms., Dr.) and name of the individual that is the
-   * source of the comment.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withAuthor(String value) {
-    setAuthor(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the title or position of the comment author.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withJobTitle(String value) {
-    setJobTitle(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the date the comment was provided.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withDate(Calendar value) {
-    setDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date the comment was provided.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withDate(Date value) {
-    setDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the Comment
-   * <p>
-   * Complex element Comment contains the comment provided by the Host Nation or
-   * Administration regarding an equipment supportability.
-   * <p>
-   * @param values One or more instances of type {@link Comment}
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withComment(Comment... values) {
-    if (values != null) {
-      getComment().addAll(new HashSet<>(Arrays.asList(values)));
+@param value the Source value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setSource(S100 value) {
+        this.source = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the Comment
-   * <p>
-   * Complex element Comment contains the comment provided by the Host Nation or
-   * Administration regarding an equipment supportability.
-   * <p>
-   * @param values A collection of {@link Comment} instances
-   * @return The current CommentSource object instance
-   */
-  public CommentSource withComment(Set<Comment> values) {
-    if (values != null) {
-      getComment().addAll(values);
+/**
+Determine if the Source is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetSource() {
+        return (this.source!= null);
     }
-    return this;
+
+/**
+Get the title (e.g., Ms., Dr.) and name of the individual that is the source of the comment.
+
+@return the Author value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getAuthor() {
+        return author;
+    }
+
+/**
+Set the title (e.g., Ms., Dr.) and name of the individual that is the source of the comment.
+
+@param value the Author value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setAuthor(S100 value) {
+        this.author = value;
+    }
+
+/**
+Determine if the Author is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAuthor() {
+        return (this.author!= null);
+    }
+
+/**
+Get the title or position of the comment author.
+
+@return the JobTitle value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getJobTitle() {
+        return jobTitle;
+    }
+
+/**
+Set the title or position of the comment author.
+
+@param value the JobTitle value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setJobTitle(S100 value) {
+        this.jobTitle = value;
+    }
+
+/**
+Determine if the JobTitle is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetJobTitle() {
+        return (this.jobTitle!= null);
+    }
+
+/**
+Get the date the comment was provided.
+
+@return the Date value in a {@link TD} data type
+@since 3.1.0
+*/
+public D getDate() {
+        return date;
+    }
+
+/**
+Set the date the comment was provided.
+
+@param value the Date value in a {@link TD} data type
+@since 3.1.0
+*/
+public void setDate(D value) {
+        this.date = value;
+    }
+
+/**
+Determine if the Date is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetDate() {
+        return (this.date!= null);
+    }
+
+/**
+Get the Comment
+
+Complex element Comment contains the comment provided by the Host Nation or Administration regarding an equipment supportability.
+
+@return  a {@link Comment} instance
+@since 3.1.0
+*/
+    public Set<Comment> getComment() {
+        if (comment == null) {
+            comment = new HashSet<Comment>();
+        }
+        return this.comment;
+    }
+
+/**
+Determine if the Comment is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetComment() {
+        return ((this.comment!= null)&&(!this.comment.isEmpty()));
+    }
+
+/**
+  Clear the Comment field. This sets the field to null.
+ */
+    public void unsetComment() {
+        this.comment = null;
+    }
+
+/**
+Set the name of the organisation or authority that is the source of the comment. For example, MCEB, SPS or NTIA.
+
+@param value  An instances of type {@link String}
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withSource(String value) {
+           setSource(new S100(value));
+        return this;
+    }
+
+/**
+Set the title (e.g., Ms., Dr.) and name of the individual that is the source of the comment.
+
+@param value  An instances of type {@link String}
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withAuthor(String value) {
+           setAuthor(new S100(value));
+        return this;
+    }
+
+/**
+Set the title or position of the comment author.
+
+@param value  An instances of type {@link String}
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withJobTitle(String value) {
+           setJobTitle(new S100(value));
+        return this;
+    }
+
+/**
+Set the date the comment was provided.
+
+@param value  An instances of type {@link Calendar}
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withDate(Calendar value) {
+           setDate(new D(value));
+        return this;
+    }
+/**
+Set the date the comment was provided.
+
+@param value  An instances of type {@link Date}
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withDate(Date value) {
+           setDate(new D(value));
+        return this;
+    }
+
+/**
+Set the Comment
+
+Complex element Comment contains the comment provided by the Host Nation or Administration regarding an equipment supportability.
+
+@param values  One or more instances of type {@link Comment...}
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withComment(Comment... values) {
+        if (values!= null) {
+            for (Comment value: values) {
+                getComment().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the Comment
+
+Complex element Comment contains the comment provided by the Host Nation or Administration regarding an equipment supportability.
+
+@param values  A collection of {@link Comment} instances
+@return The current CommentSource object instance
+@since 3.1.0
+*/
+    public CommentSource withComment(Collection<Comment> values) {
+        if (values!= null) {
+            getComment().addAll(values);
+        }
+        return this;
+    }
+
+/**
+ Get a string representation of this CommentSource instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "CommentSource {"
+ + (author !=null? " author [" + author +"]" : "") 
+ + (comment !=null? " comment [" + comment +"]" : "") 
+ + (date !=null? " date [" + date +"]" : "") 
+ + (jobTitle !=null? " jobTitle [" + jobTitle +"]" : "") 
+ + (source !=null? " source [" + source +"]" : "") +
+"}";
   }
 
-  /**
-   * Get the string representation of this CommentSource instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "CommentSource {"
-           + (author != null ? " author [" + author + "]" : "")
-           + (source != null ? " source [" + source + "]" : "")
-           + (comment != null ? " comment [" + comment + "]" : "")
-           + (date != null ? " date [" + date + "]" : "")
-           + (jobTitle != null ? " jobTitle [" + jobTitle + "]" : "")
-           + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link CommentSource} has no configuration requirement.
-   * <p>
-   * @return TRUE
-   */
-  public boolean isSet() {
-    return true;
-  }
+{@link CommentSource} has no configuration requirements.
+@return TRUE
+*/
+public boolean isSet(){
+return true;
+}
 
 }

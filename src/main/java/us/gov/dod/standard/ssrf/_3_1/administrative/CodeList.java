@@ -1,431 +1,414 @@
-/*
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1.administrative;
 
-import java.util.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.Administrative;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAC;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * CodeList contains the actions necessary to create or delete a code entry in a
- * given Code List.
- * <p>
- * Element of {@link Administrative}
- * <p>
- * Sub-Element is {@link Code}
- * <p>
- * Example:
- * <pre>
- * &lt;CodeList&gt;
- *   &lt;Action cls="U"&gt;Add Code&lt;/Action&gt;
- *   &lt;CodeListCode cls="U"&gt;CAS&lt;/CodeListCode&gt;
- *   &lt;EffectiveDate cls="U"&gt;2011-12-25&lt;/EffectiveDate&gt;
- *   &lt;Code&gt;
- *     &lt;Value cls="U"&gt;Jerking&lt;/Value&gt;
- *     &lt;Description cls="U"&gt;Moving wildly in all directions&lt;/Description&gt;
- *   &lt;/Code&gt;
- * &lt;/CodeList&gt;
- * </pre>
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+CodeList contains the actions necessary to create or delete a code entry in a given Code List.
+
+Element of {@link Administrative}
+
+Sub-Element is {@link Code}
+
+Example: <pre>
+* &lt;CodeList&gt;
+*   &lt;Action cls="U"&gt;Add Code&lt;/Action&gt;
+*   &lt;CodeListCode cls="U"&gt;CAS&lt;/CodeListCode&gt;
+*   &lt;EffectiveDate cls="U"&gt;2011-12-25&lt;/EffectiveDate&gt;
+*   &lt;Code&gt;
+*     &lt;Value cls="U"&gt;Jerking&lt;/Value&gt;
+*     &lt;Description cls="U"&gt;Moving wildly in all directions&lt;/Description&gt;
+*   &lt;/Code&gt;
+* &lt;/CodeList&gt;
+</pre>
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CodeList", propOrder = {
-  "action",
-  "codeListCode",
-  "effectiveDate",
-  "description",
-  "origin",
-  "code"
+    "action",
+    "codeListCode",
+    "effectiveDate",
+    "description",
+    "origin",
+    "code"
 })
 public class CodeList {
 
-  /**
-   * Action - Action Required (Required)
-   * <p>
-   * The intended type of modification to the given code list.
-   * <p>
-   * Format is L:CAC
-   */
-  @XmlElement(name = "Action", required = true)
-  private TString action;
-  /**
-   * CodeListCode - Code List 3-letter Code (Required)
-   * <p>
-   * The three-letter code of an existing Code List to be modified, or an unused
-   * three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * Format is US(3)
-   */
-  @XmlElement(name = "CodeListCode", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterUS3.class)
-  private TString codeListCode;
-  /**
-   * EffectiveDate - Effective Date (Required)
-   * <p>
-   * The date by which the dataset is to be operational or effective.
-   * <p>
-   * Format is Date
-   */
-  @XmlElement(name = "EffectiveDate", required = true)
-  private TDate effectiveDate;
-  /**
-   * Description - New Code List Description (Optional)
-   * <p>
-   * The description of the intended contents of new code list, and the
-   * element(s) where it will be used.
-   * <p>
-   * Format is Memo
-   */
-  @XmlElement(name = "Description", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
-  private TString description;
-  /**
-   * Origin - Originating Country/Body (Optional)
-   * <p>
-   * The country or organisation which is using the modified or new code.
-   * <p>
-   * Format is L:CAO
-   */
-  @XmlElement(name = "Origin", required = false)
-  private TString origin;
-  /**
-   * CodeListCode - Code List 3-letter Code (Required)
-   * <p>
-   * The three-letter code of an existing Code List to be modified, or an unused
-   * three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * Format is US(3)
-   */
-  @XmlElement(name = "Code")
-  private Set<Code> code;
+/**
+Action - Action Required (Required) 
 
-  /**
-   * Get the intended type of modification to the given code list.
-   * <p>
-   * @return the Action value in a {@link TString} data type
-   */
-  public TString getAction() {
-    return action;
-  }
+The intended type of modification to the given code list.
 
-  /**
-   * Set the intended type of modification to the given code list.
-   * <p>
-   * @param value the Action value in a {@link TString} data type
-   */
-  public void setAction(TString value) {
-    this.action = value;
-  }
+Format is L:CAC
+@since 3.1.0
+*/
+    @XmlElement(name = "Action", required = true)
+      private  TString action;
+/**
+CodeListCode - Code List 3-letter Code (Required) 
 
-  /**
-   * Determine if the Action is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAction() {
-    return (this.action != null ? this.action.isSetValue() : false);
-  }
+The three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
 
-  /**
-   * Get the three-letter code of an existing Code List to be modified, or an
-   * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * @return the CodeListCode value in a {@link TString} data type
-   */
-  public TString getCodeListCode() {
-    return codeListCode;
-  }
+Format is US(3)
+@since 3.1.0
+*/
+    @XmlElement(name = "CodeListCode", required = true)
+      private  US3 codeListCode;
+/**
+EffectiveDate - Effective Date (Required) 
 
-  /**
-   * Set the three-letter code of an existing Code List to be modified, or an
-   * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * @param value the CodeListCode value in a {@link TString} data type
-   */
-  public void setCodeListCode(TString value) {
-    this.codeListCode = value;
-  }
+The date by which the dataset is to be operational or effective.
 
-  /**
-   * Determine if the CodeListCode is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetCodeListCode() {
-    return (this.codeListCode != null ? this.codeListCode.isSetValue() : false);
-  }
+Format is Date
+@since 3.1.0
+*/
+    @XmlElement(name = "EffectiveDate", required = true)
+      private  D effectiveDate;
+/**
+Description - New Code List Description (Optional) 
 
-  /**
-   * Get the date by which the dataset is to be operational or effective.
-   * <p>
-   * @return the EffectiveDate value in a {@link TDate} data type
-   */
-  public TDate getEffectiveDate() {
-    return effectiveDate;
-  }
+The description of the intended contents of new code list, and the element(s) where it will be used.
 
-  /**
-   * Set the date by which the dataset is to be operational or effective.
-   * <p>
-   * @param value the EffectiveDate value in a {@link TDate} data type
-   */
-  public void setEffectiveDate(TDate value) {
-    this.effectiveDate = value;
-  }
+Format is Memo
+@since 3.1.0
+*/
+    @XmlElement(name = "Description", required = false)
+    private MEMO description;
+/**
+Origin - Originating Country/Body (Optional) 
 
-  /**
-   * Determine if the EffectiveDate is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEffectiveDate() {
-    return (this.effectiveDate != null ? this.effectiveDate.isSetValue() : false);
-  }
+The country or organisation which is using the modified or new code.
 
-  /**
-   * Get the description of the intended contents of new code list, and the
-   * element(s) where it will be used.
-   * <p>
-   * @return the Description value in a {@link TString} data type
-   */
-  public TString getDescription() {
-    return description;
-  }
+Format is L:CAO
+@since 3.1.0
+*/
+    @XmlElement(name = "Origin", required = false)
+    private TString origin;
+/**
+CodeListCode - Code List 3-letter Code (Required) 
 
-  /**
-   * Set the description of the intended contents of new code list, and the
-   * element(s) where it will be used.
-   * <p>
-   * @param value the Description value in a {@link TString} data type
-   */
-  public void setDescription(TString value) {
-    this.description = value;
-  }
+The three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
 
-  /**
-   * Determine if the Description is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetDescription() {
-    return (this.description != null ? this.description.isSetValue() : false);
-  }
+Format is US(3)
+@since 3.1.0
+*/
+    @XmlElement(name = "Code")
+      private  Set<Code> code;
 
-  /**
-   * Get the country or organisation which is using the modified or new code.
-   * <p>
-   * @return the Origin value in a {@link TString} data type
-   */
-  public TString getOrigin() {
-    return origin;
-  }
+/**
+Get the intended type of modification to the given code list.
 
-  /**
-   * Set the country or organisation which is using the modified or new code.
-   * <p>
-   * @param value the Origin value in a {@link TString} data type
-   */
-  public void setOrigin(TString value) {
-    this.origin = value;
-  }
-
-  /**
-   * Determine if the Origin is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetOrigin() {
-    return (this.origin != null ? this.origin.isSetValue() : false);
-  }
-
-  /**
-   * Get the three-letter code of an existing Code List to be modified, or an
-   * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * @return a non-null but possibly empty list of {@link Code} instances
-   */
-  public Set<Code> getCode() {
-    if (code == null) {
-      code = new HashSet<>();
+@return the Action value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getAction() {
+        return action;
     }
-    return this.code;
-  }
 
-  /**
-   * Determine if the Code is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetCode() {
-    return ((this.code != null) && (!this.code.isEmpty()));
-  }
+/**
+Set the intended type of modification to the given code list.
 
-  /**
-   * Clear the Code field. This sets the field to null.
-   */
-  public void unsetCode() {
-    this.code = null;
-  }
-
-  /**
-   * Set the intended type of modification to the given code list.
-   * <p>
-   * @param value An instances of type {@link ListCAC}
-   * @return The current CodeList object instance
-   */
-  public CodeList withAction(ListCAC value) {
-    setAction(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the three-letter code of an existing Code List to be modified, or an
-   * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current CodeList object instance
-   */
-  public CodeList withCodeListCode(String value) {
-    setCodeListCode(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the date by which the dataset is to be operational or effective.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current CodeList object instance
-   */
-  public CodeList withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date by which the dataset is to be operational or effective.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current CodeList object instance
-   */
-  public CodeList withEffectiveDate(Date value) {
-    setEffectiveDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the description of the intended contents of new code list, and the
-   * element(s) where it will be used.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current CodeList object instance
-   */
-  public CodeList withDescription(String value) {
-    setDescription(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the country or organisation which is using the modified or new code.
-   * <p>
-   * @param value An instances of type {@link ListCAO}
-   * @return The current CodeList object instance
-   */
-  public CodeList withOrigin(ListCAO value) {
-    setOrigin(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the three-letter code of an existing Code List to be modified, or an
-   * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * @param values One or more instances of type {@link Code}
-   * @return The current CodeList object instance
-   */
-  public CodeList withCode(Code... values) {
-    if (values != null) {
-      getCode().addAll(new HashSet<>(Arrays.asList(values)));
+@param value the Action value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setAction(TString value) {
+        this.action = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the three-letter code of an existing Code List to be modified, or an
-   * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
-   * @param values A collection of {@link Code} instances
-   * @return The current CodeList object instance
-   */
-  public CodeList withCode(Set<Code> values) {
-    if (values != null) {
-      getCode().addAll(values);
+/**
+Determine if the Action is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAction() {
+return (this.action!= null ? this.action.isSetValue() : false);
     }
-    return this;
+
+/**
+Get the three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
+
+@return the CodeListCode value in a {@link TUS3} data type
+@since 3.1.0
+*/
+public US3 getCodeListCode() {
+        return codeListCode;
+    }
+
+/**
+Set the three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
+
+@param value the CodeListCode value in a {@link TUS3} data type
+@since 3.1.0
+*/
+public void setCodeListCode(US3 value) {
+        this.codeListCode = value;
+    }
+
+/**
+Determine if the CodeListCode is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetCodeListCode() {
+        return (this.codeListCode!= null);
+    }
+
+/**
+Get the date by which the dataset is to be operational or effective.
+
+@return the EffectiveDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public D getEffectiveDate() {
+        return effectiveDate;
+    }
+
+/**
+Set the date by which the dataset is to be operational or effective.
+
+@param value the EffectiveDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public void setEffectiveDate(D value) {
+        this.effectiveDate = value;
+    }
+
+/**
+Determine if the EffectiveDate is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEffectiveDate() {
+        return (this.effectiveDate!= null);
+    }
+
+/**
+Get the description of the intended contents of new code list, and the element(s) where it will be used.
+
+@return the Description value in a {@link TMEMO} data type
+@since 3.1.0
+*/
+public MEMO getDescription() {
+        return description;
+    }
+
+/**
+Set the description of the intended contents of new code list, and the element(s) where it will be used.
+
+@param value the Description value in a {@link TMEMO} data type
+@since 3.1.0
+*/
+public void setDescription(MEMO value) {
+        this.description = value;
+    }
+
+/**
+Determine if the Description is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetDescription() {
+        return (this.description!= null);
+    }
+
+/**
+Get the country or organisation which is using the modified or new code.
+
+@return the Origin value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getOrigin() {
+        return origin;
+    }
+
+/**
+Set the country or organisation which is using the modified or new code.
+
+@param value the Origin value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setOrigin(TString value) {
+        this.origin = value;
+    }
+
+/**
+Determine if the Origin is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetOrigin() {
+return (this.origin!= null ? this.origin.isSetValue() : false);
+    }
+
+/**
+Get the three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
+
+@return  a {@link Code} instance
+@since 3.1.0
+*/
+    public Set<Code> getCode() {
+        if (code == null) {
+            code = new HashSet<Code>();
+        }
+        return this.code;
+    }
+
+/**
+Determine if the Code is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetCode() {
+        return ((this.code!= null)&&(!this.code.isEmpty()));
+    }
+
+/**
+  Clear the Code field. This sets the field to null.
+ */
+    public void unsetCode() {
+        this.code = null;
+    }
+
+/**
+Set the intended type of modification to the given code list.
+
+@param value  An instances of type {@link ListCAC}
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withAction(ListCAC value) {
+        setAction(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
+
+@param value  An instances of type {@link TUS3}
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withCodeListCode(TUS3 value) {
+        return this;
+    }
+
+/**
+Set the date by which the dataset is to be operational or effective.
+
+@param value  An instances of type {@link TD}
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withEffectiveDate(TD value) {
+        return this;
+    }
+
+/**
+Set the description of the intended contents of new code list, and the element(s) where it will be used.
+
+@param value  An instances of type {@link String}
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withDescription(String value) {
+           setDescription(new MEMO(value));
+        return this;
+    }
+
+/**
+Set the country or organisation which is using the modified or new code.
+
+@param value  An instances of type {@link ListCAO}
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withOrigin(ListCAO value) {
+           setOrigin(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
+
+@param values  One or more instances of type {@link Code...}
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withCode(Code... values) {
+        if (values!= null) {
+            for (Code value: values) {
+                getCode().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the three-letter code of an existing Code List to be modified, or an unused three-letter
+code in the case of the creation of a new Code List.
+
+@param values  A collection of {@link Code} instances
+@return The current CodeList object instance
+@since 3.1.0
+*/
+    public CodeList withCode(Collection<Code> values) {
+        if (values!= null) {
+            getCode().addAll(values);
+        }
+        return this;
+    }
+
+/**
+ Get a string representation of this CodeList instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "CodeList {"
+ + (action !=null? " action [" + action +"]" : "") 
+ + (code !=null? " code [" + code +"]" : "") 
+ + (codeListCode !=null? " codeListCode [" + codeListCode +"]" : "") 
+ + (description !=null? " description [" + description +"]" : "") 
+ + (effectiveDate !=null? " effectiveDate [" + effectiveDate +"]" : "") 
+ + (origin !=null? " origin [" + origin +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this CodeList instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "CodeList {"
-           + (description != null ? " description [" + description + "]" : "")
-           + (origin != null ? " origin [" + origin + "]" : "")
-           + (action != null ? " action [" + action + "]" : "")
-           + (code != null ? " code [" + code + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (codeListCode != null ? " codeListCode [" + codeListCode + "]" : "")
-           + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link CodeList} requires
-   * {@link TString Action}, {@link TString CodeListCode}, {@link TDate EffectiveDate}.
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  public boolean isSet() {
-    return isSetAction() && isSetCodeListCode() && isSetEffectiveDate();
-  }
+{@link CodeList} requires {@link TString Action}, {@link US3 CodeListCode}, {@link D EffectiveDate}.
+
+Note that this method only checks for the presence of required information; this method does not validate the information format.
+@return TRUE if required fields are set, otherwise FALSE
+*/
+public boolean isSet(){
+return  isSetAction() &&  isSetCodeListCode() &&  isSetEffectiveDate();
+}
 
 }

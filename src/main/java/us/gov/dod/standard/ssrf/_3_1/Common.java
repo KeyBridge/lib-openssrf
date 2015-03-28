@@ -1,26 +1,9 @@
-/*
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.adapter.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
@@ -37,9 +20,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * Sub-Elements are
  * {@link CaseNum}, {@link ExtReferenceRef}, {@link Remarks}, {@link SecurityClass}
  * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- * @param <T> The inheriting class type
+ * @author Key Bridge LLC <developer@keybridge.ch>
+ * @version 3.1.0, 03/27/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
@@ -66,81 +48,136 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
   "remarks"
 })
 @XmlSeeAlso({
-  Administrative.class,
-  Allotment.class,
-  Antenna.class,
-  Assignment.class,
-  ChannelPlan.class,
-  Contact.class,
-  ExternalReference.class,
-  FEDeployment.class,
-  ForceElement.class,
-  IntfReport.class,
-  JRFL.class,
-  Loadset.class,
-  Location.class,
-  Message.class,
-  Note.class,
-  Organisation.class,
-  RadiationPlan.class,
   Receiver.class,
+  ChannelPlan.class,
+  Administrative.class,
+  Antenna.class,
+  JRFL.class,
+  Location.class,
+  IntfReport.class,
+  RadiationPlan.class,
   RFSystem.class,
+  SSRequest.class,
+  SSReply.class,
+  Transmitter.class,
+  TOA.class,
+  Organisation.class,
   Role.class,
   Satellite.class,
-  SSReply.class,
-  SSRequest.class,
-  TOA.class,
-  Transmitter.class
+  Allotment.class,
+  Loadset.class,
+  Message.class,
+  ExternalReference.class,
+  Note.class,
+  FEDeployment.class,
+  ForceElement.class,
+  Assignment.class,
+  Contact.class
 })
 @SuppressWarnings("unchecked")
 public abstract class Common<T> implements Comparable<T> {
 
   /**
-   * cls - Classification (Required)
+   * US:LastObservedBy - Last Observed By (Optional)
    * <p>
-   * The classification of the current data item. This attribute is REQUIRED on
-   * each data item, even if the classification is "U".
+   * The identifier of the person or entity who last observed this Dataset.
    * <p>
-   * Format is L:CCL
+   * Format is S50
+   * <p>
+   * @since 3.1.0
    */
-  @XmlAttribute(name = "cls", required = true)
-  private ListCCL cls;
+  @XmlElement(name = "LastObservedBy", required = false)
+  private S50 lastObservedBy;
+  /**
+   * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
+   * <p>
+   * The date and time, based on Greenwich Mean Time (GMT), the subject signal
+   * was first collected.
+   * <p>
+   * Format is DateTime
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "ObservedFirstDateTime", required = false)
+  private DT observedFirstDateTime;
+  /**
+   * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
+   * <p>
+   * The date and time, based on Greenwich Mean Time (GMT), the subject signal
+   * was last collected.
+   * <p>
+   * Format is DateTime
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "ObservedLastDateTime", required = false)
+  private DT observedLastDateTime;
+  /**
+   * US:ApprovedBy - Last Approval Person (Optional)
+   * <p>
+   * The identifier of the designated expert who last approved or accepted the
+   * dataset.
+   * <p>
+   * Format is S50
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "ApprovedBy", required = false)
+  private S50 approvedBy;
+  /**
+   * US:ApprovedDateTime - Last Approval Timestamp (Optional)
+   * <p>
+   * The last date and time, based on Greenwich Mean Time (GMT), that the
+   * dataset was approved or accepted by a designated expert.
+   * <p>
+   * Format is DateTime
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "ApprovedDateTime", required = false)
+  private DT approvedDateTime;
+  /**
+   * In Data Item Redacted (US), indicate if any original, or authoritative,
+   * data was omitted. Supports datasets which have some data withheld by the
+   * submitting agency.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "Redacted", required = false)
+  private TString redacted;
   /**
    * Serial - Serial (Required)
    * <p>
    * A unique Dataset identifier.
    * <p>
    * Serial is composed of four parts separated by colons (":"). The maximum
-   * total length is 29 characters (5+1+4+1+2+1+15).
-   * <ul>
-   * <li>Part 1 is the Country and is always REQUIRED. It contains one to five
-   * alphabetic uppercase characters representing either the ITU country code or
-   * the NATO Command code identifying the originator or organisation
-   * responsible for maintaining the dataset, as listed in Code List CCY. </li>
-   * <li>Part 2 is the orgCode and is OPTIONAL. It may contain one to four
-   * alphanumeric characters (no spaces nor special characters) representing a
-   * code for an Organisation within the country or command. It will normally
-   * indicate the organisation responsible for maintaining the dataset. Domain
-   * naming is left at the discretion of each country, but should be managed by
-   * a central authority in the country to allow deconfliction and uniqueness.
-   * It should enable the location in the data repository where this dataset
-   * information is stored. </li>
-   * <li>Part 3 is the Dataset Type and MUST contain a two-character code from
-   * the table in the Introduction section identifying the type of dataset (LO
-   * for a Location, etc). </li>
-   * <li>Part 4 is a Serial Identifier and is always REQUIRED. It contains one
-   * to fifteen alphanumeric characters (including spaces and special
+   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
+   * is always REQUIRED. It contains one to five alphabetic uppercase characters
+   * representing either the ITU country code or the NATO Command code
+   * identifying the originator or organisation responsible for maintaining the
+   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
+   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
+   * special characters) representing a code for an Organisation within the
+   * country or command. It will normally indicate the organisation responsible
+   * for maintaining the dataset. Domain naming is left at the discretion of
+   * each country, but should be managed by a central authority in the country
+   * to allow deconfliction and uniqueness. It should enable the location in the
+   * data repository where this dataset information is stored. . Part 3 is the
+   * Dataset Type and MUST contain a two-character code from the table in the
+   * Introduction section identifying the type of dataset (LO for a Location,
+   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
+   * one to fifteen alphanumeric characters (including spaces and special
    * characters), whose meaning is left at the discretion of each domain
-   * manager.</li>
-   * </ul>
+   * manager.
    * <p>
    * Format is pattern (S29)
    * <p>
    * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
    */
   @XmlElement(name = "Serial", required = true)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial serial;
+  private Serial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
    * <p>
@@ -150,11 +187,179 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    * <p>
    * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
    */
   @XmlElement(name = "EntryDateTime", required = true)
-  private TDateTime entryDateTime;
-
-  //<editor-fold defaultstate="collapsed" desc="Class Attribute Fields (Optional)">
+  private DT entryDateTime;
+  /**
+   * EntryBy - Creator Role (Optional)
+   * <p>
+   * The serial of the Role which is creating the current dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "EntryBy", required = false)
+  private Serial entryBy;
+  /**
+   * Owner - Role which Owns the Dataset (Optional)
+   * <p>
+   * The serial of the Role which is responsible for the accuracy of the data
+   * content.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "Owner", required = false)
+  private Serial owner;
+  /**
+   * LastChangeDateTime - Latest Modification Date/Time (Optional)
+   * <p>
+   * The date and UTC Time the dataset was last modified.
+   * <p>
+   * Format is DateTime
+   * <p>
+   * Attribute group LastChange (Optional)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "LastChangeDateTime", required = false)
+  private DT lastChangeDateTime;
+  /**
+   * LastChangeBy - Last Modifier Role (Optional)
+   * <p>
+   * The serial of the Role which last modified the current dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group LastChange (Optional)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "LastChangeBy", required = false)
+  private Serial lastChangeBy;
+  /**
+   * LastReviewDate - Last Review Date (Optional)
+   * <p>
+   * The last date that the dataset was reviewed.
+   * <p>
+   * Format is Date
+   * <p>
+   * Attribute group LastReview (Optional)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "LastReviewDate", required = false)
+  private D lastReviewDate;
+  /**
+   * LastReviewBy - Last Review Person RoleRef (Optional)
+   * <p>
+   * The Role reference serial of the person who last reviewed the dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group LastReview (Optional)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "LastReviewBy", required = false)
+  private Serial lastReviewBy;
+  /**
+   * ModAllowedBy - Role Allowed to Modify (Optional)
+   * <p>
+   * The serial of the Role which is authorised to modify the current dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Divergence from SMADEF: Automated changes using ModAllowedBy are not
+   * permitted for use by USA systems.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "ModAllowedBy", required = false)
+  private Serial modAllowedBy;
+  /**
+   * State - Dataset Status (Optional)
+   * <p>
+   * The state of the dataset.
+   * <p>
+   * Format is L:CSU
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "State", required = false)
+  private TString state;
+  /**
+   * Description - General Dataset Description (Optional)
+   * <p>
+   * A general description of the Dataset that is inheriting Common.
+   * <p>
+   * Format is S500
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "Description", required = false)
+  private S500 description;
+  /**
+   * US:SecurityClass (Optional)
+   * <p>
+   * SecurityClass (US) contains the security classification from one or more
+   * data information sources.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "SecurityClass")
+  private SecurityClass securityClass;
+  /**
+   * CaseNum (Optional)
+   * <p>
+   * CaseNum provides the capability to store multiple identifiers for a
+   * Dataset.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "CaseNum")
+  private Set<CaseNum> caseNum;
+  /**
+   * ExtReferenceRef (Optional)
+   * <p>
+   * ExtReferenceRef refers to an external reference defined in a dataset
+   * ExternalReference.
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "ExtReferenceRef", nillable = true)
+  private Set<ExtReferenceRef> extReferenceRef;
+  /**
+   * remarks - Links to Data Item Remarks (Optional)
+   * <p>
+   * A list of Common/Remarks idx values applicable to the current data item.
+   * <p>
+   * Format is List of UN6
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "Remarks", nillable = true)
+  private Set<Remarks> remarks;
+  /**
+   * cls - Classification (Required)
+   * <p>
+   * The classification of the current data item. This attribute is REQUIRED on
+   * each data item, even if the classification is "U".
+   * <p>
+   * Format is L:CCL
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlAttribute(name = "cls", required = true)
+  private ListCCL cls;
   /**
    * releasability - Releasability Markings (Optional)
    * <p>
@@ -165,32 +370,36 @@ public abstract class Common<T> implements Comparable<T> {
    * data item.
    * <p>
    * Format is List of L:CCY
+   * <p>
+   * @since 3.1.0
    */
   @XmlList
   @XmlAttribute(name = "releasability")
   private Set<ListCCY> releasability;
   /**
-   * remarks - Index reference to Data Item Remarks (Optional)
+   * remarks - Links to Data Item Remarks (Optional)
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * Format is List of UN6
+   * <p>
+   * @since 3.1.0
    */
   @XmlList
   @XmlAttribute(name = "remarks")
-  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private Set<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of Common/ExtReferenceRef idx values applicable to the current data
+   * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
    * item.
    * <p>
    * Format is List of UN6
+   * <p>
+   * @since 3.1.0
    */
   @XmlList
   @XmlAttribute(name = "extReferences")
-  @XmlTypeValidator(type = BigInteger.class, value = XmlAdapterNumberUN6.class)
   private Set<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
@@ -201,9 +410,10 @@ public abstract class Common<T> implements Comparable<T> {
    * (i.e., ASCII character #124).
    * <p>
    * Format is Memo
+   * <p>
+   * @since 3.1.0
    */
   @XmlAttribute(name = "legacyReleasability")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   private String legacyReleasability;
   /**
    * US:quality - Data Quality (Optional)
@@ -213,9 +423,10 @@ public abstract class Common<T> implements Comparable<T> {
    * "Outlier" | "Non-CodeList".
    * <p>
    * Format is S255
+   * <p>
+   * @since 3.1.0
    */
   @XmlAttribute(name = "quality")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS255.class)
   private String quality;
   /**
    * US:recommendedValue - Recommended Value (Optional)
@@ -223,9 +434,10 @@ public abstract class Common<T> implements Comparable<T> {
    * A value that is most probably correct.
    * <p>
    * Format is Memo
+   * <p>
+   * @since 3.1.0
    */
   @XmlAttribute(name = "recommendedValue")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
   private String recommendedValue;
   /**
    * idref - Data Item ID (Optional)
@@ -238,259 +450,49 @@ public abstract class Common<T> implements Comparable<T> {
    * optional.
    * <p>
    * Format is S10
+   * <p>
+   * @since 3.1.0
    */
   @XmlAttribute(name = "idref")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS10.class)
-  private String idref;//</editor-fold>
+  private String idref;
 
-  //<editor-fold defaultstate="collapsed" desc="Class Element Fields (Optional)">
-  /**
-   * US:LastObservedBy - Last Observed By (Optional)
-   * <p>
-   * The identifier of the person or entity who last observed this Dataset.
-   * <p>
-   * Format is S50
-   */
-  @XmlElement(name = "LastObservedBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
-  private TString lastObservedBy;
-  /**
-   * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
-   * <p>
-   * The date and time, based on Greenwich Mean Time (GMT), the subject signal
-   * was first collected.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "ObservedFirstDateTime", required = false)
-  private TDateTime observedFirstDateTime;
-  /**
-   * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
-   * <p>
-   * The date and time, based on Greenwich Mean Time (GMT), the subject signal
-   * was last collected.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "ObservedLastDateTime", required = false)
-  private TDateTime observedLastDateTime;
-  /**
-   * US:ApprovedBy - Last Approval Person (Optional)
-   * <p>
-   * The identifier of the designated expert who last approved or accepted the
-   * dataset.
-   * <p>
-   * Format is S50
-   */
-  @XmlElement(name = "ApprovedBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
-  private TString approvedBy;
-  /**
-   * US:ApprovedDateTime - Last Approval Timestamp (Optional)
-   * <p>
-   * The last date and time, based on Greenwich Mean Time (GMT), that the
-   * dataset was approved or accepted by a designated expert.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "ApprovedDateTime", required = false)
-  private TDateTime approvedDateTime;
-  /**
-   * Redacted (US), indicate if any original, or authoritative, data was
-   * omitted. Supports datasets which have some data withheld by the submitting
-   * agency.
-   */
-  @XmlElement(name = "Redacted", required = false)
-  private TString redacted;
-  /**
-   * EntryBy - Creator Role (Optional)
-   * <p>
-   * The serial of the Role which is creating the current dataset.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Attribute group Initial (Required)
-   */
-  @XmlElement(name = "EntryBy", required = false)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial entryBy;
-  /**
-   * Owner - Role which Owns the Dataset (Optional)
-   * <p>
-   * The serial of the Role which is responsible for the accuracy of the data
-   * content.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Attribute group Initial (Required)
-   */
-  @XmlElement(name = "Owner", required = false)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial owner;
-  /**
-   * LastChangeDateTime - Latest Modification Date/Time (Optional)
-   * <p>
-   * The date and UTC Time the dataset was last modified.
-   * <p>
-   * Format is DateTime
-   * <p>
-   * Attribute group LastChange (Optional)
-   */
-  @XmlElement(name = "LastChangeDateTime", required = false)
-  private TDateTime lastChangeDateTime;
-  /**
-   * LastChangeBy - Last Modifier Role (Optional)
-   * <p>
-   * The serial of the Role which last modified the current dataset.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Attribute group LastChange (Optional)
-   */
-  @XmlElement(name = "LastChangeBy", required = false)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial lastChangeBy;
-  /**
-   * LastReviewDate - Last Review Date (Optional)
-   * <p>
-   * The last date that the dataset was reviewed.
-   * <p>
-   * Format is Date
-   * <p>
-   * Attribute group LastReview (Optional)
-   */
-  @XmlElement(name = "LastReviewDate", required = false)
-  private TDate lastReviewDate;
-  /**
-   * LastReviewBy - Last Review Person RoleRef (Optional)
-   * <p>
-   * The Role reference serial of the person who last reviewed the dataset.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Attribute group LastReview (Optional)
-   */
-  @XmlElement(name = "LastReviewBy", required = false)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial lastReviewBy;
-  /**
-   * ModAllowedBy - Role Allowed to Modify (Optional)
-   * <p>
-   * The serial of the Role which is authorized to modify the current dataset.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Divergence from SMADEF: Automated changes using ModAllowedBy are not
-   * permitted for use by USA systems.
-   */
-  @XmlElement(name = "ModAllowedBy", required = false)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial modAllowedBy;
-  /**
-   * State - Dataset Status (Optional)
-   * <p>
-   * The state of the dataset.
-   * <p>
-   * Format is L:CSU
-   */
-  @XmlElement(name = "State", required = false)
-  private TString state;
-  /**
-   * Description - General Dataset Description (Optional)
-   * <p>
-   * A general description of the Dataset that is inheriting Common.
-   * <p>
-   * Format is S500
-   */
-  @XmlElement(name = "Description", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
-  private TString description;
-  /**
-   * US:SecurityClass (Optional)
-   * <p>
-   * SecurityClass (US) contains the security classification from one or more
-   * data information sources.
-   */
-  @XmlElement(name = "SecurityClass")
-  private SecurityClass securityClass;
-  /**
-   * CaseNum (Optional)
-   * <p>
-   * CaseNum provides the capability to store multiple identifiers for a
-   * Dataset.
-   */
-  @XmlElement(name = "CaseNum")
-  private Set<CaseNum> caseNum;
-  /**
-   * ExtReferenceRef (Optional)
-   * <p>
-   * ExtReferenceRef refers to an external reference defined in a dataset
-   * ExternalReference.
-   */
-  @XmlElement(name = "ExtReferenceRef", nillable = true)
-  private Set<ExtReferenceRef> extReferenceRef;
-  /**
-   * remarks - Remarks (Optional)
-   * <p>
-   * Remarks is a free text field that provides a place to add additional MEMO
-   * information. In certain situations, technical data must be included in free
-   * text in order to clearly explain a technical or operational consideration;
-   * in these instances, the data must also be entered in the data element(s)
-   * specifically established for it.
-   */
-  @XmlElement(name = "Remarks", nillable = true)
-  private Set<Remarks> remarks;//</editor-fold>
-
-  /**
-   * Abstract constructor for the Common class type.
-   * <p>
-   * This constructor sets the minimum mandatory fields {@link #serial} with a
-   * programmatically generated {@link TSerial} instance and
-   * {@link #entryDateTime} with the current DATETIME.
-   */
-  @SuppressWarnings("unchecked")
-  public Common() {
-    this.serial = TSerial.getInstance((Class<? extends Common<?>>) this.getClass());
-    this.entryDateTime = new TDateTime(Calendar.getInstance());
-  }
-
-  //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
   /**
    * Get the identifier of the person or entity who last observed this Dataset.
    * <p>
-   * @return the LastObservedBy value in a {@link TString} data type
+   * @return the LastObservedBy value in a {@link TS50} data type
+   * @since 3.1.0
    */
-  public TString getLastObservedBy() {
+  public S50 getLastObservedBy() {
     return lastObservedBy;
   }
 
   /**
    * Set the identifier of the person or entity who last observed this Dataset.
    * <p>
-   * @param value the LastObservedBy value in a {@link TString} data type
+   * @param value the LastObservedBy value in a {@link TS50} data type
+   * @since 3.1.0
    */
-  public void setLastObservedBy(TString value) {
+  public void setLastObservedBy(S50 value) {
     this.lastObservedBy = value;
   }
 
   /**
    * Determine if the LastObservedBy is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastObservedBy() {
-    return (this.lastObservedBy != null ? this.lastObservedBy.isSetValue() : false);
+    return (this.lastObservedBy != null);
   }
 
   /**
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
-   * @return the ObservedFirstDateTime value in a {@link TDateTime} data type
+   * @return the ObservedFirstDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public TDateTime getObservedFirstDateTime() {
+  public DT getObservedFirstDateTime() {
     return observedFirstDateTime;
   }
 
@@ -498,32 +500,30 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
    * <p>
-   * @param value the ObservedFirstDateTime value in a {@link TDateTime} data
-   *              type
+   * @param value the ObservedFirstDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public void setObservedFirstDateTime(TDateTime value) {
+  public void setObservedFirstDateTime(DT value) {
     this.observedFirstDateTime = value;
   }
 
   /**
    * Determine if the ObservedFirstDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedFirstDateTime() {
-    return (this.observedFirstDateTime != null ? this.observedFirstDateTime.isSetValue() : false);
+    return (this.observedFirstDateTime != null);
   }
 
   /**
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
-   * @return the ObservedLastDateTime value in a {@link TDateTime} data type
+   * @return the ObservedLastDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public TDateTime getObservedLastDateTime() {
+  public DT getObservedLastDateTime() {
     return observedLastDateTime;
   }
 
@@ -531,32 +531,30 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
    * <p>
-   * @param value the ObservedLastDateTime value in a {@link TDateTime} data
-   *              type
+   * @param value the ObservedLastDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public void setObservedLastDateTime(TDateTime value) {
+  public void setObservedLastDateTime(DT value) {
     this.observedLastDateTime = value;
   }
 
   /**
    * Determine if the ObservedLastDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedLastDateTime() {
-    return (this.observedLastDateTime != null ? this.observedLastDateTime.isSetValue() : false);
+    return (this.observedLastDateTime != null);
   }
 
   /**
    * Get the identifier of the designated expert who last approved or accepted
    * the dataset.
    * <p>
-   * @return the ApprovedBy value in a {@link TString} data type
+   * @return the ApprovedBy value in a {@link TS50} data type
+   * @since 3.1.0
    */
-  public TString getApprovedBy() {
+  public S50 getApprovedBy() {
     return approvedBy;
   }
 
@@ -564,30 +562,30 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the identifier of the designated expert who last approved or accepted
    * the dataset.
    * <p>
-   * @param value the ApprovedBy value in a {@link TString} data type
+   * @param value the ApprovedBy value in a {@link TS50} data type
+   * @since 3.1.0
    */
-  public void setApprovedBy(TString value) {
+  public void setApprovedBy(S50 value) {
     this.approvedBy = value;
   }
 
   /**
    * Determine if the ApprovedBy is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApprovedBy() {
-    return (this.approvedBy != null ? this.approvedBy.isSetValue() : false);
+    return (this.approvedBy != null);
   }
 
   /**
    * Get the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
    * <p>
-   * @return the ApprovedDateTime value in a {@link TDateTime} data type
+   * @return the ApprovedDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public TDateTime getApprovedDateTime() {
+  public DT getApprovedDateTime() {
     return approvedDateTime;
   }
 
@@ -595,41 +593,41 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
    * <p>
-   * @param value the ApprovedDateTime value in a {@link TDateTime} data type
+   * @param value the ApprovedDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public void setApprovedDateTime(TDateTime value) {
+  public void setApprovedDateTime(DT value) {
     this.approvedDateTime = value;
   }
 
   /**
    * Determine if the ApprovedDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApprovedDateTime() {
-    return (this.approvedDateTime != null ? this.approvedDateTime.isSetValue() : false);
+    return (this.approvedDateTime != null);
   }
 
   /**
-   * Get Redacted (US), indicate if any original, or authoritative, data was
-   * omitted. Supports datasets which have some data withheld by the submitting
-   * agency.
+   * Get In Data Item Redacted (US), indicate if any original, or authoritative,
+   * data was omitted. Supports datasets which have some data withheld by the
+   * submitting agency.
    * <p>
    * @return the Redacted value in a {@link TString} data type
+   * @since 3.1.0
    */
   public TString getRedacted() {
     return redacted;
   }
 
   /**
-   * Set Redacted (US), indicate if any original, or authoritative, data was
-   * omitted. Supports datasets which have some data withheld by the submitting
-   * agency.
+   * Set In Data Item Redacted (US), indicate if any original, or authoritative,
+   * data was omitted. Supports datasets which have some data withheld by the
+   * submitting agency.
    * <p>
    * @param value the Redacted value in a {@link TString} data type
+   * @since 3.1.0
    */
   public void setRedacted(TString value) {
     this.redacted = value;
@@ -649,39 +647,80 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get a unique Dataset identifier.
    * <p>
-   * @return the Serial value in a {@link TSerial} data type
+   * Serial is composed of four parts separated by colons (":"). The maximum
+   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
+   * is always REQUIRED. It contains one to five alphabetic uppercase characters
+   * representing either the ITU country code or the NATO Command code
+   * identifying the originator or organisation responsible for maintaining the
+   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
+   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
+   * special characters) representing a code for an Organisation within the
+   * country or command. It will normally indicate the organisation responsible
+   * for maintaining the dataset. Domain naming is left at the discretion of
+   * each country, but should be managed by a central authority in the country
+   * to allow deconfliction and uniqueness. It should enable the location in the
+   * data repository where this dataset information is stored. . Part 3 is the
+   * Dataset Type and MUST contain a two-character code from the table in the
+   * Introduction section identifying the type of dataset (LO for a Location,
+   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
+   * one to fifteen alphanumeric characters (including spaces and special
+   * characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * @return the Serial value in a {@link Serial} data type
+   * @since 3.1.0
    */
-  public TSerial getSerial() {
+  public Serial getSerial() {
     return serial;
   }
 
   /**
    * Set a unique Dataset identifier.
    * <p>
-   * @param value the Serial value in a {@link TSerial} data type
+   * Serial is composed of four parts separated by colons (":"). The maximum
+   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
+   * is always REQUIRED. It contains one to five alphabetic uppercase characters
+   * representing either the ITU country code or the NATO Command code
+   * identifying the originator or organisation responsible for maintaining the
+   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
+   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
+   * special characters) representing a code for an Organisation within the
+   * country or command. It will normally indicate the organisation responsible
+   * for maintaining the dataset. Domain naming is left at the discretion of
+   * each country, but should be managed by a central authority in the country
+   * to allow deconfliction and uniqueness. It should enable the location in the
+   * data repository where this dataset information is stored. . Part 3 is the
+   * Dataset Type and MUST contain a two-character code from the table in the
+   * Introduction section identifying the type of dataset (LO for a Location,
+   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
+   * one to fifteen alphanumeric characters (including spaces and special
+   * characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * @param value the Serial value in a {@link Serial} data type
+   * @since 3.1.0
    */
-  public void setSerial(TSerial value) {
+  public void setSerial(Serial value) {
     this.serial = value;
   }
 
   /**
    * Determine if the Serial is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSerial() {
-    return (this.serial != null ? this.serial.isSetValue() : false);
+    return (this.serial != null);
   }
 
   /**
    * Get the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
    * <p>
-   * @return the EntryDateTime value in a {@link TDateTime} data type
+   * @return the EntryDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public TDateTime getEntryDateTime() {
+  public DT getEntryDateTime() {
     return entryDateTime;
   }
 
@@ -689,69 +728,68 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
    * <p>
-   * @param value the EntryDateTime value in a {@link TDateTime} data type
+   * @param value the EntryDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public void setEntryDateTime(TDateTime value) {
+  public void setEntryDateTime(DT value) {
     this.entryDateTime = value;
   }
 
   /**
    * Determine if the EntryDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEntryDateTime() {
-    return (this.entryDateTime != null ? this.entryDateTime.isSetValue() : false);
+    return (this.entryDateTime != null);
   }
 
   /**
    * Get the serial of the Role which is creating the current dataset.
    * <p>
-   * @return the EntryBy value in a {@link TString} data type
+   * @return the EntryBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #getEntryByRole()} instead.
    */
   @Deprecated
-  public TSerial getEntryBy() {
+  public Serial getEntryBy() {
     return entryBy;
   }
 
   /**
    * Set the serial of the Role which is creating the current dataset.
    * <p>
-   * @param value the EntryBy value in a {@link TString} data type
+   * @param value the EntryBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #setEntryByRole(Role)} instead.
    */
   @Deprecated
-  public void setEntryBy(TSerial value) {
+  public void setEntryBy(Serial value) {
     this.entryBy = value;
   }
 
   /**
    * Determine if the EntryBy is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEntryBy() {
-    return (this.entryBy != null ? this.entryBy.isSetValue() : false);
+    return (this.entryBy != null);
   }
 
   /**
    * Get the serial of the Role which is responsible for the accuracy of the
    * data content.
    * <p>
-   * @return the Owner value in a {@link TString} data type
+   * @return the Owner value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #getOwnerRole()} instead.
    */
   @Deprecated
-  public TSerial getOwner() {
+  public Serial getOwner() {
     return owner;
   }
 
@@ -759,197 +797,195 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the serial of the Role which is responsible for the accuracy of the
    * data content.
    * <p>
-   * @param value the Owner value in a {@link TString} data type
+   * @param value the Owner value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #setOwnerRole(Role)} instead.
    */
   @Deprecated
-  public void setOwner(TSerial value) {
+  public void setOwner(Serial value) {
     this.owner = value;
   }
 
   /**
    * Determine if the Owner is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwner() {
-    return (this.owner != null ? this.owner.isSetValue() : false);
+    return (this.owner != null);
   }
 
   /**
    * Get the date and UTC Time the dataset was last modified.
    * <p>
-   * @return the LastChangeDateTime value in a {@link TDateTime} data type
+   * @return the LastChangeDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public TDateTime getLastChangeDateTime() {
+  public DT getLastChangeDateTime() {
     return lastChangeDateTime;
   }
 
   /**
    * Set the date and UTC Time the dataset was last modified.
    * <p>
-   * @param value the LastChangeDateTime value in a {@link TDateTime} data type
+   * @param value the LastChangeDateTime value in a {@link DT} data type
+   * @since 3.1.0
    */
-  public void setLastChangeDateTime(TDateTime value) {
+  public void setLastChangeDateTime(DT value) {
     this.lastChangeDateTime = value;
   }
 
   /**
    * Determine if the LastChangeDateTime is configured.
    * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastChangeDateTime() {
-    return (this.lastChangeDateTime != null ? this.lastChangeDateTime.isSetValue() : false);
+    return (this.lastChangeDateTime != null);
   }
 
   /**
    * Get the serial of the Role which last modified the current dataset.
    * <p>
-   * @return the LastChangeBy value in a {@link TString} data type
+   * @return the LastChangeBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #getLastChangeByRole()} instead.
    */
   @Deprecated
-  public TSerial getLastChangeBy() {
+  public Serial getLastChangeBy() {
     return lastChangeBy;
   }
 
   /**
    * Set the serial of the Role which last modified the current dataset.
    * <p>
-   * @param value the LastChangeBy value in a {@link TString} data type
+   * @param value the LastChangeBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #setLastChangeByRole(Role)} instead.
    */
   @Deprecated
-  public void setLastChangeBy(TSerial value) {
+  public void setLastChangeBy(Serial value) {
     this.lastChangeBy = value;
   }
 
   /**
    * Determine if the LastChangeBy is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastChangeBy() {
-    return (this.lastChangeBy != null ? this.lastChangeBy.isSetValue() : false);
+    return (this.lastChangeBy != null);
   }
 
   /**
    * Get the last date that the dataset was reviewed.
    * <p>
-   * @return the LastReviewDate value in a {@link TDateTime} data type
+   * @return the LastReviewDate value in a {@link D} data type
+   * @since 3.1.0
    */
-  public TDate getLastReviewDate() {
+  public D getLastReviewDate() {
     return lastReviewDate;
   }
 
   /**
    * Set the last date that the dataset was reviewed.
    * <p>
-   * @param value the LastReviewDate value in a {@link TDateTime} data type
+   * @param value the LastReviewDate value in a {@link D} data type
+   * @since 3.1.0
    */
-  public void setLastReviewDate(TDate value) {
+  public void setLastReviewDate(D value) {
     this.lastReviewDate = value;
   }
 
   /**
    * Determine if the LastReviewDate is configured.
    * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastReviewDate() {
-    return (this.lastReviewDate != null ? this.lastReviewDate.isSetValue() : false);
+    return (this.lastReviewDate != null);
   }
 
   /**
    * Get the Role reference serial of the person who last reviewed the dataset.
    * <p>
-   * @return the LastReviewBy value in a {@link TString} data type
+   * @return the LastReviewBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #getLastReviewByRole()} instead.
    */
   @Deprecated
-  public TSerial getLastReviewBy() {
+  public Serial getLastReviewBy() {
     return lastReviewBy;
   }
 
   /**
    * Set the Role reference serial of the person who last reviewed the dataset.
    * <p>
-   * @param value the LastReviewBy value in a {@link TString} data type
+   * @param value the LastReviewBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #setLastReviewByRole(Role)} instead.
    */
   @Deprecated
-  public void setLastReviewBy(TSerial value) {
+  public void setLastReviewBy(Serial value) {
     this.lastReviewBy = value;
   }
 
   /**
    * Determine if the LastReviewBy is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastReviewBy() {
-    return (this.lastReviewBy != null ? this.lastReviewBy.isSetValue() : false);
+    return (this.lastReviewBy != null);
   }
 
   /**
-   * Get the serial of the Role which is authorized to modify the current
+   * Get the serial of the Role which is authorised to modify the current
    * dataset.
    * <p>
-   * @return the ModAllowedBy value in a {@link TString} data type
+   * @return the ModAllowedBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #getModAllowedByRole()} instead.
    */
   @Deprecated
-  public TSerial getModAllowedBy() {
+  public Serial getModAllowedBy() {
     return modAllowedBy;
   }
 
   /**
-   * Set the serial of the Role which is authorized to modify the current
+   * Set the serial of the Role which is authorised to modify the current
    * dataset.
    * <p>
-   * @param value the ModAllowedBy value in a {@link TString} data type
+   * @param value the ModAllowedBy value in a {@link Serial} data type
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #setModAllowedByRole(Role)} instead.
    */
   @Deprecated
-  public void setModAllowedBy(TSerial value) {
+  public void setModAllowedBy(Serial value) {
     this.modAllowedBy = value;
   }
 
   /**
    * Determine if the ModAllowedBy is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetModAllowedBy() {
-    return (this.modAllowedBy != null ? this.modAllowedBy.isSetValue() : false);
+    return (this.modAllowedBy != null);
   }
 
   /**
    * Get the state of the dataset.
    * <p>
    * @return the State value in a {@link TString} data type
+   * @since 3.1.0
    */
   public TString getState() {
     return state;
@@ -959,6 +995,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the state of the dataset.
    * <p>
    * @param value the State value in a {@link TString} data type
+   * @since 3.1.0
    */
   public void setState(TString value) {
     this.state = value;
@@ -978,30 +1015,30 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get a general description of the Dataset that is inheriting Common.
    * <p>
-   * @return the Description value in a {@link TString} data type
+   * @return the Description value in a {@link TS500} data type
+   * @since 3.1.0
    */
-  public TString getDescription() {
+  public S500 getDescription() {
     return description;
   }
 
   /**
    * Set a general description of the Dataset that is inheriting Common.
    * <p>
-   * @param value the Description value in a {@link TString} data type
+   * @param value the Description value in a {@link TS500} data type
+   * @since 3.1.0
    */
-  public void setDescription(TString value) {
+  public void setDescription(S500 value) {
     this.description = value;
   }
 
   /**
    * Determine if the Description is configured.
    * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
-    return (this.description != null ? this.description.isSetValue() : false);
+    return (this.description != null);
   }
 
   /**
@@ -1011,6 +1048,7 @@ public abstract class Common<T> implements Comparable<T> {
    * from one or more data information sources.
    * <p>
    * @return a {@link SecurityClass} instance
+   * @since 3.1.0
    */
   public SecurityClass getSecurityClass() {
     return securityClass;
@@ -1023,6 +1061,7 @@ public abstract class Common<T> implements Comparable<T> {
    * from one or more data information sources.
    * <p>
    * @param value a {@link SecurityClass} instance
+   * @since 3.1.0
    */
   public void setSecurityClass(SecurityClass value) {
     this.securityClass = value;
@@ -1043,11 +1082,12 @@ public abstract class Common<T> implements Comparable<T> {
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
    * <p>
-   * @return a non-null but possibly empty list of {@link CaseNum} instances
+   * @return a {@link CaseNum} instance
+   * @since 3.1.0
    */
   public Set<CaseNum> getCaseNum() {
     if (caseNum == null) {
-      caseNum = new HashSet<>();
+      caseNum = new HashSet<CaseNum>();
     }
     return this.caseNum;
   }
@@ -1074,12 +1114,12 @@ public abstract class Common<T> implements Comparable<T> {
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
    * <p>
-   * @return a non-null but possibly empty list of {@link ExtReferenceRef}
-   *         instances
+   * @return a {@link ExtReferenceRef} instance
+   * @since 3.1.0
    */
   public Set<ExtReferenceRef> getExtReferenceRef() {
     if (extReferenceRef == null) {
-      extReferenceRef = new HashSet<>();
+      extReferenceRef = new HashSet<ExtReferenceRef>();
     }
     return this.extReferenceRef;
   }
@@ -1101,13 +1141,15 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get a list of Remark memo entries applicable to the current data item.
+   * Get a list of Common/Remarks idx values applicable to the current data
+   * item.
    * <p>
-   * @return a non-null but possibly empty list of {@link Remarks} instances
+   * @return a {@link Remarks} instance
+   * @since 3.1.0
    */
   public Set<Remarks> getRemarks() {
     if (remarks == null) {
-      remarks = new HashSet<>();
+      remarks = new HashSet<Remarks>();
     }
     return this.remarks;
   }
@@ -1133,6 +1175,7 @@ public abstract class Common<T> implements Comparable<T> {
    * on each data item, even if the classification is "U".
    * <p>
    * @return a {@link ListCCL} instance
+   * @since 3.1.0
    */
   public ListCCL getCls() {
     return cls;
@@ -1143,6 +1186,7 @@ public abstract class Common<T> implements Comparable<T> {
    * on each data item, even if the classification is "U".
    * <p>
    * @param value a {@link ListCCL} instance
+   * @since 3.1.0
    */
   public void setCls(ListCCL value) {
     this.cls = value;
@@ -1164,11 +1208,12 @@ public abstract class Common<T> implements Comparable<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @return a non-null but possibly empty list of {@link ListCCY} instances
+   * @return a {@link ListCCY} instance
+   * @since 3.1.0
    */
   public Set<ListCCY> getReleasability() {
     if (releasability == null) {
-      releasability = new HashSet<>();
+      releasability = new HashSet<ListCCY>();
     }
     return this.releasability;
   }
@@ -1190,14 +1235,14 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get a list of Common/Remarks idx values applicable to the current data
-   * item.
+   * Get
    * <p>
-   * @return a non-null but possibly empty list of {@link BigInteger} instances
+   * @return a {@link BigInteger} instance
+   * @since 3.1.0
    */
   public Set<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
-      remarkRef = new HashSet<>();
+      remarkRef = new HashSet<BigInteger>();
     }
     return this.remarkRef;
   }
@@ -1219,14 +1264,15 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get a list of Common/ExtReferenceRef idx values applicable to the current
+   * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @return a non-null but possibly empty list of {@link BigInteger} instances
+   * @return a {@link BigInteger} instance
+   * @since 3.1.0
    */
   public Set<BigInteger> getExtReferences() {
     if (extReferences == null) {
-      extReferences = new HashSet<>();
+      extReferences = new HashSet<BigInteger>();
     }
     return this.extReferences;
   }
@@ -1254,6 +1300,7 @@ public abstract class Common<T> implements Comparable<T> {
    * (i.e., ASCII character #124).
    * <p>
    * @return a {@link String} instance
+   * @since 3.1.0
    */
   public String getLegacyReleasability() {
     return legacyReleasability;
@@ -1266,6 +1313,7 @@ public abstract class Common<T> implements Comparable<T> {
    * (i.e., ASCII character #124).
    * <p>
    * @param value a {@link String} instance
+   * @since 3.1.0
    */
   public void setLegacyReleasability(String value) {
     this.legacyReleasability = value;
@@ -1286,6 +1334,7 @@ public abstract class Common<T> implements Comparable<T> {
    * "Outlier" | "Non-CodeList".
    * <p>
    * @return a {@link String} instance
+   * @since 3.1.0
    */
   public String getQuality() {
     return quality;
@@ -1297,6 +1346,7 @@ public abstract class Common<T> implements Comparable<T> {
    * "Outlier" | "Non-CodeList".
    * <p>
    * @param value a {@link String} instance
+   * @since 3.1.0
    */
   public void setQuality(String value) {
     this.quality = value;
@@ -1315,6 +1365,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Get a value that is most probably correct.
    * <p>
    * @return a {@link String} instance
+   * @since 3.1.0
    */
   public String getRecommendedValue() {
     return recommendedValue;
@@ -1324,6 +1375,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set a value that is most probably correct.
    * <p>
    * @param value a {@link String} instance
+   * @since 3.1.0
    */
   public void setRecommendedValue(String value) {
     this.recommendedValue = value;
@@ -1347,6 +1399,7 @@ public abstract class Common<T> implements Comparable<T> {
    * optional.
    * <p>
    * @return a {@link String} instance
+   * @since 3.1.0
    */
   public String getIdref() {
     return idref;
@@ -1361,6 +1414,7 @@ public abstract class Common<T> implements Comparable<T> {
    * optional.
    * <p>
    * @param value a {@link String} instance
+   * @since 3.1.0
    */
   public void setIdref(String value) {
     this.idref = value;
@@ -1373,17 +1427,17 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public boolean isSetIdref() {
     return (this.idref != null);
-  }//</editor-fold>
+  }
 
-  //<editor-fold defaultstate="collapsed" desc="With Setters">
   /**
    * Set the identifier of the person or entity who last observed this Dataset.
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withLastObservedBy(String value) {
-    setLastObservedBy(new TString(value));
+    setLastObservedBy(new S50(value));
     return (T) this;
   }
 
@@ -1393,9 +1447,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withObservedFirstDateTime(Calendar value) {
-    setObservedFirstDateTime(new TDateTime(value));
+    setObservedFirstDateTime(new DT(value));
     return (T) this;
   }
 
@@ -1405,9 +1460,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withObservedFirstDateTime(Date value) {
-    setObservedFirstDateTime(new TDateTime(value));
+    setObservedFirstDateTime(new DT(value));
     return (T) this;
   }
 
@@ -1417,9 +1473,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withObservedLastDateTime(Calendar value) {
-    setObservedLastDateTime(new TDateTime(value));
+    setObservedLastDateTime(new DT(value));
     return (T) this;
   }
 
@@ -1429,9 +1486,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withObservedLastDateTime(Date value) {
-    setObservedLastDateTime(new TDateTime(value));
+    setObservedLastDateTime(new DT(value));
     return (T) this;
   }
 
@@ -1441,9 +1499,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withApprovedBy(String value) {
-    setApprovedBy(new TString(value));
+    setApprovedBy(new S50(value));
     return (T) this;
   }
 
@@ -1453,9 +1512,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withApprovedDateTime(Calendar value) {
-    setApprovedDateTime(new TDateTime(value));
+    setApprovedDateTime(new DT(value));
     return (T) this;
   }
 
@@ -1465,19 +1525,21 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withApprovedDateTime(Date value) {
-    setApprovedDateTime(new TDateTime(value));
+    setApprovedDateTime(new DT(value));
     return (T) this;
   }
 
   /**
-   * Set Redacted (US), indicate if any original, or authoritative, data was
-   * omitted. Supports datasets which have some data withheld by the submitting
-   * agency.
+   * Set In Data Item Redacted (US), indicate if any original, or authoritative,
+   * data was omitted. Supports datasets which have some data withheld by the
+   * submitting agency.
    * <p>
    * @param value An instances of type {@link ListCBO}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withRedacted(ListCBO value) {
     setRedacted(new TString(value.value()));
@@ -1487,10 +1549,31 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a unique Dataset identifier.
    * <p>
-   * @param value An instances of type {@link TSerial}
+   * Serial is composed of four parts separated by colons (":"). The maximum
+   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
+   * is always REQUIRED. It contains one to five alphabetic uppercase characters
+   * representing either the ITU country code or the NATO Command code
+   * identifying the originator or organisation responsible for maintaining the
+   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
+   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
+   * special characters) representing a code for an Organisation within the
+   * country or command. It will normally indicate the organisation responsible
+   * for maintaining the dataset. Domain naming is left at the discretion of
+   * each country, but should be managed by a central authority in the country
+   * to allow deconfliction and uniqueness. It should enable the location in the
+   * data repository where this dataset information is stored. . Part 3 is the
+   * Dataset Type and MUST contain a two-character code from the table in the
+   * Introduction section identifying the type of dataset (LO for a Location,
+   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
+   * one to fifteen alphanumeric characters (including spaces and special
+   * characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * @param value An instances of type {@link Serial}
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withSerial(TSerial value) {
+  public T withSerial(Serial value) {
     setSerial(value);
     return (T) this;
   }
@@ -1499,36 +1582,25 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
    * <p>
-   * @param value An instances of type {@link Calendar}
+   * @param value An instances of type {@link DT}
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withEntryDateTime(Calendar value) {
-    setEntryDateTime(new TDateTime(value));
-    return (T) this;
-  }
-
-  /**
-   * Set the date and UTC Time the dataset was initially entered into the data
-   * repository (e.g., FRRS for USA, SMIR for NATO).
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Common object instance
-   */
-  public T withEntryDateTime(Date value) {
-    setEntryDateTime(new TDateTime(value));
+  public T withEntryDateTime(DT value) {
     return (T) this;
   }
 
   /**
    * Set the serial of the Role which is creating the current dataset.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link Serial}
    * @return The current Common object instance
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #withEntryByRole(Role)} instead.
    */
   @Deprecated
-  public T withEntryBy(TSerial value) {
+  public T withEntryBy(Serial value) {
     setEntryBy(value);
     return (T) this;
   }
@@ -1537,13 +1609,14 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the serial of the Role which is responsible for the accuracy of the
    * data content.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link Serial}
    * @return The current Common object instance
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #withOwnerRole(Role)} instead.
    */
   @Deprecated
-  public T withOwner(TSerial value) {
+  public T withOwner(Serial value) {
     setOwner(value);
     return (T) this;
   }
@@ -1553,9 +1626,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withLastChangeDateTime(Calendar value) {
-    setLastChangeDateTime(new TDateTime(value));
+    setLastChangeDateTime(new DT(value));
     return (T) this;
   }
 
@@ -1564,22 +1638,24 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withLastChangeDateTime(Date value) {
-    setLastChangeDateTime(new TDateTime(value));
+    setLastChangeDateTime(new DT(value));
     return (T) this;
   }
 
   /**
    * Set the serial of the Role which last modified the current dataset.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link Serial}
    * @return The current Common object instance
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #withLastChangeByRole(Role)} instead.
    */
   @Deprecated
-  public T withLastChangeBy(TSerial value) {
+  public T withLastChangeBy(Serial value) {
     setLastChangeBy(value);
     return (T) this;
   }
@@ -1589,9 +1665,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withLastReviewDate(Calendar value) {
-    setLastReviewDate(new TDate(value));
+    setLastReviewDate(new D(value));
     return (T) this;
   }
 
@@ -1600,37 +1677,40 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withLastReviewDate(Date value) {
-    setLastReviewDate(new TDate(value));
+    setLastReviewDate(new D(value));
     return (T) this;
   }
 
   /**
    * Set the Role reference serial of the person who last reviewed the dataset.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link Serial}
    * @return The current Common object instance
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #withLastReviewByRole(Role)} instead.
    */
   @Deprecated
-  public T withLastReviewBy(TSerial value) {
+  public T withLastReviewBy(Serial value) {
     setLastReviewBy(value);
     return (T) this;
   }
 
   /**
-   * Set the serial of the Role which is authorized to modify the current
+   * Set the serial of the Role which is authorised to modify the current
    * dataset.
    * <p>
-   * @param value An instances of type {@link String}
+   * @param value An instances of type {@link Serial}
    * @return The current Common object instance
+   * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #withModAllowedByRole(Role)} instead.
    */
   @Deprecated
-  public T withModAllowedBy(TSerial value) {
+  public T withModAllowedBy(Serial value) {
     setModAllowedBy(value);
     return (T) this;
   }
@@ -1640,6 +1720,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link ListCSU}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withState(ListCSU value) {
     setState(new TString(value.value()));
@@ -1651,9 +1732,10 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withDescription(String value) {
-    setDescription(new TString(value));
+    setDescription(new S500(value));
     return (T) this;
   }
 
@@ -1665,9 +1747,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link SecurityClass}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withSecurityClass(SecurityClass value) {
-    setSecurityClass(value);
     return (T) this;
   }
 
@@ -1677,12 +1759,15 @@ public abstract class Common<T> implements Comparable<T> {
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
    * <p>
-   * @param values One or more instances of type {@link CaseNum}
+   * @param values One or more instances of type {@link CaseNum...}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withCaseNum(CaseNum... values) {
     if (values != null) {
-      getCaseNum().addAll(new HashSet<>(Arrays.asList(values)));
+      for (CaseNum value : values) {
+        getCaseNum().add(value);
+      }
     }
     return (T) this;
   }
@@ -1695,8 +1780,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param values A collection of {@link CaseNum} instances
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withCaseNum(Set<CaseNum> values) {
+  public T withCaseNum(Collection<CaseNum> values) {
     if (values != null) {
       getCaseNum().addAll(values);
     }
@@ -1709,12 +1795,15 @@ public abstract class Common<T> implements Comparable<T> {
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
    * <p>
-   * @param values One or more instances of type {@link ExtReferenceRef}
+   * @param values One or more instances of type {@link ExtReferenceRef...}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withExtReferenceRef(ExtReferenceRef... values) {
     if (values != null) {
-      getExtReferenceRef().addAll(new HashSet<>(Arrays.asList(values)));
+      for (ExtReferenceRef value : values) {
+        getExtReferenceRef().add(value);
+      }
     }
     return (T) this;
   }
@@ -1727,8 +1816,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param values A collection of {@link ExtReferenceRef} instances
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withExtReferenceRef(Set<ExtReferenceRef> values) {
+  public T withExtReferenceRef(Collection<ExtReferenceRef> values) {
     if (values != null) {
       getExtReferenceRef().addAll(values);
     }
@@ -1739,12 +1829,15 @@ public abstract class Common<T> implements Comparable<T> {
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @param values One or more instances of type {@link Remarks}
+   * @param values One or more instances of type {@link Remarks...}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withRemarks(Remarks... values) {
     if (values != null) {
-      getRemarks().addAll(new HashSet<>(Arrays.asList(values)));
+      for (Remarks value : values) {
+        getRemarks().add(value);
+      }
     }
     return (T) this;
   }
@@ -1755,8 +1848,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param values A collection of {@link Remarks} instances
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withRemarks(Set<Remarks> values) {
+  public T withRemarks(Collection<Remarks> values) {
     if (values != null) {
       getRemarks().addAll(values);
     }
@@ -1769,9 +1863,9 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link ListCCL}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withCls(ListCCL value) {
-    setCls(value);
     return (T) this;
   }
 
@@ -1782,12 +1876,15 @@ public abstract class Common<T> implements Comparable<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @param values One or more instances of type {@link ListCCY}
+   * @param values One or more instances of type {@link ListCCY...}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withReleasability(ListCCY... values) {
     if (values != null) {
-      getReleasability().addAll(new HashSet<>(Arrays.asList(values)));
+      for (ListCCY value : values) {
+        getReleasability().add(value);
+      }
     }
     return (T) this;
   }
@@ -1799,10 +1896,11 @@ public abstract class Common<T> implements Comparable<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    * <p>
-   * @param values A collection of {@link ListCCY} instances
+   * @param values A collection of {@link Releasability} instances
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withReleasability(Set<ListCCY> values) {
+  public T withReleasability(Collection<ListCCY> values) {
     if (values != null) {
       getReleasability().addAll(values);
     }
@@ -1812,12 +1910,15 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link BigInteger}
+   * @param values One or more instances of type {@link BigInteger...}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withRemarkRef(BigInteger... values) {
     if (values != null) {
-      getRemarkRef().addAll(new HashSet<>(Arrays.asList(values)));
+      for (BigInteger value : values) {
+        getRemarkRef().add(value);
+      }
     }
     return (T) this;
   }
@@ -1825,10 +1926,11 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set
    * <p>
-   * @param values A collection of {@link BigInteger} instances
+   * @param values A collection of {@link RemarkRef} instances
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withRemarkRef(Set<BigInteger> values) {
+  public T withRemarkRef(Collection<BigInteger> values) {
     if (values != null) {
       getRemarkRef().addAll(values);
     }
@@ -1836,27 +1938,29 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of Common/ExtReferenceRef idx values applicable to the current
+   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger}
+   * @param values One or more instances of type {@link BigInteger...}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withExtReferences(BigInteger... values) {
     if (values != null) {
-      getExtReferences().addAll(new HashSet<>(Arrays.asList(values)));
+      getExtReferences().addAll(Arrays.asList(values));
     }
     return (T) this;
   }
 
   /**
-   * Set a list of Common/ExtReferenceRef idx values applicable to the current
+   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
    * <p>
-   * @param values A collection of {@link BigInteger} instances
+   * @param values A collection of {@link ExtReferences} instances
    * @return The current Common object instance
+   * @since 3.1.0
    */
-  public T withExtReferences(Set<BigInteger> values) {
+  public T withExtReferences(Collection<BigInteger> values) {
     if (values != null) {
       getExtReferences().addAll(values);
     }
@@ -1871,6 +1975,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withLegacyReleasability(String value) {
     setLegacyReleasability(value);
@@ -1884,6 +1989,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withQuality(String value) {
     setQuality(value);
@@ -1895,6 +2001,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withRecommendedValue(String value) {
     setRecommendedValue(value);
@@ -1911,11 +2018,12 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * @param value An instances of type {@link String}
    * @return The current Common object instance
+   * @since 3.1.0
    */
   public T withIdref(String value) {
     setIdref(value);
     return (T) this;
-  }//</editor-fold>
+  }
 
   /**
    * Get a string representation of this Common instance configuration.
@@ -1925,37 +2033,35 @@ public abstract class Common<T> implements Comparable<T> {
   @Override
   public String toString() {
     return "Common {"
-           // Required
-           + (cls != null ? "cls [" + cls + "]" : "")
-           + (serial != null ? "\n      serial [" + serial + "]" : "")
-           + (entryDateTime != null ? "\n      entryDateTime [" + entryDateTime + "]" : "")
-           // Optional
-           + (approvedBy != null ? "\n      approvedBy [" + approvedBy + "]" : "")
-           + (approvedDateTime != null ? "\n      approvedDateTime [" + approvedDateTime + "]" : "")
-           + (caseNum != null ? "\n      caseNum [" + caseNum + "]" : "")
-           + (description != null ? "\n      description [" + description + "]" : "")
-           + (entryBy != null ? "\n      entryBy [" + entryBy + "]" : "")
-           + (extReferenceRef != null ? "\n      extReferenceRef [" + extReferenceRef + "]" : "")
-           + (extReferences != null ? "\n      extReferences [" + extReferences + "]" : "")
-           + (idref != null ? "\n      idref [" + idref + "]" : "")
-           + (lastChangeBy != null ? "\n      lastChangeBy [" + lastChangeBy + "]" : "")
-           + (lastChangeDateTime != null ? "\n      lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-           + (lastObservedBy != null ? "\n      lastObservedBy [" + lastObservedBy + "]" : "")
-           + (lastReviewBy != null ? "\n      lastReviewBy [" + lastReviewBy + "]" : "")
-           + (lastReviewDate != null ? "\n      lastReviewDate [" + lastReviewDate + "]" : "")
-           + (legacyReleasability != null ? "\n      legacyReleasability [" + legacyReleasability + "]" : "")
-           + (modAllowedBy != null ? "\n      modAllowedBy [" + modAllowedBy + "]" : "")
-           + (observedFirstDateTime != null ? "\n      observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-           + (observedLastDateTime != null ? "\n      observedLastDateTime [" + observedLastDateTime + "]" : "")
-           + (owner != null ? "\n      owner [" + owner + "]" : "")
-           + (quality != null ? "\n      quality [" + quality + "]" : "")
-           + (recommendedValue != null ? "\n      recommendedValue [" + recommendedValue + "]" : "")
-           + (redacted != null ? "\n      redacted [" + redacted + "]" : "")
-           + (releasability != null ? "\n      releasability [" + releasability + "]" : "")
-           + (remarkRef != null ? "\n      remarkRef [" + remarkRef + "]" : "")
-           + (remarks != null ? "\n      remarks [" + remarks + "]" : "")
-           + (securityClass != null ? "\n      securityClass [" + securityClass + "]" : "")
-           + (state != null ? "\n      state [" + state + "]" : "")
+           + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
+           + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
+           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+           + (cls != null ? " cls [" + cls + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
+           + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
+           + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (idref != null ? " idref [" + idref + "]" : "")
+           + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
+           + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+           + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
+           + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+           + (owner != null ? " owner [" + owner + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           + (redacted != null ? " redacted [" + redacted + "]" : "")
+           + (releasability != null ? " releasability [" + releasability + "]" : "")
+           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+           + (remarks != null ? " remarks [" + remarks + "]" : "")
+           + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
+           + (state != null ? " state [" + state + "]" : "")
            + "}";
   }
 

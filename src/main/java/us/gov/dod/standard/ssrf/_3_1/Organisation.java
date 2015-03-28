@@ -1,1002 +1,1491 @@
-/*
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.SSRF;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
-import us.gov.dod.standard.ssrf._3_1.contact.Address;
-import us.gov.dod.standard.ssrf._3_1.contact.EMail;
-import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTO;
-import us.gov.dod.standard.ssrf._3_1.organisation.RelatedOrganisation;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * Organisation is the XML root for all parameters of an Organisation (service,
- * agency, manufacturer, etc).
- * <p>
- * Sub-Elements are
- * {@link Address}, {@link EMail Email}, {@link RelatedOrganisation}, {@link TelephoneFax}
- * <p>
- * Example:
- * <pre>
- * &lt;Organisation cls="U"&gt;
- *   &lt;Serial cls="U"&gt;DEU:AF:OR:123&lt;/Serial&gt;
- *   &lt;EntryDateTime cls="U"&gt;2011-12-12T00:00:00Z&lt;/EntryDateTime&gt;
- *   &lt;Name cls="U"&gt;LUFTWAFFE&lt;/Name&gt;
- *   &lt;Address&gt;
- *     &lt;CityArea cls="U"&gt;Berlin&lt;/CityArea&gt;
- *     &lt;Country cls="U"&gt;DEU&lt;/Country&gt;
- *   &lt;/Address&gt;
- * &lt;/Organisation&gt;
- * </pre>
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+Organisation is the XML root for all parameters of an Organisation (service, agency, manufacturer, etc).
+
+Sub-Elements are {@link Address}, {@link Email}, {@link RelatedOrganisation}, {@link TelephoneFax}
+
+Example: <pre>
+* &lt;Organisation cls="U"&gt;
+*   &lt;Serial cls="U"&gt;DEU:AF:OR:123&lt;/Serial&gt;
+*   &lt;EntryDateTime cls="U"&gt;2011-12-12T00:00:00Z&lt;/EntryDateTime&gt;
+*   &lt;Name cls="U"&gt;LUFTWAFFE&lt;/Name&gt;
+*   &lt;Address&gt;
+*     &lt;CityArea cls="U"&gt;Berlin&lt;/CityArea&gt;
+*     &lt;Country cls="U"&gt;DEU&lt;/Country&gt;
+*   &lt;/Address&gt;
+* &lt;/Organisation&gt;
+</pre>
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Organisation", propOrder = {
-  "effectiveDate",
-  "expirationDate",
-  "reviewDate",
-  "name",
-  "alternateName",
-  "type",
-  "uic",
-  "address",
-  "telephoneFax",
-  "eMail",
-  "roleRef",
-  "relatedOrganisation"
+    "effectiveDate",
+    "expirationDate",
+    "reviewDate",
+    "name",
+    "alternateName",
+    "type",
+    "uic",
+    "address",
+    "telephoneFax",
+    "eMail",
+    "roleRef",
+    "relatedOrganisation"
 })
-public class Organisation extends Common<Organisation> {
+public class Organisation
+    extends Common
+{
 
-  /**
-   * EffectiveDate - Effective Date (Optional)
-   * <p>
-   * The date by which the dataset is to be operational or effective.
-   * <p>
-   * Format is Date
-   */
-  @XmlElement(name = "EffectiveDate", required = false)
-  private TDate effectiveDate;
-  /**
-   * ExpirationDate - Expiration Date (Optional)
-   * <p>
-   * The date at which the dataset will expire. The Expiration date should be
-   * less than five years from current date.
-   * <p>
-   * Format is Date
-   * <p>
-   * Attribute group ExpireReview (Optional)
-   */
-  @XmlElement(name = "ExpirationDate", required = false)
-  private TDate expirationDate;
-  /**
-   * ReviewDate - Review Date (Optional)
-   * <p>
-   * The date by which the dataset is to be reviewed. The Review date should be
-   * less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
-   * <p>
-   * Format is Date
-   * <p>
-   * Attribute group ExpireReview (Optional)
-   */
-  @XmlElement(name = "ReviewDate", required = false)
-  private TDate reviewDate;
-  /**
-   * AlternateName - Alternate Name (Optional)
-   * <p>
-   * An alternate name or nickname for the organisation.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "Name", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString name;
-  /**
-   * AlternateName - Alternate Name (Optional)
-   * <p>
-   * An alternate name or nickname for the organisation.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "AlternateName", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString alternateName;
-  /**
-   * Type - Type (Optional)
-   * <p>
-   * The type of relationship.
-   * <p>
-   * Format is L:CFT
-   */
-  @XmlElement(name = "Type", required = false)
-  private TString type;
-  /**
-   * US:UIC - Unit Identification Code (Optional)
-   * <p>
-   * An organisational identifier that may be used to uniquely identify an
-   * organisation in operational planning systems and other non-spectrum
-   * information systems.
-   * <p>
-   * Format is S20
-   */
-  @XmlElement(name = "UIC", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
-  private TString uic;
-  /**
-   * Address (Optional)
-   * <p>
-   * Address contains the address of a Contact, Organisation or Role.
-   */
-  @XmlElement(name = "Address")
-  private Set<Address> address;
-  /**
-   * TelephoneFax (Optional)
-   * <p>
-   * TelephoneFax reflects the telephone and/or telefax number(s) of the
-   * Contact, Organisation or Role.
-   */
-  @XmlElement(name = "TelephoneFax")
-  private Set<TelephoneFax> telephoneFax;
-  /**
-   * Email (Optional)
-   * <p>
-   * Email contains the email address of a Contact or Role.
-   * <p>
-   * Notes: Will add Organisation to text in next release
-   */
-  @XmlElement(name = "EMail")
-  private Set<EMail> eMail;
-  /**
-   * RoleRef (Optional)
-   * <p>
-   * RoleRef contains the serial of a referenced Role.
-   */
-  @XmlElement(name = "RoleRef", nillable = true)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private Set<TSerial> roleRef;
-  /**
-   * RelatedOrganisation (Optional)
-   * <p>
-   * RelatedOrganisation identifies an Organisation linked to the current
-   * Organisation, the type of relation (reporting, budget, etc) and the
-   * relation (parent, child, sibling).
-   */
-  @XmlElement(name = "RelatedOrganisation")
-  private Set<RelatedOrganisation> relatedOrganisation;
+/**
+EffectiveDate  - Effective Date (Optional) 
 
-  /**
-   * Get the date by which the dataset is to be operational or effective.
-   * <p>
-   * @return the EffectiveDate value in a {@link TDate} data type
-   */
-  public TDate getEffectiveDate() {
-    return effectiveDate;
-  }
+The date by which the dataset is to be operational or effective.
 
-  /**
-   * Set the date by which the dataset is to be operational or effective.
-   * <p>
-   * @param value the EffectiveDate value in a {@link TDate} data type
-   */
-  public void setEffectiveDate(TDate value) {
-    this.effectiveDate = value;
-  }
+Format is Date
+@since 3.1.0
+*/
+    @XmlElement(name = "EffectiveDate", required = false)
+    private D effectiveDate;
+/**
+ExpirationDate  - Expiration Date (Optional) 
 
-  /**
-   * Determine if the EffectiveDate is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEffectiveDate() {
-    return (this.effectiveDate != null ? this.effectiveDate.isSetValue() : false);
-  }
+The date at which the dataset will expire. The Expiration date should be less than five years from current date.
 
-  /**
-   * Get the date at which the dataset will expire. The Expiration date should
-   * be less than five years from current date.
-   * <p>
-   * @return the ExpirationDate value in a {@link TDate} data type
-   */
-  public TDate getExpirationDate() {
-    return expirationDate;
-  }
+Format is Date
 
-  /**
-   * Set the date at which the dataset will expire. The Expiration date should
-   * be less than five years from current date.
-   * <p>
-   * @param value the ExpirationDate value in a {@link TDate} data type
-   */
-  public void setExpirationDate(TDate value) {
-    this.expirationDate = value;
-  }
+Attribute group ExpireReview (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "ExpirationDate", required = false)
+    private D expirationDate;
+/**
+ReviewDate  - Review Date (Optional) 
 
-  /**
-   * Determine if the ExpirationDate is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetExpirationDate() {
-    return (this.expirationDate != null ? this.expirationDate.isSetValue() : false);
-  }
+The date by which the dataset is to be reviewed. The Review date should be less than five years from the effective date. In Data Item Spectrum Supportability datasets, this date indicate when the organisation responsible for re-initiating host coordination plans to resubmit a Spectrum Supportability request to the host nation for continued use of the equipment.
 
-  /**
-   * Get the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
-   * <p>
-   * @return the ReviewDate value in a {@link TDate} data type
-   */
-  public TDate getReviewDate() {
-    return reviewDate;
-  }
+Format is Date
 
-  /**
-   * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
-   * <p>
-   * @param value the ReviewDate value in a {@link TDate} data type
-   */
-  public void setReviewDate(TDate value) {
-    this.reviewDate = value;
-  }
+Attribute group ExpireReview (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "ReviewDate", required = false)
+    private D reviewDate;
+/**
+AlternateName - Alternate Name (Optional) 
 
-  /**
-   * Determine if the ReviewDate is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetReviewDate() {
-    return (this.reviewDate != null ? this.reviewDate.isSetValue() : false);
-  }
+An alternate name or nickname for the organisation.
 
-  /**
-   * Get an alternate name or nickname for the organisation.
-   * <p>
-   * @return the Name value in a {@link TString} data type
-   */
-  public TString getName() {
-    return name;
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "Name", required = false)
+    private S100 name;
+/**
+AlternateName - Alternate Name (Optional) 
 
-  /**
-   * Set an alternate name or nickname for the organisation.
-   * <p>
-   * @param value the Name value in a {@link TString} data type
-   */
-  public void setName(TString value) {
-    this.name = value;
-  }
+An alternate name or nickname for the organisation.
 
-  /**
-   * Determine if the Name is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetName() {
-    return (this.name != null ? this.name.isSetValue() : false);
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "AlternateName", required = false)
+    private S100 alternateName;
+/**
+Type  - Type (Optional) 
 
-  /**
-   * Get an alternate name or nickname for the organisation.
-   * <p>
-   * @return the AlternateName value in a {@link TString} data type
-   */
-  public TString getAlternateName() {
-    return alternateName;
-  }
+The type of relationship.
 
-  /**
-   * Set an alternate name or nickname for the organisation.
-   * <p>
-   * @param value the AlternateName value in a {@link TString} data type
-   */
-  public void setAlternateName(TString value) {
-    this.alternateName = value;
-  }
+Format is L:CFT
+@since 3.1.0
+*/
+    @XmlElement(name = "Type", required = false)
+    private TString type;
+/**
+US:UIC  - Unit Identification Code (Optional) 
 
-  /**
-   * Determine if the AlternateName is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAlternateName() {
-    return (this.alternateName != null ? this.alternateName.isSetValue() : false);
-  }
+An organisational identifier that may be used to uniquely identify an organisation in operational planning systems and other non-spectrum information systems.
 
-  /**
-   * Get the type of relationship.
-   * <p>
-   * @return the Type value in a {@link TString} data type
-   */
-  public TString getType() {
-    return type;
-  }
+Format is S20
+@since 3.1.0
+*/
+    @XmlElement(name = "UIC", required = false)
+    private S20 uic;
+/**
+Address (Optional)
 
-  /**
-   * Set the type of relationship.
-   * <p>
-   * @param value the Type value in a {@link TString} data type
-   */
-  public void setType(TString value) {
-    this.type = value;
-  }
+Address contains the address of a Contact, Organisation or Role.
+@since 3.1.0
+*/
+    @XmlElement(name = "Address")
+      private  Set<Address> address;
+/**
+TelephoneFax (Optional)
 
-  /**
-   * Determine if the Type is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetType() {
-    return (this.type != null ? this.type.isSetValue() : false);
-  }
+TelephoneFax reflects the telephone and/or telefax number(s) of the Contact, Organisation or Role.
+@since 3.1.0
+*/
+    @XmlElement(name = "TelephoneFax")
+      private  Set<TelephoneFax> telephoneFax;
+/**
+Email (Optional)
 
-  /**
-   * Get an organisational identifier that may be used to uniquely identify an
-   * organisation in operational planning systems and other non-spectrum
-   * information systems.
-   * <p>
-   * @return the UIC value in a {@link TString} data type
-   */
-  public TString getUIC() {
-    return uic;
-  }
+Email contains the email address of a Contact or Role.
 
-  /**
-   * Set an organisational identifier that may be used to uniquely identify an
-   * organisation in operational planning systems and other non-spectrum
-   * information systems.
-   * <p>
-   * @param value the UIC value in a {@link TString} data type
-   */
-  public void setUIC(TString value) {
-    this.uic = value;
-  }
+Notes: Will add Organisation to text in next release
+@since 3.1.0
+*/
+    @XmlElement(name = "EMail")
+      private  Set<EMail> eMail;
+/**
+RoleRef (Optional)
 
-  /**
-   * Determine if the UIC is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetUIC() {
-    return (this.uic != null ? this.uic.isSetValue() : false);
-  }
+RoleRef contains the serial of a referenced Role.
+@since 3.1.0
+*/
+    @XmlElement(name = "RoleRef", nillable = true)
+      private  Set<Serial> roleRef;
+/**
+RelatedOrganisation (Optional)
 
-  /**
-   * Get the Address
-   * <p>
-   * Complex element Address contains the address of a Contact, Organisation or
-   * Role.
-   * <p>
-   * @return a non-null but possibly empty list of {@link Address} instances
-   */
-  public Set<Address> getAddress() {
-    if (address == null) {
-      address = new HashSet<>();
+RelatedOrganisation identifies an Organisation linked to the current Organisation, the type of relation (reporting, budget, etc) and the relation (parent, child, sibling).
+@since 3.1.0
+*/
+    @XmlElement(name = "RelatedOrganisation")
+      private  Set<RelatedOrganisation> relatedOrganisation;
+
+/**
+Get the date by which the dataset is to be operational or effective.
+
+@return the EffectiveDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public D getEffectiveDate() {
+        return effectiveDate;
     }
-    return this.address;
-  }
 
-  /**
-   * Determine if the Address is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAddress() {
-    return ((this.address != null) && (!this.address.isEmpty()));
-  }
+/**
+Set the date by which the dataset is to be operational or effective.
 
-  /**
-   * Clear the Address field. This sets the field to null.
-   */
-  public void unsetAddress() {
-    this.address = null;
-  }
-
-  /**
-   * Get the TelephoneFax
-   * <p>
-   * Complex element TelephoneFax reflects the telephone and/or telefax
-   * number(s) of the Contact, Organisation or Role.
-   * <p>
-   * @return a non-null but possibly empty list of {@link TelephoneFax}
-   *         instances
-   */
-  public Set<TelephoneFax> getTelephoneFax() {
-    if (telephoneFax == null) {
-      telephoneFax = new HashSet<>();
+@param value the EffectiveDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public void setEffectiveDate(D value) {
+        this.effectiveDate = value;
     }
-    return this.telephoneFax;
-  }
 
-  /**
-   * Determine if the TelephoneFax is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetTelephoneFax() {
-    return ((this.telephoneFax != null) && (!this.telephoneFax.isEmpty()));
-  }
+/**
+Determine if the EffectiveDate is configured.
 
-  /**
-   * Clear the TelephoneFax field. This sets the field to null.
-   */
-  public void unsetTelephoneFax() {
-    this.telephoneFax = null;
-  }
-
-  /**
-   * Get the Email
-   * <p>
-   * Complex element Email contains the email address of a Contact or Role.
-   * <p>
-   * @return a non-null but possibly empty list of {@link EMail} instances
-   */
-  public Set<EMail> getEMail() {
-    if (eMail == null) {
-      eMail = new HashSet<>();
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEffectiveDate() {
+        return (this.effectiveDate!= null);
     }
-    return this.eMail;
-  }
 
-  /**
-   * Determine if the EMail is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEMail() {
-    return ((this.eMail != null) && (!this.eMail.isEmpty()));
-  }
+/**
+Get the date at which the dataset will expire. The Expiration date should be less than five years from current date.
 
-  /**
-   * Clear the EMail field. This sets the field to null.
-   */
-  public void unsetEMail() {
-    this.eMail = null;
-  }
-
-  /**
-   * Get the RoleRef
-   * <p>
-   * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @return a non-null but possibly empty list of {@link TString} instances
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #getRole()} instead.
-   */
-  @Deprecated
-  public Set<TSerial> getRoleRef() {
-    if (roleRef == null) {
-      roleRef = new HashSet<>();
+@return the ExpirationDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public D getExpirationDate() {
+        return expirationDate;
     }
-    return this.roleRef;
-  }
 
-  /**
-   * Determine if the RoleRef is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetRoleRef() {
-    return ((this.roleRef != null) && (!this.roleRef.isEmpty()));
-  }
+/**
+Set the date at which the dataset will expire. The Expiration date should be less than five years from current date.
 
-  /**
-   * Clear the RoleRef field. This sets the field to null.
-   */
-  public void unsetRoleRef() {
-    this.roleRef = null;
-  }
-
-  /**
-   * Get the RelatedOrganisation
-   * <p>
-   * Complex element RelatedOrganisation identifies an Organisation linked to
-   * the current Organisation, the type of relation (reporting, budget, etc) and
-   * the relation (parent, child, sibling).
-   * <p>
-   * @return a non-null but possibly empty list of {@link RelatedOrganisation}
-   *         instances
-   */
-  public Set<RelatedOrganisation> getRelatedOrganisation() {
-    if (relatedOrganisation == null) {
-      relatedOrganisation = new HashSet<>();
+@param value the ExpirationDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public void setExpirationDate(D value) {
+        this.expirationDate = value;
     }
-    return this.relatedOrganisation;
-  }
 
-  /**
-   * Determine if the RelatedOrganisation is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetRelatedOrganisation() {
-    return ((this.relatedOrganisation != null) && (!this.relatedOrganisation.isEmpty()));
-  }
+/**
+Determine if the ExpirationDate is configured.
 
-  /**
-   * Clear the RelatedOrganisation field. This sets the field to null.
-   */
-  public void unsetRelatedOrganisation() {
-    this.relatedOrganisation = null;
-  }
-
-  /**
-   * Set the date by which the dataset is to be operational or effective.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Organisation object instance
-   */
-  public Organisation withEffectiveDate(Calendar value) {
-    setEffectiveDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date by which the dataset is to be operational or effective.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Organisation object instance
-   */
-  public Organisation withEffectiveDate(Date value) {
-    setEffectiveDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date at which the dataset will expire. The Expiration date should
-   * be less than five years from current date.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Organisation object instance
-   */
-  public Organisation withExpirationDate(Calendar value) {
-    setExpirationDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date at which the dataset will expire. The Expiration date should
-   * be less than five years from current date.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Organisation object instance
-   */
-  public Organisation withExpirationDate(Date value) {
-    setExpirationDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Organisation object instance
-   */
-  public Organisation withReviewDate(Calendar value) {
-    setReviewDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set the date by which the dataset is to be reviewed. The Review date should
-   * be less than five years from the effective date. In Data Item Spectrum
-   * Supportability datasets, this date indicate when the organisation
-   * responsible for re-initiating host coordination plans to resubmit a
-   * Spectrum Supportability request to the host nation for continued use of the
-   * equipment.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Organisation object instance
-   */
-  public Organisation withReviewDate(Date value) {
-    setReviewDate(new TDate(value));
-    return this;
-  }
-
-  /**
-   * Set an alternate name or nickname for the organisation.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Organisation object instance
-   */
-  public Organisation withName(String value) {
-    setName(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set an alternate name or nickname for the organisation.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Organisation object instance
-   */
-  public Organisation withAlternateName(String value) {
-    setAlternateName(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the type of relationship.
-   * <p>
-   * @param value An instances of type {@link ListCTO}
-   * @return The current Organisation object instance
-   */
-  public Organisation withType(ListCTO value) {
-    setType(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set an organisational identifier that may be used to uniquely identify an
-   * organisation in operational planning systems and other non-spectrum
-   * information systems.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Organisation object instance
-   */
-  public Organisation withUIC(String value) {
-    setUIC(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the Address
-   * <p>
-   * Complex element Address contains the address of a Contact, Organisation or
-   * Role.
-   * <p>
-   * @param values One or more instances of type {@link Address}
-   * @return The current Organisation object instance
-   */
-  public Organisation withAddress(Address... values) {
-    if (values != null) {
-      getAddress().addAll(new HashSet<>(Arrays.asList(values)));
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetExpirationDate() {
+        return (this.expirationDate!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the Address
-   * <p>
-   * Complex element Address contains the address of a Contact, Organisation or
-   * Role.
-   * <p>
-   * @param values A collection of {@link Address} instances
-   * @return The current Organisation object instance
-   */
-  public Organisation withAddress(Set<Address> values) {
-    if (values != null) {
-      getAddress().addAll(values);
+/**
+Get the date by which the dataset is to be reviewed. The Review date should be less than five years from the effective date. In Data Item Spectrum Supportability datasets, this date indicate when the organisation responsible for re-initiating host coordination plans to resubmit a Spectrum Supportability request to the host nation for continued use of the equipment.
+
+@return the ReviewDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public D getReviewDate() {
+        return reviewDate;
     }
-    return this;
-  }
 
-  /**
-   * Set the TelephoneFax
-   * <p>
-   * Complex element TelephoneFax reflects the telephone and/or telefax
-   * number(s) of the Contact, Organisation or Role.
-   * <p>
-   * @param values One or more instances of type {@link TelephoneFax}
-   * @return The current Organisation object instance
-   */
-  public Organisation withTelephoneFax(TelephoneFax... values) {
-    if (values != null) {
-      getTelephoneFax().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set the date by which the dataset is to be reviewed. The Review date should be less than five years from the effective date. In Data Item Spectrum Supportability datasets, this date indicate when the organisation responsible for re-initiating host coordination plans to resubmit a Spectrum Supportability request to the host nation for continued use of the equipment.
+
+@param value the ReviewDate value in a {@link TD} data type
+@since 3.1.0
+*/
+public void setReviewDate(D value) {
+        this.reviewDate = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the TelephoneFax
-   * <p>
-   * Complex element TelephoneFax reflects the telephone and/or telefax
-   * number(s) of the Contact, Organisation or Role.
-   * <p>
-   * @param values A collection of {@link TelephoneFax} instances
-   * @return The current Organisation object instance
-   */
-  public Organisation withTelephoneFax(Set<TelephoneFax> values) {
-    if (values != null) {
-      getTelephoneFax().addAll(values);
+/**
+Determine if the ReviewDate is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetReviewDate() {
+        return (this.reviewDate!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the Email
-   * <p>
-   * Complex element Email contains the email address of a Contact or Role.
-   * <p>
-   * @param values One or more instances of type {@link EMail}
-   * @return The current Organisation object instance
-   */
-  public Organisation withEMail(EMail... values) {
-    if (values != null) {
-      getEMail().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Get an alternate name or nickname for the organisation.
+
+@return the Name value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getName() {
+        return name;
     }
-    return this;
-  }
 
-  /**
-   * Set the Email
-   * <p>
-   * Complex element Email contains the email address of a Contact or Role.
-   * <p>
-   * @param values A collection of {@link EMail Email} instances
-   * @return The current Organisation object instance
-   */
-  public Organisation withEMail(Set<EMail> values) {
-    if (values != null) {
-      getEMail().addAll(values);
+/**
+Set an alternate name or nickname for the organisation.
+
+@param value the Name value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setName(S100 value) {
+        this.name = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the RoleRef
-   * <p>
-   * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @param values One or more instances of type {@link TString}
-   * @return The current Organisation object instance
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #withRole(Role...)} instead.
-   */
-  @Deprecated
-  public Organisation withRoleRef(TSerial... values) {
-    if (values != null) {
-      getRoleRef().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Determine if the Name is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetName() {
+        return (this.name!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the RoleRef
-   * <p>
-   * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @param values A collection of {@link TString} instances
-   * @return The current Organisation object instance
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #withRole(Role...)} instead.
-   */
-  @Deprecated
-  public Organisation withRoleRef(Set<TSerial> values) {
-    if (values != null) {
-      getRoleRef().addAll(values);
+/**
+Get an alternate name or nickname for the organisation.
+
+@return the AlternateName value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getAlternateName() {
+        return alternateName;
     }
-    return this;
-  }
 
-  /**
-   * Set the RelatedOrganisation
-   * <p>
-   * Complex element RelatedOrganisation identifies an Organisation linked to
-   * the current Organisation, the type of relation (reporting, budget, etc) and
-   * the relation (parent, child, sibling).
-   * <p>
-   * @param values One or more instances of type {@link RelatedOrganisation}
-   * @return The current Organisation object instance
-   */
-  public Organisation withRelatedOrganisation(RelatedOrganisation... values) {
-    if (values != null) {
-      getRelatedOrganisation().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set an alternate name or nickname for the organisation.
+
+@param value the AlternateName value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setAlternateName(S100 value) {
+        this.alternateName = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the RelatedOrganisation
-   * <p>
-   * Complex element RelatedOrganisation identifies an Organisation linked to
-   * the current Organisation, the type of relation (reporting, budget, etc) and
-   * the relation (parent, child, sibling).
-   * <p>
-   * @param values A collection of {@link RelatedOrganisation} instances
-   * @return The current Organisation object instance
-   */
-  public Organisation withRelatedOrganisation(Set<RelatedOrganisation> values) {
-    if (values != null) {
-      getRelatedOrganisation().addAll(values);
+/**
+Determine if the AlternateName is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAlternateName() {
+        return (this.alternateName!= null);
     }
-    return this;
+
+/**
+Get the type of relationship.
+
+@return the Type value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getType() {
+        return type;
+    }
+
+/**
+Set the type of relationship.
+
+@param value the Type value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setType(TString value) {
+        this.type = value;
+    }
+
+/**
+Determine if the Type is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetType() {
+return (this.type!= null ? this.type.isSetValue() : false);
+    }
+
+/**
+Get an organisational identifier that may be used to uniquely identify an organisation in operational planning systems and other non-spectrum information systems.
+
+@return the UIC value in a {@link TS20} data type
+@since 3.1.0
+*/
+public S20 getUIC() {
+        return uic;
+    }
+
+/**
+Set an organisational identifier that may be used to uniquely identify an organisation in operational planning systems and other non-spectrum information systems.
+
+@param value the UIC value in a {@link TS20} data type
+@since 3.1.0
+*/
+public void setUIC(S20 value) {
+        this.uic = value;
+    }
+
+/**
+Determine if the UIC is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetUIC() {
+        return (this.uic!= null);
+    }
+
+/**
+Get the Address
+
+Complex element Address contains the address of a Contact, Organisation or Role.
+
+@return  a {@link Address} instance
+@since 3.1.0
+*/
+    public Set<Address> getAddress() {
+        if (address == null) {
+            address = new HashSet<Address>();
+        }
+        return this.address;
+    }
+
+/**
+Determine if the Address is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAddress() {
+        return ((this.address!= null)&&(!this.address.isEmpty()));
+    }
+
+/**
+  Clear the Address field. This sets the field to null.
+ */
+    public void unsetAddress() {
+        this.address = null;
+    }
+
+/**
+Get the TelephoneFax
+
+Complex element TelephoneFax reflects the telephone and/or telefax number(s) of the Contact, Organisation or Role.
+
+@return  a {@link TelephoneFax} instance
+@since 3.1.0
+*/
+    public Set<TelephoneFax> getTelephoneFax() {
+        if (telephoneFax == null) {
+            telephoneFax = new HashSet<TelephoneFax>();
+        }
+        return this.telephoneFax;
+    }
+
+/**
+Determine if the TelephoneFax is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetTelephoneFax() {
+        return ((this.telephoneFax!= null)&&(!this.telephoneFax.isEmpty()));
+    }
+
+/**
+  Clear the TelephoneFax field. This sets the field to null.
+ */
+    public void unsetTelephoneFax() {
+        this.telephoneFax = null;
+    }
+
+/**
+Get the Email
+
+Complex element Email contains the email address of a Contact or Role.
+
+@return  a {@link EMail} instance
+@since 3.1.0
+*/
+    public Set<EMail> getEMail() {
+        if (eMail == null) {
+            eMail = new HashSet<EMail>();
+        }
+        return this.eMail;
+    }
+
+/**
+Determine if the EMail is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEMail() {
+        return ((this.eMail!= null)&&(!this.eMail.isEmpty()));
+    }
+
+/**
+  Clear the EMail field. This sets the field to null.
+ */
+    public void unsetEMail() {
+        this.eMail = null;
+    }
+
+/**
+Get the RoleRef
+
+Complex element RoleRef contains the serial of a referenced Role.
+
+@return  a {@link Serial} instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #getRole()} instead.
+*/
+@Deprecated
+    public Set<Serial> getRoleRef() {
+        if (roleRef == null) {
+            roleRef = new HashSet<Serial>();
+        }
+        return this.roleRef;
+    }
+
+/**
+Determine if the RoleRef is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetRoleRef() {
+        return ((this.roleRef!= null)&&(!this.roleRef.isEmpty()));
+    }
+
+/**
+  Clear the RoleRef field. This sets the field to null.
+ */
+    public void unsetRoleRef() {
+        this.roleRef = null;
+    }
+
+/**
+Get the RelatedOrganisation
+
+Complex element RelatedOrganisation identifies an Organisation linked to the current Organisation, the type of relation (reporting, budget, etc) and the relation (parent, child, sibling).
+
+@return  a {@link RelatedOrganisation} instance
+@since 3.1.0
+*/
+    public Set<RelatedOrganisation> getRelatedOrganisation() {
+        if (relatedOrganisation == null) {
+            relatedOrganisation = new HashSet<RelatedOrganisation>();
+        }
+        return this.relatedOrganisation;
+    }
+
+/**
+Determine if the RelatedOrganisation is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetRelatedOrganisation() {
+        return ((this.relatedOrganisation!= null)&&(!this.relatedOrganisation.isEmpty()));
+    }
+
+/**
+  Clear the RelatedOrganisation field. This sets the field to null.
+ */
+    public void unsetRelatedOrganisation() {
+        this.relatedOrganisation = null;
+    }
+
+/**
+Set the date by which the dataset is to be operational or effective.
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withEffectiveDate(Calendar value) {
+           setEffectiveDate(new D(value));
+        return this;
+    }
+/**
+Set the date by which the dataset is to be operational or effective.
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withEffectiveDate(Date value) {
+           setEffectiveDate(new D(value));
+        return this;
+    }
+
+/**
+Set the date at which the dataset will expire. The Expiration date should be less than five years from current date.
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withExpirationDate(Calendar value) {
+           setExpirationDate(new D(value));
+        return this;
+    }
+/**
+Set the date at which the dataset will expire. The Expiration date should be less than five years from current date.
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withExpirationDate(Date value) {
+           setExpirationDate(new D(value));
+        return this;
+    }
+
+/**
+Set the date by which the dataset is to be reviewed. The Review date should be less than five years from the effective date. In Data Item Spectrum Supportability datasets, this date indicate when the organisation responsible for re-initiating host coordination plans to resubmit a Spectrum Supportability request to the host nation for continued use of the equipment.
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withReviewDate(Calendar value) {
+           setReviewDate(new D(value));
+        return this;
+    }
+/**
+Set the date by which the dataset is to be reviewed. The Review date should be less than five years from the effective date. In Data Item Spectrum Supportability datasets, this date indicate when the organisation responsible for re-initiating host coordination plans to resubmit a Spectrum Supportability request to the host nation for continued use of the equipment.
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withReviewDate(Date value) {
+           setReviewDate(new D(value));
+        return this;
+    }
+
+/**
+Set an alternate name or nickname for the organisation.
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withName(String value) {
+           setName(new S100(value));
+        return this;
+    }
+
+/**
+Set an alternate name or nickname for the organisation.
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withAlternateName(String value) {
+           setAlternateName(new S100(value));
+        return this;
+    }
+
+/**
+Set the type of relationship.
+
+@param value  An instances of type {@link ListCTO}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withType(ListCTO value) {
+           setType(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set an organisational identifier that may be used to uniquely identify an organisation in operational planning systems and other non-spectrum information systems.
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withUIC(String value) {
+           setUIC(new S20(value));
+        return this;
+    }
+
+/**
+Set the Address
+
+Complex element Address contains the address of a Contact, Organisation or Role.
+
+@param values  One or more instances of type {@link Address...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withAddress(Address... values) {
+        if (values!= null) {
+            for (Address value: values) {
+                getAddress().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the Address
+
+Complex element Address contains the address of a Contact, Organisation or Role.
+
+@param values  A collection of {@link Address} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withAddress(Collection<Address> values) {
+        if (values!= null) {
+            getAddress().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the TelephoneFax
+
+Complex element TelephoneFax reflects the telephone and/or telefax number(s) of the Contact, Organisation or Role.
+
+@param values  One or more instances of type {@link TelephoneFax...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withTelephoneFax(TelephoneFax... values) {
+        if (values!= null) {
+            for (TelephoneFax value: values) {
+                getTelephoneFax().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the TelephoneFax
+
+Complex element TelephoneFax reflects the telephone and/or telefax number(s) of the Contact, Organisation or Role.
+
+@param values  A collection of {@link TelephoneFax} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withTelephoneFax(Collection<TelephoneFax> values) {
+        if (values!= null) {
+            getTelephoneFax().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the Email
+
+Complex element Email contains the email address of a Contact or Role.
+
+@param values  One or more instances of type {@link EMail...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withEMail(EMail... values) {
+        if (values!= null) {
+            for (EMail value: values) {
+                getEMail().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the Email
+
+Complex element Email contains the email address of a Contact or Role.
+
+@param values  A collection of {@link EMail} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withEMail(Collection<EMail> values) {
+        if (values!= null) {
+            getEMail().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the RoleRef
+
+Complex element RoleRef contains the serial of a referenced Role.
+
+@param values  One or more instances of type {@link RoleRef...}
+@return The current Organisation object instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #withRole(Role...)} instead.
+*/
+@Deprecated
+    public Organisation withRoleRef(Serial... values) {
+        if (values!= null) {
+            for (RoleRef value: values) {
+                getRoleRef().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the RoleRef
+
+Complex element RoleRef contains the serial of a referenced Role.
+
+@param values  A collection of {@link Serial} instances
+@return The current Organisation object instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #withRole(Role...)} instead.
+*/
+@Deprecated
+    public Organisation withRoleRef(Collection<Serial> values) {
+        if (values!= null) {
+            getRoleRef().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the RelatedOrganisation
+
+Complex element RelatedOrganisation identifies an Organisation linked to the current Organisation, the type of relation (reporting, budget, etc) and the relation (parent, child, sibling).
+
+@param values  One or more instances of type {@link RelatedOrganisation...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRelatedOrganisation(RelatedOrganisation... values) {
+        if (values!= null) {
+            for (RelatedOrganisation value: values) {
+                getRelatedOrganisation().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the RelatedOrganisation
+
+Complex element RelatedOrganisation identifies an Organisation linked to the current Organisation, the type of relation (reporting, budget, etc) and the relation (parent, child, sibling).
+
+@param values  A collection of {@link RelatedOrganisation} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRelatedOrganisation(Collection<RelatedOrganisation> values) {
+        if (values!= null) {
+            getRelatedOrganisation().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastObservedBy(String value) {
+           setLastObservedBy(new S50(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withObservedFirstDateTime(Calendar value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withObservedFirstDateTime(Date value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withObservedLastDateTime(Calendar value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withObservedLastDateTime(Date value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withApprovedBy(String value) {
+           setApprovedBy(new S50(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withApprovedDateTime(Calendar value) {
+           setApprovedDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withApprovedDateTime(Date value) {
+           setApprovedDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link ListCBO}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRedacted(ListCBO value) {
+           setRedacted(new TString(value.value()));
+        return this;
+    }
+
+    @Override
+/**
+Set the unique reference of the Organisation associated with the current Organisation.
+
+@param value  An instances of type {@link Serial}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withSerial(Serial value) {
+        setSerial(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link TDT}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withEntryDateTime(TDT value) {
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withEntryBy(Serial value) {
+           setEntryBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withOwner(Serial value) {
+           setOwner(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastChangeDateTime(Calendar value) {
+           setLastChangeDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastChangeDateTime(Date value) {
+           setLastChangeDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastChangeBy(Serial value) {
+           setLastChangeBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastReviewDate(Calendar value) {
+           setLastReviewDate(new D(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastReviewDate(Date value) {
+           setLastReviewDate(new D(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLastReviewBy(Serial value) {
+           setLastReviewBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withModAllowedBy(Serial value) {
+           setModAllowedBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link ListCSU}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withState(ListCSU value) {
+           setState(new TString(value.value()));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withDescription(String value) {
+           setDescription(new S500(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link SecurityClass}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withSecurityClass(SecurityClass value) {
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link CaseNum...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withCaseNum(CaseNum... values) {
+        if (values!= null) {
+            for (CaseNum value: values) {
+                getCaseNum().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link CaseNum} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withCaseNum(Collection<CaseNum> values) {
+        if (values!= null) {
+            getCaseNum().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link ExtReferenceRef...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withExtReferenceRef(ExtReferenceRef... values) {
+        if (values!= null) {
+            for (ExtReferenceRef value: values) {
+                getExtReferenceRef().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link ExtReferenceRef} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withExtReferenceRef(Collection<ExtReferenceRef> values) {
+        if (values!= null) {
+            getExtReferenceRef().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Common/Remarks idx values applicable to the current data item.
+
+@param values  One or more instances of type {@link Remarks...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRemarks(Remarks... values) {
+        if (values!= null) {
+            for (Remarks value: values) {
+                getRemarks().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Common/Remarks idx values applicable to the current data item.
+
+@param values  A collection of {@link Remarks} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRemarks(Collection<Remarks> values) {
+        if (values!= null) {
+            getRemarks().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set the classification of the current data item. This attribute is REQUIRED on each data item, even if the classification is "U".
+
+@param value  An instances of type {@link ListCCL}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withCls(ListCCL value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a list of country codes for which the current data item is releasable. For NATO, if this element is omitted, there is no releasability restriction for the data item. For the US, if this data item AND attribute US:legacy Releasability are both blank, there is no releasability restriction for the data item.
+
+@param values  One or more instances of type {@link ListCCY...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withReleasability(ListCCY... values) {
+        if (values!= null) {
+            for (ListCCY value: values) {
+                getReleasability().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of country codes for which the current data item is releasable. For NATO, if this element is omitted, there is no releasability restriction for the data item. For the US, if this data item AND attribute US:legacy Releasability are both blank, there is no releasability restriction for the data item.
+
+@param values  A collection of {@link Releasability} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withReleasability(Collection<ListCCY> values) {
+        if (values!= null) {
+            getReleasability().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link BigInteger...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRemarkRef(BigInteger... values) {
+        if (values!= null) {
+            for (BigInteger value: values) {
+                getRemarkRef().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link RemarkRef} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRemarkRef(Collection<BigInteger> values) {
+        if (values!= null) {
+            getRemarkRef().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
+
+@param values  One or more instances of type {@link BigInteger...}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withExtReferences(BigInteger... values) {
+        if (values!= null) {
+            for (BigInteger value: values) {
+                getExtReferences().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
+
+@param values  A collection of {@link ExtReferences} instances
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withExtReferences(Collection<BigInteger> values) {
+        if (values!= null) {
+            getExtReferences().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set one or more special handling instructions in sentence format, not code format. For example, "Approved for public release; distribution is unlimited". Multiple special handling instructions are separated by "|” (i.e., ASCII character #124).
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withLegacyReleasability(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set one or more data quality indicator(s), separated by "|” (i.e., ASCII character #124), for the contents of the associated Data Item For example, "Outlier" | "Non-CodeList".
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withQuality(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a value that is most probably correct.
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withRecommendedValue(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a unique identifier for each Data Item in the Dataset. Within each Dataset, the idref value must be unique for every occurrence. If a received Dataset uses idrefs and it is expected that the Dataset will be exchanged, the idrefs should be considered required. If the receiving system is the permanent end of the line for the Dataset, the idrefs may be considered optional. 
+
+@param value  An instances of type {@link String}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+    public Organisation withIdref(String value) {
+        return this;
+    }
+
+/**
+ Get a string representation of this Organisation instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "Organisation {"
+ + (address !=null? " address [" + address +"]" : "") 
+ + (alternateName !=null? " alternateName [" + alternateName +"]" : "") 
+ + (eMail !=null? " eMail [" + eMail +"]" : "") 
+ + (effectiveDate !=null? " effectiveDate [" + effectiveDate +"]" : "") 
+ + (expirationDate !=null? " expirationDate [" + expirationDate +"]" : "") 
+ + (name !=null? " name [" + name +"]" : "") 
+ + (relatedOrganisation !=null? " relatedOrganisation [" + relatedOrganisation +"]" : "") 
+ + (reviewDate !=null? " reviewDate [" + reviewDate +"]" : "") 
+ + (roleRef !=null? " roleRef [" + roleRef +"]" : "") 
+ + (telephoneFax !=null? " telephoneFax [" + telephoneFax +"]" : "") 
+ + (type !=null? " type [" + type +"]" : "") 
+ + (uic !=null? " uic [" + uic +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this Organisation instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "Organisation {"
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (address != null ? " address [" + address + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (eMail != null ? " eMail [" + eMail + "]" : "")
-           + (relatedOrganisation != null ? " relatedOrganisation [" + relatedOrganisation + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (roleRef != null ? " roleRef [" + roleRef + "]" : "")
-           + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (uic != null ? " uic [" + uic + "]" : "")
-           + (alternateName != null ? " alternateName [" + alternateName + "]" : "")
-           + "\n  Organisation." + super.toString() + "\n"
-           + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link Organisation} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}.
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  @Override
-  public boolean isSet() {
-    return super.isSet();
-  }
+{@link Organisation} requires {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+
+Note that this method only checks for the presence of required information; this method does not validate the information format.
+@return TRUE if required fields are set, otherwise FALSE
+*/
+@Override
+public boolean isSet(){
+return true;
+}
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
-  /**
-   * RoleRef (Optional)
-   * <p>
-   * RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @since 3.1.0
-   */
-  @XmlTransient
-  private Set<Role> role;
+/**
+RoleRef (Optional)
 
-  /**
-   * Get the RoleRef
-   * <p>
-   * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @return a {@link Role} instance
-   * @since 3.1.0
-   */
-  public Set<Role> getRole() {
-    if (role == null) {
-      role = new HashSet<>();
-    }
-    return role;
-  }
+RoleRef contains the serial of a referenced Role.
+@since 3.1.0
+*/
+@XmlTransient
+private Set<Role> role;
 
-  /**
-   * Determine if the role field is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetRole() {
-    return this.role != null && !this.role.isEmpty();
-  }
+/**
+Get the RoleRef
 
-  /**
-   * Set the RoleRef
-   * <p>
-   * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @param values An instances of type {@link Role}
-   * @return The current Organisation object instance
-   * @since 3.1.0
-   */
-  public Organisation withRole(Role... values) {
-    return withRole(new HashSet<>(Arrays.asList(values)));
-  }
+Complex element RoleRef contains the serial of a referenced Role.
 
-  /**
-   * Set the RoleRef
-   * <p>
-   * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
-   * @param values An instances of type {@link Role}
-   * @return The current Organisation object instance
-   * @since 3.1.0
-   */
-  public Organisation withRole(Set<Role> values) {
-    getRole().addAll(values);
-    return this;
-  }
+@return  a {@link Role} instance
+@since 3.1.0
+*/
+public Set<Role> getRole(){
+if(role == null){
+role = new HashSet<>();
+}
+ return role;
+}
+/**
+ Determine if the role field is configured.
+  @return TRUE if the field is set, FALSE if the field is null
+ */
+public boolean isSetRole() {
+return this.role !=null  && !this.role.isEmpty();
+}
 
+/**
+Set the RoleRef
+
+Complex element RoleRef contains the serial of a referenced Role.
+
+@param values  An instances of type {@link Role}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+public Organisation withRole(Role... values) {
+return  withRole(Arrays.asList(values));
+}
+
+/**
+Set the RoleRef
+
+Complex element RoleRef contains the serial of a referenced Role.
+
+@param values  An instances of type {@link Role}
+@return The current Organisation object instance
+@since 3.1.0
+*/
+public Organisation withRole(Collection<Role> values) {
+getRole().addAll(values);
+return this;
+}
   /**
    * Update the SSRF data type references in this Organisation record.
    * <p>
-   * This method builds the exported {@link #roleRef} field with values from the
-   * transient {@link #role} field. This method should typically be called after
-   * the Organisation is configured and (optionally) before exporting an SSRF
-   * message.
-   * <p>
-   * @since 3.1.0
-   */
+ @since 3.1.0 */
   @Override
-  public void prepare() {
-    super.prepare();
-    this.roleRef = new HashSet<>();
-    for (Role instance : getRole()) {
-      this.roleRef.add(instance.getSerial());
-    }
-  }
+public void prepare() {
+super.prepare();
+this.roleRef= new ArrayList<>();
+for (Role instance :  getRole()) {
+this.roleRef.add(instance.getSerial());
+}
 
-  /**
-   * Update the SSRF data type references in this Organisation record after
-   * loading from XML.
-   * <p>
-   * This method builds the transient {@link #role} with values from the
-   * imported {@link #roleRef} field. This method should typically be called
-   * after the Organisation is imported from XML.
+/**
+   * Update the SSRF data type references in this Organisation record after loading from XML.
+
+   * This method builds the transient {@link #role} with values
+   * from the imported {@link #roleRef} field. This method should
+   * typically be called after the Organisation is imported from XML.
    * <p>
    * @param root the SSRF root instance
    * @since 3.1.0
    */
-  @Override
   public void postLoad(SSRF root) {
-    super.postLoad(root);
-    if (roleRef == null || roleRef.isEmpty()) {
-      return;
-    }
-    for (Role instance : root.getRole()) {
-      if (roleRef.contains(instance.getSerial())) {
-        role.add(instance);
-      }
-    }
-  }//</editor-fold>
+if (roleRef==null || roleRef.isEmpty() ) {return;}
+for(Role instance : root.getRole()) {
+if(roleRef.contains(instance.getSerial())){
+role.add(instance);
+}
+}}//</editor-fold>
 
 }

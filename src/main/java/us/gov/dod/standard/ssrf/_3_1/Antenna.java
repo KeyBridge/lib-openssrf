@@ -1,1432 +1,1928 @@
-/* 
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
+import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
-import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
-import us.gov.dod.standard.ssrf._3_1.antenna.AntHardware;
-import us.gov.dod.standard.ssrf._3_1.antenna.AntMode;
-import us.gov.dod.standard.ssrf._3_1.antenna.Nomenclature;
-import us.gov.dod.standard.ssrf._3_1.antenna.UsingCountries;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAT;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRS;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * Antenna is the XML root for all parameters of an Antenna. It also contains
- * various technical parameters of the antenna.
- * <p>
- * Sub-Elements are
- * {@link AntHardware}, {@link AntMode}, {@link Nomenclature}, {@link POCInformation}, {@link UsingCountries}
- * <p>
- * Example:
- * <pre>
- * &lt;Antenna cls="U"&gt;
- *   &lt;Serial cls="U"&gt;TUR::AN:123&lt;/Serial&gt;
- *   &lt;EntryDateTime cls="U"&gt;2011-12-25T00:00:00Z&lt;/EntryDateTime&gt;
- *   &lt;Generic cls="U"&gt;No&lt;/Generic&gt;
- *   &lt;AntType cls="U"&gt;Billboard&lt;/AntType&gt;
- *   &lt;Nomenclature&gt;
- *     &lt;Name cls="U"&gt;XYZ&lt;/Name&gt;
- *   &lt;/Nomenclature&gt;
- *   &lt;AntMode&gt;
- *     &lt;All_AntMode_elements/&gt;
- *   &lt;/AntMode&gt;
- * &lt;/Antenna&gt;
- * </pre>
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+Antenna is the XML root for all parameters of an Antenna. It also contains various technical parameters of the antenna.
+
+Sub-Elements are {@link AntHardware}, {@link AntMode}, {@link Nomenclature}, {@link POCInformation}, {@link UsingCountries}
+
+Example: <pre>
+* &lt;Antenna cls="U"&gt;
+*   &lt;Serial cls="U"&gt;TUR::AN:123&lt;/Serial&gt;
+*   &lt;EntryDateTime cls="U"&gt;2011-12-25T00:00:00Z&lt;/EntryDateTime&gt;
+*   &lt;Generic cls="U"&gt;No&lt;/Generic&gt;
+*   &lt;AntType cls="U"&gt;Billboard&lt;/AntType&gt;
+*   &lt;Nomenclature&gt;
+*     &lt;Name cls="U"&gt;XYZ&lt;/Name&gt;
+*   &lt;/Nomenclature&gt;
+*   &lt;AntMode&gt;
+*     &lt;All_AntMode_elements/&gt;
+*     &lt;/AntMode&gt;
+*   &lt;/Antenna&gt;
+</pre>
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Antenna", propOrder = {
-  "generic",
-  "antType",
-  "phArrayNumMainBeams",
-  "phArrayNumElements",
-  "shape",
-  "diameter",
-  "horzDimension",
-  "vertDimension",
-  "apertureDiameter",
-  "horzAperture",
-  "vertAperture",
-  "horzSidelobeSuppressed",
-  "horzSidelobeAz",
-  "horzSidelobeAttenuation",
-  "vertSidelobeSuppressed",
-  "vertSidelobeElev",
-  "vertSidelobeAttenuation",
-  "pocInformation",
-  "nomenclature",
-  "antHardware",
-  "antMode",
-  "usingCountries"
+    "generic",
+    "antType",
+    "phArrayNumMainBeams",
+    "phArrayNumElements",
+    "shape",
+    "diameter",
+    "horzDimension",
+    "vertDimension",
+    "apertureDiameter",
+    "horzAperture",
+    "vertAperture",
+    "horzSidelobeSuppressed",
+    "horzSidelobeAz",
+    "horzSidelobeAttenuation",
+    "vertSidelobeSuppressed",
+    "vertSidelobeElev",
+    "vertSidelobeAttenuation",
+    "pocInformation",
+    "nomenclature",
+    "antHardware",
+    "antMode",
+    "usingCountries"
 })
-@XmlRootElement
-public class Antenna extends Common<Antenna> {
+public class Antenna
+    extends Common
+{
 
-  /**
-   * Generic - Generic indicator (Required)
-   * <p>
-   * "Yes" to indicate that the dataset describes typical parameters of a
-   * waveform or standard signal, or a generic antenna model, rather than a
-   * specific equipment model.
-   * <p>
-   * Format is L:CBO
-   */
-  @XmlElement(name = "Generic", required = true)
-  private TString generic;
-  /**
-   * AntType - Antenna Type (Required)
-   * <p>
-   * The type of antenna.
-   * <p>
-   * Format is L:CAT
-   */
-  @XmlElement(name = "AntType", required = true)
-  private TString antType;
-  /**
-   * PhArrayNumMainBeams - Number of Main Beams in the Phased Array (Optional)
-   * <p>
-   * The number of main beams in the phased array antenna.
-   * <p>
-   * Format is UN(3)
-   */
-  @XmlElement(name = "PhArrayNumMainBeams", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN3.class)
-  private TInteger phArrayNumMainBeams;
-  /**
-   * PhArrayNumElements - Number of elements in the Phased Array (Optional)
-   * <p>
-   * The number of antenna elements in the phased array antenna.
-   * <p>
-   * Format is UN(5)
-   */
-  @XmlElement(name = "PhArrayNumElements", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN5.class)
-  private TInteger phArrayNumElements;
-  /**
-   * Shape - Antenna Shape (Optional)
-   * <p>
-   * A code used to describe the general shape of the antenna reflector.
-   * <p>
-   * Format is L:CRS
-   * <p>
-   * Attribute group Dimension (Optional)
-   */
-  @XmlElement(name = "Shape", required = false)
-  private TString shape;
-  /**
-   * ApertureDiameter - Aperture Diameter (Optional)
-   * <p>
-   * The cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * Format is UN(6,2) (m)
-   * <p>
-   * Attribute group Aperture (Optional)
-   */
-  @XmlElement(name = "Diameter", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
-  private TDecimal diameter;
-  /**
-   * HorzDimension - Horizontal Dimension (Optional)
-   * <p>
-   * The linear horizontal dimension of the antenna.
-   * <p>
-   * Format is UN(6,2) (m)
-   * <p>
-   * Attribute group Dimension (Optional)
-   */
-  @XmlElement(name = "HorzDimension", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
-  private TDecimal horzDimension;
-  /**
-   * VertDimension - Vertical Dimension (Optional)
-   * <p>
-   * The linear vertical dimension of the antenna.
-   * <p>
-   * Format is UN(6,2) (m)
-   * <p>
-   * Attribute group Dimension (Optional)
-   */
-  @XmlElement(name = "VertDimension", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
-  private TDecimal vertDimension;
-  /**
-   * ApertureDiameter - Aperture Diameter (Optional)
-   * <p>
-   * The cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * Format is UN(6,2) (m)
-   * <p>
-   * Attribute group Aperture (Optional)
-   */
-  @XmlElement(name = "ApertureDiameter", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
-  private TDecimal apertureDiameter;
-  /**
-   * HorzAperture - Horizontal Aperture (Optional)
-   * <p>
-   * The horizontal cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * Format is UN(6,2) (m)
-   * <p>
-   * Attribute group Aperture (Optional)
-   */
-  @XmlElement(name = "HorzAperture", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
-  private TDecimal horzAperture;
-  /**
-   * VertAperture - Vertical Aperture (Optional)
-   * <p>
-   * The vertical cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * Format is UN(6,2) (m)
-   * <p>
-   * Attribute group Aperture (Optional)
-   */
-  @XmlElement(name = "VertAperture", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDIMENSION.class)
-  private TDecimal vertAperture;
-  /**
-   * HorzSidelobeSuppressed - Horizontal Sidelobe is Suppressed (Optional)
-   * <p>
-   * If the sidelobe has been suppressed. Enter Yes (if the sidelobe is
-   * suppressed) or No (sidelobe not suppressed).
-   * <p>
-   * Format is L:CBO
-   * <p>
-   * Attribute group Sidelobe (Optional)
-   */
-  @XmlElement(name = "HorzSidelobeSuppressed", required = false)
-  private TString horzSidelobeSuppressed;
-  /**
-   * HorzSidelobeAz - Horizontal Sidelobe Azimuth (Optional)
-   * <p>
-   * The direction of the sidelobe in reference to the direction of maximum
-   * gain.
-   * <p>
-   * Format is UN(5,2) [0..360] (deg)
-   * <p>
-   * Attribute group Sidelobe (Optional)
-   */
-  @XmlElement(name = "HorzSidelobeAz", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterAZ.class)
-  private TDecimal horzSidelobeAz;
-  /**
-   * HorzSidelobeAttenuation - Horizontal Sidelobe Attenuation (Optional)
-   * <p>
-   * The amount of suppression relative to the main beam gain of the antenna.
-   * <p>
-   * Format is UN(5,2) (dB)
-   * <p>
-   * Attribute group Sidelobe (Optional)
-   */
-  @XmlElement(name = "HorzSidelobeAttenuation", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
-  private TDecimal horzSidelobeAttenuation;
-  /**
-   * VertSidelobeSuppressed - Vertical Sidelobe is Suppressed (Optional)
-   * <p>
-   * Whether a portion of the radiation from an antenna outside of the main beam
-   * has been suppressed or eliminated..
-   * <p>
-   * Format is L:CBO
-   * <p>
-   * Attribute group Sidelobe (Optional)
-   */
-  @XmlElement(name = "VertSidelobeSuppressed", required = false)
-  private TString vertSidelobeSuppressed;
-  /**
-   * VertSidelobeElev - Vertical Sidelobe Elevation (Optional)
-   * <p>
-   * The first sidelobe in the vertical plane. Enter the clockwise angular
-   * difference (in degrees) between the centre line of the main beam gain and
-   * the sidelobe.
-   * <p>
-   * Format is UN(5,2) [-180..180] (deg)
-   * <p>
-   * Attribute group Sidelobe (Optional)
-   */
-  @XmlElement(name = "VertSidelobeElev", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterELEV180.class)
-  private TDecimal vertSidelobeElev;
-  /**
-   * VertSidelobeAttenuation - Vertical Sidelobe Attenuation (Optional)
-   * <p>
-   * The attenuation of the sidelobe relative to the main beam gain.
-   * <p>
-   * Format is UN(5,2) (dB)
-   * <p>
-   * Attribute group Sidelobe (Optional)
-   */
-  @XmlElement(name = "VertSidelobeAttenuation", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUNSIGNED_DB_5_2.class)
-  private TDecimal vertSidelobeAttenuation;
-  /**
-   * POCInformation (Optional)
-   * <p>
-   * POCInformation contains a reference to a Contact, Organisation or Role
-   * dataset.
-   */
-  @XmlElement(name = "POCInformation")
-  private Set<POCInformation> pocInformation;
-  /**
-   * Nomenclature (Optional)
-   * <p>
-   * Nomenclature identifies either the standard military, government,
-   * nomenclature or the commercial model number of an equipment. Each device or
-   * group of devices may have several types of nomenclatures, e.g. both a
-   * military nomenclature and a commercial model number.
-   * <p>
-   * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   */
-  @XmlElement(name = "Nomenclature")
-  private Set<Nomenclature> nomenclature;
-  /**
-   * AntHardware (Optional)
-   * <p>
-   * AntHardware contains the physical parameters related to the antenna feed
-   * and lead.
-   */
-  @XmlElement(name = "AntHardware")
-  private Set<AntHardware> antHardware;
-  /**
-   * AntMode (Optional)
-   * <p>
-   * AntMode contains the technical characteristics of one antenna mode.
-   * <p>
-   * Divergence from SMADEF: SMADEF requires (1..n) AntModes
-   */
-  @XmlElement(name = "AntMode")
-  private Set<AntMode> antMode;
-  /**
-   * US:UsingCountries (Optional)
-   * <p>
-   * UsingCountries (US) describes the countries that manufacture (Producing),
-   * supply (Source), and use (Using) the Antenna.
-   */
-  @XmlElement(name = "UsingCountries")
-  private Set<UsingCountries> usingCountries;
+/**
+Generic  - Generic indicator (Required) 
 
-  /**
-   * Get "Yes" to indicate that the dataset describes typical parameters of a
-   * waveform or standard signal, or a generic antenna model, rather than a
-   * specific equipment model.
-   * <p>
-   * @return the Generic value in a {@link TString} data type
-   */
-  public TString getGeneric() {
-    return generic;
-  }
+"Yes" to indicate that the dataset describes typical parameters of a waveform or standard signal, or a generic antenna model, rather than a specific equipment model.
 
-  /**
-   * Set "Yes" to indicate that the dataset describes typical parameters of a
-   * waveform or standard signal, or a generic antenna model, rather than a
-   * specific equipment model.
-   * <p>
-   * @param value the Generic value in a {@link TString} data type
-   */
-  public void setGeneric(TString value) {
-    this.generic = value;
-  }
+Format is L:CBO
+@since 3.1.0
+*/
+    @XmlElement(name = "Generic", required = true)
+      private  TString generic;
+/**
+AntType  - Antenna Type (Required) 
 
-  /**
-   * Determine if the Generic is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetGeneric() {
-    return (this.generic != null ? this.generic.isSetValue() : false);
-  }
+The type of antenna.
 
-  /**
-   * Get the type of antenna.
-   * <p>
-   * @return the AntType value in a {@link TString} data type
-   */
-  public TString getAntType() {
-    return antType;
-  }
+Format is L:CAT
+@since 3.1.0
+*/
+    @XmlElement(name = "AntType", required = true)
+      private  TString antType;
+/**
+PhArrayNumMainBeams  - Number of Main Beams in the Phased Array (Optional) 
 
-  /**
-   * Set the type of antenna.
-   * <p>
-   * @param value the AntType value in a {@link TString} data type
-   */
-  public void setAntType(TString value) {
-    this.antType = value;
-  }
+The number of main beams in the phased array antenna.
 
-  /**
-   * Determine if the AntType is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAntType() {
-    return (this.antType != null ? this.antType.isSetValue() : false);
-  }
+Format is UN(3)
+@since 3.1.0
+*/
+    @XmlElement(name = "PhArrayNumMainBeams", required = false)
+    private UN3 phArrayNumMainBeams;
+/**
+PhArrayNumElements  - Number of elements in the Phased Array (Optional) 
 
-  /**
-   * Get the number of main beams in the phased array antenna.
-   * <p>
-   * @return the PhArrayNumMainBeams value in a {@link TInteger} data type
-   */
-  public TInteger getPhArrayNumMainBeams() {
-    return phArrayNumMainBeams;
-  }
+The number of antenna elements in the phased array antenna.
 
-  /**
-   * Set the number of main beams in the phased array antenna.
-   * <p>
-   * @param value the PhArrayNumMainBeams value in a {@link TInteger} data type
-   */
-  public void setPhArrayNumMainBeams(TInteger value) {
-    this.phArrayNumMainBeams = value;
-  }
+Format is UN(5)
+@since 3.1.0
+*/
+    @XmlElement(name = "PhArrayNumElements", required = false)
+    private UN5 phArrayNumElements;
+/**
+Shape  - Antenna Shape (Optional) 
 
-  /**
-   * Determine if the PhArrayNumMainBeams is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetPhArrayNumMainBeams() {
-    return (this.phArrayNumMainBeams != null ? this.phArrayNumMainBeams.isSetValue() : false);
-  }
+A code used to describe the general shape of the antenna reflector.
 
-  /**
-   * Get the number of antenna elements in the phased array antenna.
-   * <p>
-   * @return the PhArrayNumElements value in a {@link TInteger} data type
-   */
-  public TInteger getPhArrayNumElements() {
-    return phArrayNumElements;
-  }
+Format is L:CRS
 
-  /**
-   * Set the number of antenna elements in the phased array antenna.
-   * <p>
-   * @param value the PhArrayNumElements value in a {@link TInteger} data type
-   */
-  public void setPhArrayNumElements(TInteger value) {
-    this.phArrayNumElements = value;
-  }
+Attribute group Dimension (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "Shape", required = false)
+    private TString shape;
+/**
+ApertureDiameter  - Aperture Diameter (Optional) 
 
-  /**
-   * Determine if the PhArrayNumElements is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetPhArrayNumElements() {
-    return (this.phArrayNumElements != null ? this.phArrayNumElements.isSetValue() : false);
-  }
+The cross-section of an antenna radiation pattern in the direction of highest gain.
 
-  /**
-   * Get a code used to describe the general shape of the antenna reflector.
-   * <p>
-   * @return the Shape value in a {@link TString} data type
-   */
-  public TString getShape() {
-    return shape;
-  }
+Format is UN(6,2) (m)
 
-  /**
-   * Set a code used to describe the general shape of the antenna reflector.
-   * <p>
-   * @param value the Shape value in a {@link TString} data type
-   */
-  public void setShape(TString value) {
-    this.shape = value;
-  }
+Attribute group Aperture (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "Diameter", required = false)
+    private Dimension diameter;
+/**
+HorzDimension  - Horizontal Dimension (Optional) 
 
-  /**
-   * Determine if the Shape is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetShape() {
-    return (this.shape != null ? this.shape.isSetValue() : false);
-  }
+The linear horizontal dimension of the antenna.
 
-  /**
-   * Get the cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * @return the Diameter value in a {@link TDecimal} data type
-   */
-  public TDecimal getDiameter() {
-    return diameter;
-  }
+Format is UN(6,2) (m)
 
-  /**
-   * Set the cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * @param value the Diameter value in a {@link TDecimal} data type
-   */
-  public void setDiameter(TDecimal value) {
-    this.diameter = value;
-  }
+Attribute group Dimension (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "HorzDimension", required = false)
+    private Dimension horzDimension;
+/**
+VertDimension  - Vertical Dimension (Optional) 
 
-  /**
-   * Determine if the Diameter is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetDiameter() {
-    return (this.diameter != null ? this.diameter.isSetValue() : false);
-  }
+The linear vertical dimension of the antenna.
 
-  /**
-   * Get the linear horizontal dimension of the antenna.
-   * <p>
-   * @return the HorzDimension value in a {@link TDecimal} data type
-   */
-  public TDecimal getHorzDimension() {
-    return horzDimension;
-  }
+Format is UN(6,2) (m)
 
-  /**
-   * Set the linear horizontal dimension of the antenna.
-   * <p>
-   * @param value the HorzDimension value in a {@link TDecimal} data type
-   */
-  public void setHorzDimension(TDecimal value) {
-    this.horzDimension = value;
-  }
+Attribute group Dimension (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "VertDimension", required = false)
+    private Dimension vertDimension;
+/**
+ApertureDiameter  - Aperture Diameter (Optional) 
 
-  /**
-   * Determine if the HorzDimension is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetHorzDimension() {
-    return (this.horzDimension != null ? this.horzDimension.isSetValue() : false);
-  }
+The cross-section of an antenna radiation pattern in the direction of highest gain.
 
-  /**
-   * Get the linear vertical dimension of the antenna.
-   * <p>
-   * @return the VertDimension value in a {@link TDecimal} data type
-   */
-  public TDecimal getVertDimension() {
-    return vertDimension;
-  }
+Format is UN(6,2) (m)
 
-  /**
-   * Set the linear vertical dimension of the antenna.
-   * <p>
-   * @param value the VertDimension value in a {@link TDecimal} data type
-   */
-  public void setVertDimension(TDecimal value) {
-    this.vertDimension = value;
-  }
+Attribute group Aperture (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "ApertureDiameter", required = false)
+    private Dimension apertureDiameter;
+/**
+HorzAperture  - Horizontal Aperture (Optional) 
 
-  /**
-   * Determine if the VertDimension is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetVertDimension() {
-    return (this.vertDimension != null ? this.vertDimension.isSetValue() : false);
-  }
+The horizontal cross-section of the antenna radiation pattern in the direction of highest gain.
 
-  /**
-   * Get the cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * @return the ApertureDiameter value in a {@link TDecimal} data type
-   */
-  public TDecimal getApertureDiameter() {
-    return apertureDiameter;
-  }
+Format is UN(6,2) (m)
 
-  /**
-   * Set the cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * @param value the ApertureDiameter value in a {@link TDecimal} data type
-   */
-  public void setApertureDiameter(TDecimal value) {
-    this.apertureDiameter = value;
-  }
+Attribute group Aperture (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "HorzAperture", required = false)
+    private Dimension horzAperture;
+/**
+VertAperture  - Vertical Aperture (Optional) 
 
-  /**
-   * Determine if the ApertureDiameter is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetApertureDiameter() {
-    return (this.apertureDiameter != null ? this.apertureDiameter.isSetValue() : false);
-  }
+The vertical cross-section of the antenna radiation pattern in the direction of highest gain.
 
-  /**
-   * Get the horizontal cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * @return the HorzAperture value in a {@link TDecimal} data type
-   */
-  public TDecimal getHorzAperture() {
-    return horzAperture;
-  }
+Format is UN(6,2) (m)
 
-  /**
-   * Set the horizontal cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * @param value the HorzAperture value in a {@link TDecimal} data type
-   */
-  public void setHorzAperture(TDecimal value) {
-    this.horzAperture = value;
-  }
+Attribute group Aperture (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "VertAperture", required = false)
+    private Dimension vertAperture;
+/**
+HorzSidelobeSuppressed  - Horizontal Sidelobe is Suppressed (Optional) 
 
-  /**
-   * Determine if the HorzAperture is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetHorzAperture() {
-    return (this.horzAperture != null ? this.horzAperture.isSetValue() : false);
-  }
+If the sidelobe has been suppressed. Enter Yes (if the sidelobe is suppressed) or No (sidelobe not suppressed).
 
-  /**
-   * Get the vertical cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * @return the VertAperture value in a {@link TDecimal} data type
-   */
-  public TDecimal getVertAperture() {
-    return vertAperture;
-  }
+Format is L:CBO
 
-  /**
-   * Set the vertical cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * @param value the VertAperture value in a {@link TDecimal} data type
-   */
-  public void setVertAperture(TDecimal value) {
-    this.vertAperture = value;
-  }
+Attribute group Sidelobe (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "HorzSidelobeSuppressed", required = false)
+    private TString horzSidelobeSuppressed;
+/**
+HorzSidelobeAz  - Horizontal Sidelobe Azimuth (Optional) 
 
-  /**
-   * Determine if the VertAperture is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetVertAperture() {
-    return (this.vertAperture != null ? this.vertAperture.isSetValue() : false);
-  }
+The direction of the sidelobe in reference to the direction of maximum gain.
 
-  /**
-   * Get if the sidelobe has been suppressed. Enter Yes (if the sidelobe is
-   * suppressed) or No (sidelobe not suppressed).
-   * <p>
-   * @return the HorzSidelobeSuppressed value in a {@link TString} data type
-   */
-  public TString getHorzSidelobeSuppressed() {
-    return horzSidelobeSuppressed;
-  }
+Format is UN(5,2) [0..360] (deg)
 
-  /**
-   * Set if the sidelobe has been suppressed. Enter Yes (if the sidelobe is
-   * suppressed) or No (sidelobe not suppressed).
-   * <p>
-   * @param value the HorzSidelobeSuppressed value in a {@link TString} data
-   *              type
-   */
-  public void setHorzSidelobeSuppressed(TString value) {
-    this.horzSidelobeSuppressed = value;
-  }
+Attribute group Sidelobe (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "HorzSidelobeAz", required = false)
+    private Az horzSidelobeAz;
+/**
+HorzSidelobeAttenuation  - Horizontal Sidelobe Attenuation (Optional) 
 
-  /**
-   * Determine if the HorzSidelobeSuppressed is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetHorzSidelobeSuppressed() {
-    return (this.horzSidelobeSuppressed != null ? this.horzSidelobeSuppressed.isSetValue() : false);
-  }
+The amount of suppression relative to the main beam gain of the antenna.
 
-  /**
-   * Get the direction of the sidelobe in reference to the direction of maximum
-   * gain.
-   * <p>
-   * @return the HorzSidelobeAz value in a {@link TDecimal} data type
-   */
-  public TDecimal getHorzSidelobeAz() {
-    return horzSidelobeAz;
-  }
+Format is UN(5,2) (dB)
 
-  /**
-   * Set the direction of the sidelobe in reference to the direction of maximum
-   * gain.
-   * <p>
-   * @param value the HorzSidelobeAz value in a {@link TDecimal} data type
-   */
-  public void setHorzSidelobeAz(TDecimal value) {
-    this.horzSidelobeAz = value;
-  }
+Attribute group Sidelobe (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "HorzSidelobeAttenuation", required = false)
+    private Unsigned_dB_5_2 horzSidelobeAttenuation;
+/**
+VertSidelobeSuppressed  - Vertical Sidelobe is Suppressed (Optional) 
 
-  /**
-   * Determine if the HorzSidelobeAz is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetHorzSidelobeAz() {
-    return (this.horzSidelobeAz != null ? this.horzSidelobeAz.isSetValue() : false);
-  }
+Whether a portion of the radiation from an antenna outside of the main beam has been suppressed or eliminated..
 
-  /**
-   * Get the amount of suppression relative to the main beam gain of the
-   * antenna.
-   * <p>
-   * @return the HorzSidelobeAttenuation value in a {@link TDecimal} data type
-   */
-  public TDecimal getHorzSidelobeAttenuation() {
-    return horzSidelobeAttenuation;
-  }
+Format is L:CBO
 
-  /**
-   * Set the amount of suppression relative to the main beam gain of the
-   * antenna.
-   * <p>
-   * @param value the HorzSidelobeAttenuation value in a {@link TDecimal} data
-   *              type
-   */
-  public void setHorzSidelobeAttenuation(TDecimal value) {
-    this.horzSidelobeAttenuation = value;
-  }
+Attribute group Sidelobe (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "VertSidelobeSuppressed", required = false)
+    private TString vertSidelobeSuppressed;
+/**
+VertSidelobeElev  - Vertical Sidelobe Elevation (Optional) 
 
-  /**
-   * Determine if the HorzSidelobeAttenuation is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetHorzSidelobeAttenuation() {
-    return (this.horzSidelobeAttenuation != null ? this.horzSidelobeAttenuation.isSetValue() : false);
-  }
+The first sidelobe in the vertical plane. Enter the clockwise angular difference (in degrees) between the centre line of the main beam gain and the sidelobe.
 
-  /**
-   * Get whether a portion of the radiation from an antenna outside of the main
-   * beam has been suppressed or eliminated..
-   * <p>
-   * @return the VertSidelobeSuppressed value in a {@link TString} data type
-   */
-  public TString getVertSidelobeSuppressed() {
-    return vertSidelobeSuppressed;
-  }
+Format is UN(5,2) [-180..180] (deg)
 
-  /**
-   * Set whether a portion of the radiation from an antenna outside of the main
-   * beam has been suppressed or eliminated..
-   * <p>
-   * @param value the VertSidelobeSuppressed value in a {@link TString} data
-   *              type
-   */
-  public void setVertSidelobeSuppressed(TString value) {
-    this.vertSidelobeSuppressed = value;
-  }
+Attribute group Sidelobe (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "VertSidelobeElev", required = false)
+    private Elev180 vertSidelobeElev;
+/**
+VertSidelobeAttenuation  - Vertical Sidelobe Attenuation (Optional) 
 
-  /**
-   * Determine if the VertSidelobeSuppressed is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetVertSidelobeSuppressed() {
-    return (this.vertSidelobeSuppressed != null ? this.vertSidelobeSuppressed.isSetValue() : false);
-  }
+The attenuation of the sidelobe relative to the main beam gain.
 
-  /**
-   * Get the first sidelobe in the vertical plane. Enter the clockwise angular
-   * difference (in degrees) between the centre line of the main beam gain and
-   * the sidelobe.
-   * <p>
-   * @return the VertSidelobeElev value in a {@link TDecimal} data type
-   */
-  public TDecimal getVertSidelobeElev() {
-    return vertSidelobeElev;
-  }
+Format is UN(5,2) (dB)
 
-  /**
-   * Set the first sidelobe in the vertical plane. Enter the clockwise angular
-   * difference (in degrees) between the centre line of the main beam gain and
-   * the sidelobe.
-   * <p>
-   * @param value the VertSidelobeElev value in a {@link TDecimal} data type
-   */
-  public void setVertSidelobeElev(TDecimal value) {
-    this.vertSidelobeElev = value;
-  }
+Attribute group Sidelobe (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "VertSidelobeAttenuation", required = false)
+    private Unsigned_dB_5_2 vertSidelobeAttenuation;
+/**
+POCInformation (Optional)
 
-  /**
-   * Determine if the VertSidelobeElev is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetVertSidelobeElev() {
-    return (this.vertSidelobeElev != null ? this.vertSidelobeElev.isSetValue() : false);
-  }
+POCInformation contains a reference to a Contact, Organisation or Role dataset.
+@since 3.1.0
+*/
+    @XmlElement(name = "POCInformation")
+      private  Set<POCInformation> pocInformation;
+/**
+Nomenclature (Optional)
 
-  /**
-   * Get the attenuation of the sidelobe relative to the main beam gain.
-   * <p>
-   * @return the VertSidelobeAttenuation value in a {@link TDecimal} data type
-   */
-  public TDecimal getVertSidelobeAttenuation() {
-    return vertSidelobeAttenuation;
-  }
+Nomenclature identifies either the standard military, government, nomenclature or the commercial model number of an equipment. Each device or group of devices may have several types of nomenclatures, e.g. both a military nomenclature and a commercial model number.
 
-  /**
-   * Set the attenuation of the sidelobe relative to the main beam gain.
-   * <p>
-   * @param value the VertSidelobeAttenuation value in a {@link TDecimal} data
-   *              type
-   */
-  public void setVertSidelobeAttenuation(TDecimal value) {
-    this.vertSidelobeAttenuation = value;
-  }
+Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
+@since 3.1.0
+*/
+    @XmlElement(name = "Nomenclature")
+      private  Set<Nomenclature> nomenclature;
+/**
+AntHardware (Optional)
 
-  /**
-   * Determine if the VertSidelobeAttenuation is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetVertSidelobeAttenuation() {
-    return (this.vertSidelobeAttenuation != null ? this.vertSidelobeAttenuation.isSetValue() : false);
-  }
+AntHardware contains the physical parameters related to the antenna feed and lead.
+@since 3.1.0
+*/
+    @XmlElement(name = "AntHardware")
+      private  Set<AntHardware> antHardware;
+/**
+AntMode (Optional)
 
-  /**
-   * Get the POCInformation
-   * <p>
-   * Complex element POCInformation contains a reference to a Contact,
-   * Organisation or Role dataset.
-   * <p>
-   * @return a non-null but possibly empty list of {@link POCInformation}
-   *         instances
-   */
-  public Set<POCInformation> getPOCInformation() {
-    if (pocInformation == null) {
-      pocInformation = new HashSet<>();
+AntMode contains the technical characteristics of one antenna mode.
+
+Divergence from SMADEF: SMADEF requires (1..n) AntModes
+@since 3.1.0
+*/
+    @XmlElement(name = "AntMode")
+      private  Set<AntMode> antMode;
+/**
+US:UsingCountries (Optional)
+
+UsingCountries (US) describes the countries that manufacture (Producing), supply (Source), and use (Using) the Antenna.
+@since 3.1.0
+*/
+    @XmlElement(name = "UsingCountries")
+      private  Set<UsingCountries> usingCountries;
+
+/**
+Get "Yes" to indicate that the dataset describes typical parameters of a waveform or standard signal, or a generic antenna model, rather than a specific equipment model.
+
+@return the Generic value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getGeneric() {
+        return generic;
     }
-    return this.pocInformation;
-  }
 
-  /**
-   * Determine if the POCInformation is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetPOCInformation() {
-    return ((this.pocInformation != null) && (!this.pocInformation.isEmpty()));
-  }
+/**
+Set "Yes" to indicate that the dataset describes typical parameters of a waveform or standard signal, or a generic antenna model, rather than a specific equipment model.
 
-  /**
-   * Clear the POCInformation field. This sets the field to null.
-   */
-  public void unsetPOCInformation() {
-    this.pocInformation = null;
-  }
-
-  /**
-   * Get the Nomenclature
-   * <p>
-   * Complex element Nomenclature identifies either the standard military,
-   * government, nomenclature or the commercial model number of an equipment.
-   * Each device or group of devices may have several types of nomenclatures,
-   * e.g. both a military nomenclature and a commercial model number.
-   * <p>
-   * @return a non-null but possibly empty list of {@link Nomenclature}
-   *         instances
-   */
-  public Set<Nomenclature> getNomenclature() {
-    if (nomenclature == null) {
-      nomenclature = new HashSet<>();
+@param value the Generic value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setGeneric(TString value) {
+        this.generic = value;
     }
-    return this.nomenclature;
-  }
 
-  /**
-   * Determine if the Nomenclature is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNomenclature() {
-    return ((this.nomenclature != null) && (!this.nomenclature.isEmpty()));
-  }
+/**
+Determine if the Generic is configured.
 
-  /**
-   * Clear the Nomenclature field. This sets the field to null.
-   */
-  public void unsetNomenclature() {
-    this.nomenclature = null;
-  }
+If configured this method also inspects the {@link TString} wrapped value.
 
-  /**
-   * Get the AntHardware
-   * <p>
-   * Complex element AntHardware contains the physical parameters related to the
-   * antenna feed and lead.
-   * <p>
-   * @return a non-null but possibly empty list of {@link AntHardware} instances
-   */
-  public Set<AntHardware> getAntHardware() {
-    if (antHardware == null) {
-      antHardware = new HashSet<>();
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetGeneric() {
+return (this.generic!= null ? this.generic.isSetValue() : false);
     }
-    return this.antHardware;
-  }
 
-  /**
-   * Determine if the AntHardware is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAntHardware() {
-    return ((this.antHardware != null) && (!this.antHardware.isEmpty()));
-  }
+/**
+Get the type of antenna.
 
-  /**
-   * Clear the AntHardware field. This sets the field to null.
-   */
-  public void unsetAntHardware() {
-    this.antHardware = null;
-  }
-
-  /**
-   * Get the AntMode
-   * <p>
-   * Complex element AntMode contains the technical characteristics of one
-   * antenna mode.
-   * <p>
-   * @return a non-null but possibly empty list of {@link AntMode} instances
-   */
-  public Set<AntMode> getAntMode() {
-    if (antMode == null) {
-      antMode = new HashSet<>();
+@return the AntType value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getAntType() {
+        return antType;
     }
-    return this.antMode;
-  }
 
-  /**
-   * Determine if the AntMode is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAntMode() {
-    return ((this.antMode != null) && (!this.antMode.isEmpty()));
-  }
+/**
+Set the type of antenna.
 
-  /**
-   * Clear the AntMode field. This sets the field to null.
-   */
-  public void unsetAntMode() {
-    this.antMode = null;
-  }
-
-  /**
-   * Get the US:UsingCountries
-   * <p>
-   * Complex element UsingCountries (US) describes the countries that
-   * manufacture (Producing), supply (Source), and use (Using) the Antenna.
-   * <p>
-   * @return a non-null but possibly empty list of {@link UsingCountries}
-   *         instances
-   */
-  public Set<UsingCountries> getUsingCountries() {
-    if (usingCountries == null) {
-      usingCountries = new HashSet<>();
+@param value the AntType value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setAntType(TString value) {
+        this.antType = value;
     }
-    return this.usingCountries;
-  }
 
-  /**
-   * Determine if the UsingCountries is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetUsingCountries() {
-    return ((this.usingCountries != null) && (!this.usingCountries.isEmpty()));
-  }
+/**
+Determine if the AntType is configured.
 
-  /**
-   * Clear the UsingCountries field. This sets the field to null.
-   */
-  public void unsetUsingCountries() {
-    this.usingCountries = null;
-  }
+If configured this method also inspects the {@link TString} wrapped value.
 
-  /**
-   * Set "Yes" to indicate that the dataset describes typical parameters of a
-   * waveform or standard signal, or a generic antenna model, rather than a
-   * specific equipment model.
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current Antenna object instance
-   */
-  public Antenna withGeneric(ListCBO value) {
-    setGeneric(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the type of antenna.
-   * <p>
-   * @param value An instances of type {@link ListCAT}
-   * @return The current Antenna object instance
-   */
-  public Antenna withAntType(ListCAT value) {
-    setAntType(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the number of main beams in the phased array antenna.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current Antenna object instance
-   */
-  public Antenna withPhArrayNumMainBeams(Integer value) {
-    setPhArrayNumMainBeams(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the number of antenna elements in the phased array antenna.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current Antenna object instance
-   */
-  public Antenna withPhArrayNumElements(Integer value) {
-    setPhArrayNumElements(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set a code used to describe the general shape of the antenna reflector.
-   * <p>
-   * @param value An instances of type {@link ListCRS}
-   * @return The current Antenna object instance
-   */
-  public Antenna withShape(ListCRS value) {
-    setShape(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withDiameter(Double value) {
-    setDiameter(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the linear horizontal dimension of the antenna.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withHorzDimension(Double value) {
-    setHorzDimension(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the linear vertical dimension of the antenna.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withVertDimension(Double value) {
-    setVertDimension(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the cross-section of an antenna radiation pattern in the direction of
-   * highest gain.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withApertureDiameter(Double value) {
-    setApertureDiameter(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the horizontal cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withHorzAperture(Double value) {
-    setHorzAperture(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the vertical cross-section of the antenna radiation pattern in the
-   * direction of highest gain.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withVertAperture(Double value) {
-    setVertAperture(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set if the sidelobe has been suppressed. Enter Yes (if the sidelobe is
-   * suppressed) or No (sidelobe not suppressed).
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current Antenna object instance
-   */
-  public Antenna withHorzSidelobeSuppressed(ListCBO value) {
-    setHorzSidelobeSuppressed(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the direction of the sidelobe in reference to the direction of maximum
-   * gain.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withHorzSidelobeAz(Double value) {
-    setHorzSidelobeAz(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the amount of suppression relative to the main beam gain of the
-   * antenna.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withHorzSidelobeAttenuation(Double value) {
-    setHorzSidelobeAttenuation(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set whether a portion of the radiation from an antenna outside of the main
-   * beam has been suppressed or eliminated..
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current Antenna object instance
-   */
-  public Antenna withVertSidelobeSuppressed(ListCBO value) {
-    setVertSidelobeSuppressed(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the first sidelobe in the vertical plane. Enter the clockwise angular
-   * difference (in degrees) between the centre line of the main beam gain and
-   * the sidelobe.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withVertSidelobeElev(Double value) {
-    setVertSidelobeElev(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the attenuation of the sidelobe relative to the main beam gain.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Antenna object instance
-   */
-  public Antenna withVertSidelobeAttenuation(Double value) {
-    setVertSidelobeAttenuation(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the POCInformation
-   * <p>
-   * Complex element POCInformation contains a reference to a Contact,
-   * Organisation or Role dataset.
-   * <p>
-   * @param values One or more instances of type {@link POCInformation}
-   * @return The current Antenna object instance
-   */
-  public Antenna withPOCInformation(POCInformation... values) {
-    if (values != null) {
-      getPOCInformation().addAll(new HashSet<>(Arrays.asList(values)));
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAntType() {
+return (this.antType!= null ? this.antType.isSetValue() : false);
     }
-    return this;
-  }
 
-  /**
-   * Set the POCInformation
-   * <p>
-   * Complex element POCInformation contains a reference to a Contact,
-   * Organisation or Role dataset.
-   * <p>
-   * @param values A collection of {@link POCInformation} instances
-   * @return The current Antenna object instance
-   */
-  public Antenna withPOCInformation(Set<POCInformation> values) {
-    if (values != null) {
-      getPOCInformation().addAll(values);
+/**
+Get the number of main beams in the phased array antenna.
+
+@return the PhArrayNumMainBeams value in a {@link TUN3} data type
+@since 3.1.0
+*/
+public UN3 getPhArrayNumMainBeams() {
+        return phArrayNumMainBeams;
     }
-    return this;
-  }
 
-  /**
-   * Set the Nomenclature
-   * <p>
-   * Complex element Nomenclature identifies either the standard military,
-   * government, nomenclature or the commercial model number of an equipment.
-   * Each device or group of devices may have several types of nomenclatures,
-   * e.g. both a military nomenclature and a commercial model number.
-   * <p>
-   * @param values One or more instances of type {@link Nomenclature}
-   * @return The current Antenna object instance
-   */
-  public Antenna withNomenclature(Nomenclature... values) {
-    if (values != null) {
-      getNomenclature().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set the number of main beams in the phased array antenna.
+
+@param value the PhArrayNumMainBeams value in a {@link TUN3} data type
+@since 3.1.0
+*/
+public void setPhArrayNumMainBeams(UN3 value) {
+        this.phArrayNumMainBeams = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the Nomenclature
-   * <p>
-   * Complex element Nomenclature identifies either the standard military,
-   * government, nomenclature or the commercial model number of an equipment.
-   * Each device or group of devices may have several types of nomenclatures,
-   * e.g. both a military nomenclature and a commercial model number.
-   * <p>
-   * @param values A collection of {@link Nomenclature} instances
-   * @return The current Antenna object instance
-   */
-  public Antenna withNomenclature(Set<Nomenclature> values) {
-    if (values != null) {
-      getNomenclature().addAll(values);
+/**
+Determine if the PhArrayNumMainBeams is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetPhArrayNumMainBeams() {
+        return (this.phArrayNumMainBeams!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the AntHardware
-   * <p>
-   * Complex element AntHardware contains the physical parameters related to the
-   * antenna feed and lead.
-   * <p>
-   * @param values One or more instances of type {@link AntHardware}
-   * @return The current Antenna object instance
-   */
-  public Antenna withAntHardware(AntHardware... values) {
-    if (values != null) {
-      getAntHardware().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Get the number of antenna elements in the phased array antenna.
+
+@return the PhArrayNumElements value in a {@link TUN5} data type
+@since 3.1.0
+*/
+public UN5 getPhArrayNumElements() {
+        return phArrayNumElements;
     }
-    return this;
-  }
 
-  /**
-   * Set the AntHardware
-   * <p>
-   * Complex element AntHardware contains the physical parameters related to the
-   * antenna feed and lead.
-   * <p>
-   * @param values A collection of {@link AntHardware} instances
-   * @return The current Antenna object instance
-   */
-  public Antenna withAntHardware(Set<AntHardware> values) {
-    if (values != null) {
-      getAntHardware().addAll(values);
+/**
+Set the number of antenna elements in the phased array antenna.
+
+@param value the PhArrayNumElements value in a {@link TUN5} data type
+@since 3.1.0
+*/
+public void setPhArrayNumElements(UN5 value) {
+        this.phArrayNumElements = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the AntMode
-   * <p>
-   * Complex element AntMode contains the technical characteristics of one
-   * antenna mode.
-   * <p>
-   * @param values One or more instances of type {@link AntMode}
-   * @return The current Antenna object instance
-   */
-  public Antenna withAntMode(AntMode... values) {
-    if (values != null) {
-      getAntMode().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Determine if the PhArrayNumElements is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetPhArrayNumElements() {
+        return (this.phArrayNumElements!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the AntMode
-   * <p>
-   * Complex element AntMode contains the technical characteristics of one
-   * antenna mode.
-   * <p>
-   * @param values A collection of {@link AntMode} instances
-   * @return The current Antenna object instance
-   */
-  public Antenna withAntMode(Set<AntMode> values) {
-    if (values != null) {
-      getAntMode().addAll(values);
+/**
+Get a code used to describe the general shape of the antenna reflector.
+
+@return the Shape value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getShape() {
+        return shape;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:UsingCountries
-   * <p>
-   * Complex element UsingCountries (US) describes the countries that
-   * manufacture (Producing), supply (Source), and use (Using) the Antenna.
-   * <p>
-   * @param values One or more instances of type {@link UsingCountries}
-   * @return The current Antenna object instance
-   */
-  public Antenna withUsingCountries(UsingCountries... values) {
-    if (values != null) {
-      getUsingCountries().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set a code used to describe the general shape of the antenna reflector.
+
+@param value the Shape value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setShape(TString value) {
+        this.shape = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:UsingCountries
-   * <p>
-   * Complex element UsingCountries (US) describes the countries that
-   * manufacture (Producing), supply (Source), and use (Using) the Antenna.
-   * <p>
-   * @param values A collection of {@link UsingCountries} instances
-   * @return The current Antenna object instance
-   */
-  public Antenna withUsingCountries(Set<UsingCountries> values) {
-    if (values != null) {
-      getUsingCountries().addAll(values);
+/**
+Determine if the Shape is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetShape() {
+return (this.shape!= null ? this.shape.isSetValue() : false);
     }
-    return this;
+
+/**
+Get the cross-section of an antenna radiation pattern in the direction of highest gain.
+
+@return the Diameter value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public Dimension getDiameter() {
+        return diameter;
+    }
+
+/**
+Set the cross-section of an antenna radiation pattern in the direction of highest gain.
+
+@param value the Diameter value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public void setDiameter(Dimension value) {
+        this.diameter = value;
+    }
+
+/**
+Determine if the Diameter is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetDiameter() {
+        return (this.diameter!= null);
+    }
+
+/**
+Get the linear horizontal dimension of the antenna.
+
+@return the HorzDimension value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public Dimension getHorzDimension() {
+        return horzDimension;
+    }
+
+/**
+Set the linear horizontal dimension of the antenna.
+
+@param value the HorzDimension value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public void setHorzDimension(Dimension value) {
+        this.horzDimension = value;
+    }
+
+/**
+Determine if the HorzDimension is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetHorzDimension() {
+        return (this.horzDimension!= null);
+    }
+
+/**
+Get the linear vertical dimension of the antenna.
+
+@return the VertDimension value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public Dimension getVertDimension() {
+        return vertDimension;
+    }
+
+/**
+Set the linear vertical dimension of the antenna.
+
+@param value the VertDimension value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public void setVertDimension(Dimension value) {
+        this.vertDimension = value;
+    }
+
+/**
+Determine if the VertDimension is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetVertDimension() {
+        return (this.vertDimension!= null);
+    }
+
+/**
+Get the cross-section of an antenna radiation pattern in the direction of highest gain.
+
+@return the ApertureDiameter value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public Dimension getApertureDiameter() {
+        return apertureDiameter;
+    }
+
+/**
+Set the cross-section of an antenna radiation pattern in the direction of highest gain.
+
+@param value the ApertureDiameter value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public void setApertureDiameter(Dimension value) {
+        this.apertureDiameter = value;
+    }
+
+/**
+Determine if the ApertureDiameter is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetApertureDiameter() {
+        return (this.apertureDiameter!= null);
+    }
+
+/**
+Get the horizontal cross-section of the antenna radiation pattern in the direction of highest gain.
+
+@return the HorzAperture value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public Dimension getHorzAperture() {
+        return horzAperture;
+    }
+
+/**
+Set the horizontal cross-section of the antenna radiation pattern in the direction of highest gain.
+
+@param value the HorzAperture value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public void setHorzAperture(Dimension value) {
+        this.horzAperture = value;
+    }
+
+/**
+Determine if the HorzAperture is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetHorzAperture() {
+        return (this.horzAperture!= null);
+    }
+
+/**
+Get the vertical cross-section of the antenna radiation pattern in the direction of highest gain.
+
+@return the VertAperture value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public Dimension getVertAperture() {
+        return vertAperture;
+    }
+
+/**
+Set the vertical cross-section of the antenna radiation pattern in the direction of highest gain.
+
+@param value the VertAperture value in a {@link TDimension} data type
+@since 3.1.0
+*/
+public void setVertAperture(Dimension value) {
+        this.vertAperture = value;
+    }
+
+/**
+Determine if the VertAperture is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetVertAperture() {
+        return (this.vertAperture!= null);
+    }
+
+/**
+Get if the sidelobe has been suppressed. Enter Yes (if the sidelobe is suppressed) or No (sidelobe not suppressed).
+
+@return the HorzSidelobeSuppressed value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getHorzSidelobeSuppressed() {
+        return horzSidelobeSuppressed;
+    }
+
+/**
+Set if the sidelobe has been suppressed. Enter Yes (if the sidelobe is suppressed) or No (sidelobe not suppressed).
+
+@param value the HorzSidelobeSuppressed value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setHorzSidelobeSuppressed(TString value) {
+        this.horzSidelobeSuppressed = value;
+    }
+
+/**
+Determine if the HorzSidelobeSuppressed is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetHorzSidelobeSuppressed() {
+return (this.horzSidelobeSuppressed!= null ? this.horzSidelobeSuppressed.isSetValue() : false);
+    }
+
+/**
+Get the direction of the sidelobe in reference to the direction of maximum gain.
+
+@return the HorzSidelobeAz value in a {@link TAz} data type
+@since 3.1.0
+*/
+public Az getHorzSidelobeAz() {
+        return horzSidelobeAz;
+    }
+
+/**
+Set the direction of the sidelobe in reference to the direction of maximum gain.
+
+@param value the HorzSidelobeAz value in a {@link TAz} data type
+@since 3.1.0
+*/
+public void setHorzSidelobeAz(Az value) {
+        this.horzSidelobeAz = value;
+    }
+
+/**
+Determine if the HorzSidelobeAz is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetHorzSidelobeAz() {
+        return (this.horzSidelobeAz!= null);
+    }
+
+/**
+Get the amount of suppression relative to the main beam gain of the antenna.
+
+@return the HorzSidelobeAttenuation value in a {@link TUnsigned_DB_5_2} data type
+@since 3.1.0
+*/
+public Unsigned_dB_5_2 getHorzSidelobeAttenuation() {
+        return horzSidelobeAttenuation;
+    }
+
+/**
+Set the amount of suppression relative to the main beam gain of the antenna.
+
+@param value the HorzSidelobeAttenuation value in a {@link TUnsigned_DB_5_2} data type
+@since 3.1.0
+*/
+public void setHorzSidelobeAttenuation(Unsigned_dB_5_2 value) {
+        this.horzSidelobeAttenuation = value;
+    }
+
+/**
+Determine if the HorzSidelobeAttenuation is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetHorzSidelobeAttenuation() {
+        return (this.horzSidelobeAttenuation!= null);
+    }
+
+/**
+Get whether a portion of the radiation from an antenna outside of the main beam has been suppressed or eliminated..
+
+@return the VertSidelobeSuppressed value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getVertSidelobeSuppressed() {
+        return vertSidelobeSuppressed;
+    }
+
+/**
+Set whether a portion of the radiation from an antenna outside of the main beam has been suppressed or eliminated..
+
+@param value the VertSidelobeSuppressed value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setVertSidelobeSuppressed(TString value) {
+        this.vertSidelobeSuppressed = value;
+    }
+
+/**
+Determine if the VertSidelobeSuppressed is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetVertSidelobeSuppressed() {
+return (this.vertSidelobeSuppressed!= null ? this.vertSidelobeSuppressed.isSetValue() : false);
+    }
+
+/**
+Get the first sidelobe in the vertical plane. Enter the clockwise angular difference (in degrees) between the centre line of the main beam gain and the sidelobe.
+
+@return the VertSidelobeElev value in a {@link TElev180} data type
+@since 3.1.0
+*/
+public Elev180 getVertSidelobeElev() {
+        return vertSidelobeElev;
+    }
+
+/**
+Set the first sidelobe in the vertical plane. Enter the clockwise angular difference (in degrees) between the centre line of the main beam gain and the sidelobe.
+
+@param value the VertSidelobeElev value in a {@link TElev180} data type
+@since 3.1.0
+*/
+public void setVertSidelobeElev(Elev180 value) {
+        this.vertSidelobeElev = value;
+    }
+
+/**
+Determine if the VertSidelobeElev is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetVertSidelobeElev() {
+        return (this.vertSidelobeElev!= null);
+    }
+
+/**
+Get the attenuation of the sidelobe relative to the main beam gain.
+
+@return the VertSidelobeAttenuation value in a {@link TUnsigned_DB_5_2} data type
+@since 3.1.0
+*/
+public Unsigned_dB_5_2 getVertSidelobeAttenuation() {
+        return vertSidelobeAttenuation;
+    }
+
+/**
+Set the attenuation of the sidelobe relative to the main beam gain.
+
+@param value the VertSidelobeAttenuation value in a {@link TUnsigned_DB_5_2} data type
+@since 3.1.0
+*/
+public void setVertSidelobeAttenuation(Unsigned_dB_5_2 value) {
+        this.vertSidelobeAttenuation = value;
+    }
+
+/**
+Determine if the VertSidelobeAttenuation is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetVertSidelobeAttenuation() {
+        return (this.vertSidelobeAttenuation!= null);
+    }
+
+/**
+Get the POCInformation
+
+Complex element POCInformation contains a reference to a Contact, Organisation or Role dataset.
+
+@return  a {@link POCInformation} instance
+@since 3.1.0
+*/
+    public Set<POCInformation> getPOCInformation() {
+        if (pocInformation == null) {
+            pocInformation = new HashSet<POCInformation>();
+        }
+        return this.pocInformation;
+    }
+
+/**
+Determine if the POCInformation is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetPOCInformation() {
+        return ((this.pocInformation!= null)&&(!this.pocInformation.isEmpty()));
+    }
+
+/**
+  Clear the POCInformation field. This sets the field to null.
+ */
+    public void unsetPOCInformation() {
+        this.pocInformation = null;
+    }
+
+/**
+Get the Nomenclature
+
+Complex element Nomenclature identifies either the standard military, government, nomenclature or the commercial model number of an equipment. Each device or group of devices may have several types of nomenclatures, e.g. both a military nomenclature and a commercial model number.
+
+@return  a {@link Nomenclature} instance
+@since 3.1.0
+*/
+    public Set<Nomenclature> getNomenclature() {
+        if (nomenclature == null) {
+            nomenclature = new HashSet<Nomenclature>();
+        }
+        return this.nomenclature;
+    }
+
+/**
+Determine if the Nomenclature is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNomenclature() {
+        return ((this.nomenclature!= null)&&(!this.nomenclature.isEmpty()));
+    }
+
+/**
+  Clear the Nomenclature field. This sets the field to null.
+ */
+    public void unsetNomenclature() {
+        this.nomenclature = null;
+    }
+
+/**
+Get the AntHardware
+
+Complex element AntHardware contains the physical parameters related to the antenna feed and lead.
+
+@return  a {@link AntHardware} instance
+@since 3.1.0
+*/
+    public Set<AntHardware> getAntHardware() {
+        if (antHardware == null) {
+            antHardware = new HashSet<AntHardware>();
+        }
+        return this.antHardware;
+    }
+
+/**
+Determine if the AntHardware is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAntHardware() {
+        return ((this.antHardware!= null)&&(!this.antHardware.isEmpty()));
+    }
+
+/**
+  Clear the AntHardware field. This sets the field to null.
+ */
+    public void unsetAntHardware() {
+        this.antHardware = null;
+    }
+
+/**
+Get the AntMode
+
+Complex element AntMode contains the technical characteristics of one antenna mode.
+
+@return  a {@link AntMode} instance
+@since 3.1.0
+*/
+    public Set<AntMode> getAntMode() {
+        if (antMode == null) {
+            antMode = new HashSet<AntMode>();
+        }
+        return this.antMode;
+    }
+
+/**
+Determine if the AntMode is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAntMode() {
+        return ((this.antMode!= null)&&(!this.antMode.isEmpty()));
+    }
+
+/**
+  Clear the AntMode field. This sets the field to null.
+ */
+    public void unsetAntMode() {
+        this.antMode = null;
+    }
+
+/**
+Get the US:UsingCountries
+
+Complex element UsingCountries (US) describes the countries that manufacture (Producing), supply (Source), and use (Using) the Antenna.
+
+@return  a {@link UsingCountries} instance
+@since 3.1.0
+*/
+    public Set<UsingCountries> getUsingCountries() {
+        if (usingCountries == null) {
+            usingCountries = new HashSet<UsingCountries>();
+        }
+        return this.usingCountries;
+    }
+
+/**
+Determine if the UsingCountries is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetUsingCountries() {
+        return ((this.usingCountries!= null)&&(!this.usingCountries.isEmpty()));
+    }
+
+/**
+  Clear the UsingCountries field. This sets the field to null.
+ */
+    public void unsetUsingCountries() {
+        this.usingCountries = null;
+    }
+
+/**
+Set "Yes" to indicate that the dataset describes typical parameters of a waveform or standard signal, or a generic antenna model, rather than a specific equipment model.
+
+@param value  An instances of type {@link ListCBO}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withGeneric(ListCBO value) {
+        setGeneric(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the type of antenna.
+
+@param value  An instances of type {@link ListCAT}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withAntType(ListCAT value) {
+        setAntType(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the number of main beams in the phased array antenna.
+
+@param value  An instances of type {@link Integer}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withPhArrayNumMainBeams(Integer value) {
+           setPhArrayNumMainBeams(new UN3(value));
+        return this;
+    }
+
+/**
+Set the number of antenna elements in the phased array antenna.
+
+@param value  An instances of type {@link Integer}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withPhArrayNumElements(Integer value) {
+           setPhArrayNumElements(new UN5(value));
+        return this;
+    }
+
+/**
+Set a code used to describe the general shape of the antenna reflector.
+
+@param value  An instances of type {@link ListCRS}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withShape(ListCRS value) {
+           setShape(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the cross-section of an antenna radiation pattern in the direction of highest gain.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withDiameter(Double value) {
+           setDiameter(new Dimension(value));
+        return this;
+    }
+
+/**
+Set the linear horizontal dimension of the antenna.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withHorzDimension(Double value) {
+           setHorzDimension(new Dimension(value));
+        return this;
+    }
+
+/**
+Set the linear vertical dimension of the antenna.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withVertDimension(Double value) {
+           setVertDimension(new Dimension(value));
+        return this;
+    }
+
+/**
+Set the cross-section of an antenna radiation pattern in the direction of highest gain.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withApertureDiameter(Double value) {
+           setApertureDiameter(new Dimension(value));
+        return this;
+    }
+
+/**
+Set the horizontal cross-section of the antenna radiation pattern in the direction of highest gain.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withHorzAperture(Double value) {
+           setHorzAperture(new Dimension(value));
+        return this;
+    }
+
+/**
+Set the vertical cross-section of the antenna radiation pattern in the direction of highest gain.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withVertAperture(Double value) {
+           setVertAperture(new Dimension(value));
+        return this;
+    }
+
+/**
+Set if the sidelobe has been suppressed. Enter Yes (if the sidelobe is suppressed) or No (sidelobe not suppressed).
+
+@param value  An instances of type {@link ListCBO}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withHorzSidelobeSuppressed(ListCBO value) {
+           setHorzSidelobeSuppressed(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the direction of the sidelobe in reference to the direction of maximum gain.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withHorzSidelobeAz(Double value) {
+           setHorzSidelobeAz(new Az(value));
+        return this;
+    }
+
+/**
+Set the amount of suppression relative to the main beam gain of the antenna.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withHorzSidelobeAttenuation(Double value) {
+           setHorzSidelobeAttenuation(new Unsigned_dB_5_2(value));
+        return this;
+    }
+
+/**
+Set whether a portion of the radiation from an antenna outside of the main beam has been suppressed or eliminated..
+
+@param value  An instances of type {@link ListCBO}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withVertSidelobeSuppressed(ListCBO value) {
+           setVertSidelobeSuppressed(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the first sidelobe in the vertical plane. Enter the clockwise angular difference (in degrees) between the centre line of the main beam gain and the sidelobe.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withVertSidelobeElev(Double value) {
+           setVertSidelobeElev(new Elev180(value));
+        return this;
+    }
+
+/**
+Set the attenuation of the sidelobe relative to the main beam gain.
+
+@param value  An instances of type {@link Double}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withVertSidelobeAttenuation(Double value) {
+           setVertSidelobeAttenuation(new Unsigned_dB_5_2(value));
+        return this;
+    }
+
+/**
+Set the POCInformation
+
+Complex element POCInformation contains a reference to a Contact, Organisation or Role dataset.
+
+@param values  One or more instances of type {@link POCInformation...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withPOCInformation(POCInformation... values) {
+        if (values!= null) {
+            for (POCInformation value: values) {
+                getPOCInformation().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the POCInformation
+
+Complex element POCInformation contains a reference to a Contact, Organisation or Role dataset.
+
+@param values  A collection of {@link POCInformation} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withPOCInformation(Collection<POCInformation> values) {
+        if (values!= null) {
+            getPOCInformation().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the Nomenclature
+
+Complex element Nomenclature identifies either the standard military, government, nomenclature or the commercial model number of an equipment. Each device or group of devices may have several types of nomenclatures, e.g. both a military nomenclature and a commercial model number.
+
+@param values  One or more instances of type {@link Nomenclature...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withNomenclature(Nomenclature... values) {
+        if (values!= null) {
+            for (Nomenclature value: values) {
+                getNomenclature().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the Nomenclature
+
+Complex element Nomenclature identifies either the standard military, government, nomenclature or the commercial model number of an equipment. Each device or group of devices may have several types of nomenclatures, e.g. both a military nomenclature and a commercial model number.
+
+@param values  A collection of {@link Nomenclature} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withNomenclature(Collection<Nomenclature> values) {
+        if (values!= null) {
+            getNomenclature().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the AntHardware
+
+Complex element AntHardware contains the physical parameters related to the antenna feed and lead.
+
+@param values  One or more instances of type {@link AntHardware...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withAntHardware(AntHardware... values) {
+        if (values!= null) {
+            for (AntHardware value: values) {
+                getAntHardware().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the AntHardware
+
+Complex element AntHardware contains the physical parameters related to the antenna feed and lead.
+
+@param values  A collection of {@link AntHardware} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withAntHardware(Collection<AntHardware> values) {
+        if (values!= null) {
+            getAntHardware().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the AntMode
+
+Complex element AntMode contains the technical characteristics of one antenna mode.
+
+@param values  One or more instances of type {@link AntMode...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withAntMode(AntMode... values) {
+        if (values!= null) {
+            for (AntMode value: values) {
+                getAntMode().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the AntMode
+
+Complex element AntMode contains the technical characteristics of one antenna mode.
+
+@param values  A collection of {@link AntMode} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withAntMode(Collection<AntMode> values) {
+        if (values!= null) {
+            getAntMode().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the US:UsingCountries
+
+Complex element UsingCountries (US) describes the countries that manufacture (Producing), supply (Source), and use (Using) the Antenna.
+
+@param values  One or more instances of type {@link UsingCountries...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withUsingCountries(UsingCountries... values) {
+        if (values!= null) {
+            for (UsingCountries value: values) {
+                getUsingCountries().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the US:UsingCountries
+
+Complex element UsingCountries (US) describes the countries that manufacture (Producing), supply (Source), and use (Using) the Antenna.
+
+@param values  A collection of {@link UsingCountries} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withUsingCountries(Collection<UsingCountries> values) {
+        if (values!= null) {
+            getUsingCountries().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastObservedBy(String value) {
+           setLastObservedBy(new S50(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withObservedFirstDateTime(Calendar value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withObservedFirstDateTime(Date value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withObservedLastDateTime(Calendar value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withObservedLastDateTime(Date value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withApprovedBy(String value) {
+           setApprovedBy(new S50(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withApprovedDateTime(Calendar value) {
+           setApprovedDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withApprovedDateTime(Date value) {
+           setApprovedDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link ListCBO}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withRedacted(ListCBO value) {
+           setRedacted(new TString(value.value()));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withSerial(Serial value) {
+        setSerial(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link TDT}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withEntryDateTime(TDT value) {
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withEntryBy(Serial value) {
+           setEntryBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withOwner(Serial value) {
+           setOwner(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastChangeDateTime(Calendar value) {
+           setLastChangeDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastChangeDateTime(Date value) {
+           setLastChangeDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastChangeBy(Serial value) {
+           setLastChangeBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastReviewDate(Calendar value) {
+           setLastReviewDate(new D(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastReviewDate(Date value) {
+           setLastReviewDate(new D(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLastReviewBy(Serial value) {
+           setLastReviewBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withModAllowedBy(Serial value) {
+           setModAllowedBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link ListCSU}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withState(ListCSU value) {
+           setState(new TString(value.value()));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withDescription(String value) {
+           setDescription(new S500(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link SecurityClass}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withSecurityClass(SecurityClass value) {
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link CaseNum...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withCaseNum(CaseNum... values) {
+        if (values!= null) {
+            for (CaseNum value: values) {
+                getCaseNum().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link CaseNum} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withCaseNum(Collection<CaseNum> values) {
+        if (values!= null) {
+            getCaseNum().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link ExtReferenceRef...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withExtReferenceRef(ExtReferenceRef... values) {
+        if (values!= null) {
+            for (ExtReferenceRef value: values) {
+                getExtReferenceRef().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link ExtReferenceRef} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withExtReferenceRef(Collection<ExtReferenceRef> values) {
+        if (values!= null) {
+            getExtReferenceRef().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Common/Remarks idx values applicable to the current data item.
+
+@param values  One or more instances of type {@link Remarks...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withRemarks(Remarks... values) {
+        if (values!= null) {
+            for (Remarks value: values) {
+                getRemarks().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Common/Remarks idx values applicable to the current data item.
+
+@param values  A collection of {@link Remarks} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withRemarks(Collection<Remarks> values) {
+        if (values!= null) {
+            getRemarks().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set the classification of the current data item. This attribute is REQUIRED on each data item, even if the classification is "U".
+
+@param value  An instances of type {@link ListCCL}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withCls(ListCCL value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a list of country codes for which the current data item is releasable. For NATO, if this element is omitted, there is no releasability restriction for the data item. For the US, if this data item AND attribute US:legacy Releasability are both blank, there is no releasability restriction for the data item.
+
+@param values  One or more instances of type {@link ListCCY...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withReleasability(ListCCY... values) {
+        if (values!= null) {
+            for (ListCCY value: values) {
+                getReleasability().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of country codes for which the current data item is releasable. For NATO, if this element is omitted, there is no releasability restriction for the data item. For the US, if this data item AND attribute US:legacy Releasability are both blank, there is no releasability restriction for the data item.
+
+@param values  A collection of {@link Releasability} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withReleasability(Collection<ListCCY> values) {
+        if (values!= null) {
+            getReleasability().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link BigInteger...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withRemarkRef(BigInteger... values) {
+        if (values!= null) {
+            for (BigInteger value: values) {
+                getRemarkRef().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link RemarkRef} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withRemarkRef(Collection<BigInteger> values) {
+        if (values!= null) {
+            getRemarkRef().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
+
+@param values  One or more instances of type {@link BigInteger...}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withExtReferences(BigInteger... values) {
+        if (values!= null) {
+            for (BigInteger value: values) {
+                getExtReferences().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
+
+@param values  A collection of {@link ExtReferences} instances
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withExtReferences(Collection<BigInteger> values) {
+        if (values!= null) {
+            getExtReferences().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set one or more special handling instructions in sentence format, not code format. For example, "Approved for public release; distribution is unlimited". Multiple special handling instructions are separated by "|” (i.e., ASCII character #124).
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withLegacyReleasability(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set one or more data quality indicator(s), separated by "|” (i.e., ASCII character #124), for the contents of the associated Data Item For example, "Outlier" | "Non-CodeList".
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withQuality(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a value that is most probably correct.
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withRecommendedValue(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a unique identifier for each Data Item in the Dataset. Within each Dataset, the idref value must be unique for every occurrence. If a received Dataset uses idrefs and it is expected that the Dataset will be exchanged, the idrefs should be considered required. If the receiving system is the permanent end of the line for the Dataset, the idrefs may be considered optional. 
+
+@param value  An instances of type {@link String}
+@return The current Antenna object instance
+@since 3.1.0
+*/
+    public Antenna withIdref(String value) {
+        return this;
+    }
+
+/**
+ Get a string representation of this Antenna instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "Antenna {"
+ + (antHardware !=null? " antHardware [" + antHardware +"]" : "") 
+ + (antMode !=null? " antMode [" + antMode +"]" : "") 
+ + (antType !=null? " antType [" + antType +"]" : "") 
+ + (apertureDiameter !=null? " apertureDiameter [" + apertureDiameter +"]" : "") 
+ + (diameter !=null? " diameter [" + diameter +"]" : "") 
+ + (generic !=null? " generic [" + generic +"]" : "") 
+ + (horzAperture !=null? " horzAperture [" + horzAperture +"]" : "") 
+ + (horzDimension !=null? " horzDimension [" + horzDimension +"]" : "") 
+ + (horzSidelobeAttenuation !=null? " horzSidelobeAttenuation [" + horzSidelobeAttenuation +"]" : "") 
+ + (horzSidelobeAz !=null? " horzSidelobeAz [" + horzSidelobeAz +"]" : "") 
+ + (horzSidelobeSuppressed !=null? " horzSidelobeSuppressed [" + horzSidelobeSuppressed +"]" : "") 
+ + (nomenclature !=null? " nomenclature [" + nomenclature +"]" : "") 
+ + (phArrayNumElements !=null? " phArrayNumElements [" + phArrayNumElements +"]" : "") 
+ + (phArrayNumMainBeams !=null? " phArrayNumMainBeams [" + phArrayNumMainBeams +"]" : "") 
+ + (pocInformation !=null? " pocInformation [" + pocInformation +"]" : "") 
+ + (shape !=null? " shape [" + shape +"]" : "") 
+ + (usingCountries !=null? " usingCountries [" + usingCountries +"]" : "") 
+ + (vertAperture !=null? " vertAperture [" + vertAperture +"]" : "") 
+ + (vertDimension !=null? " vertDimension [" + vertDimension +"]" : "") 
+ + (vertSidelobeAttenuation !=null? " vertSidelobeAttenuation [" + vertSidelobeAttenuation +"]" : "") 
+ + (vertSidelobeElev !=null? " vertSidelobeElev [" + vertSidelobeElev +"]" : "") 
+ + (vertSidelobeSuppressed !=null? " vertSidelobeSuppressed [" + vertSidelobeSuppressed +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this Antenna instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "Antenna {"
-      + (generic != null ? " generic [" + generic + "]" : "")
-      + (phArrayNumElements != null ? " phArrayNumElements [" + phArrayNumElements + "]" : "")
-      + (horzAperture != null ? " horzAperture [" + horzAperture + "]" : "")
-      + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-      + (diameter != null ? " diameter [" + diameter + "]" : "")
-      + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-      + (horzSidelobeAz != null ? " horzSidelobeAz [" + horzSidelobeAz + "]" : "")
-      + (phArrayNumMainBeams != null ? " phArrayNumMainBeams [" + phArrayNumMainBeams + "]" : "")
-      + (vertAperture != null ? " vertAperture [" + vertAperture + "]" : "")
-      + (vertSidelobeAttenuation != null ? " vertSidelobeAttenuation [" + vertSidelobeAttenuation + "]" : "")
-      + (antMode != null ? " antMode [" + antMode + "]" : "")
-      + (vertDimension != null ? " vertDimension [" + vertDimension + "]" : "")
-      + (shape != null ? " shape [" + shape + "]" : "")
-      + (horzDimension != null ? " horzDimension [" + horzDimension + "]" : "")
-      + (vertSidelobeSuppressed != null ? " vertSidelobeSuppressed [" + vertSidelobeSuppressed + "]" : "")
-      + (antType != null ? " antType [" + antType + "]" : "")
-      + (antHardware != null ? " antHardware [" + antHardware + "]" : "")
-      + (vertSidelobeElev != null ? " vertSidelobeElev [" + vertSidelobeElev + "]" : "")
-      + (horzSidelobeAttenuation != null ? " horzSidelobeAttenuation [" + horzSidelobeAttenuation + "]" : "")
-      + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
-      + (apertureDiameter != null ? " apertureDiameter [" + apertureDiameter + "]" : "")
-      + (horzSidelobeSuppressed != null ? " horzSidelobeSuppressed [" + horzSidelobeSuppressed + "]" : "")
-      + "\n  Antenna." + super.toString() + "\n"
-      + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link Antenna} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link TString AntType}, {@link TString Generic}.
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  @Override
-  public boolean isSet() {
-    return super.isSet() && isSetAntType() && isSetGeneric();
-  }
+{@link Antenna} requires {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime} and {@link TString AntType}, {@link TString Generic}.
+
+Note that this method only checks for the presence of required information; this method does not validate the information format.
+@return TRUE if required fields are set, otherwise FALSE
+*/
+@Override
+public boolean isSet(){
+return super.isSet() &&  isSetAntType() &&  isSetGeneric();
+}
 
 }

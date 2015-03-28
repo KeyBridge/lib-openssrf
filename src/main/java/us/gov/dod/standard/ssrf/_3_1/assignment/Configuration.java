@@ -1,1883 +1,1774 @@
-/*
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.*;
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
-import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPT;
-import us.gov.dod.standard.ssrf._3_1.multiple.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * Configuration identifies each operational configuration that is required in a
- * SSRequest, granted by a Host Nation in a SSReply, or authorised in a
- * frequency Assignment or Allotment dataset.
- * <p>
- * Element of
- * {@link Assignment}, {@link RFSystem}, {@link SSReply}, {@link SSRequest}
- * <p>
- * Sub-Elements are
- * {@link CaseNum}, {@link ConfigEmission}, {@link ConfigFreq}, {@link Notation}, {@link ObservedERPAnalysis}, {@link RxRef}, {@link TxRef}, {@link Usage}
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+Configuration identifies each operational configuration that is required in a SSRequest, granted by a Host Nation in a SSReply, or authorised in a frequency Assignment or Allotment dataset.
+
+Element of {@link Assignment}, {@link Multiple}, {@link RFSystem}, {@link SSReply}, {@link SSRequest}
+
+Sub-Elements are {@link CaseNum}, {@link ConfigEmission}, {@link ConfigFreq}, {@link Notation}, {@link ObservedERPAnalysis}, {@link RxRef}, {@link TxRef}, {@link Usage}
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Configuration", propOrder = {
-  "configID",
-  "description",
-  "repeater",
-  "numUsers",
-  "eirpMin",
-  "eirpMax",
-  "oobJustification",
-  "powerLimit",
-  "powerType",
-  "spectrumLink",
-  "configApprovedBy",
-  "configApprovedDateTime",
-  "observedFirstDateTime",
-  "observedLastDateTime",
-  "lastObservedBy",
-  "lastReviewedBy",
-  "lastReviewedDateTime",
-  "notation",
-  "usage",
-  "configFreq",
-  "txRef",
-  "rxRef",
-  "caseNum",
-  "configEmission",
-  "loadsetRef",
-  "observedERPAnalysis"
+    "configID",
+    "description",
+    "repeater",
+    "numUsers",
+    "eirpMin",
+    "eirpMax",
+    "oobJustification",
+    "powerLimit",
+    "powerType",
+    "spectrumLink",
+    "configApprovedBy",
+    "configApprovedDateTime",
+    "observedFirstDateTime",
+    "observedLastDateTime",
+    "lastObservedBy",
+    "lastReviewedBy",
+    "lastReviewedDateTime",
+    "notation",
+    "usage",
+    "configFreq",
+    "txRef",
+    "rxRef",
+    "caseNum",
+    "configEmission",
+    "loadsetRef",
+    "observedERPAnalysis"
 })
 public class Configuration {
 
-  /**
-   * ConfigID - Configuration Identifier (Required)
-   * <p>
-   * A short name for the configuration; this name should be a meaningful
-   * identification of the configuration, but it can also be automatically
-   * generated in some systems. The identifier MUST be unique within the dataset
-   * and SHOULD NOT be modified during the entire lifetime of the dataset.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "ConfigID", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString configID;
-  /**
-   * Description - Configuration Description (Optional)
-   * <p>
-   * A description of the operational configuration. This description should be
-   * a meaningful explanation of the configurations main characteristics.
-   * <p>
-   * Format is S100
-   */
-  @XmlElement(name = "Description", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString description;
-  /**
-   * Repeater - Repeater Indicator (Optional)
-   * <p>
-   * "Yes" for each receiver location when a station in the fixed or mobile
-   * service is used primarily as a repeater.
-   * <p>
-   * Format is L:CBO
-   */
-  @XmlElement(name = "Repeater", required = false)
-  private TString repeater;
-  /**
-   * NumUsers - Number of Users (Optional)
-   * <p>
-   * The number of users supported by the configuration. This data may be used
-   * to analyse spectrum usage.
-   * <p>
-   * Format is UN(9)
-   */
-  @XmlElement(name = "NumUsers", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN9.class)
-  private TInteger numUsers;
-  /**
-   * EIRPMin - Minimum or Nominal EIRP (Optional)
-   * <p>
-   * The minimum or nominal effective isotropic radiated power (EIRP) radiated
-   * from the transmitter antenna. It is the sum of the power supplied to the
-   * antenna and the gain of the antenna, less the line loss.
-   * <p>
-   * Format is SN(10,7) (dBW)
-   * <p>
-   * Attribute group EIRP (Optional)
-   */
-  @XmlElement(name = "EIRPMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
-  private TDecimal eirpMin;
-  /**
-   * EIRPMax - Maximum EIRP (Optional)
-   * <p>
-   * The maximum effective isotropic radiated power (EIRP) radiated from the
-   * transmitter antenna. It is the sum of the power supplied to the antenna and
-   * the gain of the antenna, less the line loss.
-   * <p>
-   * [XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
-   * <p>
-   * Format is SN(10,7) (dBW)
-   * <p>
-   * Attribute group EIRP (Optional)
-   */
-  @XmlElement(name = "EIRPMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
-  private TDecimal eirpMax;
-  /**
-   * OOBJustification - Out-Of-Band Justification (Optional)
-   * <p>
-   * The justification for out-of-band frequency use.
-   * <p>
-   * Format is Memo
-   */
-  @XmlElement(name = "OOBJustification", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterMEMO.class)
-  private TString oobJustification;
-  /**
-   * US:PowerLimit - Power Limit (Optional)
-   * <p>
-   * The power limit of the transmissions in this configuration.
-   * <p>
-   * Format is SN(10,7) (dBW)
-   */
-  @XmlElement(name = "PowerLimit", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterDBW.class)
-  private TDecimal powerLimit;
-  /**
-   * US:PowerType - Power Type (Optional)
-   * <p>
-   * The power type code for carrier, mean, or peak envelope power emitted. The
-   * power type code will depend on the type of emission of the transmitter
-   * equipment.
-   * <p>
-   * Format is L:CPT
-   */
-  @XmlElement(name = "PowerType", required = false)
-  private TString powerType;
-  /**
-   * US:SpectrumLink - Spectrum Link (Optional)
-   * <p>
-   * Whether the transmitter(s) communicate or interact with the receiver(s) in
-   * this Configuration, i.e. enters a link versus a box.
-   * <p>
-   * Format is L:CBO
-   */
-  @XmlElement(name = "SpectrumLink", required = false)
-  private TString spectrumLink;
+/**
+ConfigID  - Configuration Identifier (Required) 
 
-  @XmlElement(name = "ConfigApprovedBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
-  private TString configApprovedBy;
+A short name for the configuration; this name should be a meaningful identification of the configuration, but it can also be automatically generated in some systems. The identifier MUST be unique within the dataset and SHOULD NOT be modified during the entire lifetime of the dataset.
 
-  @XmlElement(name = "ConfigApprovedDateTime", required = false)
-  private TDateTime configApprovedDateTime;
-  /**
-   * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
-   * <p>
-   * The date and time, based on Greenwich Mean Time (GMT), the subject signal
-   * was first collected.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "ObservedFirstDateTime", required = false)
-  private TDateTime observedFirstDateTime;
-  /**
-   * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
-   * <p>
-   * The date and time, based on Greenwich Mean Time (GMT), the subject signal
-   * was last collected.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "ObservedLastDateTime", required = false)
-  private TDateTime observedLastDateTime;
-  /**
-   * US:LastObservedBy - Last Observed By (Optional)
-   * <p>
-   * The identifier of the person or entity who last observed this signal
-   * configuration.
-   * <p>
-   * Format is S50
-   */
-  @XmlElement(name = "LastObservedBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
-  private TString lastObservedBy;
-  /**
-   * US:LastReviewedBy - Last Reviewed By (Optional)
-   * <p>
-   * The identifier of the person who last reviewed this configuration.
-   * <p>
-   * Format is S50
-   */
-  @XmlElement(name = "LastReviewedBy", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS50.class)
-  private TString lastReviewedBy;
-  /**
-   * US:LastReviewedDateTime - Last ReviewedTimestamp (Optional)
-   * <p>
-   * The date and time, based on Greenwich Mean Time (GMT), the configuration
-   * was thoroughly reviewed.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "LastReviewedDateTime", required = false)
-  private TDateTime lastReviewedDateTime;
-  /**
-   * Notation (Optional)
-   * <p>
-   * Notation contains the electronic identification for a pulsed or non-pulsed
-   * electromagnetic emission. It includes but is not limited to Communications
-   * Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
-   */
-  @XmlElement(name = "Notation")
-  private Set<Notation> notation;
-  /**
-   * Usage (Optional)
-   * <p>
-   * Usage identifies how an operational configuration can be used or will be
-   * used.
-   */
-  @XmlElement(name = "Usage")
-  private Set<Usage> usage;
-  /**
-   * ConfigFreq (Optional)
-   * <p>
-   * ConfigFreq indicates the set of frequencies that a configuration uses,
-   * which may be a subset of the frequencies that the linked components
-   * (Transmitter, Receiver, Antenna) are capable of.
-   * <p>
-   * Notes: When referenced by SSRequest, the Frequency i
-   */
-  @XmlElement(name = "ConfigFreq")
-  private Set<ConfigFreq> configFreq;
-  /**
-   * TxRef (Optional)
-   * <p>
-   * TxRef contains the reference of a Transmitter, and optionally some of its
-   * TxModes and the associated Antennas and AntMode.
-   */
-  @XmlElement(name = "TxRef")
-  private Set<TxRef> txRef;
-  /**
-   * RxRef (Optional)
-   * <p>
-   * RxRef contains the reference of a Receiver, and optionnally some of its
-   * RxModes and the associated Antennas and AntMode.
-   */
-  @XmlElement(name = "RxRef")
-  private Set<RxRef> rxRef;
-  /**
-   * CaseNum (Optional)
-   * <p>
-   * CaseNum contains legacy and other identifiers associated with the Dataset.
-   */
-  @XmlElement(name = "CaseNum")
-  private Set<CaseNum> caseNum;
-  /**
-   * US:ConfigEmission (Optional)
-   * <p>
-   * ConfigEmission (US) specifies the emission bandwidths and classification
-   * symbols that a Configuration uses, which may be a subset of the linked
-   * components' capabilities.
-   */
-  @XmlElement(name = "ConfigEmission")
-  private Set<ConfigEmission> configEmission;
-  /**
-   * LoadsetRef (Optional)
-   * <p>
-   * LoadsetRef describes the jamming loadset to be used against a specific
-   * target or targets.
-   */
-  @XmlElement(name = "LoadsetRef", nillable = true)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private Set<TSerial> loadsetRef;
-  /**
-   * US:ObservedERPAnalysis (Optional)
-   * <p>
-   * ObservedERPAnalysis (US) contains data describing Effective Radiated Power
-   * (ERP) associated with an emitter or Notation.
-   */
-  @XmlElement(name = "ObservedERPAnalysis")
-  private Set<ObservedERPAnalysis> observedERPAnalysis;
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "ConfigID", required = true)
+      private  S100 configID;
+/**
+Description  - Configuration Description (Optional) 
 
-  /**
-   * Empty constructor. The {@link #configID} is automatically set to a random
-   * UUID value. Use {@link #withConfigID(String)} or
-   * {@link #setConfigID(TString)} to set it.
-   */
-  public Configuration() {
-    this.configID = new TString(UUID.randomUUID().toString());
-  }
+A description of the operational configuration. This description should be a meaningful explanation of the configurations main characteristics.
 
-  /**
-   * Constructor setting the {@link #configID}.
-   * <p>
-   * @param configID the {@link #configID}.
-   */
-  public Configuration(TString configID) {
-    this.configID = configID;
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "Description", required = false)
+    private S100 description;
+/**
+Repeater  - Repeater Indicator (Optional) 
 
-  /**
-   * Get a short name for the configuration; this name should be a meaningful
-   * identification of the configuration, but it can also be automatically
-   * generated in some systems. The identifier MUST be unique within the dataset
-   * and SHOULD NOT be modified during the entire lifetime of the dataset.
-   * <p>
-   * @return the ConfigID value in a {@link TString} data type
-   */
-  public TString getConfigID() {
-    return configID;
-  }
+"Yes" for each receiver location when a station in the fixed or mobile service is used primarily as a repeater.
 
-  /**
-   * Set a short name for the configuration; this name should be a meaningful
-   * identification of the configuration, but it can also be automatically
-   * generated in some systems. The identifier MUST be unique within the dataset
-   * and SHOULD NOT be modified during the entire lifetime of the dataset.
-   * <p>
-   * @param value the ConfigID value in a {@link TString} data type
-   */
-  public void setConfigID(TString value) {
-    this.configID = value;
-  }
+Format is L:CBO
+@since 3.1.0
+*/
+    @XmlElement(name = "Repeater", required = false)
+    private TString repeater;
+/**
+NumUsers  - Number of Users (Optional) 
 
-  /**
-   * Determine if the ConfigID is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetConfigID() {
-    return (this.configID != null ? this.configID.isSetValue() : false);
-  }
+The number of users supported by the configuration. This data may be used to analyse spectrum usage.
 
-  /**
-   * Get a description of the operational configuration. This description should
-   * be a meaningful explanation of the configurations main characteristics.
-   * <p>
-   * @return the Description value in a {@link TString} data type
-   */
-  public TString getDescription() {
-    return description;
-  }
+Format is UN(9)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumUsers", required = false)
+    private UN9 numUsers;
+/**
+EIRPMin  - Minimum or Nominal EIRP (Optional) 
 
-  /**
-   * Set a description of the operational configuration. This description should
-   * be a meaningful explanation of the configurations main characteristics.
-   * <p>
-   * @param value the Description value in a {@link TString} data type
-   */
-  public void setDescription(TString value) {
-    this.description = value;
-  }
+The minimum or nominal effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
 
-  /**
-   * Determine if the Description is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetDescription() {
-    return (this.description != null ? this.description.isSetValue() : false);
-  }
+Format is SN(10,7) (dBW)
 
-  /**
-   * Get "Yes" for each receiver location when a station in the fixed or mobile
-   * service is used primarily as a repeater.
-   * <p>
-   * @return the Repeater value in a {@link TString} data type
-   */
-  public TString getRepeater() {
-    return repeater;
-  }
+Attribute group EIRP (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "EIRPMin", required = false)
+    private dBW eirpMin;
+/**
+EIRPMax  - Maximum EIRP (Optional) 
 
-  /**
-   * Set "Yes" for each receiver location when a station in the fixed or mobile
-   * service is used primarily as a repeater.
-   * <p>
-   * @param value the Repeater value in a {@link TString} data type
-   */
-  public void setRepeater(TString value) {
-    this.repeater = value;
-  }
+The maximum effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
 
-  /**
-   * Determine if the Repeater is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetRepeater() {
-    return (this.repeater != null ? this.repeater.isSetValue() : false);
-  }
+[XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
 
-  /**
-   * Get the number of users supported by the configuration. This data may be
-   * used to analyse spectrum usage.
-   * <p>
-   * @return the NumUsers value in a {@link TInteger} data type
-   */
-  public TInteger getNumUsers() {
-    return numUsers;
-  }
+Format is SN(10,7) (dBW)
 
-  /**
-   * Set the number of users supported by the configuration. This data may be
-   * used to analyse spectrum usage.
-   * <p>
-   * @param value the NumUsers value in a {@link TInteger} data type
-   */
-  public void setNumUsers(TInteger value) {
-    this.numUsers = value;
-  }
+Attribute group EIRP (Optional)
+@since 3.1.0
+*/
+    @XmlElement(name = "EIRPMax", required = false)
+    private dBW eirpMax;
+/**
+OOBJustification  - Out-Of-Band Justification (Optional) 
 
-  /**
-   * Determine if the NumUsers is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumUsers() {
-    return (this.numUsers != null ? this.numUsers.isSetValue() : false);
-  }
+The justification for out-of-band frequency use.
 
-  /**
-   * Get the minimum or nominal effective isotropic radiated power (EIRP)
-   * radiated from the transmitter antenna. It is the sum of the power supplied
-   * to the antenna and the gain of the antenna, less the line loss.
-   * <p>
-   * @return the EIRPMin value in a {@link TDecimal} data type
-   */
-  public TDecimal getEIRPMin() {
-    return eirpMin;
-  }
+Format is Memo
+@since 3.1.0
+*/
+    @XmlElement(name = "OOBJustification", required = false)
+    private MEMO oobJustification;
+/**
+US:PowerLimit - Power Limit (Optional) 
 
-  /**
-   * Set the minimum or nominal effective isotropic radiated power (EIRP)
-   * radiated from the transmitter antenna. It is the sum of the power supplied
-   * to the antenna and the gain of the antenna, less the line loss.
-   * <p>
-   * @param value the EIRPMin value in a {@link TDecimal} data type
-   */
-  public void setEIRPMin(TDecimal value) {
-    this.eirpMin = value;
-  }
+The power limit of the transmissions in this configuration.
 
-  /**
-   * Determine if the EIRPMin is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEIRPMin() {
-    return (this.eirpMin != null ? this.eirpMin.isSetValue() : false);
-  }
+Format is SN(10,7) (dBW)
+@since 3.1.0
+*/
+    @XmlElement(name = "PowerLimit", required = false)
+    private dBW powerLimit;
+/**
+US:PowerType - Power Type (Optional) 
 
-  /**
-   * Get the maximum effective isotropic radiated power (EIRP) radiated from the
-   * transmitter antenna. It is the sum of the power supplied to the antenna and
-   * the gain of the antenna, less the line loss.
-   * <p>
-   * [XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
-   * <p>
-   * @return the EIRPMax value in a {@link TDecimal} data type
-   */
-  public TDecimal getEIRPMax() {
-    return eirpMax;
-  }
+The power type code for carrier, mean, or peak envelope power emitted. The power type code will depend on the type of emission of the transmitter equipment.
 
-  /**
-   * Set the maximum effective isotropic radiated power (EIRP) radiated from the
-   * transmitter antenna. It is the sum of the power supplied to the antenna and
-   * the gain of the antenna, less the line loss.
-   * <p>
-   * [XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
-   * <p>
-   * @param value the EIRPMax value in a {@link TDecimal} data type
-   */
-  public void setEIRPMax(TDecimal value) {
-    this.eirpMax = value;
-  }
+Format is L:CPT
+@since 3.1.0
+*/
+    @XmlElement(name = "PowerType", required = false)
+    private TString powerType;
+/**
+US:SpectrumLink - Spectrum Link (Optional) 
 
-  /**
-   * Determine if the EIRPMax is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEIRPMax() {
-    return (this.eirpMax != null ? this.eirpMax.isSetValue() : false);
-  }
+Whether the transmitter(s) communicate or interact with the receiver(s) in this Configuration, i.e. enters a link versus a box.
 
-  /**
-   * Get the justification for out-of-band frequency use.
-   * <p>
-   * @return the OOBJustification value in a {@link TString} data type
-   */
-  public TString getOOBJustification() {
-    return oobJustification;
-  }
+Format is L:CBO
+@since 3.1.0
+*/
+    @XmlElement(name = "SpectrumLink", required = false)
+    private TString spectrumLink;
 
-  /**
-   * Set the justification for out-of-band frequency use.
-   * <p>
-   * @param value the OOBJustification value in a {@link TString} data type
-   */
-  public void setOOBJustification(TString value) {
-    this.oobJustification = value;
-  }
+    @XmlElement(name = "ConfigApprovedBy", required = false)
+    private S50 configApprovedBy;
 
-  /**
-   * Determine if the OOBJustification is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetOOBJustification() {
-    return (this.oobJustification != null ? this.oobJustification.isSetValue() : false);
-  }
+    @XmlElement(name = "ConfigApprovedDateTime", required = false)
+    private DT configApprovedDateTime;
+/**
+US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional) 
 
-  /**
-   * Get the power limit of the transmissions in this configuration.
-   * <p>
-   * @return the PowerLimit value in a {@link TDecimal} data type
-   */
-  public TDecimal getPowerLimit() {
-    return powerLimit;
-  }
+The date and time, based on Greenwich Mean Time (GMT), the subject signal was first collected.
 
-  /**
-   * Set the power limit of the transmissions in this configuration.
-   * <p>
-   * @param value the PowerLimit value in a {@link TDecimal} data type
-   */
-  public void setPowerLimit(TDecimal value) {
-    this.powerLimit = value;
-  }
+Format is DateTime
+@since 3.1.0
+*/
+    @XmlElement(name = "ObservedFirstDateTime", required = false)
+    private DT observedFirstDateTime;
+/**
+US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional) 
 
-  /**
-   * Determine if the PowerLimit is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetPowerLimit() {
-    return (this.powerLimit != null ? this.powerLimit.isSetValue() : false);
-  }
+The date and time, based on Greenwich Mean Time (GMT), the subject signal was last collected.
 
-  /**
-   * Get the power type code for carrier, mean, or peak envelope power emitted.
-   * The power type code will depend on the type of emission of the transmitter
-   * equipment.
-   * <p>
-   * @return the PowerType value in a {@link TString} data type
-   */
-  public TString getPowerType() {
-    return powerType;
-  }
+Format is DateTime
+@since 3.1.0
+*/
+    @XmlElement(name = "ObservedLastDateTime", required = false)
+    private DT observedLastDateTime;
+/**
+US:LastObservedBy - Last Observed By (Optional) 
 
-  /**
-   * Set the power type code for carrier, mean, or peak envelope power emitted.
-   * The power type code will depend on the type of emission of the transmitter
-   * equipment.
-   * <p>
-   * @param value the PowerType value in a {@link TString} data type
-   */
-  public void setPowerType(TString value) {
-    this.powerType = value;
-  }
+The identifier of the person or entity who last observed this signal configuration.
 
-  /**
-   * Determine if the PowerType is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetPowerType() {
-    return (this.powerType != null ? this.powerType.isSetValue() : false);
-  }
+Format is S50
+@since 3.1.0
+*/
+    @XmlElement(name = "LastObservedBy", required = false)
+    private S50 lastObservedBy;
+/**
+US:LastReviewedBy - Last Reviewed By (Optional) 
 
-  /**
-   * Get whether the transmitter(s) communicate or interact with the receiver(s)
-   * in this Configuration, i.e. enters a link versus a box.
-   * <p>
-   * @return the SpectrumLink value in a {@link TString} data type
-   */
-  public TString getSpectrumLink() {
-    return spectrumLink;
-  }
+The identifier of the person who last reviewed this configuration.
 
-  /**
-   * Set whether the transmitter(s) communicate or interact with the receiver(s)
-   * in this Configuration, i.e. enters a link versus a box.
-   * <p>
-   * @param value the SpectrumLink value in a {@link TString} data type
-   */
-  public void setSpectrumLink(TString value) {
-    this.spectrumLink = value;
-  }
+Format is S50
+@since 3.1.0
+*/
+    @XmlElement(name = "LastReviewedBy", required = false)
+    private S50 lastReviewedBy;
+/**
+US:LastReviewedDateTime - Last ReviewedTimestamp (Optional) 
 
-  /**
-   * Determine if the SpectrumLink is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetSpectrumLink() {
-    return (this.spectrumLink != null ? this.spectrumLink.isSetValue() : false);
-  }
+The date and time, based on Greenwich Mean Time (GMT), the configuration was thoroughly reviewed.
 
-  /**
-   * Get
-   * <p>
-   * @return the ConfigApprovedBy value in a {@link TString} data type
-   */
-  public TString getConfigApprovedBy() {
-    return configApprovedBy;
-  }
+Format is DateTime
+@since 3.1.0
+*/
+    @XmlElement(name = "LastReviewedDateTime", required = false)
+    private DT lastReviewedDateTime;
+/**
+Notation (Optional)
 
-  /**
-   * Set
-   * <p>
-   * @param value the ConfigApprovedBy value in a {@link TString} data type
-   */
-  public void setConfigApprovedBy(TString value) {
-    this.configApprovedBy = value;
-  }
+Notation contains the electronic identification for a pulsed or non-pulsed electromagnetic emission. It includes but is not limited to Communications Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
+@since 3.1.0
+*/
+    @XmlElement(name = "Notation")
+      private  Set<Notation> notation;
+/**
+Usage (Optional)
 
-  /**
-   * Determine if the ConfigApprovedBy is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetConfigApprovedBy() {
-    return (this.configApprovedBy != null ? this.configApprovedBy.isSetValue() : false);
-  }
+Usage identifies how an operational configuration can be used or will be used.
+@since 3.1.0
+*/
+    @XmlElement(name = "Usage")
+      private  Set<Usage> usage;
+/**
+ConfigFreq (Optional)
 
-  /**
-   * Get
-   * <p>
-   * @return the ConfigApprovedDateTime value in a {@link TDateTime} data type
-   */
-  public TDateTime getConfigApprovedDateTime() {
-    return configApprovedDateTime;
-  }
+ConfigFreq indicates the set of frequencies that a configuration uses, which may be a subset of the frequencies that the linked components (Transmitter, Receiver, Antenna) are capable of.
 
-  /**
-   * Set
-   * <p>
-   * @param value the ConfigApprovedDateTime value in a {@link TDateTime} data
-   *              type
-   */
-  public void setConfigApprovedDateTime(TDateTime value) {
-    this.configApprovedDateTime = value;
-  }
+Notes: When referenced by SSRequest, the Frequency i
+@since 3.1.0
+*/
+    @XmlElement(name = "ConfigFreq")
+      private  Set<ConfigFreq> configFreq;
+/**
+TxRef (Optional)
 
-  /**
-   * Determine if the ConfigApprovedDateTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetConfigApprovedDateTime() {
-    return (this.configApprovedDateTime != null ? this.configApprovedDateTime.isSetValue() : false);
-  }
+TxRef contains the reference of a Transmitter, and optionnally some of its TxModes and the associated Antennas and AntMode.
+@since 3.1.0
+*/
+    @XmlElement(name = "TxRef")
+      private  Set<TxRef> txRef;
+/**
+RxRef (Optional)
 
-  /**
-   * Get the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was first collected.
-   * <p>
-   * @return the ObservedFirstDateTime value in a {@link TDateTime} data type
-   */
-  public TDateTime getObservedFirstDateTime() {
-    return observedFirstDateTime;
-  }
+RxRef contains the reference of a Receiver, and optionnally some of its RxModes and the associated Antennas and AntMode.
+@since 3.1.0
+*/
+    @XmlElement(name = "RxRef")
+      private  Set<RxRef> rxRef;
+/**
+CaseNum (Optional)
 
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was first collected.
-   * <p>
-   * @param value the ObservedFirstDateTime value in a {@link TDateTime} data
-   *              type
-   */
-  public void setObservedFirstDateTime(TDateTime value) {
-    this.observedFirstDateTime = value;
-  }
+CaseNum contains legacy and other identifiers associated with the Dataset.
+@since 3.1.0
+*/
+    @XmlElement(name = "CaseNum")
+      private  Set<CaseNum> caseNum;
+/**
+US:ConfigEmission (Optional)
 
-  /**
-   * Determine if the ObservedFirstDateTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetObservedFirstDateTime() {
-    return (this.observedFirstDateTime != null ? this.observedFirstDateTime.isSetValue() : false);
-  }
+ConfigEmission (US) specifies the emission bandwidths and classification symbols that a Configuration uses, which may be a subset of the linked components' capabilities.
+@since 3.1.0
+*/
+    @XmlElement(name = "ConfigEmission")
+      private  Set<ConfigEmission> configEmission;
+/**
+LoadsetRef (Optional)
 
-  /**
-   * Get the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was last collected.
-   * <p>
-   * @return the ObservedLastDateTime value in a {@link TDateTime} data type
-   */
-  public TDateTime getObservedLastDateTime() {
-    return observedLastDateTime;
-  }
+LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+@since 3.1.0
+*/
+    @XmlElement(name = "LoadsetRef", nillable = true)
+      private  Set<Serial> loadsetRef;
+/**
+US:ObservedERPAnalysis (Optional)
 
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was last collected.
-   * <p>
-   * @param value the ObservedLastDateTime value in a {@link TDateTime} data
-   *              type
-   */
-  public void setObservedLastDateTime(TDateTime value) {
-    this.observedLastDateTime = value;
-  }
+ObservedERPAnalysis (US) contains data describing Effective Radiated Power (ERP) associated with an emitter or Notation.
+@since 3.1.0
+*/
+    @XmlElement(name = "ObservedERPAnalysis")
+      private  Set<ObservedERPAnalysis> observedERPAnalysis;
 
-  /**
-   * Determine if the ObservedLastDateTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetObservedLastDateTime() {
-    return (this.observedLastDateTime != null ? this.observedLastDateTime.isSetValue() : false);
-  }
+/**
+Get a short name for the configuration; this name should be a meaningful identification of the configuration, but it can also be automatically generated in some systems. The identifier MUST be unique within the dataset and SHOULD NOT be modified during the entire lifetime of the dataset.
 
-  /**
-   * Get the identifier of the person or entity who last observed this signal
-   * configuration.
-   * <p>
-   * @return the LastObservedBy value in a {@link TString} data type
-   */
-  public TString getLastObservedBy() {
-    return lastObservedBy;
-  }
-
-  /**
-   * Set the identifier of the person or entity who last observed this signal
-   * configuration.
-   * <p>
-   * @param value the LastObservedBy value in a {@link TString} data type
-   */
-  public void setLastObservedBy(TString value) {
-    this.lastObservedBy = value;
-  }
-
-  /**
-   * Determine if the LastObservedBy is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLastObservedBy() {
-    return (this.lastObservedBy != null ? this.lastObservedBy.isSetValue() : false);
-  }
-
-  /**
-   * Get the identifier of the person who last reviewed this configuration.
-   * <p>
-   * @return the LastReviewedBy value in a {@link TString} data type
-   */
-  public TString getLastReviewedBy() {
-    return lastReviewedBy;
-  }
-
-  /**
-   * Set the identifier of the person who last reviewed this configuration.
-   * <p>
-   * @param value the LastReviewedBy value in a {@link TString} data type
-   */
-  public void setLastReviewedBy(TString value) {
-    this.lastReviewedBy = value;
-  }
-
-  /**
-   * Determine if the LastReviewedBy is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLastReviewedBy() {
-    return (this.lastReviewedBy != null ? this.lastReviewedBy.isSetValue() : false);
-  }
-
-  /**
-   * Get the date and time, based on Greenwich Mean Time (GMT), the
-   * configuration was thoroughly reviewed.
-   * <p>
-   * @return the LastReviewedDateTime value in a {@link TDateTime} data type
-   */
-  public TDateTime getLastReviewedDateTime() {
-    return lastReviewedDateTime;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the
-   * configuration was thoroughly reviewed.
-   * <p>
-   * @param value the LastReviewedDateTime value in a {@link TDateTime} data
-   *              type
-   */
-  public void setLastReviewedDateTime(TDateTime value) {
-    this.lastReviewedDateTime = value;
-  }
-
-  /**
-   * Determine if the LastReviewedDateTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDateTime} wrapped
-   * value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLastReviewedDateTime() {
-    return (this.lastReviewedDateTime != null ? this.lastReviewedDateTime.isSetValue() : false);
-  }
-
-  /**
-   * Get the Notation
-   * <p>
-   * Complex element Notation contains the electronic identification for a
-   * pulsed or non-pulsed electromagnetic emission. It includes but is not
-   * limited to Communications Emitter Notation (CENOT) and Electronic
-   * Intelligence Notation (ELNOT).
-   * <p>
-   * @return a non-null but possibly empty list of {@link Notation} instances
-   */
-  public Set<Notation> getNotation() {
-    if (notation == null) {
-      notation = new HashSet<>();
+@return the ConfigID value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getConfigID() {
+        return configID;
     }
-    return this.notation;
-  }
 
-  /**
-   * Determine if the Notation is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNotation() {
-    return ((this.notation != null) && (!this.notation.isEmpty()));
-  }
+/**
+Set a short name for the configuration; this name should be a meaningful identification of the configuration, but it can also be automatically generated in some systems. The identifier MUST be unique within the dataset and SHOULD NOT be modified during the entire lifetime of the dataset.
 
-  /**
-   * Clear the Notation field. This sets the field to null.
-   */
-  public void unsetNotation() {
-    this.notation = null;
-  }
-
-  /**
-   * Get the Usage
-   * <p>
-   * Complex element Usage identifies how an operational configuration can be
-   * used or will be used.
-   * <p>
-   * @return a non-null but possibly empty list of {@link Usage} instances
-   */
-  public Set<Usage> getUsage() {
-    if (usage == null) {
-      usage = new HashSet<>();
+@param value the ConfigID value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setConfigID(S100 value) {
+        this.configID = value;
     }
-    return this.usage;
-  }
 
-  /**
-   * Determine if the Usage is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetUsage() {
-    return ((this.usage != null) && (!this.usage.isEmpty()));
-  }
+/**
+Determine if the ConfigID is configured.
 
-  /**
-   * Clear the Usage field. This sets the field to null.
-   */
-  public void unsetUsage() {
-    this.usage = null;
-  }
-
-  /**
-   * Get the ConfigFreq
-   * <p>
-   * Complex element ConfigFreq indicates the set of frequencies that a
-   * configuration uses, which may be a subset of the frequencies that the
-   * linked components (Transmitter, Receiver, Antenna) are capable of.
-   * <p>
-   * @return a non-null but possibly empty list of {@link ConfigFreq} instances
-   */
-  public Set<ConfigFreq> getConfigFreq() {
-    if (configFreq == null) {
-      configFreq = new HashSet<>();
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetConfigID() {
+        return (this.configID!= null);
     }
-    return this.configFreq;
-  }
 
-  /**
-   * Determine if the ConfigFreq is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetConfigFreq() {
-    return ((this.configFreq != null) && (!this.configFreq.isEmpty()));
-  }
+/**
+Get a description of the operational configuration. This description should be a meaningful explanation of the configurations main characteristics.
 
-  /**
-   * Clear the ConfigFreq field. This sets the field to null.
-   */
-  public void unsetConfigFreq() {
-    this.configFreq = null;
-  }
-
-  /**
-   * Get the TxRef
-   * <p>
-   * Complex element TxRef contains the reference of a Transmitter, and
-   * optionnally some of its TxModes and the associated Antennas and AntMode.
-   * <p>
-   * @return a non-null but possibly empty list of {@link TxRef} instances
-   */
-  public Set<TxRef> getTxRef() {
-    if (txRef == null) {
-      txRef = new HashSet<>();
+@return the Description value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getDescription() {
+        return description;
     }
-    return this.txRef;
-  }
 
-  /**
-   * Determine if the TxRef is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetTxRef() {
-    return ((this.txRef != null) && (!this.txRef.isEmpty()));
-  }
+/**
+Set a description of the operational configuration. This description should be a meaningful explanation of the configurations main characteristics.
 
-  /**
-   * Clear the TxRef field. This sets the field to null.
-   */
-  public void unsetTxRef() {
-    this.txRef = null;
-  }
-
-  /**
-   * Get the RxRef
-   * <p>
-   * Complex element RxRef contains the reference of a Receiver, and optionnally
-   * some of its RxModes and the associated Antennas and AntMode.
-   * <p>
-   * @return a non-null but possibly empty list of {@link RxRef} instances
-   */
-  public Set<RxRef> getRxRef() {
-    if (rxRef == null) {
-      rxRef = new HashSet<>();
+@param value the Description value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setDescription(S100 value) {
+        this.description = value;
     }
-    return this.rxRef;
-  }
 
-  /**
-   * Determine if the RxRef is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetRxRef() {
-    return ((this.rxRef != null) && (!this.rxRef.isEmpty()));
-  }
+/**
+Determine if the Description is configured.
 
-  /**
-   * Clear the RxRef field. This sets the field to null.
-   */
-  public void unsetRxRef() {
-    this.rxRef = null;
-  }
-
-  /**
-   * Get the CaseNum
-   * <p>
-   * Complex element CaseNum contains legacy and other identifiers associated
-   * with the Dataset.
-   * <p>
-   * @return a non-null but possibly empty list of {@link CaseNum} instances
-   */
-  public Set<CaseNum> getCaseNum() {
-    if (caseNum == null) {
-      caseNum = new HashSet<>();
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetDescription() {
+        return (this.description!= null);
     }
-    return this.caseNum;
-  }
 
-  /**
-   * Determine if the CaseNum is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetCaseNum() {
-    return ((this.caseNum != null) && (!this.caseNum.isEmpty()));
-  }
+/**
+Get "Yes" for each receiver location when a station in the fixed or mobile service is used primarily as a repeater.
 
-  /**
-   * Clear the CaseNum field. This sets the field to null.
-   */
-  public void unsetCaseNum() {
-    this.caseNum = null;
-  }
-
-  /**
-   * Get the US:ConfigEmission
-   * <p>
-   * Complex element ConfigEmission (US) specifies the emission bandwidths and
-   * classification symbols that a Configuration uses, which may be a subset of
-   * the linked components' capabilities.
-   * <p>
-   * @return a non-null but possibly empty list of {@link ConfigEmission}
-   *         instances
-   */
-  public Set<ConfigEmission> getConfigEmission() {
-    if (configEmission == null) {
-      configEmission = new HashSet<>();
+@return the Repeater value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getRepeater() {
+        return repeater;
     }
-    return this.configEmission;
-  }
 
-  /**
-   * Determine if the ConfigEmission is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetConfigEmission() {
-    return ((this.configEmission != null) && (!this.configEmission.isEmpty()));
-  }
+/**
+Set "Yes" for each receiver location when a station in the fixed or mobile service is used primarily as a repeater.
 
-  /**
-   * Clear the ConfigEmission field. This sets the field to null.
-   */
-  public void unsetConfigEmission() {
-    this.configEmission = null;
-  }
-
-  /**
-   * Get the LoadsetRef
-   * <p>
-   * Complex element LoadsetRef describes the jamming loadset to be used against
-   * a specific target or targets.
-   * <p>
-   * @return a non-null but possibly empty list of {@link TString} instances
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #getLoadset()} instead.
-   */
-  @Deprecated
-  public Set<TSerial> getLoadsetRef() {
-    if (loadsetRef == null) {
-      loadsetRef = new HashSet<>();
+@param value the Repeater value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setRepeater(TString value) {
+        this.repeater = value;
     }
-    return this.loadsetRef;
-  }
 
-  /**
-   * Determine if the LoadsetRef is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLoadsetRef() {
-    return ((this.loadsetRef != null) && (!this.loadsetRef.isEmpty()));
-  }
+/**
+Determine if the Repeater is configured.
 
-  /**
-   * Clear the LoadsetRef field. This sets the field to null.
-   */
-  public void unsetLoadsetRef() {
-    this.loadsetRef = null;
-  }
+If configured this method also inspects the {@link TString} wrapped value.
 
-  /**
-   * Get the US:ObservedERPAnalysis
-   * <p>
-   * Complex element ObservedERPAnalysis (US) contains data describing Effective
-   * Radiated Power (ERP) associated with an emitter or Notation.
-   * <p>
-   * @return a non-null but possibly empty list of {@link ObservedERPAnalysis}
-   *         instances
-   */
-  public Set<ObservedERPAnalysis> getObservedERPAnalysis() {
-    if (observedERPAnalysis == null) {
-      observedERPAnalysis = new HashSet<>();
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetRepeater() {
+return (this.repeater!= null ? this.repeater.isSetValue() : false);
     }
-    return this.observedERPAnalysis;
-  }
 
-  /**
-   * Determine if the ObservedERPAnalysis is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetObservedERPAnalysis() {
-    return ((this.observedERPAnalysis != null) && (!this.observedERPAnalysis.isEmpty()));
-  }
+/**
+Get the number of users supported by the configuration. This data may be used to analyse spectrum usage.
 
-  /**
-   * Clear the ObservedERPAnalysis field. This sets the field to null.
-   */
-  public void unsetObservedERPAnalysis() {
-    this.observedERPAnalysis = null;
-  }
-
-  /**
-   * Set a short name for the configuration; this name should be a meaningful
-   * identification of the configuration, but it can also be automatically
-   * generated in some systems. The identifier MUST be unique within the dataset
-   * and SHOULD NOT be modified during the entire lifetime of the dataset.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigID(String value) {
-    setConfigID(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set a description of the operational configuration. This description should
-   * be a meaningful explanation of the configurations main characteristics.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Configuration object instance
-   */
-  public Configuration withDescription(String value) {
-    setDescription(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set "Yes" for each receiver location when a station in the fixed or mobile
-   * service is used primarily as a repeater.
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current Configuration object instance
-   */
-  public Configuration withRepeater(ListCBO value) {
-    setRepeater(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the number of users supported by the configuration. This data may be
-   * used to analyse spectrum usage.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current Configuration object instance
-   */
-  public Configuration withNumUsers(Integer value) {
-    setNumUsers(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the minimum or nominal effective isotropic radiated power (EIRP)
-   * radiated from the transmitter antenna. It is the sum of the power supplied
-   * to the antenna and the gain of the antenna, less the line loss.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Configuration object instance
-   */
-  public Configuration withEIRPMin(Double value) {
-    setEIRPMin(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the maximum effective isotropic radiated power (EIRP) radiated from the
-   * transmitter antenna. It is the sum of the power supplied to the antenna and
-   * the gain of the antenna, less the line loss.
-   * <p>
-   * [XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Configuration object instance
-   */
-  public Configuration withEIRPMax(Double value) {
-    setEIRPMax(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the justification for out-of-band frequency use.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Configuration object instance
-   */
-  public Configuration withOOBJustification(String value) {
-    setOOBJustification(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the power limit of the transmissions in this configuration.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current Configuration object instance
-   */
-  public Configuration withPowerLimit(Double value) {
-    setPowerLimit(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the power type code for carrier, mean, or peak envelope power emitted.
-   * The power type code will depend on the type of emission of the transmitter
-   * equipment.
-   * <p>
-   * @param value An instances of type {@link ListCPT}
-   * @return The current Configuration object instance
-   */
-  public Configuration withPowerType(ListCPT value) {
-    setPowerType(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set whether the transmitter(s) communicate or interact with the receiver(s)
-   * in this Configuration, i.e. enters a link versus a box.
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current Configuration object instance
-   */
-  public Configuration withSpectrumLink(ListCBO value) {
-    setSpectrumLink(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigApprovedBy(String value) {
-    setConfigApprovedBy(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigApprovedDateTime(Calendar value) {
-    setConfigApprovedDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigApprovedDateTime(Date value) {
-    setConfigApprovedDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was first collected.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Configuration object instance
-   */
-  public Configuration withObservedFirstDateTime(Calendar value) {
-    setObservedFirstDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was first collected.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Configuration object instance
-   */
-  public Configuration withObservedFirstDateTime(Date value) {
-    setObservedFirstDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was last collected.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Configuration object instance
-   */
-  public Configuration withObservedLastDateTime(Calendar value) {
-    setObservedLastDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the subject
-   * signal was last collected.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Configuration object instance
-   */
-  public Configuration withObservedLastDateTime(Date value) {
-    setObservedLastDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the identifier of the person or entity who last observed this signal
-   * configuration.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Configuration object instance
-   */
-  public Configuration withLastObservedBy(String value) {
-    setLastObservedBy(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the identifier of the person who last reviewed this configuration.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current Configuration object instance
-   */
-  public Configuration withLastReviewedBy(String value) {
-    setLastReviewedBy(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the
-   * configuration was thoroughly reviewed.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current Configuration object instance
-   */
-  public Configuration withLastReviewedDateTime(Calendar value) {
-    setLastReviewedDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the date and time, based on Greenwich Mean Time (GMT), the
-   * configuration was thoroughly reviewed.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current Configuration object instance
-   */
-  public Configuration withLastReviewedDateTime(Date value) {
-    setLastReviewedDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the Notation
-   * <p>
-   * Complex element Notation contains the electronic identification for a
-   * pulsed or non-pulsed electromagnetic emission. It includes but is not
-   * limited to Communications Emitter Notation (CENOT) and Electronic
-   * Intelligence Notation (ELNOT).
-   * <p>
-   * @param values One or more instances of type {@link Notation}
-   * @return The current Configuration object instance
-   */
-  public Configuration withNotation(Notation... values) {
-    if (values != null) {
-      getNotation().addAll(new HashSet<>(Arrays.asList(values)));
+@return the NumUsers value in a {@link TUN9} data type
+@since 3.1.0
+*/
+public UN9 getNumUsers() {
+        return numUsers;
     }
-    return this;
-  }
 
-  /**
-   * Set the Notation
-   * <p>
-   * Complex element Notation contains the electronic identification for a
-   * pulsed or non-pulsed electromagnetic emission. It includes but is not
-   * limited to Communications Emitter Notation (CENOT) and Electronic
-   * Intelligence Notation (ELNOT).
-   * <p>
-   * @param values A collection of {@link Notation} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withNotation(Set<Notation> values) {
-    if (values != null) {
-      getNotation().addAll(values);
+/**
+Set the number of users supported by the configuration. This data may be used to analyse spectrum usage.
+
+@param value the NumUsers value in a {@link TUN9} data type
+@since 3.1.0
+*/
+public void setNumUsers(UN9 value) {
+        this.numUsers = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the Usage
-   * <p>
-   * Complex element Usage identifies how an operational configuration can be
-   * used or will be used.
-   * <p>
-   * @param values One or more instances of type {@link Usage}
-   * @return The current Configuration object instance
-   */
-  public Configuration withUsage(Usage... values) {
-    if (values != null) {
-      getUsage().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Determine if the NumUsers is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumUsers() {
+        return (this.numUsers!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the Usage
-   * <p>
-   * Complex element Usage identifies how an operational configuration can be
-   * used or will be used.
-   * <p>
-   * @param values A collection of {@link Usage} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withUsage(Set<Usage> values) {
-    if (values != null) {
-      getUsage().addAll(values);
+/**
+Get the minimum or nominal effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
+
+@return the EIRPMin value in a {@link TdBW} data type
+@since 3.1.0
+*/
+public dBW getEIRPMin() {
+        return eirpMin;
     }
-    return this;
-  }
 
-  /**
-   * Set the ConfigFreq
-   * <p>
-   * Complex element ConfigFreq indicates the set of frequencies that a
-   * configuration uses, which may be a subset of the frequencies that the
-   * linked components (Transmitter, Receiver, Antenna) are capable of.
-   * <p>
-   * @param values One or more instances of type {@link ConfigFreq}
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigFreq(ConfigFreq... values) {
-    if (values != null) {
-      getConfigFreq().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set the minimum or nominal effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
+
+@param value the EIRPMin value in a {@link TdBW} data type
+@since 3.1.0
+*/
+public void setEIRPMin(dBW value) {
+        this.eirpMin = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the ConfigFreq
-   * <p>
-   * Complex element ConfigFreq indicates the set of frequencies that a
-   * configuration uses, which may be a subset of the frequencies that the
-   * linked components (Transmitter, Receiver, Antenna) are capable of.
-   * <p>
-   * @param values A collection of {@link ConfigFreq} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigFreq(Set<ConfigFreq> values) {
-    if (values != null) {
-      getConfigFreq().addAll(values);
+/**
+Determine if the EIRPMin is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEIRPMin() {
+        return (this.eirpMin!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the TxRef
-   * <p>
-   * Complex element TxRef contains the reference of a Transmitter, and
-   * optionnally some of its TxModes and the associated Antennas and AntMode.
-   * <p>
-   * @param values One or more instances of type {@link TxRef}
-   * @return The current Configuration object instance
-   */
-  public Configuration withTxRef(TxRef... values) {
-    if (values != null) {
-      getTxRef().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Get the maximum effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
+
+[XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
+
+@return the EIRPMax value in a {@link TdBW} data type
+@since 3.1.0
+*/
+public dBW getEIRPMax() {
+        return eirpMax;
     }
-    return this;
-  }
 
-  /**
-   * Set the TxRef
-   * <p>
-   * Complex element TxRef contains the reference of a Transmitter, and
-   * optionnally some of its TxModes and the associated Antennas and AntMode.
-   * <p>
-   * @param values A collection of {@link TxRef} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withTxRef(Set<TxRef> values) {
-    if (values != null) {
-      getTxRef().addAll(values);
+/**
+Set the maximum effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
+
+[XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
+
+@param value the EIRPMax value in a {@link TdBW} data type
+@since 3.1.0
+*/
+public void setEIRPMax(dBW value) {
+        this.eirpMax = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the RxRef
-   * <p>
-   * Complex element RxRef contains the reference of a Receiver, and optionnally
-   * some of its RxModes and the associated Antennas and AntMode.
-   * <p>
-   * @param values One or more instances of type {@link RxRef}
-   * @return The current Configuration object instance
-   */
-  public Configuration withRxRef(RxRef... values) {
-    if (values != null) {
-      getRxRef().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Determine if the EIRPMax is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEIRPMax() {
+        return (this.eirpMax!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the RxRef
-   * <p>
-   * Complex element RxRef contains the reference of a Receiver, and optionnally
-   * some of its RxModes and the associated Antennas and AntMode.
-   * <p>
-   * @param values A collection of {@link RxRef} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withRxRef(Set<RxRef> values) {
-    if (values != null) {
-      getRxRef().addAll(values);
+/**
+Get the justification for out-of-band frequency use.
+
+@return the OOBJustification value in a {@link TMEMO} data type
+@since 3.1.0
+*/
+public MEMO getOOBJustification() {
+        return oobJustification;
     }
-    return this;
-  }
 
-  /**
-   * Set the CaseNum
-   * <p>
-   * Complex element CaseNum contains legacy and other identifiers associated
-   * with the Dataset.
-   * <p>
-   * @param values One or more instances of type {@link CaseNum}
-   * @return The current Configuration object instance
-   */
-  public Configuration withCaseNum(CaseNum... values) {
-    if (values != null) {
-      getCaseNum().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set the justification for out-of-band frequency use.
+
+@param value the OOBJustification value in a {@link TMEMO} data type
+@since 3.1.0
+*/
+public void setOOBJustification(MEMO value) {
+        this.oobJustification = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the CaseNum
-   * <p>
-   * Complex element CaseNum contains legacy and other identifiers associated
-   * with the Dataset.
-   * <p>
-   * @param values A collection of {@link CaseNum} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withCaseNum(Set<CaseNum> values) {
-    if (values != null) {
-      getCaseNum().addAll(values);
+/**
+Determine if the OOBJustification is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetOOBJustification() {
+        return (this.oobJustification!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the US:ConfigEmission
-   * <p>
-   * Complex element ConfigEmission (US) specifies the emission bandwidths and
-   * classification symbols that a Configuration uses, which may be a subset of
-   * the linked components' capabilities.
-   * <p>
-   * @param values One or more instances of type {@link ConfigEmission}
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigEmission(ConfigEmission... values) {
-    if (values != null) {
-      getConfigEmission().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Get the power limit of the transmissions in this configuration.
+
+@return the PowerLimit value in a {@link TdBW} data type
+@since 3.1.0
+*/
+public dBW getPowerLimit() {
+        return powerLimit;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:ConfigEmission
-   * <p>
-   * Complex element ConfigEmission (US) specifies the emission bandwidths and
-   * classification symbols that a Configuration uses, which may be a subset of
-   * the linked components' capabilities.
-   * <p>
-   * @param values A collection of {@link ConfigEmission} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withConfigEmission(Set<ConfigEmission> values) {
-    if (values != null) {
-      getConfigEmission().addAll(values);
+/**
+Set the power limit of the transmissions in this configuration.
+
+@param value the PowerLimit value in a {@link TdBW} data type
+@since 3.1.0
+*/
+public void setPowerLimit(dBW value) {
+        this.powerLimit = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the LoadsetRef
-   * <p>
-   * Complex element LoadsetRef describes the jamming loadset to be used against
-   * a specific target or targets.
-   * <p>
-   * @param values One or more instances of type {@link TString}
-   * @return The current Configuration object instance
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #withLoadset(Loadset...)} instead.
-   */
-  @Deprecated
-  public Configuration withLoadsetRef(TSerial... values) {
-    if (values != null) {
-      getLoadsetRef().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Determine if the PowerLimit is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetPowerLimit() {
+        return (this.powerLimit!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the LoadsetRef
-   * <p>
-   * Complex element LoadsetRef describes the jamming loadset to be used against
-   * a specific target or targets.
-   * <p>
-   * @param values A collection of {@link TString} instances
-   * @return The current Configuration object instance
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #withLoadset(Loadset...)} instead.
-   */
-  @Deprecated
-  public Configuration withLoadsetRef(Set<TSerial> values) {
-    if (values != null) {
-      getLoadsetRef().addAll(values);
+/**
+Get the power type code for carrier, mean, or peak envelope power emitted. The power type code will depend on the type of emission of the transmitter equipment.
+
+@return the PowerType value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getPowerType() {
+        return powerType;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:ObservedERPAnalysis
-   * <p>
-   * Complex element ObservedERPAnalysis (US) contains data describing Effective
-   * Radiated Power (ERP) associated with an emitter or Notation.
-   * <p>
-   * @param values One or more instances of type {@link ObservedERPAnalysis}
-   * @return The current Configuration object instance
-   */
-  public Configuration withObservedERPAnalysis(ObservedERPAnalysis... values) {
-    if (values != null) {
-      getObservedERPAnalysis().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set the power type code for carrier, mean, or peak envelope power emitted. The power type code will depend on the type of emission of the transmitter equipment.
+
+@param value the PowerType value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setPowerType(TString value) {
+        this.powerType = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:ObservedERPAnalysis
-   * <p>
-   * Complex element ObservedERPAnalysis (US) contains data describing Effective
-   * Radiated Power (ERP) associated with an emitter or Notation.
-   * <p>
-   * @param values A collection of {@link ObservedERPAnalysis} instances
-   * @return The current Configuration object instance
-   */
-  public Configuration withObservedERPAnalysis(Set<ObservedERPAnalysis> values) {
-    if (values != null) {
-      getObservedERPAnalysis().addAll(values);
+/**
+Determine if the PowerType is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetPowerType() {
+return (this.powerType!= null ? this.powerType.isSetValue() : false);
     }
-    return this;
+
+/**
+Get whether the transmitter(s) communicate or interact with the receiver(s) in this Configuration, i.e. enters a link versus a box.
+
+@return the SpectrumLink value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getSpectrumLink() {
+        return spectrumLink;
+    }
+
+/**
+Set whether the transmitter(s) communicate or interact with the receiver(s) in this Configuration, i.e. enters a link versus a box.
+
+@param value the SpectrumLink value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setSpectrumLink(TString value) {
+        this.spectrumLink = value;
+    }
+
+/**
+Determine if the SpectrumLink is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetSpectrumLink() {
+return (this.spectrumLink!= null ? this.spectrumLink.isSetValue() : false);
+    }
+
+/**
+Get 
+
+@return the ConfigApprovedBy value in a {@link TS50} data type
+@since 3.1.0
+*/
+public S50 getConfigApprovedBy() {
+        return configApprovedBy;
+    }
+
+/**
+Set 
+
+@param value the ConfigApprovedBy value in a {@link TS50} data type
+@since 3.1.0
+*/
+public void setConfigApprovedBy(S50 value) {
+        this.configApprovedBy = value;
+    }
+
+/**
+Determine if the ConfigApprovedBy is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetConfigApprovedBy() {
+        return (this.configApprovedBy!= null);
+    }
+
+/**
+Get 
+
+@return the ConfigApprovedDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public DT getConfigApprovedDateTime() {
+        return configApprovedDateTime;
+    }
+
+/**
+Set 
+
+@param value the ConfigApprovedDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public void setConfigApprovedDateTime(DT value) {
+        this.configApprovedDateTime = value;
+    }
+
+/**
+Determine if the ConfigApprovedDateTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetConfigApprovedDateTime() {
+        return (this.configApprovedDateTime!= null);
+    }
+
+/**
+Get the date and time, based on Greenwich Mean Time (GMT), the subject signal was first collected.
+
+@return the ObservedFirstDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public DT getObservedFirstDateTime() {
+        return observedFirstDateTime;
+    }
+
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the subject signal was first collected.
+
+@param value the ObservedFirstDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public void setObservedFirstDateTime(DT value) {
+        this.observedFirstDateTime = value;
+    }
+
+/**
+Determine if the ObservedFirstDateTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetObservedFirstDateTime() {
+        return (this.observedFirstDateTime!= null);
+    }
+
+/**
+Get the date and time, based on Greenwich Mean Time (GMT), the subject signal was last collected.
+
+@return the ObservedLastDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public DT getObservedLastDateTime() {
+        return observedLastDateTime;
+    }
+
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the subject signal was last collected.
+
+@param value the ObservedLastDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public void setObservedLastDateTime(DT value) {
+        this.observedLastDateTime = value;
+    }
+
+/**
+Determine if the ObservedLastDateTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetObservedLastDateTime() {
+        return (this.observedLastDateTime!= null);
+    }
+
+/**
+Get the identifier of the person or entity who last observed this signal configuration.
+
+@return the LastObservedBy value in a {@link TS50} data type
+@since 3.1.0
+*/
+public S50 getLastObservedBy() {
+        return lastObservedBy;
+    }
+
+/**
+Set the identifier of the person or entity who last observed this signal configuration.
+
+@param value the LastObservedBy value in a {@link TS50} data type
+@since 3.1.0
+*/
+public void setLastObservedBy(S50 value) {
+        this.lastObservedBy = value;
+    }
+
+/**
+Determine if the LastObservedBy is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetLastObservedBy() {
+        return (this.lastObservedBy!= null);
+    }
+
+/**
+Get the identifier of the person who last reviewed this configuration.
+
+@return the LastReviewedBy value in a {@link TS50} data type
+@since 3.1.0
+*/
+public S50 getLastReviewedBy() {
+        return lastReviewedBy;
+    }
+
+/**
+Set the identifier of the person who last reviewed this configuration.
+
+@param value the LastReviewedBy value in a {@link TS50} data type
+@since 3.1.0
+*/
+public void setLastReviewedBy(S50 value) {
+        this.lastReviewedBy = value;
+    }
+
+/**
+Determine if the LastReviewedBy is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetLastReviewedBy() {
+        return (this.lastReviewedBy!= null);
+    }
+
+/**
+Get the date and time, based on Greenwich Mean Time (GMT), the configuration was thoroughly reviewed.
+
+@return the LastReviewedDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public DT getLastReviewedDateTime() {
+        return lastReviewedDateTime;
+    }
+
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the configuration was thoroughly reviewed.
+
+@param value the LastReviewedDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public void setLastReviewedDateTime(DT value) {
+        this.lastReviewedDateTime = value;
+    }
+
+/**
+Determine if the LastReviewedDateTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetLastReviewedDateTime() {
+        return (this.lastReviewedDateTime!= null);
+    }
+
+/**
+Get the Notation
+
+Complex element Notation contains the electronic identification for a pulsed or non-pulsed electromagnetic emission. It includes but is not limited to Communications Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
+
+@return  a {@link Notation} instance
+@since 3.1.0
+*/
+    public Set<Notation> getNotation() {
+        if (notation == null) {
+            notation = new HashSet<Notation>();
+        }
+        return this.notation;
+    }
+
+/**
+Determine if the Notation is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNotation() {
+        return ((this.notation!= null)&&(!this.notation.isEmpty()));
+    }
+
+/**
+  Clear the Notation field. This sets the field to null.
+ */
+    public void unsetNotation() {
+        this.notation = null;
+    }
+
+/**
+Get the Usage
+
+Complex element Usage identifies how an operational configuration can be used or will be used.
+
+@return  a {@link Usage} instance
+@since 3.1.0
+*/
+    public Set<Usage> getUsage() {
+        if (usage == null) {
+            usage = new HashSet<Usage>();
+        }
+        return this.usage;
+    }
+
+/**
+Determine if the Usage is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetUsage() {
+        return ((this.usage!= null)&&(!this.usage.isEmpty()));
+    }
+
+/**
+  Clear the Usage field. This sets the field to null.
+ */
+    public void unsetUsage() {
+        this.usage = null;
+    }
+
+/**
+Get the ConfigFreq
+
+Complex element ConfigFreq indicates the set of frequencies that a configuration uses, which may be a subset of the frequencies that the linked components (Transmitter, Receiver, Antenna) are capable of.
+
+@return  a {@link ConfigFreq} instance
+@since 3.1.0
+*/
+    public Set<ConfigFreq> getConfigFreq() {
+        if (configFreq == null) {
+            configFreq = new HashSet<ConfigFreq>();
+        }
+        return this.configFreq;
+    }
+
+/**
+Determine if the ConfigFreq is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetConfigFreq() {
+        return ((this.configFreq!= null)&&(!this.configFreq.isEmpty()));
+    }
+
+/**
+  Clear the ConfigFreq field. This sets the field to null.
+ */
+    public void unsetConfigFreq() {
+        this.configFreq = null;
+    }
+
+/**
+Get the TxRef
+
+Complex element TxRef contains the reference of a Transmitter, and optionnally some of its TxModes and the associated Antennas and AntMode.
+
+@return  a {@link TxRef} instance
+@since 3.1.0
+*/
+    public Set<TxRef> getTxRef() {
+        if (txRef == null) {
+            txRef = new HashSet<TxRef>();
+        }
+        return this.txRef;
+    }
+
+/**
+Determine if the TxRef is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetTxRef() {
+        return ((this.txRef!= null)&&(!this.txRef.isEmpty()));
+    }
+
+/**
+  Clear the TxRef field. This sets the field to null.
+ */
+    public void unsetTxRef() {
+        this.txRef = null;
+    }
+
+/**
+Get the RxRef
+
+Complex element RxRef contains the reference of a Receiver, and optionnally some of its RxModes and the associated Antennas and AntMode.
+
+@return  a {@link RxRef} instance
+@since 3.1.0
+*/
+    public Set<RxRef> getRxRef() {
+        if (rxRef == null) {
+            rxRef = new HashSet<RxRef>();
+        }
+        return this.rxRef;
+    }
+
+/**
+Determine if the RxRef is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetRxRef() {
+        return ((this.rxRef!= null)&&(!this.rxRef.isEmpty()));
+    }
+
+/**
+  Clear the RxRef field. This sets the field to null.
+ */
+    public void unsetRxRef() {
+        this.rxRef = null;
+    }
+
+/**
+Get the CaseNum
+
+Complex element CaseNum contains legacy and other identifiers associated with the Dataset.
+
+@return  a {@link CaseNum} instance
+@since 3.1.0
+*/
+    public Set<CaseNum> getCaseNum() {
+        if (caseNum == null) {
+            caseNum = new HashSet<CaseNum>();
+        }
+        return this.caseNum;
+    }
+
+/**
+Determine if the CaseNum is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetCaseNum() {
+        return ((this.caseNum!= null)&&(!this.caseNum.isEmpty()));
+    }
+
+/**
+  Clear the CaseNum field. This sets the field to null.
+ */
+    public void unsetCaseNum() {
+        this.caseNum = null;
+    }
+
+/**
+Get the US:ConfigEmission
+
+Complex element ConfigEmission (US) specifies the emission bandwidths and classification symbols that a Configuration uses, which may be a subset of the linked components' capabilities.
+
+@return  a {@link ConfigEmission} instance
+@since 3.1.0
+*/
+    public Set<ConfigEmission> getConfigEmission() {
+        if (configEmission == null) {
+            configEmission = new HashSet<ConfigEmission>();
+        }
+        return this.configEmission;
+    }
+
+/**
+Determine if the ConfigEmission is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetConfigEmission() {
+        return ((this.configEmission!= null)&&(!this.configEmission.isEmpty()));
+    }
+
+/**
+  Clear the ConfigEmission field. This sets the field to null.
+ */
+    public void unsetConfigEmission() {
+        this.configEmission = null;
+    }
+
+/**
+Get the LoadsetRef
+
+Complex element LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+
+@return  a {@link Serial} instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #getLoadset()} instead.
+*/
+@Deprecated
+    public Set<Serial> getLoadsetRef() {
+        if (loadsetRef == null) {
+            loadsetRef = new HashSet<Serial>();
+        }
+        return this.loadsetRef;
+    }
+
+/**
+Determine if the LoadsetRef is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetLoadsetRef() {
+        return ((this.loadsetRef!= null)&&(!this.loadsetRef.isEmpty()));
+    }
+
+/**
+  Clear the LoadsetRef field. This sets the field to null.
+ */
+    public void unsetLoadsetRef() {
+        this.loadsetRef = null;
+    }
+
+/**
+Get the US:ObservedERPAnalysis
+
+Complex element ObservedERPAnalysis (US) contains data describing Effective Radiated Power (ERP) associated with an emitter or Notation.
+
+@return  a {@link ObservedERPAnalysis} instance
+@since 3.1.0
+*/
+    public Set<ObservedERPAnalysis> getObservedERPAnalysis() {
+        if (observedERPAnalysis == null) {
+            observedERPAnalysis = new HashSet<ObservedERPAnalysis>();
+        }
+        return this.observedERPAnalysis;
+    }
+
+/**
+Determine if the ObservedERPAnalysis is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetObservedERPAnalysis() {
+        return ((this.observedERPAnalysis!= null)&&(!this.observedERPAnalysis.isEmpty()));
+    }
+
+/**
+  Clear the ObservedERPAnalysis field. This sets the field to null.
+ */
+    public void unsetObservedERPAnalysis() {
+        this.observedERPAnalysis = null;
+    }
+
+/**
+Set a short name for the configuration; this name should be a meaningful identification of the configuration, but it can also be automatically generated in some systems. The identifier MUST be unique within the dataset and SHOULD NOT be modified during the entire lifetime of the dataset.
+
+@param value  An instances of type {@link TS100}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigID(TS100 value) {
+        return this;
+    }
+
+/**
+Set a description of the operational configuration. This description should be a meaningful explanation of the configurations main characteristics.
+
+@param value  An instances of type {@link String}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withDescription(String value) {
+           setDescription(new S100(value));
+        return this;
+    }
+
+/**
+Set "Yes" for each receiver location when a station in the fixed or mobile service is used primarily as a repeater.
+
+@param value  An instances of type {@link ListCBO}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withRepeater(ListCBO value) {
+           setRepeater(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the number of users supported by the configuration. This data may be used to analyse spectrum usage.
+
+@param value  An instances of type {@link Integer}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withNumUsers(Integer value) {
+           setNumUsers(new UN9(value));
+        return this;
+    }
+
+/**
+Set the minimum or nominal effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
+
+@param value  An instances of type {@link Double}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withEIRPMin(Double value) {
+           setEIRPMin(new dBW(value));
+        return this;
+    }
+
+/**
+Set the maximum effective isotropic radiated power (EIRP) radiated from the transmitter antenna. It is the sum of the power supplied to the antenna and the gain of the antenna, less the line loss.
+
+[XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
+
+@param value  An instances of type {@link Double}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withEIRPMax(Double value) {
+           setEIRPMax(new dBW(value));
+        return this;
+    }
+
+/**
+Set the justification for out-of-band frequency use.
+
+@param value  An instances of type {@link String}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withOOBJustification(String value) {
+           setOOBJustification(new MEMO(value));
+        return this;
+    }
+
+/**
+Set the power limit of the transmissions in this configuration.
+
+@param value  An instances of type {@link Double}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withPowerLimit(Double value) {
+           setPowerLimit(new dBW(value));
+        return this;
+    }
+
+/**
+Set the power type code for carrier, mean, or peak envelope power emitted. The power type code will depend on the type of emission of the transmitter equipment.
+
+@param value  An instances of type {@link ListCPT}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withPowerType(ListCPT value) {
+           setPowerType(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set whether the transmitter(s) communicate or interact with the receiver(s) in this Configuration, i.e. enters a link versus a box.
+
+@param value  An instances of type {@link ListCBO}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withSpectrumLink(ListCBO value) {
+           setSpectrumLink(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigApprovedBy(String value) {
+           setConfigApprovedBy(new S50(value));
+        return this;
+    }
+
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigApprovedDateTime(Calendar value) {
+           setConfigApprovedDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigApprovedDateTime(Date value) {
+           setConfigApprovedDateTime(new DT(value));
+        return this;
+    }
+
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the subject signal was first collected.
+
+@param value  An instances of type {@link Calendar}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withObservedFirstDateTime(Calendar value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the subject signal was first collected.
+
+@param value  An instances of type {@link Date}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withObservedFirstDateTime(Date value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the subject signal was last collected.
+
+@param value  An instances of type {@link Calendar}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withObservedLastDateTime(Calendar value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the subject signal was last collected.
+
+@param value  An instances of type {@link Date}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withObservedLastDateTime(Date value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+
+/**
+Set the identifier of the person or entity who last observed this signal configuration.
+
+@param value  An instances of type {@link String}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withLastObservedBy(String value) {
+           setLastObservedBy(new S50(value));
+        return this;
+    }
+
+/**
+Set the identifier of the person who last reviewed this configuration.
+
+@param value  An instances of type {@link String}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withLastReviewedBy(String value) {
+           setLastReviewedBy(new S50(value));
+        return this;
+    }
+
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the configuration was thoroughly reviewed.
+
+@param value  An instances of type {@link Calendar}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withLastReviewedDateTime(Calendar value) {
+           setLastReviewedDateTime(new DT(value));
+        return this;
+    }
+/**
+Set the date and time, based on Greenwich Mean Time (GMT), the configuration was thoroughly reviewed.
+
+@param value  An instances of type {@link Date}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withLastReviewedDateTime(Date value) {
+           setLastReviewedDateTime(new DT(value));
+        return this;
+    }
+
+/**
+Set the Notation
+
+Complex element Notation contains the electronic identification for a pulsed or non-pulsed electromagnetic emission. It includes but is not limited to Communications Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
+
+@param values  One or more instances of type {@link Notation...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withNotation(Notation... values) {
+        if (values!= null) {
+            for (Notation value: values) {
+                getNotation().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the Notation
+
+Complex element Notation contains the electronic identification for a pulsed or non-pulsed electromagnetic emission. It includes but is not limited to Communications Emitter Notation (CENOT) and Electronic Intelligence Notation (ELNOT).
+
+@param values  A collection of {@link Notation} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withNotation(Collection<Notation> values) {
+        if (values!= null) {
+            getNotation().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the Usage
+
+Complex element Usage identifies how an operational configuration can be used or will be used.
+
+@param values  One or more instances of type {@link Usage...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withUsage(Usage... values) {
+        if (values!= null) {
+            for (Usage value: values) {
+                getUsage().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the Usage
+
+Complex element Usage identifies how an operational configuration can be used or will be used.
+
+@param values  A collection of {@link Usage} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withUsage(Collection<Usage> values) {
+        if (values!= null) {
+            getUsage().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the ConfigFreq
+
+Complex element ConfigFreq indicates the set of frequencies that a configuration uses, which may be a subset of the frequencies that the linked components (Transmitter, Receiver, Antenna) are capable of.
+
+@param values  One or more instances of type {@link ConfigFreq...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigFreq(ConfigFreq... values) {
+        if (values!= null) {
+            for (ConfigFreq value: values) {
+                getConfigFreq().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the ConfigFreq
+
+Complex element ConfigFreq indicates the set of frequencies that a configuration uses, which may be a subset of the frequencies that the linked components (Transmitter, Receiver, Antenna) are capable of.
+
+@param values  A collection of {@link ConfigFreq} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigFreq(Collection<ConfigFreq> values) {
+        if (values!= null) {
+            getConfigFreq().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the TxRef
+
+Complex element TxRef contains the reference of a Transmitter, and optionnally some of its TxModes and the associated Antennas and AntMode.
+
+@param values  One or more instances of type {@link TxRef...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withTxRef(TxRef... values) {
+        if (values!= null) {
+            for (TxRef value: values) {
+                getTxRef().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the TxRef
+
+Complex element TxRef contains the reference of a Transmitter, and optionnally some of its TxModes and the associated Antennas and AntMode.
+
+@param values  A collection of {@link TxRef} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withTxRef(Collection<TxRef> values) {
+        if (values!= null) {
+            getTxRef().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the RxRef
+
+Complex element RxRef contains the reference of a Receiver, and optionnally some of its RxModes and the associated Antennas and AntMode.
+
+@param values  One or more instances of type {@link RxRef...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withRxRef(RxRef... values) {
+        if (values!= null) {
+            for (RxRef value: values) {
+                getRxRef().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the RxRef
+
+Complex element RxRef contains the reference of a Receiver, and optionnally some of its RxModes and the associated Antennas and AntMode.
+
+@param values  A collection of {@link RxRef} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withRxRef(Collection<RxRef> values) {
+        if (values!= null) {
+            getRxRef().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the CaseNum
+
+Complex element CaseNum contains legacy and other identifiers associated with the Dataset.
+
+@param values  One or more instances of type {@link CaseNum...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withCaseNum(CaseNum... values) {
+        if (values!= null) {
+            for (CaseNum value: values) {
+                getCaseNum().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the CaseNum
+
+Complex element CaseNum contains legacy and other identifiers associated with the Dataset.
+
+@param values  A collection of {@link CaseNum} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withCaseNum(Collection<CaseNum> values) {
+        if (values!= null) {
+            getCaseNum().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the US:ConfigEmission
+
+Complex element ConfigEmission (US) specifies the emission bandwidths and classification symbols that a Configuration uses, which may be a subset of the linked components' capabilities.
+
+@param values  One or more instances of type {@link ConfigEmission...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigEmission(ConfigEmission... values) {
+        if (values!= null) {
+            for (ConfigEmission value: values) {
+                getConfigEmission().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the US:ConfigEmission
+
+Complex element ConfigEmission (US) specifies the emission bandwidths and classification symbols that a Configuration uses, which may be a subset of the linked components' capabilities.
+
+@param values  A collection of {@link ConfigEmission} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withConfigEmission(Collection<ConfigEmission> values) {
+        if (values!= null) {
+            getConfigEmission().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the LoadsetRef
+
+Complex element LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+
+@param values  One or more instances of type {@link LoadsetRef...}
+@return The current Configuration object instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #withLoadset(Loadset...)} instead.
+*/
+@Deprecated
+    public Configuration withLoadsetRef(Serial... values) {
+        if (values!= null) {
+            for (LoadsetRef value: values) {
+                getLoadsetRef().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the LoadsetRef
+
+Complex element LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+
+@param values  A collection of {@link Serial} instances
+@return The current Configuration object instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #withLoadset(Loadset...)} instead.
+*/
+@Deprecated
+    public Configuration withLoadsetRef(Collection<Serial> values) {
+        if (values!= null) {
+            getLoadsetRef().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the US:ObservedERPAnalysis
+
+Complex element ObservedERPAnalysis (US) contains data describing Effective Radiated Power (ERP) associated with an emitter or Notation.
+
+@param values  One or more instances of type {@link ObservedERPAnalysis...}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withObservedERPAnalysis(ObservedERPAnalysis... values) {
+        if (values!= null) {
+            for (ObservedERPAnalysis value: values) {
+                getObservedERPAnalysis().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the US:ObservedERPAnalysis
+
+Complex element ObservedERPAnalysis (US) contains data describing Effective Radiated Power (ERP) associated with an emitter or Notation.
+
+@param values  A collection of {@link ObservedERPAnalysis} instances
+@return The current Configuration object instance
+@since 3.1.0
+*/
+    public Configuration withObservedERPAnalysis(Collection<ObservedERPAnalysis> values) {
+        if (values!= null) {
+            getObservedERPAnalysis().addAll(values);
+        }
+        return this;
+    }
+
+/**
+ Get a string representation of this Configuration instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "Configuration {"
+ + (caseNum !=null? " caseNum [" + caseNum +"]" : "") 
+ + (configApprovedBy !=null? " configApprovedBy [" + configApprovedBy +"]" : "") 
+ + (configApprovedDateTime !=null? " configApprovedDateTime [" + configApprovedDateTime +"]" : "") 
+ + (configEmission !=null? " configEmission [" + configEmission +"]" : "") 
+ + (configFreq !=null? " configFreq [" + configFreq +"]" : "") 
+ + (configID !=null? " configID [" + configID +"]" : "") 
+ + (description !=null? " description [" + description +"]" : "") 
+ + (eirpMax !=null? " eirpMax [" + eirpMax +"]" : "") 
+ + (eirpMin !=null? " eirpMin [" + eirpMin +"]" : "") 
+ + (lastObservedBy !=null? " lastObservedBy [" + lastObservedBy +"]" : "") 
+ + (lastReviewedBy !=null? " lastReviewedBy [" + lastReviewedBy +"]" : "") 
+ + (lastReviewedDateTime !=null? " lastReviewedDateTime [" + lastReviewedDateTime +"]" : "") 
+ + (loadsetRef !=null? " loadsetRef [" + loadsetRef +"]" : "") 
+ + (notation !=null? " notation [" + notation +"]" : "") 
+ + (numUsers !=null? " numUsers [" + numUsers +"]" : "") 
+ + (observedERPAnalysis !=null? " observedERPAnalysis [" + observedERPAnalysis +"]" : "") 
+ + (observedFirstDateTime !=null? " observedFirstDateTime [" + observedFirstDateTime +"]" : "") 
+ + (observedLastDateTime !=null? " observedLastDateTime [" + observedLastDateTime +"]" : "") 
+ + (oobJustification !=null? " oobJustification [" + oobJustification +"]" : "") 
+ + (powerLimit !=null? " powerLimit [" + powerLimit +"]" : "") 
+ + (powerType !=null? " powerType [" + powerType +"]" : "") 
+ + (repeater !=null? " repeater [" + repeater +"]" : "") 
+ + (rxRef !=null? " rxRef [" + rxRef +"]" : "") 
+ + (spectrumLink !=null? " spectrumLink [" + spectrumLink +"]" : "") 
+ + (txRef !=null? " txRef [" + txRef +"]" : "") 
+ + (usage !=null? " usage [" + usage +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this Configuration instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "Configuration {"
-           + (observedERPAnalysis != null ? " observedERPAnalysis [" + observedERPAnalysis + "]" : "")
-           + (eirpMax != null ? " eirpMax [" + eirpMax + "]" : "")
-           + (configApprovedBy != null ? " configApprovedBy [" + configApprovedBy + "]" : "")
-           + (configID != null ? " configID [" + configID + "]" : "")
-           + (configEmission != null ? " configEmission [" + configEmission + "]" : "")
-           + (repeater != null ? " repeater [" + repeater + "]" : "")
-           + (powerLimit != null ? " powerLimit [" + powerLimit + "]" : "")
-           + (lastReviewedBy != null ? " lastReviewedBy [" + lastReviewedBy + "]" : "")
-           + (description != null ? " description [" + description + "]" : "")
-           + (rxRef != null ? " rxRef [" + rxRef + "]" : "")
-           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-           + (notation != null ? " notation [" + notation + "]" : "")
-           + (eirpMin != null ? " eirpMin [" + eirpMin + "]" : "")
-           + (configFreq != null ? " configFreq [" + configFreq + "]" : "")
-           + (oobJustification != null ? " oobJustification [" + oobJustification + "]" : "")
-           + (spectrumLink != null ? " spectrumLink [" + spectrumLink + "]" : "")
-           + (configApprovedDateTime != null ? " configApprovedDateTime [" + configApprovedDateTime + "]" : "")
-           + (loadsetRef != null ? " loadsetRef [" + loadsetRef + "]" : "")
-           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-           + (powerType != null ? " powerType [" + powerType + "]" : "")
-           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-           + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
-           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
-           + (lastReviewedDateTime != null ? " lastReviewedDateTime [" + lastReviewedDateTime + "]" : "")
-           + (usage != null ? " usage [" + usage + "]" : "")
-           + (txRef != null ? " txRef [" + txRef + "]" : "")
-           + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link Configuration} requires {@link TString ConfigID}.
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  public boolean isSet() {
-    return isSetConfigID();
-  }
+{@link Configuration} requires {@link S100 ConfigID}.
+
+Note that this method only checks for the presence of required information; this method does not validate the information format.
+@return TRUE if required fields are set, otherwise FALSE
+*/
+public boolean isSet(){
+return  isSetConfigID();
+}
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
-  /**
-   * LoadsetRef (Optional)
-   * <p>
-   * LoadsetRef describes the jamming loadset to be used against a specific
-   * target or targets.
-   * <p>
-   * @since 3.1.0
-   */
-  @XmlTransient
-  private Set<Loadset> loadset;
+/**
+LoadsetRef (Optional)
 
-  /**
-   * Get the LoadsetRef
-   * <p>
-   * Complex element LoadsetRef describes the jamming loadset to be used against
-   * a specific target or targets.
-   * <p>
-   * @return a {@link Loadset} instance
-   * @since 3.1.0
-   */
-  public Set<Loadset> getLoadset() {
-    if (loadset == null) {
-      loadset = new HashSet<>();
-    }
-    return loadset;
-  }
+LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+@since 3.1.0
+*/
+@XmlTransient
+private Set<Loadset> loadset;
 
-  /**
-   * Determine if the loadset field is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLoadset() {
-    return this.loadset != null && !this.loadset.isEmpty();
-  }
+/**
+Get the LoadsetRef
 
-  /**
-   * Set the LoadsetRef
-   * <p>
-   * Complex element LoadsetRef describes the jamming loadset to be used against
-   * a specific target or targets.
-   * <p>
-   * @param values An instances of type {@link Loadset}
-   * @return The current Configuration object instance
-   * @since 3.1.0
-   */
-  public Configuration withLoadset(Loadset... values) {
-    return withLoadset(new HashSet<>(Arrays.asList(values)));
-  }
+Complex element LoadsetRef describes the jamming loadset to be used against a specific target or targets.
 
-  /**
-   * Set the LoadsetRef
-   * <p>
-   * Complex element LoadsetRef describes the jamming loadset to be used against
-   * a specific target or targets.
-   * <p>
-   * @param values An instances of type {@link Loadset}
-   * @return The current Configuration object instance
-   * @since 3.1.0
-   */
-  public Configuration withLoadset(Set<Loadset> values) {
-    getLoadset().addAll(values);
-    return this;
-  }
+@return  a {@link Loadset} instance
+@since 3.1.0
+*/
+public Set<Loadset> getLoadset(){
+if(loadset == null){
+loadset = new HashSet<>();
+}
+ return loadset;
+}
+/**
+ Determine if the loadset field is configured.
+  @return TRUE if the field is set, FALSE if the field is null
+ */
+public boolean isSetLoadset() {
+return this.loadset !=null  && !this.loadset.isEmpty();
+}
 
+/**
+Set the LoadsetRef
+
+Complex element LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+
+@param values  An instances of type {@link Loadset}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+public Configuration withLoadset(Loadset... values) {
+return  withLoadset(Arrays.asList(values));
+}
+
+/**
+Set the LoadsetRef
+
+Complex element LoadsetRef describes the jamming loadset to be used against a specific target or targets.
+
+@param values  An instances of type {@link Loadset}
+@return The current Configuration object instance
+@since 3.1.0
+*/
+public Configuration withLoadset(Collection<Loadset> values) {
+getLoadset().addAll(values);
+return this;
+}
   /**
    * Update the SSRF data type references in this Configuration record.
    * <p>
-   * This method builds the exported {@link #loadsetRef} field with values from
-   * the transient {@link #loadset} field. This method should typically be
-   * called after the Configuration is configured and (optionally) before
-   * exporting an SSRF message.
-   * <p>
-   * @since 3.1.0
-   */
-  public void prepare() {
-    this.loadsetRef = new HashSet<>();
-    for (Loadset instance : getLoadset()) {
-      this.loadsetRef.add(instance.getSerial());
-    }
-  }
+ @since 3.1.0 */
+public void prepare() {
+this.loadsetRef= new ArrayList<>();
+for (Loadset instance :  getLoadset()) {
+this.loadsetRef.add(instance.getSerial());
+}
 
-  /**
-   * Update the SSRF data type references in this Configuration record after
-   * loading from XML.
-   * <p>
-   * This method builds the transient {@link #loadset} with values from the
-   * imported {@link #loadsetRef} field. This method should typically be called
-   * after the Configuration is imported from XML.
+/**
+   * Update the SSRF data type references in this Configuration record after loading from XML.
+
+   * This method builds the transient {@link #loadset} with values
+   * from the imported {@link #loadsetRef} field. This method should
+   * typically be called after the Configuration is imported from XML.
    * <p>
    * @param root the SSRF root instance
    * @since 3.1.0
    */
   public void postLoad(SSRF root) {
-    if (loadsetRef == null || loadsetRef.isEmpty()) {
-      return;
-    }
-    for (Loadset instance : root.getLoadset()) {
-      if (loadsetRef.contains(instance.getSerial())) {
-        loadset.add(instance);
-      }
-    }
-  }//</editor-fold>
+if (loadsetRef==null || loadsetRef.isEmpty() ) {return;}
+for(Loadset instance : root.getLoadset()) {
+if(loadsetRef.contains(instance.getSerial())){
+loadset.add(instance);
+}
+}}//</editor-fold>
 
 }

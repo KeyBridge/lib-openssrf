@@ -1,2224 +1,2078 @@
-/* 
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.Arrays;
-import java.util.Set;
-import java.util.HashSet;
+import us.gov.dod.standard.ssrf._3_1.adapter.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS7;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS8;
 
 /**
- * ObservedScanAnalysis (US) contains data describing the collected Horizontal
- * and Vertical Scan parameters as well as the Adaptive Driver information.
- * <p>
- * Element of {@link AntMode}
- * <p>
- * Sub-Element is {@link ObservedScanValues}
- * <p>
- * Example:
- * <pre>
- * &lt;ObservedScanAnalysis&gt;
- *   &lt;:ScansHorzContinuous cls="U"&gt;Yes&lt;/:ScansHorzContinuous&gt;
- *   &lt;AzBoresightAngle cls="U"&gt;0.02&lt;/AzBoresightAngle&gt;
- *   &lt;AzScanChangeRate cls="U"&gt;14&lt;/AzScanChangeRate&gt;
- *   &lt;AzScanRateExtremeMax cls="U"&gt;500&lt;/AzScanRateExtremeMax&gt;
- *   &lt;AzScanRateExtremeMin cls="U"&gt;0.01&lt;/AzScanRateExtremeMin&gt;
- *   &lt;AzScanRateMean cls="U"&gt;34&lt;/AzScanRateMean&gt;
- *   &lt;AzScanRateMedian cls="U"&gt;12&lt;/AzScanRateMedian&gt;
- *   &lt;AzScanSector cls="U"&gt;47&lt;/AzScanSector&gt;
- *   &lt;AzScanSectorMax cls="U"&gt;23.9&lt;/AzScanSectorMax&gt;
- *   &lt;AzScanVelocity cls="U"&gt;41.3&lt;/AzScanVelocity&gt;
- *   &lt;ElevScanChangeRate cls="U"&gt;0.002&lt;/ElevScanChangeRate&gt;
- *   &lt;ElevScanRateExtremeMax cls="U"&gt;500&lt;/ElevScanRateExtremeMax&gt;
- *   &lt;ElevScanRateExtremeMin cls="U"&gt;0.01&lt;/ElevScanRateExtremeMin&gt;
- *   &lt;ElevScanRateMean cls="U"&gt;34&lt;/ElevScanRateMean&gt;
- *   &lt;ElevScanRateMedian cls="U"&gt;12&lt;/ElevScanRateMedian&gt;
- *   &lt;ElevScanSector cls="U"&gt;80&lt;/ElevScanSector&gt;
- *   &lt;ElevScanSectorMax cls="U"&gt;87&lt;/ElevScanSectorMax&gt;
- *   &lt;ElevScanVelocity cls="U"&gt;41.3&lt;/ElevScanVelocity&gt;
- *   &lt;NumBeamPositionsPerScan cls="U"&gt;567&lt;/NumBeamPositionsPerScan&gt;
- *   &lt;NumBeamPositionsTotal cls="U"&gt;98651&lt;/NumBeamPositionsTotal&gt;
- *   &lt;NumBeamsPerRaster cls="U"&gt;5956&lt;/NumBeamsPerRaster&gt;
- *   &lt;NumRastersPerCycle cls="U"&gt;3032&lt;/NumRastersPerCycle&gt;
- *   &lt;NumScanPositions cls="U"&gt;567&lt;/NumScanPositions&gt;
- *   &lt;NumScanValues cls="U"&gt;346&lt;/NumScanValues&gt;
- *   &lt;ScanAdaptiveDriverDesc cls="U"&gt;Target Motion Tracking&lt;/ScanAdaptiveDriverDesc&gt;
- *   &lt;ScanAdaptiveRuleDesc cls="U"&gt;Required Pattern Collection&lt;/ScanAdaptiveRuleDesc&gt;
- *   &lt;ScanAngleAzStart cls="U"&gt;0.01&lt;/ScanAngleAzStart&gt;
- *   &lt;ScanAngleAzStop cls="U"&gt;359.99&lt;/ScanAngleAzStop&gt;
- *   &lt;ScanAngleElevStart cls="U"&gt;-89.9&lt;/ScanAngleElevStart&gt;
- *   &lt;ScanAngleElevStop cls="U"&gt;89.9&lt;/ScanAngleElevStop&gt;
- *   &lt;ScanDwell cls="U"&gt;23.781&lt;/ScanDwell&gt;
- *   &lt;ScanDwellSequence cls="U"&gt;Scan Sample Repeat&lt;/ScanDwellSequence&gt;
- *   &lt;ScanDwellTime cls="U"&gt;3.45&lt;/ScanDwellTime&gt;
- *   &lt;ScanElevContinuous cls="U"&gt;Yes&lt;/ScanElevContinuous&gt;
- *   &lt;ScanPatternType cls="U"&gt;Non-Patterned&lt;/ScanPatternType&gt;
- *   &lt;ScanType cls="U"&gt;Primary&lt;/ScanType&gt;
- *   &lt;ObservedScanValues&gt;
- *     &lt;ScanValue cls="U"&gt;34.89&lt;/ScanValue&gt;
- *     &lt;StatisticalIndicator cls="U"&gt;97.2&lt;/StatisticalIndicator&gt;
- *   &lt;/ObservedScanValues&gt;
- * &lt;/ObservedScanAnalysis&gt;
- * </pre>
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+ObservedScanAnalysis (US) contains data describing the collected Horizontal and Vertical Scan parameters as well as the Adaptive Driver information.
+
+Element of {@link AntMode}
+
+Sub-Element is {@link ObservedScanValues}
+
+Example: <pre>
+* &lt;ObservedScanAnalysis&gt;
+*   &lt;:ScansHorzContinuous cls="U"&gt;Yes&lt;/:ScansHorzContinuous&gt;
+*   &lt;AzBoresightAngle cls="U"&gt;0.02&lt;/AzBoresightAngle&gt;
+*   &lt;AzScanChangeRate cls="U"&gt;14&lt;/AzScanChangeRate&gt;
+*   &lt;AzScanRateExtremeMax cls="U"&gt;500&lt;/AzScanRateExtremeMax&gt;
+*   &lt;AzScanRateExtremeMin cls="U"&gt;0.01&lt;/AzScanRateExtremeMin&gt;
+*   &lt;AzScanRateMean cls="U"&gt;34&lt;/AzScanRateMean&gt;
+*   &lt;AzScanRateMedian cls="U"&gt;12&lt;/AzScanRateMedian&gt;
+*   &lt;AzScanSector cls="U"&gt;47&lt;/AzScanSector&gt;
+*   &lt;AzScanSectorMax cls="U"&gt;23.9&lt;/AzScanSectorMax&gt;
+*   &lt;AzScanVelocity cls="U"&gt;41.3&lt;/AzScanVelocity&gt;
+*   &lt;ElevScanChangeRate cls="U"&gt;0.002&lt;/ElevScanChangeRate&gt;
+*   &lt;ElevScanRateExtremeMax cls="U"&gt;500&lt;/ElevScanRateExtremeMax&gt;
+*   &lt;ElevScanRateExtremeMin cls="U"&gt;0.01&lt;/ElevScanRateExtremeMin&gt;
+*   &lt;ElevScanRateMean cls="U"&gt;34&lt;/ElevScanRateMean&gt;
+*   &lt;ElevScanRateMedian cls="U"&gt;12&lt;/ElevScanRateMedian&gt;
+*   &lt;ElevScanSector cls="U"&gt;80&lt;/ElevScanSector&gt;
+*   &lt;ElevScanSectorMax cls="U"&gt;87&lt;/ElevScanSectorMax&gt;
+*   &lt;ElevScanVelocity cls="U"&gt;41.3&lt;/ElevScanVelocity&gt;
+*   &lt;NumBeamPositionsPerScan cls="U"&gt;567&lt;/NumBeamPositionsPerScan&gt;
+*   &lt;NumBeamPositionsTotal cls="U"&gt;98651&lt;/NumBeamPositionsTotal&gt;
+*   &lt;NumBeamsPerRaster cls="U"&gt;5956&lt;/NumBeamsPerRaster&gt;
+*   &lt;NumRastersPerCycle cls="U"&gt;3032&lt;/NumRastersPerCycle&gt;
+*   &lt;NumScanPositions cls="U"&gt;567&lt;/NumScanPositions&gt;
+*   &lt;NumScanValues cls="U"&gt;346&lt;/NumScanValues&gt;
+*   &lt;ScanAdaptiveDriverDesc cls="U"&gt;Target Motion Tracking&lt;/ScanAdaptiveDriverDesc&gt;
+*   &lt;ScanAdaptiveRuleDesc cls="U"&gt;Required Pattern Collection&lt;/ScanAdaptiveRuleDesc&gt;
+*   &lt;ScanAngleAzStart cls="U"&gt;0.01&lt;/ScanAngleAzStart&gt;
+*   &lt;ScanAngleAzStop cls="U"&gt;359.99&lt;/ScanAngleAzStop&gt;
+*   &lt;ScanAngleElevStart cls="U"&gt;-89.9&lt;/ScanAngleElevStart&gt;
+*   &lt;ScanAngleElevStop cls="U"&gt;89.9&lt;/ScanAngleElevStop&gt;
+*   &lt;ScanDwell cls="U"&gt;23.781&lt;/ScanDwell&gt;
+*   &lt;ScanDwellSequence cls="U"&gt;Scan Sample Repeat&lt;/ScanDwellSequence&gt;
+*   &lt;ScanDwellTime cls="U"&gt;3.45&lt;/ScanDwellTime&gt;
+*   &lt;ScanElevContinuous cls="U"&gt;Yes&lt;/ScanElevContinuous&gt;
+*   &lt;ScanPatternType cls="U"&gt;Non-Patterned&lt;/ScanPatternType&gt;
+*   &lt;ScanType cls="U"&gt;Primary&lt;/ScanType&gt;
+*   &lt;ObservedScanValues&gt;
+*     &lt;ScanValue cls="U"&gt;34.89&lt;/ScanValue&gt;
+*     &lt;StatisticalIndicator cls="U"&gt;97.2&lt;/StatisticalIndicator&gt;
+*   &lt;/ObservedScanValues&gt;
+* &lt;/ObservedScanAnalysis&gt;
+</pre>
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ObservedScanAnalysis", propOrder = {
-  "scansHorzContinuous",
-  "azBoresightAngle",
-  "azScanChangeRate",
-  "azScanRateExtremeMax",
-  "azScanRateExtremeMin",
-  "azScanRateMean",
-  "azScanRateMedian",
-  "azScanSector",
-  "azScanSectorMax",
-  "azScanVelocity",
-  "elevScanChangeRate",
-  "elevScanRateExtremeMax",
-  "elevScanRateExtremeMin",
-  "elevScanRateMean",
-  "elevScanRateMedian",
-  "elevScanSector",
-  "elevScanSectorMax",
-  "elevScanVelocity",
-  "numBeamPositionsPerScan",
-  "numBeamPositionsTotal",
-  "numBeamsPerRaster",
-  "numRastersPerCycle",
-  "numScanPositions",
-  "numScanValues",
-  "scanAdaptiveDriverDesc",
-  "scanAdaptiveRuleDesc",
-  "scanAngleAzStart",
-  "scanAngleAzStop",
-  "scanAngleElevStart",
-  "scanAngleElevStop",
-  "scanDwell",
-  "scanDwellSequence",
-  "scanDwellTime",
-  "scanElevContinuous",
-  "scanPatternType",
-  "scanType",
-  "observedScanValues"
+    "scansHorzContinuous",
+    "azBoresightAngle",
+    "azScanChangeRate",
+    "azScanRateExtremeMax",
+    "azScanRateExtremeMin",
+    "azScanRateMean",
+    "azScanRateMedian",
+    "azScanSector",
+    "azScanSectorMax",
+    "azScanVelocity",
+    "elevScanChangeRate",
+    "elevScanRateExtremeMax",
+    "elevScanRateExtremeMin",
+    "elevScanRateMean",
+    "elevScanRateMedian",
+    "elevScanSector",
+    "elevScanSectorMax",
+    "elevScanVelocity",
+    "numBeamPositionsPerScan",
+    "numBeamPositionsTotal",
+    "numBeamsPerRaster",
+    "numRastersPerCycle",
+    "numScanPositions",
+    "numScanValues",
+    "scanAdaptiveDriverDesc",
+    "scanAdaptiveRuleDesc",
+    "scanAngleAzStart",
+    "scanAngleAzStop",
+    "scanAngleElevStart",
+    "scanAngleElevStop",
+    "scanDwell",
+    "scanDwellSequence",
+    "scanDwellTime",
+    "scanElevContinuous",
+    "scanPatternType",
+    "scanType",
+    "observedScanValues"
 })
 public class ObservedScanAnalysis {
 
-  /**
-   * ScanHorzContinuous (US), indicate the if the scan azimuth progression is a
-   * continuous sweep.
-   */
-  @XmlElement(name = "ScansHorzContinuous", required = false)
-  private TString scansHorzContinuous;
-  /**
-   * US:AzBoresightAngle - Azimuth Boresight Angle (Optional)
-   * <p>
-   * The position of the emitter Mainbeam (aka, Mainlobe) boresight referenced
-   * from true north for ground based fixed emitters, and the emitter defined
-   * centerline for other platforms (e.g., mobile, airborne, shipborne).
-   * <p>
-   * Format is SN(5,2) (deg)
-   */
-  @XmlElement(name = "AzBoresightAngle", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
-  private TDecimal azBoresightAngle;
-  /**
-   * US:AzScanChangeRate - Azimuth Scan Change Rate (Optional)
-   * <p>
-   * The rate of change for horizontal Scan Period variations expressed in Scan
-   * Period change per unit of time
-   * <p>
-   * Format is UN(12,6) (μsec/sec)
-   */
-  @XmlElement(name = "AzScanChangeRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
-  private TDecimal azScanChangeRate;
-  /**
-   * US:AzScanRateExtremeMax - Extreme Horizontal Scan Rate Max (Optional)
-   * <p>
-   * The range of horizontal scan rate values that represent 100% of the signal
-   * observed Scan values obtained from a statistical study of a data set.
-   * <p>
-   * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
-   * than US:AzScanRateExtremeMin.
-   * <p>
-   * Format is UN(7,2) (scans/min)
-   */
-  @XmlElement(name = "AzScanRateExtremeMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal azScanRateExtremeMax;
-  /**
-   * US:AzScanRateExtremeMin - Extreme Horizontal Scan Rate Min (Optional)
-   * <p>
-   * The range of horizontal scan rate values that represent 100% of the signal
-   * observed Scan values obtained from a statistical study of a data set.
-   * <p>
-   * Format is UN(7,2) (scans/min)
-   */
-  @XmlElement(name = "AzScanRateExtremeMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal azScanRateExtremeMin;
-  /**
-   * US:AzScanRateMean - Mean Horizontal Scan Rate (Optional)
-   * <p>
-   * The average horizontal scan rate value for a signal that changes horizontal
-   * scan rates on a non-patterned basis.
-   * <p>
-   * Format is UN(7,2) (scans/min)
-   */
-  @XmlElement(name = "AzScanRateMean", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal azScanRateMean;
-  /**
-   * US:AzScanRateMedian - Most Probable Horizontal Scan Rate (Optional)
-   * <p>
-   * The horizontal scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * Format is UN(7,2) (scans/min)
-   */
-  @XmlElement(name = "AzScanRateMedian", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal azScanRateMedian;
-  /**
-   * US:AzScanSector - Azimuth ScanSector (Optional)
-   * <p>
-   * The total angular width in the horizontal plane (aka, azimuth) the subject
-   * emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan.
-   * <p>
-   * Format is UN(5,2) (deg)
-   */
-  @XmlElement(name = "AzScanSector", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
-  private TDecimal azScanSector;
-  /**
-   * US:AzScanSectorMax - Azimuth ScanSectorMax (Optional)
-   * <p>
-   * The total angular width in the horizontal plane (aka, azimuth) the subject
-   * emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * Format is UN(5,2) (deg)
-   */
-  @XmlElement(name = "AzScanSectorMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
-  private TDecimal azScanSectorMax;
-  /**
-   * US:AzScanVelocity - Azimuth ScanVelocity (Optional)
-   * <p>
-   * The horizontal angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * Format is UN(6,2) (deg/sec)
-   */
-  @XmlElement(name = "AzScanVelocity", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
-  private TDecimal azScanVelocity;
-  /**
-   * Vertical Scan Change Rate (US) - The rate of change for vertical Scan
-   * Period variations expressed in Scan Period change per unit of time
-   */
-  @XmlElement(name = "ElevScanChangeRate", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
-  private TDecimal elevScanChangeRate;
-  /**
-   * Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
-   * than US:ElevScanRateExtremeMin.
-   */
-  @XmlElement(name = "ElevScanRateExtremeMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal elevScanRateExtremeMax;
-  /**
-   * Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   */
-  @XmlElement(name = "ElevScanRateExtremeMin", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal elevScanRateExtremeMin;
-  /**
-   * US:ElevScanRateMean - Mean Vertical Scan Rate (Optional)
-   * <p>
-   * The average vertical scan rate value for a signal that changes vertical
-   * scan rates on a non-patterned basis.
-   * <p>
-   * Format is UN(7,2) (scans/min)
-   */
-  @XmlElement(name = "ElevScanRateMean", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal elevScanRateMean;
-  /**
-   * US:ElevScanRateMedian - Most Probable Vertical Scan Rate (Optional)
-   * <p>
-   * The vertical scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * Format is UN(7,2) (scans/min)
-   */
-  @XmlElement(name = "ElevScanRateMedian", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANRATE.class)
-  private TDecimal elevScanRateMedian;
-  /**
-   * US:ElevScanSector - Vertical Scan Sector (Optional)
-   * <p>
-   * The total angular width in the vertical plane (aka, elevation) the subject
-   * emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan.
-   * <p>
-   * Format is UN(5,2) (deg)
-   */
-  @XmlElement(name = "ElevScanSector", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
-  private TDecimal elevScanSector;
-  /**
-   * US:ElevScanSectorMax - Vertical Scan Sector Max (Optional)
-   * <p>
-   * The total angular width in the vertical plane (aka, elevation) the subject
-   * emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * Format is UN(5,2) (deg)
-   */
-  @XmlElement(name = "ElevScanSectorMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEGREES.class)
-  private TDecimal elevScanSectorMax;
-  /**
-   * US:ElevScanVelocity - Vertical Scan Velocity (Optional)
-   * <p>
-   * The vertical angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * Format is UN(6,2) (deg/sec)
-   */
-  @XmlElement(name = "ElevScanVelocity", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_SCANSPEED.class)
-  private TDecimal elevScanVelocity;
-  /**
-   * US:NumBeamPositionsPerScan - Num Beam Positions Per Scan (Optional)
-   * <p>
-   * The number of beam positions (aka., dwells) per scan cycle
-   * <p>
-   * Format is UN(6)
-   */
-  @XmlElement(name = "NumBeamPositionsPerScan", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
-  private TInteger numBeamPositionsPerScan;
-  /**
-   * US:NumBeamPositionsTotal - Total Number of Beam Positions (Optional)
-   * <p>
-   * The total number of unique array beam positions resulting from the
-   * frequency steps of a frequency scanning, phase changes, in phase scanning,
-   * or discrete time delays in time delay steering.
-   * <p>
-   * Format is UN(6)
-   */
-  @XmlElement(name = "NumBeamPositionsTotal", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
-  private TInteger numBeamPositionsTotal;
-  /**
-   * US:NumBeamsPerRaster - Num Beams Per Raster (Optional)
-   * <p>
-   * The number of beam positions necessary to complete one bar of the raster
-   * scan.
-   * <p>
-   * Format is UN(6)
-   */
-  @XmlElement(name = "NumBeamsPerRaster", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
-  private TInteger numBeamsPerRaster;
-  /**
-   * US:NumRastersPerCycle - Num Rasters Per Cycle (Optional)
-   * <p>
-   * The number of 360 degree scans (aka, turns) a component of a scan makes in
-   * the time it takes the Primary Scan to complete one complete cycle/scan.
-   * <p>
-   * Format is UN(6)
-   */
-  @XmlElement(name = "NumRastersPerCycle", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
-  private TInteger numRastersPerCycle;
-  /**
-   * US:NumScanPositions - Number of Scan Positions (Optional)
-   * <p>
-   * The number of discrete values observed in a single repeating scan period
-   * sequence.
-   * <p>
-   * Format is UN(6)
-   */
-  @XmlElement(name = "NumScanPositions", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
-  private TInteger numScanPositions;
-  /**
-   * US:NumScanValues - Number of Scan Values (Optional)
-   * <p>
-   * The number of discrete values observed in multiple repeating scan period
-   * sequences.
-   * <p>
-   * Format is UN(6)
-   */
-  @XmlElement(name = "NumScanValues", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN6.class)
-  private TInteger numScanValues;
-  /**
-   * US:ScanAdaptiveDriverDesc - Scan Adaptive Driver Description (Optional)
-   * <p>
-   * The condition which controls or can be associated with the signal Scan
-   * Period variations.
-   * <p>
-   * Format is S500
-   */
-  @XmlElement(name = "ScanAdaptiveDriverDesc", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
-  private TString scanAdaptiveDriverDesc;
-  /**
-   * US:ScanAdaptiveRuleDesc - Scan Adaptive Rule Description (Optional)
-   * <p>
-   * The rule which describes the signal Scan Period variations.
-   * <p>
-   * Format is S500
-   */
-  @XmlElement(name = "ScanAdaptiveRuleDesc", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
-  private TString scanAdaptiveRuleDesc;
-  /**
-   * US:ScanAngleAzStart - Scan Angle Azimuth Start (Optional)
-   * <p>
-   * The maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * Format is SN(5,2) (deg)
-   */
-  @XmlElement(name = "ScanAngleAzStart", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
-  private TDecimal scanAngleAzStart;
-  /**
-   * US:ScanAngleAzStop - Scan Angle Azimuth Stop (Optional)
-   * <p>
-   * The minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * Format is SN(5,2) (deg)
-   */
-  @XmlElement(name = "ScanAngleAzStop", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
-  private TDecimal scanAngleAzStop;
-  /**
-   * US:ScanAngleElevStart - Scan Angle Elevation Start (Optional)
-   * <p>
-   * The maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., elevation).
-   * <p>
-   * Format is SN(5,2) (deg)
-   */
-  @XmlElement(name = "ScanAngleElevStart", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
-  private TDecimal scanAngleElevStart;
-  /**
-   * US:ScanAngleElevStop - Scan Angle Elevation Stop (Optional)
-   * <p>
-   * The minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., azimuth).
-   * <p>
-   * Format is SN(5,2) (deg)
-   */
-  @XmlElement(name = "ScanAngleElevStop", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_DEG_SIGNED.class)
-  private TDecimal scanAngleElevStop;
-  /**
-   * US:ScanDwell - Scan Dwell (Optional)
-   * <p>
-   * The scan duration
-   * <p>
-   * Format is UN(12,6) (μsec)
-   */
-  @XmlElement(name = "ScanDwell", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterMICROSECS.class)
-  private TDecimal scanDwell;
-  /**
-   * US:ScanDwellSequence - Scan Dwell Sequence (Optional)
-   * <p>
-   * The Sequence of dwell durations, with elevation and azimuth. Example: 20
-   * deg hor, 15 deg elev, 5 second dwell, etc.
-   * <p>
-   * Format is S500
-   */
-  @XmlElement(name = "ScanDwellSequence", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS500.class)
-  private TString scanDwellSequence;
-  /**
-   * US:ScanDwellTime - Scan Dwell Time (Optional)
-   * <p>
-   * The time duration for a complete dwell/group of scan cycles which all have
-   * the same Scan Period Discrete value before changing to a different one.
-   * <p>
-   * Format is UN(12,6) (μsec/sec)
-   */
-  @XmlElement(name = "ScanDwellTime", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterUS_PRICHGRATE.class)
-  private TDecimal scanDwellTime;
-  /**
-   * ScanElevContinuous (US), indicate the if the scan elevation progression is
-   * a continuous sweep.
-   */
-  @XmlElement(name = "ScanElevContinuous", required = false)
-  private TString scanElevContinuous;
-  /**
-   * ScanPatternType (US), indicate whether the Scan Period is unmodulated,
-   * Patterned, Non-Patterned, or Adaptive.
-   */
-  @XmlElement(name = "ScanPatternType", required = false)
-  private TString scanPatternType;
-  /**
-   * ScanType (US), indicate if the observed data was detected via a primary or
-   * secondary scan.
-   */
-  @XmlElement(name = "ScanType", required = false)
-  private TString scanType;
-  /**
-   * US:ObservedScanValues (Optional)
-   * <p>
-   * ObservedScanValues (US) contains data describing the discrete scan rate
-   * values and supporting statistical information.
-   */
-  @XmlElement(name = "ObservedScanValues")
-  private Set<ObservedScanValues> observedScanValues;
-
-  /**
-   * Get ScanHorzContinuous (US), indicate the if the scan azimuth progression
-   * is a continuous sweep.
-   * <p>
-   * @return the ScansHorzContinuous value in a {@link TString} data type
-   */
-  public TString getScansHorzContinuous() {
-    return scansHorzContinuous;
-  }
-
-  /**
-   * Set ScanHorzContinuous (US), indicate the if the scan azimuth progression
-   * is a continuous sweep.
-   * <p>
-   * @param value the ScansHorzContinuous value in a {@link TString} data type
-   */
-  public void setScansHorzContinuous(TString value) {
-    this.scansHorzContinuous = value;
-  }
-
-  /**
-   * Determine if the ScansHorzContinuous is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScansHorzContinuous() {
-    return (this.scansHorzContinuous != null ? this.scansHorzContinuous.isSetValue() : false);
-  }
-
-  /**
-   * Get the position of the emitter Mainbeam (aka, Mainlobe) boresight
-   * referenced from true north for ground based fixed emitters, and the emitter
-   * defined centerline for other platforms (e.g., mobile, airborne, shipborne).
-   * <p>
-   * @return the AzBoresightAngle value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzBoresightAngle() {
-    return azBoresightAngle;
-  }
-
-  /**
-   * Set the position of the emitter Mainbeam (aka, Mainlobe) boresight
-   * referenced from true north for ground based fixed emitters, and the emitter
-   * defined centerline for other platforms (e.g., mobile, airborne, shipborne).
-   * <p>
-   * @param value the AzBoresightAngle value in a {@link TDecimal} data type
-   */
-  public void setAzBoresightAngle(TDecimal value) {
-    this.azBoresightAngle = value;
-  }
-
-  /**
-   * Determine if the AzBoresightAngle is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzBoresightAngle() {
-    return (this.azBoresightAngle != null ? this.azBoresightAngle.isSetValue() : false);
-  }
-
-  /**
-   * Get the rate of change for horizontal Scan Period variations expressed in
-   * Scan Period change per unit of time
-   * <p>
-   * @return the AzScanChangeRate value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanChangeRate() {
-    return azScanChangeRate;
-  }
-
-  /**
-   * Set the rate of change for horizontal Scan Period variations expressed in
-   * Scan Period change per unit of time
-   * <p>
-   * @param value the AzScanChangeRate value in a {@link TDecimal} data type
-   */
-  public void setAzScanChangeRate(TDecimal value) {
-    this.azScanChangeRate = value;
-  }
-
-  /**
-   * Determine if the AzScanChangeRate is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanChangeRate() {
-    return (this.azScanChangeRate != null ? this.azScanChangeRate.isSetValue() : false);
-  }
-
-  /**
-   * Get the range of horizontal scan rate values that represent 100% of the
-   * signal observed Scan values obtained from a statistical study of a data
-   * set.
-   * <p>
-   * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
-   * than US:AzScanRateExtremeMin.
-   * <p>
-   * @return the AzScanRateExtremeMax value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanRateExtremeMax() {
-    return azScanRateExtremeMax;
-  }
-
-  /**
-   * Set the range of horizontal scan rate values that represent 100% of the
-   * signal observed Scan values obtained from a statistical study of a data
-   * set.
-   * <p>
-   * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
-   * than US:AzScanRateExtremeMin.
-   * <p>
-   * @param value the AzScanRateExtremeMax value in a {@link TDecimal} data type
-   */
-  public void setAzScanRateExtremeMax(TDecimal value) {
-    this.azScanRateExtremeMax = value;
-  }
-
-  /**
-   * Determine if the AzScanRateExtremeMax is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanRateExtremeMax() {
-    return (this.azScanRateExtremeMax != null ? this.azScanRateExtremeMax.isSetValue() : false);
-  }
-
-  /**
-   * Get the range of horizontal scan rate values that represent 100% of the
-   * signal observed Scan values obtained from a statistical study of a data
-   * set.
-   * <p>
-   * @return the AzScanRateExtremeMin value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanRateExtremeMin() {
-    return azScanRateExtremeMin;
-  }
-
-  /**
-   * Set the range of horizontal scan rate values that represent 100% of the
-   * signal observed Scan values obtained from a statistical study of a data
-   * set.
-   * <p>
-   * @param value the AzScanRateExtremeMin value in a {@link TDecimal} data type
-   */
-  public void setAzScanRateExtremeMin(TDecimal value) {
-    this.azScanRateExtremeMin = value;
-  }
-
-  /**
-   * Determine if the AzScanRateExtremeMin is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanRateExtremeMin() {
-    return (this.azScanRateExtremeMin != null ? this.azScanRateExtremeMin.isSetValue() : false);
-  }
-
-  /**
-   * Get the average horizontal scan rate value for a signal that changes
-   * horizontal scan rates on a non-patterned basis.
-   * <p>
-   * @return the AzScanRateMean value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanRateMean() {
-    return azScanRateMean;
-  }
-
-  /**
-   * Set the average horizontal scan rate value for a signal that changes
-   * horizontal scan rates on a non-patterned basis.
-   * <p>
-   * @param value the AzScanRateMean value in a {@link TDecimal} data type
-   */
-  public void setAzScanRateMean(TDecimal value) {
-    this.azScanRateMean = value;
-  }
-
-  /**
-   * Determine if the AzScanRateMean is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanRateMean() {
-    return (this.azScanRateMean != null ? this.azScanRateMean.isSetValue() : false);
-  }
-
-  /**
-   * Get the horizontal scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * @return the AzScanRateMedian value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanRateMedian() {
-    return azScanRateMedian;
-  }
-
-  /**
-   * Set the horizontal scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * @param value the AzScanRateMedian value in a {@link TDecimal} data type
-   */
-  public void setAzScanRateMedian(TDecimal value) {
-    this.azScanRateMedian = value;
-  }
-
-  /**
-   * Determine if the AzScanRateMedian is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanRateMedian() {
-    return (this.azScanRateMedian != null ? this.azScanRateMedian.isSetValue() : false);
-  }
-
-  /**
-   * Get the total angular width in the horizontal plane (aka, azimuth) the
-   * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.
-   * <p>
-   * @return the AzScanSector value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanSector() {
-    return azScanSector;
-  }
-
-  /**
-   * Set the total angular width in the horizontal plane (aka, azimuth) the
-   * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.
-   * <p>
-   * @param value the AzScanSector value in a {@link TDecimal} data type
-   */
-  public void setAzScanSector(TDecimal value) {
-    this.azScanSector = value;
-  }
-
-  /**
-   * Determine if the AzScanSector is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanSector() {
-    return (this.azScanSector != null ? this.azScanSector.isSetValue() : false);
-  }
-
-  /**
-   * Get the total angular width in the horizontal plane (aka, azimuth) the
-   * subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * @return the AzScanSectorMax value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanSectorMax() {
-    return azScanSectorMax;
-  }
-
-  /**
-   * Set the total angular width in the horizontal plane (aka, azimuth) the
-   * subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * @param value the AzScanSectorMax value in a {@link TDecimal} data type
-   */
-  public void setAzScanSectorMax(TDecimal value) {
-    this.azScanSectorMax = value;
-  }
-
-  /**
-   * Determine if the AzScanSectorMax is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanSectorMax() {
-    return (this.azScanSectorMax != null ? this.azScanSectorMax.isSetValue() : false);
-  }
-
-  /**
-   * Get the horizontal angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * @return the AzScanVelocity value in a {@link TDecimal} data type
-   */
-  public TDecimal getAzScanVelocity() {
-    return azScanVelocity;
-  }
-
-  /**
-   * Set the horizontal angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * @param value the AzScanVelocity value in a {@link TDecimal} data type
-   */
-  public void setAzScanVelocity(TDecimal value) {
-    this.azScanVelocity = value;
-  }
-
-  /**
-   * Determine if the AzScanVelocity is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetAzScanVelocity() {
-    return (this.azScanVelocity != null ? this.azScanVelocity.isSetValue() : false);
-  }
-
-  /**
-   * Get Vertical Scan Change Rate (US) - The rate of change for vertical Scan
-   * Period variations expressed in Scan Period change per unit of time
-   * <p>
-   * @return the ElevScanChangeRate value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanChangeRate() {
-    return elevScanChangeRate;
-  }
-
-  /**
-   * Set Vertical Scan Change Rate (US) - The rate of change for vertical Scan
-   * Period variations expressed in Scan Period change per unit of time
-   * <p>
-   * @param value the ElevScanChangeRate value in a {@link TDecimal} data type
-   */
-  public void setElevScanChangeRate(TDecimal value) {
-    this.elevScanChangeRate = value;
-  }
-
-  /**
-   * Determine if the ElevScanChangeRate is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanChangeRate() {
-    return (this.elevScanChangeRate != null ? this.elevScanChangeRate.isSetValue() : false);
-  }
-
-  /**
-   * Get Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
-   * than US:ElevScanRateExtremeMin.
-   * <p>
-   * @return the ElevScanRateExtremeMax value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanRateExtremeMax() {
-    return elevScanRateExtremeMax;
-  }
-
-  /**
-   * Set Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
-   * than US:ElevScanRateExtremeMin.
-   * <p>
-   * @param value the ElevScanRateExtremeMax value in a {@link TDecimal} data
-   *              type
-   */
-  public void setElevScanRateExtremeMax(TDecimal value) {
-    this.elevScanRateExtremeMax = value;
-  }
-
-  /**
-   * Determine if the ElevScanRateExtremeMax is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanRateExtremeMax() {
-    return (this.elevScanRateExtremeMax != null ? this.elevScanRateExtremeMax.isSetValue() : false);
-  }
-
-  /**
-   * Get Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * @return the ElevScanRateExtremeMin value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanRateExtremeMin() {
-    return elevScanRateExtremeMin;
-  }
-
-  /**
-   * Set Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * @param value the ElevScanRateExtremeMin value in a {@link TDecimal} data
-   *              type
-   */
-  public void setElevScanRateExtremeMin(TDecimal value) {
-    this.elevScanRateExtremeMin = value;
-  }
-
-  /**
-   * Determine if the ElevScanRateExtremeMin is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanRateExtremeMin() {
-    return (this.elevScanRateExtremeMin != null ? this.elevScanRateExtremeMin.isSetValue() : false);
-  }
-
-  /**
-   * Get the average vertical scan rate value for a signal that changes vertical
-   * scan rates on a non-patterned basis.
-   * <p>
-   * @return the ElevScanRateMean value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanRateMean() {
-    return elevScanRateMean;
-  }
-
-  /**
-   * Set the average vertical scan rate value for a signal that changes vertical
-   * scan rates on a non-patterned basis.
-   * <p>
-   * @param value the ElevScanRateMean value in a {@link TDecimal} data type
-   */
-  public void setElevScanRateMean(TDecimal value) {
-    this.elevScanRateMean = value;
-  }
-
-  /**
-   * Determine if the ElevScanRateMean is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanRateMean() {
-    return (this.elevScanRateMean != null ? this.elevScanRateMean.isSetValue() : false);
-  }
-
-  /**
-   * Get the vertical scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * @return the ElevScanRateMedian value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanRateMedian() {
-    return elevScanRateMedian;
-  }
-
-  /**
-   * Set the vertical scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * @param value the ElevScanRateMedian value in a {@link TDecimal} data type
-   */
-  public void setElevScanRateMedian(TDecimal value) {
-    this.elevScanRateMedian = value;
-  }
-
-  /**
-   * Determine if the ElevScanRateMedian is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanRateMedian() {
-    return (this.elevScanRateMedian != null ? this.elevScanRateMedian.isSetValue() : false);
-  }
-
-  /**
-   * Get the total angular width in the vertical plane (aka, elevation) the
-   * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.
-   * <p>
-   * @return the ElevScanSector value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanSector() {
-    return elevScanSector;
-  }
-
-  /**
-   * Set the total angular width in the vertical plane (aka, elevation) the
-   * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.
-   * <p>
-   * @param value the ElevScanSector value in a {@link TDecimal} data type
-   */
-  public void setElevScanSector(TDecimal value) {
-    this.elevScanSector = value;
-  }
-
-  /**
-   * Determine if the ElevScanSector is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanSector() {
-    return (this.elevScanSector != null ? this.elevScanSector.isSetValue() : false);
-  }
-
-  /**
-   * Get the total angular width in the vertical plane (aka, elevation) the
-   * subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * @return the ElevScanSectorMax value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanSectorMax() {
-    return elevScanSectorMax;
-  }
-
-  /**
-   * Set the total angular width in the vertical plane (aka, elevation) the
-   * subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * @param value the ElevScanSectorMax value in a {@link TDecimal} data type
-   */
-  public void setElevScanSectorMax(TDecimal value) {
-    this.elevScanSectorMax = value;
-  }
-
-  /**
-   * Determine if the ElevScanSectorMax is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanSectorMax() {
-    return (this.elevScanSectorMax != null ? this.elevScanSectorMax.isSetValue() : false);
-  }
-
-  /**
-   * Get the vertical angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * @return the ElevScanVelocity value in a {@link TDecimal} data type
-   */
-  public TDecimal getElevScanVelocity() {
-    return elevScanVelocity;
-  }
-
-  /**
-   * Set the vertical angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * @param value the ElevScanVelocity value in a {@link TDecimal} data type
-   */
-  public void setElevScanVelocity(TDecimal value) {
-    this.elevScanVelocity = value;
-  }
-
-  /**
-   * Determine if the ElevScanVelocity is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetElevScanVelocity() {
-    return (this.elevScanVelocity != null ? this.elevScanVelocity.isSetValue() : false);
-  }
-
-  /**
-   * Get the number of beam positions (aka., dwells) per scan cycle
-   * <p>
-   * @return the NumBeamPositionsPerScan value in a {@link TInteger} data type
-   */
-  public TInteger getNumBeamPositionsPerScan() {
-    return numBeamPositionsPerScan;
-  }
-
-  /**
-   * Set the number of beam positions (aka., dwells) per scan cycle
-   * <p>
-   * @param value the NumBeamPositionsPerScan value in a {@link TInteger} data
-   *              type
-   */
-  public void setNumBeamPositionsPerScan(TInteger value) {
-    this.numBeamPositionsPerScan = value;
-  }
-
-  /**
-   * Determine if the NumBeamPositionsPerScan is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumBeamPositionsPerScan() {
-    return (this.numBeamPositionsPerScan != null ? this.numBeamPositionsPerScan.isSetValue() : false);
-  }
-
-  /**
-   * Get the total number of unique array beam positions resulting from the
-   * frequency steps of a frequency scanning, phase changes, in phase scanning,
-   * or discrete time delays in time delay steering.
-   * <p>
-   * @return the NumBeamPositionsTotal value in a {@link TInteger} data type
-   */
-  public TInteger getNumBeamPositionsTotal() {
-    return numBeamPositionsTotal;
-  }
-
-  /**
-   * Set the total number of unique array beam positions resulting from the
-   * frequency steps of a frequency scanning, phase changes, in phase scanning,
-   * or discrete time delays in time delay steering.
-   * <p>
-   * @param value the NumBeamPositionsTotal value in a {@link TInteger} data
-   *              type
-   */
-  public void setNumBeamPositionsTotal(TInteger value) {
-    this.numBeamPositionsTotal = value;
-  }
-
-  /**
-   * Determine if the NumBeamPositionsTotal is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumBeamPositionsTotal() {
-    return (this.numBeamPositionsTotal != null ? this.numBeamPositionsTotal.isSetValue() : false);
-  }
-
-  /**
-   * Get the number of beam positions necessary to complete one bar of the
-   * raster scan.
-   * <p>
-   * @return the NumBeamsPerRaster value in a {@link TInteger} data type
-   */
-  public TInteger getNumBeamsPerRaster() {
-    return numBeamsPerRaster;
-  }
-
-  /**
-   * Set the number of beam positions necessary to complete one bar of the
-   * raster scan.
-   * <p>
-   * @param value the NumBeamsPerRaster value in a {@link TInteger} data type
-   */
-  public void setNumBeamsPerRaster(TInteger value) {
-    this.numBeamsPerRaster = value;
-  }
-
-  /**
-   * Determine if the NumBeamsPerRaster is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumBeamsPerRaster() {
-    return (this.numBeamsPerRaster != null ? this.numBeamsPerRaster.isSetValue() : false);
-  }
-
-  /**
-   * Get the number of 360 degree scans (aka, turns) a component of a scan makes
-   * in the time it takes the Primary Scan to complete one complete cycle/scan.
-   * <p>
-   * @return the NumRastersPerCycle value in a {@link TInteger} data type
-   */
-  public TInteger getNumRastersPerCycle() {
-    return numRastersPerCycle;
-  }
-
-  /**
-   * Set the number of 360 degree scans (aka, turns) a component of a scan makes
-   * in the time it takes the Primary Scan to complete one complete cycle/scan.
-   * <p>
-   * @param value the NumRastersPerCycle value in a {@link TInteger} data type
-   */
-  public void setNumRastersPerCycle(TInteger value) {
-    this.numRastersPerCycle = value;
-  }
-
-  /**
-   * Determine if the NumRastersPerCycle is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumRastersPerCycle() {
-    return (this.numRastersPerCycle != null ? this.numRastersPerCycle.isSetValue() : false);
-  }
-
-  /**
-   * Get the number of discrete values observed in a single repeating scan
-   * period sequence.
-   * <p>
-   * @return the NumScanPositions value in a {@link TInteger} data type
-   */
-  public TInteger getNumScanPositions() {
-    return numScanPositions;
-  }
-
-  /**
-   * Set the number of discrete values observed in a single repeating scan
-   * period sequence.
-   * <p>
-   * @param value the NumScanPositions value in a {@link TInteger} data type
-   */
-  public void setNumScanPositions(TInteger value) {
-    this.numScanPositions = value;
-  }
-
-  /**
-   * Determine if the NumScanPositions is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumScanPositions() {
-    return (this.numScanPositions != null ? this.numScanPositions.isSetValue() : false);
-  }
-
-  /**
-   * Get the number of discrete values observed in multiple repeating scan
-   * period sequences.
-   * <p>
-   * @return the NumScanValues value in a {@link TInteger} data type
-   */
-  public TInteger getNumScanValues() {
-    return numScanValues;
-  }
-
-  /**
-   * Set the number of discrete values observed in multiple repeating scan
-   * period sequences.
-   * <p>
-   * @param value the NumScanValues value in a {@link TInteger} data type
-   */
-  public void setNumScanValues(TInteger value) {
-    this.numScanValues = value;
-  }
-
-  /**
-   * Determine if the NumScanValues is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetNumScanValues() {
-    return (this.numScanValues != null ? this.numScanValues.isSetValue() : false);
-  }
-
-  /**
-   * Get the condition which controls or can be associated with the signal Scan
-   * Period variations.
-   * <p>
-   * @return the ScanAdaptiveDriverDesc value in a {@link TString} data type
-   */
-  public TString getScanAdaptiveDriverDesc() {
-    return scanAdaptiveDriverDesc;
-  }
-
-  /**
-   * Set the condition which controls or can be associated with the signal Scan
-   * Period variations.
-   * <p>
-   * @param value the ScanAdaptiveDriverDesc value in a {@link TString} data
-   *              type
-   */
-  public void setScanAdaptiveDriverDesc(TString value) {
-    this.scanAdaptiveDriverDesc = value;
-  }
-
-  /**
-   * Determine if the ScanAdaptiveDriverDesc is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanAdaptiveDriverDesc() {
-    return (this.scanAdaptiveDriverDesc != null ? this.scanAdaptiveDriverDesc.isSetValue() : false);
-  }
-
-  /**
-   * Get the rule which describes the signal Scan Period variations.
-   * <p>
-   * @return the ScanAdaptiveRuleDesc value in a {@link TString} data type
-   */
-  public TString getScanAdaptiveRuleDesc() {
-    return scanAdaptiveRuleDesc;
-  }
-
-  /**
-   * Set the rule which describes the signal Scan Period variations.
-   * <p>
-   * @param value the ScanAdaptiveRuleDesc value in a {@link TString} data type
-   */
-  public void setScanAdaptiveRuleDesc(TString value) {
-    this.scanAdaptiveRuleDesc = value;
-  }
-
-  /**
-   * Determine if the ScanAdaptiveRuleDesc is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanAdaptiveRuleDesc() {
-    return (this.scanAdaptiveRuleDesc != null ? this.scanAdaptiveRuleDesc.isSetValue() : false);
-  }
-
-  /**
-   * Get the maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * @return the ScanAngleAzStart value in a {@link TDecimal} data type
-   */
-  public TDecimal getScanAngleAzStart() {
-    return scanAngleAzStart;
-  }
-
-  /**
-   * Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * @param value the ScanAngleAzStart value in a {@link TDecimal} data type
-   */
-  public void setScanAngleAzStart(TDecimal value) {
-    this.scanAngleAzStart = value;
-  }
-
-  /**
-   * Determine if the ScanAngleAzStart is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanAngleAzStart() {
-    return (this.scanAngleAzStart != null ? this.scanAngleAzStart.isSetValue() : false);
-  }
-
-  /**
-   * Get the minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * @return the ScanAngleAzStop value in a {@link TDecimal} data type
-   */
-  public TDecimal getScanAngleAzStop() {
-    return scanAngleAzStop;
-  }
-
-  /**
-   * Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * @param value the ScanAngleAzStop value in a {@link TDecimal} data type
-   */
-  public void setScanAngleAzStop(TDecimal value) {
-    this.scanAngleAzStop = value;
-  }
-
-  /**
-   * Determine if the ScanAngleAzStop is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanAngleAzStop() {
-    return (this.scanAngleAzStop != null ? this.scanAngleAzStop.isSetValue() : false);
-  }
-
-  /**
-   * Get the maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., elevation).
-   * <p>
-   * @return the ScanAngleElevStart value in a {@link TDecimal} data type
-   */
-  public TDecimal getScanAngleElevStart() {
-    return scanAngleElevStart;
-  }
-
-  /**
-   * Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., elevation).
-   * <p>
-   * @param value the ScanAngleElevStart value in a {@link TDecimal} data type
-   */
-  public void setScanAngleElevStart(TDecimal value) {
-    this.scanAngleElevStart = value;
-  }
-
-  /**
-   * Determine if the ScanAngleElevStart is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanAngleElevStart() {
-    return (this.scanAngleElevStart != null ? this.scanAngleElevStart.isSetValue() : false);
-  }
-
-  /**
-   * Get the minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., azimuth).
-   * <p>
-   * @return the ScanAngleElevStop value in a {@link TDecimal} data type
-   */
-  public TDecimal getScanAngleElevStop() {
-    return scanAngleElevStop;
-  }
-
-  /**
-   * Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., azimuth).
-   * <p>
-   * @param value the ScanAngleElevStop value in a {@link TDecimal} data type
-   */
-  public void setScanAngleElevStop(TDecimal value) {
-    this.scanAngleElevStop = value;
-  }
-
-  /**
-   * Determine if the ScanAngleElevStop is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanAngleElevStop() {
-    return (this.scanAngleElevStop != null ? this.scanAngleElevStop.isSetValue() : false);
-  }
-
-  /**
-   * Get the scan duration
-   * <p>
-   * @return the ScanDwell value in a {@link TDecimal} data type
-   */
-  public TDecimal getScanDwell() {
-    return scanDwell;
-  }
-
-  /**
-   * Set the scan duration
-   * <p>
-   * @param value the ScanDwell value in a {@link TDecimal} data type
-   */
-  public void setScanDwell(TDecimal value) {
-    this.scanDwell = value;
-  }
-
-  /**
-   * Determine if the ScanDwell is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanDwell() {
-    return (this.scanDwell != null ? this.scanDwell.isSetValue() : false);
-  }
-
-  /**
-   * Get the Sequence of dwell durations, with elevation and azimuth. Example:
-   * 20 deg hor, 15 deg elev, 5 second dwell, etc.
-   * <p>
-   * @return the ScanDwellSequence value in a {@link TString} data type
-   */
-  public TString getScanDwellSequence() {
-    return scanDwellSequence;
-  }
-
-  /**
-   * Set the Sequence of dwell durations, with elevation and azimuth. Example:
-   * 20 deg hor, 15 deg elev, 5 second dwell, etc.
-   * <p>
-   * @param value the ScanDwellSequence value in a {@link TString} data type
-   */
-  public void setScanDwellSequence(TString value) {
-    this.scanDwellSequence = value;
-  }
-
-  /**
-   * Determine if the ScanDwellSequence is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanDwellSequence() {
-    return (this.scanDwellSequence != null ? this.scanDwellSequence.isSetValue() : false);
-  }
-
-  /**
-   * Get the time duration for a complete dwell/group of scan cycles which all
-   * have the same Scan Period Discrete value before changing to a different
-   * one.
-   * <p>
-   * @return the ScanDwellTime value in a {@link TDecimal} data type
-   */
-  public TDecimal getScanDwellTime() {
-    return scanDwellTime;
-  }
-
-  /**
-   * Set the time duration for a complete dwell/group of scan cycles which all
-   * have the same Scan Period Discrete value before changing to a different
-   * one.
-   * <p>
-   * @param value the ScanDwellTime value in a {@link TDecimal} data type
-   */
-  public void setScanDwellTime(TDecimal value) {
-    this.scanDwellTime = value;
-  }
-
-  /**
-   * Determine if the ScanDwellTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanDwellTime() {
-    return (this.scanDwellTime != null ? this.scanDwellTime.isSetValue() : false);
-  }
-
-  /**
-   * Get ScanElevContinuous (US), indicate the if the scan elevation progression
-   * is a continuous sweep.
-   * <p>
-   * @return the ScanElevContinuous value in a {@link TString} data type
-   */
-  public TString getScanElevContinuous() {
-    return scanElevContinuous;
-  }
-
-  /**
-   * Set ScanElevContinuous (US), indicate the if the scan elevation progression
-   * is a continuous sweep.
-   * <p>
-   * @param value the ScanElevContinuous value in a {@link TString} data type
-   */
-  public void setScanElevContinuous(TString value) {
-    this.scanElevContinuous = value;
-  }
-
-  /**
-   * Determine if the ScanElevContinuous is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanElevContinuous() {
-    return (this.scanElevContinuous != null ? this.scanElevContinuous.isSetValue() : false);
-  }
-
-  /**
-   * Get ScanPatternType (US), indicate whether the Scan Period is unmodulated,
-   * Patterned, Non-Patterned, or Adaptive.
-   * <p>
-   * @return the ScanPatternType value in a {@link TString} data type
-   */
-  public TString getScanPatternType() {
-    return scanPatternType;
-  }
-
-  /**
-   * Set ScanPatternType (US), indicate whether the Scan Period is unmodulated,
-   * Patterned, Non-Patterned, or Adaptive.
-   * <p>
-   * @param value the ScanPatternType value in a {@link TString} data type
-   */
-  public void setScanPatternType(TString value) {
-    this.scanPatternType = value;
-  }
-
-  /**
-   * Determine if the ScanPatternType is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanPatternType() {
-    return (this.scanPatternType != null ? this.scanPatternType.isSetValue() : false);
-  }
-
-  /**
-   * Get ScanType (US), indicate if the observed data was detected via a primary
-   * or secondary scan.
-   * <p>
-   * @return the ScanType value in a {@link TString} data type
-   */
-  public TString getScanType() {
-    return scanType;
-  }
-
-  /**
-   * Set ScanType (US), indicate if the observed data was detected via a primary
-   * or secondary scan.
-   * <p>
-   * @param value the ScanType value in a {@link TString} data type
-   */
-  public void setScanType(TString value) {
-    this.scanType = value;
-  }
-
-  /**
-   * Determine if the ScanType is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetScanType() {
-    return (this.scanType != null ? this.scanType.isSetValue() : false);
-  }
-
-  /**
-   * Get the US:ObservedScanValues
-   * <p>
-   * Complex element ObservedScanValues (US) contains data describing the
-   * discrete scan rate values and supporting statistical information.
-   * <p>
-   * @return a non-null but possibly empty list of {@link ObservedScanValues}
-   *         instances
-   */
-  public Set<ObservedScanValues> getObservedScanValues() {
-    if (observedScanValues == null) {
-      observedScanValues = new HashSet<>();
+/**
+In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth progression is a continuous sweep.
+@since 3.1.0
+*/
+    @XmlElement(name = "ScansHorzContinuous", required = false)
+    private TString scansHorzContinuous;
+/**
+US:AzBoresightAngle - Azimuth Boresight Angle (Optional) 
+
+The position of the emitter Mainbeam (aka, Mainlobe) boresight referenced from true north for ground based fixed emitters, and the emitter defined centerline for other platforms (e.g., mobile, airborne, shipborne).
+
+Format is SN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzBoresightAngle", required = false)
+    private US_Deg_Signed azBoresightAngle;
+/**
+US:AzScanChangeRate - Azimuth Scan Change Rate  (Optional) 
+
+The rate of change for horizontal Scan Period variations expressed in Scan Period change per unit of time
+
+Format is UN(12,6) (μsec/sec)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanChangeRate", required = false)
+    private US_PRIChgRate azScanChangeRate;
+/**
+US:AzScanRateExtremeMax - Extreme Horizontal Scan Rate Max (Optional) 
+
+The range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater than US:AzScanRateExtremeMin.
+
+Format is UN(7,2) (scans/min)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanRateExtremeMax", required = false)
+    private US_ScanRate azScanRateExtremeMax;
+/**
+US:AzScanRateExtremeMin - Extreme Horizontal Scan Rate Min (Optional) 
+
+The range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+Format is UN(7,2) (scans/min)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanRateExtremeMin", required = false)
+    private US_ScanRate azScanRateExtremeMin;
+/**
+US:AzScanRateMean - Mean Horizontal Scan Rate (Optional) 
+
+The average horizontal scan rate value for a signal that changes horizontal scan rates on a non-patterned basis.
+
+Format is UN(7,2) (scans/min)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanRateMean", required = false)
+    private US_ScanRate azScanRateMean;
+/**
+US:AzScanRateMedian - Most Probable Horizontal Scan Rate (Optional) 
+
+The horizontal scan rate that the signal most often used, based on a statistical study of a data set.
+
+Format is UN(7,2) (scans/min)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanRateMedian", required = false)
+    private US_ScanRate azScanRateMedian;
+/**
+US:AzScanSector - Azimuth ScanSector (Optional) 
+
+The total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+Format is UN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanSector", required = false)
+    private US_Degrees azScanSector;
+/**
+US:AzScanSectorMax - Azimuth ScanSectorMax (Optional) 
+
+The total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+Format is UN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanSectorMax", required = false)
+    private US_Degrees azScanSectorMax;
+/**
+US:AzScanVelocity - Azimuth ScanVelocity (Optional) 
+
+The horizontal angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+Format is UN(6,2) (deg/sec)
+@since 3.1.0
+*/
+    @XmlElement(name = "AzScanVelocity", required = false)
+    private US_ScanSpeed azScanVelocity;
+/**
+In Data Item Vertical Scan Change Rate (US), enter the rate of change for vertical Scan Period variations expressed in Scan Period change per unit of time
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanChangeRate", required = false)
+    private US_PRIChgRate elevScanChangeRate;
+/**
+In Data Item Extreme Vertical Scan Rate Max (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater than US:ElevScanRateExtremeMin.
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanRateExtremeMax", required = false)
+    private US_ScanRate elevScanRateExtremeMax;
+/**
+In Data Item Extreme Vertical Scan Rate Min (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanRateExtremeMin", required = false)
+    private US_ScanRate elevScanRateExtremeMin;
+/**
+US:ElevScanRateMean - Mean Vertical Scan Rate (Optional) 
+
+The average vertical scan rate value for a signal that changes vertical scan rates on a non-patterned basis.
+
+Format is UN(7,2) (scans/min)
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanRateMean", required = false)
+    private US_ScanRate elevScanRateMean;
+/**
+US:ElevScanRateMedian - Most Probable Vertical Scan Rate (Optional) 
+
+The vertical scan rate that the signal most often used, based on a statistical study of a data set.
+
+Format is UN(7,2) (scans/min)
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanRateMedian", required = false)
+    private US_ScanRate elevScanRateMedian;
+/**
+US:ElevScanSector - Vertical Scan Sector (Optional) 
+
+The total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+Format is UN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanSector", required = false)
+    private US_Degrees elevScanSector;
+/**
+US:ElevScanSectorMax - Vertical Scan Sector Max (Optional) 
+
+The total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+Format is UN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanSectorMax", required = false)
+    private US_Degrees elevScanSectorMax;
+/**
+US:ElevScanVelocity - Vertical Scan Velocity (Optional) 
+
+The vertical angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+Format is UN(6,2) (deg/sec)
+@since 3.1.0
+*/
+    @XmlElement(name = "ElevScanVelocity", required = false)
+    private US_ScanSpeed elevScanVelocity;
+/**
+US:NumBeamPositionsPerScan - Num Beam Positions Per Scan (Optional) 
+
+The number of beam positions (aka., dwells) per scan cycle
+
+Format is UN(6)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumBeamPositionsPerScan", required = false)
+    private UN6 numBeamPositionsPerScan;
+/**
+US:NumBeamPositionsTotal - Total Number of Beam Positions (Optional) 
+
+The total number of unique array beam positions resulting from the frequency steps of a frequency scanning, phase changes, in phase scanning, or discrete time delays in time delay steering.
+
+Format is UN(6)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumBeamPositionsTotal", required = false)
+    private UN6 numBeamPositionsTotal;
+/**
+US:NumBeamsPerRaster - Num Beams Per Raster (Optional) 
+
+The number of beam positions necessary to complete one bar of the raster scan.
+
+Format is UN(6)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumBeamsPerRaster", required = false)
+    private UN6 numBeamsPerRaster;
+/**
+US:NumRastersPerCycle - Num Rasters Per Cycle (Optional) 
+
+The number of 360 degree scans (aka, turns) a component of a scan makes in the time it takes the Primary Scan to complete one complete cycle/scan.
+
+Format is UN(6)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumRastersPerCycle", required = false)
+    private UN6 numRastersPerCycle;
+/**
+US:NumScanPositions - Number of Scan Positions (Optional) 
+
+The number of discrete values observed in a single repeating scan period sequence.
+
+Format is UN(6)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumScanPositions", required = false)
+    private UN6 numScanPositions;
+/**
+US:NumScanValues - Number of Scan Values (Optional) 
+
+The number of discrete values observed in multiple repeating scan period sequences.
+
+Format is UN(6)
+@since 3.1.0
+*/
+    @XmlElement(name = "NumScanValues", required = false)
+    private UN6 numScanValues;
+/**
+US:ScanAdaptiveDriverDesc - Scan Adaptive Driver Description (Optional) 
+
+The condition which controls or can be associated with the signal Scan Period variations.
+
+Format is S500
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanAdaptiveDriverDesc", required = false)
+    private S500 scanAdaptiveDriverDesc;
+/**
+US:ScanAdaptiveRuleDesc - Scan Adaptive Rule Description (Optional) 
+
+The rule which describes the signal Scan Period variations.
+
+Format is S500
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanAdaptiveRuleDesc", required = false)
+    private S500 scanAdaptiveRuleDesc;
+/**
+US:ScanAngleAzStart - Scan Angle Azimuth Start (Optional) 
+
+The maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+Format is SN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanAngleAzStart", required = false)
+    private US_Deg_Signed scanAngleAzStart;
+/**
+US:ScanAngleAzStop - Scan Angle Azimuth Stop (Optional) 
+
+The minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+Format is SN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanAngleAzStop", required = false)
+    private US_Deg_Signed scanAngleAzStop;
+/**
+US:ScanAngleElevStart - Scan Angle Elevation Start (Optional) 
+
+The maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., elevation).
+
+Format is SN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanAngleElevStart", required = false)
+    private US_Deg_Signed scanAngleElevStart;
+/**
+US:ScanAngleElevStop - Scan Angle Elevation Stop (Optional) 
+
+The minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., azimuth).
+
+Format is SN(5,2) (deg)
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanAngleElevStop", required = false)
+    private US_Deg_Signed scanAngleElevStop;
+/**
+US:ScanDwell - Scan Dwell (Optional) 
+
+The scan duration
+
+Format is UN(12,6) (μsec)
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanDwell", required = false)
+    private microsecs scanDwell;
+/**
+US:ScanDwellSequence - Scan Dwell Sequence  (Optional) 
+
+The Sequence of dwell durations, with elevation and azimuth. Example: 20 deg hor, 15 deg elev, 5 second dwell, etc.
+
+Format is S500
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanDwellSequence", required = false)
+    private S500 scanDwellSequence;
+/**
+US:ScanDwellTime - Scan Dwell Time (Optional) 
+
+The time duration for a complete dwell/group of scan cycles which all have the same Scan Period Discrete value before changing to a different one.
+
+Format is UN(12,6) (μsec/sec)
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanDwellTime", required = false)
+    private US_PRIChgRate scanDwellTime;
+/**
+In Data Item ScanElevContinuous (US), indicate the if the scan elevation progression is a continuous sweep.
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanElevContinuous", required = false)
+    private TString scanElevContinuous;
+/**
+In Data Item ScanPatternType (US), indicate whether the Scan Period is unmodulated, Patterned, Non-Patterned, or Adaptive.
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanPatternType", required = false)
+    private TString scanPatternType;
+/**
+In Data Item ScanType (US), indicate if the observed data was detected via a primary or secondary scan.
+@since 3.1.0
+*/
+    @XmlElement(name = "ScanType", required = false)
+    private TString scanType;
+/**
+US:ObservedScanValues (Optional)
+
+ObservedScanValues (US) contains data describing the discrete scan rate values and supporting statistical information.
+@since 3.1.0
+*/
+    @XmlElement(name = "ObservedScanValues")
+      private  Set<ObservedScanValues> observedScanValues;
+
+/**
+Get In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth progression is a continuous sweep.
+
+@return the ScansHorzContinuous value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getScansHorzContinuous() {
+        return scansHorzContinuous;
     }
-    return this.observedScanValues;
-  }
 
-  /**
-   * Determine if the ObservedScanValues is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetObservedScanValues() {
-    return ((this.observedScanValues != null) && (!this.observedScanValues.isEmpty()));
-  }
+/**
+Set In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth progression is a continuous sweep.
 
-  /**
-   * Clear the ObservedScanValues field. This sets the field to null.
-   */
-  public void unsetObservedScanValues() {
-    this.observedScanValues = null;
-  }
-
-  /**
-   * Set ScanHorzContinuous (US), indicate the if the scan azimuth progression
-   * is a continuous sweep.
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScansHorzContinuous(ListCBO value) {
-    setScansHorzContinuous(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the position of the emitter Mainbeam (aka, Mainlobe) boresight
-   * referenced from true north for ground based fixed emitters, and the emitter
-   * defined centerline for other platforms (e.g., mobile, airborne, shipborne).
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzBoresightAngle(Double value) {
-    setAzBoresightAngle(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the rate of change for horizontal Scan Period variations expressed in
-   * Scan Period change per unit of time
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanChangeRate(Double value) {
-    setAzScanChangeRate(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the range of horizontal scan rate values that represent 100% of the
-   * signal observed Scan values obtained from a statistical study of a data
-   * set.
-   * <p>
-   * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
-   * than US:AzScanRateExtremeMin.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanRateExtremeMax(Double value) {
-    setAzScanRateExtremeMax(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the range of horizontal scan rate values that represent 100% of the
-   * signal observed Scan values obtained from a statistical study of a data
-   * set.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanRateExtremeMin(Double value) {
-    setAzScanRateExtremeMin(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the average horizontal scan rate value for a signal that changes
-   * horizontal scan rates on a non-patterned basis.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanRateMean(Double value) {
-    setAzScanRateMean(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the horizontal scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanRateMedian(Double value) {
-    setAzScanRateMedian(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the total angular width in the horizontal plane (aka, azimuth) the
-   * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanSector(Double value) {
-    setAzScanSector(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the total angular width in the horizontal plane (aka, azimuth) the
-   * subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanSectorMax(Double value) {
-    setAzScanSectorMax(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the horizontal angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withAzScanVelocity(Double value) {
-    setAzScanVelocity(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set Vertical Scan Change Rate (US) - The rate of change for vertical Scan
-   * Period variations expressed in Scan Period change per unit of time
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanChangeRate(Double value) {
-    setElevScanChangeRate(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set Extreme Vertical Scan Rate Max (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
-   * than US:ElevScanRateExtremeMin.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanRateExtremeMax(Double value) {
-    setElevScanRateExtremeMax(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set Extreme Vertical Scan Rate Min (US) - The range of vertical scan rate
-   * values that represent 100% of the signal observed Scan values obtained from
-   * a statistical study of a data set.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanRateExtremeMin(Double value) {
-    setElevScanRateExtremeMin(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the average vertical scan rate value for a signal that changes vertical
-   * scan rates on a non-patterned basis.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanRateMean(Double value) {
-    setElevScanRateMean(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the vertical scan rate that the signal most often used, based on a
-   * statistical study of a data set.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanRateMedian(Double value) {
-    setElevScanRateMedian(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the total angular width in the vertical plane (aka, elevation) the
-   * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanSector(Double value) {
-    setElevScanSector(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the total angular width in the vertical plane (aka, elevation) the
-   * subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanSectorMax(Double value) {
-    setElevScanSectorMax(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the vertical angular speed (i.e., degrees per second) of the subject
-   * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withElevScanVelocity(Double value) {
-    setElevScanVelocity(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the number of beam positions (aka., dwells) per scan cycle
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withNumBeamPositionsPerScan(Integer value) {
-    setNumBeamPositionsPerScan(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the total number of unique array beam positions resulting from the
-   * frequency steps of a frequency scanning, phase changes, in phase scanning,
-   * or discrete time delays in time delay steering.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withNumBeamPositionsTotal(Integer value) {
-    setNumBeamPositionsTotal(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the number of beam positions necessary to complete one bar of the
-   * raster scan.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withNumBeamsPerRaster(Integer value) {
-    setNumBeamsPerRaster(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the number of 360 degree scans (aka, turns) a component of a scan makes
-   * in the time it takes the Primary Scan to complete one complete cycle/scan.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withNumRastersPerCycle(Integer value) {
-    setNumRastersPerCycle(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the number of discrete values observed in a single repeating scan
-   * period sequence.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withNumScanPositions(Integer value) {
-    setNumScanPositions(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the number of discrete values observed in multiple repeating scan
-   * period sequences.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withNumScanValues(Integer value) {
-    setNumScanValues(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the condition which controls or can be associated with the signal Scan
-   * Period variations.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanAdaptiveDriverDesc(String value) {
-    setScanAdaptiveDriverDesc(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the rule which describes the signal Scan Period variations.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanAdaptiveRuleDesc(String value) {
-    setScanAdaptiveRuleDesc(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanAngleAzStart(Double value) {
-    setScanAngleAzStart(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the horizontal plane (aka., azimuth).
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanAngleAzStop(Double value) {
-    setScanAngleAzStop(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., elevation).
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanAngleElevStart(Double value) {
-    setScanAngleElevStart(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
-   * reaches in the vertical plane (aka., azimuth).
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanAngleElevStop(Double value) {
-    setScanAngleElevStop(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the scan duration
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanDwell(Double value) {
-    setScanDwell(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the Sequence of dwell durations, with elevation and azimuth. Example:
-   * 20 deg hor, 15 deg elev, 5 second dwell, etc.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanDwellSequence(String value) {
-    setScanDwellSequence(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the time duration for a complete dwell/group of scan cycles which all
-   * have the same Scan Period Discrete value before changing to a different
-   * one.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanDwellTime(Double value) {
-    setScanDwellTime(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set ScanElevContinuous (US), indicate the if the scan elevation progression
-   * is a continuous sweep.
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanElevContinuous(ListCBO value) {
-    setScanElevContinuous(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set ScanPatternType (US), indicate whether the Scan Period is unmodulated,
-   * Patterned, Non-Patterned, or Adaptive.
-   * <p>
-   * @param value An instances of type {@link ListUS7}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanPatternType(ListUS7 value) {
-    setScanPatternType(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set ScanType (US), indicate if the observed data was detected via a primary
-   * or secondary scan.
-   * <p>
-   * @param value An instances of type {@link ListUS8}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withScanType(ListUS8 value) {
-    setScanType(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the US:ObservedScanValues
-   * <p>
-   * Complex element ObservedScanValues (US) contains data describing the
-   * discrete scan rate values and supporting statistical information.
-   * <p>
-   * @param values One or more instances of type {@link ObservedScanValues}
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withObservedScanValues(ObservedScanValues... values) {
-    if (values != null) {
-      getObservedScanValues().addAll(new HashSet<>(Arrays.asList(values)));
+@param value the ScansHorzContinuous value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setScansHorzContinuous(TString value) {
+        this.scansHorzContinuous = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:ObservedScanValues
-   * <p>
-   * Complex element ObservedScanValues (US) contains data describing the
-   * discrete scan rate values and supporting statistical information.
-   * <p>
-   * @param values A collection of {@link ObservedScanValues} instances
-   * @return The current ObservedScanAnalysis object instance
-   */
-  public ObservedScanAnalysis withObservedScanValues(Set<ObservedScanValues> values) {
-    if (values != null) {
-      getObservedScanValues().addAll(values);
+/**
+Determine if the ScansHorzContinuous is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScansHorzContinuous() {
+return (this.scansHorzContinuous!= null ? this.scansHorzContinuous.isSetValue() : false);
     }
-    return this;
+
+/**
+Get the position of the emitter Mainbeam (aka, Mainlobe) boresight referenced from true north for ground based fixed emitters, and the emitter defined centerline for other platforms (e.g., mobile, airborne, shipborne).
+
+@return the AzBoresightAngle value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public US_Deg_Signed getAzBoresightAngle() {
+        return azBoresightAngle;
+    }
+
+/**
+Set the position of the emitter Mainbeam (aka, Mainlobe) boresight referenced from true north for ground based fixed emitters, and the emitter defined centerline for other platforms (e.g., mobile, airborne, shipborne).
+
+@param value the AzBoresightAngle value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public void setAzBoresightAngle(US_Deg_Signed value) {
+        this.azBoresightAngle = value;
+    }
+
+/**
+Determine if the AzBoresightAngle is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzBoresightAngle() {
+        return (this.azBoresightAngle!= null);
+    }
+
+/**
+Get the rate of change for horizontal Scan Period variations expressed in Scan Period change per unit of time
+
+@return the AzScanChangeRate value in a {@link TUS_PRIChgRate} data type
+@since 3.1.0
+*/
+public US_PRIChgRate getAzScanChangeRate() {
+        return azScanChangeRate;
+    }
+
+/**
+Set the rate of change for horizontal Scan Period variations expressed in Scan Period change per unit of time
+
+@param value the AzScanChangeRate value in a {@link TUS_PRIChgRate} data type
+@since 3.1.0
+*/
+public void setAzScanChangeRate(US_PRIChgRate value) {
+        this.azScanChangeRate = value;
+    }
+
+/**
+Determine if the AzScanChangeRate is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanChangeRate() {
+        return (this.azScanChangeRate!= null);
+    }
+
+/**
+Get the range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater than US:AzScanRateExtremeMin.
+
+@return the AzScanRateExtremeMax value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getAzScanRateExtremeMax() {
+        return azScanRateExtremeMax;
+    }
+
+/**
+Set the range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater than US:AzScanRateExtremeMin.
+
+@param value the AzScanRateExtremeMax value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setAzScanRateExtremeMax(US_ScanRate value) {
+        this.azScanRateExtremeMax = value;
+    }
+
+/**
+Determine if the AzScanRateExtremeMax is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanRateExtremeMax() {
+        return (this.azScanRateExtremeMax!= null);
+    }
+
+/**
+Get the range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+@return the AzScanRateExtremeMin value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getAzScanRateExtremeMin() {
+        return azScanRateExtremeMin;
+    }
+
+/**
+Set the range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+@param value the AzScanRateExtremeMin value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setAzScanRateExtremeMin(US_ScanRate value) {
+        this.azScanRateExtremeMin = value;
+    }
+
+/**
+Determine if the AzScanRateExtremeMin is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanRateExtremeMin() {
+        return (this.azScanRateExtremeMin!= null);
+    }
+
+/**
+Get the average horizontal scan rate value for a signal that changes horizontal scan rates on a non-patterned basis.
+
+@return the AzScanRateMean value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getAzScanRateMean() {
+        return azScanRateMean;
+    }
+
+/**
+Set the average horizontal scan rate value for a signal that changes horizontal scan rates on a non-patterned basis.
+
+@param value the AzScanRateMean value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setAzScanRateMean(US_ScanRate value) {
+        this.azScanRateMean = value;
+    }
+
+/**
+Determine if the AzScanRateMean is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanRateMean() {
+        return (this.azScanRateMean!= null);
+    }
+
+/**
+Get the horizontal scan rate that the signal most often used, based on a statistical study of a data set.
+
+@return the AzScanRateMedian value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getAzScanRateMedian() {
+        return azScanRateMedian;
+    }
+
+/**
+Set the horizontal scan rate that the signal most often used, based on a statistical study of a data set.
+
+@param value the AzScanRateMedian value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setAzScanRateMedian(US_ScanRate value) {
+        this.azScanRateMedian = value;
+    }
+
+/**
+Determine if the AzScanRateMedian is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanRateMedian() {
+        return (this.azScanRateMedian!= null);
+    }
+
+/**
+Get the total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+@return the AzScanSector value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public US_Degrees getAzScanSector() {
+        return azScanSector;
+    }
+
+/**
+Set the total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+@param value the AzScanSector value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public void setAzScanSector(US_Degrees value) {
+        this.azScanSector = value;
+    }
+
+/**
+Determine if the AzScanSector is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanSector() {
+        return (this.azScanSector!= null);
+    }
+
+/**
+Get the total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+@return the AzScanSectorMax value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public US_Degrees getAzScanSectorMax() {
+        return azScanSectorMax;
+    }
+
+/**
+Set the total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+@param value the AzScanSectorMax value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public void setAzScanSectorMax(US_Degrees value) {
+        this.azScanSectorMax = value;
+    }
+
+/**
+Determine if the AzScanSectorMax is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanSectorMax() {
+        return (this.azScanSectorMax!= null);
+    }
+
+/**
+Get the horizontal angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+@return the AzScanVelocity value in a {@link TUS_ScanSpeed} data type
+@since 3.1.0
+*/
+public US_ScanSpeed getAzScanVelocity() {
+        return azScanVelocity;
+    }
+
+/**
+Set the horizontal angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+@param value the AzScanVelocity value in a {@link TUS_ScanSpeed} data type
+@since 3.1.0
+*/
+public void setAzScanVelocity(US_ScanSpeed value) {
+        this.azScanVelocity = value;
+    }
+
+/**
+Determine if the AzScanVelocity is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetAzScanVelocity() {
+        return (this.azScanVelocity!= null);
+    }
+
+/**
+Get In Data Item Vertical Scan Change Rate (US), enter the rate of change for vertical Scan Period variations expressed in Scan Period change per unit of time
+
+@return the ElevScanChangeRate value in a {@link TUS_PRIChgRate} data type
+@since 3.1.0
+*/
+public US_PRIChgRate getElevScanChangeRate() {
+        return elevScanChangeRate;
+    }
+
+/**
+Set In Data Item Vertical Scan Change Rate (US), enter the rate of change for vertical Scan Period variations expressed in Scan Period change per unit of time
+
+@param value the ElevScanChangeRate value in a {@link TUS_PRIChgRate} data type
+@since 3.1.0
+*/
+public void setElevScanChangeRate(US_PRIChgRate value) {
+        this.elevScanChangeRate = value;
+    }
+
+/**
+Determine if the ElevScanChangeRate is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanChangeRate() {
+        return (this.elevScanChangeRate!= null);
+    }
+
+/**
+Get In Data Item Extreme Vertical Scan Rate Max (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater than US:ElevScanRateExtremeMin.
+
+@return the ElevScanRateExtremeMax value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getElevScanRateExtremeMax() {
+        return elevScanRateExtremeMax;
+    }
+
+/**
+Set In Data Item Extreme Vertical Scan Rate Max (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater than US:ElevScanRateExtremeMin.
+
+@param value the ElevScanRateExtremeMax value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setElevScanRateExtremeMax(US_ScanRate value) {
+        this.elevScanRateExtremeMax = value;
+    }
+
+/**
+Determine if the ElevScanRateExtremeMax is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanRateExtremeMax() {
+        return (this.elevScanRateExtremeMax!= null);
+    }
+
+/**
+Get In Data Item Extreme Vertical Scan Rate Min (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+@return the ElevScanRateExtremeMin value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getElevScanRateExtremeMin() {
+        return elevScanRateExtremeMin;
+    }
+
+/**
+Set In Data Item Extreme Vertical Scan Rate Min (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+@param value the ElevScanRateExtremeMin value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setElevScanRateExtremeMin(US_ScanRate value) {
+        this.elevScanRateExtremeMin = value;
+    }
+
+/**
+Determine if the ElevScanRateExtremeMin is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanRateExtremeMin() {
+        return (this.elevScanRateExtremeMin!= null);
+    }
+
+/**
+Get the average vertical scan rate value for a signal that changes vertical scan rates on a non-patterned basis.
+
+@return the ElevScanRateMean value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getElevScanRateMean() {
+        return elevScanRateMean;
+    }
+
+/**
+Set the average vertical scan rate value for a signal that changes vertical scan rates on a non-patterned basis.
+
+@param value the ElevScanRateMean value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setElevScanRateMean(US_ScanRate value) {
+        this.elevScanRateMean = value;
+    }
+
+/**
+Determine if the ElevScanRateMean is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanRateMean() {
+        return (this.elevScanRateMean!= null);
+    }
+
+/**
+Get the vertical scan rate that the signal most often used, based on a statistical study of a data set.
+
+@return the ElevScanRateMedian value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public US_ScanRate getElevScanRateMedian() {
+        return elevScanRateMedian;
+    }
+
+/**
+Set the vertical scan rate that the signal most often used, based on a statistical study of a data set.
+
+@param value the ElevScanRateMedian value in a {@link TUS_ScanRate} data type
+@since 3.1.0
+*/
+public void setElevScanRateMedian(US_ScanRate value) {
+        this.elevScanRateMedian = value;
+    }
+
+/**
+Determine if the ElevScanRateMedian is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanRateMedian() {
+        return (this.elevScanRateMedian!= null);
+    }
+
+/**
+Get the total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+@return the ElevScanSector value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public US_Degrees getElevScanSector() {
+        return elevScanSector;
+    }
+
+/**
+Set the total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+@param value the ElevScanSector value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public void setElevScanSector(US_Degrees value) {
+        this.elevScanSector = value;
+    }
+
+/**
+Determine if the ElevScanSector is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanSector() {
+        return (this.elevScanSector!= null);
+    }
+
+/**
+Get the total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+@return the ElevScanSectorMax value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public US_Degrees getElevScanSectorMax() {
+        return elevScanSectorMax;
+    }
+
+/**
+Set the total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+@param value the ElevScanSectorMax value in a {@link TUS_Degrees} data type
+@since 3.1.0
+*/
+public void setElevScanSectorMax(US_Degrees value) {
+        this.elevScanSectorMax = value;
+    }
+
+/**
+Determine if the ElevScanSectorMax is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanSectorMax() {
+        return (this.elevScanSectorMax!= null);
+    }
+
+/**
+Get the vertical angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+@return the ElevScanVelocity value in a {@link TUS_ScanSpeed} data type
+@since 3.1.0
+*/
+public US_ScanSpeed getElevScanVelocity() {
+        return elevScanVelocity;
+    }
+
+/**
+Set the vertical angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+@param value the ElevScanVelocity value in a {@link TUS_ScanSpeed} data type
+@since 3.1.0
+*/
+public void setElevScanVelocity(US_ScanSpeed value) {
+        this.elevScanVelocity = value;
+    }
+
+/**
+Determine if the ElevScanVelocity is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetElevScanVelocity() {
+        return (this.elevScanVelocity!= null);
+    }
+
+/**
+Get the number of beam positions (aka., dwells) per scan cycle
+
+@return the NumBeamPositionsPerScan value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public UN6 getNumBeamPositionsPerScan() {
+        return numBeamPositionsPerScan;
+    }
+
+/**
+Set the number of beam positions (aka., dwells) per scan cycle
+
+@param value the NumBeamPositionsPerScan value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public void setNumBeamPositionsPerScan(UN6 value) {
+        this.numBeamPositionsPerScan = value;
+    }
+
+/**
+Determine if the NumBeamPositionsPerScan is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumBeamPositionsPerScan() {
+        return (this.numBeamPositionsPerScan!= null);
+    }
+
+/**
+Get the total number of unique array beam positions resulting from the frequency steps of a frequency scanning, phase changes, in phase scanning, or discrete time delays in time delay steering.
+
+@return the NumBeamPositionsTotal value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public UN6 getNumBeamPositionsTotal() {
+        return numBeamPositionsTotal;
+    }
+
+/**
+Set the total number of unique array beam positions resulting from the frequency steps of a frequency scanning, phase changes, in phase scanning, or discrete time delays in time delay steering.
+
+@param value the NumBeamPositionsTotal value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public void setNumBeamPositionsTotal(UN6 value) {
+        this.numBeamPositionsTotal = value;
+    }
+
+/**
+Determine if the NumBeamPositionsTotal is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumBeamPositionsTotal() {
+        return (this.numBeamPositionsTotal!= null);
+    }
+
+/**
+Get the number of beam positions necessary to complete one bar of the raster scan.
+
+@return the NumBeamsPerRaster value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public UN6 getNumBeamsPerRaster() {
+        return numBeamsPerRaster;
+    }
+
+/**
+Set the number of beam positions necessary to complete one bar of the raster scan.
+
+@param value the NumBeamsPerRaster value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public void setNumBeamsPerRaster(UN6 value) {
+        this.numBeamsPerRaster = value;
+    }
+
+/**
+Determine if the NumBeamsPerRaster is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumBeamsPerRaster() {
+        return (this.numBeamsPerRaster!= null);
+    }
+
+/**
+Get the number of 360 degree scans (aka, turns) a component of a scan makes in the time it takes the Primary Scan to complete one complete cycle/scan.
+
+@return the NumRastersPerCycle value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public UN6 getNumRastersPerCycle() {
+        return numRastersPerCycle;
+    }
+
+/**
+Set the number of 360 degree scans (aka, turns) a component of a scan makes in the time it takes the Primary Scan to complete one complete cycle/scan.
+
+@param value the NumRastersPerCycle value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public void setNumRastersPerCycle(UN6 value) {
+        this.numRastersPerCycle = value;
+    }
+
+/**
+Determine if the NumRastersPerCycle is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumRastersPerCycle() {
+        return (this.numRastersPerCycle!= null);
+    }
+
+/**
+Get the number of discrete values observed in a single repeating scan period sequence.
+
+@return the NumScanPositions value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public UN6 getNumScanPositions() {
+        return numScanPositions;
+    }
+
+/**
+Set the number of discrete values observed in a single repeating scan period sequence.
+
+@param value the NumScanPositions value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public void setNumScanPositions(UN6 value) {
+        this.numScanPositions = value;
+    }
+
+/**
+Determine if the NumScanPositions is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumScanPositions() {
+        return (this.numScanPositions!= null);
+    }
+
+/**
+Get the number of discrete values observed in multiple repeating scan period sequences.
+
+@return the NumScanValues value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public UN6 getNumScanValues() {
+        return numScanValues;
+    }
+
+/**
+Set the number of discrete values observed in multiple repeating scan period sequences.
+
+@param value the NumScanValues value in a {@link TUN6} data type
+@since 3.1.0
+*/
+public void setNumScanValues(UN6 value) {
+        this.numScanValues = value;
+    }
+
+/**
+Determine if the NumScanValues is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetNumScanValues() {
+        return (this.numScanValues!= null);
+    }
+
+/**
+Get the condition which controls or can be associated with the signal Scan Period variations.
+
+@return the ScanAdaptiveDriverDesc value in a {@link TS500} data type
+@since 3.1.0
+*/
+public S500 getScanAdaptiveDriverDesc() {
+        return scanAdaptiveDriverDesc;
+    }
+
+/**
+Set the condition which controls or can be associated with the signal Scan Period variations.
+
+@param value the ScanAdaptiveDriverDesc value in a {@link TS500} data type
+@since 3.1.0
+*/
+public void setScanAdaptiveDriverDesc(S500 value) {
+        this.scanAdaptiveDriverDesc = value;
+    }
+
+/**
+Determine if the ScanAdaptiveDriverDesc is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanAdaptiveDriverDesc() {
+        return (this.scanAdaptiveDriverDesc!= null);
+    }
+
+/**
+Get the rule which describes the signal Scan Period variations.
+
+@return the ScanAdaptiveRuleDesc value in a {@link TS500} data type
+@since 3.1.0
+*/
+public S500 getScanAdaptiveRuleDesc() {
+        return scanAdaptiveRuleDesc;
+    }
+
+/**
+Set the rule which describes the signal Scan Period variations.
+
+@param value the ScanAdaptiveRuleDesc value in a {@link TS500} data type
+@since 3.1.0
+*/
+public void setScanAdaptiveRuleDesc(S500 value) {
+        this.scanAdaptiveRuleDesc = value;
+    }
+
+/**
+Determine if the ScanAdaptiveRuleDesc is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanAdaptiveRuleDesc() {
+        return (this.scanAdaptiveRuleDesc!= null);
+    }
+
+/**
+Get the maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+@return the ScanAngleAzStart value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public US_Deg_Signed getScanAngleAzStart() {
+        return scanAngleAzStart;
+    }
+
+/**
+Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+@param value the ScanAngleAzStart value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public void setScanAngleAzStart(US_Deg_Signed value) {
+        this.scanAngleAzStart = value;
+    }
+
+/**
+Determine if the ScanAngleAzStart is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanAngleAzStart() {
+        return (this.scanAngleAzStart!= null);
+    }
+
+/**
+Get the minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+@return the ScanAngleAzStop value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public US_Deg_Signed getScanAngleAzStop() {
+        return scanAngleAzStop;
+    }
+
+/**
+Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+@param value the ScanAngleAzStop value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public void setScanAngleAzStop(US_Deg_Signed value) {
+        this.scanAngleAzStop = value;
+    }
+
+/**
+Determine if the ScanAngleAzStop is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanAngleAzStop() {
+        return (this.scanAngleAzStop!= null);
+    }
+
+/**
+Get the maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., elevation).
+
+@return the ScanAngleElevStart value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public US_Deg_Signed getScanAngleElevStart() {
+        return scanAngleElevStart;
+    }
+
+/**
+Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., elevation).
+
+@param value the ScanAngleElevStart value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public void setScanAngleElevStart(US_Deg_Signed value) {
+        this.scanAngleElevStart = value;
+    }
+
+/**
+Determine if the ScanAngleElevStart is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanAngleElevStart() {
+        return (this.scanAngleElevStart!= null);
+    }
+
+/**
+Get the minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., azimuth).
+
+@return the ScanAngleElevStop value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public US_Deg_Signed getScanAngleElevStop() {
+        return scanAngleElevStop;
+    }
+
+/**
+Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., azimuth).
+
+@param value the ScanAngleElevStop value in a {@link TUS_Deg_Signed} data type
+@since 3.1.0
+*/
+public void setScanAngleElevStop(US_Deg_Signed value) {
+        this.scanAngleElevStop = value;
+    }
+
+/**
+Determine if the ScanAngleElevStop is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanAngleElevStop() {
+        return (this.scanAngleElevStop!= null);
+    }
+
+/**
+Get the scan duration
+
+@return the ScanDwell value in a {@link Tmicrosecs} data type
+@since 3.1.0
+*/
+public microsecs getScanDwell() {
+        return scanDwell;
+    }
+
+/**
+Set the scan duration
+
+@param value the ScanDwell value in a {@link Tmicrosecs} data type
+@since 3.1.0
+*/
+public void setScanDwell(microsecs value) {
+        this.scanDwell = value;
+    }
+
+/**
+Determine if the ScanDwell is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanDwell() {
+        return (this.scanDwell!= null);
+    }
+
+/**
+Get the Sequence of dwell durations, with elevation and azimuth. Example: 20 deg hor, 15 deg elev, 5 second dwell, etc.
+
+@return the ScanDwellSequence value in a {@link TS500} data type
+@since 3.1.0
+*/
+public S500 getScanDwellSequence() {
+        return scanDwellSequence;
+    }
+
+/**
+Set the Sequence of dwell durations, with elevation and azimuth. Example: 20 deg hor, 15 deg elev, 5 second dwell, etc.
+
+@param value the ScanDwellSequence value in a {@link TS500} data type
+@since 3.1.0
+*/
+public void setScanDwellSequence(S500 value) {
+        this.scanDwellSequence = value;
+    }
+
+/**
+Determine if the ScanDwellSequence is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanDwellSequence() {
+        return (this.scanDwellSequence!= null);
+    }
+
+/**
+Get the time duration for a complete dwell/group of scan cycles which all have the same Scan Period Discrete value before changing to a different one.
+
+@return the ScanDwellTime value in a {@link TUS_PRIChgRate} data type
+@since 3.1.0
+*/
+public US_PRIChgRate getScanDwellTime() {
+        return scanDwellTime;
+    }
+
+/**
+Set the time duration for a complete dwell/group of scan cycles which all have the same Scan Period Discrete value before changing to a different one.
+
+@param value the ScanDwellTime value in a {@link TUS_PRIChgRate} data type
+@since 3.1.0
+*/
+public void setScanDwellTime(US_PRIChgRate value) {
+        this.scanDwellTime = value;
+    }
+
+/**
+Determine if the ScanDwellTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanDwellTime() {
+        return (this.scanDwellTime!= null);
+    }
+
+/**
+Get In Data Item ScanElevContinuous (US), indicate the if the scan elevation progression is a continuous sweep.
+
+@return the ScanElevContinuous value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getScanElevContinuous() {
+        return scanElevContinuous;
+    }
+
+/**
+Set In Data Item ScanElevContinuous (US), indicate the if the scan elevation progression is a continuous sweep.
+
+@param value the ScanElevContinuous value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setScanElevContinuous(TString value) {
+        this.scanElevContinuous = value;
+    }
+
+/**
+Determine if the ScanElevContinuous is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanElevContinuous() {
+return (this.scanElevContinuous!= null ? this.scanElevContinuous.isSetValue() : false);
+    }
+
+/**
+Get In Data Item ScanPatternType (US), indicate whether the Scan Period is unmodulated, Patterned, Non-Patterned, or Adaptive.
+
+@return the ScanPatternType value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getScanPatternType() {
+        return scanPatternType;
+    }
+
+/**
+Set In Data Item ScanPatternType (US), indicate whether the Scan Period is unmodulated, Patterned, Non-Patterned, or Adaptive.
+
+@param value the ScanPatternType value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setScanPatternType(TString value) {
+        this.scanPatternType = value;
+    }
+
+/**
+Determine if the ScanPatternType is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanPatternType() {
+return (this.scanPatternType!= null ? this.scanPatternType.isSetValue() : false);
+    }
+
+/**
+Get In Data Item ScanType (US), indicate if the observed data was detected via a primary or secondary scan.
+
+@return the ScanType value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getScanType() {
+        return scanType;
+    }
+
+/**
+Set In Data Item ScanType (US), indicate if the observed data was detected via a primary or secondary scan.
+
+@param value the ScanType value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setScanType(TString value) {
+        this.scanType = value;
+    }
+
+/**
+Determine if the ScanType is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetScanType() {
+return (this.scanType!= null ? this.scanType.isSetValue() : false);
+    }
+
+/**
+Get the US:ObservedScanValues
+
+Complex element ObservedScanValues (US) contains data describing the discrete scan rate values and supporting statistical information.
+
+@return  a {@link ObservedScanValues} instance
+@since 3.1.0
+*/
+    public Set<ObservedScanValues> getObservedScanValues() {
+        if (observedScanValues == null) {
+            observedScanValues = new HashSet<ObservedScanValues>();
+        }
+        return this.observedScanValues;
+    }
+
+/**
+Determine if the ObservedScanValues is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetObservedScanValues() {
+        return ((this.observedScanValues!= null)&&(!this.observedScanValues.isEmpty()));
+    }
+
+/**
+  Clear the ObservedScanValues field. This sets the field to null.
+ */
+    public void unsetObservedScanValues() {
+        this.observedScanValues = null;
+    }
+
+/**
+Set In Data Item ScanHorzContinuous (US), indicate the if the scan azimuth progression is a continuous sweep.
+
+@param value  An instances of type {@link ListCBO}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScansHorzContinuous(ListCBO value) {
+           setScansHorzContinuous(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the position of the emitter Mainbeam (aka, Mainlobe) boresight referenced from true north for ground based fixed emitters, and the emitter defined centerline for other platforms (e.g., mobile, airborne, shipborne).
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzBoresightAngle(Double value) {
+           setAzBoresightAngle(new US_Deg_Signed(value));
+        return this;
+    }
+
+/**
+Set the rate of change for horizontal Scan Period variations expressed in Scan Period change per unit of time
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanChangeRate(Double value) {
+           setAzScanChangeRate(new US_PRIChgRate(value));
+        return this;
+    }
+
+/**
+Set the range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater than US:AzScanRateExtremeMin.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanRateExtremeMax(Double value) {
+           setAzScanRateExtremeMax(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the range of horizontal scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanRateExtremeMin(Double value) {
+           setAzScanRateExtremeMin(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the average horizontal scan rate value for a signal that changes horizontal scan rates on a non-patterned basis.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanRateMean(Double value) {
+           setAzScanRateMean(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the horizontal scan rate that the signal most often used, based on a statistical study of a data set.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanRateMedian(Double value) {
+           setAzScanRateMedian(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanSector(Double value) {
+           setAzScanSector(new US_Degrees(value));
+        return this;
+    }
+
+/**
+Set the total angular width in the horizontal plane (aka, azimuth) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanSectorMax(Double value) {
+           setAzScanSectorMax(new US_Degrees(value));
+        return this;
+    }
+
+/**
+Set the horizontal angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withAzScanVelocity(Double value) {
+           setAzScanVelocity(new US_ScanSpeed(value));
+        return this;
+    }
+
+/**
+Set In Data Item Vertical Scan Change Rate (US), enter the rate of change for vertical Scan Period variations expressed in Scan Period change per unit of time
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanChangeRate(Double value) {
+           setElevScanChangeRate(new US_PRIChgRate(value));
+        return this;
+    }
+
+/**
+Set In Data Item Extreme Vertical Scan Rate Max (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+[XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater than US:ElevScanRateExtremeMin.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanRateExtremeMax(Double value) {
+           setElevScanRateExtremeMax(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set In Data Item Extreme Vertical Scan Rate Min (US), enter the range of vertical scan rate values that represent 100% of the signal observed Scan values obtained from a statistical study of a data set. 
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanRateExtremeMin(Double value) {
+           setElevScanRateExtremeMin(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the average vertical scan rate value for a signal that changes vertical scan rates on a non-patterned basis.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanRateMean(Double value) {
+           setElevScanRateMean(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the vertical scan rate that the signal most often used, based on a statistical study of a data set.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanRateMedian(Double value) {
+           setElevScanRateMedian(new US_ScanRate(value));
+        return this;
+    }
+
+/**
+Set the total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan. 
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanSector(Double value) {
+           setElevScanSector(new US_Degrees(value));
+        return this;
+    }
+
+/**
+Set the total angular width in the vertical plane (aka, elevation) the subject emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanSectorMax(Double value) {
+           setElevScanSectorMax(new US_Degrees(value));
+        return this;
+    }
+
+/**
+Set the vertical angular speed (i.e., degrees per second) of the subject emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withElevScanVelocity(Double value) {
+           setElevScanVelocity(new US_ScanSpeed(value));
+        return this;
+    }
+
+/**
+Set the number of beam positions (aka., dwells) per scan cycle
+
+@param value  An instances of type {@link Integer}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withNumBeamPositionsPerScan(Integer value) {
+           setNumBeamPositionsPerScan(new UN6(value));
+        return this;
+    }
+
+/**
+Set the total number of unique array beam positions resulting from the frequency steps of a frequency scanning, phase changes, in phase scanning, or discrete time delays in time delay steering.
+
+@param value  An instances of type {@link Integer}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withNumBeamPositionsTotal(Integer value) {
+           setNumBeamPositionsTotal(new UN6(value));
+        return this;
+    }
+
+/**
+Set the number of beam positions necessary to complete one bar of the raster scan.
+
+@param value  An instances of type {@link Integer}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withNumBeamsPerRaster(Integer value) {
+           setNumBeamsPerRaster(new UN6(value));
+        return this;
+    }
+
+/**
+Set the number of 360 degree scans (aka, turns) a component of a scan makes in the time it takes the Primary Scan to complete one complete cycle/scan.
+
+@param value  An instances of type {@link Integer}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withNumRastersPerCycle(Integer value) {
+           setNumRastersPerCycle(new UN6(value));
+        return this;
+    }
+
+/**
+Set the number of discrete values observed in a single repeating scan period sequence.
+
+@param value  An instances of type {@link Integer}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withNumScanPositions(Integer value) {
+           setNumScanPositions(new UN6(value));
+        return this;
+    }
+
+/**
+Set the number of discrete values observed in multiple repeating scan period sequences.
+
+@param value  An instances of type {@link Integer}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withNumScanValues(Integer value) {
+           setNumScanValues(new UN6(value));
+        return this;
+    }
+
+/**
+Set the condition which controls or can be associated with the signal Scan Period variations.
+
+@param value  An instances of type {@link String}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanAdaptiveDriverDesc(String value) {
+           setScanAdaptiveDriverDesc(new S500(value));
+        return this;
+    }
+
+/**
+Set the rule which describes the signal Scan Period variations.
+
+@param value  An instances of type {@link String}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanAdaptiveRuleDesc(String value) {
+           setScanAdaptiveRuleDesc(new S500(value));
+        return this;
+    }
+
+/**
+Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanAngleAzStart(Double value) {
+           setScanAngleAzStart(new US_Deg_Signed(value));
+        return this;
+    }
+
+/**
+Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the horizontal plane (aka., azimuth).
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanAngleAzStop(Double value) {
+           setScanAngleAzStop(new US_Deg_Signed(value));
+        return this;
+    }
+
+/**
+Set the maximum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., elevation).
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanAngleElevStart(Double value) {
+           setScanAngleElevStart(new US_Deg_Signed(value));
+        return this;
+    }
+
+/**
+Set the minimum angle the subject emitter antenna mainbeam (aka., mainlobe) reaches in the vertical plane (aka., azimuth).
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanAngleElevStop(Double value) {
+           setScanAngleElevStop(new US_Deg_Signed(value));
+        return this;
+    }
+
+/**
+Set the scan duration
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanDwell(Double value) {
+           setScanDwell(new microsecs(value));
+        return this;
+    }
+
+/**
+Set the Sequence of dwell durations, with elevation and azimuth. Example: 20 deg hor, 15 deg elev, 5 second dwell, etc.
+
+@param value  An instances of type {@link String}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanDwellSequence(String value) {
+           setScanDwellSequence(new S500(value));
+        return this;
+    }
+
+/**
+Set the time duration for a complete dwell/group of scan cycles which all have the same Scan Period Discrete value before changing to a different one.
+
+@param value  An instances of type {@link Double}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanDwellTime(Double value) {
+           setScanDwellTime(new US_PRIChgRate(value));
+        return this;
+    }
+
+/**
+Set In Data Item ScanElevContinuous (US), indicate the if the scan elevation progression is a continuous sweep.
+
+@param value  An instances of type {@link ListCBO}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanElevContinuous(ListCBO value) {
+           setScanElevContinuous(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set In Data Item ScanPatternType (US), indicate whether the Scan Period is unmodulated, Patterned, Non-Patterned, or Adaptive.
+
+@param value  An instances of type {@link ListUS7}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanPatternType(ListUS7 value) {
+           setScanPatternType(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set In Data Item ScanType (US), indicate if the observed data was detected via a primary or secondary scan.
+
+@param value  An instances of type {@link ListUS8}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withScanType(ListUS8 value) {
+           setScanType(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the US:ObservedScanValues
+
+Complex element ObservedScanValues (US) contains data describing the discrete scan rate values and supporting statistical information.
+
+@param values  One or more instances of type {@link ObservedScanValues...}
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withObservedScanValues(ObservedScanValues... values) {
+        if (values!= null) {
+            for (ObservedScanValues value: values) {
+                getObservedScanValues().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the US:ObservedScanValues
+
+Complex element ObservedScanValues (US) contains data describing the discrete scan rate values and supporting statistical information.
+
+@param values  A collection of {@link ObservedScanValues} instances
+@return The current ObservedScanAnalysis object instance
+@since 3.1.0
+*/
+    public ObservedScanAnalysis withObservedScanValues(Collection<ObservedScanValues> values) {
+        if (values!= null) {
+            getObservedScanValues().addAll(values);
+        }
+        return this;
+    }
+
+/**
+ Get a string representation of this ObservedScanAnalysis instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "ObservedScanAnalysis {"
+ + (azBoresightAngle !=null? " azBoresightAngle [" + azBoresightAngle +"]" : "") 
+ + (azScanChangeRate !=null? " azScanChangeRate [" + azScanChangeRate +"]" : "") 
+ + (azScanRateExtremeMax !=null? " azScanRateExtremeMax [" + azScanRateExtremeMax +"]" : "") 
+ + (azScanRateExtremeMin !=null? " azScanRateExtremeMin [" + azScanRateExtremeMin +"]" : "") 
+ + (azScanRateMean !=null? " azScanRateMean [" + azScanRateMean +"]" : "") 
+ + (azScanRateMedian !=null? " azScanRateMedian [" + azScanRateMedian +"]" : "") 
+ + (azScanSector !=null? " azScanSector [" + azScanSector +"]" : "") 
+ + (azScanSectorMax !=null? " azScanSectorMax [" + azScanSectorMax +"]" : "") 
+ + (azScanVelocity !=null? " azScanVelocity [" + azScanVelocity +"]" : "") 
+ + (elevScanChangeRate !=null? " elevScanChangeRate [" + elevScanChangeRate +"]" : "") 
+ + (elevScanRateExtremeMax !=null? " elevScanRateExtremeMax [" + elevScanRateExtremeMax +"]" : "") 
+ + (elevScanRateExtremeMin !=null? " elevScanRateExtremeMin [" + elevScanRateExtremeMin +"]" : "") 
+ + (elevScanRateMean !=null? " elevScanRateMean [" + elevScanRateMean +"]" : "") 
+ + (elevScanRateMedian !=null? " elevScanRateMedian [" + elevScanRateMedian +"]" : "") 
+ + (elevScanSector !=null? " elevScanSector [" + elevScanSector +"]" : "") 
+ + (elevScanSectorMax !=null? " elevScanSectorMax [" + elevScanSectorMax +"]" : "") 
+ + (elevScanVelocity !=null? " elevScanVelocity [" + elevScanVelocity +"]" : "") 
+ + (numBeamPositionsPerScan !=null? " numBeamPositionsPerScan [" + numBeamPositionsPerScan +"]" : "") 
+ + (numBeamPositionsTotal !=null? " numBeamPositionsTotal [" + numBeamPositionsTotal +"]" : "") 
+ + (numBeamsPerRaster !=null? " numBeamsPerRaster [" + numBeamsPerRaster +"]" : "") 
+ + (numRastersPerCycle !=null? " numRastersPerCycle [" + numRastersPerCycle +"]" : "") 
+ + (numScanPositions !=null? " numScanPositions [" + numScanPositions +"]" : "") 
+ + (numScanValues !=null? " numScanValues [" + numScanValues +"]" : "") 
+ + (observedScanValues !=null? " observedScanValues [" + observedScanValues +"]" : "") 
+ + (scanAdaptiveDriverDesc !=null? " scanAdaptiveDriverDesc [" + scanAdaptiveDriverDesc +"]" : "") 
+ + (scanAdaptiveRuleDesc !=null? " scanAdaptiveRuleDesc [" + scanAdaptiveRuleDesc +"]" : "") 
+ + (scanAngleAzStart !=null? " scanAngleAzStart [" + scanAngleAzStart +"]" : "") 
+ + (scanAngleAzStop !=null? " scanAngleAzStop [" + scanAngleAzStop +"]" : "") 
+ + (scanAngleElevStart !=null? " scanAngleElevStart [" + scanAngleElevStart +"]" : "") 
+ + (scanAngleElevStop !=null? " scanAngleElevStop [" + scanAngleElevStop +"]" : "") 
+ + (scanDwell !=null? " scanDwell [" + scanDwell +"]" : "") 
+ + (scanDwellSequence !=null? " scanDwellSequence [" + scanDwellSequence +"]" : "") 
+ + (scanDwellTime !=null? " scanDwellTime [" + scanDwellTime +"]" : "") 
+ + (scanElevContinuous !=null? " scanElevContinuous [" + scanElevContinuous +"]" : "") 
+ + (scanPatternType !=null? " scanPatternType [" + scanPatternType +"]" : "") 
+ + (scanType !=null? " scanType [" + scanType +"]" : "") 
+ + (scansHorzContinuous !=null? " scansHorzContinuous [" + scansHorzContinuous +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this ObservedScanAnalysis instance
-   * configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "ObservedScanAnalysis {"
-      + (scanPatternType != null ? " scanPatternType [" + scanPatternType + "]" : "")
-      + (azScanSector != null ? " azScanSector [" + azScanSector + "]" : "")
-      + (azScanRateExtremeMax != null ? " azScanRateExtremeMax [" + azScanRateExtremeMax + "]" : "")
-      + (scanElevContinuous != null ? " scanElevContinuous [" + scanElevContinuous + "]" : "")
-      + (scanDwellSequence != null ? " scanDwellSequence [" + scanDwellSequence + "]" : "")
-      + (scanAdaptiveRuleDesc != null ? " scanAdaptiveRuleDesc [" + scanAdaptiveRuleDesc + "]" : "")
-      + (scansHorzContinuous != null ? " scansHorzContinuous [" + scansHorzContinuous + "]" : "")
-      + (observedScanValues != null ? " observedScanValues [" + observedScanValues + "]" : "")
-      + (scanAdaptiveDriverDesc != null ? " scanAdaptiveDriverDesc [" + scanAdaptiveDriverDesc + "]" : "")
-      + (azScanChangeRate != null ? " azScanChangeRate [" + azScanChangeRate + "]" : "")
-      + (scanAngleAzStart != null ? " scanAngleAzStart [" + scanAngleAzStart + "]" : "")
-      + (azScanSectorMax != null ? " azScanSectorMax [" + azScanSectorMax + "]" : "")
-      + (azScanRateMean != null ? " azScanRateMean [" + azScanRateMean + "]" : "")
-      + (numBeamPositionsPerScan != null ? " numBeamPositionsPerScan [" + numBeamPositionsPerScan + "]" : "")
-      + (elevScanVelocity != null ? " elevScanVelocity [" + elevScanVelocity + "]" : "")
-      + (numBeamsPerRaster != null ? " numBeamsPerRaster [" + numBeamsPerRaster + "]" : "")
-      + (elevScanChangeRate != null ? " elevScanChangeRate [" + elevScanChangeRate + "]" : "")
-      + (azScanVelocity != null ? " azScanVelocity [" + azScanVelocity + "]" : "")
-      + (numBeamPositionsTotal != null ? " numBeamPositionsTotal [" + numBeamPositionsTotal + "]" : "")
-      + (numScanValues != null ? " numScanValues [" + numScanValues + "]" : "")
-      + (scanDwellTime != null ? " scanDwellTime [" + scanDwellTime + "]" : "")
-      + (numScanPositions != null ? " numScanPositions [" + numScanPositions + "]" : "")
-      + (elevScanRateExtremeMin != null ? " elevScanRateExtremeMin [" + elevScanRateExtremeMin + "]" : "")
-      + (scanType != null ? " scanType [" + scanType + "]" : "")
-      + (scanDwell != null ? " scanDwell [" + scanDwell + "]" : "")
-      + (scanAngleElevStop != null ? " scanAngleElevStop [" + scanAngleElevStop + "]" : "")
-      + (elevScanSectorMax != null ? " elevScanSectorMax [" + elevScanSectorMax + "]" : "")
-      + (elevScanRateExtremeMax != null ? " elevScanRateExtremeMax [" + elevScanRateExtremeMax + "]" : "")
-      + (elevScanSector != null ? " elevScanSector [" + elevScanSector + "]" : "")
-      + (azBoresightAngle != null ? " azBoresightAngle [" + azBoresightAngle + "]" : "")
-      + (scanAngleElevStart != null ? " scanAngleElevStart [" + scanAngleElevStart + "]" : "")
-      + (elevScanRateMedian != null ? " elevScanRateMedian [" + elevScanRateMedian + "]" : "")
-      + (azScanRateExtremeMin != null ? " azScanRateExtremeMin [" + azScanRateExtremeMin + "]" : "")
-      + (elevScanRateMean != null ? " elevScanRateMean [" + elevScanRateMean + "]" : "")
-      + (scanAngleAzStop != null ? " scanAngleAzStop [" + scanAngleAzStop + "]" : "")
-      + (azScanRateMedian != null ? " azScanRateMedian [" + azScanRateMedian + "]" : "")
-      + (numRastersPerCycle != null ? " numRastersPerCycle [" + numRastersPerCycle + "]" : "")
-      + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link ObservedScanAnalysis} has no configuration requirement.
-   * <p>
-   * @return TRUE
-   */
-  public boolean isSet() {
-    return true;
-  }
+{@link ObservedScanAnalysis} has no configuration requirements.
+@return TRUE
+*/
+public boolean isSet(){
+return true;
+}
 
 }

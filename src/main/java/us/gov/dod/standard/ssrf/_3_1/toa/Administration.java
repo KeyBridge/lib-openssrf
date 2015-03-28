@@ -1,4 +1,4 @@
-package us.gov.dod.standard.ssrf._3_1.assignment;
+package us.gov.dod.standard.ssrf._3_1.toa;
 
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
@@ -16,24 +16,20 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
 /**
-DCSTrunk (US) is the Defense Communications System (DCS) trunk identifier for a specific "trunked" system. The identifier is assigned by the Defense Information Systems Agency (DISA).
+Administration contains the country for which this variance applies.
 
-Element of {@link Link}
-
-Example: <pre>
-* &lt;DCSTrunk cls="U"&gt;56789&lt;/DCSTrunk&gt;
-</pre>
+Element of {@link Variance}
 @author Key Bridge LLC <developer@keybridge.ch>
 @version 3.1.0, 03/27/2015
 */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DCSTrunk", propOrder = {
+@XmlType(name = "Administration", propOrder = {
     "value"
 })
-public class DCSTrunk {
+public class Administration {
 
     @XmlValue
-      private  String value;
+      private  ListCAO value;
 /**
 cls - Classification (Required) 
 
@@ -114,20 +110,20 @@ In attribute availability  (US),  enter data supporting legacy equipment certifi
 /**
 Get a value that is most probably correct.
 
-@return  a {@link String} instance
+@return  a {@link ListCAO} instance
 @since 3.1.0
 */
-public String getValue() {
+public ListCAO getValue() {
         return value;
     }
 
 /**
 Set a value that is most probably correct.
 
-@param value  a {@link String} instance
+@param value  a {@link ListCAO} instance
 @since 3.1.0
 */
-public void setValue(String value) {
+public void setValue(ListCAO value) {
         this.value = value;
     }
 
@@ -375,11 +371,11 @@ Determine if the Availability is configured.
 /**
 Set a value that is most probably correct.
 
-@param value  An instances of type {@link String}
-@return The current DCSTrunk object instance
+@param value  An instances of type {@link ListCAO}
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withValue(String value) {
+    public Administration withValue(ListCAO value) {
         return this;
     }
 
@@ -387,10 +383,10 @@ Set a value that is most probably correct.
 Set the classification of the current data item. This attribute is REQUIRED on each data item, even if the classification is "U".
 
 @param value  An instances of type {@link ListCCL}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withCls(ListCCL value) {
+    public Administration withCls(ListCCL value) {
         return this;
     }
 
@@ -398,10 +394,10 @@ Set the classification of the current data item. This attribute is REQUIRED on e
 Set a list of Common/Remarks idx values applicable to the current data item.
 
 @param values  One or more instances of type {@link BigInteger...}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withRemarks(BigInteger... values) {
+    public Administration withRemarks(BigInteger... values) {
         if (values!= null) {
             for (BigInteger value: values) {
                 getRemarks().add(value);
@@ -414,10 +410,10 @@ Set a list of Common/Remarks idx values applicable to the current data item.
 Set a list of Common/Remarks idx values applicable to the current data item.
 
 @param values  A collection of {@link Remarks} instances
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withRemarks(Collection<BigInteger> values) {
+    public Administration withRemarks(Collection<BigInteger> values) {
         if (values!= null) {
             getRemarks().addAll(values);
         }
@@ -428,10 +424,10 @@ Set a list of Common/Remarks idx values applicable to the current data item.
 Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
 
 @param values  One or more instances of type {@link BigInteger...}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withExtReferences(BigInteger... values) {
+    public Administration withExtReferences(BigInteger... values) {
         if (values!= null) {
             for (BigInteger value: values) {
                 getExtReferences().add(value);
@@ -444,10 +440,10 @@ Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data 
 Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
 
 @param values  A collection of {@link ExtReferences} instances
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withExtReferences(Collection<BigInteger> values) {
+    public Administration withExtReferences(Collection<BigInteger> values) {
         if (values!= null) {
             getExtReferences().addAll(values);
         }
@@ -458,10 +454,10 @@ Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data 
 Set one or more special handling instructions in sentence format, not code format. For example, "Approved for public release; distribution is unlimited". Multiple special handling instructions are separated by "|” (i.e., ASCII character #124).
 
 @param value  An instances of type {@link String}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withLegacyReleasability(String value) {
+    public Administration withLegacyReleasability(String value) {
         return this;
     }
 
@@ -469,10 +465,10 @@ Set one or more special handling instructions in sentence format, not code forma
 Set one or more data quality indicator(s), separated by "|” (i.e., ASCII character #124), for the contents of the associated Data Item For example, "Outlier" | "Non-CodeList".
 
 @param value  An instances of type {@link String}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withQuality(String value) {
+    public Administration withQuality(String value) {
         return this;
     }
 
@@ -480,10 +476,10 @@ Set one or more data quality indicator(s), separated by "|” (i.e., ASCII chara
 Set a value that is most probably correct.
 
 @param value  An instances of type {@link String}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withRecommendedValue(String value) {
+    public Administration withRecommendedValue(String value) {
         return this;
     }
 
@@ -491,10 +487,10 @@ Set a value that is most probably correct.
 Set a unique identifier for each Data Item in the Dataset. Within each Dataset, the idref value must be unique for every occurrence. If a received Dataset uses idrefs and it is expected that the Dataset will be exchanged, the idrefs should be considered required. If the receiving system is the permanent end of the line for the Dataset, the idrefs may be considered optional. 
 
 @param value  An instances of type {@link String}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withIdref(String value) {
+    public Administration withIdref(String value) {
         return this;
     }
 
@@ -502,21 +498,21 @@ Set a unique identifier for each Data Item in the Dataset. Within each Dataset, 
 Set In attribute availability  (US),  enter data supporting legacy equipment certification business practice of entering "Unknown", "N/A", "Not Available" or "Not Applicable", when data is not available.
 
 @param value  An instances of type {@link String}
-@return The current DCSTrunk object instance
+@return The current Administration object instance
 @since 3.1.0
 */
-    public DCSTrunk withAvailability(String value) {
+    public Administration withAvailability(String value) {
         return this;
     }
 
 /**
- Get a string representation of this DCSTrunk instance configuration.
+ Get a string representation of this Administration instance configuration.
 
 @return The current object instance configuration as a non-null String
 */
 @Override
  public String toString() {
- return "DCSTrunk {"
+ return "Administration {"
  + (availability !=null? " availability [" + availability +"]" : "") 
  + (cls !=null? " cls [" + cls +"]" : "") 
  + (extReferences !=null? " extReferences [" + extReferences +"]" : "") 
@@ -532,7 +528,7 @@ Set In attribute availability  (US),  enter data supporting legacy equipment cer
 /**
 Determine if the required fields in this SSRF data type instance are set.
 
-{@link DCSTrunk} requires {@link ListCCL cls}.
+{@link Administration} requires {@link ListCCL cls}.
 
 Note that this method only checks for the presence of required information; this method does not validate the information format.
 @return TRUE if required fields are set, otherwise FALSE

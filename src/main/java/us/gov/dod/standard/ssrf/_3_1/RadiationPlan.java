@@ -1,817 +1,1329 @@
-/*
- * Copyright 2014 Key Bridge LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf.SSRF;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
-import us.gov.dod.standard.ssrf._3_1.radiationplan.JammingAuthority;
-import us.gov.dod.standard.ssrf._3_1.radiationplan.JammingPlan;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * RadiationPlan (US) is used to describe the high level plans that can be
- * directed at a specific target or the mission plan for a group of targets.
- * <p>
- * Sub-Elements are {@link JammingAuthority}, {@link JammingPlan}
- * <p>
- * Example:
- * <pre>
- * &lt;RadiationPlan cls="U"&gt;
- *   &lt;Serial cls="U"&gt;USA::RP:123&lt;/Serial&gt;
- *   &lt;EntryDateTime cls="U"&gt;2011-12-25T00:00:00Z&lt;/EntryDateTime&gt;
- *   &lt;FreqMax cls="U"&gt;3107.56&lt;/FreqMax&gt;
- *   &lt;FreqMin cls="U"&gt;2999.753&lt;/FreqMin&gt;
- *   &lt;JCALevel cls="U"&gt;3&lt;/JCALevel&gt;
- *   &lt;LocationRef cls="U"&gt;D:AR:LO:123&lt;/LocationRef&gt;
- *   &lt;Name cls="U"&gt;A37&lt;/Name&gt;
- *   &lt;StartDateTime cls="U"&gt;2011-12-25T01:23:001Z&lt;/StartDateTime&gt;
- *   &lt;StopDateTime cls="U"&gt;2011-12-25T01:29:013Z&lt;/StopDateTime&gt;
- *   &lt;Version cls="U"&gt;1673&lt;/Version&gt;
- *   &lt;JammingAuthority&gt;
- *     &lt;JCACallSign cls="U"&gt;Checkmate 32&lt;/JCACallSign&gt;
- *     &lt;JCAFreq cls="U"&gt;3002&lt;/JCAFreq&gt;
- *     &lt;JCALevel cls="U"&gt;3&lt;/JCALevel&gt;
- *     &lt;JCAState cls="U"&gt;Denied&lt;/JCAState&gt;
- *   &lt;/JammingAuthority&gt;
- *   &lt;JammingPlan&gt;
- *     &lt;Name cls="U"&gt;A1370003&lt;/Name&gt;
- *     &lt;NumFreqs cls="U"&gt;204&lt;/NumFreqs&gt;
- *     &lt;Priority cls="U"&gt;High&lt;/Priority&gt;
- *     &lt;RequiredEffect cls="U"&gt;Deception &lt;/RequiredEffect&gt;
- *     &lt;RequiredPerformance cls="U"&gt;Partially Effective&lt;/RequiredPerformance&gt;
- *     &lt;StartDateTime cls="U"&gt;2011-12-25T01:23:001Z&lt;/StartDateTime&gt;
- *     &lt;StartLocationRef cls="U"&gt;D:AR:LO:123&lt;/StartLocationRef&gt;
- *     &lt;StartTrigger cls="U"&gt;Troops in Contact&lt;/StartTrigger&gt;
- *     &lt;StopDateTime cls="U"&gt;2011-12-25T01:29:013Z&lt;/StopDateTime&gt;
- *     &lt;StopLocationRef cls="U"&gt;D:AR:LO:123&lt;/StopLocationRef&gt;
- *     &lt;StopTrigger cls="U"&gt;Troops Not in Contact&lt;/StopTrigger&gt;
- *     &lt;Version cls="U"&gt;1673&lt;/Version&gt;
- *     &lt;Level3Auth cls="U"&gt;Yes&lt;/Level3Auth&gt;
- *     &lt;StandOffDist cls="U"&gt;120&lt;/StandOffDist&gt;
- *     &lt;JammingTarget &gt;
- *       &lt;AntStabilisation cls="U"&gt;At Bearing&lt;/AntStabilisation&gt;
- *       &lt;Bearing cls="U"&gt;271&lt;/Bearing&gt;
- *       &lt;FreqMax cls="U"&gt;3107.56&lt;/FreqMax&gt;
- *       &lt;FreqMin cls="U"&gt;2999.753&lt;/FreqMin&gt;
- *       &lt;Lat cls="U"&gt;394217.12N&lt;/Lat&gt;
- *       &lt;LoadsetRef cls="U"&gt;D:AR:LO:123&lt;/LoadsetRef&gt;
- *       &lt;LocationRef cls="U"&gt;D:AR:LO:123&lt;/LocationRef&gt;
- *       &lt;Lon cls="U"&gt;792823.5W&lt;/Lon&gt;
- *       &lt;PolarisationType cls="U"&gt;Oblique, angled, crossed&lt;/PolarisationType&gt;
- *       &lt;Power cls="U"&gt;100&lt;/Power&gt;
- *       &lt;TargetID cls="U"&gt;67981&lt;/TargetID&gt;
- *       &lt;JammingPerformance&gt;
- *         &lt;ActualEffect cls="U"&gt;Deception &lt;/ActualEffect&gt;
- *         &lt;ActualPerformance cls="U"&gt;Partially Effective&lt;/ActualPerformance&gt;
- *         &lt;ContinuousUpdate cls="U"&gt;Yes&lt;/ContinuousUpdate&gt;
- *         &lt;DesiredEffect cls="U"&gt;Deception &lt;/DesiredEffect&gt;
- *         &lt;DesiredPerformance cls="U"&gt;Partially Effective&lt;/DesiredPerformance&gt;
- *       &lt;/JammingPerformance&gt;
- *     &lt;/JammingTarget &gt;
- *   &lt;/JammingPlan&gt;
- * &lt;/RadiationPlan&gt;
- * </pre>
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+RadiationPlan (US) is used to describe the high level plans that can be directed at a specific target or the mission plan for a group of targets.
+
+Sub-Elements are {@link JammingAuthority}, {@link JammingPlan}
+
+Example: <pre>
+* &lt;RadiationPlan cls="U"&gt;
+*   &lt;Serial cls="U"&gt;USA::RP:123&lt;/Serial&gt;
+*   &lt;EntryDateTime cls="U"&gt;2011-12-25T00:00:00Z&lt;/EntryDateTime&gt;
+*   &lt;FreqMax cls="U"&gt;3107.56&lt;/FreqMax&gt;
+*   &lt;FreqMin cls="U"&gt;2999.753&lt;/FreqMin&gt;
+*   &lt;JCALevel cls="U"&gt;3&lt;/JCALevel&gt;
+*   &lt;LocationRef cls="U"&gt;D:AR:LO:123&lt;/LocationRef&gt;
+*   &lt;Name cls="U"&gt;A37&lt;/Name&gt;
+*   &lt;StartDateTime cls="U"&gt;2011-12-25T01:23:001Z&lt;/StartDateTime&gt;
+*   &lt;StopDateTime cls="U"&gt;2011-12-25T01:29:013Z&lt;/StopDateTime&gt;
+*   &lt;Version cls="U"&gt;1673&lt;/Version&gt;
+*   &lt;JammingAuthority&gt;
+*     &lt;JCACallSign cls="U"&gt;Checkmate 32&lt;/JCACallSign&gt;
+*     &lt;JCAFreq cls="U"&gt;3002&lt;/JCAFreq&gt;
+*     &lt;JCALevel cls="U"&gt;3&lt;/JCALevel&gt;
+*     &lt;JCAState cls="U"&gt;Denied&lt;/JCAState&gt;
+*   &lt;/JammingAuthority&gt;
+*   &lt;JammingPlan&gt;
+*     &lt;Name cls="U"&gt;A1370003&lt;/Name&gt;
+*     &lt;NumFreqs cls="U"&gt;204&lt;/NumFreqs&gt;
+*     &lt;Priority cls="U"&gt;High&lt;/Priority&gt;
+*     &lt;RequiredEffect cls="U"&gt;Deception &lt;/RequiredEffect&gt;
+*     &lt;RequiredPerformance cls="U"&gt;Partially Effective&lt;/RequiredPerformance&gt;
+*     &lt;StartDateTime cls="U"&gt;2011-12-25T01:23:001Z&lt;/StartDateTime&gt;
+*     &lt;StartLocationRef cls="U"&gt;D:AR:LO:123&lt;/StartLocationRef&gt;
+*     &lt;StartTrigger cls="U"&gt;Troops in Contact&lt;/StartTrigger&gt;
+*     &lt;StopDateTime cls="U"&gt;2011-12-25T01:29:013Z&lt;/StopDateTime&gt;
+*     &lt;StopLocationRef cls="U"&gt;D:AR:LO:123&lt;/StopLocationRef&gt;
+*     &lt;StopTrigger cls="U"&gt;Troops Not in Contact&lt;/StopTrigger&gt;
+*     &lt;Version cls="U"&gt;1673&lt;/Version&gt;
+*     &lt;Level3Auth cls="U"&gt;Yes&lt;/Level3Auth&gt;
+*     &lt;StandOffDist cls="U"&gt;120&lt;/StandOffDist&gt;
+*     &lt;JammingTarget &gt;
+*       &lt;AntStabilisation cls="U"&gt;At Bearing&lt;/AntStabilisation&gt;
+*       &lt;Bearing cls="U"&gt;271&lt;/Bearing&gt;
+*       &lt;FreqMax cls="U"&gt;3107.56&lt;/FreqMax&gt;
+*       &lt;FreqMin cls="U"&gt;2999.753&lt;/FreqMin&gt;
+*       &lt;Lat cls="U"&gt;394217.12N&lt;/Lat&gt;
+*       &lt;LoadsetRef cls="U"&gt;D:AR:LO:123&lt;/LoadsetRef&gt;
+*       &lt;LocationRef cls="U"&gt;D:AR:LO:123&lt;/LocationRef&gt;
+*       &lt;Lon cls="U"&gt;792823.5W&lt;/Lon&gt;
+*       &lt;PolarisationType cls="U"&gt;Oblique, angled, crossed&lt;/PolarisationType&gt;
+*       &lt;Power cls="U"&gt;100&lt;/Power&gt;
+*       &lt;TargetID cls="U"&gt;67981&lt;/TargetID&gt;
+*       &lt;JammingPerformance&gt;
+*         &lt;ActualEffect cls="U"&gt;Deception &lt;/ActualEffect&gt;
+*         &lt;ActualPerformance cls="U"&gt;Partially Effective&lt;/ActualPerformance&gt;
+*         &lt;ContinuousUpdate cls="U"&gt;Yes&lt;/ContinuousUpdate&gt;
+*         &lt;DesiredEffect cls="U"&gt;Deception &lt;/DesiredEffect&gt;
+*         &lt;DesiredPerformance cls="U"&gt;Partially Effective&lt;/DesiredPerformance&gt;
+*       &lt;/JammingPerformance&gt;
+*     &lt;/JammingTarget &gt;
+*   &lt;/JammingPlan&gt;
+* &lt;/RadiationPlan&gt;
+</pre>
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RadiationPlan", propOrder = {
-  "freqMax",
-  "freqMin",
-  "jcaLevel",
-  "locationRef",
-  "name",
-  "startDateTime",
-  "stopDateTime",
-  "version",
-  "jammingAuthority",
-  "jammingPlan"
+    "freqMax",
+    "freqMin",
+    "jcaLevel",
+    "locationRef",
+    "name",
+    "startDateTime",
+    "stopDateTime",
+    "version",
+    "jammingAuthority",
+    "jammingPlan"
 })
-public class RadiationPlan extends Common<RadiationPlan> {
+public class RadiationPlan
+    extends Common
+{
 
-  /**
-   * US:FreqMax - Maximum Frequency (Optional)
-   * <p>
-   * The frequency range maximum value planned for denial of use.
-   * <p>
-   * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
-   * <p>
-   * Format is UN(16,9) [0..1E9] (MHz)
-   */
-  @XmlElement(name = "FreqMax", required = false)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
-  private TDecimal freqMax;
-  /**
-   * US:FreqMin - Minimum Frequency (Required)
-   * <p>
-   * The frequency range minimum value planned for denial of use.
-   * <p>
-   * Format is UN(16,9) [0..1E9] (MHz)
-   */
-  @XmlElement(name = "FreqMin", required = true)
-  @XmlTypeValidator(type = TDecimal.class, value = XmlAdapterFREQM.class)
-  private TDecimal freqMin;
-  /**
-   * US:JCALevel - Authorisation Level (Optional)
-   * <p>
-   * The level of joint control authorization (JCA) required for the jamming
-   * plan.
-   * <p>
-   * Format is UN(2)
-   */
-  @XmlElement(name = "JCALevel", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUN2.class)
-  private TInteger jcaLevel;
-  /**
-   * US:LocationRef - Plan Location Serial (Optional)
-   * <p>
-   * The unique reference serial of an existing Location dataset.
-   * <p>
-   * Format is pattern (S29)
-   */
-  @XmlElement(name = "LocationRef", required = false)
-  @XmlTypeValidator(type = TSerial.class, value = XmlAdapterSERIAL.class)
-  private TSerial locationRef;
-  /**
-   * Name (US), enter a descriptive name for the Radiation Plan.
-   */
-  @XmlElement(name = "Name", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString name;
-  /**
-   * US:StartDateTime - Start Time (Optional)
-   * <p>
-   * The timestamp when the denial of spectrum use is planned to begin.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "StartDateTime", required = false)
-  private TDateTime startDateTime;
-  /**
-   * US:StopDateTime - Stop Time (Optional)
-   * <p>
-   * The timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
-   * Format is DateTime
-   */
-  @XmlElement(name = "StopDateTime", required = false)
-  private TDateTime stopDateTime;
-  /**
-   * US:Version - Radiation Plan Version (Optional)
-   * <p>
-   * The current version of the Radiation Plan.
-   * <p>
-   * Format is S10
-   */
-  @XmlElement(name = "Version", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS10.class)
-  private TString version;
-  /**
-   * US:JammingAuthority (Optional)
-   * <p>
-   * JammingAuthority (US) describes the Jamming Control Authority (JCA)
-   * authorisation information for the jamming plan and the controls affecting
-   * the level of authorisation.
-   */
-  @XmlElement(name = "JammingAuthority")
-  private Set<JammingAuthority> jammingAuthority;
-  /**
-   * US:JammingPlan (Optional)
-   * <p>
-   * JammingPlan (US) describes the start and stop conditions, priorities,
-   * desired effect, and desired effectiveness.
-   */
-  @XmlElement(name = "JammingPlan")
-  private Set<JammingPlan> jammingPlan;
+/**
+US:FreqMax - Maximum Frequency (Optional) 
 
-  /**
-   * Get the frequency range maximum value planned for denial of use.
-   * <p>
-   * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
-   * <p>
-   * @return the FreqMax value in a {@link TDecimal} data type
-   */
-  public TDecimal getFreqMax() {
-    return freqMax;
-  }
+The frequency range maximum value planned for denial of use.
 
-  /**
-   * Set the frequency range maximum value planned for denial of use.
-   * <p>
-   * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
-   * <p>
-   * @param value the FreqMax value in a {@link TDecimal} data type
-   */
-  public void setFreqMax(TDecimal value) {
-    this.freqMax = value;
-  }
+[XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
 
-  /**
-   * Determine if the FreqMax is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetFreqMax() {
-    return (this.freqMax != null ? this.freqMax.isSetValue() : false);
-  }
+Format is UN(16,9) [0..1E9] (MHz)
+@since 3.1.0
+*/
+    @XmlElement(name = "FreqMax", required = false)
+    private FreqM freqMax;
+/**
+US:FreqMin - Minimum Frequency (Required) 
 
-  /**
-   * Get the frequency range minimum value planned for denial of use.
-   * <p>
-   * @return the FreqMin value in a {@link TDecimal} data type
-   */
-  public TDecimal getFreqMin() {
-    return freqMin;
-  }
+The frequency range minimum value planned for denial of use.
 
-  /**
-   * Set the frequency range minimum value planned for denial of use.
-   * <p>
-   * @param value the FreqMin value in a {@link TDecimal} data type
-   */
-  public void setFreqMin(TDecimal value) {
-    this.freqMin = value;
-  }
+Format is UN(16,9) [0..1E9] (MHz)
+@since 3.1.0
+*/
+    @XmlElement(name = "FreqMin", required = true)
+      private  FreqM freqMin;
+/**
+US:JCALevel - Authorisation Level (Optional) 
 
-  /**
-   * Determine if the FreqMin is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDecimal} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetFreqMin() {
-    return (this.freqMin != null ? this.freqMin.isSetValue() : false);
-  }
+The level of joint control authorization (JCA) required for the jamming plan.
 
-  /**
-   * Get the level of joint control authorization (JCA) required for the jamming
-   * plan.
-   * <p>
-   * @return the JCALevel value in a {@link TInteger} data type
-   */
-  public TInteger getJCALevel() {
-    return jcaLevel;
-  }
+Format is UN(2)
+@since 3.1.0
+*/
+    @XmlElement(name = "JCALevel", required = false)
+    private UN2 jcaLevel;
+/**
+US:LocationRef - Plan Location Serial (Optional) 
 
-  /**
-   * Set the level of joint control authorization (JCA) required for the jamming
-   * plan.
-   * <p>
-   * @param value the JCALevel value in a {@link TInteger} data type
-   */
-  public void setJCALevel(TInteger value) {
-    this.jcaLevel = value;
-  }
+The unique reference serial of an existing Location dataset.
 
-  /**
-   * Determine if the JCALevel is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetJCALevel() {
-    return (this.jcaLevel != null ? this.jcaLevel.isSetValue() : false);
-  }
+Format is pattern (S29)
+@since 3.1.0
+*/
+    @XmlElement(name = "LocationRef", required = false)
+    private Serial locationRef;
+/**
+In Data Item Name  (US),  enter a descriptive name for the Radiation Plan.
+@since 3.1.0
+*/
+    @XmlElement(name = "Name", required = false)
+    private S100 name;
+/**
+US:StartDateTime - Start Time (Optional) 
 
-  /**
-   * Get the unique reference serial of an existing Location dataset.
-   * <p>
-   * @return the LocationRef value in a {@link TString} data type
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #getLocation()} instead.
-   */
-  @Deprecated
-  public TSerial getLocationRef() {
-    return locationRef;
-  }
+The timestamp when the denial of spectrum use is planned to begin.
 
-  /**
-   * Set the unique reference serial of an existing Location dataset.
-   * <p>
-   * @param value the LocationRef value in a {@link TString} data type
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLocation(Location)} instead.
-   */
-  @Deprecated
-  public void setLocationRef(TSerial value) {
-    this.locationRef = value;
-  }
+Format is DateTime
+@since 3.1.0
+*/
+    @XmlElement(name = "StartDateTime", required = false)
+    private DT startDateTime;
+/**
+US:StopDateTime - Stop Time (Optional) 
 
-  /**
-   * Determine if the LocationRef is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLocationRef() {
-    return (this.locationRef != null ? this.locationRef.isSetValue() : false);
-  }
+The timestamp when the denial of spectrum use is planned to be halted.
 
-  /**
-   * Get Name (US), enter a descriptive name for the Radiation Plan.
-   * <p>
-   * @return the Name value in a {@link TString} data type
-   */
-  public TString getName() {
-    return name;
-  }
+Format is DateTime
+@since 3.1.0
+*/
+    @XmlElement(name = "StopDateTime", required = false)
+    private DT stopDateTime;
+/**
+US:Version - Radiation Plan Version (Optional) 
 
-  /**
-   * Set Name (US), enter a descriptive name for the Radiation Plan.
-   * <p>
-   * @param value the Name value in a {@link TString} data type
-   */
-  public void setName(TString value) {
-    this.name = value;
-  }
+The current version of the Radiation Plan.
 
-  /**
-   * Determine if the Name is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetName() {
-    return (this.name != null ? this.name.isSetValue() : false);
-  }
+Format is S10
+@since 3.1.0
+*/
+    @XmlElement(name = "Version", required = false)
+    private S10 version;
+/**
+US:JammingAuthority (Optional)
 
-  /**
-   * Get the timestamp when the denial of spectrum use is planned to begin.
-   * <p>
-   * @return the StartDateTime value in a {@link TDate} data type
-   */
-  public TDateTime getStartDateTime() {
-    return startDateTime;
-  }
+JammingAuthority (US) describes the Jamming Control Authority (JCA) authorisation information for the jamming plan and the controls affecting the level of authorisation.
+@since 3.1.0
+*/
+    @XmlElement(name = "JammingAuthority")
+      private  Set<JammingAuthority> jammingAuthority;
+/**
+US:JammingPlan (Optional)
 
-  /**
-   * Set the timestamp when the denial of spectrum use is planned to begin.
-   * <p>
-   * @param value the StartDateTime value in a {@link TDate} data type
-   */
-  public void setStartDateTime(TDateTime value) {
-    this.startDateTime = value;
-  }
+JammingPlan (US) describes the start and stop conditions, priorities, desired effect, and desired effectiveness.
+@since 3.1.0
+*/
+    @XmlElement(name = "JammingPlan")
+      private  Set<JammingPlan> jammingPlan;
 
-  /**
-   * Determine if the StartDateTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetStartDateTime() {
-    return (this.startDateTime != null ? this.startDateTime.isSetValue() : false);
-  }
+/**
+Get the frequency range maximum value planned for denial of use.
 
-  /**
-   * Get the timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
-   * @return the StopDateTime value in a {@link TDate} data type
-   */
-  public TDateTime getStopDateTime() {
-    return stopDateTime;
-  }
+[XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
 
-  /**
-   * Set the timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
-   * @param value the StopDateTime value in a {@link TDate} data type
-   */
-  public void setStopDateTime(TDateTime value) {
-    this.stopDateTime = value;
-  }
-
-  /**
-   * Determine if the StopDateTime is configured.
-   * <p>
-   * If configured this method also inspects the {@link TDate} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetStopDateTime() {
-    return (this.stopDateTime != null ? this.stopDateTime.isSetValue() : false);
-  }
-
-  /**
-   * Get the current version of the Radiation Plan.
-   * <p>
-   * @return the Version value in a {@link TString} data type
-   */
-  public TString getVersion() {
-    return version;
-  }
-
-  /**
-   * Set the current version of the Radiation Plan.
-   * <p>
-   * @param value the Version value in a {@link TString} data type
-   */
-  public void setVersion(TString value) {
-    this.version = value;
-  }
-
-  /**
-   * Determine if the Version is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetVersion() {
-    return (this.version != null ? this.version.isSetValue() : false);
-  }
-
-  /**
-   * Get the US:JammingAuthority
-   * <p>
-   * Complex element JammingAuthority (US) describes the Jamming Control
-   * Authority (JCA) authorisation information for the jamming plan and the
-   * controls affecting the level of authorisation.
-   * <p>
-   * @return a non-null but possibly empty list of {@link JammingAuthority}
-   *         instances
-   */
-  public Set<JammingAuthority> getJammingAuthority() {
-    if (jammingAuthority == null) {
-      jammingAuthority = new HashSet<>();
+@return the FreqMax value in a {@link TFreqM} data type
+@since 3.1.0
+*/
+public FreqM getFreqMax() {
+        return freqMax;
     }
-    return this.jammingAuthority;
-  }
 
-  /**
-   * Determine if the JammingAuthority is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetJammingAuthority() {
-    return ((this.jammingAuthority != null) && (!this.jammingAuthority.isEmpty()));
-  }
+/**
+Set the frequency range maximum value planned for denial of use.
 
-  /**
-   * Clear the JammingAuthority field. This sets the field to null.
-   */
-  public void unsetJammingAuthority() {
-    this.jammingAuthority = null;
-  }
+[XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
 
-  /**
-   * Get the US:JammingPlan
-   * <p>
-   * Complex element JammingPlan (US) describes the start and stop conditions,
-   * priorities, desired effect, and desired effectiveness.
-   * <p>
-   * @return a non-null but possibly empty list of {@link JammingPlan} instances
-   */
-  public Set<JammingPlan> getJammingPlan() {
-    if (jammingPlan == null) {
-      jammingPlan = new HashSet<>();
+@param value the FreqMax value in a {@link TFreqM} data type
+@since 3.1.0
+*/
+public void setFreqMax(FreqM value) {
+        this.freqMax = value;
     }
-    return this.jammingPlan;
-  }
 
-  /**
-   * Determine if the JammingPlan is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetJammingPlan() {
-    return ((this.jammingPlan != null) && (!this.jammingPlan.isEmpty()));
-  }
+/**
+Determine if the FreqMax is configured.
 
-  /**
-   * Clear the JammingPlan field. This sets the field to null.
-   */
-  public void unsetJammingPlan() {
-    this.jammingPlan = null;
-  }
-
-  /**
-   * Set the frequency range maximum value planned for denial of use.
-   * <p>
-   * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withFreqMax(Double value) {
-    setFreqMax(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the frequency range minimum value planned for denial of use.
-   * <p>
-   * @param value An instances of type {@link Double}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withFreqMin(Double value) {
-    setFreqMin(new TDecimal(value));
-    return this;
-  }
-
-  /**
-   * Set the level of joint control authorization (JCA) required for the jamming
-   * plan.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withJCALevel(Integer value) {
-    setJCALevel(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the unique reference serial of an existing Location dataset.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current RadiationPlan object instance
-   * @deprecated SSRF references are managed automatically. Use
-   * {@link #withLocation(Location)} instead.
-   */
-  @Deprecated
-  public RadiationPlan withLocationRef(TSerial value) {
-    setLocationRef(value);
-    return this;
-  }
-
-  /**
-   * Set Name (US), enter a descriptive name for the Radiation Plan.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withName(String value) {
-    setName(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the timestamp when the denial of spectrum use is planned to begin.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withStartDateTime(Calendar value) {
-    setStartDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the timestamp when the denial of spectrum use is planned to begin.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withStartDateTime(Date value) {
-    setStartDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
-   * @param value An instances of type {@link Calendar}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withStopDateTime(Calendar value) {
-    setStopDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
-   * @param value An instances of type {@link Date}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withStopDateTime(Date value) {
-    setStopDateTime(new TDateTime(value));
-    return this;
-  }
-
-  /**
-   * Set the current version of the Radiation Plan.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withVersion(String value) {
-    setVersion(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the US:JammingAuthority
-   * <p>
-   * Complex element JammingAuthority (US) describes the Jamming Control
-   * Authority (JCA) authorisation information for the jamming plan and the
-   * controls affecting the level of authorisation.
-   * <p>
-   * @param values One or more instances of type {@link JammingAuthority}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withJammingAuthority(JammingAuthority... values) {
-    if (values != null) {
-      getJammingAuthority().addAll(new HashSet<>(Arrays.asList(values)));
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetFreqMax() {
+        return (this.freqMax!= null);
     }
-    return this;
-  }
 
-  /**
-   * Set the US:JammingAuthority
-   * <p>
-   * Complex element JammingAuthority (US) describes the Jamming Control
-   * Authority (JCA) authorisation information for the jamming plan and the
-   * controls affecting the level of authorisation.
-   * <p>
-   * @param values A collection of {@link JammingAuthority} instances
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withJammingAuthority(Set<JammingAuthority> values) {
-    if (values != null) {
-      getJammingAuthority().addAll(values);
+/**
+Get the frequency range minimum value planned for denial of use.
+
+@return the FreqMin value in a {@link TFreqM} data type
+@since 3.1.0
+*/
+public FreqM getFreqMin() {
+        return freqMin;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:JammingPlan
-   * <p>
-   * Complex element JammingPlan (US) describes the start and stop conditions,
-   * priorities, desired effect, and desired effectiveness.
-   * <p>
-   * @param values One or more instances of type {@link JammingPlan}
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withJammingPlan(JammingPlan... values) {
-    if (values != null) {
-      getJammingPlan().addAll(new HashSet<>(Arrays.asList(values)));
+/**
+Set the frequency range minimum value planned for denial of use.
+
+@param value the FreqMin value in a {@link TFreqM} data type
+@since 3.1.0
+*/
+public void setFreqMin(FreqM value) {
+        this.freqMin = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the US:JammingPlan
-   * <p>
-   * Complex element JammingPlan (US) describes the start and stop conditions,
-   * priorities, desired effect, and desired effectiveness.
-   * <p>
-   * @param values A collection of {@link JammingPlan} instances
-   * @return The current RadiationPlan object instance
-   */
-  public RadiationPlan withJammingPlan(Set<JammingPlan> values) {
-    if (values != null) {
-      getJammingPlan().addAll(values);
+/**
+Determine if the FreqMin is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetFreqMin() {
+        return (this.freqMin!= null);
     }
-    return this;
+
+/**
+Get the level of joint control authorization (JCA) required for the jamming plan.
+
+@return the JCALevel value in a {@link TUN2} data type
+@since 3.1.0
+*/
+public UN2 getJCALevel() {
+        return jcaLevel;
+    }
+
+/**
+Set the level of joint control authorization (JCA) required for the jamming plan.
+
+@param value the JCALevel value in a {@link TUN2} data type
+@since 3.1.0
+*/
+public void setJCALevel(UN2 value) {
+        this.jcaLevel = value;
+    }
+
+/**
+Determine if the JCALevel is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetJCALevel() {
+        return (this.jcaLevel!= null);
+    }
+
+/**
+Get the unique reference serial of an existing Location dataset.
+
+@return the LocationRef value in a {@link Serial} data type
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #getLocation()} instead.
+*/
+@Deprecated
+public Serial getLocationRef() {
+        return locationRef;
+    }
+
+/**
+Set the unique reference serial of an existing Location dataset.
+
+@param value the LocationRef value in a {@link Serial} data type
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #setLocation(Location)} instead.
+*/
+@Deprecated
+public void setLocationRef(Serial value) {
+        this.locationRef = value;
+    }
+
+/**
+Determine if the LocationRef is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetLocationRef() {
+        return (this.locationRef!= null);
+    }
+
+/**
+Get In Data Item Name  (US),  enter a descriptive name for the Radiation Plan.
+
+@return the Name value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getName() {
+        return name;
+    }
+
+/**
+Set In Data Item Name  (US),  enter a descriptive name for the Radiation Plan.
+
+@param value the Name value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setName(S100 value) {
+        this.name = value;
+    }
+
+/**
+Determine if the Name is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetName() {
+        return (this.name!= null);
+    }
+
+/**
+Get the timestamp when the denial of spectrum use is planned to begin.
+
+@return the StartDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public DT getStartDateTime() {
+        return startDateTime;
+    }
+
+/**
+Set the timestamp when the denial of spectrum use is planned to begin.
+
+@param value the StartDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public void setStartDateTime(DT value) {
+        this.startDateTime = value;
+    }
+
+/**
+Determine if the StartDateTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetStartDateTime() {
+        return (this.startDateTime!= null);
+    }
+
+/**
+Get the timestamp when the denial of spectrum use is planned to be halted.
+
+@return the StopDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public DT getStopDateTime() {
+        return stopDateTime;
+    }
+
+/**
+Set the timestamp when the denial of spectrum use is planned to be halted.
+
+@param value the StopDateTime value in a {@link TDT} data type
+@since 3.1.0
+*/
+public void setStopDateTime(DT value) {
+        this.stopDateTime = value;
+    }
+
+/**
+Determine if the StopDateTime is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetStopDateTime() {
+        return (this.stopDateTime!= null);
+    }
+
+/**
+Get the current version of the Radiation Plan.
+
+@return the Version value in a {@link TS10} data type
+@since 3.1.0
+*/
+public S10 getVersion() {
+        return version;
+    }
+
+/**
+Set the current version of the Radiation Plan.
+
+@param value the Version value in a {@link TS10} data type
+@since 3.1.0
+*/
+public void setVersion(S10 value) {
+        this.version = value;
+    }
+
+/**
+Determine if the Version is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetVersion() {
+        return (this.version!= null);
+    }
+
+/**
+Get the US:JammingAuthority
+
+Complex element JammingAuthority (US) describes the Jamming Control Authority (JCA) authorisation information for the jamming plan and the controls affecting the level of authorisation.
+
+@return  a {@link JammingAuthority} instance
+@since 3.1.0
+*/
+    public Set<JammingAuthority> getJammingAuthority() {
+        if (jammingAuthority == null) {
+            jammingAuthority = new HashSet<JammingAuthority>();
+        }
+        return this.jammingAuthority;
+    }
+
+/**
+Determine if the JammingAuthority is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetJammingAuthority() {
+        return ((this.jammingAuthority!= null)&&(!this.jammingAuthority.isEmpty()));
+    }
+
+/**
+  Clear the JammingAuthority field. This sets the field to null.
+ */
+    public void unsetJammingAuthority() {
+        this.jammingAuthority = null;
+    }
+
+/**
+Get the US:JammingPlan
+
+Complex element JammingPlan (US) describes the start and stop conditions, priorities, desired effect, and desired effectiveness.
+
+@return  a {@link JammingPlan} instance
+@since 3.1.0
+*/
+    public Set<JammingPlan> getJammingPlan() {
+        if (jammingPlan == null) {
+            jammingPlan = new HashSet<JammingPlan>();
+        }
+        return this.jammingPlan;
+    }
+
+/**
+Determine if the JammingPlan is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetJammingPlan() {
+        return ((this.jammingPlan!= null)&&(!this.jammingPlan.isEmpty()));
+    }
+
+/**
+  Clear the JammingPlan field. This sets the field to null.
+ */
+    public void unsetJammingPlan() {
+        this.jammingPlan = null;
+    }
+
+/**
+Set the frequency range maximum value planned for denial of use.
+
+[XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
+
+@param value  An instances of type {@link Double}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withFreqMax(Double value) {
+           setFreqMax(new FreqM(value));
+        return this;
+    }
+
+/**
+Set the frequency range minimum value planned for denial of use.
+
+@param value  An instances of type {@link TFreqM}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withFreqMin(TFreqM value) {
+        return this;
+    }
+
+/**
+Set the level of joint control authorization (JCA) required for the jamming plan.
+
+@param value  An instances of type {@link Integer}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withJCALevel(Integer value) {
+           setJCALevel(new UN2(value));
+        return this;
+    }
+
+/**
+Set the unique reference serial of an existing Location dataset.
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+@deprecated SSRF references are managed automatically. Use {@link #withLocation(Location)} instead.
+*/
+@Deprecated
+    public RadiationPlan withLocationRef(Serial value) {
+           setLocationRef(value);
+        return this;
+    }
+
+/**
+Set In Data Item Name  (US),  enter a descriptive name for the Radiation Plan.
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withName(String value) {
+           setName(new S100(value));
+        return this;
+    }
+
+/**
+Set the timestamp when the denial of spectrum use is planned to begin.
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withStartDateTime(Calendar value) {
+           setStartDateTime(new DT(value));
+        return this;
+    }
+/**
+Set the timestamp when the denial of spectrum use is planned to begin.
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withStartDateTime(Date value) {
+           setStartDateTime(new DT(value));
+        return this;
+    }
+
+/**
+Set the timestamp when the denial of spectrum use is planned to be halted.
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withStopDateTime(Calendar value) {
+           setStopDateTime(new DT(value));
+        return this;
+    }
+/**
+Set the timestamp when the denial of spectrum use is planned to be halted.
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withStopDateTime(Date value) {
+           setStopDateTime(new DT(value));
+        return this;
+    }
+
+/**
+Set the current version of the Radiation Plan.
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withVersion(String value) {
+           setVersion(new S10(value));
+        return this;
+    }
+
+/**
+Set the US:JammingAuthority
+
+Complex element JammingAuthority (US) describes the Jamming Control Authority (JCA) authorisation information for the jamming plan and the controls affecting the level of authorisation.
+
+@param values  One or more instances of type {@link JammingAuthority...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withJammingAuthority(JammingAuthority... values) {
+        if (values!= null) {
+            for (JammingAuthority value: values) {
+                getJammingAuthority().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the US:JammingAuthority
+
+Complex element JammingAuthority (US) describes the Jamming Control Authority (JCA) authorisation information for the jamming plan and the controls affecting the level of authorisation.
+
+@param values  A collection of {@link JammingAuthority} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withJammingAuthority(Collection<JammingAuthority> values) {
+        if (values!= null) {
+            getJammingAuthority().addAll(values);
+        }
+        return this;
+    }
+
+/**
+Set the US:JammingPlan
+
+Complex element JammingPlan (US) describes the start and stop conditions, priorities, desired effect, and desired effectiveness.
+
+@param values  One or more instances of type {@link JammingPlan...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withJammingPlan(JammingPlan... values) {
+        if (values!= null) {
+            for (JammingPlan value: values) {
+                getJammingPlan().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the US:JammingPlan
+
+Complex element JammingPlan (US) describes the start and stop conditions, priorities, desired effect, and desired effectiveness.
+
+@param values  A collection of {@link JammingPlan} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withJammingPlan(Collection<JammingPlan> values) {
+        if (values!= null) {
+            getJammingPlan().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastObservedBy(String value) {
+           setLastObservedBy(new S50(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withObservedFirstDateTime(Calendar value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withObservedFirstDateTime(Date value) {
+           setObservedFirstDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withObservedLastDateTime(Calendar value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withObservedLastDateTime(Date value) {
+           setObservedLastDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withApprovedBy(String value) {
+           setApprovedBy(new S50(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withApprovedDateTime(Calendar value) {
+           setApprovedDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withApprovedDateTime(Date value) {
+           setApprovedDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link ListCBO}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withRedacted(ListCBO value) {
+           setRedacted(new TString(value.value()));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withSerial(Serial value) {
+        setSerial(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link TDT}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withEntryDateTime(TDT value) {
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withEntryBy(Serial value) {
+           setEntryBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withOwner(Serial value) {
+           setOwner(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastChangeDateTime(Calendar value) {
+           setLastChangeDateTime(new DT(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastChangeDateTime(Date value) {
+           setLastChangeDateTime(new DT(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastChangeBy(Serial value) {
+           setLastChangeBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Calendar}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastReviewDate(Calendar value) {
+           setLastReviewDate(new D(value));
+        return this;
+    }
+/**
+Set 
+
+@param value  An instances of type {@link Date}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastReviewDate(Date value) {
+           setLastReviewDate(new D(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLastReviewBy(Serial value) {
+           setLastReviewBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link Serial}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withModAllowedBy(Serial value) {
+           setModAllowedBy(value);
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link ListCSU}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withState(ListCSU value) {
+           setState(new TString(value.value()));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withDescription(String value) {
+           setDescription(new S500(value));
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param value  An instances of type {@link SecurityClass}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withSecurityClass(SecurityClass value) {
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link CaseNum...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withCaseNum(CaseNum... values) {
+        if (values!= null) {
+            for (CaseNum value: values) {
+                getCaseNum().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link CaseNum} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withCaseNum(Collection<CaseNum> values) {
+        if (values!= null) {
+            getCaseNum().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link ExtReferenceRef...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withExtReferenceRef(ExtReferenceRef... values) {
+        if (values!= null) {
+            for (ExtReferenceRef value: values) {
+                getExtReferenceRef().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link ExtReferenceRef} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withExtReferenceRef(Collection<ExtReferenceRef> values) {
+        if (values!= null) {
+            getExtReferenceRef().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Common/Remarks idx values applicable to the current data item.
+
+@param values  One or more instances of type {@link Remarks...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withRemarks(Remarks... values) {
+        if (values!= null) {
+            for (Remarks value: values) {
+                getRemarks().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Common/Remarks idx values applicable to the current data item.
+
+@param values  A collection of {@link Remarks} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withRemarks(Collection<Remarks> values) {
+        if (values!= null) {
+            getRemarks().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set the classification of the current data item. This attribute is REQUIRED on each data item, even if the classification is "U".
+
+@param value  An instances of type {@link ListCCL}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withCls(ListCCL value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a list of country codes for which the current data item is releasable. For NATO, if this element is omitted, there is no releasability restriction for the data item. For the US, if this data item AND attribute US:legacy Releasability are both blank, there is no releasability restriction for the data item.
+
+@param values  One or more instances of type {@link ListCCY...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withReleasability(ListCCY... values) {
+        if (values!= null) {
+            for (ListCCY value: values) {
+                getReleasability().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of country codes for which the current data item is releasable. For NATO, if this element is omitted, there is no releasability restriction for the data item. For the US, if this data item AND attribute US:legacy Releasability are both blank, there is no releasability restriction for the data item.
+
+@param values  A collection of {@link Releasability} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withReleasability(Collection<ListCCY> values) {
+        if (values!= null) {
+            getReleasability().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  One or more instances of type {@link BigInteger...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withRemarkRef(BigInteger... values) {
+        if (values!= null) {
+            for (BigInteger value: values) {
+                getRemarkRef().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set 
+
+@param values  A collection of {@link RemarkRef} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withRemarkRef(Collection<BigInteger> values) {
+        if (values!= null) {
+            getRemarkRef().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
+
+@param values  One or more instances of type {@link BigInteger...}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withExtReferences(BigInteger... values) {
+        if (values!= null) {
+            for (BigInteger value: values) {
+                getExtReferences().add(value);
+            }
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set a list of Conmmon/ExtReferenceRef idx values applicable to the current data item.
+
+@param values  A collection of {@link ExtReferences} instances
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withExtReferences(Collection<BigInteger> values) {
+        if (values!= null) {
+            getExtReferences().addAll(values);
+        }
+        return this;
+    }
+
+    @Override
+/**
+Set one or more special handling instructions in sentence format, not code format. For example, "Approved for public release; distribution is unlimited". Multiple special handling instructions are separated by "|” (i.e., ASCII character #124).
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withLegacyReleasability(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set one or more data quality indicator(s), separated by "|” (i.e., ASCII character #124), for the contents of the associated Data Item For example, "Outlier" | "Non-CodeList".
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withQuality(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a value that is most probably correct.
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withRecommendedValue(String value) {
+        return this;
+    }
+
+    @Override
+/**
+Set a unique identifier for each Data Item in the Dataset. Within each Dataset, the idref value must be unique for every occurrence. If a received Dataset uses idrefs and it is expected that the Dataset will be exchanged, the idrefs should be considered required. If the receiving system is the permanent end of the line for the Dataset, the idrefs may be considered optional. 
+
+@param value  An instances of type {@link String}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+    public RadiationPlan withIdref(String value) {
+        return this;
+    }
+
+/**
+ Get a string representation of this RadiationPlan instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "RadiationPlan {"
+ + (freqMax !=null? " freqMax [" + freqMax +"]" : "") 
+ + (freqMin !=null? " freqMin [" + freqMin +"]" : "") 
+ + (jammingAuthority !=null? " jammingAuthority [" + jammingAuthority +"]" : "") 
+ + (jammingPlan !=null? " jammingPlan [" + jammingPlan +"]" : "") 
+ + (jcaLevel !=null? " jcaLevel [" + jcaLevel +"]" : "") 
+ + (locationRef !=null? " locationRef [" + locationRef +"]" : "") 
+ + (name !=null? " name [" + name +"]" : "") 
+ + (startDateTime !=null? " startDateTime [" + startDateTime +"]" : "") 
+ + (stopDateTime !=null? " stopDateTime [" + stopDateTime +"]" : "") 
+ + (version !=null? " version [" + version +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this RadiationPlan instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "RadiationPlan {"
-           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-           + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
-           + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
-           + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
-           + (version != null ? " version [" + version + "]" : "")
-           + "\n  RadiationPlan." + super.toString() + "\n"
-           + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link RadiationPlan} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TDate EntryDateTime}
-   * and {@link TDecimal FreqMin}.
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  @Override
-  public boolean isSet() {
-    return super.isSet() && isSetFreqMin();
-  }
+{@link RadiationPlan} requires {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime} and {@link FreqM FreqMin}.
+
+Note that this method only checks for the presence of required information; this method does not validate the information format.
+@return TRUE if required fields are set, otherwise FALSE
+*/
+@Override
+public boolean isSet(){
+return super.isSet() &&  isSetFreqMin();
+}
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
-  /**
-   * US:LocationRef - Plan Location Serial (Optional)
-   * <p>
-   * The unique reference serial of an existing Location dataset.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * @since 3.1.0
-   */
-  @XmlTransient
-  private Location location;
+/**
+US:LocationRef - Plan Location Serial (Optional) 
 
-  /**
-   * Get the unique reference serial of an existing Location dataset.
-   * <p>
-   * @return a {@link Location} instance
-   * @since 3.1.0
-   */
-  public Location getLocation() {
-    return location;
-  }
+The unique reference serial of an existing Location dataset.
 
-  /**
-   * Determine if the location field is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetLocation() {
-    return this.location != null;
-  }
+Format is pattern (S29)
+@since 3.1.0
+*/
+@XmlTransient
+private Location location;
 
-  /**
-   * Set the unique reference serial of an existing Location dataset.
-   * <p>
-   * @param value An instances of type {@link Location}
-   * @return The current RadiationPlan object instance
-   * @since 3.1.0
-   */
-  public RadiationPlan withLocation(Location value) {
-    this.location = value;
-    return this;
-  }
+/**
+Get the unique reference serial of an existing Location dataset.
+
+@return  a {@link Location} instance
+@since 3.1.0
+*/
+public Location getLocation(){
+return location;
+}
+/**
+ Determine if the location field is configured.
+  @return TRUE if the field is set, FALSE if the field is null
+ */
+public boolean isSetLocation() {
+    return this.location != null ;
+}
+
+/**
+Set the unique reference serial of an existing Location dataset.
+
+@param value  An instances of type {@link Location}
+@return The current RadiationPlan object instance
+@since 3.1.0
+*/
+public RadiationPlan withLocation(Location value) {
+this.location = value;
+return this;
+}
 
   /**
    * Update the SSRF data type references in this RadiationPlan record.
    * <p>
-   * This method builds the exported {@link #locationRef} field with values from
-   * the transient {@link #location} field. This method should typically be
-   * called after the RadiationPlan is configured and (optionally) before
-   * exporting an SSRF message.
-   */
+ */
   @Override
-  public void prepare() {
-    super.prepare();
-    this.locationRef = location != null ? location.getSerial() : null;
-  }
+public void prepare() {
+super.prepare();
+this.locationRef = location !=null? location.getSerial() : null;
+}
 
-  /**
-   * Update the SSRF data type references in this RadiationPlan record after
-   * loading from XML.
-   * <p>
-   * This method builds the transient {@link #location} with values from the
-   * imported {@link #locationRef} field. This method should typically be called
-   * after the RadiationPlan is imported from XML.
+/**
+   * Update the SSRF data type references in this RadiationPlan record after loading from XML.
+
+   * This method builds the transient {@link #location} with values
+   * from the imported {@link #locationRef} field. This method should
+   * typically be called after the RadiationPlan is imported from XML.
    * <p>
    * @param root the SSRF root instance
    * @since 3.1.0
    */
-  @Override
   public void postLoad(SSRF root) {
-    super.postLoad(root);
-    if (locationRef == null || !locationRef.isSetValue()) {
-      return;
-    }
-    for (Location instance : root.getLocation()) {
-      if (locationRef.equals(instance.getSerial())) {
-        location = instance;
-        return;
-      }
-    }
-  }//</editor-fold>
+if (locationRef==null || !locationRef.isSetValue() ) {return;}
+for(Location instance : root.getLocation()) {
+if(locationRef.equals(instance.getSerial())){
+location = instance;
+return;}
+}}//</editor-fold>
 
 }

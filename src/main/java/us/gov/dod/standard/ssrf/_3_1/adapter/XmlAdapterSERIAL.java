@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * XML data type adapter for the SSRF SERIAL data type.
@@ -26,7 +26,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterSERIAL extends XmlAdapter<String, TSerial> {
+public class XmlAdapterSERIAL extends XmlAdapter<String, Serial> {
 
   /**
    * "XmlAdapter". The standard adapter name prefix. This is used when
@@ -75,7 +75,7 @@ public class XmlAdapterSERIAL extends XmlAdapter<String, TSerial> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String marshal(TSerial v) throws Exception {
+  public String marshal(Serial v) throws Exception {
     return convert(v.getValue());
   }
 
@@ -91,8 +91,8 @@ public class XmlAdapterSERIAL extends XmlAdapter<String, TSerial> {
    *                   ValidationEventHandler.
    */
   @Override
-  public TSerial unmarshal(String v) throws Exception {
-    return new TSerial(convert(v));
+  public Serial unmarshal(String v) throws Exception {
+    return new Serial(convert(v));
   }
 
   /**

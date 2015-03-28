@@ -1,534 +1,481 @@
-/*
- * Copyright 2014 Key Bridge Global LLC.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import us.gov.dod.standard.ssrf._3_1.adapter.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
-import us.gov.dod.standard.ssrf._3_1.SSRequest;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCIC;
 
 /**
- * DiagramEndpoint defines an instance of an icon on the diagram.
- * <p>
- * Element of {@link SSRequest}
- * <p>
- * Sub-Element is {@link EndpointLocation}
- * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 09/30/2014
- */
+DiagramEndpoint defines an instance of an icon on the diagram.
+
+Element of {@link SSRequest}
+
+Sub-Element is {@link EndpointLocation}
+@author Key Bridge LLC <developer@keybridge.ch>
+@version 3.1.0, 03/27/2015
+*/
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DiagramEndpoint", propOrder = {
-  "iconType",
-  "endpointID",
-  "description",
-  "name",
-  "iconPosLeft",
-  "iconPosTop",
-  "pointToMultiPoint",
-  "endpointLocation"
+    "iconType",
+    "endpointID",
+    "description",
+    "name",
+    "iconPosLeft",
+    "iconPosTop",
+    "pointToMultiPoint",
+    "endpointLocation"
 })
 public class DiagramEndpoint {
 
-  /**
-   * IconType - Icon Type (Required)
-   * <p>
-   * The type of icon for the diagram endpoint.
-   * <p>
-   * Format is L:CIC
-   */
-  @XmlElement(name = "IconType", required = false)
-  private TString iconType;
-  /**
-   * EndpointID - Endpoint ID (Required)
-   * <p>
-   * An identifier for each icon on the diagram. Within a diagram, all
-   * EndPointIDs must be unique.
-   * <p>
-   * This is mapped from the v3.0 Name field.
-   * <p>
-   * Format is S20
-   */
-  @XmlElement(name = "EndpointID", required = true)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS20.class)
-  private TString endpointID;
-  /**
-   * Description - Endpoint Description (Optional)
-   * <p>
-   * A human-readable description of a diagram endpoint.
-   * <p>
-   * Format is S100
-   * <p>
-   * @since v3.1.0
-   */
-  @XmlElement(name = "Description", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS100.class)
-  private TString description;
-  /**
-   * Repurposed in v3.1.0 to be a short text endpoint description.
-   */
-  @XmlElement(name = "Name ", required = false)
-  @XmlTypeValidator(type = TString.class, value = XmlAdapterS15.class)
-  private TString name;
-  @XmlElement(name = "IconPosLeft ", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUS_TWIPS.class)
-  private TInteger iconPosLeft;
-  @XmlElement(name = "IconPosTop ", required = false)
-  @XmlTypeValidator(type = TInteger.class, value = XmlAdapterUS_TWIPS.class)
-  private TInteger iconPosTop;
-  /**
-   * PointToMultiPoint - Point to Multipoint Indicator (Optional)
-   * <p>
-   * "Yes" if the diagram endpoint participates in point-to-multipoint links.
-   * enter "No" if it participates in point-to-point links. Note for the USA:
-   * Required when operating between 932 and 935 MHz or 941 and 944 MHz.
-   * <p>
-   * Format is L:CBO
-   */
-  @XmlElement(name = "PointToMultiPoint", required = false)
-  private TString pointToMultiPoint;
-  /**
-   * EndpointLocation (Optional)
-   * <p>
-   * EndpointLocation defines locations where the diagram endpoint is allowed or
-   * forbidden from use.
-   */
-  @XmlElement(name = "EndpointLocation")
-  private Set<EndpointLocation> endpointLocation;
+/**
+IconType  - Icon Type (Required) 
 
-  /**
-   * Get the type of icon for the diagram endpoint.
-   * <p>
-   * @return the IconType value in a {@link TString} data type
-   */
-  public TString getIconType() {
-    return iconType;
-  }
+The type of icon for the diagram endpoint.
 
-  /**
-   * Set the type of icon for the diagram endpoint.
-   * <p>
-   * @param value the IconType value in a {@link TString} data type
-   */
-  public void setIconType(TString value) {
-    this.iconType = value;
-  }
+Format is L:CIC
+@since 3.1.0
+*/
+    @XmlElement(name = "IconType", required = false)
+    private TString iconType;
+/**
+EndpointID - Endpoint ID (Required) 
 
-  /**
-   * Determine if the IconType is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetIconType() {
-    return (this.iconType != null ? this.iconType.isSetValue() : false);
-  }
+An identifier for each icon on the diagram. Within a diagram, all EndPointIDs must be unique.
 
-  /**
-   * Get an identifier for each icon on the diagram. Within a diagram, all
-   * EndPointIDs must be unique.
-   * <p>
-   * @return the EndpointID value in a {@link TString} data type
-   */
-  public TString getEndpointID() {
-    return endpointID;
-  }
+Format is S20
+@since 3.1.0
+*/
+    @XmlElement(name = "EndpointID", required = true)
+      private  S20 endpointID;
+/**
+Description - Endpoint Description (Optional) 
 
-  /**
-   * Set an identifier for each icon on the diagram. Within a diagram, all
-   * EndPointIDs must be unique.
-   * <p>
-   * @param value the EndpointID value in a {@link TString} data type
-   */
-  public void setEndpointID(TString value) {
-    this.endpointID = value;
-  }
+A human-readable description of a diagram endpoint.
 
-  /**
-   * Determine if the EndpointID is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEndpointID() {
-    return (this.endpointID != null ? this.endpointID.isSetValue() : false);
-  }
+Format is S100
+@since 3.1.0
+*/
+    @XmlElement(name = "Description", required = false)
+    private S100 description;
+    @XmlElement(name = "Name ", required = false)
+    private S15 name;
+    @XmlElement(name = "IconPosLeft ", required = false)
+    private US_Twips iconPosLeft;
+    @XmlElement(name = "IconPosTop ", required = false)
+    private US_Twips iconPosTop;
+/**
+PointToMultiPoint  - Point to Multipoint Indicator (Optional) 
 
-  /**
-   * Get a human-readable description of a diagram endpoint.
-   * <p>
-   * @return the Description value in a {@link TString} data type
-   */
-  public TString getDescription() {
-    return description;
-  }
+"Yes" if the diagram endpoint participates in point-to-multipoint links. enter "No" if it participates in point-to-point links. Note for the USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
 
-  /**
-   * Set a human-readable description of a diagram endpoint.
-   * <p>
-   * @param value the Description value in a {@link TString} data type
-   */
-  public void setDescription(TString value) {
-    this.description = value;
-  }
+Format is L:CBO
+@since 3.1.0
+*/
+    @XmlElement(name = "PointToMultiPoint", required = false)
+    private TString pointToMultiPoint;
+/**
+EndpointLocation (Optional)
 
-  /**
-   * Determine if the Description is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetDescription() {
-    return (this.description != null ? this.description.isSetValue() : false);
-  }
+EndpointLocation defines locations where the diagram endpoint is allowed or forbidden from use.
+@since 3.1.0
+*/
+    @XmlElement(name = "EndpointLocation")
+      private  Set<EndpointLocation> endpointLocation;
 
-  /**
-   * Get a human-readable name of a diagram endpoint, or Station.
-   * <p>
-   * @return the Name value in a {@link TString} data type
-   */
-  public TString getName() {
-    return name;
-  }
+/**
+Get the type of icon for the diagram endpoint.
 
-  /**
-   * Set a human-readable name of a diagram endpoint, or Station.
-   * <p>
-   * @param value the Name value in a {@link TString} data type
-   */
-  public void setName(TString value) {
-    this.name = value;
-  }
-
-  /**
-   * Determine if the Name is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetName() {
-    return (this.name != null ? this.name.isSetValue() : false);
-  }
-
-  /**
-   * Get the X coordinate of the icon in twips. Twips are screen-independent
-   * units to ensure that the proportion of screen elements is the same on all
-   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
-   * <p>
-   * @return the IconPosLeft value in a {@link TInteger} data type
-   */
-  public TInteger getIconPosLeft() {
-    return iconPosLeft;
-  }
-
-  /**
-   * Set the X coordinate of the icon in twips. Twips are screen-independent
-   * units to ensure that the proportion of screen elements is the same on all
-   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
-   * <p>
-   * @param value the IconPosLeft value in a {@link TInteger} data type
-   */
-  public void setIconPosLeft(TInteger value) {
-    this.iconPosLeft = value;
-  }
-
-  /**
-   * Determine if the IconPosLeft is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetIconPosLeft() {
-    return (this.iconPosLeft != null ? this.iconPosLeft.isSetValue() : false);
-  }
-
-  /**
-   * Get the Y coordinate of the icon in twips." to read, "
-   * <p>
-   * Enter the Y coordinate of the icon in twips. Twips are screen-independent
-   * units to ensure that the proportion of screen elements is the same on all
-   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
-   * <p>
-   * @return the IconPosTop value in a {@link TInteger} data type
-   */
-  public TInteger getIconPosTop() {
-    return iconPosTop;
-  }
-
-  /**
-   * Set the Y coordinate of the icon in twips." to read, "
-   * <p>
-   * Enter the Y coordinate of the icon in twips. Twips are screen-independent
-   * units to ensure that the proportion of screen elements is the same on all
-   * display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
-   * <p>
-   * @param value the IconPosTop value in a {@link TInteger} data type
-   */
-  public void setIconPosTop(TInteger value) {
-    this.iconPosTop = value;
-  }
-
-  /**
-   * Determine if the IconPosTop is configured.
-   * <p>
-   * If configured this method also inspects the {@link TInteger} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetIconPosTop() {
-    return (this.iconPosTop != null ? this.iconPosTop.isSetValue() : false);
-  }
-
-  /**
-   * Get "Yes" if the diagram endpoint participates in point-to-multipoint links
-   * or "No" if it participates in point-to-point links.
-   * <p>
-   * Note for the USA: Required when operating between 932 and 935 MHz or 941
-   * and 944 MHz.
-   * <p>
-   * @return the PointToMultiPoint value in a {@link TString} data type
-   */
-  public TString getPointToMultiPoint() {
-    return pointToMultiPoint;
-  }
-
-  /**
-   * Set "Yes" if the diagram endpoint participates in point-to-multipoint links
-   * or "No" if it participates in point-to-point links.
-   * <p>
-   * Note for the USA: Required when operating between 932 and 935 MHz or 941
-   * and 944 MHz.
-   * <p>
-   * @param value the PointToMultiPoint value in a {@link TString} data type
-   */
-  public void setPointToMultiPoint(TString value) {
-    this.pointToMultiPoint = value;
-  }
-
-  /**
-   * Determine if the PointToMultiPoint is configured.
-   * <p>
-   * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetPointToMultiPoint() {
-    return (this.pointToMultiPoint != null ? this.pointToMultiPoint.isSetValue() : false);
-  }
-
-  /**
-   * Get the EndpointLocation
-   * <p>
-   * Complex element EndpointLocation defines locations where the diagram
-   * endpoint is allowed or forbidden from use.
-   * <p>
-   * @return a non-null but possibly empty list of {@link EndpointLocation}
-   *         instances
-   */
-  public Set<EndpointLocation> getEndpointLocation() {
-    if (endpointLocation == null) {
-      endpointLocation = new HashSet<>();
+@return the IconType value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getIconType() {
+        return iconType;
     }
-    return this.endpointLocation;
-  }
 
-  /**
-   * Determine if the EndpointLocation is configured.
-   * <p>
-   * @return TRUE if the field is set, FALSE if the field is null
-   */
-  public boolean isSetEndpointLocation() {
-    return ((this.endpointLocation != null) && (!this.endpointLocation.isEmpty()));
-  }
+/**
+Set the type of icon for the diagram endpoint.
 
-  /**
-   * Clear the EndpointLocation field. This sets the field to null.
-   */
-  public void unsetEndpointLocation() {
-    this.endpointLocation = null;
-  }
-
-  /**
-   * Set the type of icon for the diagram endpoint.
-   * <p>
-   * @param value An instances of type {@link ListCIC}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withIconType(ListCIC value) {
-    setIconType(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set an identifier for each icon on the diagram. Within a diagram, all
-   * EndPointIDs must be unique.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withEndpointID(String value) {
-    setEndpointID(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set a human-readable description of a diagram endpoint.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withDescription(String value) {
-    setDescription(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set a human-readable name of a diagram endpoint, or Station.
-   * <p>
-   * @param value An instances of type {@link String}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withName(String value) {
-    setName(new TString(value));
-    return this;
-  }
-
-  /**
-   * Set the X coordinate of the icon in twips.
-   * <p>
-   * Twips are screen-independent units to ensure that the proportion of screen
-   * elements is the same on all display systems. A twip is defined as being
-   * 1/1440 of an inch, or 17.639µm.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withIconPosLeft(Integer value) {
-    setIconPosLeft(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set the Y coordinate of the icon in twips." to read, "
-   * <p>
-   * In Data Item IconPosTop, enter the Y coordinate of the icon in twips. Twips
-   * are screen-independent units to ensure that the proportion of screen
-   * elements is the same on all display systems. A twip is defined as being
-   * 1/1440 of an inch, or 17.639µm.
-   * <p>
-   * @param value An instances of type {@link Integer}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withIconPosTop(Integer value) {
-    setIconPosTop(new TInteger(value));
-    return this;
-  }
-
-  /**
-   * Set "Yes" if the diagram endpoint participates in point-to-multipoint links
-   * or "No" if it participates in point-to-point links.
-   * <p>
-   * Note for the USA: Required when operating between 932 and 935 MHz or 941
-   * and 944 MHz.
-   * <p>
-   * @param value An instances of type {@link ListCBO}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withPointToMultiPoint(ListCBO value) {
-    setPointToMultiPoint(new TString(value.value()));
-    return this;
-  }
-
-  /**
-   * Set the EndpointLocation
-   * <p>
-   * Complex element EndpointLocation defines locations where the diagram
-   * endpoint is allowed or forbidden from use.
-   * <p>
-   * @param values One or more instances of type {@link EndpointLocation}
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withEndpointLocation(EndpointLocation... values) {
-    if (values != null) {
-      getEndpointLocation().addAll(new HashSet<>(Arrays.asList(values)));
+@param value the IconType value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setIconType(TString value) {
+        this.iconType = value;
     }
-    return this;
-  }
 
-  /**
-   * Set the EndpointLocation
-   * <p>
-   * Complex element EndpointLocation defines locations where the diagram
-   * endpoint is allowed or forbidden from use.
-   * <p>
-   * @param values A collection of {@link EndpointLocation} instances
-   * @return The current DiagramEndpoint object instance
-   */
-  public DiagramEndpoint withEndpointLocation(Set<EndpointLocation> values) {
-    if (values != null) {
-      getEndpointLocation().addAll(values);
+/**
+Determine if the IconType is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetIconType() {
+return (this.iconType!= null ? this.iconType.isSetValue() : false);
     }
-    return this;
+
+/**
+Get an identifier for each icon on the diagram. Within a diagram, all EndPointIDs must be unique.
+
+@return the EndpointID value in a {@link TS20} data type
+@since 3.1.0
+*/
+public S20 getEndpointID() {
+        return endpointID;
+    }
+
+/**
+Set an identifier for each icon on the diagram. Within a diagram, all EndPointIDs must be unique.
+
+@param value the EndpointID value in a {@link TS20} data type
+@since 3.1.0
+*/
+public void setEndpointID(S20 value) {
+        this.endpointID = value;
+    }
+
+/**
+Determine if the EndpointID is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEndpointID() {
+        return (this.endpointID!= null);
+    }
+
+/**
+Get a human-readable description of a diagram endpoint.
+
+@return the Description value in a {@link TS100} data type
+@since 3.1.0
+*/
+public S100 getDescription() {
+        return description;
+    }
+
+/**
+Set a human-readable description of a diagram endpoint.
+
+@param value the Description value in a {@link TS100} data type
+@since 3.1.0
+*/
+public void setDescription(S100 value) {
+        this.description = value;
+    }
+
+/**
+Determine if the Description is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetDescription() {
+        return (this.description!= null);
+    }
+
+/**
+Get a human-readable name of a diagram endpoint, or Station.
+
+@return the Name value in a {@link TS15} data type
+@since 3.1.0
+*/
+public S15 getName() {
+        return name;
+    }
+
+/**
+Set a human-readable name of a diagram endpoint, or Station.
+
+@param value the Name value in a {@link TS15} data type
+@since 3.1.0
+*/
+public void setName(S15 value) {
+        this.name = value;
+    }
+
+/**
+Determine if the Name is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetName() {
+        return (this.name != null);
+    }
+
+/**
+Get the X coordinate of the icon in twips. Twips are screen-independent units to ensure that the proportion of screen elements is the same on all display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+
+@return the IconPosLeft value in a {@link TUS_Twips} data type
+@since 3.1.0
+*/
+public US_Twips getIconPosLeft() {
+        return iconPosLeft;
+    }
+
+/**
+Set the X coordinate of the icon in twips. Twips are screen-independent units to ensure that the proportion of screen elements is the same on all display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+
+@param value the IconPosLeft value in a {@link TUS_Twips} data type
+@since 3.1.0
+*/
+public void setIconPosLeft(US_Twips value) {
+        this.iconPosLeft = value;
+    }
+
+/**
+Determine if the IconPosLeft is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetIconPosLeft() {
+        return (this.iconPosLeft != null);
+    }
+
+/**
+Get the Y coordinate of the icon in twips." to read, "In Data Item IconPosTop, enter the Y coordinate of the icon in twips. Twips are screen-independent units to ensure that the proportion of screen elements is the same on all display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+
+@return the IconPosTop value in a {@link TUS_Twips} data type
+@since 3.1.0
+*/
+public US_Twips getIconPosTop() {
+        return iconPosTop;
+    }
+
+/**
+Set the Y coordinate of the icon in twips." to read, "In Data Item IconPosTop, enter the Y coordinate of the icon in twips. Twips are screen-independent units to ensure that the proportion of screen elements is the same on all display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+
+@param value the IconPosTop value in a {@link TUS_Twips} data type
+@since 3.1.0
+*/
+public void setIconPosTop(US_Twips value) {
+        this.iconPosTop = value;
+    }
+
+/**
+Determine if the IconPosTop is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetIconPosTop() {
+        return (this.iconPosTop != null);
+    }
+
+/**
+Get "Yes" if the diagram endpoint participates in point-to-multipoint links. enter "No" if it participates in point-to-point links. Note for the USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
+
+@return the PointToMultiPoint value in a {@link TString} data type
+@since 3.1.0
+*/
+public TString getPointToMultiPoint() {
+        return pointToMultiPoint;
+    }
+
+/**
+Set "Yes" if the diagram endpoint participates in point-to-multipoint links. enter "No" if it participates in point-to-point links. Note for the USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
+
+@param value the PointToMultiPoint value in a {@link TString} data type
+@since 3.1.0
+*/
+public void setPointToMultiPoint(TString value) {
+        this.pointToMultiPoint = value;
+    }
+
+/**
+Determine if the PointToMultiPoint is configured.
+
+If configured this method also inspects the {@link TString} wrapped value.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetPointToMultiPoint() {
+return (this.pointToMultiPoint!= null ? this.pointToMultiPoint.isSetValue() : false);
+    }
+
+/**
+Get the EndpointLocation
+
+Complex element EndpointLocation defines locations where the diagram endpoint is allowed or forbidden from use.
+
+@return  a {@link EndpointLocation} instance
+@since 3.1.0
+*/
+    public Set<EndpointLocation> getEndpointLocation() {
+        if (endpointLocation == null) {
+            endpointLocation = new HashSet<EndpointLocation>();
+        }
+        return this.endpointLocation;
+    }
+
+/**
+Determine if the EndpointLocation is configured.
+
+@return TRUE if the field is set, FALSE if the field is null
+*/
+    public boolean isSetEndpointLocation() {
+        return ((this.endpointLocation!= null)&&(!this.endpointLocation.isEmpty()));
+    }
+
+/**
+  Clear the EndpointLocation field. This sets the field to null.
+ */
+    public void unsetEndpointLocation() {
+        this.endpointLocation = null;
+    }
+
+/**
+Set the type of icon for the diagram endpoint.
+
+@param value  An instances of type {@link ListCIC}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withIconType(ListCIC value) {
+           setIconType(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set an identifier for each icon on the diagram. Within a diagram, all EndPointIDs must be unique.
+
+@param value  An instances of type {@link TS20}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withEndpointID(TS20 value) {
+        return this;
+    }
+
+/**
+Set a human-readable description of a diagram endpoint.
+
+@param value  An instances of type {@link String}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withDescription(String value) {
+           setDescription(new S100(value));
+        return this;
+    }
+
+/**
+Set a human-readable name of a diagram endpoint, or Station.
+
+@param value  An instances of type {@link String}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withName(String value) {
+           setName(new S15(value));
+        return this;
+    }
+
+/**
+Set the X coordinate of the icon in twips. Twips are screen-independent units to ensure that the proportion of screen elements is the same on all display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+
+@param value  An instances of type {@link Integer}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withIconPosLeft(Integer value) {
+           setIconPosLeft(new US_Twips(value));
+        return this;
+    }
+
+/**
+Set the Y coordinate of the icon in twips." to read, "In Data Item IconPosTop, enter the Y coordinate of the icon in twips. Twips are screen-independent units to ensure that the proportion of screen elements is the same on all display systems. A twip is defined as being 1/1440 of an inch, or 17.639µm.
+
+@param value  An instances of type {@link Integer}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withIconPosTop(Integer value) {
+           setIconPosTop(new US_Twips(value));
+        return this;
+    }
+
+/**
+Set "Yes" if the diagram endpoint participates in point-to-multipoint links. enter "No" if it participates in point-to-point links. Note for the USA: Required when operating between 932 and 935 MHz or 941 and 944 MHz.
+
+@param value  An instances of type {@link ListCBO}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withPointToMultiPoint(ListCBO value) {
+           setPointToMultiPoint(new TString(value.value()));
+        return this;
+    }
+
+/**
+Set the EndpointLocation
+
+Complex element EndpointLocation defines locations where the diagram endpoint is allowed or forbidden from use.
+
+@param values  One or more instances of type {@link EndpointLocation...}
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withEndpointLocation(EndpointLocation... values) {
+        if (values!= null) {
+            for (EndpointLocation value: values) {
+                getEndpointLocation().add(value);
+            }
+        }
+        return this;
+    }
+
+/**
+Set the EndpointLocation
+
+Complex element EndpointLocation defines locations where the diagram endpoint is allowed or forbidden from use.
+
+@param values  A collection of {@link EndpointLocation} instances
+@return The current DiagramEndpoint object instance
+@since 3.1.0
+*/
+    public DiagramEndpoint withEndpointLocation(Collection<EndpointLocation> values) {
+        if (values!= null) {
+            getEndpointLocation().addAll(values);
+        }
+        return this;
+    }
+
+/**
+ Get a string representation of this DiagramEndpoint instance configuration.
+
+@return The current object instance configuration as a non-null String
+*/
+@Override
+ public String toString() {
+ return "DiagramEndpoint {"
+ + (description !=null? " description [" + description +"]" : "") 
+ + (endpointID !=null? " endpointID [" + endpointID +"]" : "") 
+ + (endpointLocation !=null? " endpointLocation [" + endpointLocation +"]" : "") 
+ + (iconPosLeft !=null? " iconPosLeft [" + iconPosLeft +"]" : "") 
+ + (iconPosTop !=null? " iconPosTop [" + iconPosTop +"]" : "") 
+ + (iconType !=null? " iconType [" + iconType +"]" : "") 
+ + (name !=null? " name [" + name +"]" : "") 
+ + (pointToMultiPoint !=null? " pointToMultiPoint [" + pointToMultiPoint +"]" : "") +
+"}";
   }
 
-  /**
-   * Get a string representation of this DiagramEndpoint instance configuration.
-   * <p>
-   * @return The current object instance configuration as a non-null String
-   */
-  @Override
-  public String toString() {
-    return "DiagramEndpoint {"
-           + (endpointID != null ? " endpointID [" + endpointID + "]" : "")
-           + (description != null ? " description [" + description + "]" : "")
-           + (pointToMultiPoint != null ? " pointToMultiPoint [" + pointToMultiPoint + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (iconPosLeft != null ? " iconPosLeft [" + iconPosLeft + "]" : "")
-           + (endpointLocation != null ? " endpointLocation [" + endpointLocation + "]" : "")
-           + (iconPosTop != null ? " iconPosTop [" + iconPosTop + "]" : "")
-           + (iconType != null ? " iconType [" + iconType + "]" : "")
-           + "}";
-  }
+/**
+Determine if the required fields in this SSRF data type instance are set.
 
-  /**
-   * Determine if the required fields in this SSRF data type instance are set.
-   * <p>
-   * {@link DiagramEndpoint} requires {@link TString EndpointID}.
-   * <p>
-   * Note that this method only checks for the presence of required information;
-   * this method does not validate the information format.
-   * <p>
-   * @return TRUE if required fields are set, otherwise FALSE
-   */
-  public boolean isSet() {
-    return isSetEndpointID();
-  }
+{@link DiagramEndpoint} requires {@link S20 EndpointID}.
+
+Note that this method only checks for the presence of required information; this method does not validate the information format.
+@return TRUE if required fields are set, otherwise FALSE
+*/
+public boolean isSet(){
+return  isSetEndpointID();
+}
 
 }
