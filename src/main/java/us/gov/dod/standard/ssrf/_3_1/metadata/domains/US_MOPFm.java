@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF US_MOPFm data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "US_MOPFm", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class US_MOPFm extends AMetadata<US_MOPFm> implements Comparable<US_MOPFm
    */
   public US_MOPFm(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new US_MOPFm instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public US_MOPFm(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

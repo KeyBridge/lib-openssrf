@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF US_Degrees data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "US_Degrees", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class US_Degrees extends AMetadata<US_Degrees> implements Comparable<US_D
    */
   public US_Degrees(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new US_Degrees instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public US_Degrees(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

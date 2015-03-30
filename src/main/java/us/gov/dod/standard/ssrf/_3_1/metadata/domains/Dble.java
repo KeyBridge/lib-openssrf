@@ -13,7 +13,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * This is a simple wrapper for an UNCONSTRAINED double number.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Dble", propOrder = {"value"})

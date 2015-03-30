@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF RotationRate data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RotationRate", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class RotationRate extends AMetadata<RotationRate> implements Comparable<
    */
   public RotationRate(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new RotationRate instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public RotationRate(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

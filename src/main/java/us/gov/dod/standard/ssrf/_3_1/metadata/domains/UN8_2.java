@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF UN8_2 data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UN8_2", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class UN8_2 extends AMetadata<UN8_2> implements Comparable<UN8_2> {
    */
   public UN8_2(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new UN8_2 instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public UN8_2(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

@@ -18,7 +18,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * The SSRF DT data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DT", propOrder = {"value"})
@@ -146,7 +146,7 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
   /**
    * Hash code is based upon the value.
    * <p>
-   * @return a unique hash code from the value
+   * @return a unique hash code from the value.
    */
   @Override
   public int hashCode() {
@@ -158,8 +158,8 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
   /**
    * Equality is based upon the value.
    * <p>
-   * @param obj the other object to compare
-   * @return TRUE if the values match exactly
+   * @param obj the other object to compare.
+   * @return TRUE if the values match exactly.
    */
   @Override
   public boolean equals(Object obj) {
@@ -169,7 +169,7 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    return Objects.equals(this.value, ((DT) obj).value);
+    return Objects.equals(this.value, ((DT) obj).getValue());
   }
 
   /**
@@ -187,6 +187,5 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
       return -1;
     }
     return -1 * this.value.compareTo(obj.getValue());
-  }
-//</editor-fold>
+  }//</editor-fold>
 }

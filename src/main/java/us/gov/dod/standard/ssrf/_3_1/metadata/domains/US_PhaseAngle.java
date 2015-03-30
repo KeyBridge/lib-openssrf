@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF US_PhaseAngle data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "US_PhaseAngle", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class US_PhaseAngle extends AMetadata<US_PhaseAngle> implements Comparabl
    */
   public US_PhaseAngle(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new US_PhaseAngle instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public US_PhaseAngle(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

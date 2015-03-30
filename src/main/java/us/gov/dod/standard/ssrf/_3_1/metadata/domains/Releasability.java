@@ -15,9 +15,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * class. This class wrapper is NOT used but exists only as a relic from the XML
  * schema.
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
-@Deprecated
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Releasability", propOrder = {"value"})
 public class Releasability extends AMetadata<Releasability> {

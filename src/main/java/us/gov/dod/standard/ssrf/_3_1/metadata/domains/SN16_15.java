@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF SN16_15 data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SN16_15", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class SN16_15 extends AMetadata<SN16_15> implements Comparable<SN16_15> {
    */
   public SN16_15(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new SN16_15 instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public SN16_15(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

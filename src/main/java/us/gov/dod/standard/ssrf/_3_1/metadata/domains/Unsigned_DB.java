@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF Unsigned_DB data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Unsigned_DB", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class Unsigned_DB extends AMetadata<Unsigned_DB> implements Comparable<Un
    */
   public Unsigned_DB(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new Unsigned_DB instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public Unsigned_DB(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

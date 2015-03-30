@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF UN18_6 data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UN18_6", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class UN18_6 extends AMetadata<UN18_6> implements Comparable<UN18_6> {
    */
   public UN18_6(BigDecimal value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new UN18_6 instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public UN18_6(Double value) {
+    this.value = BigDecimal.valueOf(value);
   }
 
   /**

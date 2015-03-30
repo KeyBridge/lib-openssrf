@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF Height_UN4 data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Height_UN4", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class Height_UN4 extends AMetadata<Height_UN4> implements Comparable<Heig
    */
   public Height_UN4(BigInteger value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new Height_UN4 instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public Height_UN4(Integer value) {
+    this.value = BigInteger.valueOf(value);
   }
 
   /**

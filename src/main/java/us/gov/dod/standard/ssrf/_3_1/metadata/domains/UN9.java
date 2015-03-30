@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF UN9 data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UN9", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class UN9 extends AMetadata<UN9> implements Comparable<UN9> {
    */
   public UN9(BigInteger value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new UN9 instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public UN9(Integer value) {
+    this.value = BigInteger.valueOf(value);
   }
 
   /**

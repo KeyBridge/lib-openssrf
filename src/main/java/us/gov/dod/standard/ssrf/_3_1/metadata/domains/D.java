@@ -16,7 +16,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF D data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "D", propOrder = {"value"})
@@ -164,7 +164,7 @@ public class D extends AMetadata<D> implements Comparable<D> {
   /**
    * Comparison and sorting is in REVERSE chronological order (Newest to Oldest)
    * <p>
-   * @param o the other object to compare
+   * @param obj the other object to compare
    * @return the reverse chronological order
    */
   @Override

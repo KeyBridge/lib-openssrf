@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF US_Twips data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "US_Twips", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class US_Twips extends AMetadata<US_Twips> implements Comparable<US_Twips
    */
   public US_Twips(BigInteger value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new US_Twips instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public US_Twips(Integer value) {
+    this.value = BigInteger.valueOf(value);
   }
 
   /**

@@ -14,7 +14,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * The SSRF SN2 data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
- * @version 3.1.0, 03/28/2015
+ * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SN2", propOrder = {"value"})
@@ -40,6 +40,15 @@ public class SN2 extends AMetadata<SN2> implements Comparable<SN2> {
    */
   public SN2(BigInteger value) {
     this.value = value;
+  }
+
+  /**
+   * Construct a new SN2 instance with the given initial value.
+   * <p>
+   * @param value The initial value.
+   */
+  public SN2(Integer value) {
+    this.value = BigInteger.valueOf(value);
   }
 
   /**
