@@ -128,7 +128,7 @@ public class TString extends AMetadata<TString> implements Comparable<TString> {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link TString} requires {@link ListCCL cls} and {@link String value}
+   * Requires {@link ListCCL cls} and {@link String value}
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
