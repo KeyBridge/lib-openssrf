@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 package us.gov.dod.standard.ssrf;
 
 import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * Enumerated list of serial number data types.
@@ -24,7 +24,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TSerial;
  * This class contains the codes that MUST be used as the third part of the
  * Serial of each dataset corresponding to each class type.
  * <p>
- * Used by {@link TSerial}
+ * Used by {@link Serial}
  * <p>
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
@@ -107,7 +107,7 @@ public enum EDatasetType {
    * @param clazz the object instance class type
    * @return the serial number data type code
    */
-  public static EDatasetType fromInstance(Class clazz) {
+  public static EDatasetType fromInstance(Class<?> clazz) {
     for (EDatasetType eSerialType : EDatasetType.values()) {
       if (eSerialType.getClazz().equals(clazz)) {
         return eSerialType;

@@ -8,6 +8,7 @@ import us.gov.dod.standard.ssrf._3_1.common.CaseNum;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.common.SecurityClass;
+import us.gov.dod.standard.ssrf._3_1.metadata.TDateTime;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -1087,7 +1088,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public Set<CaseNum> getCaseNum() {
     if (caseNum == null) {
-      caseNum = new HashSet<CaseNum>();
+      caseNum = new HashSet<>();
     }
     return this.caseNum;
   }
@@ -1119,7 +1120,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public Set<ExtReferenceRef> getExtReferenceRef() {
     if (extReferenceRef == null) {
-      extReferenceRef = new HashSet<ExtReferenceRef>();
+      extReferenceRef = new HashSet<>();
     }
     return this.extReferenceRef;
   }
@@ -1149,7 +1150,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public Set<Remarks> getRemarks() {
     if (remarks == null) {
-      remarks = new HashSet<Remarks>();
+      remarks = new HashSet<>();
     }
     return this.remarks;
   }
@@ -1213,7 +1214,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public Set<ListCCY> getReleasability() {
     if (releasability == null) {
-      releasability = new HashSet<ListCCY>();
+      releasability = new HashSet<>();
     }
     return this.releasability;
   }
@@ -1242,7 +1243,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public Set<BigInteger> getRemarkRef() {
     if (remarkRef == null) {
-      remarkRef = new HashSet<BigInteger>();
+      remarkRef = new HashSet<>();
     }
     return this.remarkRef;
   }
@@ -1272,7 +1273,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public Set<BigInteger> getExtReferences() {
     if (extReferences == null) {
-      extReferences = new HashSet<BigInteger>();
+      extReferences = new HashSet<>();
     }
     return this.extReferences;
   }
@@ -1765,9 +1766,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withCaseNum(CaseNum... values) {
     if (values != null) {
-      for (CaseNum value : values) {
-        getCaseNum().add(value);
-      }
+      getCaseNum().addAll(Arrays.asList(values));
     }
     return (T) this;
   }
@@ -1801,9 +1800,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withExtReferenceRef(ExtReferenceRef... values) {
     if (values != null) {
-      for (ExtReferenceRef value : values) {
-        getExtReferenceRef().add(value);
-      }
+      getExtReferenceRef().addAll(Arrays.asList(values));
     }
     return (T) this;
   }
@@ -1835,9 +1832,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withRemarks(Remarks... values) {
     if (values != null) {
-      for (Remarks value : values) {
-        getRemarks().add(value);
-      }
+      getRemarks().addAll(Arrays.asList(values));
     }
     return (T) this;
   }
@@ -1882,9 +1877,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withReleasability(ListCCY... values) {
     if (values != null) {
-      for (ListCCY value : values) {
-        getReleasability().add(value);
-      }
+      getReleasability().addAll(Arrays.asList(values));
     }
     return (T) this;
   }
@@ -1916,9 +1909,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   public T withRemarkRef(BigInteger... values) {
     if (values != null) {
-      for (BigInteger value : values) {
-        getRemarkRef().add(value);
-      }
+      getRemarkRef().addAll(Arrays.asList(values));
     }
     return (T) this;
   }

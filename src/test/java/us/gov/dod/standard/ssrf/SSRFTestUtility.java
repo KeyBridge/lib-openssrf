@@ -131,7 +131,7 @@ public class SSRFTestUtility {
              */
             String fieldClassName = field.getType().toString().replace("class ", "").trim();
             Class<?> fieldClass = Class.forName(fieldClassName);
-            if (fieldClass.equals(TSerial.class)) {
+            if (fieldClass.equals(Serial.class)) {
               continue;
             }
             /**
@@ -402,10 +402,10 @@ public class SSRFTestUtility {
       return new BigInteger(String.valueOf(new Random().nextInt(1024)));
     } else if (type.equals(Double.class)) {
       return new Random().nextInt(1024000) * new Random().nextDouble();
-    } else if (type.equals(TDate.class)) {
-      return new TDate(Calendar.getInstance());
-    } else if (type.equals(TDateTime.class)) {
-      return new TDateTime(Calendar.getInstance());
+    } else if (type.equals(D.class)) {
+      return new D(Calendar.getInstance());
+    } else if (type.equals(DT.class)) {
+      return new DT(Calendar.getInstance());
     } else if (type.isEnum()) {
       String fieldClassName = type.toString().replace("class ", "").trim();
       Class<?> fieldClass = Class.forName(fieldClassName);

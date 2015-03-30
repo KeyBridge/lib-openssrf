@@ -30,7 +30,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
  * case characters).
  * <p>
  * This abstract adapter converts between a {@link java.lang.String} and a
- * {@link TString}.
+ * {@link String}.
  * <p>
  * @author Jesse Caulfield
  */

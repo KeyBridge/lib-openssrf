@@ -118,7 +118,7 @@ public class TDateTime extends AMetadata<TDateTime> implements IMetadataType, Co
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link TCalendar} requires {@link ListCCL cls} and {@link Calendar value}
+   * {@link Calendar} requires {@link ListCCL cls} and {@link Calendar value}
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

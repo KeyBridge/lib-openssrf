@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf.SMADEF;
+import us.gov.dod.standard.ssrf.SSRF;
 
 /**
  * SchemaRoot is an abstract class extended by {@link SSRF} and {@link SMADEF}
