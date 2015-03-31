@@ -20,7 +20,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterMEMO;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS10;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS255;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS30;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -106,7 +110,7 @@ public abstract class AMetadata<T> {
    * Format is Memo
    */
   @XmlAttribute(name = "legacyReleasability")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
+  @XmlJavaTypeAdapter(value = XmlAdapterMEMO.class)
   protected String legacyReleasability;
   /**
    * US:quality - Data Quality (Optional)
@@ -118,7 +122,7 @@ public abstract class AMetadata<T> {
    * Format is S255
    */
   @XmlAttribute(name = "quality")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS255.class)
+  @XmlJavaTypeAdapter(value = XmlAdapterS255.class)
   protected String quality;
   /**
    * US:recommendedValue - Recommended Value (Optional)
@@ -128,7 +132,7 @@ public abstract class AMetadata<T> {
    * Format is Memo
    */
   @XmlAttribute(name = "recommendedValue")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringMEMO.class)
+  @XmlJavaTypeAdapter(value = XmlAdapterMEMO.class)
   protected String recommendedValue;
   /**
    * idref - Data Item ID (Optional)
@@ -143,7 +147,7 @@ public abstract class AMetadata<T> {
    * Format is S10
    */
   @XmlAttribute(name = "idref")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS10.class)
+  @XmlJavaTypeAdapter(value = XmlAdapterS10.class)
   protected String idref;
   /**
    * US:availability - data supporting legacy equipment certification business
@@ -153,7 +157,7 @@ public abstract class AMetadata<T> {
    * "Not Applicable", when data is not available.
    */
   @XmlAttribute(name = "availability")
-  @XmlTypeValidator(type = String.class, value = XmlAdapterStringS30.class)
+  @XmlJavaTypeAdapter(value = XmlAdapterS30.class)
   protected String availability;
 
   /**
