@@ -15,34 +15,33 @@
  */
 package us.gov.dod.standard.ssrf._3_1.adapter;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
- * Abstract Number type XmlAdapter; converts BigDecimal and BigInteger number
- * types.
+ * Abstract Number type XmlAdapter.
  * <p>
  * The maximum and minimum digit lengths plus inclusive values are identified in
  * the constructor.
- * <p>
+ * <ul>
+ * <li>
  * UN(x) is an unsigned (positive) integer number of maximum x digits
- * <p>
+ * </li><li>
  * SN(x) is an integer number of maximum x digits (excluding minus sign)
- * <p>
+ * </li><li>
  * UN(x.y) is a unsigned (positive) decimal number of maximum x digits
  * (excluding decimal point as applicable) and with a maximum of y decimal
  * digits.
- * <p>
+ * </li><li>
  * SN(x.y) is a decimal number of maximum x digits (excluding minus sign and
  * decimal point as applicable) and with a maximum of y decimal digits.
- * <p>
+ * </li><li>
  * double is a number expressing either in floating point (e.g. 0.015) or
  * scientific notation or using scientific notation (decimal number followed by
  * an optional "E" for the power of 10, e.g. 1.5E-2 representing the same value
  * 0.015).
+ * </li>
+ * </ul>
  * <p>
  * Where applicable, the types UN and SN may be followed by an additional range
  * constraint in the form [a .. b] meaning that the value is restricted to be
@@ -50,11 +49,8 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * parenthesis. Example: Sensitivity value: SN(5.2) [-140.00 .. -30.00] (dBm)
  * <p>
  * @author Jesse Caulfield
- * @since 3.1.0
- * @deprecated Values and are converted by type-specific adapters. This generic
- * adapter may be used in the future.
  */
-public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
+public class AXmlAdapterInteger extends XmlAdapter<String, Integer> {
 
   /**
    * "XmlAdapter". The standard adapter name prefix. This is used when
@@ -67,11 +63,6 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    * digits. e.g. 123.456 contains 6 digits.
    */
   private final Integer totalDigits;
-  /**
-   * The maximum number of fraction digits - number of digits to the right of
-   * the decimal. e.g. 123.456 contains 3 fraction digits.
-   */
-  private final Integer fractionDigits;
 
   /**
    * The minimum inclusive value. If NULL then the integer is signed (may take a
@@ -101,8 +92,8 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    *                       digits to the right of the decimal. e.g. 123.456
    *                       contains 3 fraction digits.
    */
-  public AXmlAdapterTNumber(Integer totalDigits, Integer fractionDigits) {
-    this(totalDigits, fractionDigits, null, null);
+  public AXmlAdapterInteger(Integer totalDigits) {
+    this(totalDigits, null, null);
   }
 
   /**
@@ -117,26 +108,22 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    * @param minInclusive   The minimum inclusive value.
    * @param maxInclusive   The maximum inclusive value.
    */
-  public AXmlAdapterTNumber(Integer totalDigits, Integer fractionDigits, Integer minInclusive, Integer maxInclusive) {
+  public AXmlAdapterInteger(Integer totalDigits, Integer minInclusive, Integer maxInclusive) {
     this.totalDigits = totalDigits;
-    this.fractionDigits = fractionDigits;
     this.minInclusive = minInclusive;
     this.maxInclusive = maxInclusive;
     /**
      * Build a DecimalFormat if configured.
      */
-    if (totalDigits != null && fractionDigits != null) {
+    if (totalDigits != null) {
       StringBuilder sb = new StringBuilder();
       for (int i = 0; i < totalDigits; i++) {
         sb.append("#");
-        if (i == (totalDigits - fractionDigits - 1)) {
-          sb.append(".");
-        }
       }
       /**
        * Require zeros on either side of the decimal point.
        */
-      this.df = new DecimalFormat(sb.toString().replace("#.#", "0.0"));
+      this.df = new DecimalFormat(sb.toString());
     }
   }
 
@@ -152,14 +139,14 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String marshal(Number v) throws Exception {
+  public String marshal(Integer v) throws Exception {
     /**
      * If there is no configured decimal format then print a plain, normal (non
      * scientific notation) number.
      */
-    return df != null
-           ? df.format(convert(v))
-           : new DecimalFormat("###").format(convert(v));
+    return v != null
+           ? df != null ? df.format(convert(v)) : new DecimalFormat("###").format(convert(v))
+           : null;
   }
 
   /**
@@ -174,8 +161,11 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    *                   ValidationEventHandler.
    */
   @Override
-  public Number unmarshal(String v) throws Exception {
-    return convert(v.contains(".") ? new BigDecimal(v) : new BigInteger(v));
+  public Integer unmarshal(String v) throws Exception {
+
+    return v != null
+           ? convert(Integer.valueOf(v))
+           : null;
   }
 
   /**
@@ -187,51 +177,20 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    *                   responsible for reporting the error to the user through
    *                   ValidationEventHandler.
    */
-  private Number convert(Number v) throws Exception {
+  private Integer convert(Integer v) throws Exception {
+    if (v == null) {
+      return null;
+    }
     /**
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for \"" + v + "\".");
+      throw new Exception("minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for " + v + ".");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for \"" + v + "\".");
+      throw new Exception("maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for " + v + ".");
     }
-    /**
-     * Validate the digit count.
-     */
-    if (v instanceof BigInteger) {
-      if (totalDigits != null && totalDigits < getDigitCount((BigInteger) v)) {
-        throw new Exception("Maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for \"" + v + "\".");
-      }
-      return v;
-    } else if (v instanceof BigDecimal || v instanceof Double) {
-      /**
-       * Just convert the number precision to ensure it matches the required XML
-       * style pattern.
-       */
-      return new BigDecimal(v.doubleValue()).setScale(totalDigits - fractionDigits, RoundingMode.HALF_UP);
-    }
-    /**
-     * Default fall through is a Double type.
-     */
     return v;
-  }
-
-  /**
-   * Internal helper method to get the number of digits from a BigInteger
-   * instance.
-   * <p>
-   * @param number a BigInteger number instance.
-   * @return the total number of digits in the number.
-   */
-  private int getDigitCount(BigInteger number) {
-    double factor = Math.log(2) / Math.log(10);
-    int digitCount = (int) (factor * number.bitLength() + 1);
-    if (BigInteger.TEN.pow(digitCount - 1).compareTo(number) > 0) {
-      return digitCount - 1;
-    }
-    return digitCount;
   }
 
   /**
@@ -241,7 +200,7 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    */
   public Number getMaxValue() {
     if (totalDigits != null) {
-      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits));
     } else {
       return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
     }
@@ -254,7 +213,7 @@ public class AXmlAdapterTNumber extends XmlAdapter<String, Number> {
    */
   public Number getMinValue() {
     if (totalDigits != null) {
-      return minInclusive != null ? minInclusive : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+      return minInclusive != null ? minInclusive : -Math.pow(10, (totalDigits));
     } else {
       return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
     }

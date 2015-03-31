@@ -22,7 +22,8 @@ import java.text.DecimalFormat;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
- * Abstract Number type XmlAdapter.
+ * Abstract Number type XmlAdapter; converts BigDecimal and BigInteger number
+ * types.
  * <p>
  * The maximum and minimum digit lengths plus inclusive values are identified in
  * the constructor.
@@ -152,9 +153,13 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    */
   @Override
   public String marshal(Number v) throws Exception {
-    return v != null
-           ? df != null ? df.format(convert(v)) : convert(v).toString()
-           : null;
+    /**
+     * If there is no configured decimal format then print a plain, normal (non
+     * scientific notation) number.
+     */
+    return df != null
+           ? df.format(convert(v))
+           : new DecimalFormat("###").format(convert(v));
   }
 
   /**
@@ -170,7 +175,9 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    */
   @Override
   public Number unmarshal(String v) throws Exception {
-    return v != null ? convert(v.contains(".") ? new BigDecimal(v) : new BigInteger(v)) : null;
+    return convert(fractionDigits != null
+                   ? new BigDecimal(v)
+                   : new BigInteger(v));
   }
 
   /**
@@ -183,26 +190,22 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                   ValidationEventHandler.
    */
   private Number convert(Number v) throws Exception {
-    if (v == null) {
-      return null;
-    }
     /**
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception("minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for " + v + ".");
+      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for " + v + ".");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception("maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for " + v + ".");
+      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for " + v + ".");
     }
     /**
      * Validate the digit count.
      */
     if (v instanceof BigInteger) {
       if (totalDigits != null && totalDigits < getDigitCount((BigInteger) v)) {
-        throw new Exception("maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
+        throw new Exception("Maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
       }
-      return v;
     } else if (v instanceof BigDecimal || v instanceof Double) {
       /**
        * Just convert the number precision to ensure it matches the required XML

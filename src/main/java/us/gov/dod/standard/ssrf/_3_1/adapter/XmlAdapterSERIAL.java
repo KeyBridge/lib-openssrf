@@ -18,7 +18,6 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * XML data type adapter for the SSRF SERIAL data type.
@@ -26,7 +25,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterSERIAL extends XmlAdapter<String, Serial> {
+public class XmlAdapterSERIAL extends XmlAdapter<String, String> {
 
   /**
    * "XmlAdapter". The standard adapter name prefix. This is used when
@@ -75,8 +74,8 @@ public class XmlAdapterSERIAL extends XmlAdapter<String, Serial> {
    *                   ValidationEventHandler.
    */
   @Override
-  public String marshal(Serial v) throws Exception {
-    return convert(v.getValue());
+  public String marshal(String v) throws Exception {
+    return convert(v);
   }
 
   /**
@@ -91,8 +90,8 @@ public class XmlAdapterSERIAL extends XmlAdapter<String, Serial> {
    *                   ValidationEventHandler.
    */
   @Override
-  public Serial unmarshal(String v) throws Exception {
-    return new Serial(convert(v));
+  public String unmarshal(String v) throws Exception {
+    return convert(v);
   }
 
   /**
@@ -106,17 +105,17 @@ public class XmlAdapterSERIAL extends XmlAdapter<String, Serial> {
    */
   private String convert(String v) throws Exception {
     if (minLength != null && v.length() < minLength) {
-      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
+      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }
     if (maxLength != null && v.length() > maxLength) {
-      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
+      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }
     /**
      * If the string length is valid then validate the pattern if applicable.
      */
     if (pattern != null) {
       if (!Pattern.compile(pattern).matcher(v).find()) {
-        throw new Exception("string pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + pattern + "] for \"" + v + "\".");
+        throw new Exception("String pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + pattern + "] for \"" + v + "\".");
       }
     }
     /**
