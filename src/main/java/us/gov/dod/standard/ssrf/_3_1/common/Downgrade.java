@@ -210,9 +210,9 @@ public class Downgrade {
   @Override
   public String toString() {
     return "Downgrade {"
-           + (date != null ? " date [" + date + "]" : "")
-           + (downcls != null ? " downcls [" + downcls + "]" : "")
-           + (downgradeInfo != null ? " downgradeInfo [" + downgradeInfo + "]" : "")
+           + (date != null ? "\n date [" + date + "]" : "")
+           + (downcls != null ? "\n downcls [" + downcls + "]" : "")
+           + (downgradeInfo != null ? "\n downgradeInfo [" + downgradeInfo + "]" : "")
            + "}";
   }
 

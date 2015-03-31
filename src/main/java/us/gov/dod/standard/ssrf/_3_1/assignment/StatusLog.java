@@ -306,11 +306,11 @@ public class StatusLog {
   @Override
   public String toString() {
     return "StatusLog {"
-           + (agencyCode != null ? " agencyCode [" + agencyCode + "]" : "")
-           + (comment != null ? " comment [" + comment + "]" : "")
-           + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
-           + (pocRef != null ? " pocRef [" + pocRef + "]" : "")
-           + (state != null ? " state [" + state + "]" : "")
+           + (agencyCode != null ? "\n agencyCode [" + agencyCode + "]" : "")
+           + (comment != null ? "\n comment [" + comment + "]" : "")
+           + (dateTime != null ? "\n dateTime [" + dateTime + "]" : "")
+           + (pocRef != null ? "\n pocRef [" + pocRef + "]" : "")
+           + (state != null ? "\n state [" + state + "]" : "")
            + "}";
   }
 

@@ -945,21 +945,21 @@ public class Trunking {
   @Override
   public String toString() {
     return "Trunking {"
-           + (additionalChannelsRationale != null ? " additionalChannelsRationale [" + additionalChannelsRationale + "]" : "")
-           + (dispatcher != null ? " dispatcher [" + dispatcher + "]" : "")
-           + (dispatcherExplanation != null ? " dispatcherExplanation [" + dispatcherExplanation + "]" : "")
-           + (estimatedExpansionCost != null ? " estimatedExpansionCost [" + estimatedExpansionCost + "]" : "")
-           + (expansionTargetDate != null ? " expansionTargetDate [" + expansionTargetDate + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (nsepUse != null ? " nsepUse [" + nsepUse + "]" : "")
-           + (numFreqsRequired != null ? " numFreqsRequired [" + numFreqsRequired + "]" : "")
-           + (numRepeaters != null ? " numRepeaters [" + numRepeaters + "]" : "")
-           + (numUsers != null ? " numUsers [" + numUsers + "]" : "")
-           + (previousSPSDocketNum != null ? " previousSPSDocketNum [" + previousSPSDocketNum + "]" : "")
-           + (requestForExpansion != null ? " requestForExpansion [" + requestForExpansion + "]" : "")
-           + (separateSystemJustification != null ? " separateSystemJustification [" + separateSystemJustification + "]" : "")
-           + (trunkingAssignment != null ? " trunkingAssignment [" + trunkingAssignment + "]" : "")
+           + (additionalChannelsRationale != null ? "\n additionalChannelsRationale [" + additionalChannelsRationale + "]" : "")
+           + (dispatcher != null ? "\n dispatcher [" + dispatcher + "]" : "")
+           + (dispatcherExplanation != null ? "\n dispatcherExplanation [" + dispatcherExplanation + "]" : "")
+           + (estimatedExpansionCost != null ? "\n estimatedExpansionCost [" + estimatedExpansionCost + "]" : "")
+           + (expansionTargetDate != null ? "\n expansionTargetDate [" + expansionTargetDate + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (nsepUse != null ? "\n nsepUse [" + nsepUse + "]" : "")
+           + (numFreqsRequired != null ? "\n numFreqsRequired [" + numFreqsRequired + "]" : "")
+           + (numRepeaters != null ? "\n numRepeaters [" + numRepeaters + "]" : "")
+           + (numUsers != null ? "\n numUsers [" + numUsers + "]" : "")
+           + (previousSPSDocketNum != null ? "\n previousSPSDocketNum [" + previousSPSDocketNum + "]" : "")
+           + (requestForExpansion != null ? "\n requestForExpansion [" + requestForExpansion + "]" : "")
+           + (separateSystemJustification != null ? "\n separateSystemJustification [" + separateSystemJustification + "]" : "")
+           + (trunkingAssignment != null ? "\n trunkingAssignment [" + trunkingAssignment + "]" : "")
            + "}";
   }
 

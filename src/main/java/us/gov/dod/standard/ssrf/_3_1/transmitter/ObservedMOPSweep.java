@@ -628,16 +628,16 @@ public class ObservedMOPSweep {
   @Override
   public String toString() {
     return "ObservedMOPSweep {"
-           + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
-           + (mopFlyBackInterval != null ? " mopFlyBackInterval [" + mopFlyBackInterval + "]" : "")
-           + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
-           + (mopRepetionInterval != null ? " mopRepetionInterval [" + mopRepetionInterval + "]" : "")
-           + (mopStepAM != null ? " mopStepAM [" + mopStepAM + "]" : "")
-           + (mopStepCW != null ? " mopStepCW [" + mopStepCW + "]" : "")
-           + (mopStepFM != null ? " mopStepFM [" + mopStepFM + "]" : "")
-           + (mopStepPM != null ? " mopStepPM [" + mopStepPM + "]" : "")
-           + (mopSweepPeriod != null ? " mopSweepPeriod [" + mopSweepPeriod + "]" : "")
-           + (observedMOPSequence != null ? " observedMOPSequence [" + observedMOPSequence + "]" : "")
+           + (mopDutyCycle != null ? "\n mopDutyCycle [" + mopDutyCycle + "]" : "")
+           + (mopFlyBackInterval != null ? "\n mopFlyBackInterval [" + mopFlyBackInterval + "]" : "")
+           + (mopNumElements != null ? "\n mopNumElements [" + mopNumElements + "]" : "")
+           + (mopRepetionInterval != null ? "\n mopRepetionInterval [" + mopRepetionInterval + "]" : "")
+           + (mopStepAM != null ? "\n mopStepAM [" + mopStepAM + "]" : "")
+           + (mopStepCW != null ? "\n mopStepCW [" + mopStepCW + "]" : "")
+           + (mopStepFM != null ? "\n mopStepFM [" + mopStepFM + "]" : "")
+           + (mopStepPM != null ? "\n mopStepPM [" + mopStepPM + "]" : "")
+           + (mopSweepPeriod != null ? "\n mopSweepPeriod [" + mopSweepPeriod + "]" : "")
+           + (observedMOPSequence != null ? "\n observedMOPSequence [" + observedMOPSequence + "]" : "")
            + "}";
   }
 

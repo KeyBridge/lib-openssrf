@@ -376,11 +376,11 @@ public class AntPattern {
   @Override
   public String toString() {
     return "AntPattern {"
-           + (antPatternPoint != null ? " antPatternPoint [" + antPatternPoint + "]" : "")
-           + (calculated != null ? " calculated [" + calculated + "]" : "")
-           + (cutAngle != null ? " cutAngle [" + cutAngle + "]" : "")
-           + (cutType != null ? " cutType [" + cutType + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (antPatternPoint != null ? "\n antPatternPoint [" + antPatternPoint + "]" : "")
+           + (calculated != null ? "\n calculated [" + calculated + "]" : "")
+           + (cutAngle != null ? "\n cutAngle [" + cutAngle + "]" : "")
+           + (cutType != null ? "\n cutType [" + cutType + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

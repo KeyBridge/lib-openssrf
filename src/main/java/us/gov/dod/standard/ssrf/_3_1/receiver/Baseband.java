@@ -579,15 +579,15 @@ public class Baseband {
   @Override
   public String toString() {
     return "Baseband {"
-           + (bitDuration != null ? " bitDuration [" + bitDuration + "]" : "")
-           + (modFreqMax != null ? " modFreqMax [" + modFreqMax + "]" : "")
-           + (modFreqMin != null ? " modFreqMin [" + modFreqMin + "]" : "")
-           + (ookPattern != null ? " ookPattern [" + ookPattern + "]" : "")
-           + (signalDurationMax != null ? " signalDurationMax [" + signalDurationMax + "]" : "")
-           + (signalDurationMin != null ? " signalDurationMin [" + signalDurationMin + "]" : "")
-           + (signalSequenceDesc != null ? " signalSequenceDesc [" + signalSequenceDesc + "]" : "")
-           + (signalShape != null ? " signalShape [" + signalShape + "]" : "")
-           + (signalType != null ? " signalType [" + signalType + "]" : "")
+           + (bitDuration != null ? "\n bitDuration [" + bitDuration + "]" : "")
+           + (modFreqMax != null ? "\n modFreqMax [" + modFreqMax + "]" : "")
+           + (modFreqMin != null ? "\n modFreqMin [" + modFreqMin + "]" : "")
+           + (ookPattern != null ? "\n ookPattern [" + ookPattern + "]" : "")
+           + (signalDurationMax != null ? "\n signalDurationMax [" + signalDurationMax + "]" : "")
+           + (signalDurationMin != null ? "\n signalDurationMin [" + signalDurationMin + "]" : "")
+           + (signalSequenceDesc != null ? "\n signalSequenceDesc [" + signalSequenceDesc + "]" : "")
+           + (signalShape != null ? "\n signalShape [" + signalShape + "]" : "")
+           + (signalType != null ? "\n signalType [" + signalType + "]" : "")
            + "}";
   }
 

@@ -208,9 +208,9 @@ public class ClsDerived {
   @Override
   public String toString() {
     return "ClsDerived {"
-           + (date != null ? " date [" + date + "]" : "")
-           + (org != null ? " org [" + org + "]" : "")
-           + (title != null ? " title [" + title + "]" : "")
+           + (date != null ? "\n date [" + date + "]" : "")
+           + (org != null ? "\n org [" + org + "]" : "")
+           + (title != null ? "\n title [" + title + "]" : "")
            + "}";
   }
 

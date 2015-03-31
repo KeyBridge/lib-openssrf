@@ -263,10 +263,10 @@ public class EMail {
   @Override
   public String toString() {
     return "EMail {"
-           + (address != null ? " address [" + address + "]" : "")
-           + (maxCls != null ? " maxCls [" + maxCls + "]" : "")
-           + (preferred != null ? " preferred [" + preferred + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (address != null ? "\n address [" + address + "]" : "")
+           + (maxCls != null ? "\n maxCls [" + maxCls + "]" : "")
+           + (preferred != null ? "\n preferred [" + preferred + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

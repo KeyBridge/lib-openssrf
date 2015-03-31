@@ -236,9 +236,9 @@ public class Deployment {
   @Override
   public String toString() {
     return "Deployment {"
-           + (installation != null ? " installation [" + installation + "]" : "")
-           + (status != null ? " status [" + status + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (installation != null ? "\n installation [" + installation + "]" : "")
+           + (status != null ? "\n status [" + status + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

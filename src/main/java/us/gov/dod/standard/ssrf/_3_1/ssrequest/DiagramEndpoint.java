@@ -487,14 +487,14 @@ public class DiagramEndpoint {
   @Override
   public String toString() {
     return "DiagramEndpoint {"
-           + (description != null ? " description [" + description + "]" : "")
-           + (endpointID != null ? " endpointID [" + endpointID + "]" : "")
-           + (endpointLocation != null ? " endpointLocation [" + endpointLocation + "]" : "")
-           + (iconPosLeft != null ? " iconPosLeft [" + iconPosLeft + "]" : "")
-           + (iconPosTop != null ? " iconPosTop [" + iconPosTop + "]" : "")
-           + (iconType != null ? " iconType [" + iconType + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (pointToMultiPoint != null ? " pointToMultiPoint [" + pointToMultiPoint + "]" : "")
+           + (description != null ? "\n description [" + description + "]" : "")
+           + (endpointID != null ? "\n endpointID [" + endpointID + "]" : "")
+           + (endpointLocation != null ? "\n endpointLocation [" + endpointLocation + "]" : "")
+           + (iconPosLeft != null ? "\n iconPosLeft [" + iconPosLeft + "]" : "")
+           + (iconPosTop != null ? "\n iconPosTop [" + iconPosTop + "]" : "")
+           + (iconType != null ? "\n iconType [" + iconType + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (pointToMultiPoint != null ? "\n pointToMultiPoint [" + pointToMultiPoint + "]" : "")
            + "}";
   }
 

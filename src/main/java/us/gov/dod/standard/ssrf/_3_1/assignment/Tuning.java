@@ -451,13 +451,13 @@ public class Tuning {
   @Override
   public String toString() {
     return "Tuning {"
-           + (exclusive != null ? " exclusive [" + exclusive + "]" : "")
-           + (freqSep != null ? " freqSep [" + freqSep + "]" : "")
-           + (freqSepType != null ? " freqSepType [" + freqSepType + "]" : "")
-           + (numFreq != null ? " numFreq [" + numFreq + "]" : "")
-           + (priority != null ? " priority [" + priority + "]" : "")
-           + (requestedFreq != null ? " requestedFreq [" + requestedFreq + "]" : "")
-           + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
+           + (exclusive != null ? "\n exclusive [" + exclusive + "]" : "")
+           + (freqSep != null ? "\n freqSep [" + freqSep + "]" : "")
+           + (freqSepType != null ? "\n freqSepType [" + freqSepType + "]" : "")
+           + (numFreq != null ? "\n numFreq [" + numFreq + "]" : "")
+           + (priority != null ? "\n priority [" + priority + "]" : "")
+           + (requestedFreq != null ? "\n requestedFreq [" + requestedFreq + "]" : "")
+           + (tuningStep != null ? "\n tuningStep [" + tuningStep + "]" : "")
            + "}";
   }
 

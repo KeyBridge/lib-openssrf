@@ -970,21 +970,21 @@ public class StationConfig {
   @Override
   public String toString() {
     return "StationConfig {"
-           + (antFeedpointHeight != null ? " antFeedpointHeight [" + antFeedpointHeight + "]" : "")
-           + (blanking != null ? " blanking [" + blanking + "]" : "")
-           + (configID != null ? " configID [" + configID + "]" : "")
-           + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
-           + (earthCoverage != null ? " earthCoverage [" + earthCoverage + "]" : "")
-           + (eirpMax != null ? " eirpMax [" + eirpMax + "]" : "")
-           + (eirpMin != null ? " eirpMin [" + eirpMin + "]" : "")
-           + (feedlineLength != null ? " feedlineLength [" + feedlineLength + "]" : "")
-           + (feedlineLoss != null ? " feedlineLoss [" + feedlineLoss + "]" : "")
-           + (pointingAzMax != null ? " pointingAzMax [" + pointingAzMax + "]" : "")
-           + (pointingAzMin != null ? " pointingAzMin [" + pointingAzMin + "]" : "")
-           + (pointingElevMax != null ? " pointingElevMax [" + pointingElevMax + "]" : "")
-           + (pointingElevMin != null ? " pointingElevMin [" + pointingElevMin + "]" : "")
-           + (stationID != null ? " stationID [" + stationID + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (antFeedpointHeight != null ? "\n antFeedpointHeight [" + antFeedpointHeight + "]" : "")
+           + (blanking != null ? "\n blanking [" + blanking + "]" : "")
+           + (configID != null ? "\n configID [" + configID + "]" : "")
+           + (coordinationNum != null ? "\n coordinationNum [" + coordinationNum + "]" : "")
+           + (earthCoverage != null ? "\n earthCoverage [" + earthCoverage + "]" : "")
+           + (eirpMax != null ? "\n eirpMax [" + eirpMax + "]" : "")
+           + (eirpMin != null ? "\n eirpMin [" + eirpMin + "]" : "")
+           + (feedlineLength != null ? "\n feedlineLength [" + feedlineLength + "]" : "")
+           + (feedlineLoss != null ? "\n feedlineLoss [" + feedlineLoss + "]" : "")
+           + (pointingAzMax != null ? "\n pointingAzMax [" + pointingAzMax + "]" : "")
+           + (pointingAzMin != null ? "\n pointingAzMin [" + pointingAzMin + "]" : "")
+           + (pointingElevMax != null ? "\n pointingElevMax [" + pointingElevMax + "]" : "")
+           + (pointingElevMin != null ? "\n pointingElevMin [" + pointingElevMin + "]" : "")
+           + (stationID != null ? "\n stationID [" + stationID + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

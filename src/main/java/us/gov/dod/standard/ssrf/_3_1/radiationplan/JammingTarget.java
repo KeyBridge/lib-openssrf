@@ -780,18 +780,18 @@ public class JammingTarget {
   @Override
   public String toString() {
     return "JammingTarget {"
-           + (antStabilisation != null ? " antStabilisation [" + antStabilisation + "]" : "")
-           + (bearing != null ? " bearing [" + bearing + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (jammingPerformance != null ? " jammingPerformance [" + jammingPerformance + "]" : "")
-           + (lat != null ? " lat [" + lat + "]" : "")
-           + (loadsetRef != null ? " loadsetRef [" + loadsetRef + "]" : "")
-           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-           + (lon != null ? " lon [" + lon + "]" : "")
-           + (polarisationType != null ? " polarisationType [" + polarisationType + "]" : "")
-           + (power != null ? " power [" + power + "]" : "")
-           + (targetID != null ? " targetID [" + targetID + "]" : "")
+           + (antStabilisation != null ? "\n antStabilisation [" + antStabilisation + "]" : "")
+           + (bearing != null ? "\n bearing [" + bearing + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (jammingPerformance != null ? "\n jammingPerformance [" + jammingPerformance + "]" : "")
+           + (lat != null ? "\n lat [" + lat + "]" : "")
+           + (loadsetRef != null ? "\n loadsetRef [" + loadsetRef + "]" : "")
+           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
+           + (lon != null ? "\n lon [" + lon + "]" : "")
+           + (polarisationType != null ? "\n polarisationType [" + polarisationType + "]" : "")
+           + (power != null ? "\n power [" + power + "]" : "")
+           + (targetID != null ? "\n targetID [" + targetID + "]" : "")
            + "}";
   }
 

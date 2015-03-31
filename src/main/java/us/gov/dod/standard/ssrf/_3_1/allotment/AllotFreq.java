@@ -395,12 +395,12 @@ public class AllotFreq {
   @Override
   public String toString() {
     return "AllotFreq {"
-           + (allotChannel != null ? " allotChannel [" + allotChannel + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (locationRestrictionRef != null ? " locationRestriction [" + locationRestrictionRef + "]" : "")
-           + (pairedFreqMin != null ? " pairedFreqMin [" + pairedFreqMin + "]" : "")
-           + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
+           + (allotChannel != null ? "\n allotChannel [" + allotChannel + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (locationRestrictionRef != null ? "\n locationRestriction [" + locationRestrictionRef + "]" : "")
+           + (pairedFreqMin != null ? "\n pairedFreqMin [" + pairedFreqMin + "]" : "")
+           + (tuningStep != null ? "\n tuningStep [" + tuningStep + "]" : "")
            + "}";
   }
 

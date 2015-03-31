@@ -669,17 +669,17 @@ public class ObservedLobeValues {
   @Override
   public String toString() {
     return "ObservedLobeValues {"
-           + (horzBwMax != null ? " horzBwMax [" + horzBwMax + "]" : "")
-           + (horzBwMin != null ? " horzBwMin [" + horzBwMin + "]" : "")
-           + (lobeValueAngleAccuracy != null ? " lobeValueAngleAccuracy [" + lobeValueAngleAccuracy + "]" : "")
-           + (lobeValueAngleHorz != null ? " lobeValueAngleHorz [" + lobeValueAngleHorz + "]" : "")
-           + (lobeValueAngleVert != null ? " lobeValueAngleVert [" + lobeValueAngleVert + "]" : "")
-           + (lobeValueID != null ? " lobeValueID [" + lobeValueID + "]" : "")
-           + (lobeValueLevel != null ? " lobeValueLevel [" + lobeValueLevel + "]" : "")
-           + (lobeValueLevelAccuracy != null ? " lobeValueLevelAccuracy [" + lobeValueLevelAccuracy + "]" : "")
-           + (lobeValueName != null ? " lobeValueName [" + lobeValueName + "]" : "")
-           + (vertBwMax != null ? " vertBwMax [" + vertBwMax + "]" : "")
-           + (vertBwMin != null ? " vertBwMin [" + vertBwMin + "]" : "")
+           + (horzBwMax != null ? "\n horzBwMax [" + horzBwMax + "]" : "")
+           + (horzBwMin != null ? "\n horzBwMin [" + horzBwMin + "]" : "")
+           + (lobeValueAngleAccuracy != null ? "\n lobeValueAngleAccuracy [" + lobeValueAngleAccuracy + "]" : "")
+           + (lobeValueAngleHorz != null ? "\n lobeValueAngleHorz [" + lobeValueAngleHorz + "]" : "")
+           + (lobeValueAngleVert != null ? "\n lobeValueAngleVert [" + lobeValueAngleVert + "]" : "")
+           + (lobeValueID != null ? "\n lobeValueID [" + lobeValueID + "]" : "")
+           + (lobeValueLevel != null ? "\n lobeValueLevel [" + lobeValueLevel + "]" : "")
+           + (lobeValueLevelAccuracy != null ? "\n lobeValueLevelAccuracy [" + lobeValueLevelAccuracy + "]" : "")
+           + (lobeValueName != null ? "\n lobeValueName [" + lobeValueName + "]" : "")
+           + (vertBwMax != null ? "\n vertBwMax [" + vertBwMax + "]" : "")
+           + (vertBwMin != null ? "\n vertBwMin [" + vertBwMin + "]" : "")
            + "}";
   }
 

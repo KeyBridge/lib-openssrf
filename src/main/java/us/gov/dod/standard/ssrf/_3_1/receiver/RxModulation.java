@@ -384,12 +384,12 @@ public class RxModulation {
   @Override
   public String toString() {
     return "RxModulation {"
-           + (codePeriod != null ? " codePeriod [" + codePeriod + "]" : "")
-           + (codeRate != null ? " codeRate [" + codeRate + "]" : "")
-           + (digitalModType != null ? " digitalModType [" + digitalModType + "]" : "")
-           + (lineCoding != null ? " lineCoding [" + lineCoding + "]" : "")
-           + (maxBitRate != null ? " maxBitRate [" + maxBitRate + "]" : "")
-           + (numStates != null ? " numStates [" + numStates + "]" : "")
+           + (codePeriod != null ? "\n codePeriod [" + codePeriod + "]" : "")
+           + (codeRate != null ? "\n codeRate [" + codeRate + "]" : "")
+           + (digitalModType != null ? "\n digitalModType [" + digitalModType + "]" : "")
+           + (lineCoding != null ? "\n lineCoding [" + lineCoding + "]" : "")
+           + (maxBitRate != null ? "\n maxBitRate [" + maxBitRate + "]" : "")
+           + (numStates != null ? "\n numStates [" + numStates + "]" : "")
            + "}";
   }
 

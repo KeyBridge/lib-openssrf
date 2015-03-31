@@ -384,12 +384,12 @@ public class Address {
   @Override
   public String toString() {
     return "Address {"
-           + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
-           + (country != null ? " country [" + country + "]" : "")
-           + (description != null ? " description [" + description + "]" : "")
-           + (postCode != null ? " postCode [" + postCode + "]" : "")
-           + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
-           + (street != null ? " street [" + street + "]" : "")
+           + (cityArea != null ? "\n cityArea [" + cityArea + "]" : "")
+           + (country != null ? "\n country [" + country + "]" : "")
+           + (description != null ? "\n description [" + description + "]" : "")
+           + (postCode != null ? "\n postCode [" + postCode + "]" : "")
+           + (stateCounty != null ? "\n stateCounty [" + stateCounty + "]" : "")
+           + (street != null ? "\n street [" + street + "]" : "")
            + "}";
   }
 

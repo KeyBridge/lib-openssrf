@@ -268,10 +268,10 @@ public class NotationTimeline {
   @Override
   public String toString() {
     return "NotationTimeline {"
-           + (code != null ? " code [" + code + "]" : "")
-           + (status != null ? " status [" + status + "]" : "")
-           + (statusChangeDateTime != null ? " statusChangeDateTime [" + statusChangeDateTime + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (code != null ? "\n code [" + code + "]" : "")
+           + (status != null ? "\n status [" + status + "]" : "")
+           + (statusChangeDateTime != null ? "\n statusChangeDateTime [" + statusChangeDateTime + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

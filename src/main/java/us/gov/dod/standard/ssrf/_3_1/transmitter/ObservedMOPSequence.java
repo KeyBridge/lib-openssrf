@@ -598,16 +598,16 @@ public class ObservedMOPSequence {
   @Override
   public String toString() {
     return "ObservedMOPSequence {"
-           + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
-           + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
-           + (mopRepetionInterval != null ? " mopRepetionInterval [" + mopRepetionInterval + "]" : "")
-           + (mopSequenceDesc != null ? " mopSequenceDesc [" + mopSequenceDesc + "]" : "")
-           + (mopStepAM != null ? " mopStepAM [" + mopStepAM + "]" : "")
-           + (mopStepCW != null ? " mopStepCW [" + mopStepCW + "]" : "")
-           + (mopStepFM != null ? " mopStepFM [" + mopStepFM + "]" : "")
-           + (mopStepPM != null ? " mopStepPM [" + mopStepPM + "]" : "")
-           + (observedMOPBits != null ? " observedMOPBits [" + observedMOPBits + "]" : "")
-           + (sequenceBitLength != null ? " sequenceBitLength [" + sequenceBitLength + "]" : "")
+           + (mopDutyCycle != null ? "\n mopDutyCycle [" + mopDutyCycle + "]" : "")
+           + (mopNumElements != null ? "\n mopNumElements [" + mopNumElements + "]" : "")
+           + (mopRepetionInterval != null ? "\n mopRepetionInterval [" + mopRepetionInterval + "]" : "")
+           + (mopSequenceDesc != null ? "\n mopSequenceDesc [" + mopSequenceDesc + "]" : "")
+           + (mopStepAM != null ? "\n mopStepAM [" + mopStepAM + "]" : "")
+           + (mopStepCW != null ? "\n mopStepCW [" + mopStepCW + "]" : "")
+           + (mopStepFM != null ? "\n mopStepFM [" + mopStepFM + "]" : "")
+           + (mopStepPM != null ? "\n mopStepPM [" + mopStepPM + "]" : "")
+           + (observedMOPBits != null ? "\n observedMOPBits [" + observedMOPBits + "]" : "")
+           + (sequenceBitLength != null ? "\n sequenceBitLength [" + sequenceBitLength + "]" : "")
            + "}";
   }
 

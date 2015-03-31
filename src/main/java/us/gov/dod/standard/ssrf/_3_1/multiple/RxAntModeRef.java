@@ -224,9 +224,9 @@ public class RxAntModeRef {
   @Override
   public String toString() {
     return "RxAntModeRef {"
-           + (couplingLoss != null ? " couplingLoss [" + couplingLoss + "]" : "")
-           + (modeID != null ? " modeID [" + modeID + "]" : "")
-           + (serial != null ? " serial [" + serial + "]" : "")
+           + (couplingLoss != null ? "\n couplingLoss [" + couplingLoss + "]" : "")
+           + (modeID != null ? "\n modeID [" + modeID + "]" : "")
+           + (serial != null ? "\n serial [" + serial + "]" : "")
            + "}";
   }
 

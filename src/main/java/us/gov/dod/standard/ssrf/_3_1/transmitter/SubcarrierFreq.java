@@ -260,10 +260,10 @@ public class SubcarrierFreq {
   @Override
   public String toString() {
     return "SubcarrierFreq {"
-           + (freq != null ? " freq [" + freq + "]" : "")
-           + (freqOffset != null ? " freqOffset [" + freqOffset + "]" : "")
-           + (freqRest != null ? " freqRest [" + freqRest + "]" : "")
-           + (subcarrierTone != null ? " subcarrierTone [" + subcarrierTone + "]" : "")
+           + (freq != null ? "\n freq [" + freq + "]" : "")
+           + (freqOffset != null ? "\n freqOffset [" + freqOffset + "]" : "")
+           + (freqRest != null ? "\n freqRest [" + freqRest + "]" : "")
+           + (subcarrierTone != null ? "\n subcarrierTone [" + subcarrierTone + "]" : "")
            + "}";
   }
 

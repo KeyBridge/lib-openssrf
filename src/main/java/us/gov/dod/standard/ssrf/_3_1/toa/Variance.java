@@ -291,10 +291,10 @@ public class Variance {
   @Override
   public String toString() {
     return "Variance {"
-           + (administration != null ? " administration [" + administration + "]" : "")
-           + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
-           + (priority != null ? " priority [" + priority + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (administration != null ? "\n administration [" + administration + "]" : "")
+           + (allocatedService != null ? "\n allocatedService [" + allocatedService + "]" : "")
+           + (priority != null ? "\n priority [" + priority + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

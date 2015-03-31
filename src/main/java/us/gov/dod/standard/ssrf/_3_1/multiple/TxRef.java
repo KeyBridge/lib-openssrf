@@ -259,9 +259,9 @@ public class TxRef {
   @Override
   public String toString() {
     return "TxRef {"
-           + (serial != null ? " serial [" + serial + "]" : "")
-           + (txAntModeRef != null ? " txAntModeRef [" + txAntModeRef + "]" : "")
-           + (txModeRef != null ? " txModeRef [" + txModeRef + "]" : "")
+           + (serial != null ? "\n serial [" + serial + "]" : "")
+           + (txAntModeRef != null ? "\n txAntModeRef [" + txAntModeRef + "]" : "")
+           + (txModeRef != null ? "\n txModeRef [" + txModeRef + "]" : "")
            + "}";
   }
 

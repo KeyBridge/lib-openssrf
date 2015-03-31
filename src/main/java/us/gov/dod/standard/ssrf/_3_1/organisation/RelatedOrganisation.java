@@ -214,9 +214,9 @@ public class RelatedOrganisation {
   @Override
   public String toString() {
     return "RelatedOrganisation {"
-           + (relation != null ? " relation [" + relation + "]" : "")
-           + (serial != null ? " serial [" + serial + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (relation != null ? "\n relation [" + relation + "]" : "")
+           + (serial != null ? "\n serial [" + serial + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

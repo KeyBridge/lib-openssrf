@@ -1024,21 +1024,21 @@ public class Station {
   @Override
   public String toString() {
     return "Station {"
-           + (antStructureHeight != null ? " antStructureHeight [" + antStructureHeight + "]" : "")
-           + (callSign != null ? " callSign [" + callSign + "]" : "")
-           + (cositeSep != null ? " cositeSep [" + cositeSep + "]" : "")
-           + (cositeSepDescription != null ? " cositeSepDescription [" + cositeSepDescription + "]" : "")
-           + (numAreaUnits != null ? " numAreaUnits [" + numAreaUnits + "]" : "")
-           + (numCositedUnits != null ? " numCositedUnits [" + numCositedUnits + "]" : "")
-           + (numMobileUnits != null ? " numMobileUnits [" + numMobileUnits + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (primaryStation != null ? " primaryStation [" + primaryStation + "]" : "")
-           + (stationControl != null ? " stationControl [" + stationControl + "]" : "")
-           + (stationID != null ? " stationID [" + stationID + "]" : "")
-           + (stationLoc != null ? " stationLoc [" + stationLoc + "]" : "")
-           + (stationName != null ? " stationName [" + stationName + "]" : "")
-           + (tsdf != null ? " tsdf [" + tsdf + "]" : "")
-           + (userCode != null ? " userCode [" + userCode + "]" : "")
+           + (antStructureHeight != null ? "\n antStructureHeight [" + antStructureHeight + "]" : "")
+           + (callSign != null ? "\n callSign [" + callSign + "]" : "")
+           + (cositeSep != null ? "\n cositeSep [" + cositeSep + "]" : "")
+           + (cositeSepDescription != null ? "\n cositeSepDescription [" + cositeSepDescription + "]" : "")
+           + (numAreaUnits != null ? "\n numAreaUnits [" + numAreaUnits + "]" : "")
+           + (numCositedUnits != null ? "\n numCositedUnits [" + numCositedUnits + "]" : "")
+           + (numMobileUnits != null ? "\n numMobileUnits [" + numMobileUnits + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (primaryStation != null ? "\n primaryStation [" + primaryStation + "]" : "")
+           + (stationControl != null ? "\n stationControl [" + stationControl + "]" : "")
+           + (stationID != null ? "\n stationID [" + stationID + "]" : "")
+           + (stationLoc != null ? "\n stationLoc [" + stationLoc + "]" : "")
+           + (stationName != null ? "\n stationName [" + stationName + "]" : "")
+           + (tsdf != null ? "\n tsdf [" + tsdf + "]" : "")
+           + (userCode != null ? "\n userCode [" + userCode + "]" : "")
            + "}";
   }
 

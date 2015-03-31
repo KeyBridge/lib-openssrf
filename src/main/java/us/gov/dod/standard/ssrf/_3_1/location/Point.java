@@ -500,13 +500,13 @@ public class Point {
   @Override
   public String toString() {
     return "Point {"
-           + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
-           + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
-           + (excluded != null ? " excluded [" + excluded + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (lat != null ? " lat [" + lat + "]" : "")
-           + (lon != null ? " lon [" + lon + "]" : "")
-           + (terrainElevation != null ? " terrainElevation [" + terrainElevation + "]" : "")
+           + (altitudeMax != null ? "\n altitudeMax [" + altitudeMax + "]" : "")
+           + (altitudeMin != null ? "\n altitudeMin [" + altitudeMin + "]" : "")
+           + (excluded != null ? "\n excluded [" + excluded + "]" : "")
+           + (idx != null ? "\n idx [" + idx + "]" : "")
+           + (lat != null ? "\n lat [" + lat + "]" : "")
+           + (lon != null ? "\n lon [" + lon + "]" : "")
+           + (terrainElevation != null ? "\n terrainElevation [" + terrainElevation + "]" : "")
            + "}";
   }
 

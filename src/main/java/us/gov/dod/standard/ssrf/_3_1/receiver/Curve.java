@@ -599,15 +599,15 @@ public class Curve {
   @Override
   public String toString() {
     return "Curve {"
-           + (bw != null ? " bw [" + bw + "]" : "")
-           + (calculated != null ? " calculated [" + calculated + "]" : "")
-           + (curvePoint != null ? " curvePoint [" + curvePoint + "]" : "")
-           + (freqConst != null ? " freqConst [" + freqConst + "]" : "")
-           + (freqFactor != null ? " freqFactor [" + freqFactor + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (bw != null ? "\n bw [" + bw + "]" : "")
+           + (calculated != null ? "\n calculated [" + calculated + "]" : "")
+           + (curvePoint != null ? "\n curvePoint [" + curvePoint + "]" : "")
+           + (freqConst != null ? "\n freqConst [" + freqConst + "]" : "")
+           + (freqFactor != null ? "\n freqFactor [" + freqFactor + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (idx != null ? "\n idx [" + idx + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

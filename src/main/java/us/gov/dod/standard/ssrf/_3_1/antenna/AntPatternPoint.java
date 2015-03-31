@@ -137,8 +137,8 @@ public class AntPatternPoint {
   @Override
   public String toString() {
     return "AntPatternPoint {"
-           + (dir != null ? " dir [" + dir + "]" : "")
-           + (gain != null ? " gain [" + gain + "]" : "")
+           + (dir != null ? "\n dir [" + dir + "]" : "")
+           + (gain != null ? "\n gain [" + gain + "]" : "")
            + "}";
   }
 

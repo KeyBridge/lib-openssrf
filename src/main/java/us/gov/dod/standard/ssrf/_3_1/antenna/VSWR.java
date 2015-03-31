@@ -150,8 +150,8 @@ public class VSWR {
   @Override
   public String toString() {
     return "VSWR {"
-           + (freq != null ? " freq [" + freq + "]" : "")
-           + (ratio != null ? " ratio [" + ratio + "]" : "")
+           + (freq != null ? "\n freq [" + freq + "]" : "")
+           + (ratio != null ? "\n ratio [" + ratio + "]" : "")
            + "}";
   }
 

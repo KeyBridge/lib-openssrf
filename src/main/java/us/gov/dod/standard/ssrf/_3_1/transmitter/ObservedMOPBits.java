@@ -612,16 +612,16 @@ public class ObservedMOPBits {
   @Override
   public String toString() {
     return "ObservedMOPBits {"
-           + (bitDuration != null ? " bitDuration [" + bitDuration + "]" : "")
-           + (bitRate != null ? " bitRate [" + bitRate + "]" : "")
-           + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
-           + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
-           + (mopRepetionInterval != null ? " mopRepetionInterval [" + mopRepetionInterval + "]" : "")
-           + (mopStepAM != null ? " mopStepAM [" + mopStepAM + "]" : "")
-           + (mopStepCW != null ? " mopStepCW [" + mopStepCW + "]" : "")
-           + (mopStepFM != null ? " mopStepFM [" + mopStepFM + "]" : "")
-           + (mopStepPM != null ? " mopStepPM [" + mopStepPM + "]" : "")
-           + (observedMOPValues != null ? " observedMOPValues [" + observedMOPValues + "]" : "")
+           + (bitDuration != null ? "\n bitDuration [" + bitDuration + "]" : "")
+           + (bitRate != null ? "\n bitRate [" + bitRate + "]" : "")
+           + (mopDutyCycle != null ? "\n mopDutyCycle [" + mopDutyCycle + "]" : "")
+           + (mopNumElements != null ? "\n mopNumElements [" + mopNumElements + "]" : "")
+           + (mopRepetionInterval != null ? "\n mopRepetionInterval [" + mopRepetionInterval + "]" : "")
+           + (mopStepAM != null ? "\n mopStepAM [" + mopStepAM + "]" : "")
+           + (mopStepCW != null ? "\n mopStepCW [" + mopStepCW + "]" : "")
+           + (mopStepFM != null ? "\n mopStepFM [" + mopStepFM + "]" : "")
+           + (mopStepPM != null ? "\n mopStepPM [" + mopStepPM + "]" : "")
+           + (observedMOPValues != null ? "\n observedMOPValues [" + observedMOPValues + "]" : "")
            + "}";
   }
 

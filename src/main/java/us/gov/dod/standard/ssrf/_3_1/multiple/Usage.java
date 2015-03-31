@@ -212,9 +212,9 @@ public class Usage {
   @Override
   public String toString() {
     return "Usage {"
-           + (eqpFnct != null ? " eqpFnct [" + eqpFnct + "]" : "")
-           + (radioService != null ? " radioService [" + radioService + "]" : "")
-           + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
+           + (eqpFnct != null ? "\n eqpFnct [" + eqpFnct + "]" : "")
+           + (radioService != null ? "\n radioService [" + radioService + "]" : "")
+           + (stnClass != null ? "\n stnClass [" + stnClass + "]" : "")
            + "}";
   }
 

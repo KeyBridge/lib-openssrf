@@ -622,16 +622,16 @@ public class Comment {
   @Override
   public String toString() {
     return "Comment {"
-           + (availability != null ? " availability [" + availability + "]" : "")
-           + (cls != null ? " cls [" + cls + "]" : "")
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (idref != null ? " idref [" + idref + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           + (remarks != null ? " remarks [" + remarks + "]" : "")
-           + (value != null ? " value [" + value + "]" : "")
+           + (availability != null ? "\n availability [" + availability + "]" : "")
+           + (cls != null ? "\n cls [" + cls + "]" : "")
+           + (extReferences != null ? "\n extReferences [" + extReferences + "]" : "")
+           + (idref != null ? "\n idref [" + idref + "]" : "")
+           + (idx != null ? "\n idx [" + idx + "]" : "")
+           + (legacyReleasability != null ? "\n legacyReleasability [" + legacyReleasability + "]" : "")
+           + (quality != null ? "\n quality [" + quality + "]" : "")
+           + (recommendedValue != null ? "\n recommendedValue [" + recommendedValue + "]" : "")
+           + (remarks != null ? "\n remarks [" + remarks + "]" : "")
+           + (value != null ? "\n value [" + value + "]" : "")
            + "}";
   }
 

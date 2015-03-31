@@ -348,11 +348,11 @@ public class Nomenclature {
   @Override
   public String toString() {
     return "Nomenclature {"
-           + (level != null ? " level [" + level + "]" : "")
-           + (manufacturer != null ? " manufacturer [" + manufacturer + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (physicalUsage != null ? " physicalUsage [" + physicalUsage + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (level != null ? "\n level [" + level + "]" : "")
+           + (manufacturer != null ? "\n manufacturer [" + manufacturer + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (physicalUsage != null ? "\n physicalUsage [" + physicalUsage + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}";
   }
 

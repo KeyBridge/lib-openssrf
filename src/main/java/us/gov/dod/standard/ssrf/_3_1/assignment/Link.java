@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.DetailedFunction;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFN;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
@@ -59,7 +58,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
 public class Link {
 
   /**
-   * LinkID - Link Identifier (Required)    * <p>
+   * LinkID - Link Identifier (Required)
+   * <p>
    * A unique identifier for the link. This identifier should be a meaningful
    * identification of the link, but may also be automatically generated. The
    * identifier SHOULD NOT be modified during the lifetime of the dataset.
@@ -94,7 +94,8 @@ public class Link {
   @XmlElement(name = "IntermediateFunction", required = false)
   private TString intermediateFunction;
   /**
-   * US:MajorFunction - Major Function (Optional)    * <p>
+   * US:MajorFunction - Major Function (Optional)
+   * <p>
    * The major (or primary) function of the frequency assignment.
    * <p>
    * Format is L:UFN
@@ -104,7 +105,8 @@ public class Link {
   @XmlElement(name = "MajorFunction", required = false)
   private TString majorFunction;
   /**
-   * US:LinkName - Link Name (Optional)    * <p>
+   * US:LinkName - Link Name (Optional)
+   * <p>
    * A human readable name of the link.
    * <p>
    * Format is S25
@@ -543,7 +545,8 @@ public class Link {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link ListUFN}.
    * @return The current Link object instance.
    * @since 3.1.0
@@ -720,7 +723,8 @@ public class Link {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param values One or more instances of type {@link DetailedFunction...}.
    * @return The current Link object instance.
    * @since 3.1.0
@@ -733,7 +737,8 @@ public class Link {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param values A collection of {@link DetailedFunction} instances
    * @return The current Link object instance.
    * @since 3.1.0
@@ -753,16 +758,16 @@ public class Link {
   @Override
   public String toString() {
     return "Link {"
-           + (assigned != null ? " assigned [" + assigned + "]" : "")
-           + (dcsTrunk != null ? " dcsTrunk [" + dcsTrunk + "]" : "")
-           + (detailedFunction != null ? " detailedFunction [" + detailedFunction + "]" : "")
-           + (function != null ? " function [" + function + "]" : "")
-           + (intermediateFunction != null ? " intermediateFunction [" + intermediateFunction + "]" : "")
-           + (linkID != null ? " linkID [" + linkID + "]" : "")
-           + (linkName != null ? " linkName [" + linkName + "]" : "")
-           + (majorFunction != null ? " majorFunction [" + majorFunction + "]" : "")
-           + (stationConfig != null ? " stationConfig [" + stationConfig + "]" : "")
-           + (tuning != null ? " tuning [" + tuning + "]" : "")
+           + (assigned != null ? "\n assigned [" + assigned + "]" : "")
+           + (dcsTrunk != null ? "\n dcsTrunk [" + dcsTrunk + "]" : "")
+           + (detailedFunction != null ? "\n detailedFunction [" + detailedFunction + "]" : "")
+           + (function != null ? "\n function [" + function + "]" : "")
+           + (intermediateFunction != null ? "\n intermediateFunction [" + intermediateFunction + "]" : "")
+           + (linkID != null ? "\n linkID [" + linkID + "]" : "")
+           + (linkName != null ? "\n linkName [" + linkName + "]" : "")
+           + (majorFunction != null ? "\n majorFunction [" + majorFunction + "]" : "")
+           + (stationConfig != null ? "\n stationConfig [" + stationConfig + "]" : "")
+           + (tuning != null ? "\n tuning [" + tuning + "]" : "")
            + "}";
   }
 

@@ -209,9 +209,9 @@ public class Channel {
   @Override
   public String toString() {
     return "Channel {"
-           + (channelFreq != null ? " channelFreq [" + channelFreq + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (user != null ? " user [" + user + "]" : "")
+           + (channelFreq != null ? "\n channelFreq [" + channelFreq + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (user != null ? "\n user [" + user + "]" : "")
            + "}";
   }
 

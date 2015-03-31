@@ -208,9 +208,9 @@ public class ExtReferenceRef {
   @Override
   public String toString() {
     return "ExtReferenceRef {"
-           + (cls != null ? " cls [" + cls + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (value != null ? " value [" + value + "]" : "")
+           + (cls != null ? "\n cls [" + cls + "]" : "")
+           + (idx != null ? "\n idx [" + idx + "]" : "")
+           + (value != null ? "\n value [" + value + "]" : " NULL VALUE ")
            + "}";
   }
 
@@ -284,7 +284,7 @@ public class ExtReferenceRef {
    * @since 3.1.0
    */
   public void prepare() {
-    this.value = externalReference != null ? externalReference.getSerial() : null;
+    this.value = externalReference != null ? externalReference.getSerial() : this.value;
   }
 
   /**
@@ -309,5 +309,4 @@ public class ExtReferenceRef {
       }
     }
   }//</editor-fold>
-
 }

@@ -252,10 +252,10 @@ public class JammingAuthority {
   @Override
   public String toString() {
     return "JammingAuthority {"
-           + (jcaCallSign != null ? " jcaCallSign [" + jcaCallSign + "]" : "")
-           + (jcaFreq != null ? " jcaFreq [" + jcaFreq + "]" : "")
-           + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
-           + (jcaState != null ? " jcaState [" + jcaState + "]" : "")
+           + (jcaCallSign != null ? "\n jcaCallSign [" + jcaCallSign + "]" : "")
+           + (jcaFreq != null ? "\n jcaFreq [" + jcaFreq + "]" : "")
+           + (jcaLevel != null ? "\n jcaLevel [" + jcaLevel + "]" : "")
+           + (jcaState != null ? "\n jcaState [" + jcaState + "]" : "")
            + "}";
   }
 

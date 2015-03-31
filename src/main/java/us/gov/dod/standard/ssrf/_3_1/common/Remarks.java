@@ -192,9 +192,9 @@ public class Remarks {
   @Override
   public String toString() {
     return "Remarks {"
-           + (cls != null ? " cls [" + cls + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (value != null ? " value [" + value + "]" : "")
+           + (cls != null ? "\n cls [" + cls + "]" : "")
+           + (idx != null ? "\n idx [" + idx + "]" : "")
+           + (value != null ? "\n value [" + value + "]" : "")
            + "}";
   }
 

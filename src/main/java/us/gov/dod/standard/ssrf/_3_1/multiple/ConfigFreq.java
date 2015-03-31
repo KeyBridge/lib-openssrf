@@ -590,16 +590,16 @@ public class ConfigFreq {
   @Override
   public String toString() {
     return "ConfigFreq {"
-           + (channelSpacing != null ? " channelSpacing [" + channelSpacing + "]" : "")
-           + (configFreqUse != null ? " configFreqUse [" + configFreqUse + "]" : "")
-           + (duration != null ? " duration [" + duration + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (idx != null ? " idx [" + idx + "]" : "")
-           + (inBand != null ? " inBand [" + inBand + "]" : "")
-           + (period != null ? " period [" + period + "]" : "")
-           + (priority != null ? " priority [" + priority + "]" : "")
-           + (pulseWidth != null ? " pulseWidth [" + pulseWidth + "]" : "")
+           + (channelSpacing != null ? "\n channelSpacing [" + channelSpacing + "]" : "")
+           + (configFreqUse != null ? "\n configFreqUse [" + configFreqUse + "]" : "")
+           + (duration != null ? "\n duration [" + duration + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (idx != null ? "\n idx [" + idx + "]" : "")
+           + (inBand != null ? "\n inBand [" + inBand + "]" : "")
+           + (period != null ? "\n period [" + period + "]" : "")
+           + (priority != null ? "\n priority [" + priority + "]" : "")
+           + (pulseWidth != null ? "\n pulseWidth [" + pulseWidth + "]" : "")
            + "}";
   }
 

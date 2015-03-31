@@ -194,9 +194,9 @@ public class PotentialVictims {
   @Override
   public String toString() {
     return "PotentialVictims {"
-           + (type != null ? " type [" + type + "]" : "")
-           + (victimName != null ? " victimName [" + victimName + "]" : "")
-           + (victimNotation != null ? " victimNotation [" + victimNotation + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
+           + (victimName != null ? "\n victimName [" + victimName + "]" : "")
+           + (victimNotation != null ? "\n victimNotation [" + victimNotation + "]" : "")
            + "}";
   }
 

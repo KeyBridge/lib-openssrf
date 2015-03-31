@@ -210,9 +210,9 @@ public class AntEfficiency {
   @Override
   public String toString() {
     return "AntEfficiency {"
-           + (efficiency != null ? " efficiency [" + efficiency + "]" : "")
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (efficiency != null ? "\n efficiency [" + efficiency + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
            + "}";
   }
 

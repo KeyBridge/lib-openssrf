@@ -3,29 +3,27 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
 
 /**
- * HostDocketNum (US) contains the Host Nation docket number from a prior data
- * repository.
- * <p>
- * Element of {@link Assignment}
+ * The SSRF DetailedFunction data type.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HostDocketNum", propOrder = {
+@XmlType(name = "DetailedFunction", propOrder = {
   "value"
 })
-public class HostDocketNum {
+public class DetailedFunction {
 
   @XmlValue
-  private String value;
+  private ListUFN value;
   /**
-   * cls - Classification (Required)    * <p>
+   * cls - Classification (Required)
+   * <p>
    * The classification of the current data item. This attribute is REQUIRED on
    * each data item, even if the classification is "U".
    * <p>
@@ -36,7 +34,8 @@ public class HostDocketNum {
   @XmlAttribute(name = "cls", required = true)
   private ListCCL cls;
   /**
-   * remarks - Links to Data Item Remarks (Optional)    * <p>
+   * remarks - Links to Data Item Remarks (Optional)
+   * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * Format is List of UN6
@@ -46,7 +45,8 @@ public class HostDocketNum {
   @XmlAttribute(name = "remarks")
   private Set<BigInteger> remarks;
   /**
-   * extReferences - Links to External References (Optional)    * <p>
+   * extReferences - Links to External References (Optional)
+   * <p>
    * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
    * item.
    * <p>
@@ -57,7 +57,8 @@ public class HostDocketNum {
   @XmlAttribute(name = "extReferences")
   private Set<BigInteger> extReferences;
   /**
-   * US:legacyReleasability - Legacy Releasability (Optional)    * <p>
+   * US:legacyReleasability - Legacy Releasability (Optional)
+   * <p>
    * One or more special handling instructions in sentence format, not code
    * format. For example, "Approved for public release; distribution is
    * unlimited". Multiple special handling instructions are separated by "|”
@@ -70,7 +71,8 @@ public class HostDocketNum {
   @XmlAttribute(name = "legacyReleasability")
   private String legacyReleasability;
   /**
-   * US:quality - Data Quality (Optional)    * <p>
+   * US:quality - Data Quality (Optional)
+   * <p>
    * One or more data quality indicator(s), separated by "|” (i.e., ASCII
    * character #124), for the contents of the associated Data Item For example,
    * "Outlier" | "Non-CodeList".
@@ -82,7 +84,8 @@ public class HostDocketNum {
   @XmlAttribute(name = "quality")
   private String quality;
   /**
-   * US:recommendedValue - Recommended Value (Optional)    * <p>
+   * US:recommendedValue - Recommended Value (Optional)
+   * <p>
    * A value that is most probably correct.
    * <p>
    * Format is Memo
@@ -92,13 +95,15 @@ public class HostDocketNum {
   @XmlAttribute(name = "recommendedValue")
   private String recommendedValue;
   /**
-   * idref - Data Item ID (Optional)    * <p>
+   * idref - Data Item ID (Optional)
+   * <p>
    * A unique identifier for each Data Item in the Dataset. Within each Dataset,
    * the idref value must be unique for every occurrence. If a received Dataset
    * uses idrefs and it is expected that the Dataset will be exchanged, the
    * idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.    * <p>
+   * optional.
+   * <p>
    * Format is S10
    * <p>
    * @since 3.1.0
@@ -118,20 +123,20 @@ public class HostDocketNum {
   /**
    * Get a value that is most probably correct..
    * <p>
-   * @return a {@link String} instance
+   * @return a {@link ListUFN} instance
    * @since 3.1.0
    */
-  public String getValue() {
+  public ListUFN getValue() {
     return value;
   }
 
   /**
    * Set a value that is most probably correct..
    * <p>
-   * @param value a {@link String} instance
+   * @param value a {@link ListUFN} instance
    * @since 3.1.0
    */
-  public void setValue(String value) {
+  public void setValue(ListUFN value) {
     this.value = value;
   }
 
@@ -407,11 +412,11 @@ public class HostDocketNum {
   /**
    * Set a value that is most probably correct.
    * <p>
-   * @param value An instances of type {@link String}.
-   * @return The current HostDocketNum object instance.
+   * @param value An instances of type {@link ListUFN}.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withValue(String value) {
+  public DetailedFunction withValue(ListUFN value) {
     return this;
   }
 
@@ -420,10 +425,10 @@ public class HostDocketNum {
    * on each data item, even if the classification is "U".
    * <p>
    * @param value An instances of type {@link ListCCL}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withCls(ListCCL value) {
+  public DetailedFunction withCls(ListCCL value) {
     return this;
   }
 
@@ -432,10 +437,10 @@ public class HostDocketNum {
    * item.
    * <p>
    * @param values One or more instances of type {@link BigInteger...}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withRemarks(BigInteger... values) {
+  public DetailedFunction withRemarks(BigInteger... values) {
     if (values != null) {
       getRemarks().addAll(Arrays.asList(values));
     }
@@ -447,10 +452,10 @@ public class HostDocketNum {
    * item.
    * <p>
    * @param values A collection of {@link Remarks} instances
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withRemarks(Collection<BigInteger> values) {
+  public DetailedFunction withRemarks(Collection<BigInteger> values) {
     if (values != null) {
       getRemarks().addAll(values);
     }
@@ -462,10 +467,10 @@ public class HostDocketNum {
    * data item.
    * <p>
    * @param values One or more instances of type {@link BigInteger...}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withExtReferences(BigInteger... values) {
+  public DetailedFunction withExtReferences(BigInteger... values) {
     if (values != null) {
       getExtReferences().addAll(Arrays.asList(values));
     }
@@ -477,10 +482,10 @@ public class HostDocketNum {
    * data item.
    * <p>
    * @param values A collection of {@link ExtReferences} instances
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withExtReferences(Collection<BigInteger> values) {
+  public DetailedFunction withExtReferences(Collection<BigInteger> values) {
     if (values != null) {
       getExtReferences().addAll(values);
     }
@@ -494,10 +499,10 @@ public class HostDocketNum {
    * (i.e., ASCII character #124).
    * <p>
    * @param value An instances of type {@link String}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withLegacyReleasability(String value) {
+  public DetailedFunction withLegacyReleasability(String value) {
     return this;
   }
 
@@ -507,10 +512,10 @@ public class HostDocketNum {
    * "Outlier" | "Non-CodeList".
    * <p>
    * @param value An instances of type {@link String}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withQuality(String value) {
+  public DetailedFunction withQuality(String value) {
     return this;
   }
 
@@ -518,10 +523,10 @@ public class HostDocketNum {
    * Set a value that is most probably correct.
    * <p>
    * @param value An instances of type {@link String}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withRecommendedValue(String value) {
+  public DetailedFunction withRecommendedValue(String value) {
     return this;
   }
 
@@ -531,12 +536,13 @@ public class HostDocketNum {
    * Dataset uses idrefs and it is expected that the Dataset will be exchanged,
    * the idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.    * <p>
+   * optional.
+   * <p>
    * @param value An instances of type {@link String}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withIdref(String value) {
+  public DetailedFunction withIdref(String value) {
     return this;
   }
 
@@ -546,21 +552,22 @@ public class HostDocketNum {
    * Available" or "Not Applicable", when data is not available.
    * <p>
    * @param value An instances of type {@link String}.
-   * @return The current HostDocketNum object instance.
+   * @return The current DetailedFunction object instance.
    * @since 3.1.0
    */
-  public HostDocketNum withAvailability(String value) {
+  public DetailedFunction withAvailability(String value) {
     return this;
   }
 
   /**
-   * Get a string representation of this HostDocketNum instance configuration.
+   * Get a string representation of this DetailedFunction instance
+   * configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
    */
   @Override
   public String toString() {
-    return "HostDocketNum {"
+    return "DetailedFunction {"
            + (availability != null ? "\n availability [" + availability + "]" : "")
            + (cls != null ? "\n cls [" + cls + "]" : "")
            + (extReferences != null ? "\n extReferences [" + extReferences + "]" : "")
@@ -576,7 +583,7 @@ public class HostDocketNum {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link HostDocketNum} requires {@link ListCCL cls}.
+   * {@link DetailedFunction} requires {@link ListCCL cls}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
