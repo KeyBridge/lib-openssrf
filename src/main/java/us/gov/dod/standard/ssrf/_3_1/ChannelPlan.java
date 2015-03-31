@@ -41,7 +41,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
-   * Name - Channel Plan Name (Required)    * <p>
+   * Name - Channel Plan Name (Required)
+   * <p>
    * The name of this channel plan (e.g., "Plan for Wireless Microphones in the
    * Band 162-174 MHz").
    * <p>
@@ -52,7 +53,8 @@ public class ChannelPlan extends Common<ChannelPlan> {
   @XmlElement(name = "Name", required = true)
   private S100 name;
   /**
-   * ChannelPlanRef - Element Content (Required)    * <p>
+   * ChannelPlanRef - Element Content (Required)
+   * <p>
    * The serial of the referenced ChannelPlan.
    * <p>
    * Format is pattern (S29)
@@ -61,6 +63,13 @@ public class ChannelPlan extends Common<ChannelPlan> {
    */
   @XmlElement(name = "Channel", required = true)
   private Set<Channel> channel;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public ChannelPlan() {
+    super();
+  }
 
   /**
    * Get the name of this channel plan (e.g., "Plan for Wireless Microphones in
@@ -171,8 +180,8 @@ public class ChannelPlan extends Common<ChannelPlan> {
   @Override
   public String toString() {
     return "ChannelPlan {"
-           + (channel != null ? " channel [" + channel + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
+           + (channel != null ? "\n channel [" + channel + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
            + "}\n  ChannelPlan." + super.toString() + "\n";
   }
 

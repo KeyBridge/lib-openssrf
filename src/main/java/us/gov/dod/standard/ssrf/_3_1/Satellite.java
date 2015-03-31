@@ -304,6 +304,13 @@ public class Satellite extends Common<Satellite> {
   private Set<Nomenclature> nomenclature;
 
   /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Satellite() {
+    super();
+  }
+
+  /**
    * Get the date by which the dataset is to be reviewed. The Review date should
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicate when the organisation
@@ -1368,27 +1375,27 @@ public class Satellite extends Common<Satellite> {
   @Override
   public String toString() {
     return "Satellite {"
-           + (administration != null ? " administration [" + administration + "]" : "")
-           + (callSign != null ? " callSign [" + callSign + "]" : "")
-           + (earthStation != null ? " earthStation [" + earthStation + "]" : "")
-           + (geoAltitude != null ? " geoAltitude [" + geoAltitude + "]" : "")
-           + (geoNominalLon != null ? " geoNominalLon [" + geoNominalLon + "]" : "")
-           + (internationalDesignator != null ? " internationalDesignator [" + internationalDesignator + "]" : "")
-           + (launchDate != null ? " launchDate [" + launchDate + "]" : "")
-           + (launchLocRef != null ? " launchLocRef [" + launchLocRef + "]" : "")
-           + (launchStatus != null ? " launchStatus [" + launchStatus + "]" : "")
-           + (networkName != null ? " networkName [" + networkName + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (nonGeoApogee != null ? " nonGeoApogee [" + nonGeoApogee + "]" : "")
-           + (nonGeoInclination != null ? " nonGeoInclination [" + nonGeoInclination + "]" : "")
-           + (nonGeoNumSatellites != null ? " nonGeoNumSatellites [" + nonGeoNumSatellites + "]" : "")
-           + (nonGeoPerigee != null ? " nonGeoPerigee [" + nonGeoPerigee + "]" : "")
-           + (nonGeoPeriod != null ? " nonGeoPeriod [" + nonGeoPeriod + "]" : "")
-           + (objectNum != null ? " objectNum [" + objectNum + "]" : "")
-           + (orbitType != null ? " orbitType [" + orbitType + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (rfSystemRef != null ? " rfSystemRef [" + rfSystemRef + "]" : "")
-           + (serviceArea != null ? " serviceArea [" + serviceArea + "]" : "")
+           + (administration != null ? "\n administration [" + administration + "]" : "")
+           + (callSign != null ? "\n callSign [" + callSign + "]" : "")
+           + (earthStation != null ? "\n earthStation [" + earthStation + "]" : "")
+           + (geoAltitude != null ? "\n geoAltitude [" + geoAltitude + "]" : "")
+           + (geoNominalLon != null ? "\n geoNominalLon [" + geoNominalLon + "]" : "")
+           + (internationalDesignator != null ? "\n internationalDesignator [" + internationalDesignator + "]" : "")
+           + (launchDate != null ? "\n launchDate [" + launchDate + "]" : "")
+           + (launchLocRef != null ? "\n launchLocRef [" + launchLocRef + "]" : "")
+           + (launchStatus != null ? "\n launchStatus [" + launchStatus + "]" : "")
+           + (networkName != null ? "\n networkName [" + networkName + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (nonGeoApogee != null ? "\n nonGeoApogee [" + nonGeoApogee + "]" : "")
+           + (nonGeoInclination != null ? "\n nonGeoInclination [" + nonGeoInclination + "]" : "")
+           + (nonGeoNumSatellites != null ? "\n nonGeoNumSatellites [" + nonGeoNumSatellites + "]" : "")
+           + (nonGeoPerigee != null ? "\n nonGeoPerigee [" + nonGeoPerigee + "]" : "")
+           + (nonGeoPeriod != null ? "\n nonGeoPeriod [" + nonGeoPeriod + "]" : "")
+           + (objectNum != null ? "\n objectNum [" + objectNum + "]" : "")
+           + (orbitType != null ? "\n orbitType [" + orbitType + "]" : "")
+           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
+           + (rfSystemRef != null ? "\n rfSystemRef [" + rfSystemRef + "]" : "")
+           + (serviceArea != null ? "\n serviceArea [" + serviceArea + "]" : "")
            + "}\n  Satellite." + super.toString() + "\n";
   }
 

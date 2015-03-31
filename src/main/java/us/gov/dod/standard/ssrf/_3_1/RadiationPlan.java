@@ -91,7 +91,8 @@ import us.gov.dod.standard.ssrf._3_1.radiationplan.JammingPlan;
 public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
-   * US:FreqMax - Maximum Frequency (Optional)    * <p>
+   * US:FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The frequency range maximum value planned for denial of use.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
@@ -103,7 +104,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * US:FreqMin - Minimum Frequency (Required)    * <p>
+   * US:FreqMin - Minimum Frequency (Required)
+   * <p>
    * The frequency range minimum value planned for denial of use.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -113,7 +115,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * US:JCALevel - Authorisation Level (Optional)    * <p>
+   * US:JCALevel - Authorisation Level (Optional)
+   * <p>
    * The level of joint control authorization (JCA) required for the jamming
    * plan.
    * <p>
@@ -124,7 +127,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlElement(name = "JCALevel", required = false)
   private UN2 jcaLevel;
   /**
-   * US:LocationRef - Plan Location Serial (Optional)    * <p>
+   * US:LocationRef - Plan Location Serial (Optional)
+   * <p>
    * The unique reference serial of an existing Location dataset.
    * <p>
    * Format is pattern (S29)
@@ -141,7 +145,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlElement(name = "Name", required = false)
   private S100 name;
   /**
-   * US:StartDateTime - Start Time (Optional)    * <p>
+   * US:StartDateTime - Start Time (Optional)
+   * <p>
    * The timestamp when the denial of spectrum use is planned to begin.
    * <p>
    * Format is DateTime
@@ -151,7 +156,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlElement(name = "StartDateTime", required = false)
   private DT startDateTime;
   /**
-   * US:StopDateTime - Stop Time (Optional)    * <p>
+   * US:StopDateTime - Stop Time (Optional)
+   * <p>
    * The timestamp when the denial of spectrum use is planned to be halted.
    * <p>
    * Format is DateTime
@@ -161,7 +167,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @XmlElement(name = "StopDateTime", required = false)
   private DT stopDateTime;
   /**
-   * US:Version - Radiation Plan Version (Optional)    * <p>
+   * US:Version - Radiation Plan Version (Optional)
+   * <p>
    * The current version of the Radiation Plan.
    * <p>
    * Format is S10
@@ -191,6 +198,13 @@ public class RadiationPlan extends Common<RadiationPlan> {
    */
   @XmlElement(name = "JammingPlan")
   private Set<JammingPlan> jammingPlan;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public RadiationPlan() {
+    super();
+  }
 
   /**
    * Get the frequency range maximum value planned for denial of use.
@@ -710,16 +724,16 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @Override
   public String toString() {
     return "RadiationPlan {"
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
-           + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
-           + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
-           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
-           + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
-           + (version != null ? " version [" + version + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (jammingAuthority != null ? "\n jammingAuthority [" + jammingAuthority + "]" : "")
+           + (jammingPlan != null ? "\n jammingPlan [" + jammingPlan + "]" : "")
+           + (jcaLevel != null ? "\n jcaLevel [" + jcaLevel + "]" : "")
+           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (startDateTime != null ? "\n startDateTime [" + startDateTime + "]" : "")
+           + (stopDateTime != null ? "\n stopDateTime [" + stopDateTime + "]" : "")
+           + (version != null ? "\n version [" + version + "]" : "")
            + "}\n  RadiationPlan." + super.toString() + "\n";
   }
 
@@ -742,7 +756,8 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:LocationRef - Plan Location Serial (Optional)    * <p>
+   * US:LocationRef - Plan Location Serial (Optional)
+   * <p>
    * The unique reference serial of an existing Location dataset.
    * <p>
    * Format is pattern (S29)

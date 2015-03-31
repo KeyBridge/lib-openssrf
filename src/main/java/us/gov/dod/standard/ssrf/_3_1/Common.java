@@ -23,6 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/27/2015
+ * @param <T> The inheriting class type
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Common", propOrder = {
@@ -49,36 +50,96 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
   "remarks"
 })
 @XmlSeeAlso({
-  Receiver.class,
-  ChannelPlan.class,
   Administrative.class,
-  Antenna.class,
-  JRFL.class,
-  Location.class,
-  IntfReport.class,
-  RadiationPlan.class,
-  RFSystem.class,
-  SSRequest.class,
-  SSReply.class,
-  Transmitter.class,
-  TOA.class,
-  Organisation.class,
-  Role.class,
-  Satellite.class,
   Allotment.class,
-  Loadset.class,
-  Message.class,
+  Antenna.class,
+  Assignment.class,
+  ChannelPlan.class,
+  Contact.class,
   ExternalReference.class,
-  Note.class,
   FEDeployment.class,
   ForceElement.class,
-  Assignment.class,
-  Contact.class
+  IntfReport.class,
+  JRFL.class,
+  Loadset.class,
+  Location.class,
+  Message.class,
+  Note.class,
+  Organisation.class,
+  RadiationPlan.class,
+  Receiver.class,
+  RFSystem.class,
+  Role.class,
+  Satellite.class,
+  SSReply.class,
+  SSRequest.class,
+  TOA.class,
+  Transmitter.class
 })
 @SuppressWarnings("unchecked")
 public abstract class Common<T> implements Comparable<T> {
 
-  //<editor-fold defaultstate="collapsed" desc="Common Bean Fields">
+  /**
+   * cls - Classification (Required)
+   * <p>
+   * The classification of the current data item. This attribute is REQUIRED on
+   * each data item, even if the classification is "U".
+   * <p>
+   * Format is L:CCL
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlAttribute(name = "cls", required = true)
+  private ListCCL cls;
+  /**
+   * Serial - Serial (Required)
+   * <p>
+   * A unique Dataset identifier.
+   * <p>
+   * Serial is composed of four parts separated by colons (":"). The maximum
+   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
+   * is always REQUIRED. It contains one to five alphabetic uppercase characters
+   * representing either the ITU country code or the NATO Command code
+   * identifying the originator or organisation responsible for maintaining the
+   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
+   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
+   * special characters) representing a code for an Organisation within the
+   * country or command. It will normally indicate the organisation responsible
+   * for maintaining the dataset. Domain naming is left at the discretion of
+   * each country, but should be managed by a central authority in the country
+   * to allow deconfliction and uniqueness. It should enable the location in the
+   * data repository where this dataset information is stored. . Part 3 is the
+   * Dataset Type and MUST contain a two-character code from the table in the
+   * Introduction section identifying the type of dataset (LO for a Location,
+   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
+   * one to fifteen alphanumeric characters (including spaces and special
+   * characters), whose meaning is left at the discretion of each domain
+   * manager.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "Serial", required = true)
+  private Serial serial;
+  /**
+   * EntryDateTime - Entry Date/Time (Required)
+   * <p>
+   * The date and UTC Time the dataset was initially entered into the data
+   * repository (e.g., FRRS for USA, SMIR for NATO).
+   * <p>
+   * Format is DateTime
+   * <p>
+   * Attribute group Initial (Required)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlElement(name = "EntryDateTime", required = true)
+  private DT entryDateTime;
+
+  //<editor-fold defaultstate="collapsed" desc="Optional Bean Fields">
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -147,53 +208,6 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "Redacted", required = false)
   private TString redacted;
-  /**
-   * Serial - Serial (Required)
-   * <p>
-   * A unique Dataset identifier.
-   * <p>
-   * Serial is composed of four parts separated by colons (":"). The maximum
-   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
-   * is always REQUIRED. It contains one to five alphabetic uppercase characters
-   * representing either the ITU country code or the NATO Command code
-   * identifying the originator or organisation responsible for maintaining the
-   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
-   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
-   * special characters) representing a code for an Organisation within the
-   * country or command. It will normally indicate the organisation responsible
-   * for maintaining the dataset. Domain naming is left at the discretion of
-   * each country, but should be managed by a central authority in the country
-   * to allow deconfliction and uniqueness. It should enable the location in the
-   * data repository where this dataset information is stored. . Part 3 is the
-   * Dataset Type and MUST contain a two-character code from the table in the
-   * Introduction section identifying the type of dataset (LO for a Location,
-   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
-   * one to fifteen alphanumeric characters (including spaces and special
-   * characters), whose meaning is left at the discretion of each domain
-   * manager.
-   * <p>
-   * Format is pattern (S29)
-   * <p>
-   * Attribute group Initial (Required)
-   * <p>
-   * @since 3.1.0
-   */
-  @XmlElement(name = "Serial", required = true)
-  private Serial serial;
-  /**
-   * EntryDateTime - Entry Date/Time (Required)
-   * <p>
-   * The date and UTC Time the dataset was initially entered into the data
-   * repository (e.g., FRRS for USA, SMIR for NATO).
-   * <p>
-   * Format is DateTime
-   * <p>
-   * Attribute group Initial (Required)
-   * <p>
-   * @since 3.1.0
-   */
-  @XmlElement(name = "EntryDateTime", required = true)
-  private DT entryDateTime;
   /**
    * EntryBy - Creator Role (Optional)
    * <p>
@@ -350,18 +364,6 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlElement(name = "Remarks", nillable = true)
   private Set<Remarks> remarks;
-  /**
-   * cls - Classification (Required)
-   * <p>
-   * The classification of the current data item. This attribute is REQUIRED on
-   * each data item, even if the classification is "U".
-   * <p>
-   * Format is L:CCL
-   * <p>
-   * @since 3.1.0
-   */
-  @XmlAttribute(name = "cls", required = true)
-  private ListCCL cls;
   /**
    * releasability - Releasability Markings (Optional)
    * <p>
@@ -2039,35 +2041,35 @@ public abstract class Common<T> implements Comparable<T> {
   @Override
   public String toString() {
     return "Common {"
-           + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
-           + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
-           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-           + (cls != null ? " cls [" + cls + "]" : "")
-           + (description != null ? " description [" + description + "]" : "")
-           + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
-           + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
-           + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (idref != null ? " idref [" + idref + "]" : "")
-           + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
-           + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
-           + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
-           + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-           + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
-           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-           + (owner != null ? " owner [" + owner + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           + (redacted != null ? " redacted [" + redacted + "]" : "")
-           + (releasability != null ? " releasability [" + releasability + "]" : "")
-           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-           + (remarks != null ? " remarks [" + remarks + "]" : "")
-           + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
-           + (serial != null ? " serial [" + serial + "]" : "")
-           + (state != null ? " state [" + state + "]" : "")
+           + (approvedBy != null ? "\n approvedBy [" + approvedBy + "]" : "")
+           + (approvedDateTime != null ? "\n approvedDateTime [" + approvedDateTime + "]" : "")
+           + (caseNum != null ? "\n caseNum [" + caseNum + "]" : "")
+           + (cls != null ? "\n cls [" + cls + "]" : "")
+           + (description != null ? "\n description [" + description + "]" : "")
+           + (entryBy != null ? "\n entryBy [" + entryBy + "]" : "")
+           + (entryDateTime != null ? "\n entryDateTime [" + entryDateTime + "]" : "")
+           + (extReferenceRef != null ? "\n extReferenceRef [" + extReferenceRef + "]" : "")
+           + (extReferences != null ? "\n extReferences [" + extReferences + "]" : "")
+           + (idref != null ? "\n idref [" + idref + "]" : "")
+           + (lastChangeBy != null ? "\n lastChangeBy [" + lastChangeBy + "]" : "")
+           + (lastChangeDateTime != null ? "\n lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+           + (lastObservedBy != null ? "\n lastObservedBy [" + lastObservedBy + "]" : "")
+           + (lastReviewBy != null ? "\n lastReviewBy [" + lastReviewBy + "]" : "")
+           + (lastReviewDate != null ? "\n lastReviewDate [" + lastReviewDate + "]" : "")
+           + (legacyReleasability != null ? "\n legacyReleasability [" + legacyReleasability + "]" : "")
+           + (modAllowedBy != null ? "\n modAllowedBy [" + modAllowedBy + "]" : "")
+           + (observedFirstDateTime != null ? "\n observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+           + (observedLastDateTime != null ? "\n observedLastDateTime [" + observedLastDateTime + "]" : "")
+           + (owner != null ? "\n owner [" + owner + "]" : "")
+           + (quality != null ? "\n quality [" + quality + "]" : "")
+           + (recommendedValue != null ? "\n recommendedValue [" + recommendedValue + "]" : "")
+           + (redacted != null ? "\n redacted [" + redacted + "]" : "")
+           + (releasability != null ? "\n releasability [" + releasability + "]" : "")
+           + (remarkRef != null ? "\n remarkRef [" + remarkRef + "]" : "")
+           + (remarks != null ? "\n remarks [" + remarks + "]" : "")
+           + (securityClass != null ? "\n securityClass [" + securityClass + "]" : "")
+           + (serial != null ? "\n serial [" + serial + "]" : "")
+           + (state != null ? "\n state [" + state + "]" : "")
            + "}";
   }
 

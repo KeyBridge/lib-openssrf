@@ -52,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFD;
 public class FEDeployment extends Common<FEDeployment> {
 
   /**
-   * FERef - Force Element Serial (Required)    * <p>
+   * FERef - Force Element Serial (Required)
+   * <p>
    * The dataset identifier of the ForceElement being deployed.
    * <p>
    * Format is pattern (S29)
@@ -62,7 +63,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "FERef", required = true)
   private Serial feRef;
   /**
-   * Type - Deployment Type (Required)    * <p>
+   * Type - Deployment Type (Required)
+   * <p>
    * The type of deployment.
    * <p>
    * Format is L:CFD
@@ -72,7 +74,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * Num - Number of deployed Force Elements (Optional)    * <p>
+   * Num - Number of deployed Force Elements (Optional)
+   * <p>
    * The quantity of Force Element referenced in FERef.
    * <p>
    * Format is UN(6)
@@ -82,7 +85,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Num", required = false)
   private UN6 num;
   /**
-   * Seconds - Seconds (Optional)    * <p>
+   * Seconds - Seconds (Optional)
+   * <p>
    * The seconds of hour [0-59] that the Force element is planned for
    * deployment.
    * <p>
@@ -95,7 +99,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Seconds", required = false)
   private MinSec seconds;
   /**
-   * Minutes - Minutes (Optional)    * <p>
+   * Minutes - Minutes (Optional)
+   * <p>
    * The minutes of an hour [0-59] that the Force element is planned for
    * deployment.
    * <p>
@@ -108,7 +113,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Minutes", required = false)
   private MinSec minutes;
   /**
-   * Hours - Hours (Optional)    * <p>
+   * Hours - Hours (Optional)
+   * <p>
    * The hours of a day [0-23] (UTC time) that the Force element is planned for
    * deployment.
    * <p>
@@ -121,7 +127,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Hours", required = false)
   private Hours hours;
   /**
-   * DaysOfMonth - Days Of Month (Optional)    * <p>
+   * DaysOfMonth - Days Of Month (Optional)
+   * <p>
    * The day of month [1-31] that the Force element is planned for deployment.
    * <p>
    * Format is pattern (S40)
@@ -133,7 +140,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "DaysOfMonth", required = false)
   private DaysOfMonth daysOfMonth;
   /**
-   * Months - Months (Optional)    * <p>
+   * Months - Months (Optional)
+   * <p>
    * The month of year [1-12] that the Force element is planned for deployment.
    * <p>
    * Format is pattern (S40)
@@ -145,7 +153,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Months", required = false)
   private Months months;
   /**
-   * DaysOfWeek - Days Of Week (Optional)    * <p>
+   * DaysOfWeek - Days Of Week (Optional)
+   * <p>
    * The weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] that the
    * Force element is planned for deployment.
    * <p>
@@ -158,7 +167,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "DaysOfWeek", required = false)
   private DaysOfWeek daysOfWeek;
   /**
-   * Years - Years (Optional)    * <p>
+   * Years - Years (Optional)
+   * <p>
    * The 4-digit year [1900..2100] that the Force element is planned for
    * deployment.
    * <p>
@@ -171,19 +181,23 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Years", required = false)
   private Years years;
   /**
-   * Duration - Duration (Optional)    * <p>
+   * Duration - Duration (Optional)
+   * <p>
    * The number of minutes for which an event will live. Examples: Hours data
    * item: 8 = one value: 08h00Z 5,6,9 = multiple values: 05h00Z, 06h00Z, 09h00Z
    * 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd hour,
    * starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd hour
-   * between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z    * <p>
+   * between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
+   * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007: %lt;Minutes%gt;star/10%lt;/Minutes%gt;
    * %lt;Hours%gt;9-17%lt;/Hours%gt; %lt;DaysofWeek%gt;0-4%lt;/DaysofWeek%gt;
-   * %lt;Years%gt;2007%lt;/Years%gt; %lt;Duration%gt;2%lt;/Duration%gt;    * <p>
+   * %lt;Years%gt;2007%lt;/Years%gt; %lt;Duration%gt;2%lt;/Duration%gt;
+   * <p>
    * On the 5-minute mark, every 3rd hour, Monday-Friday
    * %lt;Minutes%gt;5%lt;/Minutes%gt; %lt;Hours%gt;star/3%lt;/Hours%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;    * <p>
+   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * <p>
    * On the 20 and 50-minute marks, every hour, every month except June,
    * Monday-Friday %lt;Minutes%gt;20,50%lt;/Minutes%gt;
    * %lt;Months%gt;1-5,7-12%lt;/Months%gt;
@@ -198,7 +212,8 @@ public class FEDeployment extends Common<FEDeployment> {
   @XmlElement(name = "Duration", required = false)
   private Duration_UN4 duration;
   /**
-   * LocationRef - Location Reference (Optional)    * <p>
+   * LocationRef - Location Reference (Optional)
+   * <p>
    * The serial of the referenced Location.
    * <p>
    * Format is pattern (S29)
@@ -227,6 +242,13 @@ public class FEDeployment extends Common<FEDeployment> {
    */
   @XmlElement(name = "AtWaypoint")
   private Set<AtWaypoint> atWaypoint;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public FEDeployment() {
+    super();
+  }
 
   /**
    * Get the dataset identifier of the ForceElement being deployed..
@@ -539,19 +561,22 @@ public class FEDeployment extends Common<FEDeployment> {
    * data item: 8 = one value: 08h00Z 5,6,9 = multiple values: 05h00Z, 06h00Z,
    * 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd
    * hour, starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd
-   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z    * <p>
+   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
+   * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
    * <Minutes>star/10</Minutes>
    * <Hours>9-17</Hours>
    * <DaysofWeek>0-4</DaysofWeek>
    * <Years>2007</Years>
-   * <Duration>2</Duration>    * <p>
-On the 5-minute mark, every 3rd hour, Monday-Friday
+   * <Duration>2</Duration>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday
    * <Minutes>5</Minutes>
    * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>    * <p>
-On the 20 and 50-minute marks, every hour, every month except June,
+   * <DaysofWeek>1-5</DaysofWeek>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June,
    * Monday-Friday
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
@@ -569,19 +594,22 @@ On the 20 and 50-minute marks, every hour, every month except June,
    * data item: 8 = one value: 08h00Z 5,6,9 = multiple values: 05h00Z, 06h00Z,
    * 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd
    * hour, starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd
-   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z    * <p>
+   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
+   * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
    * <Minutes>star/10</Minutes>
    * <Hours>9-17</Hours>
    * <DaysofWeek>0-4</DaysofWeek>
    * <Years>2007</Years>
-   * <Duration>2</Duration>    * <p>
-On the 5-minute mark, every 3rd hour, Monday-Friday
+   * <Duration>2</Duration>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday
    * <Minutes>5</Minutes>
    * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>    * <p>
-On the 20 and 50-minute marks, every hour, every month except June,
+   * <DaysofWeek>1-5</DaysofWeek>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June,
    * Monday-Friday
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
@@ -828,19 +856,22 @@ On the 20 and 50-minute marks, every hour, every month except June,
    * data item: 8 = one value: 08h00Z 5,6,9 = multiple values: 05h00Z, 06h00Z,
    * 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd
    * hour, starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd
-   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z    * <p>
+   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
+   * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
    * <Minutes>star/10</Minutes>
    * <Hours>9-17</Hours>
    * <DaysofWeek>0-4</DaysofWeek>
    * <Years>2007</Years>
-   * <Duration>2</Duration>    * <p>
-On the 5-minute mark, every 3rd hour, Monday-Friday
+   * <Duration>2</Duration>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday
    * <Minutes>5</Minutes>
    * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>    * <p>
-On the 20 and 50-minute marks, every hour, every month except June,
+   * <DaysofWeek>1-5</DaysofWeek>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June,
    * Monday-Friday
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
@@ -943,20 +974,20 @@ On the 20 and 50-minute marks, every hour, every month except June,
   @Override
   public String toString() {
     return "FEDeployment {"
-           + (atWaypoint != null ? " atWaypoint [" + atWaypoint + "]" : "")
-           + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
-           + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
-           + (duration != null ? " duration [" + duration + "]" : "")
-           + (feRef != null ? " feRef [" + feRef + "]" : "")
-           + (hours != null ? " hours [" + hours + "]" : "")
-           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
-           + (minutes != null ? " minutes [" + minutes + "]" : "")
-           + (months != null ? " months [" + months + "]" : "")
-           + (num != null ? " num [" + num + "]" : "")
-           + (project != null ? " project [" + project + "]" : "")
-           + (seconds != null ? " seconds [" + seconds + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
-           + (years != null ? " years [" + years + "]" : "")
+           + (atWaypoint != null ? "\n atWaypoint [" + atWaypoint + "]" : "")
+           + (daysOfMonth != null ? "\n daysOfMonth [" + daysOfMonth + "]" : "")
+           + (daysOfWeek != null ? "\n daysOfWeek [" + daysOfWeek + "]" : "")
+           + (duration != null ? "\n duration [" + duration + "]" : "")
+           + (feRef != null ? "\n feRef [" + feRef + "]" : "")
+           + (hours != null ? "\n hours [" + hours + "]" : "")
+           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
+           + (minutes != null ? "\n minutes [" + minutes + "]" : "")
+           + (months != null ? "\n months [" + months + "]" : "")
+           + (num != null ? "\n num [" + num + "]" : "")
+           + (project != null ? "\n project [" + project + "]" : "")
+           + (seconds != null ? "\n seconds [" + seconds + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
+           + (years != null ? "\n years [" + years + "]" : "")
            + "}\n  FEDeployment." + super.toString() + "\n";
   }
 
@@ -979,7 +1010,8 @@ On the 20 and 50-minute marks, every hour, every month except June,
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * FERef - Force Element Serial (Required)    * <p>
+   * FERef - Force Element Serial (Required)
+   * <p>
    * The dataset identifier of the ForceElement being deployed.
    * <p>
    * Format is pattern (S29)

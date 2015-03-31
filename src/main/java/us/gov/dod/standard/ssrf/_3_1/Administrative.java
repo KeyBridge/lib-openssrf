@@ -47,7 +47,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDR;
 public class Administrative extends Common<Administrative> {
 
   /**
-   * Action - Action (Required)    * <p>
+   * Action - Action (Required)
+   * <p>
    * The action which triggered the transmission, or to be performed upon
    * reception, of this dataset.
    * <p>
@@ -58,7 +59,8 @@ public class Administrative extends Common<Administrative> {
   @XmlElement(name = "Action", required = true)
   private TString action;
   /**
-   * MessageRef - Message Reference (Optional)    * <p>
+   * MessageRef - Message Reference (Optional)
+   * <p>
    * The serial of the Message Dataset that is causing this response.
    * <p>
    * Format is pattern (S29)
@@ -87,6 +89,13 @@ public class Administrative extends Common<Administrative> {
    */
   @XmlElement(name = "CodeList")
   private Set<CodeList> codeList;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Administrative() {
+    super();
+  }
 
   /**
    * Get the action which triggered the transmission, or to be performed upon
@@ -324,10 +333,10 @@ public class Administrative extends Common<Administrative> {
   @Override
   public String toString() {
     return "Administrative {"
-           + (action != null ? " action [" + action + "]" : "")
-           + (codeList != null ? " codeList [" + codeList + "]" : "")
-           + (dataset != null ? " dataset [" + dataset + "]" : "")
-           + (messageRef != null ? " messageRef [" + messageRef + "]" : "")
+           + (action != null ? "\n action [" + action + "]" : "")
+           + (codeList != null ? "\n codeList [" + codeList + "]" : "")
+           + (dataset != null ? "\n dataset [" + dataset + "]" : "")
+           + (messageRef != null ? "\n messageRef [" + messageRef + "]" : "")
            + "}\n  Administrative." + super.toString() + "\n";
   }
 
@@ -350,7 +359,8 @@ public class Administrative extends Common<Administrative> {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * MessageRef - Message Reference (Optional)    * <p>
+   * MessageRef - Message Reference (Optional)
+   * <p>
    * The serial of the Message Dataset that is causing this response.
    * <p>
    * Format is pattern (S29)

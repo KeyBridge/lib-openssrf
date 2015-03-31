@@ -62,7 +62,8 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.StageLocation;
 public class SSReply extends Common<SSReply> {
 
   /**
-   * SSRequestRef - SSRequest Serial (Optional)    * <p>
+   * SSRequestRef - SSRequest Serial (Optional)
+   * <p>
    * The dataset identifier of the SSRequest being replied to.
    * <p>
    * Format is pattern (S29)
@@ -72,7 +73,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "SSRequestRef", required = false)
   private Serial ssRequestRef;
   /**
-   * ReplyingCountry - Replying Country (Required)    * <p>
+   * ReplyingCountry - Replying Country (Required)
+   * <p>
    * The code of the country providing the reply.
    * <p>
    * Format is L:CAO
@@ -82,7 +84,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "ReplyingCountry", required = true)
   private TString replyingCountry;
   /**
-   * SupportabilityCode - Supportability Code (Required)    * <p>
+   * SupportabilityCode - Supportability Code (Required)
+   * <p>
    * The overall result of the national analysis. - If replying "Supported with
    * Restrictions", use Comments for general restrictions only. Specific
    * restrictions on authorised/excluded location should be expressed using the
@@ -97,7 +100,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "SupportabilityCode", required = true)
   private TString supportabilityCode;
   /**
-   * DateReceivedByCountry - Date Request Received By Country (Optional)    * <p>
+   * DateReceivedByCountry - Date Request Received By Country (Optional)
+   * <p>
    * The date the request was received by the Host Nation Administration.
    * <p>
    * Format is Date
@@ -107,7 +111,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "DateReceivedByCountry", required = false)
   private D dateReceivedByCountry;
   /**
-   * EffectiveDate - Effective Date (Required)    * <p>
+   * EffectiveDate - Effective Date (Required)
+   * <p>
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
@@ -117,7 +122,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "EffectiveDate", required = true)
   private D effectiveDate;
   /**
-   * ExpirationDate - Expiration Date (Optional)    * <p>
+   * ExpirationDate - Expiration Date (Optional)
+   * <p>
    * The date at which the dataset will expire. The Expiration date should be
    * less than five years from current date.
    * <p>
@@ -130,7 +136,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "ExpirationDate", required = false)
   private D expirationDate;
   /**
-   * ReviewDate - Review Date (Optional)    * <p>
+   * ReviewDate - Review Date (Optional)
+   * <p>
    * The date by which the dataset is to be reviewed. The Review date should be
    * less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicates when the organisation
@@ -147,7 +154,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "ReviewDate", required = false)
   private D reviewDate;
   /**
-   * US:ApprovalSPSNum - Approval SPS Number (Optional)    * <p>
+   * US:ApprovalSPSNum - Approval SPS Number (Optional)
+   * <p>
    * The Certification of Spectrum Support Spectrum Planning Subcommittee (SPS)
    * document identifier assigned by NTIA. This is not the same as the
    * application SPS number.
@@ -159,7 +167,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "ApprovalSPSNum", required = false)
   private S11 approvalSPSNum;
   /**
-   * US:ERPNumber - ERP Number (Optional)    * <p>
+   * US:ERPNumber - ERP Number (Optional)
+   * <p>
    * The Emergency Readiness Plan (ERP) Number. Certification applications are
    * assigned an ERP Number by the Emergency Planning Subcommittee (EPS) of the
    * Interdepartment Radio Advisory Committee (IRAC) if the system involves
@@ -172,7 +181,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "ERPNumber", required = false)
   private S50 erpNumber;
   /**
-   * US:FASNumber - FAS Number (Optional)    * <p>
+   * US:FASNumber - FAS Number (Optional)
+   * <p>
    * The Interdepartment Radio Advisory Committee (IRAC) Frequency Assignment
    * Subcommittee (FAS) identifier assigned by NTIA.
    * <p>
@@ -183,7 +193,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "FASNumber", required = false)
   private S50 fasNumber;
   /**
-   * US:IRACNumber - IRAC Number (Optional)    * <p>
+   * US:IRACNumber - IRAC Number (Optional)
+   * <p>
    * The Interdepartment Radio Advisory Committee (IRAC) document number of the
    * NTIA Certification of Spectrum Support document. This number is assigned by
    * NTIA.
@@ -195,7 +206,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "IRACNumber", required = false)
   private S50 iracNumber;
   /**
-   * US:ReplyingAuthority - Replying Authority (Optional)    * <p>
+   * US:ReplyingAuthority - Replying Authority (Optional)
+   * <p>
    * The name of the organization providing the reply.
    * <p>
    * Format is S100
@@ -213,7 +225,8 @@ public class SSReply extends Common<SSReply> {
   @XmlElement(name = "DistributionGroups", required = false)
   private S20 distributionGroups;
   /**
-   * US:CoordinationNum - Coordination Number (Optional)    * <p>
+   * US:CoordinationNum - Coordination Number (Optional)
+   * <p>
    * The US Military Communications-Electronics Board (MCEB) identifier assigned
    * to the equipment or system. (e.g., J/F 12/12345). An SSRequest coordination
    * number usually ends with an even digit (e.g., /2, /4), while an SSReply
@@ -263,6 +276,13 @@ public class SSReply extends Common<SSReply> {
    */
   @XmlElement(name = "Configuration")
   private Set<Configuration> configuration;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public SSReply() {
+    super();
+  }
 
   /**
    * Get the dataset identifier of the SSRequest being replied to..
@@ -1195,23 +1215,23 @@ public class SSReply extends Common<SSReply> {
   @Override
   public String toString() {
     return "SSReply {"
-           + (approvalSPSNum != null ? " approvalSPSNum [" + approvalSPSNum + "]" : "")
-           + (commentSource != null ? " commentSource [" + commentSource + "]" : "")
-           + (configuration != null ? " configuration [" + configuration + "]" : "")
-           + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
-           + (dateReceivedByCountry != null ? " dateReceivedByCountry [" + dateReceivedByCountry + "]" : "")
-           + (distributionGroups != null ? " distributionGroups [" + distributionGroups + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (erpNumber != null ? " erpNumber [" + erpNumber + "]" : "")
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (fasNumber != null ? " fasNumber [" + fasNumber + "]" : "")
-           + (iracNumber != null ? " iracNumber [" + iracNumber + "]" : "")
-           + (replyingAuthority != null ? " replyingAuthority [" + replyingAuthority + "]" : "")
-           + (replyingCountry != null ? " replyingCountry [" + replyingCountry + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (ssRequestRef != null ? " ssRequestRef [" + ssRequestRef + "]" : "")
-           + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
-           + (supportabilityCode != null ? " supportabilityCode [" + supportabilityCode + "]" : "")
+           + (approvalSPSNum != null ? "\n approvalSPSNum [" + approvalSPSNum + "]" : "")
+           + (commentSource != null ? "\n commentSource [" + commentSource + "]" : "")
+           + (configuration != null ? "\n configuration [" + configuration + "]" : "")
+           + (coordinationNum != null ? "\n coordinationNum [" + coordinationNum + "]" : "")
+           + (dateReceivedByCountry != null ? "\n dateReceivedByCountry [" + dateReceivedByCountry + "]" : "")
+           + (distributionGroups != null ? "\n distributionGroups [" + distributionGroups + "]" : "")
+           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
+           + (erpNumber != null ? "\n erpNumber [" + erpNumber + "]" : "")
+           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
+           + (fasNumber != null ? "\n fasNumber [" + fasNumber + "]" : "")
+           + (iracNumber != null ? "\n iracNumber [" + iracNumber + "]" : "")
+           + (replyingAuthority != null ? "\n replyingAuthority [" + replyingAuthority + "]" : "")
+           + (replyingCountry != null ? "\n replyingCountry [" + replyingCountry + "]" : "")
+           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
+           + (ssRequestRef != null ? "\n ssRequestRef [" + ssRequestRef + "]" : "")
+           + (stageLocation != null ? "\n stageLocation [" + stageLocation + "]" : "")
+           + (supportabilityCode != null ? "\n supportabilityCode [" + supportabilityCode + "]" : "")
            + "}\n  SSReply." + super.toString() + "\n";
   }
 
@@ -1235,7 +1255,8 @@ public class SSReply extends Common<SSReply> {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * SSRequestRef - SSRequest Serial (Optional)    * <p>
+   * SSRequestRef - SSRequest Serial (Optional)
+   * <p>
    * The dataset identifier of the SSRequest being replied to.
    * <p>
    * Format is pattern (S29)

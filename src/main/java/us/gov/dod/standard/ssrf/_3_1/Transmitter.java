@@ -67,7 +67,8 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
 public class Transmitter extends Common<Transmitter> {
 
   /**
-   * Generic - Generic indicator (Required)    * <p>
+   * Generic - Generic indicator (Required)
+   * <p>
    * "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model.
@@ -79,7 +80,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "Generic", required = true)
   private TString generic;
   /**
-   * DuplexSep - Duplex Separation (Optional)    * <p>
+   * DuplexSep - Duplex Separation (Optional)
+   * <p>
    * The minimum or exact duplex frequency separation
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -91,7 +93,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "DuplexSep")
   private FreqM duplexSep;
   /**
-   * DuplexSepType - Duplex Separation Type (Optional)    * <p>
+   * DuplexSepType - Duplex Separation Type (Optional)
+   * <p>
    * If the frequency separation must be exactly, or at the minimum, the amount
    * specified.
    * <p>
@@ -104,7 +107,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "DuplexSepType", required = false)
   private TString duplexSepType;
   /**
-   * OutputDeviceType - Output Device Type (Optional)    * <p>
+   * OutputDeviceType - Output Device Type (Optional)
+   * <p>
    * The type of the device. Select an entry from the list.
    * <p>
    * Format is L:COT
@@ -116,7 +120,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "OutputDeviceType", required = false)
   private TString outputDeviceType;
   /**
-   * OutputDevice - Output Device Name (Optional)    * <p>
+   * OutputDevice - Output Device Name (Optional)
+   * <p>
    * The name of the output device. The specific device designation should be
    * provided, for example, VARIAN VTS5751A1.
    * <p>
@@ -129,7 +134,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "OutputDevice", required = false)
   private S40 outputDevice;
   /**
-   * Filter - Filter Type Description (Optional)    * <p>
+   * Filter - Filter Type Description (Optional)
+   * <p>
    * A brief description of the type of the output filter.
    * <p>
    * Format is Memo
@@ -139,7 +145,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "Filter", required = false)
   private MEMO filter;
   /**
-   * US:FCCAcceptanceNum - FCC Acceptance Number (Optional)    * <p>
+   * US:FCCAcceptanceNum - FCC Acceptance Number (Optional)
+   * <p>
    * The Federal Communication Commission (FCC) ID of FCC authorised equipment.
    * <p>
    * Format is S50
@@ -149,7 +156,8 @@ public class Transmitter extends Common<Transmitter> {
   @XmlElement(name = "FCCAcceptanceNum", required = false)
   private S50 fccAcceptanceNum;
   /**
-   * US:TSPR - TSPR (Optional)    * <p>
+   * US:TSPR - TSPR (Optional)
+   * <p>
    * The telecommunications service priority applicable to a spectrum-dependent
    * radiocommunications system intended to be used in direct support of a
    * national emergency declared under Section 706 of the Communications Act of
@@ -231,6 +239,13 @@ public class Transmitter extends Common<Transmitter> {
    */
   @XmlElement(name = "UsingCountries")
   private Set<UsingCountries> usingCountries;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Transmitter() {
+    super();
+  }
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -1021,20 +1036,20 @@ public class Transmitter extends Common<Transmitter> {
   @Override
   public String toString() {
     return "Transmitter {"
-           + (curve != null ? " curve [" + curve + "]" : "")
-           + (deployment != null ? " deployment [" + deployment + "]" : "")
-           + (duplexSep != null ? " duplexSep [" + duplexSep + "]" : "")
-           + (duplexSepType != null ? " duplexSepType [" + duplexSepType + "]" : "")
-           + (fccAcceptanceNum != null ? " fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
-           + (filter != null ? " filter [" + filter + "]" : "")
-           + (generic != null ? " generic [" + generic + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (outputDevice != null ? " outputDevice [" + outputDevice + "]" : "")
-           + (outputDeviceType != null ? " outputDeviceType [" + outputDeviceType + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (tspr != null ? " tspr [" + tspr + "]" : "")
-           + (txMode != null ? " txMode [" + txMode + "]" : "")
-           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+           + (curve != null ? "\n curve [" + curve + "]" : "")
+           + (deployment != null ? "\n deployment [" + deployment + "]" : "")
+           + (duplexSep != null ? "\n duplexSep [" + duplexSep + "]" : "")
+           + (duplexSepType != null ? "\n duplexSepType [" + duplexSepType + "]" : "")
+           + (fccAcceptanceNum != null ? "\n fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
+           + (filter != null ? "\n filter [" + filter + "]" : "")
+           + (generic != null ? "\n generic [" + generic + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (outputDevice != null ? "\n outputDevice [" + outputDevice + "]" : "")
+           + (outputDeviceType != null ? "\n outputDeviceType [" + outputDeviceType + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (tspr != null ? "\n tspr [" + tspr + "]" : "")
+           + (txMode != null ? "\n txMode [" + txMode + "]" : "")
+           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
            + "}\n  Transmitter." + super.toString() + "\n";
   }
 

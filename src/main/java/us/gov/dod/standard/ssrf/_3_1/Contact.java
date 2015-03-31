@@ -12,7 +12,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
- * Contact is the XML root for all parameters of a Contact.  * <p>
+ * Contact is the XML root for all parameters of a Contact.
+ * <p>
  * Sub-Elements are {@link Address}, {@link Email}, {@link TelephoneFax}
  * <p>
  * Example:
@@ -46,7 +47,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class Contact extends Common<Contact> {
 
   /**
-   * EffectiveDate - Effective Date (Optional)    * <p>
+   * EffectiveDate - Effective Date (Optional)
+   * <p>
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
@@ -56,7 +58,8 @@ public class Contact extends Common<Contact> {
   @XmlElement(name = "EffectiveDate", required = false)
   private D effectiveDate;
   /**
-   * ExpirationDate - Expiration Date (Optional)    * <p>
+   * ExpirationDate - Expiration Date (Optional)
+   * <p>
    * The date at which the dataset will expire. The Expiration date should be
    * less than five years from current date.
    * <p>
@@ -69,7 +72,8 @@ public class Contact extends Common<Contact> {
   @XmlElement(name = "ExpirationDate", required = false)
   private D expirationDate;
   /**
-   * ReviewDate - Review Date (Optional)    * <p>
+   * ReviewDate - Review Date (Optional)
+   * <p>
    * The date by which the dataset is to be reviewed. The Review date should be
    * less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicate when the organisation
@@ -86,7 +90,8 @@ public class Contact extends Common<Contact> {
   @XmlElement(name = "ReviewDate", required = false)
   private D reviewDate;
   /**
-   * TitleRank - Title or Rank (Optional)    * <p>
+   * TitleRank - Title or Rank (Optional)
+   * <p>
    * The contact title or rank e.g., Ms, Col, etc.
    * <p>
    * Format is S10
@@ -96,7 +101,8 @@ public class Contact extends Common<Contact> {
   @XmlElement(name = "TitleRank", required = false)
   private S10 titleRank;
   /**
-   * FirstName - First Name (Optional)    * <p>
+   * FirstName - First Name (Optional)
+   * <p>
    * The first name of the contact individual.
    * <p>
    * Format is S30
@@ -106,7 +112,8 @@ public class Contact extends Common<Contact> {
   @XmlElement(name = "FirstName", required = false)
   private S30 firstName;
   /**
-   * LastName - Last Name (Optional)    * <p>
+   * LastName - Last Name (Optional)
+   * <p>
    * The last name of the contact individual.
    * <p>
    * Format is S30
@@ -143,6 +150,13 @@ public class Contact extends Common<Contact> {
    */
   @XmlElement(name = "EMail")
   private Set<EMail> eMail;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Contact() {
+    super();
+  }
 
   /**
    * Get the date by which the dataset is to be operational or effective..
@@ -653,15 +667,15 @@ public class Contact extends Common<Contact> {
   @Override
   public String toString() {
     return "Contact {"
-           + (address != null ? " address [" + address + "]" : "")
-           + (eMail != null ? " eMail [" + eMail + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (firstName != null ? " firstName [" + firstName + "]" : "")
-           + (lastName != null ? " lastName [" + lastName + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
-           + (titleRank != null ? " titleRank [" + titleRank + "]" : "")
+           + (address != null ? "\n address [" + address + "]" : "")
+           + (eMail != null ? "\n eMail [" + eMail + "]" : "")
+           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
+           + (firstName != null ? "\n firstName [" + firstName + "]" : "")
+           + (lastName != null ? "\n lastName [" + lastName + "]" : "")
+           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
+           + (telephoneFax != null ? "\n telephoneFax [" + telephoneFax + "]" : "")
+           + (titleRank != null ? "\n titleRank [" + titleRank + "]" : "")
            + "}\n  Contact." + super.toString() + "\n";
   }
 

@@ -209,6 +209,13 @@ public class ForceElement extends Common<ForceElement> {
   private Set<StockNum> stockNum;
 
   /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public ForceElement() {
+    super();
+  }
+
+  /**
    * Get the date by which the dataset is to be reviewed. The Review date should
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicate when the organisation
@@ -923,19 +930,19 @@ public class ForceElement extends Common<ForceElement> {
   @Override
   public String toString() {
     return "ForceElement {"
-           + (assets != null ? " assets [" + assets + "]" : "")
-           + (cmdLevel != null ? " cmdLevel [" + cmdLevel + "]" : "")
-           + (missionCode != null ? " missionCode [" + missionCode + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (owningCountry != null ? " owningCountry [" + owningCountry + "]" : "")
-           + (owningOrganisation != null ? " owningOrganisation [" + owningOrganisation + "]" : "")
-           + (platform != null ? " platform [" + platform + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (role != null ? " role [" + role + "]" : "")
-           + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
-           + (uic != null ? " uic [" + uic + "]" : "")
+           + (assets != null ? "\n assets [" + assets + "]" : "")
+           + (cmdLevel != null ? "\n cmdLevel [" + cmdLevel + "]" : "")
+           + (missionCode != null ? "\n missionCode [" + missionCode + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (owningCountry != null ? "\n owningCountry [" + owningCountry + "]" : "")
+           + (owningOrganisation != null ? "\n owningOrganisation [" + owningOrganisation + "]" : "")
+           + (platform != null ? "\n platform [" + platform + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
+           + (role != null ? "\n role [" + role + "]" : "")
+           + (stockNum != null ? "\n stockNum [" + stockNum + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
+           + (uic != null ? "\n uic [" + uic + "]" : "")
            + "}\n  ForceElement." + super.toString() + "\n";
   }
 

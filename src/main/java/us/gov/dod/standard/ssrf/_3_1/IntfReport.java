@@ -65,7 +65,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
 public class IntfReport extends Common<IntfReport> {
 
   /**
-   * HelpRequired - Help Required (Optional)    * <p>
+   * HelpRequired - Help Required (Optional)
+   * <p>
    * Whether the user needs technical assistance from another organisation to
    * solve the interference. If not used, consider as "No".
    * <p>
@@ -76,7 +77,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "HelpRequired", required = false)
   private TString helpRequired;
   /**
-   * IntfPeriod - Interference Period (Optional)    * <p>
+   * IntfPeriod - Interference Period (Optional)
+   * <p>
    * How often the interference is experienced.
    * <p>
    * Format is L:CTI
@@ -86,7 +88,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "IntfPeriod", required = false)
   private TString intfPeriod;
   /**
-   * IntfStartDateTime - Interference Start Date/Time (Required)    * <p>
+   * IntfStartDateTime - Interference Start Date/Time (Required)
+   * <p>
    * The date/time the interference was first perceived.
    * <p>
    * Format is DT
@@ -96,7 +99,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "IntfStartDateTime", required = true)
   private DT intfStartDateTime;
   /**
-   * IntfStopDateTime - Interference Stop Date/Time (Optional)    * <p>
+   * IntfStopDateTime - Interference Stop Date/Time (Optional)
+   * <p>
    * The date/time the interference ceased.
    * <p>
    * Format is DT
@@ -115,7 +119,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "IntfDescr", required = false)
   private MEMO intfDescr;
   /**
-   * AffectedEquipment - Victim Equipment Description (Optional)    * <p>
+   * AffectedEquipment - Victim Equipment Description (Optional)
+   * <p>
    * The nomenclature or description of equipment experiencing the interference.
    * <p>
    * Format is S100
@@ -125,7 +130,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "AffectedEquipment", required = false)
   private S100 affectedEquipment;
   /**
-   * SourceFieldStrength - Field Strength (Optional)    * <p>
+   * SourceFieldStrength - Field Strength (Optional)
+   * <p>
    * The measured electromagnetic field strength.
    * <p>
    * Format is UN(6,1) (dB)
@@ -135,7 +141,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceFieldStrength", required = false)
   private FieldStrength sourceFieldStrength;
   /**
-   * SourceLon - Longitude of the Source (Optional)    * <p>
+   * SourceLon - Longitude of the Source (Optional)
+   * <p>
    * The geographical longitude (degrees, minutes, seconds, and hemisphere E or
    * W) of the source of the interference. If the seconds are not known, use 00.
    * Use leading zeros as appropriate for degrees, minutes, or seconds. Degrees
@@ -154,7 +161,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceLon", required = false)
   private Lon sourceLon;
   /**
-   * SourceLat - Latitude of the Source (Optional)    * <p>
+   * SourceLat - Latitude of the Source (Optional)
+   * <p>
    * The geographical latitude (degrees, minutes, seconds and hemisphere N or S)
    * of the source of the interference. Same remarks for seconds and leading
    * zeros. Enter N or S immediately following the seconds. The format is:
@@ -170,7 +178,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceLat", required = false)
   private Lat sourceLat;
   /**
-   * SourceAz - Source Azimuth (Optional)    * <p>
+   * SourceAz - Source Azimuth (Optional)
+   * <p>
    * The measured azimuth of the source from the victim.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
@@ -180,7 +189,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceAz", required = false)
   private Az sourceAz;
   /**
-   * SourceLocDescr - Location Description of the Source (Optional)    * <p>
+   * SourceLocDescr - Location Description of the Source (Optional)
+   * <p>
    * The approximate position the source, if exact coordinates are not known.
    * <p>
    * Format is S255
@@ -190,7 +200,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceLocDescr", required = false)
   private S255 sourceLocDescr;
   /**
-   * SourceFreqMin - Minimum Source Frequency (Optional)    * <p>
+   * SourceFreqMin - Minimum Source Frequency (Optional)
+   * <p>
    * The nominal frequency of the interference, or the minimum frequency in case
    * of a range.
    * <p>
@@ -201,7 +212,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceFreqMin", required = false)
   private FreqM sourceFreqMin;
   /**
-   * SourceFreqMax - Maximum Source Frequency (Optional)    * <p>
+   * SourceFreqMax - Maximum Source Frequency (Optional)
+   * <p>
    * The maximum frequency of the interference, in case of a range.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
@@ -281,7 +293,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SourceEmsClass", required = false)
   private EmsDes sourceEmsClass;
   /**
-   * SourceEmsBw - Emission Bandwidth of the interference source (Optional)    * <p>
+   * SourceEmsBw - Emission Bandwidth of the interference source (Optional)
+   * <p>
    * The calculated or measured bandwidth of the interference source.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
@@ -303,7 +316,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimAsgnRef", required = false)
   private Serial victimAsgnRef;
   /**
-   * VictimSystem - Victim System (Optional)    * <p>
+   * VictimSystem - Victim System (Optional)
+   * <p>
    * The nomenclature or other identifier of equipment experiencing the
    * interference.
    * <p>
@@ -314,7 +328,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimSystem", required = false)
   private S100 victimSystem;
   /**
-   * VictimCountry - Country/Area of the Victim (Optional)    * <p>
+   * VictimCountry - Country/Area of the Victim (Optional)
+   * <p>
    * The country or area where the victim of the interference is located.
    * <p>
    * Format is L:CAO
@@ -324,7 +339,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimCountry", required = false)
   private TString victimCountry;
   /**
-   * VictimLon - Longitude of the Victim (Optional)    * <p>
+   * VictimLon - Longitude of the Victim (Optional)
+   * <p>
    * The geographical longitude (degrees, minutes, seconds, and hemisphere E or
    * W) of the victim of the interference. If the seconds are not known, use 00.
    * Use leading zeros as appropriate for degrees, minutes, or seconds. Degrees
@@ -342,7 +358,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimLon", required = false)
   private Lon victimLon;
   /**
-   * VictimLat - Latitude of the Victim (Optional)    * <p>
+   * VictimLat - Latitude of the Victim (Optional)
+   * <p>
    * The geographical latitude (degrees, minutes, seconds and hemisphere N or S)
    * of the victim of the interference. Same remarks for seconds and leading
    * zeros. Enter N or S immediately following the seconds. The format is:
@@ -358,7 +375,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimLat", required = false)
   private Lat victimLat;
   /**
-   * VictimLocDescr - Location Description of the Victim (Optional)    * <p>
+   * VictimLocDescr - Location Description of the Victim (Optional)
+   * <p>
    * The approximate position the victim of the interference, if exact
    * coordinates are not known.
    * <p>
@@ -369,7 +387,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimLocDescr", required = false)
   private S255 victimLocDescr;
   /**
-   * VictimFreqMin - Minimum Victim Frequency (Required)    * <p>
+   * VictimFreqMin - Minimum Victim Frequency (Required)
+   * <p>
    * The nominal or lower frequency used by the victim of the interference.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
@@ -379,7 +398,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimFreqMin", required = true)
   private FreqM victimFreqMin;
   /**
-   * VictimFreqMax - Maximum Victim Frequency (Optional)    * <p>
+   * VictimFreqMax - Maximum Victim Frequency (Optional)
+   * <p>
    * The upper frequency of the range, in case of an assignment over a frequency
    * range.
    * <p>
@@ -390,7 +410,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "VictimFreqMax", required = false)
   private FreqM victimFreqMax;
   /**
-   * SatelliteName - Victim Satellite Name (Optional)    * <p>
+   * SatelliteName - Victim Satellite Name (Optional)
+   * <p>
    * The name of the satellite experiencing the interference.
    * <p>
    * Format is S50
@@ -400,7 +421,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteName", required = false)
   private S50 satelliteName;
   /**
-   * SatelliteChannel - Victim Satellite Channel (Optional)    * <p>
+   * SatelliteChannel - Victim Satellite Channel (Optional)
+   * <p>
    * The identifier of satellite channel experiencing the interference.
    * <p>
    * Format is S50
@@ -410,7 +432,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteChannel", required = false)
   private S50 satelliteChannel;
   /**
-   * SatelliteUplinkFreq - Victim Satellite Uplink Freq (Optional)    * <p>
+   * SatelliteUplinkFreq - Victim Satellite Uplink Freq (Optional)
+   * <p>
    * The satellite uplink frequency experiencing the interference
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
@@ -420,7 +443,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteUplinkFreq", required = false)
   private FreqM satelliteUplinkFreq;
   /**
-   * PerformanceEffects - Effects On Performance (Optional)    * <p>
+   * PerformanceEffects - Effects On Performance (Optional)
+   * <p>
    * The effect the interference has on normal operations.
    * <p>
    * Format is Memo
@@ -430,7 +454,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "PerformanceEffects", required = false)
   private MEMO performanceEffects;
   /**
-   * Evaluation - Evaluation (Optional)    * <p>
+   * Evaluation - Evaluation (Optional)
+   * <p>
    * Your best guess as to the cause of the interference.
    * <p>
    * Format is L:CJ1
@@ -440,7 +465,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "Evaluation", required = false)
   private TString evaluation;
   /**
-   * Solution - Description of the Solution (Optional)    * <p>
+   * Solution - Description of the Solution (Optional)
+   * <p>
    * What actions were taken to resolve the interference.
    * <p>
    * Format is Memo
@@ -450,7 +476,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "Solution", required = false)
   private MEMO solution;
   /**
-   * US:AffectedCSA - Affected CSA (Optional)    * <p>
+   * US:AffectedCSA - Affected CSA (Optional)
+   * <p>
    * The responsible Combatant Commander for the geographic area where the
    * interference occurred and/or the victim's organization.
    * <p>
@@ -461,7 +488,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "AffectedCSA", required = false)
   private TString affectedCSA;
   /**
-   * US:Characteristics - Characteristics (Optional)    * <p>
+   * US:Characteristics - Characteristics (Optional)
+   * <p>
    * The interference characteristics.
    * <p>
    * Format is L:UCH
@@ -471,7 +499,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "Characteristics", required = false)
   private TString characteristics;
   /**
-   * US:GPSAffected - GPS Affected (Optional)    * <p>
+   * US:GPSAffected - GPS Affected (Optional)
+   * <p>
    * Whether the interference affects GPS reception.
    * <p>
    * Format is L:CBO
@@ -481,7 +510,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "GPSAffected", required = false)
   private TString gpsAffected;
   /**
-   * US:LocalEventID - Local Event ID (Optional)    * <p>
+   * US:LocalEventID - Local Event ID (Optional)
+   * <p>
    * The local event ID.
    * <p>
    * Format is S20
@@ -491,7 +521,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "LocalEventID", required = false)
   private S20 localEventID;
   /**
-   * US:NetCircuitsAffected - Net Circuits Affected (Optional)    * <p>
+   * US:NetCircuitsAffected - Net Circuits Affected (Optional)
+   * <p>
    * The network circuits affected by the interference.
    * <p>
    * Format is Memo
@@ -501,7 +532,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "NetCircuitsAffected", required = false)
   private MEMO netCircuitsAffected;
   /**
-   * US:NetsAffected - Nets Affected (Optional)    * <p>
+   * US:NetsAffected - Nets Affected (Optional)
+   * <p>
    * The networks affected by the interference.
    * <p>
    * Format is Memo
@@ -511,7 +543,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "NetsAffected", required = false)
   private MEMO netsAffected;
   /**
-   * US:SATCOMPriority - SATCOM Priority (Optional)    * <p>
+   * US:SATCOMPriority - SATCOM Priority (Optional)
+   * <p>
    * The satellite communication priority.
    * <p>
    * Format is L:UPR
@@ -521,7 +554,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SATCOMPriority", required = false)
   private TString satcomPriority;
   /**
-   * US:SatelliteAffected - Satellite Affected (Optional)    * <p>
+   * US:SatelliteAffected - Satellite Affected (Optional)
+   * <p>
    * Whether the interference affects satellite reception.
    * <p>
    * Format is L:CBO
@@ -532,7 +566,8 @@ public class IntfReport extends Common<IntfReport> {
   private TString satelliteAffected;
   /**
    * US:SatelliteDownlinkPolarisation - Satellite Downlink Polarisation
-   * (Optional)    * <p>
+   * (Optional)
+   * <p>
    * The polarisation of the satellite downlink signal.
    * <p>
    * Format is L:CPO
@@ -542,7 +577,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteDownlinkPolarisation", required = false)
   private TString satelliteDownlinkPolarisation;
   /**
-   * US:SatelliteHemisphere - Satellite Hemisphere (Optional)    * <p>
+   * US:SatelliteHemisphere - Satellite Hemisphere (Optional)
+   * <p>
    * The satellite hemisphere.
    * <p>
    * Format is L:CCO
@@ -552,7 +588,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteHemisphere", required = false)
   private TString satelliteHemisphere;
   /**
-   * US:SatelliteLongitude - Satellite Longitude (Optional)    * <p>
+   * US:SatelliteLongitude - Satellite Longitude (Optional)
+   * <p>
    * The satellite longitude.
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
@@ -566,7 +603,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteLongitude", required = false)
   private Lon satelliteLongitude;
   /**
-   * US:SatelliteTransponderID - Satellite Transponder ID (Optional)    * <p>
+   * US:SatelliteTransponderID - Satellite Transponder ID (Optional)
+   * <p>
    * The satellite transponder ID.
    * <p>
    * Format is S50
@@ -576,7 +614,8 @@ public class IntfReport extends Common<IntfReport> {
   @XmlElement(name = "SatelliteTransponderID", required = false)
   private S50 satelliteTransponderID;
   /**
-   * US:SatelliteUplinkPolarisation - Satellite Uplink Polarisation (Optional)    * <p>
+   * US:SatelliteUplinkPolarisation - Satellite Uplink Polarisation (Optional)
+   * <p>
    * The polarisation of the satellite uplink signal.
    * <p>
    * Format is L:CPO
@@ -595,6 +634,13 @@ public class IntfReport extends Common<IntfReport> {
    */
   @XmlElement(name = "POCInformation")
   private Set<POCInformation> pocInformation;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public IntfReport() {
+    super();
+  }
 
   /**
    * Get whether the user needs technical assistance from another organisation
@@ -2792,49 +2838,49 @@ public class IntfReport extends Common<IntfReport> {
   @Override
   public String toString() {
     return "IntfReport {"
-           + (affectedCSA != null ? " affectedCSA [" + affectedCSA + "]" : "")
-           + (affectedEquipment != null ? " affectedEquipment [" + affectedEquipment + "]" : "")
-           + (characteristics != null ? " characteristics [" + characteristics + "]" : "")
-           + (evaluation != null ? " evaluation [" + evaluation + "]" : "")
-           + (gpsAffected != null ? " gpsAffected [" + gpsAffected + "]" : "")
-           + (helpRequired != null ? " helpRequired [" + helpRequired + "]" : "")
-           + (intfDescr != null ? " intfDescr [" + intfDescr + "]" : "")
-           + (intfPeriod != null ? " intfPeriod [" + intfPeriod + "]" : "")
-           + (intfStartDateTime != null ? " intfStartDateTime [" + intfStartDateTime + "]" : "")
-           + (intfStopDateTime != null ? " intfStopDateTime [" + intfStopDateTime + "]" : "")
-           + (localEventID != null ? " localEventID [" + localEventID + "]" : "")
-           + (netCircuitsAffected != null ? " netCircuitsAffected [" + netCircuitsAffected + "]" : "")
-           + (netsAffected != null ? " netsAffected [" + netsAffected + "]" : "")
-           + (performanceEffects != null ? " performanceEffects [" + performanceEffects + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (satcomPriority != null ? " satcomPriority [" + satcomPriority + "]" : "")
-           + (satelliteAffected != null ? " satelliteAffected [" + satelliteAffected + "]" : "")
-           + (satelliteChannel != null ? " satelliteChannel [" + satelliteChannel + "]" : "")
-           + (satelliteDownlinkPolarisation != null ? " satelliteDownlinkPolarisation [" + satelliteDownlinkPolarisation + "]" : "")
-           + (satelliteHemisphere != null ? " satelliteHemisphere [" + satelliteHemisphere + "]" : "")
-           + (satelliteLongitude != null ? " satelliteLongitude [" + satelliteLongitude + "]" : "")
-           + (satelliteName != null ? " satelliteName [" + satelliteName + "]" : "")
-           + (satelliteTransponderID != null ? " satelliteTransponderID [" + satelliteTransponderID + "]" : "")
-           + (satelliteUplinkFreq != null ? " satelliteUplinkFreq [" + satelliteUplinkFreq + "]" : "")
-           + (satelliteUplinkPolarisation != null ? " satelliteUplinkPolarisation [" + satelliteUplinkPolarisation + "]" : "")
-           + (solution != null ? " solution [" + solution + "]" : "")
-           + (sourceAz != null ? " sourceAz [" + sourceAz + "]" : "")
-           + (sourceEmsBw != null ? " sourceEmsBw [" + sourceEmsBw + "]" : "")
-           + (sourceEmsClass != null ? " sourceEmsClass [" + sourceEmsClass + "]" : "")
-           + (sourceFieldStrength != null ? " sourceFieldStrength [" + sourceFieldStrength + "]" : "")
-           + (sourceFreqMax != null ? " sourceFreqMax [" + sourceFreqMax + "]" : "")
-           + (sourceFreqMin != null ? " sourceFreqMin [" + sourceFreqMin + "]" : "")
-           + (sourceLat != null ? " sourceLat [" + sourceLat + "]" : "")
-           + (sourceLocDescr != null ? " sourceLocDescr [" + sourceLocDescr + "]" : "")
-           + (sourceLon != null ? " sourceLon [" + sourceLon + "]" : "")
-           + (victimAsgnRef != null ? " victimAsgnRef [" + victimAsgnRef + "]" : "")
-           + (victimCountry != null ? " victimCountry [" + victimCountry + "]" : "")
-           + (victimFreqMax != null ? " victimFreqMax [" + victimFreqMax + "]" : "")
-           + (victimFreqMin != null ? " victimFreqMin [" + victimFreqMin + "]" : "")
-           + (victimLat != null ? " victimLat [" + victimLat + "]" : "")
-           + (victimLocDescr != null ? " victimLocDescr [" + victimLocDescr + "]" : "")
-           + (victimLon != null ? " victimLon [" + victimLon + "]" : "")
-           + (victimSystem != null ? " victimSystem [" + victimSystem + "]" : "")
+           + (affectedCSA != null ? "\n affectedCSA [" + affectedCSA + "]" : "")
+           + (affectedEquipment != null ? "\n affectedEquipment [" + affectedEquipment + "]" : "")
+           + (characteristics != null ? "\n characteristics [" + characteristics + "]" : "")
+           + (evaluation != null ? "\n evaluation [" + evaluation + "]" : "")
+           + (gpsAffected != null ? "\n gpsAffected [" + gpsAffected + "]" : "")
+           + (helpRequired != null ? "\n helpRequired [" + helpRequired + "]" : "")
+           + (intfDescr != null ? "\n intfDescr [" + intfDescr + "]" : "")
+           + (intfPeriod != null ? "\n intfPeriod [" + intfPeriod + "]" : "")
+           + (intfStartDateTime != null ? "\n intfStartDateTime [" + intfStartDateTime + "]" : "")
+           + (intfStopDateTime != null ? "\n intfStopDateTime [" + intfStopDateTime + "]" : "")
+           + (localEventID != null ? "\n localEventID [" + localEventID + "]" : "")
+           + (netCircuitsAffected != null ? "\n netCircuitsAffected [" + netCircuitsAffected + "]" : "")
+           + (netsAffected != null ? "\n netsAffected [" + netsAffected + "]" : "")
+           + (performanceEffects != null ? "\n performanceEffects [" + performanceEffects + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (satcomPriority != null ? "\n satcomPriority [" + satcomPriority + "]" : "")
+           + (satelliteAffected != null ? "\n satelliteAffected [" + satelliteAffected + "]" : "")
+           + (satelliteChannel != null ? "\n satelliteChannel [" + satelliteChannel + "]" : "")
+           + (satelliteDownlinkPolarisation != null ? "\n satelliteDownlinkPolarisation [" + satelliteDownlinkPolarisation + "]" : "")
+           + (satelliteHemisphere != null ? "\n satelliteHemisphere [" + satelliteHemisphere + "]" : "")
+           + (satelliteLongitude != null ? "\n satelliteLongitude [" + satelliteLongitude + "]" : "")
+           + (satelliteName != null ? "\n satelliteName [" + satelliteName + "]" : "")
+           + (satelliteTransponderID != null ? "\n satelliteTransponderID [" + satelliteTransponderID + "]" : "")
+           + (satelliteUplinkFreq != null ? "\n satelliteUplinkFreq [" + satelliteUplinkFreq + "]" : "")
+           + (satelliteUplinkPolarisation != null ? "\n satelliteUplinkPolarisation [" + satelliteUplinkPolarisation + "]" : "")
+           + (solution != null ? "\n solution [" + solution + "]" : "")
+           + (sourceAz != null ? "\n sourceAz [" + sourceAz + "]" : "")
+           + (sourceEmsBw != null ? "\n sourceEmsBw [" + sourceEmsBw + "]" : "")
+           + (sourceEmsClass != null ? "\n sourceEmsClass [" + sourceEmsClass + "]" : "")
+           + (sourceFieldStrength != null ? "\n sourceFieldStrength [" + sourceFieldStrength + "]" : "")
+           + (sourceFreqMax != null ? "\n sourceFreqMax [" + sourceFreqMax + "]" : "")
+           + (sourceFreqMin != null ? "\n sourceFreqMin [" + sourceFreqMin + "]" : "")
+           + (sourceLat != null ? "\n sourceLat [" + sourceLat + "]" : "")
+           + (sourceLocDescr != null ? "\n sourceLocDescr [" + sourceLocDescr + "]" : "")
+           + (sourceLon != null ? "\n sourceLon [" + sourceLon + "]" : "")
+           + (victimAsgnRef != null ? "\n victimAsgnRef [" + victimAsgnRef + "]" : "")
+           + (victimCountry != null ? "\n victimCountry [" + victimCountry + "]" : "")
+           + (victimFreqMax != null ? "\n victimFreqMax [" + victimFreqMax + "]" : "")
+           + (victimFreqMin != null ? "\n victimFreqMin [" + victimFreqMin + "]" : "")
+           + (victimLat != null ? "\n victimLat [" + victimLat + "]" : "")
+           + (victimLocDescr != null ? "\n victimLocDescr [" + victimLocDescr + "]" : "")
+           + (victimLon != null ? "\n victimLon [" + victimLon + "]" : "")
+           + (victimSystem != null ? "\n victimSystem [" + victimSystem + "]" : "")
            + "}\n  IntfReport." + super.toString() + "\n";
   }
 

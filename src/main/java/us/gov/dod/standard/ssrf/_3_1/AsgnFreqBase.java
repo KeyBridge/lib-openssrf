@@ -207,10 +207,10 @@ public class AsgnFreqBase {
   @Override
   public String toString() {
     return "AsgnFreqBase {"
-           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
-           + (freqUse != null ? " freqUse [" + freqUse + "]" : "")
-           + (refFreq != null ? " refFreq [" + refFreq + "]" : "")
+           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
+           + (freqUse != null ? "\n freqUse [" + freqUse + "]" : "")
+           + (refFreq != null ? "\n refFreq [" + refFreq + "]" : "")
            + "}";
   }
 

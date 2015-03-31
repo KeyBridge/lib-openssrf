@@ -60,7 +60,8 @@ import us.gov.dod.standard.ssrf._3_1.receiver.RxMode;
 public class Receiver extends Common<Receiver> {
 
   /**
-   * Generic - Generic indicator (Required)    * <p>
+   * Generic - Generic indicator (Required)
+   * <p>
    * "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model.
@@ -72,7 +73,8 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "Generic", required = true)
   private TString generic;
   /**
-   * DuplexSep - Duplex Separation (Optional)    * <p>
+   * DuplexSep - Duplex Separation (Optional)
+   * <p>
    * The minimum or exact duplex frequency separation
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -84,7 +86,8 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "DuplexSep")
   private FreqM duplexSep;
   /**
-   * DuplexSepType - Duplex Separation Type (Optional)    * <p>
+   * DuplexSepType - Duplex Separation Type (Optional)
+   * <p>
    * If the frequency separation must be exactly, or at the minimum, the amount
    * specified.
    * <p>
@@ -97,7 +100,8 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "DuplexSepType", required = false)
   private TString duplexSepType;
   /**
-   * PreSelectionType - Preselection Type (Optional)    * <p>
+   * PreSelectionType - Preselection Type (Optional)
+   * <p>
    * The type of preselection used in the receiver frontend.
    * <p>
    * Format is S60
@@ -107,7 +111,8 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "PreselectionType", required = false)
   private S60 preselectionType;
   /**
-   * US:ConductedEmissions - Conducted Emissions (Optional)    * <p>
+   * US:ConductedEmissions - Conducted Emissions (Optional)
+   * <p>
    * The power level of undesired signals generated in the receiver and
    * conducted by way of the connection to the receiver.
    * <p>
@@ -118,7 +123,8 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "ConductedEmissions", required = false)
   private US_DBm conductedEmissions;
   /**
-   * US:FCCAcceptanceNum - FCC Acceptance Number (Optional)    * <p>
+   * US:FCCAcceptanceNum - FCC Acceptance Number (Optional)
+   * <p>
    * The Federal Communication Commission (FCC) ID of FCC authorised equipment.
    * <p>
    * Format is S50
@@ -128,7 +134,8 @@ public class Receiver extends Common<Receiver> {
   @XmlElement(name = "FCCAcceptanceNum", required = false)
   private S50 fccAcceptanceNum;
   /**
-   * US:TSPR - TSPR (Optional)    * <p>
+   * US:TSPR - TSPR (Optional)
+   * <p>
    * The telecommunications service priority applicable to a spectrum-dependent
    * radiocommunications system intended to be used in direct support of a
    * national emergency declared under Section 706 of the Communications Act of
@@ -210,6 +217,13 @@ public class Receiver extends Common<Receiver> {
    */
   @XmlElement(name = "UsingCountries")
   private Set<UsingCountries> usingCountries;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Receiver() {
+    super();
+  }
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -957,19 +971,19 @@ public class Receiver extends Common<Receiver> {
   @Override
   public String toString() {
     return "Receiver {"
-           + (conductedEmissions != null ? " conductedEmissions [" + conductedEmissions + "]" : "")
-           + (curve != null ? " curve [" + curve + "]" : "")
-           + (deployment != null ? " deployment [" + deployment + "]" : "")
-           + (duplexSep != null ? " duplexSep [" + duplexSep + "]" : "")
-           + (duplexSepType != null ? " duplexSepType [" + duplexSepType + "]" : "")
-           + (fccAcceptanceNum != null ? " fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
-           + (generic != null ? " generic [" + generic + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (preselectionType != null ? " preselectionType [" + preselectionType + "]" : "")
-           + (rxMode != null ? " rxMode [" + rxMode + "]" : "")
-           + (tspr != null ? " tspr [" + tspr + "]" : "")
-           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+           + (conductedEmissions != null ? "\n conductedEmissions [" + conductedEmissions + "]" : "")
+           + (curve != null ? "\n curve [" + curve + "]" : "")
+           + (deployment != null ? "\n deployment [" + deployment + "]" : "")
+           + (duplexSep != null ? "\n duplexSep [" + duplexSep + "]" : "")
+           + (duplexSepType != null ? "\n duplexSepType [" + duplexSepType + "]" : "")
+           + (fccAcceptanceNum != null ? "\n fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
+           + (generic != null ? "\n generic [" + generic + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (preselectionType != null ? "\n preselectionType [" + preselectionType + "]" : "")
+           + (rxMode != null ? "\n rxMode [" + rxMode + "]" : "")
+           + (tspr != null ? "\n tspr [" + tspr + "]" : "")
+           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
            + "}\n  Receiver." + super.toString() + "\n";
   }
 

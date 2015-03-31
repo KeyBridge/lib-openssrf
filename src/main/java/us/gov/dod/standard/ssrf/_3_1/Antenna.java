@@ -70,7 +70,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRS;
 public class Antenna extends Common<Antenna> {
 
   /**
-   * Generic - Generic indicator (Required)    * <p>
+   * Generic - Generic indicator (Required)
+   * <p>
    * "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model.
@@ -82,7 +83,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "Generic", required = true)
   private TString generic;
   /**
-   * AntType - Antenna Type (Required)    * <p>
+   * AntType - Antenna Type (Required)
+   * <p>
    * The type of antenna.
    * <p>
    * Format is L:CAT
@@ -92,7 +94,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "AntType", required = true)
   private TString antType;
   /**
-   * PhArrayNumMainBeams - Number of Main Beams in the Phased Array (Optional)    * <p>
+   * PhArrayNumMainBeams - Number of Main Beams in the Phased Array (Optional)
+   * <p>
    * The number of main beams in the phased array antenna.
    * <p>
    * Format is UN(3)
@@ -102,7 +105,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "PhArrayNumMainBeams", required = false)
   private UN3 phArrayNumMainBeams;
   /**
-   * PhArrayNumElements - Number of elements in the Phased Array (Optional)    * <p>
+   * PhArrayNumElements - Number of elements in the Phased Array (Optional)
+   * <p>
    * The number of antenna elements in the phased array antenna.
    * <p>
    * Format is UN(5)
@@ -112,7 +116,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "PhArrayNumElements", required = false)
   private UN5 phArrayNumElements;
   /**
-   * Shape - Antenna Shape (Optional)    * <p>
+   * Shape - Antenna Shape (Optional)
+   * <p>
    * A code used to describe the general shape of the antenna reflector.
    * <p>
    * Format is L:CRS
@@ -124,7 +129,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "Shape", required = false)
   private TString shape;
   /**
-   * ApertureDiameter - Aperture Diameter (Optional)    * <p>
+   * ApertureDiameter - Aperture Diameter (Optional)
+   * <p>
    * The cross-section of an antenna radiation pattern in the direction of
    * highest gain.
    * <p>
@@ -137,7 +143,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "Diameter", required = false)
   private Dimension diameter;
   /**
-   * HorzDimension - Horizontal Dimension (Optional)    * <p>
+   * HorzDimension - Horizontal Dimension (Optional)
+   * <p>
    * The linear horizontal dimension of the antenna.
    * <p>
    * Format is UN(6,2) (m)
@@ -149,7 +156,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "HorzDimension", required = false)
   private Dimension horzDimension;
   /**
-   * VertDimension - Vertical Dimension (Optional)    * <p>
+   * VertDimension - Vertical Dimension (Optional)
+   * <p>
    * The linear vertical dimension of the antenna.
    * <p>
    * Format is UN(6,2) (m)
@@ -161,7 +169,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "VertDimension", required = false)
   private Dimension vertDimension;
   /**
-   * ApertureDiameter - Aperture Diameter (Optional)    * <p>
+   * ApertureDiameter - Aperture Diameter (Optional)
+   * <p>
    * The cross-section of an antenna radiation pattern in the direction of
    * highest gain.
    * <p>
@@ -174,7 +183,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "ApertureDiameter", required = false)
   private Dimension apertureDiameter;
   /**
-   * HorzAperture - Horizontal Aperture (Optional)    * <p>
+   * HorzAperture - Horizontal Aperture (Optional)
+   * <p>
    * The horizontal cross-section of the antenna radiation pattern in the
    * direction of highest gain.
    * <p>
@@ -187,7 +197,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "HorzAperture", required = false)
   private Dimension horzAperture;
   /**
-   * VertAperture - Vertical Aperture (Optional)    * <p>
+   * VertAperture - Vertical Aperture (Optional)
+   * <p>
    * The vertical cross-section of the antenna radiation pattern in the
    * direction of highest gain.
    * <p>
@@ -200,7 +211,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "VertAperture", required = false)
   private Dimension vertAperture;
   /**
-   * HorzSidelobeSuppressed - Horizontal Sidelobe is Suppressed (Optional)    * <p>
+   * HorzSidelobeSuppressed - Horizontal Sidelobe is Suppressed (Optional)
+   * <p>
    * If the sidelobe has been suppressed. Enter Yes (if the sidelobe is
    * suppressed) or No (sidelobe not suppressed).
    * <p>
@@ -213,7 +225,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "HorzSidelobeSuppressed", required = false)
   private TString horzSidelobeSuppressed;
   /**
-   * HorzSidelobeAz - Horizontal Sidelobe Azimuth (Optional)    * <p>
+   * HorzSidelobeAz - Horizontal Sidelobe Azimuth (Optional)
+   * <p>
    * The direction of the sidelobe in reference to the direction of maximum
    * gain.
    * <p>
@@ -226,7 +239,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "HorzSidelobeAz", required = false)
   private Az horzSidelobeAz;
   /**
-   * HorzSidelobeAttenuation - Horizontal Sidelobe Attenuation (Optional)    * <p>
+   * HorzSidelobeAttenuation - Horizontal Sidelobe Attenuation (Optional)
+   * <p>
    * The amount of suppression relative to the main beam gain of the antenna.
    * <p>
    * Format is UN(5,2) (dB)
@@ -238,7 +252,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "HorzSidelobeAttenuation", required = false)
   private Unsigned_DB_5_2 horzSidelobeAttenuation;
   /**
-   * VertSidelobeSuppressed - Vertical Sidelobe is Suppressed (Optional)    * <p>
+   * VertSidelobeSuppressed - Vertical Sidelobe is Suppressed (Optional)
+   * <p>
    * Whether a portion of the radiation from an antenna outside of the main beam
    * has been suppressed or eliminated..
    * <p>
@@ -251,7 +266,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "VertSidelobeSuppressed", required = false)
   private TString vertSidelobeSuppressed;
   /**
-   * VertSidelobeElev - Vertical Sidelobe Elevation (Optional)    * <p>
+   * VertSidelobeElev - Vertical Sidelobe Elevation (Optional)
+   * <p>
    * The first sidelobe in the vertical plane. Enter the clockwise angular
    * difference (in degrees) between the centre line of the main beam gain and
    * the sidelobe.
@@ -265,7 +281,8 @@ public class Antenna extends Common<Antenna> {
   @XmlElement(name = "VertSidelobeElev", required = false)
   private Elev180 vertSidelobeElev;
   /**
-   * VertSidelobeAttenuation - Vertical Sidelobe Attenuation (Optional)    * <p>
+   * VertSidelobeAttenuation - Vertical Sidelobe Attenuation (Optional)
+   * <p>
    * The attenuation of the sidelobe relative to the main beam gain.
    * <p>
    * Format is UN(5,2) (dB)
@@ -331,6 +348,13 @@ public class Antenna extends Common<Antenna> {
    */
   @XmlElement(name = "UsingCountries")
   private Set<UsingCountries> usingCountries;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Antenna() {
+    super();
+  }
 
   /**
    * Get "Yes" to indicate that the dataset describes typical parameters of a
@@ -1421,28 +1445,28 @@ public class Antenna extends Common<Antenna> {
   @Override
   public String toString() {
     return "Antenna {"
-           + (antHardware != null ? " antHardware [" + antHardware + "]" : "")
-           + (antMode != null ? " antMode [" + antMode + "]" : "")
-           + (antType != null ? " antType [" + antType + "]" : "")
-           + (apertureDiameter != null ? " apertureDiameter [" + apertureDiameter + "]" : "")
-           + (diameter != null ? " diameter [" + diameter + "]" : "")
-           + (generic != null ? " generic [" + generic + "]" : "")
-           + (horzAperture != null ? " horzAperture [" + horzAperture + "]" : "")
-           + (horzDimension != null ? " horzDimension [" + horzDimension + "]" : "")
-           + (horzSidelobeAttenuation != null ? " horzSidelobeAttenuation [" + horzSidelobeAttenuation + "]" : "")
-           + (horzSidelobeAz != null ? " horzSidelobeAz [" + horzSidelobeAz + "]" : "")
-           + (horzSidelobeSuppressed != null ? " horzSidelobeSuppressed [" + horzSidelobeSuppressed + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (phArrayNumElements != null ? " phArrayNumElements [" + phArrayNumElements + "]" : "")
-           + (phArrayNumMainBeams != null ? " phArrayNumMainBeams [" + phArrayNumMainBeams + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (shape != null ? " shape [" + shape + "]" : "")
-           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
-           + (vertAperture != null ? " vertAperture [" + vertAperture + "]" : "")
-           + (vertDimension != null ? " vertDimension [" + vertDimension + "]" : "")
-           + (vertSidelobeAttenuation != null ? " vertSidelobeAttenuation [" + vertSidelobeAttenuation + "]" : "")
-           + (vertSidelobeElev != null ? " vertSidelobeElev [" + vertSidelobeElev + "]" : "")
-           + (vertSidelobeSuppressed != null ? " vertSidelobeSuppressed [" + vertSidelobeSuppressed + "]" : "")
+           + (antHardware != null ? "\n antHardware [" + antHardware + "]" : "")
+           + (antMode != null ? "\n antMode [" + antMode + "]" : "")
+           + (antType != null ? "\n antType [" + antType + "]" : "")
+           + (apertureDiameter != null ? "\n apertureDiameter [" + apertureDiameter + "]" : "")
+           + (diameter != null ? "\n diameter [" + diameter + "]" : "")
+           + (generic != null ? "\n generic [" + generic + "]" : "")
+           + (horzAperture != null ? "\n horzAperture [" + horzAperture + "]" : "")
+           + (horzDimension != null ? "\n horzDimension [" + horzDimension + "]" : "")
+           + (horzSidelobeAttenuation != null ? "\n horzSidelobeAttenuation [" + horzSidelobeAttenuation + "]" : "")
+           + (horzSidelobeAz != null ? "\n horzSidelobeAz [" + horzSidelobeAz + "]" : "")
+           + (horzSidelobeSuppressed != null ? "\n horzSidelobeSuppressed [" + horzSidelobeSuppressed + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (phArrayNumElements != null ? "\n phArrayNumElements [" + phArrayNumElements + "]" : "")
+           + (phArrayNumMainBeams != null ? "\n phArrayNumMainBeams [" + phArrayNumMainBeams + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (shape != null ? "\n shape [" + shape + "]" : "")
+           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
+           + (vertAperture != null ? "\n vertAperture [" + vertAperture + "]" : "")
+           + (vertDimension != null ? "\n vertDimension [" + vertDimension + "]" : "")
+           + (vertSidelobeAttenuation != null ? "\n vertSidelobeAttenuation [" + vertSidelobeAttenuation + "]" : "")
+           + (vertSidelobeElev != null ? "\n vertSidelobeElev [" + vertSidelobeElev + "]" : "")
+           + (vertSidelobeSuppressed != null ? "\n vertSidelobeSuppressed [" + vertSidelobeSuppressed + "]" : "")
            + "}\n  Antenna." + super.toString() + "\n";
   }
 

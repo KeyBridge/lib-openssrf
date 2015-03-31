@@ -81,7 +81,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class Loadset extends Common<Loadset> {
 
   /**
-   * US:KeyLoadProcedure - Key Loading Procedure (Optional)    * <p>
+   * US:KeyLoadProcedure - Key Loading Procedure (Optional)
+   * <p>
    * The sequence pattern for initializing the jamming equipment.
    * <p>
    * Format is Memo
@@ -91,7 +92,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "KeyLoadProcedure", required = false)
   private MEMO keyLoadProcedure;
   /**
-   * US:MaxActiveFrames - Maximum Active Frames (Optional)    * <p>
+   * US:MaxActiveFrames - Maximum Active Frames (Optional)
+   * <p>
    * The maximum number of active frames (data blocks currently in use directing
    * equipment functionality) for a specific loadset.
    * <p>
@@ -102,7 +104,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "MaxActiveFrames", required = false)
   private UN6 maxActiveFrames;
   /**
-   * US:MaxReactiveFrames - Maximum Reactive Frames (Optional)    * <p>
+   * US:MaxReactiveFrames - Maximum Reactive Frames (Optional)
+   * <p>
    * The maximum number of reactive frames (data blocks planned to direct
    * equipment functionality in response to a stimulus) for a specific loadset.
    * <p>
@@ -113,7 +116,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "MaxReactiveFrames", required = false)
   private UN6 maxReactiveFrames;
   /**
-   * US:Mission - Threat Load Mission (Optional)    * <p>
+   * US:Mission - Threat Load Mission (Optional)
+   * <p>
    * The task expected to be accomplished by the loadset.
    * <p>
    * Format is S100
@@ -123,7 +127,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "Mission", required = false)
   private S100 mission;
   /**
-   * US:Name - Loadset Name (Required)    * <p>
+   * US:Name - Loadset Name (Required)
+   * <p>
    * The name of the loadset.
    * <p>
    * Format is S50
@@ -133,7 +138,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "Name", required = true)
   private S50 name;
   /**
-   * US:PrimaryFirmware - Primary Firmware (Optional)    * <p>
+   * US:PrimaryFirmware - Primary Firmware (Optional)
+   * <p>
    * The mission-independent software that is "burned" and which stays resident
    * on the RF jamming hardware.
    * <p>
@@ -144,7 +150,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "PrimaryFirmware", required = false)
   private S50 primaryFirmware;
   /**
-   * US:ResetProcedure - Reset Procedure (Optional)    * <p>
+   * US:ResetProcedure - Reset Procedure (Optional)
+   * <p>
    * The instructions for zeroing/sanitizing the jamming equipment to initial
    * operating conditions.
    * <p>
@@ -155,7 +162,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "ResetProcedure", required = false)
   private MEMO resetProcedure;
   /**
-   * US:SecondaryFirmware - Secondary Firmware (Optional)    * <p>
+   * US:SecondaryFirmware - Secondary Firmware (Optional)
+   * <p>
    * Alternate mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware.
    * <p>
@@ -166,7 +174,8 @@ public class Loadset extends Common<Loadset> {
   @XmlElement(name = "SecondaryFirmware", required = false)
   private S50 secondaryFirmware;
   /**
-   * US:Software - Software (Optional)    * <p>
+   * US:Software - Software (Optional)
+   * <p>
    * The mission-specific software that is loaded on the RF jamming hardware.
    * <p>
    * Format is S50
@@ -187,6 +196,13 @@ public class Loadset extends Common<Loadset> {
    */
   @XmlElement(name = "JammingChannelProfile", required = true)
   private Set<JammingChannelProfile> jammingChannelProfile;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Loadset() {
+    super();
+  }
 
   /**
    * Get the sequence pattern for initializing the jamming equipment..
@@ -650,16 +666,16 @@ public class Loadset extends Common<Loadset> {
   @Override
   public String toString() {
     return "Loadset {"
-           + (jammingChannelProfile != null ? " jammingChannelProfile [" + jammingChannelProfile + "]" : "")
-           + (keyLoadProcedure != null ? " keyLoadProcedure [" + keyLoadProcedure + "]" : "")
-           + (maxActiveFrames != null ? " maxActiveFrames [" + maxActiveFrames + "]" : "")
-           + (maxReactiveFrames != null ? " maxReactiveFrames [" + maxReactiveFrames + "]" : "")
-           + (mission != null ? " mission [" + mission + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (primaryFirmware != null ? " primaryFirmware [" + primaryFirmware + "]" : "")
-           + (resetProcedure != null ? " resetProcedure [" + resetProcedure + "]" : "")
-           + (secondaryFirmware != null ? " secondaryFirmware [" + secondaryFirmware + "]" : "")
-           + (software != null ? " software [" + software + "]" : "")
+           + (jammingChannelProfile != null ? "\n jammingChannelProfile [" + jammingChannelProfile + "]" : "")
+           + (keyLoadProcedure != null ? "\n keyLoadProcedure [" + keyLoadProcedure + "]" : "")
+           + (maxActiveFrames != null ? "\n maxActiveFrames [" + maxActiveFrames + "]" : "")
+           + (maxReactiveFrames != null ? "\n maxReactiveFrames [" + maxReactiveFrames + "]" : "")
+           + (mission != null ? "\n mission [" + mission + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (primaryFirmware != null ? "\n primaryFirmware [" + primaryFirmware + "]" : "")
+           + (resetProcedure != null ? "\n resetProcedure [" + resetProcedure + "]" : "")
+           + (secondaryFirmware != null ? "\n secondaryFirmware [" + secondaryFirmware + "]" : "")
+           + (software != null ? "\n software [" + software + "]" : "")
            + "}\n  Loadset." + super.toString() + "\n";
   }
 

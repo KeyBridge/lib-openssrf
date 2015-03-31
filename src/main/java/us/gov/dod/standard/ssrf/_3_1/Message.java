@@ -64,6 +64,13 @@ public class Message extends Common<Message> {
   private Set<Serial> datasetRef;
 
   /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Message() {
+    super();
+  }
+
+  /**
    * Get a human-readable name for the message..
    * <p>
    * @return a {@link S40} instance
@@ -224,9 +231,9 @@ public class Message extends Common<Message> {
   @Override
   public String toString() {
     return "Message {"
-           + (datasetRef != null ? " datasetRef [" + datasetRef + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (secondaryDatasets != null ? " secondaryDatasets [" + secondaryDatasets + "]" : "")
+           + (datasetRef != null ? "\n datasetRef [" + datasetRef + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (secondaryDatasets != null ? "\n secondaryDatasets [" + secondaryDatasets + "]" : "")
            + "}\n  Message." + super.toString() + "\n";
   }
 

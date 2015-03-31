@@ -154,6 +154,13 @@ public class Role extends Common<Role> {
   private Set<Serial> contactRef;
 
   /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Role() {
+    super();
+  }
+
+  /**
    * Get the date by which the dataset is to be operational or effective..
    * <p>
    * @return a {@link D} instance
@@ -710,15 +717,15 @@ public class Role extends Common<Role> {
   @Override
   public String toString() {
     return "Role {"
-           + (address != null ? " address [" + address + "]" : "")
-           + (contactRef != null ? " contactRef [" + contactRef + "]" : "")
-           + (country != null ? " country [" + country + "]" : "")
-           + (eMail != null ? " eMail [" + eMail + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
+           + (address != null ? "\n address [" + address + "]" : "")
+           + (contactRef != null ? "\n contactRef [" + contactRef + "]" : "")
+           + (country != null ? "\n country [" + country + "]" : "")
+           + (eMail != null ? "\n eMail [" + eMail + "]" : "")
+           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
+           + (telephoneFax != null ? "\n telephoneFax [" + telephoneFax + "]" : "")
            + "}\n  Role." + super.toString() + "\n";
   }
 

@@ -527,6 +527,13 @@ public class SSRequest extends Common<SSRequest> {
   private Trunking trunking;
 
   /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public SSRequest() {
+    super();
+  }
+
+  /**
    * Get the title of the Spectrum Supportability application. Each application
    * title should be unique..
    * <p>
@@ -2515,43 +2522,43 @@ public class SSRequest extends Common<SSRequest> {
   @Override
   public String toString() {
     return "SSRequest {"
-           + (applicationDate != null ? " applicationDate [" + applicationDate + "]" : "")
-           + (applicationSPSNumber != null ? " applicationSPSNumber [" + applicationSPSNumber + "]" : "")
-           + (configuration != null ? " configuration [" + configuration + "]" : "")
-           + (coordinationNum != null ? " coordinationNum [" + coordinationNum + "]" : "")
-           + (currentStage != null ? " currentStage [" + currentStage + "]" : "")
-           + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
-           + (diagramEndpoint != null ? " diagramEndpoint [" + diagramEndpoint + "]" : "")
-           + (diagramLine != null ? " diagramLine [" + diagramLine + "]" : "")
-           + (emergency != null ? " emergency [" + emergency + "]" : "")
-           + (hostNation != null ? " hostNation [" + hostNation + "]" : "")
-           + (infoTransferRequirement != null ? " infoTransferRequirement [" + infoTransferRequirement + "]" : "")
-           + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
-           + (initialCostDesc != null ? " initialCostDesc [" + initialCostDesc + "]" : "")
-           + (ituWaiver != null ? " ituWaiver [" + ituWaiver + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (ntiaCoordinationRequired != null ? " ntiaCoordinationRequired [" + ntiaCoordinationRequired + "]" : "")
-           + (ntiaSpaceData != null ? " ntiaSpaceData [" + ntiaSpaceData + "]" : "")
-           + (numAreaUnits != null ? " numAreaUnits [" + numAreaUnits + "]" : "")
-           + (numCositedUnits != null ? " numCositedUnits [" + numCositedUnits + "]" : "")
-           + (numMobileUnits != null ? " numMobileUnits [" + numMobileUnits + "]" : "")
-           + (operInvIntent != null ? " operInvIntent [" + operInvIntent + "]" : "")
-           + (originatingAgency != null ? " originatingAgency [" + originatingAgency + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (project != null ? " project [" + project + "]" : "")
-           + (relatedAnalysisAndTestData != null ? " relatedAnalysisAndTestData [" + relatedAnalysisAndTestData + "]" : "")
-           + (relatedSupportability != null ? " relatedSupportability [" + relatedSupportability + "]" : "")
-           + (replacementInfo != null ? " replacementInfo [" + replacementInfo + "]" : "")
-           + (requestType != null ? " requestType [" + requestType + "]" : "")
-           + (requirement != null ? " requirement [" + requirement + "]" : "")
-           + (stage != null ? " stage [" + stage + "]" : "")
-           + (statusLog != null ? " statusLog [" + statusLog + "]" : "")
-           + (sysRelationEssential != null ? " sysRelationEssential [" + sysRelationEssential + "]" : "")
-           + (time != null ? " time [" + time + "]" : "")
-           + (title != null ? " title [" + title + "]" : "")
-           + (trunking != null ? " trunking [" + trunking + "]" : "")
-           + (tspr != null ? " tspr [" + tspr + "]" : "")
-           + (wartimeUse != null ? " wartimeUse [" + wartimeUse + "]" : "")
+           + (applicationDate != null ? "\n applicationDate [" + applicationDate + "]" : "")
+           + (applicationSPSNumber != null ? "\n applicationSPSNumber [" + applicationSPSNumber + "]" : "")
+           + (configuration != null ? "\n configuration [" + configuration + "]" : "")
+           + (coordinationNum != null ? "\n coordinationNum [" + coordinationNum + "]" : "")
+           + (currentStage != null ? "\n currentStage [" + currentStage + "]" : "")
+           + (dateResponseRequired != null ? "\n dateResponseRequired [" + dateResponseRequired + "]" : "")
+           + (diagramEndpoint != null ? "\n diagramEndpoint [" + diagramEndpoint + "]" : "")
+           + (diagramLine != null ? "\n diagramLine [" + diagramLine + "]" : "")
+           + (emergency != null ? "\n emergency [" + emergency + "]" : "")
+           + (hostNation != null ? "\n hostNation [" + hostNation + "]" : "")
+           + (infoTransferRequirement != null ? "\n infoTransferRequirement [" + infoTransferRequirement + "]" : "")
+           + (initialCost != null ? "\n initialCost [" + initialCost + "]" : "")
+           + (initialCostDesc != null ? "\n initialCostDesc [" + initialCostDesc + "]" : "")
+           + (ituWaiver != null ? "\n ituWaiver [" + ituWaiver + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (ntiaCoordinationRequired != null ? "\n ntiaCoordinationRequired [" + ntiaCoordinationRequired + "]" : "")
+           + (ntiaSpaceData != null ? "\n ntiaSpaceData [" + ntiaSpaceData + "]" : "")
+           + (numAreaUnits != null ? "\n numAreaUnits [" + numAreaUnits + "]" : "")
+           + (numCositedUnits != null ? "\n numCositedUnits [" + numCositedUnits + "]" : "")
+           + (numMobileUnits != null ? "\n numMobileUnits [" + numMobileUnits + "]" : "")
+           + (operInvIntent != null ? "\n operInvIntent [" + operInvIntent + "]" : "")
+           + (originatingAgency != null ? "\n originatingAgency [" + originatingAgency + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (project != null ? "\n project [" + project + "]" : "")
+           + (relatedAnalysisAndTestData != null ? "\n relatedAnalysisAndTestData [" + relatedAnalysisAndTestData + "]" : "")
+           + (relatedSupportability != null ? "\n relatedSupportability [" + relatedSupportability + "]" : "")
+           + (replacementInfo != null ? "\n replacementInfo [" + replacementInfo + "]" : "")
+           + (requestType != null ? "\n requestType [" + requestType + "]" : "")
+           + (requirement != null ? "\n requirement [" + requirement + "]" : "")
+           + (stage != null ? "\n stage [" + stage + "]" : "")
+           + (statusLog != null ? "\n statusLog [" + statusLog + "]" : "")
+           + (sysRelationEssential != null ? "\n sysRelationEssential [" + sysRelationEssential + "]" : "")
+           + (time != null ? "\n time [" + time + "]" : "")
+           + (title != null ? "\n title [" + title + "]" : "")
+           + (trunking != null ? "\n trunking [" + trunking + "]" : "")
+           + (tspr != null ? "\n tspr [" + tspr + "]" : "")
+           + (wartimeUse != null ? "\n wartimeUse [" + wartimeUse + "]" : "")
            + "}\n  SSRequest." + super.toString() + "\n";
   }
 

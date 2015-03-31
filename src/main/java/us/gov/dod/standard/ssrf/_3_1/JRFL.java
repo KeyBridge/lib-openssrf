@@ -50,7 +50,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class JRFL extends Common<JRFL> {
 
   /**
-   * EffectiveDateTime - Effective Date/Time (Optional)    * <p>
+   * EffectiveDateTime - Effective Date/Time (Optional)
+   * <p>
    * The width of the range (or band) of restricted frequency(s).
    * <p>
    * Format is DT
@@ -72,7 +73,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "ExpirationDateTime", required = false)
   private DT expirationDateTime;
   /**
-   * ReviewDate - Review Date (Optional)    * <p>
+   * ReviewDate - Review Date (Optional)
+   * <p>
    * A description of the justification of why the JRFL entry is required, to
    * support the spectrum manager.
    * <p>
@@ -92,7 +94,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "Seconds", required = false)
   private MinSec seconds;
   /**
-   * Minutes - Minutes (Optional)    * <p>
+   * Minutes - Minutes (Optional)
+   * <p>
    * The minutes of an hour [0-59].
    * <p>
    * Format is pattern (S40)
@@ -104,7 +107,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "Minutes", required = false)
   private MinSec minutes;
   /**
-   * Hours - Hours (Optional)    * <p>
+   * Hours - Hours (Optional)
+   * <p>
    * The hours of a day [0-23] (UTC time).
    * <p>
    * Format is pattern (S40)
@@ -116,7 +120,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "Hours", required = false)
   private Hours hours;
   /**
-   * DaysOfMonth - Days Of Month (Optional)    * <p>
+   * DaysOfMonth - Days Of Month (Optional)
+   * <p>
    * The day of month [1-31].
    * <p>
    * Format is pattern (S40)
@@ -128,7 +133,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "DaysOfMonth", required = false)
   private DaysOfMonth daysOfMonth;
   /**
-   * Months - Months (Optional)    * <p>
+   * Months - Months (Optional)
+   * <p>
    * The month of year [1-12].
    * <p>
    * Format is pattern (S40)
@@ -140,7 +146,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "Months", required = false)
   private Months months;
   /**
-   * DaysOfWeek - Days of Week (Optional)    * <p>
+   * DaysOfWeek - Days of Week (Optional)
+   * <p>
    * The weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc].
    * <p>
    * Format is pattern (S40)
@@ -152,7 +159,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "DaysOfWeek", required = false)
   private DaysOfWeek daysOfWeek;
   /**
-   * Years - Years (Optional)    * <p>
+   * Years - Years (Optional)
+   * <p>
    * The 4-digit year [1900..2100].
    * <p>
    * Format is pattern (S40)
@@ -164,7 +172,8 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "Years", required = false)
   private Years years;
   /**
-   * Duration - Duration (Optional)    * <p>
+   * Duration - Duration (Optional)
+   * <p>
    * The number of minutes for which an event will live. Examples: possible
    * values for the Hours item: 8 one value: 08h00Z 5,6,9 multiple values:
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
@@ -204,6 +213,13 @@ public class JRFL extends Common<JRFL> {
    */
   @XmlElement(name = "JRFLEntry", required = true)
   private Set<JRFLEntry> jrflEntry;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public JRFL() {
+    super();
+  }
 
   /**
    * Get the width of the range (or band) of restricted frequency(s)..
@@ -871,18 +887,18 @@ public class JRFL extends Common<JRFL> {
   @Override
   public String toString() {
     return "JRFL {"
-           + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
-           + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
-           + (duration != null ? " duration [" + duration + "]" : "")
-           + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
-           + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
-           + (hours != null ? " hours [" + hours + "]" : "")
-           + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
-           + (minutes != null ? " minutes [" + minutes + "]" : "")
-           + (months != null ? " months [" + months + "]" : "")
-           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
-           + (seconds != null ? " seconds [" + seconds + "]" : "")
-           + (years != null ? " years [" + years + "]" : "")
+           + (daysOfMonth != null ? "\n daysOfMonth [" + daysOfMonth + "]" : "")
+           + (daysOfWeek != null ? "\n daysOfWeek [" + daysOfWeek + "]" : "")
+           + (duration != null ? "\n duration [" + duration + "]" : "")
+           + (effectiveDateTime != null ? "\n effectiveDateTime [" + effectiveDateTime + "]" : "")
+           + (expirationDateTime != null ? "\n expirationDateTime [" + expirationDateTime + "]" : "")
+           + (hours != null ? "\n hours [" + hours + "]" : "")
+           + (jrflEntry != null ? "\n jrflEntry [" + jrflEntry + "]" : "")
+           + (minutes != null ? "\n minutes [" + minutes + "]" : "")
+           + (months != null ? "\n months [" + months + "]" : "")
+           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
+           + (seconds != null ? "\n seconds [" + seconds + "]" : "")
+           + (years != null ? "\n years [" + years + "]" : "")
            + "}\n  JRFL." + super.toString() + "\n";
   }
 

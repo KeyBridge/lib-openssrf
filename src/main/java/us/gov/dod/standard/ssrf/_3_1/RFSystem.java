@@ -68,7 +68,8 @@ import us.gov.dod.standard.ssrf._3_1.rfsystem.RelatedSystem;
 public class RFSystem extends Common<RFSystem> {
 
   /**
-   * FieldedStatus - Fielded Status (Optional)    * <p>
+   * FieldedStatus - Fielded Status (Optional)
+   * <p>
    * The current stage of the RFSystem.
    * <p>
    * Format is L:CSG
@@ -78,7 +79,8 @@ public class RFSystem extends Common<RFSystem> {
   @XmlElement(name = "FieldedStatus", required = false)
   private TString fieldedStatus;
   /**
-   * Emergency - Emergency Indicator (Optional)    * <p>
+   * Emergency - Emergency Indicator (Optional)
+   * <p>
    * "Yes" if the system may be used in a case of emergency.
    * <p>
    * Format is L:CBO
@@ -88,7 +90,8 @@ public class RFSystem extends Common<RFSystem> {
   @XmlElement(name = "Emergency", required = false)
   private TString emergency;
   /**
-   * US:InitialCost - Initial Cost (Optional)    * <p>
+   * US:InitialCost - Initial Cost (Optional)
+   * <p>
    * The estimated initial cost, in US dollars, of the system/equipment.
    * <p>
    * Format is S70
@@ -180,6 +183,13 @@ public class RFSystem extends Common<RFSystem> {
    */
   @XmlElement(name = "UsingCountries")
   private Set<UsingCountries> usingCountries;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public RFSystem() {
+    super();
+  }
 
   /**
    * Get the current stage of the RFSystem..
@@ -814,16 +824,16 @@ public class RFSystem extends Common<RFSystem> {
   @Override
   public String toString() {
     return "RFSystem {"
-           + (configuration != null ? " configuration [" + configuration + "]" : "")
-           + (deployment != null ? " deployment [" + deployment + "]" : "")
-           + (emergency != null ? " emergency [" + emergency + "]" : "")
-           + (fieldedStatus != null ? " fieldedStatus [" + fieldedStatus + "]" : "")
-           + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
-           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
-           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
-           + (relatedSystem != null ? " relatedSystem [" + relatedSystem + "]" : "")
-           + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
-           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
+           + (configuration != null ? "\n configuration [" + configuration + "]" : "")
+           + (deployment != null ? "\n deployment [" + deployment + "]" : "")
+           + (emergency != null ? "\n emergency [" + emergency + "]" : "")
+           + (fieldedStatus != null ? "\n fieldedStatus [" + fieldedStatus + "]" : "")
+           + (initialCost != null ? "\n initialCost [" + initialCost + "]" : "")
+           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
+           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
+           + (relatedSystem != null ? "\n relatedSystem [" + relatedSystem + "]" : "")
+           + (stockNum != null ? "\n stockNum [" + stockNum + "]" : "")
+           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
            + "}\n  RFSystem." + super.toString() + "\n";
   }
 

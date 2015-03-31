@@ -51,7 +51,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSG;
 public class ExternalReference extends Common<ExternalReference> {
 
   /**
-   * Type - Type of Reference (Optional)    * <p>
+   * Type - Type of Reference (Optional)
+   * <p>
    * The type of information referenced by this external reference.
    * <p>
    * Format is L:CRE
@@ -61,7 +62,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * Date - Date of Reference (Optional)    * <p>
+   * Date - Date of Reference (Optional)
+   * <p>
    * The publication date of the external reference
    * <p>
    * Format is Date
@@ -71,7 +73,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "Date", required = false)
   private D date;
   /**
-   * AlternateIdentifier - Alternate Identifier (Optional)    * <p>
+   * AlternateIdentifier - Alternate Identifier (Optional)
+   * <p>
    * Any alternate identifier for the document as needed.
    * <p>
    * Format is S50
@@ -81,7 +84,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "Identifier", required = false)
   private S50 identifier;
   /**
-   * AlternateIdentifier - Alternate Identifier (Optional)    * <p>
+   * AlternateIdentifier - Alternate Identifier (Optional)
+   * <p>
    * Any alternate identifier for the document as needed.
    * <p>
    * Format is S50
@@ -91,7 +95,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "AlternateIdentifier", required = false)
   private S50 alternateIdentifier;
   /**
-   * Title - Full Title (Optional)    * <p>
+   * Title - Full Title (Optional)
+   * <p>
    * The full title of the document.
    * <p>
    * Format is S255
@@ -101,7 +106,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "Title", required = false)
   private S255 title;
   /**
-   * Author - Author of the Reference (Optional)    * <p>
+   * Author - Author of the Reference (Optional)
+   * <p>
    * The name of the author of the reference, if it cannot be covered by a
    * ContactRef.
    * <p>
@@ -112,7 +118,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "Author", required = false)
   private S255 author;
   /**
-   * Organisation - Organisation that published the Reference (Optional)    * <p>
+   * Organisation - Organisation that published the Reference (Optional)
+   * <p>
    * The name of the Organisation that published the Reference, if it cannot be
    * covered by a OrganisationRef
    * <p>
@@ -123,7 +130,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "Organisation", required = false)
   private S50 organisation;
   /**
-   * DocumentCls - Document Classification (Optional)    * <p>
+   * DocumentCls - Document Classification (Optional)
+   * <p>
    * The classification level of the Reference.
    * <p>
    * Format is L:CCL
@@ -133,7 +141,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "DocumentCls", required = false)
   private TString documentCls;
   /**
-   * ResourceLocator - Attached File Name or URL (Optional)    * <p>
+   * ResourceLocator - Attached File Name or URL (Optional)
+   * <p>
    * Either the file name (including the extension) of the reference document
    * when it is attached to the dataset, or an URL (Uniform Resource Locator) to
    * find the document.
@@ -145,7 +154,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "ResourceLocator", required = false)
   private S255 resourceLocator;
   /**
-   * US:IsAttached - Is Attached (Required)    * <p>
+   * US:IsAttached - Is Attached (Required)
+   * <p>
    * If the document, file or other "external" information is stored in
    * attachment to this message.
    * <p>
@@ -156,7 +166,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "IsAttached", required = true)
   private TString isAttached;
   /**
-   * US:IsClassified - Is Classified (Optional)    * <p>
+   * US:IsClassified - Is Classified (Optional)
+   * <p>
    * If the referenced information contains any classified data.
    * <p>
    * Format is L:CBO
@@ -166,7 +177,8 @@ public class ExternalReference extends Common<ExternalReference> {
   @XmlElement(name = "IsClassified", required = false)
   private TString isClassified;
   /**
-   * US:ReferencedStage - Referenced Stage (Optional)    * <p>
+   * US:ReferencedStage - Referenced Stage (Optional)
+   * <p>
    * The spectrum certification stage associated with this information.
    * <p>
    * Format is L:CSG
@@ -183,6 +195,13 @@ public class ExternalReference extends Common<ExternalReference> {
    */
   @XmlElement(name = "Repeat", required = false)
   private TString repeat;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public ExternalReference() {
+    super();
+  }
 
   /**
    * Get the type of information referenced by this external reference..
@@ -768,19 +787,19 @@ public class ExternalReference extends Common<ExternalReference> {
   @Override
   public String toString() {
     return "ExternalReference {"
-           + (alternateIdentifier != null ? " alternateIdentifier [" + alternateIdentifier + "]" : "")
-           + (author != null ? " author [" + author + "]" : "")
-           + (date != null ? " date [" + date + "]" : "")
-           + (documentCls != null ? " documentCls [" + documentCls + "]" : "")
-           + (identifier != null ? " identifier [" + identifier + "]" : "")
-           + (isAttached != null ? " isAttached [" + isAttached + "]" : "")
-           + (isClassified != null ? " isClassified [" + isClassified + "]" : "")
-           + (organisation != null ? " organisation [" + organisation + "]" : "")
-           + (referencedStage != null ? " referencedStage [" + referencedStage + "]" : "")
-           + (repeat != null ? " repeat [" + repeat + "]" : "")
-           + (resourceLocator != null ? " resourceLocator [" + resourceLocator + "]" : "")
-           + (title != null ? " title [" + title + "]" : "")
-           + (type != null ? " type [" + type + "]" : "")
+           + (alternateIdentifier != null ? "\n alternateIdentifier [" + alternateIdentifier + "]" : "")
+           + (author != null ? "\n author [" + author + "]" : "")
+           + (date != null ? "\n date [" + date + "]" : "")
+           + (documentCls != null ? "\n documentCls [" + documentCls + "]" : "")
+           + (identifier != null ? "\n identifier [" + identifier + "]" : "")
+           + (isAttached != null ? "\n isAttached [" + isAttached + "]" : "")
+           + (isClassified != null ? "\n isClassified [" + isClassified + "]" : "")
+           + (organisation != null ? "\n organisation [" + organisation + "]" : "")
+           + (referencedStage != null ? "\n referencedStage [" + referencedStage + "]" : "")
+           + (repeat != null ? "\n repeat [" + repeat + "]" : "")
+           + (resourceLocator != null ? "\n resourceLocator [" + resourceLocator + "]" : "")
+           + (title != null ? "\n title [" + title + "]" : "")
+           + (type != null ? "\n type [" + type + "]" : "")
            + "}\n  ExternalReference." + super.toString() + "\n";
   }
 

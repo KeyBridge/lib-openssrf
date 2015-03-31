@@ -35,7 +35,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class Note extends Common<Note> {
 
   /**
-   * US:Administration - Administration (Optional)    * <p>
+   * US:Administration - Administration (Optional)
+   * <p>
    * The nation or regulatory body that administers this note.
    * <p>
    * Format is L:CAO
@@ -45,7 +46,8 @@ public class Note extends Common<Note> {
   @XmlElement(name = "Administration", required = false)
   private TString administration;
   /**
-   * US:EffectiveDate - Effective Date (Optional)    * <p>
+   * US:EffectiveDate - Effective Date (Optional)
+   * <p>
    * The date this note comes in force.
    * <p>
    * Format is Date
@@ -55,7 +57,8 @@ public class Note extends Common<Note> {
   @XmlElement(name = "EffectiveDate", required = false)
   private D effectiveDate;
   /**
-   * US:ExpirationDate - Expiration Date (Optional)    * <p>
+   * US:ExpirationDate - Expiration Date (Optional)
+   * <p>
    * The date this note goes out of force.
    * <p>
    * Format is Date
@@ -65,7 +68,8 @@ public class Note extends Common<Note> {
   @XmlElement(name = "ExpirationDate", required = false)
   private D expirationDate;
   /**
-   * US:Name - Name (Optional)    * <p>
+   * US:Name - Name (Optional)
+   * <p>
    * The externally-assigned name of the note.
    * <p>
    * Format is S100
@@ -75,7 +79,8 @@ public class Note extends Common<Note> {
   @XmlElement(name = "Name", required = false)
   private S100 name;
   /**
-   * US:Source - Source (Optional)    * <p>
+   * US:Source - Source (Optional)
+   * <p>
    * The source or creator of the note.
    * <p>
    * Format is S100
@@ -84,6 +89,13 @@ public class Note extends Common<Note> {
    */
   @XmlElement(name = "Source", required = false)
   private S100 source;
+
+  /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public Note() {
+    super();
+  }
 
   /**
    * Get the nation or regulatory body that administers this note..
@@ -324,11 +336,11 @@ public class Note extends Common<Note> {
   @Override
   public String toString() {
     return "Note {"
-           + (administration != null ? " administration [" + administration + "]" : "")
-           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (source != null ? " source [" + source + "]" : "")
+           + (administration != null ? "\n administration [" + administration + "]" : "")
+           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
+           + (name != null ? "\n name [" + name + "]" : "")
+           + (source != null ? "\n source [" + source + "]" : "")
            + "}\n  Note." + super.toString() + "\n";
   }
 
