@@ -339,7 +339,7 @@ public class TxRef {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = transmitter != null ? transmitter.getSerial() : null;
+    this.serial = transmitter != null ? transmitter.getSerial() : this.serial;
   }
 
   /**

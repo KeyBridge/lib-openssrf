@@ -863,7 +863,7 @@ public class JammingTarget {
    * @since 3.1.0
    */
   public void prepare() {
-    this.loadsetRef = loadset != null ? loadset.getSerial() : null;
+    this.loadsetRef = loadset != null ? loadset.getSerial() : this.loadsetRef;
   }
 
   /**

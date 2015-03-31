@@ -1310,7 +1310,7 @@ public class SSReply extends Common<SSReply> {
   @Override
   public void prepare() {
     super.prepare();
-    this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : null;
+    this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : this.ssRequestRef;
   }
 
   /**

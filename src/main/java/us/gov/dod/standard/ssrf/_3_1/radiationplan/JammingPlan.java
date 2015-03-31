@@ -1024,7 +1024,7 @@ public class JammingPlan {
    * @since 3.1.0
    */
   public void prepare() {
-    this.startLocationRef = startLocation != null ? startLocation.getSerial() : null;
+    this.startLocationRef = startLocation != null ? startLocation.getSerial() : this.startLocationRef;
   }
 
   /**

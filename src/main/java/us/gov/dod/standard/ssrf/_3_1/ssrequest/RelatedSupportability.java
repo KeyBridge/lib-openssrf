@@ -278,7 +278,7 @@ public class RelatedSupportability {
    * @since 3.1.0
    */
   public void prepare() {
-    this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : null;
+    this.ssRequestRef = ssRequest != null ? ssRequest.getSerial() : this.ssRequestRef;
   }
 
   /**

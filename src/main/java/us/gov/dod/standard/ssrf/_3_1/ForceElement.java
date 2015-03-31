@@ -1011,7 +1011,7 @@ public class ForceElement extends Common<ForceElement> {
   @Override
   public void prepare() {
     super.prepare();
-    this.owningOrganisationRef = owningOrganisation != null ? owningOrganisation.getSerial() : null;
+    this.owningOrganisationRef = owningOrganisation != null ? owningOrganisation.getSerial() : this.owningOrganisationRef;
   }
 
   /**

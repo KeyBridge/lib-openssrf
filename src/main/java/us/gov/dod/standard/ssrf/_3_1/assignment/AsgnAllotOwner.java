@@ -278,7 +278,7 @@ public class AsgnAllotOwner {
    * @since 3.1.0
    */
   public void prepare() {
-    this.ownerOrgRef = ownerOrg != null ? ownerOrg.getSerial() : null;
+    this.ownerOrgRef = ownerOrg != null ? ownerOrg.getSerial() : this.ownerOrgRef;
   }
 
   /**

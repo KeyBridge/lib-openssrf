@@ -104,7 +104,7 @@ public class TString extends AMetadata<TString> implements Comparable<TString> {
    * <p>
    * @param locale A {@link Locale} instance
    */
-//  public void setLocale(Locale locale) {    this.locale = locale != null ? locale.toLanguageTag() : null;  }
+//  public void setLocale(Locale locale) {    this.locale = locale != null ? locale.toLanguageTag() : this.locale;  }
   /**
    * Sets the value of the value property.
    * <p>

@@ -259,7 +259,7 @@ public class JRFLEntryLocation {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = location != null ? location.getSerial() : null;
+    this.serial = location != null ? location.getSerial() : this.serial;
   }
 
   /**

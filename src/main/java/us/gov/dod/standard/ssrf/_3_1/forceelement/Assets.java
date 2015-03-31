@@ -290,7 +290,7 @@ public class Assets {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = asset != null ? asset.getSerial() : null;
+    this.serial = asset != null ? asset.getSerial() : this.serial;
   }
 
   /**

@@ -1407,7 +1407,7 @@ public class JRFLEntry {
    * @since 3.1.0
    */
   public void prepare() {
-    this.asgnAllotRef = assignmentAllotment != null ? assignmentAllotment.getSerial() : null;
+    this.asgnAllotRef = assignmentAllotment != null ? assignmentAllotment.getSerial() : this.asgnAllotRef;
   }
 
   /**

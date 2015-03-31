@@ -414,7 +414,7 @@ public class Administrative extends Common<Administrative> {
   @Override
   public void prepare() {
     super.prepare();
-    this.messageRef = message != null ? message.getSerial() : null;
+    this.messageRef = message != null ? message.getSerial() : this.messageRef;
   }
 
   /**

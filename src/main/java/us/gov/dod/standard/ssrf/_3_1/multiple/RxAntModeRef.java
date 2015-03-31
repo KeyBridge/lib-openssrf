@@ -304,7 +304,7 @@ public class RxAntModeRef {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = antenna != null ? antenna.getSerial() : null;
+    this.serial = antenna != null ? antenna.getSerial() : this.serial;
   }
 
   /**

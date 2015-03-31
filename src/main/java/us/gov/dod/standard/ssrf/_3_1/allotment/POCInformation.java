@@ -294,7 +294,7 @@ public class POCInformation {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = poc != null ? poc.getSerial() : null;
+    this.serial = poc != null ? poc.getSerial() : this.serial;
   }
 
   /**

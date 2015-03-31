@@ -2969,7 +2969,7 @@ public class IntfReport extends Common<IntfReport> {
   @Override
   public void prepare() {
     super.prepare();
-    this.victimAsgnRef = victimAssignment != null ? victimAssignment.getSerial() : null;
+    this.victimAsgnRef = victimAssignment != null ? victimAssignment.getSerial() : this.victimAsgnRef;
   }
 
   /**

@@ -226,7 +226,7 @@ public class RelatedSystem {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = rfSystem != null ? rfSystem.getSerial() : null;
+    this.serial = rfSystem != null ? rfSystem.getSerial() : this.serial;
   }
 
   /**

@@ -275,7 +275,7 @@ public class EarthStation {
    * @since 3.1.0
    */
   public void prepare() {
-    this.locationRef = location != null ? location.getSerial() : null;
+    this.locationRef = location != null ? location.getSerial() : this.locationRef;
   }
 
   /**

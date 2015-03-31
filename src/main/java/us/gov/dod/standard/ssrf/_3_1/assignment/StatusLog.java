@@ -385,7 +385,7 @@ public class StatusLog {
    * @since 3.1.0
    */
   public void prepare() {
-    this.pocRef = poc != null ? poc.getSerial() : null;
+    this.pocRef = poc != null ? poc.getSerial() : this.pocRef;
   }
 
   /**

@@ -229,7 +229,7 @@ public class RecordNote {
    * @since 3.1.0
    */
   public void prepare() {
-    this.noteRef = note != null ? note.getSerial() : null;
+    this.noteRef = note != null ? note.getSerial() : this.noteRef;
   }
 
   /**

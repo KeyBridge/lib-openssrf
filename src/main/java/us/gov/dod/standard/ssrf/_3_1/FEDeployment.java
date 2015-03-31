@@ -1065,7 +1065,7 @@ public class FEDeployment extends Common<FEDeployment> {
   @Override
   public void prepare() {
     super.prepare();
-    this.feRef = forceElement != null ? forceElement.getSerial() : null;
+    this.feRef = forceElement != null ? forceElement.getSerial() : this.feRef;
   }
 
   /**

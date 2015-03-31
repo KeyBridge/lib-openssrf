@@ -1474,7 +1474,7 @@ public class Satellite extends Common<Satellite> {
   @Override
   public void prepare() {
     super.prepare();
-    this.launchLocRef = launchLoc != null ? launchLoc.getSerial() : null;
+    this.launchLocRef = launchLoc != null ? launchLoc.getSerial() : this.launchLocRef;
   }
 
   /**

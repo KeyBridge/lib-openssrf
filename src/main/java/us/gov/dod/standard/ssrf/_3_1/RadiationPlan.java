@@ -811,7 +811,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @Override
   public void prepare() {
     super.prepare();
-    this.locationRef = location != null ? location.getSerial() : null;
+    this.locationRef = location != null ? location.getSerial() : this.locationRef;
   }
 
   /**

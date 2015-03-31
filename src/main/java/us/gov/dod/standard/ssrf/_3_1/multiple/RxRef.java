@@ -335,7 +335,7 @@ public class RxRef {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = receiver != null ? receiver.getSerial() : null;
+    this.serial = receiver != null ? receiver.getSerial() : this.serial;
   }
 
   /**

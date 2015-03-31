@@ -292,7 +292,7 @@ public class RelatedOrganisation {
    * @since 3.1.0
    */
   public void prepare() {
-    this.serial = organisation != null ? organisation.getSerial() : null;
+    this.serial = organisation != null ? organisation.getSerial() : this.serial;
   }
 
   /**

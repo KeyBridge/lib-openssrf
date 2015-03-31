@@ -2331,11 +2331,11 @@ public abstract class Common<T> implements Comparable<T> {
    * (optionally) before exporting an SSRF message.
    */
   public void prepare() {
-    this.entryBy = entryByRole != null ? entryByRole.getSerial() : null;
-    this.owner = ownerRole != null ? ownerRole.getSerial() : null;
-    this.lastChangeBy = lastChangeByRole != null ? lastChangeByRole.getSerial() : null;
-    this.lastReviewBy = lastReviewByRole != null ? lastReviewByRole.getSerial() : null;
-    this.modAllowedBy = modAllowedByRole != null ? modAllowedByRole.getSerial() : null;
+    this.entryBy = entryByRole != null ? entryByRole.getSerial() : this.entryBy;
+    this.owner = ownerRole != null ? ownerRole.getSerial() : this.owner;
+    this.lastChangeBy = lastChangeByRole != null ? lastChangeByRole.getSerial() : this.lastChangeBy;
+    this.lastReviewBy = lastReviewByRole != null ? lastReviewByRole.getSerial() : this.lastReviewBy;
+    this.modAllowedBy = modAllowedByRole != null ? modAllowedByRole.getSerial() : this.modAllowedBy;
   }
 
   /**

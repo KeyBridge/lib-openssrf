@@ -343,7 +343,7 @@ public class PairedFreq {
    * @since 3.1.0
    */
   public void prepare() {
-    this.assignmentRef = assignment != null ? assignment.getSerial() : null;
+    this.assignmentRef = assignment != null ? assignment.getSerial() : this.assignmentRef;
   }
 
   /**

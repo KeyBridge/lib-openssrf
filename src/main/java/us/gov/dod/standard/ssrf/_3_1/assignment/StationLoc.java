@@ -502,7 +502,7 @@ public class StationLoc {
    * @since 3.1.0
    */
   public void prepare() {
-    this.locSatRef = locSat != null ? locSat.getSerial() : null;
+    this.locSatRef = locSat != null ? locSat.getSerial() : this.locSatRef;
   }
 
   /**
