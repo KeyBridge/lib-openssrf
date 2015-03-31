@@ -78,6 +78,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
 @SuppressWarnings("unchecked")
 public abstract class Common<T> implements Comparable<T> {
 
+  //<editor-fold defaultstate="collapsed" desc="Common Bean Fields">
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -455,8 +456,22 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlAttribute(name = "idref")
-  private String idref;
+  private String idref;//</editor-fold>
 
+  /**
+   * Abstract constructor for the Common class type.
+   * <p>
+   * This constructor sets the minimum mandatory fields {@link #serial} with a
+   * programmatically generated {@link TSerial} instance and
+   * {@link #entryDateTime} with the current DATETIME.
+   */
+  @SuppressWarnings("unchecked")
+  public Common() {
+    this.serial = Serial.getInstance((Class<? extends Common<?>>) this.getClass());
+    this.entryDateTime = new DT(Calendar.getInstance());
+  }
+
+  //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
   /**
    * Get the identifier of the person or entity who last observed this Dataset.
    * <p>
