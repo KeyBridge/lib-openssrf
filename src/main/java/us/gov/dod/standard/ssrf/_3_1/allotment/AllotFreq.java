@@ -26,7 +26,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
   "pairedFreqMin",
   "tuningStep",
   "allotChannel",
-  "locationRestriction"
+  "locationRestrictionRef"
 })
 public class AllotFreq {
 
