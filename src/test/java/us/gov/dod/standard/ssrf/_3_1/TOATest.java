@@ -1,5 +1,5 @@
-/*
- * Copyright 2015 OpenSSRF.org.
+/* 
+ * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,24 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
+import java.net.URL;
+import java.nio.file.Paths;
 import junit.framework.TestCase;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFProperties;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
+import us.gov.dod.standard.ssrf.XmlLint;
 
 /**
  *
  * @author jesse
  */
 public class TOATest extends TestCase {
+
+  /**
+   * A copy of the SSRF XSD is located in the TEST META-INF directory.
+   */
+  URL xsd = TOATest.class.getResource("/META-INF/xsd/3.1.0/ssrf.xsd");
 
   public TOATest(String testName) {
     super(testName);
@@ -45,9 +53,12 @@ public class TOATest extends TestCase {
 
     System.out.println("\n\n");
     System.out.println(ssrf.toXML());
+
+    XmlLint.validate(ssrf.toXML(), Paths.get(xsd.toURI()));
+
   }
 
-  public void testMinimumPositiveFill() throws Exception {
+  public void _testMinimumPositiveFill() throws Exception {
     TOA t = new TOA();
     SSRFTestUtility.fill(t, false);
 

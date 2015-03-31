@@ -1,5 +1,5 @@
-/*
- * Copyright 2015 OpenSSRF.org.
+/* 
+ * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,33 @@ import java.util.logging.Logger;
  * and make that program accessible for XML document testing and schema
  * validation.
  * <p>
+ * <em>From http://xmlsoft.org/xmldtd.html#validate</em>
+ * <p>
+ * DTD is the acronym for Document Type Definition. This is a description of the
+ * content for a family of XML files. This is part of the XML 1.0 specification,
+ * and allows one to describe and verify that a given document instance conforms
+ * to the set of rules detailing its structure and content.
+ * <p>
+ * Validation is the process of checking a document against a DTD (more
+ * generally against a set of construction rules).
+ * <p>
+ * The validation process and building DTDs are the two most difficult parts of
+ * the XML life cycle. Briefly a DTD defines all the possible elements to be
+ * found within your document, what is the formal shape of your document tree
+ * (by defining the allowed content of an element; either text, a regular
+ * expression for the allowed list of children, or mixed content i.e. both text
+ * and children). The DTD also defines the valid attributes for all elements and
+ * the types of those attributes.
+ * <p>
+ * The simplest way is to use the xmllint program included with libxml. The
+ * --valid option turns-on validation of the files given as input. For example
+ * the following validates a copy of the first revision of the XML 1.0
+ * specification:
+ * <code>xmllint --valid --noout test/valid/REC-xml-19980210.xml</code>
+ * <p>
  * @author jesse
  * @since 3.1.0 03/31/15
+ * @see <a href="http://xmlsoft.org/xmldtd.html">Validation</a>
  */
 public class XmlLint {
 
