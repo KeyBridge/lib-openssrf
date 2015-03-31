@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterPLATFORM extends AXmlAdapterTString {
+public class XmlAdapterPLATFORM extends AXmlAdapterString {
 
   public XmlAdapterPLATFORM() {
     super(1, 4, false, "\\P{Ll}{1,4}");

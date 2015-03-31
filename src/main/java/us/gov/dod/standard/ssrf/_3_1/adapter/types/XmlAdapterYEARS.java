@@ -25,7 +25,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterYEARS extends AXmlAdapterTString {
+public class XmlAdapterYEARS extends AXmlAdapterString {
 
   public XmlAdapterYEARS() {
     super(1, 40, false, "(([12]\\d{3}(-[12]\\d{3}(/\\d+)?)?)|(\\*/\\d+))(,([12]\\d{3}(-[12]\\d{3}(/\\d+)?)?)|(,\\*/\\d+))*");

@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterBITRATE extends AXmlAdapterTNumber {
+public class XmlAdapterBITRATE extends AXmlAdapterNumber {
 
   public XmlAdapterBITRATE() {
     super(10, 3, 0, null);

@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterEMSDES extends AXmlAdapterTString {
+public class XmlAdapterEMSDES extends AXmlAdapterString {
 
   public XmlAdapterEMSDES() {
     super(1, 5, false, "(A|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|V|W|X|-)(0|1|2|3|7|8|9|X|-)(A|B|C|D|E|F|N|W|X|-)(A|B|C|D|E|F|G|H|J|K|L|M|N|W|X)?(C|F|N|T|W|X)?");

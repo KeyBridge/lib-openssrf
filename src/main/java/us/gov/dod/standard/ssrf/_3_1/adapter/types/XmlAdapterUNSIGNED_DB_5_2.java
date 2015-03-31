@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterUNSIGNED_DB_5_2 extends AXmlAdapterTNumber {
+public class XmlAdapterUNSIGNED_DB_5_2 extends AXmlAdapterNumber {
 
   public XmlAdapterUNSIGNED_DB_5_2() {
     super(5, 2, 0, null);

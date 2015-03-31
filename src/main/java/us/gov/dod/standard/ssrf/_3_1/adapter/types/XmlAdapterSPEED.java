@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterSPEED extends AXmlAdapterTNumber {
+public class XmlAdapterSPEED extends AXmlAdapterNumber {
 
   public XmlAdapterSPEED() {
     super(7, 2, 0, null);

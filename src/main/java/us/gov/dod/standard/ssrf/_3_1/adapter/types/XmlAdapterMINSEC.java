@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterMINSEC extends AXmlAdapterTString {
+public class XmlAdapterMINSEC extends AXmlAdapterString {
 
   public XmlAdapterMINSEC() {
     super(1, 40, false, "(([1-5]?\\d(-[1-5]?\\d(/\\d+)?)?)|(\\*/\\d+))(,([1-5]?\\d(-[1-5]?\\d(/\\d+)?)?)|(,\\*/\\d+))*");

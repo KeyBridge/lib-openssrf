@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,9 +23,9 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterIFNUM extends AXmlAdapterTNumber {
+public class XmlAdapterIFNUM extends AXmlAdapterInteger {
 
   public XmlAdapterIFNUM() {
-    super(1, null, 1, 5);
+    super(1, 1, 5);
   }
 }

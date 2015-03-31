@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterNETNUMBER extends AXmlAdapterTString {
+public class XmlAdapterNETNUMBER extends AXmlAdapterString {
 
   public XmlAdapterNETNUMBER() {
     super(1, 6, false, "[AB][0-9]{3}(00|25|50|75)");

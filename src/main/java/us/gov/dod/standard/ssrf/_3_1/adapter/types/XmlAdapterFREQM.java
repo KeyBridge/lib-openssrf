@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterFREQM extends AXmlAdapterTNumber {
+public class XmlAdapterFREQM extends AXmlAdapterNumber {
 
   public XmlAdapterFREQM() {
     super(16, 9, 0, 1000000000);

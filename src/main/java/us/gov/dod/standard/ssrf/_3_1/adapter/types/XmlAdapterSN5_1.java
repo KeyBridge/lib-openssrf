@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterSN5_1 extends AXmlAdapterTNumber {
+public class XmlAdapterSN5_1 extends AXmlAdapterNumber {
 
   public XmlAdapterSN5_1() {
     super(5, 1, null, null);

@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterHOURS extends AXmlAdapterTString {
+public class XmlAdapterHOURS extends AXmlAdapterString {
 
   public XmlAdapterHOURS() {
     super(1, 40, false, "(([12]?\\d(-[12]?\\d(/\\d+)?)?)|(\\*/\\d+))(,([12]?\\d(-[12]?\\d(/\\d+)?)?)|(,\\*/\\d+))*");

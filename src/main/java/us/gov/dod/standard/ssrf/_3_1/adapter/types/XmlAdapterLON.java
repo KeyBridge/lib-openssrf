@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterLON extends AXmlAdapterTString {
+public class XmlAdapterLON extends AXmlAdapterString {
 
   public XmlAdapterLON() {
     super(1, 11, false, "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X");

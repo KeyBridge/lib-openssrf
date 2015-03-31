@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.*;
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
-public class XmlAdapterUS_DURATION extends AXmlAdapterTString {
+public class XmlAdapterUS_DURATION extends AXmlAdapterString {
 
   public XmlAdapterUS_DURATION() {
     super(1, 16, true, "[0-9]{3}.[0-5][0-9].[0-9]{9}");
