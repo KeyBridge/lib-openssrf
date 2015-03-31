@@ -1176,14 +1176,14 @@ public class SSRFUtility {
    * @param field the field to look for
    * @return a WITH setter method, if present
    */
-  protected static Method findWithSetMethod(Class<?> clazz, Field field) {
+  protected static Method findWithCollectionMethod(Class<?> clazz, Field field) {
     /**
      * Push all names to lower case to perform a case-insensitive search.
      */
     Set<Method> methods = new HashSet<>();
     for (Method method : findDeclaredAndInheritedMethods(clazz)) {
       if (method.getName().toLowerCase().startsWith("with" + field.getName().toLowerCase())
-          && Arrays.asList(method.getParameterTypes()).contains(Set.class)) {
+          && Arrays.asList(method.getParameterTypes()).contains(Collection.class)) {
         methods.add(method);
       }
     }
