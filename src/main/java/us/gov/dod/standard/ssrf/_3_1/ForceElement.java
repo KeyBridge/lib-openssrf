@@ -40,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
   "type",
   "uic",
   "owningCountry",
-  "owningOrganisation",
+  "owningOrganisationRef",
   "role",
   "platform",
   "missionCode",
