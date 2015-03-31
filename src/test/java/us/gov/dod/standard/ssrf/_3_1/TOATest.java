@@ -15,7 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import org.junit.Test;
+import junit.framework.TestCase;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFProperties;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
@@ -24,12 +24,15 @@ import us.gov.dod.standard.ssrf.SSRFTestUtility;
  *
  * @author jesse
  */
-public class TOATest {
+public class TOATest extends TestCase {
+
+  public TOATest(String testName) {
+    super(testName);
+  }
 
   public TOATest() {
   }
 
-  @Test
   public void testMaximumPositiveFill() throws Exception {
     TOA t = new TOA();
     SSRFTestUtility.fill(t, true);
@@ -38,10 +41,12 @@ public class TOATest {
     for (String error : ssrf.evaluate()) {
       System.err.println("ERROR  " + error);
     }
+//    System.out.println("FULL " + t.toString() + "\n\n");
+
+    System.out.println("\n\n");
     System.out.println(ssrf.toXML());
   }
 
-  @Test
   public void testMinimumPositiveFill() throws Exception {
     TOA t = new TOA();
     SSRFTestUtility.fill(t, false);
@@ -50,6 +55,8 @@ public class TOATest {
     for (String error : ssrf.evaluate()) {
       System.err.println("ERROR  " + error);
     }
+    System.out.println("\n\n");
+
     System.out.println(ssrf.toXML());
   }
 
