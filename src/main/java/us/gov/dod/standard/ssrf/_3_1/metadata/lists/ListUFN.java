@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2014 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@ package us.gov.dod.standard.ssrf._3_1.metadata.lists;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.DetailedFunction;
+import us.gov.dod.standard.ssrf._3_1.assignment.DetailedFunction;
 import us.gov.dod.standard.ssrf._3_1.assignment.Link;
 
 /**
