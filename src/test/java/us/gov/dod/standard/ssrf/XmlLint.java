@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -120,8 +120,8 @@ public class XmlLint {
    */
   public static void validate(String xml, Path schema) throws IOException, InterruptedException, Exception {
     Path tempFile = Files.createTempFile(null, ".xml");
+    tempFile.toFile().deleteOnExit();
     Files.write(tempFile, xml.getBytes());
-//    tempFile.toFile().deleteOnExit();
     XmlLint.validate(tempFile, schema);
   }
 

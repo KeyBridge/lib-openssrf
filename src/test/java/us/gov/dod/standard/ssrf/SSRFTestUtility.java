@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
-import us.gov.dod.standard.ssrf._3_1.Contact;
+import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -50,6 +50,131 @@ public class SSRFTestUtility {
    * "us.gov.dod.standard.ssrf". The SSRF top level package.
    */
   private static final String SSRF_PACKAGE = "us.gov.dod.standard.ssrf";
+
+  /**
+   * A copy of the SSRF XSD is located in the TEST META-INF directory.
+   */
+  private static final URL SSRF_XSD = SSRFTestUtility.class.getResource("/META-INF/xsd/3.1.0/ssrf.xsd");
+
+  /**
+   * Common helper method to validate a SSRF component class instance.
+   * <p>
+   * This method inserts the component in to a SSRF document, then attempts to
+   * validate the resultant SSRF document.
+   * <p>
+   * @param object a SSRF component class instance (extends Common)
+   * @throws Exception if the SSRF XML document fails to validate or fails to
+   *                   validate against the SSRF schema.
+   */
+  public static void validate(Object object) throws Exception {
+    /**
+     * Initialize a new SSRF document.
+     */
+    SSRF ssrf = new SSRF().withProperties(SSRFProperties.getDefault());
+    /**
+     * Add the SSRF component to the document by calling the corresponding WITH
+     * setter.
+     */
+    switch (EDatasetType.fromInstance(object)) {
+      case AD:
+        ssrf.withAdministrative((Administrative) object);
+        break;
+      case AL:
+        ssrf.withAllotment((Allotment) object);
+        break;
+      case AN:
+        ssrf.withAntenna((Antenna) object);
+        break;
+      case AS:
+        ssrf.withAssignment((Assignment) object);
+        break;
+      case CN:
+        ssrf.withContact((Contact) object);
+        break;
+      case CP:
+        ssrf.withChannelPlan((ChannelPlan) object);
+        break;
+      case EX:
+        ssrf.withExternalReference((ExternalReference) object);
+        break;
+      case FD:
+        ssrf.withFEDeployment((FEDeployment) object);
+        break;
+      case FE:
+        ssrf.withForceElement((ForceElement) object);
+        break;
+      case HD:
+        ssrf.withSSReply((SSReply) object);
+        break;
+      case IF:
+        ssrf.withIntfReport((IntfReport) object);
+        break;
+      case JA:
+        ssrf.withRole((Role) object);
+        break;
+      case JR:
+        ssrf.withJRFL((JRFL) object);
+        break;
+      case LO:
+        ssrf.withLocation((Location) object);
+        break;
+      case LS:
+        ssrf.withLoadset((Loadset) object);
+        break;
+      case MS:
+        ssrf.withMessage((Message) object);
+        break;
+      case NT:
+        ssrf.withNote((Note) object);
+        break;
+      case OR:
+        ssrf.withOrganisation((Organisation) object);
+        break;
+      case RP:
+        ssrf.withRadiationPlan((RadiationPlan) object);
+        break;
+      case RX:
+        ssrf.withReceiver((Receiver) object);
+        break;
+      case SA:
+        ssrf.withSatellite((Satellite) object);
+        break;
+      case SR:
+        ssrf.withSSRequest((SSRequest) object);
+        break;
+      case TA:
+        ssrf.withTOA((TOA) object);
+        break;
+      case TR:
+        ssrf.withRFSystem((RFSystem) object);
+        break;
+      case TX:
+        ssrf.withTransmitter((Transmitter) object);
+        break;
+      default:
+        throw new AssertionError(EDatasetType.fromInstance(object).name());
+    }
+    /**
+     * Evaluate the SSRF document.
+     */
+    Set<String> errors = ssrf.evaluate();
+    if (errors.isEmpty()) {
+      /**
+       * If the SSRF document evaluates with no errors then run XMLLINT on the
+       * SSRF XML document.
+       */
+      XmlLint.validate(ssrf.toXML(), Paths.get(SSRF_XSD.toURI()));
+    } else {
+      /**
+       * If the SSRF document fails to validate then log the error detail and
+       * throw an exception to report the failure.
+       */
+      for (String error : ssrf.evaluate()) {
+        logger.log(Level.SEVERE, "  {0}", error);
+      }
+      throw new Exception(object.getClass().getSimpleName() + " is not a valid SSRF XML document.");
+    }
+  }
 
   /**
    * Recursively populate the Object instance with the minimum required
