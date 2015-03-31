@@ -2,9 +2,10 @@ package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.adapter.XmlAdapterSERIAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -22,13 +23,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ExtReferenceRef", propOrder = {
-  "value"
-})
+@XmlType(name = "ExtReferenceRef", propOrder = {"value"})
 public class ExtReferenceRef {
 
   @XmlValue
-  private Serial value;
+  @XmlJavaTypeAdapter(XmlAdapterSERIAL.class)
+  private String value;
   /**
    * cls - Classification (Required)
    * <p>
@@ -65,7 +65,7 @@ public class ExtReferenceRef {
    * {@link #getExternalReference()} instead.
    */
   @Deprecated
-  public Serial getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -78,7 +78,7 @@ public class ExtReferenceRef {
    * {@link #setExternalReference(ExternalReference)} instead.
    */
   @Deprecated
-  public void setValue(Serial value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
@@ -167,7 +167,7 @@ public class ExtReferenceRef {
    * {@link #withExternalReference(ExternalReference)} instead.
    */
   @Deprecated
-  public ExtReferenceRef withValue(Serial value) {
+  public ExtReferenceRef withValue(String value) {
     setValue(value);
     return this;
   }
@@ -284,7 +284,7 @@ public class ExtReferenceRef {
    * @since 3.1.0
    */
   public void prepare() {
-    this.value = externalReference != null ? externalReference.getSerial() : this.value;
+    this.value = externalReference != null ? externalReference.getSerial().toString() : this.value;
   }
 
   /**
@@ -303,7 +303,7 @@ public class ExtReferenceRef {
       return;
     }
     for (ExternalReference instance : root.getExternalReference()) {
-      if (value.equals(instance.getSerial())) {
+      if (value.equals(instance.getSerial().toString())) {
         externalReference = instance;
         return;
       }
