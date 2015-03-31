@@ -136,6 +136,13 @@ public class TOA extends Common<TOA> {
   private Set<FreqBand> freqBand;
 
   /**
+   * No arg constructor. Initializes the Common required fields.
+   */
+  public TOA() {
+    super();
+  }
+
+  /**
    * Get the nation or regulatory body that administers this Table of
    * Allocations..
    * <p>
