@@ -23,15 +23,14 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Remarks", propOrder = {
-  "value"
-})
+@XmlType(name = "Remarks", propOrder = {"value"})
 public class Remarks {
 
   @XmlValue
   private String value;
   /**
-   * cls - Classification (Required)    * <p>
+   * cls - Classification (Required)
+   * <p>
    * The classification of the current data item. This attribute is REQUIRED on
    * each data item, even if the classification is "U".
    * <p>
@@ -42,10 +41,12 @@ public class Remarks {
   @XmlAttribute(name = "cls", required = true)
   private ListCCL cls;
   /**
-   * idx - Index (Required)    * <p>
+   * idx - Index (Required)
+   * <p>
    * A unique index for each Remark used by this Dataset. Once an idx is used it
    * SHOULD NOT be modified during the lifetime of the Dataset; e.g., an element
-   * with idx=2 will keep idx=2 even if the first occurrence (idx=1) is deleted.    * <p>
+   * with idx=2 will keep idx=2 even if the first occurrence (idx=1) is deleted.
+   * <p>
    * Format is UN(6)
    * <p>
    * @since 3.1.0
@@ -175,7 +176,8 @@ public class Remarks {
    * Set a unique index for each Remark used by this Dataset. Once an idx is
    * used it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
    * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.    * <p>
+   * deleted.
+   * <p>
    * @param value An instances of type {@link BigInteger}.
    * @return The current Remarks object instance.
    * @since 3.1.0
