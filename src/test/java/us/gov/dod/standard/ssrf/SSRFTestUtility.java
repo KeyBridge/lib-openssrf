@@ -32,6 +32,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 import us.gov.dod.standard.ssrf._3_1.Contact;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
@@ -89,6 +90,13 @@ public class SSRFTestUtility {
        */
       field.setAccessible(true);
       /**
+       * Skip if the field is already populated
+       */
+      if (field.get(instance) != null) {
+//          System.out.println("DEBUG " + clazz.getSimpleName() + " " + field.getName() + " is already configured: " + field.get(instance) + ". Skipping...");
+        continue;
+      }
+      /**
        * Populate if the field is required.
        */
       if ((SSRFUtility.isRequired(field) || maximum) && !SSRFUtility.isTransient(field)) {
@@ -106,9 +114,8 @@ public class SSRFTestUtility {
            * The field is a SET. Inspect the WITH setter to identify the
            * preferred object type for this field.
            */
-          Object fieldInstance = getFillSet(clazz, field, maximum);
-
-          field.set(instance, fieldInstance);
+          Object fieldSet = getFillSet(clazz, field, maximum);
+          field.set(instance, fieldSet);
         } else {
           /**
            * The field is a single instance.
@@ -131,9 +138,7 @@ public class SSRFTestUtility {
              */
             String fieldClassName = field.getType().toString().replace("class ", "").trim();
             Class<?> fieldClass = Class.forName(fieldClassName);
-            if (fieldClass.equals(Serial.class)) {
-              continue;
-            }
+//            if (fieldClass.equals(Serial.class)) {              continue;            }
             /**
              * Handle the case where the class is an enumerated type.
              */
@@ -164,6 +169,19 @@ public class SSRFTestUtility {
           }
         }
       }
+      /**
+       * For maximum fill also try to add at least one reference.
+       */
+      if (maximum && SSRFUtility.isTransient(field)) {
+        Class<?> c = field.getType();
+        if (c.equals(Set.class)) {
+          Object fieldSet = getFillSet(clazz, field, false);
+          field.set(instance, fieldSet);
+        } else {
+          Object fillObject = getFillObject(clazz, field);
+          field.set(instance, fillObject);
+        }
+      }
     }
 //    System.out.println("<<< ----------------- " + clazz.getSimpleName());
   }
@@ -182,7 +200,8 @@ public class SSRFTestUtility {
     /**
      * Look for a WITH method to try setting the field with the preferred type.
      */
-    Method with = SSRFUtility.findWithSetMethod(clazz, field);
+    Method with = SSRFUtility.findWithCollectionMethod(clazz, field);
+
     Type type;
     if (with != null) {
       /**
@@ -274,7 +293,14 @@ public class SSRFTestUtility {
           }
           response.add(fieldInstance);
         }
-      } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException noSuchMethodException) {
+      } catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+        /**
+         * This will FAIL for Serial types since the no-arg constructor is set
+         * to PRIVATE. Safe to ignore since serial references are handled
+         * separately via Transient lists.
+         */
+//        System.err.println("ERROR FAIL: " + clazz.getSimpleName() + " " + field.getName() + " " + fieldClass.getSimpleName() + " instance " + ex.getMessage());
+//        logger.log(Level.SEVERE, null, ex);
       }
     }
     return response;
@@ -301,7 +327,7 @@ public class SSRFTestUtility {
      * XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlTypeValidator) {
+      if (annotation instanceof XmlJavaTypeAdapter) {
         /**
          * If an XmlJavaTypeAdapter annotation is found then instantiate the
          * XmlAdapter class referred to in the "value" field and attempt to
@@ -310,8 +336,8 @@ public class SSRFTestUtility {
          * valid (as determined by the marshal method).
          */
         try {
-          Class<?> adapterType = ((XmlTypeValidator) annotation).type();
-          XmlAdapter adapter = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
+          Class<?> fieldType = field.getType();
+          XmlAdapter adapter = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
 
           if (adapter instanceof AXmlAdapterNumber) {
             Number value = getTestNumber(((AXmlAdapterNumber) adapter).getMaxValue(),
@@ -320,22 +346,12 @@ public class SSRFTestUtility {
              * Try to build a new number. If that fails try with the string
              * value, which is required for BigInteger, BigDecimal, etc.
              */
+//            System.out.println("  return value " + value + " is type  " + value.getClass().getSimpleName());
+//            return value;
             try {
-              return adapterType.getConstructor(Number.class).newInstance(value);
+              return fieldType.getConstructor(Number.class).newInstance(value);
             } catch (Exception exception) {
-              return adapterType.getConstructor(String.class).newInstance(value.toString());
-            }
-          } else if (adapter instanceof AXmlAdapterTNumber) {
-            Number value = getTestNumber(((AXmlAdapterTNumber) adapter).getMaxValue(),
-                                         ((AXmlAdapterTNumber) adapter).getMinValue());
-            /**
-             * Try to build a new number. If that fails try with the string
-             * value, which is required for BigInteger, BigDecimal, etc.
-             */
-            try {
-              return adapterType.getConstructor(Number.class).newInstance(value);
-            } catch (Exception exception) {
-              return adapterType.getConstructor(String.class).newInstance(value.toString());
+              return fieldType.getConstructor(String.class).newInstance(value.toString());
             }
           } else if (adapter instanceof AXmlAdapterString) {
             /**
@@ -344,32 +360,32 @@ public class SSRFTestUtility {
              */
             String value = getTextString(((AXmlAdapterString) adapter).getMaxLength(),
                                          ((AXmlAdapterString) adapter).getMinLength());
-            return adapterType.getConstructor(String.class).newInstance(value);
+//            return adapterType.getConstructor(String.class).newInstance(value);
+            return value;
           } else if (adapter instanceof AXmlAdapterTString) {
+            /**
+             * TStrings typically only represent List entries...
+             */
             String value = getTextString(((AXmlAdapterTString) adapter).getMaxLength(),
                                          ((AXmlAdapterTString) adapter).getMinLength());
-            return adapterType.getConstructor(String.class).newInstance(value);
+            return fieldType.getConstructor(String.class).newInstance(value);
           } else if (adapter instanceof XmlAdapterDATE) {
-            return adapterType.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
+            return fieldType.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
           } else if (adapter instanceof XmlAdapterDATETIME) {
-            return adapterType.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
+            return fieldType.getConstructor(Calendar.class).newInstance(Calendar.getInstance());
           } else if (adapter instanceof XmlAdapterSERIAL) {
             /**
              * If the field has an XmlAdapterSERIAL then inspect the field name.
              * <p>
              * If the name is NOT 'serial' then assume the field is a reference
              * and provide a (bogus) temporary serial number. Otherwise the
-             * (serial) field should be ignored.
+             * (serial) field should be ignored. (It should be skipped if
+             * already populatd.
              */
-            if (!"serial".equals(field.getName())) {
-              return new Contact().getSerial();
-            } else {
-              return null;
-            }
+            return new Contact().getSerial().toString();
           } else {
             logger.log(Level.WARNING, "UNKNOWN annotation {0}  {1} : {2}  ", new Object[]{field.getType(), field.getDeclaringClass().getSimpleName(), field.getName()});
           }
-
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
           logger.log(Level.WARNING, "XmlValidator failed to instantiate for field {0}: {1}", new Object[]{field, ex.getMessage()});
           logger.log(Level.SEVERE, null, ex);
@@ -386,7 +402,12 @@ public class SSRFTestUtility {
        * the field expects an enumerated input.
        */
       Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
-      return enumInstance != null ? enumInstance : getTextString(32, 32);
+      return enumInstance != null ? enumInstance : getTextString(8, 0);
+    } else if (type.equals(Serial.class)) {
+      /**
+       * Return a bogus serial number.
+       */
+      return new Contact().getSerial();
     } else if (type.equals(TString.class)) {
       /**
        * If the field is a TString then inspect the WITH setter to determine if
@@ -395,7 +416,7 @@ public class SSRFTestUtility {
       Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
       return enumInstance != null
              ? new TString(enumInstance.toString())
-             : new TString(getTextString(32, 32));
+             : new TString(getTextString(8, 0));
     } else if (type.equals(BigDecimal.class)) {
       return new BigDecimal(new Random().nextInt(1024000) * new Random().nextDouble());
     } else if (type.equals(BigInteger.class)) {
@@ -457,12 +478,12 @@ public class SSRFTestUtility {
    * @param min the minimum number value
    * @return a random number ranging between the maximum and minimum values
    */
-  private static Number getTestNumber(Number max, Number min) {
+  private static Double getTestNumber(Number max, Number min) {
     Number maxValue = max != null ? max : 1024.0;
-    Number minValue = min != null ? min : 0.0;
-
+    Double minValue = min != null ? min.doubleValue() : 0.0;
+    Random r = new Random();
     for (int i = 0; i < 1000; i++) {
-      int candidate = new Random().nextInt(maxValue.intValue());
+      Double candidate = r.nextInt(maxValue.intValue()) * r.nextDouble();
       if (candidate <= maxValue.intValue() && candidate >= minValue.intValue()) {
         return candidate;
       }
@@ -518,7 +539,10 @@ public class SSRFTestUtility {
     int lengthMin = minLength != null ? minLength : new Random().nextInt(8);
     int lengthMax = maxLength != null ? maxLength : minLength + new Random().nextInt(64);
     StringBuilder sb = new StringBuilder();
-    for (int i = lengthMin; i <= lengthMax; i++) {
+    for (int i = 0; i < lengthMin; i++) {
+      sb.append("R");
+    }
+    for (int i = lengthMin; i < lengthMax; i++) {
       sb.append("#");
     }
     return sb.toString();
