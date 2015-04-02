@@ -52,7 +52,7 @@ public class PreviousAuthorization {
    */
   @XmlElement(name = "DocketNum", required = true)
   private S8 docketNum;
-  @XmlElement(name = "Date ", required = false)
+  @XmlElement(name = "Date", required = false)
   private D date;
   /**
    * US:AgencySerialNum - Agency Serial Number (Optional)    * <p>
