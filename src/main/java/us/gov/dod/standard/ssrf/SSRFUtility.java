@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,8 +32,8 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
-import us.gov.dod.standard.ssrf._3_1.adapter.XmlTypeValidator;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.location.Ellipse;
@@ -367,7 +367,7 @@ public class SSRFUtility {
        * Report an ERROR if the field is required and not configured.
        */
       if (isRequired(field) && fieldValue == null) {
-        messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + " " + getErrorLabel(parentField, parentInstance) + " requires a non-null (" + field.getType().getSimpleName() + ") " + field.getName());
+        messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + getErrorLabel(parentField, parentInstance) + " (" + field.getType().getSimpleName() + ") " + field.getName() + " is required");
       }
       /**
        * If the field value is not required and NULL then DO NOT try to validate
@@ -397,8 +397,15 @@ public class SSRFUtility {
         try {
           validateField(field, fieldValue);
         } catch (Exception exception) {
+          /**
+           * If there is a null pointer error then dump the output.
+           */
+          if (exception instanceof NullPointerException) {
+            logger.log(Level.SEVERE, null, exception);
+          }
 //          logger.log(Level.WARNING, "{0}.{1} failed XML type validation: {2}", new Object[]{instance.getClass().getSimpleName(), field.getName(), exception.getMessage()});
-          messages.add(clazz.getSimpleName() + "." + field.getName() + " " + exception.getMessage());
+//          messages.add(instance.getClass().getSimpleName() + "." + field.getName() + "  " + exception.getMessage());
+          messages.add(parentInstance.getClass().getSimpleName() + "." + parentField.getName() + "." + field.getName() + " (" + instance.getClass().getSimpleName() + ") :  " + exception.getMessage());
         }
       }
     }
@@ -434,7 +441,7 @@ public class SSRFUtility {
      * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
      */
     for (Annotation annotation : field.getAnnotations()) {
-      if (annotation instanceof XmlTypeValidator) {
+      if (annotation instanceof XmlJavaTypeAdapter) {
         /**
          * If an XmlJavaTypeAdapter annotation is found then instantiate the
          * XmlAdapter class referred to in the "value" field and attempt to
@@ -443,10 +450,10 @@ public class SSRFUtility {
          * valid (as determined by the marshal method).
          */
         try {
-          XmlAdapter<Object, Object> anInstance = ((XmlTypeValidator) annotation).value().getConstructor().newInstance();
-          anInstance.marshal(fieldValue);
+          XmlAdapter<Object, Object> adapterInstance = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
+          adapterInstance.marshal(fieldValue);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
-          logger.log(Level.WARNING, "XmlValidator failed to instantiate: {0}", ex.getMessage());
+          logger.log(Level.WARNING, "XmlJavaTypeAdapter failed to instantiate: {0}", ex.getMessage());
           logger.log(Level.SEVERE, null, ex);
         }
       }
@@ -474,12 +481,12 @@ public class SSRFUtility {
        * class-level instance.
        */
       if (fieldValue.getClass().getName().contains("metadata.domains") || fieldValue.getClass().getName().equals("java.lang.String")) {
-        return "\"" + trimString(fieldValue.toString(), MAX_STRING_LENGTH) + "\"";
+        return " \"" + trimString(fieldValue.toString(), MAX_STRING_LENGTH) + "\"";
       }
     } catch (IllegalArgumentException | IllegalAccessException ex) {
       Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
     }
-    return "instance";
+    return "";
   }
 
   /**
