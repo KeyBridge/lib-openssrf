@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -123,17 +123,17 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    */
   private String convert(String v) throws Exception {
     if (minLength != null && v.length() < minLength) {
-      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
+      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }
     if (maxLength != null && v.length() > maxLength) {
-      throw new Exception("string length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
+      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
     }
     /**
      * If the string length is valid then validate the pattern if applicable.
      */
     if (pattern != null) {
       if (!Pattern.compile(pattern).matcher(v).find()) {
-        throw new Exception("string pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + pattern + "] for \"" + v + "\".");
+        throw new Exception("String pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " requires [" + pattern + "].");
       }
     }
     /**
