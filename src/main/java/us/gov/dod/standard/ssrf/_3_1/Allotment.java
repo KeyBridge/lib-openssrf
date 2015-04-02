@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1056,9 +1056,11 @@ public class Allotment extends Common<Allotment> {
   @Override
   public void prepare() {
     super.prepare();
-    this.locationRef = new HashSet<>();
+    if (locationRef == null) {
+      locationRef = new HashSet<>();
+    }
     for (Location instance : getLocation()) {
-      this.locationRef.add(instance.getSerial());
+      locationRef.add(instance.getSerial());
     }
   }
 
