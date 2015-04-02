@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,17 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 
 /**
  * The SSRF EmsDes data type.
+ * <p>
+ * An emission designator utilizes a seven-character “word” to represent the
+ * bandwidth, modulation, nature of signal, and type of information transmitted
+ * by a particular radio. The emission designator is required in most FCC radio
+ * applications. An emission designator consists of seven characters as follows:
+ * The first four characters identify the necessary bandwidth required to
+ * transmit the desired information at the rate and with the quality required
+ * for the system employed; The fifth character identifies the type of
+ * modulation of the main carrier; The sixth character identifies the nature of
+ * signal(s) modulating the main carrier; The seventh character identifies the
+ * type of information to be transmitted.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
