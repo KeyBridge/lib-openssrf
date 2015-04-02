@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,8 +41,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class EndpointLocation {
 
   /**
-   * AntennaHeight - Antenna Height (Optional)    * <p>
-   * The antenna height above the ground level.    * <p>
+   * AntennaHeight - Antenna Height (Optional)
+   * <p>
+   * The antenna height above the ground level.
+   * <p>
    * Format is SN(7,2) (m)
    * <p>
    * @since 3.1.0
@@ -50,7 +52,8 @@ public class EndpointLocation {
   @XmlElement(name = "AntennaHeight", required = false)
   private Altitude antennaHeight;
   /**
-   * Excluded - Exclude Location (Optional)    * <p>
+   * Excluded - Exclude Location (Optional)
+   * <p>
    * Whether the referenced Location is included or excluded at this diagram
    * endpoint.
    * <p>
@@ -61,7 +64,8 @@ public class EndpointLocation {
   @XmlElement(name = "Excluded", required = false)
   private TString excluded;
   /**
-   * LocSatRef - Location or Satellite Reference (Optional)    * <p>
+   * LocSatRef - Location or Satellite Reference (Optional)
+   * <p>
    * A reference to a geographic location or satellite associated with this
    * diagram endpoint. Note for the USA: When coordinating with NTIA, a location
    * is required for base stations and repeaters of trunking systems and
@@ -75,7 +79,8 @@ public class EndpointLocation {
   @XmlElement(name = "LocSatRef", required = false)
   private Serial locSatRef;
   /**
-   * MinPointAngle - Minimum Pointing Angle (Optional)    * <p>
+   * MinPointAngle - Minimum Pointing Angle (Optional)
+   * <p>
    * The minimum vertical pointing angle for satellite ground station antennas.
    * <p>
    * Format is UN(5,2) [0..180] (deg)
@@ -85,7 +90,8 @@ public class EndpointLocation {
   @XmlElement(name = "MinPointAngle", required = false)
   private Az180 minPointAngle;
   /**
-   * SiteElevation - Site Elevation (Optional)    * <p>
+   * SiteElevation - Site Elevation (Optional)
+   * <p>
    * The site elevation of each base station and repeater in a trunking system.
    * <p>
    * Format is SN(7,2) (m)
@@ -263,7 +269,8 @@ public class EndpointLocation {
   }
 
   /**
-   * Set the antenna height above the ground level.    * <p>
+   * Set the antenna height above the ground level.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current EndpointLocation object instance.
    * @since 3.1.0
@@ -361,7 +368,8 @@ public class EndpointLocation {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * LocSatRef - Location or Satellite Reference (Optional)    * <p>
+   * LocSatRef - Location or Satellite Reference (Optional)
+   * <p>
    * A reference to a geographic location or satellite associated with this
    * diagram endpoint. Note for the USA: When coordinating with NTIA, a location
    * is required for base stations and repeaters of trunking systems and
