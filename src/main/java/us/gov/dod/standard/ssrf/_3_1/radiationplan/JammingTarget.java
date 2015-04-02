@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,7 +54,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWG;
 public class JammingTarget {
 
   /**
-   * US:AntStabilisation - Antenna Stabilisation Type (Optional)    * <p>
+   * US:AntStabilisation - Antenna Stabilisation Type (Optional)
+   * <p>
    * The method by which the jamming antenna beam is focused.
    * <p>
    * Format is L:UWG
@@ -64,7 +65,8 @@ public class JammingTarget {
   @XmlElement(name = "AntStabilisation", required = false)
   private TString antStabilisation;
   /**
-   * US:Bearing - Target Bearing (Optional)    * <p>
+   * US:Bearing - Target Bearing (Optional)
+   * <p>
    * The bearing of the target in degrees referenced to the "boresight" of the
    * jammer equipment or the platform that the jammer equipment is mounted on.
    * <p>
@@ -75,7 +77,8 @@ public class JammingTarget {
   @XmlElement(name = "Bearing", required = false)
   private Az bearing;
   /**
-   * US:FreqMax - Maximum Frequency (Optional)    * <p>
+   * US:FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The frequency range maximum value planned for denial of use.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
@@ -87,7 +90,8 @@ public class JammingTarget {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * US:FreqMin - Minimum Frequency (Required)    * <p>
+   * US:FreqMin - Minimum Frequency (Required)
+   * <p>
    * The discrete frequency, or frequency range minimum value, planned for
    * denial of use.
    * <p>
@@ -98,7 +102,8 @@ public class JammingTarget {
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * US:Lat - Latitude (Optional)    * <p>
+   * US:Lat - Latitude (Optional)
+   * <p>
    * The geographic latitude of the target location, including hemisphere (H).
    * The format for Lat is ddmmss[.hh]H (where H = N or S). Seconds may have a
    * decimal point followed by up to two numerals. If seconds are not known, use
@@ -122,9 +127,11 @@ public class JammingTarget {
   @XmlElement(name = "LoadsetRef", required = false)
   private Serial loadsetRef;
   /**
-   * US:LocationRef - Target Location Serial (Optional)    * <p>
+   * US:LocationRef - Target Location Serial (Optional)
+   * <p>
    * The unique reference of an existing Location dataset that describes the
-   * target location.    * <p>
+   * target location.
+   * <p>
    * Format is pattern (S29)
    * <p>
    * @since 3.1.0
@@ -132,7 +139,8 @@ public class JammingTarget {
   @XmlElement(name = "LocationRef", required = false)
   private Serial locationRef;
   /**
-   * US:Lon - Longitude (Optional)    * <p>
+   * US:Lon - Longitude (Optional)
+   * <p>
    * The geographical longitude of the target location, including hemisphere
    * (H). The format for Lon is dddmmss[.hh]H (where H = E or W). Seconds may
    * have a decimal point followed by up to two numerals. If seconds are not
@@ -148,7 +156,8 @@ public class JammingTarget {
   @XmlElement(name = "Lon", required = false)
   private Lon lon;
   /**
-   * US:PolarisationType - Polarisation (Optional)    * <p>
+   * US:PolarisationType - Polarisation (Optional)
+   * <p>
    * The antenna polarisation planned for the desired jamming instance.
    * <p>
    * Format is L:CPO
@@ -158,7 +167,8 @@ public class JammingTarget {
   @XmlElement(name = "PolarisationType", required = false)
   private TString polarisationType;
   /**
-   * US:Power - Power (Optional)    * <p>
+   * US:Power - Power (Optional)
+   * <p>
    * The desired power value planned to be directed at the target.
    * <p>
    * Format is SN(10,7) (dBW)
@@ -168,7 +178,8 @@ public class JammingTarget {
   @XmlElement(name = "Power", required = false)
   private dBW power;
   /**
-   * US:TargetID - Taget ID (Optional)    * <p>
+   * US:TargetID - Taget ID (Optional)
+   * <p>
    * A unique (within the parent JammingPlan) numeric identifier to distinguish
    * one target from another.
    * <p>
@@ -684,7 +695,8 @@ public class JammingTarget {
 
   /**
    * Set the unique reference of an existing Location dataset that describes the
-   * target location.    * <p>
+   * target location.
+   * <p>
    * @param value An instances of type {@link Serial}.
    * @return The current JammingTarget object instance.
    * @since 3.1.0
@@ -868,6 +880,49 @@ public class JammingTarget {
   }
 
   /**
+   * LocationRef - Location Serial (Optional)
+   * <p>
+   * The serial of the referenced Location.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location location;
+
+  /**
+   * Get the serial of the referenced Location..
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getLocation() {
+    return location;
+  }
+
+  /**
+   * Determine if the location field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocation() {
+    return this.location != null;
+  }
+
+  /**
+   * Set the serial of the referenced Location.
+   * <p>
+   * @param value An instances of type {@link Location}.
+   * @return The current JammingTarget object instance.
+   * @since 3.1.0
+   */
+  public JammingTarget withLocation(Location value) {
+    this.location = value;
+    return this;
+  }
+
+  /**
    * Update the SSRF data type references in this JammingTarget record.
    * <p>
    * This method builds the exported {@link #loadsetRef} field with values from
@@ -879,6 +934,7 @@ public class JammingTarget {
    */
   public void prepare() {
     this.loadsetRef = loadset != null ? loadset.getSerial() : this.loadsetRef;
+    this.locationRef = location != null ? location.getSerial() : this.locationRef;
   }
 
   /**
@@ -899,6 +955,15 @@ public class JammingTarget {
     for (Loadset instance : root.getLoadset()) {
       if (loadsetRef.equals(instance.getSerial())) {
         loadset = instance;
+        return;
+      }
+    }
+    if (locationRef == null || !locationRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locationRef.equals(instance.getSerial())) {
+        location = instance;
         return;
       }
     }

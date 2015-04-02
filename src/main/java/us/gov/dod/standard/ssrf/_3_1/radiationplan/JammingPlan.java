@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,7 +64,8 @@ public class JammingPlan {
   @XmlElement(name = "Name", required = false)
   private S100 name;
   /**
-   * US:NumFreqs - Frequency Count (Optional)    * <p>
+   * US:NumFreqs - Frequency Count (Optional)
+   * <p>
    * The number of discrete frequencies or frequency ranges associated with this
    * Jamming Plan. There SHOULD be one JammingTarget sub-element for each
    * discrete frequency or frequency range.
@@ -76,7 +77,8 @@ public class JammingPlan {
   @XmlElement(name = "NumFreqs", required = false)
   private UN6 numFreqs;
   /**
-   * US:Priority - Plan Priority (Required)    * <p>
+   * US:Priority - Plan Priority (Required)
+   * <p>
    * The relative priority of the service request.
    * <p>
    * Format is L:UWE
@@ -86,7 +88,8 @@ public class JammingPlan {
   @XmlElement(name = "Priority", required = true)
   private TString priority;
   /**
-   * US:RequiredEffect - Required Effect (Optional)    * <p>
+   * US:RequiredEffect - Required Effect (Optional)
+   * <p>
    * The desired effect of this service request.
    * <p>
    * Format is L:UWA
@@ -96,7 +99,8 @@ public class JammingPlan {
   @XmlElement(name = "RequiredEffect", required = false)
   private TString requiredEffect;
   /**
-   * US:RequiredPerformance - Required Performance (Optional)    * <p>
+   * US:RequiredPerformance - Required Performance (Optional)
+   * <p>
    * The desired effectiveness of the service request. Example: the minimum
    * percentage of known enemy command and control nodes that must be rendered
    * inoperable for successful mission accomplishment.
@@ -108,7 +112,8 @@ public class JammingPlan {
   @XmlElement(name = "RequiredPerformance", required = false)
   private TString requiredPerformance;
   /**
-   * US:StartDateTime - Start Timestamp (Optional)    * <p>
+   * US:StartDateTime - Start Timestamp (Optional)
+   * <p>
    * The date/time stamp when to initiate the jamming, if "Date/Time" is used in
    * element StartTrigger. Entries must be equal to or later than
    * RadiationPlan.StartDateTime, and less than RadiationPlan.StopDateTime.
@@ -120,7 +125,8 @@ public class JammingPlan {
   @XmlElement(name = "StartDateTime", required = false)
   private DT startDateTime;
   /**
-   * US:StartLocationRef - Start Location Serial (Optional)    * <p>
+   * US:StartLocationRef - Start Location Serial (Optional)
+   * <p>
    * The Location serial indicating the region associated with "Troops in
    * Region" or "Troops Not in Region", in attribute StartTrigger.
    * <p>
@@ -131,7 +137,8 @@ public class JammingPlan {
   @XmlElement(name = "StartLocationRef", required = false)
   private Serial startLocationRef;
   /**
-   * US:StartTrigger - Start Trigger (Required)    * <p>
+   * US:StartTrigger - Start Trigger (Required)
+   * <p>
    * The type of trigger that indicates when it is time to start jamming.
    * <p>
    * Format is L:UWF
@@ -141,7 +148,8 @@ public class JammingPlan {
   @XmlElement(name = "StartTrigger", required = true)
   private TString startTrigger;
   /**
-   * US:StopDateTime - Stop Timestamp (Optional)    * <p>
+   * US:StopDateTime - Stop Timestamp (Optional)
+   * <p>
    * The date/time stamp when to stop the jamming, if "Date/Time" is used in
    * element StopTrigger. Entries must be after RadiationPlan.StartDateTime, and
    * be equal to or less than RadiationPlan.StopDateTime.
@@ -153,7 +161,8 @@ public class JammingPlan {
   @XmlElement(name = "StopDateTime", required = false)
   private DT stopDateTime;
   /**
-   * US:StopLocationRef - Stop Location Serial (Optional)    * <p>
+   * US:StopLocationRef - Stop Location Serial (Optional)
+   * <p>
    * The Location serial indicating the region associated with "Troops in
    * Region" or "Troops Not in Region", in attribute StopTrigger.
    * <p>
@@ -164,7 +173,8 @@ public class JammingPlan {
   @XmlElement(name = "StopLocationRef", required = false)
   private Serial stopLocationRef;
   /**
-   * US:StopTrigger - Stop Trigger (Required)    * <p>
+   * US:StopTrigger - Stop Trigger (Required)
+   * <p>
    * The type of trigger that indicates when it is time to stop jamming.
    * <p>
    * Format is L:UWF
@@ -174,7 +184,8 @@ public class JammingPlan {
   @XmlElement(name = "StopTrigger", required = true)
   private TString stopTrigger;
   /**
-   * US:Version - Plan Version (Optional)    * <p>
+   * US:Version - Plan Version (Optional)
+   * <p>
    * The current version of the Jamming Plan.
    * <p>
    * Format is S10
@@ -193,7 +204,8 @@ public class JammingPlan {
   @XmlElement(name = "Level3Auth", required = true)
   private TString level3Auth;
   /**
-   * US:StandOffDist - Stand Off Distance (Optional)    * <p>
+   * US:StandOffDist - Stand Off Distance (Optional)
+   * <p>
    * The required distance from the jammer to non-threat equipment, in km.
    * <p>
    * Format is UN(9,4) (km)
@@ -512,9 +524,11 @@ public class JammingPlan {
    * Get the Location serial indicating the region associated with "Troops in
    * Region" or "Troops Not in Region", in attribute StopTrigger..
    * <p>
+   * @deprecated SSRF references are managed automatically.
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
+  @Deprecated
   public Serial getStopLocationRef() {
     return stopLocationRef;
   }
@@ -523,9 +537,11 @@ public class JammingPlan {
    * Set the Location serial indicating the region associated with "Troops in
    * Region" or "Troops Not in Region", in attribute StopTrigger..
    * <p>
+   * @deprecated SSRF references are managed automatically.
    * @param value a {@link Serial} instance
    * @since 3.1.0
    */
+  @Deprecated
   public void setStopLocationRef(Serial value) {
     this.stopLocationRef = value;
   }
@@ -851,7 +867,9 @@ public class JammingPlan {
    * @param value An instances of type {@link Serial}.
    * @return The current JammingPlan object instance.
    * @since 3.1.0
+   * @deprecated SSRF references are managed automatically.
    */
+  @Deprecated
   public JammingPlan withStopLocationRef(Serial value) {
     setStopLocationRef(value);
     return this;
@@ -984,7 +1002,8 @@ public class JammingPlan {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:StartLocationRef - Start Location Serial (Optional)    * <p>
+   * US:StartLocationRef - Start Location Serial (Optional)
+   * <p>
    * The Location serial indicating the region associated with "Troops in
    * Region" or "Troops Not in Region", in attribute StartTrigger.
    * <p>
@@ -1029,6 +1048,52 @@ public class JammingPlan {
   }
 
   /**
+   * US:StopLocationRef - Stop Location Serial (Optional)
+   * <p>
+   * The Location serial indicating the region associated with "Troops in
+   * Region" or "Troops Not in Region", in attribute StopTrigger.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location stopLocation;
+
+  /**
+   * Get the Location serial indicating the region associated with "Troops in
+   * Region" or "Troops Not in Region", in attribute StopTrigger..
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getStopLocation() {
+    return stopLocation;
+  }
+
+  /**
+   * Determine if the stopLocation field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetStopLocation() {
+    return this.stopLocation != null;
+  }
+
+  /**
+   * Set the Location serial indicating the region associated with "Troops in
+   * Region" or "Troops Not in Region", in attribute StopTrigger.
+   * <p>
+   * @param value An instances of type {@link Location}.
+   * @return The current JammingPlan object instance.
+   * @since 3.1.0
+   */
+  public JammingPlan withStopLocation(Location value) {
+    this.stopLocation = value;
+    return this;
+  }
+
+  /**
    * Update the SSRF data type references in this JammingPlan record.
    * <p>
    * This method builds the exported {@link #startLocationRef} field with values
@@ -1040,6 +1105,7 @@ public class JammingPlan {
    */
   public void prepare() {
     this.startLocationRef = startLocation != null ? startLocation.getSerial() : this.startLocationRef;
+    this.stopLocationRef = stopLocation != null ? startLocation.getSerial() : this.stopLocationRef;
   }
 
   /**
@@ -1060,6 +1126,15 @@ public class JammingPlan {
     for (Location instance : root.getLocation()) {
       if (startLocationRef.equals(instance.getSerial())) {
         startLocation = instance;
+        return;
+      }
+    }
+    if (stopLocationRef == null || !stopLocationRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (stopLocationRef.equals(instance.getSerial())) {
+        stopLocation = instance;
         return;
       }
     }
