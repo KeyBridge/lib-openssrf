@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -194,10 +194,16 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] for " + v + ".");
+      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] exceed");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] for " + v + ".");
+      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] exceeded");
+    }
+    if (maxInclusive == null && v.doubleValue() > getMaxValue().doubleValue()) {
+      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "")
+                          + " pattern ["
+                          + (df != null ? df.toPattern() : (totalDigits - (fractionDigits != null ? fractionDigits : 0)) + "." + (fractionDigits != null ? fractionDigits : 0))
+                          + "] exceeded.");
     }
     /**
      * Validate the digit count.
@@ -211,7 +217,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
        * Just convert the number precision to ensure it matches the required XML
        * style pattern.
        */
-      return new BigDecimal(v.doubleValue()).setScale(totalDigits - fractionDigits, RoundingMode.HALF_UP);
+      return new BigDecimal(v.doubleValue()).setScale(totalDigits - (fractionDigits != null ? fractionDigits : 0), RoundingMode.HALF_UP);
     }
     /**
      * Default fall through with whatever Number type was presented.
@@ -236,26 +242,41 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
   }
 
   /**
-   * Get the maximum value allowed by this adapter.
+   * Get the maximum (inclusive) value allowed by this adapter.
+   * <p>
+   * If the inclusive maximum value is not specifically declared then it is
+   * calculated from the total and fraction digits declaration (if present).
    * <p>
    * @return the maximum allowed value. Integer.MAX_VALUE if not set.
    */
   public Number getMaxValue() {
+    /**
+     * Calculate the maximum value from digits by calculating the exponent - 1 .
+     * For example: a three digit allowance will be calculated as 10 ^ 3 minus 1
+     * = 999.
+     */
     if (totalDigits != null) {
-      return maxInclusive != null ? maxInclusive : Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+      return maxInclusive != null
+             ? maxInclusive
+             : Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0))) - 1;
     } else {
       return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
     }
   }
 
   /**
-   * Get the minimum value allowed by this adapter.
+   * Get the minimum (inclusive) value allowed by this adapter.
+   * <p>
+   * If the inclusive minimum value is not specifically declared then it is
+   * calculated from the total and fraction digits declaration (if present).
    * <p>
    * @return the minimum allowed value. Integer.MIN_VALUE if not set.
    */
   public Number getMinValue() {
     if (totalDigits != null) {
-      return minInclusive != null ? minInclusive : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0)));
+      return minInclusive != null
+             ? minInclusive
+             : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0))) - 1;
     } else {
       return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
     }
