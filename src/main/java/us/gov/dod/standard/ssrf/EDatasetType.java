@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,32 +31,89 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
  */
 public enum EDatasetType {
 
+  /**
+   * Administrative
+   */
   AD(Administrative.class),
+  /**
+   * Allotment
+   */
   AL(Allotment.class),
+  /**
+   * Antenna
+   */
   AN(Antenna.class),
+  /**
+   * Assignment
+   */
   AS(Assignment.class),
+  /**
+   * Contact
+   */
   CN(Contact.class),
+  /**
+   * ChannelPlan
+   */
   CP(ChannelPlan.class),
+  /**
+   * ExternalReference
+   */
   EX(ExternalReference.class),
   /**
    * Force Element Deployment
    */
   FD(FEDeployment.class),
+  /**
+   * ForceElement
+   */
   FE(ForceElement.class),
   /**
    * Spectrum Supportability Reply (Host Nation Declaration)
    */
   HD(SSReply.class),
+  /**
+   * IntfReport
+   */
   IF(IntfReport.class),
+  /**
+   * Role
+   */
   JA(Role.class),
+  /**
+   * JRFL
+   */
   JR(JRFL.class),
+  /**
+   * Location
+   */
   LO(Location.class),
+  /**
+   * Loadset
+   */
   LS(Loadset.class),
+  /**
+   * Message
+   */
   MS(Message.class),
+  /**
+   * Note
+   */
   NT(Note.class),
+  /**
+   * Organisation
+   */
   OR(Organisation.class),
+  /**
+   * RadiationPlan
+   */
   RP(RadiationPlan.class),
+  /**
+   * Receiver
+   */
   RX(Receiver.class),
+  /**
+   * Satellite
+   */
   SA(Satellite.class),
   /**
    * Spectrum Supportability Request
@@ -66,7 +123,13 @@ public enum EDatasetType {
    * Table of Allocations
    */
   TA(TOA.class),
+  /**
+   * RFSystem
+   */
   TR(RFSystem.class),
+  /**
+   * Transmitter
+   */
   TX(Transmitter.class);
 
   /**
