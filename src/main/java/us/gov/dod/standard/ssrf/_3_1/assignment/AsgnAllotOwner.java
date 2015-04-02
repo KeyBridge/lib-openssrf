@@ -38,9 +38,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUOW;
 })
 public class AsgnAllotOwner {
 
-  @XmlElement(name = "Description ", required = false)
+  @XmlElement(name = "Description", required = false)
   private S18 description;
-  @XmlElement(name = "OwnerType ", required = true)
+  @XmlElement(name = "OwnerType", required = true)
   private TString ownerType;
   /**
    * US:OwnerOrgRef - Owner Organisation Serial (Optional)    * <p>
