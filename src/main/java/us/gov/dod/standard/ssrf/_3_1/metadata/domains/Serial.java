@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -177,6 +177,10 @@ public class Serial extends AMetadata<Serial> implements Comparable<Serial> {
    * @return a 15-character UUID-based alphanumeric String
    */
   private static String uuidSnippet() {
+    /**
+     * The following sequence generates a (almost) guaranteed unique text
+     * snippet.
+     */
     return UUID.randomUUID().toString().replaceAll("-", "").substring(0, 14);
   }
 
