@@ -25,8 +25,8 @@ import us.gov.dod.standard.ssrf._3_1.multiple.Usage;
  * <p>
  * Used in {@link Usage}
  * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 10/01/2014
+ * @author Key Bridge LLC <developer@keybridge.ch>
+ * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCEF")
 @XmlEnum
@@ -369,10 +369,6 @@ public enum ListCEF {
   public static ListCEF fromValue(String v) {
     for (ListCEF c : ListCEF.values()) {
       if (c.value.equals(v)) {
-        return c;
-      } else if (c.value.equals(v.replaceAll(" ", "-"))) {
-        return c;
-      } else if (c.value.equals(v.replaceAll("-", " "))) {
         return c;
       }
     }

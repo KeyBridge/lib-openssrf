@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,10 +25,10 @@ import us.gov.dod.standard.ssrf._3_1.Antenna;
  * <p>
  * Enumerated values for fields using the ListCAT type.
  * <p>
- * Used in {@link Antenna} antenna type field.
+ * Used in {@link Antenna}
  * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 10/01/2014
+ * @author Key Bridge LLC <developer@keybridge.ch>
+ * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCAT")
 @XmlEnum
@@ -422,7 +422,7 @@ public enum ListCAT {
 
   public static ListCAT fromValue(String v) {
     for (ListCAT c : ListCAT.values()) {
-      if (c.value.equalsIgnoreCase(v)) {
+      if (c.value.equals(v)) {
         return c;
       }
     }

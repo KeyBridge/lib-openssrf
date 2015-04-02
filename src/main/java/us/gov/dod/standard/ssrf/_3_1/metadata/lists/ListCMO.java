@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,8 +29,8 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxModulation;
  * Used in
  * {@link Baseband}, {@link ObservedMOPAnalysis}, {@link RxModulation}, {@link TxModulation}
  * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 10/01/2014
+ * @author Key Bridge LLC <developer@keybridge.ch>
+ * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCMO")
 @XmlEnum

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,8 +25,8 @@ import us.gov.dod.standard.ssrf._3_1.receiver.RxMode;
  * <p>
  * Used in {@link RxMode}
  * <p>
- * @author Jesse Caulfield
- * @version SSRF 3.1.0, 10/01/2014
+ * @author Key Bridge LLC <developer@keybridge.ch>
+ * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCSE")
 @XmlEnum
@@ -44,7 +44,7 @@ public enum ListCSE {
   @XmlEnumValue("S/N")
   S_N("S/N"),
   @XmlEnumValue("(S+N)/N")
-  S_N_N("(S+N)/N");
+  _S_N_N("(S+N)/N");
   private final String value;
 
   ListCSE(String v) {
