@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,19 +15,25 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import org.junit.Test;
+import junit.framework.TestCase;
 
 /**
  *
  * @author jesse
  */
-public class AdministrativeTest {
+public class AdministrativeTest extends TestCase {
 
   public AdministrativeTest() {
   }
 
-  @Test
   public void testSomeMethod() {
+    Integer totalDigits = 3;
+    Integer fractionDigits = null;
+
+    Double maxInclusive = Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0))) - 1;
+
+    System.out.println("max " + maxInclusive);
+
   }
 
 }

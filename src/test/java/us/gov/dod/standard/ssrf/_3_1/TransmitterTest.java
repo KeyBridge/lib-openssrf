@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Key Bridge LLC.
+ * Copyright 2015 OpenSSRF.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,47 +19,49 @@ import junit.framework.TestCase;
 import us.gov.dod.standard.ssrf.EDatasetType;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
 
-public class TOATest extends TestCase {
+/**
+ *
+ * @author jesse
+ */
+public class TransmitterTest extends TestCase {
 
-  public TOATest(String testName) {
-    super(testName);
+  public TransmitterTest() {
   }
-  //<editor-fold defaultstate="collapsed" desc="comment">
 
+  //<editor-fold defaultstate="collapsed" desc="Certification Test for Transmitter">
   /**
    * Test a MAX-fill record with a GOOD configuration.
    * <p>
-   * @throws Exception if the SSRF document fails to validate
+   * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMaximumPositiveFill() throws Exception {
-    SSRFTestUtility.testMaximumPositiveFill(EDatasetType.TA);
-  }//</editor-fold>
+  public void testMaximumPositiveFill_TX() throws Exception {
+    SSRFTestUtility.testMaximumPositiveFill(EDatasetType.TX);
+  }
 
   /**
    * Test a MIN-fill record with a GOOD configuration.
    * <p>
-   * @throws Exception if the SSRF document fails to validate
+   * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMinimumPositiveFill() throws Exception {
-    SSRFTestUtility.testMinimumPositiveFill(EDatasetType.TA);
+  public void _testMinimumPositiveFill_TX() throws Exception {
+    SSRFTestUtility.testMinimumPositiveFill(EDatasetType.TX);
   }
 
   /**
    * Test a MAX-fill record with randomly seeded BAD configuration(s).
    * <p>
-   * @throws Exception if the SSRF document fails to validate
+   * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMaximumNegativeFill() throws Exception {
-    SSRFTestUtility.testMaximumNegativeFill(EDatasetType.TA);
+  public void _testMaximumNegativeFill_TX() throws Exception {
+    SSRFTestUtility.testMaximumNegativeFill(EDatasetType.TX);
   }
 
   /**
    * Test a MIN-fill record with randomly seeded BAD configuration(s).
    * <p>
-   * @throws Exception if the SSRF document fails to validate
+   * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMinimumNegativeFill() throws Exception {
-    SSRFTestUtility.testMinimumNegativeFill(EDatasetType.TA);
-  }
-
+  public void _testMinimumNegativeFill_TX() throws Exception {
+    SSRFTestUtility.testMinimumNegativeFill(EDatasetType.TX);
+  }//</editor-fold>
 }
