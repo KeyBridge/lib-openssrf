@@ -79,11 +79,11 @@ public class DiagramEndpoint {
    */
   @XmlElement(name = "Description", required = false)
   private S100 description;
-  @XmlElement(name = "Name ", required = false)
+  @XmlElement(name = "Name", required = false)
   private S15 name;
-  @XmlElement(name = "IconPosLeft ", required = false)
+  @XmlElement(name = "IconPosLeft", required = false)
   private US_Twips iconPosLeft;
-  @XmlElement(name = "IconPosTop ", required = false)
+  @XmlElement(name = "IconPosTop", required = false)
   private US_Twips iconPosTop;
   /**
    * PointToMultiPoint - Point to Multipoint Indicator (Optional)    * <p>

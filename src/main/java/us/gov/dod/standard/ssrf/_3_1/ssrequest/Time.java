@@ -45,7 +45,7 @@ public class Time {
    */
   @XmlElement(name = "Period", required = false)
   private TString period;
-  @XmlElement(name = "UsageDescription ", required = false)
+  @XmlElement(name = "UsageDescription", required = false)
   private MEMO usageDescription;
 
   /**

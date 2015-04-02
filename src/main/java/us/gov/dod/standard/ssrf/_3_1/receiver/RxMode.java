@@ -287,7 +287,7 @@ public class RxMode {
    */
   @XmlElement(name = "PostDetectionFreqMax", required = false)
   private FreqM postDetectionFreqMax;
-  @XmlElement(name = "ProcessingGainMin ", required = false)
+  @XmlElement(name = "ProcessingGainMin", required = false)
   private dB processingGainMin;
   /**
    * ProcessingGainMax - Maximum Processing Gain (Optional)

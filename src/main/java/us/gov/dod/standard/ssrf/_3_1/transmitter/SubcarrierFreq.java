@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 })
 public class SubcarrierFreq {
 
-  @XmlElement(name = "Freq ", required = true)
+  @XmlElement(name = "Freq", required = true)
   private FreqM freq;
   /**
    * FreqOffset - Subcarrier Frequency Offset (Optional)    * <p>
