@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1068,6 +1068,49 @@ public class FEDeployment extends Common<FEDeployment> {
   }
 
   /**
+   * US:LocationRef - Plan Location Serial (Optional)
+   * <p>
+   * The unique reference serial of an existing Location dataset.
+   * <p>
+   * Format is pattern (S29)
+   * <p>
+   * @since 3.1.0
+   */
+  @XmlTransient
+  private Location location;
+
+  /**
+   * Get the unique reference serial of an existing Location dataset..
+   * <p>
+   * @return a {@link Location} instance
+   * @since 3.1.0
+   */
+  public Location getLocation() {
+    return location;
+  }
+
+  /**
+   * Determine if the location field is configured.
+   * <p>
+   * @return TRUE if the field is set, FALSE if the field is null
+   */
+  public boolean isSetLocation() {
+    return this.location != null;
+  }
+
+  /**
+   * Set the unique reference serial of an existing Location dataset.
+   * <p>
+   * @param value An instances of type {@link Location}.
+   * @return The current FEDeployment object instance.
+   * @since 3.1.0
+   */
+  public FEDeployment withLocation(Location value) {
+    this.location = value;
+    return this;
+  }
+
+  /**
    * Update the SSRF data type references in this FEDeployment record.
    * <p>
    * This method builds the exported {@link #feRef} field with values from the
@@ -1081,6 +1124,7 @@ public class FEDeployment extends Common<FEDeployment> {
   public void prepare() {
     super.prepare();
     this.feRef = forceElement != null ? forceElement.getSerial() : this.feRef;
+    this.locationRef = location != null ? location.getSerial() : this.locationRef;
   }
 
   /**
@@ -1102,6 +1146,15 @@ public class FEDeployment extends Common<FEDeployment> {
     for (ForceElement instance : root.getForceElement()) {
       if (feRef.equals(instance.getSerial())) {
         forceElement = instance;
+        return;
+      }
+    }
+    if (locationRef == null || !locationRef.isSetValue()) {
+      return;
+    }
+    for (Location instance : root.getLocation()) {
+      if (locationRef.equals(instance.getSerial())) {
+        location = instance;
         return;
       }
     }
