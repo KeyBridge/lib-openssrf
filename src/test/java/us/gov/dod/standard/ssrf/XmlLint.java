@@ -155,6 +155,17 @@ public class XmlLint {
     ProcessBuilder processBuilder = new ProcessBuilder("/bin/sh", "-c", xmllint.toString());
     logger.log(Level.FINE, "xmllint: {0} ", xmllint.toString());
     /**
+     * Sets the source and destination for subprocess standard I/O to be the
+     * same as those of the current Java process. This is a convenience method.
+     * An invocation of the form pb.inheritIO() behaves in exactly the same way
+     * as the invocation pb.redirectInput(Redirect.INHERIT)
+     * .redirectOutput(Redirect.INHERIT) .redirectError(Redirect.INHERIT)
+     * <p>
+     * This gives behavior equivalent to most operating system command
+     * interpreters, or the standard C library function system()
+     */
+//    processBuilder.inheritIO();
+    /**
      * Set the working directory. This is used to load supplementary XSD files
      * are locally referenced (e.g. on the same file system) by the schema.
      */
@@ -166,8 +177,11 @@ public class XmlLint {
      * subprocess can be read using the input stream returned by
      * Process.getInputStream().
      */
-    processBuilder.redirectOutput(ProcessBuilder.Redirect.PIPE);
-    processBuilder.redirectError(ProcessBuilder.Redirect.PIPE);
+//    processBuilder.redirectErrorStream(true);
+//    processBuilder.redirectOutput(ProcessBuilder.Redirect.PIPE);
+//    processBuilder.redirectError(ProcessBuilder.Redirect.PIPE);
+//    processBuilder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+//    processBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);
     /**
      * Start the process.
      */
@@ -179,7 +193,14 @@ public class XmlLint {
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
       String line;
       while ((line = reader.readLine()) != null) {
-        logger.log(Level.WARNING, "xmllint {0}", line);
+        /**
+         * Only log xmllint error details. Remove the transient tempfile from
+         * the logger output..
+         */
+        if (line.matches("/tmp/\\w+.xml:\\d+:")) {
+//          logger.log(Level.WARNING, "xmllint {0}", line.replaceAll("/tmp/\\w+.xml:\\d+:", ""));
+          System.err.println("    xmllint " + line.replaceAll("/tmp/\\w+.xml:\\d+:", ""));
+        }
       }
     }
     /**
@@ -202,7 +223,7 @@ public class XmlLint {
     if (exitCode == 0) {
       logger.log(Level.FINE, "xmllint validates OK");
     } else {
-      throw new Exception("xmllint error:  " + EXIT[exitCode]);
+      throw new Exception("xmllint " + EXIT[exitCode]);
     }
   }
 
