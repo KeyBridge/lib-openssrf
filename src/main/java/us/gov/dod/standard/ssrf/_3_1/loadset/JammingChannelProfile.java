@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,7 +63,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListULD;
 public class JammingChannelProfile {
 
   /**
-   * US:ActivationPower - Activation Threshold (Optional)    * <p>
+   * US:ActivationPower - Activation Threshold (Optional)
+   * <p>
    * The signal level required to activate the loadset, for systems capable of
    * selecting multiple power thresholds by sub-band or other region of
    * interest.
@@ -75,7 +76,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "ActivationPower", required = false)
   private dBm activationPower;
   /**
-   * US:ActivationTime - Activation Time (Optional)    * <p>
+   * US:ActivationTime - Activation Time (Optional)
+   * <p>
    * The minimum time required to trigger the jammer after start of signal
    * reception.
    * <p>
@@ -86,7 +88,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "ActivationTime", required = false)
   private microsecs activationTime;
   /**
-   * US:CarrierWaveform - Carrier Waveform (Required)    * <p>
+   * US:CarrierWaveform - Carrier Waveform (Required)
+   * <p>
    * The waveform that will be used for the carrier of the jamming signal.
    * <p>
    * Format is S100
@@ -96,7 +99,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "CarrierWaveform", required = true)
   private S100 carrierWaveform;
   /**
-   * US:CenterFreq - Center Frequency (Optional)    * <p>
+   * US:CenterFreq - Center Frequency (Optional)
+   * <p>
    * The middle frequency in the band.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -106,7 +110,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "CenterFreq", required = false)
   private FreqM centerFreq;
   /**
-   * US:ChannelSpacing - Channel Spacing (Optional)    * <p>
+   * US:ChannelSpacing - Channel Spacing (Optional)
+   * <p>
    * The frequency increment between discrete channels.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -116,7 +121,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "ChannelSpacing", required = false)
   private FreqM channelSpacing;
   /**
-   * US:Direction - Sweep Direction (Optional)    * <p>
+   * US:Direction - Sweep Direction (Optional)
+   * <p>
    * The sweep direction from the center frequency.
    * <p>
    * Format is L:ULD
@@ -126,7 +132,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "Direction", required = false)
   private TString direction;
   /**
-   * US:Dwell - Dwell (Optional)    * <p>
+   * US:Dwell - Dwell (Optional)
+   * <p>
    * The frequency range dwell time; how long a sweep pauses on a particular
    * frequency before moving to next technique.
    * <p>
@@ -144,7 +151,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "ExBlankingOn", required = false)
   private TString exBlankingOn;
   /**
-   * US:FFTType - FFT Type (Optional)    * <p>
+   * US:FFTType - FFT Type (Optional)
+   * <p>
    * The form of the Fast Fourier Transform used (e.g., Integral, Serial,
    * Discrete).
    * <p>
@@ -155,7 +163,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "FFTType", required = false)
   private S20 fftType;
   /**
-   * US:FreqMax - Maximum Frequency (Optional)    * <p>
+   * US:FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The target frequency range maximum value.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
@@ -167,7 +176,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * US:FreqMin - Minimum Frequency (Required)    * <p>
+   * US:FreqMin - Minimum Frequency (Required)
+   * <p>
    * The target discrete frequency, or frequency range minimum value.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -177,7 +187,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * US:ObserveTime - Observe Time (Optional)    * <p>
+   * US:ObserveTime - Observe Time (Optional)
+   * <p>
    * The time interval for the recording of received signals, in (0-999) hours,
    * (0-59) minutes, and (0-999,999,999) nanoseconds (hhh.mm.sssssssss).
    * Example: one microsecond is entered as 1,000 nanoseconds
@@ -190,7 +201,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "ObserveTime", required = false)
   private US_Duration observeTime;
   /**
-   * US:OffsetFreq - Offset Frequency (Optional)    * <p>
+   * US:OffsetFreq - Offset Frequency (Optional)
+   * <p>
    * The frequency offset relative to the center frequency of the channel.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -200,7 +212,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "OffsetFreq", required = false)
   private FreqM offsetFreq;
   /**
-   * US:RxDuration - Receive Duration (Optional)    * <p>
+   * US:RxDuration - Receive Duration (Optional)
+   * <p>
    * The amount of time that the equipment will monitor the spectrum before
    * initiating an action, in (0-999) hours, (0-59) minutes, and (0-999,999,999)
    * nanoseconds (hhh.mm.sssssssss). Example: one microsecond is entered as
@@ -213,7 +226,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "RxDuration", required = false)
   private US_Duration rxDuration;
   /**
-   * US:Signal - Signal (Required)    * <p>
+   * US:Signal - Signal (Required)
+   * <p>
    * The waveform information modulated, or impressed, on the carrier.
    * <p>
    * Format is S100
@@ -223,7 +237,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "Signal", required = true)
   private S100 signal;
   /**
-   * US:Techniques - Techniques (Optional)    * <p>
+   * US:Techniques - Techniques (Optional)
+   * <p>
    * How many ramp techniques occur during the programmed frequency range dwell
    * time.
    * <p>
@@ -234,7 +249,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "Techniques", required = false)
   private UN5 techniques;
   /**
-   * US:Threat - Threat (Optional)    * <p>
+   * US:Threat - Threat (Optional)
+   * <p>
    * A short description of the threat name or threat type.
    * <p>
    * Format is S100
@@ -244,7 +260,8 @@ public class JammingChannelProfile {
   @XmlElement(name = "Threat", required = false)
   private S100 threat;
   /**
-   * US:TxDuration - Transmit Duration (Optional)    * <p>
+   * US:TxDuration - Transmit Duration (Optional)
+   * <p>
    * The amount of time that the equipment will emit a jamming signal, in in
    * (0-999) hours, (0-59) minutes, and (0-999,999,999) nanoseconds
    * (hhh.mm.sssssssss). Example: one microsecond is entered as 1,000
