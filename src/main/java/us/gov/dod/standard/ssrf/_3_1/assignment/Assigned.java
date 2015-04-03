@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,7 +61,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCIR;
 public class Assigned {
 
   /**
-   * Quality - Quality (Optional)    * <p>
+   * Quality - Quality (Optional)
+   * <p>
    * An application-specific measure of the quality for the assigned frequency.
    * FOR UHF AMS assignments performed at NATO HQ via the NUFAS application,
    * this measure ranges from 0 (best quality) to 3 (high risk of interference),
@@ -75,7 +76,8 @@ public class Assigned {
   @XmlElement(name = "Quality", required = false)
   private UN1 quality;
   /**
-   * ColourWord - Colour Word (Optional)    * <p>
+   * ColourWord - Colour Word (Optional)
+   * <p>
    * The Colour Word associated to the assigned frequency. A tactical colour
    * word is a series of alpha characters that can be used to identify
    * frequencies and nets. These words are usually listed in the Air Tasking
@@ -90,7 +92,8 @@ public class Assigned {
   @XmlElement(name = "ColourWord", required = false)
   private S20 colourWord;
   /**
-   * ColourNum - Colour Number (Optional)    * <p>
+   * ColourNum - Colour Number (Optional)
+   * <p>
    * A Colour Number associated to the assigned frequency. These numbers are
    * usually listed in the Air Tasking Order (ATO) to prevent inadvertent
    * disclosure of classified information.
@@ -104,7 +107,8 @@ public class Assigned {
   @XmlElement(name = "ColourNum", required = false)
   private UN2 colourNum;
   /**
-   * ITURegStatus - ITU Registration Status (Optional)    * <p>
+   * ITURegStatus - ITU Registration Status (Optional)
+   * <p>
    * The status of the Assignment ITU-R registration.
    * <p>
    * Format is L:CIR
@@ -118,7 +122,8 @@ public class Assigned {
   @XmlElement(name = "ITURegStatus", required = false)
   private TString ituRegStatus;
   /**
-   * ITURegDate - ITU Registration Date (Optional)    * <p>
+   * ITURegDate - ITU Registration Date (Optional)
+   * <p>
    * The date the frequency assignment was registered with the International
    * Telecommunication Union (ITU) Radiocommunication Bureau (BR).
    * <p>
@@ -133,7 +138,8 @@ public class Assigned {
   @XmlElement(name = "ITURegDate", required = false)
   private D ituRegDate;
   /**
-   * ITURegNum - ITU Registration Number (Optional)    * <p>
+   * ITURegNum - ITU Registration Number (Optional)
+   * <p>
    * The registration number assigned by the International Telecommunication
    * Union (ITU) Radiocommunication Bureau (BR).
    * <p>
@@ -159,7 +165,8 @@ public class Assigned {
   @XmlElement(name = "NavAidsChannel", required = false)
   private NavAidChnl navAidsChannel;
   /**
-   * NetNum - Net Number (Optional)    * <p>
+   * NetNum - Net Number (Optional)
+   * <p>
    * The net number in the format PXXXnn where 'P' is either A for HAVE QUICK II
    * or B for SATURN, XXX is in the range 000 through 999, and nn is one of the
    * following four modes: 00 - sub-band hopping mode (only for SATURN), 25 -
@@ -173,7 +180,8 @@ public class Assigned {
   @XmlElement(name = "NetNum", required = false)
   private NetNumber netNum;
   /**
-   * US:ITURegComments - ITU Regulatory Comments (Optional)    * <p>
+   * US:ITURegComments - ITU Regulatory Comments (Optional)
+   * <p>
    * Amplifying comments related to registering an assignment with the
    * International Telecommunication Union (ITU) Radiocommunication Bureau (BR).
    * <p>
