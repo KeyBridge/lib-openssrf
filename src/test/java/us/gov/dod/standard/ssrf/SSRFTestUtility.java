@@ -17,10 +17,7 @@ package us.gov.dod.standard.ssrf;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Type;
+import java.lang.reflect.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.URISyntaxException;
@@ -37,10 +34,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
-import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterEMSDES;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -267,6 +263,7 @@ public class SSRFTestUtility {
    */
   private static void saveFile(SSRF ssrf, EDatasetType ssrfType, boolean max, boolean pass) {
     try {
+      String xml = ssrf.toXML(); // throws exception
       Path dir = Paths.get("/tmp",
                            "certification",
                            "xml",
@@ -276,7 +273,7 @@ public class SSRFTestUtility {
         dir.toFile().mkdirs();
       }
       Path file = Files.createTempFile(dir, ssrfType.getClassSimpleName() + "-", "-" + (max ? "max" : "min") + ".xml");
-      Files.write(file, ssrf.toXML().getBytes());
+      Files.write(file, xml.getBytes());
     } catch (Exception ex) {
 //      System.err.println("FAILED to save SSRF " + ssrfType.getClassSimpleName() + " to file. " + ex.getMessage());
 //      Logger.getLogger(SSRFTestUtility.class.getName()).log(Level.SEVERE, null, ex);
@@ -322,7 +319,7 @@ public class SSRFTestUtility {
        * If the SSRF document evaluates with no errors then run XMLLINT on the
        * SSRF XML document.
        */
-      XmlLint.validate(ssrf.toXML(), Paths.get(SSRF_XSD.toURI()));
+      errorDetected = XmlLint.validate(ssrf.toXML(), Paths.get(SSRF_XSD.toURI()));
     }
 //    else {
     /**
@@ -445,10 +442,18 @@ public class SSRFTestUtility {
             if (fieldInstance != null) {
               SSRFTestUtility.fill(fieldInstance, maximum);
               /**
-               * Special handling: TxMode modeId requires a unique field.
+               * Special handling: TxMode modeId requires a unique field.<br/>
+               * Station.stationId requires a unique field.<br/>
+               * Configuration.configId requires a unique field.<br/>
                */
               if (field.getName().equalsIgnoreCase("modeId")) {
                 ((S20) fieldInstance).setValue(UUID.randomUUID().toString().substring(0, 20));
+              } else if (field.getName().equalsIgnoreCase("stationID")) {
+                ((S100) fieldInstance).setValue(UUID.randomUUID().toString());
+              } else if (field.getName().equalsIgnoreCase("linkId")) {
+                ((S100) fieldInstance).setValue(UUID.randomUUID().toString());
+              } else if (field.getName().equalsIgnoreCase("configID")) {
+                ((S100) fieldInstance).setValue(UUID.randomUUID().toString());
               }
               field.set(instance, fieldInstance);
             }
@@ -484,41 +489,17 @@ public class SSRFTestUtility {
    */
   private static Object getFillSet(Class<?> clazz, Field field, boolean maximum) throws ClassNotFoundException, Exception {
     /**
-     * Look for a WITH method to try setting the field with the preferred type.
+     * Inspect the Collection declaration to identify the internal class type.
      */
-    Method with = SSRFUtility.findWithCollectionMethod(clazz, field);
-
-    Type type;
-    if (with != null) {
-      /**
-       * Returns an array of Type objects that represent the formal parameter
-       * types, in declaration order, of the method represented by this Method
-       * object. Returns an array of length 0 if the underlying method takes no
-       * parameters. If a formal parameter type is a parameterized type, the
-       * Type object returned for it must accurately reflect the actual type
-       * parameters used in the source code.
-       */
-      type = with.getGenericParameterTypes()[0];
-    } else {
-      /**
-       * Get the Parameterized Type object that represents the declared type for
-       * the field represented by this Field object. For SSRF sets the Type is a
-       * parameterized type and the Type object identifies the actual type
-       * parameters used in the source code.
-       */
-      type = field.getGenericType();
-    }
-    /**
-     * Get the (only) Type objects representing the actual type argument.
-     */
-    Type fieldType = ((ParameterizedTypeImpl) type).getActualTypeArguments()[0];
+    Type genericType = field.getGenericType();
+    Type type = ((ParameterizedType) genericType).getActualTypeArguments()[0];
     /**
      * The fieldType is a (very) generic Type and apparently cannot be used to
      * instantiate an instance. Instead use its name, which must be processed to
      * strip the 'class ' prefix that Java classes prepend in the default
      * toString.
      */
-    String fieldClassName = fieldType.toString().replace("class ", "").trim();
+    String fieldClassName = type.toString().replace("class ", "").trim();
     /**
      * Some sets refer to generic Common<?> types. Ignore these.
      */
@@ -545,6 +526,7 @@ public class SSRFTestUtility {
      * The SecurityClass.downgrade field is limited to 3 entries. <br/>
      * The SSRequest.stage field is limited to 4 entries. <br/>
      * The Polygon.polygonPoint field is required at least 3 entries. <br/>
+     * Administrative.codeList and dataset are mutually exclusive. <br/>
      */
     if (maximum && field.getName().equals("downgrade")) {
       responseSize = 3;
@@ -552,6 +534,8 @@ public class SSRFTestUtility {
       responseSize = 4;
     } else if (maximum && field.getName().equals("polygonPoint")) {
       responseSize = 10;
+    } else if (maximum && field.getName().equals("codeList")) {
+      return null;
     }
     /**
      * Handle the case where the class is an enumerated type.
@@ -568,7 +552,7 @@ public class SSRFTestUtility {
         }
         response.add(fieldInstance);
       }
-    } else if (fieldType.equals(BigInteger.class)) {
+    } else if (type.equals(BigInteger.class)) {
       for (int i = 0; i < responseSize; i++) {
         Object fieldInstance = new BigInteger(String.valueOf(new Random().nextInt(1024)));
         if (fieldInstance != null) {
@@ -678,6 +662,28 @@ public class SSRFTestUtility {
              * already populatd.
              */
             return new Contact().getSerial().toString();
+          } else if (adapter instanceof XmlAdapterUS_DURATION) {
+            return "123.12.123456789";
+          } else if (adapter instanceof XmlAdapterMINSEC) {
+            return "30";
+          } else if (adapter instanceof XmlAdapterHOURS) {
+            return "8";
+          } else if (adapter instanceof XmlAdapterDAYSOFWEEK) {
+            return "1";
+          } else if (adapter instanceof XmlAdapterMONTHS) {
+            return "1";
+          } else if (adapter instanceof XmlAdapterYEARS) {
+            return "2007";
+          } else if (adapter instanceof XmlAdapterDAYSOFMONTH) {
+            return "15";
+          } else if (adapter instanceof XmlAdapterNAVAIDCHNL) {
+            return "123X";
+          } else if (adapter instanceof XmlAdapterNETNUMBER) {
+            return "A12325";
+          } else if (adapter instanceof XmlAdapterTSDFVALUE) {
+            return "40/20";
+          } else if (adapter instanceof XmlAdapterUS_DBM) {
+            return -90.0;
           } else if (adapter instanceof XmlAdapterEMSDES) {
             /**
              * Special case for a Emission Designator (only supports 5
