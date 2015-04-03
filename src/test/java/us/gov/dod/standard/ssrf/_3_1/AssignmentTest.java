@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Key Bridge LLC.
+ * Copyright 2015 OpenSSRF.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,29 +23,19 @@ import us.gov.dod.standard.ssrf.SSRFTestUtility;
  *
  * @author jesse
  */
-public class AdministrativeTest extends TestCase {
+public class AssignmentTest extends TestCase {
 
-  public AdministrativeTest() {
+  public AssignmentTest() {
   }
 
-  public void _testSomeMethod() {
-    Integer totalDigits = 3;
-    Integer fractionDigits = null;
-
-    Double maxInclusive = Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0))) - 1;
-
-    System.out.println("max " + maxInclusive);
-
-  }
-
-  //<editor-fold defaultstate="collapsed" desc="Certification Test for Administrative">
+  //<editor-fold defaultstate="collapsed" desc="Certification Test for Assignment">
   /**
    * Test a MAX-fill record with a GOOD configuration.
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMaximumPositiveFill_AD() throws Exception {
-    SSRFTestUtility.testMaximumPositiveFill(EDatasetType.AD);
+  public void testMaximumPositiveFill_AS() throws Exception {
+    SSRFTestUtility.testMaximumPositiveFill(EDatasetType.AS);
   }
 
   /**
@@ -53,8 +43,8 @@ public class AdministrativeTest extends TestCase {
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMinimumPositiveFill_AD() throws Exception {
-    SSRFTestUtility.testMinimumPositiveFill(EDatasetType.AD);
+  public void testMinimumPositiveFill_AS() throws Exception {
+    SSRFTestUtility.testMinimumPositiveFill(EDatasetType.AS);
   }
 
   /**
@@ -62,8 +52,8 @@ public class AdministrativeTest extends TestCase {
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMaximumNegativeFill_AD() throws Exception {
-    SSRFTestUtility.testMaximumNegativeFill(EDatasetType.AD);
+  public void testMaximumNegativeFill_AS() throws Exception {
+    SSRFTestUtility.testMaximumNegativeFill(EDatasetType.AS);
   }
 
   /**
@@ -71,8 +61,8 @@ public class AdministrativeTest extends TestCase {
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMinimumNegativeFill_AD() throws Exception {
-    SSRFTestUtility.testMinimumNegativeFill(EDatasetType.AD);
+  public void testMinimumNegativeFill_AS() throws Exception {
+    SSRFTestUtility.testMinimumNegativeFill(EDatasetType.AS);
   }//</editor-fold>
 
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,14 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.Set;
 import junit.framework.TestCase;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
 import us.gov.dod.standard.ssrf.SSRFUtility;
+import us.gov.dod.standard.ssrf._3_1.assignment.Assigned;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -25,12 +30,47 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *
  * @author jesse
  */
-public class ExtReferenceRefTest extends TestCase {
+public class MiscTest extends TestCase {
 
-  public ExtReferenceRefTest() {
+  public MiscTest() {
   }
 
-  public void testMinimumPositiveFill() throws Exception {
+  public void testSuperClass() throws Exception {
+//    Assigned a = new Assigned();
+//    SSRFTestUtility.fill(a, true);
+
+    for (Field declaredField : Assigned.class.getDeclaredFields()) {
+      System.out.println(declaredField.getName());
+
+      Class<?> type = declaredField.getType();
+      Type genericType = declaredField.getGenericType();
+      System.out.println("  Type " + type.getSimpleName());
+      System.out.println("  Generic Type " + genericType);
+
+      if (type.equals(Set.class)) {
+        Type[] typeArgs = ((ParameterizedType) genericType).getActualTypeArguments();
+        for (int i = 0; i < typeArgs.length; i++) {
+          System.out.println("    " + i + " " + typeArgs[i]);
+        }
+
+        Type fieldType = ((ParameterizedType) genericType).getActualTypeArguments()[0];
+        System.out.println("    Internal Type: " + fieldType);
+
+        Class<?> fieldClass = Class.forName(fieldType.toString().replace("class ", "").trim());
+
+        System.out.println("    Field Class : " + fieldClass.getSimpleName());
+
+        Object instance = fieldClass.getConstructor().newInstance();
+
+        System.out.println("    Instance: " + instance);
+
+      }
+
+    }
+
+  }
+
+  public void _testMinimumPositiveFill() throws Exception {
 
     ExtReferenceRef ref = new ExtReferenceRef()
             .withValue(new Contact().getSerial().toString())
