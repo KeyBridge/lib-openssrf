@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +18,8 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 import java.math.BigInteger;
 import java.util.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS6;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -27,6 +29,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * Information Systems Agency (DISA).
  * <p>
  * Element of {@link Link}
+ * <p>
+ * Pattern is S6
  * <p>
  * Example:
  * <pre>
@@ -42,10 +46,16 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 })
 public class DCSTrunk {
 
+  /**
+   * The Defense Communications System (DCS) trunk identifier assigned by the
+   * Defense Information Systems Agency (DISA).
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(XmlAdapterS6.class)
   private String value;
   /**
-   * cls - Classification (Required)    * <p>
+   * cls - Classification (Required)
+   * <p>
    * The classification of the current data item. This attribute is REQUIRED on
    * each data item, even if the classification is "U".
    * <p>
@@ -56,7 +66,8 @@ public class DCSTrunk {
   @XmlAttribute(name = "cls", required = true)
   private ListCCL cls;
   /**
-   * remarks - Links to Data Item Remarks (Optional)    * <p>
+   * remarks - Links to Data Item Remarks (Optional)
+   * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * Format is List of UN6
@@ -66,7 +77,8 @@ public class DCSTrunk {
   @XmlAttribute(name = "remarks")
   private Set<BigInteger> remarks;
   /**
-   * extReferences - Links to External References (Optional)    * <p>
+   * extReferences - Links to External References (Optional)
+   * <p>
    * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
    * item.
    * <p>
@@ -77,7 +89,8 @@ public class DCSTrunk {
   @XmlAttribute(name = "extReferences")
   private Set<BigInteger> extReferences;
   /**
-   * US:legacyReleasability - Legacy Releasability (Optional)    * <p>
+   * US:legacyReleasability - Legacy Releasability (Optional)
+   * <p>
    * One or more special handling instructions in sentence format, not code
    * format. For example, "Approved for public release; distribution is
    * unlimited". Multiple special handling instructions are separated by "|”
@@ -90,7 +103,8 @@ public class DCSTrunk {
   @XmlAttribute(name = "legacyReleasability")
   private String legacyReleasability;
   /**
-   * US:quality - Data Quality (Optional)    * <p>
+   * US:quality - Data Quality (Optional)
+   * <p>
    * One or more data quality indicator(s), separated by "|” (i.e., ASCII
    * character #124), for the contents of the associated Data Item For example,
    * "Outlier" | "Non-CodeList".
@@ -102,7 +116,8 @@ public class DCSTrunk {
   @XmlAttribute(name = "quality")
   private String quality;
   /**
-   * US:recommendedValue - Recommended Value (Optional)    * <p>
+   * US:recommendedValue - Recommended Value (Optional)
+   * <p>
    * A value that is most probably correct.
    * <p>
    * Format is Memo
@@ -112,13 +127,15 @@ public class DCSTrunk {
   @XmlAttribute(name = "recommendedValue")
   private String recommendedValue;
   /**
-   * idref - Data Item ID (Optional)    * <p>
+   * idref - Data Item ID (Optional)
+   * <p>
    * A unique identifier for each Data Item in the Dataset. Within each Dataset,
    * the idref value must be unique for every occurrence. If a received Dataset
    * uses idrefs and it is expected that the Dataset will be exchanged, the
    * idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.    * <p>
+   * optional.
+   * <p>
    * Format is S10
    * <p>
    * @since 3.1.0
@@ -551,7 +568,8 @@ public class DCSTrunk {
    * Dataset uses idrefs and it is expected that the Dataset will be exchanged,
    * the idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.    * <p>
+   * optional.
+   * <p>
    * @param value An instances of type {@link String}.
    * @return The current DCSTrunk object instance.
    * @since 3.1.0
