@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -99,6 +99,8 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * CodeList contains the actions necessary to create or delete a code entry in
    * a given Code List.
+   * <p>
+   * CodeList and DataSet are exclusive.
    * <p>
    * @since 3.1.0
    */
