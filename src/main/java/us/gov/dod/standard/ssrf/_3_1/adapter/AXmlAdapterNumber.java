@@ -255,12 +255,14 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
      * For example: a three digit allowance will be calculated as 10 ^ 3 minus 1
      * = 999.
      */
-    if (totalDigits != null) {
+    if (maxInclusive != null) {
+      return maxInclusive;
+    } else if (totalDigits != null) {
       return maxInclusive != null
              ? maxInclusive
              : Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0))) - 1;
     } else {
-      return maxInclusive != null ? maxInclusive : Integer.MAX_VALUE;
+      return Integer.MAX_VALUE;
     }
   }
 
@@ -273,12 +275,14 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * @return the minimum allowed value. Integer.MIN_VALUE if not set.
    */
   public Number getMinValue() {
-    if (totalDigits != null) {
+    if (minInclusive != null) {
+      return maxInclusive;
+    } else if (totalDigits != null) {
       return minInclusive != null
              ? minInclusive
              : -Math.pow(10, (totalDigits - (fractionDigits != null ? fractionDigits : 0))) - 1;
     } else {
-      return minInclusive != null ? minInclusive : Integer.MIN_VALUE;
+      return Integer.MIN_VALUE;
     }
   }
 }
