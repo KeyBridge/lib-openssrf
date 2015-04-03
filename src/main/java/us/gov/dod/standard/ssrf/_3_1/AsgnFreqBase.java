@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
   FreqOld.class,
   Freq.class
 })
-public class AsgnFreqBase {
+@SuppressWarnings("unchecked")
+public abstract class AsgnFreqBase<T> {
 
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
@@ -171,47 +172,51 @@ public class AsgnFreqBase {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public AsgnFreqBase withFreqMin(Double value) {
+  public T withFreqMin(Double value) {
     setFreqMin(new FreqM(value));
-    return this;
+    return (T) this;
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public AsgnFreqBase withFreqMax(Double value) {
+  public T withFreqMax(Double value) {
     setFreqMax(new FreqM(value));
-    return this;
+    return (T) this;
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public AsgnFreqBase withRefFreq(Double value) {
+  public T withRefFreq(Double value) {
     setRefFreq(new FreqM(value));
-    return this;
+    return (T) this;
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link ListCAU}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public AsgnFreqBase withFreqUse(ListCAU value) {
+  public T withFreqUse(ListCAU value) {
     setFreqUse(new TString(value.value()));
-    return this;
+    return (T) this;
   }
 
   /**
@@ -222,10 +227,10 @@ public class AsgnFreqBase {
   @Override
   public String toString() {
     return "AsgnFreqBase {"
-           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
-           + (freqUse != null ? "\n freqUse [" + freqUse + "]" : "")
-           + (refFreq != null ? "\n refFreq [" + refFreq + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (freqUse != null ? " freqUse [" + freqUse + "]" : "")
+           + (refFreq != null ? " refFreq [" + refFreq + "]" : "")
            + "}";
   }
 
