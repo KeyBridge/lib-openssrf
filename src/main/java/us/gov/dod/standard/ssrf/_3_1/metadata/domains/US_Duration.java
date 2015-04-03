@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,6 +27,13 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 /**
  * The SSRF US_Duration data type.
  * <p>
+ * TxDuration: In Data Item TxDuration (US) enter the amount of time that the
+ * equipment will emit a jamming signal, in (0-999) hours, (0-59) minutes, and
+ * (0-999,999,999) nanoseconds (hhh.mm.sssssssss).
+ * <p>
+ * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+ * "[0-9]{3}.[0-5][0-9].[0-9]{9}"
+ * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -35,7 +42,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 public class US_Duration extends AMetadata<US_Duration> implements Comparable<US_Duration> {
 
   /**
-   * The value property.
+   * The value property. Time in (0-999) hours, (0-59) minutes, and
+   * (0-999,999,999) nanoseconds (hhh.mm.sssssssss)
    */
   @XmlValue
   @XmlJavaTypeAdapter(XmlAdapterUS_DURATION.class)
