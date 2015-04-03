@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,36 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 
 /**
  * The SSRF TSDFValue data type.
+ * <p>
+ * Time Slot Duty Factor.
+ * <p>
+ * the time slot duty factor assigned to stations of a time division multiple
+ * access (TDMA) system. It is applicable in particular to the MIDS/JTIDS
+ * systems as explained in the notes below. For NATO MIDS/JTIDS assignments,
+ * enter in value the time slot duty factor expressed as NNN/nn where NNN is the
+ * maximum percentage of time that may be used by MIDS/JTIDS users in an
+ * operational area (a circle with a 100 nautical mile (183.2 km) radius) and nn
+ * is the maximum percentage of time that any individual user may be using
+ * MIDS/JTIDS. Optionally, use a Remark to add any amplifying information.
+ * <p>
+ * Notes:
+ * <p>
+ * 1. A JTIDS time slot is a 0.0078125 microsecond time interval during which
+ * MIDS/JTIDS messages may be transmitted or received.
+ * <p>
+ * 2. The 40/20 notation specifies that the total MIDS/JTIDS community will not
+ * be assigned more than 40% TSDF, with no more than 20% TSDF assigned to a
+ * single user. Note that 100% TSDF corresponds to a maximum pulse transmission
+ * rate of 396,288 pulses per 12 second period (an average of 33,024 pulses per
+ * second). The total number of pulses allowed per 12 second period is 158,515
+ * for 40% TSDF and 79,257 for 20% TSDF. Using all 1536 time slots in each 12
+ * second period, with 258 pulses per time slot with no contention or multinet
+ * overlap conditions results in a TSDF of 100%.
+ * <p>
+ * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+ * "([0-9]{1,2}|100)/[0-9]{1,2}"
+ * <p>
+ * pattern (S6) e.g. 40/20
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
