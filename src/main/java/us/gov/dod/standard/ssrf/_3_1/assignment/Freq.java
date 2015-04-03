@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.AsgnFreqBase;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
 
 /**
  * Freq indicates a single assigned frequency or an assigned range of
@@ -50,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
   "pairedFreq",
   "narrowBandPlanning"
 })
-public class Freq extends AsgnFreqBase {
+public class Freq extends AsgnFreqBase<Freq> {
 
   /**
    * TAD - Tactical Air Designator (Optional)
@@ -322,63 +321,6 @@ public class Freq extends AsgnFreqBase {
   }
 
   /**
-   * Set the nominal frequency or minimum value of the frequency range.
-   * <p>
-   * @param value An instances of type {@link Double}.
-   * @return The current Freq object instance.
-   * @since 3.1.0
-   */
-  @Override
-  public Freq withFreqMin(Double value) {
-    setFreqMin(new FreqM(value));
-    return this;
-  }
-
-  /**
-   * Set the maximum value of the frequencies in the range.
-   * <p>
-   * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
-   * <p>
-   * @param value An instances of type {@link Double}.
-   * @return The current Freq object instance.
-   * @since 3.1.0
-   */
-  @Override
-  public Freq withFreqMax(Double value) {
-    setFreqMax(new FreqM(value));
-    return this;
-  }
-
-  /**
-   * Set the reference frequency of a suppressed or reduced carrier sideband.
-   * This item only applies to a single frequency and should not be used with a
-   * range.
-   * <p>
-   * @param value An instances of type {@link Double}.
-   * @return The current Freq object instance.
-   * @since 3.1.0
-   */
-  @Override
-  public Freq withRefFreq(Double value) {
-    setRefFreq(new FreqM(value));
-    return this;
-  }
-
-  /**
-   * Set if the frequency range is used for transmit, receive, or both transmit
-   * and receive.
-   * <p>
-   * @param value An instances of type {@link ListCAU}.
-   * @return The current Freq object instance.
-   * @since 3.1.0
-   */
-  @Override
-  public Freq withFreqUse(ListCAU value) {
-    setFreqUse(new TString(value.value()));
-    return this;
-  }
-
-  /**
    * Get a string representation of this Freq instance configuration.
    * <p>
    * @return The current object instance configuration as a non-null String
@@ -390,6 +332,7 @@ public class Freq extends AsgnFreqBase {
            + (narrowBandPlanning != null ? "\n narrowBandPlanning [" + narrowBandPlanning + "]" : "")
            + (pairedFreq != null ? "\n pairedFreq [" + pairedFreq + "]" : "")
            + (tad != null ? "\n tad [" + tad + "]" : "")
+           + "\n" + super.toString()
            + "}";
   }
 
