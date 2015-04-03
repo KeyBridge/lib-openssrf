@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,7 +66,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class Station {
 
   /**
-   * StationID - Station Reference (Required)    * <p>
+   * StationID - Station Reference (Required)
+   * <p>
    * The unique identifier of one of the stations used by this Assignment at
    * this specific Station. A Station dataset may have more than one discrete
    * station.
@@ -78,7 +79,8 @@ public class Station {
   @XmlElement(name = "StationID", required = true)
   private S100 stationID;
   /**
-   * CallSign - Call Sign (Optional)    * <p>
+   * CallSign - Call Sign (Optional)
+   * <p>
    * The call sign assigned to the transmitting station. It can be an
    * internationally allocated call sign or the tactical call sign assigned by
    * the operational authority when the Station is used within a Net. For
@@ -91,7 +93,8 @@ public class Station {
   @XmlElement(name = "CallSign", required = false)
   private S20 callSign;
   /**
-   * CositeSep - Cosite Separation (Optional)    * <p>
+   * CositeSep - Cosite Separation (Optional)
+   * <p>
    * The minimum required frequency separation between the equipment for which
    * the assignment is being made and any other equipment operating at the same
    * location. Enter: - For a fixed frequency assignment, the required frequency
@@ -113,7 +116,8 @@ public class Station {
   @XmlElement(name = "CositeSep", required = false)
   private FreqM cositeSep;
   /**
-   * CositeSepDescription - Cosite Separation Description (Optional)    * <p>
+   * CositeSepDescription - Cosite Separation Description (Optional)
+   * <p>
    * A free text description of the minimum required frequency separation
    * between a number of transmitters, or between a transmitter and a related
    * receiver in radio relay frequency requests.
@@ -125,7 +129,8 @@ public class Station {
   @XmlElement(name = "CositeSepDescription", required = false)
   private MEMO cositeSepDescription;
   /**
-   * NumMobileUnits - Number of Mobile Units (Optional)    * <p>
+   * NumMobileUnits - Number of Mobile Units (Optional)
+   * <p>
    * The number of mobile units (equipment). These units do not necessarily
    * operate simultaneously in the same electromagnetic environment.
    * <p>
@@ -138,7 +143,8 @@ public class Station {
   @XmlElement(name = "NumMobileUnits", required = false)
   private UN9 numMobileUnits;
   /**
-   * NumAreaUnits - Number of Units in Area (Optional)    * <p>
+   * NumAreaUnits - Number of Units in Area (Optional)
+   * <p>
    * The maximum number of units (equipment) that will be operating
    * simultaneously in the same area of operation. An area is generally defined
    * as a country. enter the number of land mobile stations, ship stations, and
@@ -160,7 +166,8 @@ public class Station {
   @XmlElement(name = "NumAreaUnits", required = false)
   private UN9 numAreaUnits;
   /**
-   * NumCositedUnits - Number of Cosited Units (Optional)    * <p>
+   * NumCositedUnits - Number of Cosited Units (Optional)
+   * <p>
    * The maximum number of units (equipment) that will be operating
    * simultaneously in the same cosite environment. A cosite situation occurs
    * when several antennas are within the near field of each other.
@@ -173,11 +180,42 @@ public class Station {
    */
   @XmlElement(name = "NumCositedUnits", required = false)
   private UN9 numCositedUnits;
-
+  /**
+   * Time Slot Duty Factor.
+   * <p>
+   * the time slot duty factor assigned to stations of a time division multiple
+   * access (TDMA) system. It is applicable in particular to the MIDS/JTIDS
+   * systems as explained in the notes below. For NATO MIDS/JTIDS assignments,
+   * enter in value the time slot duty factor expressed as NNN/nn where NNN is
+   * the maximum percentage of time that may be used by MIDS/JTIDS users in an
+   * operational area (a circle with a 100 nautical mile (183.2 km) radius) and
+   * nn is the maximum percentage of time that any individual user may be using
+   * MIDS/JTIDS. Optionally, use a Remark to add any amplifying information.
+   * <p>
+   * Notes:
+   * <p>
+   * 1. A JTIDS time slot is a 0.0078125 microsecond time interval during which
+   * MIDS/JTIDS messages may be transmitted or received.
+   * <p>
+   * 2. The 40/20 notation specifies that the total MIDS/JTIDS community will
+   * not be assigned more than 40% TSDF, with no more than 20% TSDF assigned to
+   * a single user. Note that 100% TSDF corresponds to a maximum pulse
+   * transmission rate of 396,288 pulses per 12 second period (an average of
+   * 33,024 pulses per second). The total number of pulses allowed per 12 second
+   * period is 158,515 for 40% TSDF and 79,257 for 20% TSDF. Using all 1536 time
+   * slots in each 12 second period, with 258 pulses per time slot with no
+   * contention or multinet overlap conditions results in a TSDF of 100%.
+   * <p>
+   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
+   * "([0-9]{1,2}|100)/[0-9]{1,2}"
+   * <p>
+   * pattern (S6) e.g. 40/20
+   */
   @XmlElement(name = "TSDF", required = false)
   private TSDFValue tsdf;
   /**
-   * UserCode - User Code (Optional)    * <p>
+   * UserCode - User Code (Optional)
+   * <p>
    * A code identifying the user of the station.
    * <p>
    * Format is S6
@@ -187,7 +225,8 @@ public class Station {
   @XmlElement(name = "UserCode", required = false)
   private S6 userCode;
   /**
-   * US:AntStructureHeight - Antenna Structure Height (Optional)    * <p>
+   * US:AntStructureHeight - Antenna Structure Height (Optional)
+   * <p>
    * The overall height, of the antenna support structure above ground level.
    * <p>
    * Format is UN(3) (m)
@@ -197,7 +236,8 @@ public class Station {
   @XmlElement(name = "AntStructureHeight", required = false)
   private AntHeight antStructureHeight;
   /**
-   * US:StationName - Station Name (Optional)    * <p>
+   * US:StationName - Station Name (Optional)
+   * <p>
    * A short descriptive name for the station. This must be unique within the
    * dataset.
    * <p>
@@ -208,7 +248,8 @@ public class Station {
   @XmlElement(name = "StationName", required = false)
   private S100 stationName;
   /**
-   * US:StationControl - Station Control (Optional)    * <p>
+   * US:StationControl - Station Control (Optional)
+   * <p>
    * The operating unit that controls the station when different than the
    * assignment users.
    * <p>
@@ -219,7 +260,8 @@ public class Station {
   @XmlElement(name = "StationControl", required = false)
   private S18 stationControl;
   /**
-   * US:PrimaryStation - Primary Station (Optional)    * <p>
+   * US:PrimaryStation - Primary Station (Optional)
+   * <p>
    * Whether this station is the station of primary regulatory interest.
    * <p>
    * Format is L:CBO
@@ -886,7 +928,8 @@ public class Station {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link String}.
    * @return The current Station object instance.
    * @since 3.1.0
