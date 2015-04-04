@@ -218,6 +218,18 @@ public class SSRFTestUtility {
      * SETS as the contents may have shifted but are still OK.
      */
     for (Map.Entry<String, String> entry : keyMap.entrySet()) {
+
+      if (entry.getValue().startsWith("UN") && !entry.getValue().contains("_")) {
+        /**
+         * Ignore unconstrained UNsigned digits.
+         */
+        continue;
+      } else if (!detectSet.contains(entry.getKey()) && entry.getKey().contains("ID")) {
+        /**
+         * Ignore undetected ID fields, which are special case.
+         */
+        continue;
+      }
       if (!"Set".equals(entry.getValue())) {
         ok = ok && detectSet.contains(entry.getKey());
       }
@@ -624,6 +636,10 @@ public class SSRFTestUtility {
           XmlAdapter adapter = ((XmlJavaTypeAdapter) annotation).value().getConstructor().newInstance();
 
           if (adapter instanceof AXmlAdapterNumber) {
+            if (adapter instanceof XmlAdapterUS_DBM) {
+              return BigDecimal.valueOf(-90.0);
+            }
+
             if (fieldType.equals(BigInteger.class) || fieldType.equals(Integer.class)) {
               Number value = getTestInteger(((AXmlAdapterNumber) adapter).getMaxValue(),
                                             ((AXmlAdapterNumber) adapter).getMinValue());
@@ -662,35 +678,35 @@ public class SSRFTestUtility {
              * already populatd.
              */
             return new Contact().getSerial().toString();
-          } else if (adapter instanceof XmlAdapterUS_DURATION) {
-            return "123.12.123456789";
-          } else if (adapter instanceof XmlAdapterMINSEC) {
-            return "30";
-          } else if (adapter instanceof XmlAdapterHOURS) {
-            return "8";
-          } else if (adapter instanceof XmlAdapterDAYSOFWEEK) {
-            return "1";
-          } else if (adapter instanceof XmlAdapterMONTHS) {
-            return "1";
-          } else if (adapter instanceof XmlAdapterYEARS) {
-            return "2007";
-          } else if (adapter instanceof XmlAdapterDAYSOFMONTH) {
-            return "15";
-          } else if (adapter instanceof XmlAdapterNAVAIDCHNL) {
-            return "123X";
-          } else if (adapter instanceof XmlAdapterNETNUMBER) {
-            return "A12325";
-          } else if (adapter instanceof XmlAdapterTSDFVALUE) {
-            return "40/20";
-          } else if (adapter instanceof XmlAdapterUS_DBM) {
-            return -90.0;
-          } else if (adapter instanceof XmlAdapterEMSDES) {
-            /**
-             * Special case for a Emission Designator (only supports 5
-             * characters)
-             */
-            return "A1AAF";   // unknown pattern
           } else if (adapter instanceof AXmlAdapterString) {
+            if (adapter instanceof XmlAdapterUS_DURATION) {
+              return "123.12.123456789";
+            } else if (adapter instanceof XmlAdapterMINSEC) {
+              return "30";
+            } else if (adapter instanceof XmlAdapterHOURS) {
+              return "8";
+            } else if (adapter instanceof XmlAdapterDAYSOFWEEK) {
+              return "1";
+            } else if (adapter instanceof XmlAdapterMONTHS) {
+              return "1";
+            } else if (adapter instanceof XmlAdapterYEARS) {
+              return "2007";
+            } else if (adapter instanceof XmlAdapterDAYSOFMONTH) {
+              return "15";
+            } else if (adapter instanceof XmlAdapterNAVAIDCHNL) {
+              return "123X";
+            } else if (adapter instanceof XmlAdapterNETNUMBER) {
+              return "A12325";
+            } else if (adapter instanceof XmlAdapterTSDFVALUE) {
+              return "40/20";
+            } else if (adapter instanceof XmlAdapterEMSDES) {
+              /**
+               * Special case for a Emission Designator (only supports 5
+               * characters)
+               */
+              return "A1AAF";   // unknown pattern
+            }
+
             /**
              * If the field is a TString then inspect the WITH setter to
              * determine if the field expects an enumerated input.
