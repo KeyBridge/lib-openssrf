@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1111,7 +1111,20 @@ public class Satellite extends Common<Satellite> {
    * @return The current Satellite object instance.
    * @since 3.1.0
    */
-  public Satellite withGeoNominalLon(String value) {
+  public Satellite withGeoNominalLon(String value) throws Exception {
+    setGeoNominalLon(new Lon(value));
+    return this;
+  }
+
+  /**
+   * Set the longitude of the geostationary satellite in decimal degrees.
+   * <p>
+   * @param value An instances of type {@link String}.
+   * @return The current Satellite object instance.
+   * @throws Exception if the value fails to parse
+   * @since 3.1.0
+   */
+  public Satellite withGeoNominalLon(Double value) {
     setGeoNominalLon(new Lon(value));
     return this;
   }

@@ -672,7 +672,19 @@ public class JammingTarget {
    * @return The current JammingTarget object instance.
    * @since 3.1.0
    */
-  public JammingTarget withLat(String value) {
+  public JammingTarget withLat(String value) throws Exception {
+    setLat(new Lat(value));
+    return this;
+  }
+
+  /**
+   * Set the geographic latitude of the target location in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current JammingTarget object instance.
+   * @since 3.1.0
+   */
+  public JammingTarget withLat(Double value) {
     setLat(new Lat(value));
     return this;
   }
@@ -719,7 +731,19 @@ public class JammingTarget {
    * @return The current JammingTarget object instance.
    * @since 3.1.0
    */
-  public JammingTarget withLon(String value) {
+  public JammingTarget withLon(String value) throws Exception {
+    setLon(new Lon(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical longitude of the target location in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current JammingTarget object instance.
+   * @since 3.1.0
+   */
+  public JammingTarget withLon(Double value) {
     setLon(new Lon(value));
     return this;
   }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -2296,7 +2296,19 @@ public class IntfReport extends Common<IntfReport> {
    * @return The current IntfReport object instance.
    * @since 3.1.0
    */
-  public IntfReport withSourceLon(String value) {
+  public IntfReport withSourceLon(String value) throws Exception {
+    setSourceLon(new Lon(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical longitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current IntfReport object instance.
+   * @since 3.1.0
+   */
+  public IntfReport withSourceLon(Double value) {
     setSourceLon(new Lon(value));
     return this;
   }
@@ -2314,7 +2326,19 @@ public class IntfReport extends Common<IntfReport> {
    * @return The current IntfReport object instance.
    * @since 3.1.0
    */
-  public IntfReport withSourceLat(String value) {
+  public IntfReport withSourceLat(String value) throws Exception {
+    setSourceLat(new Lat(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical latitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current IntfReport object instance.
+   * @since 3.1.0
+   */
+  public IntfReport withSourceLat(Double value) {
     setSourceLat(new Lat(value));
     return this;
   }
@@ -2502,40 +2526,25 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set the geographical longitude (degrees, minutes, seconds, and hemisphere E
-   * or W) of the victim of the interference. If the seconds are not known, use
-   * 00. Use leading zeros as appropriate for degrees, minutes, or seconds.
-   * Degrees longitude require three digits. Seconds may have a decimal point
-   * followed by up to two decimals. Enter E or W immediately following the
-   * seconds. The format is: dddmmss.hhH (where ".hh" is optional and H = E or
-   * W).
+   * Set the geographical longitude in decimal degrees.
    * <p>
-   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
-   * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X"
-   * <p>
-   * @param value An instances of type {@link String}.
+   * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
    */
-  public IntfReport withVictimLon(String value) {
+  public IntfReport withVictimLon(Double value) {
     setVictimLon(new Lon(value));
     return this;
   }
 
   /**
-   * Set the geographical latitude (degrees, minutes, seconds and hemisphere N
-   * or S) of the victim of the interference. Same remarks for seconds and
-   * leading zeros. Enter N or S immediately following the seconds. The format
-   * is: ddmmss.hhH (where ".hh" is optional and H = N or S).
+   * Set the geographical latitude in decimal degrees.
    * <p>
-   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
-   * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X"
-   * <p>
-   * @param value An instances of type {@link String}.
+   * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
    */
-  public IntfReport withVictimLat(String value) {
+  public IntfReport withVictimLat(Double value) {
     setVictimLat(new Lat(value));
     return this;
   }
@@ -2772,17 +2781,13 @@ public class IntfReport extends Common<IntfReport> {
   }
 
   /**
-   * Set the satellite longitude.
+   * Set the satellite longitude in decimal degrees.
    * <p>
-   * [XSD ERR REGEX] This data item MUST comply to the regular expression:
-   * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1
-   * (US),2})?)|1800000)(E|W))|X"
-   * <p>
-   * @param value An instances of type {@link String}.
+   * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
    */
-  public IntfReport withSatelliteLongitude(String value) {
+  public IntfReport withSatelliteLongitude(Double value) {
     setSatelliteLongitude(new Lon(value));
     return this;
   }

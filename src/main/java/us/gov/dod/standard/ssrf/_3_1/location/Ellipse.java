@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,7 +60,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class Ellipse {
 
   /**
-   * Excluded - Shape is Excluded (Optional)    * <p>
+   * Excluded - Shape is Excluded (Optional)
+   * <p>
    * "Yes" to indicate that the shape is to be excluded from the set. If
    * omitted, a "No" SHOULD be assumed by processing applications, meaning that
    * the shape is included by default.
@@ -72,7 +73,8 @@ public class Ellipse {
   @XmlElement(name = "Excluded", required = false)
   private TString excluded;
   /**
-   * Lon - Longitude (Required)    * <p>
+   * Lon - Longitude (Required)
+   * <p>
    * The geographical longitude (degrees, minutes, seconds, and hemisphere E or
    * W) of the Point or center of the Ellipse. If the seconds are not known, use
    * 00, except in the case of navigation aid systems, geostationary satellites,
@@ -91,7 +93,8 @@ public class Ellipse {
   @XmlElement(name = "Lon", required = true)
   private Lon lon;
   /**
-   * Lat - Latitude (Required)    * <p>
+   * Lat - Latitude (Required)
+   * <p>
    * The geographical latitude (degrees, minutes, seconds and hemisphere N or S)
    * of the Point or center of the Ellipse. Same remarks for seconds and leading
    * zeros. enter N or S immediately following the seconds. The format is:
@@ -106,7 +109,8 @@ public class Ellipse {
   @XmlElement(name = "Lat", required = true)
   private Lat lat;
   /**
-   * SemiMajorAxis - Semi Major Axis (Required)    * <p>
+   * SemiMajorAxis - Semi Major Axis (Required)
+   * <p>
    * The length of the semi-major axis of the ellipse.
    * <p>
    * [XSL ERR MINMAX] SemiMajorAxis it MUST be greater than or equal to
@@ -119,7 +123,8 @@ public class Ellipse {
   @XmlElement(name = "SemiMajorAxis", required = true)
   private DistEarth semiMajorAxis;
   /**
-   * SemiMinorAxis - Semi Minor Axis (Required)    * <p>
+   * SemiMinorAxis - Semi Minor Axis (Required)
+   * <p>
    * The length of the semi-minor axis of the ellipse.
    * <p>
    * Format is UN(9,4) [0..10000] (km)
@@ -129,7 +134,8 @@ public class Ellipse {
   @XmlElement(name = "SemiMinorAxis", required = true)
   private DistEarth semiMinorAxis;
   /**
-   * Azimuth - Azimuth of the Major Axis (Required)    * <p>
+   * Azimuth - Azimuth of the Major Axis (Required)
+   * <p>
    * The angle of the semi-major axis in the horizontal plane, measured from
    * true North.
    * <p>
@@ -140,7 +146,8 @@ public class Ellipse {
   @XmlElement(name = "Azimuth", required = true)
   private Az azimuth;
   /**
-   * AltitudeMin - Minimum Altitude Above Ground Level (Optional)    * <p>
+   * AltitudeMin - Minimum Altitude Above Ground Level (Optional)
+   * <p>
    * The minimum or nominal height of the point above the terrain (also known as
    * "above ground level" AGL).
    * <p>
@@ -153,7 +160,8 @@ public class Ellipse {
   @XmlElement(name = "AltitudeMin", required = false)
   private Altitude altitudeMin;
   /**
-   * AltitudeMax - Maximum Altitude Above Ground Level (Optional)    * <p>
+   * AltitudeMax - Maximum Altitude Above Ground Level (Optional)
+   * <p>
    * The minimum or nominal height of the point above the terrain (also known as
    * "above ground level" AGL).
    * <p>
@@ -169,7 +177,8 @@ public class Ellipse {
   @XmlElement(name = "AltitudeMax", required = false)
   private Altitude altitudeMax;
   /**
-   * idx - Index (Required)    * <p>
+   * idx - Index (Required)
+   * <p>
    * A unique integer index for the current ellipse within the geometric shape.
    * <p>
    * Format is UN(6)
@@ -514,7 +523,19 @@ public class Ellipse {
    * @return The current Ellipse object instance.
    * @since 3.1.0
    */
-  public Ellipse withLon(String value) {
+  public Ellipse withLon(String value) throws Exception {
+    setLon(new Lon(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical longitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current Ellipse object instance.
+   * @since 3.1.0
+   */
+  public Ellipse withLon(Double value) {
     setLon(new Lon(value));
     return this;
   }
@@ -529,7 +550,19 @@ public class Ellipse {
    * @return The current Ellipse object instance.
    * @since 3.1.0
    */
-  public Ellipse withLat(String value) {
+  public Ellipse withLat(String value) throws Exception {
+    setLat(new Lat(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical latitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current Ellipse object instance.
+   * @since 3.1.0
+   */
+  public Ellipse withLat(Double value) {
     setLat(new Lat(value));
     return this;
   }

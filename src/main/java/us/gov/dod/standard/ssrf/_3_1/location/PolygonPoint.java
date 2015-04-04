@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class PolygonPoint {
 
   /**
-   * Lon - Longitude (Required)    * <p>
+   * Lon - Longitude (Required)
+   * <p>
    * The geographical longitude (degrees, minutes, seconds, and hemisphere E or
    * W) of the Point or center of the Ellipse. If the seconds are not known, use
    * 00, except in the case of navigation aid systems, geostationary satellites,
@@ -57,7 +58,8 @@ public class PolygonPoint {
   @XmlElement(name = "Lon", required = true)
   private Lon lon;
   /**
-   * Lat - Latitude (Required)    * <p>
+   * Lat - Latitude (Required)
+   * <p>
    * The geographical latitude (degrees, minutes, seconds and hemisphere N or S)
    * of the Point or center of the Ellipse. Same remarks for seconds and leading
    * zeros. enter N or S immediately following the seconds. The format is:
@@ -72,7 +74,8 @@ public class PolygonPoint {
   @XmlElement(name = "Lat", required = true)
   private Lat lat;
   /**
-   * sequence - Sequence index (Required)    * <p>
+   * sequence - Sequence index (Required)
+   * <p>
    * A unique, sequenced, index for each point describing the current polygon.
    * <p>
    * Format is UN(6)
@@ -205,7 +208,19 @@ public class PolygonPoint {
    * @return The current PolygonPoint object instance.
    * @since 3.1.0
    */
-  public PolygonPoint withLon(String value) {
+  public PolygonPoint withLon(String value) throws Exception {
+    setLon(new Lon(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical longitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current PolygonPoint object instance.
+   * @since 3.1.0
+   */
+  public PolygonPoint withLon(Double value) {
     setLon(new Lon(value));
     return this;
   }
@@ -220,7 +235,19 @@ public class PolygonPoint {
    * @return The current PolygonPoint object instance.
    * @since 3.1.0
    */
-  public PolygonPoint withLat(String value) {
+  public PolygonPoint withLat(String value) throws Exception {
+    setLat(new Lat(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical latitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current PolygonPoint object instance.
+   * @since 3.1.0
+   */
+  public PolygonPoint withLat(Double value) {
     setLat(new Lat(value));
     return this;
   }

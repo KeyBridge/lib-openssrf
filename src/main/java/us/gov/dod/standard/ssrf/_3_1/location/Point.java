@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -53,7 +53,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class Point {
 
   /**
-   * Excluded - Shape is Excluded (Optional)    * <p>
+   * Excluded - Shape is Excluded (Optional)
+   * <p>
    * "Yes" to indicate that the shape is to be excluded from the set. If
    * omitted, a "No" SHOULD be assumed by processing applications, meaning that
    * the shape is included by default.
@@ -65,7 +66,8 @@ public class Point {
   @XmlElement(name = "Excluded", required = false)
   private TString excluded;
   /**
-   * Lon - Longitude (Required)    * <p>
+   * Lon - Longitude (Required)
+   * <p>
    * The geographical longitude (degrees, minutes, seconds, and hemisphere E or
    * W) of the Point or center of the Ellipse. If the seconds are not known, use
    * 00, except in the case of navigation aid systems, geostationary satellites,
@@ -84,7 +86,8 @@ public class Point {
   @XmlElement(name = "Lon", required = true)
   private Lon lon;
   /**
-   * Lat - Latitude (Required)    * <p>
+   * Lat - Latitude (Required)
+   * <p>
    * The geographical latitude (degrees, minutes, seconds and hemisphere N or S)
    * of the Point or center of the Ellipse. Same remarks for seconds and leading
    * zeros. enter N or S immediately following the seconds. The format is:
@@ -99,7 +102,8 @@ public class Point {
   @XmlElement(name = "Lat", required = true)
   private Lat lat;
   /**
-   * TerrainElevation - Terrain Elevation (Optional)    * <p>
+   * TerrainElevation - Terrain Elevation (Optional)
+   * <p>
    * The elevation of the base of the transmitting antenna structure above Mean
    * Sea Level (MSL).
    * <p>
@@ -110,7 +114,8 @@ public class Point {
   @XmlElement(name = "TerrainElevation", required = false)
   private Altitude terrainElevation;
   /**
-   * AltitudeMin - Minimum Altitude Above Ground Level (Optional)    * <p>
+   * AltitudeMin - Minimum Altitude Above Ground Level (Optional)
+   * <p>
    * The minimum or nominal height of the point above the terrain (also known as
    * "above ground level" AGL).
    * <p>
@@ -123,7 +128,8 @@ public class Point {
   @XmlElement(name = "AltitudeMin", required = false)
   private Altitude altitudeMin;
   /**
-   * AltitudeMax - Maximum Altitude Above Ground Level (Optional)    * <p>
+   * AltitudeMax - Maximum Altitude Above Ground Level (Optional)
+   * <p>
    * The minimum or nominal height of the point above the terrain (also known as
    * "above ground level" AGL).
    * <p>
@@ -139,7 +145,8 @@ public class Point {
   @XmlElement(name = "AltitudeMax", required = false)
   private Altitude altitudeMax;
   /**
-   * WayPointIdx - Waypoint Index (Required)    * <p>
+   * WayPointIdx - Waypoint Index (Required)
+   * <p>
    * The sequential index of a Point within the referenced Location. Some points
    * of the Location may be omitted, and are not necessarily visited in the
    * order they are defined in the Location. For example a Location might have
@@ -430,7 +437,19 @@ public class Point {
    * @return The current Point object instance.
    * @since 3.1.0
    */
-  public Point withLon(String value) {
+  public Point withLon(String value) throws Exception {
+    setLon(new Lon(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical longitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current Point object instance.
+   * @since 3.1.0
+   */
+  public Point withLon(Double value) {
     setLon(new Lon(value));
     return this;
   }
@@ -445,7 +464,19 @@ public class Point {
    * @return The current Point object instance.
    * @since 3.1.0
    */
-  public Point withLat(String value) {
+  public Point withLat(String value) throws Exception {
+    setLat(new Lat(value));
+    return this;
+  }
+
+  /**
+   * Set the geographical latitude in decimal degrees.
+   * <p>
+   * @param value The coordinate value in decimal degrees
+   * @return The current Point object instance.
+   * @since 3.1.0
+   */
+  public Point withLat(Double value) {
     setLat(new Lat(value));
     return this;
   }
