@@ -189,35 +189,38 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    *                   responsible for reporting the error to the user through
    *                   ValidationEventHandler.
    */
-  private Number convert(Number v) throws Exception {
+  protected Number convert(Number v) throws Exception {
     /**
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minInclusive + "] exceed");
+      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + ": max " + minInclusive + " exceeded by " + v + ".");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + maxInclusive + "] exceeded");
+      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + ": min " + maxInclusive + " exceeded by " + v + ".");
     }
     if (maxInclusive == null && v.doubleValue() > getMaxValue().doubleValue()) {
       throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "")
-                          + " pattern ["
+                          + " pattern "
                           + (df != null ? df.toPattern() : (totalDigits - (fractionDigits != null ? fractionDigits : 0)) + "." + (fractionDigits != null ? fractionDigits : 0))
-                          + "] exceeded.");
+                          + " exceeded.");
     }
     /**
      * Validate the digit count.
      */
     if (v instanceof BigInteger) {
       if (totalDigits != null && totalDigits < getDigitCount((BigInteger) v)) {
-        throw new Exception("Maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + totalDigits + "] for " + v + ".");
+        throw new Exception("Maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " " + totalDigits + " digits exceeded by \"" + v + "\".");
       }
     } else if (v instanceof BigDecimal || v instanceof Double) {
+      if (totalDigits != null && totalDigits < getDigitCount(BigInteger.valueOf(v.intValue()))) {
+        throw new Exception("Maximum digits violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " " + totalDigits + " digits exceeded by \"" + v + "\".");
+      }
       /**
-       * Just convert the number precision to ensure it matches the required XML
-       * style pattern.
+       * Set the number precision to ensure it matches the required XML style
+       * pattern.
        */
-      return new BigDecimal(v.doubleValue()).setScale(totalDigits - (fractionDigits != null ? fractionDigits : 0), RoundingMode.HALF_UP);
+      return new BigDecimal(v.doubleValue()).setScale((fractionDigits != null ? fractionDigits : 0), RoundingMode.HALF_UP);
     }
     /**
      * Default fall through with whatever Number type was presented.
