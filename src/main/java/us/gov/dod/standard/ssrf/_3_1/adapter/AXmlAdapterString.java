@@ -123,17 +123,17 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    */
   private String convert(String v) throws Exception {
     if (minLength != null && v.length() < minLength) {
-      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
+      throw new Exception("Minimum length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " min length " + minLength + " required.");
     }
     if (maxLength != null && v.length() > maxLength) {
-      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " [" + minLength + "-" + maxLength + "]" + " with length = " + v.length() + ".");
+      throw new Exception("String length violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " max length " + maxLength + " exceeded.");
     }
     /**
      * If the string length is valid then validate the pattern if applicable.
      */
     if (pattern != null) {
       if (!Pattern.compile(pattern).matcher(v).find()) {
-        throw new Exception("String pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " requires [" + pattern + "].");
+        throw new Exception("String pattern violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + " requires " + pattern + " received \"" + v + "\"");
       }
     }
     /**
