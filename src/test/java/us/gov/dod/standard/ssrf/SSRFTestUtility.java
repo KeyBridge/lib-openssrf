@@ -617,7 +617,21 @@ public class SSRFTestUtility {
     if (field.getName().equals("cls")) {
       return ListCCL.UNCLASSIFIED;
     }
-
+    /**
+     * If the field type is a TString then the field is likely recommended as an
+     * enumerated list entry. Query the WITH setter method to get the preferred
+     * List enumerated type.
+     */
+    if (field.getType().equals(TString.class)) {
+      /**
+       * If the field is a TString then inspect the WITH setter to determine if
+       * the field expects an enumerated input.
+       */
+      Object enumInstance = getEnumEntry(field.getDeclaringClass(), field);
+      return enumInstance != null
+             ? new TString(enumInstance.toString())
+             : new TString("ENUM-" + getTextString(7, 0));
+    }
     /**
      * Get the field type. Scan the field annotations looking for an
      * XmlJavaTypeAdapter instance.
@@ -783,6 +797,17 @@ public class SSRFTestUtility {
     return null;
   }
 
+  /**
+   * Query the Class type to find a WITH setter method for the indicated field.
+   * <p>
+   * @param type  the class type
+   * @param field the field
+   * @return
+   * @throws ClassNotFoundException
+   * @throws IllegalAccessException
+   * @throws IllegalArgumentException
+   * @throws InvocationTargetException
+   */
   private static Object getEnumEntry(Class<?> type, Field field) throws ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     /**
      * Inspect the WITH setter to determine if the field expects an enumerated
@@ -794,16 +819,29 @@ public class SSRFTestUtility {
         if (parameterType.isEnum()) {
           String fieldClassName = parameterType.toString().replace("class ", "").trim();
           Class<?> fieldClass = Class.forName(fieldClassName); // throws ClassNotFoundException
+          /**
+           * Get a random instance of the enumerated class type.
+           */
           Enum fieldInstance = (Enum) fieldClass.getEnumConstants()[new Random().nextInt(fieldClass.getEnumConstants().length)];
+          /**
+           * If the instance has an XmlEnumValue annotation then return the XML
+           * value.
+           */
           XmlEnumValue xmlEnumValue = fieldInstance.getClass().getAnnotation(XmlEnumValue.class);
           if (xmlEnumValue != null) {
             return xmlEnumValue.value();
           }
+          /**
+           * Otherwise try to call the value getter.
+           */
           for (Method method : fieldClass.getDeclaredMethods()) {
             if (method.getName().equals("value")) {
               return method.invoke(fieldInstance);
             }
           }
+          /**
+           * Finally just return the numerated instance name.
+           */
           return fieldInstance.name();
         }
       }
