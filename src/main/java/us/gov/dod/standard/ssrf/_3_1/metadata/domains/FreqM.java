@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 public class FreqM extends AMetadata<FreqM> implements Comparable<FreqM> {
 
   /**
-   * The value property.
+   * The value property; frequency in MHz.
+   * <p>
+   * Format is UN(16,9) [0..1.0E9](MHz)
    */
   @XmlValue
   @XmlJavaTypeAdapter(XmlAdapterFREQM.class)
