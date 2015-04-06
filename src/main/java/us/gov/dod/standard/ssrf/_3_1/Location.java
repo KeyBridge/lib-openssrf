@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1075,7 +1075,7 @@ public class Location extends Common<Location> {
    */
   @Override
   public String toString() {
-    return "Location {"
+    return "\n  Location {"
            + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
            + (country != null ? " country [" + country + "]" : "")
            + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
@@ -1090,7 +1090,7 @@ public class Location extends Common<Location> {
            + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
            + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
            + (street != null ? " street [" + street + "]" : "")
-           + "}\n  Location." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**
@@ -1205,7 +1205,7 @@ public class Location extends Common<Location> {
     }
     for (Location instance : root.getLocation()) {
       if (locationRef.contains(instance.getSerial())) {
-        location.add(instance);
+        getLocation().add(instance);
       }
     }
   }//</editor-fold>

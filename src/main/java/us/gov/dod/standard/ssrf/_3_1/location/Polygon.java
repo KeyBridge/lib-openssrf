@@ -335,7 +335,7 @@ public class Polygon {
    */
   @Override
   public String toString() {
-    return "Polygon {"
+    return "\n  Polygon {"
            + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
            + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
            + (excluded != null ? " excluded [" + excluded + "]" : "")

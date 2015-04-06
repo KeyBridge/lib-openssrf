@@ -1157,7 +1157,7 @@ public class JammingChannelProfile {
    */
   @Override
   public String toString() {
-    return "JammingChannelProfile {"
+    return "\n  JammingChannelProfile {"
            + (activationPower != null ? " activationPower [" + activationPower + "]" : "")
            + (activationTime != null ? " activationTime [" + activationTime + "]" : "")
            + (carrierWaveform != null ? " carrierWaveform [" + carrierWaveform + "]" : "")

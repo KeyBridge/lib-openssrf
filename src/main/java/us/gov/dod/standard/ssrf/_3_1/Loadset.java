@@ -680,7 +680,7 @@ public class Loadset extends Common<Loadset> {
    */
   @Override
   public String toString() {
-    return "Loadset {"
+    return "\n  Loadset {"
            + (jammingChannelProfile != null ? " jammingChannelProfile [" + jammingChannelProfile + "]" : "")
            + (keyLoadProcedure != null ? " keyLoadProcedure [" + keyLoadProcedure + "]" : "")
            + (maxActiveFrames != null ? " maxActiveFrames [" + maxActiveFrames + "]" : "")
@@ -691,7 +691,7 @@ public class Loadset extends Common<Loadset> {
            + (resetProcedure != null ? " resetProcedure [" + resetProcedure + "]" : "")
            + (secondaryFirmware != null ? " secondaryFirmware [" + secondaryFirmware + "]" : "")
            + (software != null ? " software [" + software + "]" : "")
-           + "}\n  Loadset." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

@@ -188,7 +188,7 @@ public class JRFLEntryLocation {
    */
   @Override
   public String toString() {
-    return "JRFLEntryLocation {"
+    return "\n  JRFLEntryLocation {"
            + (antFeedpointHeight != null ? " antFeedpointHeight [" + antFeedpointHeight + "]" : "")
            + (serial != null ? " serial [" + serial + "]" : "")
            + "}";

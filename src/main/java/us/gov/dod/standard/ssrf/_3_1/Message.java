@@ -245,11 +245,11 @@ public class Message extends Common<Message> {
    */
   @Override
   public String toString() {
-    return "Message {"
+    return "\n  Message {"
            + (datasetRef != null ? " datasetRef [" + datasetRef + "]" : "")
            + (name != null ? " name [" + name + "]" : "")
            + (secondaryDatasets != null ? " secondaryDatasets [" + secondaryDatasets + "]" : "")
-           + "}\n  Message." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

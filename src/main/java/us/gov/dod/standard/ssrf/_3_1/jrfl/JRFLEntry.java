@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -77,7 +77,8 @@ public class JRFLEntry {
   @XmlElement(name = "ProtectionCode", required = true)
   private TString protectionCode;
   /**
-   * Priority - Priority (Optional)    * <p>
+   * Priority - Priority (Optional)
+   * <p>
    * The assigned priority code consisting of a letter followed by a number in
    * the range A1 through Z9, with A1 being the highest priority (all Taboo nets
    * should be assigned an A1 priority code). This code is set at the local
@@ -90,7 +91,8 @@ public class JRFLEntry {
   @XmlElement(name = "Priority", required = false)
   private US2 priority;
   /**
-   * Justification - Justification (Required)    * <p>
+   * Justification - Justification (Required)
+   * <p>
    * A description of the justification of why the JRFL entry is required, to
    * support the spectrum manager.
    * <p>
@@ -101,7 +103,8 @@ public class JRFLEntry {
   @XmlElement(name = "Justification", required = true)
   private S255 justification;
   /**
-   * ApprovalLevel - Approval Level (Optional)    * <p>
+   * ApprovalLevel - Approval Level (Optional)
+   * <p>
    * The approval status of the JRFL entry.
    * <p>
    * Format is L:CTS
@@ -118,7 +121,8 @@ public class JRFLEntry {
   @XmlElement(name = "Seconds", required = false)
   private MinSec seconds;
   /**
-   * Minutes - Minutes (Optional)    * <p>
+   * Minutes - Minutes (Optional)
+   * <p>
    * The minutes of an hour [0-59].
    * <p>
    * Format is pattern (S40)
@@ -130,7 +134,8 @@ public class JRFLEntry {
   @XmlElement(name = "Minutes", required = false)
   private MinSec minutes;
   /**
-   * Hours - Hours (Optional)    * <p>
+   * Hours - Hours (Optional)
+   * <p>
    * The hours of a day [0-23] (UTC time).
    * <p>
    * Format is pattern (S40)
@@ -142,7 +147,8 @@ public class JRFLEntry {
   @XmlElement(name = "Hours", required = false)
   private Hours hours;
   /**
-   * DaysOfMonth - Days Of Month (Optional)    * <p>
+   * DaysOfMonth - Days Of Month (Optional)
+   * <p>
    * The day of month [1-31].
    * <p>
    * Format is pattern (S40)
@@ -154,7 +160,8 @@ public class JRFLEntry {
   @XmlElement(name = "DaysOfMonth", required = false)
   private DaysOfMonth daysOfMonth;
   /**
-   * Months - Months (Optional)    * <p>
+   * Months - Months (Optional)
+   * <p>
    * The month of year [1-12].
    * <p>
    * Format is pattern (S40)
@@ -166,7 +173,8 @@ public class JRFLEntry {
   @XmlElement(name = "Months", required = false)
   private Months months;
   /**
-   * DaysOfWeek - Days of Week (Optional)    * <p>
+   * DaysOfWeek - Days of Week (Optional)
+   * <p>
    * The weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc].
    * <p>
    * Format is pattern (S40)
@@ -178,7 +186,8 @@ public class JRFLEntry {
   @XmlElement(name = "DaysOfWeek", required = false)
   private DaysOfWeek daysOfWeek;
   /**
-   * Years - Years (Optional)    * <p>
+   * Years - Years (Optional)
+   * <p>
    * The 4-digit year [1900..2100].
    * <p>
    * Format is pattern (S40)
@@ -190,7 +199,8 @@ public class JRFLEntry {
   @XmlElement(name = "Years", required = false)
   private Years years;
   /**
-   * Duration - Duration (Optional)    * <p>
+   * Duration - Duration (Optional)
+   * <p>
    * The number of minutes for which an event will live. Examples: possible
    * values for the Hours item: 8 one value: 08h00Z 5,6,9 multiple values:
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
@@ -217,7 +227,8 @@ public class JRFLEntry {
   @XmlElement(name = "Duration", required = false)
   private Duration_UN4 duration;
   /**
-   * AsgnAllotRef - Assignment or Allotment Serial (Optional)    * <p>
+   * AsgnAllotRef - Assignment or Allotment Serial (Optional)
+   * <p>
    * The Serial reference of the Assignment or Allotment to be protected.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be "AS
@@ -231,7 +242,8 @@ public class JRFLEntry {
   @XmlElement(name = "AsgnAllotRef", required = false)
   private Serial asgnAllotRef;
   /**
-   * FreqMin - Nominal or Minimum Frequency (Optional)    * <p>
+   * FreqMin - Nominal or Minimum Frequency (Optional)
+   * <p>
    * The nominal frequency or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
@@ -243,7 +255,8 @@ public class JRFLEntry {
   @XmlElement(name = "FreqMin")
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Optional)    * <p>
+   * FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -257,7 +270,8 @@ public class JRFLEntry {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * Bandwidth - Bandwidth (Optional)    * <p>
+   * Bandwidth - Bandwidth (Optional)
+   * <p>
    * The width of the range (or band) of restricted frequency(s).
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
@@ -267,7 +281,8 @@ public class JRFLEntry {
   @XmlElement(name = "Bandwidth", required = false)
   private FreqM bandwidth;
   /**
-   * FreqUse - Frequency Use (Optional)    * <p>
+   * FreqUse - Frequency Use (Optional)
+   * <p>
    * The intended usage of the frequency.
    * <p>
    * Format is L:CAU
@@ -1317,7 +1332,7 @@ public class JRFLEntry {
    */
   @Override
   public String toString() {
-    return "JRFLEntry {"
+    return "\n  JRFLEntry {"
            + (approvalLevel != null ? " approvalLevel [" + approvalLevel + "]" : "")
            + (asgnAllotRef != null ? " asgnAllotRef [" + asgnAllotRef + "]" : "")
            + (bandwidth != null ? " bandwidth [" + bandwidth + "]" : "")
@@ -1358,7 +1373,8 @@ public class JRFLEntry {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * AsgnAllotRef - Assignment or Allotment Serial (Optional)    * <p>
+   * AsgnAllotRef - Assignment or Allotment Serial (Optional)
+   * <p>
    * The Serial reference of the Assignment or Allotment to be protected.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be "AS

@@ -484,7 +484,7 @@ public class TimingDeconflictionProtocol {
    */
   @Override
   public String toString() {
-    return "TimingDeconflictionProtocol {"
+    return "\n  TimingDeconflictionProtocol {"
            + (description != null ? " description [" + description + "]" : "")
            + (name != null ? " name [" + name + "]" : "")
            + (period != null ? " period [" + period + "]" : "")

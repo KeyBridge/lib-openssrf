@@ -545,7 +545,7 @@ public class Point {
    */
   @Override
   public String toString() {
-    return "Point {"
+    return "\n  Point {"
            + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
            + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
            + (excluded != null ? " excluded [" + excluded + "]" : "")

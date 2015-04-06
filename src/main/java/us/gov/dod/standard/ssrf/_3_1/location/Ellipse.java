@@ -655,7 +655,7 @@ public class Ellipse {
    */
   @Override
   public String toString() {
-    return "Ellipse {"
+    return "\n  Ellipse {"
            + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
            + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
            + (azimuth != null ? " azimuth [" + azimuth + "]" : "")
