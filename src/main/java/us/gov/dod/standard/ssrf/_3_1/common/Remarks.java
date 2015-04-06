@@ -219,7 +219,7 @@ public class Remarks {
    */
   @Override
   public String toString() {
-    return "Remarks {"
+    return "\n  Remarks {"
            + (cls != null ? " cls [" + cls + "]" : "")
            + (idx != null ? " idx [" + idx + "]" : "")
            + (value != null ? " value [" + value + "]" : "")

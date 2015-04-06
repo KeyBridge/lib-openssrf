@@ -2857,7 +2857,7 @@ public class IntfReport extends Common<IntfReport> {
    */
   @Override
   public String toString() {
-    return "IntfReport {"
+    return "\n  IntfReport {"
            + (affectedCSA != null ? " affectedCSA [" + affectedCSA + "]" : "")
            + (affectedEquipment != null ? " affectedEquipment [" + affectedEquipment + "]" : "")
            + (characteristics != null ? " characteristics [" + characteristics + "]" : "")
@@ -2901,7 +2901,7 @@ public class IntfReport extends Common<IntfReport> {
            + (victimLocDescr != null ? " victimLocDescr [" + victimLocDescr + "]" : "")
            + (victimLon != null ? " victimLon [" + victimLon + "]" : "")
            + (victimSystem != null ? " victimSystem [" + victimSystem + "]" : "")
-           + "}\n  IntfReport." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

@@ -681,7 +681,7 @@ public class Contact extends Common<Contact> {
    */
   @Override
   public String toString() {
-    return "Contact {"
+    return "\n  Contact {"
            + (address != null ? " address [" + address + "]" : "")
            + (eMail != null ? " eMail [" + eMail + "]" : "")
            + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
@@ -691,7 +691,7 @@ public class Contact extends Common<Contact> {
            + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
            + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
            + (titleRank != null ? " titleRank [" + titleRank + "]" : "")
-           + "}\n  Contact." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

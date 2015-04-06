@@ -801,7 +801,7 @@ public class ExternalReference extends Common<ExternalReference> {
    */
   @Override
   public String toString() {
-    return "ExternalReference {"
+    return "\n  ExternalReference {"
            + (alternateIdentifier != null ? " alternateIdentifier [" + alternateIdentifier + "]" : "")
            + (author != null ? " author [" + author + "]" : "")
            + (date != null ? " date [" + date + "]" : "")
@@ -815,7 +815,7 @@ public class ExternalReference extends Common<ExternalReference> {
            + (resourceLocator != null ? " resourceLocator [" + resourceLocator + "]" : "")
            + (title != null ? " title [" + title + "]" : "")
            + (type != null ? " type [" + type + "]" : "")
-           + "}\n  ExternalReference." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

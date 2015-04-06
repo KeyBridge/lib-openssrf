@@ -341,7 +341,7 @@ public class TelephoneFax {
    */
   @Override
   public String toString() {
-    return "TelephoneFax {"
+    return "\n  TelephoneFax {"
            + (fax != null ? " fax [" + fax + "]" : "")
            + (maxCls != null ? " maxCls [" + maxCls + "]" : "")
            + (number != null ? " number [" + number + "]" : "")

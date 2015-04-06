@@ -944,7 +944,7 @@ public class ForceElement extends Common<ForceElement> {
    */
   @Override
   public String toString() {
-    return "ForceElement {"
+    return "\n  ForceElement {"
            + (assets != null ? " assets [" + assets + "]" : "")
            + (cmdLevel != null ? " cmdLevel [" + cmdLevel + "]" : "")
            + (missionCode != null ? " missionCode [" + missionCode + "]" : "")
@@ -958,7 +958,7 @@ public class ForceElement extends Common<ForceElement> {
            + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
            + (type != null ? " type [" + type + "]" : "")
            + (uic != null ? " uic [" + uic + "]" : "")
-           + "}\n  ForceElement." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

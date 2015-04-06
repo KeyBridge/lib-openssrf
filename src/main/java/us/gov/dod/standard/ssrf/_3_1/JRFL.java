@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -901,20 +901,20 @@ public class JRFL extends Common<JRFL> {
    */
   @Override
   public String toString() {
-    return "JRFL {"
+    return "\n  JRFL {"
            + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
            + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
            + (duration != null ? " duration [" + duration + "]" : "")
            + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
            + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
            + (hours != null ? " hours [" + hours + "]" : "")
-           + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
            + (minutes != null ? " minutes [" + minutes + "]" : "")
            + (months != null ? " months [" + months + "]" : "")
            + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
            + (seconds != null ? " seconds [" + seconds + "]" : "")
            + (years != null ? " years [" + years + "]" : "")
-           + "}\n  JRFL." + super.toString() + "\n";
+           + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
+           + super.toString();
   }
 
   /**

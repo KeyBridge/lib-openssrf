@@ -398,7 +398,7 @@ public class Address {
    */
   @Override
   public String toString() {
-    return "Address {"
+    return "\n  Address {"
            + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
            + (country != null ? " country [" + country + "]" : "")
            + (description != null ? " description [" + description + "]" : "")

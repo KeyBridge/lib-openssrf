@@ -988,7 +988,7 @@ public class FEDeployment extends Common<FEDeployment> {
    */
   @Override
   public String toString() {
-    return "FEDeployment {"
+    return "\n  FEDeployment {"
            + (atWaypoint != null ? " atWaypoint [" + atWaypoint + "]" : "")
            + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
            + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
@@ -1003,7 +1003,7 @@ public class FEDeployment extends Common<FEDeployment> {
            + (seconds != null ? " seconds [" + seconds + "]" : "")
            + (type != null ? " type [" + type + "]" : "")
            + (years != null ? " years [" + years + "]" : "")
-           + "}\n  FEDeployment." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

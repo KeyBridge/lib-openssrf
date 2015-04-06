@@ -671,7 +671,7 @@ public class SecurityClass {
    */
   @Override
   public String toString() {
-    return "SecurityClass {"
+    return "\n  SecurityClass {"
            + (clsAuthority != null ? " clsAuthority [" + clsAuthority + "]" : "")
            + (clsDerived != null ? " clsDerived [" + clsDerived + "]" : "")
            + (clsOrg != null ? " clsOrg [" + clsOrg + "]" : "")

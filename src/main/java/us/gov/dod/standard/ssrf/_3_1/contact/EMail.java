@@ -277,7 +277,7 @@ public class EMail {
    */
   @Override
   public String toString() {
-    return "EMail {"
+    return "\n  EMail {"
            + (address != null ? " address [" + address + "]" : "")
            + (maxCls != null ? " maxCls [" + maxCls + "]" : "")
            + (preferred != null ? " preferred [" + preferred + "]" : "")
