@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,79 +64,79 @@ import us.gov.dod.standard.ssrf.SSRF;
 public abstract class SchemaRoot<T> {
 
   @XmlElement(name = "Contact")
-  private Set<Contact> contact;
+  protected Set<Contact> contact;
 
   @XmlElement(name = "Role")
-  private Set<Role> role;
+  protected Set<Role> role;
 
   @XmlElement(name = "Organisation")
-  private Set<Organisation> organisation;
+  protected Set<Organisation> organisation;
 
   @XmlElement(name = "ExternalReference")
-  private Set<ExternalReference> externalReference;
+  protected Set<ExternalReference> externalReference;
 
   @XmlElement(name = "Administrative")
-  private Set<Administrative> administrative;
+  protected Set<Administrative> administrative;
 
   @XmlElement(name = "Location")
-  private Set<Location> location;
+  protected Set<Location> location;
 
   @XmlElement(name = "ChannelPlan")
-  private Set<ChannelPlan> channelPlan;
+  protected Set<ChannelPlan> channelPlan;
 
   @XmlElement(name = "TOA")
-  private Set<TOA> toa;
+  protected Set<TOA> toa;
 
   @XmlElement(name = "Transmitter")
-  private Set<Transmitter> transmitter;
+  protected Set<Transmitter> transmitter;
 
   @XmlElement(name = "Receiver")
-  private Set<Receiver> receiver;
+  protected Set<Receiver> receiver;
 
   @XmlElement(name = "Antenna")
-  private Set<Antenna> antenna;
+  protected Set<Antenna> antenna;
 
   @XmlElement(name = "RFSystem")
-  private Set<RFSystem> rfSystem;
+  protected Set<RFSystem> rfSystem;
 
   @XmlElement(name = "SSRequest")
-  private Set<SSRequest> ssRequest;
+  protected Set<SSRequest> ssRequest;
 
   @XmlElement(name = "SSReply")
-  private Set<SSReply> ssReply;
+  protected Set<SSReply> ssReply;
 
   @XmlElement(name = "Allotment")
-  private Set<Allotment> allotment;
+  protected Set<Allotment> allotment;
 
   @XmlElement(name = "Assignment")
-  private Set<Assignment> assignment;
+  protected Set<Assignment> assignment;
 
   @XmlElement(name = "Satellite")
-  private Set<Satellite> satellite;
+  protected Set<Satellite> satellite;
 
   @XmlElement(name = "IntfReport")
-  private Set<IntfReport> intfReport;
+  protected Set<IntfReport> intfReport;
 
   @XmlElement(name = "JRFL")
-  private Set<JRFL> jrfl;
+  protected Set<JRFL> jrfl;
 
   @XmlElement(name = "ForceElement")
-  private Set<ForceElement> forceElement;
+  protected Set<ForceElement> forceElement;
 
   @XmlElement(name = "FEDeployment")
-  private Set<FEDeployment> feDeployment;
+  protected Set<FEDeployment> feDeployment;
 
   @XmlElement(name = "Message")
-  private Set<Message> message;
+  protected Set<Message> message;
 
   @XmlElement(name = "Note")
-  private Set<Note> note;
+  protected Set<Note> note;
 
   @XmlElement(name = "Loadset")
-  private Set<Loadset> loadset;
+  protected Set<Loadset> loadset;
 
   @XmlElement(name = "RadiationPlan")
-  private Set<RadiationPlan> radiationPlan;
+  protected Set<RadiationPlan> radiationPlan;
 
   /**
    * Get
@@ -1553,7 +1553,7 @@ public abstract class SchemaRoot<T> {
    */
   @Override
   public String toString() {
-    return "SchemaRoot {"
+    return "\n  SchemaRoot {"
            + (administrative != null ? " administrative [" + administrative + "]" : "")
            + (allotment != null ? " allotment [" + allotment + "]" : "")
            + (antenna != null ? " antenna [" + antenna + "]" : "")
