@@ -681,16 +681,16 @@ public class Loadset extends Common<Loadset> {
   @Override
   public String toString() {
     return "Loadset {"
-           + (jammingChannelProfile != null ? "\n jammingChannelProfile [" + jammingChannelProfile + "]" : "")
-           + (keyLoadProcedure != null ? "\n keyLoadProcedure [" + keyLoadProcedure + "]" : "")
-           + (maxActiveFrames != null ? "\n maxActiveFrames [" + maxActiveFrames + "]" : "")
-           + (maxReactiveFrames != null ? "\n maxReactiveFrames [" + maxReactiveFrames + "]" : "")
-           + (mission != null ? "\n mission [" + mission + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (primaryFirmware != null ? "\n primaryFirmware [" + primaryFirmware + "]" : "")
-           + (resetProcedure != null ? "\n resetProcedure [" + resetProcedure + "]" : "")
-           + (secondaryFirmware != null ? "\n secondaryFirmware [" + secondaryFirmware + "]" : "")
-           + (software != null ? "\n software [" + software + "]" : "")
+           + (jammingChannelProfile != null ? " jammingChannelProfile [" + jammingChannelProfile + "]" : "")
+           + (keyLoadProcedure != null ? " keyLoadProcedure [" + keyLoadProcedure + "]" : "")
+           + (maxActiveFrames != null ? " maxActiveFrames [" + maxActiveFrames + "]" : "")
+           + (maxReactiveFrames != null ? " maxReactiveFrames [" + maxReactiveFrames + "]" : "")
+           + (mission != null ? " mission [" + mission + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (primaryFirmware != null ? " primaryFirmware [" + primaryFirmware + "]" : "")
+           + (resetProcedure != null ? " resetProcedure [" + resetProcedure + "]" : "")
+           + (secondaryFirmware != null ? " secondaryFirmware [" + secondaryFirmware + "]" : "")
+           + (software != null ? " software [" + software + "]" : "")
            + "}\n  Loadset." + super.toString() + "\n";
   }
 

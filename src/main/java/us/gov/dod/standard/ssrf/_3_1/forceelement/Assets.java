@@ -225,9 +225,9 @@ public class Assets {
   @Override
   public String toString() {
     return "Assets {"
-           + (authorised != null ? "\n authorised [" + authorised + "]" : "")
-           + (available != null ? "\n available [" + available + "]" : "")
-           + (serial != null ? "\n serial [" + serial + "]" : "")
+           + (authorised != null ? " authorised [" + authorised + "]" : "")
+           + (available != null ? " available [" + available + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
            + "}";
   }
 

@@ -575,15 +575,15 @@ public class Administration {
   @Override
   public String toString() {
     return "Administration {"
-           + (availability != null ? "\n availability [" + availability + "]" : "")
-           + (cls != null ? "\n cls [" + cls + "]" : "")
-           + (extReferences != null ? "\n extReferences [" + extReferences + "]" : "")
-           + (idref != null ? "\n idref [" + idref + "]" : "")
-           + (legacyReleasability != null ? "\n legacyReleasability [" + legacyReleasability + "]" : "")
-           + (quality != null ? "\n quality [" + quality + "]" : "")
-           + (recommendedValue != null ? "\n recommendedValue [" + recommendedValue + "]" : "")
-           + (remarks != null ? "\n remarks [" + remarks + "]" : "")
-           + (value != null ? "\n value [" + value + "]" : "")
+           + (availability != null ? " availability [" + availability + "]" : "")
+           + (cls != null ? " cls [" + cls + "]" : "")
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (idref != null ? " idref [" + idref + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           + (remarks != null ? " remarks [" + remarks + "]" : "")
+           + (value != null ? " value [" + value + "]" : "")
            + "}";
   }
 

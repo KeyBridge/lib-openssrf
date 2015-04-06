@@ -288,10 +288,10 @@ public class Power {
   @Override
   public String toString() {
     return "Power {"
-           + (calculated != null ? "\n calculated [" + calculated + "]" : "")
-           + (powerMax != null ? "\n powerMax [" + powerMax + "]" : "")
-           + (powerMin != null ? "\n powerMin [" + powerMin + "]" : "")
-           + (powerType != null ? "\n powerType [" + powerType + "]" : "")
+           + (calculated != null ? " calculated [" + calculated + "]" : "")
+           + (powerMax != null ? " powerMax [" + powerMax + "]" : "")
+           + (powerMin != null ? " powerMin [" + powerMin + "]" : "")
+           + (powerType != null ? " powerType [" + powerType + "]" : "")
            + "}";
   }
 

@@ -270,9 +270,9 @@ public class RxRef {
   @Override
   public String toString() {
     return "RxRef {"
-           + (rxAntModeRef != null ? "\n rxAntModeRef [" + rxAntModeRef + "]" : "")
-           + (rxModeRef != null ? "\n rxModeRef [" + rxModeRef + "]" : "")
-           + (serial != null ? "\n serial [" + serial + "]" : "")
+           + (rxAntModeRef != null ? " rxAntModeRef [" + rxAntModeRef + "]" : "")
+           + (rxModeRef != null ? " rxModeRef [" + rxModeRef + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
            + "}";
   }
 

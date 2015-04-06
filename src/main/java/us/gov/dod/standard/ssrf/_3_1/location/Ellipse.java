@@ -656,15 +656,15 @@ public class Ellipse {
   @Override
   public String toString() {
     return "Ellipse {"
-           + (altitudeMax != null ? "\n altitudeMax [" + altitudeMax + "]" : "")
-           + (altitudeMin != null ? "\n altitudeMin [" + altitudeMin + "]" : "")
-           + (azimuth != null ? "\n azimuth [" + azimuth + "]" : "")
-           + (excluded != null ? "\n excluded [" + excluded + "]" : "")
-           + (idx != null ? "\n idx [" + idx + "]" : "")
-           + (lat != null ? "\n lat [" + lat + "]" : "")
-           + (lon != null ? "\n lon [" + lon + "]" : "")
-           + (semiMajorAxis != null ? "\n semiMajorAxis [" + semiMajorAxis + "]" : "")
-           + (semiMinorAxis != null ? "\n semiMinorAxis [" + semiMinorAxis + "]" : "")
+           + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+           + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
+           + (azimuth != null ? " azimuth [" + azimuth + "]" : "")
+           + (excluded != null ? " excluded [" + excluded + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (lat != null ? " lat [" + lat + "]" : "")
+           + (lon != null ? " lon [" + lon + "]" : "")
+           + (semiMajorAxis != null ? " semiMajorAxis [" + semiMajorAxis + "]" : "")
+           + (semiMinorAxis != null ? " semiMinorAxis [" + semiMinorAxis + "]" : "")
            + "}";
   }
 

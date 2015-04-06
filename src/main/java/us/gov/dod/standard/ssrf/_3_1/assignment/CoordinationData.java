@@ -152,8 +152,8 @@ public class CoordinationData {
   @Override
   public String toString() {
     return "CoordinationData {"
-           + (coordIndicator != null ? "\n coordIndicator [" + coordIndicator + "]" : "")
-           + (hostComments != null ? "\n hostComments [" + hostComments + "]" : "")
+           + (coordIndicator != null ? " coordIndicator [" + coordIndicator + "]" : "")
+           + (hostComments != null ? " hostComments [" + hostComments + "]" : "")
            + "}";
   }
 

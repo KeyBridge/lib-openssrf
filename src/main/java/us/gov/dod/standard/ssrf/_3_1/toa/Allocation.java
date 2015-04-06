@@ -681,15 +681,15 @@ public class Allocation {
   @Override
   public String toString() {
     return "Allocation {"
-           + (allocatedByFootnote != null ? "\n allocatedByFootnote [" + allocatedByFootnote + "]" : "")
-           + (allocatedService != null ? "\n allocatedService [" + allocatedService + "]" : "")
-           + (channelPlanRef != null ? "\n channelPlanRef [" + channelPlanRef + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (footnotes != null ? "\n footnotes [" + footnotes + "]" : "")
-           + (priority != null ? "\n priority [" + priority + "]" : "")
-           + (stnClass != null ? "\n stnClass [" + stnClass + "]" : "")
-           + (variance != null ? "\n variance [" + variance + "]" : "")
+           + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
+           + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
+           + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
+           + (priority != null ? " priority [" + priority + "]" : "")
+           + (stnClass != null ? " stnClass [" + stnClass + "]" : "")
+           + (variance != null ? " variance [" + variance + "]" : "")
            + "}";
   }
 

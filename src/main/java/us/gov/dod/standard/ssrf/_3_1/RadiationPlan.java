@@ -739,16 +739,16 @@ public class RadiationPlan extends Common<RadiationPlan> {
   @Override
   public String toString() {
     return "RadiationPlan {"
-           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
-           + (jammingAuthority != null ? "\n jammingAuthority [" + jammingAuthority + "]" : "")
-           + (jammingPlan != null ? "\n jammingPlan [" + jammingPlan + "]" : "")
-           + (jcaLevel != null ? "\n jcaLevel [" + jcaLevel + "]" : "")
-           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (startDateTime != null ? "\n startDateTime [" + startDateTime + "]" : "")
-           + (stopDateTime != null ? "\n stopDateTime [" + stopDateTime + "]" : "")
-           + (version != null ? "\n version [" + version + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
+           + (jammingPlan != null ? " jammingPlan [" + jammingPlan + "]" : "")
+           + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
+           + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
+           + (version != null ? " version [" + version + "]" : "")
            + "}\n  RadiationPlan." + super.toString() + "\n";
   }
 

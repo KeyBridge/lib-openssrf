@@ -321,11 +321,11 @@ public class StatusLog {
   @Override
   public String toString() {
     return "StatusLog {"
-           + (agencyCode != null ? "\n agencyCode [" + agencyCode + "]" : "")
-           + (comment != null ? "\n comment [" + comment + "]" : "")
-           + (dateTime != null ? "\n dateTime [" + dateTime + "]" : "")
-           + (pocRef != null ? "\n pocRef [" + pocRef + "]" : "")
-           + (state != null ? "\n state [" + state + "]" : "")
+           + (agencyCode != null ? " agencyCode [" + agencyCode + "]" : "")
+           + (comment != null ? " comment [" + comment + "]" : "")
+           + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
+           + (pocRef != null ? " pocRef [" + pocRef + "]" : "")
+           + (state != null ? " state [" + state + "]" : "")
            + "}";
   }
 

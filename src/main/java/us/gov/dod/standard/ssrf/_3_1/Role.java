@@ -732,15 +732,15 @@ public class Role extends Common<Role> {
   @Override
   public String toString() {
     return "Role {"
-           + (address != null ? "\n address [" + address + "]" : "")
-           + (contactRef != null ? "\n contactRef [" + contactRef + "]" : "")
-           + (country != null ? "\n country [" + country + "]" : "")
-           + (eMail != null ? "\n eMail [" + eMail + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
-           + (telephoneFax != null ? "\n telephoneFax [" + telephoneFax + "]" : "")
+           + (address != null ? " address [" + address + "]" : "")
+           + (contactRef != null ? " contactRef [" + contactRef + "]" : "")
+           + (country != null ? " country [" + country + "]" : "")
+           + (eMail != null ? " eMail [" + eMail + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
            + "}\n  Role." + super.toString() + "\n";
   }
 

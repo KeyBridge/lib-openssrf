@@ -773,16 +773,16 @@ public class Link {
   @Override
   public String toString() {
     return "Link {"
-           + (assigned != null ? "\n assigned [" + assigned + "]" : "")
-           + (dcsTrunk != null ? "\n dcsTrunk [" + dcsTrunk + "]" : "")
-           + (detailedFunction != null ? "\n detailedFunction [" + detailedFunction + "]" : "")
-           + (function != null ? "\n function [" + function + "]" : "")
-           + (intermediateFunction != null ? "\n intermediateFunction [" + intermediateFunction + "]" : "")
-           + (linkID != null ? "\n linkID [" + linkID + "]" : "")
-           + (linkName != null ? "\n linkName [" + linkName + "]" : "")
-           + (majorFunction != null ? "\n majorFunction [" + majorFunction + "]" : "")
-           + (stationConfig != null ? "\n stationConfig [" + stationConfig + "]" : "")
-           + (tuning != null ? "\n tuning [" + tuning + "]" : "")
+           + (assigned != null ? " assigned [" + assigned + "]" : "")
+           + (dcsTrunk != null ? " dcsTrunk [" + dcsTrunk + "]" : "")
+           + (detailedFunction != null ? " detailedFunction [" + detailedFunction + "]" : "")
+           + (function != null ? " function [" + function + "]" : "")
+           + (intermediateFunction != null ? " intermediateFunction [" + intermediateFunction + "]" : "")
+           + (linkID != null ? " linkID [" + linkID + "]" : "")
+           + (linkName != null ? " linkName [" + linkName + "]" : "")
+           + (majorFunction != null ? " majorFunction [" + majorFunction + "]" : "")
+           + (stationConfig != null ? " stationConfig [" + stationConfig + "]" : "")
+           + (tuning != null ? " tuning [" + tuning + "]" : "")
            + "}";
   }
 

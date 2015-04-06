@@ -216,9 +216,9 @@ public class PreviousAuthorization {
   @Override
   public String toString() {
     return "PreviousAuthorization {"
-           + (agencySerialNum != null ? "\n agencySerialNum [" + agencySerialNum + "]" : "")
-           + (date != null ? "\n date [" + date + "]" : "")
-           + (docketNum != null ? "\n docketNum [" + docketNum + "]" : "")
+           + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + (docketNum != null ? " docketNum [" + docketNum + "]" : "")
            + "}";
   }
 

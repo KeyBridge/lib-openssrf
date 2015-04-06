@@ -839,16 +839,16 @@ public class RFSystem extends Common<RFSystem> {
   @Override
   public String toString() {
     return "RFSystem {"
-           + (configuration != null ? "\n configuration [" + configuration + "]" : "")
-           + (deployment != null ? "\n deployment [" + deployment + "]" : "")
-           + (emergency != null ? "\n emergency [" + emergency + "]" : "")
-           + (fieldedStatus != null ? "\n fieldedStatus [" + fieldedStatus + "]" : "")
-           + (initialCost != null ? "\n initialCost [" + initialCost + "]" : "")
-           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
-           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
-           + (relatedSystem != null ? "\n relatedSystem [" + relatedSystem + "]" : "")
-           + (stockNum != null ? "\n stockNum [" + stockNum + "]" : "")
-           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
+           + (configuration != null ? " configuration [" + configuration + "]" : "")
+           + (deployment != null ? " deployment [" + deployment + "]" : "")
+           + (emergency != null ? " emergency [" + emergency + "]" : "")
+           + (fieldedStatus != null ? " fieldedStatus [" + fieldedStatus + "]" : "")
+           + (initialCost != null ? " initialCost [" + initialCost + "]" : "")
+           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (relatedSystem != null ? " relatedSystem [" + relatedSystem + "]" : "")
+           + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
+           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
            + "}\n  RFSystem." + super.toString() + "\n";
   }
 

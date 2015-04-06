@@ -219,9 +219,9 @@ public class EarthStation {
   @Override
   public String toString() {
     return "EarthStation {"
-           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
            + "}";
   }
 

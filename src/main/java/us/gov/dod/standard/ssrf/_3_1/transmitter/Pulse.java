@@ -986,21 +986,21 @@ public class Pulse {
   @Override
   public String toString() {
     return "Pulse {"
-           + (avgPowerMax != null ? "\n avgPowerMax [" + avgPowerMax + "]" : "")
-           + (avgPowerMin != null ? "\n avgPowerMin [" + avgPowerMin + "]" : "")
-           + (compMethod != null ? "\n compMethod [" + compMethod + "]" : "")
-           + (compRatio != null ? "\n compRatio [" + compRatio + "]" : "")
-           + (dutyCycleMax != null ? "\n dutyCycleMax [" + dutyCycleMax + "]" : "")
-           + (dutyCycleMin != null ? "\n dutyCycleMin [" + dutyCycleMin + "]" : "")
-           + (fallTime != null ? "\n fallTime [" + fallTime + "]" : "")
-           + (justifyShortRiseTime != null ? "\n justifyShortRiseTime [" + justifyShortRiseTime + "]" : "")
-           + (numSubpulses != null ? "\n numSubpulses [" + numSubpulses + "]" : "")
-           + (pdMax != null ? "\n pdMax [" + pdMax + "]" : "")
-           + (pdMin != null ? "\n pdMin [" + pdMin + "]" : "")
-           + (prrMax != null ? "\n prrMax [" + prrMax + "]" : "")
-           + (prrMin != null ? "\n prrMin [" + prrMin + "]" : "")
-           + (radarProcessingGainMax != null ? "\n radarProcessingGainMax [" + radarProcessingGainMax + "]" : "")
-           + (riseTime != null ? "\n riseTime [" + riseTime + "]" : "")
+           + (avgPowerMax != null ? " avgPowerMax [" + avgPowerMax + "]" : "")
+           + (avgPowerMin != null ? " avgPowerMin [" + avgPowerMin + "]" : "")
+           + (compMethod != null ? " compMethod [" + compMethod + "]" : "")
+           + (compRatio != null ? " compRatio [" + compRatio + "]" : "")
+           + (dutyCycleMax != null ? " dutyCycleMax [" + dutyCycleMax + "]" : "")
+           + (dutyCycleMin != null ? " dutyCycleMin [" + dutyCycleMin + "]" : "")
+           + (fallTime != null ? " fallTime [" + fallTime + "]" : "")
+           + (justifyShortRiseTime != null ? " justifyShortRiseTime [" + justifyShortRiseTime + "]" : "")
+           + (numSubpulses != null ? " numSubpulses [" + numSubpulses + "]" : "")
+           + (pdMax != null ? " pdMax [" + pdMax + "]" : "")
+           + (pdMin != null ? " pdMin [" + pdMin + "]" : "")
+           + (prrMax != null ? " prrMax [" + prrMax + "]" : "")
+           + (prrMin != null ? " prrMin [" + prrMin + "]" : "")
+           + (radarProcessingGainMax != null ? " radarProcessingGainMax [" + radarProcessingGainMax + "]" : "")
+           + (riseTime != null ? " riseTime [" + riseTime + "]" : "")
            + "}";
   }
 

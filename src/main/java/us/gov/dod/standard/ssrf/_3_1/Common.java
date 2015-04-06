@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -369,11 +369,15 @@ public abstract class Common<T> implements Comparable<T> {
   @XmlElement(name = "ExtReferenceRef", nillable = true)
   private Set<ExtReferenceRef> extReferenceRef;
   /**
-   * remarks - Links to Data Item Remarks (Optional)
+   * remarks - additional information applicable to this data item. (Optional)
    * <p>
-   * A list of Common/Remarks idx values applicable to the current data item.
+   * Remarks contains a free text field that provides a place to add additional
+   * information applicable to this data item.
    * <p>
-   * Format is List of UN6
+   * In certain situations, technical data must be included in free text in
+   * order to clearly explain a technical or operational consideration; in these
+   * instances, the data must also be entered in the data element(s)
+   * specifically established for it.
    * <p>
    * @since 3.1.0
    */
@@ -2056,35 +2060,35 @@ public abstract class Common<T> implements Comparable<T> {
   @Override
   public String toString() {
     return "Common {"
-           + (approvedBy != null ? "\n approvedBy [" + approvedBy + "]" : "")
-           + (approvedDateTime != null ? "\n approvedDateTime [" + approvedDateTime + "]" : "")
-           + (caseNum != null ? "\n caseNum [" + caseNum + "]" : "")
-           + (cls != null ? "\n cls [" + cls + "]" : "")
-           + (description != null ? "\n description [" + description + "]" : "")
-           + (entryBy != null ? "\n entryBy [" + entryBy + "]" : "")
-           + (entryDateTime != null ? "\n entryDateTime [" + entryDateTime + "]" : "")
-           + (extReferenceRef != null ? "\n extReferenceRef [" + extReferenceRef + "]" : "")
-           + (extReferences != null ? "\n extReferences [" + extReferences + "]" : "")
-           + (idref != null ? "\n idref [" + idref + "]" : "")
-           + (lastChangeBy != null ? "\n lastChangeBy [" + lastChangeBy + "]" : "")
-           + (lastChangeDateTime != null ? "\n lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-           + (lastObservedBy != null ? "\n lastObservedBy [" + lastObservedBy + "]" : "")
-           + (lastReviewBy != null ? "\n lastReviewBy [" + lastReviewBy + "]" : "")
-           + (lastReviewDate != null ? "\n lastReviewDate [" + lastReviewDate + "]" : "")
-           + (legacyReleasability != null ? "\n legacyReleasability [" + legacyReleasability + "]" : "")
-           + (modAllowedBy != null ? "\n modAllowedBy [" + modAllowedBy + "]" : "")
-           + (observedFirstDateTime != null ? "\n observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-           + (observedLastDateTime != null ? "\n observedLastDateTime [" + observedLastDateTime + "]" : "")
-           + (owner != null ? "\n owner [" + owner + "]" : "")
-           + (quality != null ? "\n quality [" + quality + "]" : "")
-           + (recommendedValue != null ? "\n recommendedValue [" + recommendedValue + "]" : "")
-           + (redacted != null ? "\n redacted [" + redacted + "]" : "")
-           + (releasability != null ? "\n releasability [" + releasability + "]" : "")
-           + (remarkRef != null ? "\n remarkRef [" + remarkRef + "]" : "")
-           + (remarks != null ? "\n remarks [" + remarks + "]" : "")
-           + (securityClass != null ? "\n securityClass [" + securityClass + "]" : "")
-           + (serial != null ? "\n serial [" + serial + "]" : "")
-           + (state != null ? "\n state [" + state + "]" : "")
+           + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
+           + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
+           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+           + (cls != null ? " cls [" + cls + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
+           + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
+           + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (idref != null ? " idref [" + idref + "]" : "")
+           + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
+           + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+           + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
+           + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+           + (owner != null ? " owner [" + owner + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           + (redacted != null ? " redacted [" + redacted + "]" : "")
+           + (releasability != null ? " releasability [" + releasability + "]" : "")
+           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+           + (remarks != null ? " remarks [" + remarks + "]" : "")
+           + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
+           + (state != null ? " state [" + state + "]" : "")
            + "}";
   }
 

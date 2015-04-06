@@ -986,19 +986,19 @@ public class Receiver extends Common<Receiver> {
   @Override
   public String toString() {
     return "Receiver {"
-           + (conductedEmissions != null ? "\n conductedEmissions [" + conductedEmissions + "]" : "")
-           + (curve != null ? "\n curve [" + curve + "]" : "")
-           + (deployment != null ? "\n deployment [" + deployment + "]" : "")
-           + (duplexSep != null ? "\n duplexSep [" + duplexSep + "]" : "")
-           + (duplexSepType != null ? "\n duplexSepType [" + duplexSepType + "]" : "")
-           + (fccAcceptanceNum != null ? "\n fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
-           + (generic != null ? "\n generic [" + generic + "]" : "")
-           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
-           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
-           + (preselectionType != null ? "\n preselectionType [" + preselectionType + "]" : "")
-           + (rxMode != null ? "\n rxMode [" + rxMode + "]" : "")
-           + (tspr != null ? "\n tspr [" + tspr + "]" : "")
-           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
+           + (conductedEmissions != null ? " conductedEmissions [" + conductedEmissions + "]" : "")
+           + (curve != null ? " curve [" + curve + "]" : "")
+           + (deployment != null ? " deployment [" + deployment + "]" : "")
+           + (duplexSep != null ? " duplexSep [" + duplexSep + "]" : "")
+           + (duplexSepType != null ? " duplexSepType [" + duplexSepType + "]" : "")
+           + (fccAcceptanceNum != null ? " fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
+           + (generic != null ? " generic [" + generic + "]" : "")
+           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (preselectionType != null ? " preselectionType [" + preselectionType + "]" : "")
+           + (rxMode != null ? " rxMode [" + rxMode + "]" : "")
+           + (tspr != null ? " tspr [" + tspr + "]" : "")
+           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
            + "}\n  Receiver." + super.toString() + "\n";
   }
 

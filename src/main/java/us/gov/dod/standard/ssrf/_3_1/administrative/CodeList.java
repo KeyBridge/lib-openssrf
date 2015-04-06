@@ -419,12 +419,12 @@ public class CodeList {
   @Override
   public String toString() {
     return "CodeList {"
-           + (action != null ? "\n action [" + action + "]" : "")
-           + (code != null ? "\n code [" + code + "]" : "")
-           + (codeListCode != null ? "\n codeListCode [" + codeListCode + "]" : "")
-           + (description != null ? "\n description [" + description + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (origin != null ? "\n origin [" + origin + "]" : "")
+           + (action != null ? " action [" + action + "]" : "")
+           + (code != null ? " code [" + code + "]" : "")
+           + (codeListCode != null ? " codeListCode [" + codeListCode + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (origin != null ? " origin [" + origin + "]" : "")
            + "}";
   }
 

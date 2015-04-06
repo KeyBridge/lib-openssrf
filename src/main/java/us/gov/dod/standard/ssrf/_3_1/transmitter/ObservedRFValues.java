@@ -152,8 +152,8 @@ public class ObservedRFValues {
   @Override
   public String toString() {
     return "ObservedRFValues {"
-           + (rfValue != null ? "\n rfValue [" + rfValue + "]" : "")
-           + (statisticalIndicator != null ? "\n statisticalIndicator [" + statisticalIndicator + "]" : "")
+           + (rfValue != null ? " rfValue [" + rfValue + "]" : "")
+           + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")
            + "}";
   }
 

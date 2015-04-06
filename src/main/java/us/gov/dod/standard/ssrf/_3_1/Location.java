@@ -1076,20 +1076,20 @@ public class Location extends Common<Location> {
   @Override
   public String toString() {
     return "Location {"
-           + (cityArea != null ? "\n cityArea [" + cityArea + "]" : "")
-           + (country != null ? "\n country [" + country + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (ellipse != null ? "\n ellipse [" + ellipse + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
-           + (point != null ? "\n point [" + point + "]" : "")
-           + (polygon != null ? "\n polygon [" + polygon + "]" : "")
-           + (postCode != null ? "\n postCode [" + postCode + "]" : "")
-           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
-           + (stateCounty != null ? "\n stateCounty [" + stateCounty + "]" : "")
-           + (street != null ? "\n street [" + street + "]" : "")
+           + (cityArea != null ? " cityArea [" + cityArea + "]" : "")
+           + (country != null ? " country [" + country + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (ellipse != null ? " ellipse [" + ellipse + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (point != null ? " point [" + point + "]" : "")
+           + (polygon != null ? " polygon [" + polygon + "]" : "")
+           + (postCode != null ? " postCode [" + postCode + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (stateCounty != null ? " stateCounty [" + stateCounty + "]" : "")
+           + (street != null ? " street [" + street + "]" : "")
            + "}\n  Location." + super.toString() + "\n";
   }
 

@@ -967,21 +967,21 @@ public class JammingPlan {
   @Override
   public String toString() {
     return "JammingPlan {"
-           + (jammingTarget != null ? "\n jammingTarget [" + jammingTarget + "]" : "")
-           + (level3Auth != null ? "\n level3Auth [" + level3Auth + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (numFreqs != null ? "\n numFreqs [" + numFreqs + "]" : "")
-           + (priority != null ? "\n priority [" + priority + "]" : "")
-           + (requiredEffect != null ? "\n requiredEffect [" + requiredEffect + "]" : "")
-           + (requiredPerformance != null ? "\n requiredPerformance [" + requiredPerformance + "]" : "")
-           + (standOffDist != null ? "\n standOffDist [" + standOffDist + "]" : "")
-           + (startDateTime != null ? "\n startDateTime [" + startDateTime + "]" : "")
-           + (startLocationRef != null ? "\n startLocationRef [" + startLocationRef + "]" : "")
-           + (startTrigger != null ? "\n startTrigger [" + startTrigger + "]" : "")
-           + (stopDateTime != null ? "\n stopDateTime [" + stopDateTime + "]" : "")
-           + (stopLocationRef != null ? "\n stopLocationRef [" + stopLocationRef + "]" : "")
-           + (stopTrigger != null ? "\n stopTrigger [" + stopTrigger + "]" : "")
-           + (version != null ? "\n version [" + version + "]" : "")
+           + (jammingTarget != null ? " jammingTarget [" + jammingTarget + "]" : "")
+           + (level3Auth != null ? " level3Auth [" + level3Auth + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (numFreqs != null ? " numFreqs [" + numFreqs + "]" : "")
+           + (priority != null ? " priority [" + priority + "]" : "")
+           + (requiredEffect != null ? " requiredEffect [" + requiredEffect + "]" : "")
+           + (requiredPerformance != null ? " requiredPerformance [" + requiredPerformance + "]" : "")
+           + (standOffDist != null ? " standOffDist [" + standOffDist + "]" : "")
+           + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
+           + (startLocationRef != null ? " startLocationRef [" + startLocationRef + "]" : "")
+           + (startTrigger != null ? " startTrigger [" + startTrigger + "]" : "")
+           + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
+           + (stopLocationRef != null ? " stopLocationRef [" + stopLocationRef + "]" : "")
+           + (stopTrigger != null ? " stopTrigger [" + stopTrigger + "]" : "")
+           + (version != null ? " version [" + version + "]" : "")
            + "}";
   }
 

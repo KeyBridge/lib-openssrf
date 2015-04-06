@@ -336,11 +336,11 @@ public class Polygon {
   @Override
   public String toString() {
     return "Polygon {"
-           + (altitudeMax != null ? "\n altitudeMax [" + altitudeMax + "]" : "")
-           + (altitudeMin != null ? "\n altitudeMin [" + altitudeMin + "]" : "")
-           + (excluded != null ? "\n excluded [" + excluded + "]" : "")
-           + (idx != null ? "\n idx [" + idx + "]" : "")
-           + (polygonPoint != null ? "\n polygonPoint [" + polygonPoint + "]" : "")
+           + (altitudeMax != null ? " altitudeMax [" + altitudeMax + "]" : "")
+           + (altitudeMin != null ? " altitudeMin [" + altitudeMin + "]" : "")
+           + (excluded != null ? " excluded [" + excluded + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (polygonPoint != null ? " polygonPoint [" + polygonPoint + "]" : "")
            + "}";
   }
 

@@ -233,9 +233,9 @@ public class DiagramLine {
   @Override
   public String toString() {
     return "DiagramLine {"
-           + (configID != null ? "\n configID [" + configID + "]" : "")
-           + (rxEndpointID != null ? "\n rxEndpointID [" + rxEndpointID + "]" : "")
-           + (txEndpointID != null ? "\n txEndpointID [" + txEndpointID + "]" : "")
+           + (configID != null ? " configID [" + configID + "]" : "")
+           + (rxEndpointID != null ? " rxEndpointID [" + rxEndpointID + "]" : "")
+           + (txEndpointID != null ? " txEndpointID [" + txEndpointID + "]" : "")
            + "}";
   }
 

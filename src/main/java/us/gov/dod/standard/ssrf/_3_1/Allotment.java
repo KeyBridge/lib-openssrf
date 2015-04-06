@@ -949,18 +949,18 @@ public class Allotment extends Common<Allotment> {
   @Override
   public String toString() {
     return "Allotment {"
-           + (allotFreq != null ? "\n allotFreq [" + allotFreq + "]" : "")
-           + (dateResponseRequired != null ? "\n dateResponseRequired [" + dateResponseRequired + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (emission != null ? "\n emission [" + emission + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
-           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
-           + (project != null ? "\n project [" + project + "]" : "")
-           + (requirement != null ? "\n requirement [" + requirement + "]" : "")
-           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
-           + (title != null ? "\n title [" + title + "]" : "")
-           + (usageType != null ? "\n usageType [" + usageType + "]" : "")
+           + (allotFreq != null ? " allotFreq [" + allotFreq + "]" : "")
+           + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (emission != null ? " emission [" + emission + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (project != null ? " project [" + project + "]" : "")
+           + (requirement != null ? " requirement [" + requirement + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
+           + (usageType != null ? " usageType [" + usageType + "]" : "")
            + "}\n  Allotment." + super.toString() + "\n";
   }
 

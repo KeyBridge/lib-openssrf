@@ -682,15 +682,15 @@ public class Contact extends Common<Contact> {
   @Override
   public String toString() {
     return "Contact {"
-           + (address != null ? "\n address [" + address + "]" : "")
-           + (eMail != null ? "\n eMail [" + eMail + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (firstName != null ? "\n firstName [" + firstName + "]" : "")
-           + (lastName != null ? "\n lastName [" + lastName + "]" : "")
-           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
-           + (telephoneFax != null ? "\n telephoneFax [" + telephoneFax + "]" : "")
-           + (titleRank != null ? "\n titleRank [" + titleRank + "]" : "")
+           + (address != null ? " address [" + address + "]" : "")
+           + (eMail != null ? " eMail [" + eMail + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (firstName != null ? " firstName [" + firstName + "]" : "")
+           + (lastName != null ? " lastName [" + lastName + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
+           + (titleRank != null ? " titleRank [" + titleRank + "]" : "")
            + "}\n  Contact." + super.toString() + "\n";
   }
 

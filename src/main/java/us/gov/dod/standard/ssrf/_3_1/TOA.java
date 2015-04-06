@@ -639,14 +639,14 @@ public class TOA extends Common<TOA> {
   @Override
   public String toString() {
     return "TOA {"
-           + (administration != null ? "\n administration [" + administration + "]" : "")
-           + (channelPlanRef != null ? "\n channelPlanRef [" + channelPlanRef + "]" : "")
-           + (country != null ? "\n country [" + country + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (footnote != null ? "\n footnote [" + footnote + "]" : "")
-           + (freqBand != null ? "\n freqBand [" + freqBand + "]" : "")
-           + (title != null ? "\n title [" + title + "]" : "")
+           + (administration != null ? " administration [" + administration + "]" : "")
+           + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
+           + (country != null ? " country [" + country + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (footnote != null ? " footnote [" + footnote + "]" : "")
+           + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
            + "}\n  TOA." + super.toString() + "\n";
   }
 

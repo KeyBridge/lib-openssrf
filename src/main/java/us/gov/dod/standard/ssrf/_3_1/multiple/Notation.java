@@ -473,12 +473,12 @@ public class Notation {
   @Override
   public String toString() {
     return "Notation {"
-           + (code != null ? "\n code [" + code + "]" : "")
-           + (notationTimeline != null ? "\n notationTimeline [" + notationTimeline + "]" : "")
-           + (potentialVictims != null ? "\n potentialVictims [" + potentialVictims + "]" : "")
-           + (status != null ? "\n status [" + status + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
-           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
+           + (code != null ? " code [" + code + "]" : "")
+           + (notationTimeline != null ? " notationTimeline [" + notationTimeline + "]" : "")
+           + (potentialVictims != null ? " potentialVictims [" + potentialVictims + "]" : "")
+           + (status != null ? " status [" + status + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
            + "}";
   }
 

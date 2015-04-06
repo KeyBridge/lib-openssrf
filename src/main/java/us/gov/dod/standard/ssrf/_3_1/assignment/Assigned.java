@@ -802,17 +802,17 @@ public class Assigned {
   @Override
   public String toString() {
     return "Assigned {"
-           + (colourNum != null ? "\n colourNum [" + colourNum + "]" : "")
-           + (colourWord != null ? "\n colourWord [" + colourWord + "]" : "")
-           + (freq != null ? "\n freq [" + freq + "]" : "")
-           + (freqOld != null ? "\n freqOld [" + freqOld + "]" : "")
-           + (ituRegComments != null ? "\n ituRegComments [" + ituRegComments + "]" : "")
-           + (ituRegDate != null ? "\n ituRegDate [" + ituRegDate + "]" : "")
-           + (ituRegNum != null ? "\n ituRegNum [" + ituRegNum + "]" : "")
-           + (ituRegStatus != null ? "\n ituRegStatus [" + ituRegStatus + "]" : "")
-           + (navAidsChannel != null ? "\n navAidsChannel [" + navAidsChannel + "]" : "")
-           + (netNum != null ? "\n netNum [" + netNum + "]" : "")
-           + (quality != null ? "\n quality [" + quality + "]" : "")
+           + (colourNum != null ? " colourNum [" + colourNum + "]" : "")
+           + (colourWord != null ? " colourWord [" + colourWord + "]" : "")
+           + (freq != null ? " freq [" + freq + "]" : "")
+           + (freqOld != null ? " freqOld [" + freqOld + "]" : "")
+           + (ituRegComments != null ? " ituRegComments [" + ituRegComments + "]" : "")
+           + (ituRegDate != null ? " ituRegDate [" + ituRegDate + "]" : "")
+           + (ituRegNum != null ? " ituRegNum [" + ituRegNum + "]" : "")
+           + (ituRegStatus != null ? " ituRegStatus [" + ituRegStatus + "]" : "")
+           + (navAidsChannel != null ? " navAidsChannel [" + navAidsChannel + "]" : "")
+           + (netNum != null ? " netNum [" + netNum + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
            + "}";
   }
 

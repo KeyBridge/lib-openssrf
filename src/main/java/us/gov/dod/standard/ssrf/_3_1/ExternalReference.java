@@ -802,19 +802,19 @@ public class ExternalReference extends Common<ExternalReference> {
   @Override
   public String toString() {
     return "ExternalReference {"
-           + (alternateIdentifier != null ? "\n alternateIdentifier [" + alternateIdentifier + "]" : "")
-           + (author != null ? "\n author [" + author + "]" : "")
-           + (date != null ? "\n date [" + date + "]" : "")
-           + (documentCls != null ? "\n documentCls [" + documentCls + "]" : "")
-           + (identifier != null ? "\n identifier [" + identifier + "]" : "")
-           + (isAttached != null ? "\n isAttached [" + isAttached + "]" : "")
-           + (isClassified != null ? "\n isClassified [" + isClassified + "]" : "")
-           + (organisation != null ? "\n organisation [" + organisation + "]" : "")
-           + (referencedStage != null ? "\n referencedStage [" + referencedStage + "]" : "")
-           + (repeat != null ? "\n repeat [" + repeat + "]" : "")
-           + (resourceLocator != null ? "\n resourceLocator [" + resourceLocator + "]" : "")
-           + (title != null ? "\n title [" + title + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
+           + (alternateIdentifier != null ? " alternateIdentifier [" + alternateIdentifier + "]" : "")
+           + (author != null ? " author [" + author + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + (documentCls != null ? " documentCls [" + documentCls + "]" : "")
+           + (identifier != null ? " identifier [" + identifier + "]" : "")
+           + (isAttached != null ? " isAttached [" + isAttached + "]" : "")
+           + (isClassified != null ? " isClassified [" + isClassified + "]" : "")
+           + (organisation != null ? " organisation [" + organisation + "]" : "")
+           + (referencedStage != null ? " referencedStage [" + referencedStage + "]" : "")
+           + (repeat != null ? " repeat [" + repeat + "]" : "")
+           + (resourceLocator != null ? " resourceLocator [" + resourceLocator + "]" : "")
+           + (title != null ? " title [" + title + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
            + "}\n  ExternalReference." + super.toString() + "\n";
   }
 

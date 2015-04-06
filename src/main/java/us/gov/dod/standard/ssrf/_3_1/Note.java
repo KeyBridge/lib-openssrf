@@ -351,11 +351,11 @@ public class Note extends Common<Note> {
   @Override
   public String toString() {
     return "Note {"
-           + (administration != null ? "\n administration [" + administration + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (source != null ? "\n source [" + source + "]" : "")
+           + (administration != null ? " administration [" + administration + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (source != null ? " source [" + source + "]" : "")
            + "}\n  Note." + super.toString() + "\n";
   }
 

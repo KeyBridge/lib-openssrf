@@ -306,10 +306,10 @@ public class Dataset {
   @Override
   public String toString() {
     return "Dataset {"
-           + (missingRef != null ? "\n missingRef [" + missingRef + "]" : "")
-           + (reason != null ? "\n reason [" + reason + "]" : "")
-           + (retireDate != null ? "\n retireDate [" + retireDate + "]" : "")
-           + (serial != null ? "\n serial [" + serial + "]" : "")
+           + (missingRef != null ? " missingRef [" + missingRef + "]" : "")
+           + (reason != null ? " reason [" + reason + "]" : "")
+           + (retireDate != null ? " retireDate [" + retireDate + "]" : "")
+           + (serial != null ? " serial [" + serial + "]" : "")
            + "}";
   }
 

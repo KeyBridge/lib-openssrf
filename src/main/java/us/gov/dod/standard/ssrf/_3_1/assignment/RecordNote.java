@@ -168,8 +168,8 @@ public class RecordNote {
   @Override
   public String toString() {
     return "RecordNote {"
-           + (comments != null ? "\n comments [" + comments + "]" : "")
-           + (noteRef != null ? "\n noteRef [" + noteRef + "]" : "")
+           + (comments != null ? " comments [" + comments + "]" : "")
+           + (noteRef != null ? " noteRef [" + noteRef + "]" : "")
            + "}";
   }
 

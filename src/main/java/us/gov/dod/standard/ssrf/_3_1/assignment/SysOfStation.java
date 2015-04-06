@@ -160,8 +160,8 @@ public class SysOfStation {
   @Override
   public String toString() {
     return "SysOfStation {"
-           + (numStations != null ? "\n numStations [" + numStations + "]" : "")
-           + (sysName != null ? "\n sysName [" + sysName + "]" : "")
+           + (numStations != null ? " numStations [" + numStations + "]" : "")
+           + (sysName != null ? " sysName [" + sysName + "]" : "")
            + "}";
   }
 

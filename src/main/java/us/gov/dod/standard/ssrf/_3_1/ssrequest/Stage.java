@@ -574,14 +574,14 @@ public class Stage {
   @Override
   public String toString() {
     return "Stage {"
-           + (dateApprovalRequired != null ? "\n dateApprovalRequired [" + dateApprovalRequired + "]" : "")
-           + (geoDescription != null ? "\n geoDescription [" + geoDescription + "]" : "")
-           + (numEquip != null ? "\n numEquip [" + numEquip + "]" : "")
-           + (stageLocation != null ? "\n stageLocation [" + stageLocation + "]" : "")
-           + (startDate != null ? "\n startDate [" + startDate + "]" : "")
-           + (targetDate != null ? "\n targetDate [" + targetDate + "]" : "")
-           + (terminationDate != null ? "\n terminationDate [" + terminationDate + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
+           + (dateApprovalRequired != null ? " dateApprovalRequired [" + dateApprovalRequired + "]" : "")
+           + (geoDescription != null ? " geoDescription [" + geoDescription + "]" : "")
+           + (numEquip != null ? " numEquip [" + numEquip + "]" : "")
+           + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
+           + (startDate != null ? " startDate [" + startDate + "]" : "")
+           + (targetDate != null ? " targetDate [" + targetDate + "]" : "")
+           + (terminationDate != null ? " terminationDate [" + terminationDate + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
            + "}";
   }
 

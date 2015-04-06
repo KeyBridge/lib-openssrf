@@ -213,9 +213,9 @@ public class AsgnAllotOwner {
   @Override
   public String toString() {
     return "AsgnAllotOwner {"
-           + (description != null ? "\n description [" + description + "]" : "")
-           + (ownerOrgRef != null ? "\n ownerOrgRef [" + ownerOrgRef + "]" : "")
-           + (ownerType != null ? "\n ownerType [" + ownerType + "]" : "")
+           + (description != null ? " description [" + description + "]" : "")
+           + (ownerOrgRef != null ? " ownerOrgRef [" + ownerOrgRef + "]" : "")
+           + (ownerType != null ? " ownerType [" + ownerType + "]" : "")
            + "}";
   }
 

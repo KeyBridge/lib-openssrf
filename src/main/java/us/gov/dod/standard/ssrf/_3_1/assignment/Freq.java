@@ -328,10 +328,10 @@ public class Freq extends AsgnFreqBase<Freq> {
   @Override
   public String toString() {
     return "Freq {"
-           + (legacyNum != null ? "\n legacyNum [" + legacyNum + "]" : "")
-           + (narrowBandPlanning != null ? "\n narrowBandPlanning [" + narrowBandPlanning + "]" : "")
-           + (pairedFreq != null ? "\n pairedFreq [" + pairedFreq + "]" : "")
-           + (tad != null ? "\n tad [" + tad + "]" : "")
+           + (legacyNum != null ? " legacyNum [" + legacyNum + "]" : "")
+           + (narrowBandPlanning != null ? " narrowBandPlanning [" + narrowBandPlanning + "]" : "")
+           + (pairedFreq != null ? " pairedFreq [" + pairedFreq + "]" : "")
+           + (tad != null ? " tad [" + tad + "]" : "")
            + "\n" + super.toString()
            + "}";
   }

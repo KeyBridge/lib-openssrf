@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,15 +17,20 @@ package us.gov.dod.standard.ssrf._3_1.common;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterMEMO;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterUN6;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
- * Remarks is a free text field that provides a place to add additional. In
- * certain situations, technical data must be included in free text in order to
- * clearly explain a technical or operational consideration; in these instances,
- * the data must also be entered in the data element(s) specifically established
- * for it.
+ * Remarks is a free text field that provides a place to add additional
+ * additional information applicable to a data item.
+ * <p>
+ * In certain situations, technical data must be included in free text in order
+ * to clearly explain a technical or operational consideration; in these
+ * instances, the data must also be entered in the data element(s) specifically
+ * established for it.
  * <p>
  * Element of {@link Common}
  * <p>
@@ -41,7 +46,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 @XmlType(name = "Remarks", propOrder = {"value"})
 public class Remarks {
 
+  /**
+   * A free text field that provides a place to add additional additional
+   * information applicable to a data item.
+   */
   @XmlValue
+  @XmlJavaTypeAdapter(XmlAdapterMEMO.class)
   private String value;
   /**
    * cls - Classification (Required)
@@ -67,6 +77,7 @@ public class Remarks {
    * @since 3.1.0
    */
   @XmlAttribute(name = "idx", required = true)
+  @XmlJavaTypeAdapter(XmlAdapterUN6.class)
   private BigInteger idx;
 
   /**
@@ -209,9 +220,9 @@ public class Remarks {
   @Override
   public String toString() {
     return "Remarks {"
-           + (cls != null ? "\n cls [" + cls + "]" : "")
-           + (idx != null ? "\n idx [" + idx + "]" : "")
-           + (value != null ? "\n value [" + value + "]" : "")
+           + (cls != null ? " cls [" + cls + "]" : "")
+           + (idx != null ? " idx [" + idx + "]" : "")
+           + (value != null ? " value [" + value + "]" : "")
            + "}";
   }
 

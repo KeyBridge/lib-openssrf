@@ -912,18 +912,18 @@ public class Organisation extends Common<Organisation> {
   @Override
   public String toString() {
     return "Organisation {"
-           + (address != null ? "\n address [" + address + "]" : "")
-           + (alternateName != null ? "\n alternateName [" + alternateName + "]" : "")
-           + (eMail != null ? "\n eMail [" + eMail + "]" : "")
-           + (effectiveDate != null ? "\n effectiveDate [" + effectiveDate + "]" : "")
-           + (expirationDate != null ? "\n expirationDate [" + expirationDate + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (relatedOrganisation != null ? "\n relatedOrganisation [" + relatedOrganisation + "]" : "")
-           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
-           + (roleRef != null ? "\n roleRef [" + roleRef + "]" : "")
-           + (telephoneFax != null ? "\n telephoneFax [" + telephoneFax + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
-           + (uic != null ? "\n uic [" + uic + "]" : "")
+           + (address != null ? " address [" + address + "]" : "")
+           + (alternateName != null ? " alternateName [" + alternateName + "]" : "")
+           + (eMail != null ? " eMail [" + eMail + "]" : "")
+           + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
+           + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (relatedOrganisation != null ? " relatedOrganisation [" + relatedOrganisation + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (roleRef != null ? " roleRef [" + roleRef + "]" : "")
+           + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (uic != null ? " uic [" + uic + "]" : "")
            + "}\n  Organisation." + super.toString() + "\n";
   }
 

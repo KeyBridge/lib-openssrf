@@ -331,11 +331,11 @@ public class JammingPerformance {
   @Override
   public String toString() {
     return "JammingPerformance {"
-           + (actualEffect != null ? "\n actualEffect [" + actualEffect + "]" : "")
-           + (actualPerformance != null ? "\n actualPerformance [" + actualPerformance + "]" : "")
-           + (continuousUpdate != null ? "\n continuousUpdate [" + continuousUpdate + "]" : "")
-           + (desiredEffect != null ? "\n desiredEffect [" + desiredEffect + "]" : "")
-           + (desiredPerformance != null ? "\n desiredPerformance [" + desiredPerformance + "]" : "")
+           + (actualEffect != null ? " actualEffect [" + actualEffect + "]" : "")
+           + (actualPerformance != null ? " actualPerformance [" + actualPerformance + "]" : "")
+           + (continuousUpdate != null ? " continuousUpdate [" + continuousUpdate + "]" : "")
+           + (desiredEffect != null ? " desiredEffect [" + desiredEffect + "]" : "")
+           + (desiredPerformance != null ? " desiredPerformance [" + desiredPerformance + "]" : "")
            + "}";
   }
 

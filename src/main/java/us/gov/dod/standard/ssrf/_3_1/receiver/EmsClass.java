@@ -778,18 +778,18 @@ public class EmsClass {
   @Override
   public String toString() {
     return "EmsClass {"
-           + (availability != null ? "\n availability [" + availability + "]" : "")
-           + (cls != null ? "\n cls [" + cls + "]" : "")
-           + (explainInformationTypeX != null ? "\n explainInformationTypeX [" + explainInformationTypeX + "]" : "")
-           + (explainModulationTypeX != null ? "\n explainModulationTypeX [" + explainModulationTypeX + "]" : "")
-           + (explainNatureOfSignalX != null ? "\n explainNatureOfSignalX [" + explainNatureOfSignalX + "]" : "")
-           + (extReferences != null ? "\n extReferences [" + extReferences + "]" : "")
-           + (idref != null ? "\n idref [" + idref + "]" : "")
-           + (legacyReleasability != null ? "\n legacyReleasability [" + legacyReleasability + "]" : "")
-           + (quality != null ? "\n quality [" + quality + "]" : "")
-           + (recommendedValue != null ? "\n recommendedValue [" + recommendedValue + "]" : "")
-           + (remarks != null ? "\n remarks [" + remarks + "]" : "")
-           + (value != null ? "\n value [" + value + "]" : "")
+           + (availability != null ? " availability [" + availability + "]" : "")
+           + (cls != null ? " cls [" + cls + "]" : "")
+           + (explainInformationTypeX != null ? " explainInformationTypeX [" + explainInformationTypeX + "]" : "")
+           + (explainModulationTypeX != null ? " explainModulationTypeX [" + explainModulationTypeX + "]" : "")
+           + (explainNatureOfSignalX != null ? " explainNatureOfSignalX [" + explainNatureOfSignalX + "]" : "")
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (idref != null ? " idref [" + idref + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           + (remarks != null ? " remarks [" + remarks + "]" : "")
+           + (value != null ? " value [" + value + "]" : "")
            + "}";
   }
 

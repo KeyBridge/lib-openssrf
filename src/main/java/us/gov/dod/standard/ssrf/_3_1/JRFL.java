@@ -902,18 +902,18 @@ public class JRFL extends Common<JRFL> {
   @Override
   public String toString() {
     return "JRFL {"
-           + (daysOfMonth != null ? "\n daysOfMonth [" + daysOfMonth + "]" : "")
-           + (daysOfWeek != null ? "\n daysOfWeek [" + daysOfWeek + "]" : "")
-           + (duration != null ? "\n duration [" + duration + "]" : "")
-           + (effectiveDateTime != null ? "\n effectiveDateTime [" + effectiveDateTime + "]" : "")
-           + (expirationDateTime != null ? "\n expirationDateTime [" + expirationDateTime + "]" : "")
-           + (hours != null ? "\n hours [" + hours + "]" : "")
-           + (jrflEntry != null ? "\n jrflEntry [" + jrflEntry + "]" : "")
-           + (minutes != null ? "\n minutes [" + minutes + "]" : "")
-           + (months != null ? "\n months [" + months + "]" : "")
-           + (reviewDate != null ? "\n reviewDate [" + reviewDate + "]" : "")
-           + (seconds != null ? "\n seconds [" + seconds + "]" : "")
-           + (years != null ? "\n years [" + years + "]" : "")
+           + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+           + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+           + (duration != null ? " duration [" + duration + "]" : "")
+           + (effectiveDateTime != null ? " effectiveDateTime [" + effectiveDateTime + "]" : "")
+           + (expirationDateTime != null ? " expirationDateTime [" + expirationDateTime + "]" : "")
+           + (hours != null ? " hours [" + hours + "]" : "")
+           + (jrflEntry != null ? " jrflEntry [" + jrflEntry + "]" : "")
+           + (minutes != null ? " minutes [" + minutes + "]" : "")
+           + (months != null ? " months [" + months + "]" : "")
+           + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
+           + (seconds != null ? " seconds [" + seconds + "]" : "")
+           + (years != null ? " years [" + years + "]" : "")
            + "}\n  JRFL." + super.toString() + "\n";
   }
 

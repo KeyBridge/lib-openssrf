@@ -272,10 +272,10 @@ public class SubcarrierTone {
   @Override
   public String toString() {
     return "SubcarrierTone {"
-           + (duration != null ? "\n duration [" + duration + "]" : "")
-           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
+           + (duration != null ? " duration [" + duration + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
            + "}";
   }
 

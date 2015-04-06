@@ -257,10 +257,10 @@ public class ObservedPulseValues {
   @Override
   public String toString() {
     return "ObservedPulseValues {"
-           + (observedPDValue != null ? "\n observedPDValue [" + observedPDValue + "]" : "")
-           + (observedPRFValue != null ? "\n observedPRFValue [" + observedPRFValue + "]" : "")
-           + (observedPRIValue != null ? "\n observedPRIValue [" + observedPRIValue + "]" : "")
-           + (statisticalIndicator != null ? "\n statisticalIndicator [" + statisticalIndicator + "]" : "")
+           + (observedPDValue != null ? " observedPDValue [" + observedPDValue + "]" : "")
+           + (observedPRFValue != null ? " observedPRFValue [" + observedPRFValue + "]" : "")
+           + (observedPRIValue != null ? " observedPRIValue [" + observedPRIValue + "]" : "")
+           + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")
            + "}";
   }
 

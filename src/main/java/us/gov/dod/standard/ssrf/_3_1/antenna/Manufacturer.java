@@ -152,8 +152,8 @@ public class Manufacturer {
   @Override
   public String toString() {
     return "Manufacturer {"
-           + (country != null ? "\n country [" + country + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
+           + (country != null ? " country [" + country + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
            + "}";
   }
 

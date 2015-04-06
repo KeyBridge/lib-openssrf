@@ -394,11 +394,11 @@ public class ObservedLobeAnalysis {
   @Override
   public String toString() {
     return "ObservedLobeAnalysis {"
-           + (beamType != null ? "\n beamType [" + beamType + "]" : "")
-           + (lobeID != null ? "\n lobeID [" + lobeID + "]" : "")
-           + (lobeName != null ? "\n lobeName [" + lobeName + "]" : "")
-           + (lobeSymmetric != null ? "\n lobeSymmetric [" + lobeSymmetric + "]" : "")
-           + (observedLobeValues != null ? "\n observedLobeValues [" + observedLobeValues + "]" : "")
+           + (beamType != null ? " beamType [" + beamType + "]" : "")
+           + (lobeID != null ? " lobeID [" + lobeID + "]" : "")
+           + (lobeName != null ? " lobeName [" + lobeName + "]" : "")
+           + (lobeSymmetric != null ? " lobeSymmetric [" + lobeSymmetric + "]" : "")
+           + (observedLobeValues != null ? " observedLobeValues [" + observedLobeValues + "]" : "")
            + "}";
   }
 

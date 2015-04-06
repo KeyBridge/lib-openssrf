@@ -243,9 +243,9 @@ public class AtWaypoint {
   @Override
   public String toString() {
     return "AtWaypoint {"
-           + (dateTime != null ? "\n dateTime [" + dateTime + "]" : "")
-           + (speed != null ? "\n speed [" + speed + "]" : "")
-           + (waypointIdx != null ? "\n waypointIdx [" + waypointIdx + "]" : "")
+           + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
+           + (speed != null ? " speed [" + speed + "]" : "")
+           + (waypointIdx != null ? " waypointIdx [" + waypointIdx + "]" : "")
            + "}";
   }
 

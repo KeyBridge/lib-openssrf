@@ -389,12 +389,12 @@ public class TxSignalTuning {
   @Override
   public String toString() {
     return "TxSignalTuning {"
-           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
-           + (lowestUsableChannel != null ? "\n lowestUsableChannel [" + lowestUsableChannel + "]" : "")
-           + (minSeparation != null ? "\n minSeparation [" + minSeparation + "]" : "")
-           + (numPresetChannels != null ? "\n numPresetChannels [" + numPresetChannels + "]" : "")
-           + (tuningStep != null ? "\n tuningStep [" + tuningStep + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (lowestUsableChannel != null ? " lowestUsableChannel [" + lowestUsableChannel + "]" : "")
+           + (minSeparation != null ? " minSeparation [" + minSeparation + "]" : "")
+           + (numPresetChannels != null ? " numPresetChannels [" + numPresetChannels + "]" : "")
+           + (tuningStep != null ? " tuningStep [" + tuningStep + "]" : "")
            + "}";
   }
 

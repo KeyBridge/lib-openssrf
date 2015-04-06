@@ -463,9 +463,9 @@ public class ConfigEmission {
   @Override
   public String toString() {
     return "ConfigEmission {"
-           + (emsClass != null ? "\n emsClass [" + emsClass + "]" : "")
-           + (necessaryBwMax != null ? "\n necessaryBwMax [" + necessaryBwMax + "]" : "")
-           + (necessaryBwMin != null ? "\n necessaryBwMin [" + necessaryBwMin + "]" : "")
+           + (emsClass != null ? " emsClass [" + emsClass + "]" : "")
+           + (necessaryBwMax != null ? " necessaryBwMax [" + necessaryBwMax + "]" : "")
+           + (necessaryBwMin != null ? " necessaryBwMin [" + necessaryBwMin + "]" : "")
            + "}";
   }
 

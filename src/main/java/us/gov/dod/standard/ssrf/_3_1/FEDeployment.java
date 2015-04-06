@@ -989,20 +989,20 @@ public class FEDeployment extends Common<FEDeployment> {
   @Override
   public String toString() {
     return "FEDeployment {"
-           + (atWaypoint != null ? "\n atWaypoint [" + atWaypoint + "]" : "")
-           + (daysOfMonth != null ? "\n daysOfMonth [" + daysOfMonth + "]" : "")
-           + (daysOfWeek != null ? "\n daysOfWeek [" + daysOfWeek + "]" : "")
-           + (duration != null ? "\n duration [" + duration + "]" : "")
-           + (feRef != null ? "\n feRef [" + feRef + "]" : "")
-           + (hours != null ? "\n hours [" + hours + "]" : "")
-           + (locationRef != null ? "\n locationRef [" + locationRef + "]" : "")
-           + (minutes != null ? "\n minutes [" + minutes + "]" : "")
-           + (months != null ? "\n months [" + months + "]" : "")
-           + (num != null ? "\n num [" + num + "]" : "")
-           + (project != null ? "\n project [" + project + "]" : "")
-           + (seconds != null ? "\n seconds [" + seconds + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
-           + (years != null ? "\n years [" + years + "]" : "")
+           + (atWaypoint != null ? " atWaypoint [" + atWaypoint + "]" : "")
+           + (daysOfMonth != null ? " daysOfMonth [" + daysOfMonth + "]" : "")
+           + (daysOfWeek != null ? " daysOfWeek [" + daysOfWeek + "]" : "")
+           + (duration != null ? " duration [" + duration + "]" : "")
+           + (feRef != null ? " feRef [" + feRef + "]" : "")
+           + (hours != null ? " hours [" + hours + "]" : "")
+           + (locationRef != null ? " locationRef [" + locationRef + "]" : "")
+           + (minutes != null ? " minutes [" + minutes + "]" : "")
+           + (months != null ? " months [" + months + "]" : "")
+           + (num != null ? " num [" + num + "]" : "")
+           + (project != null ? " project [" + project + "]" : "")
+           + (seconds != null ? " seconds [" + seconds + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
+           + (years != null ? " years [" + years + "]" : "")
            + "}\n  FEDeployment." + super.toString() + "\n";
   }
 

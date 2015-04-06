@@ -164,8 +164,8 @@ public class TxModeRef {
   @Override
   public String toString() {
     return "TxModeRef {"
-           + (modeID != null ? "\n modeID [" + modeID + "]" : "")
-           + (powerLimit != null ? "\n powerLimit [" + powerLimit + "]" : "")
+           + (modeID != null ? " modeID [" + modeID + "]" : "")
+           + (powerLimit != null ? " powerLimit [" + powerLimit + "]" : "")
            + "}";
   }
 

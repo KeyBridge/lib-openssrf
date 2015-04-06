@@ -223,9 +223,9 @@ public class ObservedERPValues {
   @Override
   public String toString() {
     return "ObservedERPValues {"
-           + (erpDwell != null ? "\n erpDwell [" + erpDwell + "]" : "")
-           + (erpValue != null ? "\n erpValue [" + erpValue + "]" : "")
-           + (statisticalIndicator != null ? "\n statisticalIndicator [" + statisticalIndicator + "]" : "")
+           + (erpDwell != null ? " erpDwell [" + erpDwell + "]" : "")
+           + (erpValue != null ? " erpValue [" + erpValue + "]" : "")
+           + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")
            + "}";
   }
 

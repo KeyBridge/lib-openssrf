@@ -364,11 +364,11 @@ public class CommentSource {
   @Override
   public String toString() {
     return "CommentSource {"
-           + (author != null ? "\n author [" + author + "]" : "")
-           + (comment != null ? "\n comment [" + comment + "]" : "")
-           + (date != null ? "\n date [" + date + "]" : "")
-           + (jobTitle != null ? "\n jobTitle [" + jobTitle + "]" : "")
-           + (source != null ? "\n source [" + source + "]" : "")
+           + (author != null ? " author [" + author + "]" : "")
+           + (comment != null ? " comment [" + comment + "]" : "")
+           + (date != null ? " date [" + date + "]" : "")
+           + (jobTitle != null ? " jobTitle [" + jobTitle + "]" : "")
+           + (source != null ? " source [" + source + "]" : "")
            + "}";
   }
 

@@ -195,8 +195,8 @@ public class ChannelPlan extends Common<ChannelPlan> {
   @Override
   public String toString() {
     return "ChannelPlan {"
-           + (channel != null ? "\n channel [" + channel + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
+           + (channel != null ? " channel [" + channel + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
            + "}\n  ChannelPlan." + super.toString() + "\n";
   }
 

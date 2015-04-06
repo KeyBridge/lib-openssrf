@@ -246,9 +246,9 @@ public class Message extends Common<Message> {
   @Override
   public String toString() {
     return "Message {"
-           + (datasetRef != null ? "\n datasetRef [" + datasetRef + "]" : "")
-           + (name != null ? "\n name [" + name + "]" : "")
-           + (secondaryDatasets != null ? "\n secondaryDatasets [" + secondaryDatasets + "]" : "")
+           + (datasetRef != null ? " datasetRef [" + datasetRef + "]" : "")
+           + (name != null ? " name [" + name + "]" : "")
+           + (secondaryDatasets != null ? " secondaryDatasets [" + secondaryDatasets + "]" : "")
            + "}\n  Message." + super.toString() + "\n";
   }
 

@@ -672,15 +672,15 @@ public class SecurityClass {
   @Override
   public String toString() {
     return "SecurityClass {"
-           + (clsAuthority != null ? "\n clsAuthority [" + clsAuthority + "]" : "")
-           + (clsDerived != null ? "\n clsDerived [" + clsDerived + "]" : "")
-           + (clsOrg != null ? "\n clsOrg [" + clsOrg + "]" : "")
-           + (clsReason != null ? "\n clsReason [" + clsReason + "]" : "")
-           + (declsDate != null ? "\n declsDate [" + declsDate + "]" : "")
-           + (declsEvent != null ? "\n declsEvent [" + declsEvent + "]" : "")
-           + (declsType != null ? "\n declsType [" + declsType + "]" : "")
-           + (downgrade != null ? "\n downgrade [" + downgrade + "]" : "")
-           + (sourceClsDate != null ? "\n sourceClsDate [" + sourceClsDate + "]" : "")
+           + (clsAuthority != null ? " clsAuthority [" + clsAuthority + "]" : "")
+           + (clsDerived != null ? " clsDerived [" + clsDerived + "]" : "")
+           + (clsOrg != null ? " clsOrg [" + clsOrg + "]" : "")
+           + (clsReason != null ? " clsReason [" + clsReason + "]" : "")
+           + (declsDate != null ? " declsDate [" + declsDate + "]" : "")
+           + (declsEvent != null ? " declsEvent [" + declsEvent + "]" : "")
+           + (declsType != null ? " declsType [" + declsType + "]" : "")
+           + (downgrade != null ? " downgrade [" + downgrade + "]" : "")
+           + (sourceClsDate != null ? " sourceClsDate [" + sourceClsDate + "]" : "")
            + "}";
   }
 

@@ -284,10 +284,10 @@ public class AntFreqs {
   @Override
   public String toString() {
     return "AntFreqs {"
-           + (bandwidth != null ? "\n bandwidth [" + bandwidth + "]" : "")
-           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
-           + (freqUse != null ? "\n freqUse [" + freqUse + "]" : "")
+           + (bandwidth != null ? " bandwidth [" + bandwidth + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (freqUse != null ? " freqUse [" + freqUse + "]" : "")
            + "}";
   }
 

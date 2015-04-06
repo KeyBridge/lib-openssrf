@@ -1051,20 +1051,20 @@ public class Transmitter extends Common<Transmitter> {
   @Override
   public String toString() {
     return "Transmitter {"
-           + (curve != null ? "\n curve [" + curve + "]" : "")
-           + (deployment != null ? "\n deployment [" + deployment + "]" : "")
-           + (duplexSep != null ? "\n duplexSep [" + duplexSep + "]" : "")
-           + (duplexSepType != null ? "\n duplexSepType [" + duplexSepType + "]" : "")
-           + (fccAcceptanceNum != null ? "\n fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
-           + (filter != null ? "\n filter [" + filter + "]" : "")
-           + (generic != null ? "\n generic [" + generic + "]" : "")
-           + (nomenclature != null ? "\n nomenclature [" + nomenclature + "]" : "")
-           + (outputDevice != null ? "\n outputDevice [" + outputDevice + "]" : "")
-           + (outputDeviceType != null ? "\n outputDeviceType [" + outputDeviceType + "]" : "")
-           + (pocInformation != null ? "\n pocInformation [" + pocInformation + "]" : "")
-           + (tspr != null ? "\n tspr [" + tspr + "]" : "")
-           + (txMode != null ? "\n txMode [" + txMode + "]" : "")
-           + (usingCountries != null ? "\n usingCountries [" + usingCountries + "]" : "")
+           + (curve != null ? " curve [" + curve + "]" : "")
+           + (deployment != null ? " deployment [" + deployment + "]" : "")
+           + (duplexSep != null ? " duplexSep [" + duplexSep + "]" : "")
+           + (duplexSepType != null ? " duplexSepType [" + duplexSepType + "]" : "")
+           + (fccAcceptanceNum != null ? " fccAcceptanceNum [" + fccAcceptanceNum + "]" : "")
+           + (filter != null ? " filter [" + filter + "]" : "")
+           + (generic != null ? " generic [" + generic + "]" : "")
+           + (nomenclature != null ? " nomenclature [" + nomenclature + "]" : "")
+           + (outputDevice != null ? " outputDevice [" + outputDevice + "]" : "")
+           + (outputDeviceType != null ? " outputDeviceType [" + outputDeviceType + "]" : "")
+           + (pocInformation != null ? " pocInformation [" + pocInformation + "]" : "")
+           + (tspr != null ? " tspr [" + tspr + "]" : "")
+           + (txMode != null ? " txMode [" + txMode + "]" : "")
+           + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
            + "}\n  Transmitter." + super.toString() + "\n";
   }
 

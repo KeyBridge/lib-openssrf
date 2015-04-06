@@ -1064,21 +1064,21 @@ public class TxModulation extends RxModulation {
   @Override
   public String toString() {
     return "TxModulation {"
-           + (amIdx != null ? "\n amIdx [" + amIdx + "]" : "")
-           + (amrmsIdx != null ? "\n amrmsIdx [" + amrmsIdx + "]" : "")
-           + (carrierSuppression != null ? "\n carrierSuppression [" + carrierSuppression + "]" : "")
-           + (fmDeviationCode != null ? "\n fmDeviationCode [" + fmDeviationCode + "]" : "")
-           + (fmPeakFreqDev != null ? "\n fmPeakFreqDev [" + fmPeakFreqDev + "]" : "")
-           + (fmPeakModulationIdx != null ? "\n fmPeakModulationIdx [" + fmPeakModulationIdx + "]" : "")
-           + (fmrmsFreqDev != null ? "\n fmrmsFreqDev [" + fmrmsFreqDev + "]" : "")
-           + (keysAngle != null ? "\n keysAngle [" + keysAngle + "]" : "")
-           + (keysDesc != null ? "\n keysDesc [" + keysDesc + "]" : "")
-           + (maxDevRatio != null ? "\n maxDevRatio [" + maxDevRatio + "]" : "")
-           + (muxLevel != null ? "\n muxLevel [" + muxLevel + "]" : "")
-           + (muxScheme != null ? "\n muxScheme [" + muxScheme + "]" : "")
-           + (sidebandSuppressed != null ? "\n sidebandSuppressed [" + sidebandSuppressed + "]" : "")
-           + (sidebandSuppression != null ? "\n sidebandSuppression [" + sidebandSuppression + "]" : "")
-           + (symbolSize != null ? "\n symbolSize [" + symbolSize + "]" : "")
+           + (amIdx != null ? " amIdx [" + amIdx + "]" : "")
+           + (amrmsIdx != null ? " amrmsIdx [" + amrmsIdx + "]" : "")
+           + (carrierSuppression != null ? " carrierSuppression [" + carrierSuppression + "]" : "")
+           + (fmDeviationCode != null ? " fmDeviationCode [" + fmDeviationCode + "]" : "")
+           + (fmPeakFreqDev != null ? " fmPeakFreqDev [" + fmPeakFreqDev + "]" : "")
+           + (fmPeakModulationIdx != null ? " fmPeakModulationIdx [" + fmPeakModulationIdx + "]" : "")
+           + (fmrmsFreqDev != null ? " fmrmsFreqDev [" + fmrmsFreqDev + "]" : "")
+           + (keysAngle != null ? " keysAngle [" + keysAngle + "]" : "")
+           + (keysDesc != null ? " keysDesc [" + keysDesc + "]" : "")
+           + (maxDevRatio != null ? " maxDevRatio [" + maxDevRatio + "]" : "")
+           + (muxLevel != null ? " muxLevel [" + muxLevel + "]" : "")
+           + (muxScheme != null ? " muxScheme [" + muxScheme + "]" : "")
+           + (sidebandSuppressed != null ? " sidebandSuppressed [" + sidebandSuppressed + "]" : "")
+           + (sidebandSuppression != null ? " sidebandSuppression [" + sidebandSuppression + "]" : "")
+           + (symbolSize != null ? " symbolSize [" + symbolSize + "]" : "")
            + "}";
   }
 

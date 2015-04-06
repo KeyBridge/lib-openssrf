@@ -158,8 +158,8 @@ public class StockNum {
   @Override
   public String toString() {
     return "StockNum {"
-           + (stockNum != null ? "\n stockNum [" + stockNum + "]" : "")
-           + (type != null ? "\n type [" + type + "]" : "")
+           + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
+           + (type != null ? " type [" + type + "]" : "")
            + "}";
   }
 

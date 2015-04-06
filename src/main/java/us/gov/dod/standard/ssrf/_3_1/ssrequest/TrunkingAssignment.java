@@ -356,11 +356,11 @@ public class TrunkingAssignment {
   @Override
   public String toString() {
     return "TrunkingAssignment {"
-           + (agencySerialNum != null ? "\n agencySerialNum [" + agencySerialNum + "]" : "")
-           + (freqMax != null ? "\n freqMax [" + freqMax + "]" : "")
-           + (freqMin != null ? "\n freqMin [" + freqMin + "]" : "")
-           + (isRelinquished != null ? "\n isRelinquished [" + isRelinquished + "]" : "")
-           + (relinquishmentDate != null ? "\n relinquishmentDate [" + relinquishmentDate + "]" : "")
+           + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
+           + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
+           + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
+           + (isRelinquished != null ? " isRelinquished [" + isRelinquished + "]" : "")
+           + (relinquishmentDate != null ? " relinquishmentDate [" + relinquishmentDate + "]" : "")
            + "}";
   }
 
