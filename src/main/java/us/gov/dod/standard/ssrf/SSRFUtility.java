@@ -608,9 +608,9 @@ public class SSRFUtility {
    * into their proper location and prepares the SSRF destination instance for
    * export.
    * <p>
-   * @param sourceInstance the SSRF working copy
-   * @param rootInstance   the root SSRF instance into which the components are
-   *                       copied into their proper destination
+   * @param sourceInstance the current object instance to inspect
+   * @param rootInstance   the root SSRF/SMADEF object instance into which the
+   *                       source instance components are copied
    */
   @SuppressWarnings("AssignmentToMethodParameter")
   public static void prepare(Object sourceInstance, Object rootInstance) {
@@ -695,7 +695,7 @@ public class SSRFUtility {
           if (implementsPrepare(entryCandidate)) {
             preparablObjects.add(entryCandidate);
           } else {
-            prepare(entryCandidate, rootInstance);
+            prepare(entryCandidate, rootInstance); // recurse
             addValueToDestinationInstance(entryCandidate, rootInstance);
           }
         }
@@ -713,7 +713,7 @@ public class SSRFUtility {
           /**
            * Recurse into the class instance.
            */
-          prepare(preparableObject, rootInstance);
+          prepare(preparableObject, rootInstance); // recurse
           /**
            * After recursion try adding the value to the destination (root SSRF)
            * instance.
@@ -722,13 +722,14 @@ public class SSRFUtility {
         }
       } else {
         /**
-         * Same process as above except working on single instances and not set
-         * entries. If the object instance implements prepare() then invoke it.
+         * Same process as above except working on single instances and not
+         * Collection entries. If the object instance implements prepare() then
+         * invoke it.
          */
         if (implementsPrepare(fieldValue)) {
           invokePrepare(fieldValue);
         }
-        prepare(fieldValue, rootInstance);
+        prepare(fieldValue, rootInstance); // recurse
         addValueToDestinationInstance(fieldValue, rootInstance);
       }
     }
@@ -744,12 +745,13 @@ public class SSRFUtility {
    * accepts the source object instance class type. If found the source object
    * instance is added to the destination object instance.
    * <p>
-   * @param sourceInstance      the source object instance to add to the
-   *                            destination object instance
-   * @param destinationInstance the destination object instance to which the
-   *                            source object instance is to be added
+   * @param commonInstance the source object instance to add to the destination
+   *                       object instance. Ignored if does not extend
+   *                       {@link Common}.
+   * @param rootInstance   the {@link Common} root instance to which the source
+   *                       object instance is to be added
    */
-  private static void addValueToDestinationInstance(Object sourceInstance, Object destinationInstance) {
+  private static void addValueToDestinationInstance(Object commonInstance, Object rootInstance) {
     /**
      * SchemaRoot only contains sets of object instances that extend Common.
      * Simplify and speed up processing by only trying to add SSRF object
@@ -759,12 +761,15 @@ public class SSRFUtility {
      * NullPointerException here just in case the sourceInstance is null.
      */
     try {
-      if (Common.class.equals(sourceInstance.getClass().getSuperclass())) {
-        Method method = destinationInstance.getClass().getMethod("with" + sourceInstance.getClass().getSimpleName(), Set.class);
-        method.invoke(destinationInstance, new HashSet<>(Arrays.asList(new Object[]{sourceInstance})));
+      if (Common.class.equals(commonInstance.getClass().getSuperclass())) {
+        Method method = rootInstance.getClass().getMethod("with" + commonInstance.getClass().getSimpleName(), Collection.class);
+        method.invoke(rootInstance, Arrays.asList(new Object[]{commonInstance}));
+//        System.out.println("SSRFUtility.addValueToDestinationInstance " + commonInstance.getClass().getSimpleName());
       }
     } catch (NullPointerException | NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-      //      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex );
+      logger.log(Level.WARNING, "Failed to add {0} value to SSRF root instance:  {1}", new Object[]{commonInstance.getClass().getSimpleName(), ex.getMessage()});
+//      System.err.println("ERROR SSRFUtility.addValueToDestinationInstance " + commonInstance.getClass().getSimpleName() + "  " + ex.getMessage());
+//      Logger.getLogger(SSRFUtility.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
 
