@@ -156,7 +156,7 @@ public class ObservedPolarisationValues {
    */
   @Override
   public String toString() {
-    return "ObservedPolarisationValues {"
+    return "\n  ObservedPolarisationValues {"
            + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")
            + (tiltAngleValue != null ? " tiltAngleValue [" + tiltAngleValue + "]" : "")
            + "}";

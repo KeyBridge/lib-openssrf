@@ -2210,7 +2210,7 @@ public class ObservedScanAnalysis {
    */
   @Override
   public String toString() {
-    return "ObservedScanAnalysis {"
+    return "\n  ObservedScanAnalysis {"
            + (azBoresightAngle != null ? " azBoresightAngle [" + azBoresightAngle + "]" : "")
            + (azScanChangeRate != null ? " azScanChangeRate [" + azScanChangeRate + "]" : "")
            + (azScanRateExtremeMax != null ? " azScanRateExtremeMax [" + azScanRateExtremeMax + "]" : "")

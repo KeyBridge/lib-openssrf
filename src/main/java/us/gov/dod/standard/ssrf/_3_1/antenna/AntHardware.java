@@ -292,7 +292,7 @@ public class AntHardware {
    */
   @Override
   public String toString() {
-    return "AntHardware {"
+    return "\n  AntHardware {"
            + (connectorType != null ? " connectorType [" + connectorType + "]" : "")
            + (feedOrientation != null ? " feedOrientation [" + feedOrientation + "]" : "")
            + (feedType != null ? " feedType [" + feedType + "]" : "")

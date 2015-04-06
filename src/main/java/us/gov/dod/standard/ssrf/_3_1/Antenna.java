@@ -1459,7 +1459,7 @@ public class Antenna extends Common<Antenna> {
    */
   @Override
   public String toString() {
-    return "Antenna {"
+    return "\n  Antenna {"
            + (antHardware != null ? " antHardware [" + antHardware + "]" : "")
            + (antMode != null ? " antMode [" + antMode + "]" : "")
            + (antType != null ? " antType [" + antType + "]" : "")
@@ -1482,7 +1482,7 @@ public class Antenna extends Common<Antenna> {
            + (vertSidelobeAttenuation != null ? " vertSidelobeAttenuation [" + vertSidelobeAttenuation + "]" : "")
            + (vertSidelobeElev != null ? " vertSidelobeElev [" + vertSidelobeElev + "]" : "")
            + (vertSidelobeSuppressed != null ? " vertSidelobeSuppressed [" + vertSidelobeSuppressed + "]" : "")
-           + "}\n  Antenna." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

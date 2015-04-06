@@ -683,7 +683,7 @@ public class ObservedLobeValues {
    */
   @Override
   public String toString() {
-    return "ObservedLobeValues {"
+    return "\n  ObservedLobeValues {"
            + (horzBwMax != null ? " horzBwMax [" + horzBwMax + "]" : "")
            + (horzBwMin != null ? " horzBwMin [" + horzBwMin + "]" : "")
            + (lobeValueAngleAccuracy != null ? " lobeValueAngleAccuracy [" + lobeValueAngleAccuracy + "]" : "")

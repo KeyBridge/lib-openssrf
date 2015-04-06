@@ -2303,7 +2303,7 @@ public class AntMode {
    */
   @Override
   public String toString() {
-    return "AntMode {"
+    return "\n  AntMode {"
            + (antEfficiency != null ? " antEfficiency [" + antEfficiency + "]" : "")
            + (antFreqs != null ? " antFreqs [" + antFreqs + "]" : "")
            + (antGain != null ? " antGain [" + antGain + "]" : "")

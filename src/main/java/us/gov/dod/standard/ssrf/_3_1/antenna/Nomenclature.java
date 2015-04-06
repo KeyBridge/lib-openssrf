@@ -362,7 +362,7 @@ public class Nomenclature {
    */
   @Override
   public String toString() {
-    return "Nomenclature {"
+    return "\n  Nomenclature {"
            + (level != null ? " level [" + level + "]" : "")
            + (manufacturer != null ? " manufacturer [" + manufacturer + "]" : "")
            + (name != null ? " name [" + name + "]" : "")

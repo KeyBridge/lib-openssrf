@@ -1517,7 +1517,7 @@ public class ObservedPolarisationAnalysis {
    */
   @Override
   public String toString() {
-    return "ObservedPolarisationAnalysis {"
+    return "\n  ObservedPolarisationAnalysis {"
            + (axialRatio != null ? " axialRatio [" + axialRatio + "]" : "")
            + (numTiltAngleElements != null ? " numTiltAngleElements [" + numTiltAngleElements + "]" : "")
            + (numTiltAnglePositions != null ? " numTiltAnglePositions [" + numTiltAnglePositions + "]" : "")

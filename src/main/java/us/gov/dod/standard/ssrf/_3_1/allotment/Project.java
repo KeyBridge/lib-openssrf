@@ -217,7 +217,7 @@ public class Project {
    */
   @Override
   public String toString() {
-    return "Project {"
+    return "\n  Project {"
            + (description != null ? " description [" + description + "]" : "")
            + (name != null ? " name [" + name + "]" : "")
            + (type != null ? " type [" + type + "]" : "")

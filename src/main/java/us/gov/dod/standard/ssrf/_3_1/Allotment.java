@@ -948,7 +948,7 @@ public class Allotment extends Common<Allotment> {
    */
   @Override
   public String toString() {
-    return "Allotment {"
+    return "\n  Allotment {"
            + (allotFreq != null ? " allotFreq [" + allotFreq + "]" : "")
            + (dateResponseRequired != null ? " dateResponseRequired [" + dateResponseRequired + "]" : "")
            + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
@@ -961,7 +961,7 @@ public class Allotment extends Common<Allotment> {
            + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
            + (title != null ? " title [" + title + "]" : "")
            + (usageType != null ? " usageType [" + usageType + "]" : "")
-           + "}\n  Allotment." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**
@@ -1082,7 +1082,7 @@ public class Allotment extends Common<Allotment> {
     }
     for (Location instance : root.getLocation()) {
       if (locationRef.contains(instance.getSerial())) {
-        location.add(instance);
+        getLocation().add(instance);
       }
     }
   }//</editor-fold>

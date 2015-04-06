@@ -409,7 +409,7 @@ public class AllotFreq {
    */
   @Override
   public String toString() {
-    return "AllotFreq {"
+    return "\n  AllotFreq {"
            + (allotChannel != null ? " allotChannel [" + allotChannel + "]" : "")
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
            + (freqMin != null ? " freqMin [" + freqMin + "]" : "")

@@ -349,12 +349,12 @@ public class Administrative extends Common<Administrative> {
    */
   @Override
   public String toString() {
-    return "Administrative {"
+    return "\n  Administrative {"
            + (action != null ? " action [" + action + "]" : "")
            + (codeList != null ? " codeList [" + codeList + "]" : "")
            + (dataset != null ? " dataset [" + dataset + "]" : "")
            + (messageRef != null ? " messageRef [" + messageRef + "]" : "")
-           + "}\n  Administrative." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

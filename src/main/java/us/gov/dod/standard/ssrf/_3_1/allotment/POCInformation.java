@@ -234,7 +234,7 @@ public class POCInformation {
    */
   @Override
   public String toString() {
-    return "POCInformation {"
+    return "\n  POCInformation {"
            + (description != null ? " description [" + description + "]" : "")
            + (serial != null ? " serial [" + serial + "]" : "")
            + (type != null ? " type [" + type + "]" : "")

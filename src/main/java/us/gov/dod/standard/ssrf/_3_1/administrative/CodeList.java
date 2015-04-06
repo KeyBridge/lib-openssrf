@@ -418,7 +418,7 @@ public class CodeList {
    */
   @Override
   public String toString() {
-    return "CodeList {"
+    return "\n  CodeList {"
            + (action != null ? " action [" + action + "]" : "")
            + (code != null ? " code [" + code + "]" : "")
            + (codeListCode != null ? " codeListCode [" + codeListCode + "]" : "")
