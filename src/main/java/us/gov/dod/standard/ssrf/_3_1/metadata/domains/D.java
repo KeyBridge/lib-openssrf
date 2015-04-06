@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +15,7 @@
  */
 package us.gov.dod.standard.ssrf._3_1.metadata.domains;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -143,7 +144,12 @@ public class D extends AMetadata<D> implements Comparable<D> {
    */
   @Override
   public String toString() {
-    return this.value != null ? this.value.toString() : null;
+    if (value != null) {
+      SimpleDateFormat sdf = new SimpleDateFormat(PATTERN);
+      sdf.setCalendar(value);
+      return sdf.format(value.getTime());
+    }
+    return null;
   }
 
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
