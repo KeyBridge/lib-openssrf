@@ -86,11 +86,6 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
   private final Integer maxInclusive;
 
   /**
-   * The decimal format pattern defined by the total and fraction digit count.
-   */
-  private DecimalFormat df;
-
-  /**
    * Construct a new Number adapter. The minimum and maximum inclusive values
    * are not set, supporting unsigned, unbound numbers within the digit count.
    * <p>
@@ -122,22 +117,38 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
     this.fractionDigits = fractionDigits;
     this.minInclusive = minInclusive;
     this.maxInclusive = maxInclusive;
-    /**
-     * Build a DecimalFormat if configured.
-     */
-    if (totalDigits != null && fractionDigits != null) {
-      StringBuilder sb = new StringBuilder();
-      for (int i = 0; i < totalDigits; i++) {
-        sb.append("#");
-        if (i == (totalDigits - fractionDigits - 1)) {
-          sb.append(".");
-        }
-      }
-      /**
-       * Require zeros on either side of the decimal point.
-       */
-      this.df = new DecimalFormat(sb.toString().replace("#.#", "0.0"));
+  }
+
+  /**
+   * Internal method to build a Decimal Format based upon the total available
+   * digits and the input value. Produces a decimal format pattern defined by
+   * the total and fraction digit count.
+   * <p>
+   * @param v the input value to marshal
+   * @return a decimal format pattern
+   */
+  private DecimalFormat buildDecimalFormat(Number v) {
+    if (totalDigits == null || fractionDigits == null) {
+      return new DecimalFormat("#");
     }
+    int digitCount = getDigitCount(new BigInteger(String.valueOf(v.intValue())));
+    int totalCount = digitCount + fractionDigits > totalDigits
+                     ? totalDigits
+                     : digitCount + fractionDigits;
+    int fractionCount = digitCount > (totalDigits - fractionDigits)
+                        ? totalDigits - digitCount
+                        : fractionDigits;
+    /**
+     * Require zeros on either side of the decimal point.
+     */
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < totalCount; i++) {
+      sb.append("#");
+      if (i == (totalCount - fractionCount - 1)) {
+        sb.append(".");
+      }
+    }
+    return new DecimalFormat(sb.toString().replace("#.#", "0.0"));
   }
 
   /**
@@ -157,9 +168,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
      * If there is no configured decimal format then print a plain, normal (non
      * scientific notation) number.
      */
-    return df != null
-           ? df.format(convert(v))
-           : new DecimalFormat("###").format(convert(v));
+    return buildDecimalFormat(convert(v)).format(v);
   }
 
   /**
@@ -194,15 +203,15 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
      * Validate the max/min values.
      */
     if (minInclusive != null && v.doubleValue() < minInclusive) {
-      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + ": max " + minInclusive + " exceeded by " + v + ".");
+      throw new Exception("Minimum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + ": min " + minInclusive + " exceeded by " + v + ".");
     }
     if (maxInclusive != null && v.doubleValue() > maxInclusive) {
-      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + ": min " + maxInclusive + " exceeded by " + v + ".");
+      throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "") + ": max " + maxInclusive + " exceeded by " + v + ".");
     }
-    if (maxInclusive == null && v.doubleValue() > getMaxValue().doubleValue()) {
+    if (maxInclusive == null && v.doubleValue() > getMaxInclusive().doubleValue()) {
       throw new Exception("Maximum value violation " + this.getClass().getSimpleName().replace(NAME_PREFIX, "")
                           + " pattern "
-                          + (df != null ? df.toPattern() : (totalDigits - (fractionDigits != null ? fractionDigits : 0)) + "." + (fractionDigits != null ? fractionDigits : 0))
+                          + buildDecimalFormat(v).toPattern()
                           + " exceeded.");
     }
     /**
@@ -252,7 +261,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * <p>
    * @return the maximum allowed value. Integer.MAX_VALUE if not set.
    */
-  public Number getMaxValue() {
+  public Number getMaxInclusive() {
     /**
      * Calculate the maximum value from digits by calculating the exponent - 1 .
      * For example: a three digit allowance will be calculated as 10 ^ 3 minus 1
@@ -277,9 +286,9 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * <p>
    * @return the minimum allowed value. Integer.MIN_VALUE if not set.
    */
-  public Number getMinValue() {
+  public Number getMinInclusive() {
     if (minInclusive != null) {
-      return maxInclusive;
+      return minInclusive;
     } else if (totalDigits != null) {
       return minInclusive != null
              ? minInclusive
