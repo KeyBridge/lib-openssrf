@@ -71,11 +71,16 @@ public class SSRFTestUtility {
      */
     Common<?> instance = ssrfType.getClazz().getConstructor().newInstance();
     /**
-     * MIN Fill it with known good values.
+     * MAX Fill it with known good values.
      */
     fill(instance, true);
+    /**
+     * Place the instance into a SSRF document.
+     */
     SSRF ssrf = buildSSRF(instance);
-
+    /**
+     * Validate and inspect the SSRF document.
+     */
     try {
       Set<String> detect = SSRFTestUtility.validate(ssrf);
       if (detect.isEmpty()) {
@@ -89,7 +94,9 @@ public class SSRFTestUtility {
         saveFile(ssrf, ssrfType, true, false);
       }
     } catch (Exception exception) {
-      System.out.println("  FAIL: " + ssrfType.getClassSimpleName() + " " + testName + "  " + " " + exception.getMessage());
+      System.out.println("  EXCEPT: " + ssrfType.getClassSimpleName() + " " + testName + "  " + " " + exception.getMessage());
+      logger.log(Level.SEVERE, null, exception);
+//      System.out.println(ssrf);
       saveFile(ssrf, ssrfType, true, false);
     }
   }
@@ -147,6 +154,8 @@ public class SSRFTestUtility {
     fill(instance, false);
     SSRF ssrf = buildSSRF(instance);
     testNegativeFill(ssrf, ssrfType, "Minimum Negative Fill Test");
+
+//    System.out.println("testMinimumNegativeFill");    System.out.println(ssrf);    System.out.println("");
   }
 
   /**
@@ -165,6 +174,8 @@ public class SSRFTestUtility {
     fill(instance, true);
     SSRF ssrf = buildSSRF(instance);
     testNegativeFill(ssrf, ssrfType, "Maximum Negative Fill Test");
+
+//    System.out.println("testMaximumNegativeFill");    System.out.println(ssrf);    System.out.println("");
   }
 
   /**
@@ -180,13 +191,13 @@ public class SSRFTestUtility {
     /**
      * Corrupt various randomly selected fields in the object tree.
      */
-    Set<String> corrupt = SSRFTestUtility.corrupt(ssrf);
+    Set<String> corruptedErrors = SSRFTestUtility.corrupt(ssrf);
     /**
      * Detect the corrupted fields.
      */
-    Set<String> detect;
+    Set<String> detectErrors;
     try {
-      detect = SSRFTestUtility.validate(ssrf, corrupt.size()); // throws xmllint exception
+      detectErrors = SSRFTestUtility.validate(ssrf, corruptedErrors.size()); // throws xmllint exception
     } catch (Exception exception) {
       System.out.println("  FAIL: " + ssrfType.getClassSimpleName() + " " + testName + "  " + exception.getMessage());
       return;
@@ -197,7 +208,7 @@ public class SSRFTestUtility {
     Map<String, String> keyMap = new TreeMap<>();
     Set<String> corruptSet = new HashSet<>();
     Pattern p = Pattern.compile("(.*) \\((\\w+)\\) ");
-    for (String line : corrupt) {
+    for (String line : corruptedErrors) {
       Matcher m = p.matcher(line);
       if (m.find()) {
         keyMap.put(m.group(1), m.group(2));
@@ -205,7 +216,7 @@ public class SSRFTestUtility {
       }
     }
     Set<String> detectSet = new HashSet<>();
-    for (String line : detect) {
+    for (String line : detectErrors) {
       Matcher m = p.matcher(line);
       if (m.find()) {
         keyMap.put(m.group(1), m.group(2));
@@ -217,8 +228,8 @@ public class SSRFTestUtility {
      * Set the OK flag to FALSE if the two sets do not match. Do not consider
      * SETS as the contents may have shifted but are still OK.
      */
+    Set<String> undetected = new HashSet<>();
     for (Map.Entry<String, String> entry : keyMap.entrySet()) {
-
       if (entry.getValue().startsWith("UN") && !entry.getValue().contains("_")) {
         /**
          * Ignore unconstrained UNsigned digits.
@@ -232,6 +243,9 @@ public class SSRFTestUtility {
       }
       if (!"Set".equals(entry.getValue())) {
         ok = ok && detectSet.contains(entry.getKey());
+        if (!detectSet.contains(entry.getKey())) {
+          undetected.add(entry.getKey());
+        }
       }
     }
     /**
@@ -240,7 +254,14 @@ public class SSRFTestUtility {
     if (ok) {
       System.out.println("  PASS: " + ssrfType.getClassSimpleName() + " " + testName);
     } else {
-      System.out.println("  FAIL: " + ssrfType.getClassSimpleName() + " " + testName + "  Result requires manual inspection.");
+      if (detectErrors.isEmpty()) {
+        System.out.println("  FAIL: " + ssrfType.getClassSimpleName() + " " + testName + "  Result requires manual inspection.");
+        return;
+      }
+      /**
+       * Pass and print the mis-matched results.
+       */
+      System.out.println("  CHECK: " + ssrfType.getClassSimpleName() + " " + testName + "  Result requires manual inspection.");
 //      System.out.println("");
       /**
        * Pretty-Print the results.
@@ -253,13 +274,17 @@ public class SSRFTestUtility {
                                        "DET",
                                        "Type",
                                        "FieldName"));
-      for (Map.Entry<String, String> entry : keyMap.entrySet()) {
+      for (String key : undetected) {
+//      }
+//      for (Map.Entry<String, String> entry : keyMap.entrySet()) {
         System.out.println(String.format("    %4d %5s %5s %-20s %-50s",
                                          i,
-                                         corruptSet.contains(entry.getKey()) ? "  " : "ND",
-                                         detectSet.contains(entry.getKey()) ? "  " : "ND",
-                                         entry.getValue(),
-                                         entry.getKey()
+                                         corruptSet.contains(key) ? "  " : "ND",
+                                         detectSet.contains(key) ? "  " : "ND",
+                                         keyMap.get(key),
+                                         key
+        //                                         entry.getValue(),
+        //                                         entry.getKey()
         ));
         i++;
       }
@@ -286,12 +311,39 @@ public class SSRFTestUtility {
       }
       Path file = Files.createTempFile(dir, ssrfType.getClassSimpleName() + "-", "-" + (max ? "max" : "min") + ".xml");
       Files.write(file, xml.getBytes());
+//      System.out.println("  WROTE FILE " + file);
     } catch (Exception ex) {
 //      System.err.println("FAILED to save SSRF " + ssrfType.getClassSimpleName() + " to file. " + ex.getMessage());
 //      Logger.getLogger(SSRFTestUtility.class.getName()).log(Level.SEVERE, null, ex);
-      for (String evaluate : ssrf.evaluate()) {
-        System.out.println("    " + evaluate);
+//      for (String evaluate : ssrf.evaluate()) {
+//        System.out.println(" XML ERROR    " + evaluate);
+//      }
+      saveFileBad(ssrf, ssrfType, max);
+    }
+  }
+
+  /**
+   * Save a invalid SSRF object to a file.
+   * <p>
+   * @param ssrf     the ssrf object
+   * @param ssrfType the ssrf data type
+   * @param pass     if the test passes or fails
+   */
+  private static void saveFileBad(SSRF ssrf, EDatasetType ssrfType, boolean max) {
+    try {
+      Path dir = Paths.get("/tmp",
+                           "certification",
+                           "xml",
+                           ssrfType.getClassSimpleName(),
+                           "fail");
+      if (!dir.toFile().exists()) {
+        dir.toFile().mkdirs();
       }
+      Path file = Files.createTempFile(dir, ssrfType.getClassSimpleName() + "-", "-" + (max ? "max" : "min") + ".xml");
+      Files.write(file, ssrf.toString().getBytes());
+    } catch (Exception ex) {
+//      System.err.println("FAILED to save SSRF " + ssrfType.getClassSimpleName() + " to file. " + ex.getMessage());
+      Logger.getLogger(SSRFTestUtility.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
 
@@ -377,6 +429,7 @@ public class SSRFTestUtility {
      * private) and populate each according to its annotated configuration.
      */
     for (Field field : fields) {
+//      System.out.println("DEBUG FILL field " + field.getDeclaringClass().getSimpleName() + "." + field.getName());
       /**
        * Important: Enable access to the Object instance fields (public,
        * protected and private).
@@ -386,6 +439,12 @@ public class SSRFTestUtility {
        * Skip if the field is already populated
        */
       if (field.get(instance) != null) {
+        continue;
+      }
+      /**
+       * Do not try to populate a field referencing the Common abstract type.
+       */
+      if (field.getType().equals(Common.class)) {
         continue;
       }
       /**
@@ -477,10 +536,26 @@ public class SSRFTestUtility {
        */
       if (maximum && SSRFUtility.isTransient(field)) {
         Class<?> c = field.getType();
+        /**
+         * to prevent a recursive StackOverflowError only fill the transient
+         * reference objects with a MINIMUM fill
+         */
         if (c.equals(Set.class)) {
-          Object fieldSet = getFillSet(clazz, field, false);
+          Object fieldSet = getFillSet(clazz, field, false); // minimum fill
           field.set(instance, fieldSet);
         } else {
+          String fieldClassName = field.getType().toString().replace("class ", "").trim();
+          Class<?> fieldClass = Class.forName(fieldClassName);
+          /**
+           * Do not try to a field referencing the Common abstract type.
+           */
+          if (fieldClass.equals(Common.class)) {
+            continue;
+          }
+          Object fieldInstance = fieldClass.getConstructor().newInstance();
+          if (fieldInstance != null) {
+            SSRFTestUtility.fill(fieldInstance, false); // minimum  fill
+          }
           Object fillObject = getFillObject(clazz, field);
           field.set(instance, fillObject);
         }
@@ -594,8 +669,8 @@ public class SSRFTestUtility {
            * to PRIVATE. Safe to ignore since serial references are handled
            * separately via Transient lists.
            */
-//        System.err.println("ERROR FAIL: " + clazz.getSimpleName() + " " + field.getName() + " " + fieldClass.getSimpleName() + " instance " + ex.getMessage());
-//        logger.log(Level.SEVERE, null, ex);
+          System.err.println("ERROR FAILED TO BUILD SET: " + clazz.getSimpleName() + " " + field.getName() + " " + fieldClass.getSimpleName() + " instance " + ex.getMessage());
+          logger.log(Level.SEVERE, null, ex);
         }
       }
     }
@@ -655,24 +730,24 @@ public class SSRFTestUtility {
             }
 
             if (fieldType.equals(BigInteger.class) || fieldType.equals(Integer.class)) {
-              Number value = getTestInteger(((AXmlAdapterNumber) adapter).getMaxValue(),
-                                            ((AXmlAdapterNumber) adapter).getMinValue());
+              Number value = getTestInteger(((AXmlAdapterNumber) adapter).getMaxInclusive(),
+                                            ((AXmlAdapterNumber) adapter).getMinInclusive());
               try {
                 return fieldType.getConstructor(Number.class).newInstance(value);
               } catch (Exception exception) {
                 return fieldType.getConstructor(String.class).newInstance(value.toString());
               }
             } else if (fieldType.equals(BigDecimal.class) || fieldType.equals(Double.class)) {
-              Double value = getTestDouble(((AXmlAdapterNumber) adapter).getMaxValue(),
-                                           ((AXmlAdapterNumber) adapter).getMinValue());
+              Double value = getTestDouble(((AXmlAdapterNumber) adapter).getMaxInclusive(),
+                                           ((AXmlAdapterNumber) adapter).getMinInclusive());
               try {
                 return fieldType.getConstructor(Double.class).newInstance(value);
               } catch (Exception exception) {
                 return fieldType.getConstructor(String.class).newInstance(value.toString());
               }
             } else {
-              Double value = getTestDouble(((AXmlAdapterNumber) adapter).getMaxValue(),
-                                           ((AXmlAdapterNumber) adapter).getMinValue());
+              Double value = getTestDouble(((AXmlAdapterNumber) adapter).getMaxInclusive(),
+                                           ((AXmlAdapterNumber) adapter).getMinInclusive());
               try {
                 return fieldType.getConstructor(Number.class).newInstance(value);
               } catch (Exception exception) {
@@ -885,7 +960,7 @@ public class SSRFTestUtility {
     Random r = new Random();
     for (int i = 0; i < 1000; i++) {
       Double candidate = r.nextInt(maxValue.intValue()) * r.nextDouble();
-      if (candidate <= maxValue.intValue() && candidate >= minValue.intValue()) {
+      if (candidate <= maxValue.doubleValue() && candidate >= minValue) {
         return candidate;
       }
     }
@@ -1216,7 +1291,7 @@ public class SSRFTestUtility {
      * Scan the field annotations looking for an XmlJavaTypeAdapter instance.
      */
     if (instance instanceof String) {
-      return instance.toString() + "_BOGUS_TEXT";
+      return instance.toString() + "_INVALID_TEXT_" + generateRandomString(12);
     } else if (instance instanceof BigDecimal) {
       return BigDecimal.valueOf(Double.MAX_VALUE);
     } else if (instance instanceof BigInteger) {
@@ -1228,5 +1303,22 @@ public class SSRFTestUtility {
      * Just null out the field.
      */
     return instance;
+  }
+
+  /**
+   * Generate a random character string
+   * <p>
+   * @param length the length of the string to be produced
+   * @return a String of the indicated length
+   */
+  private static String generateRandomString(int length) {
+    String alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int N = alphabet.length();
+    Random r = new Random();
+    StringBuilder sb = new StringBuilder(length);
+    for (int i = 0; i < length; i++) {
+      sb.append(alphabet.charAt(r.nextInt(N)));
+    }
+    return sb.toString();
   }
 }

@@ -24,7 +24,6 @@ public class TOATest extends TestCase {
   public TOATest(String testName) {
     super(testName);
   }
-  //<editor-fold defaultstate="collapsed" desc="comment">
 
   /**
    * Test a MAX-fill record with a GOOD configuration.
@@ -33,7 +32,7 @@ public class TOATest extends TestCase {
    */
   public void testMaximumPositiveFill() throws Exception {
     SSRFTestUtility.testMaximumPositiveFill(EDatasetType.TA);
-  }//</editor-fold>
+  }
 
   /**
    * Test a MIN-fill record with a GOOD configuration.
@@ -61,5 +60,4 @@ public class TOATest extends TestCase {
   public void testMinimumNegativeFill() throws Exception {
     SSRFTestUtility.testMinimumNegativeFill(EDatasetType.TA);
   }
-
 }

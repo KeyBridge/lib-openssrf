@@ -18,10 +18,12 @@ package us.gov.dod.standard.ssrf._3_1;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.Set;
 import junit.framework.TestCase;
 import us.gov.dod.standard.ssrf.SSRFTestUtility;
 import us.gov.dod.standard.ssrf.SSRFUtility;
+import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterFREQM;
 import us.gov.dod.standard.ssrf._3_1.assignment.Assigned;
 import us.gov.dod.standard.ssrf._3_1.common.ExtReferenceRef;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -35,7 +37,28 @@ public class MiscTest extends TestCase {
   public MiscTest() {
   }
 
-  public void testSuperClass() throws Exception {
+  public void testAdapter() throws Exception {
+    XmlAdapterFREQM adapter = new XmlAdapterFREQM();
+    Number n;
+//            = 25213532.3219061530409284092384;
+    n = 177102387.22020063;
+    String string = adapter.marshal(n);
+    System.out.println(n + " marshals to " + string);
+
+    DecimalFormat df = new DecimalFormat("#######.#########");
+    System.out.println("number: " + df.format(177102387.22020063));
+
+  }
+
+  public void _testAdapter() throws Exception {
+    XmlAdapterFREQM adapter = new XmlAdapterFREQM();
+    Number n = 25213932.3219061530409284092384;
+    String string = adapter.marshal(n);
+    System.out.println(n + " marshals to " + string);
+
+  }
+
+  public void _testSuperClass() throws Exception {
 //    Assigned a = new Assigned();
 //    SSRFTestUtility.fill(a, true);
 

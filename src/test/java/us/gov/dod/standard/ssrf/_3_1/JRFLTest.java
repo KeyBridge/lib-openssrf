@@ -23,19 +23,19 @@ import us.gov.dod.standard.ssrf.SSRFTestUtility;
  *
  * @author jesse
  */
-public class ChannelPlanTest extends TestCase {
+public class JRFLTest extends TestCase {
 
-  public ChannelPlanTest() {
+  public JRFLTest() {
   }
 
-  //<editor-fold defaultstate="collapsed" desc="Certification Test for ChannelPlan">
+  //<editor-fold defaultstate="collapsed" desc="Certification Test for JRFL">
   /**
    * Test a MAX-fill record with a GOOD configuration.
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMaximumPositiveFill_CP() throws Exception {
-    SSRFTestUtility.testMaximumPositiveFill(EDatasetType.CP);
+  public void testMaximumPositiveFill_JR() throws Exception {
+    SSRFTestUtility.testMaximumPositiveFill(EDatasetType.JR);
   }
 
   /**
@@ -43,8 +43,8 @@ public class ChannelPlanTest extends TestCase {
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMinimumPositiveFill_CP() throws Exception {
-    SSRFTestUtility.testMinimumPositiveFill(EDatasetType.CP);
+  public void testMinimumPositiveFill_JR() throws Exception {
+    SSRFTestUtility.testMinimumPositiveFill(EDatasetType.JR);
   }
 
   /**
@@ -52,8 +52,8 @@ public class ChannelPlanTest extends TestCase {
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMaximumNegativeFill_CP() throws Exception {
-    SSRFTestUtility.testMaximumNegativeFill(EDatasetType.CP);
+  public void testMaximumNegativeFill_JR() throws Exception {
+    SSRFTestUtility.testMaximumNegativeFill(EDatasetType.JR);
   }
 
   /**
@@ -61,7 +61,7 @@ public class ChannelPlanTest extends TestCase {
    * <p>
    * @throws Exception if the SSRF document fails to validate.
    */
-  public void testMinimumNegativeFill_CP() throws Exception {
-    SSRFTestUtility.testMinimumNegativeFill(EDatasetType.CP);
+  public void testMinimumNegativeFill_JR() throws Exception {
+    SSRFTestUtility.testMinimumNegativeFill(EDatasetType.JR);
   }//</editor-fold>
 }
