@@ -105,7 +105,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlAttribute(name = "cls", required = true)
-  private ListCCL cls;
+  protected ListCCL cls;
   /**
    * Serial - Serial (Required)
    * <p>
@@ -138,7 +138,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "Serial", required = true)
-  private Serial serial;
+  protected Serial serial;
   /**
    * EntryDateTime - Entry Date/Time (Required)
    * <p>
@@ -152,7 +152,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "EntryDateTime", required = true)
-  private DT entryDateTime;
+  protected DT entryDateTime;
 
   //<editor-fold defaultstate="collapsed" desc="Optional Element Fields">
   /**
@@ -165,7 +165,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "LastObservedBy", required = false)
-  private S50 lastObservedBy;
+  protected S50 lastObservedBy;
   /**
    * US:ObservedFirstDateTime - Initial Signal Detected Timestamp (Optional)
    * <p>
@@ -177,7 +177,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedFirstDateTime", required = false)
-  private DT observedFirstDateTime;
+  protected DT observedFirstDateTime;
   /**
    * US:ObservedLastDateTime - Last Signal Detected Timestamp (Optional)
    * <p>
@@ -189,7 +189,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedLastDateTime", required = false)
-  private DT observedLastDateTime;
+  protected DT observedLastDateTime;
   /**
    * US:ApprovedBy - Last Approval Person (Optional)
    * <p>
@@ -201,7 +201,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "ApprovedBy", required = false)
-  private S50 approvedBy;
+  protected S50 approvedBy;
   /**
    * US:ApprovedDateTime - Last Approval Timestamp (Optional)
    * <p>
@@ -213,7 +213,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "ApprovedDateTime", required = false)
-  private DT approvedDateTime;
+  protected DT approvedDateTime;
   /**
    * In Data Item Redacted (US), indicate if any original, or authoritative,
    * data was omitted. Supports datasets which have some data withheld by the
@@ -222,7 +222,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "Redacted", required = false)
-  private TString redacted;
+  protected TString redacted;
   /**
    * EntryBy - Creator Role (Optional)
    * <p>
@@ -235,7 +235,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "EntryBy", required = false)
-  private Serial entryBy;
+  protected Serial entryBy;
   /**
    * Owner - Role which Owns the Dataset (Optional)
    * <p>
@@ -249,7 +249,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "Owner", required = false)
-  private Serial owner;
+  protected Serial owner;
   /**
    * LastChangeDateTime - Latest Modification Date/Time (Optional)
    * <p>
@@ -262,7 +262,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "LastChangeDateTime", required = false)
-  private DT lastChangeDateTime;
+  protected DT lastChangeDateTime;
   /**
    * LastChangeBy - Last Modifier Role (Optional)
    * <p>
@@ -275,7 +275,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "LastChangeBy", required = false)
-  private Serial lastChangeBy;
+  protected Serial lastChangeBy;
   /**
    * LastReviewDate - Last Review Date (Optional)
    * <p>
@@ -288,7 +288,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "LastReviewDate", required = false)
-  private D lastReviewDate;
+  protected D lastReviewDate;
   /**
    * LastReviewBy - Last Review Person RoleRef (Optional)
    * <p>
@@ -301,7 +301,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "LastReviewBy", required = false)
-  private Serial lastReviewBy;
+  protected Serial lastReviewBy;
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
    * <p>
@@ -315,7 +315,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "ModAllowedBy", required = false)
-  private Serial modAllowedBy;
+  protected Serial modAllowedBy;
   /**
    * State - Dataset Status (Optional)
    * <p>
@@ -326,7 +326,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "State", required = false)
-  private TString state;
+  protected TString state;
   /**
    * Description - General Dataset Description (Optional)
    * <p>
@@ -337,7 +337,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
-  private S500 description;
+  protected S500 description;
   /**
    * US:SecurityClass (Optional)
    * <p>
@@ -347,7 +347,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "SecurityClass")
-  private SecurityClass securityClass;
+  protected SecurityClass securityClass;
   /**
    * CaseNum (Optional)
    * <p>
@@ -357,7 +357,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "CaseNum")
-  private Set<CaseNum> caseNum;
+  protected Set<CaseNum> caseNum;
   /**
    * ExtReferenceRef (Optional)
    * <p>
@@ -367,7 +367,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "ExtReferenceRef", nillable = true)
-  private Set<ExtReferenceRef> extReferenceRef;
+  protected Set<ExtReferenceRef> extReferenceRef;
   /**
    * remarks - additional information applicable to this data item. (Optional)
    * <p>
@@ -382,7 +382,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "Remarks", nillable = true)
-  private Set<Remarks> remarks;//</editor-fold>
+  protected Set<Remarks> remarks;//</editor-fold>
 
   //<editor-fold defaultstate="collapsed" desc="Optional Attribute Fields">
   /**
@@ -400,7 +400,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlList
   @XmlAttribute(name = "releasability")
-  private Set<ListCCY> releasability;
+  protected Set<ListCCY> releasability;
   /**
    * remarks - Links to Data Item Remarks (Optional)
    * <p>
@@ -412,7 +412,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlList
   @XmlAttribute(name = "remarks")
-  private Set<BigInteger> remarkRef;
+  protected Set<BigInteger> remarkRef;
   /**
    * extReferences - Links to External References (Optional)
    * <p>
@@ -425,7 +425,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlList
   @XmlAttribute(name = "extReferences")
-  private Set<BigInteger> extReferences;
+  protected Set<BigInteger> extReferences;
   /**
    * US:legacyReleasability - Legacy Releasability (Optional)
    * <p>
@@ -439,7 +439,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlAttribute(name = "legacyReleasability")
-  private String legacyReleasability;
+  protected String legacyReleasability;
   /**
    * US:quality - Data Quality (Optional)
    * <p>
@@ -452,7 +452,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlAttribute(name = "quality")
-  private String quality;
+  protected String quality;
   /**
    * US:recommendedValue - Recommended Value (Optional)
    * <p>
@@ -463,7 +463,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlAttribute(name = "recommendedValue")
-  private String recommendedValue;
+  protected String recommendedValue;
   /**
    * idref - Data Item ID (Optional)
    * <p>
@@ -479,7 +479,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlAttribute(name = "idref")
-  private String idref;//</editor-fold>
+  protected String idref;//</editor-fold>
 
   /**
    * Abstract constructor for the Common class type.
@@ -2092,7 +2092,7 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @Override
   public String toString() {
-    return "  Common {"
+    return "\n    Common {"
            // attributes
            + (cls != null ? " cls [" + cls + "]" : "") // required
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
@@ -2155,7 +2155,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Role entryByRole;
+  protected Role entryByRole;
   /**
    * Owner - Role which Owns the Dataset (Optional)
    * <p>
@@ -2169,7 +2169,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Role ownerRole;
+  protected Role ownerRole;
   /**
    * LastChangeBy - Last Modifier Role (Optional)
    * <p>
@@ -2182,7 +2182,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Role lastChangeByRole;
+  protected Role lastChangeByRole;
   /**
    * LastReviewBy - Last Review Person RoleRef (Optional)
    * <p>
@@ -2195,7 +2195,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Role lastReviewByRole;
+  protected Role lastReviewByRole;
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
    * <p>
@@ -2209,7 +2209,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlTransient
-  private Role modAllowedByRole;
+  protected Role modAllowedByRole;
 
   /**
    * Get the serial of the Role which is creating the current dataset.
