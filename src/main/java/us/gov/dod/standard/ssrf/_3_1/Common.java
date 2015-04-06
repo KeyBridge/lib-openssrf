@@ -154,7 +154,7 @@ public abstract class Common<T> implements Comparable<T> {
   @XmlElement(name = "EntryDateTime", required = true)
   private DT entryDateTime;
 
-  //<editor-fold defaultstate="collapsed" desc="Optional Bean Fields">
+  //<editor-fold defaultstate="collapsed" desc="Optional Element Fields">
   /**
    * US:LastObservedBy - Last Observed By (Optional)
    * <p>
@@ -382,7 +382,9 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   @XmlElement(name = "Remarks", nillable = true)
-  private Set<Remarks> remarks;
+  private Set<Remarks> remarks;//</editor-fold>
+
+  //<editor-fold defaultstate="collapsed" desc="Optional Attribute Fields">
   /**
    * releasability - Releasability Markings (Optional)
    * <p>
@@ -1272,7 +1274,9 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get
+   * Get remarks - Links to Data Item Remarks (Optional)
+   * <p>
+   * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * @return a {@link BigInteger} instance
    * @since 3.1.0
@@ -1937,7 +1941,9 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set
+   * Set remarks - Links to Data Item Remarks (Optional)
+   * <p>
+   * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * @param values One or more instances of type {@link BigInteger...}
    * @return The current Common object instance
@@ -1951,7 +1957,9 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set
+   * Set remarks - Links to Data Item Remarks (Optional)
+   * <p>
+   * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * @param values A collection of {@link RemarkRef} instances
    * @return The current Common object instance
@@ -1962,6 +1970,19 @@ public abstract class Common<T> implements Comparable<T> {
       getRemarkRef().addAll(values);
     }
     return (T) this;
+  }
+
+  /**
+   * Set a single remark - Links to Data Item Remarks (Optional)
+   * <p>
+   * A list of Common/Remarks idx values applicable to the current data item.
+   * <p>
+   * @param remark A collection of {@link RemarkRef} instances
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withRemarkRef(Remarks remark) {
+    return withRemarkRef(remark.getIdx());
   }
 
   /**
@@ -1992,6 +2013,18 @@ public abstract class Common<T> implements Comparable<T> {
       getExtReferences().addAll(values);
     }
     return (T) this;
+  }
+
+  /**
+   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * data item.
+   * <p>
+   * @param extReference A collection of {@link ExtReferences} instances
+   * @return The current Common object instance
+   * @since 3.1.0
+   */
+  public T withExtReferences(ExtReferenceRef extReference) {
+    return withExtReferences(extReference.getIdx());
   }
 
   /**
@@ -2059,32 +2092,34 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @Override
   public String toString() {
-    return "Common {"
+    return "  Common {"
+           // attributes
+           + (cls != null ? " cls [" + cls + "]" : "") // required
+           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+           + (releasability != null ? " releasability [" + releasability + "]" : "")
+           + (idref != null ? " idref [" + idref + "]" : "")
+           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+           + (quality != null ? " quality [" + quality + "]" : "")
+           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+           // elements
            + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
            + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
            + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-           + (cls != null ? " cls [" + cls + "]" : "")
            + (description != null ? " description [" + description + "]" : "")
            + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
            + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
            + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (idref != null ? " idref [" + idref + "]" : "")
            + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
            + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
            + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
            + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
            + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
            + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
            + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
            + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
            + (owner != null ? " owner [" + owner + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
            + (redacted != null ? " redacted [" + redacted + "]" : "")
-           + (releasability != null ? " releasability [" + releasability + "]" : "")
-           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
            + (remarks != null ? " remarks [" + remarks + "]" : "")
            + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
            + (serial != null ? " serial [" + serial + "]" : "")
@@ -2161,7 +2196,6 @@ public abstract class Common<T> implements Comparable<T> {
    */
   @XmlTransient
   private Role lastReviewByRole;
-
   /**
    * ModAllowedBy - Role Allowed to Modify (Optional)
    * <p>
