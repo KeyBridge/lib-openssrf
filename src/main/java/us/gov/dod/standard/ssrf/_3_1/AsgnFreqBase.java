@@ -39,19 +39,19 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
   Freq.class
 })
 @SuppressWarnings("unchecked")
-public abstract class AsgnFreqBase<T> {
+public abstract class AsgnFreqBase {
 
   @XmlElement(name = "FreqMin", required = true)
-  private FreqM freqMin;
+  protected FreqM freqMin;
 
   @XmlElement(name = "FreqMax", required = false)
-  private FreqM freqMax;
+  protected FreqM freqMax;
 
   @XmlElement(name = "RefFreq", required = false)
-  private FreqM refFreq;
+  protected FreqM refFreq;
 
   @XmlElement(name = "FreqUse", required = false)
-  private TString freqUse;
+  protected TString freqUse;
 
   /**
    * Get .
@@ -178,9 +178,9 @@ public abstract class AsgnFreqBase<T> {
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public T withFreqMin(Double value) {
+  public AsgnFreqBase withFreqMin(Double value) {
     setFreqMin(new FreqM(value));
-    return (T) this;
+    return this;
   }
 
   /**
@@ -190,9 +190,9 @@ public abstract class AsgnFreqBase<T> {
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public T withFreqMax(Double value) {
+  public AsgnFreqBase withFreqMax(Double value) {
     setFreqMax(new FreqM(value));
-    return (T) this;
+    return this;
   }
 
   /**
@@ -202,9 +202,9 @@ public abstract class AsgnFreqBase<T> {
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public T withRefFreq(Double value) {
+  public AsgnFreqBase withRefFreq(Double value) {
     setRefFreq(new FreqM(value));
-    return (T) this;
+    return this;
   }
 
   /**
@@ -214,9 +214,9 @@ public abstract class AsgnFreqBase<T> {
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
    */
-  public T withFreqUse(ListCAU value) {
+  public AsgnFreqBase withFreqUse(ListCAU value) {
     setFreqUse(new TString(value.value()));
-    return (T) this;
+    return this;
   }
 
   /**
@@ -226,7 +226,7 @@ public abstract class AsgnFreqBase<T> {
    */
   @Override
   public String toString() {
-    return "AsgnFreqBase {"
+    return "\n  AsgnFreqBase {"
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
            + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
            + (freqUse != null ? " freqUse [" + freqUse + "]" : "")
