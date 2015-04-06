@@ -801,7 +801,7 @@ public class Assigned {
    */
   @Override
   public String toString() {
-    return "Assigned {"
+    return "\n  Assigned {"
            + (colourNum != null ? " colourNum [" + colourNum + "]" : "")
            + (colourWord != null ? " colourWord [" + colourWord + "]" : "")
            + (freq != null ? " freq [" + freq + "]" : "")

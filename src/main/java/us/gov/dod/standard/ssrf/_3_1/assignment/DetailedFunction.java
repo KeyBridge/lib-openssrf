@@ -582,7 +582,7 @@ public class DetailedFunction {
    */
   @Override
   public String toString() {
-    return "DetailedFunction {"
+    return "\n  DetailedFunction {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

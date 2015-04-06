@@ -772,7 +772,7 @@ public class Link {
    */
   @Override
   public String toString() {
-    return "Link {"
+    return "\n  Link {"
            + (assigned != null ? " assigned [" + assigned + "]" : "")
            + (dcsTrunk != null ? " dcsTrunk [" + dcsTrunk + "]" : "")
            + (detailedFunction != null ? " detailedFunction [" + detailedFunction + "]" : "")

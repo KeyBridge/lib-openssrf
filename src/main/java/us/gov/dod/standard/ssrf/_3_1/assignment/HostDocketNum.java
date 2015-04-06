@@ -575,7 +575,7 @@ public class HostDocketNum {
    */
   @Override
   public String toString() {
-    return "HostDocketNum {"
+    return "\n  HostDocketNum {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

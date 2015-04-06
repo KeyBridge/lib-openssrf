@@ -574,7 +574,7 @@ public class DocketNum {
    */
   @Override
   public String toString() {
-    return "DocketNum {"
+    return "\n  DocketNum {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

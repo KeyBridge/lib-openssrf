@@ -1081,7 +1081,7 @@ public class Station {
    */
   @Override
   public String toString() {
-    return "Station {"
+    return "\n  Station {"
            + (antStructureHeight != null ? " antStructureHeight [" + antStructureHeight + "]" : "")
            + (callSign != null ? " callSign [" + callSign + "]" : "")
            + (cositeSep != null ? " cositeSep [" + cositeSep + "]" : "")

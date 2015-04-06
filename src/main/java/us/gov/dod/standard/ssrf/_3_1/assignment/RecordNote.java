@@ -167,7 +167,7 @@ public class RecordNote {
    */
   @Override
   public String toString() {
-    return "RecordNote {"
+    return "\n  RecordNote {"
            + (comments != null ? " comments [" + comments + "]" : "")
            + (noteRef != null ? " noteRef [" + noteRef + "]" : "")
            + "}";

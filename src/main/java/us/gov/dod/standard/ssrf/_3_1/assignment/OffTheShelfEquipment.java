@@ -594,7 +594,7 @@ public class OffTheShelfEquipment {
    */
   @Override
   public String toString() {
-    return "OffTheShelfEquipment {"
+    return "\n  OffTheShelfEquipment {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

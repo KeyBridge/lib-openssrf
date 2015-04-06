@@ -164,7 +164,7 @@ public class NarrowBandPlanning {
    */
   @Override
   public String toString() {
-    return "NarrowBandPlanning {"
+    return "\n  NarrowBandPlanning {"
            + (changeDate != null ? " changeDate [" + changeDate + "]" : "")
            + (nbFreq != null ? " nbFreq [" + nbFreq + "]" : "")
            + "}";

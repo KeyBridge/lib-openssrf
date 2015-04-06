@@ -159,7 +159,7 @@ public class SysOfStation {
    */
   @Override
   public String toString() {
-    return "SysOfStation {"
+    return "\n  SysOfStation {"
            + (numStations != null ? " numStations [" + numStations + "]" : "")
            + (sysName != null ? " sysName [" + sysName + "]" : "")
            + "}";

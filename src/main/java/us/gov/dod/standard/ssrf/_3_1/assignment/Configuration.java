@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1792,7 +1792,7 @@ public class Configuration {
    */
   @Override
   public String toString() {
-    return "Configuration {"
+    return "\n  Configuration {"
            + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
            + (configApprovedBy != null ? " configApprovedBy [" + configApprovedBy + "]" : "")
            + (configApprovedDateTime != null ? " configApprovedDateTime [" + configApprovedDateTime + "]" : "")
@@ -1936,7 +1936,7 @@ public class Configuration {
     }
     for (Loadset instance : root.getLoadset()) {
       if (loadsetRef.contains(instance.getSerial())) {
-        loadset.add(instance);
+        getLoadset().add(instance);
       }
     }
   }//</editor-fold>

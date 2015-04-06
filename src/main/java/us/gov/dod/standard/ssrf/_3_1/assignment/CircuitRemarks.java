@@ -580,7 +580,7 @@ public class CircuitRemarks {
    */
   @Override
   public String toString() {
-    return "CircuitRemarks {"
+    return "\n  CircuitRemarks {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

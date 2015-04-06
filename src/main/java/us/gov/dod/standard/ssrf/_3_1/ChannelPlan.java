@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -194,10 +194,10 @@ public class ChannelPlan extends Common<ChannelPlan> {
    */
   @Override
   public String toString() {
-    return "ChannelPlan {"
+    return "\n  ChannelPlan {"
            + (channel != null ? " channel [" + channel + "]" : "")
            + (name != null ? " name [" + name + "]" : "")
-           + "}\n  ChannelPlan." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

@@ -465,7 +465,7 @@ public class Tuning {
    */
   @Override
   public String toString() {
-    return "Tuning {"
+    return "\n  Tuning {"
            + (exclusive != null ? " exclusive [" + exclusive + "]" : "")
            + (freqSep != null ? " freqSep [" + freqSep + "]" : "")
            + (freqSepType != null ? " freqSepType [" + freqSepType + "]" : "")

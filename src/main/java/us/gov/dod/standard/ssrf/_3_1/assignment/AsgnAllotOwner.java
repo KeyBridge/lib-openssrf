@@ -212,7 +212,7 @@ public class AsgnAllotOwner {
    */
   @Override
   public String toString() {
-    return "AsgnAllotOwner {"
+    return "\n  AsgnAllotOwner {"
            + (description != null ? " description [" + description + "]" : "")
            + (ownerOrgRef != null ? " ownerOrgRef [" + ownerOrgRef + "]" : "")
            + (ownerType != null ? " ownerType [" + ownerType + "]" : "")

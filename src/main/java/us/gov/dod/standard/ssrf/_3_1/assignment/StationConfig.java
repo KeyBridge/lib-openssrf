@@ -984,7 +984,7 @@ public class StationConfig {
    */
   @Override
   public String toString() {
-    return "StationConfig {"
+    return "\n  StationConfig {"
            + (antFeedpointHeight != null ? " antFeedpointHeight [" + antFeedpointHeight + "]" : "")
            + (blanking != null ? " blanking [" + blanking + "]" : "")
            + (configID != null ? " configID [" + configID + "]" : "")

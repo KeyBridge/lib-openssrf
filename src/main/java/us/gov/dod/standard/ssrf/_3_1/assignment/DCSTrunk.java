@@ -598,7 +598,7 @@ public class DCSTrunk {
    */
   @Override
   public String toString() {
-    return "DCSTrunk {"
+    return "\n  DCSTrunk {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

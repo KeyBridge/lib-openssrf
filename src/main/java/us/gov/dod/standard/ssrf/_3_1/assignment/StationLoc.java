@@ -436,7 +436,7 @@ public class StationLoc {
    */
   @Override
   public String toString() {
-    return "StationLoc {"
+    return "\n  StationLoc {"
            + (locSatRef != null ? " locSatRef [" + locSatRef + "]" : "")
            + (locationExcluded != null ? " locationExcluded [" + locationExcluded + "]" : "")
            + (locationRadius != null ? " locationRadius [" + locationRadius + "]" : "")

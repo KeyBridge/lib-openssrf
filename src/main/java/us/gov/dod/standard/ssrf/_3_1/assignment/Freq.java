@@ -49,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
   "pairedFreq",
   "narrowBandPlanning"
 })
-public class Freq extends AsgnFreqBase<Freq> {
+public class Freq extends AsgnFreqBase {
 
   /**
    * TAD - Tactical Air Designator (Optional)
@@ -327,7 +327,7 @@ public class Freq extends AsgnFreqBase<Freq> {
    */
   @Override
   public String toString() {
-    return "Freq {"
+    return "\n  Freq {"
            + (legacyNum != null ? " legacyNum [" + legacyNum + "]" : "")
            + (narrowBandPlanning != null ? " narrowBandPlanning [" + narrowBandPlanning + "]" : "")
            + (pairedFreq != null ? " pairedFreq [" + pairedFreq + "]" : "")

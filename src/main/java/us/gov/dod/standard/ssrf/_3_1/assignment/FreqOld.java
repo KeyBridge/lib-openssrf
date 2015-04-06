@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.AsgnFreqBase;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FreqOld")
-public class FreqOld extends AsgnFreqBase<FreqOld> {
+public class FreqOld extends AsgnFreqBase {
 
   @Override
   public String toString() {

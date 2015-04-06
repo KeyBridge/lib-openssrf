@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -4045,7 +4045,7 @@ public class Assignment extends Common<Assignment> {
    */
   @Override
   public String toString() {
-    return "Assignment {"
+    return "\n  Assignment {"
            + (agencyActionNum != null ? " agencyActionNum [" + agencyActionNum + "]" : "")
            + (agencyComments != null ? " agencyComments [" + agencyComments + "]" : "")
            + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
@@ -4105,7 +4105,7 @@ public class Assignment extends Common<Assignment> {
            + (usageType != null ? " usageType [" + usageType + "]" : "")
            + (userNetCode != null ? " userNetCode [" + userNetCode + "]" : "")
            + (years != null ? " years [" + years + "]" : "")
-           + "}\n  Assignment." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**
@@ -4230,27 +4230,27 @@ public class Assignment extends Common<Assignment> {
     }
     for (Assignment instance : root.getAssignment()) {
       if (relatedRef.contains(instance.getSerial())) {
-        related.add(instance);
+        getRelated().add(instance);
       }
     }
     for (Allotment instance : root.getAllotment()) {
       if (relatedRef.contains(instance.getSerial())) {
-        related.add(instance);
+        getRelated().add(instance);
       }
     }
     for (SSReply instance : root.getSSReply()) {
       if (relatedRef.contains(instance.getSerial())) {
-        related.add(instance);
+        getRelated().add(instance);
       }
     }
     for (ForceElement instance : root.getForceElement()) {
       if (relatedRef.contains(instance.getSerial())) {
-        related.add(instance);
+        getRelated().add(instance);
       }
     }
     for (FEDeployment instance : root.getFEDeployment()) {
       if (relatedRef.contains(instance.getSerial())) {
-        related.add(instance);
+        getRelated().add(instance);
       }
     }
   }//</editor-fold>

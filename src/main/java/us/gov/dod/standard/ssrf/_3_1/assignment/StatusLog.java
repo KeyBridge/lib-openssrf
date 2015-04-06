@@ -320,7 +320,7 @@ public class StatusLog {
    */
   @Override
   public String toString() {
-    return "StatusLog {"
+    return "\n  StatusLog {"
            + (agencyCode != null ? " agencyCode [" + agencyCode + "]" : "")
            + (comment != null ? " comment [" + comment + "]" : "")
            + (dateTime != null ? " dateTime [" + dateTime + "]" : "")
