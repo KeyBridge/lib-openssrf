@@ -330,7 +330,7 @@ public class JammingPerformance {
    */
   @Override
   public String toString() {
-    return "JammingPerformance {"
+    return "\n  JammingPerformance {"
            + (actualEffect != null ? " actualEffect [" + actualEffect + "]" : "")
            + (actualPerformance != null ? " actualPerformance [" + actualPerformance + "]" : "")
            + (continuousUpdate != null ? " continuousUpdate [" + continuousUpdate + "]" : "")

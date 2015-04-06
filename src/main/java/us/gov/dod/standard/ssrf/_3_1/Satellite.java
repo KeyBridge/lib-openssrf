@@ -1402,7 +1402,7 @@ public class Satellite extends Common<Satellite> {
    */
   @Override
   public String toString() {
-    return "Satellite {"
+    return "\n  Satellite {"
            + (administration != null ? " administration [" + administration + "]" : "")
            + (callSign != null ? " callSign [" + callSign + "]" : "")
            + (earthStation != null ? " earthStation [" + earthStation + "]" : "")
@@ -1424,7 +1424,7 @@ public class Satellite extends Common<Satellite> {
            + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
            + (rfSystemRef != null ? " rfSystemRef [" + rfSystemRef + "]" : "")
            + (serviceArea != null ? " serviceArea [" + serviceArea + "]" : "")
-           + "}\n  Satellite." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

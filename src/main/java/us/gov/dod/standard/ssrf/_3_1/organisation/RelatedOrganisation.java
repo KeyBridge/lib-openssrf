@@ -228,7 +228,7 @@ public class RelatedOrganisation {
    */
   @Override
   public String toString() {
-    return "RelatedOrganisation {"
+    return "\n  RelatedOrganisation {"
            + (relation != null ? " relation [" + relation + "]" : "")
            + (serial != null ? " serial [" + serial + "]" : "")
            + (type != null ? " type [" + type + "]" : "")

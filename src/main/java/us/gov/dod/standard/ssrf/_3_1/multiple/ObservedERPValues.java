@@ -222,7 +222,7 @@ public class ObservedERPValues {
    */
   @Override
   public String toString() {
-    return "ObservedERPValues {"
+    return "\n  ObservedERPValues {"
            + (erpDwell != null ? " erpDwell [" + erpDwell + "]" : "")
            + (erpValue != null ? " erpValue [" + erpValue + "]" : "")
            + (statisticalIndicator != null ? " statisticalIndicator [" + statisticalIndicator + "]" : "")

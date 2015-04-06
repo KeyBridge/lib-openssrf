@@ -738,7 +738,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    */
   @Override
   public String toString() {
-    return "RadiationPlan {"
+    return "\n  RadiationPlan {"
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
            + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
            + (jammingAuthority != null ? " jammingAuthority [" + jammingAuthority + "]" : "")
@@ -749,7 +749,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
            + (startDateTime != null ? " startDateTime [" + startDateTime + "]" : "")
            + (stopDateTime != null ? " stopDateTime [" + stopDateTime + "]" : "")
            + (version != null ? " version [" + version + "]" : "")
-           + "}\n  RadiationPlan." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

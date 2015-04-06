@@ -2108,7 +2108,7 @@ public class RxMode {
    */
   @Override
   public String toString() {
-    return "RxMode {"
+    return "\n  RxMode {"
            + (adjacentChannelSelectivity != null ? " adjacentChannelSelectivity [" + adjacentChannelSelectivity + "]" : "")
            + (baseband != null ? " baseband [" + baseband + "]" : "")
            + (curves != null ? " curves [" + curves + "]" : "")

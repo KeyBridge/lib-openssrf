@@ -593,7 +593,7 @@ public class Baseband {
    */
   @Override
   public String toString() {
-    return "Baseband {"
+    return "\n  Baseband {"
            + (bitDuration != null ? " bitDuration [" + bitDuration + "]" : "")
            + (modFreqMax != null ? " modFreqMax [" + modFreqMax + "]" : "")
            + (modFreqMin != null ? " modFreqMin [" + modFreqMin + "]" : "")

@@ -226,7 +226,7 @@ public class Usage {
    */
   @Override
   public String toString() {
-    return "Usage {"
+    return "\n  Usage {"
            + (eqpFnct != null ? " eqpFnct [" + eqpFnct + "]" : "")
            + (radioService != null ? " radioService [" + radioService + "]" : "")
            + (stnClass != null ? " stnClass [" + stnClass + "]" : "")

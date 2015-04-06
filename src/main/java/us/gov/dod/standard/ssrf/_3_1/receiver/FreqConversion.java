@@ -390,7 +390,7 @@ public class FreqConversion {
    */
   @Override
   public String toString() {
-    return "FreqConversion {"
+    return "\n  FreqConversion {"
            + (ifMax != null ? " ifMax [" + ifMax + "]" : "")
            + (ifMin != null ? " ifMin [" + ifMin + "]" : "")
            + (loFreqMax != null ? " loFreqMax [" + loFreqMax + "]" : "")

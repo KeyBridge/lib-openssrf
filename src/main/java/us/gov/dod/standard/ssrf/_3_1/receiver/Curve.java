@@ -613,7 +613,7 @@ public class Curve {
    */
   @Override
   public String toString() {
-    return "Curve {"
+    return "\n  Curve {"
            + (bw != null ? " bw [" + bw + "]" : "")
            + (calculated != null ? " calculated [" + calculated + "]" : "")
            + (curvePoint != null ? " curvePoint [" + curvePoint + "]" : "")

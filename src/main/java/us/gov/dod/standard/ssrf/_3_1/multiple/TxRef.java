@@ -273,7 +273,7 @@ public class TxRef {
    */
   @Override
   public String toString() {
-    return "TxRef {"
+    return "\n  TxRef {"
            + (serial != null ? " serial [" + serial + "]" : "")
            + (txAntModeRef != null ? " txAntModeRef [" + txAntModeRef + "]" : "")
            + (txModeRef != null ? " txModeRef [" + txModeRef + "]" : "")

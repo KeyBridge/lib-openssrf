@@ -838,7 +838,7 @@ public class RFSystem extends Common<RFSystem> {
    */
   @Override
   public String toString() {
-    return "RFSystem {"
+    return "\n  RFSystem {"
            + (configuration != null ? " configuration [" + configuration + "]" : "")
            + (deployment != null ? " deployment [" + deployment + "]" : "")
            + (emergency != null ? " emergency [" + emergency + "]" : "")
@@ -849,7 +849,7 @@ public class RFSystem extends Common<RFSystem> {
            + (relatedSystem != null ? " relatedSystem [" + relatedSystem + "]" : "")
            + (stockNum != null ? " stockNum [" + stockNum + "]" : "")
            + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
-           + "}\n  RFSystem." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

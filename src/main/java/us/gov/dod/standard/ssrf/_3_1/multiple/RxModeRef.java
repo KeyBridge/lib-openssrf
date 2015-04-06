@@ -574,7 +574,7 @@ public class RxModeRef {
    */
   @Override
   public String toString() {
-    return "RxModeRef {"
+    return "\n  RxModeRef {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

@@ -985,7 +985,7 @@ public class Receiver extends Common<Receiver> {
    */
   @Override
   public String toString() {
-    return "Receiver {"
+    return "\n  Receiver {"
            + (conductedEmissions != null ? " conductedEmissions [" + conductedEmissions + "]" : "")
            + (curve != null ? " curve [" + curve + "]" : "")
            + (deployment != null ? " deployment [" + deployment + "]" : "")
@@ -999,7 +999,7 @@ public class Receiver extends Common<Receiver> {
            + (rxMode != null ? " rxMode [" + rxMode + "]" : "")
            + (tspr != null ? " tspr [" + tspr + "]" : "")
            + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
-           + "}\n  Receiver." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

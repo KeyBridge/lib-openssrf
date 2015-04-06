@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -731,7 +731,7 @@ public class Role extends Common<Role> {
    */
   @Override
   public String toString() {
-    return "Role {"
+    return "\n  Role {"
            + (address != null ? " address [" + address + "]" : "")
            + (contactRef != null ? " contactRef [" + contactRef + "]" : "")
            + (country != null ? " country [" + country + "]" : "")
@@ -741,7 +741,7 @@ public class Role extends Common<Role> {
            + (name != null ? " name [" + name + "]" : "")
            + (reviewDate != null ? " reviewDate [" + reviewDate + "]" : "")
            + (telephoneFax != null ? " telephoneFax [" + telephoneFax + "]" : "")
-           + "}\n  Role." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**
@@ -860,7 +860,7 @@ public class Role extends Common<Role> {
     }
     for (Contact instance : root.getContact()) {
       if (contactRef.contains(instance.getSerial())) {
-        contact.add(instance);
+        getContact().add(instance);
       }
     }
   }//</editor-fold>

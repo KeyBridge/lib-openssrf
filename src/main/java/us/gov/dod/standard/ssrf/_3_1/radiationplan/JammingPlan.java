@@ -966,7 +966,7 @@ public class JammingPlan {
    */
   @Override
   public String toString() {
-    return "JammingPlan {"
+    return "\n  JammingPlan {"
            + (jammingTarget != null ? " jammingTarget [" + jammingTarget + "]" : "")
            + (level3Auth != null ? " level3Auth [" + level3Auth + "]" : "")
            + (name != null ? " name [" + name + "]" : "")

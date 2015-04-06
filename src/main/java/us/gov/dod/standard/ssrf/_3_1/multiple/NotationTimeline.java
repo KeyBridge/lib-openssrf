@@ -282,7 +282,7 @@ public class NotationTimeline {
    */
   @Override
   public String toString() {
-    return "NotationTimeline {"
+    return "\n  NotationTimeline {"
            + (code != null ? " code [" + code + "]" : "")
            + (status != null ? " status [" + status + "]" : "")
            + (statusChangeDateTime != null ? " statusChangeDateTime [" + statusChangeDateTime + "]" : "")

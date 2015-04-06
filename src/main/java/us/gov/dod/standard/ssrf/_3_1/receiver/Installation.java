@@ -581,7 +581,7 @@ public class Installation {
    */
   @Override
   public String toString() {
-    return "Installation {"
+    return "\n  Installation {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

@@ -166,7 +166,7 @@ public class RelatedSystem {
    */
   @Override
   public String toString() {
-    return "RelatedSystem {"
+    return "\n  RelatedSystem {"
            + (relation != null ? " relation [" + relation + "]" : "")
            + (serial != null ? " serial [" + serial + "]" : "")
            + "}";

@@ -1155,7 +1155,7 @@ public class SpreadSpectrum {
    */
   @Override
   public String toString() {
-    return "SpreadSpectrum {"
+    return "\n  SpreadSpectrum {"
            + (chipRate != null ? " chipRate [" + chipRate + "]" : "")
            + (codeRate != null ? " codeRate [" + codeRate + "]" : "")
            + (freqBlocking != null ? " freqBlocking [" + freqBlocking + "]" : "")

@@ -398,7 +398,7 @@ public class RxModulation {
    */
   @Override
   public String toString() {
-    return "RxModulation {"
+    return "\n  RxModulation {"
            + (codePeriod != null ? " codePeriod [" + codePeriod + "]" : "")
            + (codeRate != null ? " codeRate [" + codeRate + "]" : "")
            + (digitalModType != null ? " digitalModType [" + digitalModType + "]" : "")

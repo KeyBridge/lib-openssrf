@@ -575,7 +575,7 @@ public class ServiceArea {
    */
   @Override
   public String toString() {
-    return "ServiceArea {"
+    return "\n  ServiceArea {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

@@ -830,7 +830,7 @@ public class JammingTarget {
    */
   @Override
   public String toString() {
-    return "JammingTarget {"
+    return "\n  JammingTarget {"
            + (antStabilisation != null ? " antStabilisation [" + antStabilisation + "]" : "")
            + (bearing != null ? " bearing [" + bearing + "]" : "")
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")

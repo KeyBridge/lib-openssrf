@@ -269,7 +269,7 @@ public class RxRef {
    */
   @Override
   public String toString() {
-    return "RxRef {"
+    return "\n  RxRef {"
            + (rxAntModeRef != null ? " rxAntModeRef [" + rxAntModeRef + "]" : "")
            + (rxModeRef != null ? " rxModeRef [" + rxModeRef + "]" : "")
            + (serial != null ? " serial [" + serial + "]" : "")

@@ -266,7 +266,7 @@ public class JammingAuthority {
    */
   @Override
   public String toString() {
-    return "JammingAuthority {"
+    return "\n  JammingAuthority {"
            + (jcaCallSign != null ? " jcaCallSign [" + jcaCallSign + "]" : "")
            + (jcaFreq != null ? " jcaFreq [" + jcaFreq + "]" : "")
            + (jcaLevel != null ? " jcaLevel [" + jcaLevel + "]" : "")

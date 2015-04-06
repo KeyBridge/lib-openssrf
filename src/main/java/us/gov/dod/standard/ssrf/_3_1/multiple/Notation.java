@@ -472,7 +472,7 @@ public class Notation {
    */
   @Override
   public String toString() {
-    return "Notation {"
+    return "\n  Notation {"
            + (code != null ? " code [" + code + "]" : "")
            + (notationTimeline != null ? " notationTimeline [" + notationTimeline + "]" : "")
            + (potentialVictims != null ? " potentialVictims [" + potentialVictims + "]" : "")

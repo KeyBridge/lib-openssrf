@@ -777,7 +777,7 @@ public class EmsClass {
    */
   @Override
   public String toString() {
-    return "EmsClass {"
+    return "\n  EmsClass {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (explainInformationTypeX != null ? " explainInformationTypeX [" + explainInformationTypeX + "]" : "")

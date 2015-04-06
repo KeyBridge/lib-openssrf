@@ -250,7 +250,7 @@ public class Deployment {
    */
   @Override
   public String toString() {
-    return "Deployment {"
+    return "\n  Deployment {"
            + (installation != null ? " installation [" + installation + "]" : "")
            + (status != null ? " status [" + status + "]" : "")
            + (type != null ? " type [" + type + "]" : "")

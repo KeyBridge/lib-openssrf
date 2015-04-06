@@ -1147,7 +1147,7 @@ public class ObservedERPAnalysis {
    */
   @Override
   public String toString() {
-    return "ObservedERPAnalysis {"
+    return "\n  ObservedERPAnalysis {"
            + (continuous != null ? " continuous [" + continuous + "]" : "")
            + (erpActualMax != null ? " erpActualMax [" + erpActualMax + "]" : "")
            + (erpActualMin != null ? " erpActualMin [" + erpActualMin + "]" : "")

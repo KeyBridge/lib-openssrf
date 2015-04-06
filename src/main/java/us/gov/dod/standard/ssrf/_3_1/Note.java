@@ -350,13 +350,13 @@ public class Note extends Common<Note> {
    */
   @Override
   public String toString() {
-    return "Note {"
+    return "\n  Note {"
            + (administration != null ? " administration [" + administration + "]" : "")
            + (effectiveDate != null ? " effectiveDate [" + effectiveDate + "]" : "")
            + (expirationDate != null ? " expirationDate [" + expirationDate + "]" : "")
            + (name != null ? " name [" + name + "]" : "")
            + (source != null ? " source [" + source + "]" : "")
-           + "}\n  Note." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

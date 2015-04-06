@@ -604,7 +604,7 @@ public class ConfigFreq {
    */
   @Override
   public String toString() {
-    return "ConfigFreq {"
+    return "\n  ConfigFreq {"
            + (channelSpacing != null ? " channelSpacing [" + channelSpacing + "]" : "")
            + (configFreqUse != null ? " configFreqUse [" + configFreqUse + "]" : "")
            + (duration != null ? " duration [" + duration + "]" : "")
