@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,7 +43,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class Channel {
 
   /**
-   * Name - Channel Name (Optional)    * <p>
+   * Name - Channel Name (Optional)
+   * <p>
    * The name of this channel (e.g., "Video carrier, Sound carrier, Nicam Sound
    * carrier").
    * <p>
@@ -54,7 +55,8 @@ public class Channel {
   @XmlElement(name = "Name", required = false)
   private S50 name;
   /**
-   * User - Channel User (Optional)    * <p>
+   * User - Channel User (Optional)
+   * <p>
    * A specific user of this channel in the channel plan.
    * <p>
    * Format is S50
@@ -64,7 +66,8 @@ public class Channel {
   @XmlElement(name = "User", required = false)
   private S50 user;
   /**
-   * ChannelFreq - Element Content (Required)    * <p>
+   * ChannelFreq - Element Content (Required)
+   * <p>
    * One frequency in the channel plan.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -142,7 +145,7 @@ public class Channel {
    */
   public Set<ChannelFreq> getChannelFreq() {
     if (channelFreq == null) {
-      channelFreq = new HashSet<>();
+      channelFreq = new TreeSet<>();
     }
     return this.channelFreq;
   }
@@ -223,10 +226,10 @@ public class Channel {
    */
   @Override
   public String toString() {
-    return "Channel {"
+    return "\n  Channel {"
+           //           + (name != null ? " name [" + name + "]" : "")
+           //           + (user != null ? " user [" + user + "]" : "")
            + (channelFreq != null ? " channelFreq [" + channelFreq + "]" : "")
-           + (name != null ? " name [" + name + "]" : "")
-           + (user != null ? " user [" + user + "]" : "")
            + "}";
   }
 
@@ -239,6 +242,38 @@ public class Channel {
    */
   public boolean isSet() {
     return true;
+  }
+
+  /**
+   * Hash code is based upon the channel frequency set. This precludes duplicate
+   * channel descriptions.
+   * <p>
+   * @return a hash code based upon the channel frequency set.
+   */
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 71 * hash + Objects.hashCode(this.channelFreq);
+    return hash;
+  }
+
+  /**
+   * Equals is based upon the channel frequency set. This precludes duplicate
+   * channel descriptions.
+   * <p>
+   * @param obj the other channel object
+   * @return equality comparison is based upon the channel frequency set.
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final Channel other = (Channel) obj;
+    return Objects.equals(this.channelFreq, other.channelFreq);
   }
 
 }
