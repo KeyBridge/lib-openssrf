@@ -642,7 +642,7 @@ public class ObservedMOPSweep {
    */
   @Override
   public String toString() {
-    return "ObservedMOPSweep {"
+    return "\n  ObservedMOPSweep {"
            + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
            + (mopFlyBackInterval != null ? " mopFlyBackInterval [" + mopFlyBackInterval + "]" : "")
            + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")

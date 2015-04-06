@@ -636,7 +636,7 @@ public class Comment {
    */
   @Override
   public String toString() {
-    return "Comment {"
+    return "\n  Comment {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

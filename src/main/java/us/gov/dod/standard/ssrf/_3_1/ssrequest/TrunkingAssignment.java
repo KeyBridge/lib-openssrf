@@ -355,7 +355,7 @@ public class TrunkingAssignment {
    */
   @Override
   public String toString() {
-    return "TrunkingAssignment {"
+    return "\n  TrunkingAssignment {"
            + (agencySerialNum != null ? " agencySerialNum [" + agencySerialNum + "]" : "")
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
            + (freqMin != null ? " freqMin [" + freqMin + "]" : "")

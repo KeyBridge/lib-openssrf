@@ -287,7 +287,7 @@ public class Power {
    */
   @Override
   public String toString() {
-    return "Power {"
+    return "\n  Power {"
            + (calculated != null ? " calculated [" + calculated + "]" : "")
            + (powerMax != null ? " powerMax [" + powerMax + "]" : "")
            + (powerMin != null ? " powerMin [" + powerMin + "]" : "")

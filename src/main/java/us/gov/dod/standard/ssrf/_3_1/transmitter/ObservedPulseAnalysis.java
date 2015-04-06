@@ -3676,7 +3676,7 @@ public class ObservedPulseAnalysis {
    */
   @Override
   public String toString() {
-    return "ObservedPulseAnalysis {"
+    return "\n  ObservedPulseAnalysis {"
            + (fallTime != null ? " fallTime [" + fallTime + "]" : "")
            + (numPDPositions != null ? " numPDPositions [" + numPDPositions + "]" : "")
            + (numPDValues != null ? " numPDValues [" + numPDValues + "]" : "")

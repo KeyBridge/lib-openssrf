@@ -2734,7 +2734,7 @@ public class TxMode {
    */
   @Override
   public String toString() {
-    return "TxMode {"
+    return "\n  TxMode {"
            + (baseband != null ? " baseband [" + baseband + "]" : "")
            + (burstDuration != null ? " burstDuration [" + burstDuration + "]" : "")
            + (burstNumPulses != null ? " burstNumPulses [" + burstNumPulses + "]" : "")

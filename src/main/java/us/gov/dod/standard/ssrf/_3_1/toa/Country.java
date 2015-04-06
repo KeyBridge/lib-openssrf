@@ -581,7 +581,7 @@ public class Country {
    */
   @Override
   public String toString() {
-    return "Country {"
+    return "\n  Country {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

@@ -574,7 +574,7 @@ public class Administration {
    */
   @Override
   public String toString() {
-    return "Administration {"
+    return "\n  Administration {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

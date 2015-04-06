@@ -985,7 +985,7 @@ public class Pulse {
    */
   @Override
   public String toString() {
-    return "Pulse {"
+    return "\n  Pulse {"
            + (avgPowerMax != null ? " avgPowerMax [" + avgPowerMax + "]" : "")
            + (avgPowerMin != null ? " avgPowerMin [" + avgPowerMin + "]" : "")
            + (compMethod != null ? " compMethod [" + compMethod + "]" : "")

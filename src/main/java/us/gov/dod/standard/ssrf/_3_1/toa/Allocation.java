@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -680,7 +680,7 @@ public class Allocation {
    */
   @Override
   public String toString() {
-    return "Allocation {"
+    return "\n  Allocation {"
            + (allocatedByFootnote != null ? " allocatedByFootnote [" + allocatedByFootnote + "]" : "")
            + (allocatedService != null ? " allocatedService [" + allocatedService + "]" : "")
            + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
@@ -804,7 +804,7 @@ public class Allocation {
     }
     for (ChannelPlan instance : root.getChannelPlan()) {
       if (channelPlanRef.contains(instance.getSerial())) {
-        channelPlan.add(instance);
+        getChannelPlan().add(instance);
       }
     }
   }//</editor-fold>

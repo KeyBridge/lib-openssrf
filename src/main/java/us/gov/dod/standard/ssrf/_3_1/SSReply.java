@@ -1229,7 +1229,7 @@ public class SSReply extends Common<SSReply> {
    */
   @Override
   public String toString() {
-    return "SSReply {"
+    return "\n  SSReply {"
            + (approvalSPSNum != null ? " approvalSPSNum [" + approvalSPSNum + "]" : "")
            + (commentSource != null ? " commentSource [" + commentSource + "]" : "")
            + (configuration != null ? " configuration [" + configuration + "]" : "")
@@ -1247,7 +1247,7 @@ public class SSReply extends Common<SSReply> {
            + (ssRequestRef != null ? " ssRequestRef [" + ssRequestRef + "]" : "")
            + (stageLocation != null ? " stageLocation [" + stageLocation + "]" : "")
            + (supportabilityCode != null ? " supportabilityCode [" + supportabilityCode + "]" : "")
-           + "}\n  SSReply." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

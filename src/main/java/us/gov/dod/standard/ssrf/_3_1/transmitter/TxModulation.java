@@ -1063,7 +1063,7 @@ public class TxModulation extends RxModulation {
    */
   @Override
   public String toString() {
-    return "TxModulation {"
+    return "\n  TxModulation {"
            + (amIdx != null ? " amIdx [" + amIdx + "]" : "")
            + (amrmsIdx != null ? " amrmsIdx [" + amrmsIdx + "]" : "")
            + (carrierSuppression != null ? " carrierSuppression [" + carrierSuppression + "]" : "")

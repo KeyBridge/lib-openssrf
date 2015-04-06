@@ -574,7 +574,7 @@ public class StnClass {
    */
   @Override
   public String toString() {
-    return "StnClass {"
+    return "\n  StnClass {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

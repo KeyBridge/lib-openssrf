@@ -583,7 +583,7 @@ public class HostNation {
    */
   @Override
   public String toString() {
-    return "HostNation {"
+    return "\n  HostNation {"
            + (availability != null ? " availability [" + availability + "]" : "")
            + (cls != null ? " cls [" + cls + "]" : "")
            + (extReferences != null ? " extReferences [" + extReferences + "]" : "")

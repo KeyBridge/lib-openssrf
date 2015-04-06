@@ -573,7 +573,7 @@ public class Stage {
    */
   @Override
   public String toString() {
-    return "Stage {"
+    return "\n  Stage {"
            + (dateApprovalRequired != null ? " dateApprovalRequired [" + dateApprovalRequired + "]" : "")
            + (geoDescription != null ? " geoDescription [" + geoDescription + "]" : "")
            + (numEquip != null ? " numEquip [" + numEquip + "]" : "")

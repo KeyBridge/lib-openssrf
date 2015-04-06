@@ -346,7 +346,7 @@ public class EndpointLocation {
    */
   @Override
   public String toString() {
-    return "EndpointLocation {"
+    return "\n  EndpointLocation {"
            + (antennaHeight != null ? " antennaHeight [" + antennaHeight + "]" : "")
            + (excluded != null ? " excluded [" + excluded + "]" : "")
            + (locSatRef != null ? " locSatRef [" + locSatRef + "]" : "")

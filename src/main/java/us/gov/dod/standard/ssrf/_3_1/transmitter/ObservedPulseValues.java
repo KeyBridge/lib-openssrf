@@ -256,7 +256,7 @@ public class ObservedPulseValues {
    */
   @Override
   public String toString() {
-    return "ObservedPulseValues {"
+    return "\n  ObservedPulseValues {"
            + (observedPDValue != null ? " observedPDValue [" + observedPDValue + "]" : "")
            + (observedPRFValue != null ? " observedPRFValue [" + observedPRFValue + "]" : "")
            + (observedPRIValue != null ? " observedPRIValue [" + observedPRIValue + "]" : "")

@@ -501,7 +501,7 @@ public class DiagramEndpoint {
    */
   @Override
   public String toString() {
-    return "DiagramEndpoint {"
+    return "\n  DiagramEndpoint {"
            + (description != null ? " description [" + description + "]" : "")
            + (endpointID != null ? " endpointID [" + endpointID + "]" : "")
            + (endpointLocation != null ? " endpointLocation [" + endpointLocation + "]" : "")

@@ -2241,7 +2241,7 @@ public class ObservedRFAnalysis {
    */
   @Override
   public String toString() {
-    return "ObservedRFAnalysis {"
+    return "\n  ObservedRFAnalysis {"
            + (chipRate != null ? " chipRate [" + chipRate + "]" : "")
            + (dwellTime != null ? " dwellTime [" + dwellTime + "]" : "")
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")

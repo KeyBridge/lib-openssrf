@@ -274,7 +274,7 @@ public class SubcarrierFreq {
    */
   @Override
   public String toString() {
-    return "SubcarrierFreq {"
+    return "\n  SubcarrierFreq {"
            + (freq != null ? " freq [" + freq + "]" : "")
            + (freqOffset != null ? " freqOffset [" + freqOffset + "]" : "")
            + (freqRest != null ? " freqRest [" + freqRest + "]" : "")

@@ -377,7 +377,7 @@ public class FreqBand {
    */
   @Override
   public String toString() {
-    return "FreqBand {"
+    return "\n  FreqBand {"
            + (allocation != null ? " allocation [" + allocation + "]" : "")
            + (footnotes != null ? " footnotes [" + footnotes + "]" : "")
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")

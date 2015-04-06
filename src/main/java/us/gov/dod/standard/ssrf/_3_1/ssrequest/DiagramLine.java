@@ -232,7 +232,7 @@ public class DiagramLine {
    */
   @Override
   public String toString() {
-    return "DiagramLine {"
+    return "\n  DiagramLine {"
            + (configID != null ? " configID [" + configID + "]" : "")
            + (rxEndpointID != null ? " rxEndpointID [" + rxEndpointID + "]" : "")
            + (txEndpointID != null ? " txEndpointID [" + txEndpointID + "]" : "")

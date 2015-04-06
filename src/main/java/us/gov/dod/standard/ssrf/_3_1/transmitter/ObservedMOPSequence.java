@@ -612,7 +612,7 @@ public class ObservedMOPSequence {
    */
   @Override
   public String toString() {
-    return "ObservedMOPSequence {"
+    return "\n  ObservedMOPSequence {"
            + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")
            + (mopNumElements != null ? " mopNumElements [" + mopNumElements + "]" : "")
            + (mopRepetionInterval != null ? " mopRepetionInterval [" + mopRepetionInterval + "]" : "")

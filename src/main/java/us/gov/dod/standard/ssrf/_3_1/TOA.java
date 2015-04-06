@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -638,7 +638,7 @@ public class TOA extends Common<TOA> {
    */
   @Override
   public String toString() {
-    return "TOA {"
+    return "\n  TOA {"
            + (administration != null ? " administration [" + administration + "]" : "")
            + (channelPlanRef != null ? " channelPlanRef [" + channelPlanRef + "]" : "")
            + (country != null ? " country [" + country + "]" : "")
@@ -647,7 +647,7 @@ public class TOA extends Common<TOA> {
            + (footnote != null ? " footnote [" + footnote + "]" : "")
            + (freqBand != null ? " freqBand [" + freqBand + "]" : "")
            + (title != null ? " title [" + title + "]" : "")
-           + "}\n  TOA." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**
@@ -766,7 +766,7 @@ public class TOA extends Common<TOA> {
     }
     for (ChannelPlan instance : root.getChannelPlan()) {
       if (channelPlanRef.contains(instance.getSerial())) {
-        channelPlan.add(instance);
+        getChannelPlan().add(instance);
       }
     }
   }//</editor-fold>

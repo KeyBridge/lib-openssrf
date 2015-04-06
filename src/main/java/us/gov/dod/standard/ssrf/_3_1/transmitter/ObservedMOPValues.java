@@ -341,7 +341,7 @@ public class ObservedMOPValues {
    */
   @Override
   public String toString() {
-    return "ObservedMOPValues {"
+    return "\n  ObservedMOPValues {"
            + (mopValueAM != null ? " mopValueAM [" + mopValueAM + "]" : "")
            + (mopValueCW != null ? " mopValueCW [" + mopValueCW + "]" : "")
            + (mopValueFM != null ? " mopValueFM [" + mopValueFM + "]" : "")

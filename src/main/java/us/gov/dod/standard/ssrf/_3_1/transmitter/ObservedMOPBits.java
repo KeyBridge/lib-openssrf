@@ -626,7 +626,7 @@ public class ObservedMOPBits {
    */
   @Override
   public String toString() {
-    return "ObservedMOPBits {"
+    return "\n  ObservedMOPBits {"
            + (bitDuration != null ? " bitDuration [" + bitDuration + "]" : "")
            + (bitRate != null ? " bitRate [" + bitRate + "]" : "")
            + (mopDutyCycle != null ? " mopDutyCycle [" + mopDutyCycle + "]" : "")

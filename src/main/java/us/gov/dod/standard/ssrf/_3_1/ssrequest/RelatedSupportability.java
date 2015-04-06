@@ -218,7 +218,7 @@ public class RelatedSupportability {
    */
   @Override
   public String toString() {
-    return "RelatedSupportability {"
+    return "\n  RelatedSupportability {"
            + (j12Number != null ? " j12Number [" + j12Number + "]" : "")
            + (ssRequestRef != null ? " ssRequestRef [" + ssRequestRef + "]" : "")
            + (type != null ? " type [" + type + "]" : "")

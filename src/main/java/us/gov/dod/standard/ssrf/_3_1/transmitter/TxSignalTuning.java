@@ -388,7 +388,7 @@ public class TxSignalTuning {
    */
   @Override
   public String toString() {
-    return "TxSignalTuning {"
+    return "\n  TxSignalTuning {"
            + (freqMax != null ? " freqMax [" + freqMax + "]" : "")
            + (freqMin != null ? " freqMin [" + freqMin + "]" : "")
            + (lowestUsableChannel != null ? " lowestUsableChannel [" + lowestUsableChannel + "]" : "")

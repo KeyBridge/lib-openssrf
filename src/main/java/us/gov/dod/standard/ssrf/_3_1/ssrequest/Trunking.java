@@ -959,7 +959,7 @@ public class Trunking {
    */
   @Override
   public String toString() {
-    return "Trunking {"
+    return "\n  Trunking {"
            + (additionalChannelsRationale != null ? " additionalChannelsRationale [" + additionalChannelsRationale + "]" : "")
            + (dispatcher != null ? " dispatcher [" + dispatcher + "]" : "")
            + (dispatcherExplanation != null ? " dispatcherExplanation [" + dispatcherExplanation + "]" : "")

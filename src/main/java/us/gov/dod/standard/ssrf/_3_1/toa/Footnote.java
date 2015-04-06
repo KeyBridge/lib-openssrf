@@ -295,7 +295,7 @@ public class Footnote {
    */
   @Override
   public String toString() {
-    return "Footnote {"
+    return "\n  Footnote {"
            + (footnoteType != null ? " footnoteType [" + footnoteType + "]" : "")
            + (identifier != null ? " identifier [" + identifier + "]" : "")
            + (idx != null ? " idx [" + idx + "]" : "")

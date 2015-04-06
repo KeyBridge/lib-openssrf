@@ -2536,7 +2536,7 @@ public class SSRequest extends Common<SSRequest> {
    */
   @Override
   public String toString() {
-    return "SSRequest {"
+    return "\n  SSRequest {"
            + (applicationDate != null ? " applicationDate [" + applicationDate + "]" : "")
            + (applicationSPSNumber != null ? " applicationSPSNumber [" + applicationSPSNumber + "]" : "")
            + (configuration != null ? " configuration [" + configuration + "]" : "")
@@ -2574,7 +2574,7 @@ public class SSRequest extends Common<SSRequest> {
            + (trunking != null ? " trunking [" + trunking + "]" : "")
            + (tspr != null ? " tspr [" + tspr + "]" : "")
            + (wartimeUse != null ? " wartimeUse [" + wartimeUse + "]" : "")
-           + "}\n  SSRequest." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1050,7 +1050,7 @@ public class Transmitter extends Common<Transmitter> {
    */
   @Override
   public String toString() {
-    return "Transmitter {"
+    return "\n Transmitter {"
            + (curve != null ? " curve [" + curve + "]" : "")
            + (deployment != null ? " deployment [" + deployment + "]" : "")
            + (duplexSep != null ? " duplexSep [" + duplexSep + "]" : "")
@@ -1065,7 +1065,7 @@ public class Transmitter extends Common<Transmitter> {
            + (tspr != null ? " tspr [" + tspr + "]" : "")
            + (txMode != null ? " txMode [" + txMode + "]" : "")
            + (usingCountries != null ? " usingCountries [" + usingCountries + "]" : "")
-           + "}\n  Transmitter." + super.toString() + "\n";
+           + super.toString();
   }
 
   /**

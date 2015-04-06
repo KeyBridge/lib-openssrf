@@ -1938,7 +1938,7 @@ public class ObservedMOPAnalysis {
    */
   @Override
   public String toString() {
-    return "ObservedMOPAnalysis {"
+    return "\n  ObservedMOPAnalysis {"
            + (mopAdaptiveDriverDesc != null ? " mopAdaptiveDriverDesc [" + mopAdaptiveDriverDesc + "]" : "")
            + (mopAdaptiveDriverRuleDesc != null ? " mopAdaptiveDriverRuleDesc [" + mopAdaptiveDriverRuleDesc + "]" : "")
            + (mopChangeRateAM != null ? " mopChangeRateAM [" + mopChangeRateAM + "]" : "")
