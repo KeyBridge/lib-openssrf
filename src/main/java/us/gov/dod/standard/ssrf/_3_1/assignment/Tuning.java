@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +49,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDS;
 public class Tuning {
 
   /**
-   * TuningStep - Tuning Step (Required)    * <p>
+   * TuningStep - Tuning Step (Required)
+   * <p>
    * The tuning increment expressed of the requested frequency range. This
    * should be compatible with the tuning capability of the transmitters and/or
    * receivers in the link.
@@ -61,7 +62,8 @@ public class Tuning {
   @XmlElement(name = "TuningStep", required = true)
   private FreqM tuningStep;
   /**
-   * NumFreq - Number of Frequencies (Required)    * <p>
+   * NumFreq - Number of Frequencies (Required)
+   * <p>
    * The number of frequencies required.
    * <p>
    * Format is UN(4)
@@ -71,7 +73,8 @@ public class Tuning {
   @XmlElement(name = "NumFreq", required = true)
   private UN4 numFreq;
   /**
-   * Priority - Priority (Optional)    * <p>
+   * Priority - Priority (Optional)
+   * <p>
    * A number from 0 to 9 that is used to influence the positioning of the
    * Assignment in the ordering of the assignment process, where 9 represents
    * the highest priority and 0 is the lowest priority.
@@ -83,7 +86,8 @@ public class Tuning {
   @XmlElement(name = "Priority", required = false)
   private UN1 priority;
   /**
-   * Exclusive - Exclusive Assignment (Optional)    * <p>
+   * Exclusive - Exclusive Assignment (Optional)
+   * <p>
    * Yes if the assigned frequency should not be reused within the area of
    * exercise/operation.
    * <p>
@@ -94,7 +98,8 @@ public class Tuning {
   @XmlElement(name = "Exclusive", required = false)
   private TString exclusive;
   /**
-   * FreqSep - Frequency Separation (Optional)    * <p>
+   * FreqSep - Frequency Separation (Optional)
+   * <p>
    * The required minimum or exact frequency separation.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -106,7 +111,8 @@ public class Tuning {
   @XmlElement(name = "FreqSep")
   private FreqM freqSep;
   /**
-   * FreqSepType - Frequency Separation Type (Optional)    * <p>
+   * FreqSepType - Frequency Separation Type (Optional)
+   * <p>
    * If the stated frequency separation is an exact or minimum value.
    * <p>
    * Format is L:CDS
@@ -425,10 +431,7 @@ public class Tuning {
   }
 
   /**
-   * Set the RequestedFreq
-   * <p>
-   * Complex element RequestedFreq indicates a single frequency or a range of
-   * frequencies.
+   * Set the Requested Freq: a single frequency or a range of frequencies.
    * <p>
    * @param values One or more instances of type {@link AsgnFreqBase...}.
    * @return The current Tuning object instance.
@@ -442,12 +445,9 @@ public class Tuning {
   }
 
   /**
-   * Set the RequestedFreq
+   * Set the Requested Freq: a single frequency or a range of frequencies.
    * <p>
-   * Complex element RequestedFreq indicates a single frequency or a range of
-   * frequencies.
-   * <p>
-   * @param values A collection of {@link RequestedFreq} instances
+   * @param values A collection of {@link AsgnFreqBase} instances
    * @return The current Tuning object instance.
    * @since 3.1.0
    */
