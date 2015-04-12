@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.*;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.*;
+import us.gov.dod.standard.ssrf._3_1.assignment.Freq;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -444,9 +445,7 @@ public class SSRFTestUtility {
       /**
        * Do not try to populate a field referencing the Common abstract type.
        */
-      if (field.getType().equals(Common.class)) {
-        continue;
-      }
+//      if (field.getType().equals(Common.class)) {        continue;      }
       /**
        * Populate if the field is required.
        */
@@ -533,8 +532,12 @@ public class SSRFTestUtility {
       }
       /**
        * For maximum fill also try to add at least one reference.
+       * <p>
+       * Add a special hook to always populate the transient field for Message
+       * objects. Message objects contain other types, so the min-fill test will
+       * fail without the transient entry.
        */
-      if (maximum && SSRFUtility.isTransient(field)) {
+      if ((maximum || instance.getClass().equals(Message.class)) && SSRFUtility.isTransient(field)) {
         Class<?> c = field.getType();
         /**
          * to prevent a recursive StackOverflowError only fill the transient
@@ -576,28 +579,6 @@ public class SSRFTestUtility {
    */
   private static Object getFillSet(Class<?> clazz, Field field, boolean maximum) throws ClassNotFoundException, Exception {
     /**
-     * Inspect the Collection declaration to identify the internal class type.
-     */
-    Type genericType = field.getGenericType();
-    Type type = ((ParameterizedType) genericType).getActualTypeArguments()[0];
-    /**
-     * The fieldType is a (very) generic Type and apparently cannot be used to
-     * instantiate an instance. Instead use its name, which must be processed to
-     * strip the 'class ' prefix that Java classes prepend in the default
-     * toString.
-     */
-    String fieldClassName = type.toString().replace("class ", "").trim();
-    /**
-     * Some sets refer to generic Common<?> types. Ignore these.
-     */
-    if (fieldClassName.contains("Common")) {
-      return null;
-    }
-    /**
-     * Look up the class by its name.
-     */
-    Class<?> fieldClass = Class.forName(fieldClassName);
-    /**
      * Initialize a new HashSet, then fill it with a random number of entries.
      * Set the response set size to 1 if MIN, else to a random number greater
      * than zero for MAX.
@@ -624,6 +605,43 @@ public class SSRFTestUtility {
     } else if (maximum && field.getName().equals("codeList")) {
       return null;
     }
+    /**
+     * Inspect the Collection declaration to identify the internal class type.
+     */
+    Type genericType = field.getGenericType();
+    Type type = ((ParameterizedType) genericType).getActualTypeArguments()[0];
+    /**
+     * The fieldType is a (very) generic Type and apparently cannot be used to
+     * instantiate an instance. Instead use its name, which must be processed to
+     * strip the 'class ' prefix that Java classes prepend in the default
+     * toString.
+     */
+    String fieldClassName = type.toString().replace("class ", "").trim();
+    /**
+     * Some sets refer to generic Common<?> types. Wherever the type is generic
+     * then add a random number of randomly selected Comment data types.
+     */
+    if (fieldClassName.contains("Common")) {
+      Random r = new Random();
+      for (int i = 0; i < 5; i++) {
+        EDatasetType randomType = EDatasetType.values()[r.nextInt(EDatasetType.values().length)];
+        Common<?> randomTypeInstance = randomType.getClazz().getConstructor().newInstance();
+        fill(randomTypeInstance, false);
+        response.add(randomTypeInstance);
+      }
+      return response;
+    } else if (fieldClassName.contains("AsgnFreqBase")) {
+      /**
+       * If the type is abstract then force it to an actual implementation. This
+       * fixes Tuning..
+       */
+      fieldClassName = Freq.class.getName();
+    }
+
+    /**
+     * Look up the class by its name.
+     */
+    Class<?> fieldClass = Class.forName(fieldClassName);
     /**
      * Handle the case where the class is an enumerated type.
      */
