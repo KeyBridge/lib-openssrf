@@ -499,7 +499,7 @@ public class SSRFUtility {
    * @param clazz the class type to inspect
    * @return a non-null {@link HashSet} instance of Fields
    */
-  protected static Set<Field> findDeclaredAndInheritedFields(Class<?> clazz) {
+  public static Set<Field> findDeclaredAndInheritedFields(Class<?> clazz) {
     Set<Field> fieldSet = new HashSet<>();
     Class<?> clazzType = clazz;
     while (clazzType != null && clazzType != Object.class) {
