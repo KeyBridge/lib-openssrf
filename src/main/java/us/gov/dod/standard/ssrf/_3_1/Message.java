@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,11 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
+import java.lang.reflect.Field;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
+import us.gov.dod.standard.ssrf.SSRFUtility;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -353,9 +355,37 @@ public class Message extends Common<Message> {
       return;
     }
     /**
-     * @TODO: Check ALL SSRF lists.
+     * Scan ALL the data lists in the SSRF (SchemaRoot) object.
      */
-//    for (Common<?> instance : root.getCommon < ?  > ()) {      if (datasetRef.contains(instance.getSerial())) {        data.add(instance);      }    }
+    for (Field field : SSRFUtility.findDeclaredAndInheritedFields(root.getClass())) {
+      try {
+        field.setAccessible(true);
+        /**
+         * Ignore fields that are NOT.
+         */
+        Object fieldValue = field.get(root);
+        if (fieldValue == null) {
+          continue;
+        }
+        System.out.println("field type " + field.getType().getSimpleName());
+        if (field.getType().getSuperclass().equals(Collection.class)) {
+          System.out.println("  superclass is a collection");
+        }
+        /**
+         * Only process field values that are instance of a collection.
+         */
+        if (fieldValue instanceof Collection) {
+          for (Object entry : (Iterable<? extends Object>) fieldValue) {
+            if (entry != null) {
+              if (datasetRef.contains(((Common<?>) entry).getSerial())) {
+                data.add((Common<?>) entry);
+              }
+            }
+          }
+        }
+      } catch (SecurityException | IllegalArgumentException | IllegalAccessException securityException) {
+      }
+    }
   }//</editor-fold>
 
 }
