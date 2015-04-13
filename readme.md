@@ -1,5 +1,5 @@
-# OpenSSRF
-## Reference Implementation v3.1.0rc1 (Release Candidate)
+# OpenSSRF v3.1.0rc2
+## Reference Implementation Release Candidate
 OpenSSRF is an open source reference implementation of the Standard Spectrum Resource 
 Format (SSRF). The specification is defined in MCEB Pub 8. 
 
@@ -9,40 +9,45 @@ compliant reference implementation of the most recent Standard Spectrum Resource
 
 See the [tutorial](tutorial.md) for a brief how-to.
 
-This software project implements the SSRF specification Version 3.1.0 as of 2014-09-16 (with corrections).
+This software project implements the SSRF specification Version 3.1.0 (2014-09-16 with corrections).
 Previous versions released by this project include v1.2.4b and v3.0.0. 
 Visit [OpenSSRF.org](http://openssrf.org) for details.
 
 ### Sponsor Opportunity
-Contact [Key Bridge Global LLC](https://keybridgeglobal.com) or the 
-[Wireless Innovation Forum](http://www.wirelessinnovation.org) to join or to sponsor 
-this project.
+Contact [Key Bridge Global LLC](https://keybridgeglobal.com) or the [Wireless Innovation Forum](http://www.wirelessinnovation.org) to join or to sponsor this project.
 
 ## In this Release
-The software contained in this release is, to the best of our knowledge, a complete
-and compliant implementation of the SSRF v3.1.0 data format specification. 
+The software contained in this release (RC2) has passed all certification tests is a the OpenSSRF v3.1.0 reference implementation candidate. RC2 is a complete and compliant implementation of the SSRF v3.1.0 data format specification. 
 
-Special attention and effort has been invested to organize the software, to improve the approachability of the
-underlying SSRF logical data model, and to add methods and techniques to simplify 
-the construction of SSRF data structures.
+### Testing Software
+The utilities developed to automate certification testing and evaluation of this software library are available for download at [lib-openssrf-test](https://github.com/KeyBridge/lib-openssrf-test).
 
-### Useful features in OpenSSRF:
+### OpenSSRF Features
+Special attention and effort has been invested in the development of OpenSSRF to organize the software, to improve the approachability of the underlying SSRF logical data model, and to add methods and techniques to simplify the construction of SSRF data structures.
+
  * Data type validation: A comprehensive data type validation strategy has been incorporated into the software to implement and enforce the SSRF data format and validation rules.
  * Pick lists: Support for pick lists has been updated to match both the schema and text of the specification.
  * Software packaging: SSRF data types are organized naturally according to their use and parent-child relationship with other data types.
  * Software abstraction and simplification: Metadata and other common elements and data attributes have been consolidated into several abstract classes and types.
  * Developer utilities: Methods supporting the fluent programming interface have been introduced throughout the new software library.
-
-### New features in this release:
  * A sophisticated set of utilities for automated XML reading, writing, assmbly and validation 
  * Content validation: Required attributes and elements are validated.
  * Patterned fields: Formatted string patterned fields are programmatically generated. Direct user input is not required. 
  * Indexed cross-referencing: SSRF cross referencing between data element is fully automatic.
  * Metadata configuration: Metadata fields are automatically configured using a powerful SSRF properties configuration utility.
 
-Not in this Release (TODO List)
- * External references: SSRF supports the incorporation of external references by file or URI. This is out of scope and left to the application developer.
+### New features in this release
+ * Field type and pattern validation has been improved and (often times manually) added to fields where the schema compiler failed to correctly apply validation annotations.
+ * Automated assembly, construction, writing and reading of the Message type is complete.
+ * Correct handling of abstract frequency data types
 
+Not in this Release (TODO or Not TODO)
+The following issues are left to the application developer:
+ * Time-related values: Hour, Minute, Second, Days of Week/Month and Year fields are represented by complex String patterns that are cumbersome and very difficult to parse or process automatically
+ * Product-specific identifications: A few fields buried deep within the frequency Assignment record are represented by String patterns that appear to require product or network-specific automated parsing and processing
+ * Emission classification: Some RF emission classification patterns do not appear to match industry standards and require custom parsing and processing
+ * External references: The software does not contain hooks to automate external references by file or URI
+ 
 ## SSRF Background
 SSRF is based on the NATO Spectrum Management Allied Data Exchange Format-eXtensible Markup Language
 (SMADEF-XML) data standard. NTIA’s Office of Spectrum Management Data Dictionary (OSMDD) is expected to
@@ -63,8 +68,7 @@ This project is managed by the Open Standard Spectrum Resource Format (SSRF) gro
 within the Wireless Innovation Forum's [Spectrum Innovation Committee](http://groups.winnforum.org/spectrum_innovation_committee).
 
 ## Availability and Use
-The source code and documentation within this project are available under the Apache 2.0 license, copies of which are
-included in the source tree and documentation directories.
+The source code and documentation within this project are available under the Apache 2.0 license, copies of which are included in the source tree and documentation directories.
 
 You are free to download, use and modify this project without restriction, subject to the terms of the Apache 2.0 license.
 
