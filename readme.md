@@ -1,5 +1,6 @@
-# OpenSSRF v3.1.0rc2
-## Reference Implementation Release Candidate
+# OpenSSRF v3.1.0 Release 1.0.0
+
+## Reference Implementation Production Release
 OpenSSRF is an open source reference implementation of the Standard Spectrum Resource 
 Format (SSRF). The specification is defined in MCEB Pub 8. 
 
@@ -17,7 +18,7 @@ Visit [OpenSSRF.org](http://openssrf.org) for details.
 Contact [Key Bridge Global LLC](https://keybridgeglobal.com) or the [Wireless Innovation Forum](http://www.wirelessinnovation.org) to join or to sponsor this project.
 
 ## In this Release
-The software contained in this release (RC2) has passed all certification tests is a the OpenSSRF v3.1.0 reference implementation candidate. RC2 is a complete and compliant implementation of the SSRF v3.1.0 data format specification. 
+In April 2015 The software contained in this release (Rel. 1.0.0) passed all certification tests and is officially recognized by the Defense Information Systems Agency (DISA) as a complete and compliant implementation of the SSRF v3.1.0 data format specification. 
 
 ### Testing Software
 The utilities developed to automate certification testing and evaluation of this software library are available for download at [lib-openssrf-test](https://github.com/KeyBridge/lib-openssrf-test).
@@ -35,15 +36,13 @@ Special attention and effort has been invested in the development of OpenSSRF to
  * Patterned fields: Formatted string patterned fields are programmatically generated. Direct user input is not required. 
  * Indexed cross-referencing: SSRF cross referencing between data element is fully automatic.
  * Metadata configuration: Metadata fields are automatically configured using a powerful SSRF properties configuration utility.
-
-### New features in this release
- * Field type and pattern validation has been improved and (often times manually) added to fields where the schema compiler failed to correctly apply validation annotations.
+ * Improved field type and pattern validation.
  * Automated assembly, construction, writing and reading of the Message type is complete.
  * Correct handling of abstract frequency data types
 
-Not in this Release (TODO or Not TODO)
+### Not in this Release (TODO or Not TODO)
 The following issues are left to the application developer:
- * Time-related values: Hour, Minute, Second, Days of Week/Month and Year fields are represented by complex String patterns that are cumbersome and very difficult to parse or process automatically
+ * Date and DateTime components: Hour, Minute, Second, Days of Week/Month and Year data types are represented by complex String patterns that are cumbersome and difficult to parse or process automatically. See, for example, the _Hours_ type used in Assignment, FEDeployment, JRFL and JRFLEntry. Date and DateTime fields are parsed automatically into Java Calendar objects but Date and DateTime component fields are left as Strings. 
  * Product-specific identifications: A few fields buried deep within the frequency Assignment record are represented by String patterns that appear to require product or network-specific automated parsing and processing
  * Emission classification: Some RF emission classification patterns do not appear to match industry standards and require custom parsing and processing
  * External references: The software does not contain hooks to automate external references by file or URI
@@ -80,7 +79,7 @@ Your code and contributions are welcome. There are two ways you can give back an
 
 ## References
  * [OpenSSRF.org](http://openssrf.org)
- * [Key Bridge Global LLC](https://keybridgeglobal.com)
+ * [Key Bridge LLC](https://keybridgeglobal.com)
  * [Standard Spectrum Resource Format (SSRF) -- MCEB Pub 8](https://acc.dau.mil/CommunityBrowser.aspx?id=283273&lang=en-US)
  * [Wireless Innovation Forum](http://www.wirelessinnovation.org)
 
