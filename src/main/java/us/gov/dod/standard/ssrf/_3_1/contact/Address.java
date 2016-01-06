@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -57,7 +57,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 public class Address {
 
   /**
-   * Description - Address Title (Optional)    * <p>
+   * Description - Address Title (Optional)
+   * <p>
    * The title for the address; for an Organisation, it can be the name of the
    * specific Branch or office; for a Contact or a Role, it can be the job title
    * associated to the address.
@@ -69,7 +70,8 @@ public class Address {
   @XmlElement(name = "Description", required = false)
   private S100 description;
   /**
-   * Street - Street Address (Optional)    * <p>
+   * Street - Street Address (Optional)
+   * <p>
    * The street address.
    * <p>
    * Format is S255
@@ -81,7 +83,8 @@ public class Address {
   @XmlElement(name = "Street", required = false)
   private S255 street;
   /**
-   * CityArea - City or Area (Optional)    * <p>
+   * CityArea - City or Area (Optional)
+   * <p>
    * The city of the address or an operational area name.
    * <p>
    * Format is S50
@@ -93,7 +96,8 @@ public class Address {
   @XmlElement(name = "CityArea", required = false)
   private S50 cityArea;
   /**
-   * StateCounty - State or County (Optional)    * <p>
+   * StateCounty - State or County (Optional)
+   * <p>
    * The state or other sub-national political area.
    * <p>
    * Format is S50
@@ -105,7 +109,8 @@ public class Address {
   @XmlElement(name = "StateCounty", required = false)
   private S50 stateCounty;
   /**
-   * PostCode - Zip Code or Post Code (Optional)    * <p>
+   * PostCode - Zip Code or Post Code (Optional)
+   * <p>
    * The zip code or postal code portion of the address.
    * <p>
    * Format is S15
@@ -117,7 +122,8 @@ public class Address {
   @XmlElement(name = "PostCode", required = false)
   private S15 postCode;
   /**
-   * Country - Country or Area (Required)    * <p>
+   * Country - Country or Area (Required)
+   * <p>
    * The country or area code. Use a one to six alphabetic characters
    * representing either an official country code, a regional body, a group of
    * countries or a NATO Command.

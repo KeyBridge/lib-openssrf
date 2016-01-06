@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -82,7 +82,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;LocationRef cls="U"&gt;BEL::LO:222&lt;/LocationRef&gt;
  * &lt;/Location&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -111,7 +111,7 @@ public class Location extends Common<Location> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = false)
@@ -125,7 +125,7 @@ public class Location extends Common<Location> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -143,7 +143,7 @@ public class Location extends Common<Location> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -154,7 +154,7 @@ public class Location extends Common<Location> {
    * The name of the location.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = true)
@@ -167,7 +167,7 @@ public class Location extends Common<Location> {
    * Format is S255
    * <p>
    * Attribute group Address (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Street", required = false)
@@ -180,7 +180,7 @@ public class Location extends Common<Location> {
    * Format is S50
    * <p>
    * Attribute group Address (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CityArea", required = false)
@@ -193,7 +193,7 @@ public class Location extends Common<Location> {
    * Format is S50
    * <p>
    * Attribute group Address (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StateCounty", required = false)
@@ -206,7 +206,7 @@ public class Location extends Common<Location> {
    * Format is S15
    * <p>
    * Attribute group Address (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PostCode", required = false)
@@ -221,7 +221,7 @@ public class Location extends Common<Location> {
    * Format is L:CAO
    * <p>
    * Attribute group Address (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Country")
@@ -231,7 +231,7 @@ public class Location extends Common<Location> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -246,7 +246,7 @@ public class Location extends Common<Location> {
    * above ground.
    * <p>
    * Format is SN(7,2) (m)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Point")
@@ -257,7 +257,7 @@ public class Location extends Common<Location> {
    * Polygon is a closed geometric shape on the surface of the Earth, defined by
    * at least three points, used to describe an operational area or an excluded
    * area.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Polygon")
@@ -268,7 +268,7 @@ public class Location extends Common<Location> {
    * Ellipse on the horizontal plane, defined by its semi-major and semi-minor
    * axis, and by the orientation (azimuth) of the semi-major axis. This element
    * SHALL NOT be used to describe a satellite orbit.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Ellipse")
@@ -279,7 +279,7 @@ public class Location extends Common<Location> {
    * The serial of the referenced Location.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LocationRef", nillable = true)
@@ -294,7 +294,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -304,7 +304,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -314,7 +314,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -324,7 +324,7 @@ public class Location extends Common<Location> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -335,7 +335,7 @@ public class Location extends Common<Location> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -345,7 +345,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -359,7 +359,7 @@ public class Location extends Common<Location> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -374,7 +374,7 @@ public class Location extends Common<Location> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -384,7 +384,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -393,7 +393,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the name of the location..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -403,7 +403,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the name of the location..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -413,7 +413,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -422,7 +422,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the street address..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -432,7 +432,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the street address..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -442,7 +442,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the Street is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStreet() {
@@ -451,7 +451,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the city of the address or an operational area name..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -461,7 +461,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the city of the address or an operational area name..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -471,7 +471,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the CityArea is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCityArea() {
@@ -480,7 +480,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the state or other sub-national political area..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -490,7 +490,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the state or other sub-national political area..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -500,7 +500,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the StateCounty is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStateCounty() {
@@ -509,7 +509,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the zip code or postal code portion of the address..
-   * <p>
+   *
    * @return a {@link S15} instance
    * @since 3.1.0
    */
@@ -519,7 +519,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the zip code or postal code portion of the address..
-   * <p>
+   *
    * @param value a {@link S15} instance
    * @since 3.1.0
    */
@@ -529,7 +529,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the PostCode is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPostCode() {
@@ -540,7 +540,7 @@ public class Location extends Common<Location> {
    * Get the country or area code. Use a one to six alphabetic characters
    * representing either an official country code, a regional body, a group of
    * countries or a NATO Command..
-   * <p>
+   *
    * @return the Country value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -552,7 +552,7 @@ public class Location extends Common<Location> {
    * Set the country or area code. Use a one to six alphabetic characters
    * representing either an official country code, a regional body, a group of
    * countries or a NATO Command..
-   * <p>
+   *
    * @param value the Country value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -564,7 +564,7 @@ public class Location extends Common<Location> {
    * Determine if the Country is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCountry() {
@@ -576,7 +576,7 @@ public class Location extends Common<Location> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -589,7 +589,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -609,7 +609,7 @@ public class Location extends Common<Location> {
    * structure, enter the height of the reflector above ground. If the Station
    * is a flying object, this data represents the maximum altitude of the object
    * above ground..
-   * <p>
+   *
    * @return a {@link Point} instance
    * @since 3.1.0
    */
@@ -622,7 +622,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the Point is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPoint() {
@@ -642,7 +642,7 @@ public class Location extends Common<Location> {
    * Complex element Polygon is a closed geometric shape on the surface of the
    * Earth, defined by at least three points, used to describe an operational
    * area or an excluded area..
-   * <p>
+   *
    * @return a {@link Polygon} instance
    * @since 3.1.0
    */
@@ -655,7 +655,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the Polygon is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPolygon() {
@@ -675,7 +675,7 @@ public class Location extends Common<Location> {
    * Complex element Ellipse on the horizontal plane, defined by its semi-major
    * and semi-minor axis, and by the orientation (azimuth) of the semi-major
    * axis. This element SHALL NOT be used to describe a satellite orbit..
-   * <p>
+   *
    * @return a {@link Ellipse} instance
    * @since 3.1.0
    */
@@ -688,7 +688,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the Ellipse is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEllipse() {
@@ -704,7 +704,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the serial of the referenced Location..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -720,7 +720,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the LocationRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRef() {
@@ -736,7 +736,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -748,7 +748,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -761,7 +761,7 @@ public class Location extends Common<Location> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -774,7 +774,7 @@ public class Location extends Common<Location> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -791,7 +791,7 @@ public class Location extends Common<Location> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -808,7 +808,7 @@ public class Location extends Common<Location> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -820,7 +820,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the name of the location.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -832,7 +832,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the street address.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -844,7 +844,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the city of the address or an operational area name.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -856,7 +856,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the state or other sub-national political area.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -868,7 +868,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the zip code or postal code portion of the address.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -882,7 +882,7 @@ public class Location extends Common<Location> {
    * Set the country or area code. Use a one to six alphabetic characters
    * representing either an official country code, a regional body, a group of
    * countries or a NATO Command.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAO}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -897,7 +897,7 @@ public class Location extends Common<Location> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -914,7 +914,7 @@ public class Location extends Common<Location> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current Location object instance.
    * @since 3.1.0
@@ -932,7 +932,7 @@ public class Location extends Common<Location> {
    * structure, enter the height of the reflector above ground. If the Station
    * is a flying object, this data represents the maximum altitude of the object
    * above ground.
-   * <p>
+   *
    * @param values One or more instances of type {@link Point...}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -950,7 +950,7 @@ public class Location extends Common<Location> {
    * structure, enter the height of the reflector above ground. If the Station
    * is a flying object, this data represents the maximum altitude of the object
    * above ground.
-   * <p>
+   *
    * @param values A collection of {@link Point} instances
    * @return The current Location object instance.
    * @since 3.1.0
@@ -968,7 +968,7 @@ public class Location extends Common<Location> {
    * Complex element Polygon is a closed geometric shape on the surface of the
    * Earth, defined by at least three points, used to describe an operational
    * area or an excluded area.
-   * <p>
+   *
    * @param values One or more instances of type {@link Polygon...}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -986,7 +986,7 @@ public class Location extends Common<Location> {
    * Complex element Polygon is a closed geometric shape on the surface of the
    * Earth, defined by at least three points, used to describe an operational
    * area or an excluded area.
-   * <p>
+   *
    * @param values A collection of {@link Polygon} instances
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1004,7 +1004,7 @@ public class Location extends Common<Location> {
    * Complex element Ellipse on the horizontal plane, defined by its semi-major
    * and semi-minor axis, and by the orientation (azimuth) of the semi-major
    * axis. This element SHALL NOT be used to describe a satellite orbit.
-   * <p>
+   *
    * @param values One or more instances of type {@link Ellipse...}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1022,7 +1022,7 @@ public class Location extends Common<Location> {
    * Complex element Ellipse on the horizontal plane, defined by its semi-major
    * and semi-minor axis, and by the orientation (azimuth) of the semi-major
    * axis. This element SHALL NOT be used to describe a satellite orbit.
-   * <p>
+   *
    * @param values A collection of {@link Ellipse} instances
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1036,7 +1036,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the serial of the referenced Location.
-   * <p>
+   *
    * @param values One or more instances of type {@link LocationRef...}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1053,7 +1053,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the serial of the referenced Location.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1070,7 +1070,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get a string representation of this Location instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1102,7 +1102,7 @@ public class Location extends Common<Location> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -1117,7 +1117,7 @@ public class Location extends Common<Location> {
    * The serial of the referenced Location.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -1125,7 +1125,7 @@ public class Location extends Common<Location> {
 
   /**
    * Get the serial of the referenced Location..
-   * <p>
+   *
    * @return a {@link Location} instance
    * @since 3.1.0
    */
@@ -1138,7 +1138,7 @@ public class Location extends Common<Location> {
 
   /**
    * Determine if the location field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocation() {
@@ -1147,7 +1147,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the serial of the referenced Location.
-   * <p>
+   *
    * @param values An instances of type {@link Location}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1158,7 +1158,7 @@ public class Location extends Common<Location> {
 
   /**
    * Set the serial of the referenced Location.
-   * <p>
+   *
    * @param values An instances of type {@link Location}.
    * @return The current Location object instance.
    * @since 3.1.0
@@ -1175,7 +1175,7 @@ public class Location extends Common<Location> {
    * the transient {@link #location} field. This method should typically be
    * called after the Location is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1194,7 +1194,7 @@ public class Location extends Common<Location> {
    * This method builds the transient {@link #location} with values from the
    * imported {@link #locationRef} field. This method should typically be called
    * after the Location is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

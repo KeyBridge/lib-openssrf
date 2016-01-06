@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,10 @@
 package us.gov.dod.standard.ssrf._3_1.ssreply;
 
 import java.math.BigInteger;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.common.Remarks;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -41,11 +44,13 @@ public class Comment {
   @XmlValue
   private String value;
   /**
-   * idx - Index (Required)    * <p>
+   * idx - Index (Required)
+   * <p>
    * A unique index for each Comment used by this Dataset. Once an idx is used
    * it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
    * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.    * <p>
+   * deleted.
+   * <p>
    * Format is UN(6)
    * <p>
    * @since 3.1.0
@@ -53,7 +58,8 @@ public class Comment {
   @XmlAttribute(name = "idx", required = true)
   private BigInteger idx;
   /**
-   * cls - Classification (Required)    * <p>
+   * cls - Classification (Required)
+   * <p>
    * The classification of the current data item. This attribute is REQUIRED on
    * each data item, even if the classification is "U".
    * <p>
@@ -64,7 +70,8 @@ public class Comment {
   @XmlAttribute(name = "cls", required = true)
   private ListCCL cls;
   /**
-   * remarks - Links to Data Item Remarks (Optional)    * <p>
+   * remarks - Links to Data Item Remarks (Optional)
+   * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * Format is List of UN6
@@ -74,7 +81,8 @@ public class Comment {
   @XmlAttribute(name = "remarks")
   private Set<BigInteger> remarks;
   /**
-   * extReferences - Links to External References (Optional)    * <p>
+   * extReferences - Links to External References (Optional)
+   * <p>
    * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
    * item.
    * <p>
@@ -85,7 +93,8 @@ public class Comment {
   @XmlAttribute(name = "extReferences")
   private Set<BigInteger> extReferences;
   /**
-   * US:legacyReleasability - Legacy Releasability (Optional)    * <p>
+   * US:legacyReleasability - Legacy Releasability (Optional)
+   * <p>
    * One or more special handling instructions in sentence format, not code
    * format. For example, "Approved for public release; distribution is
    * unlimited". Multiple special handling instructions are separated by "|”
@@ -98,7 +107,8 @@ public class Comment {
   @XmlAttribute(name = "legacyReleasability")
   private String legacyReleasability;
   /**
-   * US:quality - Data Quality (Optional)    * <p>
+   * US:quality - Data Quality (Optional)
+   * <p>
    * One or more data quality indicator(s), separated by "|” (i.e., ASCII
    * character #124), for the contents of the associated Data Item For example,
    * "Outlier" | "Non-CodeList".
@@ -110,7 +120,8 @@ public class Comment {
   @XmlAttribute(name = "quality")
   private String quality;
   /**
-   * US:recommendedValue - Recommended Value (Optional)    * <p>
+   * US:recommendedValue - Recommended Value (Optional)
+   * <p>
    * A value that is most probably correct.
    * <p>
    * Format is Memo
@@ -120,13 +131,15 @@ public class Comment {
   @XmlAttribute(name = "recommendedValue")
   private String recommendedValue;
   /**
-   * idref - Data Item ID (Optional)    * <p>
+   * idref - Data Item ID (Optional)
+   * <p>
    * A unique identifier for each Data Item in the Dataset. Within each Dataset,
    * the idref value must be unique for every occurrence. If a received Dataset
    * uses idrefs and it is expected that the Dataset will be exchanged, the
    * idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.    * <p>
+   * optional.
+   * <p>
    * Format is S10
    * <p>
    * @since 3.1.0
@@ -482,7 +495,8 @@ public class Comment {
    * Set a unique index for each Comment used by this Dataset. Once an idx is
    * used it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
    * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.    * <p>
+   * deleted.
+   * <p>
    * @param value An instances of type {@link BigInteger}.
    * @return The current Comment object instance.
    * @since 3.1.0
@@ -607,7 +621,8 @@ public class Comment {
    * Dataset uses idrefs and it is expected that the Dataset will be exchanged,
    * the idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
-   * optional.    * <p>
+   * optional.
+   * <p>
    * @param value An instances of type {@link String}.
    * @return The current Comment object instance.
    * @since 3.1.0

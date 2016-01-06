@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S12;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
 /**
@@ -55,7 +58,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class TrunkingAssignment {
 
   /**
-   * US:IsRelinquished - Is Relinquished (Required)    * <p>
+   * US:IsRelinquished - Is Relinquished (Required)
+   * <p>
    * The Yes if this is an existing assignment to be relinquished by the trunked
    * land mobile system. If No, the existing assignment will be used by
    * (incorporated into) the system.
@@ -67,7 +71,8 @@ public class TrunkingAssignment {
   @XmlElement(name = "IsRelinquished", required = true)
   private TString isRelinquished;
   /**
-   * US:AgencySerialNum - Agency Serial Number (Optional)    * <p>
+   * US:AgencySerialNum - Agency Serial Number (Optional)
+   * <p>
    * The externally-assigned unique identifier of a frequency assignment.
    * <p>
    * Format is S12
@@ -77,7 +82,8 @@ public class TrunkingAssignment {
   @XmlElement(name = "AgencySerialNum", required = false)
   private S12 agencySerialNum;
   /**
-   * US:FreqMax - Frequency Maximum (Optional)    * <p>
+   * US:FreqMax - Frequency Maximum (Optional)
+   * <p>
    * The upper frequency of band.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
@@ -89,7 +95,8 @@ public class TrunkingAssignment {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * US:FreqMin - Frequency Minimum (Optional)    * <p>
+   * US:FreqMin - Frequency Minimum (Optional)
+   * <p>
    * The lower frequency of band or discrete frequency.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -99,7 +106,8 @@ public class TrunkingAssignment {
   @XmlElement(name = "FreqMin", required = false)
   private FreqM freqMin;
   /**
-   * US:RelinquishmentDate - Relinquishment Date (Optional)    * <p>
+   * US:RelinquishmentDate - Relinquishment Date (Optional)
+   * <p>
    * The expected date the existing assignment will be relinquished by the
    * trunked land mobile system.
    * <p>

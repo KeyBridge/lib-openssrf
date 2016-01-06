@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Percent3;
 
 /**
  * ObservedRFValues (US) contains details of actual RF observations.
@@ -36,7 +40,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedRFValues {
 
   /**
-   * US:RFValue - RF Value (Optional)    * <p>
+   * US:RFValue - RF Value (Optional)
+   * <p>
    * The observed signals values
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,14 @@
  */
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCMO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSS;
 import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
@@ -53,7 +59,8 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
 public class Baseband {
 
   /**
-   * ModFreqMin - Minimum Modulating Frequency (Optional)    * <p>
+   * ModFreqMin - Minimum Modulating Frequency (Optional)
+   * <p>
    * The minimum modulating frequency measured: - for a transmitter, on the low
    * side of the spectrum signature at the -3 dB point before the baseband
    * signal begins the up-conversion process; - for a receiver, at the -3 dB
@@ -67,7 +74,8 @@ public class Baseband {
   @XmlElement(name = "ModFreqMin", required = false)
   private FreqM modFreqMin;
   /**
-   * ModFreqMax - Maximum Modulating Frequency (Optional)    * <p>
+   * ModFreqMax - Maximum Modulating Frequency (Optional)
+   * <p>
    * The maximum modulating frequency: - for a transmitter, measured on the high
    * side of the spectrum signature at the -3 dB point before the baseband
    * signal begins the up-conversion process; - for a receiver, frequency that
@@ -84,7 +92,8 @@ public class Baseband {
   @XmlElement(name = "ModFreqMax", required = false)
   private FreqM modFreqMax;
   /**
-   * SignalType - Signal Type (Optional)    * <p>
+   * SignalType - Signal Type (Optional)
+   * <p>
    * The type of modulation.
    * <p>
    * Format is L:CMO
@@ -94,7 +103,8 @@ public class Baseband {
   @XmlElement(name = "SignalType", required = false)
   private TString signalType;
   /**
-   * BitDuration - Bit Duration (Optional)    * <p>
+   * BitDuration - Bit Duration (Optional)
+   * <p>
    * The period of elapsed time, per bit instance, before change of states.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -104,7 +114,8 @@ public class Baseband {
   @XmlElement(name = "BitDuration", required = false)
   private microsecs bitDuration;
   /**
-   * OOKPattern - On-Off Key Pattern (Optional)    * <p>
+   * OOKPattern - On-Off Key Pattern (Optional)
+   * <p>
    * A text description of the on-off keying (OOK) pattern. Example: (3 on, 3
    * off, 3 on, 4 off,...)
    * <p>
@@ -115,7 +126,8 @@ public class Baseband {
   @XmlElement(name = "OOKPattern", required = false)
   private S100 ookPattern;
   /**
-   * US:SignalDurationMax - Maximum Signal Duration (Optional)    * <p>
+   * US:SignalDurationMax - Maximum Signal Duration (Optional)
+   * <p>
    * The maximum time value for how long the tone persists in the baseband.
    * <p>
    * [XSL ERR MINMAX] If US:SignalDurationMax is used, it MUST be greater than
@@ -128,7 +140,8 @@ public class Baseband {
   @XmlElement(name = "SignalDurationMax", required = false)
   private microsecs signalDurationMax;
   /**
-   * US:SignalDurationMin - Minimum Signal Duration (Optional)    * <p>
+   * US:SignalDurationMin - Minimum Signal Duration (Optional)
+   * <p>
    * The minimum time value for how long the tone persists in the baseband.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -138,7 +151,8 @@ public class Baseband {
   @XmlElement(name = "SignalDurationMin", required = false)
   private microsecs signalDurationMin;
   /**
-   * US:SignalSequenceDesc - Signal Sequence Description (Optional)    * <p>
+   * US:SignalSequenceDesc - Signal Sequence Description (Optional)
+   * <p>
    * The pattern of occurrence of sub-signals. (Example: beep, beep, pause, bip,
    * pause...) If using SignalDuration, entries in ToneName MUST match the
    * descriptive names used here.
@@ -150,7 +164,8 @@ public class Baseband {
   @XmlElement(name = "SignalSequenceDesc", required = false)
   private S100 signalSequenceDesc;
   /**
-   * US:SignalShape - Signal Shape (Optional)    * <p>
+   * US:SignalShape - Signal Shape (Optional)
+   * <p>
    * The basic shape of the signal.
    * <p>
    * Format is L:USS

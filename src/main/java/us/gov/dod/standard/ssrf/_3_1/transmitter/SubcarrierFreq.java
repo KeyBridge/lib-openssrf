@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,15 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
 
 /**
  * SubcarrierFreq describes the secondary channel that
@@ -44,7 +47,8 @@ public class SubcarrierFreq {
   @XmlElement(name = "Freq", required = true)
   private FreqM freq;
   /**
-   * FreqOffset - Subcarrier Frequency Offset (Optional)    * <p>
+   * FreqOffset - Subcarrier Frequency Offset (Optional)
+   * <p>
    * The frequency differential from the subcarrier frequency.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -54,7 +58,8 @@ public class SubcarrierFreq {
   @XmlElement(name = "FreqOffset", required = false)
   private FreqM freqOffset;
   /**
-   * FreqRest - Rest Frequency (Optional)    * <p>
+   * FreqRest - Rest Frequency (Optional)
+   * <p>
    * The dwell or pause frequency utilised while processing the subcarrier.
    * Typically provided for improvement of the baseband S/N noise ratio.
    * <p>

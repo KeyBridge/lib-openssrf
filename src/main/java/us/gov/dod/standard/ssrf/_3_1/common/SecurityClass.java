@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +62,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class SecurityClass {
 
   /**
-   * US:ClsAuthority - Original Classification Authority (Optional)    * <p>
+   * US:ClsAuthority - Original Classification Authority (Optional)
+   * <p>
    * The identity, by name and position, or by personal identifier, of the
    * original classification authority.
    * <p>
@@ -73,7 +74,8 @@ public class SecurityClass {
   @XmlElement(name = "ClsAuthority", required = false)
   private S30 clsAuthority;
   /**
-   * US:SourceClsDate - Source Classification Date (Optional)    * <p>
+   * US:SourceClsDate - Source Classification Date (Optional)
+   * <p>
    * The date this classified dataset was prepared, i.e., the Original
    * Classification Date.
    * <p>
@@ -84,7 +86,8 @@ public class SecurityClass {
   @XmlElement(name = "SourceClsDate", required = false)
   private D sourceClsDate;
   /**
-   * US:ClsOrg - Original Classification Authority Organizatio (Optional)    * <p>
+   * US:ClsOrg - Original Classification Authority Organizatio (Optional)
+   * <p>
    * The organization of the original classification authority.
    * <p>
    * Format is S30
@@ -94,7 +97,8 @@ public class SecurityClass {
   @XmlElement(name = "ClsOrg", required = false)
   private S30 clsOrg;
   /**
-   * US:ClsReason - Reason for Classification (Optional)    * <p>
+   * US:ClsReason - Reason for Classification (Optional)
+   * <p>
    * The reason(s) for the classification. This field contains one or more
    * letters, separated by spaces, from the following list. (a) military plans,
    * weapons systems, or operations; (b) foreign government information; (c)
@@ -115,7 +119,8 @@ public class SecurityClass {
   @XmlElement(name = "ClsReason", required = false)
   private S15 clsReason;
   /**
-   * US:DeclsType - Declassification Instructions (Optional)    * <p>
+   * US:DeclsType - Declassification Instructions (Optional)
+   * <p>
    * The declassification instructions of the dataset. Refer to the appropriate
    * classification authority(s) for more information about this field.
    * <p>
@@ -126,7 +131,8 @@ public class SecurityClass {
   @XmlElement(name = "DeclsType", required = false)
   private S10 declsType;
   /**
-   * US:DeclsDate - Declassification Date (Optional)    * <p>
+   * US:DeclsDate - Declassification Date (Optional)
+   * <p>
    * The declassification date for DEDATE and DE25Xn-based declassification
    * instructions.
    * <p>
@@ -137,7 +143,8 @@ public class SecurityClass {
   @XmlElement(name = "DeclsDate", required = false)
   private D declsDate;
   /**
-   * US:DeclsEvent - Declassification Event (Optional)    * <p>
+   * US:DeclsEvent - Declassification Event (Optional)
+   * <p>
    * The declassification event, when necessary based on the declassification
    * instructions.
    * <p>

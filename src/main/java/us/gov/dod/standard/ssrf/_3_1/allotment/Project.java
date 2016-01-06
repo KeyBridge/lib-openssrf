@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +24,9 @@ import us.gov.dod.standard.ssrf._3_1.Assignment;
 import us.gov.dod.standard.ssrf._3_1.FEDeployment;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S30;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPJ;
 
 /**
@@ -42,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPJ;
  *   &lt;Description cls="U"&gt;This is a good project.&lt;/Description&gt;
  * &lt;/Project&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -55,31 +57,29 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPJ;
 public class Project {
 
   /**
-   * Type - Project Type (Optional)    * <p>
-   * The type of project.
+   * Type - Project Type (Optional) * The type of project.
    * <p>
    * Format is L:CPJ
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * Name - Project Name (Required)    * <p>
-   * The name of the project.
+   * Name - Project Name (Required) * The name of the project.
    * <p>
    * Format is S30
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = true)
   private S30 name;
   /**
-   * Description - Description (Optional)    * <p>
-   * Any additional amplifying information about the project.
+   * Description - Description (Optional) * Any additional amplifying
+   * information about the project.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
@@ -87,7 +87,7 @@ public class Project {
 
   /**
    * Get the type of project..
-   * <p>
+   *
    * @return the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -97,7 +97,7 @@ public class Project {
 
   /**
    * Set the type of project..
-   * <p>
+   *
    * @param value the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -109,7 +109,7 @@ public class Project {
    * Determine if the Type is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetType() {
@@ -118,7 +118,7 @@ public class Project {
 
   /**
    * Get the name of the project..
-   * <p>
+   *
    * @return a {@link S30} instance
    * @since 3.1.0
    */
@@ -128,7 +128,7 @@ public class Project {
 
   /**
    * Set the name of the project..
-   * <p>
+   *
    * @param value a {@link S30} instance
    * @since 3.1.0
    */
@@ -138,7 +138,7 @@ public class Project {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -147,7 +147,7 @@ public class Project {
 
   /**
    * Get any additional amplifying information about the project..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -157,7 +157,7 @@ public class Project {
 
   /**
    * Set any additional amplifying information about the project..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -167,7 +167,7 @@ public class Project {
 
   /**
    * Determine if the Description is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
@@ -176,7 +176,7 @@ public class Project {
 
   /**
    * Set the type of project.
-   * <p>
+   *
    * @param value An instances of type {@link ListCPJ}.
    * @return The current Project object instance.
    * @since 3.1.0
@@ -188,7 +188,7 @@ public class Project {
 
   /**
    * Set the name of the project.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Project object instance.
    * @since 3.1.0
@@ -200,7 +200,7 @@ public class Project {
 
   /**
    * Set any additional amplifying information about the project.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Project object instance.
    * @since 3.1.0
@@ -212,7 +212,7 @@ public class Project {
 
   /**
    * Get a string representation of this Project instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -231,7 +231,7 @@ public class Project {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

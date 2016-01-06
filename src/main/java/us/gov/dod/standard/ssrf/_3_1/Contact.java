@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
 import us.gov.dod.standard.ssrf._3_1.contact.EMail;
 import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S10;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S30;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -43,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;/TelephoneFax&gt;
  * &lt;/Contact&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -67,7 +70,7 @@ public class Contact extends Common<Contact> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = false)
@@ -81,7 +84,7 @@ public class Contact extends Common<Contact> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -99,7 +102,7 @@ public class Contact extends Common<Contact> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -110,7 +113,7 @@ public class Contact extends Common<Contact> {
    * The contact title or rank e.g., Ms, Col, etc.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TitleRank", required = false)
@@ -121,7 +124,7 @@ public class Contact extends Common<Contact> {
    * The first name of the contact individual.
    * <p>
    * Format is S30
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FirstName", required = false)
@@ -132,7 +135,7 @@ public class Contact extends Common<Contact> {
    * The last name of the contact individual.
    * <p>
    * Format is S30
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LastName", required = false)
@@ -141,7 +144,7 @@ public class Contact extends Common<Contact> {
    * Address (Optional)
    * <p>
    * Address contains the address of a Contact, Organisation or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Address")
@@ -151,7 +154,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * TelephoneFax reflects the telephone and/or telefax number(s) of the
    * Contact, Organisation or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TelephoneFax")
@@ -160,7 +163,7 @@ public class Contact extends Common<Contact> {
    * Email (Optional)
    * <p>
    * Email contains the email address of the Contact or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EMail")
@@ -175,7 +178,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -185,7 +188,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -195,7 +198,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -205,7 +208,7 @@ public class Contact extends Common<Contact> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -216,7 +219,7 @@ public class Contact extends Common<Contact> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -226,7 +229,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -240,7 +243,7 @@ public class Contact extends Common<Contact> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -255,7 +258,7 @@ public class Contact extends Common<Contact> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -265,7 +268,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -274,7 +277,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Get the contact title or rank e.g., Ms, Col, etc..
-   * <p>
+   *
    * @return a {@link S10} instance
    * @since 3.1.0
    */
@@ -284,7 +287,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the contact title or rank e.g., Ms, Col, etc..
-   * <p>
+   *
    * @param value a {@link S10} instance
    * @since 3.1.0
    */
@@ -294,7 +297,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the TitleRank is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTitleRank() {
@@ -303,7 +306,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Get the first name of the contact individual..
-   * <p>
+   *
    * @return a {@link S30} instance
    * @since 3.1.0
    */
@@ -313,7 +316,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the first name of the contact individual..
-   * <p>
+   *
    * @param value a {@link S30} instance
    * @since 3.1.0
    */
@@ -323,7 +326,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the FirstName is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFirstName() {
@@ -332,7 +335,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Get the last name of the contact individual..
-   * <p>
+   *
    * @return a {@link S30} instance
    * @since 3.1.0
    */
@@ -342,7 +345,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the last name of the contact individual..
-   * <p>
+   *
    * @param value a {@link S30} instance
    * @since 3.1.0
    */
@@ -352,7 +355,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the LastName is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastName() {
@@ -364,7 +367,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role..
-   * <p>
+   *
    * @return a {@link Address} instance
    * @since 3.1.0
    */
@@ -377,7 +380,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the Address is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAddress() {
@@ -396,7 +399,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role..
-   * <p>
+   *
    * @return a {@link TelephoneFax} instance
    * @since 3.1.0
    */
@@ -409,7 +412,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the TelephoneFax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTelephoneFax() {
@@ -427,7 +430,7 @@ public class Contact extends Common<Contact> {
    * Get the Email
    * <p>
    * Complex element Email contains the email address of the Contact or Role..
-   * <p>
+   *
    * @return a {@link EMail} instance
    * @since 3.1.0
    */
@@ -440,7 +443,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Determine if the EMail is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEMail() {
@@ -456,7 +459,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -468,7 +471,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -481,7 +484,7 @@ public class Contact extends Common<Contact> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -494,7 +497,7 @@ public class Contact extends Common<Contact> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -511,7 +514,7 @@ public class Contact extends Common<Contact> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -528,7 +531,7 @@ public class Contact extends Common<Contact> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -540,7 +543,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the contact title or rank e.g., Ms, Col, etc.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -552,7 +555,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the first name of the contact individual.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -564,7 +567,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Set the last name of the contact individual.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -579,7 +582,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link Address...}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -596,7 +599,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
-   * <p>
+   *
    * @param values A collection of {@link Address} instances
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -613,7 +616,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link TelephoneFax...}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -630,7 +633,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
-   * <p>
+   *
    * @param values A collection of {@link TelephoneFax} instances
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -646,7 +649,7 @@ public class Contact extends Common<Contact> {
    * Set the Email
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link EMail...}.
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -662,7 +665,7 @@ public class Contact extends Common<Contact> {
    * Set the Email
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
-   * <p>
+   *
    * @param values A collection of {@link EMail} instances
    * @return The current Contact object instance.
    * @since 3.1.0
@@ -676,7 +679,7 @@ public class Contact extends Common<Contact> {
 
   /**
    * Get a string representation of this Contact instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -702,7 +705,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

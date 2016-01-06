@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
@@ -43,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFD;
  *   &lt;LocationRef cls="U"&gt;NLD::LO:333&lt;/LocationRef&gt;
  * &lt;/FEDeployment&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -72,7 +75,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * The dataset identifier of the ForceElement being deployed.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FERef", required = true)
@@ -83,7 +86,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * The type of deployment.
    * <p>
    * Format is L:CFD
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Type", required = true)
@@ -94,7 +97,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * The quantity of Force Element referenced in FERef.
    * <p>
    * Format is UN(6)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Num", required = false)
@@ -108,7 +111,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Seconds", required = false)
@@ -122,7 +125,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Minutes", required = false)
@@ -136,7 +139,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Hours", required = false)
@@ -149,7 +152,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DaysOfMonth", required = false)
@@ -162,7 +165,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Months", required = false)
@@ -176,7 +179,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DaysOfWeek", required = false)
@@ -190,7 +193,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Years", required = false)
@@ -221,7 +224,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Format is UN(4) (min)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Duration", required = false)
@@ -232,7 +235,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * The serial of the referenced Location.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LocationRef", required = false)
@@ -242,7 +245,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Project provides the Project, OPLAN, COMPLAN or Exercise name, or any other
    * project name associated to the dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Project")
@@ -252,7 +255,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * AtWayPoint defines a point in time at which a Force Element is at a given
    * waypoint along a route.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AtWaypoint")
@@ -267,7 +270,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get the dataset identifier of the ForceElement being deployed..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -277,7 +280,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the dataset identifier of the ForceElement being deployed..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    */
@@ -287,7 +290,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the FERef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFERef() {
@@ -296,7 +299,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get the type of deployment..
-   * <p>
+   *
    * @return the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -306,7 +309,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the type of deployment..
-   * <p>
+   *
    * @param value the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -318,7 +321,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Determine if the Type is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetType() {
@@ -327,7 +330,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get the quantity of Force Element referenced in FERef..
-   * <p>
+   *
    * @return a {@link UN6} instance
    * @since 3.1.0
    */
@@ -337,7 +340,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the quantity of Force Element referenced in FERef..
-   * <p>
+   *
    * @param value a {@link UN6} instance
    * @since 3.1.0
    */
@@ -347,7 +350,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Num is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNum() {
@@ -357,7 +360,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the seconds of hour [0-59] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @return a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -368,7 +371,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the seconds of hour [0-59] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @param value a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -378,7 +381,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Seconds is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSeconds() {
@@ -388,7 +391,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the minutes of an hour [0-59] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @return a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -399,7 +402,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the minutes of an hour [0-59] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @param value a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -409,7 +412,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Minutes is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMinutes() {
@@ -419,7 +422,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the hours of a day [0-23] (UTC time) that the Force element is planned
    * for deployment..
-   * <p>
+   *
    * @return a {@link Hours} instance
    * @since 3.1.0
    */
@@ -430,7 +433,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the hours of a day [0-23] (UTC time) that the Force element is planned
    * for deployment..
-   * <p>
+   *
    * @param value a {@link Hours} instance
    * @since 3.1.0
    */
@@ -440,7 +443,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Hours is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHours() {
@@ -450,7 +453,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the day of month [1-31] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @return a {@link DaysOfMonth} instance
    * @since 3.1.0
    */
@@ -461,7 +464,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the day of month [1-31] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @param value a {@link DaysOfMonth} instance
    * @since 3.1.0
    */
@@ -471,7 +474,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the DaysOfMonth is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDaysOfMonth() {
@@ -481,7 +484,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the month of year [1-12] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @return a {@link Months} instance
    * @since 3.1.0
    */
@@ -492,7 +495,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the month of year [1-12] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @param value a {@link Months} instance
    * @since 3.1.0
    */
@@ -502,7 +505,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Months is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMonths() {
@@ -512,7 +515,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] that
    * the Force element is planned for deployment..
-   * <p>
+   *
    * @return a {@link DaysOfWeek} instance
    * @since 3.1.0
    */
@@ -523,7 +526,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] that
    * the Force element is planned for deployment..
-   * <p>
+   *
    * @param value a {@link DaysOfWeek} instance
    * @since 3.1.0
    */
@@ -533,7 +536,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the DaysOfWeek is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDaysOfWeek() {
@@ -543,7 +546,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Get the 4-digit year [1900..2100] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @return a {@link Years} instance
    * @since 3.1.0
    */
@@ -554,7 +557,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the 4-digit year [1900..2100] that the Force element is planned for
    * deployment..
-   * <p>
+   *
    * @param value a {@link Years} instance
    * @since 3.1.0
    */
@@ -564,7 +567,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Years is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetYears() {
@@ -596,7 +599,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>.
-   * <p>
+   *
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -629,7 +632,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>.
-   * <p>
+   *
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -639,7 +642,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Duration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuration() {
@@ -648,7 +651,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get the serial of the referenced Location..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -658,7 +661,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the serial of the referenced Location..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    */
@@ -668,7 +671,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the LocationRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRef() {
@@ -680,7 +683,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset..
-   * <p>
+   *
    * @return a {@link Project} instance
    * @since 3.1.0
    */
@@ -693,7 +696,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the Project is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetProject() {
@@ -712,7 +715,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Complex element AtWayPoint defines a point in time at which a Force Element
    * is at a given waypoint along a route..
-   * <p>
+   *
    * @return a {@link AtWaypoint} instance
    * @since 3.1.0
    */
@@ -725,7 +728,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the AtWaypoint is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAtWaypoint() {
@@ -741,7 +744,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the dataset identifier of the ForceElement being deployed.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -753,7 +756,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the type of deployment.
-   * <p>
+   *
    * @param value An instances of type {@link ListCFD}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -765,7 +768,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the quantity of Force Element referenced in FERef.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -778,7 +781,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the seconds of hour [0-59] that the Force element is planned for
    * deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -791,7 +794,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the minutes of an hour [0-59] that the Force element is planned for
    * deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -804,7 +807,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the hours of a day [0-23] (UTC time) that the Force element is planned
    * for deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -817,7 +820,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the day of month [1-31] that the Force element is planned for
    * deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -830,7 +833,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the month of year [1-12] that the Force element is planned for
    * deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -843,7 +846,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] that
    * the Force element is planned for deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -856,7 +859,7 @@ public class FEDeployment extends Common<FEDeployment> {
   /**
    * Set the 4-digit year [1900..2100] that the Force element is planned for
    * deployment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -891,7 +894,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -903,7 +906,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the serial of the referenced Location.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -918,7 +921,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link Project...}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -935,7 +938,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values A collection of {@link Project} instances
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -952,7 +955,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Complex element AtWayPoint defines a point in time at which a Force Element
    * is at a given waypoint along a route.
-   * <p>
+   *
    * @param values One or more instances of type {@link AtWaypoint...}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -969,7 +972,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Complex element AtWayPoint defines a point in time at which a Force Element
    * is at a given waypoint along a route.
-   * <p>
+   *
    * @param values A collection of {@link AtWaypoint} instances
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -983,7 +986,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get a string representation of this FEDeployment instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1015,7 +1018,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -1030,7 +1033,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * The dataset identifier of the ForceElement being deployed.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -1038,7 +1041,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get the dataset identifier of the ForceElement being deployed..
-   * <p>
+   *
    * @return a {@link ForceElement} instance
    * @since 3.1.0
    */
@@ -1048,7 +1051,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the forceElement field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetForceElement() {
@@ -1057,7 +1060,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the dataset identifier of the ForceElement being deployed.
-   * <p>
+   *
    * @param value An instances of type {@link ForceElement}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -1073,7 +1076,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * The unique reference serial of an existing Location dataset.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -1081,7 +1084,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Get the unique reference serial of an existing Location dataset..
-   * <p>
+   *
    * @return a {@link Location} instance
    * @since 3.1.0
    */
@@ -1091,7 +1094,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Determine if the location field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocation() {
@@ -1100,7 +1103,7 @@ public class FEDeployment extends Common<FEDeployment> {
 
   /**
    * Set the unique reference serial of an existing Location dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Location}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
@@ -1117,7 +1120,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * transient {@link #forceElement} field. This method should typically be
    * called after the FEDeployment is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1135,7 +1138,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * imported {@link #feRef} field. This method should typically be called after
    * the FEDeployment is imported from XML. * @param root the SSRF root
    * instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

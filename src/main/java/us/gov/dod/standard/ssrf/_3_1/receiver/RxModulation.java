@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,10 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.BitRate;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN5;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDF;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCMO;
 import us.gov.dod.standard.ssrf._3_1.transmitter.TxModulation;
@@ -53,7 +56,8 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxModulation;
 public class RxModulation {
 
   /**
-   * DigitalModType - Digital Modulaton Type (Optional)    * <p>
+   * DigitalModType - Digital Modulaton Type (Optional)
+   * <p>
    * The type of digital modulation.
    * <p>
    * Format is L:CMO
@@ -63,7 +67,8 @@ public class RxModulation {
   @XmlElement(name = "DigitalModType", required = false)
   private TString digitalModType;
   /**
-   * MaxBitRate - Maximum Bit Rate (Optional)    * <p>
+   * MaxBitRate - Maximum Bit Rate (Optional)
+   * <p>
    * The maximum bit rate in kilobits per second applicable to digital
    * communications systems. For spread spectrum transmissions enter the bit
    * rate after error-correction coding. Do not enter the spectrum-spreading
@@ -76,7 +81,8 @@ public class RxModulation {
   @XmlElement(name = "MaxBitRate", required = false)
   private BitRate maxBitRate;
   /**
-   * NumStates - Number of Digital States (Optional)    * <p>
+   * NumStates - Number of Digital States (Optional)
+   * <p>
    * The total number of states, e.g., 4 for 4-ary Phase Shift-Keying, 64 for 64
    * level Quadrature AM.
    * <p>
@@ -89,7 +95,8 @@ public class RxModulation {
   @XmlElement(name = "NumStates", required = false)
   private UN5 numStates;
   /**
-   * LineCoding - Line Coding (Optional)    * <p>
+   * LineCoding - Line Coding (Optional)
+   * <p>
    * The format used to represent binary digit sequencing when digital
    * modulation is used.
    * <p>
@@ -102,7 +109,8 @@ public class RxModulation {
   @XmlElement(name = "LineCoding", required = false)
   private TString lineCoding;
   /**
-   * CodeRate - Pseudorandom Code Rate (Optional)    * <p>
+   * CodeRate - Pseudorandom Code Rate (Optional)
+   * <p>
    * The pseudorandom code rate.
    * <p>
    * Format is UN(10,3) (kbit/sec)
@@ -114,7 +122,8 @@ public class RxModulation {
   @XmlElement(name = "CodeRate", required = false)
   private BitRate codeRate;
   /**
-   * CodePeriod - Pseudorandom Code Repetition Period (Optional)    * <p>
+   * CodePeriod - Pseudorandom Code Repetition Period (Optional)
+   * <p>
    * The length of time of the pseudorandom code repetition period.
    * <p>
    * Format is UN(12,6) (μsec)

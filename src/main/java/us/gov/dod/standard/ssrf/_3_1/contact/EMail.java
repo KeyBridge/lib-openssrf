@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Contact;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.Role;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S255;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -54,7 +56,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class EMail {
 
   /**
-   * Preferred - Preferred Address (Optional)    * <p>
+   * Preferred - Preferred Address (Optional)
+   * <p>
    * A code "Yes" for the preferred address(es) and a code "No" for the others.
    * Automated tools SHOULD send all mails to this Contact to all its preferred
    * addresses.
@@ -66,7 +69,8 @@ public class EMail {
   @XmlElement(name = "Preferred", required = false)
   private TString preferred;
   /**
-   * Type - System or Network (Optional)    * <p>
+   * Type - System or Network (Optional)
+   * <p>
    * The type of network hosting the e-mail address.
    * <p>
    * Format is S20
@@ -76,7 +80,8 @@ public class EMail {
   @XmlElement(name = "Type", required = false)
   private S20 type;
   /**
-   * MaxCls - System Maximum Classification (Optional)    * <p>
+   * MaxCls - System Maximum Classification (Optional)
+   * <p>
    * The highest classification that can be used for the email address.
    * <p>
    * Format is L:CCL
@@ -86,7 +91,8 @@ public class EMail {
   @XmlElement(name = "MaxCls", required = false)
   private TString maxCls;
   /**
-   * Address - Email Address (Required)    * <p>
+   * Address - Email Address (Required)
+   * <p>
    * The e-mail address.
    * <p>
    * Format is S255

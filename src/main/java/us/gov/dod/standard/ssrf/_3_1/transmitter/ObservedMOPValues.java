@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,14 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Signed_DB_5_2;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Degrees;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Percent3;
 
 /**
  * ObservedMOPValues (US) contains specific data artifacts that describe the

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Common;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 
 /**
@@ -49,7 +50,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 public class CaseNum {
 
   /**
-   * Country - Country/Body issuing the case number (Optional)    * <p>
+   * Country - Country/Body issuing the case number (Optional)
+   * <p>
    * The nation or body who provided or assigned the case number.
    * <p>
    * Format is L:CAO
@@ -59,7 +61,8 @@ public class CaseNum {
   @XmlElement(name = "Country", required = false)
   private TString country;
   /**
-   * Type - Case Number Type (Optional)    * <p>
+   * Type - Case Number Type (Optional)
+   * <p>
    * A text identifying the type of case number (national file, exercise name,
    * etc).
    * <p>
@@ -70,7 +73,8 @@ public class CaseNum {
   @XmlElement(name = "Type", required = false)
   private S20 type;
   /**
-   * Identifier - Case Number (Required)    * <p>
+   * Identifier - Case Number (Required)
+   * <p>
    * The case number.
    * <p>
    * Format is S20

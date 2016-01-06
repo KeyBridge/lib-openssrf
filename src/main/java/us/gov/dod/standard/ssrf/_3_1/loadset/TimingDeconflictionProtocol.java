@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Loadset;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUTM;
 
@@ -49,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUTM;
 public class TimingDeconflictionProtocol {
 
   /**
-   * US:Description - Protocol Description (Optional)    * <p>
+   * US:Description - Protocol Description (Optional)
+   * <p>
    * A description of the timing deconfliction protocol.
    * <p>
    * Format is Memo
@@ -59,7 +63,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "Description", required = false)
   private MEMO description;
   /**
-   * US:Name - Protocol Name (Optional)    * <p>
+   * US:Name - Protocol Name (Optional)
+   * <p>
    * The identifying term for the timing deconfliction protocol
    * <p>
    * Format is S50
@@ -69,7 +74,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "Name", required = false)
   private S50 name;
   /**
-   * US:Period - Period (Optional)    * <p>
+   * US:Period - Period (Optional)
+   * <p>
    * The enter the elapsed time between On and Off Triggers (i.e., Operations).
    * <p>
    * Format is UN(12,6) (μsec)
@@ -79,7 +85,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "Period", required = false)
   private microsecs period;
   /**
-   * US:Ranking - Ranking Level (Optional)    * <p>
+   * US:Ranking - Ranking Level (Optional)
+   * <p>
    * The ranking level of the timing deconfliction protocol.
    * <p>
    * Format is L:UTM
@@ -89,7 +96,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "Ranking", required = false)
   private TString ranking;
   /**
-   * US:Required - Deconfliction Required (Required)    * <p>
+   * US:Required - Deconfliction Required (Required)
+   * <p>
    * If a common timing deconfliction protocol is required for processing the
    * subject signal. Enter "˜No" if only entering Jamming Frequencies without
    * timing deconfliction.
@@ -101,7 +109,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "Required", required = true)
   private TString required;
   /**
-   * US:SyncMethod - Synchronisation Method (Optional)    * <p>
+   * US:SyncMethod - Synchronisation Method (Optional)
+   * <p>
    * A description of the timing synchronisation method used by the timing
    * deconfliction protocol.
    * <p>
@@ -112,7 +121,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "SyncMethod", required = false)
   private MEMO syncMethod;
   /**
-   * US:TriggerOff - Off Trigger (Optional)    * <p>
+   * US:TriggerOff - Off Trigger (Optional)
+   * <p>
    * The time that the jammer is off (listening).
    * <p>
    * Format is UN(12,6) (μsec)
@@ -122,7 +132,8 @@ public class TimingDeconflictionProtocol {
   @XmlElement(name = "TriggerOff", required = false)
   private microsecs triggerOff;
   /**
-   * US:TriggerOn - On Trigger (Optional)    * <p>
+   * US:TriggerOn - On Trigger (Optional)
+   * <p>
    * The time that the jammer is on (jamming).
    * <p>
    * Format is UN(12,6) (μsec)

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,14 @@
 package us.gov.dod.standard.ssrf._3_1.toa;
 
 import java.math.BigInteger;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.TOA;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S40;
 
 /**
  * FreqBand contains the allocation of a specific frequency band to
@@ -55,7 +59,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class FreqBand {
 
   /**
-   * FreqMin - Minimum Frequency (Required)    * <p>
+   * FreqMin - Minimum Frequency (Required)
+   * <p>
    * The nominal frequency or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -65,7 +70,8 @@ public class FreqBand {
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Required)    * <p>
+   * FreqMax - Maximum Frequency (Required)
+   * <p>
    * The maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -77,7 +83,8 @@ public class FreqBand {
   @XmlElement(name = "FreqMax", required = true)
   private FreqM freqMax;
   /**
-   * UseIndicator - Use Indicator (Optional)    * <p>
+   * UseIndicator - Use Indicator (Optional)
+   * <p>
    * The permitted uses of this band (e.g., "Government", "Non-government",
    * etc).
    * <p>
@@ -98,7 +105,8 @@ public class FreqBand {
   @XmlElement(name = "Allocation")
   private Set<Allocation> allocation;
   /**
-   * footnotes - Link to band usage notes (Optional)    * <p>
+   * footnotes - Link to band usage notes (Optional)
+   * <p>
    * A list containing each Footnote index applicable to the current frequency
    * band. Each entry in the list should be separated by a blank space.
    * <p>

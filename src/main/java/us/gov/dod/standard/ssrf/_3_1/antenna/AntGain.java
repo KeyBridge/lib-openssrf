@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Unsigned_DB_5_2;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dBi;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
 /**
@@ -39,7 +42,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  *   &lt;FrontToBackRatio cls="U"&gt;2&lt;/FrontToBackRatio&gt;
  * &lt;/AntGain&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -53,44 +56,43 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class AntGain {
 
   /**
-   * Calculated - Calculated Data Indicator (Optional)    * <p>
-   * Yes to indicate that the data was calculated, or "No" if the data is issued
-   * from measurement. Leave blank if the origin of the data is not known.
+   * Calculated - Calculated Data Indicator (Optional) * Yes to indicate that
+   * the data was calculated, or "No" if the data is issued from measurement.
+   * Leave blank if the origin of the data is not known.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Calculated", required = false)
   private TString calculated;
   /**
-   * Gain - Gain (Required)    * <p>
-   * The antenna gain (in dBi - dB with reference to an isotropic source) in the
-   * direction of maximum radiation. For a negative gain (earth and space
-   * stations only), enter a dash before the value of the gain.
+   * Gain - Gain (Required) * The antenna gain (in dBi - dB with reference to an
+   * isotropic source) in the direction of maximum radiation. For a negative
+   * gain (earth and space stations only), enter a dash before the value of the
+   * gain.
    * <p>
    * Format is SN(6.3) (dBi)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Gain", required = true)
   private dBi gain;
   /**
-   * Freq - Frequency (Optional)    * <p>
-   * The frequency at which the gain is expressed.
+   * Freq - Frequency (Optional) * The frequency at which the gain is expressed.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Freq", required = false)
   private FreqM freq;
   /**
-   * FrontToBackRatio - Front-to-back Ratio (Optional)    * <p>
-   * The front-to-back ratio of the main beam to the back lobe.
+   * FrontToBackRatio - Front-to-back Ratio (Optional) * The front-to-back ratio
+   * of the main beam to the back lobe.
    * <p>
    * Format is UN(5,2) (dB)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FrontToBackRatio", required = false)
@@ -100,7 +102,7 @@ public class AntGain {
    * Get Yes to indicate that the data was calculated, or "No" if the data is
    * issued from measurement. Leave blank if the origin of the data is not
    * known..
-   * <p>
+   *
    * @return the Calculated value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -112,7 +114,7 @@ public class AntGain {
    * Set Yes to indicate that the data was calculated, or "No" if the data is
    * issued from measurement. Leave blank if the origin of the data is not
    * known..
-   * <p>
+   *
    * @param value the Calculated value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -124,7 +126,7 @@ public class AntGain {
    * Determine if the Calculated is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCalculated() {
@@ -135,7 +137,7 @@ public class AntGain {
    * Get the antenna gain (in dBi - dB with reference to an isotropic source) in
    * the direction of maximum radiation. For a negative gain (earth and space
    * stations only), enter a dash before the value of the gain..
-   * <p>
+   *
    * @return a {@link dBi} instance
    * @since 3.1.0
    */
@@ -147,7 +149,7 @@ public class AntGain {
    * Set the antenna gain (in dBi - dB with reference to an isotropic source) in
    * the direction of maximum radiation. For a negative gain (earth and space
    * stations only), enter a dash before the value of the gain..
-   * <p>
+   *
    * @param value a {@link dBi} instance
    * @since 3.1.0
    */
@@ -157,7 +159,7 @@ public class AntGain {
 
   /**
    * Determine if the Gain is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGain() {
@@ -166,7 +168,7 @@ public class AntGain {
 
   /**
    * Get the frequency at which the gain is expressed..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -176,7 +178,7 @@ public class AntGain {
 
   /**
    * Set the frequency at which the gain is expressed..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -186,7 +188,7 @@ public class AntGain {
 
   /**
    * Determine if the Freq is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreq() {
@@ -195,7 +197,7 @@ public class AntGain {
 
   /**
    * Get the front-to-back ratio of the main beam to the back lobe..
-   * <p>
+   *
    * @return a {@link Unsigned_DB_5_2} instance
    * @since 3.1.0
    */
@@ -205,7 +207,7 @@ public class AntGain {
 
   /**
    * Set the front-to-back ratio of the main beam to the back lobe..
-   * <p>
+   *
    * @param value a {@link Unsigned_DB_5_2} instance
    * @since 3.1.0
    */
@@ -215,7 +217,7 @@ public class AntGain {
 
   /**
    * Determine if the FrontToBackRatio is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFrontToBackRatio() {
@@ -226,7 +228,7 @@ public class AntGain {
    * Set Yes to indicate that the data was calculated, or "No" if the data is
    * issued from measurement. Leave blank if the origin of the data is not
    * known.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current AntGain object instance.
    * @since 3.1.0
@@ -240,7 +242,7 @@ public class AntGain {
    * Set the antenna gain (in dBi - dB with reference to an isotropic source) in
    * the direction of maximum radiation. For a negative gain (earth and space
    * stations only), enter a dash before the value of the gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntGain object instance.
    * @since 3.1.0
@@ -252,7 +254,7 @@ public class AntGain {
 
   /**
    * Set the frequency at which the gain is expressed.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntGain object instance.
    * @since 3.1.0
@@ -264,7 +266,7 @@ public class AntGain {
 
   /**
    * Set the front-to-back ratio of the main beam to the back lobe.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntGain object instance.
    * @since 3.1.0
@@ -276,7 +278,7 @@ public class AntGain {
 
   /**
    * Get a string representation of this AntGain instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -296,7 +298,7 @@ public class AntGain {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

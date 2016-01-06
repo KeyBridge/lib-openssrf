@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,14 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Allotment;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.EmsDes;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dBW;
 
 /**
  * Emission defines the limits of the authorized bandwidth and power within the
@@ -26,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * Element of {@link Allotment}
  * <p>
  * Example: See {@link Allotment}.
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -39,18 +44,17 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class Emission {
 
   /**
-   * EmsClass - Class Of Emission (Optional)    * <p>
-   * A three to five characters code, derived from the table below, representing
-   * the emission classification. If an "X" is used in any of the symbols,
-   * Remarks SHOULD be used to explain the nature of the signal. First Symbol -
-   * Designates Type of Modulation of the Main Carrier Unmodulated N - Emission
-   * of unmodulated carrier Amplitude Modulated A - Double sideband H - Single
-   * sideband, full carrier R - Single sideband, reduced or variable level
-   * carrier J - Single sideband, suppressed carrier B - Independent sidebands C
-   * - Vestigial sidebands Angle-Modulated F - Frequency modulation G - Phase
-   * modulation Amplitude and Angle-Modulated D - Main carrier is
-   * amplitude-modulated and angle-modulated simultaneously or in a
-   * preestablished sequence Pulse P - Sequence of unmodulated pulses K -
+   * EmsClass - Class Of Emission (Optional) * A three to five characters code,
+   * derived from the table below, representing the emission classification. If
+   * an "X" is used in any of the symbols, Remarks SHOULD be used to explain the
+   * nature of the signal. First Symbol - Designates Type of Modulation of the
+   * Main Carrier Unmodulated N - Emission of unmodulated carrier Amplitude
+   * Modulated A - Double sideband H - Single sideband, full carrier R - Single
+   * sideband, reduced or variable level carrier J - Single sideband, suppressed
+   * carrier B - Independent sidebands C - Vestigial sidebands Angle-Modulated F
+   * - Frequency modulation G - Phase modulation Amplitude and Angle-Modulated D
+   * - Main carrier is amplitude-modulated and angle-modulated simultaneously or
+   * in a preestablished sequence Pulse P - Sequence of unmodulated pulses K -
    * Modulated in amplitude L - Modulated in width/duration M - Modulated in
    * position phase Q - Carrier is angle-modulated during the period of the
    * pulse V - Combination of the foregoing or is produced by other means
@@ -101,31 +105,31 @@ public class Emission {
    * Other types of multiplexing
    * <p>
    * Format is pattern (S5)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EmsClass", required = false)
   private EmsDes emsClass;
   /**
-   * NecessaryBw - Necessary Bandwidth (Optional)    * <p>
-   * The necessary bandwidth which is defined as the value in MHz, for a given
-   * class of emission, the width of the frequency band which is just sufficient
-   * to ensure the transmission of information at the rate and with the quality
-   * required under specified conditions. This is approximately at the -20 dB
-   * level on an emission curve.
+   * NecessaryBw - Necessary Bandwidth (Optional) * The necessary bandwidth
+   * which is defined as the value in MHz, for a given class of emission, the
+   * width of the frequency band which is just sufficient to ensure the
+   * transmission of information at the rate and with the quality required under
+   * specified conditions. This is approximately at the -20 dB level on an
+   * emission curve.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NecessaryBw", required = false)
   private FreqM necessaryBw;
   /**
-   * Power - Maximum Power (Optional)    * <p>
-   * The maximum authorised power in dBW, for the given class of emission.
+   * Power - Maximum Power (Optional) * The maximum authorised power in dBW, for
+   * the given class of emission.
    * <p>
    * Format is SN(10,7) (dBW)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Power", required = false)
@@ -191,7 +195,7 @@ public class Emission {
    * F - Frequency-division multiplex T - Time-division multiplex W -
    * Combination of frequency-division multiplex and time-division multiplex X -
    * Other types of multiplexing .
-   * <p>
+   *
    * @return a {@link EmsDes} instance
    * @since 3.1.0
    */
@@ -259,7 +263,7 @@ public class Emission {
    * F - Frequency-division multiplex T - Time-division multiplex W -
    * Combination of frequency-division multiplex and time-division multiplex X -
    * Other types of multiplexing .
-   * <p>
+   *
    * @param value a {@link EmsDes} instance
    * @since 3.1.0
    */
@@ -269,7 +273,7 @@ public class Emission {
 
   /**
    * Determine if the EmsClass is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEmsClass() {
@@ -282,7 +286,7 @@ public class Emission {
    * sufficient to ensure the transmission of information at the rate and with
    * the quality required under specified conditions. This is approximately at
    * the -20 dB level on an emission curve..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -296,7 +300,7 @@ public class Emission {
    * sufficient to ensure the transmission of information at the rate and with
    * the quality required under specified conditions. This is approximately at
    * the -20 dB level on an emission curve..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -306,7 +310,7 @@ public class Emission {
 
   /**
    * Determine if the NecessaryBw is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNecessaryBw() {
@@ -315,7 +319,7 @@ public class Emission {
 
   /**
    * Get the maximum authorised power in dBW, for the given class of emission..
-   * <p>
+   *
    * @return a {@link dBW} instance
    * @since 3.1.0
    */
@@ -325,7 +329,7 @@ public class Emission {
 
   /**
    * Set the maximum authorised power in dBW, for the given class of emission..
-   * <p>
+   *
    * @param value a {@link dBW} instance
    * @since 3.1.0
    */
@@ -335,7 +339,7 @@ public class Emission {
 
   /**
    * Determine if the Power is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPower() {
@@ -402,7 +406,7 @@ public class Emission {
    * F - Frequency-division multiplex T - Time-division multiplex W -
    * Combination of frequency-division multiplex and time-division multiplex X -
    * Other types of multiplexing
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Emission object instance.
    * @since 3.1.0
@@ -418,7 +422,7 @@ public class Emission {
    * sufficient to ensure the transmission of information at the rate and with
    * the quality required under specified conditions. This is approximately at
    * the -20 dB level on an emission curve.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Emission object instance.
    * @since 3.1.0
@@ -430,7 +434,7 @@ public class Emission {
 
   /**
    * Set the maximum authorised power in dBW, for the given class of emission.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Emission object instance.
    * @since 3.1.0
@@ -442,7 +446,7 @@ public class Emission {
 
   /**
    * Get a string representation of this Emission instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -458,7 +462,7 @@ public class Emission {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Emission} has no configuration requirements.
-   * <p>
+   *
    * @return TRUE
    */
   public boolean isSet() {

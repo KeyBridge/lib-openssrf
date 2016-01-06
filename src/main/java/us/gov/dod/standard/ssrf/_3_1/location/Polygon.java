@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,14 @@
 package us.gov.dod.standard.ssrf._3_1.location;
 
 import java.math.BigInteger;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Location;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Altitude;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
 /**
@@ -44,7 +48,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class Polygon {
 
   /**
-   * Excluded - Shape is Excluded (Optional)    * <p>
+   * Excluded - Shape is Excluded (Optional)
+   * <p>
    * "Yes" to indicate that the shape is to be excluded from the set. If
    * omitted, a "No" SHOULD be assumed by processing applications, meaning that
    * the shape is included by default.
@@ -74,7 +79,8 @@ public class Polygon {
   @XmlElement(name = "PolygonPoint", required = true)
   private Set<PolygonPoint> polygonPoint;
   /**
-   * idx - Index (Required)    * <p>
+   * idx - Index (Required)
+   * <p>
    * A unique integer index for the current ellipse within the Location.
    * <p>
    * Format is UN(6)
@@ -256,7 +262,8 @@ public class Polygon {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current Polygon object instance.
    * @since 3.1.0
@@ -267,7 +274,8 @@ public class Polygon {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current Polygon object instance.
    * @since 3.1.0

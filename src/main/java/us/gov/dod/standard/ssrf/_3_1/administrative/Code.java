@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,14 +19,15 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S255;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
 
 /**
  * Code contains the information necessary to create or modify a code entry in
  * the given code list.
  * <p>
  * Element of {@link CodeList}
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -38,11 +39,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class Code {
 
   /**
-   * Value - Code Value (Required)    * <p>
-   * The unique code entry within the code list.
+   * Value - Code Value (Required) * The unique code entry within the code list.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Value", required = true)
@@ -50,7 +50,7 @@ public class Code {
   /**
    * In Data Item Description, the long text name of the code entry or a brief
    * description of the entry to be created or modified.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
@@ -58,7 +58,7 @@ public class Code {
 
   /**
    * Get the unique code entry within the code list..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -68,7 +68,7 @@ public class Code {
 
   /**
    * Set the unique code entry within the code list..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -78,7 +78,7 @@ public class Code {
 
   /**
    * Determine if the Value is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetValue() {
@@ -88,7 +88,7 @@ public class Code {
   /**
    * Get In Data Item Description, the long text name of the code entry or a
    * brief description of the entry to be created or modified..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -99,7 +99,7 @@ public class Code {
   /**
    * Set In Data Item Description, the long text name of the code entry or a
    * brief description of the entry to be created or modified..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -109,7 +109,7 @@ public class Code {
 
   /**
    * Determine if the Description is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
@@ -118,7 +118,7 @@ public class Code {
 
   /**
    * Set the unique code entry within the code list.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Code object instance.
    * @since 3.1.0
@@ -131,7 +131,7 @@ public class Code {
   /**
    * Set In Data Item Description, the long text name of the code entry or a
    * brief description of the entry to be created or modified.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Code object instance.
    * @since 3.1.0
@@ -143,7 +143,7 @@ public class Code {
 
   /**
    * Get a string representation of this Code instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -161,7 +161,7 @@ public class Code {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

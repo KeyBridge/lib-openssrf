@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,14 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dB;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dBWHz;
 
 /**
  * TxAntModeRef contains references to the Antenna and its AntMode, used to
@@ -44,7 +50,8 @@ public class TxAntModeRef
         extends RxAntModeRef {
 
   /**
-   * SpectralPowerDensity - Spectral Power Density (Optional)    * <p>
+   * SpectralPowerDensity - Spectral Power Density (Optional)
+   * <p>
    * The maximum spectral power density supplied to the input of the antenna.
    * <p>
    * Format is SN(6,3) (dBW/Hz)

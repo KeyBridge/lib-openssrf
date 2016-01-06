@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,9 @@ package us.gov.dod.standard.ssrf._3_1.rfsystem;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.RFSystem;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFR;
 
 /**
@@ -46,7 +47,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFR;
 public class RelatedSystem {
 
   /**
-   * Relation - Relation Type (Required)    * <p>
+   * Relation - Relation Type (Required)
+   * <p>
    * The relationship between the two systems.
    * <p>
    * Format is L:CFR
@@ -56,7 +58,8 @@ public class RelatedSystem {
   @XmlElement(name = "Relation", required = true)
   private TString relation;
   /**
-   * Serial - Related System Serial (Required)    * <p>
+   * Serial - Related System Serial (Required)
+   * <p>
    * The reference of the System associated with the current System.
    * <p>
    * Format is pattern (S29)
@@ -189,7 +192,8 @@ public class RelatedSystem {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Related System Serial (Required)    * <p>
+   * Serial - Related System Serial (Required)
+   * <p>
    * The reference of the System associated with the current System.
    * <p>
    * Format is pattern (S29)

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN8;
 
 /**
  * RxSignalTuning indicates the tuning capabilities, the specific frequency or
@@ -51,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class RxSignalTuning {
 
   /**
-   * FreqMin - Nominal or Minimum Frequency (Required)    * <p>
+   * FreqMin - Nominal or Minimum Frequency (Required)
+   * <p>
    * The nominal frequency or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -63,7 +65,8 @@ public class RxSignalTuning {
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Optional)    * <p>
+   * FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -77,7 +80,8 @@ public class RxSignalTuning {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * TuningStep - Tuning Step (Optional)    * <p>
+   * TuningStep - Tuning Step (Optional)
+   * <p>
    * The tuning increment.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -87,7 +91,8 @@ public class RxSignalTuning {
   @XmlElement(name = "TuningStep", required = false)
   private FreqM tuningStep;
   /**
-   * NumPresetChannels - Number of Preset Channels (Optional)    * <p>
+   * NumPresetChannels - Number of Preset Channels (Optional)
+   * <p>
    * The number of preset channels available.
    * <p>
    * Format is UN(8)

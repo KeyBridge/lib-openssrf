@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.StageLocation;
  *   &lt;/CommentSource&gt;
  * &lt;/SSReply&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -82,7 +82,7 @@ public class SSReply extends Common<SSReply> {
    * The dataset identifier of the SSRequest being replied to.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SSRequestRef", required = false)
@@ -93,7 +93,7 @@ public class SSReply extends Common<SSReply> {
    * The code of the country providing the reply.
    * <p>
    * Format is L:CAO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReplyingCountry", required = true)
@@ -109,7 +109,7 @@ public class SSReply extends Common<SSReply> {
    * Recommendations", use Comments to express these recommendations.
    * <p>
    * Format is L:CCD
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SupportabilityCode", required = true)
@@ -120,7 +120,7 @@ public class SSReply extends Common<SSReply> {
    * The date the request was received by the Host Nation Administration.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DateReceivedByCountry", required = false)
@@ -131,7 +131,7 @@ public class SSReply extends Common<SSReply> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = true)
@@ -145,7 +145,7 @@ public class SSReply extends Common<SSReply> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -163,7 +163,7 @@ public class SSReply extends Common<SSReply> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -176,7 +176,7 @@ public class SSReply extends Common<SSReply> {
    * application SPS number.
    * <p>
    * Format is S11
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ApprovalSPSNum", required = false)
@@ -190,7 +190,7 @@ public class SSReply extends Common<SSReply> {
    * national security and emergency preparedness (NSEP).
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ERPNumber", required = false)
@@ -202,7 +202,7 @@ public class SSReply extends Common<SSReply> {
    * Subcommittee (FAS) identifier assigned by NTIA.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FASNumber", required = false)
@@ -215,7 +215,7 @@ public class SSReply extends Common<SSReply> {
    * NTIA.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IRACNumber", required = false)
@@ -226,7 +226,7 @@ public class SSReply extends Common<SSReply> {
    * The name of the organization providing the reply.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReplyingAuthority", required = false)
@@ -234,7 +234,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * In Data Item DistributionGroups (US), identify to whom the signed
    * certification should be distributed (e.g., "J-12 Holders").
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DistributionGroups", required = false)
@@ -250,7 +250,7 @@ public class SSReply extends Common<SSReply> {
    * number.
    * <p>
    * Format is S15
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CoordinationNum", required = false)
@@ -260,7 +260,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * CommentSource is used to provide comments to a SSRequest. It can also be
    * used to certify supportability.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CommentSource")
@@ -270,7 +270,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * StageLocation defines locations where the equipment or system is allowed or
    * forbidden from use.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StageLocation")
@@ -286,7 +286,7 @@ public class SSReply extends Common<SSReply> {
    * as a repeater. A direct coupling between the station's receiver and the
    * station's transmitter allows the incoming signal to be retransmitted
    * exactly as received.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Configuration")
@@ -301,7 +301,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the dataset identifier of the SSRequest being replied to..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -311,7 +311,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the dataset identifier of the SSRequest being replied to..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    */
@@ -321,7 +321,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the SSRequestRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSSRequestRef() {
@@ -330,7 +330,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the code of the country providing the reply..
-   * <p>
+   *
    * @return the ReplyingCountry value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -340,7 +340,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the code of the country providing the reply..
-   * <p>
+   *
    * @param value the ReplyingCountry value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -352,7 +352,7 @@ public class SSReply extends Common<SSReply> {
    * Determine if the ReplyingCountry is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReplyingCountry() {
@@ -366,7 +366,7 @@ public class SSReply extends Common<SSReply> {
    * LocationRef. Specific restrictions on tuning ranges and power limits should
    * be expressed using the Configuration. - If replying "Supported with
    * Recommendations", use Comments to express these recommendations..
-   * <p>
+   *
    * @return the SupportabilityCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -381,7 +381,7 @@ public class SSReply extends Common<SSReply> {
    * LocationRef. Specific restrictions on tuning ranges and power limits should
    * be expressed using the Configuration. - If replying "Supported with
    * Recommendations", use Comments to express these recommendations..
-   * <p>
+   *
    * @param value the SupportabilityCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -393,7 +393,7 @@ public class SSReply extends Common<SSReply> {
    * Determine if the SupportabilityCode is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSupportabilityCode() {
@@ -402,7 +402,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the date the request was received by the Host Nation Administration..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -412,7 +412,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date the request was received by the Host Nation Administration..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -422,7 +422,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the DateReceivedByCountry is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDateReceivedByCountry() {
@@ -431,7 +431,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -441,7 +441,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -451,7 +451,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -461,7 +461,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -472,7 +472,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -482,7 +482,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -496,7 +496,7 @@ public class SSReply extends Common<SSReply> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -511,7 +511,7 @@ public class SSReply extends Common<SSReply> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -521,7 +521,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -532,7 +532,7 @@ public class SSReply extends Common<SSReply> {
    * Get the Certification of Spectrum Support Spectrum Planning Subcommittee
    * (SPS) document identifier assigned by NTIA. This is not the same as the
    * application SPS number..
-   * <p>
+   *
    * @return a {@link S11} instance
    * @since 3.1.0
    */
@@ -544,7 +544,7 @@ public class SSReply extends Common<SSReply> {
    * Set the Certification of Spectrum Support Spectrum Planning Subcommittee
    * (SPS) document identifier assigned by NTIA. This is not the same as the
    * application SPS number..
-   * <p>
+   *
    * @param value a {@link S11} instance
    * @since 3.1.0
    */
@@ -554,7 +554,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the ApprovalSPSNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApprovalSPSNum() {
@@ -566,7 +566,7 @@ public class SSReply extends Common<SSReply> {
    * are assigned an ERP Number by the Emergency Planning Subcommittee (EPS) of
    * the Interdepartment Radio Advisory Committee (IRAC) if the system involves
    * national security and emergency preparedness (NSEP)..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -579,7 +579,7 @@ public class SSReply extends Common<SSReply> {
    * are assigned an ERP Number by the Emergency Planning Subcommittee (EPS) of
    * the Interdepartment Radio Advisory Committee (IRAC) if the system involves
    * national security and emergency preparedness (NSEP)..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -589,7 +589,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the ERPNumber is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetERPNumber() {
@@ -599,7 +599,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Get the Interdepartment Radio Advisory Committee (IRAC) Frequency
    * Assignment Subcommittee (FAS) identifier assigned by NTIA..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -610,7 +610,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set the Interdepartment Radio Advisory Committee (IRAC) Frequency
    * Assignment Subcommittee (FAS) identifier assigned by NTIA..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -620,7 +620,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the FASNumber is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFASNumber() {
@@ -631,7 +631,7 @@ public class SSReply extends Common<SSReply> {
    * Get the Interdepartment Radio Advisory Committee (IRAC) document number of
    * the NTIA Certification of Spectrum Support document. This number is
    * assigned by NTIA..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -643,7 +643,7 @@ public class SSReply extends Common<SSReply> {
    * Set the Interdepartment Radio Advisory Committee (IRAC) document number of
    * the NTIA Certification of Spectrum Support document. This number is
    * assigned by NTIA..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -653,7 +653,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the IRACNumber is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIRACNumber() {
@@ -662,7 +662,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the name of the organization providing the reply..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -672,7 +672,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the name of the organization providing the reply..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -682,7 +682,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the ReplyingAuthority is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReplyingAuthority() {
@@ -692,7 +692,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Get In Data Item DistributionGroups (US), identify to whom the signed
    * certification should be distributed (e.g., "J-12 Holders")..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -703,7 +703,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set In Data Item DistributionGroups (US), identify to whom the signed
    * certification should be distributed (e.g., "J-12 Holders")..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -713,7 +713,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the DistributionGroups is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDistributionGroups() {
@@ -727,7 +727,7 @@ public class SSReply extends Common<SSReply> {
    * an SSReply coordination number usually ends with an odd digit (e.g., /3,
    * /5). When certifying equipment, both SSRequest and SSReply SHOULD have a
    * coordination number..
-   * <p>
+   *
    * @return a {@link S15} instance
    * @since 3.1.0
    */
@@ -742,7 +742,7 @@ public class SSReply extends Common<SSReply> {
    * an SSReply coordination number usually ends with an odd digit (e.g., /3,
    * /5). When certifying equipment, both SSRequest and SSReply SHOULD have a
    * coordination number..
-   * <p>
+   *
    * @param value a {@link S15} instance
    * @since 3.1.0
    */
@@ -752,7 +752,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the CoordinationNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCoordinationNum() {
@@ -764,7 +764,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability..
-   * <p>
+   *
    * @return a {@link CommentSource} instance
    * @since 3.1.0
    */
@@ -777,7 +777,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the CommentSource is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCommentSource() {
@@ -796,7 +796,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use..
-   * <p>
+   *
    * @return a {@link StageLocation} instance
    * @since 3.1.0
    */
@@ -809,7 +809,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the StageLocation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStageLocation() {
@@ -834,7 +834,7 @@ public class SSReply extends Common<SSReply> {
    * used primarily as a repeater. A direct coupling between the station's
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received..
-   * <p>
+   *
    * @return a {@link Configuration} instance
    * @since 3.1.0
    */
@@ -847,7 +847,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the Configuration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetConfiguration() {
@@ -863,7 +863,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the dataset identifier of the SSRequest being replied to.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -875,7 +875,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the code of the country providing the reply.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAO}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -892,7 +892,7 @@ public class SSReply extends Common<SSReply> {
    * LocationRef. Specific restrictions on tuning ranges and power limits should
    * be expressed using the Configuration. - If replying "Supported with
    * Recommendations", use Comments to express these recommendations.
-   * <p>
+   *
    * @param value An instances of type {@link ListCCD}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -904,7 +904,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date the request was received by the Host Nation Administration.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -916,7 +916,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date the request was received by the Host Nation Administration.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -928,7 +928,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -940,7 +940,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -953,7 +953,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -966,7 +966,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -983,7 +983,7 @@ public class SSReply extends Common<SSReply> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1000,7 +1000,7 @@ public class SSReply extends Common<SSReply> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1014,7 +1014,7 @@ public class SSReply extends Common<SSReply> {
    * Set the Certification of Spectrum Support Spectrum Planning Subcommittee
    * (SPS) document identifier assigned by NTIA. This is not the same as the
    * application SPS number.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1029,7 +1029,7 @@ public class SSReply extends Common<SSReply> {
    * are assigned an ERP Number by the Emergency Planning Subcommittee (EPS) of
    * the Interdepartment Radio Advisory Committee (IRAC) if the system involves
    * national security and emergency preparedness (NSEP).
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1042,7 +1042,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set the Interdepartment Radio Advisory Committee (IRAC) Frequency
    * Assignment Subcommittee (FAS) identifier assigned by NTIA.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1056,7 +1056,7 @@ public class SSReply extends Common<SSReply> {
    * Set the Interdepartment Radio Advisory Committee (IRAC) document number of
    * the NTIA Certification of Spectrum Support document. This number is
    * assigned by NTIA.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1068,7 +1068,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the name of the organization providing the reply.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1081,7 +1081,7 @@ public class SSReply extends Common<SSReply> {
   /**
    * Set In Data Item DistributionGroups (US), identify to whom the signed
    * certification should be distributed (e.g., "J-12 Holders").
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1098,7 +1098,7 @@ public class SSReply extends Common<SSReply> {
    * an SSReply coordination number usually ends with an odd digit (e.g., /3,
    * /5). When certifying equipment, both SSRequest and SSReply SHOULD have a
    * coordination number.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1113,7 +1113,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability.
-   * <p>
+   *
    * @param values One or more instances of type {@link CommentSource...}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1130,7 +1130,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability.
-   * <p>
+   *
    * @param values A collection of {@link CommentSource} instances
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1147,7 +1147,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
-   * <p>
+   *
    * @param values One or more instances of type {@link StageLocation...}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1164,7 +1164,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
-   * <p>
+   *
    * @param values A collection of {@link StageLocation} instances
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1187,7 +1187,7 @@ public class SSReply extends Common<SSReply> {
    * used primarily as a repeater. A direct coupling between the station's
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
-   * <p>
+   *
    * @param values One or more instances of type {@link Configuration...}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1210,7 +1210,7 @@ public class SSReply extends Common<SSReply> {
    * used primarily as a repeater. A direct coupling between the station's
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
-   * <p>
+   *
    * @param values A collection of {@link Configuration} instances
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1224,7 +1224,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get a string representation of this SSReply instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1260,7 +1260,7 @@ public class SSReply extends Common<SSReply> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -1275,7 +1275,7 @@ public class SSReply extends Common<SSReply> {
    * The dataset identifier of the SSRequest being replied to.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -1283,7 +1283,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Get the dataset identifier of the SSRequest being replied to..
-   * <p>
+   *
    * @return a {@link SSRequest} instance
    * @since 3.1.0
    */
@@ -1293,7 +1293,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Determine if the ssRequest field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSsRequest() {
@@ -1302,7 +1302,7 @@ public class SSReply extends Common<SSReply> {
 
   /**
    * Set the dataset identifier of the SSRequest being replied to.
-   * <p>
+   *
    * @param value An instances of type {@link SSRequest}.
    * @return The current SSReply object instance.
    * @since 3.1.0
@@ -1319,7 +1319,7 @@ public class SSReply extends Common<SSReply> {
    * from the transient {@link #ssRequest} field. This method should typically
    * be called after the SSReply is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1336,7 +1336,7 @@ public class SSReply extends Common<SSReply> {
    * imported {@link #ssRequestRef} field. This method should typically be
    * called after the SSReply is imported from XML. * @param root the SSRF root
    * instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

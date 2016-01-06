@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,8 @@ package us.gov.dod.standard.ssrf._3_1.forceelement;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN9;
 
 /**
  * Assets indicates the authorised and available quantity of the equipment, RF
@@ -47,7 +48,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class Assets {
 
   /**
-   * Serial - Equipment/FE Reference (Required)    * <p>
+   * Serial - Equipment/FE Reference (Required)
+   * <p>
    * A reference to a Transmitter, Receiver, Antenna, RFSystem used by this
    * ForceElement, or to a ForceElement carried by or belonging to this
    * ForceElement.
@@ -59,7 +61,8 @@ public class Assets {
   @XmlElement(name = "Serial", required = true)
   private Serial serial;
   /**
-   * Authorised - Authorised Quantity (Optional)    * <p>
+   * Authorised - Authorised Quantity (Optional)
+   * <p>
    * The authorised quantity of the referenced equipment or system.
    * <p>
    * Format is UN(9)
@@ -69,7 +72,8 @@ public class Assets {
   @XmlElement(name = "Authorised", required = false)
   private UN9 authorised;
   /**
-   * Available - Available Quantity (Optional)    * <p>
+   * Available - Available Quantity (Optional)
+   * <p>
    * The available quantity of the referenced equipment or system.
    * <p>
    * Format is UN(9)
@@ -247,7 +251,8 @@ public class Assets {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Equipment/FE Reference (Required)    * <p>
+   * Serial - Equipment/FE Reference (Required)
+   * <p>
    * A reference to a Transmitter, Receiver, Antenna, RFSystem used by this
    * ForceElement, or to a ForceElement carried by or belonging to this
    * ForceElement.

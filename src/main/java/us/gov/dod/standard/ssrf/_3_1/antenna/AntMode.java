@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,7 +45,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *   &lt;other_AntMode_elements/&gt;
  *   &lt;/AntMode&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -87,29 +90,29 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
 public class AntMode {
 
   /**
-   * ModeID - Mode Identifier (Required)    * <p>
-   * A short name for the mode; this name should be a meaningful identification
-   * of the mode, but it can also be automatically generated in some systems.
-   * The Name MUST be unique within the dataset and SHOULD NOT be modified
-   * during the entire lifetime of the dataset.
+   * ModeID - Mode Identifier (Required) * A short name for the mode; this name
+   * should be a meaningful identification of the mode, but it can also be
+   * automatically generated in some systems. The Name MUST be unique within the
+   * dataset and SHOULD NOT be modified during the entire lifetime of the
+   * dataset.
    * <p>
    * Format is S20
    * <p>
    * Attribute group ModeInfo (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ModeID", required = true)
   private S20 modeID;
   /**
-   * Description - Mode Description (Optional)    * <p>
-   * A description of the operational mode; this description should be a
-   * meaningful explanation of the mode main characteristics.
+   * Description - Mode Description (Optional) * A description of the
+   * operational mode; this description should be a meaningful explanation of
+   * the mode main characteristics.
    * <p>
    * Format is S100
    * <p>
    * Attribute group ModeInfo (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
@@ -117,170 +120,167 @@ public class AntMode {
   /**
    * In Data Item ModeUse, indicate if the mode is used for transmit, receive,
    * or both transmit and receive.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ModeUse", required = false)
   private TString modeUse;
   /**
-   * MotionType - Antenna Motion Type (Optional)    * <p>
-   * The general category for the movement of a scanning or tracking antenna.
+   * MotionType - Antenna Motion Type (Optional) * The general category for the
+   * movement of a scanning or tracking antenna.
    * <p>
    * Format is L:CAD
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MotionType", required = false)
   private TString motionType;
   /**
-   * SectBlanking - Sector Blanking (Optional)    * <p>
-   * "Yes" if sector blanking is possible and "No" if it is not possible.
+   * SectBlanking - Sector Blanking (Optional) * "Yes" if sector blanking is
+   * possible and "No" if it is not possible.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SectBlanking", required = false)
   private TString sectBlanking;
   /**
-   * PolarisationType - Type of Polarisation (Required)    * <p>
-   * The principal orientation of the electric field of the electromagnetic wave
-   * for an antenna.
+   * PolarisationType - Type of Polarisation (Required) * The principal
+   * orientation of the electric field of the electromagnetic wave for an
+   * antenna.
    * <p>
    * Format is L:CPO
    * <p>
    * Attribute group Pol (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PolarisationType")
   private TString polarisationType;
   /**
-   * PolarisationAngle - Polarisation Angle (Optional)    * <p>
-   * The angle of the electric field vector measured counter-clockwise from the
-   * equatorial plane as referenced from the boresight or typical static
-   * positioning of the antenna.
+   * PolarisationAngle - Polarisation Angle (Optional) * The angle of the
+   * electric field vector measured counter-clockwise from the equatorial plane
+   * as referenced from the boresight or typical static positioning of the
+   * antenna.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group Pol (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PolarisationAngle", required = false)
   private Az polarisationAngle;
   /**
-   * HorzScanSpeed - Horizontal Scan Speed (Optional)    * <p>
-   * The number of degrees per second the antenna is capable of scanning. It is
-   * not necessarily the "Sector Scanned" figure times the degrees per second.
-   * If a significant portion of time is spent vertically scanning in between
-   * horizontal sweeps, the horizontal scan rate will be lower than if the
-   * antenna were horizontally scanning all the time.
+   * HorzScanSpeed - Horizontal Scan Speed (Optional) * The number of degrees
+   * per second the antenna is capable of scanning. It is not necessarily the
+   * "Sector Scanned" figure times the degrees per second. If a significant
+   * portion of time is spent vertically scanning in between horizontal sweeps,
+   * the horizontal scan rate will be lower than if the antenna were
+   * horizontally scanning all the time.
    * <p>
    * Format is UN(7,2) (deg/sec)
    * <p>
    * Attribute group HorzScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzScanSpeed", required = false)
   private ScanSpeed horzScanSpeed;
   /**
-   * HorzScanRate - Horizontal Scan Rate (Optional)    * <p>
-   * The number of complete scans the antenna is capable of making each minute.
+   * HorzScanRate - Horizontal Scan Rate (Optional) * The number of complete
+   * scans the antenna is capable of making each minute.
    * <p>
    * Format is UN(4) (scans/min)
    * <p>
    * Attribute group HorzScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzScanRate", required = false)
   private ScanRate horzScanRate;
   /**
-   * HorzScanType - Horizontal Scan Type (Optional)    * <p>
-   * The antenna horizontal scanning capability.
+   * HorzScanType - Horizontal Scan Type (Optional) * The antenna horizontal
+   * scanning capability.
    * <p>
    * Format is L:CAS
    * <p>
    * Attribute group HorzScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzScanType", required = false)
   private TString horzScanType;
   /**
-   * HorzScanSector - Horizontal Scan Sector (Optional)    * <p>
-   * The maximum horizontal sector the antenna can scan (enter 360 for a full
-   * rotation).
+   * HorzScanSector - Horizontal Scan Sector (Optional) * The maximum horizontal
+   * sector the antenna can scan (enter 360 for a full rotation).
    * <p>
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group HorzScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzScanSector", required = false)
   private Az horzScanSector;
   /**
-   * VertScanSpeed - Vertical Scan Speed (Optional)    * <p>
-   * The number of degrees of vertical scan per second. If an antenna does a
-   * horizontal scan per second as part of a raster scan and drops down one
-   * degree after each sweep, it is scanning vertically at one degree per
-   * second. If the same antenna completed a scan in 30 seconds the vertical
-   * scan speed would be 2 degrees per minute.
+   * VertScanSpeed - Vertical Scan Speed (Optional) * The number of degrees of
+   * vertical scan per second. If an antenna does a horizontal scan per second
+   * as part of a raster scan and drops down one degree after each sweep, it is
+   * scanning vertically at one degree per second. If the same antenna completed
+   * a scan in 30 seconds the vertical scan speed would be 2 degrees per minute.
    * <p>
    * Format is UN(7,2) (deg/sec)
    * <p>
    * Attribute group VertScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertScanSpeed", required = false)
   private ScanSpeed vertScanSpeed;
   /**
-   * VertScanRate - Vertical Scan Rate (Optional)    * <p>
-   * The number of complete vertical scans per minute. If the antenna does a
-   * horizontal scan per second as part of a raster scan and drops down one
-   * degree after each sweep, it is scanning vertically at one degree per
-   * second. If the same antenna completed a scan in 30 seconds the vertical
-   * scan rate would be 2 scans per minute.
+   * VertScanRate - Vertical Scan Rate (Optional) * The number of complete
+   * vertical scans per minute. If the antenna does a horizontal scan per second
+   * as part of a raster scan and drops down one degree after each sweep, it is
+   * scanning vertically at one degree per second. If the same antenna completed
+   * a scan in 30 seconds the vertical scan rate would be 2 scans per minute.
    * <p>
    * Format is UN(4) (scans/min)
    * <p>
    * Attribute group VertScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertScanRate", required = false)
   private ScanRate vertScanRate;
   /**
-   * VertScanType - Vertical Scan Type (Optional)    * <p>
-   * The antenna vertical scanning capability.
+   * VertScanType - Vertical Scan Type (Optional) * The antenna vertical
+   * scanning capability.
    * <p>
    * Format is L:CAS
    * <p>
    * Attribute group VertScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertScanType", required = false)
   private TString vertScanType;
   /**
-   * VertScanAngleMin - Vertical Scan Minimum Angle (Optional)    * <p>
-   * The minimum limit of the vertical arc scanned relative to the horizontal.
+   * VertScanAngleMin - Vertical Scan Minimum Angle (Optional) * The minimum
+   * limit of the vertical arc scanned relative to the horizontal.
    * <p>
    * Format is SN(4,2) [-90..90] (deg)
    * <p>
    * Attribute group VertScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertScanAngleMin", required = false)
   private Elev vertScanAngleMin;
   /**
-   * VertScanAngleMax - Vertical Scan Maximum Angle (Optional)    * <p>
-   * The maximum limit of the vertical arc scanned relative to the horizontal.
+   * VertScanAngleMax - Vertical Scan Maximum Angle (Optional) * The maximum
+   * limit of the vertical arc scanned relative to the horizontal.
    * <p>
    * [XSL ERR MINMAX] If VertScanAngleMax is used, it MUST be greater than
    * VertScanAngleMin.
@@ -288,36 +288,36 @@ public class AntMode {
    * Format is SN(4,2) [-90..90] (deg)
    * <p>
    * Attribute group VertScan (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertScanAngleMax", required = false)
   private Elev vertScanAngleMax;
   /**
-   * RotationDirection - Rotation Direction (Optional)    * <p>
-   * The antenna direction of rotation or motion.
+   * RotationDirection - Rotation Direction (Optional) * The antenna direction
+   * of rotation or motion.
    * <p>
    * Format is L:CRD
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RotationDirection", required = false)
   private TString rotationDirection;
   /**
-   * RotationRateMin - Minimum or Nominal Rotation Rate (Required)    * <p>
-   * The nominal or minimum antenna rotation rate.
+   * RotationRateMin - Minimum or Nominal Rotation Rate (Required) * The nominal
+   * or minimum antenna rotation rate.
    * <p>
    * Format is UN(7,2) (deg/sec)
    * <p>
    * Attribute group RotationRate (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RotationRateMin")
   private RotationRate rotationRateMin;
   /**
-   * RotationRateMax - Maximum Rotation Rate (Optional)    * <p>
-   * If applicable, the maximum antenna rotation rate.
+   * RotationRateMax - Maximum Rotation Rate (Optional) * If applicable, the
+   * maximum antenna rotation rate.
    * <p>
    * [XSL ERR MINMAX] If RotationRateMax is used, it MUST be greater than
    * RotationRateMin.
@@ -325,94 +325,91 @@ public class AntMode {
    * Format is UN(7,2) (deg/sec)
    * <p>
    * Attribute group RotationRate (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RotationRateMax", required = false)
   private RotationRate rotationRateMax;
   /**
-   * HorzBwMin - Minimum or Nominal Horizontal Beamwidth (Optional)    * <p>
-   * The minimum or nominal horizontal beamwidth.
+   * HorzBwMin - Minimum or Nominal Horizontal Beamwidth (Optional) * The
+   * minimum or nominal horizontal beamwidth.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group Beamwidth (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzBwMin", required = false)
   private Az horzBwMin;
   /**
-   * HorzBwMax - Maximum Horizontal Beamwidth (Optional)    * <p>
-   * The maximum horizontal beamwidth for beamwidths which vary with the
-   * frequency.
+   * HorzBwMax - Maximum Horizontal Beamwidth (Optional) * The maximum
+   * horizontal beamwidth for beamwidths which vary with the frequency.
    * <p>
    * [XSL ERR MINMAX] If HorzBwMax is used, it MUST be greater than HorzBwMin.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group Beamwidth (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzBwMax", required = false)
   private Az horzBwMax;
   /**
-   * VertBwMin - Minimum or Nominal Vertical Beamwidth (Optional)    * <p>
-   * The minimum or nominal vertical beamwidth.
+   * VertBwMin - Minimum or Nominal Vertical Beamwidth (Optional) * The minimum
+   * or nominal vertical beamwidth.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group Beamwidth (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertBwMin", required = false)
   private Az vertBwMin;
   /**
-   * VertBwMax - Maximum Vertical Beamwidth (Optional)    * <p>
-   * The maximum vertical beamwidth for beamwidths which vary with the
-   * frequency.
+   * VertBwMax - Maximum Vertical Beamwidth (Optional) * The maximum vertical
+   * beamwidth for beamwidths which vary with the frequency.
    * <p>
    * [XSL ERR MINMAX] If VertBwMax is used, it MUST be greater than VertBwMin.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group Beamwidth (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertBwMax", required = false)
   private Az vertBwMax;
   /**
-   * BeamType - Beam Type (Optional)    * <p>
-   * One of the codes describing the shape or type of the antenna main beam.
+   * BeamType - Beam Type (Optional) * One of the codes describing the shape or
+   * type of the antenna main beam.
    * <p>
    * Format is L:CBD
    * <p>
    * Attribute group Beamwidth (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "BeamType", required = false)
   private TString beamType;
   /**
-   * MaxPower - Maximum Allowed Power (Optional)    * <p>
-   * The maximum level of input power.
+   * MaxPower - Maximum Allowed Power (Optional) * The maximum level of input
+   * power.
    * <p>
    * Format is SN(10,7) (dBW)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MaxPower", required = false)
   private dBW maxPower;
   /**
-   * PortIsolation - Port Isolation (Optional)    * <p>
-   * The power ratio between the signal injected into one port and the power
-   * returned by the other port .
+   * PortIsolation - Port Isolation (Optional) * The power ratio between the
+   * signal injected into one port and the power returned by the other port .
    * <p>
    * Format is SN(6,3) (dB)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PortIsolation", required = false)
@@ -425,7 +422,7 @@ public class AntMode {
    * <p>
    * AntGain indicates the antenna gain, in decibels with reference to an
    * isotropic source (dBi), in the direction of maximum radiation.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntGain")
@@ -435,7 +432,7 @@ public class AntMode {
    * <p>
    * AntFreqs contains the antenna's designed tuning range, or the discrete
    * operating frequency.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntFreqs")
@@ -449,7 +446,7 @@ public class AntMode {
    * At different values of phi, pattern cuts can be taken with theta as the
    * dependent variable. These will be great circle cuts through the main-beam
    * peak.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntPattern")
@@ -459,7 +456,7 @@ public class AntMode {
    * <p>
    * AntEfficiency describes the antenna efficiency at various frequencies
    * within the frequency range of the antenna.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntEfficiency")
@@ -468,7 +465,7 @@ public class AntMode {
    * Complex Element VSWR stores the Voltage Standing Wave Ratio information for
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VSWR")
@@ -478,7 +475,7 @@ public class AntMode {
    * <p>
    * ObservedLobeAnalysis (US) contains general data associated with observed
    * Antenna sidelobes and backlobes.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedLobeAnalysis")
@@ -488,7 +485,7 @@ public class AntMode {
    * <p>
    * ObservedPolarisationAnalysis (US) contains data describing the parametric
    * information for the polarization and tilt angle information.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedPolarisationAnalysis")
@@ -498,7 +495,7 @@ public class AntMode {
    * <p>
    * ObservedScanAnalysis (US) contains data describing the collected Horizontal
    * and Vertical Scan parameters as well as the Adaptive Driver information.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedScanAnalysis")
@@ -509,7 +506,7 @@ public class AntMode {
    * identification of the mode, but it can also be automatically generated in
    * some systems. The Name MUST be unique within the dataset and SHOULD NOT be
    * modified during the entire lifetime of the dataset..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -522,7 +519,7 @@ public class AntMode {
    * identification of the mode, but it can also be automatically generated in
    * some systems. The Name MUST be unique within the dataset and SHOULD NOT be
    * modified during the entire lifetime of the dataset..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -532,7 +529,7 @@ public class AntMode {
 
   /**
    * Determine if the ModeID is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetModeID() {
@@ -542,7 +539,7 @@ public class AntMode {
   /**
    * Get a description of the operational mode; this description should be a
    * meaningful explanation of the mode main characteristics..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -553,7 +550,7 @@ public class AntMode {
   /**
    * Set a description of the operational mode; this description should be a
    * meaningful explanation of the mode main characteristics..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -563,7 +560,7 @@ public class AntMode {
 
   /**
    * Determine if the Description is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
@@ -573,7 +570,7 @@ public class AntMode {
   /**
    * Get In Data Item ModeUse, indicate if the mode is used for transmit,
    * receive, or both transmit and receive..
-   * <p>
+   *
    * @return the ModeUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -584,7 +581,7 @@ public class AntMode {
   /**
    * Set In Data Item ModeUse, indicate if the mode is used for transmit,
    * receive, or both transmit and receive..
-   * <p>
+   *
    * @param value the ModeUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -596,7 +593,7 @@ public class AntMode {
    * Determine if the ModeUse is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetModeUse() {
@@ -606,7 +603,7 @@ public class AntMode {
   /**
    * Get the general category for the movement of a scanning or tracking
    * antenna..
-   * <p>
+   *
    * @return the MotionType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -617,7 +614,7 @@ public class AntMode {
   /**
    * Set the general category for the movement of a scanning or tracking
    * antenna..
-   * <p>
+   *
    * @param value the MotionType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -629,7 +626,7 @@ public class AntMode {
    * Determine if the MotionType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMotionType() {
@@ -638,7 +635,7 @@ public class AntMode {
 
   /**
    * Get "Yes" if sector blanking is possible and "No" if it is not possible..
-   * <p>
+   *
    * @return the SectBlanking value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -648,7 +645,7 @@ public class AntMode {
 
   /**
    * Set "Yes" if sector blanking is possible and "No" if it is not possible..
-   * <p>
+   *
    * @param value the SectBlanking value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -660,7 +657,7 @@ public class AntMode {
    * Determine if the SectBlanking is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSectBlanking() {
@@ -670,7 +667,7 @@ public class AntMode {
   /**
    * Get the principal orientation of the electric field of the electromagnetic
    * wave for an antenna..
-   * <p>
+   *
    * @return the PolarisationType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -681,7 +678,7 @@ public class AntMode {
   /**
    * Set the principal orientation of the electric field of the electromagnetic
    * wave for an antenna..
-   * <p>
+   *
    * @param value the PolarisationType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -693,7 +690,7 @@ public class AntMode {
    * Determine if the PolarisationType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPolarisationType() {
@@ -704,7 +701,7 @@ public class AntMode {
    * Get the angle of the electric field vector measured counter-clockwise from
    * the equatorial plane as referenced from the boresight or typical static
    * positioning of the antenna..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -716,7 +713,7 @@ public class AntMode {
    * Set the angle of the electric field vector measured counter-clockwise from
    * the equatorial plane as referenced from the boresight or typical static
    * positioning of the antenna..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -726,7 +723,7 @@ public class AntMode {
 
   /**
    * Determine if the PolarisationAngle is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPolarisationAngle() {
@@ -739,7 +736,7 @@ public class AntMode {
    * second. If a significant portion of time is spent vertically scanning in
    * between horizontal sweeps, the horizontal scan rate will be lower than if
    * the antenna were horizontally scanning all the time..
-   * <p>
+   *
    * @return a {@link ScanSpeed} instance
    * @since 3.1.0
    */
@@ -753,7 +750,7 @@ public class AntMode {
    * second. If a significant portion of time is spent vertically scanning in
    * between horizontal sweeps, the horizontal scan rate will be lower than if
    * the antenna were horizontally scanning all the time..
-   * <p>
+   *
    * @param value a {@link ScanSpeed} instance
    * @since 3.1.0
    */
@@ -763,7 +760,7 @@ public class AntMode {
 
   /**
    * Determine if the HorzScanSpeed is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzScanSpeed() {
@@ -773,7 +770,7 @@ public class AntMode {
   /**
    * Get the number of complete scans the antenna is capable of making each
    * minute..
-   * <p>
+   *
    * @return a {@link ScanRate} instance
    * @since 3.1.0
    */
@@ -784,7 +781,7 @@ public class AntMode {
   /**
    * Set the number of complete scans the antenna is capable of making each
    * minute..
-   * <p>
+   *
    * @param value a {@link ScanRate} instance
    * @since 3.1.0
    */
@@ -794,7 +791,7 @@ public class AntMode {
 
   /**
    * Determine if the HorzScanRate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzScanRate() {
@@ -803,7 +800,7 @@ public class AntMode {
 
   /**
    * Get the antenna horizontal scanning capability..
-   * <p>
+   *
    * @return the HorzScanType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -813,7 +810,7 @@ public class AntMode {
 
   /**
    * Set the antenna horizontal scanning capability..
-   * <p>
+   *
    * @param value the HorzScanType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -825,7 +822,7 @@ public class AntMode {
    * Determine if the HorzScanType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzScanType() {
@@ -835,7 +832,7 @@ public class AntMode {
   /**
    * Get the maximum horizontal sector the antenna can scan (enter 360 for a
    * full rotation)..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -846,7 +843,7 @@ public class AntMode {
   /**
    * Set the maximum horizontal sector the antenna can scan (enter 360 for a
    * full rotation)..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -856,7 +853,7 @@ public class AntMode {
 
   /**
    * Determine if the HorzScanSector is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzScanSector() {
@@ -869,7 +866,7 @@ public class AntMode {
    * degree after each sweep, it is scanning vertically at one degree per
    * second. If the same antenna completed a scan in 30 seconds the vertical
    * scan speed would be 2 degrees per minute..
-   * <p>
+   *
    * @return a {@link ScanSpeed} instance
    * @since 3.1.0
    */
@@ -883,7 +880,7 @@ public class AntMode {
    * degree after each sweep, it is scanning vertically at one degree per
    * second. If the same antenna completed a scan in 30 seconds the vertical
    * scan speed would be 2 degrees per minute..
-   * <p>
+   *
    * @param value a {@link ScanSpeed} instance
    * @since 3.1.0
    */
@@ -893,7 +890,7 @@ public class AntMode {
 
   /**
    * Determine if the VertScanSpeed is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertScanSpeed() {
@@ -906,7 +903,7 @@ public class AntMode {
    * degree after each sweep, it is scanning vertically at one degree per
    * second. If the same antenna completed a scan in 30 seconds the vertical
    * scan rate would be 2 scans per minute..
-   * <p>
+   *
    * @return a {@link ScanRate} instance
    * @since 3.1.0
    */
@@ -920,7 +917,7 @@ public class AntMode {
    * degree after each sweep, it is scanning vertically at one degree per
    * second. If the same antenna completed a scan in 30 seconds the vertical
    * scan rate would be 2 scans per minute..
-   * <p>
+   *
    * @param value a {@link ScanRate} instance
    * @since 3.1.0
    */
@@ -930,7 +927,7 @@ public class AntMode {
 
   /**
    * Determine if the VertScanRate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertScanRate() {
@@ -939,7 +936,7 @@ public class AntMode {
 
   /**
    * Get the antenna vertical scanning capability..
-   * <p>
+   *
    * @return the VertScanType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -949,7 +946,7 @@ public class AntMode {
 
   /**
    * Set the antenna vertical scanning capability..
-   * <p>
+   *
    * @param value the VertScanType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -961,7 +958,7 @@ public class AntMode {
    * Determine if the VertScanType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertScanType() {
@@ -971,7 +968,7 @@ public class AntMode {
   /**
    * Get the minimum limit of the vertical arc scanned relative to the
    * horizontal..
-   * <p>
+   *
    * @return a {@link Elev} instance
    * @since 3.1.0
    */
@@ -982,7 +979,7 @@ public class AntMode {
   /**
    * Set the minimum limit of the vertical arc scanned relative to the
    * horizontal..
-   * <p>
+   *
    * @param value a {@link Elev} instance
    * @since 3.1.0
    */
@@ -992,7 +989,7 @@ public class AntMode {
 
   /**
    * Determine if the VertScanAngleMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertScanAngleMin() {
@@ -1005,7 +1002,7 @@ public class AntMode {
    * <p>
    * [XSL ERR MINMAX] If VertScanAngleMax is used, it MUST be greater than
    * VertScanAngleMin..
-   * <p>
+   *
    * @return a {@link Elev} instance
    * @since 3.1.0
    */
@@ -1019,7 +1016,7 @@ public class AntMode {
    * <p>
    * [XSL ERR MINMAX] If VertScanAngleMax is used, it MUST be greater than
    * VertScanAngleMin..
-   * <p>
+   *
    * @param value a {@link Elev} instance
    * @since 3.1.0
    */
@@ -1029,7 +1026,7 @@ public class AntMode {
 
   /**
    * Determine if the VertScanAngleMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertScanAngleMax() {
@@ -1038,7 +1035,7 @@ public class AntMode {
 
   /**
    * Get the antenna direction of rotation or motion..
-   * <p>
+   *
    * @return the RotationDirection value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1048,7 +1045,7 @@ public class AntMode {
 
   /**
    * Set the antenna direction of rotation or motion..
-   * <p>
+   *
    * @param value the RotationDirection value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1060,7 +1057,7 @@ public class AntMode {
    * Determine if the RotationDirection is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRotationDirection() {
@@ -1069,7 +1066,7 @@ public class AntMode {
 
   /**
    * Get the nominal or minimum antenna rotation rate..
-   * <p>
+   *
    * @return a {@link RotationRate} instance
    * @since 3.1.0
    */
@@ -1079,7 +1076,7 @@ public class AntMode {
 
   /**
    * Set the nominal or minimum antenna rotation rate..
-   * <p>
+   *
    * @param value a {@link RotationRate} instance
    * @since 3.1.0
    */
@@ -1089,7 +1086,7 @@ public class AntMode {
 
   /**
    * Determine if the RotationRateMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRotationRateMin() {
@@ -1101,7 +1098,7 @@ public class AntMode {
    * <p>
    * [XSL ERR MINMAX] If RotationRateMax is used, it MUST be greater than
    * RotationRateMin..
-   * <p>
+   *
    * @return a {@link RotationRate} instance
    * @since 3.1.0
    */
@@ -1114,7 +1111,7 @@ public class AntMode {
    * <p>
    * [XSL ERR MINMAX] If RotationRateMax is used, it MUST be greater than
    * RotationRateMin..
-   * <p>
+   *
    * @param value a {@link RotationRate} instance
    * @since 3.1.0
    */
@@ -1124,7 +1121,7 @@ public class AntMode {
 
   /**
    * Determine if the RotationRateMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRotationRateMax() {
@@ -1133,7 +1130,7 @@ public class AntMode {
 
   /**
    * Get the minimum or nominal horizontal beamwidth..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -1143,7 +1140,7 @@ public class AntMode {
 
   /**
    * Set the minimum or nominal horizontal beamwidth..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -1153,7 +1150,7 @@ public class AntMode {
 
   /**
    * Determine if the HorzBwMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzBwMin() {
@@ -1165,7 +1162,7 @@ public class AntMode {
    * frequency.
    * <p>
    * [XSL ERR MINMAX] If HorzBwMax is used, it MUST be greater than HorzBwMin..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -1178,7 +1175,7 @@ public class AntMode {
    * frequency.
    * <p>
    * [XSL ERR MINMAX] If HorzBwMax is used, it MUST be greater than HorzBwMin..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -1188,7 +1185,7 @@ public class AntMode {
 
   /**
    * Determine if the HorzBwMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzBwMax() {
@@ -1197,7 +1194,7 @@ public class AntMode {
 
   /**
    * Get the minimum or nominal vertical beamwidth..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -1207,7 +1204,7 @@ public class AntMode {
 
   /**
    * Set the minimum or nominal vertical beamwidth..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -1217,7 +1214,7 @@ public class AntMode {
 
   /**
    * Determine if the VertBwMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertBwMin() {
@@ -1229,7 +1226,7 @@ public class AntMode {
    * frequency.
    * <p>
    * [XSL ERR MINMAX] If VertBwMax is used, it MUST be greater than VertBwMin..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -1242,7 +1239,7 @@ public class AntMode {
    * frequency.
    * <p>
    * [XSL ERR MINMAX] If VertBwMax is used, it MUST be greater than VertBwMin..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -1252,7 +1249,7 @@ public class AntMode {
 
   /**
    * Determine if the VertBwMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertBwMax() {
@@ -1262,7 +1259,7 @@ public class AntMode {
   /**
    * Get one of the codes describing the shape or type of the antenna main
    * beam..
-   * <p>
+   *
    * @return the BeamType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1273,7 +1270,7 @@ public class AntMode {
   /**
    * Set one of the codes describing the shape or type of the antenna main
    * beam..
-   * <p>
+   *
    * @param value the BeamType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1285,7 +1282,7 @@ public class AntMode {
    * Determine if the BeamType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetBeamType() {
@@ -1294,7 +1291,7 @@ public class AntMode {
 
   /**
    * Get the maximum level of input power..
-   * <p>
+   *
    * @return a {@link dBW} instance
    * @since 3.1.0
    */
@@ -1304,7 +1301,7 @@ public class AntMode {
 
   /**
    * Set the maximum level of input power..
-   * <p>
+   *
    * @param value a {@link dBW} instance
    * @since 3.1.0
    */
@@ -1314,7 +1311,7 @@ public class AntMode {
 
   /**
    * Determine if the MaxPower is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMaxPower() {
@@ -1324,7 +1321,7 @@ public class AntMode {
   /**
    * Get the power ratio between the signal injected into one port and the power
    * returned by the other port ..
-   * <p>
+   *
    * @return a {@link dB} instance
    * @since 3.1.0
    */
@@ -1335,7 +1332,7 @@ public class AntMode {
   /**
    * Set the power ratio between the signal injected into one port and the power
    * returned by the other port ..
-   * <p>
+   *
    * @param value a {@link dB} instance
    * @since 3.1.0
    */
@@ -1345,7 +1342,7 @@ public class AntMode {
 
   /**
    * Determine if the PortIsolation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPortIsolation() {
@@ -1354,7 +1351,7 @@ public class AntMode {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link S40} instance
    * @since 3.1.0
    */
@@ -1364,7 +1361,7 @@ public class AntMode {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value a {@link S40} instance
    * @since 3.1.0
    */
@@ -1374,7 +1371,7 @@ public class AntMode {
 
   /**
    * Determine if the ModeName is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetModeName() {
@@ -1387,7 +1384,7 @@ public class AntMode {
    * Complex element AntGain indicates the antenna gain, in decibels with
    * reference to an isotropic source (dBi), in the direction of maximum
    * radiation..
-   * <p>
+   *
    * @return a {@link AntGain} instance
    * @since 3.1.0
    */
@@ -1400,7 +1397,7 @@ public class AntMode {
 
   /**
    * Determine if the AntGain is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntGain() {
@@ -1419,7 +1416,7 @@ public class AntMode {
    * <p>
    * Complex element AntFreqs contains the antenna's designed tuning range, or
    * the discrete operating frequency..
-   * <p>
+   *
    * @return a {@link AntFreqs} instance
    * @since 3.1.0
    */
@@ -1432,7 +1429,7 @@ public class AntMode {
 
   /**
    * Determine if the AntFreqs is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntFreqs() {
@@ -1455,7 +1452,7 @@ public class AntMode {
    * the direction of the Z-axis. At different values of phi, pattern cuts can
    * be taken with theta as the dependent variable. These will be great circle
    * cuts through the main-beam peak..
-   * <p>
+   *
    * @return a {@link AntPattern} instance
    * @since 3.1.0
    */
@@ -1468,7 +1465,7 @@ public class AntMode {
 
   /**
    * Determine if the AntPattern is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntPattern() {
@@ -1487,7 +1484,7 @@ public class AntMode {
    * <p>
    * Complex element AntEfficiency describes the antenna efficiency at various
    * frequencies within the frequency range of the antenna..
-   * <p>
+   *
    * @return a {@link AntEfficiency} instance
    * @since 3.1.0
    */
@@ -1500,7 +1497,7 @@ public class AntMode {
 
   /**
    * Determine if the AntEfficiency is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntEfficiency() {
@@ -1520,7 +1517,7 @@ public class AntMode {
    * Complex Element VSWR stores the Voltage Standing Wave Ratio information for
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency..
-   * <p>
+   *
    * @return a {@link VSWR} instance
    * @since 3.1.0
    */
@@ -1533,7 +1530,7 @@ public class AntMode {
 
   /**
    * Determine if the VSWR is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVSWR() {
@@ -1552,7 +1549,7 @@ public class AntMode {
    * <p>
    * Complex element ObservedLobeAnalysis (US) contains general data associated
    * with observed Antenna sidelobes and backlobes..
-   * <p>
+   *
    * @return a {@link ObservedLobeAnalysis} instance
    * @since 3.1.0
    */
@@ -1565,7 +1562,7 @@ public class AntMode {
 
   /**
    * Determine if the ObservedLobeAnalysis is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedLobeAnalysis() {
@@ -1585,7 +1582,7 @@ public class AntMode {
    * Complex element ObservedPolarisationAnalysis (US) contains data describing
    * the parametric information for the polarization and tilt angle
    * information..
-   * <p>
+   *
    * @return a {@link ObservedPolarisationAnalysis} instance
    * @since 3.1.0
    */
@@ -1598,7 +1595,7 @@ public class AntMode {
 
   /**
    * Determine if the ObservedPolarisationAnalysis is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedPolarisationAnalysis() {
@@ -1618,7 +1615,7 @@ public class AntMode {
    * Complex element ObservedScanAnalysis (US) contains data describing the
    * collected Horizontal and Vertical Scan parameters as well as the Adaptive
    * Driver information..
-   * <p>
+   *
    * @return a {@link ObservedScanAnalysis} instance
    * @since 3.1.0
    */
@@ -1631,7 +1628,7 @@ public class AntMode {
 
   /**
    * Determine if the ObservedScanAnalysis is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedScanAnalysis() {
@@ -1650,7 +1647,7 @@ public class AntMode {
    * identification of the mode, but it can also be automatically generated in
    * some systems. The Name MUST be unique within the dataset and SHOULD NOT be
    * modified during the entire lifetime of the dataset.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1663,7 +1660,7 @@ public class AntMode {
   /**
    * Set a description of the operational mode; this description should be a
    * meaningful explanation of the mode main characteristics.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1676,7 +1673,7 @@ public class AntMode {
   /**
    * Set In Data Item ModeUse, indicate if the mode is used for transmit,
    * receive, or both transmit and receive.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAU}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1689,7 +1686,7 @@ public class AntMode {
   /**
    * Set the general category for the movement of a scanning or tracking
    * antenna.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAD}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1701,7 +1698,7 @@ public class AntMode {
 
   /**
    * Set "Yes" if sector blanking is possible and "No" if it is not possible.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1714,7 +1711,7 @@ public class AntMode {
   /**
    * Set the principal orientation of the electric field of the electromagnetic
    * wave for an antenna.
-   * <p>
+   *
    * @param value An instances of type {@link ListCPO}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1728,7 +1725,7 @@ public class AntMode {
    * Set the angle of the electric field vector measured counter-clockwise from
    * the equatorial plane as referenced from the boresight or typical static
    * positioning of the antenna.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1744,7 +1741,7 @@ public class AntMode {
    * second. If a significant portion of time is spent vertically scanning in
    * between horizontal sweeps, the horizontal scan rate will be lower than if
    * the antenna were horizontally scanning all the time.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1757,7 +1754,7 @@ public class AntMode {
   /**
    * Set the number of complete scans the antenna is capable of making each
    * minute.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1769,7 +1766,7 @@ public class AntMode {
 
   /**
    * Set the antenna horizontal scanning capability.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAS}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1782,7 +1779,7 @@ public class AntMode {
   /**
    * Set the maximum horizontal sector the antenna can scan (enter 360 for a
    * full rotation).
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1798,7 +1795,7 @@ public class AntMode {
    * degree after each sweep, it is scanning vertically at one degree per
    * second. If the same antenna completed a scan in 30 seconds the vertical
    * scan speed would be 2 degrees per minute.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1814,7 +1811,7 @@ public class AntMode {
    * degree after each sweep, it is scanning vertically at one degree per
    * second. If the same antenna completed a scan in 30 seconds the vertical
    * scan rate would be 2 scans per minute.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1826,7 +1823,7 @@ public class AntMode {
 
   /**
    * Set the antenna vertical scanning capability.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAS}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1839,7 +1836,7 @@ public class AntMode {
   /**
    * Set the minimum limit of the vertical arc scanned relative to the
    * horizontal.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1855,7 +1852,7 @@ public class AntMode {
    * <p>
    * [XSL ERR MINMAX] If VertScanAngleMax is used, it MUST be greater than
    * VertScanAngleMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1867,7 +1864,7 @@ public class AntMode {
 
   /**
    * Set the antenna direction of rotation or motion.
-   * <p>
+   *
    * @param value An instances of type {@link ListCRD}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1879,7 +1876,7 @@ public class AntMode {
 
   /**
    * Set the nominal or minimum antenna rotation rate.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1894,7 +1891,7 @@ public class AntMode {
    * <p>
    * [XSL ERR MINMAX] If RotationRateMax is used, it MUST be greater than
    * RotationRateMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1906,7 +1903,7 @@ public class AntMode {
 
   /**
    * Set the minimum or nominal horizontal beamwidth.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1921,7 +1918,7 @@ public class AntMode {
    * frequency.
    * <p>
    * [XSL ERR MINMAX] If HorzBwMax is used, it MUST be greater than HorzBwMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1933,7 +1930,7 @@ public class AntMode {
 
   /**
    * Set the minimum or nominal vertical beamwidth.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1948,7 +1945,7 @@ public class AntMode {
    * frequency.
    * <p>
    * [XSL ERR MINMAX] If VertBwMax is used, it MUST be greater than VertBwMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1960,7 +1957,7 @@ public class AntMode {
 
   /**
    * Set one of the codes describing the shape or type of the antenna main beam.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBD}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1972,7 +1969,7 @@ public class AntMode {
 
   /**
    * Set the maximum level of input power.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1985,7 +1982,7 @@ public class AntMode {
   /**
    * Set the power ratio between the signal injected into one port and the power
    * returned by the other port .
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -1996,7 +1993,9 @@ public class AntMode {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   *
+   *
    * @param value An instances of type {@link String}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -2012,7 +2011,7 @@ public class AntMode {
    * Complex element AntGain indicates the antenna gain, in decibels with
    * reference to an isotropic source (dBi), in the direction of maximum
    * radiation.
-   * <p>
+   *
    * @param values One or more instances of type {@link AntGain...}.
    * @return The current AntMode object instance.
    * @since 3.1.0
@@ -2030,7 +2029,7 @@ public class AntMode {
    * Complex element AntGain indicates the antenna gain, in decibels with
    * reference to an isotropic source (dBi), in the direction of maximum
    * radiation.
-   * <p>
+   *
    * @param values A collection of {@link AntGain} instances
    * @return The current AntMode object instance.
    * @since 3.1.0

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.FEDeployment;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Speed;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN6;
 
 /**
  * AtWayPoint defines a point in time at which a Force Element is at a given
@@ -50,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class AtWaypoint {
 
   /**
-   * WayPointIdx - Waypoint Index (Required)    * <p>
+   * WayPointIdx - Waypoint Index (Required)
+   * <p>
    * The sequential index of a Point within the referenced Location. Some points
    * of the Location may be omitted, and are not necessarily visited in the
    * order they are defined in the Location. For example a Location might have
@@ -64,7 +67,8 @@ public class AtWaypoint {
   @XmlElement(name = "WaypointIdx", required = true)
   private UN6 waypointIdx;
   /**
-   * DateTime - Date/Time (Required)    * <p>
+   * DateTime - Date/Time (Required)
+   * <p>
    * The date and time that the force element is at the selected waypoint.
    * <p>
    * Format is DateTime
@@ -74,7 +78,8 @@ public class AtWaypoint {
   @XmlElement(name = "DateTime", required = true)
   private DT dateTime;
   /**
-   * Speed - Speed at Waypoint (Optional)    * <p>
+   * Speed - Speed at Waypoint (Optional)
+   * <p>
    * The speed of the force element along a straight route or to the next
    * waypoint.
    * <p>

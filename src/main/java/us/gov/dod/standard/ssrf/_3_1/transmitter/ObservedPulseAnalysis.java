@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -175,7 +178,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS7;
 public class ObservedPulseAnalysis {
 
   /**
-   * US:FallTime - Fall Time (Optional)    * <p>
+   * US:FallTime - Fall Time (Optional)
+   * <p>
    * The time required for a pulse to fall from 90% to 10 percent of the mean
    * peak amplitude of its voltage waveform/envelope.
    * <p>
@@ -186,7 +190,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "FallTime", required = false)
   private microsecs fallTime;
   /**
-   * US:NumPDPositions - Num PD Positions (Optional)    * <p>
+   * US:NumPDPositions - Num PD Positions (Optional)
+   * <p>
    * The number of pulses (i.e., positions) in a repeating sequence of pulses
    * which has multiple (2 or more) PD values.
    * <p>
@@ -197,7 +202,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "NumPDPositions", required = false)
   private UN6 numPDPositions;
   /**
-   * US:NumPDValues - Num PD Values (Optional)    * <p>
+   * US:NumPDValues - Num PD Values (Optional)
+   * <p>
    * The number of discrete PD values (i.e., elements) in a repeating sequence
    * of pulses which has multiple (2 or more) PD values.
    * <p>
@@ -208,7 +214,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "NumPDValues", required = false)
   private UN6 numPDValues;
   /**
-   * US:NumPRIElements - Num PRI Elements (Optional)    * <p>
+   * US:NumPRIElements - Num PRI Elements (Optional)
+   * <p>
    * The number of discrete PRI values in a repeating sequence of discrete PRIs.
    * <p>
    * Format is UN(6)
@@ -218,7 +225,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "NumPRIElements", required = false)
   private UN6 numPRIElements;
   /**
-   * US:NumPRIPositions - Num PRI Positions (Optional)    * <p>
+   * US:NumPRIPositions - Num PRI Positions (Optional)
+   * <p>
    * The number of time intervals between pulses or pulse groups, or the number
    * of PRI dwell groups, in a repeating PRI sequence which uses discrete PRI
    * values.
@@ -230,7 +238,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "NumPRIPositions", required = false)
   private UN6 numPRIPositions;
   /**
-   * US:PDAdaptiveRuleDesc - PD Adaptive Rule Description (Optional)    * <p>
+   * US:PDAdaptiveRuleDesc - PD Adaptive Rule Description (Optional)
+   * <p>
    * The rule which describes the signal PD variations (aka. modulation).
    * <p>
    * Format is S500
@@ -250,7 +259,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDContinuous", required = false)
   private TString pdContinuous;
   /**
-   * US:PDDwellMax - PD Dwell Max (Optional)    * <p>
+   * US:PDDwellMax - PD Dwell Max (Optional)
+   * <p>
    * The maximum time duration for a complete dwell/group of pulses which all
    * have the same PD value.
    * <p>
@@ -264,7 +274,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDDwellMax", required = false)
   private microsecs pdDwellMax;
   /**
-   * US:PDDwellMin - PD Dwell Min (Optional)    * <p>
+   * US:PDDwellMin - PD Dwell Min (Optional)
+   * <p>
    * The minimum time duration for a complete dwell/group of pulses which all
    * have the same PD value.
    * <p>
@@ -275,7 +286,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDDwellMin", required = false)
   private microsecs pdDwellMin;
   /**
-   * US:PDExtremeMax - Maximum PD Extreme (Optional)    * <p>
+   * US:PDExtremeMax - Maximum PD Extreme (Optional)
+   * <p>
    * The maximum PD value that represents 100% of observed values.
    * <p>
    * [XSL ERR MINMAX] If US:PDExtremeMax is used, it MUST be greater than
@@ -288,7 +300,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDExtremeMax", required = false)
   private microsecs pdExtremeMax;
   /**
-   * US:PDExtremeMin - Minimum PD Extreme (Optional)    * <p>
+   * US:PDExtremeMin - Minimum PD Extreme (Optional)
+   * <p>
    * The minimum PD value that represents 100% of observed values.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -298,7 +311,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDExtremeMin", required = false)
   private microsecs pdExtremeMin;
   /**
-   * US:PDMax - Maximum PD (Optional)    * <p>
+   * US:PDMax - Maximum PD (Optional)
+   * <p>
    * The highest discrete PD value in a repeating sequence of pulses which has
    * multiple PD values
    * <p>
@@ -311,7 +325,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDMax", required = false)
   private microsecs pdMax;
   /**
-   * US:PDMean - Average PD (Optional)    * <p>
+   * US:PDMean - Average PD (Optional)
+   * <p>
    * The average PD of a signal which changes PD values on a non-patterned
    * basis.
    * <p>
@@ -322,7 +337,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDMean", required = false)
   private microsecs pdMean;
   /**
-   * US:PDMedian - PD Median (Optional)    * <p>
+   * US:PDMedian - PD Median (Optional)
+   * <p>
    * The PD value that the signal most often used, based on a statistical study.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -332,7 +348,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDMedian", required = false)
   private microsecs pdMedian;
   /**
-   * US:PDMin - Minimum PD (Optional)    * <p>
+   * US:PDMin - Minimum PD (Optional)
+   * <p>
    * The delta lowest discrete PD value in a repeating sequence of pulses which
    * has multiple PD values
    * <p>
@@ -343,7 +360,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDMin", required = false)
   private microsecs pdMin;
   /**
-   * US:PDPatternPeriod - PD Pattern Period (Optional)    * <p>
+   * US:PDPatternPeriod - PD Pattern Period (Optional)
+   * <p>
    * The time duration for one complete cycle of a repeating sequence of pulses
    * which has multiple (2 or more) PD values; the time duration shall go from a
    * point in one cycle to a like point in the next cycle.
@@ -363,7 +381,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDPatternType", required = false)
   private TString pdPatternType;
   /**
-   * US:PDSequenceDesc - PD Sequence Description (Optional)    * <p>
+   * US:PDSequenceDesc - PD Sequence Description (Optional)
+   * <p>
    * A freetext description of the PD Sequence.
    * <p>
    * Format is S500
@@ -373,7 +392,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDSequenceDesc", required = false)
   private S500 pdSequenceDesc;
   /**
-   * US:PDStdDev - PD Standard Deviation (Optional)    * <p>
+   * US:PDStdDev - PD Standard Deviation (Optional)
+   * <p>
    * The standard deviation of the data sample used to calculate PD Mean.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -383,7 +403,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDStdDev", required = false)
   private microsecs pdStdDev;
   /**
-   * US:PDStep - PD Step (Optional)    * <p>
+   * US:PDStep - PD Step (Optional)
+   * <p>
    * The Step between adjacent PD values; pertains to discrete PD variations.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -393,7 +414,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDStep", required = false)
   private microsecs pdStep;
   /**
-   * US:PDTypicalMax - Maximum PD Typical (Optional)    * <p>
+   * US:PDTypicalMax - Maximum PD Typical (Optional)
+   * <p>
    * The upper end of the range of PD values that represents 95% of observed
    * values, from a statistical study.
    * <p>
@@ -407,7 +429,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDTypicalMax", required = false)
   private microsecs pdTypicalMax;
   /**
-   * US:PDTypicalMin - Minimum PD Typical (Optional)    * <p>
+   * US:PDTypicalMin - Minimum PD Typical (Optional)
+   * <p>
    * The lower end of the range of PD values that represents 95% of observed
    * values, from a statistical study
    * <p>
@@ -418,7 +441,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PDTypicalMin", required = false)
   private microsecs pdTypicalMin;
   /**
-   * US:PRFChangeRate - PRF Change Rate (Optional)    * <p>
+   * US:PRFChangeRate - PRF Change Rate (Optional)
+   * <p>
    * The rate of change for PD variations expressed as PD change per unit of
    * time.
    * <p>
@@ -429,7 +453,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFChangeRate", required = false)
   private US_PRIChgRate prfChangeRate;
   /**
-   * US:PRFExtremeMax - Maximum PRF Extreme (Optional)    * <p>
+   * US:PRFExtremeMax - Maximum PRF Extreme (Optional)
+   * <p>
    * The minimum Observed PRF in the signal sample.
    * <p>
    * [XSL ERR MINMAX] If US:PRFExtremeMax is used, it MUST be greater than
@@ -442,7 +467,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFExtremeMax", required = false)
   private US_PPS prfExtremeMax;
   /**
-   * US:PRFExtremeMin - Minimum PRF Extreme (Optional)    * <p>
+   * US:PRFExtremeMin - Minimum PRF Extreme (Optional)
+   * <p>
    * The minimum Observed PRF in the signal sample.
    * <p>
    * Format is UN(7,2) (pps)
@@ -452,7 +478,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFExtremeMin", required = false)
   private US_PPS prfExtremeMin;
   /**
-   * US:PRFMax - PRF Max (Optional)    * <p>
+   * US:PRFMax - PRF Max (Optional)
+   * <p>
    * The highest discrete PRI value (convert PRI to PRF) which are found in a
    * single intercept that contains the complete PRI characteristics for that
    * specific data set.
@@ -466,10 +493,12 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFMax", required = false)
   private US_PPS prfMax;
   /**
-   * US:PRFMin - PRF Min (Optional)    * <p>
+   * US:PRFMin - PRF Min (Optional)
+   * <p>
    * The lowest discrete PRI value (convert PRI to PRF) which are found in a
    * single intercept that contains the complete PRI characteristics for that
-   * specific data set.    * <p>
+   * specific data set.
+   * <p>
    * Format is UN(7,2) (pps)
    * <p>
    * @since 3.1.0
@@ -477,7 +506,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFMin", required = false)
   private US_PPS prfMin;
   /**
-   * US:PRFTypicalMax - Maximum PRF Typical (Optional)    * <p>
+   * US:PRFTypicalMax - Maximum PRF Typical (Optional)
+   * <p>
    * The upper end of the range of PRF values that represents 95% of observed
    * values, from a statistical study.
    * <p>
@@ -491,7 +521,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFTypicalMax", required = false)
   private US_PPS prfTypicalMax;
   /**
-   * US:PRFTypicalMin - Minimum PRF Typical (Optional)    * <p>
+   * US:PRFTypicalMin - Minimum PRF Typical (Optional)
+   * <p>
    * The lower end of the range of PRF values that represents 95% of observed
    * values, from a statistical study
    * <p>
@@ -502,7 +533,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRFTypicalMin", required = false)
   private US_PPS prfTypicalMin;
   /**
-   * US:PRIAdaptiveDriverDesc - PRI Adaptive Driver Description (Optional)    * <p>
+   * US:PRIAdaptiveDriverDesc - PRI Adaptive Driver Description (Optional)
+   * <p>
    * The condition which controls or can be associated with the signal PRI
    * variations (aka, interpulse modulation changes).
    * <p>
@@ -513,7 +545,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIAdaptiveDriverDesc", required = false)
   private S500 priAdaptiveDriverDesc;
   /**
-   * US:PRIAdaptiveRuleDesc - PRI Adaptive Rule Description (Optional)    * <p>
+   * US:PRIAdaptiveRuleDesc - PRI Adaptive Rule Description (Optional)
+   * <p>
    * The rule which describes the signal PRI variations (aka, interpulse
    * modulation changes)
    * <p>
@@ -524,7 +557,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIAdaptiveRuleDesc", required = false)
   private S500 priAdaptiveRuleDesc;
   /**
-   * US:PRIAnomalousValues - PRI Anomalous Values (Optional)    * <p>
+   * US:PRIAnomalousValues - PRI Anomalous Values (Optional)
+   * <p>
    * Any regularly occurring signal values which do not fit in any of the other
    * PRI related fields. For example Minimum Scheduling Interval (MSI) values,
    * or Engagement Group Duration values can be documented in this field.. When
@@ -538,7 +572,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIAnomalousValues", required = false)
   private S500 priAnomalousValues;
   /**
-   * US:PRIBasicClockPeriod - PRI Basic Clock Period (Optional)    * <p>
+   * US:PRIBasicClockPeriod - PRI Basic Clock Period (Optional)
+   * <p>
    * The fundamental period of the emitter clock which is used to generate the
    * subject signal PRIs
    * <p>
@@ -549,7 +584,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIBasicClockPeriod", required = false)
   private microsecs priBasicClockPeriod;
   /**
-   * US:PRIChangeRate - PRI Change Rate (Optional)    * <p>
+   * US:PRIChangeRate - PRI Change Rate (Optional)
+   * <p>
    * The PRI change per unit of time, measured over a significant portion of the
    * waveform. This applies to Continuous PRI variations.
    * <p>
@@ -570,7 +606,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIContinuous", required = false)
   private TString priContinuous;
   /**
-   * US:PRICountdown - PRI Countdown (Optional)    * <p>
+   * US:PRICountdown - PRI Countdown (Optional)
+   * <p>
    * The integer (aka, count or countdown) associated with the PRI Crystal value
    * to provide the Pattern Period.
    * <p>
@@ -581,7 +618,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRICountdown", required = false)
   private UN6 priCountdown;
   /**
-   * US:PRICountdownKey - PRI Countdown Key (Optional)    * <p>
+   * US:PRICountdownKey - PRI Countdown Key (Optional)
+   * <p>
    * The integer (aka, count or countdown) used to generate the PRI from the PRI
    * Crystal value.
    * <p>
@@ -592,7 +630,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRICountdownKey", required = false)
   private UN9 priCountdownKey;
   /**
-   * US:PRIExtremeMax - PRI Extreme Max (Optional)    * <p>
+   * US:PRIExtremeMax - PRI Extreme Max (Optional)
+   * <p>
    * The maximum observed PRI value, from a statistical study of a 100% data
    * set.
    * <p>
@@ -606,7 +645,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIExtremeMax", required = false)
   private microsecs priExtremeMax;
   /**
-   * US:PRIExtremeMin - PRI Extreme Min (Optional)    * <p>
+   * US:PRIExtremeMin - PRI Extreme Min (Optional)
+   * <p>
    * The minimum observed PRI value, from a statistical study of a 100% data
    * set.
    * <p>
@@ -617,7 +657,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIExtremeMin", required = false)
   private microsecs priExtremeMin;
   /**
-   * US:PRIFramePeriod - PRI Frame Period (Optional)    * <p>
+   * US:PRIFramePeriod - PRI Frame Period (Optional)
+   * <p>
    * The time difference between a point on the leading edge of the frame marker
    * (or an alternate pulse in the frame), to the similar point on the leading
    * edge of the frame marker (or the alternate pulse) in the next/consecutive
@@ -630,7 +671,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIFramePeriod", required = false)
   private microsecs priFramePeriod;
   /**
-   * US:PRIFrameRate - PRI Frame Rate (Optional)    * <p>
+   * US:PRIFrameRate - PRI Frame Rate (Optional)
+   * <p>
    * The rate of frame generation during the Pulse Repetition Interval. For
    * example, 10 frames generated during a PRI of 1 us yields a PRI frame rate
    * of 10 MHz.
@@ -642,7 +684,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIFrameRate", required = false)
   private FreqM priFrameRate;
   /**
-   * US:PRIGroupPulseSpacing - PRI Group Pulse Spacing (Optional)    * <p>
+   * US:PRIGroupPulseSpacing - PRI Group Pulse Spacing (Optional)
+   * <p>
    * The time difference between a point on the leading edge of the subframe
    * marker (or an alternate pulse in the subframe), to the similar point on the
    * leading edge of the subframe marker (or the alternate pulse in the
@@ -655,7 +698,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIGroupPulseSpacing", required = false)
   private microsecs priGroupPulseSpacing;
   /**
-   * US:PRIGroupSpacing - PRI Group Spacing (Optional)    * <p>
+   * US:PRIGroupSpacing - PRI Group Spacing (Optional)
+   * <p>
    * The PRI between two groups of pulses which both have constant but different
    * PRIs (aka, the PRI between consecutive PRI dwell groups).
    * <p>
@@ -666,7 +710,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIGroupSpacing", required = false)
   private microsecs priGroupSpacing;
   /**
-   * US:PRIMean - Average PRI (Optional)    * <p>
+   * US:PRIMean - Average PRI (Optional)
+   * <p>
    * The average PRI value for a signal which changes PRI values on a
    * non-patterned basis.
    * <p>
@@ -677,7 +722,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIMean", required = false)
   private microsecs priMean;
   /**
-   * US:PRIMedian - PRI Median (Optional)    * <p>
+   * US:PRIMedian - PRI Median (Optional)
+   * <p>
    * The observed PRI value that the signal most often used based on statistical
    * study of a data set.
    * <p>
@@ -688,7 +734,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIMedian", required = false)
   private microsecs priMedian;
   /**
-   * US:PRIMedianCountdowns - PRI Median Countdowns (Optional)    * <p>
+   * US:PRIMedianCountdowns - PRI Median Countdowns (Optional)
+   * <p>
    * The observed PRI Crystal Counts used to generate the PRIs used most often
    * by the signal, based on statistical study of a data set.
    * <p>
@@ -699,7 +746,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIMedianCountdowns", required = false)
   private S100 priMedianCountdowns;
   /**
-   * US:PRIPatternPeriod - PRI Pattern Period (Optional)    * <p>
+   * US:PRIPatternPeriod - PRI Pattern Period (Optional)
+   * <p>
    * The time duration for one complete cycle of a repeating PRI sequence.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -709,7 +757,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIPatternPeriod", required = false)
   private microsecs priPatternPeriod;
   /**
-   * US:PRIPatternType - PRI Pattern Type (Optional)    * <p>
+   * US:PRIPatternType - PRI Pattern Type (Optional)
+   * <p>
    * Whether the PRI is unmodulated or pulse-to-pulse PRI variations are
    * Patterned, Non-Patterned, or Adaptive.
    * <p>
@@ -720,7 +769,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIPatternType", required = false)
   private TString priPatternType;
   /**
-   * US:PRIPulsesPerGroup - PRI Pulses Per Group (Optional)    * <p>
+   * US:PRIPulsesPerGroup - PRI Pulses Per Group (Optional)
+   * <p>
    * The number of pulses in a pulse group.
    * <p>
    * Format is UN(6)
@@ -730,7 +780,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIPulsesPerGroup", required = false)
   private UN6 priPulsesPerGroup;
   /**
-   * US:PRISequenceDesc - PRI Sequence Description (Optional)    * <p>
+   * US:PRISequenceDesc - PRI Sequence Description (Optional)
+   * <p>
    * A free text description of the PRI Sequence.
    * <p>
    * Format is S500
@@ -740,7 +791,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRISequenceDesc", required = false)
   private S500 priSequenceDesc;
   /**
-   * US:PRIStability - PRI Stability (Optional)    * <p>
+   * US:PRIStability - PRI Stability (Optional)
+   * <p>
    * The variation of a mean PRI value measured from one time to another time
    * <p>
    * Format is UN(18,6) (ppm)
@@ -750,7 +802,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIStability", required = false)
   private US_PPM priStability;
   /**
-   * US:PRIStabilitySamplePeriod - PRI Stability Sample Period (Optional)    * <p>
+   * US:PRIStabilitySamplePeriod - PRI Stability Sample Period (Optional)
+   * <p>
    * The time interval used to determine the PRI stability value.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -760,7 +813,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIStabilitySamplePeriod", required = false)
   private microsecs priStabilitySamplePeriod;
   /**
-   * US:PRIStdDev - PRI Standard Deviation (Optional)    * <p>
+   * US:PRIStdDev - PRI Standard Deviation (Optional)
+   * <p>
    * The standard deviation associated with the data set used to calculate the
    * values entered in the PRI Mean fields
    * <p>
@@ -771,7 +825,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIStdDev", required = false)
   private microsecs priStdDev;
   /**
-   * US:PRIStep - PRI Step (Optional)    * <p>
+   * US:PRIStep - PRI Step (Optional)
+   * <p>
    * The delta between the Most Probable observed PRI values of adjacent and
    * discrete PRI.
    * <p>
@@ -782,7 +837,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRIStep", required = false)
   private microsecs priStep;
   /**
-   * US:PRISubframePeriod - PRI Subframe Period (Optional)    * <p>
+   * US:PRISubframePeriod - PRI Subframe Period (Optional)
+   * <p>
    * The time difference between a point on the leading edge of the subframe
    * marker (or an alternate pulse in the subframe), to the similar point on the
    * leading edge of the subframe marker (or the alternate pulse in the
@@ -795,7 +851,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRISubframePeriod", required = false)
   private microsecs priSubframePeriod;
   /**
-   * US:PRISubframeRate - PRI Subframe Rate (Optional)    * <p>
+   * US:PRISubframeRate - PRI Subframe Rate (Optional)
+   * <p>
    * The number of subframes detected during each PRI Subframe period.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -805,7 +862,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRISubframeRate", required = false)
   private FreqM priSubframeRate;
   /**
-   * US:PRITimingShift - PRI Timing Shift (Optional)    * <p>
+   * US:PRITimingShift - PRI Timing Shift (Optional)
+   * <p>
    * The PRI timing shift value, on Emitters with repeated timing shifts of a
    * predictable magnitude, but not predictable timing.
    * <p>
@@ -816,7 +874,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRITimingShift", required = false)
   private microsecs priTimingShift;
   /**
-   * US:PRITypicalMax - PRI Typical Max (Optional)    * <p>
+   * US:PRITypicalMax - PRI Typical Max (Optional)
+   * <p>
    * The upper end of the range of PRI values that represent 95% of the signal
    * observed PRI values, from a statistical study of a data set.
    * <p>
@@ -830,7 +889,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRITypicalMax", required = false)
   private microsecs priTypicalMax;
   /**
-   * US:PRITypicalMin - PRI Typical Min (Optional)    * <p>
+   * US:PRITypicalMin - PRI Typical Min (Optional)
+   * <p>
    * The lower end of the range of PRI values that represent 95% of the signal
    * observed PRI values, from a statistical study of a data set.
    * <p>
@@ -841,7 +901,8 @@ public class ObservedPulseAnalysis {
   @XmlElement(name = "PRITypicalMin", required = false)
   private microsecs priTypicalMin;
   /**
-   * US:RiseTime - RiseTime (Optional)    * <p>
+   * US:RiseTime - RiseTime (Optional)
+   * <p>
    * The time required for a pulse to rise from 10% to 90 percent of the mean
    * peak amplitude of the voltage pattern.
    * <p>
@@ -3179,7 +3240,8 @@ public class ObservedPulseAnalysis {
   /**
    * Set the lowest discrete PRI value (convert PRI to PRF) which are found in a
    * single intercept that contains the complete PRI characteristics for that
-   * specific data set.    * <p>
+   * specific data set.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedPulseAnalysis object instance.
    * @since 3.1.0

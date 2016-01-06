@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -132,7 +135,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSX;
 public class ObservedMOPAnalysis {
 
   /**
-   * US:MOPAdaptiveDriverDesc - MOP Adaptive Driver Description (Optional)    * <p>
+   * US:MOPAdaptiveDriverDesc - MOP Adaptive Driver Description (Optional)
+   * <p>
    * The condition which controls, or can be associated with, the signal MOP
    * variations.
    * <p>
@@ -144,7 +148,8 @@ public class ObservedMOPAnalysis {
   private S500 mopAdaptiveDriverDesc;
   /**
    * US:MOPAdaptiveDriverRuleDesc - MOP Adaptive Driver Rule Description
-   * (Optional)    * <p>
+   * (Optional)
+   * <p>
    * The rule which describes the signal MOP variations.
    * <p>
    * Format is S500
@@ -154,7 +159,8 @@ public class ObservedMOPAnalysis {
   @XmlElement(name = "MOPAdaptiveDriverRuleDesc", required = false)
   private S500 mopAdaptiveDriverRuleDesc;
   /**
-   * US:MOPAMPercentModulation - MOP AM Percent Modulation (Optional)    * <p>
+   * US:MOPAMPercentModulation - MOP AM Percent Modulation (Optional)
+   * <p>
    * The AM Percent Modulation is the ratio (expressed as a percentage) between
    * the amplitude variation and the maximum amplitude
    * <p>

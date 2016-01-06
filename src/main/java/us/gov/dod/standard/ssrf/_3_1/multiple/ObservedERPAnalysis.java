@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -98,7 +101,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "Continuous", required = false)
   private TString continuous;
   /**
-   * US:ERPAdaptiveDriverDesc - ERP Driver Description (Optional)    * <p>
+   * US:ERPAdaptiveDriverDesc - ERP Driver Description (Optional)
+   * <p>
    * The condition which controls, or can be associated with, the signal ERP
    * variations.
    * <p>
@@ -109,7 +113,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPAdaptiveDriverDesc", required = false)
   private S500 erpAdaptiveDriverDesc;
   /**
-   * US:ERPAdaptiveRuleDesc - ERP Driver Rule Description (Optional)    * <p>
+   * US:ERPAdaptiveRuleDesc - ERP Driver Rule Description (Optional)
+   * <p>
    * The rule which describes the signal ERP variations.
    * <p>
    * Format is S500
@@ -119,7 +124,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPAdaptiveRuleDesc", required = false)
   private S500 erpAdaptiveRuleDesc;
   /**
-   * US:ERPPatternPeriod - ERP Pattern Period (Optional)    * <p>
+   * US:ERPPatternPeriod - ERP Pattern Period (Optional)
+   * <p>
    * The time duration for one complete cycle of a repeating ERP sequence.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -137,7 +143,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPPatternType", required = false)
   private TString erpPatternType;
   /**
-   * US:ERPActualMax - ERP Actual Max Value (Optional)    * <p>
+   * US:ERPActualMax - ERP Actual Max Value (Optional)
+   * <p>
    * The highest discrete ERP value which is found in a single piece of a
    * complete data (e.g., in a single intercept that contains the complete ERP
    * characteristics of the signal).
@@ -152,7 +159,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPActualMax", required = false)
   private dBW erpActualMax;
   /**
-   * US:ERPActualMin - ERP Actual Min Value (Optional)    * <p>
+   * US:ERPActualMin - ERP Actual Min Value (Optional)
+   * <p>
    * The lowest discrete ERP value which is found in a single piece of a
    * complete data (e.g., in a single intercept that contains the complete ERP
    * characteristics of the signal).
@@ -164,7 +172,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPActualMin", required = false)
   private dBW erpActualMin;
   /**
-   * US:ERPChangeRate - ERP Change Rate (Optional)    * <p>
+   * US:ERPChangeRate - ERP Change Rate (Optional)
+   * <p>
    * The rate of change for ERP variations expressed in ERP change per unit of
    * time.
    * <p>
@@ -175,7 +184,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPChangeRate", required = false)
   private US_DBWS erpChangeRate;
   /**
-   * US:ERPExtremeMax - ERP Extreme Max Value (Optional)    * <p>
+   * US:ERPExtremeMax - ERP Extreme Max Value (Optional)
+   * <p>
    * The upper ERP value that represent 100% of the signal observed ERP values
    * which were obtained from a statistical study of a data set.
    * <p>
@@ -189,7 +199,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPExtremeMax", required = false)
   private dBW erpExtremeMax;
   /**
-   * US:ERPExtremeMin - ERP Extreme Min Value (Optional)    * <p>
+   * US:ERPExtremeMin - ERP Extreme Min Value (Optional)
+   * <p>
    * The lower ERP value that represent 100% of the signal observed ERP values
    * which were obtained from a statistical study of a data set.
    * <p>
@@ -200,7 +211,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPExtremeMin", required = false)
   private dBW erpExtremeMin;
   /**
-   * US:ERPMean - ERP Mean Value (Optional)    * <p>
+   * US:ERPMean - ERP Mean Value (Optional)
+   * <p>
    * The mean ERP value for a signal which changes ERP values on a non-patterned
    * basis.
    * <p>
@@ -211,10 +223,12 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPMean", required = false)
   private dBW erpMean;
   /**
-   * US:ERPMedian - ERP Most Probable Value (Optional)    * <p>
+   * US:ERPMedian - ERP Most Probable Value (Optional)
+   * <p>
    * The observed ERP value, or the observed ERP values in the case of a signal
    * with multiple discrete/individual ERP values, that the signal most often
-   * used based on a statistical study of a dataset.    * <p>
+   * used based on a statistical study of a dataset.
+   * <p>
    * Format is SN(10,7) (dBW)
    * <p>
    * @since 3.1.0
@@ -230,7 +244,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPSequenceDesc", required = false)
   private S500 erpSequenceDesc;
   /**
-   * US:ERPStdDev - ERP Standard Deviation (Optional)    * <p>
+   * US:ERPStdDev - ERP Standard Deviation (Optional)
+   * <p>
    * The standard deviation associated with the ERP Value data set that was used
    * to calculate ERPMean.
    * <p>
@@ -241,7 +256,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPStdDev", required = false)
   private dBW erpStdDev;
   /**
-   * US:ERPStep - ERP Step (Optional)    * <p>
+   * US:ERPStep - ERP Step (Optional)
+   * <p>
    * The delta between the Most Probable observed ERP values of adjacent and
    * discrete ERPs.
    * <p>
@@ -252,7 +268,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "ERPStep", required = false)
   private dBW erpStep;
   /**
-   * US:NumObsPositions - Observed Position Count (Optional)    * <p>
+   * US:NumObsPositions - Observed Position Count (Optional)
+   * <p>
    * The number of discrete ERP dwell/pulse groups, for a pulsed signal, or ERP
    * values at a constant ERP value, for a continuous wave (CW) signal, observed
    * in a signal which contains multiple and discrete ERP values that change in
@@ -265,7 +282,8 @@ public class ObservedERPAnalysis {
   @XmlElement(name = "NumObsPositions", required = false)
   private UN6 numObsPositions;
   /**
-   * US:NumObsValues - Observed Value Count (Optional)    * <p>
+   * US:NumObsValues - Observed Value Count (Optional)
+   * <p>
    * The number of discrete ERP values observed for a signal which contains
    * multiple and discrete ERP values.
    * <p>
@@ -1026,7 +1044,8 @@ public class ObservedERPAnalysis {
   /**
    * Set the observed ERP value, or the observed ERP values in the case of a
    * signal with multiple discrete/individual ERP values, that the signal most
-   * often used based on a statistical study of a dataset.    * <p>
+   * often used based on a statistical study of a dataset.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedERPAnalysis object instance.
    * @since 3.1.0

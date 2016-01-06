@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,11 @@ package us.gov.dod.standard.ssrf._3_1.satellite;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.Satellite;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEA;
 
 /**
@@ -47,7 +50,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEA;
 public class EarthStation {
 
   /**
-   * Name - Station Name (Optional)    * <p>
+   * Name - Station Name (Optional)
+   * <p>
    * The name of an associated earth station.
    * <p>
    * Format is S50
@@ -57,7 +61,8 @@ public class EarthStation {
   @XmlElement(name = "Name", required = false)
   private S50 name;
   /**
-   * Type - Station Type (Optional)    * <p>
+   * Type - Station Type (Optional)
+   * <p>
    * If this is a specific or typical earth station.
    * <p>
    * Format is L:CEA
@@ -67,7 +72,8 @@ public class EarthStation {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * LocationRef - Location Serial (Optional)    * <p>
+   * LocationRef - Location Serial (Optional)
+   * <p>
    * The serial of the referenced Location.
    * <p>
    * Format is pattern (S29)
@@ -238,7 +244,8 @@ public class EarthStation {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * LocationRef - Location Serial (Optional)    * <p>
+   * LocationRef - Location Serial (Optional)
+   * <p>
    * The serial of the referenced Location.
    * <p>
    * Format is pattern (S29)

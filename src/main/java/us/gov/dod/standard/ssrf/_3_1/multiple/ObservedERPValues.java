@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Percent3;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dBW;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 
 /**
  * ObservedERPValues (US) contains specific data artifacts that describe the
@@ -41,7 +43,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedERPValues {
 
   /**
-   * US:ERPDwell - ERP Dwell (Optional)    * <p>
+   * US:ERPDwell - ERP Dwell (Optional)
+   * <p>
    * The time duration for a complete dwell/group of pulses which all have the
    * same discrete ERP value, or for a continuous wave at a constant ERP value.
    * <p>
@@ -52,7 +55,8 @@ public class ObservedERPValues {
   @XmlElement(name = "ERPDwell", required = false)
   private microsecs erpDwell;
   /**
-   * US:ERPValue - Observed ERP Value (Required)    * <p>
+   * US:ERPValue - Observed ERP Value (Required)
+   * <p>
    * The ERP values that represent 95% of the signal observed ERP values for
    * each discrete ERP value which were obtained from a statistical study of a
    * data set.

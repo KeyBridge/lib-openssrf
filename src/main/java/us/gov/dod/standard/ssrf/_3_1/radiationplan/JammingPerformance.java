@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.radiationplan;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWA;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWB;
@@ -45,7 +48,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWB;
 public class JammingPerformance {
 
   /**
-   * US:ActualEffect - Actual Effect (Optional)    * <p>
+   * US:ActualEffect - Actual Effect (Optional)
+   * <p>
    * The actual impact a jamming mission had on a specific target area.
    * <p>
    * Format is L:UWA
@@ -63,7 +67,8 @@ public class JammingPerformance {
   @XmlElement(name = "ActualPerformance", required = false)
   private TString actualPerformance;
   /**
-   * US:ContinuousUpdate - Update Continuously (Optional)    * <p>
+   * US:ContinuousUpdate - Update Continuously (Optional)
+   * <p>
    * If effectiveness data should be provided continually or just once.
    * <p>
    * Format is L:CBO
@@ -73,7 +78,8 @@ public class JammingPerformance {
   @XmlElement(name = "ContinuousUpdate", required = false)
   private TString continuousUpdate;
   /**
-   * US:DesiredEffect - Desired Effect (Optional)    * <p>
+   * US:DesiredEffect - Desired Effect (Optional)
+   * <p>
    * The expected impact a jamming mission will have on a specific target area.
    * <p>
    * Format is L:UWA
@@ -83,7 +89,8 @@ public class JammingPerformance {
   @XmlElement(name = "DesiredEffect", required = false)
   private TString desiredEffect;
   /**
-   * US:DesiredPerformance - Desired Performance (Optional)    * <p>
+   * US:DesiredPerformance - Desired Performance (Optional)
+   * <p>
    * The desired effectiveness of the service request. Example: the minimum
    * percentage of known enemy command and control nodes that must be rendered
    * inoperable for successful mission accomplishment.

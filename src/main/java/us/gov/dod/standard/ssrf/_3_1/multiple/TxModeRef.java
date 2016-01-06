@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dBW;
 
 /**
  * TxModeRef contains references to the Transmitter and its modes, used to
@@ -46,7 +47,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class TxModeRef {
 
   /**
-   * ModeID - Mode Identifier (Required)    * <p>
+   * ModeID - Mode Identifier (Required)
+   * <p>
    * The unique identifier of a TxMode of the transmitter in this configuration.
    * This mode is from the transmitter specified in the Serial field of the
    * parent TxRef element.
@@ -58,7 +60,8 @@ public class TxModeRef {
   @XmlElement(name = "ModeID", required = true)
   private S20 modeID;
   /**
-   * PowerLimit - Power Limit (Optional)    * <p>
+   * PowerLimit - Power Limit (Optional)
+   * <p>
    * The power limit of this transmitter mode when in this configuration.
    * <p>
    * Format is SN(10,7) (dBW)

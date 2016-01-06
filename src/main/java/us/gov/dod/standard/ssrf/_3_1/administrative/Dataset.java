@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +18,11 @@ package us.gov.dod.standard.ssrf._3_1.administrative;
 import java.util.*;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Administrative;
+import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * Dataset is used within an Administrative transaction to specify the
@@ -28,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * Element of {@link Administrative}
  * <p>
  * Sub-Element is
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -47,7 +50,7 @@ public class Dataset {
    * The serial of the referenced Dataset.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Serial", required = true)
@@ -58,7 +61,7 @@ public class Dataset {
    * The date this Dataset goes out of force.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RetireDate", required = false)
@@ -69,7 +72,7 @@ public class Dataset {
    * The reason linked to the Action performed on this dataset.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Reason", required = false)
@@ -79,7 +82,7 @@ public class Dataset {
    * <p>
    * MissingRef allows the recipient of a message to signal the sender that a
    * dataset referenced in the message was not known by the recipient.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MissingRef", nillable = true)
@@ -87,7 +90,7 @@ public class Dataset {
 
   /**
    * Get the serial of the referenced Dataset..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -97,7 +100,7 @@ public class Dataset {
 
   /**
    * Set the serial of the referenced Dataset..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    */
@@ -107,7 +110,7 @@ public class Dataset {
 
   /**
    * Determine if the Serial is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSerial() {
@@ -116,7 +119,7 @@ public class Dataset {
 
   /**
    * Get the date this Dataset goes out of force..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -126,7 +129,7 @@ public class Dataset {
 
   /**
    * Set the date this Dataset goes out of force..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -136,7 +139,7 @@ public class Dataset {
 
   /**
    * Determine if the RetireDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRetireDate() {
@@ -145,7 +148,7 @@ public class Dataset {
 
   /**
    * Get the reason linked to the Action performed on this dataset..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -155,7 +158,7 @@ public class Dataset {
 
   /**
    * Set the reason linked to the Action performed on this dataset..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -165,7 +168,7 @@ public class Dataset {
 
   /**
    * Determine if the Reason is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReason() {
@@ -178,7 +181,7 @@ public class Dataset {
    * Complex element MissingRef allows the recipient of a message to signal the
    * sender that a dataset referenced in the message was not known by the
    * recipient..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -194,7 +197,7 @@ public class Dataset {
 
   /**
    * Determine if the MissingRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMissingRef() {
@@ -210,7 +213,7 @@ public class Dataset {
 
   /**
    * Set the serial of the referenced Dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -222,7 +225,7 @@ public class Dataset {
 
   /**
    * Set the date this Dataset goes out of force.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -234,7 +237,7 @@ public class Dataset {
 
   /**
    * Set the date this Dataset goes out of force.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -246,7 +249,7 @@ public class Dataset {
 
   /**
    * Set the reason linked to the Action performed on this dataset.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -262,7 +265,7 @@ public class Dataset {
    * Complex element MissingRef allows the recipient of a message to signal the
    * sender that a dataset referenced in the message was not known by the
    * recipient.
-   * <p>
+   *
    * @param values One or more instances of type {@link MissingRef...}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -283,7 +286,7 @@ public class Dataset {
    * Complex element MissingRef allows the recipient of a message to signal the
    * sender that a dataset referenced in the message was not known by the
    * recipient.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -300,7 +303,7 @@ public class Dataset {
 
   /**
    * Get a string representation of this Dataset instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -320,7 +323,7 @@ public class Dataset {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {
@@ -333,7 +336,7 @@ public class Dataset {
    * <p>
    * MissingRef allows the recipient of a message to signal the sender that a
    * dataset referenced in the message was not known by the recipient.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -345,7 +348,7 @@ public class Dataset {
    * Complex element MissingRef allows the recipient of a message to signal the
    * sender that a dataset referenced in the message was not known by the
    * recipient..
-   * <p>
+   *
    * @return a {@link Common} instance
    * @since 3.1.0
    */
@@ -358,7 +361,7 @@ public class Dataset {
 
   /**
    * Determine if the missing field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMissing() {
@@ -371,7 +374,7 @@ public class Dataset {
    * Complex element MissingRef allows the recipient of a message to signal the
    * sender that a dataset referenced in the message was not known by the
    * recipient.
-   * <p>
+   *
    * @param values An instances of type {@link Common<?>}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -386,7 +389,7 @@ public class Dataset {
    * Complex element MissingRef allows the recipient of a message to signal the
    * sender that a dataset referenced in the message was not known by the
    * recipient.
-   * <p>
+   *
    * @param values An instances of type {@link Common<?>}.
    * @return The current Dataset object instance.
    * @since 3.1.0
@@ -403,7 +406,7 @@ public class Dataset {
    * the transient {@link #missing} field. This method should typically be
    * called after the Dataset is configured and (optionally) before exporting an
    * SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   public void prepare() {
@@ -420,7 +423,7 @@ public class Dataset {
    * This method builds the transient {@link #missing} with values from the
    * imported {@link #missingRef} field. This method should typically be called
    * after the Dataset is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

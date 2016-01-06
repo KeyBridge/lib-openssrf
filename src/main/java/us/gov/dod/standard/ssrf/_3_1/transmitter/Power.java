@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dBW;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPT;
 
@@ -48,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPT;
 public class Power {
 
   /**
-   * PowerMin - Minimum or Nominal Power (Optional)    * <p>
+   * PowerMin - Minimum or Nominal Power (Optional)
+   * <p>
    * The nominal transmitter power, or the minimum power in case of a range of
    * values.
    * <p>
@@ -59,7 +64,8 @@ public class Power {
   @XmlElement(name = "PowerMin", required = false)
   private dBW powerMin;
   /**
-   * PowerMax - Maximum Power (Optional)    * <p>
+   * PowerMax - Maximum Power (Optional)
+   * <p>
    * The maximum transmitter power.
    * <p>
    * [XSL ERR MINMAX] If PowerMax is used, it MUST be greater than PowerMin.
@@ -71,7 +77,8 @@ public class Power {
   @XmlElement(name = "PowerMax", required = false)
   private dBW powerMax;
   /**
-   * PowerType - Power Type (Optional)    * <p>
+   * PowerType - Power Type (Optional)
+   * <p>
    * The power type code for carrier, mean, or peak envelope power emitted. The
    * power type code will depend on the type of emission of the transmitter
    * equipment.
@@ -83,7 +90,8 @@ public class Power {
   @XmlElement(name = "PowerType", required = false)
   private TString powerType;
   /**
-   * Calculated - Calculated Data Indicator (Optional)    * <p>
+   * Calculated - Calculated Data Indicator (Optional)
+   * <p>
    * "Yes" if the power value(s) have been calculated, or "No" if they have been
    * measured.
    * <p>

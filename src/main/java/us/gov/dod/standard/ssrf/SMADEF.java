@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,14 +19,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.SchemaRoot;
 
 /**
  * SMADEF-XML. This is the ROOT element for any SMADEF-XML message. It contains
  * all SMADEF-XML attributes and content.
  * <p>
  * A SMADEF-XML message may contain any number of datasets.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  * @deprecated Since 3.1.0rc1 SMADEF is not not implemented. Contact Key Bridge

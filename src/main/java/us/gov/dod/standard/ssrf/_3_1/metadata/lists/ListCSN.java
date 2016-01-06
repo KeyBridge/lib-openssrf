@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -221,11 +221,11 @@ public enum ListCSN {
     List<ListCSN> csn = new ArrayList<>(Arrays.asList(ListCSN.values()));
     Collections.sort(csn, new Comparator<ListCSN>() {
 
-      @Override
-      public int compare(ListCSN o1, ListCSN o2) {
-        return o1.name().length() > o2.name().length() ? -1 : 1;
-      }
-    });
+               @Override
+               public int compare(ListCSN o1, ListCSN o2) {
+                 return o1.name().length() > o2.name().length() ? -1 : 1;
+               }
+             });
     /**
      * Replace all non-word and whitespace characters with underscore, then try
      * to match the name.

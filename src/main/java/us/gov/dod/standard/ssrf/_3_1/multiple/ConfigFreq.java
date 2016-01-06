@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,9 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPS;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFU;
@@ -64,7 +66,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFU;
 public class ConfigFreq {
 
   /**
-   * FreqMin - Nominal or Minimum Frequency (Required)    * <p>
+   * FreqMin - Nominal or Minimum Frequency (Required)
+   * <p>
    * The nominal frequency or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -76,7 +79,8 @@ public class ConfigFreq {
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Optional)    * <p>
+   * FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -90,7 +94,8 @@ public class ConfigFreq {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * InBand - In Band Indicator (Optional)    * <p>
+   * InBand - In Band Indicator (Optional)
+   * <p>
    * "Yes" if this frequency range is in compliance with the applicable
    * Frequency Allocation Table. Enter “No” if any portion of the frequency
    * range is not in compliance.
@@ -102,7 +107,8 @@ public class ConfigFreq {
   @XmlElement(name = "InBand", required = false)
   private TString inBand;
   /**
-   * Priority - Priority (Optional)    * <p>
+   * Priority - Priority (Optional)
+   * <p>
    * If this spectrum use is Primary, Secondary or Permitted, as defined by the
    * system use and the appropriate Administration Frequency Allocation
    * Table/guidance.
@@ -123,7 +129,8 @@ public class ConfigFreq {
   @XmlElement(name = "ChannelSpacing", required = false)
   private FreqM channelSpacing;
   /**
-   * US:Duration - Frequency Dwell (Optional)    * <p>
+   * US:Duration - Frequency Dwell (Optional)
+   * <p>
    * The amount of time the frequency is being monitored or jammed.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -144,7 +151,8 @@ public class ConfigFreq {
   @XmlElement(name = "Period", required = false)
   private microsecs period;
   /**
-   * US:PulseWidth - Pulse Width (Optional)    * <p>
+   * US:PulseWidth - Pulse Width (Optional)
+   * <p>
    * The collected EW channel dwell for the Chirped Signal.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -552,7 +560,8 @@ public class ConfigFreq {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link ListUFU}.
    * @return The current ConfigFreq object instance.
    * @since 3.1.0
@@ -588,7 +597,8 @@ public class ConfigFreq {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param value An instances of type {@link BigInteger}.
    * @return The current ConfigFreq object instance.
    * @since 3.1.0

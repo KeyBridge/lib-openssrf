@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,7 +63,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <p>
  * <b> Example: </b>
  * <code>@XmlTypeValidator(type = TCalendar.class, value = XmlAdapterDATE.class)</code>
- * <p>
+ *
  * @author Jesse Caulfield <jesse@caulfield.org>
  * @since SSRF 3.1.0
  * @see XmlAdapter
@@ -75,7 +75,7 @@ public @interface XmlTypeValidator {
   /**
    * Points to the class that converts a value type to a bound type or vice
    * versa. See {@link XmlAdapter} for more details.
-   * <p>
+   *
    * @return
    */
   public Class<? extends XmlAdapter> value();
@@ -83,7 +83,7 @@ public @interface XmlTypeValidator {
   /**
    * If this annotation is used at the package level, then value of the type()
    * must be specified.
-   * <p>
+   *
    * @return
    */
   public Class<?> type() default DEFAULT.class;

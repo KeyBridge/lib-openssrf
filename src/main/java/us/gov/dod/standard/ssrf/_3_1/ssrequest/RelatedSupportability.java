@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,10 @@ package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.SSRequest;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S15;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDD;
 
 /**
@@ -47,7 +49,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDD;
 public class RelatedSupportability {
 
   /**
-   * Type - Type (Required)    * <p>
+   * Type - Type (Required)
+   * <p>
    * The type of dependency between the current dataset and the referred
    * application.
    * <p>
@@ -58,7 +61,8 @@ public class RelatedSupportability {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * SSRequestRef - SSRequest Serial (Optional)    * <p>
+   * SSRequestRef - SSRequest Serial (Optional)
+   * <p>
    * A Serial reference to a superseded or related SSRequest application.
    * <p>
    * Format is pattern (S29)
@@ -68,7 +72,8 @@ public class RelatedSupportability {
   @XmlElement(name = "SSRequestRef", required = false)
   private Serial ssRequestRef;
   /**
-   * US:J12Number - J/F 12 Number (Optional)    * <p>
+   * US:J12Number - J/F 12 Number (Optional)
+   * <p>
    * The US Military Communications-Electronics Board (MCEB) identifier of a
    * superseded or related application.
    * <p>
@@ -241,7 +246,8 @@ public class RelatedSupportability {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * SSRequestRef - SSRequest Serial (Optional)    * <p>
+   * SSRequestRef - SSRequest Serial (Optional)
+   * <p>
    * A Serial reference to a superseded or related SSRequest application.
    * <p>
    * Format is pattern (S29)

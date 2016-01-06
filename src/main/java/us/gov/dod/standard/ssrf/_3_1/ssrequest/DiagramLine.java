@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
 
 /**
  * DiagramLine defines a line between two endpoints on the diagram.
@@ -39,7 +40,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class DiagramLine {
 
   /**
-   * TxEndpointID - Tx Endpoint ID (Required)    * <p>
+   * TxEndpointID - Tx Endpoint ID (Required)
+   * <p>
    * The Endpoint ID at the originating (transmitting) endpoint of a line on the
    * diagram. There must be a corresponding DiagramEndpoint element with this
    * name. Note there may be more than one line with the same originating and
@@ -52,7 +54,8 @@ public class DiagramLine {
   @XmlElement(name = "TxEndpointID", required = true)
   private S20 txEndpointID;
   /**
-   * RxEndpointID - Rx Endpoint ID (Required)    * <p>
+   * RxEndpointID - Rx Endpoint ID (Required)
+   * <p>
    * The Endpoint ID at the terminating (receiving) endpoint of a line on the
    * diagram. There must be a corresponding DiagramEndpoint element with this
    * name. Note there may be more than one line with the same originating and
@@ -65,7 +68,8 @@ public class DiagramLine {
   @XmlElement(name = "RxEndpointID", required = true)
   private S20 rxEndpointID;
   /**
-   * ConfigID - Configuration ID (Optional)    * <p>
+   * ConfigID - Configuration ID (Optional)
+   * <p>
    * A reference to a Configuration associated with this line on the diagram.
    * <p>
    * Format is S100

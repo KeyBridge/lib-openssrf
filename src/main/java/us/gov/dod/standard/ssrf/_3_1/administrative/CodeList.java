@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Administrative;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US3;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAC;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 
@@ -45,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
  *   &lt;/Code&gt;
  * &lt;/CodeList&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -61,64 +64,64 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 public class CodeList {
 
   /**
-   * Action - Action Required (Required)    * <p>
-   * The intended type of modification to the given code list.
+   * Action - Action Required (Required) * The intended type of modification to
+   * the given code list.
    * <p>
    * Format is L:CAC
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Action", required = true)
   private TString action;
   /**
-   * CodeListCode - Code List 3-letter Code (Required)    * <p>
-   * The three-letter code of an existing Code List to be modified, or an unused
-   * three-letter code in the case of the creation of a new Code List.
+   * CodeListCode - Code List 3-letter Code (Required) * The three-letter code
+   * of an existing Code List to be modified, or an unused three-letter code in
+   * the case of the creation of a new Code List.
    * <p>
    * Format is US(3)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CodeListCode", required = true)
   private US3 codeListCode;
   /**
-   * EffectiveDate - Effective Date (Required)    * <p>
-   * The date by which the dataset is to be operational or effective.
+   * EffectiveDate - Effective Date (Required) * The date by which the dataset
+   * is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = true)
   private D effectiveDate;
   /**
-   * Description - New Code List Description (Optional)    * <p>
-   * The description of the intended contents of new code list, and the
-   * element(s) where it will be used.
+   * Description - New Code List Description (Optional) * The description of the
+   * intended contents of new code list, and the element(s) where it will be
+   * used.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
   private MEMO description;
   /**
-   * Origin - Originating Country/Body (Optional)    * <p>
-   * The country or organisation which is using the modified or new code.
+   * Origin - Originating Country/Body (Optional) * The country or organisation
+   * which is using the modified or new code.
    * <p>
    * Format is L:CAO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Origin", required = false)
   private TString origin;
   /**
-   * CodeListCode - Code List 3-letter Code (Required)    * <p>
-   * The three-letter code of an existing Code List to be modified, or an unused
-   * three-letter code in the case of the creation of a new Code List.
+   * CodeListCode - Code List 3-letter Code (Required) * The three-letter code
+   * of an existing Code List to be modified, or an unused three-letter code in
+   * the case of the creation of a new Code List.
    * <p>
    * Format is US(3)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Code")
@@ -126,7 +129,7 @@ public class CodeList {
 
   /**
    * Get the intended type of modification to the given code list..
-   * <p>
+   *
    * @return the Action value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -136,7 +139,7 @@ public class CodeList {
 
   /**
    * Set the intended type of modification to the given code list..
-   * <p>
+   *
    * @param value the Action value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -148,7 +151,7 @@ public class CodeList {
    * Determine if the Action is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAction() {
@@ -158,7 +161,7 @@ public class CodeList {
   /**
    * Get the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List..
-   * <p>
+   *
    * @return a {@link US3} instance
    * @since 3.1.0
    */
@@ -169,7 +172,7 @@ public class CodeList {
   /**
    * Set the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List..
-   * <p>
+   *
    * @param value a {@link US3} instance
    * @since 3.1.0
    */
@@ -179,7 +182,7 @@ public class CodeList {
 
   /**
    * Determine if the CodeListCode is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCodeListCode() {
@@ -188,7 +191,7 @@ public class CodeList {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -198,7 +201,7 @@ public class CodeList {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -208,7 +211,7 @@ public class CodeList {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -218,7 +221,7 @@ public class CodeList {
   /**
    * Get the description of the intended contents of new code list, and the
    * element(s) where it will be used..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -229,7 +232,7 @@ public class CodeList {
   /**
    * Set the description of the intended contents of new code list, and the
    * element(s) where it will be used..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -239,7 +242,7 @@ public class CodeList {
 
   /**
    * Determine if the Description is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
@@ -248,7 +251,7 @@ public class CodeList {
 
   /**
    * Get the country or organisation which is using the modified or new code..
-   * <p>
+   *
    * @return the Origin value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -258,7 +261,7 @@ public class CodeList {
 
   /**
    * Set the country or organisation which is using the modified or new code..
-   * <p>
+   *
    * @param value the Origin value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -270,7 +273,7 @@ public class CodeList {
    * Determine if the Origin is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOrigin() {
@@ -280,7 +283,7 @@ public class CodeList {
   /**
    * Get the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List..
-   * <p>
+   *
    * @return a {@link Code} instance
    * @since 3.1.0
    */
@@ -293,7 +296,7 @@ public class CodeList {
 
   /**
    * Determine if the Code is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCode() {
@@ -309,7 +312,7 @@ public class CodeList {
 
   /**
    * Set the intended type of modification to the given code list.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAC}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -322,7 +325,7 @@ public class CodeList {
   /**
    * Set the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -334,7 +337,7 @@ public class CodeList {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -346,7 +349,7 @@ public class CodeList {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -359,7 +362,7 @@ public class CodeList {
   /**
    * Set the description of the intended contents of new code list, and the
    * element(s) where it will be used.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -371,7 +374,7 @@ public class CodeList {
 
   /**
    * Set the country or organisation which is using the modified or new code.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAO}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -384,7 +387,7 @@ public class CodeList {
   /**
    * Set the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
+   *
    * @param values One or more instances of type {@link Code...}.
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -399,7 +402,7 @@ public class CodeList {
   /**
    * Set the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List.
-   * <p>
+   *
    * @param values A collection of {@link Code} instances
    * @return The current CodeList object instance.
    * @since 3.1.0
@@ -413,7 +416,7 @@ public class CodeList {
 
   /**
    * Get a string representation of this CodeList instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -436,7 +439,7 @@ public class CodeList {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -106,7 +109,8 @@ public class ObservedMOPBits {
   @XmlElement(name = "MOPStepPM", required = false)
   private US_PhaseAngle mopStepPM;
   /**
-   * US:MOPRepetionInterval - MOP Repetion Interval (Optional)    * <p>
+   * US:MOPRepetionInterval - MOP Repetion Interval (Optional)
+   * <p>
    * The overall interval which may include multiple Sweep Repetition Intervals
    * (SRI). Fly-back times, and dead times.
    * <p>
@@ -117,7 +121,8 @@ public class ObservedMOPBits {
   @XmlElement(name = "MOPRepetionInterval", required = false)
   private microsecs mopRepetionInterval;
   /**
-   * US:BitRate - Bit Rate (Optional)    * <p>
+   * US:BitRate - Bit Rate (Optional)
+   * <p>
    * The rate at which the signal exhibits a change of FREQ/PHASE/AMP; inverse
    * of the minimum bit duration (e.g., a signal that has a .977 usec minimum
    * bit has a bit rate of 1024 kbit/sec).
@@ -129,7 +134,8 @@ public class ObservedMOPBits {
   @XmlElement(name = "BitRate", required = false)
   private BitRate bitRate;
   /**
-   * US:BitDuration - Bit Duration (Optional)    * <p>
+   * US:BitDuration - Bit Duration (Optional)
+   * <p>
    * The shortest time interval (within a pulse for pulsed signals) that a
    * discrete frequency, phase, or amplitude value stays at its state before
    * changing to a new one.
@@ -594,7 +600,8 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param values One or more instances of type {@link ObservedMOPValues...}.
    * @return The current ObservedMOPBits object instance.
    * @since 3.1.0
@@ -607,7 +614,8 @@ public class ObservedMOPBits {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param values A collection of {@link ObservedMOPValues} instances
    * @return The current ObservedMOPBits object instance.
    * @since 3.1.0

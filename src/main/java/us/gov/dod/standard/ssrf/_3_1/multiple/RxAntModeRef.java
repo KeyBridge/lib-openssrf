@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,10 @@ package us.gov.dod.standard.ssrf._3_1.multiple;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Antenna;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.dB;
 
 /**
  * RxAntModeRef contains references to the Antenna and its AntMode, used to
@@ -49,7 +51,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class RxAntModeRef {
 
   /**
-   * Serial - Antenna Identifier (Required)    * <p>
+   * Serial - Antenna Identifier (Required)
+   * <p>
    * The reference to an Antenna in this configuration. This antenna is
    * associated with the receiver specified in the Serial field of the parent
    * RxRef element.
@@ -61,7 +64,8 @@ public class RxAntModeRef {
   @XmlElement(name = "Serial", required = true)
   private Serial serial;
   /**
-   * ModeID - Antenna Mode Identifier (Optional)    * <p>
+   * ModeID - Antenna Mode Identifier (Optional)
+   * <p>
    * The unique name of an AntMode of the Antenna specified in the corresponding
    * Serial field. This antenna mode is grouped with the receiver modes
    * specified in RxModeRef.
@@ -73,7 +77,8 @@ public class RxAntModeRef {
   @XmlElement(name = "ModeID", required = false)
   private S20 modeID;
   /**
-   * CouplingLoss - Coupling Loss (Optional)    * <p>
+   * CouplingLoss - Coupling Loss (Optional)
+   * <p>
    * The loss that occurs when energy is transferred between the
    * transmitter/receiver and the antenna.
    * <p>
@@ -261,7 +266,8 @@ public class RxAntModeRef {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Antenna Identifier (Required)    * <p>
+   * Serial - Antenna Identifier (Required)
+   * <p>
    * The reference to an Antenna in this configuration. This antenna is
    * associated with the receiver specified in the Serial field of the parent
    * RxRef element.

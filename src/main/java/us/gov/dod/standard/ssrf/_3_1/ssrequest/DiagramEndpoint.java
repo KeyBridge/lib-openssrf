@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCIC;
 public class DiagramEndpoint {
 
   /**
-   * IconType - Icon Type (Required)    * <p>
+   * IconType - Icon Type (Required)
+   * <p>
    * The type of icon for the diagram endpoint.
    * <p>
    * Format is L:CIC
@@ -59,7 +63,8 @@ public class DiagramEndpoint {
   @XmlElement(name = "IconType", required = false)
   private TString iconType;
   /**
-   * EndpointID - Endpoint ID (Required)    * <p>
+   * EndpointID - Endpoint ID (Required)
+   * <p>
    * An identifier for each icon on the diagram. Within a diagram, all
    * EndPointIDs must be unique.
    * <p>
@@ -70,7 +75,8 @@ public class DiagramEndpoint {
   @XmlElement(name = "EndpointID", required = true)
   private S20 endpointID;
   /**
-   * Description - Endpoint Description (Optional)    * <p>
+   * Description - Endpoint Description (Optional)
+   * <p>
    * A human-readable description of a diagram endpoint.
    * <p>
    * Format is S100
@@ -86,7 +92,8 @@ public class DiagramEndpoint {
   @XmlElement(name = "IconPosTop", required = false)
   private US_Twips iconPosTop;
   /**
-   * PointToMultiPoint - Point to Multipoint Indicator (Optional)    * <p>
+   * PointToMultiPoint - Point to Multipoint Indicator (Optional)
+   * <p>
    * "Yes" if the diagram endpoint participates in point-to-multipoint links.
    * enter "No" if it participates in point-to-point links. Note for the USA:
    * Required when operating between 932 and 935 MHz or 941 and 944 MHz.

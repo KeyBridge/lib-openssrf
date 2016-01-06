@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
  */
 package us.gov.dod.standard.ssrf;
 
-import java.util.*;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.SchemaRoot;
 
 /**
  * Standard Spectrum Resource Format (SSRF).
@@ -45,7 +45,7 @@ import us.gov.dod.standard.ssrf._3_1.*;
  * <p>
  * Use the {@link SSRFProperties} and {@link SSRFUtility} classes to streamline
  * SSRF message configuration and processing.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
@@ -57,7 +57,7 @@ public class SSRF extends SchemaRoot<SSRF> {
   //<editor-fold defaultstate="collapsed" desc="Property Configuration">
   /**
    * SSRF Properties associated with this SSRF instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -72,7 +72,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * Use {@link #setProperty(String, String, String)} to set and update
    * additional properties.
-   * <p>
+   *
    * @param ssrfProperties a SSRFProperties instance
    * @since 3.1.0
    */
@@ -84,7 +84,7 @@ public class SSRF extends SchemaRoot<SSRF> {
   /**
    * Set a SSRF property. To unset a property simply set the field value to null
    * or to an empty string "";
-   * <p>
+   *
    * @param propertyName  A dot-delimited SSRF class and field name (e.g.
    *                      "ChannelPlan.name")
    * @param propertyValue the value to set the SSRF field (e.g. "My Channel
@@ -101,7 +101,7 @@ public class SSRF extends SchemaRoot<SSRF> {
   /**
    * Inspect this SSRF instance to determine if the SSRF Properties field is
    * configured.
-   * <p>
+   *
    * @return TRUE if the internal SSRF Properties configuration is not null;
    */
   public boolean isSetProperties() {
@@ -117,7 +117,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * Use {@link #setProperty(String, String, String)} to set and update
    * additional properties.
-   * <p>
+   *
    * @param ssrfProperties a SSRFProperties instance
    * @return the current SSRF instance
    * @since 3.1.0rc2
@@ -130,7 +130,7 @@ public class SSRF extends SchemaRoot<SSRF> {
   /**
    * Set a SSRF property. To unset a property simply set the field value to null
    * or to an empty string "";
-   * <p>
+   *
    * @param propertyName  A dot-delimited SSRF class and field name (e.g.
    *                      "ChannelPlan.name")
    * @param propertyValue the value to set the SSRF field (e.g. "My Channel
@@ -145,7 +145,7 @@ public class SSRF extends SchemaRoot<SSRF> {
 
   /**
    * Unset (clear) a SSRF property.
-   * <p>
+   *
    * @param propertyName a SSRF property name (e.g. "ChannelPlan.name")
    */
   public void unsetProperty(String propertyName) {
@@ -159,7 +159,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * the key is not found in this property list, the default property list, and
    * its defaults, recursively, are then checked. The method returns null if the
    * property is not found.
-   * <p>
+   *
    * @param propertyName the property key.
    * @return the value in this property list with the specified key value.
    */
@@ -175,7 +175,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * This method does not perform any validation. Call {@link #prepare()} to
    * validate.
-   * <p>
+   *
    * @since 3.1.0
    */
   private void assemble() {
@@ -195,7 +195,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * If the object instance is NOT valid then call {@link #evaluate(Object)} to
    * re-inspect the SSRF object instance and retrieve a list of specific
    * validation errors.
-   * <p>
+   *
    * @return This SSRF instance as an XML document
    * @throws Exception If this SSRF configuration fails to validate
    * @since 3.1.0
@@ -224,7 +224,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * If the object instance is NOT valid then call {@link #evaluate(Object)} to
    * re-inspect the SSRF object instance and retrieve a list of specific
    * validation errors.
-   * <p>
+   *
    * @return TRUE the object instance validates OK; otherwise FALSE.
    * @since 3.1.0
    */
@@ -256,7 +256,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * It is expected that this method will only be called on the top-level SSRF
    * class. However it will just as easily validate any SSRF data type.
-   * <p>
+   *
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
    * @since 3.1.0
@@ -271,7 +271,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * Standard method to get a fully qualified class instance.
    * <p>
    * This is a shortcut to {@link #fromXml(String)}
-   * <p>
+   *
    * @param xml A SSRF XML document
    * @return A SSRF software object instance
    * @throws Exception If this SSRF XML document fails to unmarshal; typically
@@ -291,7 +291,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * After reading the XML this method examines the class tree and copies all
    * required data objects into their proper location and preparing the SSRF
    * software class hierarchy for work.
-   * <p>
+   *
    * @param xml A SSRF XML document
    * @return A SSRF software object instance
    * @throws Exception If this SSRF XML document fails to unmarshal; typically

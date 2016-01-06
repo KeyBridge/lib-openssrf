@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,17 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.channelplan.Channel;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -44,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;/Channel&gt;
  * &lt;/ChannelPlan&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -62,7 +66,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * Band 162-174 MHz").
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = true)
@@ -73,7 +77,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * The serial of the referenced ChannelPlan.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Channel", required = true)
@@ -89,7 +93,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Get the name of this channel plan (e.g., "Plan for Wireless Microphones in
    * the Band 162-174 MHz")..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -100,7 +104,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Set the name of this channel plan (e.g., "Plan for Wireless Microphones in
    * the Band 162-174 MHz")..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -110,7 +114,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -119,7 +123,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
    * Get the serial of the referenced ChannelPlan..
-   * <p>
+   *
    * @return a {@link Channel} instance
    * @since 3.1.0
    */
@@ -132,7 +136,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
    * Determine if the Channel is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetChannel() {
@@ -149,7 +153,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Set the name of this channel plan (e.g., "Plan for Wireless Microphones in
    * the Band 162-174 MHz").
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ChannelPlan object instance.
    * @since 3.1.0
@@ -161,7 +165,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
    * Set the serial of the referenced ChannelPlan.
-   * <p>
+   *
    * @param values One or more instances of type {@link Channel...}.
    * @return The current ChannelPlan object instance.
    * @since 3.1.0
@@ -175,7 +179,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
    * Set the serial of the referenced ChannelPlan.
-   * <p>
+   *
    * @param values A collection of {@link Channel} instances
    * @return The current ChannelPlan object instance.
    * @since 3.1.0
@@ -189,7 +193,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
 
   /**
    * Get a string representation of this ChannelPlan instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -209,7 +213,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

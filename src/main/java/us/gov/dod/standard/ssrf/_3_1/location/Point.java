@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,10 @@ package us.gov.dod.standard.ssrf._3_1.location;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Location;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Altitude;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Lat;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Lon;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
 /**

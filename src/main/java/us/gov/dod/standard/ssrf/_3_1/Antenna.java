@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,7 +56,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRS;
  *     &lt;/AntMode&gt;
  *   &lt;/Antenna&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -92,7 +95,7 @@ public class Antenna extends Common<Antenna> {
    * specific equipment model.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Generic", required = true)
@@ -103,7 +106,7 @@ public class Antenna extends Common<Antenna> {
    * The type of antenna.
    * <p>
    * Format is L:CAT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntType", required = true)
@@ -114,7 +117,7 @@ public class Antenna extends Common<Antenna> {
    * The number of main beams in the phased array antenna.
    * <p>
    * Format is UN(3)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PhArrayNumMainBeams", required = false)
@@ -125,7 +128,7 @@ public class Antenna extends Common<Antenna> {
    * The number of antenna elements in the phased array antenna.
    * <p>
    * Format is UN(5)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PhArrayNumElements", required = false)
@@ -138,7 +141,7 @@ public class Antenna extends Common<Antenna> {
    * Format is L:CRS
    * <p>
    * Attribute group Dimension (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Shape", required = false)
@@ -152,7 +155,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(6,2) (m)
    * <p>
    * Attribute group Aperture (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Diameter", required = false)
@@ -165,7 +168,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(6,2) (m)
    * <p>
    * Attribute group Dimension (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzDimension", required = false)
@@ -178,7 +181,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(6,2) (m)
    * <p>
    * Attribute group Dimension (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertDimension", required = false)
@@ -192,7 +195,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(6,2) (m)
    * <p>
    * Attribute group Aperture (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ApertureDiameter", required = false)
@@ -206,7 +209,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(6,2) (m)
    * <p>
    * Attribute group Aperture (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzAperture", required = false)
@@ -220,7 +223,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(6,2) (m)
    * <p>
    * Attribute group Aperture (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertAperture", required = false)
@@ -234,7 +237,7 @@ public class Antenna extends Common<Antenna> {
    * Format is L:CBO
    * <p>
    * Attribute group Sidelobe (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzSidelobeSuppressed", required = false)
@@ -248,7 +251,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(5,2) [0..360] (deg)
    * <p>
    * Attribute group Sidelobe (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzSidelobeAz", required = false)
@@ -261,7 +264,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(5,2) (dB)
    * <p>
    * Attribute group Sidelobe (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HorzSidelobeAttenuation", required = false)
@@ -275,7 +278,7 @@ public class Antenna extends Common<Antenna> {
    * Format is L:CBO
    * <p>
    * Attribute group Sidelobe (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertSidelobeSuppressed", required = false)
@@ -290,7 +293,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(5,2) [-180..180] (deg)
    * <p>
    * Attribute group Sidelobe (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertSidelobeElev", required = false)
@@ -303,7 +306,7 @@ public class Antenna extends Common<Antenna> {
    * Format is UN(5,2) (dB)
    * <p>
    * Attribute group Sidelobe (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VertSidelobeAttenuation", required = false)
@@ -313,7 +316,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -327,7 +330,7 @@ public class Antenna extends Common<Antenna> {
    * military nomenclature and a commercial model number.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature")
@@ -337,7 +340,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * AntHardware contains the physical parameters related to the antenna feed
    * and lead.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntHardware")
@@ -348,7 +351,7 @@ public class Antenna extends Common<Antenna> {
    * AntMode contains the technical characteristics of one antenna mode.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) AntModes
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AntMode")
@@ -358,7 +361,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * UsingCountries (US) describes the countries that manufacture (Producing),
    * supply (Source), and use (Using) the Antenna.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsingCountries")
@@ -375,7 +378,7 @@ public class Antenna extends Common<Antenna> {
    * Get "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model..
-   * <p>
+   *
    * @return the Generic value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -387,7 +390,7 @@ public class Antenna extends Common<Antenna> {
    * Set "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model..
-   * <p>
+   *
    * @param value the Generic value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -399,7 +402,7 @@ public class Antenna extends Common<Antenna> {
    * Determine if the Generic is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGeneric() {
@@ -408,7 +411,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get the type of antenna..
-   * <p>
+   *
    * @return the AntType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -418,7 +421,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the type of antenna..
-   * <p>
+   *
    * @param value the AntType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -430,7 +433,7 @@ public class Antenna extends Common<Antenna> {
    * Determine if the AntType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntType() {
@@ -439,7 +442,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get the number of main beams in the phased array antenna..
-   * <p>
+   *
    * @return a {@link UN3} instance
    * @since 3.1.0
    */
@@ -449,7 +452,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the number of main beams in the phased array antenna..
-   * <p>
+   *
    * @param value a {@link UN3} instance
    * @since 3.1.0
    */
@@ -459,7 +462,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the PhArrayNumMainBeams is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPhArrayNumMainBeams() {
@@ -468,7 +471,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get the number of antenna elements in the phased array antenna..
-   * <p>
+   *
    * @return a {@link UN5} instance
    * @since 3.1.0
    */
@@ -478,7 +481,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the number of antenna elements in the phased array antenna..
-   * <p>
+   *
    * @param value a {@link UN5} instance
    * @since 3.1.0
    */
@@ -488,7 +491,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the PhArrayNumElements is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPhArrayNumElements() {
@@ -497,7 +500,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get a code used to describe the general shape of the antenna reflector..
-   * <p>
+   *
    * @return the Shape value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -507,7 +510,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set a code used to describe the general shape of the antenna reflector..
-   * <p>
+   *
    * @param value the Shape value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -519,7 +522,7 @@ public class Antenna extends Common<Antenna> {
    * Determine if the Shape is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetShape() {
@@ -529,7 +532,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get the cross-section of an antenna radiation pattern in the direction of
    * highest gain..
-   * <p>
+   *
    * @return a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -540,7 +543,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the cross-section of an antenna radiation pattern in the direction of
    * highest gain..
-   * <p>
+   *
    * @param value a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -550,7 +553,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the Diameter is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDiameter() {
@@ -559,7 +562,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get the linear horizontal dimension of the antenna..
-   * <p>
+   *
    * @return a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -569,7 +572,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the linear horizontal dimension of the antenna..
-   * <p>
+   *
    * @param value a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -579,7 +582,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the HorzDimension is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzDimension() {
@@ -588,7 +591,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get the linear vertical dimension of the antenna..
-   * <p>
+   *
    * @return a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -598,7 +601,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the linear vertical dimension of the antenna..
-   * <p>
+   *
    * @param value a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -608,7 +611,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the VertDimension is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertDimension() {
@@ -618,7 +621,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get the cross-section of an antenna radiation pattern in the direction of
    * highest gain..
-   * <p>
+   *
    * @return a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -629,7 +632,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the cross-section of an antenna radiation pattern in the direction of
    * highest gain..
-   * <p>
+   *
    * @param value a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -639,7 +642,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the ApertureDiameter is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApertureDiameter() {
@@ -649,7 +652,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get the horizontal cross-section of the antenna radiation pattern in the
    * direction of highest gain..
-   * <p>
+   *
    * @return a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -660,7 +663,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the horizontal cross-section of the antenna radiation pattern in the
    * direction of highest gain..
-   * <p>
+   *
    * @param value a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -670,7 +673,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the HorzAperture is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzAperture() {
@@ -680,7 +683,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get the vertical cross-section of the antenna radiation pattern in the
    * direction of highest gain..
-   * <p>
+   *
    * @return a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -691,7 +694,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the vertical cross-section of the antenna radiation pattern in the
    * direction of highest gain..
-   * <p>
+   *
    * @param value a {@link Dimension} instance
    * @since 3.1.0
    */
@@ -701,7 +704,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the VertAperture is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertAperture() {
@@ -711,7 +714,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get if the sidelobe has been suppressed. Enter Yes (if the sidelobe is
    * suppressed) or No (sidelobe not suppressed)..
-   * <p>
+   *
    * @return the HorzSidelobeSuppressed value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -722,7 +725,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set if the sidelobe has been suppressed. Enter Yes (if the sidelobe is
    * suppressed) or No (sidelobe not suppressed)..
-   * <p>
+   *
    * @param value the HorzSidelobeSuppressed value in a {@link TString} data
    *              type
    * @since 3.1.0
@@ -735,7 +738,7 @@ public class Antenna extends Common<Antenna> {
    * Determine if the HorzSidelobeSuppressed is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzSidelobeSuppressed() {
@@ -745,7 +748,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get the direction of the sidelobe in reference to the direction of maximum
    * gain..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -756,7 +759,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the direction of the sidelobe in reference to the direction of maximum
    * gain..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -766,7 +769,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the HorzSidelobeAz is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzSidelobeAz() {
@@ -776,7 +779,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get the amount of suppression relative to the main beam gain of the
    * antenna..
-   * <p>
+   *
    * @return a {@link Unsigned_DB_5_2} instance
    * @since 3.1.0
    */
@@ -787,7 +790,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the amount of suppression relative to the main beam gain of the
    * antenna..
-   * <p>
+   *
    * @param value a {@link Unsigned_DB_5_2} instance
    * @since 3.1.0
    */
@@ -797,7 +800,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the HorzSidelobeAttenuation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHorzSidelobeAttenuation() {
@@ -807,7 +810,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Get whether a portion of the radiation from an antenna outside of the main
    * beam has been suppressed or eliminated...
-   * <p>
+   *
    * @return the VertSidelobeSuppressed value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -818,7 +821,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set whether a portion of the radiation from an antenna outside of the main
    * beam has been suppressed or eliminated...
-   * <p>
+   *
    * @param value the VertSidelobeSuppressed value in a {@link TString} data
    *              type
    * @since 3.1.0
@@ -831,7 +834,7 @@ public class Antenna extends Common<Antenna> {
    * Determine if the VertSidelobeSuppressed is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertSidelobeSuppressed() {
@@ -842,7 +845,7 @@ public class Antenna extends Common<Antenna> {
    * Get the first sidelobe in the vertical plane. Enter the clockwise angular
    * difference (in degrees) between the centre line of the main beam gain and
    * the sidelobe..
-   * <p>
+   *
    * @return a {@link Elev180} instance
    * @since 3.1.0
    */
@@ -854,7 +857,7 @@ public class Antenna extends Common<Antenna> {
    * Set the first sidelobe in the vertical plane. Enter the clockwise angular
    * difference (in degrees) between the centre line of the main beam gain and
    * the sidelobe..
-   * <p>
+   *
    * @param value a {@link Elev180} instance
    * @since 3.1.0
    */
@@ -864,7 +867,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the VertSidelobeElev is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertSidelobeElev() {
@@ -873,7 +876,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get the attenuation of the sidelobe relative to the main beam gain..
-   * <p>
+   *
    * @return a {@link Unsigned_DB_5_2} instance
    * @since 3.1.0
    */
@@ -883,7 +886,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the attenuation of the sidelobe relative to the main beam gain..
-   * <p>
+   *
    * @param value a {@link Unsigned_DB_5_2} instance
    * @since 3.1.0
    */
@@ -893,7 +896,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the VertSidelobeAttenuation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVertSidelobeAttenuation() {
@@ -905,7 +908,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -918,7 +921,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -939,7 +942,7 @@ public class Antenna extends Common<Antenna> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -952,7 +955,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -971,7 +974,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element AntHardware contains the physical parameters related to the
    * antenna feed and lead..
-   * <p>
+   *
    * @return a {@link AntHardware} instance
    * @since 3.1.0
    */
@@ -984,7 +987,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the AntHardware is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntHardware() {
@@ -1003,7 +1006,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element AntMode contains the technical characteristics of one
    * antenna mode..
-   * <p>
+   *
    * @return a {@link AntMode} instance
    * @since 3.1.0
    */
@@ -1016,7 +1019,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the AntMode is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntMode() {
@@ -1035,7 +1038,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna..
-   * <p>
+   *
    * @return a {@link UsingCountries} instance
    * @since 3.1.0
    */
@@ -1048,7 +1051,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Determine if the UsingCountries is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsingCountries() {
@@ -1066,7 +1069,7 @@ public class Antenna extends Common<Antenna> {
    * Set "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1078,7 +1081,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the type of antenna.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAT}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1090,7 +1093,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the number of main beams in the phased array antenna.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1102,7 +1105,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the number of antenna elements in the phased array antenna.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1114,7 +1117,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set a code used to describe the general shape of the antenna reflector.
-   * <p>
+   *
    * @param value An instances of type {@link ListCRS}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1127,7 +1130,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the cross-section of an antenna radiation pattern in the direction of
    * highest gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1139,7 +1142,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the linear horizontal dimension of the antenna.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1151,7 +1154,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the linear vertical dimension of the antenna.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1164,7 +1167,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the cross-section of an antenna radiation pattern in the direction of
    * highest gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1177,7 +1180,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the horizontal cross-section of the antenna radiation pattern in the
    * direction of highest gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1190,7 +1193,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the vertical cross-section of the antenna radiation pattern in the
    * direction of highest gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1203,7 +1206,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set if the sidelobe has been suppressed. Enter Yes (if the sidelobe is
    * suppressed) or No (sidelobe not suppressed).
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1216,7 +1219,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the direction of the sidelobe in reference to the direction of maximum
    * gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1229,7 +1232,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set the amount of suppression relative to the main beam gain of the
    * antenna.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1242,7 +1245,7 @@ public class Antenna extends Common<Antenna> {
   /**
    * Set whether a portion of the radiation from an antenna outside of the main
    * beam has been suppressed or eliminated..
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1256,7 +1259,7 @@ public class Antenna extends Common<Antenna> {
    * Set the first sidelobe in the vertical plane. Enter the clockwise angular
    * difference (in degrees) between the centre line of the main beam gain and
    * the sidelobe.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1268,7 +1271,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Set the attenuation of the sidelobe relative to the main beam gain.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1283,7 +1286,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1300,7 +1303,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1319,7 +1322,7 @@ public class Antenna extends Common<Antenna> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1338,7 +1341,7 @@ public class Antenna extends Common<Antenna> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1355,7 +1358,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element AntHardware contains the physical parameters related to the
    * antenna feed and lead.
-   * <p>
+   *
    * @param values One or more instances of type {@link AntHardware...}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1372,7 +1375,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element AntHardware contains the physical parameters related to the
    * antenna feed and lead.
-   * <p>
+   *
    * @param values A collection of {@link AntHardware} instances
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1389,7 +1392,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element AntMode contains the technical characteristics of one
    * antenna mode.
-   * <p>
+   *
    * @param values One or more instances of type {@link AntMode...}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1406,7 +1409,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element AntMode contains the technical characteristics of one
    * antenna mode.
-   * <p>
+   *
    * @param values A collection of {@link AntMode} instances
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1423,7 +1426,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna.
-   * <p>
+   *
    * @param values One or more instances of type {@link UsingCountries...}.
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1440,7 +1443,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna.
-   * <p>
+   *
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Antenna object instance.
    * @since 3.1.0
@@ -1454,7 +1457,7 @@ public class Antenna extends Common<Antenna> {
 
   /**
    * Get a string representation of this Antenna instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1494,7 +1497,7 @@ public class Antenna extends Common<Antenna> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

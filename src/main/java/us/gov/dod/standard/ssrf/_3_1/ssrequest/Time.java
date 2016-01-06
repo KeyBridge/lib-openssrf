@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.ssrequest;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTI;
 
 /**
@@ -36,7 +40,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTI;
 public class Time {
 
   /**
-   * Period - Period (Optional)    * <p>
+   * Period - Period (Optional)
+   * <p>
    * The period of usage.
    * <p>
    * Format is L:CTI

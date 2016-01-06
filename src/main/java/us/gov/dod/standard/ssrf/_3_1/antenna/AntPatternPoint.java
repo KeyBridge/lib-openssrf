@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Az;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Signed_DB_5_2;
 
 /**
  * AntPatternPoint contains a single point of the antenna radiation pattern,
@@ -38,7 +39,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class AntPatternPoint {
 
   /**
-   * Dir - Antenna Radiation Pattern Direction (Required)    * <p>
+   * Dir - Antenna Radiation Pattern Direction (Required)
+   * <p>
    * The direction in degrees in reference to the pointing angle of the antenna
    * set to zero.
    * <p>
@@ -49,7 +51,8 @@ public class AntPatternPoint {
   @XmlElement(name = "Dir", required = true)
   private Az dir;
   /**
-   * Gain - Antenna Radiation Pattern Gain (Required)    * <p>
+   * Gain - Antenna Radiation Pattern Gain (Required)
+   * <p>
    * The amount of gain for the direction relative to the main beam gain.
    * <p>
    * Format is SN(5,2) (dB)

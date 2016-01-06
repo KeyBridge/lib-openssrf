@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.ForceElement;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S25;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
 
 /**
  * StockNum (US) provides the equipment stock number and indicates the type of
@@ -48,7 +49,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class StockNum {
 
   /**
-   * US:StockNum - Stock Number (Required)    * <p>
+   * US:StockNum - Stock Number (Required)
+   * <p>
    * The stock number of the system/equipment.
    * <p>
    * Format is S50
@@ -58,7 +60,8 @@ public class StockNum {
   @XmlElement(name = "StockNum", required = true)
   private S50 stockNum;
   /**
-   * US:Type - Stock Number Type (Optional)    * <p>
+   * US:Type - Stock Number Type (Optional)
+   * <p>
    * The type of stock number.
    * <p>
    * Format is L:UNS

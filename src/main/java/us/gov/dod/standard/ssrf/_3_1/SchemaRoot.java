@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,7 +29,7 @@ import us.gov.dod.standard.ssrf.SSRF;
 /**
  * SchemaRoot is an abstract class extended by {@link SSRF} and {@link SMADEF}
  * containing common attributes for both types.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/30/2014
  * @param <T> The desired message class type implementation. Must be either
@@ -140,7 +143,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a {@link Contact} instance
    * @since 3.1.0
    */
@@ -153,7 +156,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Contact is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetContact() {
@@ -169,7 +172,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -182,7 +185,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Role is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRole() {
@@ -198,7 +201,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Organisation}
    *         instances
    */
@@ -211,7 +214,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Organisation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOrganisation() {
@@ -227,7 +230,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a {@link ExternalReference} instance
    * @since 3.1.0
    */
@@ -240,7 +243,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the ExternalReference is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExternalReference() {
@@ -256,7 +259,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Administrative}
    *         instances
    */
@@ -269,7 +272,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Administrative is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAdministrative() {
@@ -285,7 +288,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Location} instances
    */
   public Set<Location> getLocation() {
@@ -297,7 +300,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Location is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocation() {
@@ -313,7 +316,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link ChannelPlan} instances
    */
   public Set<ChannelPlan> getChannelPlan() {
@@ -325,7 +328,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the ChannelPlan is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetChannelPlan() {
@@ -341,7 +344,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link TOA} instances
    */
   public Set<TOA> getTOA() {
@@ -353,7 +356,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the TOA is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTOA() {
@@ -369,7 +372,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Transmitter} instances
    */
   public Set<Transmitter> getTransmitter() {
@@ -381,7 +384,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Transmitter is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTransmitter() {
@@ -397,7 +400,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Receiver} instances
    */
   public Set<Receiver> getReceiver() {
@@ -409,7 +412,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Receiver is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReceiver() {
@@ -425,7 +428,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Antenna} instances
    */
   public Set<Antenna> getAntenna() {
@@ -437,7 +440,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Antenna is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAntenna() {
@@ -453,7 +456,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link RFSystem} instances
    */
   public Set<RFSystem> getRFSystem() {
@@ -465,7 +468,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the RFSystem is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRFSystem() {
@@ -481,7 +484,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link SSRequest} instances
    */
   public Set<SSRequest> getSSRequest() {
@@ -493,7 +496,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the SSRequest is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSSRequest() {
@@ -509,7 +512,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link SSReply} instances
    */
   public Set<SSReply> getSSReply() {
@@ -521,7 +524,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the SSReply is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSSReply() {
@@ -537,7 +540,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Allotment} instances
    */
   public Set<Allotment> getAllotment() {
@@ -549,7 +552,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Allotment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAllotment() {
@@ -565,7 +568,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Assignment} instances
    */
   public Set<Assignment> getAssignment() {
@@ -577,7 +580,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Assignment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAssignment() {
@@ -593,7 +596,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Satellite} instances
    */
   public Set<Satellite> getSatellite() {
@@ -605,7 +608,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Satellite is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatellite() {
@@ -621,7 +624,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link IntfReport} instances
    */
   public Set<IntfReport> getIntfReport() {
@@ -633,7 +636,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the IntfReport is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIntfReport() {
@@ -649,7 +652,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link JRFL} instances
    */
   public Set<JRFL> getJRFL() {
@@ -661,7 +664,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the JRFL is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetJRFL() {
@@ -677,7 +680,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link ForceElement}
    *         instances
    */
@@ -690,7 +693,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the ForceElement is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetForceElement() {
@@ -706,7 +709,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link FEDeployment}
    *         instances
    */
@@ -719,7 +722,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the FEDeployment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFEDeployment() {
@@ -735,7 +738,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Message} instances
    */
   public Set<Message> getMessage() {
@@ -747,7 +750,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Message is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMessage() {
@@ -763,7 +766,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Note} instances
    */
   public Set<Note> getNote() {
@@ -775,7 +778,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Note is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNote() {
@@ -791,7 +794,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link Loadset} instances
    */
   public Set<Loadset> getLoadset() {
@@ -803,7 +806,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the Loadset is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLoadset() {
@@ -819,7 +822,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get
-   * <p>
+   *
    * @return a non-null but possibly empty list of {@link RadiationPlan}
    *         instances
    */
@@ -832,7 +835,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Determine if the RadiationPlan is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRadiationPlan() {
@@ -848,7 +851,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Contact...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -862,7 +865,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Contact} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -876,7 +879,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Role...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -890,7 +893,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Role} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -904,7 +907,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Organisation...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -918,7 +921,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Organisation} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -932,7 +935,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link ExternalReference...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -946,7 +949,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link ExternalReference} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -960,7 +963,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Administrative...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -974,7 +977,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Administrative} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -988,7 +991,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Location...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1002,7 +1005,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Location} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1016,7 +1019,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link ChannelPlan...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1030,7 +1033,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link ChannelPlan} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1044,7 +1047,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link TOA...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1058,7 +1061,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link TOA} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1072,7 +1075,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Transmitter...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1086,7 +1089,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Transmitter} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1100,7 +1103,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Receiver...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1114,7 +1117,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Receiver} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1128,7 +1131,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Antenna...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1142,7 +1145,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Antenna} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1156,7 +1159,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link RFSystem...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1170,7 +1173,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link RFSystem} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1184,7 +1187,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link SSRequest...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1198,7 +1201,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link SSRequest} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1212,7 +1215,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link SSReply...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1226,7 +1229,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link SSReply} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1240,7 +1243,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Allotment...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1254,7 +1257,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Allotment} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1268,7 +1271,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Assignment...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1282,7 +1285,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Assignment} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1296,7 +1299,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Satellite...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1310,7 +1313,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Satellite} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1324,7 +1327,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link IntfReport...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1338,7 +1341,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link IntfReport} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1352,7 +1355,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link JRFL...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1366,7 +1369,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link JRFL} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1380,7 +1383,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link ForceElement...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1394,7 +1397,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link ForceElement} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1408,7 +1411,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link FEDeployment...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1422,7 +1425,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link FEDeployment} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1436,7 +1439,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Message...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1450,7 +1453,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Message} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1464,7 +1467,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Note...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1478,7 +1481,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Note} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1492,7 +1495,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link Loadset...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1506,7 +1509,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Loadset} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1520,7 +1523,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link RadiationPlan...}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1534,7 +1537,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link RadiationPlan} instances
    * @return The current SchemaRoot object instance
    * @since 3.1.0
@@ -1548,7 +1551,7 @@ public abstract class SchemaRoot<T> {
 
   /**
    * Get a string representation of this SchemaRoot instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1586,7 +1589,7 @@ public abstract class SchemaRoot<T> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link SchemaRoot} has no configuration requirements.
-   * <p>
+   *
    * @return TRUE
    */
   public boolean isSet() {

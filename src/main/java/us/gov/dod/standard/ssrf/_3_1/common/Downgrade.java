@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S200;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -50,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class Downgrade {
 
   /**
-   * US:Downcls - Downgrading Classification (Required)    * <p>
+   * US:Downcls - Downgrading Classification (Required)
+   * <p>
    * The classification level of the dataset after downgrading.
    * <p>
    * Format is L:CCL
@@ -60,7 +63,8 @@ public class Downgrade {
   @XmlElement(name = "Downcls", required = true)
   private TString downcls;
   /**
-   * US:Date - Downgrading Date (Required)    * <p>
+   * US:Date - Downgrading Date (Required)
+   * <p>
    * The date of the permitted downgrading.
    * <p>
    * Format is Date
@@ -70,7 +74,8 @@ public class Downgrade {
   @XmlElement(name = "Date", required = true)
   private D date;
   /**
-   * US:DowngradeInfo - Downgrading Information (Optional)    * <p>
+   * US:DowngradeInfo - Downgrading Information (Optional)
+   * <p>
    * Additional downgrading information, if any.
    * <p>
    * Format is S200

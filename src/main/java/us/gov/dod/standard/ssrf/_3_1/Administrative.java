@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,16 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_1.administrative.Dataset;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDR;
 
@@ -48,7 +52,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDR;
  *   &lt;/Dataset&gt;
  * &lt;/Administrative&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -68,7 +72,7 @@ public class Administrative extends Common<Administrative> {
    * reception, of this dataset.
    * <p>
    * Format is L:CDR
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Action", required = true)
@@ -79,7 +83,7 @@ public class Administrative extends Common<Administrative> {
    * The serial of the Message Dataset that is causing this response.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MessageRef", required = false)
@@ -89,7 +93,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Dataset is used within an Administrative transaction to specify the
    * identifier of the datasets on which the action must apply.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Dataset")
@@ -101,7 +105,7 @@ public class Administrative extends Common<Administrative> {
    * a given Code List.
    * <p>
    * CodeList and DataSet are exclusive.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CodeList")
@@ -117,7 +121,7 @@ public class Administrative extends Common<Administrative> {
   /**
    * Get the action which triggered the transmission, or to be performed upon
    * reception, of this dataset..
-   * <p>
+   *
    * @return the Action value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -128,7 +132,7 @@ public class Administrative extends Common<Administrative> {
   /**
    * Set the action which triggered the transmission, or to be performed upon
    * reception, of this dataset..
-   * <p>
+   *
    * @param value the Action value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -140,7 +144,7 @@ public class Administrative extends Common<Administrative> {
    * Determine if the Action is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAction() {
@@ -149,7 +153,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Get the serial of the Message Dataset that is causing this response..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -162,7 +166,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Set the serial of the Message Dataset that is causing this response..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -175,7 +179,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Determine if the MessageRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMessageRef() {
@@ -187,7 +191,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Complex element Dataset is used within an Administrative transaction to
    * specify the identifier of the datasets on which the action must apply..
-   * <p>
+   *
    * @return a {@link Dataset} instance
    * @since 3.1.0
    */
@@ -200,7 +204,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Determine if the Dataset is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDataset() {
@@ -219,7 +223,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Complex element CodeList contains the actions necessary to create or delete
    * a code entry in a given Code List..
-   * <p>
+   *
    * @return a {@link CodeList} instance
    * @since 3.1.0
    */
@@ -232,7 +236,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Determine if the CodeList is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCodeList() {
@@ -249,7 +253,7 @@ public class Administrative extends Common<Administrative> {
   /**
    * Set the action which triggered the transmission, or to be performed upon
    * reception, of this dataset.
-   * <p>
+   *
    * @param value An instances of type {@link ListCDR}.
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -261,7 +265,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Set the serial of the Message Dataset that is causing this response.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -279,7 +283,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Complex element Dataset is used within an Administrative transaction to
    * specify the identifier of the datasets on which the action must apply.
-   * <p>
+   *
    * @param values One or more instances of type {@link Dataset...}.
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -296,7 +300,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Complex element Dataset is used within an Administrative transaction to
    * specify the identifier of the datasets on which the action must apply.
-   * <p>
+   *
    * @param values A collection of {@link Dataset} instances
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -313,7 +317,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Complex element CodeList contains the actions necessary to create or delete
    * a code entry in a given Code List.
-   * <p>
+   *
    * @param values One or more instances of type {@link CodeList...}.
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -330,7 +334,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Complex element CodeList contains the actions necessary to create or delete
    * a code entry in a given Code List.
-   * <p>
+   *
    * @param values A collection of {@link CodeList} instances
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -344,7 +348,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Get a string representation of this Administrative instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -366,7 +370,7 @@ public class Administrative extends Common<Administrative> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -381,7 +385,7 @@ public class Administrative extends Common<Administrative> {
    * The serial of the Message Dataset that is causing this response.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -389,7 +393,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Get the serial of the Message Dataset that is causing this response..
-   * <p>
+   *
    * @return a {@link Message} instance
    * @since 3.1.0
    */
@@ -399,7 +403,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Determine if the message field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMessage() {
@@ -408,7 +412,7 @@ public class Administrative extends Common<Administrative> {
 
   /**
    * Set the serial of the Message Dataset that is causing this response.
-   * <p>
+   *
    * @param value An instances of type {@link Message}.
    * @return The current Administrative object instance.
    * @since 3.1.0
@@ -425,7 +429,7 @@ public class Administrative extends Common<Administrative> {
    * the transient {@link #message} field. This method should typically be
    * called after the Administrative is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -442,7 +446,7 @@ public class Administrative extends Common<Administrative> {
    * imported {@link #messageRef} field. This method should typically be called
    * after the Administrative is imported from XML. * @param root the SSRF root
    * instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,11 +15,17 @@
  */
 package us.gov.dod.standard.ssrf._3_1.allotment;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Allotment;
+import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S6;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * AllotFreq defines a frequency or range of frequencies belonging to the
@@ -30,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * Sub-Element is
  * <p>
  * Example: See {@link Allotment}.
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -53,7 +59,7 @@ public class AllotFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group FreqRangeGrp (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMin", required = true)
@@ -68,7 +74,7 @@ public class AllotFreq {
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group FreqRangeGrp (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMax", required = false)
@@ -81,7 +87,7 @@ public class AllotFreq {
    * system.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PairedFreqMin", required = false)
@@ -92,7 +98,7 @@ public class AllotFreq {
    * The tuning increment.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TuningStep", required = false)
@@ -103,7 +109,7 @@ public class AllotFreq {
    * A TACAN channel or net number
    * <p>
    * Format is S6
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AllotChannel", required = false)
@@ -113,7 +119,7 @@ public class AllotFreq {
    * <p>
    * LocationRestriction indicates a Location where the Allotment usage is
    * forbidden.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LocationRestriction", nillable = true)
@@ -121,7 +127,7 @@ public class AllotFreq {
 
   /**
    * Get the nominal frequency or minimum value of the frequency range..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -131,7 +137,7 @@ public class AllotFreq {
 
   /**
    * Set the nominal frequency or minimum value of the frequency range..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -141,7 +147,7 @@ public class AllotFreq {
 
   /**
    * Determine if the FreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMin() {
@@ -152,7 +158,7 @@ public class AllotFreq {
    * Get the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -164,7 +170,7 @@ public class AllotFreq {
    * Set the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -174,7 +180,7 @@ public class AllotFreq {
 
   /**
    * Determine if the FreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMax() {
@@ -185,7 +191,7 @@ public class AllotFreq {
    * Get the nominal frequency or minimum value of the frequency range, for the
    * paired frequency or frequency range when the allotment is for a duplex
    * system..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -197,7 +203,7 @@ public class AllotFreq {
    * Set the nominal frequency or minimum value of the frequency range, for the
    * paired frequency or frequency range when the allotment is for a duplex
    * system..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -207,7 +213,7 @@ public class AllotFreq {
 
   /**
    * Determine if the PairedFreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPairedFreqMin() {
@@ -216,7 +222,7 @@ public class AllotFreq {
 
   /**
    * Get the tuning increment..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -226,7 +232,7 @@ public class AllotFreq {
 
   /**
    * Set the tuning increment..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -236,7 +242,7 @@ public class AllotFreq {
 
   /**
    * Determine if the TuningStep is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTuningStep() {
@@ -245,7 +251,7 @@ public class AllotFreq {
 
   /**
    * Get a TACAN channel or net number.
-   * <p>
+   *
    * @return a {@link S6} instance
    * @since 3.1.0
    */
@@ -255,7 +261,7 @@ public class AllotFreq {
 
   /**
    * Set a TACAN channel or net number.
-   * <p>
+   *
    * @param value a {@link S6} instance
    * @since 3.1.0
    */
@@ -265,7 +271,7 @@ public class AllotFreq {
 
   /**
    * Determine if the AllotChannel is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAllotChannel() {
@@ -277,7 +283,7 @@ public class AllotFreq {
    * <p>
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -290,7 +296,7 @@ public class AllotFreq {
 
   /**
    * Determine if the LocationRestriction is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRestrictionRef() {
@@ -306,7 +312,7 @@ public class AllotFreq {
 
   /**
    * Set the nominal frequency or minimum value of the frequency range.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -320,7 +326,7 @@ public class AllotFreq {
    * Set the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -334,7 +340,7 @@ public class AllotFreq {
    * Set the nominal frequency or minimum value of the frequency range, for the
    * paired frequency or frequency range when the allotment is for a duplex
    * system.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -346,7 +352,7 @@ public class AllotFreq {
 
   /**
    * Set the tuning increment.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -358,7 +364,7 @@ public class AllotFreq {
 
   /**
    * Set a TACAN channel or net number
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -373,7 +379,7 @@ public class AllotFreq {
    * <p>
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
-   * <p>
+   *
    * @param values One or more instances of type {@link LocationRestriction...}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -390,7 +396,7 @@ public class AllotFreq {
    * <p>
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -404,7 +410,7 @@ public class AllotFreq {
 
   /**
    * Get a string representation of this AllotFreq instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -426,7 +432,7 @@ public class AllotFreq {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {
@@ -439,7 +445,7 @@ public class AllotFreq {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link Location} instance
    * @since 3.1.0
    */
@@ -452,7 +458,7 @@ public class AllotFreq {
 
   /**
    * Determine if the locationRestriction field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRestriction() {
@@ -461,7 +467,7 @@ public class AllotFreq {
 
   /**
    * Set
-   * <p>
+   *
    * @param values An instances of type {@link Location}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -472,7 +478,7 @@ public class AllotFreq {
 
   /**
    * Set
-   * <p>
+   *
    * @param values An instances of type {@link Location}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
@@ -489,7 +495,7 @@ public class AllotFreq {
    * values from the transient {@link #locationRestriction} field. This method
    * should typically be called after the AllotFreq is configured and
    * (optionally) before exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   public void prepare() {
@@ -506,7 +512,7 @@ public class AllotFreq {
    * This method builds the transient {@link #locationRestriction} with values
    * from the imported {@link #locationRestrictionRef} field. This method should
    * typically be called after the AllotFreq is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

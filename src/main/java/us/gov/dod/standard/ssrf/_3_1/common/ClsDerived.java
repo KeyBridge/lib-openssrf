@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S30;
 
 /**
  * ClsDerived (US) contains the derived security classification from one or more
@@ -50,7 +51,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ClsDerived {
 
   /**
-   * US:Date - Derivative Classification Date (Required)    * <p>
+   * US:Date - Derivative Classification Date (Required)
+   * <p>
    * The date of the source document.
    * <p>
    * Format is Date
@@ -60,7 +62,8 @@ public class ClsDerived {
   @XmlElement(name = "Date", required = true)
   private D date;
   /**
-   * US:Title - Derivative Classification Document Title (Required)    * <p>
+   * US:Title - Derivative Classification Document Title (Required)
+   * <p>
    * The title of the source document.
    * <p>
    * Format is S30
@@ -70,7 +73,8 @@ public class ClsDerived {
   @XmlElement(name = "Title", required = true)
   private S30 title;
   /**
-   * US:Org - Derivative Classification Publishing Organisa (Required)    * <p>
+   * US:Org - Derivative Classification Publishing Organisa (Required)
+   * <p>
    * The publishing organization of the source document.
    * <p>
    * Format is S30

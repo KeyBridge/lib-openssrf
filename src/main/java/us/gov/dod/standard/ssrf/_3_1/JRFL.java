@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;/JRFLEntry&gt;
  * &lt;/JRFL&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -70,7 +70,7 @@ public class JRFL extends Common<JRFL> {
    * The width of the range (or band) of restricted frequency(s).
    * <p>
    * Format is DT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDateTime", required = false)
@@ -82,7 +82,7 @@ public class JRFL extends Common<JRFL> {
    * real effective time, use values 00:00:01Z to 24:00:00Z. The value 00:00:00Z
    * is reserved to indicate that time is not an issue. The Expiration date
    * should be less than five years from the effective date.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
@@ -96,14 +96,14 @@ public class JRFL extends Common<JRFL> {
    * Format is DT
    * <p>
    * Attribute group ExpireReviewDT (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
   private D reviewDate;
   /**
    * In Data Item Seconds,enter the seconds of hour [0-59]
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Seconds", required = false)
@@ -116,7 +116,7 @@ public class JRFL extends Common<JRFL> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Minutes", required = false)
@@ -129,7 +129,7 @@ public class JRFL extends Common<JRFL> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Hours", required = false)
@@ -142,7 +142,7 @@ public class JRFL extends Common<JRFL> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DaysOfMonth", required = false)
@@ -155,7 +155,7 @@ public class JRFL extends Common<JRFL> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Months", required = false)
@@ -168,7 +168,7 @@ public class JRFL extends Common<JRFL> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DaysOfWeek", required = false)
@@ -181,7 +181,7 @@ public class JRFL extends Common<JRFL> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Years", required = false)
@@ -209,7 +209,7 @@ public class JRFL extends Common<JRFL> {
    * Format is UN(4) (min)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Duration", required = false)
@@ -223,7 +223,7 @@ public class JRFL extends Common<JRFL> {
    * and duration). In the case of an arbitrary set of frequencies, if multiple
    * organisations are listed they will all use the same set of frequencies; if
    * it is not the case, split the JRFL entry into several entries.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "JRFLEntry", required = true)
@@ -238,7 +238,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the width of the range (or band) of restricted frequency(s)..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -248,7 +248,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the width of the range (or band) of restricted frequency(s)..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -258,7 +258,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the EffectiveDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDateTime() {
@@ -272,7 +272,7 @@ public class JRFL extends Common<JRFL> {
    * indicate a real effective time, use values 00:00:01Z to 24:00:00Z. The
    * value 00:00:00Z is reserved to indicate that time is not an issue. The
    * Expiration date should be less than five years from the effective date..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -287,7 +287,7 @@ public class JRFL extends Common<JRFL> {
    * indicate a real effective time, use values 00:00:01Z to 24:00:00Z. The
    * value 00:00:00Z is reserved to indicate that time is not an issue. The
    * Expiration date should be less than five years from the effective date..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -297,7 +297,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the ExpirationDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDateTime() {
@@ -307,7 +307,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Get a description of the justification of why the JRFL entry is required,
    * to support the spectrum manager..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -318,7 +318,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Set a description of the justification of why the JRFL entry is required,
    * to support the spectrum manager..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -328,7 +328,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -337,7 +337,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get In Data Item Seconds,enter the seconds of hour [0-59].
-   * <p>
+   *
    * @return a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -347,7 +347,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set In Data Item Seconds,enter the seconds of hour [0-59].
-   * <p>
+   *
    * @param value a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -357,7 +357,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the Seconds is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSeconds() {
@@ -366,7 +366,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the minutes of an hour [0-59]..
-   * <p>
+   *
    * @return a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -376,7 +376,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the minutes of an hour [0-59]..
-   * <p>
+   *
    * @param value a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -386,7 +386,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the Minutes is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMinutes() {
@@ -395,7 +395,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the hours of a day [0-23] (UTC time)..
-   * <p>
+   *
    * @return a {@link Hours} instance
    * @since 3.1.0
    */
@@ -405,7 +405,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the hours of a day [0-23] (UTC time)..
-   * <p>
+   *
    * @param value a {@link Hours} instance
    * @since 3.1.0
    */
@@ -415,7 +415,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the Hours is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHours() {
@@ -424,7 +424,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the day of month [1-31]..
-   * <p>
+   *
    * @return a {@link DaysOfMonth} instance
    * @since 3.1.0
    */
@@ -434,7 +434,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the day of month [1-31]..
-   * <p>
+   *
    * @param value a {@link DaysOfMonth} instance
    * @since 3.1.0
    */
@@ -444,7 +444,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the DaysOfMonth is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDaysOfMonth() {
@@ -453,7 +453,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the month of year [1-12]..
-   * <p>
+   *
    * @return a {@link Months} instance
    * @since 3.1.0
    */
@@ -463,7 +463,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the month of year [1-12]..
-   * <p>
+   *
    * @param value a {@link Months} instance
    * @since 3.1.0
    */
@@ -473,7 +473,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the Months is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMonths() {
@@ -482,7 +482,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc]..
-   * <p>
+   *
    * @return a {@link DaysOfWeek} instance
    * @since 3.1.0
    */
@@ -492,7 +492,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc]..
-   * <p>
+   *
    * @param value a {@link DaysOfWeek} instance
    * @since 3.1.0
    */
@@ -502,7 +502,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the DaysOfWeek is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDaysOfWeek() {
@@ -511,7 +511,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get the 4-digit year [1900..2100]..
-   * <p>
+   *
    * @return a {@link Years} instance
    * @since 3.1.0
    */
@@ -521,7 +521,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the 4-digit year [1900..2100]..
-   * <p>
+   *
    * @param value a {@link Years} instance
    * @since 3.1.0
    */
@@ -531,7 +531,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the Years is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetYears() {
@@ -561,7 +561,7 @@ public class JRFL extends Common<JRFL> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>.
-   * <p>
+   *
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -592,7 +592,7 @@ public class JRFL extends Common<JRFL> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>.
-   * <p>
+   *
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -602,7 +602,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the Duration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuration() {
@@ -620,7 +620,7 @@ public class JRFL extends Common<JRFL> {
    * and duration). In the case of an arbitrary set of frequencies, if multiple
    * organisations are listed they will all use the same set of frequencies; if
    * it is not the case, split the JRFL entry into several entries..
-   * <p>
+   *
    * @return a {@link JRFLEntry} instance
    * @since 3.1.0
    */
@@ -633,7 +633,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Determine if the JRFLEntry is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetJRFLEntry() {
@@ -649,7 +649,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the width of the range (or band) of restricted frequency(s).
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -661,7 +661,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the width of the range (or band) of restricted frequency(s).
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -678,7 +678,7 @@ public class JRFL extends Common<JRFL> {
    * indicate a real effective time, use values 00:00:01Z to 24:00:00Z. The
    * value 00:00:00Z is reserved to indicate that time is not an issue. The
    * Expiration date should be less than five years from the effective date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -695,7 +695,7 @@ public class JRFL extends Common<JRFL> {
    * indicate a real effective time, use values 00:00:01Z to 24:00:00Z. The
    * value 00:00:00Z is reserved to indicate that time is not an issue. The
    * Expiration date should be less than five years from the effective date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -708,7 +708,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Set a description of the justification of why the JRFL entry is required,
    * to support the spectrum manager.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -721,7 +721,7 @@ public class JRFL extends Common<JRFL> {
   /**
    * Set a description of the justification of why the JRFL entry is required,
    * to support the spectrum manager.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -733,7 +733,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set In Data Item Seconds,enter the seconds of hour [0-59]
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -745,7 +745,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the minutes of an hour [0-59].
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -757,7 +757,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the hours of a day [0-23] (UTC time).
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -769,7 +769,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the day of month [1-31].
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -781,7 +781,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the month of year [1-12].
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -793,7 +793,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc].
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -805,7 +805,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Set the 4-digit year [1900..2100].
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -838,7 +838,7 @@ public class JRFL extends Common<JRFL> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -859,7 +859,7 @@ public class JRFL extends Common<JRFL> {
    * and duration). In the case of an arbitrary set of frequencies, if multiple
    * organisations are listed they will all use the same set of frequencies; if
    * it is not the case, split the JRFL entry into several entries.
-   * <p>
+   *
    * @param values One or more instances of type {@link JRFLEntry...}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -882,7 +882,7 @@ public class JRFL extends Common<JRFL> {
    * and duration). In the case of an arbitrary set of frequencies, if multiple
    * organisations are listed they will all use the same set of frequencies; if
    * it is not the case, split the JRFL entry into several entries.
-   * <p>
+   *
    * @param values A collection of {@link JRFLEntry} instances
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -896,7 +896,7 @@ public class JRFL extends Common<JRFL> {
 
   /**
    * Get a string representation of this JRFL instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -926,7 +926,7 @@ public class JRFL extends Common<JRFL> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,9 @@ import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Station;
 import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCI;
 
 /**
@@ -38,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCI;
  *   &lt;Description cls="U"&gt;Bldg 120, Room 410&lt;/Description&gt;
  * &lt;/POCInformation&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -51,34 +53,32 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCI;
 public class POCInformation {
 
   /**
-   * Type - POC Type (Required)    * <p>
-   * The function of the referenced Contact or Organisation within the current
-   * dataset.
+   * Type - POC Type (Required) * The function of the referenced Contact or
+   * Organisation within the current dataset.
    * <p>
    * Format is L:CCI
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * Serial - Serial of Referenced dataset (Optional)    * <p>
-   * The dataset identifier of the Contact, Organisation, or Role.
+   * Serial - Serial of Referenced dataset (Optional) * The dataset identifier
+   * of the Contact, Organisation, or Role.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Serial", required = false)
   private Serial serial;
   /**
-   * Description - POC Description (Optional)    * <p>
-   * Free text Contact information for legacy applications. When building new
-   * records, enter the contact information in the structured Contact, Role, or
-   * Organisation dataset.
+   * Description - POC Description (Optional) * Free text Contact information
+   * for legacy applications. When building new records, enter the contact
+   * information in the structured Contact, Role, or Organisation dataset.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
@@ -87,7 +87,7 @@ public class POCInformation {
   /**
    * Get the function of the referenced Contact or Organisation within the
    * current dataset..
-   * <p>
+   *
    * @return the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -98,7 +98,7 @@ public class POCInformation {
   /**
    * Set the function of the referenced Contact or Organisation within the
    * current dataset..
-   * <p>
+   *
    * @param value the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -110,7 +110,7 @@ public class POCInformation {
    * Determine if the Type is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetType() {
@@ -119,7 +119,7 @@ public class POCInformation {
 
   /**
    * Get the dataset identifier of the Contact, Organisation, or Role..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -132,7 +132,7 @@ public class POCInformation {
 
   /**
    * Set the dataset identifier of the Contact, Organisation, or Role..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -145,7 +145,7 @@ public class POCInformation {
 
   /**
    * Determine if the Serial is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSerial() {
@@ -156,7 +156,7 @@ public class POCInformation {
    * Get free text Contact information for legacy applications. When building
    * new records, enter the contact information in the structured Contact, Role,
    * or Organisation dataset..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -168,7 +168,7 @@ public class POCInformation {
    * Set free text Contact information for legacy applications. When building
    * new records, enter the contact information in the structured Contact, Role,
    * or Organisation dataset..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -178,7 +178,7 @@ public class POCInformation {
 
   /**
    * Determine if the Description is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
@@ -188,7 +188,7 @@ public class POCInformation {
   /**
    * Set the function of the referenced Contact or Organisation within the
    * current dataset.
-   * <p>
+   *
    * @param value An instances of type {@link ListCCI}.
    * @return The current POCInformation object instance.
    * @since 3.1.0
@@ -200,7 +200,7 @@ public class POCInformation {
 
   /**
    * Set the dataset identifier of the Contact, Organisation, or Role.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current POCInformation object instance.
    * @since 3.1.0
@@ -217,7 +217,7 @@ public class POCInformation {
    * Set free text Contact information for legacy applications. When building
    * new records, enter the contact information in the structured Contact, Role,
    * or Organisation dataset.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current POCInformation object instance.
    * @since 3.1.0
@@ -229,7 +229,7 @@ public class POCInformation {
 
   /**
    * Get a string representation of this POCInformation instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -248,7 +248,7 @@ public class POCInformation {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {
@@ -257,11 +257,11 @@ public class POCInformation {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Serial of Referenced dataset (Optional)    * <p>
-   * The dataset identifier of the Contact, Organisation, or Role.
+   * Serial - Serial of Referenced dataset (Optional) * The dataset identifier
+   * of the Contact, Organisation, or Role.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -269,7 +269,7 @@ public class POCInformation {
 
   /**
    * Get the dataset identifier of the Contact, Organisation, or Role..
-   * <p>
+   *
    * @return a {@link Common} instance
    * @since 3.1.0
    */
@@ -279,7 +279,7 @@ public class POCInformation {
 
   /**
    * Determine if the poc field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPoc() {
@@ -288,7 +288,7 @@ public class POCInformation {
 
   /**
    * Set the dataset identifier of the Contact, Organisation, or Role.
-   * <p>
+   *
    * @param value An instances of type {@link Common<?>}.
    * @return The current POCInformation object instance.
    * @since 3.1.0
@@ -305,7 +305,7 @@ public class POCInformation {
    * transient {@link #poc} field. This method should typically be called after
    * the POCInformation is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
+   *
    * @since 3.1.0
    */
   public void prepare() {
@@ -319,7 +319,7 @@ public class POCInformation {
    * This method builds the transient {@link #poc} with values from the imported
    * {@link #serial} field. This method should typically be called after the
    * POCInformation is imported from XML. * @param root the SSRF root instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   public void postLoad(SSRF root) {

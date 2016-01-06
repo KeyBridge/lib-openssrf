@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.Footnote;
  * <p>
  * These methods help to assemble, validate, serialize and un-serialize object
  * representations to and from XML.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version 1.0, 10/02/14
  * @since 3.1.0
@@ -93,7 +93,7 @@ public class SSRFUtility {
    * This method is required by the following 9 classes which set an index in
    * their constructors:
    * {@link Comment}, {@link ConfigFreq}, {@link Curve}, {@link Ellipse}, {@link ExtReferenceRef}, {@link Footnote}, {@link Point}, {@link Polygon}, {@link Remarks},
-   * <p>
+   *
    * @return an {@link AtomicInteger}, wrapped inside a {@link BigInteger}
    *         instance.
    */
@@ -122,7 +122,7 @@ public class SSRFUtility {
    * Reflection API</a> and <a
    * href="http://tutorials.jenkov.com/java-reflection/index.html">Java
    * Reflection Tutorial</a>.
-   * <p>
+   *
    * @param instance the object instance to validate
    * @throws java.lang.Exception if the SSRF instance fails to validate
    */
@@ -142,7 +142,7 @@ public class SSRFUtility {
    * Reflection API</a> and <a
    * href="http://tutorials.jenkov.com/java-reflection/index.html">Java
    * Reflection Tutorial</a>.
-   * <p>
+   *
    * @param instance the object instance to validate
    * @param cls      The parent (maximum) classification. If set all subordinate
    *                 classifications in the class tree must be less than or
@@ -259,7 +259,7 @@ public class SSRFUtility {
    * <p>
    * It is expected that this method will only be called on the top-level SSRF
    * class. However it will just as easily validate any SSRF data type.
-   * <p>
+   *
    * @param instance the object instance to validate
    * @return a non-null Collection of error messages. The collection is EMPTY if
    *         the object instance validates OK.
@@ -280,7 +280,7 @@ public class SSRFUtility {
    * Reflection API</a> and <a
    * href="http://tutorials.jenkov.com/java-reflection/index.html">Java
    * Reflection Tutorial</a>.
-   * <p>
+   *
    * @param instance       the object instance to validate
    * @param parentInstance the parent object instance
    * @param parentField    the parent field where the object instance lives
@@ -423,8 +423,8 @@ public class SSRFUtility {
    * to be valid.
    * <p>
    * If the field value is null then NO VALIDATION is done.
-   * <p>
-   * <p>
+   *
+   *
    * @param field      the class field
    * @param fieldValue the class field configured value
    * @throws Exception the XmlTypeValidator marshal error, thrown ONLY if the
@@ -466,7 +466,7 @@ public class SSRFUtility {
    * If the field is an end-type then the field value (trimmed to 25 characters)
    * is returned. Otherwise if the field is an object type then the work
    * "instance" is returned.
-   * <p>
+   *
    * @param field    the field to get the value from
    * @param instance the object instance to query
    * @return either the field value or the string "instance"
@@ -495,7 +495,7 @@ public class SSRFUtility {
    * Reflection does not expose inherited fields. This method implements a
    * recursive search (up to but not including the base Object) of the Class
    * inheritance tree and returns all declared fields.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @return a non-null {@link HashSet} instance of Fields
    */
@@ -515,7 +515,7 @@ public class SSRFUtility {
    * Reflection does not expose inherited fields. This method implements a
    * recursive search (up to but not including the base Object) of the Class
    * inheritance tree and returns all declared methods.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @return a non-null {@link HashSet} instance of Methods
    */
@@ -535,7 +535,7 @@ public class SSRFUtility {
    * This method looks for and inspects {@link XmlAttribute}, {@link XmlElement}
    * and {@link XmlElementRef} field annotation types marked as REQUIRED; also,
    * {@link XmlValue}.
-   * <p>
+   *
    * @param field the field to inspect
    * @return TRUE if and only if the XML annotation is marked "required = true"
    */
@@ -559,7 +559,7 @@ public class SSRFUtility {
    * processed .
    * <p>
    * This method looks for a {@link XmlTransient} field annotation.
-   * <p>
+   *
    * @param field the field to inspect
    * @return TRUE if and only if the XML annotation is marked "required = true"
    */
@@ -574,7 +574,7 @@ public class SSRFUtility {
 
   /**
    * Trim a string to the desired maximum length.
-   * <p>
+   *
    * @param value     the {@link String} instance to trim.
    * @param maxLength the maximum desired string length
    * @return the input value, trimmed to the desired length.
@@ -591,7 +591,7 @@ public class SSRFUtility {
    * This method examines the class tree and copies all required data objects
    * into their proper location and prepares the SSRF destination instance for
    * export.
-   * <p>
+   *
    * @param ssrf A SSRF working copy
    * @return The input SSRF instance after preparation. The live object is
    *         returned to support method chaining.
@@ -607,7 +607,7 @@ public class SSRFUtility {
    * This method examines the class tree and copies all required data objects
    * into their proper location and prepares the SSRF destination instance for
    * export.
-   * <p>
+   *
    * @param sourceInstance the current object instance to inspect
    * @param rootInstance   the root SSRF/SMADEF object instance into which the
    *                       source instance components are copied
@@ -744,7 +744,7 @@ public class SSRFUtility {
    * This method tries to find a "with" setter in the destination instance that
    * accepts the source object instance class type. If found the source object
    * instance is added to the destination object instance.
-   * <p>
+   *
    * @param commonInstance the source object instance to add to the destination
    *                       object instance. Ignored if does not extend
    *                       {@link Common}.
@@ -776,7 +776,7 @@ public class SSRFUtility {
   /**
    * Test if the object instance class is preparable; that is, whether an
    * attempt to invoke the prepare() method should be made.
-   * <p>
+   *
    * @param instance the object instance
    * @return true if the object class implements the prepare() method.
    */
@@ -806,7 +806,7 @@ public class SSRFUtility {
   /**
    * Try to invoke the prepare() method on the provided object instance. If the
    * object does not implement prepare() this method will fail gracefully.
-   * <p>
+   *
    * @param instance the object instance
    */
   private static void invokePrepare(Object instance) {
@@ -836,7 +836,7 @@ public class SSRFUtility {
    * This method examines the class tree and copies all required data objects
    * into their proper location and preparing the SSRF software class hierarchy
    * for working.
-   * <p>
+   *
    * @param ssrf a {@link SSRF} instance
    * @return The input SSRF instance after post-load. The live object is
    *         returned to support method chaining.
@@ -852,7 +852,7 @@ public class SSRFUtility {
    * This method examines the class tree and copies all required data objects
    * into their proper location and preparing the SSRF software class hierarchy
    * for working.
-   * <p>
+   *
    * @param sourceInstance any of SSRF data type object instance
    * @param rootInstance   a {@link SSRF} instance
    */
@@ -941,14 +941,12 @@ public class SSRFUtility {
            * instance.
            */
         }
-      } else {
-        if (implementsPostLoad(fieldValue)) {
-          /**
-           * Same process as above.
-           */
-          invokePostLoad(fieldValue, rootInstance);
-          postLoad(fieldValue, rootInstance);
-        }
+      } else if (implementsPostLoad(fieldValue)) {
+        /**
+         * Same process as above.
+         */
+        invokePostLoad(fieldValue, rootInstance);
+        postLoad(fieldValue, rootInstance);
       }
     }
     /**
@@ -959,7 +957,7 @@ public class SSRFUtility {
   /**
    * Test if the object instance class is loadable; that is, whether an attempt
    * to invoke the postLoad(SSRF) or postLoad() method should be made.
-   * <p>
+   *
    * @param instance the object instance
    * @return true if the object class implements the postLoad(SSRF) or
    *         postLoad() method.
@@ -990,7 +988,7 @@ public class SSRFUtility {
   /**
    * Try to invoke the postLoad() method on the provided object instance. If the
    * object does not implement postLoad() this method will fail gracefully.
-   * <p>
+   *
    * @param instance the object instance
    */
   private static void invokePostLoad(Object instance, SSRF rootInstance) {
@@ -1018,7 +1016,7 @@ public class SSRFUtility {
    * <p>
    * This assigns default values declared in a SSRF configuration profile to a
    * SSRF configuration.
-   * <p>
+   *
    * @param properties a SSRF properties configuration
    * @param instance   a SSRF object instance. The field type is a generic
    *                   object as this method calls itself recursively.
@@ -1032,7 +1030,7 @@ public class SSRFUtility {
    * <p>
    * This assigns default values declared in a SSRF configuration profile to a
    * SSRF configuration.
-   * <p>
+   *
    * @param properties a SSRF properties configuration
    * @param instance   a SSRF object instance. The field type is a generic
    *                   object as this method calls itself recursively.
@@ -1159,7 +1157,7 @@ public class SSRFUtility {
    * <p>
    * This method supports
    * {@link #setProperties(SSRFProperties, java.lang.Object)}.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @param field the field to look for
    * @return a WITH setter method, if present
@@ -1183,7 +1181,7 @@ public class SSRFUtility {
    * <p>
    * This method supports
    * {@link #setProperties(SSRFProperties, java.lang.Object)}.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @param field the field to look for
    * @return a WITH setter method, if present
@@ -1217,7 +1215,7 @@ public class SSRFUtility {
    * <p>
    * This method supports
    * {@link #setProperties(SSRFProperties, java.lang.Object)}.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @param field the field to look for
    * @return a WITH setter method, if present
@@ -1241,7 +1239,7 @@ public class SSRFUtility {
   /**
    * Helper method to inspect the indicated Class to find the first declared or
    * inherited SET setter method for the indicated field type.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @param field the field to look for
    * @return a SET setter method, if present
@@ -1261,7 +1259,7 @@ public class SSRFUtility {
   /**
    * Helper method to inspect the indicated Class to find the first declared or
    * inherited GET setter method for the indicated field type.
-   * <p>
+   *
    * @param clazz the class type to inspect
    * @param field the field to look for
    * @return a SET setter method, if present
@@ -1280,10 +1278,10 @@ public class SSRFUtility {
 
   /**
    * Marshal an entity class into a XML String representation.
-   * <p/>
+   * <p>
    * The output of this method is typically either written to a file or sent via
    * a SOAP communication link.
-   * <p/>
+   *
    * @param <T>   the entity class type
    * @param clazz the entity class to be written
    * @return the entity class serialized into XML form
@@ -1306,7 +1304,7 @@ public class SSRFUtility {
    * Parse an XML file into a container class. This method calls the JAXB
    * un-marshaler and returns a class containing all of the content defined in
    * the XML file.
-   * <p/>
+   *
    * @param <T>   the class type to be returned
    * @param xml   the XML source content
    * @param clazz the parsed and populated class type; this is the same as the

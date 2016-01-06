@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,16 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Az180;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAP;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTP;
@@ -64,7 +68,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTP;
 public class AntPattern {
 
   /**
-   * CutType - Pattern Cut Type (Optional)    * <p>
+   * CutType - Pattern Cut Type (Optional)
+   * <p>
    * The type of the pattern cut. A Theta cut holds Phi constant while varying
    * Theta. A Phi cut holds Theta constant while varying Phi, where Theta is the
    * angle off the boresight and Phi is the rotation angle about the boresight.
@@ -76,7 +81,8 @@ public class AntPattern {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * Calculated - Calculated Data Indicator (Optional)    * <p>
+   * Calculated - Calculated Data Indicator (Optional)
+   * <p>
    * Yes to indicate that the data was calculated, or "No" if the data is issued
    * from measurement. Leave blank if the origin of the data is not known.
    * <p>
@@ -87,7 +93,8 @@ public class AntPattern {
   @XmlElement(name = "Calculated", required = false)
   private TString calculated;
   /**
-   * CutType - Pattern Cut Type (Optional)    * <p>
+   * CutType - Pattern Cut Type (Optional)
+   * <p>
    * The type of the pattern cut. A Theta cut holds Phi constant while varying
    * Theta. A Phi cut holds Theta constant while varying Phi, where Theta is the
    * angle off the boresight and Phi is the rotation angle about the boresight.
@@ -99,7 +106,8 @@ public class AntPattern {
   @XmlElement(name = "CutType", required = false)
   private TString cutType;
   /**
-   * CutAngle - Pattern Cut Angle (Optional)    * <p>
+   * CutAngle - Pattern Cut Angle (Optional)
+   * <p>
    * The angle of the pattern cut. It is the value of Phi for a Theta cut and
    * the value of Theta for a Phi cut.
    * <p>

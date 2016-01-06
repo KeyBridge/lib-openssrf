@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,11 +15,11 @@
  */
 package us.gov.dod.standard.ssrf._3_1.adapter.types;
 
-import us.gov.dod.standard.ssrf._3_1.adapter.*;
+import us.gov.dod.standard.ssrf._3_1.adapter.AXmlAdapterString;
 
 /**
  * XML data type adapter for the SSRF NETNUMBER data type.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */

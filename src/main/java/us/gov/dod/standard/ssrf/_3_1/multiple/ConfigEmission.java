@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.EmsDes;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
 
 /**
  * ConfigEmission (US) specifies the emission bandwidths and classification
@@ -38,7 +42,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ConfigEmission {
 
   /**
-   * US:EmsClass - Class Of Emission (Optional)    * <p>
+   * US:EmsClass - Class Of Emission (Optional)
+   * <p>
    * A three to five characters code, derived from the table below, representing
    * the emission classification. If an "X" is used in any of the symbols,
    * Remarks SHOULD be used to explain the nature of the signal. First Symbol -
@@ -106,7 +111,8 @@ public class ConfigEmission {
   @XmlElement(name = "EmsClass", required = false)
   private EmsDes emsClass;
   /**
-   * US:NecessaryBwMax - Maximum Necessary Bandwidth (Optional)    * <p>
+   * US:NecessaryBwMax - Maximum Necessary Bandwidth (Optional)
+   * <p>
    * The maximum necessary bandwidth in the case of a range of values.
    * <p>
    * [XSL ERR MINMAX] If US:NecessaryBwMax is used, it MUST be greater than
@@ -119,7 +125,8 @@ public class ConfigEmission {
   @XmlElement(name = "NecessaryBwMax", required = false)
   private FreqM necessaryBwMax;
   /**
-   * US:NecessaryBwMin - Minimum Necessary Bandwidth (Optional)    * <p>
+   * US:NecessaryBwMin - Minimum Necessary Bandwidth (Optional)
+   * <p>
    * The necessary bandwidth which is defined as the value in MHz, for a given
    * class of emission, the width of the frequency band which is just sufficient
    * to ensure the transmission of information at the rate and with the quality

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S10;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 
 /**
  * SubcarrierTone describes the sidetone frequency used to modulate the
@@ -40,7 +42,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class SubcarrierTone {
 
   /**
-   * FreqMin - Minimum SubcarrierTone Frequency (Optional)    * <p>
+   * FreqMin - Minimum SubcarrierTone Frequency (Optional)
+   * <p>
    * The nominal frequency or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -52,7 +55,8 @@ public class SubcarrierTone {
   @XmlElement(name = "FreqMin")
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Subcarrier Tone Frequency (Optional)    * <p>
+   * FreqMax - Maximum Subcarrier Tone Frequency (Optional)
+   * <p>
    * The maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -66,7 +70,8 @@ public class SubcarrierTone {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * Duration - Subcarrier Tone Dwell (Optional)    * <p>
+   * Duration - Subcarrier Tone Dwell (Optional)
+   * <p>
    * The period of dwell for the baseband audio frequency, before it is disabled
    * or switched.
    * <p>
@@ -77,7 +82,8 @@ public class SubcarrierTone {
   @XmlElement(name = "Duration", required = false)
   private microsecs duration;
   /**
-   * Name - Tone Name (Optional)    * <p>
+   * Name - Tone Name (Optional)
+   * <p>
    * The name of the tone. Tone names MUST match entries in
    * Baseband/US:SignalSequenceDesc.
    * <p>

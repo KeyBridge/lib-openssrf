@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -23,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCIN;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
 
@@ -57,7 +60,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
 public class Deployment {
 
   /**
-   * Type - Deployment Type (Required)    * <p>
+   * Type - Deployment Type (Required)
+   * <p>
    * The type of deployment.
    * <p>
    * Format is L:CFD
@@ -67,7 +71,8 @@ public class Deployment {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * Status - Status (Optional)    * <p>
+   * Status - Status (Optional)
+   * <p>
    * The status of the Deployment.
    * <p>
    * Format is L:CSU

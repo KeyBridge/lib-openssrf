@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.SSRequest;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN9;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSG;
 import us.gov.dod.standard.ssrf._3_1.ssreply.StageLocation;
 
@@ -61,7 +64,8 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.StageLocation;
 public class Stage {
 
   /**
-   * Type - Stage (Required)    * <p>
+   * Type - Stage (Required)
+   * <p>
    * The stage.
    * <p>
    * Format is L:CSG
@@ -71,7 +75,8 @@ public class Stage {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * StartDate - Start Date (Optional)    * <p>
+   * StartDate - Start Date (Optional)
+   * <p>
    * The date upon which work will commence on this stage.
    * <p>
    * Format is Date
@@ -81,7 +86,8 @@ public class Stage {
   @XmlElement(name = "StartDate", required = false)
   private D startDate;
   /**
-   * TargetDate - Target Date (Optional)    * <p>
+   * TargetDate - Target Date (Optional)
+   * <p>
    * The date by which a usable version of the system is expected to be
    * available for testing or deployment.
    * <p>
@@ -92,7 +98,8 @@ public class Stage {
   @XmlElement(name = "TargetDate", required = false)
   private D targetDate;
   /**
-   * DateApprovalRequired - Desired Approval Date (Optional)    * <p>
+   * DateApprovalRequired - Desired Approval Date (Optional)
+   * <p>
    * The date by which the approval of the application is desired
    * <p>
    * Format is Date
@@ -102,7 +109,8 @@ public class Stage {
   @XmlElement(name = "DateApprovalRequired", required = false)
   private D dateApprovalRequired;
   /**
-   * TerminationDate - Termination Date (Optional)    * <p>
+   * TerminationDate - Termination Date (Optional)
+   * <p>
    * The date this stage is expected to terminate. For a stage 2 application the
    * date entered is the date when the system is expected to enter stage 3. The
    * date may be an estimate.
@@ -114,7 +122,8 @@ public class Stage {
   @XmlElement(name = "TerminationDate", required = false)
   private D terminationDate;
   /**
-   * NumEquip - Number of Equipment (Optional)    * <p>
+   * NumEquip - Number of Equipment (Optional)
+   * <p>
    * The total number of units to be built, procured or used during this stage.
    * <p>
    * Format is UN(9)
@@ -124,7 +133,8 @@ public class Stage {
   @XmlElement(name = "NumEquip", required = false)
   private UN9 numEquip;
   /**
-   * US:GeoDescription - Geographic Description (Optional)    * <p>
+   * US:GeoDescription - Geographic Description (Optional)
+   * <p>
    * A textual description of the geographic locations where this equipment will
    * be used during this stage.
    * <p>

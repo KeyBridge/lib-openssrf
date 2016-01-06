@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 
 /**
@@ -59,7 +62,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class Pulse {
 
   /**
-   * PRRMin - Minimum or Nominal Pulse Repetition Rate (Optional)    * <p>
+   * PRRMin - Minimum or Nominal Pulse Repetition Rate (Optional)
+   * <p>
    * The numeric value for the pulse repetition rate (PRR) of the equipment. For
    * equipment having a capability for continuously variable PRR over a wide
    * range(s), insert the minimum value in this attribute and the maximum value
@@ -74,7 +78,8 @@ public class Pulse {
   @XmlElement(name = "PRRMin", required = false)
   private PulseRate prrMin;
   /**
-   * PRRMax - Maximum Pulse Repetition Rate (Optional)    * <p>
+   * PRRMax - Maximum Pulse Repetition Rate (Optional)
+   * <p>
    * For equipment having a capability for continuously variable PRR over a wide
    * range.
    * <p>
@@ -89,7 +94,8 @@ public class Pulse {
   @XmlElement(name = "PRRMax", required = false)
   private PulseRate prrMax;
   /**
-   * PDMin - Minimum or Nominal Pulse Duration (Optional)    * <p>
+   * PDMin - Minimum or Nominal Pulse Duration (Optional)
+   * <p>
    * A numeric value indicating the characteristic pulse duration of the
    * equipment at the half-power (-3 dB) points. For equipment having a
    * capability for continuously variable PDs over a wide range, insert the
@@ -104,7 +110,8 @@ public class Pulse {
   @XmlElement(name = "PDMin", required = false)
   private microsecs pdMin;
   /**
-   * PDMax - Maximum Pulse Duration (Optional)    * <p>
+   * PDMax - Maximum Pulse Duration (Optional)
+   * <p>
    * For equipment having a capability for continuously variable PD over a wide
    * range.
    * <p>
@@ -119,7 +126,8 @@ public class Pulse {
   @XmlElement(name = "PDMax", required = false)
   private microsecs pdMax;
   /**
-   * DutyCycleMin - Minimum/Nominal Duty Cycle Ratio (Optional)    * <p>
+   * DutyCycleMin - Minimum/Nominal Duty Cycle Ratio (Optional)
+   * <p>
    * As a percentage, the minimum or nominal ratio of the pulse duration to the
    * pulse period.
    * <p>
@@ -132,7 +140,8 @@ public class Pulse {
   @XmlElement(name = "DutyCycleMin", required = false)
   private Percent dutyCycleMin;
   /**
-   * DutyCycleMax - Maximum Duty Cycle Ratio (Optional)    * <p>
+   * DutyCycleMax - Maximum Duty Cycle Ratio (Optional)
+   * <p>
    * As a percentage, the maximum ratio of the pulse duration to the pulse
    * period.
    * <p>
@@ -148,7 +157,8 @@ public class Pulse {
   @XmlElement(name = "DutyCycleMax", required = false)
   private Percent dutyCycleMax;
   /**
-   * AvgPowerMin - Minimum/Nominal Average Power (Optional)    * <p>
+   * AvgPowerMin - Minimum/Nominal Average Power (Optional)
+   * <p>
    * The minimum or nominal average power.
    * <p>
    * Format is SN(10,7) (dBW)
@@ -160,7 +170,8 @@ public class Pulse {
   @XmlElement(name = "AvgPowerMin", required = false)
   private dBW avgPowerMin;
   /**
-   * AvgPowerMax - Maximum Average Power (Optional)    * <p>
+   * AvgPowerMax - Maximum Average Power (Optional)
+   * <p>
    * the maximum average power.
    * <p>
    * [XSL ERR MINMAX] If AvgPowerMax is used, it MUST be greater than
@@ -175,7 +186,8 @@ public class Pulse {
   @XmlElement(name = "AvgPowerMax", required = false)
   private dBW avgPowerMax;
   /**
-   * CompRatio - Pulse Compression Ratio (Optional)    * <p>
+   * CompRatio - Pulse Compression Ratio (Optional)
+   * <p>
    * The ratio of the uncompressed pulse width to the compressed pulse width
    * measured at the 50% amplitude (-3 dB) points.
    * <p>
@@ -188,7 +200,8 @@ public class Pulse {
   @XmlElement(name = "CompRatio", required = false)
   private UN8_4 compRatio;
   /**
-   * CompMethod - Pulse Compression Method (Optional)    * <p>
+   * CompMethod - Pulse Compression Method (Optional)
+   * <p>
    * The method employed to reduce the period of the pulse.
    * <p>
    * Format is S40
@@ -200,7 +213,8 @@ public class Pulse {
   @XmlElement(name = "CompMethod", required = false)
   private S40 compMethod;
   /**
-   * JustifyShortRiseTime - Justification for Short Rise Time (Optional)    * <p>
+   * JustifyShortRiseTime - Justification for Short Rise Time (Optional)
+   * <p>
    * An operational justification for short pulse rise time. This is required if
    * the transmitter is a pulsed Group B, C, or radar, and either: (1) it uses
    * FM modulation and the Rise Time or Fall Time is less than 0.1 microseconds,
@@ -216,7 +230,8 @@ public class Pulse {
   @XmlElement(name = "RiseTime", required = false)
   private microsecs riseTime;
   /**
-   * FallTime - Fall Time (Optional)    * <p>
+   * FallTime - Fall Time (Optional)
+   * <p>
    * The pulse fall time from 90 to 10 percent of the pulse.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -228,7 +243,8 @@ public class Pulse {
   @XmlElement(name = "FallTime", required = false)
   private microsecs fallTime;
   /**
-   * JustifyShortRiseTime - Justification for Short Rise Time (Optional)    * <p>
+   * JustifyShortRiseTime - Justification for Short Rise Time (Optional)
+   * <p>
    * An operational justification for short pulse rise time. This is required if
    * the transmitter is a pulsed Group B, C, or radar, and either: (1) it uses
    * FM modulation and the Rise Time or Fall Time is less than 0.1 microseconds,
@@ -244,7 +260,8 @@ public class Pulse {
   @XmlElement(name = "JustifyShortRiseTime", required = false)
   private MEMO justifyShortRiseTime;
   /**
-   * RadarProcessingGainMax - Maximum Radar Processing Gain (Optional)    * <p>
+   * RadarProcessingGainMax - Maximum Radar Processing Gain (Optional)
+   * <p>
    * The maximum ratio of the post-processing signal-to-noise ratio to the
    * received signal-to-noise ratio. This only applies when the Radar Type is
    * "FM Pulse".
@@ -256,7 +273,8 @@ public class Pulse {
   @XmlElement(name = "RadarProcessingGainMax", required = false)
   private dB radarProcessingGainMax;
   /**
-   * NumSubpulses - Number of Subpulses (Optional)    * <p>
+   * NumSubpulses - Number of Subpulses (Optional)
+   * <p>
    * The total number of subpulses (chips) contained in a radar coded pulse.
    * This only applies when the Radar Type is "FM Pulse" or "Coded Pulse".
    * <p>

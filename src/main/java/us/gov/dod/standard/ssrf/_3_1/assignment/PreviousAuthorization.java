@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S12;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S8;
 
 /**
  * Previous Authorization (US) refers to the frequency assignment's previous
@@ -42,7 +44,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class PreviousAuthorization {
 
   /**
-   * US:DocketNum - Docket Number (Required)    * <p>
+   * US:DocketNum - Docket Number (Required)
+   * <p>
    * The previous frequency assignment Government Master File (GMF)
    * authorization docket number.
    * <p>
@@ -55,7 +58,8 @@ public class PreviousAuthorization {
   @XmlElement(name = "Date", required = false)
   private D date;
   /**
-   * US:AgencySerialNum - Agency Serial Number (Optional)    * <p>
+   * US:AgencySerialNum - Agency Serial Number (Optional)
+   * <p>
    * The externally-assigned unique identifier of a frequency assignment.
    * <p>
    * Format is S12

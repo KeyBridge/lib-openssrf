@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
  * implementation of the default <code>Lat</code> using a BigDecimal value in
  * Decimal degrees (instead of DMS-encoded string) and relying upon the
  * XmlJavaTypeAdapter for DMS translation.
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 04/04/2015
  */
@@ -72,7 +72,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
    * Convert a bound type to a value type.
    * <p>
    * This is called when converting an object to XML.
-   * <p>
+   *
    * @param v The value to be convereted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -106,7 +106,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
    * Convert a value type to a bound type.
    * <p>
    * This is called with converting XML to an object.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -130,7 +130,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
 
   /**
    * Convert a coordinate Degree/Minute/Second/Dir values to decimal degrees.
-   * <p>
+   *
    * @param deg       the degree
    * @param min       the minute
    * @param sec       the second
@@ -148,7 +148,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
 
   /**
    * Calculate the degrees component from a decimal degree coordinate
-   * <p>
+   *
    * @return the degrees component
    */
   private int getDegrees(Number latitude) {
@@ -157,7 +157,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
 
   /**
    * Calculate the minutes component from a decimal degree coordinate
-   * <p>
+   *
    * @return the latitude minutes component
    */
   private int getMinutes(Number latitude) {
@@ -166,7 +166,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
 
   /**
    * Calculate the seconds component from a decimal degree coordinate
-   * <p>
+   *
    * @return the latitude seconds component
    */
   private double getSeconds(Number latitude) {
@@ -175,7 +175,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
 
   /**
    * Get the latitude hemisphere from a latitude in decimal degrees.
-   * <p>
+   *
    * @return the latitude hemisphere: [N]orth or [S]outh
    */
   protected String getLatHemisphere(Number latitude) {

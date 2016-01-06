@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,13 @@ package us.gov.dod.standard.ssrf._3_1;
 
 import java.util.Calendar;
 import java.util.Date;
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -35,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;Source cls="U"&gt;Joint Spectrum Center&lt;/Source&gt;
  * &lt;/Note&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -55,7 +60,7 @@ public class Note extends Common<Note> {
    * The nation or regulatory body that administers this note.
    * <p>
    * Format is L:CAO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Administration", required = false)
@@ -66,7 +71,7 @@ public class Note extends Common<Note> {
    * The date this note comes in force.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = false)
@@ -77,7 +82,7 @@ public class Note extends Common<Note> {
    * The date this note goes out of force.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -88,7 +93,7 @@ public class Note extends Common<Note> {
    * The externally-assigned name of the note.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = false)
@@ -99,7 +104,7 @@ public class Note extends Common<Note> {
    * The source or creator of the note.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Source", required = false)
@@ -114,7 +119,7 @@ public class Note extends Common<Note> {
 
   /**
    * Get the nation or regulatory body that administers this note..
-   * <p>
+   *
    * @return the Administration value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -124,7 +129,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the nation or regulatory body that administers this note..
-   * <p>
+   *
    * @param value the Administration value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -136,7 +141,7 @@ public class Note extends Common<Note> {
    * Determine if the Administration is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAdministration() {
@@ -145,7 +150,7 @@ public class Note extends Common<Note> {
 
   /**
    * Get the date this note comes in force..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -155,7 +160,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the date this note comes in force..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -165,7 +170,7 @@ public class Note extends Common<Note> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -174,7 +179,7 @@ public class Note extends Common<Note> {
 
   /**
    * Get the date this note goes out of force..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -184,7 +189,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the date this note goes out of force..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -194,7 +199,7 @@ public class Note extends Common<Note> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -203,7 +208,7 @@ public class Note extends Common<Note> {
 
   /**
    * Get the externally-assigned name of the note..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -213,7 +218,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the externally-assigned name of the note..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -223,7 +228,7 @@ public class Note extends Common<Note> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -232,7 +237,7 @@ public class Note extends Common<Note> {
 
   /**
    * Get the source or creator of the note..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -242,7 +247,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the source or creator of the note..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -252,7 +257,7 @@ public class Note extends Common<Note> {
 
   /**
    * Determine if the Source is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSource() {
@@ -261,7 +266,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the nation or regulatory body that administers this note.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAO}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -273,7 +278,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the date this note comes in force.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -285,7 +290,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the date this note comes in force.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -297,7 +302,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the date this note goes out of force.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -309,7 +314,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the date this note goes out of force.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -321,7 +326,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the externally-assigned name of the note.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -333,7 +338,7 @@ public class Note extends Common<Note> {
 
   /**
    * Set the source or creator of the note.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Note object instance.
    * @since 3.1.0
@@ -345,7 +350,7 @@ public class Note extends Common<Note> {
 
   /**
    * Get a string representation of this Note instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -367,7 +372,7 @@ public class Note extends Common<Note> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

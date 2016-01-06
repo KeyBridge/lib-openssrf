@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,9 @@ package us.gov.dod.standard.ssrf._3_1.toa;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.TOA;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S255;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTA;
 
 /**
@@ -66,7 +68,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTA;
 public class Footnote {
 
   /**
-   * FootnoteType - Footnote Type (Required)    * <p>
+   * FootnoteType - Footnote Type (Required)
+   * <p>
    * The type or source of the Footnote.
    * <p>
    * Format is L:CTA
@@ -76,7 +79,8 @@ public class Footnote {
   @XmlElement(name = "FootnoteType", required = true)
   private TString footnoteType;
   /**
-   * Identifier - Name (Required)    * <p>
+   * Identifier - Name (Required)
+   * <p>
    * An identifier for this Footnote (e.g., US2, 5.441). This Data Item is
    * optional if NoteType is Band User or Band Application.
    * <p>
@@ -87,7 +91,8 @@ public class Footnote {
   @XmlElement(name = "Identifier", required = true)
   private S255 identifier;
   /**
-   * Text - Footnote Text (Required)    * <p>
+   * Text - Footnote Text (Required)
+   * <p>
    * The textual specification of the footnote, band user or band application.
    * <p>
    * Format is Memo
@@ -97,11 +102,13 @@ public class Footnote {
   @XmlElement(name = "Text", required = true)
   private MEMO text;
   /**
-   * idx - Index (Required)    * <p>
+   * idx - Index (Required)
+   * <p>
    * A unique index for each Footnote used by this Dataset. Once an idx is used
    * it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
    * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.    * <p>
+   * deleted.
+   * <p>
    * Format is UN(6)
    * <p>
    * @since 3.1.0
@@ -279,7 +286,8 @@ public class Footnote {
    * Set a unique index for each Footnote used by this Dataset. Once an idx is
    * used it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
    * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.    * <p>
+   * deleted.
+   * <p>
    * @param value An instances of type {@link BigInteger}.
    * @return The current Footnote object instance.
    * @since 3.1.0

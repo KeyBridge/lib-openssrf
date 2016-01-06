@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,17 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S10;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S25;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBD;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
@@ -82,7 +87,8 @@ public class ObservedLobeAnalysis {
   @XmlElement(name = "BeamType", required = false)
   private TString beamType;
   /**
-   * US:LobeID - Lobe Identifier (Required)    * <p>
+   * US:LobeID - Lobe Identifier (Required)
+   * <p>
    * A unique (within the AntMode) identifier for the Antenna lobe.
    * <p>
    * Format is S10
@@ -92,7 +98,8 @@ public class ObservedLobeAnalysis {
   @XmlElement(name = "LobeID", required = true)
   private S10 lobeID;
   /**
-   * US:LobeName - Lobe Name (Optional)    * <p>
+   * US:LobeName - Lobe Name (Optional)
+   * <p>
    * A name for the Antenna lobe. Examples: 1st Backlobe, 5th SideLobe, etc.
    * <p>
    * Format is S25

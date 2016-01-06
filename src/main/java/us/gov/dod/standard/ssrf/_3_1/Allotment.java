@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,7 +61,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCUT;
  *   &lt;LocationRef cls="U"&gt;DEU::LO:25&lt;/LocationRef&gt;
  * &lt;/Allotment&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -88,7 +88,7 @@ public class Allotment extends Common<Allotment> {
    * An identifying name for this Allotment or Assignment.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Title", required = false)
@@ -101,7 +101,7 @@ public class Allotment extends Common<Allotment> {
    * associated Remarks to indicate the reason.
    * <p>
    * Format is L:CUT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsageType", required = false)
@@ -114,7 +114,7 @@ public class Allotment extends Common<Allotment> {
    * coordination.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DateResponseRequired", required = false)
@@ -125,7 +125,7 @@ public class Allotment extends Common<Allotment> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = true)
@@ -139,7 +139,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -157,7 +157,7 @@ public class Allotment extends Common<Allotment> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -168,7 +168,7 @@ public class Allotment extends Common<Allotment> {
    * Any amplifying information on the requirement.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Requirement", required = false)
@@ -178,7 +178,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Project provides the Project, OPLAN, COMPLAN or Exercise name, or any other
    * project name associated to the dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Project")
@@ -188,7 +188,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -197,7 +197,7 @@ public class Allotment extends Common<Allotment> {
    * LocationRef (Required)
    * <p>
    * LocationRef references a Location dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LocationRef", required = true, nillable = true)
@@ -207,7 +207,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Emission defines the limits of the authorized bandwidth and power within
    * the allotment.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Emission")
@@ -217,7 +217,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * AllotFreq defines a frequency or range of frequencies belonging to the
    * Allotment.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AllotFreq", required = true)
@@ -232,7 +232,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Get an identifying name for this Allotment or Assignment..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -242,7 +242,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set an identifying name for this Allotment or Assignment..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -252,7 +252,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the Title is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTitle() {
@@ -263,7 +263,7 @@ public class Allotment extends Common<Allotment> {
    * Get the type of assignment request or approved assignment/allotment. In
    * Data Item case of a rejected or cancelled assignment/allotment, use an
    * associated Remarks to indicate the reason..
-   * <p>
+   *
    * @return the UsageType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -275,7 +275,7 @@ public class Allotment extends Common<Allotment> {
    * Set the type of assignment request or approved assignment/allotment. In
    * Data Item case of a rejected or cancelled assignment/allotment, use an
    * associated Remarks to indicate the reason..
-   * <p>
+   *
    * @param value the UsageType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -287,7 +287,7 @@ public class Allotment extends Common<Allotment> {
    * Determine if the UsageType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsageType() {
@@ -298,7 +298,7 @@ public class Allotment extends Common<Allotment> {
    * Get the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -310,7 +310,7 @@ public class Allotment extends Common<Allotment> {
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -320,7 +320,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the DateResponseRequired is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDateResponseRequired() {
@@ -329,7 +329,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -339,7 +339,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -349,7 +349,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -359,7 +359,7 @@ public class Allotment extends Common<Allotment> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -370,7 +370,7 @@ public class Allotment extends Common<Allotment> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -380,7 +380,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -394,7 +394,7 @@ public class Allotment extends Common<Allotment> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -409,7 +409,7 @@ public class Allotment extends Common<Allotment> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -419,7 +419,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -428,7 +428,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Get any amplifying information on the requirement..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -438,7 +438,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set any amplifying information on the requirement..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -448,7 +448,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the Requirement is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRequirement() {
@@ -460,7 +460,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset..
-   * <p>
+   *
    * @return a {@link Project} instance
    * @since 3.1.0
    */
@@ -473,7 +473,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the Project is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetProject() {
@@ -492,7 +492,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -505,7 +505,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -523,7 +523,7 @@ public class Allotment extends Common<Allotment> {
    * Get the LocationRef
    * <p>
    * Complex element LocationRef references a Location dataset..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -539,7 +539,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the LocationRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRef() {
@@ -558,7 +558,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element Emission defines the limits of the authorized bandwidth and
    * power within the allotment..
-   * <p>
+   *
    * @return a {@link Emission} instance
    * @since 3.1.0
    */
@@ -571,7 +571,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the Emission is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEmission() {
@@ -590,7 +590,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element AllotFreq defines a frequency or range of frequencies
    * belonging to the Allotment..
-   * <p>
+   *
    * @return a {@link AllotFreq} instance
    * @since 3.1.0
    */
@@ -603,7 +603,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the AllotFreq is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAllotFreq() {
@@ -619,7 +619,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set an identifying name for this Allotment or Assignment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -633,7 +633,7 @@ public class Allotment extends Common<Allotment> {
    * Set the type of assignment request or approved assignment/allotment. In
    * Data Item case of a rejected or cancelled assignment/allotment, use an
    * associated Remarks to indicate the reason.
-   * <p>
+   *
    * @param value An instances of type {@link ListCUT}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -647,7 +647,7 @@ public class Allotment extends Common<Allotment> {
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -661,7 +661,7 @@ public class Allotment extends Common<Allotment> {
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -673,7 +673,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -685,7 +685,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -698,7 +698,7 @@ public class Allotment extends Common<Allotment> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -711,7 +711,7 @@ public class Allotment extends Common<Allotment> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -728,7 +728,7 @@ public class Allotment extends Common<Allotment> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -745,7 +745,7 @@ public class Allotment extends Common<Allotment> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -757,7 +757,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Set any amplifying information on the requirement.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -772,7 +772,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link Project...}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -789,7 +789,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values A collection of {@link Project} instances
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -806,7 +806,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -823,7 +823,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -839,7 +839,7 @@ public class Allotment extends Common<Allotment> {
    * Set the LocationRef
    * <p>
    * Complex element LocationRef references a Location dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link LocationRef...}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -858,7 +858,7 @@ public class Allotment extends Common<Allotment> {
    * Set the LocationRef
    * <p>
    * Complex element LocationRef references a Location dataset.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -878,7 +878,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element Emission defines the limits of the authorized bandwidth and
    * power within the allotment.
-   * <p>
+   *
    * @param values One or more instances of type {@link Emission...}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -895,7 +895,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element Emission defines the limits of the authorized bandwidth and
    * power within the allotment.
-   * <p>
+   *
    * @param values A collection of {@link Emission} instances
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -912,7 +912,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element AllotFreq defines a frequency or range of frequencies
    * belonging to the Allotment.
-   * <p>
+   *
    * @param values One or more instances of type {@link AllotFreq...}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -929,7 +929,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element AllotFreq defines a frequency or range of frequencies
    * belonging to the Allotment.
-   * <p>
+   *
    * @param values A collection of {@link AllotFreq} instances
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -943,7 +943,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Get a string representation of this Allotment instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -973,7 +973,7 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -986,7 +986,7 @@ public class Allotment extends Common<Allotment> {
    * LocationRef (Required)
    * <p>
    * LocationRef references a Location dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -996,7 +996,7 @@ public class Allotment extends Common<Allotment> {
    * Get the LocationRef
    * <p>
    * Complex element LocationRef references a Location dataset..
-   * <p>
+   *
    * @return a {@link Location} instance
    * @since 3.1.0
    */
@@ -1009,7 +1009,7 @@ public class Allotment extends Common<Allotment> {
 
   /**
    * Determine if the location field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocation() {
@@ -1020,7 +1020,7 @@ public class Allotment extends Common<Allotment> {
    * Set the LocationRef
    * <p>
    * Complex element LocationRef references a Location dataset.
-   * <p>
+   *
    * @param values An instances of type {@link Location}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -1033,7 +1033,7 @@ public class Allotment extends Common<Allotment> {
    * Set the LocationRef
    * <p>
    * Complex element LocationRef references a Location dataset.
-   * <p>
+   *
    * @param values An instances of type {@link Location}.
    * @return The current Allotment object instance.
    * @since 3.1.0
@@ -1050,7 +1050,7 @@ public class Allotment extends Common<Allotment> {
    * the transient {@link #location} field. This method should typically be
    * called after the Allotment is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1071,7 +1071,7 @@ public class Allotment extends Common<Allotment> {
    * This method builds the transient {@link #location} with values from the
    * imported {@link #locationRef} field. This method should typically be called
    * after the Allotment is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

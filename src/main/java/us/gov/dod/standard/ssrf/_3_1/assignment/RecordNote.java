@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,10 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.Note;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * RecordNote (US) contains a reference to a formal host nation "note" and
@@ -37,7 +39,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class RecordNote {
 
   /**
-   * US:NoteRef - Note Reference (Required)    * <p>
+   * US:NoteRef - Note Reference (Required)
+   * <p>
    * A reference to the Note dataset that describes the note identified in
    * NoteCode.
    * <p>
@@ -48,7 +51,8 @@ public class RecordNote {
   @XmlElement(name = "NoteRef", required = true)
   private Serial noteRef;
   /**
-   * US:Comments - Comments (Optional)    * <p>
+   * US:Comments - Comments (Optional)
+   * <p>
    * The Amplifying conditional comments for the note as agreed to by the
    * Interdepartment Radio Advisory Committee (IRAC) Frequency Assignment
    * Subcommittee (FAS).
@@ -189,7 +193,8 @@ public class RecordNote {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:NoteRef - Note Reference (Required)    * <p>
+   * US:NoteRef - Note Reference (Required)
+   * <p>
    * A reference to the Note dataset that describes the note identified in
    * NoteCode.
    * <p>

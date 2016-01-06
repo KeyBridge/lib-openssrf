@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Antenna;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S10;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAF;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCN;
@@ -37,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCN;
  *   &lt;LeadType  cls="U"&gt;Waveguide Semirigid&lt;/LeadType &gt;
  * &lt;/Ant Hardware&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -51,47 +55,45 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCN;
 public class AntHardware {
 
   /**
-   * FeedType - Antenna Feed Type (Optional)    * <p>
-   * The element used to "illuminate" the reflector for an antenna unit.
+   * FeedType - Antenna Feed Type (Optional) * The element used to "illuminate"
+   * the reflector for an antenna unit.
    * <p>
    * Format is L:CAF
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FeedType", required = false)
   private TString feedType;
   /**
-   * LeadType - Antenna Lead Type (Optional)    * <p>
-   * The type of device used for conducting or guiding the radio-frequency
-   * energy from the transmitter or receiver to the antenna (e.g., continuous
-   * waveguide).
+   * LeadType - Antenna Lead Type (Optional) * The type of device used for
+   * conducting or guiding the radio-frequency energy from the transmitter or
+   * receiver to the antenna (e.g., continuous waveguide).
    * <p>
    * Format is L:CAL
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LeadType", required = false)
   private TString leadType;
   /**
-   * ConnectorType - Antenna Connector Type (Optional)    * <p>
-   * The type of connector used to attach the antenna to the equipment or the
-   * antenna to the transmission media that attaches the equipment to the
-   * antenna.
+   * ConnectorType - Antenna Connector Type (Optional) * The type of connector
+   * used to attach the antenna to the equipment or the antenna to the
+   * transmission media that attaches the equipment to the antenna.
    * <p>
    * Format is L:CCN
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ConnectorType", required = false)
   private TString connectorType;
   /**
-   * FeedOrientation - Antenna Feed Orientation (Optional)    * <p>
-   * The orientation of the feed when looking in the direction of the boresight.
-   * Examples of orientations are right, left, center, up, down, up-left,
-   * up-right, down-left, down-right.
+   * FeedOrientation - Antenna Feed Orientation (Optional) * The orientation of
+   * the feed when looking in the direction of the boresight. Examples of
+   * orientations are right, left, center, up, down, up-left, up-right,
+   * down-left, down-right.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FeedOrientation", required = false)
@@ -99,7 +101,7 @@ public class AntHardware {
 
   /**
    * Get the element used to "illuminate" the reflector for an antenna unit..
-   * <p>
+   *
    * @return the FeedType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -109,7 +111,7 @@ public class AntHardware {
 
   /**
    * Set the element used to "illuminate" the reflector for an antenna unit..
-   * <p>
+   *
    * @param value the FeedType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -121,7 +123,7 @@ public class AntHardware {
    * Determine if the FeedType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFeedType() {
@@ -132,7 +134,7 @@ public class AntHardware {
    * Get the type of device used for conducting or guiding the radio-frequency
    * energy from the transmitter or receiver to the antenna (e.g., continuous
    * waveguide)..
-   * <p>
+   *
    * @return the LeadType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -144,7 +146,7 @@ public class AntHardware {
    * Set the type of device used for conducting or guiding the radio-frequency
    * energy from the transmitter or receiver to the antenna (e.g., continuous
    * waveguide)..
-   * <p>
+   *
    * @param value the LeadType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -156,7 +158,7 @@ public class AntHardware {
    * Determine if the LeadType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLeadType() {
@@ -167,7 +169,7 @@ public class AntHardware {
    * Get the type of connector used to attach the antenna to the equipment or
    * the antenna to the transmission media that attaches the equipment to the
    * antenna..
-   * <p>
+   *
    * @return the ConnectorType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -179,7 +181,7 @@ public class AntHardware {
    * Set the type of connector used to attach the antenna to the equipment or
    * the antenna to the transmission media that attaches the equipment to the
    * antenna..
-   * <p>
+   *
    * @param value the ConnectorType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -191,7 +193,7 @@ public class AntHardware {
    * Determine if the ConnectorType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetConnectorType() {
@@ -202,7 +204,7 @@ public class AntHardware {
    * Get the orientation of the feed when looking in the direction of the
    * boresight. Examples of orientations are right, left, center, up, down,
    * up-left, up-right, down-left, down-right..
-   * <p>
+   *
    * @return a {@link S10} instance
    * @since 3.1.0
    */
@@ -214,7 +216,7 @@ public class AntHardware {
    * Set the orientation of the feed when looking in the direction of the
    * boresight. Examples of orientations are right, left, center, up, down,
    * up-left, up-right, down-left, down-right..
-   * <p>
+   *
    * @param value a {@link S10} instance
    * @since 3.1.0
    */
@@ -224,7 +226,7 @@ public class AntHardware {
 
   /**
    * Determine if the FeedOrientation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFeedOrientation() {
@@ -233,7 +235,7 @@ public class AntHardware {
 
   /**
    * Set the element used to "illuminate" the reflector for an antenna unit.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAF}.
    * @return The current AntHardware object instance.
    * @since 3.1.0
@@ -247,7 +249,7 @@ public class AntHardware {
    * Set the type of device used for conducting or guiding the radio-frequency
    * energy from the transmitter or receiver to the antenna (e.g., continuous
    * waveguide).
-   * <p>
+   *
    * @param value An instances of type {@link ListCAL}.
    * @return The current AntHardware object instance.
    * @since 3.1.0
@@ -261,7 +263,7 @@ public class AntHardware {
    * Set the type of connector used to attach the antenna to the equipment or
    * the antenna to the transmission media that attaches the equipment to the
    * antenna.
-   * <p>
+   *
    * @param value An instances of type {@link ListCCN}.
    * @return The current AntHardware object instance.
    * @since 3.1.0
@@ -275,7 +277,7 @@ public class AntHardware {
    * Set the orientation of the feed when looking in the direction of the
    * boresight. Examples of orientations are right, left, center, up, down,
    * up-left, up-right, down-left, down-right.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current AntHardware object instance.
    * @since 3.1.0
@@ -287,7 +289,7 @@ public class AntHardware {
 
   /**
    * Get a string representation of this AntHardware instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -304,7 +306,7 @@ public class AntHardware {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link AntHardware} has no configuration requirements.
-   * <p>
+   *
    * @return TRUE
    */
   public boolean isSet() {

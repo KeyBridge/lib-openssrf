@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.SSReply;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
 
 /**
  * CommentSource is used to provide comments to a SSRequest. It can also be used
@@ -56,7 +57,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class CommentSource {
 
   /**
-   * Source - Comment Source (Optional)    * <p>
+   * Source - Comment Source (Optional)
+   * <p>
    * The name of the organisation or authority that is the source of the
    * comment. For example, MCEB, SPS or NTIA.
    * <p>
@@ -67,7 +69,8 @@ public class CommentSource {
   @XmlElement(name = "Source", required = false)
   private S100 source;
   /**
-   * Author - Comment Author (Optional)    * <p>
+   * Author - Comment Author (Optional)
+   * <p>
    * The title (e.g., Ms., Dr.) and name of the individual that is the source of
    * the comment.
    * <p>
@@ -78,7 +81,8 @@ public class CommentSource {
   @XmlElement(name = "Author", required = false)
   private S100 author;
   /**
-   * JobTitle - Author Job Title (Optional)    * <p>
+   * JobTitle - Author Job Title (Optional)
+   * <p>
    * The title or position of the comment author.
    * <p>
    * Format is S100
@@ -88,7 +92,8 @@ public class CommentSource {
   @XmlElement(name = "JobTitle", required = false)
   private S100 jobTitle;
   /**
-   * Date - Comment Date (Optional)    * <p>
+   * Date - Comment Date (Optional)
+   * <p>
    * The date the comment was provided.
    * <p>
    * Format is Date

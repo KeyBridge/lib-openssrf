@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,7 +52,7 @@ import us.gov.dod.standard.ssrf._3_1.ssrequest.*;
  *   &lt;/Configuration&gt;
  * &lt;/SSRequest&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -105,7 +105,7 @@ public class SSRequest extends Common<SSRequest> {
    * title should be unique.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Title", required = true)
@@ -116,7 +116,7 @@ public class SSRequest extends Common<SSRequest> {
    * The current stage of the system.
    * <p>
    * Format is L:CSG
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CurrentStage", required = false)
@@ -133,7 +133,7 @@ public class SSRequest extends Common<SSRequest> {
    * be listed in the ExtReferenceRef element.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Requirement", required = false)
@@ -144,7 +144,7 @@ public class SSRequest extends Common<SSRequest> {
    * "Yes" if the system may be used in a case of emergency.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Emergency", required = false)
@@ -158,7 +158,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is UN(9)
    * <p>
    * Attribute group NumUnits (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NumMobileUnits", required = false)
@@ -181,7 +181,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is UN(9)
    * <p>
    * Attribute group NumUnits (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NumAreaUnits", required = false)
@@ -196,7 +196,7 @@ public class SSRequest extends Common<SSRequest> {
    * Format is UN(9)
    * <p>
    * Attribute group NumUnits (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NumCositedUnits", required = false)
@@ -208,7 +208,7 @@ public class SSRequest extends Common<SSRequest> {
    * spectrum management office.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ApplicationDate", required = false)
@@ -221,7 +221,7 @@ public class SSRequest extends Common<SSRequest> {
    * coordination.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DateResponseRequired", required = false)
@@ -232,7 +232,7 @@ public class SSRequest extends Common<SSRequest> {
    * The name of the systems that are likely to be replaced by this system.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReplacementInfo", required = false)
@@ -245,7 +245,7 @@ public class SSRequest extends Common<SSRequest> {
    * Support SPS number.
    * <p>
    * Format is S11
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ApplicationSPSNumber", required = false)
@@ -261,7 +261,7 @@ public class SSRequest extends Common<SSRequest> {
    * number.
    * <p>
    * Format is S15
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CoordinationNum", required = false)
@@ -273,7 +273,7 @@ public class SSRequest extends Common<SSRequest> {
    * of the system.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "InfoTransferRequirement", required = false)
@@ -284,7 +284,7 @@ public class SSRequest extends Common<SSRequest> {
    * The estimated initial cost, in US dollars, of the system/equipment.
    * <p>
    * Format is S70
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "InitialCost", required = false)
@@ -296,7 +296,7 @@ public class SSRequest extends Common<SSRequest> {
    * calculated.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "InitialCostDesc", required = false)
@@ -308,7 +308,7 @@ public class SSRequest extends Common<SSRequest> {
    * to the Radiocommunication Bureau.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ITUWaiver", required = false)
@@ -322,7 +322,7 @@ public class SSRequest extends Common<SSRequest> {
    * approval.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NTIACoordinationRequired", required = false)
@@ -334,7 +334,7 @@ public class SSRequest extends Common<SSRequest> {
    * NTIA Manual and not captured in other more specific data fields.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NTIASpaceData", required = false)
@@ -345,7 +345,7 @@ public class SSRequest extends Common<SSRequest> {
    * If the system is intended for the DoD operational inventory.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OperInvIntent", required = false)
@@ -356,7 +356,7 @@ public class SSRequest extends Common<SSRequest> {
    * The agency that originated the application.
    * <p>
    * Format is S80
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OriginatingAgency", required = false)
@@ -368,7 +368,7 @@ public class SSRequest extends Common<SSRequest> {
    * Certification, NTIA Certification, and Foreign Coordination.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RequestType", required = false)
@@ -378,7 +378,7 @@ public class SSRequest extends Common<SSRequest> {
    * compatibility studies, testing or analyses relevant to this system,
    * including documents currently in progress. Use the ExtReference attribute
    * of this element as appropriate.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RelatedAnalysisAndTestData", required = false)
@@ -395,7 +395,7 @@ public class SSRequest extends Common<SSRequest> {
    * 1934, as amended.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TSPR", required = false)
@@ -406,7 +406,7 @@ public class SSRequest extends Common<SSRequest> {
    * If the system is used in a wartime environment.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "WartimeUse", required = false)
@@ -416,7 +416,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Project provides the Project, OPLAN, COMPLAN or Exercise name, or any other
    * project name associated to the dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Project")
@@ -427,7 +427,7 @@ public class SSRequest extends Common<SSRequest> {
    * The current stage of the system.
    * <p>
    * Format is L:CSG
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Stage")
@@ -439,7 +439,7 @@ public class SSRequest extends Common<SSRequest> {
    * nomenclature or the commercial model number of an equipment. Each device or
    * group of devices may have several types of nomenclatures, e.g. both a
    * military nomenclature and a commercial model number.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature")
@@ -449,7 +449,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -459,7 +459,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * RelatedSupportability refers to a SSRequest with which the current dataset
    * has a dependency.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RelatedSupportability")
@@ -471,7 +471,7 @@ public class SSRequest extends Common<SSRequest> {
    * requested. If a SSRequest received by NATO has no HostNation entry, it will
    * be assumed that this SSRequest is for all NATO Nations plus AUS and NZL (in
    * accordance with the FMSC agreement).
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HostNation", nillable = true)
@@ -482,7 +482,7 @@ public class SSRequest extends Common<SSRequest> {
    * If the system is used in a wartime environment.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Time")
@@ -491,7 +491,7 @@ public class SSRequest extends Common<SSRequest> {
    * DiagramEndpoint (Optional)
    * <p>
    * DiagramEndpoint defines an instance of an icon on the diagram.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DiagramEndpoint")
@@ -500,7 +500,7 @@ public class SSRequest extends Common<SSRequest> {
    * DiagramLine (Optional)
    * <p>
    * DiagramLine defines a line between two endpoints on the diagram.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DiagramLine")
@@ -515,7 +515,7 @@ public class SSRequest extends Common<SSRequest> {
    * station.
    * <p>
    * Divergence from SMADEF: Mandatory [1..n] when exchanging with NATO /
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Configuration")
@@ -525,7 +525,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * StatusLog (US) contains the transactional processing information related to
    * spectrum supportability requests.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StatusLog")
@@ -535,7 +535,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Trunking (US) defines Radiotelephony using standard land mobile principles
    * where multiple baseband signals are bounded within one physical channel.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Trunking")
@@ -551,7 +551,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the title of the Spectrum Supportability application. Each application
    * title should be unique..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -562,7 +562,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the title of the Spectrum Supportability application. Each application
    * title should be unique..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -572,7 +572,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Title is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTitle() {
@@ -581,7 +581,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get the current stage of the system..
-   * <p>
+   *
    * @return the CurrentStage value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -591,7 +591,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the current stage of the system..
-   * <p>
+   *
    * @param value the CurrentStage value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -603,7 +603,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the CurrentStage is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCurrentStage() {
@@ -618,7 +618,7 @@ public class SSRequest extends Common<SSRequest> {
    * system (e.g., in the PATRIOT system: search, acquisition and tracking
    * radar, TT&C, C2 links, etc); - Any related supportability documents should
    * be listed in the ExtReferenceRef element..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -634,7 +634,7 @@ public class SSRequest extends Common<SSRequest> {
    * system (e.g., in the PATRIOT system: search, acquisition and tracking
    * radar, TT&C, C2 links, etc); - Any related supportability documents should
    * be listed in the ExtReferenceRef element..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -644,7 +644,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Requirement is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRequirement() {
@@ -653,7 +653,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get "Yes" if the system may be used in a case of emergency..
-   * <p>
+   *
    * @return the Emergency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -663,7 +663,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set "Yes" if the system may be used in a case of emergency..
-   * <p>
+   *
    * @param value the Emergency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -675,7 +675,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the Emergency is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEmergency() {
@@ -685,7 +685,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the number of mobile units. These units do not necessarily operate
    * simultaneously in the same electromagnetic environment..
-   * <p>
+   *
    * @return a {@link UN9} instance
    * @since 3.1.0
    */
@@ -696,7 +696,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the number of mobile units. These units do not necessarily operate
    * simultaneously in the same electromagnetic environment..
-   * <p>
+   *
    * @param value a {@link UN9} instance
    * @since 3.1.0
    */
@@ -706,7 +706,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the NumMobileUnits is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNumMobileUnits() {
@@ -725,7 +725,7 @@ public class SSRequest extends Common<SSRequest> {
    * If the exact number is to be recorded, and it is 10, 30, 100, 300, 1000,
    * 3000, or a multiple of 10000, add one to the number to distinguish it from
    * a figure that represents a range of numbers..
-   * <p>
+   *
    * @return a {@link UN9} instance
    * @since 3.1.0
    */
@@ -745,7 +745,7 @@ public class SSRequest extends Common<SSRequest> {
    * If the exact number is to be recorded, and it is 10, 30, 100, 300, 1000,
    * 3000, or a multiple of 10000, add one to the number to distinguish it from
    * a figure that represents a range of numbers..
-   * <p>
+   *
    * @param value a {@link UN9} instance
    * @since 3.1.0
    */
@@ -755,7 +755,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the NumAreaUnits is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNumAreaUnits() {
@@ -766,7 +766,7 @@ public class SSRequest extends Common<SSRequest> {
    * Get the maximum number of units (equipment) that will be operating
    * simultaneously in the same cosite environment. A cosite situation occurs
    * when several antennas are within the near field of each other..
-   * <p>
+   *
    * @return a {@link UN9} instance
    * @since 3.1.0
    */
@@ -778,7 +778,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the maximum number of units (equipment) that will be operating
    * simultaneously in the same cosite environment. A cosite situation occurs
    * when several antennas are within the near field of each other..
-   * <p>
+   *
    * @param value a {@link UN9} instance
    * @since 3.1.0
    */
@@ -788,7 +788,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the NumCositedUnits is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNumCositedUnits() {
@@ -798,7 +798,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the date on which the application will be submitted to the appropriate
    * spectrum management office..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -809,7 +809,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the date on which the application will be submitted to the appropriate
    * spectrum management office..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -819,7 +819,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the ApplicationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApplicationDate() {
@@ -830,7 +830,7 @@ public class SSRequest extends Common<SSRequest> {
    * Get the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -842,7 +842,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -852,7 +852,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the DateResponseRequired is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDateResponseRequired() {
@@ -861,7 +861,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get the name of the systems that are likely to be replaced by this system..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -871,7 +871,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the name of the systems that are likely to be replaced by this system..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -881,7 +881,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the ReplacementInfo is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReplacementInfo() {
@@ -892,7 +892,7 @@ public class SSRequest extends Common<SSRequest> {
    * Get the application Spectrum Planning Subcommittee (SPS) document
    * identifier assigned by NTIA. This is not the same as the Certification of
    * Spectrum Support SPS number..
-   * <p>
+   *
    * @return a {@link S11} instance
    * @since 3.1.0
    */
@@ -904,7 +904,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the application Spectrum Planning Subcommittee (SPS) document
    * identifier assigned by NTIA. This is not the same as the Certification of
    * Spectrum Support SPS number..
-   * <p>
+   *
    * @param value a {@link S11} instance
    * @since 3.1.0
    */
@@ -914,7 +914,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the ApplicationSPSNumber is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApplicationSPSNumber() {
@@ -928,7 +928,7 @@ public class SSRequest extends Common<SSRequest> {
    * an SSReply coordination number usually ends with an odd digit (e.g., /3,
    * /5). When certifying equipment, both SSRequest and SSReply SHOULD have a
    * coordination number..
-   * <p>
+   *
    * @return a {@link S15} instance
    * @since 3.1.0
    */
@@ -943,7 +943,7 @@ public class SSRequest extends Common<SSRequest> {
    * an SSReply coordination number usually ends with an odd digit (e.g., /3,
    * /5). When certifying equipment, both SSRequest and SSReply SHOULD have a
    * coordination number..
-   * <p>
+   *
    * @param value a {@link S15} instance
    * @since 3.1.0
    */
@@ -953,7 +953,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the CoordinationNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCoordinationNum() {
@@ -963,7 +963,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the required character rates, data rates, and circuit
    * quality/reliability of the system..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -974,7 +974,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the required character rates, data rates, and circuit
    * quality/reliability of the system..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -984,7 +984,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the InfoTransferRequirement is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetInfoTransferRequirement() {
@@ -993,7 +993,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get the estimated initial cost, in US dollars, of the system/equipment..
-   * <p>
+   *
    * @return a {@link S70} instance
    * @since 3.1.0
    */
@@ -1003,7 +1003,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the estimated initial cost, in US dollars, of the system/equipment..
-   * <p>
+   *
    * @param value a {@link S70} instance
    * @since 3.1.0
    */
@@ -1013,7 +1013,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the InitialCost is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetInitialCost() {
@@ -1023,7 +1023,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the explanation of how the estimated initial cost for the system was
    * calculated..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1034,7 +1034,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the explanation of how the estimated initial cost for the system was
    * calculated..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1044,7 +1044,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the InitialCostDesc is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetInitialCostDesc() {
@@ -1054,7 +1054,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get if this is a satellite system that is exempt from submitting
    * notification to the Radiocommunication Bureau..
-   * <p>
+   *
    * @return the ITUWaiver value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1065,7 +1065,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set if this is a satellite system that is exempt from submitting
    * notification to the Radiocommunication Bureau..
-   * <p>
+   *
    * @param value the ITUWaiver value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1077,7 +1077,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the ITUWaiver is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetITUWaiver() {
@@ -1089,7 +1089,7 @@ public class SSRequest extends Common<SSRequest> {
    * for approval. For US records, the National Authority is NTIA and this
    * should be Yes, unless the record does not require coordination with NTIA
    * for approval..
-   * <p>
+   *
    * @return the NTIACoordinationRequired value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1102,7 +1102,7 @@ public class SSRequest extends Common<SSRequest> {
    * for approval. For US records, the National Authority is NTIA and this
    * should be Yes, unless the record does not require coordination with NTIA
    * for approval..
-   * <p>
+   *
    * @param value the NTIACoordinationRequired value in a {@link TString} data
    *              type
    * @since 3.1.0
@@ -1115,7 +1115,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the NTIACoordinationRequired is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNTIACoordinationRequired() {
@@ -1125,7 +1125,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the Space and terrestrial information as defined by section 10.8 of the
    * NTIA Manual and not captured in other more specific data fields..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1136,7 +1136,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the Space and terrestrial information as defined by section 10.8 of the
    * NTIA Manual and not captured in other more specific data fields..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1146,7 +1146,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the NTIASpaceData is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNTIASpaceData() {
@@ -1155,7 +1155,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get if the system is intended for the DoD operational inventory..
-   * <p>
+   *
    * @return the OperInvIntent value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1165,7 +1165,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set if the system is intended for the DoD operational inventory..
-   * <p>
+   *
    * @param value the OperInvIntent value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1177,7 +1177,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the OperInvIntent is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOperInvIntent() {
@@ -1186,7 +1186,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get the agency that originated the application..
-   * <p>
+   *
    * @return a {@link S80} instance
    * @since 3.1.0
    */
@@ -1196,7 +1196,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the agency that originated the application..
-   * <p>
+   *
    * @param value a {@link S80} instance
    * @since 3.1.0
    */
@@ -1206,7 +1206,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the OriginatingAgency is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOriginatingAgency() {
@@ -1216,7 +1216,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Get the request type. Possible values may include, but are not limited to,
    * DoD Certification, NTIA Certification, and Foreign Coordination..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -1227,7 +1227,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the request type. Possible values may include, but are not limited to,
    * DoD Certification, NTIA Certification, and Foreign Coordination..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -1237,7 +1237,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the RequestType is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRequestType() {
@@ -1249,7 +1249,7 @@ public class SSRequest extends Common<SSRequest> {
    * compatibility studies, testing or analyses relevant to this system,
    * including documents currently in progress. Use the ExtReference attribute
    * of this element as appropriate..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1262,7 +1262,7 @@ public class SSRequest extends Common<SSRequest> {
    * compatibility studies, testing or analyses relevant to this system,
    * including documents currently in progress. Use the ExtReference attribute
    * of this element as appropriate..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1272,7 +1272,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the RelatedAnalysisAndTestData is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRelatedAnalysisAndTestData() {
@@ -1281,7 +1281,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1291,7 +1291,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1301,7 +1301,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the SysRelationEssential is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSysRelationEssential() {
@@ -1313,7 +1313,7 @@ public class SSRequest extends Common<SSRequest> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended..
-   * <p>
+   *
    * @return a {@link S10} instance
    * @since 3.1.0
    */
@@ -1326,7 +1326,7 @@ public class SSRequest extends Common<SSRequest> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended..
-   * <p>
+   *
    * @param value a {@link S10} instance
    * @since 3.1.0
    */
@@ -1336,7 +1336,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the TSPR is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTSPR() {
@@ -1345,7 +1345,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get if the system is used in a wartime environment..
-   * <p>
+   *
    * @return the WartimeUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1355,7 +1355,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set if the system is used in a wartime environment..
-   * <p>
+   *
    * @param value the WartimeUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1367,7 +1367,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the WartimeUse is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetWartimeUse() {
@@ -1379,7 +1379,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset..
-   * <p>
+   *
    * @return a {@link Project} instance
    * @since 3.1.0
    */
@@ -1392,7 +1392,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Project is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetProject() {
@@ -1408,7 +1408,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get the current stage of the system..
-   * <p>
+   *
    * @return a {@link Stage} instance
    * @since 3.1.0
    */
@@ -1421,7 +1421,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Stage is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStage() {
@@ -1442,7 +1442,7 @@ public class SSRequest extends Common<SSRequest> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -1455,7 +1455,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -1474,7 +1474,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -1487,7 +1487,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -1506,7 +1506,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency..
-   * <p>
+   *
    * @return a {@link RelatedSupportability} instance
    * @since 3.1.0
    */
@@ -1519,7 +1519,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the RelatedSupportability is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRelatedSupportability() {
@@ -1540,7 +1540,7 @@ public class SSRequest extends Common<SSRequest> {
    * supportability is requested. If a SSRequest received by NATO has no
    * HostNation entry, it will be assumed that this SSRequest is for all NATO
    * Nations plus AUS and NZL (in accordance with the FMSC agreement)..
-   * <p>
+   *
    * @return a {@link HostNation} instance
    * @since 3.1.0
    */
@@ -1553,7 +1553,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the HostNation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHostNation() {
@@ -1569,7 +1569,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get if the system is used in a wartime environment..
-   * <p>
+   *
    * @return a {@link Time} instance
    * @since 3.1.0
    */
@@ -1582,7 +1582,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Time is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTime() {
@@ -1601,7 +1601,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram..
-   * <p>
+   *
    * @return a {@link DiagramEndpoint} instance
    * @since 3.1.0
    */
@@ -1614,7 +1614,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the DiagramEndpoint is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDiagramEndpoint() {
@@ -1633,7 +1633,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram..
-   * <p>
+   *
    * @return a {@link DiagramLine} instance
    * @since 3.1.0
    */
@@ -1646,7 +1646,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the DiagramLine is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDiagramLine() {
@@ -1668,7 +1668,7 @@ public class SSRequest extends Common<SSRequest> {
    * authorised in a frequency Assignment or Allotment dataset. It also
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station..
-   * <p>
+   *
    * @return a {@link Configuration} instance
    * @since 3.1.0
    */
@@ -1681,7 +1681,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the Configuration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetConfiguration() {
@@ -1700,7 +1700,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests..
-   * <p>
+   *
    * @return a {@link StatusLog} instance
    * @since 3.1.0
    */
@@ -1713,7 +1713,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Determine if the StatusLog is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStatusLog() {
@@ -1733,7 +1733,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element Trunking (US) defines Radiotelephony using standard land
    * mobile principles where multiple baseband signals are bounded within one
    * physical channel..
-   * <p>
+   *
    * @return the Trunking value in a {@link Trunking} data type
    * @since 3.1.0
    */
@@ -1747,7 +1747,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element Trunking (US) defines Radiotelephony using standard land
    * mobile principles where multiple baseband signals are bounded within one
    * physical channel..
-   * <p>
+   *
    * @param value the Trunking value in a {@link Trunking} data type
    * @since 3.1.0
    */
@@ -1759,7 +1759,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the Trunking is configured.
    * <p>
    * If configured this method also inspects the {@link Trunking} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTrunking() {
@@ -1769,7 +1769,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the title of the Spectrum Supportability application. Each application
    * title should be unique.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1781,7 +1781,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the current stage of the system.
-   * <p>
+   *
    * @param value An instances of type {@link ListCSG}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1799,7 +1799,7 @@ public class SSRequest extends Common<SSRequest> {
    * system (e.g., in the PATRIOT system: search, acquisition and tracking
    * radar, TT&C, C2 links, etc); - Any related supportability documents should
    * be listed in the ExtReferenceRef element.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1811,7 +1811,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set "Yes" if the system may be used in a case of emergency.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1824,7 +1824,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the number of mobile units. These units do not necessarily operate
    * simultaneously in the same electromagnetic environment.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1846,7 +1846,7 @@ public class SSRequest extends Common<SSRequest> {
    * If the exact number is to be recorded, and it is 10, 30, 100, 300, 1000,
    * 3000, or a multiple of 10000, add one to the number to distinguish it from
    * a figure that represents a range of numbers.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1860,7 +1860,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the maximum number of units (equipment) that will be operating
    * simultaneously in the same cosite environment. A cosite situation occurs
    * when several antennas are within the near field of each other.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1873,7 +1873,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the date on which the application will be submitted to the appropriate
    * spectrum management office.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1886,7 +1886,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the date on which the application will be submitted to the appropriate
    * spectrum management office.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1900,7 +1900,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1914,7 +1914,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the date by which the frequency assignment or Spectrum Supportability
    * Reply is required by the user in order to complete necessary advanced
    * operation coordination.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1926,7 +1926,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the name of the systems that are likely to be replaced by this system.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1940,7 +1940,7 @@ public class SSRequest extends Common<SSRequest> {
    * Set the application Spectrum Planning Subcommittee (SPS) document
    * identifier assigned by NTIA. This is not the same as the Certification of
    * Spectrum Support SPS number.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1957,7 +1957,7 @@ public class SSRequest extends Common<SSRequest> {
    * an SSReply coordination number usually ends with an odd digit (e.g., /3,
    * /5). When certifying equipment, both SSRequest and SSReply SHOULD have a
    * coordination number.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1970,7 +1970,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the required character rates, data rates, and circuit
    * quality/reliability of the system.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1982,7 +1982,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the estimated initial cost, in US dollars, of the system/equipment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -1995,7 +1995,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the explanation of how the estimated initial cost for the system was
    * calculated.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2008,7 +2008,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set if this is a satellite system that is exempt from submitting
    * notification to the Radiocommunication Bureau.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2023,7 +2023,7 @@ public class SSRequest extends Common<SSRequest> {
    * for approval. For US records, the National Authority is NTIA and this
    * should be Yes, unless the record does not require coordination with NTIA
    * for approval.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2036,7 +2036,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the Space and terrestrial information as defined by section 10.8 of the
    * NTIA Manual and not captured in other more specific data fields.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2048,7 +2048,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set if the system is intended for the DoD operational inventory.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2060,7 +2060,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the agency that originated the application.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2073,7 +2073,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the request type. Possible values may include, but are not limited to,
    * DoD Certification, NTIA Certification, and Foreign Coordination.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2088,7 +2088,7 @@ public class SSRequest extends Common<SSRequest> {
    * compatibility studies, testing or analyses relevant to this system,
    * including documents currently in progress. Use the ExtReference attribute
    * of this element as appropriate.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2100,7 +2100,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2115,7 +2115,7 @@ public class SSRequest extends Common<SSRequest> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2127,7 +2127,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set if the system is used in a wartime environment.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2142,7 +2142,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link Project...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2159,7 +2159,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values A collection of {@link Project} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2173,7 +2173,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the current stage of the system.
-   * <p>
+   *
    * @param values One or more instances of type {@link Stage...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2187,7 +2187,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set the current stage of the system.
-   * <p>
+   *
    * @param values A collection of {@link Stage} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2206,7 +2206,7 @@ public class SSRequest extends Common<SSRequest> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2225,7 +2225,7 @@ public class SSRequest extends Common<SSRequest> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2242,7 +2242,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2259,7 +2259,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2276,7 +2276,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
-   * <p>
+   *
    * @param values One or more instances of type
    *               {@link RelatedSupportability...}.
    * @return The current SSRequest object instance.
@@ -2294,7 +2294,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
-   * <p>
+   *
    * @param values A collection of {@link RelatedSupportability} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2313,7 +2313,7 @@ public class SSRequest extends Common<SSRequest> {
    * supportability is requested. If a SSRequest received by NATO has no
    * HostNation entry, it will be assumed that this SSRequest is for all NATO
    * Nations plus AUS and NZL (in accordance with the FMSC agreement).
-   * <p>
+   *
    * @param values One or more instances of type {@link HostNation...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2332,7 +2332,7 @@ public class SSRequest extends Common<SSRequest> {
    * supportability is requested. If a SSRequest received by NATO has no
    * HostNation entry, it will be assumed that this SSRequest is for all NATO
    * Nations plus AUS and NZL (in accordance with the FMSC agreement).
-   * <p>
+   *
    * @param values A collection of {@link HostNation} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2346,7 +2346,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set if the system is used in a wartime environment.
-   * <p>
+   *
    * @param values One or more instances of type {@link Time...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2360,7 +2360,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Set if the system is used in a wartime environment.
-   * <p>
+   *
    * @param values A collection of {@link Time} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2377,7 +2377,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
-   * <p>
+   *
    * @param values One or more instances of type {@link DiagramEndpoint...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2394,7 +2394,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
-   * <p>
+   *
    * @param values A collection of {@link DiagramEndpoint} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2411,7 +2411,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram.
-   * <p>
+   *
    * @param values One or more instances of type {@link DiagramLine...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2428,7 +2428,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram.
-   * <p>
+   *
    * @param values A collection of {@link DiagramLine} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2448,7 +2448,7 @@ public class SSRequest extends Common<SSRequest> {
    * authorised in a frequency Assignment or Allotment dataset. It also
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station.
-   * <p>
+   *
    * @param values One or more instances of type {@link Configuration...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2468,7 +2468,7 @@ public class SSRequest extends Common<SSRequest> {
    * authorised in a frequency Assignment or Allotment dataset. It also
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station.
-   * <p>
+   *
    * @param values A collection of {@link Configuration} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2485,7 +2485,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests.
-   * <p>
+   *
    * @param values One or more instances of type {@link StatusLog...}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2502,7 +2502,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests.
-   * <p>
+   *
    * @param values A collection of {@link StatusLog} instances
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2520,7 +2520,7 @@ public class SSRequest extends Common<SSRequest> {
    * Complex element Trunking (US) defines Radiotelephony using standard land
    * mobile principles where multiple baseband signals are bounded within one
    * physical channel.
-   * <p>
+   *
    * @param value An instances of type {@link Trunking}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
@@ -2531,7 +2531,7 @@ public class SSRequest extends Common<SSRequest> {
 
   /**
    * Get a string representation of this SSRequest instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -2586,7 +2586,7 @@ public class SSRequest extends Common<SSRequest> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

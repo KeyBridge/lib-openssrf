@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Percent;
 
 /**
  * AntEfficiency describes the antenna efficiency at various frequencies within
@@ -35,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  *   &lt;Efficiency cls="U"&gt;60.4&lt;/Efficiency&gt;
  * &lt;/AntEfficiency&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -48,38 +49,37 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class AntEfficiency {
 
   /**
-   * FreqMin - Nominal or Minimum Frequency (Required)    * <p>
-   * The nominal frequency or minimum value of the frequency range.
+   * FreqMin - Nominal or Minimum Frequency (Required) * The nominal frequency
+   * or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group FreqRangeGrp (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMin")
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Optional)    * <p>
-   * The maximum value of the frequencies in the range.
+   * FreqMax - Maximum Frequency (Optional) * The maximum value of the
+   * frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group FreqRangeGrp (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * Efficiency - Efficiency (Required)    * <p>
-   * The efficiency of the antenna within the frequency range which is being
-   * reported.
+   * Efficiency - Efficiency (Required) * The efficiency of the antenna within
+   * the frequency range which is being reported.
    * <p>
    * Format is UN(4,2) [0..100] (%)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Efficiency", required = true)
@@ -87,7 +87,7 @@ public class AntEfficiency {
 
   /**
    * Get the nominal frequency or minimum value of the frequency range..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -97,7 +97,7 @@ public class AntEfficiency {
 
   /**
    * Set the nominal frequency or minimum value of the frequency range..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -107,7 +107,7 @@ public class AntEfficiency {
 
   /**
    * Determine if the FreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMin() {
@@ -118,7 +118,7 @@ public class AntEfficiency {
    * Get the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -130,7 +130,7 @@ public class AntEfficiency {
    * Set the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -140,7 +140,7 @@ public class AntEfficiency {
 
   /**
    * Determine if the FreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMax() {
@@ -150,7 +150,7 @@ public class AntEfficiency {
   /**
    * Get the efficiency of the antenna within the frequency range which is being
    * reported..
-   * <p>
+   *
    * @return a {@link Percent} instance
    * @since 3.1.0
    */
@@ -161,7 +161,7 @@ public class AntEfficiency {
   /**
    * Set the efficiency of the antenna within the frequency range which is being
    * reported..
-   * <p>
+   *
    * @param value a {@link Percent} instance
    * @since 3.1.0
    */
@@ -171,7 +171,7 @@ public class AntEfficiency {
 
   /**
    * Determine if the Efficiency is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEfficiency() {
@@ -180,7 +180,7 @@ public class AntEfficiency {
 
   /**
    * Set the nominal frequency or minimum value of the frequency range.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntEfficiency object instance.
    * @since 3.1.0
@@ -194,7 +194,7 @@ public class AntEfficiency {
    * Set the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntEfficiency object instance.
    * @since 3.1.0
@@ -207,7 +207,7 @@ public class AntEfficiency {
   /**
    * Set the efficiency of the antenna within the frequency range which is being
    * reported.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntEfficiency object instance.
    * @since 3.1.0
@@ -219,7 +219,7 @@ public class AntEfficiency {
 
   /**
    * Get a string representation of this AntEfficiency instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -238,7 +238,7 @@ public class AntEfficiency {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

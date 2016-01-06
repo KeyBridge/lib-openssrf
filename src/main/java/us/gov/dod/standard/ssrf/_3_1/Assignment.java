@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,7 +64,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *   &lt;/Link&gt;
  * &lt;/Assignment&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -138,7 +138,7 @@ public class Assignment extends Common<Assignment> {
    * An identifying name for this Allotment or Assignment.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Title", required = false)
@@ -151,7 +151,7 @@ public class Assignment extends Common<Assignment> {
    * reason in a Remark.
    * <p>
    * Format is L:CUT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsageType", required = false)
@@ -162,7 +162,7 @@ public class Assignment extends Common<Assignment> {
    * The date by which the Assignment or SSReply is required by the requestor.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DateResponseRequired", required = false)
@@ -173,7 +173,7 @@ public class Assignment extends Common<Assignment> {
    * The date and UTC time when the Assignment will be operational.
    * <p>
    * Format is DateTime
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDateTime", required = true)
@@ -187,7 +187,7 @@ public class Assignment extends Common<Assignment> {
    * Format is DateTime
    * <p>
    * Attribute group ExpireReviewDT (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
@@ -203,7 +203,7 @@ public class Assignment extends Common<Assignment> {
    * Format is Date
    * <p>
    * Attribute group ExpireReviewDT (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -215,7 +215,7 @@ public class Assignment extends Common<Assignment> {
    * frequencies will be either guarded (monitored) or used for transmission.
    * <p>
    * Format is L:CTI
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Period", required = false)
@@ -229,7 +229,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Seconds", required = false)
@@ -243,7 +243,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Minutes", required = false)
@@ -257,7 +257,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Hours", required = false)
@@ -271,7 +271,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DaysOfMonth", required = false)
@@ -285,7 +285,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Months", required = false)
@@ -299,7 +299,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DaysOfWeek", required = false)
@@ -313,7 +313,7 @@ public class Assignment extends Common<Assignment> {
    * Format is pattern (S40)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Years", required = false)
@@ -344,7 +344,7 @@ public class Assignment extends Common<Assignment> {
    * Format is UN(4) (min)
    * <p>
    * Attribute group TimeFrame (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Duration", required = false)
@@ -356,7 +356,7 @@ public class Assignment extends Common<Assignment> {
    * international level.
    * <p>
    * Format is L:CPI
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Processing", required = false)
@@ -367,7 +367,7 @@ public class Assignment extends Common<Assignment> {
    * "Yes" if the system may be used in a case of emergency.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Emergency", required = false)
@@ -378,7 +378,7 @@ public class Assignment extends Common<Assignment> {
    * The user acceptance of host-nation or NATO HQ frequency nominations.
    * <p>
    * Format is L:CHN
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AssignmentAuthority", required = false)
@@ -394,7 +394,7 @@ public class Assignment extends Common<Assignment> {
    * therefore, will be excluded from the Government Master File (GMF).
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Requirement", required = false)
@@ -405,7 +405,7 @@ public class Assignment extends Common<Assignment> {
    * The total number of systems that are expected to use this Assignment.
    * <p>
    * Format is UN(9)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NumSystems", required = false)
@@ -416,7 +416,7 @@ public class Assignment extends Common<Assignment> {
    * The "An" identifier used to track transactions.
    * <p>
    * Format is S12
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AgencyActionNum", required = false)
@@ -429,7 +429,7 @@ public class Assignment extends Common<Assignment> {
    * included in the Government Master File (GMF).
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AgencyComments", required = false)
@@ -440,7 +440,7 @@ public class Assignment extends Common<Assignment> {
    * The externally-assigned unique identifier of a frequency assignment.
    * <p>
    * Format is S12
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AgencySerialNum", required = false)
@@ -451,7 +451,7 @@ public class Assignment extends Common<Assignment> {
    * The date the assignment was most recently authorized.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AssignmentDate", required = false)
@@ -465,7 +465,7 @@ public class Assignment extends Common<Assignment> {
    * frequencies.
    * <p>
    * Format is S8
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "COCOMGroup", required = false)
@@ -477,7 +477,7 @@ public class Assignment extends Common<Assignment> {
    * track specific frequency applications.
    * <p>
    * Format is S15
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ControlRequestNum", required = false)
@@ -489,7 +489,7 @@ public class Assignment extends Common<Assignment> {
    * assignment.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CoordinationComments", required = false)
@@ -500,7 +500,7 @@ public class Assignment extends Common<Assignment> {
    * The source or organization from which the data record was received.
    * <p>
    * Format is L:UDA
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DataSource", required = false)
@@ -514,7 +514,7 @@ public class Assignment extends Common<Assignment> {
    * to each FCC license.
    * <p>
    * Format is S22
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FCCFileNum", required = false)
@@ -526,7 +526,7 @@ public class Assignment extends Common<Assignment> {
    * Subcommittee (FMSC) Master Radio Frequency List (MRFL).
    * <p>
    * Format is S14
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FMSCNum", required = false)
@@ -538,7 +538,7 @@ public class Assignment extends Common<Assignment> {
    * assignment.
    * <p>
    * Format is S3
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FrequencyActionOfficer", required = false)
@@ -552,7 +552,7 @@ public class Assignment extends Common<Assignment> {
    * assignment or authorised for communications with nongovernment stations.
    * <p>
    * Format is S12
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ListSerialNum", required = false)
@@ -563,7 +563,7 @@ public class Assignment extends Common<Assignment> {
    * The Type Special Assignment for the frequency assignment.
    * <p>
    * Format is L:UPF
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NATOPooledFrequencyCode", required = false)
@@ -575,7 +575,7 @@ public class Assignment extends Common<Assignment> {
    * identifying the type and nationality of a frequency pool.
    * <p>
    * Format is UN(4)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NATOPooledFrequencyNum", required = false)
@@ -586,7 +586,7 @@ public class Assignment extends Common<Assignment> {
    * The date the frequency assignment was originally authorized.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OriginalAssignmentDate", required = false)
@@ -601,7 +601,7 @@ public class Assignment extends Common<Assignment> {
    * output data item only.
    * <p>
    * Format is L:URI
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RoutineAgendaItem", required = false)
@@ -618,7 +618,7 @@ public class Assignment extends Common<Assignment> {
    * for further details.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SupplementaryDetails", required = false)
@@ -629,7 +629,7 @@ public class Assignment extends Common<Assignment> {
    * The type of service or circuit involved.
    * <p>
    * Format is L:UTY
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TypeOfService", required = false)
@@ -640,7 +640,7 @@ public class Assignment extends Common<Assignment> {
    * The usage and category of circuits.
    * <p>
    * Format is L:UUC
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsageCode", required = false)
@@ -652,7 +652,7 @@ public class Assignment extends Common<Assignment> {
    * be either guarded (monitored) or used for transmission.
    * <p>
    * Format is L:UUF
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsageFrequency", required = false)
@@ -664,7 +664,7 @@ public class Assignment extends Common<Assignment> {
    * scheduled hours of operation.
    * <p>
    * Format is UN(3) [0..100] (%)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsagePercentage", required = false)
@@ -676,7 +676,7 @@ public class Assignment extends Common<Assignment> {
    * command, activity, unit, project, etc.
    * <p>
    * Format is S6
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UserNetCode", required = false)
@@ -689,7 +689,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Project provides the Project, OPLAN, COMPLAN or Exercise name, or any other
    * project name associated to the dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Project")
@@ -699,7 +699,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -710,7 +710,7 @@ public class Assignment extends Common<Assignment> {
    * SysOfStation defines the name of the system that this assignment belongs
    * and whether or not the assignment provides assets to or uses another
    * assignment resources. It also describes linkages to or from other datasets.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SysOfStation")
@@ -720,7 +720,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * RelatedRef contains the serial of a referenced Assignment, Allotment,
    * SSReply, ForceElement or FEDeployment.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RelatedRef", nillable = true)
@@ -731,7 +731,7 @@ public class Assignment extends Common<Assignment> {
    * Configuration identifies each operational configuration that is required in
    * a SSRequest, granted by a Host Nation in a SSReply, or authorised in a
    * frequency Assignment or Allotment dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Configuration", required = true)
@@ -741,7 +741,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Station defines the station, or one of the stations, within the current
    * Assignment dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Station", required = true)
@@ -755,7 +755,7 @@ public class Assignment extends Common<Assignment> {
    * very generic (one or several base stations serving an area or a volume with
    * non-defined mobiles) to very accurate (such as one link for each
    * radio-relay hop).
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Link", required = true)
@@ -765,7 +765,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * StatusLog (US) contains the transactional processing information related to
    * frequency assignments.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StatusLog")
@@ -775,7 +775,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * AsgnAllotOwner (US) contains the serial of the owning, or originating,
    * organisation.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AsgnAllotOwner")
@@ -785,7 +785,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * CircuitRemarks (US) contains general information about the network and
    * equipment used to support a specific frequency assignment or assignments.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CircuitRemarks", nillable = true)
@@ -794,7 +794,7 @@ public class Assignment extends Common<Assignment> {
    * US:CoordinationData (Optional)
    * <p>
    * CoordinationData (US) contains Host Nation coordination information.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CoordinationData")
@@ -803,7 +803,7 @@ public class Assignment extends Common<Assignment> {
    * US:DocketNum (Optional)
    * <p>
    * DocketNum (US) contains the docket number from a prior data repository.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DocketNum", nillable = true)
@@ -813,7 +813,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * HostDocketNum (US) contains the Host Nation docket number from a prior data
    * repository.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HostDocketNum", nillable = true)
@@ -824,7 +824,7 @@ public class Assignment extends Common<Assignment> {
    * OffTheShelfEquipment (US) defines the function of readily available
    * equipment. It is often commercial equipment that provides a compatible
    * function to DoD or government equipment.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OffTheShelfEquipment", nillable = true)
@@ -834,7 +834,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Previous Authorization (US) refers to the frequency assignment's previous
    * Government Master File (GMF) authorization agency serial number.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PreviousAuthorization")
@@ -844,7 +844,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * RecordNote (US) contains a reference to a formal host nation "note" and
    * specific comments.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RecordNote")
@@ -859,7 +859,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get an identifying name for this Allotment or Assignment..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -869,7 +869,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set an identifying name for this Allotment or Assignment..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -879,7 +879,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Title is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTitle() {
@@ -890,7 +890,7 @@ public class Assignment extends Common<Assignment> {
    * Get the type of assignment request or approved assignment or allotment. In
    * Data Item case of a rejected or cancelled assignment or allotment, indicate
    * the reason in a Remark..
-   * <p>
+   *
    * @return the UsageType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -902,7 +902,7 @@ public class Assignment extends Common<Assignment> {
    * Set the type of assignment request or approved assignment or allotment. In
    * Data Item case of a rejected or cancelled assignment or allotment, indicate
    * the reason in a Remark..
-   * <p>
+   *
    * @param value the UsageType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -914,7 +914,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the UsageType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsageType() {
@@ -924,7 +924,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the date by which the Assignment or SSReply is required by the
    * requestor..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -935,7 +935,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the date by which the Assignment or SSReply is required by the
    * requestor..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -945,7 +945,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the DateResponseRequired is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDateResponseRequired() {
@@ -954,7 +954,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the date and UTC time when the Assignment will be operational..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -964,7 +964,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date and UTC time when the Assignment will be operational..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -974,7 +974,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the EffectiveDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDateTime() {
@@ -984,7 +984,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the date and UTC time that this Assignment will expire. The Expiration
    * date should be less than five years from the effective date..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -995,7 +995,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the date and UTC time that this Assignment will expire. The Expiration
    * date should be less than five years from the effective date..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -1005,7 +1005,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the ExpirationDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDateTime() {
@@ -1017,7 +1017,7 @@ public class Assignment extends Common<Assignment> {
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicates when the request should be
    * resubmitted to the host nation for continued equipment use..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -1030,7 +1030,7 @@ public class Assignment extends Common<Assignment> {
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicates when the request should be
    * resubmitted to the host nation for continued equipment use..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -1040,7 +1040,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -1050,7 +1050,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the general period on a daily basis when the frequency assignment
    * frequencies will be either guarded (monitored) or used for transmission..
-   * <p>
+   *
    * @return the Period value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1061,7 +1061,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the general period on a daily basis when the frequency assignment
    * frequencies will be either guarded (monitored) or used for transmission..
-   * <p>
+   *
    * @param value the Period value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1073,7 +1073,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the Period is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPeriod() {
@@ -1083,7 +1083,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the seconds of hour [0-59] when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @return a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -1094,7 +1094,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the seconds of hour [0-59] when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @param value a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -1104,7 +1104,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Seconds is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSeconds() {
@@ -1114,7 +1114,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the minutes of an hour (0-59) when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @return a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -1125,7 +1125,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the minutes of an hour (0-59) when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @param value a {@link MinSec} instance
    * @since 3.1.0
    */
@@ -1135,7 +1135,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Minutes is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMinutes() {
@@ -1145,7 +1145,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the hours of day [0-23] (UTC time) when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @return a {@link Hours} instance
    * @since 3.1.0
    */
@@ -1156,7 +1156,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the hours of day [0-23] (UTC time) when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @param value a {@link Hours} instance
    * @since 3.1.0
    */
@@ -1166,7 +1166,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Hours is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHours() {
@@ -1176,7 +1176,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the day of month [1-31] when the Assignment will be guarded (monitored)
    * or used for transmission..
-   * <p>
+   *
    * @return a {@link DaysOfMonth} instance
    * @since 3.1.0
    */
@@ -1187,7 +1187,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the day of month [1-31] when the Assignment will be guarded (monitored)
    * or used for transmission..
-   * <p>
+   *
    * @param value a {@link DaysOfMonth} instance
    * @since 3.1.0
    */
@@ -1197,7 +1197,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the DaysOfMonth is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDaysOfMonth() {
@@ -1207,7 +1207,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the month of year [1-12] when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @return a {@link Months} instance
    * @since 3.1.0
    */
@@ -1218,7 +1218,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the month of year [1-12] when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @param value a {@link Months} instance
    * @since 3.1.0
    */
@@ -1228,7 +1228,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Months is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMonths() {
@@ -1238,7 +1238,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] when
    * the Assignment will be guarded (monitored) or used for transmission..
-   * <p>
+   *
    * @return a {@link DaysOfWeek} instance
    * @since 3.1.0
    */
@@ -1249,7 +1249,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] when
    * the Assignment will be guarded (monitored) or used for transmission..
-   * <p>
+   *
    * @param value a {@link DaysOfWeek} instance
    * @since 3.1.0
    */
@@ -1259,7 +1259,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the DaysOfWeek is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDaysOfWeek() {
@@ -1269,7 +1269,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the 4-digit year [1900..2100] when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @return a {@link Years} instance
    * @since 3.1.0
    */
@@ -1280,7 +1280,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the 4-digit year [1900..2100] when the Assignment will be guarded
    * (monitored) or used for transmission..
-   * <p>
+   *
    * @param value a {@link Years} instance
    * @since 3.1.0
    */
@@ -1290,7 +1290,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Years is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetYears() {
@@ -1322,7 +1322,7 @@ public class Assignment extends Common<Assignment> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>.
-   * <p>
+   *
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -1355,7 +1355,7 @@ public class Assignment extends Common<Assignment> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>.
-   * <p>
+   *
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -1365,7 +1365,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Duration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuration() {
@@ -1375,7 +1375,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get if the frequency assignment is to be approved at the national or
    * international level..
-   * <p>
+   *
    * @return the Processing value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1386,7 +1386,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set if the frequency assignment is to be approved at the national or
    * international level..
-   * <p>
+   *
    * @param value the Processing value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1398,7 +1398,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the Processing is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetProcessing() {
@@ -1407,7 +1407,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get "Yes" if the system may be used in a case of emergency..
-   * <p>
+   *
    * @return the Emergency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1417,7 +1417,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set "Yes" if the system may be used in a case of emergency..
-   * <p>
+   *
    * @param value the Emergency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1429,7 +1429,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the Emergency is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEmergency() {
@@ -1438,7 +1438,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the user acceptance of host-nation or NATO HQ frequency nominations..
-   * <p>
+   *
    * @return the AssignmentAuthority value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1448,7 +1448,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the user acceptance of host-nation or NATO HQ frequency nominations..
-   * <p>
+   *
    * @param value the AssignmentAuthority value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1460,7 +1460,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the AssignmentAuthority is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAssignmentAuthority() {
@@ -1474,7 +1474,7 @@ public class Assignment extends Common<Assignment> {
    * assignment, are not intended to be part of the application processed
    * through the Interdepartment Radio Advisory Committee (IRAC). These remarks,
    * therefore, will be excluded from the Government Master File (GMF)..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1489,7 +1489,7 @@ public class Assignment extends Common<Assignment> {
    * assignment, are not intended to be part of the application processed
    * through the Interdepartment Radio Advisory Committee (IRAC). These remarks,
    * therefore, will be excluded from the Government Master File (GMF)..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1499,7 +1499,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Requirement is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRequirement() {
@@ -1508,7 +1508,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the total number of systems that are expected to use this Assignment..
-   * <p>
+   *
    * @return a {@link UN9} instance
    * @since 3.1.0
    */
@@ -1518,7 +1518,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the total number of systems that are expected to use this Assignment..
-   * <p>
+   *
    * @param value a {@link UN9} instance
    * @since 3.1.0
    */
@@ -1528,7 +1528,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the NumSystems is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNumSystems() {
@@ -1537,7 +1537,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the "An" identifier used to track transactions..
-   * <p>
+   *
    * @return a {@link S12} instance
    * @since 3.1.0
    */
@@ -1547,7 +1547,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the "An" identifier used to track transactions..
-   * <p>
+   *
    * @param value a {@link S12} instance
    * @since 3.1.0
    */
@@ -1557,7 +1557,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the AgencyActionNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAgencyActionNum() {
@@ -1568,7 +1568,7 @@ public class Assignment extends Common<Assignment> {
    * Get the Agency remarks in the applications processed through the
    * Interdepartment Radio Advisory Committee (IRAC). These remarks will be
    * included in the Government Master File (GMF)..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1580,7 +1580,7 @@ public class Assignment extends Common<Assignment> {
    * Set the Agency remarks in the applications processed through the
    * Interdepartment Radio Advisory Committee (IRAC). These remarks will be
    * included in the Government Master File (GMF)..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1590,7 +1590,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the AgencyComments is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAgencyComments() {
@@ -1599,7 +1599,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the externally-assigned unique identifier of a frequency assignment..
-   * <p>
+   *
    * @return a {@link S12} instance
    * @since 3.1.0
    */
@@ -1609,7 +1609,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the externally-assigned unique identifier of a frequency assignment..
-   * <p>
+   *
    * @param value a {@link S12} instance
    * @since 3.1.0
    */
@@ -1619,7 +1619,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the AgencySerialNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAgencySerialNum() {
@@ -1628,7 +1628,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the date the assignment was most recently authorized..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -1638,7 +1638,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date the assignment was most recently authorized..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -1648,7 +1648,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the AssignmentDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAssignmentDate() {
@@ -1660,7 +1660,7 @@ public class Assignment extends Common<Assignment> {
    * use. Enter EUCOM to identify the function number(s) used by the Frequency
    * Management Sub-Committee (FMSC) to specify the operational use of
    * frequencies..
-   * <p>
+   *
    * @return a {@link S8} instance
    * @since 3.1.0
    */
@@ -1673,7 +1673,7 @@ public class Assignment extends Common<Assignment> {
    * use. Enter EUCOM to identify the function number(s) used by the Frequency
    * Management Sub-Committee (FMSC) to specify the operational use of
    * frequencies..
-   * <p>
+   *
    * @param value a {@link S8} instance
    * @since 3.1.0
    */
@@ -1683,7 +1683,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the COCOMGroup is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCOCOMGroup() {
@@ -1693,7 +1693,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the control or request identifier that allows subordinate organizations
    * to track specific frequency applications..
-   * <p>
+   *
    * @return a {@link S15} instance
    * @since 3.1.0
    */
@@ -1704,7 +1704,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the control or request identifier that allows subordinate organizations
    * to track specific frequency applications..
-   * <p>
+   *
    * @param value a {@link S15} instance
    * @since 3.1.0
    */
@@ -1714,7 +1714,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the ControlRequestNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetControlRequestNum() {
@@ -1724,7 +1724,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the Comments related to the external coordination of a frequency
    * assignment..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1735,7 +1735,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the Comments related to the external coordination of a frequency
    * assignment..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1745,7 +1745,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the CoordinationComments is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCoordinationComments() {
@@ -1754,7 +1754,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the source or organization from which the data record was received..
-   * <p>
+   *
    * @return the DataSource value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1764,7 +1764,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the source or organization from which the data record was received..
-   * <p>
+   *
    * @param value the DataSource value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1776,7 +1776,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the DataSource is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDataSource() {
@@ -1788,7 +1788,7 @@ public class Assignment extends Common<Assignment> {
    * (FCC), issued to non-government stations operating on government
    * frequencies or government stations operating on nongovernment frequencies,
    * which is unique to each FCC license..
-   * <p>
+   *
    * @return a {@link S22} instance
    * @since 3.1.0
    */
@@ -1801,7 +1801,7 @@ public class Assignment extends Common<Assignment> {
    * (FCC), issued to non-government stations operating on government
    * frequencies or government stations operating on nongovernment frequencies,
    * which is unique to each FCC license..
-   * <p>
+   *
    * @param value a {@link S22} instance
    * @since 3.1.0
    */
@@ -1811,7 +1811,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the FCCFileNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFCCFileNum() {
@@ -1821,7 +1821,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the assignment serial number as registered in the Frequency Management
    * Subcommittee (FMSC) Master Radio Frequency List (MRFL)..
-   * <p>
+   *
    * @return a {@link S14} instance
    * @since 3.1.0
    */
@@ -1832,7 +1832,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the assignment serial number as registered in the Frequency Management
    * Subcommittee (FMSC) Master Radio Frequency List (MRFL)..
-   * <p>
+   *
    * @param value a {@link S14} instance
    * @since 3.1.0
    */
@@ -1842,7 +1842,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the FMSCNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFMSCNum() {
@@ -1852,7 +1852,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get a MILDEP code identifying the person or group responsible for the
    * frequency assignment..
-   * <p>
+   *
    * @return a {@link S3} instance
    * @since 3.1.0
    */
@@ -1863,7 +1863,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set a MILDEP code identifying the person or group responsible for the
    * frequency assignment..
-   * <p>
+   *
    * @param value a {@link S3} instance
    * @since 3.1.0
    */
@@ -1873,7 +1873,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the FrequencyActionOfficer is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFrequencyActionOfficer() {
@@ -1885,7 +1885,7 @@ public class Assignment extends Common<Assignment> {
    * representing a group or area assignment. It brings into use, by a
    * particular station or stations, a frequency authorised under a group
    * assignment or authorised for communications with nongovernment stations..
-   * <p>
+   *
    * @return a {@link S12} instance
    * @since 3.1.0
    */
@@ -1898,7 +1898,7 @@ public class Assignment extends Common<Assignment> {
    * representing a group or area assignment. It brings into use, by a
    * particular station or stations, a frequency authorised under a group
    * assignment or authorised for communications with nongovernment stations..
-   * <p>
+   *
    * @param value a {@link S12} instance
    * @since 3.1.0
    */
@@ -1908,7 +1908,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the ListSerialNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetListSerialNum() {
@@ -1917,7 +1917,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the Type Special Assignment for the frequency assignment..
-   * <p>
+   *
    * @return the NATOPooledFrequencyCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1927,7 +1927,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the Type Special Assignment for the frequency assignment..
-   * <p>
+   *
    * @param value the NATOPooledFrequencyCode value in a {@link TString} data
    *              type
    * @since 3.1.0
@@ -1940,7 +1940,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the NATOPooledFrequencyCode is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNATOPooledFrequencyCode() {
@@ -1950,7 +1950,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the a Frequency Management Sub-committee (FMSC) assigned code number
    * identifying the type and nationality of a frequency pool..
-   * <p>
+   *
    * @return a {@link UN4} instance
    * @since 3.1.0
    */
@@ -1961,7 +1961,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the a Frequency Management Sub-committee (FMSC) assigned code number
    * identifying the type and nationality of a frequency pool..
-   * <p>
+   *
    * @param value a {@link UN4} instance
    * @since 3.1.0
    */
@@ -1971,7 +1971,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the NATOPooledFrequencyNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNATOPooledFrequencyNum() {
@@ -1980,7 +1980,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the date the frequency assignment was originally authorized..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -1990,7 +1990,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date the frequency assignment was originally authorized..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -2000,7 +2000,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the OriginalAssignmentDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOriginalAssignmentDate() {
@@ -2013,7 +2013,7 @@ public class Assignment extends Common<Assignment> {
    * application will be processed. This value is computer-generated by NTIA for
    * its internal processing of frequency assignment applications. It is an
    * output data item only..
-   * <p>
+   *
    * @return the RoutineAgendaItem value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2027,7 +2027,7 @@ public class Assignment extends Common<Assignment> {
    * application will be processed. This value is computer-generated by NTIA for
    * its internal processing of frequency assignment applications. It is an
    * output data item only..
-   * <p>
+   *
    * @param value the RoutineAgendaItem value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2039,7 +2039,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the RoutineAgendaItem is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRoutineAgendaItem() {
@@ -2054,7 +2054,7 @@ public class Assignment extends Common<Assignment> {
    * justification, (4) coordination data, and (5) refer to National
    * Telecommunications and Information Administration (NTIA) manual, Chapter 9,
    * for further details..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -2070,7 +2070,7 @@ public class Assignment extends Common<Assignment> {
    * justification, (4) coordination data, and (5) refer to National
    * Telecommunications and Information Administration (NTIA) manual, Chapter 9,
    * for further details..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -2080,7 +2080,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the SupplementaryDetails is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSupplementaryDetails() {
@@ -2089,7 +2089,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the type of service or circuit involved..
-   * <p>
+   *
    * @return the TypeOfService value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2099,7 +2099,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the type of service or circuit involved..
-   * <p>
+   *
    * @param value the TypeOfService value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2111,7 +2111,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the TypeOfService is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTypeOfService() {
@@ -2120,7 +2120,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get the usage and category of circuits..
-   * <p>
+   *
    * @return the UsageCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2130,7 +2130,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the usage and category of circuits..
-   * <p>
+   *
    * @param value the UsageCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2142,7 +2142,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the UsageCode is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsageCode() {
@@ -2152,7 +2152,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the general amount of time when the frequency assignment frequencies
    * will be either guarded (monitored) or used for transmission..
-   * <p>
+   *
    * @return the UsageFrequency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2163,7 +2163,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the general amount of time when the frequency assignment frequencies
    * will be either guarded (monitored) or used for transmission..
-   * <p>
+   *
    * @param value the UsageFrequency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2175,7 +2175,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the UsageFrequency is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsageFrequency() {
@@ -2185,7 +2185,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get the percentage of time the transmitter equipment is in use during the
    * scheduled hours of operation..
-   * <p>
+   *
    * @return a {@link US_Percent} instance
    * @since 3.1.0
    */
@@ -2196,7 +2196,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the percentage of time the transmitter equipment is in use during the
    * scheduled hours of operation..
-   * <p>
+   *
    * @param value a {@link US_Percent} instance
    * @since 3.1.0
    */
@@ -2206,7 +2206,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the UsagePercentage is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsagePercentage() {
@@ -2216,7 +2216,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Get a unique code that identifies the specific user of the frequency, i.e.,
    * the command, activity, unit, project, etc..
-   * <p>
+   *
    * @return a {@link S6} instance
    * @since 3.1.0
    */
@@ -2227,7 +2227,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set a unique code that identifies the specific user of the frequency, i.e.,
    * the command, activity, unit, project, etc..
-   * <p>
+   *
    * @param value a {@link S6} instance
    * @since 3.1.0
    */
@@ -2237,7 +2237,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the UserNetCode is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUserNetCode() {
@@ -2246,7 +2246,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get .
-   * <p>
+   *
    * @return the PrimaryStation value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2256,7 +2256,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value the PrimaryStation value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2268,7 +2268,7 @@ public class Assignment extends Common<Assignment> {
    * Determine if the PrimaryStation is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPrimaryStation() {
@@ -2280,7 +2280,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset..
-   * <p>
+   *
    * @return a {@link Project} instance
    * @since 3.1.0
    */
@@ -2293,7 +2293,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Project is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetProject() {
@@ -2312,7 +2312,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -2325,7 +2325,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -2346,7 +2346,7 @@ public class Assignment extends Common<Assignment> {
    * assignment belongs and whether or not the assignment provides assets to or
    * uses another assignment resources. It also describes linkages to or from
    * other datasets..
-   * <p>
+   *
    * @return a {@link SysOfStation} instance
    * @since 3.1.0
    */
@@ -2359,7 +2359,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the SysOfStation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSysOfStation() {
@@ -2378,7 +2378,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -2394,7 +2394,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the RelatedRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRelatedRef() {
@@ -2414,7 +2414,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset..
-   * <p>
+   *
    * @return a {@link Configuration} instance
    * @since 3.1.0
    */
@@ -2427,7 +2427,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Configuration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetConfiguration() {
@@ -2446,7 +2446,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset..
-   * <p>
+   *
    * @return a {@link Station} instance
    * @since 3.1.0
    */
@@ -2459,7 +2459,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Station is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStation() {
@@ -2482,7 +2482,7 @@ public class Assignment extends Common<Assignment> {
    * link can be very generic (one or several base stations serving an area or a
    * volume with non-defined mobiles) to very accurate (such as one link for
    * each radio-relay hop)..
-   * <p>
+   *
    * @return a {@link Link} instance
    * @since 3.1.0
    */
@@ -2495,7 +2495,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the Link is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLink() {
@@ -2514,7 +2514,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments..
-   * <p>
+   *
    * @return a {@link StatusLog} instance
    * @since 3.1.0
    */
@@ -2527,7 +2527,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the StatusLog is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStatusLog() {
@@ -2546,7 +2546,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation..
-   * <p>
+   *
    * @return a {@link AsgnAllotOwner} instance
    * @since 3.1.0
    */
@@ -2559,7 +2559,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the AsgnAllotOwner is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAsgnAllotOwner() {
@@ -2579,7 +2579,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element CircuitRemarks (US) contains general information about the
    * network and equipment used to support a specific frequency assignment or
    * assignments..
-   * <p>
+   *
    * @return a {@link CircuitRemarks} instance
    * @since 3.1.0
    */
@@ -2592,7 +2592,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the CircuitRemarks is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCircuitRemarks() {
@@ -2611,7 +2611,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information..
-   * <p>
+   *
    * @return a {@link CoordinationData} instance
    * @since 3.1.0
    */
@@ -2624,7 +2624,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the CoordinationData is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCoordinationData() {
@@ -2643,7 +2643,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository..
-   * <p>
+   *
    * @return a {@link DocketNum} instance
    * @since 3.1.0
    */
@@ -2656,7 +2656,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the DocketNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDocketNum() {
@@ -2675,7 +2675,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository..
-   * <p>
+   *
    * @return a {@link HostDocketNum} instance
    * @since 3.1.0
    */
@@ -2688,7 +2688,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the HostDocketNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHostDocketNum() {
@@ -2708,7 +2708,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element OffTheShelfEquipment (US) defines the function of readily
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment..
-   * <p>
+   *
    * @return a {@link OffTheShelfEquipment} instance
    * @since 3.1.0
    */
@@ -2721,7 +2721,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the OffTheShelfEquipment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOffTheShelfEquipment() {
@@ -2741,7 +2741,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Previous Authorization (US) refers to the frequency
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number..
-   * <p>
+   *
    * @return a {@link PreviousAuthorization} instance
    * @since 3.1.0
    */
@@ -2754,7 +2754,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the PreviousAuthorization is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPreviousAuthorization() {
@@ -2773,7 +2773,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments..
-   * <p>
+   *
    * @return a {@link RecordNote} instance
    * @since 3.1.0
    */
@@ -2786,7 +2786,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the RecordNote is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRecordNote() {
@@ -2802,7 +2802,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set an identifying name for this Allotment or Assignment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2816,7 +2816,7 @@ public class Assignment extends Common<Assignment> {
    * Set the type of assignment request or approved assignment or allotment. In
    * Data Item case of a rejected or cancelled assignment or allotment, indicate
    * the reason in a Remark.
-   * <p>
+   *
    * @param value An instances of type {@link ListCUT}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2829,7 +2829,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the date by which the Assignment or SSReply is required by the
    * requestor.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2842,7 +2842,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the date by which the Assignment or SSReply is required by the
    * requestor.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2854,7 +2854,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date and UTC time when the Assignment will be operational.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2866,7 +2866,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date and UTC time when the Assignment will be operational.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2879,7 +2879,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the date and UTC time that this Assignment will expire. The Expiration
    * date should be less than five years from the effective date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2892,7 +2892,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the date and UTC time that this Assignment will expire. The Expiration
    * date should be less than five years from the effective date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2907,7 +2907,7 @@ public class Assignment extends Common<Assignment> {
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicates when the request should be
    * resubmitted to the host nation for continued equipment use.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2922,7 +2922,7 @@ public class Assignment extends Common<Assignment> {
    * be less than five years from the effective date. In Data Item Spectrum
    * Supportability datasets, this date indicates when the request should be
    * resubmitted to the host nation for continued equipment use.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2935,7 +2935,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the general period on a daily basis when the frequency assignment
    * frequencies will be either guarded (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link ListCTI}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2948,7 +2948,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the seconds of hour [0-59] when the Assignment will be guarded
    * (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2961,7 +2961,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the minutes of an hour (0-59) when the Assignment will be guarded
    * (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2974,7 +2974,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the hours of day [0-23] (UTC time) when the Assignment will be guarded
    * (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -2987,7 +2987,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the day of month [1-31] when the Assignment will be guarded (monitored)
    * or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3000,7 +3000,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the month of year [1-12] when the Assignment will be guarded
    * (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3013,7 +3013,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the weekday [0-7 where 0 and 7 are for Sunday, 1 for Monday, etc] when
    * the Assignment will be guarded (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3026,7 +3026,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the 4-digit year [1900..2100] when the Assignment will be guarded
    * (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3061,7 +3061,7 @@ public class Assignment extends Common<Assignment> {
    * <Minutes>20,50</Minutes>
    * <Months>1-5,7-12</Months>
    * <DaysofWeek>1-5</DaysofWeek>
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3074,7 +3074,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set if the frequency assignment is to be approved at the national or
    * international level.
-   * <p>
+   *
    * @param value An instances of type {@link ListCPI}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3086,7 +3086,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set "Yes" if the system may be used in a case of emergency.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3098,7 +3098,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the user acceptance of host-nation or NATO HQ frequency nominations.
-   * <p>
+   *
    * @param value An instances of type {@link ListCHN}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3115,7 +3115,7 @@ public class Assignment extends Common<Assignment> {
    * assignment, are not intended to be part of the application processed
    * through the Interdepartment Radio Advisory Committee (IRAC). These remarks,
    * therefore, will be excluded from the Government Master File (GMF).
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3127,7 +3127,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the total number of systems that are expected to use this Assignment.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3139,7 +3139,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the "An" identifier used to track transactions.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3153,7 +3153,7 @@ public class Assignment extends Common<Assignment> {
    * Set the Agency remarks in the applications processed through the
    * Interdepartment Radio Advisory Committee (IRAC). These remarks will be
    * included in the Government Master File (GMF).
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3165,7 +3165,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the externally-assigned unique identifier of a frequency assignment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3177,7 +3177,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date the assignment was most recently authorized.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3189,7 +3189,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date the assignment was most recently authorized.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3204,7 +3204,7 @@ public class Assignment extends Common<Assignment> {
    * use. Enter EUCOM to identify the function number(s) used by the Frequency
    * Management Sub-Committee (FMSC) to specify the operational use of
    * frequencies.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3217,7 +3217,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the control or request identifier that allows subordinate organizations
    * to track specific frequency applications.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3230,7 +3230,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the Comments related to the external coordination of a frequency
    * assignment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3242,7 +3242,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the source or organization from which the data record was received.
-   * <p>
+   *
    * @param value An instances of type {@link ListUDA}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3257,7 +3257,7 @@ public class Assignment extends Common<Assignment> {
    * (FCC), issued to non-government stations operating on government
    * frequencies or government stations operating on nongovernment frequencies,
    * which is unique to each FCC license.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3270,7 +3270,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the assignment serial number as registered in the Frequency Management
    * Subcommittee (FMSC) Master Radio Frequency List (MRFL).
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3283,7 +3283,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set a MILDEP code identifying the person or group responsible for the
    * frequency assignment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3298,7 +3298,7 @@ public class Assignment extends Common<Assignment> {
    * representing a group or area assignment. It brings into use, by a
    * particular station or stations, a frequency authorised under a group
    * assignment or authorised for communications with nongovernment stations.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3310,7 +3310,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the Type Special Assignment for the frequency assignment.
-   * <p>
+   *
    * @param value An instances of type {@link ListUPF}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3323,7 +3323,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the a Frequency Management Sub-committee (FMSC) assigned code number
    * identifying the type and nationality of a frequency pool.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3335,7 +3335,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date the frequency assignment was originally authorized.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3347,7 +3347,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the date the frequency assignment was originally authorized.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3363,7 +3363,7 @@ public class Assignment extends Common<Assignment> {
    * application will be processed. This value is computer-generated by NTIA for
    * its internal processing of frequency assignment applications. It is an
    * output data item only.
-   * <p>
+   *
    * @param value An instances of type {@link ListURI}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3381,7 +3381,7 @@ public class Assignment extends Common<Assignment> {
    * justification, (4) coordination data, and (5) refer to National
    * Telecommunications and Information Administration (NTIA) manual, Chapter 9,
    * for further details.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3393,7 +3393,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the type of service or circuit involved.
-   * <p>
+   *
    * @param value An instances of type {@link ListUTY}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3405,7 +3405,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set the usage and category of circuits.
-   * <p>
+   *
    * @param value An instances of type {@link ListUUC}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3418,7 +3418,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the general amount of time when the frequency assignment frequencies
    * will be either guarded (monitored) or used for transmission.
-   * <p>
+   *
    * @param value An instances of type {@link ListUUF}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3431,7 +3431,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set the percentage of time the transmitter equipment is in use during the
    * scheduled hours of operation.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3444,7 +3444,7 @@ public class Assignment extends Common<Assignment> {
   /**
    * Set a unique code that identifies the specific user of the frequency, i.e.,
    * the command, activity, unit, project, etc.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3456,7 +3456,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3471,7 +3471,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link Project...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3488,7 +3488,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
-   * <p>
+   *
    * @param values A collection of {@link Project} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3505,7 +3505,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3522,7 +3522,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3541,7 +3541,7 @@ public class Assignment extends Common<Assignment> {
    * assignment belongs and whether or not the assignment provides assets to or
    * uses another assignment resources. It also describes linkages to or from
    * other datasets.
-   * <p>
+   *
    * @param values One or more instances of type {@link SysOfStation...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3560,7 +3560,7 @@ public class Assignment extends Common<Assignment> {
    * assignment belongs and whether or not the assignment provides assets to or
    * uses another assignment resources. It also describes linkages to or from
    * other datasets.
-   * <p>
+   *
    * @param values A collection of {@link SysOfStation} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3577,7 +3577,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
-   * <p>
+   *
    * @param values One or more instances of type {@link RelatedRef...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3597,7 +3597,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3618,7 +3618,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link Configuration...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3636,7 +3636,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset.
-   * <p>
+   *
    * @param values A collection of {@link Configuration} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3653,7 +3653,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link Station...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3670,7 +3670,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset.
-   * <p>
+   *
    * @param values A collection of {@link Station} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3691,7 +3691,7 @@ public class Assignment extends Common<Assignment> {
    * link can be very generic (one or several base stations serving an area or a
    * volume with non-defined mobiles) to very accurate (such as one link for
    * each radio-relay hop).
-   * <p>
+   *
    * @param values One or more instances of type {@link Link...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3712,7 +3712,7 @@ public class Assignment extends Common<Assignment> {
    * link can be very generic (one or several base stations serving an area or a
    * volume with non-defined mobiles) to very accurate (such as one link for
    * each radio-relay hop).
-   * <p>
+   *
    * @param values A collection of {@link Link} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3729,7 +3729,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments.
-   * <p>
+   *
    * @param values One or more instances of type {@link StatusLog...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3746,7 +3746,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments.
-   * <p>
+   *
    * @param values A collection of {@link StatusLog} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3763,7 +3763,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
-   * <p>
+   *
    * @param values One or more instances of type {@link AsgnAllotOwner...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3780,7 +3780,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
-   * <p>
+   *
    * @param values A collection of {@link AsgnAllotOwner} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3798,7 +3798,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element CircuitRemarks (US) contains general information about the
    * network and equipment used to support a specific frequency assignment or
    * assignments.
-   * <p>
+   *
    * @param values One or more instances of type {@link CircuitRemarks...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3816,7 +3816,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element CircuitRemarks (US) contains general information about the
    * network and equipment used to support a specific frequency assignment or
    * assignments.
-   * <p>
+   *
    * @param values A collection of {@link CircuitRemarks} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3833,7 +3833,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
-   * <p>
+   *
    * @param values One or more instances of type {@link CoordinationData...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3850,7 +3850,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
-   * <p>
+   *
    * @param values A collection of {@link CoordinationData} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3867,7 +3867,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository.
-   * <p>
+   *
    * @param values One or more instances of type {@link DocketNum...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3884,7 +3884,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository.
-   * <p>
+   *
    * @param values A collection of {@link DocketNum} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3901,7 +3901,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository.
-   * <p>
+   *
    * @param values One or more instances of type {@link HostDocketNum...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3918,7 +3918,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository.
-   * <p>
+   *
    * @param values A collection of {@link HostDocketNum} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3936,7 +3936,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element OffTheShelfEquipment (US) defines the function of readily
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment.
-   * <p>
+   *
    * @param values One or more instances of type
    *               {@link OffTheShelfEquipment...}.
    * @return The current Assignment object instance.
@@ -3955,7 +3955,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element OffTheShelfEquipment (US) defines the function of readily
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment.
-   * <p>
+   *
    * @param values A collection of {@link OffTheShelfEquipment} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -3973,7 +3973,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Previous Authorization (US) refers to the frequency
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number.
-   * <p>
+   *
    * @param values One or more instances of type
    *               {@link PreviousAuthorization...}.
    * @return The current Assignment object instance.
@@ -3992,7 +3992,7 @@ public class Assignment extends Common<Assignment> {
    * Complex element Previous Authorization (US) refers to the frequency
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number.
-   * <p>
+   *
    * @param values A collection of {@link PreviousAuthorization} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -4009,7 +4009,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments.
-   * <p>
+   *
    * @param values One or more instances of type {@link RecordNote...}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -4026,7 +4026,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments.
-   * <p>
+   *
    * @param values A collection of {@link RecordNote} instances
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -4040,7 +4040,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Get a string representation of this Assignment instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -4119,7 +4119,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -4133,7 +4133,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * RelatedRef contains the serial of a referenced Assignment, Allotment,
    * SSReply, ForceElement or FEDeployment.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -4144,7 +4144,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment..
-   * <p>
+   *
    * @return a {@link Common} instance
    * @since 3.1.0
    */
@@ -4157,7 +4157,7 @@ public class Assignment extends Common<Assignment> {
 
   /**
    * Determine if the related field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRelated() {
@@ -4169,7 +4169,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
-   * <p>
+   *
    * @param values An instances of type {@link Common<?>}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -4183,7 +4183,7 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
-   * <p>
+   *
    * @param values An instances of type {@link Common<?>}.
    * @return The current Assignment object instance.
    * @since 3.1.0
@@ -4200,7 +4200,7 @@ public class Assignment extends Common<Assignment> {
    * the transient {@link #related} field. This method should typically be
    * called after the Assignment is configured and (optionally) before exporting
    * an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -4219,7 +4219,7 @@ public class Assignment extends Common<Assignment> {
    * This method builds the transient {@link #related} with values from the
    * imported {@link #relatedRef} field. This method should typically be called
    * after the Assignment is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

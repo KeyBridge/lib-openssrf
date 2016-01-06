@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
  * Serial of each dataset corresponding to each class type.
  * <p>
  * Used by {@link Serial}
- * <p>
+ *
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
@@ -143,7 +143,7 @@ public enum EDatasetType {
 
   /**
    * Get the class type for this serial type.
-   * <p>
+   *
    * @return the class type.
    */
   public Class<? extends Common<?>> getClazz() {
@@ -154,7 +154,7 @@ public enum EDatasetType {
    * Get a serial number data type from an object instance. This method is used
    * within the {@link Common} constructor to automatically build a serial
    * number.
-   * <p>
+   *
    * @param instance the object instance
    * @return the serial number data type code
    */
@@ -166,7 +166,7 @@ public enum EDatasetType {
    * Get a serial number data type from an object instance. This method is used
    * within the {@link Common} constructor to automatically build a serial
    * number.
-   * <p>
+   *
    * @param clazz the object instance class type
    * @return the serial number data type code
    */
@@ -181,7 +181,7 @@ public enum EDatasetType {
 
   /**
    * Get the class type simple name
-   * <p>
+   *
    * @return the class type simple name. e.g. an Allotment instance will return
    *         "Allotment"
    */

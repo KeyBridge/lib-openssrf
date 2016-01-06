@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US20;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEN;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUNT;
 
@@ -46,7 +48,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUNT;
 public class NotationTimeline {
 
   /**
-   * US:Code - Notation Code (Required)    * <p>
+   * US:Code - Notation Code (Required)
+   * <p>
    * An alphanumeric combination that is used to identify a particular
    * Notation/Signal.
    * <p>
@@ -57,7 +60,8 @@ public class NotationTimeline {
   @XmlElement(name = "Code", required = true)
   private US20 code;
   /**
-   * US:Status - Notation Status (Optional)    * <p>
+   * US:Status - Notation Status (Optional)
+   * <p>
    * The status of the future, prior, or associated, Notation.
    * <p>
    * Format is L:UNT
@@ -67,7 +71,8 @@ public class NotationTimeline {
   @XmlElement(name = "Status", required = false)
   private TString status;
   /**
-   * US:StatusChangeDateTime - Notation Status Timestamp (Optional)    * <p>
+   * US:StatusChangeDateTime - Notation Status Timestamp (Optional)
+   * <p>
    * The timestamp when the prior, or associated, Notation achieved this Status.
    * <p>
    * Format is DateTime
@@ -77,7 +82,8 @@ public class NotationTimeline {
   @XmlElement(name = "StatusChangeDateTime", required = false)
   private DT statusChangeDateTime;
   /**
-   * US:Type - Notation Type (Optional)    * <p>
+   * US:Type - Notation Type (Optional)
+   * <p>
    * The type of Notation.
    * <p>
    * Format is L:CEN

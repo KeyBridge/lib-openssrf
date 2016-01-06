@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +27,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * incident.
  * <p>
  * Sub-Element is {@link POCInformation}
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -86,7 +86,7 @@ public class IntfReport extends Common<IntfReport> {
    * solve the interference. If not used, consider as "No".
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "HelpRequired", required = false)
@@ -97,7 +97,7 @@ public class IntfReport extends Common<IntfReport> {
    * How often the interference is experienced.
    * <p>
    * Format is L:CTI
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IntfPeriod", required = false)
@@ -108,7 +108,7 @@ public class IntfReport extends Common<IntfReport> {
    * The date/time the interference was first perceived.
    * <p>
    * Format is DT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IntfStartDateTime", required = true)
@@ -119,7 +119,7 @@ public class IntfReport extends Common<IntfReport> {
    * The date/time the interference ceased.
    * <p>
    * Format is DT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IntfStopDateTime", required = false)
@@ -128,7 +128,7 @@ public class IntfReport extends Common<IntfReport> {
    * In Data Item IntfDescr, describe the interference. Provide as much
    * information as possible. State what actions you have taken so far to
    * resolve the interference.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IntfDescr", required = false)
@@ -139,7 +139,7 @@ public class IntfReport extends Common<IntfReport> {
    * The nomenclature or description of equipment experiencing the interference.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AffectedEquipment", required = false)
@@ -150,7 +150,7 @@ public class IntfReport extends Common<IntfReport> {
    * The measured electromagnetic field strength.
    * <p>
    * Format is UN(6,1) (dB)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceFieldStrength", required = false)
@@ -170,7 +170,7 @@ public class IntfReport extends Common<IntfReport> {
    * [0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X"
    * <p>
    * Format is pattern (S11)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceLon", required = false)
@@ -187,7 +187,7 @@ public class IntfReport extends Common<IntfReport> {
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X"
    * <p>
    * Format is pattern (S10)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceLat", required = false)
@@ -198,7 +198,7 @@ public class IntfReport extends Common<IntfReport> {
    * The measured azimuth of the source from the victim.
    * <p>
    * Format is UN(5,2) [0..360] (deg)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceAz", required = false)
@@ -209,7 +209,7 @@ public class IntfReport extends Common<IntfReport> {
    * The approximate position the source, if exact coordinates are not known.
    * <p>
    * Format is S255
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceLocDescr", required = false)
@@ -221,7 +221,7 @@ public class IntfReport extends Common<IntfReport> {
    * of a range.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceFreqMin", required = false)
@@ -232,7 +232,7 @@ public class IntfReport extends Common<IntfReport> {
    * The maximum frequency of the interference, in case of a range.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceFreqMax", required = false)
@@ -302,7 +302,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(A|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|V|
    * W|X|-)(0|1|2|3|7|8|9|X|-)(A|B|C|D|E|F|N|W|X|-)(A|B|C|D|E|F|G|H|J|K|L|M|N|W|X)?(C|F|N|T|W|X)?"
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceEmsClass", required = false)
@@ -313,7 +313,7 @@ public class IntfReport extends Common<IntfReport> {
    * The calculated or measured bandwidth of the interference source.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SourceEmsBw", required = false)
@@ -325,7 +325,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimAsgnRef", required = false)
@@ -337,7 +337,7 @@ public class IntfReport extends Common<IntfReport> {
    * interference.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimSystem", required = false)
@@ -348,7 +348,7 @@ public class IntfReport extends Common<IntfReport> {
    * The country or area where the victim of the interference is located.
    * <p>
    * Format is L:CAO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimCountry", required = false)
@@ -367,7 +367,7 @@ public class IntfReport extends Common<IntfReport> {
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X"
    * <p>
    * Format is pattern (S11)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimLon", required = false)
@@ -384,7 +384,7 @@ public class IntfReport extends Common<IntfReport> {
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X"
    * <p>
    * Format is pattern (S10)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimLat", required = false)
@@ -396,7 +396,7 @@ public class IntfReport extends Common<IntfReport> {
    * coordinates are not known.
    * <p>
    * Format is S255
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimLocDescr", required = false)
@@ -407,7 +407,7 @@ public class IntfReport extends Common<IntfReport> {
    * The nominal or lower frequency used by the victim of the interference.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimFreqMin", required = true)
@@ -419,7 +419,7 @@ public class IntfReport extends Common<IntfReport> {
    * range.
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "VictimFreqMax", required = false)
@@ -430,7 +430,7 @@ public class IntfReport extends Common<IntfReport> {
    * The name of the satellite experiencing the interference.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteName", required = false)
@@ -441,7 +441,7 @@ public class IntfReport extends Common<IntfReport> {
    * The identifier of satellite channel experiencing the interference.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteChannel", required = false)
@@ -452,7 +452,7 @@ public class IntfReport extends Common<IntfReport> {
    * The satellite uplink frequency experiencing the interference
    * <p>
    * Format is UN(16,9) [0..1.0E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteUplinkFreq", required = false)
@@ -463,7 +463,7 @@ public class IntfReport extends Common<IntfReport> {
    * The effect the interference has on normal operations.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PerformanceEffects", required = false)
@@ -474,7 +474,7 @@ public class IntfReport extends Common<IntfReport> {
    * Your best guess as to the cause of the interference.
    * <p>
    * Format is L:CJ1
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Evaluation", required = false)
@@ -485,7 +485,7 @@ public class IntfReport extends Common<IntfReport> {
    * What actions were taken to resolve the interference.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Solution", required = false)
@@ -497,7 +497,7 @@ public class IntfReport extends Common<IntfReport> {
    * interference occurred and/or the victim's organization.
    * <p>
    * Format is L:UAG
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AffectedCSA", required = false)
@@ -508,7 +508,7 @@ public class IntfReport extends Common<IntfReport> {
    * The interference characteristics.
    * <p>
    * Format is L:UCH
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Characteristics", required = false)
@@ -519,7 +519,7 @@ public class IntfReport extends Common<IntfReport> {
    * Whether the interference affects GPS reception.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "GPSAffected", required = false)
@@ -530,7 +530,7 @@ public class IntfReport extends Common<IntfReport> {
    * The local event ID.
    * <p>
    * Format is S20
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LocalEventID", required = false)
@@ -541,7 +541,7 @@ public class IntfReport extends Common<IntfReport> {
    * The network circuits affected by the interference.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NetCircuitsAffected", required = false)
@@ -552,7 +552,7 @@ public class IntfReport extends Common<IntfReport> {
    * The networks affected by the interference.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NetsAffected", required = false)
@@ -563,7 +563,7 @@ public class IntfReport extends Common<IntfReport> {
    * The satellite communication priority.
    * <p>
    * Format is L:UPR
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SATCOMPriority", required = false)
@@ -574,7 +574,7 @@ public class IntfReport extends Common<IntfReport> {
    * Whether the interference affects satellite reception.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteAffected", required = false)
@@ -586,7 +586,7 @@ public class IntfReport extends Common<IntfReport> {
    * The polarisation of the satellite downlink signal.
    * <p>
    * Format is L:CPO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteDownlinkPolarisation", required = false)
@@ -597,7 +597,7 @@ public class IntfReport extends Common<IntfReport> {
    * The satellite hemisphere.
    * <p>
    * Format is L:CCO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteHemisphere", required = false)
@@ -612,7 +612,7 @@ public class IntfReport extends Common<IntfReport> {
    * (US),2})?)|1800000)(E|W))|X"
    * <p>
    * Format is pattern (S11)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteLongitude", required = false)
@@ -623,7 +623,7 @@ public class IntfReport extends Common<IntfReport> {
    * The satellite transponder ID.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteTransponderID", required = false)
@@ -634,7 +634,7 @@ public class IntfReport extends Common<IntfReport> {
    * The polarisation of the satellite uplink signal.
    * <p>
    * Format is L:CPO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SatelliteUplinkPolarisation", required = false)
@@ -644,7 +644,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -660,7 +660,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get whether the user needs technical assistance from another organisation
    * to solve the interference. If not used, consider as "No"..
-   * <p>
+   *
    * @return the HelpRequired value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -671,7 +671,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set whether the user needs technical assistance from another organisation
    * to solve the interference. If not used, consider as "No"..
-   * <p>
+   *
    * @param value the HelpRequired value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -683,7 +683,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the HelpRequired is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetHelpRequired() {
@@ -692,7 +692,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get how often the interference is experienced..
-   * <p>
+   *
    * @return the IntfPeriod value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -702,7 +702,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set how often the interference is experienced..
-   * <p>
+   *
    * @param value the IntfPeriod value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -714,7 +714,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the IntfPeriod is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIntfPeriod() {
@@ -723,7 +723,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the date/time the interference was first perceived..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -733,7 +733,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the date/time the interference was first perceived..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -743,7 +743,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the IntfStartDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIntfStartDateTime() {
@@ -752,7 +752,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the date/time the interference ceased..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -762,7 +762,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the date/time the interference ceased..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -772,7 +772,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the IntfStopDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIntfStopDateTime() {
@@ -783,7 +783,7 @@ public class IntfReport extends Common<IntfReport> {
    * Get In Data Item IntfDescr, describe the interference. Provide as much
    * information as possible. State what actions you have taken so far to
    * resolve the interference..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -795,7 +795,7 @@ public class IntfReport extends Common<IntfReport> {
    * Set In Data Item IntfDescr, describe the interference. Provide as much
    * information as possible. State what actions you have taken so far to
    * resolve the interference..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -805,7 +805,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the IntfDescr is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIntfDescr() {
@@ -815,7 +815,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the nomenclature or description of equipment experiencing the
    * interference..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -826,7 +826,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the nomenclature or description of equipment experiencing the
    * interference..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -836,7 +836,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the AffectedEquipment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAffectedEquipment() {
@@ -845,7 +845,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the measured electromagnetic field strength..
-   * <p>
+   *
    * @return a {@link FieldStrength} instance
    * @since 3.1.0
    */
@@ -855,7 +855,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the measured electromagnetic field strength..
-   * <p>
+   *
    * @param value a {@link FieldStrength} instance
    * @since 3.1.0
    */
@@ -865,7 +865,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceFieldStrength is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceFieldStrength() {
@@ -884,7 +884,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5]
    * [0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X".
-   * <p>
+   *
    * @return a {@link Lon} instance
    * @since 3.1.0
    */
@@ -904,7 +904,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5]
    * [0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X".
-   * <p>
+   *
    * @param value a {@link Lon} instance
    * @since 3.1.0
    */
@@ -914,7 +914,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceLon is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceLon() {
@@ -929,7 +929,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X".
-   * <p>
+   *
    * @return a {@link Lat} instance
    * @since 3.1.0
    */
@@ -945,7 +945,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X".
-   * <p>
+   *
    * @param value a {@link Lat} instance
    * @since 3.1.0
    */
@@ -955,7 +955,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceLat is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceLat() {
@@ -964,7 +964,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the measured azimuth of the source from the victim..
-   * <p>
+   *
    * @return a {@link Az} instance
    * @since 3.1.0
    */
@@ -974,7 +974,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the measured azimuth of the source from the victim..
-   * <p>
+   *
    * @param value a {@link Az} instance
    * @since 3.1.0
    */
@@ -984,7 +984,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceAz is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceAz() {
@@ -994,7 +994,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the approximate position the source, if exact coordinates are not
    * known..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -1005,7 +1005,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the approximate position the source, if exact coordinates are not
    * known..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -1015,7 +1015,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceLocDescr is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceLocDescr() {
@@ -1025,7 +1025,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the nominal frequency of the interference, or the minimum frequency in
    * case of a range..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1036,7 +1036,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the nominal frequency of the interference, or the minimum frequency in
    * case of a range..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1046,7 +1046,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceFreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceFreqMin() {
@@ -1055,7 +1055,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the maximum frequency of the interference, in case of a range..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1065,7 +1065,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the maximum frequency of the interference, in case of a range..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1075,7 +1075,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceFreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceFreqMax() {
@@ -1147,7 +1147,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(A|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|V|
    * W|X|-)(0|1|2|3|7|8|9|X|-)(A|B|C|D|E|F|N|W|X|-)(A|B|C|D|E|F|G|H|J|K|L|M|N|W|X)?(C|F|N|T|W|X)?".
-   * <p>
+   *
    * @return a {@link EmsDes} instance
    * @since 3.1.0
    */
@@ -1220,7 +1220,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(A|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|V|
    * W|X|-)(0|1|2|3|7|8|9|X|-)(A|B|C|D|E|F|N|W|X|-)(A|B|C|D|E|F|G|H|J|K|L|M|N|W|X)?(C|F|N|T|W|X)?".
-   * <p>
+   *
    * @param value a {@link EmsDes} instance
    * @since 3.1.0
    */
@@ -1230,7 +1230,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceEmsClass is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceEmsClass() {
@@ -1239,7 +1239,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the calculated or measured bandwidth of the interference source..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1249,7 +1249,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the calculated or measured bandwidth of the interference source..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1259,7 +1259,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SourceEmsBw is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSourceEmsBw() {
@@ -1273,7 +1273,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}".
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -1291,7 +1291,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}".
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -1304,7 +1304,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimAsgnRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimAsgnRef() {
@@ -1314,7 +1314,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the nomenclature or other identifier of equipment experiencing the
    * interference..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -1325,7 +1325,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the nomenclature or other identifier of equipment experiencing the
    * interference..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -1335,7 +1335,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimSystem is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimSystem() {
@@ -1344,7 +1344,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the country or area where the victim of the interference is located..
-   * <p>
+   *
    * @return the VictimCountry value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1354,7 +1354,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the country or area where the victim of the interference is located..
-   * <p>
+   *
    * @param value the VictimCountry value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1366,7 +1366,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the VictimCountry is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimCountry() {
@@ -1384,7 +1384,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X".
-   * <p>
+   *
    * @return a {@link Lon} instance
    * @since 3.1.0
    */
@@ -1403,7 +1403,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X".
-   * <p>
+   *
    * @param value a {@link Lon} instance
    * @since 3.1.0
    */
@@ -1413,7 +1413,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimLon is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimLon() {
@@ -1428,7 +1428,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X".
-   * <p>
+   *
    * @return a {@link Lat} instance
    * @since 3.1.0
    */
@@ -1444,7 +1444,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X".
-   * <p>
+   *
    * @param value a {@link Lat} instance
    * @since 3.1.0
    */
@@ -1454,7 +1454,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimLat is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimLat() {
@@ -1464,7 +1464,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the approximate position the victim of the interference, if exact
    * coordinates are not known..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -1475,7 +1475,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the approximate position the victim of the interference, if exact
    * coordinates are not known..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -1485,7 +1485,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimLocDescr is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimLocDescr() {
@@ -1494,7 +1494,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the nominal or lower frequency used by the victim of the interference..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1504,7 +1504,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the nominal or lower frequency used by the victim of the interference..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1514,7 +1514,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimFreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimFreqMin() {
@@ -1524,7 +1524,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the upper frequency of the range, in case of an assignment over a
    * frequency range..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1535,7 +1535,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the upper frequency of the range, in case of an assignment over a
    * frequency range..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1545,7 +1545,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the VictimFreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimFreqMax() {
@@ -1554,7 +1554,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the name of the satellite experiencing the interference..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -1564,7 +1564,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the name of the satellite experiencing the interference..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -1574,7 +1574,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SatelliteName is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteName() {
@@ -1583,7 +1583,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the identifier of satellite channel experiencing the interference..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -1593,7 +1593,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the identifier of satellite channel experiencing the interference..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -1603,7 +1603,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SatelliteChannel is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteChannel() {
@@ -1612,7 +1612,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the satellite uplink frequency experiencing the interference.
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1622,7 +1622,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite uplink frequency experiencing the interference.
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -1632,7 +1632,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SatelliteUplinkFreq is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteUplinkFreq() {
@@ -1641,7 +1641,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the effect the interference has on normal operations..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1651,7 +1651,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the effect the interference has on normal operations..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1661,7 +1661,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the PerformanceEffects is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPerformanceEffects() {
@@ -1670,7 +1670,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get your best guess as to the cause of the interference..
-   * <p>
+   *
    * @return the Evaluation value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1680,7 +1680,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set your best guess as to the cause of the interference..
-   * <p>
+   *
    * @param value the Evaluation value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1692,7 +1692,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the Evaluation is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEvaluation() {
@@ -1701,7 +1701,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get what actions were taken to resolve the interference..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1711,7 +1711,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set what actions were taken to resolve the interference..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1721,7 +1721,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the Solution is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSolution() {
@@ -1731,7 +1731,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Get the responsible Combatant Commander for the geographic area where the
    * interference occurred and/or the victim's organization..
-   * <p>
+   *
    * @return the AffectedCSA value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1742,7 +1742,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the responsible Combatant Commander for the geographic area where the
    * interference occurred and/or the victim's organization..
-   * <p>
+   *
    * @param value the AffectedCSA value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1754,7 +1754,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the AffectedCSA is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAffectedCSA() {
@@ -1763,7 +1763,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the interference characteristics..
-   * <p>
+   *
    * @return the Characteristics value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1773,7 +1773,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the interference characteristics..
-   * <p>
+   *
    * @param value the Characteristics value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1785,7 +1785,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the Characteristics is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCharacteristics() {
@@ -1794,7 +1794,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get whether the interference affects GPS reception..
-   * <p>
+   *
    * @return the GPSAffected value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1804,7 +1804,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set whether the interference affects GPS reception..
-   * <p>
+   *
    * @param value the GPSAffected value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1816,7 +1816,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the GPSAffected is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGPSAffected() {
@@ -1825,7 +1825,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the local event ID..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -1835,7 +1835,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the local event ID..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -1845,7 +1845,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the LocalEventID is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocalEventID() {
@@ -1854,7 +1854,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the network circuits affected by the interference..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1864,7 +1864,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the network circuits affected by the interference..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1874,7 +1874,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the NetCircuitsAffected is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNetCircuitsAffected() {
@@ -1883,7 +1883,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the networks affected by the interference..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1893,7 +1893,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the networks affected by the interference..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -1903,7 +1903,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the NetsAffected is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNetsAffected() {
@@ -1912,7 +1912,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the satellite communication priority..
-   * <p>
+   *
    * @return the SATCOMPriority value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1922,7 +1922,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite communication priority..
-   * <p>
+   *
    * @param value the SATCOMPriority value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1934,7 +1934,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the SATCOMPriority is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSATCOMPriority() {
@@ -1943,7 +1943,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get whether the interference affects satellite reception..
-   * <p>
+   *
    * @return the SatelliteAffected value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1953,7 +1953,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set whether the interference affects satellite reception..
-   * <p>
+   *
    * @param value the SatelliteAffected value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1965,7 +1965,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the SatelliteAffected is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteAffected() {
@@ -1974,7 +1974,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the polarisation of the satellite downlink signal..
-   * <p>
+   *
    * @return the SatelliteDownlinkPolarisation value in a {@link TString} data
    *         type
    * @since 3.1.0
@@ -1985,7 +1985,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the polarisation of the satellite downlink signal..
-   * <p>
+   *
    * @param value the SatelliteDownlinkPolarisation value in a {@link TString}
    *              data type
    * @since 3.1.0
@@ -1998,7 +1998,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the SatelliteDownlinkPolarisation is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteDownlinkPolarisation() {
@@ -2007,7 +2007,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the satellite hemisphere..
-   * <p>
+   *
    * @return the SatelliteHemisphere value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2017,7 +2017,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite hemisphere..
-   * <p>
+   *
    * @param value the SatelliteHemisphere value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -2029,7 +2029,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the SatelliteHemisphere is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteHemisphere() {
@@ -2042,7 +2042,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1
    * (US),2})?)|1800000)(E|W))|X".
-   * <p>
+   *
    * @return a {@link Lon} instance
    * @since 3.1.0
    */
@@ -2056,7 +2056,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5][0-9]){2})(.[0-9]{1
    * (US),2})?)|1800000)(E|W))|X".
-   * <p>
+   *
    * @param value a {@link Lon} instance
    * @since 3.1.0
    */
@@ -2066,7 +2066,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SatelliteLongitude is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteLongitude() {
@@ -2075,7 +2075,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the satellite transponder ID..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -2085,7 +2085,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite transponder ID..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -2095,7 +2095,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the SatelliteTransponderID is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteTransponderID() {
@@ -2104,7 +2104,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get the polarisation of the satellite uplink signal..
-   * <p>
+   *
    * @return the SatelliteUplinkPolarisation value in a {@link TString} data
    *         type
    * @since 3.1.0
@@ -2115,7 +2115,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the polarisation of the satellite uplink signal..
-   * <p>
+   *
    * @param value the SatelliteUplinkPolarisation value in a {@link TString}
    *              data type
    * @since 3.1.0
@@ -2128,7 +2128,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the SatelliteUplinkPolarisation is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSatelliteUplinkPolarisation() {
@@ -2140,7 +2140,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -2153,7 +2153,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -2170,7 +2170,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set whether the user needs technical assistance from another organisation
    * to solve the interference. If not used, consider as "No".
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2182,7 +2182,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set how often the interference is experienced.
-   * <p>
+   *
    * @param value An instances of type {@link ListCTI}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2194,7 +2194,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the date/time the interference was first perceived.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2206,7 +2206,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the date/time the interference was first perceived.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2218,7 +2218,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the date/time the interference ceased.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2230,7 +2230,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the date/time the interference ceased.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2244,7 +2244,7 @@ public class IntfReport extends Common<IntfReport> {
    * Set In Data Item IntfDescr, describe the interference. Provide as much
    * information as possible. State what actions you have taken so far to
    * resolve the interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2257,7 +2257,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the nomenclature or description of equipment experiencing the
    * interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2269,7 +2269,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the measured electromagnetic field strength.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2291,7 +2291,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "((((((0[0-9]{2})|(1[0-7][0-9]))([0-5]
    * [0-9]){2})(.[0-9]{1,2})?)|1800000)(E|W))|X"
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2303,7 +2303,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the geographical longitude in decimal degrees.
-   * <p>
+   *
    * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2321,7 +2321,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(((((([0-8][0-9]))([0-5][0-9]){2})(.[0-9]{1,2})?)|900000)(N|S))|X"
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2333,7 +2333,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the geographical latitude in decimal degrees.
-   * <p>
+   *
    * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2345,7 +2345,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the measured azimuth of the source from the victim.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2358,7 +2358,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the approximate position the source, if exact coordinates are not
    * known.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2371,7 +2371,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the nominal frequency of the interference, or the minimum frequency in
    * case of a range.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2383,7 +2383,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the maximum frequency of the interference, in case of a range.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2458,7 +2458,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "(A|B|C|D|F|G|H|J|K|L|M|N|P|Q|R|V|
    * W|X|-)(0|1|2|3|7|8|9|X|-)(A|B|C|D|E|F|N|W|X|-)(A|B|C|D|E|F|G|H|J|K|L|M|N|W|X)?(C|F|N|T|W|X)?"
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2470,7 +2470,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the calculated or measured bandwidth of the interference source.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2487,7 +2487,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2503,7 +2503,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the nomenclature or other identifier of equipment experiencing the
    * interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2515,7 +2515,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the country or area where the victim of the interference is located.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2527,7 +2527,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the geographical longitude in decimal degrees.
-   * <p>
+   *
    * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2539,7 +2539,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the geographical latitude in decimal degrees.
-   * <p>
+   *
    * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2552,7 +2552,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the approximate position the victim of the interference, if exact
    * coordinates are not known.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2564,7 +2564,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the nominal or lower frequency used by the victim of the interference.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2577,7 +2577,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the upper frequency of the range, in case of an assignment over a
    * frequency range.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2589,7 +2589,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the name of the satellite experiencing the interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2601,7 +2601,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the identifier of satellite channel experiencing the interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2613,7 +2613,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite uplink frequency experiencing the interference
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2625,7 +2625,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the effect the interference has on normal operations.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2637,7 +2637,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set your best guess as to the cause of the interference.
-   * <p>
+   *
    * @param value An instances of type {@link ListCJ1}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2649,7 +2649,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set what actions were taken to resolve the interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2662,7 +2662,7 @@ public class IntfReport extends Common<IntfReport> {
   /**
    * Set the responsible Combatant Commander for the geographic area where the
    * interference occurred and/or the victim's organization.
-   * <p>
+   *
    * @param value An instances of type {@link ListUAG}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2674,7 +2674,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the interference characteristics.
-   * <p>
+   *
    * @param value An instances of type {@link ListUCH}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2686,7 +2686,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set whether the interference affects GPS reception.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2698,7 +2698,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the local event ID.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2710,7 +2710,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the network circuits affected by the interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2722,7 +2722,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the networks affected by the interference.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2734,7 +2734,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite communication priority.
-   * <p>
+   *
    * @param value An instances of type {@link ListUPR}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2746,7 +2746,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set whether the interference affects satellite reception.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2758,7 +2758,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the polarisation of the satellite downlink signal.
-   * <p>
+   *
    * @param value An instances of type {@link ListCPO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2770,7 +2770,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite hemisphere.
-   * <p>
+   *
    * @param value An instances of type {@link ListCCO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2782,7 +2782,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite longitude in decimal degrees.
-   * <p>
+   *
    * @param value The coordinate value in decimal degrees
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2794,7 +2794,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the satellite transponder ID.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2806,7 +2806,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Set the polarisation of the satellite uplink signal.
-   * <p>
+   *
    * @param value An instances of type {@link ListCPO}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2821,7 +2821,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2838,7 +2838,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2852,7 +2852,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Get a string representation of this IntfReport instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -2913,7 +2913,7 @@ public class IntfReport extends Common<IntfReport> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -2929,7 +2929,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -2942,7 +2942,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}".
-   * <p>
+   *
    * @return a {@link Assignment} instance
    * @since 3.1.0
    */
@@ -2952,7 +2952,7 @@ public class IntfReport extends Common<IntfReport> {
 
   /**
    * Determine if the victimAssignment field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVictimAssignment() {
@@ -2966,7 +2966,7 @@ public class IntfReport extends Common<IntfReport> {
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
    * "AS". [XSD ERR REGEX] This data item MUST comply to the regular expression:
    * "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
-   * <p>
+   *
    * @param value An instances of type {@link Assignment}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
@@ -2983,7 +2983,7 @@ public class IntfReport extends Common<IntfReport> {
    * from the transient {@link #victimAssignment} field. This method should
    * typically be called after the IntfReport is configured and (optionally)
    * before exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -3000,7 +3000,7 @@ public class IntfReport extends Common<IntfReport> {
    * the imported {@link #victimAsgnRef} field. This method should typically be
    * called after the IntfReport is imported from XML. * @param root the SSRF
    * root instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

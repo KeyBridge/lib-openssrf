@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,12 @@ package us.gov.dod.standard.ssrf._3_1.ssreply;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.SSReply;
+import us.gov.dod.standard.ssrf._3_1.Satellite;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.ssrequest.Stage;
 
@@ -39,7 +43,8 @@ import us.gov.dod.standard.ssrf._3_1.ssrequest.Stage;
 public class StageLocation {
 
   /**
-   * LocSatRef - Location or Satellite Reference (Required)    * <p>
+   * LocSatRef - Location or Satellite Reference (Required)
+   * <p>
    * The serial of a Location or satellite.
    * <p>
    * Format is pattern (S29)
@@ -49,7 +54,8 @@ public class StageLocation {
   @XmlElement(name = "LocSatRef", required = true)
   private Serial locSatRef;
   /**
-   * Excluded - Shape is Excluded (Optional)    * <p>
+   * Excluded - Shape is Excluded (Optional)
+   * <p>
    * "Yes" to indicate that the shape is to be excluded from the set. If
    * omitted, a "No" SHOULD be assumed by processing applications, meaning that
    * the shape is included by default.
@@ -189,7 +195,8 @@ public class StageLocation {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * LocSatRef - Location or Satellite Reference (Required)    * <p>
+   * LocSatRef - Location or Satellite Reference (Required)
+   * <p>
    * The serial of a Location or satellite.
    * <p>
    * Format is pattern (S29)

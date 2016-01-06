@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.Antenna;
 import us.gov.dod.standard.ssrf._3_1.RFSystem;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS2;
 import us.gov.dod.standard.ssrf._3_1.multiple.Notation;
@@ -54,7 +54,8 @@ import us.gov.dod.standard.ssrf._3_1.multiple.Notation;
 public class UsingCountries {
 
   /**
-   * US:CountryName - Country Name (Required)    * <p>
+   * US:CountryName - Country Name (Required)
+   * <p>
    * The designator for a specific country associated with the emitter that
    * transmits the subject Notation/Signal. Emitters commonly have more than one
    * user country associated with them.
@@ -66,7 +67,8 @@ public class UsingCountries {
   @XmlElement(name = "CountryName", required = true)
   private TString countryName;
   /**
-   * US:Role - Country Role (Optional)    * <p>
+   * US:Role - Country Role (Optional)
+   * <p>
    * The role of the country associated with the emitter that transmits the
    * subject Notation/Signal.
    * <p>

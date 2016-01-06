@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 
 /**
@@ -40,7 +41,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 public class Manufacturer {
 
   /**
-   * Country - Country/Area (Optional)    * <p>
+   * Country - Country/Area (Optional)
+   * <p>
    * The country or area in which the Manufacturer has its Headquarters.
    * <p>
    * Format is L:CAO
@@ -50,7 +52,8 @@ public class Manufacturer {
   @XmlElement(name = "Country", required = false)
   private TString country;
   /**
-   * Name - Manufacturer Name (Required)    * <p>
+   * Name - Manufacturer Name (Required)
+   * <p>
    * The name of the company that manufactured the equipment.
    * <p>
    * Format is S100

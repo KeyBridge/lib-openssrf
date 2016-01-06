@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,17 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCNU;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS5;
@@ -51,7 +55,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS5;
 public class Nomenclature {
 
   /**
-   * Type - Type (Optional)    * <p>
+   * Type - Type (Optional)
+   * <p>
    * The type of nomenclature (commercial, military, etc).
    * <p>
    * Format is L:CTO
@@ -61,7 +66,8 @@ public class Nomenclature {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * Level - Level (Optional)    * <p>
+   * Level - Level (Optional)
+   * <p>
    * The level of nomenclature (primary, nickname, etc).
    * <p>
    * Format is L:CNU
@@ -71,7 +77,8 @@ public class Nomenclature {
   @XmlElement(name = "Level", required = false)
   private TString level;
   /**
-   * Name - Name (Required)    * <p>
+   * Name - Name (Required)
+   * <p>
    * The standard military nomenclature. If the unit does not have a military
    * nomenclature, enter the manufacturer model number, or a short description.
    * <p>

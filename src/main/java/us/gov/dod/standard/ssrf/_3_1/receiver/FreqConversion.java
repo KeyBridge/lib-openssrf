@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.IFNum;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCLO;
 
 /**
@@ -51,7 +56,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCLO;
 public class FreqConversion {
 
   /**
-   * StageNum - Conversion Stage Number (Optional)    * <p>
+   * StageNum - Conversion Stage Number (Optional)
+   * <p>
    * The position of the IF stage being described.
    * <p>
    * Format is UN(1) [1..5]
@@ -61,7 +67,8 @@ public class FreqConversion {
   @XmlElement(name = "StageNum", required = false)
   private IFNum stageNum;
   /**
-   * OscillatorTuning - Oscillator Tuning (Optional)    * <p>
+   * OscillatorTuning - Oscillator Tuning (Optional)
+   * <p>
    * The relationship between the local oscillator frequency and the RF centre
    * frequency.
    * <p>
@@ -72,7 +79,8 @@ public class FreqConversion {
   @XmlElement(name = "OscillatorTuning", required = false)
   private TString oscillatorTuning;
   /**
-   * LOFreqMin - Minimum or Nominal LO Frequency (Optional)    * <p>
+   * LOFreqMin - Minimum or Nominal LO Frequency (Optional)
+   * <p>
    * The nominal LO frequency or minimum value of the LO frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -82,7 +90,8 @@ public class FreqConversion {
   @XmlElement(name = "LOFreqMin", required = false)
   private FreqM loFreqMin;
   /**
-   * LOFreqMax - Maximum LO Frequency (Optional)    * <p>
+   * LOFreqMax - Maximum LO Frequency (Optional)
+   * <p>
    * The maximum value of the LO frequencies.
    * <p>
    * [XSL ERR MINMAX] If LOFreqMax is used, it MUST be greater than LOFreqMin.
@@ -94,7 +103,8 @@ public class FreqConversion {
   @XmlElement(name = "LOFreqMax", required = false)
   private FreqM loFreqMax;
   /**
-   * IFMin - Nominal/Minimum Intermediate Frequency (Optional)    * <p>
+   * IFMin - Nominal/Minimum Intermediate Frequency (Optional)
+   * <p>
    * The nominal intermediate frequency or minimum value of the intermediate
    * frequency range.
    * <p>
@@ -105,7 +115,8 @@ public class FreqConversion {
   @XmlElement(name = "IFMin", required = false)
   private FreqM ifMin;
   /**
-   * IFMax - Maximum Intermediate Frequency (Optional)    * <p>
+   * IFMax - Maximum Intermediate Frequency (Optional)
+   * <p>
    * The maximum value of the intermediate frequencies.
    * <p>
    * [XSL ERR MINMAX] If IFMax is used, it MUST be greater than IFMin.

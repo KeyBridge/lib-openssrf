@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Calendar;
 import java.util.InvalidPropertiesFormatException;
@@ -37,7 +40,7 @@ import java.util.regex.Pattern;
  * string.
  * <p>
  * SSRF Properties can be saved to a File/Stream or loaded from a File/Stream.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version 1.0, 10/07/14
  * @since 3.1.0
@@ -58,7 +61,7 @@ public class SSRFProperties extends Properties {
    * before assigning it to a SSRF configuration. Typically at minimum the
    * "TSerial.organisation" property is set to a four-character organization
    * code.
-   * <p>
+   *
    * @return the default SSRFProperties "Unclassified" instance
    */
   public static SSRFProperties getDefault() {
@@ -76,7 +79,7 @@ public class SSRFProperties extends Properties {
    * <p>
    * This method scans the properties KEYs looking for any entry with the
    * indicated class value.
-   * <p>
+   *
    * @param clazz the class type to look for
    * @return TRUE if the properties contains a setting for the indicated class
    */
@@ -97,7 +100,7 @@ public class SSRFProperties extends Properties {
    * If the key is not found in this property list, the default property list,
    * and its defaults, recursively, are then checked. The method returns null if
    * the property is not found.
-   * <p>
+   *
    * @param clazz the containing class under inspection
    * @param field the class field under inspection
    * @return a string representation of the value, if set; otherwise NULL.
@@ -113,7 +116,7 @@ public class SSRFProperties extends Properties {
    * the key is not found in this property list, the default property list, and
    * its defaults, recursively, are then checked. The method returns null if the
    * property is not found.
-   * <p>
+   *
    * @param classPath the containing class name
    * @param fieldName the field name
    * @return a string representation of the value, if set; otherwise NULL.
@@ -129,7 +132,7 @@ public class SSRFProperties extends Properties {
    * If the key is not found in this property list, the default property list,
    * and its defaults, recursively, are then checked. The method returns the
    * default value argument if the property is not found.
-   * <p>
+   *
    * @param classPath    the containing class name
    * @param fieldName    the field name
    * @param defaultValue a default value
@@ -161,7 +164,7 @@ public class SSRFProperties extends Properties {
    * character. Characters not in Latin1, and certain special characters, are
    * represented in keys and elements using Unicode escapes as defined in
    * section 3.3 of The Java™ Language Specification.
-   * <p>
+   *
    * @param inFile a properties file
    * @throws IOException if the file cannot be read, is malformed or does not
    *                     exist
@@ -178,7 +181,7 @@ public class SSRFProperties extends Properties {
    * properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;
    * <p>
    * Furthermore, the document must satisfy the properties DTD described above.
-   * <p>
+   *
    * @param inFile a properties file
    * @throws IOException
    * @throws InvalidPropertiesFormatException
@@ -203,7 +206,7 @@ public class SSRFProperties extends Properties {
    * Characters less than \u0020 and characters greater than \u007E in property
    * keys or values are written as \\uxxxx for the appropriate hexadecimal value
    * xxxx.
-   * <p>
+   *
    * @param outFile the output file
    * @throws IOException if the output file cannot be written
    */
@@ -221,7 +224,7 @@ public class SSRFProperties extends Properties {
    * <p>
    * If the specified comment is null then no comment will be stored in the
    * document.
-   * <p>
+   *
    * @param outFile the output file
    * @throws IOException if the output file cannot be written
    */

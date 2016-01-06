@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * <p>
  * Sub-Elements are
  * {@link CaseNum}, {@link ExtReferenceRef}, {@link Remarks}, {@link SecurityClass}
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/27/2015
  * @param <T> The inheriting class type
@@ -101,7 +101,7 @@ public abstract class Common<T> implements Comparable<T> {
    * each data item, even if the classification is "U".
    * <p>
    * Format is L:CCL
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlAttribute(name = "cls", required = true)
@@ -134,7 +134,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group Initial (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Serial", required = true)
@@ -148,7 +148,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    * <p>
    * Attribute group Initial (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EntryDateTime", required = true)
@@ -161,7 +161,7 @@ public abstract class Common<T> implements Comparable<T> {
    * The identifier of the person or entity who last observed this Dataset.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LastObservedBy", required = false)
@@ -173,7 +173,7 @@ public abstract class Common<T> implements Comparable<T> {
    * was first collected.
    * <p>
    * Format is DateTime
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedFirstDateTime", required = false)
@@ -185,7 +185,7 @@ public abstract class Common<T> implements Comparable<T> {
    * was last collected.
    * <p>
    * Format is DateTime
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ObservedLastDateTime", required = false)
@@ -197,7 +197,7 @@ public abstract class Common<T> implements Comparable<T> {
    * dataset.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ApprovedBy", required = false)
@@ -209,7 +209,7 @@ public abstract class Common<T> implements Comparable<T> {
    * dataset was approved or accepted by a designated expert.
    * <p>
    * Format is DateTime
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ApprovedDateTime", required = false)
@@ -218,7 +218,7 @@ public abstract class Common<T> implements Comparable<T> {
    * In Data Item Redacted (US), indicate if any original, or authoritative,
    * data was omitted. Supports datasets which have some data withheld by the
    * submitting agency.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Redacted", required = false)
@@ -231,7 +231,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group Initial (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EntryBy", required = false)
@@ -245,7 +245,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group Initial (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Owner", required = false)
@@ -258,7 +258,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is DateTime
    * <p>
    * Attribute group LastChange (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LastChangeDateTime", required = false)
@@ -271,7 +271,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group LastChange (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LastChangeBy", required = false)
@@ -284,7 +284,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is Date
    * <p>
    * Attribute group LastReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LastReviewDate", required = false)
@@ -297,7 +297,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group LastReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LastReviewBy", required = false)
@@ -311,7 +311,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Divergence from SMADEF: Automated changes using ModAllowedBy are not
    * permitted for use by USA systems.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ModAllowedBy", required = false)
@@ -322,7 +322,7 @@ public abstract class Common<T> implements Comparable<T> {
    * The state of the dataset.
    * <p>
    * Format is L:CSU
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "State", required = false)
@@ -333,7 +333,7 @@ public abstract class Common<T> implements Comparable<T> {
    * A general description of the Dataset that is inheriting Common.
    * <p>
    * Format is S500
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Description", required = false)
@@ -343,7 +343,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * SecurityClass (US) contains the security classification from one or more
    * data information sources.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SecurityClass")
@@ -353,7 +353,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * CaseNum provides the capability to store multiple identifiers for a
    * Dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CaseNum")
@@ -363,7 +363,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * ExtReferenceRef refers to an external reference defined in a dataset
    * ExternalReference.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExtReferenceRef", nillable = true)
@@ -378,7 +378,7 @@ public abstract class Common<T> implements Comparable<T> {
    * order to clearly explain a technical or operational consideration; in these
    * instances, the data must also be entered in the data element(s)
    * specifically established for it.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Remarks", nillable = true)
@@ -395,7 +395,7 @@ public abstract class Common<T> implements Comparable<T> {
    * data item.
    * <p>
    * Format is List of L:CCY
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlList
@@ -407,7 +407,7 @@ public abstract class Common<T> implements Comparable<T> {
    * A list of Common/Remarks idx values applicable to the current data item.
    * <p>
    * Format is List of UN6
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlList
@@ -420,7 +420,7 @@ public abstract class Common<T> implements Comparable<T> {
    * item.
    * <p>
    * Format is List of UN6
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlList
@@ -435,7 +435,7 @@ public abstract class Common<T> implements Comparable<T> {
    * (i.e., ASCII character #124).
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlAttribute(name = "legacyReleasability")
@@ -448,7 +448,7 @@ public abstract class Common<T> implements Comparable<T> {
    * "Outlier" | "Non-CodeList".
    * <p>
    * Format is S255
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlAttribute(name = "quality")
@@ -459,7 +459,7 @@ public abstract class Common<T> implements Comparable<T> {
    * A value that is most probably correct.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlAttribute(name = "recommendedValue")
@@ -475,7 +475,7 @@ public abstract class Common<T> implements Comparable<T> {
    * optional.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlAttribute(name = "idref")
@@ -497,7 +497,7 @@ public abstract class Common<T> implements Comparable<T> {
   //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
   /**
    * Get the identifier of the person or entity who last observed this Dataset.
-   * <p>
+   *
    * @return the LastObservedBy value in a {@link TS50} data type
    * @since 3.1.0
    */
@@ -507,7 +507,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the identifier of the person or entity who last observed this Dataset.
-   * <p>
+   *
    * @param value the LastObservedBy value in a {@link TS50} data type
    * @since 3.1.0
    */
@@ -517,7 +517,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the LastObservedBy is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastObservedBy() {
@@ -527,7 +527,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
-   * <p>
+   *
    * @return the ObservedFirstDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -538,7 +538,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
-   * <p>
+   *
    * @param value the ObservedFirstDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -548,7 +548,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ObservedFirstDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedFirstDateTime() {
@@ -558,7 +558,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
-   * <p>
+   *
    * @return the ObservedLastDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -569,7 +569,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
-   * <p>
+   *
    * @param value the ObservedLastDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -579,7 +579,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ObservedLastDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObservedLastDateTime() {
@@ -589,7 +589,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the identifier of the designated expert who last approved or accepted
    * the dataset.
-   * <p>
+   *
    * @return the ApprovedBy value in a {@link TS50} data type
    * @since 3.1.0
    */
@@ -600,7 +600,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the identifier of the designated expert who last approved or accepted
    * the dataset.
-   * <p>
+   *
    * @param value the ApprovedBy value in a {@link TS50} data type
    * @since 3.1.0
    */
@@ -610,7 +610,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ApprovedBy is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApprovedBy() {
@@ -620,7 +620,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
-   * <p>
+   *
    * @return the ApprovedDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -631,7 +631,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
-   * <p>
+   *
    * @param value the ApprovedDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -641,7 +641,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ApprovedDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetApprovedDateTime() {
@@ -652,7 +652,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Get In Data Item Redacted (US), indicate if any original, or authoritative,
    * data was omitted. Supports datasets which have some data withheld by the
    * submitting agency.
-   * <p>
+   *
    * @return the Redacted value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -664,7 +664,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set In Data Item Redacted (US), indicate if any original, or authoritative,
    * data was omitted. Supports datasets which have some data withheld by the
    * submitting agency.
-   * <p>
+   *
    * @param value the Redacted value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -676,7 +676,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Determine if the Redacted is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRedacted() {
@@ -705,7 +705,7 @@ public abstract class Common<T> implements Comparable<T> {
    * one to fifteen alphanumeric characters (including spaces and special
    * characters), whose meaning is left at the discretion of each domain
    * manager.
-   * <p>
+   *
    * @return the Serial value in a {@link Serial} data type
    * @since 3.1.0
    */
@@ -735,7 +735,7 @@ public abstract class Common<T> implements Comparable<T> {
    * one to fifteen alphanumeric characters (including spaces and special
    * characters), whose meaning is left at the discretion of each domain
    * manager.
-   * <p>
+   *
    * @param value the Serial value in a {@link Serial} data type
    * @since 3.1.0
    */
@@ -745,7 +745,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Serial is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSerial() {
@@ -755,7 +755,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
-   * <p>
+   *
    * @return the EntryDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -766,7 +766,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
-   * <p>
+   *
    * @param value the EntryDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -776,7 +776,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the EntryDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEntryDateTime() {
@@ -785,7 +785,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the serial of the Role which is creating the current dataset.
-   * <p>
+   *
    * @return the EntryBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -798,7 +798,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the serial of the Role which is creating the current dataset.
-   * <p>
+   *
    * @param value the EntryBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -811,7 +811,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the EntryBy is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEntryBy() {
@@ -821,7 +821,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the serial of the Role which is responsible for the accuracy of the
    * data content.
-   * <p>
+   *
    * @return the Owner value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -835,7 +835,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the serial of the Role which is responsible for the accuracy of the
    * data content.
-   * <p>
+   *
    * @param value the Owner value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -848,7 +848,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Owner is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwner() {
@@ -857,7 +857,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the date and UTC Time the dataset was last modified.
-   * <p>
+   *
    * @return the LastChangeDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -867,7 +867,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the date and UTC Time the dataset was last modified.
-   * <p>
+   *
    * @param value the LastChangeDateTime value in a {@link DT} data type
    * @since 3.1.0
    */
@@ -877,7 +877,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the LastChangeDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastChangeDateTime() {
@@ -886,7 +886,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the serial of the Role which last modified the current dataset.
-   * <p>
+   *
    * @return the LastChangeBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -899,7 +899,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the serial of the Role which last modified the current dataset.
-   * <p>
+   *
    * @param value the LastChangeBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -912,7 +912,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the LastChangeBy is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastChangeBy() {
@@ -921,7 +921,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the last date that the dataset was reviewed.
-   * <p>
+   *
    * @return the LastReviewDate value in a {@link D} data type
    * @since 3.1.0
    */
@@ -931,7 +931,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the last date that the dataset was reviewed.
-   * <p>
+   *
    * @param value the LastReviewDate value in a {@link D} data type
    * @since 3.1.0
    */
@@ -941,7 +941,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the LastReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastReviewDate() {
@@ -950,7 +950,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the Role reference serial of the person who last reviewed the dataset.
-   * <p>
+   *
    * @return the LastReviewBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -963,7 +963,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the Role reference serial of the person who last reviewed the dataset.
-   * <p>
+   *
    * @param value the LastReviewBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -976,7 +976,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the LastReviewBy is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastReviewBy() {
@@ -986,7 +986,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the serial of the Role which is authorised to modify the current
    * dataset.
-   * <p>
+   *
    * @return the ModAllowedBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -1000,7 +1000,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the serial of the Role which is authorised to modify the current
    * dataset.
-   * <p>
+   *
    * @param value the ModAllowedBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -1013,7 +1013,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ModAllowedBy is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetModAllowedBy() {
@@ -1022,7 +1022,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the state of the dataset.
-   * <p>
+   *
    * @return the State value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1032,7 +1032,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the state of the dataset.
-   * <p>
+   *
    * @param value the State value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -1044,7 +1044,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Determine if the State is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetState() {
@@ -1053,7 +1053,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get a general description of the Dataset that is inheriting Common.
-   * <p>
+   *
    * @return the Description value in a {@link TS500} data type
    * @since 3.1.0
    */
@@ -1063,7 +1063,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set a general description of the Dataset that is inheriting Common.
-   * <p>
+   *
    * @param value the Description value in a {@link TS500} data type
    * @since 3.1.0
    */
@@ -1073,7 +1073,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Description is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDescription() {
@@ -1085,7 +1085,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element SecurityClass (US) contains the security classification
    * from one or more data information sources.
-   * <p>
+   *
    * @return a {@link SecurityClass} instance
    * @since 3.1.0
    */
@@ -1098,7 +1098,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element SecurityClass (US) contains the security classification
    * from one or more data information sources.
-   * <p>
+   *
    * @param value a {@link SecurityClass} instance
    * @since 3.1.0
    */
@@ -1108,7 +1108,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the SecurityClass is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSecurityClass() {
@@ -1120,7 +1120,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
-   * <p>
+   *
    * @return a {@link CaseNum} instance
    * @since 3.1.0
    */
@@ -1133,7 +1133,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the CaseNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCaseNum() {
@@ -1152,7 +1152,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
-   * <p>
+   *
    * @return a {@link ExtReferenceRef} instance
    * @since 3.1.0
    */
@@ -1165,7 +1165,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ExtReferenceRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExtReferenceRef() {
@@ -1182,7 +1182,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get a list of Common/Remarks idx values applicable to the current data
    * item.
-   * <p>
+   *
    * @return a {@link Remarks} instance
    * @since 3.1.0
    */
@@ -1195,7 +1195,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Remarks is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRemarks() {
@@ -1212,7 +1212,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the classification of the current data item. This attribute is REQUIRED
    * on each data item, even if the classification is "U".
-   * <p>
+   *
    * @return a {@link ListCCL} instance
    * @since 3.1.0
    */
@@ -1223,7 +1223,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the classification of the current data item. This attribute is REQUIRED
    * on each data item, even if the classification is "U".
-   * <p>
+   *
    * @param value a {@link ListCCL} instance
    * @since 3.1.0
    */
@@ -1233,7 +1233,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Cls is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCls() {
@@ -1246,7 +1246,7 @@ public abstract class Common<T> implements Comparable<T> {
    * for the data item. For the US, if this data item AND attribute US:legacy
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
-   * <p>
+   *
    * @return a {@link ListCCY} instance
    * @since 3.1.0
    */
@@ -1259,7 +1259,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Releasability is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReleasability() {
@@ -1277,7 +1277,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Get remarks - Links to Data Item Remarks (Optional)
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
-   * <p>
+   *
    * @return a {@link BigInteger} instance
    * @since 3.1.0
    */
@@ -1290,7 +1290,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the RemarkRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRemarkRef() {
@@ -1307,7 +1307,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
-   * <p>
+   *
    * @return a {@link BigInteger} instance
    * @since 3.1.0
    */
@@ -1320,7 +1320,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ExtReferences is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExtReferences() {
@@ -1339,7 +1339,7 @@ public abstract class Common<T> implements Comparable<T> {
    * format. For example, "Approved for public release; distribution is
    * unlimited". Multiple special handling instructions are separated by "|”
    * (i.e., ASCII character #124).
-   * <p>
+   *
    * @return a {@link String} instance
    * @since 3.1.0
    */
@@ -1352,7 +1352,7 @@ public abstract class Common<T> implements Comparable<T> {
    * format. For example, "Approved for public release; distribution is
    * unlimited". Multiple special handling instructions are separated by "|”
    * (i.e., ASCII character #124).
-   * <p>
+   *
    * @param value a {@link String} instance
    * @since 3.1.0
    */
@@ -1362,7 +1362,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the LegacyReleasability is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLegacyReleasability() {
@@ -1373,7 +1373,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Get one or more data quality indicator(s), separated by "|” (i.e., ASCII
    * character #124), for the contents of the associated Data Item For example,
    * "Outlier" | "Non-CodeList".
-   * <p>
+   *
    * @return a {@link String} instance
    * @since 3.1.0
    */
@@ -1385,7 +1385,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set one or more data quality indicator(s), separated by "|” (i.e., ASCII
    * character #124), for the contents of the associated Data Item For example,
    * "Outlier" | "Non-CodeList".
-   * <p>
+   *
    * @param value a {@link String} instance
    * @since 3.1.0
    */
@@ -1395,7 +1395,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Quality is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetQuality() {
@@ -1404,7 +1404,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get a value that is most probably correct.
-   * <p>
+   *
    * @return a {@link String} instance
    * @since 3.1.0
    */
@@ -1414,7 +1414,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set a value that is most probably correct.
-   * <p>
+   *
    * @param value a {@link String} instance
    * @since 3.1.0
    */
@@ -1424,7 +1424,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the RecommendedValue is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRecommendedValue() {
@@ -1438,7 +1438,7 @@ public abstract class Common<T> implements Comparable<T> {
    * the idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
    * optional.
-   * <p>
+   *
    * @return a {@link String} instance
    * @since 3.1.0
    */
@@ -1453,7 +1453,7 @@ public abstract class Common<T> implements Comparable<T> {
    * the idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
    * optional.
-   * <p>
+   *
    * @param value a {@link String} instance
    * @since 3.1.0
    */
@@ -1463,7 +1463,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the Idref is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIdref() {
@@ -1472,7 +1472,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the identifier of the person or entity who last observed this Dataset.
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1485,7 +1485,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1498,7 +1498,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was first collected.
-   * <p>
+   *
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1511,7 +1511,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1524,7 +1524,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and time, based on Greenwich Mean Time (GMT), the subject
    * signal was last collected.
-   * <p>
+   *
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1537,7 +1537,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the identifier of the designated expert who last approved or accepted
    * the dataset.
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1550,7 +1550,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1563,7 +1563,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the last date and time, based on Greenwich Mean Time (GMT), that the
    * dataset was approved or accepted by a designated expert.
-   * <p>
+   *
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1577,7 +1577,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set In Data Item Redacted (US), indicate if any original, or authoritative,
    * data was omitted. Supports datasets which have some data withheld by the
    * submitting agency.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1609,7 +1609,7 @@ public abstract class Common<T> implements Comparable<T> {
    * one to fifteen alphanumeric characters (including spaces and special
    * characters), whose meaning is left at the discretion of each domain
    * manager.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1622,7 +1622,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the date and UTC Time the dataset was initially entered into the data
    * repository (e.g., FRRS for USA, SMIR for NATO).
-   * <p>
+   *
    * @param value An instances of type {@link DT}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1633,7 +1633,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the serial of the Role which is creating the current dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1649,7 +1649,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the serial of the Role which is responsible for the accuracy of the
    * data content.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1664,7 +1664,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the date and UTC Time the dataset was last modified.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1676,7 +1676,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the date and UTC Time the dataset was last modified.
-   * <p>
+   *
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1688,7 +1688,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the serial of the Role which last modified the current dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1703,7 +1703,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the last date that the dataset was reviewed.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1715,7 +1715,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the last date that the dataset was reviewed.
-   * <p>
+   *
    * @param value An instances of type {@link Date}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1727,7 +1727,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the Role reference serial of the person who last reviewed the dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1743,7 +1743,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the serial of the Role which is authorised to modify the current
    * dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1758,7 +1758,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the state of the dataset.
-   * <p>
+   *
    * @param value An instances of type {@link ListCSU}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1770,7 +1770,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set a general description of the Dataset that is inheriting Common.
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1785,7 +1785,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element SecurityClass (US) contains the security classification
    * from one or more data information sources.
-   * <p>
+   *
    * @param value An instances of type {@link SecurityClass}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1799,7 +1799,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link CaseNum...}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1816,7 +1816,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
-   * <p>
+   *
    * @param values A collection of {@link CaseNum} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -1833,7 +1833,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
-   * <p>
+   *
    * @param values One or more instances of type {@link ExtReferenceRef...}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1850,7 +1850,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
-   * <p>
+   *
    * @param values A collection of {@link ExtReferenceRef} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -1865,7 +1865,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
-   * <p>
+   *
    * @param values One or more instances of type {@link Remarks...}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1880,7 +1880,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
-   * <p>
+   *
    * @param values A collection of {@link Remarks} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -1895,7 +1895,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the classification of the current data item. This attribute is REQUIRED
    * on each data item, even if the classification is "U".
-   * <p>
+   *
    * @param value An instances of type {@link ListCCL}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1910,7 +1910,7 @@ public abstract class Common<T> implements Comparable<T> {
    * for the data item. For the US, if this data item AND attribute US:legacy
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
-   * <p>
+   *
    * @param values One or more instances of type {@link ListCCY...}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1928,7 +1928,7 @@ public abstract class Common<T> implements Comparable<T> {
    * for the data item. For the US, if this data item AND attribute US:legacy
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
-   * <p>
+   *
    * @param values A collection of {@link Releasability} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -1944,7 +1944,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set remarks - Links to Data Item Remarks (Optional)
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
-   * <p>
+   *
    * @param values One or more instances of type {@link BigInteger...}
    * @return The current Common object instance
    * @since 3.1.0
@@ -1960,7 +1960,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set remarks - Links to Data Item Remarks (Optional)
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
-   * <p>
+   *
    * @param values A collection of {@link RemarkRef} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -1976,7 +1976,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set a single remark - Links to Data Item Remarks (Optional)
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
-   * <p>
+   *
    * @param remark A collection of {@link RemarkRef} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -1988,7 +1988,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
-   * <p>
+   *
    * @param values One or more instances of type {@link BigInteger...}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2003,7 +2003,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
-   * <p>
+   *
    * @param values A collection of {@link ExtReferences} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -2018,7 +2018,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
    * data item.
-   * <p>
+   *
    * @param extReference A collection of {@link ExtReferences} instances
    * @return The current Common object instance
    * @since 3.1.0
@@ -2032,7 +2032,7 @@ public abstract class Common<T> implements Comparable<T> {
    * format. For example, "Approved for public release; distribution is
    * unlimited". Multiple special handling instructions are separated by "|”
    * (i.e., ASCII character #124).
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2046,7 +2046,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set one or more data quality indicator(s), separated by "|” (i.e., ASCII
    * character #124), for the contents of the associated Data Item For example,
    * "Outlier" | "Non-CodeList".
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2058,7 +2058,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set a value that is most probably correct.
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2075,7 +2075,7 @@ public abstract class Common<T> implements Comparable<T> {
    * the idrefs should be considered required. If the receiving system is the
    * permanent end of the line for the Dataset, the idrefs may be considered
    * optional.
-   * <p>
+   *
    * @param value An instances of type {@link String}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2087,7 +2087,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get a string representation of this Common instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -2135,7 +2135,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {
@@ -2151,7 +2151,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group Initial (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -2165,7 +2165,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group Initial (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -2178,7 +2178,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group LastChange (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -2191,7 +2191,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Format is pattern (S29)
    * <p>
    * Attribute group LastReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -2205,7 +2205,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * Divergence from SMADEF: Automated changes using ModAllowedBy are not
    * permitted for use by USA systems.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -2213,7 +2213,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the serial of the Role which is creating the current dataset.
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -2223,7 +2223,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the entryByRole field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEntryByRole() {
@@ -2232,7 +2232,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the serial of the Role which is creating the current dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Role}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2245,7 +2245,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the serial of the Role which is responsible for the accuracy of the
    * data content.
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -2255,7 +2255,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the ownerRole field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwnerRole() {
@@ -2265,7 +2265,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the serial of the Role which is responsible for the accuracy of the
    * data content.
-   * <p>
+   *
    * @param value An instances of type {@link Role}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2277,7 +2277,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the serial of the Role which last modified the current dataset.
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -2287,7 +2287,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the lastChangeByRole field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastChangeByRole() {
@@ -2296,7 +2296,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the serial of the Role which last modified the current dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Role}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2308,7 +2308,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Get the Role reference serial of the person who last reviewed the dataset.
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -2318,7 +2318,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the lastReviewByRole field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLastReviewByRole() {
@@ -2327,7 +2327,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Set the Role reference serial of the person who last reviewed the dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Role}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2340,7 +2340,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the serial of the Role which is authorized to modify the current
    * dataset.
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -2350,7 +2350,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Determine if the modAllowedByRole field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetModAllowedByRole() {
@@ -2360,7 +2360,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the serial of the Role which is authorized to modify the current
    * dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Role}
    * @return The current Common object instance
    * @since 3.1.0
@@ -2398,7 +2398,7 @@ public abstract class Common<T> implements Comparable<T> {
    * This method builds the transient {@link #entryByRole} with values from the
    * imported {@link #entryBy} field. This method should typically be called
    * after the Common is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance
    * @since 3.1.0
    */
@@ -2448,7 +2448,7 @@ public abstract class Common<T> implements Comparable<T> {
   //<editor-fold defaultstate="collapsed" desc="Hashcode Equals and Comparable">
   /**
    * Hash code is based upon the object serial number.
-   * <p>
+   *
    * @return A unique hash code for this object instance.
    */
   @Override
@@ -2460,7 +2460,7 @@ public abstract class Common<T> implements Comparable<T> {
 
   /**
    * Equality is based upon the object serial number.
-   * <p>
+   *
    * @param obj the other object
    * @return TRUE if the objects are of the same class and their serial numbers
    *         match
@@ -2480,7 +2480,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Comparison is based alphabetically by class type, reverse chronologically
    * by entry date/time, then finally by alphabetically by the (semi-random)
    * serial number.
-   * <p>
+   *
    * @param o the other object instance to sort
    * @return alphabetical sort order
    */

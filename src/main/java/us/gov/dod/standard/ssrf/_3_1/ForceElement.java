@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,10 @@ import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.antenna.Nomenclature;
 import us.gov.dod.standard.ssrf._3_1.forceelement.Assets;
 import us.gov.dod.standard.ssrf._3_1.forceelement.StockNum;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
 
 /**
@@ -45,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *   &lt;Assets_etc/&gt;
  *   &lt;/ForceElement&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -78,7 +81,7 @@ public class ForceElement extends Common<ForceElement> {
    * equipment.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -89,7 +92,7 @@ public class ForceElement extends Common<ForceElement> {
    * If the Force Element is a Unit or a Platform.
    * <p>
    * Format is L:CFE
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Type", required = true)
@@ -102,7 +105,7 @@ public class ForceElement extends Common<ForceElement> {
    * information systems.
    * <p>
    * Format is S20
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UIC", required = false)
@@ -113,7 +116,7 @@ public class ForceElement extends Common<ForceElement> {
    * The owning country or body of the ForceElement.
    * <p>
    * Format is L:CAO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OwningCountry", required = false)
@@ -124,7 +127,7 @@ public class ForceElement extends Common<ForceElement> {
    * A reference to the organisation that owns the ForceElement.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OwningOrganisation", required = false)
@@ -138,7 +141,7 @@ public class ForceElement extends Common<ForceElement> {
    * Organisation and Equipment (TOE).
    * <p>
    * Format is L:CSR
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Role", required = false)
@@ -149,7 +152,7 @@ public class ForceElement extends Common<ForceElement> {
    * The type of platform.
    * <p>
    * Format is L:CET
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Platform", required = false)
@@ -161,7 +164,7 @@ public class ForceElement extends Common<ForceElement> {
    * (e.g.,Training, Finance, etc).
    * <p>
    * Format is L:CMC
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MissionCode", required = false)
@@ -173,7 +176,7 @@ public class ForceElement extends Common<ForceElement> {
    * or point at which authority or control is maintained.
    * <p>
    * Format is L:CLC
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CmdLevel", required = false)
@@ -183,7 +186,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -193,7 +196,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Assets indicates the authorised and available quantity of the equipment, RF
    * systems, or other Force Elements used or owned by the Force Element.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Assets")
@@ -207,7 +210,7 @@ public class ForceElement extends Common<ForceElement> {
    * military nomenclature and a commercial model number.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature", required = true)
@@ -217,7 +220,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * StockNum (US) provides the equipment stock number and indicates the type of
    * stock number.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StockNum")
@@ -237,7 +240,7 @@ public class ForceElement extends Common<ForceElement> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -252,7 +255,7 @@ public class ForceElement extends Common<ForceElement> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -262,7 +265,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -271,7 +274,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Get if the Force Element is a Unit or a Platform..
-   * <p>
+   *
    * @return the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -281,7 +284,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set if the Force Element is a Unit or a Platform..
-   * <p>
+   *
    * @param value the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -293,7 +296,7 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the Type is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetType() {
@@ -304,7 +307,7 @@ public class ForceElement extends Common<ForceElement> {
    * Get an organisational identifier that may be used to uniquely identify an
    * organisation in operational planning systems and other non-spectrum
    * information systems..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -316,7 +319,7 @@ public class ForceElement extends Common<ForceElement> {
    * Set an organisational identifier that may be used to uniquely identify an
    * organisation in operational planning systems and other non-spectrum
    * information systems..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -326,7 +329,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the UIC is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUIC() {
@@ -335,7 +338,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Get the owning country or body of the ForceElement..
-   * <p>
+   *
    * @return the OwningCountry value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -345,7 +348,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set the owning country or body of the ForceElement..
-   * <p>
+   *
    * @param value the OwningCountry value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -357,7 +360,7 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the OwningCountry is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwningCountry() {
@@ -366,7 +369,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Get a reference to the organisation that owns the ForceElement..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -376,7 +379,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set a reference to the organisation that owns the ForceElement..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    */
@@ -386,7 +389,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the OwningOrganisation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwningOrganisationRef() {
@@ -398,7 +401,7 @@ public class ForceElement extends Common<ForceElement> {
    * may be used to derive what equipment (i.e., weapons systems, signal,
    * platforms, etc.) the Force Element is authorised. Also referred to as the
    * Table of Organisation and Equipment (TOE)..
-   * <p>
+   *
    * @return the Role value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -411,7 +414,7 @@ public class ForceElement extends Common<ForceElement> {
    * may be used to derive what equipment (i.e., weapons systems, signal,
    * platforms, etc.) the Force Element is authorised. Also referred to as the
    * Table of Organisation and Equipment (TOE)..
-   * <p>
+   *
    * @param value the Role value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -423,7 +426,7 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the Role is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRole() {
@@ -432,7 +435,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Get the type of platform..
-   * <p>
+   *
    * @return the Platform value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -442,7 +445,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set the type of platform..
-   * <p>
+   *
    * @param value the Platform value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -454,7 +457,7 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the Platform is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPlatform() {
@@ -464,7 +467,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Get the mission code representing the primary mission of the Force Element
    * (e.g.,Training, Finance, etc)..
-   * <p>
+   *
    * @return the MissionCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -475,7 +478,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Set the mission code representing the primary mission of the Force Element
    * (e.g.,Training, Finance, etc)..
-   * <p>
+   *
    * @param value the MissionCode value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -487,7 +490,7 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the MissionCode is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMissionCode() {
@@ -497,7 +500,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Get the organisational level of the force element according to stratum,
    * echelon or point at which authority or control is maintained..
-   * <p>
+   *
    * @return the CmdLevel value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -508,7 +511,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Set the organisational level of the force element according to stratum,
    * echelon or point at which authority or control is maintained..
-   * <p>
+   *
    * @param value the CmdLevel value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -520,7 +523,7 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the CmdLevel is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCmdLevel() {
@@ -532,7 +535,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -545,7 +548,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -565,7 +568,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element Assets indicates the authorised and available quantity of
    * the equipment, RF systems, or other Force Elements used or owned by the
    * Force Element..
-   * <p>
+   *
    * @return a {@link Assets} instance
    * @since 3.1.0
    */
@@ -578,7 +581,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the Assets is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAssets() {
@@ -599,7 +602,7 @@ public class ForceElement extends Common<ForceElement> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -612,7 +615,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -631,7 +634,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number..
-   * <p>
+   *
    * @return a {@link StockNum} instance
    * @since 3.1.0
    */
@@ -644,7 +647,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the StockNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStockNum() {
@@ -665,7 +668,7 @@ public class ForceElement extends Common<ForceElement> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -682,7 +685,7 @@ public class ForceElement extends Common<ForceElement> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -694,7 +697,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set if the Force Element is a Unit or a Platform.
-   * <p>
+   *
    * @param value An instances of type {@link ListCFE}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -708,7 +711,7 @@ public class ForceElement extends Common<ForceElement> {
    * Set an organisational identifier that may be used to uniquely identify an
    * organisation in operational planning systems and other non-spectrum
    * information systems.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -720,7 +723,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set the owning country or body of the ForceElement.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAO}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -732,7 +735,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set a reference to the organisation that owns the ForceElement.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -747,7 +750,7 @@ public class ForceElement extends Common<ForceElement> {
    * may be used to derive what equipment (i.e., weapons systems, signal,
    * platforms, etc.) the Force Element is authorised. Also referred to as the
    * Table of Organisation and Equipment (TOE).
-   * <p>
+   *
    * @param value An instances of type {@link ListCSR}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -759,7 +762,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set the type of platform.
-   * <p>
+   *
    * @param value An instances of type {@link ListCET}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -772,7 +775,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Set the mission code representing the primary mission of the Force Element
    * (e.g.,Training, Finance, etc).
-   * <p>
+   *
    * @param value An instances of type {@link ListCMC}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -785,7 +788,7 @@ public class ForceElement extends Common<ForceElement> {
   /**
    * Set the organisational level of the force element according to stratum,
    * echelon or point at which authority or control is maintained.
-   * <p>
+   *
    * @param value An instances of type {@link ListCLC}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -800,7 +803,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -817,7 +820,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -835,7 +838,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element Assets indicates the authorised and available quantity of
    * the equipment, RF systems, or other Force Elements used or owned by the
    * Force Element.
-   * <p>
+   *
    * @param values One or more instances of type {@link Assets...}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -853,7 +856,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element Assets indicates the authorised and available quantity of
    * the equipment, RF systems, or other Force Elements used or owned by the
    * Force Element.
-   * <p>
+   *
    * @param values A collection of {@link Assets} instances
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -872,7 +875,7 @@ public class ForceElement extends Common<ForceElement> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -891,7 +894,7 @@ public class ForceElement extends Common<ForceElement> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -908,7 +911,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
-   * <p>
+   *
    * @param values One or more instances of type {@link StockNum...}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -925,7 +928,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
-   * <p>
+   *
    * @param values A collection of {@link StockNum} instances
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -939,7 +942,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Get a string representation of this ForceElement instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -970,7 +973,7 @@ public class ForceElement extends Common<ForceElement> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -984,7 +987,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link Organisation} instance
    * @since 3.1.0
    */
@@ -994,7 +997,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Determine if the owningOrganisation field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOwningOrganisation() {
@@ -1003,7 +1006,7 @@ public class ForceElement extends Common<ForceElement> {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link Organisation}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
@@ -1020,7 +1023,7 @@ public class ForceElement extends Common<ForceElement> {
    * values from the transient {@link #owningOrganisation} field. This method
    * should typically be called after the ForceElement is configured and
    * (optionally) before exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1037,7 +1040,7 @@ public class ForceElement extends Common<ForceElement> {
    * from the imported {@link #owningOrganisationRef} field. This method should
    * typically be called after the ForceElement is imported from XML. * @param
    * root the SSRF root instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,10 @@ package us.gov.dod.standard.ssrf._3_1.channelplan;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Objects;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterFREQM;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,9 @@ package us.gov.dod.standard.ssrf._3_1.organisation;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Organisation;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFR;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFT;
 
@@ -50,7 +51,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFT;
 public class RelatedOrganisation {
 
   /**
-   * Type - Type (Optional)    * <p>
+   * Type - Type (Optional)
+   * <p>
    * The type of relationship.
    * <p>
    * Format is L:CFT
@@ -60,7 +62,8 @@ public class RelatedOrganisation {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * Relation - Relationship (Required)    * <p>
+   * Relation - Relationship (Required)
+   * <p>
    * The relationship between the two organisations.
    * <p>
    * Format is L:CFR
@@ -70,7 +73,8 @@ public class RelatedOrganisation {
   @XmlElement(name = "Relation", required = true)
   private TString relation;
   /**
-   * Serial - Organisation Serial (Required)    * <p>
+   * Serial - Organisation Serial (Required)
+   * <p>
    * The unique reference of the Organisation associated with the current
    * Organisation.
    * <p>
@@ -252,7 +256,8 @@ public class RelatedOrganisation {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Organisation Serial (Required)    * <p>
+   * Serial - Organisation Serial (Required)
+   * <p>
    * The unique reference of the Organisation associated with the current
    * Organisation.
    * <p>

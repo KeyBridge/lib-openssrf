@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Deg_Signed;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Percent3;
 
 /**
  * ObservedPolarisationValues (US) contains data describing the parametric
@@ -46,7 +50,8 @@ public class ObservedPolarisationValues {
   @XmlElement(name = "StatisticalIndicator", required = false)
   private US_Percent3 statisticalIndicator;
   /**
-   * US:TiltAngleValue - Tilt Angle Value (Optional)    * <p>
+   * US:TiltAngleValue - Tilt Angle Value (Optional)
+   * <p>
    * The observed Tilt Angle which provided the base data set used for
    * statistical study.
    * <p>

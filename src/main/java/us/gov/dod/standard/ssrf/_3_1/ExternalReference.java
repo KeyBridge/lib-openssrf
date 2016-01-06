@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S255;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRE;
@@ -43,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSG;
  *   &lt;ResourceLocator cls="U"&gt;USA-AF-EX-123.PDF&lt;/ResourceLocator&gt;
  * &lt;/ExternalReference&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -71,7 +74,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * The type of information referenced by this external reference.
    * <p>
    * Format is L:CRE
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Type", required = false)
@@ -82,7 +85,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * The publication date of the external reference
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Date", required = false)
@@ -93,7 +96,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Any alternate identifier for the document as needed.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Identifier", required = false)
@@ -104,7 +107,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Any alternate identifier for the document as needed.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AlternateIdentifier", required = false)
@@ -115,7 +118,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * The full title of the document.
    * <p>
    * Format is S255
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Title", required = false)
@@ -127,7 +130,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * ContactRef.
    * <p>
    * Format is S255
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Author", required = false)
@@ -139,7 +142,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * covered by a OrganisationRef
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Organisation", required = false)
@@ -150,7 +153,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * The classification level of the Reference.
    * <p>
    * Format is L:CCL
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DocumentCls", required = false)
@@ -163,7 +166,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * find the document.
    * <p>
    * Format is S255
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ResourceLocator", required = false)
@@ -175,7 +178,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * attachment to this message.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IsAttached", required = true)
@@ -186,7 +189,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * If the referenced information contains any classified data.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "IsClassified", required = false)
@@ -197,7 +200,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * The spectrum certification stage associated with this information.
    * <p>
    * Format is L:CSG
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReferencedStage", required = false)
@@ -205,7 +208,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * In Data Item Repeat (US), indicate if the attached file should be
    * repeatedly viewed / listened to.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Repeat", required = false)
@@ -220,7 +223,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get the type of information referenced by this external reference..
-   * <p>
+   *
    * @return the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -230,7 +233,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the type of information referenced by this external reference..
-   * <p>
+   *
    * @param value the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -242,7 +245,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the Type is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetType() {
@@ -251,7 +254,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get the publication date of the external reference.
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -261,7 +264,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the publication date of the external reference.
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -271,7 +274,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the Date is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDate() {
@@ -280,7 +283,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get any alternate identifier for the document as needed..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -290,7 +293,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set any alternate identifier for the document as needed..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -300,7 +303,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the Identifier is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIdentifier() {
@@ -309,7 +312,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get any alternate identifier for the document as needed..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -319,7 +322,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set any alternate identifier for the document as needed..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -329,7 +332,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the AlternateIdentifier is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAlternateIdentifier() {
@@ -338,7 +341,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get the full title of the document..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -348,7 +351,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the full title of the document..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -358,7 +361,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the Title is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTitle() {
@@ -368,7 +371,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Get the name of the author of the reference, if it cannot be covered by a
    * ContactRef..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -379,7 +382,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set the name of the author of the reference, if it cannot be covered by a
    * ContactRef..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -389,7 +392,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the Author is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAuthor() {
@@ -399,7 +402,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Get the name of the Organisation that published the Reference, if it cannot
    * be covered by a OrganisationRef.
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -410,7 +413,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set the name of the Organisation that published the Reference, if it cannot
    * be covered by a OrganisationRef.
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -420,7 +423,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the Organisation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOrganisation() {
@@ -429,7 +432,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get the classification level of the Reference..
-   * <p>
+   *
    * @return the DocumentCls value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -439,7 +442,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the classification level of the Reference..
-   * <p>
+   *
    * @param value the DocumentCls value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -451,7 +454,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the DocumentCls is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDocumentCls() {
@@ -462,7 +465,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Get either the file name (including the extension) of the reference
    * document when it is attached to the dataset, or an URL (Uniform Resource
    * Locator) to find the document..
-   * <p>
+   *
    * @return a {@link S255} instance
    * @since 3.1.0
    */
@@ -474,7 +477,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Set either the file name (including the extension) of the reference
    * document when it is attached to the dataset, or an URL (Uniform Resource
    * Locator) to find the document..
-   * <p>
+   *
    * @param value a {@link S255} instance
    * @since 3.1.0
    */
@@ -484,7 +487,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Determine if the ResourceLocator is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetResourceLocator() {
@@ -494,7 +497,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Get if the document, file or other "external" information is stored in
    * attachment to this message..
-   * <p>
+   *
    * @return the IsAttached value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -505,7 +508,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set if the document, file or other "external" information is stored in
    * attachment to this message..
-   * <p>
+   *
    * @param value the IsAttached value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -517,7 +520,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the IsAttached is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIsAttached() {
@@ -526,7 +529,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get if the referenced information contains any classified data..
-   * <p>
+   *
    * @return the IsClassified value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -536,7 +539,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set if the referenced information contains any classified data..
-   * <p>
+   *
    * @param value the IsClassified value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -548,7 +551,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the IsClassified is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetIsClassified() {
@@ -557,7 +560,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Get the spectrum certification stage associated with this information..
-   * <p>
+   *
    * @return the ReferencedStage value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -567,7 +570,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the spectrum certification stage associated with this information..
-   * <p>
+   *
    * @param value the ReferencedStage value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -579,7 +582,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the ReferencedStage is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReferencedStage() {
@@ -589,7 +592,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Get In Data Item Repeat (US), indicate if the attached file should be
    * repeatedly viewed / listened to..
-   * <p>
+   *
    * @return the Repeat value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -600,7 +603,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set In Data Item Repeat (US), indicate if the attached file should be
    * repeatedly viewed / listened to..
-   * <p>
+   *
    * @param value the Repeat value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -612,7 +615,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the Repeat is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRepeat() {
@@ -621,7 +624,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the type of information referenced by this external reference.
-   * <p>
+   *
    * @param value An instances of type {@link ListCRE}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -633,7 +636,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the publication date of the external reference
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -645,7 +648,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the publication date of the external reference
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -657,7 +660,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set any alternate identifier for the document as needed.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -669,7 +672,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set any alternate identifier for the document as needed.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -681,7 +684,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the full title of the document.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -694,7 +697,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set the name of the author of the reference, if it cannot be covered by a
    * ContactRef.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -707,7 +710,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set the name of the Organisation that published the Reference, if it cannot
    * be covered by a OrganisationRef
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -719,7 +722,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the classification level of the Reference.
-   * <p>
+   *
    * @param value An instances of type {@link ListCCL}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -733,7 +736,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Set either the file name (including the extension) of the reference
    * document when it is attached to the dataset, or an URL (Uniform Resource
    * Locator) to find the document.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -746,7 +749,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set if the document, file or other "external" information is stored in
    * attachment to this message.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -758,7 +761,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set if the referenced information contains any classified data.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -770,7 +773,7 @@ public class ExternalReference extends Common<ExternalReference> {
 
   /**
    * Set the spectrum certification stage associated with this information.
-   * <p>
+   *
    * @param value An instances of type {@link ListCSG}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -783,7 +786,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Set In Data Item Repeat (US), indicate if the attached file should be
    * repeatedly viewed / listened to.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current ExternalReference object instance.
    * @since 3.1.0
@@ -796,7 +799,7 @@ public class ExternalReference extends Common<ExternalReference> {
   /**
    * Get a string representation of this ExternalReference instance
    * configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -827,7 +830,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

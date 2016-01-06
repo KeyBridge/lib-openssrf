@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -86,7 +86,7 @@ import us.gov.dod.standard.ssrf._3_1.radiationplan.JammingPlan;
  *   &lt;/JammingPlan&gt;
  * &lt;/RadiationPlan&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -113,7 +113,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMax", required = false)
@@ -124,7 +124,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * The frequency range minimum value planned for denial of use.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMin", required = true)
@@ -136,7 +136,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * plan.
    * <p>
    * Format is UN(2)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "JCALevel", required = false)
@@ -147,14 +147,14 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * The unique reference serial of an existing Location dataset.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LocationRef", required = false)
   private Serial locationRef;
   /**
    * In Data Item Name (US), enter a descriptive name for the Radiation Plan.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = false)
@@ -165,7 +165,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * The timestamp when the denial of spectrum use is planned to begin.
    * <p>
    * Format is DateTime
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StartDateTime", required = false)
@@ -176,7 +176,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * The timestamp when the denial of spectrum use is planned to be halted.
    * <p>
    * Format is DateTime
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StopDateTime", required = false)
@@ -187,7 +187,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * The current version of the Radiation Plan.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Version", required = false)
@@ -198,7 +198,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * JammingAuthority (US) describes the Jamming Control Authority (JCA)
    * authorisation information for the jamming plan and the controls affecting
    * the level of authorisation.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "JammingAuthority")
@@ -208,7 +208,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * JammingPlan (US) describes the start and stop conditions, priorities,
    * desired effect, and desired effectiveness.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "JammingPlan")
@@ -226,7 +226,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than
    * US:FreqMin..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -239,7 +239,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than
    * US:FreqMin..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -249,7 +249,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the FreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMax() {
@@ -258,7 +258,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get the frequency range minimum value planned for denial of use..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -268,7 +268,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the frequency range minimum value planned for denial of use..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -278,7 +278,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the FreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMin() {
@@ -288,7 +288,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Get the level of joint control authorization (JCA) required for the jamming
    * plan..
-   * <p>
+   *
    * @return a {@link UN2} instance
    * @since 3.1.0
    */
@@ -299,7 +299,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Set the level of joint control authorization (JCA) required for the jamming
    * plan..
-   * <p>
+   *
    * @param value a {@link UN2} instance
    * @since 3.1.0
    */
@@ -309,7 +309,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the JCALevel is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetJCALevel() {
@@ -318,7 +318,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get the unique reference serial of an existing Location dataset..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -331,7 +331,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the unique reference serial of an existing Location dataset..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -344,7 +344,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the LocationRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocationRef() {
@@ -354,7 +354,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Get In Data Item Name (US), enter a descriptive name for the Radiation
    * Plan..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -365,7 +365,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Set In Data Item Name (US), enter a descriptive name for the Radiation
    * Plan..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -375,7 +375,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -384,7 +384,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get the timestamp when the denial of spectrum use is planned to begin..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -394,7 +394,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to begin..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -404,7 +404,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the StartDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStartDateTime() {
@@ -413,7 +413,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get the timestamp when the denial of spectrum use is planned to be halted..
-   * <p>
+   *
    * @return a {@link DT} instance
    * @since 3.1.0
    */
@@ -423,7 +423,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to be halted..
-   * <p>
+   *
    * @param value a {@link DT} instance
    * @since 3.1.0
    */
@@ -433,7 +433,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the StopDateTime is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStopDateTime() {
@@ -442,7 +442,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get the current version of the Radiation Plan..
-   * <p>
+   *
    * @return a {@link S10} instance
    * @since 3.1.0
    */
@@ -452,7 +452,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the current version of the Radiation Plan..
-   * <p>
+   *
    * @param value a {@link S10} instance
    * @since 3.1.0
    */
@@ -462,7 +462,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the Version is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetVersion() {
@@ -475,7 +475,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Complex element JammingAuthority (US) describes the Jamming Control
    * Authority (JCA) authorisation information for the jamming plan and the
    * controls affecting the level of authorisation..
-   * <p>
+   *
    * @return a {@link JammingAuthority} instance
    * @since 3.1.0
    */
@@ -488,7 +488,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the JammingAuthority is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetJammingAuthority() {
@@ -507,7 +507,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * Complex element JammingPlan (US) describes the start and stop conditions,
    * priorities, desired effect, and desired effectiveness..
-   * <p>
+   *
    * @return a {@link JammingPlan} instance
    * @since 3.1.0
    */
@@ -520,7 +520,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the JammingPlan is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetJammingPlan() {
@@ -538,7 +538,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Set the frequency range maximum value planned for denial of use.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -550,7 +550,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the frequency range minimum value planned for denial of use.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -563,7 +563,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Set the level of joint control authorization (JCA) required for the jamming
    * plan.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -575,7 +575,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the unique reference serial of an existing Location dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -591,7 +591,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   /**
    * Set In Data Item Name (US), enter a descriptive name for the Radiation
    * Plan.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -603,7 +603,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to begin.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -615,7 +615,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to begin.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -627,7 +627,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -639,7 +639,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the timestamp when the denial of spectrum use is planned to be halted.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -651,7 +651,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the current version of the Radiation Plan.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -667,7 +667,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Complex element JammingAuthority (US) describes the Jamming Control
    * Authority (JCA) authorisation information for the jamming plan and the
    * controls affecting the level of authorisation.
-   * <p>
+   *
    * @param values One or more instances of type {@link JammingAuthority...}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -685,7 +685,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Complex element JammingAuthority (US) describes the Jamming Control
    * Authority (JCA) authorisation information for the jamming plan and the
    * controls affecting the level of authorisation.
-   * <p>
+   *
    * @param values A collection of {@link JammingAuthority} instances
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -702,7 +702,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * Complex element JammingPlan (US) describes the start and stop conditions,
    * priorities, desired effect, and desired effectiveness.
-   * <p>
+   *
    * @param values One or more instances of type {@link JammingPlan...}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -719,7 +719,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * Complex element JammingPlan (US) describes the start and stop conditions,
    * priorities, desired effect, and desired effectiveness.
-   * <p>
+   *
    * @param values A collection of {@link JammingPlan} instances
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -733,7 +733,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get a string representation of this RadiationPlan instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -761,7 +761,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -776,7 +776,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * The unique reference serial of an existing Location dataset.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -784,7 +784,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Get the unique reference serial of an existing Location dataset..
-   * <p>
+   *
    * @return a {@link Location} instance
    * @since 3.1.0
    */
@@ -794,7 +794,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Determine if the location field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLocation() {
@@ -803,7 +803,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
 
   /**
    * Set the unique reference serial of an existing Location dataset.
-   * <p>
+   *
    * @param value An instances of type {@link Location}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
@@ -820,7 +820,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * the transient {@link #location} field. This method should typically be
    * called after the RadiationPlan is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -837,7 +837,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * imported {@link #locationRef} field. This method should typically be called
    * after the RadiationPlan is imported from XML. * @param root the SSRF root
    * instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

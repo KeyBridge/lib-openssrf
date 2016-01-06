@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,7 +42,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class StatusLog {
 
   /**
-   * US:DateTime - DateTime (Required)    * <p>
+   * US:DateTime - DateTime (Required)
+   * <p>
    * The date and UTC time of this status log entry.
    * <p>
    * Format is DateTime
@@ -52,7 +53,8 @@ public class StatusLog {
   @XmlElement(name = "DateTime", required = true)
   private DT dateTime;
   /**
-   * US:State - State (Required)    * <p>
+   * US:State - State (Required)
+   * <p>
    * The action performed for this status log entry.
    * <p>
    * Format is L:UST
@@ -62,7 +64,8 @@ public class StatusLog {
   @XmlElement(name = "State", required = true)
   private S50 state;
   /**
-   * US:AgencyCode - Agency Code (Optional)    * <p>
+   * US:AgencyCode - Agency Code (Optional)
+   * <p>
    * The agency responsible for this status log entry.
    * <p>
    * Format is S80
@@ -72,7 +75,8 @@ public class StatusLog {
   @XmlElement(name = "AgencyCode", required = false)
   private S80 agencyCode;
   /**
-   * US:Comment - Comment (Optional)    * <p>
+   * US:Comment - Comment (Optional)
+   * <p>
    * Amplifying information to describe the Status of the Assignment.
    * <p>
    * Format is S255
@@ -82,7 +86,8 @@ public class StatusLog {
   @XmlElement(name = "Comment", required = false)
   private S255 comment;
   /**
-   * US:POCRef - Point Of Contact Reference (Optional)    * <p>
+   * US:POCRef - Point Of Contact Reference (Optional)
+   * <p>
    * The reference to a Contact, Organisation, or Role responsible for this
    * status log entry or the recipient of the action.
    * <p>
@@ -345,7 +350,8 @@ public class StatusLog {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:POCRef - Point Of Contact Reference (Optional)    * <p>
+   * US:POCRef - Point Of Contact Reference (Optional)
+   * <p>
    * The reference to a Contact, Organisation, or Role responsible for this
    * status log entry or the recipient of the action.
    * <p>

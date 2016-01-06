@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -100,7 +103,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS7;
 public class ObservedPolarisationAnalysis {
 
   /**
-   * US:AxialRatio - Axial Ratio (Optional)    * <p>
+   * US:AxialRatio - Axial Ratio (Optional)
+   * <p>
    * The ratio of the polarisation ellipse major axis to its minor axis
    * expressed in decibels.
    * <p>
@@ -111,7 +115,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "AxialRatio", required = false)
   private Unsigned_DB_5_2 axialRatio;
   /**
-   * US:NumTiltAngleElements - Num Tilt Angle Elements (Optional)    * <p>
+   * US:NumTiltAngleElements - Num Tilt Angle Elements (Optional)
+   * <p>
    * The number of unique discrete tilt angle values.
    * <p>
    * Format is UN(6)
@@ -121,7 +126,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "NumTiltAngleElements", required = false)
   private UN6 numTiltAngleElements;
   /**
-   * US:NumTiltAnglePositions - Num Tilt Angle Positions (Optional)    * <p>
+   * US:NumTiltAnglePositions - Num Tilt Angle Positions (Optional)
+   * <p>
    * The number of discrete Polarisation Tilt Angles used in a repeating
    * Polarisation Tilt Angle sequence.
    * <p>
@@ -132,7 +138,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "NumTiltAnglePositions", required = false)
   private UN6 numTiltAnglePositions;
   /**
-   * US:PolarisationRotationRate - Polarisation Rotation Rate (Optional)    * <p>
+   * US:PolarisationRotationRate - Polarisation Rotation Rate (Optional)
+   * <p>
    * The number of times per second that the polarisation ellipse mechanically
    * rotates through the same major axis tilt angle.
    * <p>
@@ -143,7 +150,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "PolarisationRotationRate", required = false)
   private US_ScanRate polarisationRotationRate;
   /**
-   * US:PolarisationType - Polarisation Type (Optional)    * <p>
+   * US:PolarisationType - Polarisation Type (Optional)
+   * <p>
    * The polarisation of the radio wave referenced to the direction of
    * propagation.
    * <p>
@@ -154,7 +162,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "PolarisationType", required = false)
   private TString polarisationType;
   /**
-   * US:PolarisationDirection - Polarization Direction (Optional)    * <p>
+   * US:PolarisationDirection - Polarization Direction (Optional)
+   * <p>
    * The direction in which the polarisation ellipse is mechanically rotating.
    * The direction is relative to an observer standing behind the radiator and
    * looking toward the direction of mainbeam propagation.
@@ -166,7 +175,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "PolarisationDirection", required = false)
   private TString polarisationDirection;
   /**
-   * US:PolarisationSense - Polarization Sense (Optional)    * <p>
+   * US:PolarisationSense - Polarization Sense (Optional)
+   * <p>
    * The rotation direction of the radiated electromagnetic wave electric field
    * (E-field) vector (E) relative to the direction of propagation. This is
    * typically the opposite of Polarisation Direction.
@@ -179,7 +189,8 @@ public class ObservedPolarisationAnalysis {
   private TString polarisationSense;
   /**
    * US:TiltAngleAdaptiveDriverDesc - Tilt Angle Adaptive Driver Description
-   * (Optional)    * <p>
+   * (Optional)
+   * <p>
    * The condition which controls, or can be associated with, the signals Tilt
    * Angle variations.
    * <p>
@@ -191,7 +202,8 @@ public class ObservedPolarisationAnalysis {
   private S500 tiltAngleAdaptiveDriverDesc;
   /**
    * US:TiltAngleAdaptiveRuleDesc - Tilt Angle Adaptive Rule Description
-   * (Optional)    * <p>
+   * (Optional)
+   * <p>
    * The rule which describes the signal Polarisation Tilt Angle variations.
    * <p>
    * Format is S500
@@ -201,7 +213,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleAdaptiveRuleDesc", required = false)
   private S500 tiltAngleAdaptiveRuleDesc;
   /**
-   * US:TiltAngleContinuous - Tilt Angle Continuous (Optional)    * <p>
+   * US:TiltAngleContinuous - Tilt Angle Continuous (Optional)
+   * <p>
    * Whether the tilt angle variations are Discrete or Continuous. Discrete uses
    * a finite number of fixed values separated by ranges of unused values.
    * Continuous potentially uses an infinite number of values within one or more
@@ -214,7 +227,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleContinuous", required = false)
   private TString tiltAngleContinuous;
   /**
-   * US:TiltAngleDuration - Tilt Angle Duration (Optional)    * <p>
+   * US:TiltAngleDuration - Tilt Angle Duration (Optional)
+   * <p>
    * The time duration for a complete dwell/group of pulses which all have the
    * same discrete Polarisation Tilt Angle value, or for a continuous wave at a
    * constant Polarisation Tilt Angle value.
@@ -226,7 +240,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleDuration", required = false)
   private microsecs tiltAngleDuration;
   /**
-   * US:TiltAngleExtremeMax - Maximum Tilt Angle Extreme (Optional)    * <p>
+   * US:TiltAngleExtremeMax - Maximum Tilt Angle Extreme (Optional)
+   * <p>
    * The upper end of the range of Polarisation Tilt Angle values that represent
    * 100% of observed Tilt Angle values, from a statistical study of the data
    * set.
@@ -241,7 +256,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleExtremeMax", required = false)
   private US_Deg_Signed tiltAngleExtremeMax;
   /**
-   * US:TiltAngleExtremeMin - Minimum Tilt Angle Extreme (Optional)    * <p>
+   * US:TiltAngleExtremeMin - Minimum Tilt Angle Extreme (Optional)
+   * <p>
    * The lower end of the range of Polarisation Tilt Angle values that represent
    * 100% of observed Tilt Angle values, from a statistical study of the data
    * set.
@@ -253,7 +269,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleExtremeMin", required = false)
   private US_Deg_Signed tiltAngleExtremeMin;
   /**
-   * US:TiltAngleMean - Average Tilt Angle (Optional)    * <p>
+   * US:TiltAngleMean - Average Tilt Angle (Optional)
+   * <p>
    * The average Polarisation Tilt Angle value for a signal which changes
    * Polarisation Tilt Angle values on a non-patterned basis.
    * <p>
@@ -264,7 +281,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleMean", required = false)
   private US_Deg_Signed tiltAngleMean;
   /**
-   * US:TiltAngleMedian - Most Probable Tilt Angle (Optional)    * <p>
+   * US:TiltAngleMedian - Most Probable Tilt Angle (Optional)
+   * <p>
    * The observed Polarisation Tilt Angle value that the signal most often used,
    * based on statistical study of the data set.
    * <p>
@@ -275,7 +293,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleMedian", required = false)
   private US_Deg_Signed tiltAngleMedian;
   /**
-   * US:TiltAnglePatternPeriod - Tilt Angle Pattern Period (Optional)    * <p>
+   * US:TiltAnglePatternPeriod - Tilt Angle Pattern Period (Optional)
+   * <p>
    * The time duration for one complete cycle of a repeating Polarisation Tilt
    * Angle sequence
    * <p>
@@ -295,7 +314,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAnglePatternType", required = false)
   private TString tiltAnglePatternType;
   /**
-   * US:TiltAngleRangeMax - Tilt Angle Range Max (Optional)    * <p>
+   * US:TiltAngleRangeMax - Tilt Angle Range Max (Optional)
+   * <p>
    * The highest discrete Polarisation Tilt Angle value found in a single
    * intercept that contains the complete Polarisation Tilt Angle
    * characteristics.
@@ -310,7 +330,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleRangeMax", required = false)
   private US_Deg_Signed tiltAngleRangeMax;
   /**
-   * US:TiltAngleRangeMin - Tilt Angle Range Min (Optional)    * <p>
+   * US:TiltAngleRangeMin - Tilt Angle Range Min (Optional)
+   * <p>
    * The lowest discrete Polarisation Tilt Angle value found in a single
    * intercept that contains the complete Polarisation Tilt Angle
    * characteristics
@@ -322,7 +343,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleRangeMin", required = false)
   private US_Deg_Signed tiltAngleRangeMin;
   /**
-   * US:TiltAngleRate - TiltAngle Rate (Optional)    * <p>
+   * US:TiltAngleRate - TiltAngle Rate (Optional)
+   * <p>
    * The rate of change for Polarisation Tilt Angle variations expressed in
    * Polarisation Tilt Angle changes per unit of time.
    * <p>
@@ -333,7 +355,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleRate", required = false)
   private US_TiltAngRate tiltAngleRate;
   /**
-   * US:TiltAngleSequenceDesc - Tilt Angle Sequence Description (Optional)    * <p>
+   * US:TiltAngleSequenceDesc - Tilt Angle Sequence Description (Optional)
+   * <p>
    * A free text description of the sequence of Polarisation Tilt Angle values.
    * <p>
    * Format is S500
@@ -343,7 +366,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleSequenceDesc", required = false)
   private S500 tiltAngleSequenceDesc;
   /**
-   * US:TiltAngleStdDev - Tilt Angle Standard Deviation (Optional)    * <p>
+   * US:TiltAngleStdDev - Tilt Angle Standard Deviation (Optional)
+   * <p>
    * The standard deviation of the data set used to calculate Polarisation Tilt
    * Angle Mean fields.
    * <p>
@@ -354,7 +378,8 @@ public class ObservedPolarisationAnalysis {
   @XmlElement(name = "TiltAngleStdDev", required = false)
   private US_Deg_Signed tiltAngleStdDev;
   /**
-   * US:TiltAngleStep - Tilt Angle Step (Optional)    * <p>
+   * US:TiltAngleStep - Tilt Angle Step (Optional)
+   * <p>
    * The delta between the Most Probable Polarisation Tilt Angle values of
    * adjacent and discrete Polarisation Tilt Angle values.
    * <p>

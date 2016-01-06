@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,15 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * RxRef contains the reference of a Receiver, and optionnally some of its
@@ -42,7 +45,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class RxRef {
 
   /**
-   * Serial - Receiver Serial (Required)    * <p>
+   * Serial - Receiver Serial (Required)
+   * <p>
    * The identifier of the related Receiver used in this configuration. The same
    * receiver can be referenced in different RxRef elements in order to properly
    * group receiver modes with antenna modes.
@@ -292,7 +296,8 @@ public class RxRef {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Receiver Serial (Required)    * <p>
+   * Serial - Receiver Serial (Required)
+   * <p>
    * The identifier of the related Receiver used in this configuration. The same
    * receiver can be referenced in different RxRef elements in order to properly
    * group receiver modes with antenna modes.

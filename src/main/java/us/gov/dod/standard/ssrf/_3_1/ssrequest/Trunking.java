@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -76,7 +76,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class Trunking {
 
   /**
-   * US:AdditionalChannelsRationale - Additional Channels Reason (Optional)    * <p>
+   * US:AdditionalChannelsRationale - Additional Channels Reason (Optional)
+   * <p>
    * A rationale for the additional channels (e.g., channel loading, queuing
    * times, or new users).
    * <p>
@@ -89,7 +90,8 @@ public class Trunking {
   @XmlElement(name = "AdditionalChannelsRationale", required = false)
   private MEMO additionalChannelsRationale;
   /**
-   * US:Dispatcher - Dispatcher Access (Optional)    * <p>
+   * US:Dispatcher - Dispatcher Access (Optional)
+   * <p>
    * If a Dispatcher accesses base stations or repeaters in the trunked land
    * mobile system.
    * <p>
@@ -100,7 +102,8 @@ public class Trunking {
   @XmlElement(name = "Dispatcher", required = false)
   private S1 dispatcher;
   /**
-   * US:DispatcherExplanation - Dispatcher Explanation (Optional)    * <p>
+   * US:DispatcherExplanation - Dispatcher Explanation (Optional)
+   * <p>
    * How the dispatcher accesses the base station or repeater.
    * <p>
    * Format is Memo
@@ -110,7 +113,8 @@ public class Trunking {
   @XmlElement(name = "DispatcherExplanation", required = false)
   private MEMO dispatcherExplanation;
   /**
-   * US:EstimatedExpansionCost - Estimated Expansion Cost (Optional)    * <p>
+   * US:EstimatedExpansionCost - Estimated Expansion Cost (Optional)
+   * <p>
    * The estimated cost of the expansion.
    * <p>
    * Format is S70
@@ -122,7 +126,8 @@ public class Trunking {
   @XmlElement(name = "EstimatedExpansionCost", required = false)
   private S70 estimatedExpansionCost;
   /**
-   * US:ExpansionTargetDate - Expansion Target Date (Optional)    * <p>
+   * US:ExpansionTargetDate - Expansion Target Date (Optional)
+   * <p>
    * The date this expansion will be activated (i.e., the date the system will
    * require the additional radio frequencies).
    * <p>
@@ -135,7 +140,8 @@ public class Trunking {
   @XmlElement(name = "ExpansionTargetDate", required = false)
   private D expansionTargetDate;
   /**
-   * US:FreqMax - Frequency Maximum (Optional)    * <p>
+   * US:FreqMax - Frequency Maximum (Optional)
+   * <p>
    * The upper frequency of band.
    * <p>
    * [XSL ERR MINMAX] If US:FreqMax is used, it MUST be greater than US:FreqMin.
@@ -147,7 +153,8 @@ public class Trunking {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * US:NSEPUse - NSEP Use (Optional)    * <p>
+   * US:NSEPUse - NSEP Use (Optional)
+   * <p>
    * The U.S. National Security and Emergency Preparedness (NSEP) function. A
    * statement as to whether the proposed system, if it becomes operational,
    * will support a NSEP function and require review under the
@@ -160,7 +167,8 @@ public class Trunking {
   @XmlElement(name = "NSEPUse", required = false)
   private MEMO nsepUse;
   /**
-   * US:NumFreqsRequired - Number of Frequencies Required (Optional)    * <p>
+   * US:NumFreqsRequired - Number of Frequencies Required (Optional)
+   * <p>
    * The total number of frequencies required.
    * <p>
    * Format is UN(10)
@@ -172,7 +180,8 @@ public class Trunking {
   @XmlElement(name = "NumFreqsRequired", required = false)
   private UN10 numFreqsRequired;
   /**
-   * US:NumRepeaters - Number of Repeaters (Optional)    * <p>
+   * US:NumRepeaters - Number of Repeaters (Optional)
+   * <p>
    * The total number of repeaters in the trunked land mobile system.
    * <p>
    * Format is UN(7)
@@ -182,7 +191,8 @@ public class Trunking {
   @XmlElement(name = "NumRepeaters", required = false)
   private UN7 numRepeaters;
   /**
-   * US:NumUsers - Number of Users (Optional)    * <p>
+   * US:NumUsers - Number of Users (Optional)
+   * <p>
    * The total number of users of the trunked land mobile system.
    * <p>
    * Format is UN(10)
@@ -192,7 +202,8 @@ public class Trunking {
   @XmlElement(name = "NumUsers", required = false)
   private UN10 numUsers;
   /**
-   * US:PreviousSPSDocketNum - Previous SPS Docket Number (Optional)    * <p>
+   * US:PreviousSPSDocketNum - Previous SPS Docket Number (Optional)
+   * <p>
    * The IRAC Spectrum Planning Subcommittee (SPS) docket number of the NTIA
    * Certification of Spectrum Support for the existing trunked system.
    * <p>
@@ -205,7 +216,8 @@ public class Trunking {
   @XmlElement(name = "PreviousSPSDocketNum", required = false)
   private S12 previousSPSDocketNum;
   /**
-   * US:RequestForExpansion - Request For Expansion (Optional)    * <p>
+   * US:RequestForExpansion - Request For Expansion (Optional)
+   * <p>
    * If this application is a request for expansion.
    * <p>
    * Format is L:CBO
@@ -217,7 +229,8 @@ public class Trunking {
   @XmlElement(name = "RequestForExpansion", required = false)
   private TString requestForExpansion;
   /**
-   * US:SeparateSystemJustification - Separate System Justification (Optional)    * <p>
+   * US:SeparateSystemJustification - Separate System Justification (Optional)
+   * <p>
    * The For trunked land mobile systems that are within 30 km of an existing or
    * planned trunked land mobile system authorised by NTIA, provides the
    * information required under subparagraph 8.2.48a of the NTIA Manual
@@ -231,7 +244,8 @@ public class Trunking {
   @XmlElement(name = "SeparateSystemJustification", required = false)
   private MEMO separateSystemJustification;
   /**
-   * US:FreqMin - Frequency Minimum (Optional)    * <p>
+   * US:FreqMin - Frequency Minimum (Optional)
+   * <p>
    * The lower frequency of band or discrete frequency.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)

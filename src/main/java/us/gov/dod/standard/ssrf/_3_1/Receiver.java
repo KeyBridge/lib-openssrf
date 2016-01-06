@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,7 +55,7 @@ import us.gov.dod.standard.ssrf._3_1.receiver.RxMode;
  *   &lt;/RxMode&gt;
  * &lt;/Receiver&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -82,7 +85,7 @@ public class Receiver extends Common<Receiver> {
    * specific equipment model.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Generic", required = true)
@@ -95,7 +98,7 @@ public class Receiver extends Common<Receiver> {
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group Duplex (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DuplexSep")
@@ -109,7 +112,7 @@ public class Receiver extends Common<Receiver> {
    * Format is L:CDS
    * <p>
    * Attribute group Duplex (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DuplexSepType", required = false)
@@ -120,7 +123,7 @@ public class Receiver extends Common<Receiver> {
    * The type of preselection used in the receiver frontend.
    * <p>
    * Format is S60
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PreselectionType", required = false)
@@ -132,7 +135,7 @@ public class Receiver extends Common<Receiver> {
    * conducted by way of the connection to the receiver.
    * <p>
    * Format is SN(6,3) [-165..-30] (dBm)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ConductedEmissions", required = false)
@@ -143,7 +146,7 @@ public class Receiver extends Common<Receiver> {
    * The Federal Communication Commission (FCC) ID of FCC authorised equipment.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FCCAcceptanceNum", required = false)
@@ -157,7 +160,7 @@ public class Receiver extends Common<Receiver> {
    * 1934, as amended.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TSPR", required = false)
@@ -167,7 +170,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -181,7 +184,7 @@ public class Receiver extends Common<Receiver> {
    * military nomenclature and a commercial model number.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature")
@@ -194,7 +197,7 @@ public class Receiver extends Common<Receiver> {
    * be referenced. Data element Deployment identifies the general category of
    * how the equipment is deployed. For example an equipment may be deployed on
    * an airborne platform, a ship or fixed land installation.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Deployment")
@@ -207,7 +210,7 @@ public class Receiver extends Common<Receiver> {
    * the carrier frequency to find the abscissa of the curve, a frequency to be
    * added to the carrier frequency to obtain the origin of the curve, and the
    * measurement bandwidth.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Curve")
@@ -217,7 +220,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * RxMode and sub-elements define all the technical parameters for a mode of
    * operation of the Receiver.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RxMode")
@@ -227,7 +230,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * UsingCountries (US) describes the countries that manufacture (Producing),
    * supply (Source), and use (Using) the Receiver.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsingCountries")
@@ -244,7 +247,7 @@ public class Receiver extends Common<Receiver> {
    * Get "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model..
-   * <p>
+   *
    * @return the Generic value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -256,7 +259,7 @@ public class Receiver extends Common<Receiver> {
    * Set "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model..
-   * <p>
+   *
    * @param value the Generic value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -268,7 +271,7 @@ public class Receiver extends Common<Receiver> {
    * Determine if the Generic is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGeneric() {
@@ -277,7 +280,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Get the minimum or exact duplex frequency separation.
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -287,7 +290,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Set the minimum or exact duplex frequency separation.
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -297,7 +300,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the DuplexSep is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuplexSep() {
@@ -307,7 +310,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Get if the frequency separation must be exactly, or at the minimum, the
    * amount specified..
-   * <p>
+   *
    * @return the DuplexSepType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -318,7 +321,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Set if the frequency separation must be exactly, or at the minimum, the
    * amount specified..
-   * <p>
+   *
    * @param value the DuplexSepType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -330,7 +333,7 @@ public class Receiver extends Common<Receiver> {
    * Determine if the DuplexSepType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuplexSepType() {
@@ -339,7 +342,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Get the type of preselection used in the receiver frontend..
-   * <p>
+   *
    * @return a {@link S60} instance
    * @since 3.1.0
    */
@@ -349,7 +352,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Set the type of preselection used in the receiver frontend..
-   * <p>
+   *
    * @param value a {@link S60} instance
    * @since 3.1.0
    */
@@ -359,7 +362,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the PreselectionType is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPreselectionType() {
@@ -369,7 +372,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Get the power level of undesired signals generated in the receiver and
    * conducted by way of the connection to the receiver..
-   * <p>
+   *
    * @return a {@link US_DBm} instance
    * @since 3.1.0
    */
@@ -380,7 +383,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Set the power level of undesired signals generated in the receiver and
    * conducted by way of the connection to the receiver..
-   * <p>
+   *
    * @param value a {@link US_DBm} instance
    * @since 3.1.0
    */
@@ -390,7 +393,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the ConductedEmissions is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetConductedEmissions() {
@@ -400,7 +403,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Get the Federal Communication Commission (FCC) ID of FCC authorised
    * equipment..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -411,7 +414,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Set the Federal Communication Commission (FCC) ID of FCC authorised
    * equipment..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -421,7 +424,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the FCCAcceptanceNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFCCAcceptanceNum() {
@@ -433,7 +436,7 @@ public class Receiver extends Common<Receiver> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended..
-   * <p>
+   *
    * @return a {@link S10} instance
    * @since 3.1.0
    */
@@ -446,7 +449,7 @@ public class Receiver extends Common<Receiver> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended..
-   * <p>
+   *
    * @param value a {@link S10} instance
    * @since 3.1.0
    */
@@ -456,7 +459,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the TSPR is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTSPR() {
@@ -468,7 +471,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -481,7 +484,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -502,7 +505,7 @@ public class Receiver extends Common<Receiver> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -515,7 +518,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -538,7 +541,7 @@ public class Receiver extends Common<Receiver> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation..
-   * <p>
+   *
    * @return a {@link Deployment} instance
    * @since 3.1.0
    */
@@ -551,7 +554,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the Deployment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDeployment() {
@@ -573,7 +576,7 @@ public class Receiver extends Common<Receiver> {
    * be applied to the carrier frequency to find the abscissa of the curve, a
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth..
-   * <p>
+   *
    * @return a {@link Curve} instance
    * @since 3.1.0
    */
@@ -586,7 +589,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the Curve is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCurve() {
@@ -605,7 +608,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element RxMode and sub-elements define all the technical parameters
    * for a mode of operation of the Receiver..
-   * <p>
+   *
    * @return a {@link RxMode} instance
    * @since 3.1.0
    */
@@ -618,7 +621,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the RxMode is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRxMode() {
@@ -637,7 +640,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Receiver..
-   * <p>
+   *
    * @return a {@link UsingCountries} instance
    * @since 3.1.0
    */
@@ -650,7 +653,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Determine if the UsingCountries is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsingCountries() {
@@ -668,7 +671,7 @@ public class Receiver extends Common<Receiver> {
    * Set "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -680,7 +683,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Set the minimum or exact duplex frequency separation
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -693,7 +696,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Set if the frequency separation must be exactly, or at the minimum, the
    * amount specified.
-   * <p>
+   *
    * @param value An instances of type {@link ListCDS}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -705,7 +708,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Set the type of preselection used in the receiver frontend.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -718,7 +721,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Set the power level of undesired signals generated in the receiver and
    * conducted by way of the connection to the receiver.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -731,7 +734,7 @@ public class Receiver extends Common<Receiver> {
   /**
    * Set the Federal Communication Commission (FCC) ID of FCC authorised
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -746,7 +749,7 @@ public class Receiver extends Common<Receiver> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -761,7 +764,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -778,7 +781,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -797,7 +800,7 @@ public class Receiver extends Common<Receiver> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -816,7 +819,7 @@ public class Receiver extends Common<Receiver> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -837,7 +840,7 @@ public class Receiver extends Common<Receiver> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
-   * <p>
+   *
    * @param values One or more instances of type {@link Deployment...}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -858,7 +861,7 @@ public class Receiver extends Common<Receiver> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
-   * <p>
+   *
    * @param values A collection of {@link Deployment} instances
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -878,7 +881,7 @@ public class Receiver extends Common<Receiver> {
    * be applied to the carrier frequency to find the abscissa of the curve, a
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
-   * <p>
+   *
    * @param values One or more instances of type {@link Curve...}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -898,7 +901,7 @@ public class Receiver extends Common<Receiver> {
    * be applied to the carrier frequency to find the abscissa of the curve, a
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
-   * <p>
+   *
    * @param values A collection of {@link Curve} instances
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -915,7 +918,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element RxMode and sub-elements define all the technical parameters
    * for a mode of operation of the Receiver.
-   * <p>
+   *
    * @param values One or more instances of type {@link RxMode...}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -932,7 +935,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element RxMode and sub-elements define all the technical parameters
    * for a mode of operation of the Receiver.
-   * <p>
+   *
    * @param values A collection of {@link RxMode} instances
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -949,7 +952,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Receiver.
-   * <p>
+   *
    * @param values One or more instances of type {@link UsingCountries...}.
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -966,7 +969,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Receiver.
-   * <p>
+   *
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Receiver object instance.
    * @since 3.1.0
@@ -980,7 +983,7 @@ public class Receiver extends Common<Receiver> {
 
   /**
    * Get a string representation of this Receiver instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1011,7 +1014,7 @@ public class Receiver extends Common<Receiver> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

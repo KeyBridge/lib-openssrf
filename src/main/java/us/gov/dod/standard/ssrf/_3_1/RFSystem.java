@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,7 +28,8 @@ import us.gov.dod.standard.ssrf._3_1.antenna.Nomenclature;
 import us.gov.dod.standard.ssrf._3_1.antenna.UsingCountries;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.forceelement.StockNum;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S70;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSG;
@@ -63,7 +67,7 @@ import us.gov.dod.standard.ssrf._3_1.rfsystem.RelatedSystem;
  *   &lt;/Configuration&gt;
  * &lt;/RFSystem&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -88,7 +92,7 @@ public class RFSystem extends Common<RFSystem> {
    * The current stage of the RFSystem.
    * <p>
    * Format is L:CSG
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FieldedStatus", required = false)
@@ -99,7 +103,7 @@ public class RFSystem extends Common<RFSystem> {
    * "Yes" if the system may be used in a case of emergency.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Emergency", required = false)
@@ -110,7 +114,7 @@ public class RFSystem extends Common<RFSystem> {
    * The estimated initial cost, in US dollars, of the system/equipment.
    * <p>
    * Format is S70
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "InitialCost", required = false)
@@ -120,7 +124,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -134,7 +138,7 @@ public class RFSystem extends Common<RFSystem> {
    * military nomenclature and a commercial model number.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature")
@@ -147,7 +151,7 @@ public class RFSystem extends Common<RFSystem> {
    * be referenced. Data element Deployment identifies the general category of
    * how the equipment is deployed. For example an equipment may be deployed on
    * an airborne platform, a ship or fixed land installation.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Deployment")
@@ -163,7 +167,7 @@ public class RFSystem extends Common<RFSystem> {
    * as a repeater. A direct coupling between the station's receiver and the
    * station's transmitter allows the incoming signal to be retransmitted
    * exactly as received.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Configuration")
@@ -173,7 +177,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * RelatedSystem identifies a System linked to the current System, and the
    * relation (parent, child, sibling).
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RelatedSystem")
@@ -183,7 +187,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * StockNum (US) provides the equipment stock number and indicates the type of
    * stock number.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "StockNum")
@@ -193,7 +197,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * UsingCountries (US) describes the countries that manufacture (Producing),
    * supply (Source), and use (Using) the RFSystem.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsingCountries")
@@ -208,7 +212,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Get the current stage of the RFSystem..
-   * <p>
+   *
    * @return the FieldedStatus value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -218,7 +222,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Set the current stage of the RFSystem..
-   * <p>
+   *
    * @param value the FieldedStatus value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -230,7 +234,7 @@ public class RFSystem extends Common<RFSystem> {
    * Determine if the FieldedStatus is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFieldedStatus() {
@@ -239,7 +243,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Get "Yes" if the system may be used in a case of emergency..
-   * <p>
+   *
    * @return the Emergency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -249,7 +253,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Set "Yes" if the system may be used in a case of emergency..
-   * <p>
+   *
    * @param value the Emergency value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -261,7 +265,7 @@ public class RFSystem extends Common<RFSystem> {
    * Determine if the Emergency is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEmergency() {
@@ -270,7 +274,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Get the estimated initial cost, in US dollars, of the system/equipment..
-   * <p>
+   *
    * @return a {@link S70} instance
    * @since 3.1.0
    */
@@ -280,7 +284,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Set the estimated initial cost, in US dollars, of the system/equipment..
-   * <p>
+   *
    * @param value a {@link S70} instance
    * @since 3.1.0
    */
@@ -290,7 +294,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the InitialCost is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetInitialCost() {
@@ -302,7 +306,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -315,7 +319,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -336,7 +340,7 @@ public class RFSystem extends Common<RFSystem> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -349,7 +353,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -372,7 +376,7 @@ public class RFSystem extends Common<RFSystem> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation..
-   * <p>
+   *
    * @return a {@link Deployment} instance
    * @since 3.1.0
    */
@@ -385,7 +389,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the Deployment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDeployment() {
@@ -410,7 +414,7 @@ public class RFSystem extends Common<RFSystem> {
    * used primarily as a repeater. A direct coupling between the station's
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received..
-   * <p>
+   *
    * @return a {@link Configuration} instance
    * @since 3.1.0
    */
@@ -423,7 +427,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the Configuration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetConfiguration() {
@@ -442,7 +446,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element RelatedSystem identifies a System linked to the current
    * System, and the relation (parent, child, sibling)..
-   * <p>
+   *
    * @return a {@link RelatedSystem} instance
    * @since 3.1.0
    */
@@ -455,7 +459,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the RelatedSystem is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRelatedSystem() {
@@ -474,7 +478,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number..
-   * <p>
+   *
    * @return a {@link StockNum} instance
    * @since 3.1.0
    */
@@ -487,7 +491,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the StockNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetStockNum() {
@@ -506,7 +510,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the RFSystem..
-   * <p>
+   *
    * @return a {@link UsingCountries} instance
    * @since 3.1.0
    */
@@ -519,7 +523,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Determine if the UsingCountries is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsingCountries() {
@@ -535,7 +539,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Set the current stage of the RFSystem.
-   * <p>
+   *
    * @param value An instances of type {@link ListCSG}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -547,7 +551,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Set "Yes" if the system may be used in a case of emergency.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -559,7 +563,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Set the estimated initial cost, in US dollars, of the system/equipment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -574,7 +578,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -591,7 +595,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -610,7 +614,7 @@ public class RFSystem extends Common<RFSystem> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -629,7 +633,7 @@ public class RFSystem extends Common<RFSystem> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -650,7 +654,7 @@ public class RFSystem extends Common<RFSystem> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
-   * <p>
+   *
    * @param values One or more instances of type {@link Deployment...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -671,7 +675,7 @@ public class RFSystem extends Common<RFSystem> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
-   * <p>
+   *
    * @param values A collection of {@link Deployment} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -694,7 +698,7 @@ public class RFSystem extends Common<RFSystem> {
    * used primarily as a repeater. A direct coupling between the station's
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
-   * <p>
+   *
    * @param values One or more instances of type {@link Configuration...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -717,7 +721,7 @@ public class RFSystem extends Common<RFSystem> {
    * used primarily as a repeater. A direct coupling between the station's
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
-   * <p>
+   *
    * @param values A collection of {@link Configuration} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -734,7 +738,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element RelatedSystem identifies a System linked to the current
    * System, and the relation (parent, child, sibling).
-   * <p>
+   *
    * @param values One or more instances of type {@link RelatedSystem...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -751,7 +755,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element RelatedSystem identifies a System linked to the current
    * System, and the relation (parent, child, sibling).
-   * <p>
+   *
    * @param values A collection of {@link RelatedSystem} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -768,7 +772,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
-   * <p>
+   *
    * @param values One or more instances of type {@link StockNum...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -785,7 +789,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
-   * <p>
+   *
    * @param values A collection of {@link StockNum} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -802,7 +806,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the RFSystem.
-   * <p>
+   *
    * @param values One or more instances of type {@link UsingCountries...}.
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -819,7 +823,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the RFSystem.
-   * <p>
+   *
    * @param values A collection of {@link UsingCountries} instances
    * @return The current RFSystem object instance.
    * @since 3.1.0
@@ -833,7 +837,7 @@ public class RFSystem extends Common<RFSystem> {
 
   /**
    * Get a string representation of this RFSystem instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -860,7 +864,7 @@ public class RFSystem extends Common<RFSystem> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

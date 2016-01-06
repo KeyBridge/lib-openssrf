@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -121,7 +124,8 @@ public class ObservedMOPSequence {
   @XmlElement(name = "MOPSequenceDesc", required = false)
   private S500 mopSequenceDesc;
   /**
-   * US:MOPRepetionInterval - MOP Repetion Interval (Optional)    * <p>
+   * US:MOPRepetionInterval - MOP Repetion Interval (Optional)
+   * <p>
    * The overall interval which may include multiple Sweep Repetition Intervals
    * (SRI). Fly-back times, and dead times.
    * <p>
@@ -579,7 +583,8 @@ public class ObservedMOPSequence {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param values One or more instances of type {@link ObservedMOPBits...}.
    * @return The current ObservedMOPSequence object instance.
    * @since 3.1.0
@@ -592,7 +597,8 @@ public class ObservedMOPSequence {
   }
 
   /**
-   * Set    * <p>
+   * Set
+   * <p>
    * @param values A collection of {@link ObservedMOPBits} instances
    * @return The current ObservedMOPSequence object instance.
    * @since 3.1.0

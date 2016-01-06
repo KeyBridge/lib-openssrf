@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,7 +61,7 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
  *   &lt;/TxMode&gt;
  * &lt;/Transmitter&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -89,7 +92,7 @@ public class Transmitter extends Common<Transmitter> {
    * specific equipment model.
    * <p>
    * Format is L:CBO
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Generic", required = true)
@@ -102,7 +105,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group Duplex (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DuplexSep")
@@ -116,7 +119,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is L:CDS
    * <p>
    * Attribute group Duplex (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "DuplexSepType", required = false)
@@ -129,7 +132,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is L:COT
    * <p>
    * Attribute group Output (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OutputDeviceType", required = false)
@@ -143,7 +146,7 @@ public class Transmitter extends Common<Transmitter> {
    * Format is S40
    * <p>
    * Attribute group Output (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OutputDevice", required = false)
@@ -154,7 +157,7 @@ public class Transmitter extends Common<Transmitter> {
    * A brief description of the type of the output filter.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Filter", required = false)
@@ -165,7 +168,7 @@ public class Transmitter extends Common<Transmitter> {
    * The Federal Communication Commission (FCC) ID of FCC authorised equipment.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FCCAcceptanceNum", required = false)
@@ -179,7 +182,7 @@ public class Transmitter extends Common<Transmitter> {
    * 1934, as amended.
    * <p>
    * Format is S10
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TSPR", required = false)
@@ -189,7 +192,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * POCInformation contains a reference to a Contact, Organisation or Role
    * dataset.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "POCInformation")
@@ -203,7 +206,7 @@ public class Transmitter extends Common<Transmitter> {
    * military nomenclature and a commercial model number.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature")
@@ -216,7 +219,7 @@ public class Transmitter extends Common<Transmitter> {
    * be referenced. Data element Deployment identifies the general category of
    * how the equipment is deployed. For example an equipment may be deployed on
    * an airborne platform, a ship or fixed land installation.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Deployment")
@@ -229,7 +232,7 @@ public class Transmitter extends Common<Transmitter> {
    * the carrier frequency to find the abscissa of the curve, a frequency to be
    * added to the carrier frequency to obtain the origin of the curve, and the
    * measurement bandwidth.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Curve")
@@ -239,7 +242,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * TxMode and its sub-elements define all the technical parameters for a mode
    * of operation of the Transmitter.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TxMode")
@@ -249,7 +252,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * UsingCountries (US) describes the countries that manufacture (Producing),
    * supply (Source), and use (Using) the Transmitter.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UsingCountries")
@@ -266,7 +269,7 @@ public class Transmitter extends Common<Transmitter> {
    * Get "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model..
-   * <p>
+   *
    * @return the Generic value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -278,7 +281,7 @@ public class Transmitter extends Common<Transmitter> {
    * Set "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model..
-   * <p>
+   *
    * @param value the Generic value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -290,7 +293,7 @@ public class Transmitter extends Common<Transmitter> {
    * Determine if the Generic is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGeneric() {
@@ -299,7 +302,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Get the minimum or exact duplex frequency separation.
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -309,7 +312,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set the minimum or exact duplex frequency separation.
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -319,7 +322,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the DuplexSep is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuplexSep() {
@@ -329,7 +332,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Get if the frequency separation must be exactly, or at the minimum, the
    * amount specified..
-   * <p>
+   *
    * @return the DuplexSepType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -340,7 +343,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Set if the frequency separation must be exactly, or at the minimum, the
    * amount specified..
-   * <p>
+   *
    * @param value the DuplexSepType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -352,7 +355,7 @@ public class Transmitter extends Common<Transmitter> {
    * Determine if the DuplexSepType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDuplexSepType() {
@@ -361,7 +364,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Get the type of the device. Select an entry from the list..
-   * <p>
+   *
    * @return the OutputDeviceType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -371,7 +374,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set the type of the device. Select an entry from the list..
-   * <p>
+   *
    * @param value the OutputDeviceType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -383,7 +386,7 @@ public class Transmitter extends Common<Transmitter> {
    * Determine if the OutputDeviceType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOutputDeviceType() {
@@ -393,7 +396,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Get the name of the output device. The specific device designation should
    * be provided, for example, VARIAN VTS5751A1..
-   * <p>
+   *
    * @return a {@link S40} instance
    * @since 3.1.0
    */
@@ -404,7 +407,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Set the name of the output device. The specific device designation should
    * be provided, for example, VARIAN VTS5751A1..
-   * <p>
+   *
    * @param value a {@link S40} instance
    * @since 3.1.0
    */
@@ -414,7 +417,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the OutputDevice is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOutputDevice() {
@@ -423,7 +426,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Get a brief description of the type of the output filter..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -433,7 +436,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set a brief description of the type of the output filter..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -443,7 +446,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the Filter is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFilter() {
@@ -453,7 +456,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Get the Federal Communication Commission (FCC) ID of FCC authorised
    * equipment..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -464,7 +467,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Set the Federal Communication Commission (FCC) ID of FCC authorised
    * equipment..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -474,7 +477,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the FCCAcceptanceNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFCCAcceptanceNum() {
@@ -486,7 +489,7 @@ public class Transmitter extends Common<Transmitter> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended..
-   * <p>
+   *
    * @return a {@link S10} instance
    * @since 3.1.0
    */
@@ -499,7 +502,7 @@ public class Transmitter extends Common<Transmitter> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended..
-   * <p>
+   *
    * @param value a {@link S10} instance
    * @since 3.1.0
    */
@@ -509,7 +512,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the TSPR is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTSPR() {
@@ -521,7 +524,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset..
-   * <p>
+   *
    * @return a {@link POCInformation} instance
    * @since 3.1.0
    */
@@ -534,7 +537,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the POCInformation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPOCInformation() {
@@ -555,7 +558,7 @@ public class Transmitter extends Common<Transmitter> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -568,7 +571,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -591,7 +594,7 @@ public class Transmitter extends Common<Transmitter> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation..
-   * <p>
+   *
    * @return a {@link Deployment} instance
    * @since 3.1.0
    */
@@ -604,7 +607,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the Deployment is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDeployment() {
@@ -626,7 +629,7 @@ public class Transmitter extends Common<Transmitter> {
    * be applied to the carrier frequency to find the abscissa of the curve, a
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth..
-   * <p>
+   *
    * @return a {@link Curve} instance
    * @since 3.1.0
    */
@@ -639,7 +642,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the Curve is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCurve() {
@@ -658,7 +661,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element TxMode and its sub-elements define all the technical
    * parameters for a mode of operation of the Transmitter..
-   * <p>
+   *
    * @return a {@link TxMode} instance
    * @since 3.1.0
    */
@@ -671,7 +674,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the TxMode is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTxMode() {
@@ -690,7 +693,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Transmitter..
-   * <p>
+   *
    * @return a {@link UsingCountries} instance
    * @since 3.1.0
    */
@@ -703,7 +706,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Determine if the UsingCountries is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUsingCountries() {
@@ -721,7 +724,7 @@ public class Transmitter extends Common<Transmitter> {
    * Set "Yes" to indicate that the dataset describes typical parameters of a
    * waveform or standard signal, or a generic antenna model, rather than a
    * specific equipment model.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -733,7 +736,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set the minimum or exact duplex frequency separation
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -746,7 +749,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Set if the frequency separation must be exactly, or at the minimum, the
    * amount specified.
-   * <p>
+   *
    * @param value An instances of type {@link ListCDS}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -758,7 +761,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set the type of the device. Select an entry from the list.
-   * <p>
+   *
    * @param value An instances of type {@link ListCOT}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -771,7 +774,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Set the name of the output device. The specific device designation should
    * be provided, for example, VARIAN VTS5751A1.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -783,7 +786,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Set a brief description of the type of the output filter.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -796,7 +799,7 @@ public class Transmitter extends Common<Transmitter> {
   /**
    * Set the Federal Communication Commission (FCC) ID of FCC authorised
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -811,7 +814,7 @@ public class Transmitter extends Common<Transmitter> {
    * spectrum-dependent radiocommunications system intended to be used in direct
    * support of a national emergency declared under Section 706 of the
    * Communications Act of 1934, as amended.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -826,7 +829,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values One or more instances of type {@link POCInformation...}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -843,7 +846,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
-   * <p>
+   *
    * @param values A collection of {@link POCInformation} instances
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -862,7 +865,7 @@ public class Transmitter extends Common<Transmitter> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -881,7 +884,7 @@ public class Transmitter extends Common<Transmitter> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -902,7 +905,7 @@ public class Transmitter extends Common<Transmitter> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
-   * <p>
+   *
    * @param values One or more instances of type {@link Deployment...}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -923,7 +926,7 @@ public class Transmitter extends Common<Transmitter> {
    * the general category of how the equipment is deployed. For example an
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
-   * <p>
+   *
    * @param values A collection of {@link Deployment} instances
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -943,7 +946,7 @@ public class Transmitter extends Common<Transmitter> {
    * be applied to the carrier frequency to find the abscissa of the curve, a
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
-   * <p>
+   *
    * @param values One or more instances of type {@link Curve...}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -963,7 +966,7 @@ public class Transmitter extends Common<Transmitter> {
    * be applied to the carrier frequency to find the abscissa of the curve, a
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
-   * <p>
+   *
    * @param values A collection of {@link Curve} instances
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -980,7 +983,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element TxMode and its sub-elements define all the technical
    * parameters for a mode of operation of the Transmitter.
-   * <p>
+   *
    * @param values One or more instances of type {@link TxMode...}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -997,7 +1000,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element TxMode and its sub-elements define all the technical
    * parameters for a mode of operation of the Transmitter.
-   * <p>
+   *
    * @param values A collection of {@link TxMode} instances
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -1014,7 +1017,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Transmitter.
-   * <p>
+   *
    * @param values One or more instances of type {@link UsingCountries...}.
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -1031,7 +1034,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Transmitter.
-   * <p>
+   *
    * @param values A collection of {@link UsingCountries} instances
    * @return The current Transmitter object instance.
    * @since 3.1.0
@@ -1045,7 +1048,7 @@ public class Transmitter extends Common<Transmitter> {
 
   /**
    * Get a string representation of this Transmitter instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1077,7 +1080,7 @@ public class Transmitter extends Common<Transmitter> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

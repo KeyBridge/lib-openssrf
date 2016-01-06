@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -66,7 +69,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCO;
 public class StationConfig {
 
   /**
-   * Type - Station Type (Required)    * <p>
+   * Type - Station Type (Required)
+   * <p>
    * Whether the StationConfig is acting as a transmitter, receiver or
    * transceiver.
    * <p>
@@ -77,7 +81,8 @@ public class StationConfig {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * ConfigID - Configuration Reference (Required)    * <p>
+   * ConfigID - Configuration Reference (Required)
+   * <p>
    * The unique identifier of one the configurations used by this Assignment at
    * this specific Station.
    * <p>
@@ -88,7 +93,8 @@ public class StationConfig {
   @XmlElement(name = "ConfigID", required = true)
   private S100 configID;
   /**
-   * StationID - Station Reference (Required)    * <p>
+   * StationID - Station Reference (Required)
+   * <p>
    * The unique identifier of one of the stations used by this Assignment at
    * this specific Station. A Station dataset may have more than one discrete
    * station.
@@ -100,12 +106,14 @@ public class StationConfig {
   @XmlElement(name = "StationID", required = true)
   private S100 stationID;
   /**
-   * EIRPMin - Minimum or Nominal EIRP (Optional)    * <p>
+   * EIRPMin - Minimum or Nominal EIRP (Optional)
+   * <p>
    * The minimum or nominal effective isotropic radiated power (EIRP) radiated
    * from the transmitter antenna. It is the sum of the power supplied to the
    * antenna and the gain of the antenna, less the line loss.
    * <p>
-   * Format is SN(10,7) (dBW)    * <p>
+   * Format is SN(10,7) (dBW)
+   * <p>
    * Attribute group EIRP (Optional)
    * <p>
    * @since 3.1.0
@@ -113,14 +121,16 @@ public class StationConfig {
   @XmlElement(name = "EIRPMin", required = false)
   private dBW eirpMin;
   /**
-   * EIRPMax - Maximum EIRP (Optional)    * <p>
+   * EIRPMax - Maximum EIRP (Optional)
+   * <p>
    * The maximum effective isotropic radiated power (EIRP) radiated from the
    * transmitter antenna. It is the sum of the power supplied to the antenna and
    * the gain of the antenna, less the line loss.
    * <p>
    * [XSL ERR MINMAX] If EIRPMax is used, it MUST be greater than EIRPMin.
    * <p>
-   * Format is SN(10,7) (dBW)    * <p>
+   * Format is SN(10,7) (dBW)
+   * <p>
    * Attribute group EIRP (Optional)
    * <p>
    * @since 3.1.0
@@ -128,7 +138,8 @@ public class StationConfig {
   @XmlElement(name = "EIRPMax", required = false)
   private dBW eirpMax;
   /**
-   * AntFeedpointHeight - Antenna Feedpoint Height (Optional)    * <p>
+   * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
+   * <p>
    * The antenna feed point height above the terrain, in metres. In Data Item
    * the case where the antenna is mounted pointing vertically to a reflector on
    * the same structure, enter the height of the reflector above ground. If the
@@ -142,7 +153,8 @@ public class StationConfig {
   @XmlElement(name = "AntFeedpointHeight", required = false)
   private Height_UN4 antFeedpointHeight;
   /**
-   * FeedlineLength - Feedline length (Optional)    * <p>
+   * FeedlineLength - Feedline length (Optional)
+   * <p>
    * The length of the antenna feed line.
    * <p>
    * Format is SN(7,2) (m)
@@ -152,7 +164,8 @@ public class StationConfig {
   @XmlElement(name = "FeedlineLength", required = false)
   private Altitude feedlineLength;
   /**
-   * FeedlineLoss - Feedline total loss (Optional)    * <p>
+   * FeedlineLoss - Feedline total loss (Optional)
+   * <p>
    * The total loss of the antenna feed line.
    * <p>
    * Format is SN(6,3) (dB)
@@ -162,7 +175,8 @@ public class StationConfig {
   @XmlElement(name = "FeedlineLoss", required = false)
   private dB feedlineLoss;
   /**
-   * EarthCoverage - Satellite Earth Coverage (Optional)    * <p>
+   * EarthCoverage - Satellite Earth Coverage (Optional)
+   * <p>
    * The area of earth coverage.
    * <p>
    * Format is L:CCO
@@ -172,7 +186,8 @@ public class StationConfig {
   @XmlElement(name = "EarthCoverage", required = false)
   private TString earthCoverage;
   /**
-   * PointingAzMin - Pointing Minimum/Nominal Azimuth (Optional)    * <p>
+   * PointingAzMin - Pointing Minimum/Nominal Azimuth (Optional)
+   * <p>
    * The starting azimuth if an azimuth range is reported; otherwise, enter a
    * single azimuth. This is considered the left limit of an azimuth range when
    * an azimuth range is entered.
@@ -184,7 +199,8 @@ public class StationConfig {
   @XmlElement(name = "PointingAzMin", required = false)
   private Az pointingAzMin;
   /**
-   * PointingAzMax - Pointing Maximum Azimuth (Optional)    * <p>
+   * PointingAzMax - Pointing Maximum Azimuth (Optional)
+   * <p>
    * The maximum antenna azimuth angle. A range can be used to identify a scan
    * or automated or manual adjustment range. Use "0" or "360" for true north.
    * <p>
@@ -198,7 +214,8 @@ public class StationConfig {
   @XmlElement(name = "PointingAzMax", required = false)
   private Az pointingAzMax;
   /**
-   * PointingElevMin - Pointing Minimum/Nominal Elevation (Optional)    * <p>
+   * PointingElevMin - Pointing Minimum/Nominal Elevation (Optional)
+   * <p>
    * The minimum antenna elevation angle. Use "-90" for straight down and "90"
    * for directly overhead. A range can be used to identify a scan or automated
    * or manual adjustment range.
@@ -210,7 +227,8 @@ public class StationConfig {
   @XmlElement(name = "PointingElevMin", required = false)
   private Elev pointingElevMin;
   /**
-   * PointingElevMax - Pointing Maximum Elevation (Optional)    * <p>
+   * PointingElevMax - Pointing Maximum Elevation (Optional)
+   * <p>
    * The maximum antenna elevation angle. Use "-90" for straight down and "90"
    * for directly overhead. A range can be used to identify a scan or automated
    * or manual adjustment range.
@@ -225,7 +243,8 @@ public class StationConfig {
   @XmlElement(name = "PointingElevMax", required = false)
   private Elev pointingElevMax;
   /**
-   * US:CoordinationNum - Coordination Number (Optional)    * <p>
+   * US:CoordinationNum - Coordination Number (Optional)
+   * <p>
    * The US Military Communications-Electronics Board (MCEB) identifier assigned
    * to the equipment or system. (e.g., "J/F 12/12345")
    * <p>

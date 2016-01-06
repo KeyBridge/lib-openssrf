@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.MEMO;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUCJ;
 
 /**
@@ -39,7 +40,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUCJ;
 public class CoordinationData {
 
   /**
-   * US:CoordIndicator - Coordination Indicator (Required)    * <p>
+   * US:CoordIndicator - Coordination Indicator (Required)
+   * <p>
    * The coordinating entity.
    * <p>
    * Format is L:UCJ
@@ -49,7 +51,8 @@ public class CoordinationData {
   @XmlElement(name = "CoordIndicator", required = true)
   private TString coordIndicator;
   /**
-   * US:HostComments - Host Comments (Optional)    * <p>
+   * US:HostComments - Host Comments (Optional)
+   * <p>
    * The Comments from the coordinating entity.
    * <p>
    * Format is Memo

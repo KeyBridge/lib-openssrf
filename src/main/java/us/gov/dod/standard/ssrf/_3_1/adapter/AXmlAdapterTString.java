@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
  * <p>
  * This abstract adapter converts between a {@link java.lang.String} and a
  * {@link String}.
- * <p>
+ *
  * @author Jesse Caulfield
  */
 public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
@@ -85,7 +85,7 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
    * Convert a bound type to a value type.
    * <p>
    * This is called when converting an object to XML.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -101,7 +101,7 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
    * Convert a value type to a bound type.
    * <p>
    * This is called with converting XML to an object.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -115,7 +115,7 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
 
   /**
    * Internal method to perform the validation.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -148,7 +148,7 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
 
   /**
    * Get the maximum string length.
-   * <p>
+   *
    * @return the maximum string length.
    */
   public Integer getMaxLength() {
@@ -157,7 +157,7 @@ public abstract class AXmlAdapterTString extends XmlAdapter<String, TString> {
 
   /**
    * Get the minimum string length.
-   * <p>
+   *
    * @return the minimum string length.
    */
   public Integer getMinLength() {

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEF;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSC;
@@ -49,7 +52,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSC;
 public class Usage {
 
   /**
-   * EqpFnct - Equipment Function (Optional)    * <p>
+   * EqpFnct - Equipment Function (Optional)
+   * <p>
    * The equipment function.
    * <p>
    * Format is L:CEF
@@ -59,7 +63,8 @@ public class Usage {
   @XmlElement(name = "EqpFnct", required = false)
   private TString eqpFnct;
   /**
-   * StnClass - Class of Station (Optional)    * <p>
+   * StnClass - Class of Station (Optional)
+   * <p>
    * The station class, as defined by the appropriate Administration.
    * <p>
    * Format is L:USC
@@ -72,7 +77,8 @@ public class Usage {
   @XmlElement(name = "StnClass", required = false)
   private TString stnClass;
   /**
-   * RadioService - Radiocommunication Service (Optional)    * <p>
+   * RadioService - Radiocommunication Service (Optional)
+   * <p>
    * The Radiocommunication Service associated with the frequency usage in this
    * configuration. Allowable values are defined by the appropriate
    * Administration.

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -101,7 +101,8 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
 public class SpreadSpectrum {
 
   /**
-   * Type - Spread Spectrum Type (Optional)    * <p>
+   * Type - Spread Spectrum Type (Optional)
+   * <p>
    * The type of spread spectrum system being used.
    * <p>
    * Format is L:CSS
@@ -111,7 +112,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * FreqMin - Nominal or Minimum Frequency (Required)    * <p>
+   * FreqMin - Nominal or Minimum Frequency (Required)
+   * <p>
    * The nominal frequency or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -123,7 +125,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "FreqMin")
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Optional)    * <p>
+   * FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -137,7 +140,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * MaxGain - Spread Spectrum Processing Gain (Optional)    * <p>
+   * MaxGain - Spread Spectrum Processing Gain (Optional)
+   * <p>
    * The processing gain.
    * <p>
    * Format is SN(6,3) (dB)
@@ -155,7 +159,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "PulseFreqDev", required = false)
   private FreqM pulseFreqDev;
   /**
-   * InfoDataRate - Information Data Rate (Optional)    * <p>
+   * InfoDataRate - Information Data Rate (Optional)
+   * <p>
    * The information data rate.
    * <p>
    * Format is UN(10,3) (bits/sec)
@@ -165,7 +170,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "InfoDataRate", required = false)
   private InfoDataRate infoDataRate;
   /**
-   * ChipRate - Direct Sequence Chip Rate (Optional)    * <p>
+   * ChipRate - Direct Sequence Chip Rate (Optional)
+   * <p>
    * The maximum generator rate used to encode/decode a Direct Sequence spread
    * spectrum signal.
    * <p>
@@ -176,7 +182,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "ChipRate", required = false)
   private MChips chipRate;
   /**
-   * CodeRate - Code Rate (Optional)    * <p>
+   * CodeRate - Code Rate (Optional)
+   * <p>
    * The post encryption number of symbols per bit for a digital data stream.
    * This does not refer to modulation symbols in a format such as quadrature
    * amplitude modulation (QAM).
@@ -188,7 +195,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "CodeRate", required = false)
   private CodeRate codeRate;
   /**
-   * PulseChirpRate - Chirp Rate (Optional)    * <p>
+   * PulseChirpRate - Chirp Rate (Optional)
+   * <p>
    * For linear frequency modulation, the constant rate at which the radio
    * frequency of a pulse is increased throughout the width of the pulse.
    * <p>
@@ -199,7 +207,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "PulseChirpRate", required = false)
   private RFChgRate pulseChirpRate;
   /**
-   * PulseChirpFreqShift - Chirp Frequency Shift (Optional)    * <p>
+   * PulseChirpFreqShift - Chirp Frequency Shift (Optional)
+   * <p>
    * The difference between the starting and stopping frequency of a chirped
    * pulse signal.
    * <p>
@@ -210,7 +219,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "PulseChirpFreqShift", required = false)
   private FreqM pulseChirpFreqShift;
   /**
-   * PulseChirpDurationMin - Minimum Chirp Duration (Optional)    * <p>
+   * PulseChirpDurationMin - Minimum Chirp Duration (Optional)
+   * <p>
    * The duration (pulsewidth) of the chirp signal.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -220,7 +230,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "PulseChirpDurationMin", required = false)
   private microsecs pulseChirpDurationMin;
   /**
-   * PulseChirpDurationMax - Maximum Chirp Duration (Optional)    * <p>
+   * PulseChirpDurationMax - Maximum Chirp Duration (Optional)
+   * <p>
    * The maximum duration (pulsewidth) of the chirp signal.
    * <p>
    * [XSL ERR MINMAX] If PulseChirpDurationMax is used, it MUST be greater than
@@ -233,7 +244,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "PulseChirpDurationMax", required = false)
   private microsecs pulseChirpDurationMax;
   /**
-   * TimeHopNumSlots - Number of Time Hop Slots (Optional)    * <p>
+   * TimeHopNumSlots - Number of Time Hop Slots (Optional)
+   * <p>
    * The number of time slots.
    * <p>
    * Format is UN(5)
@@ -245,7 +257,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "TimeHopNumSlots", required = false)
   private UN5 timeHopNumSlots;
   /**
-   * TimeHopPulsesPerDwell - Number of Pulses Per Dwell (Optional)    * <p>
+   * TimeHopPulsesPerDwell - Number of Pulses Per Dwell (Optional)
+   * <p>
    * The number of pulses transmitted during each dwell.
    * <p>
    * Format is UN(12)
@@ -257,7 +270,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "TimeHopPulsesPerDwell", required = false)
   private UN12 timeHopPulsesPerDwell;
   /**
-   * HopRate - Hopping Rate (Optional)    * <p>
+   * HopRate - Hopping Rate (Optional)
+   * <p>
    * The rate at which the frequency hopping system hops from one frequency to
    * another frequency.
    * <p>
@@ -270,7 +284,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "HopRate", required = false)
   private hops hopRate;
   /**
-   * HopDwell - Hop Dwell Time (Optional)    * <p>
+   * HopDwell - Hop Dwell Time (Optional)
+   * <p>
    * The length of time the frequency hopping system dwells on a frequency.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -282,7 +297,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "HopDwell", required = false)
   private microsecs hopDwell;
   /**
-   * NumFreqsPerHopset - Number of Frequencies in the Hopset (Optional)    * <p>
+   * NumFreqsPerHopset - Number of Frequencies in the Hopset (Optional)
+   * <p>
    * The number of frequencies contained in a hop set.
    * <p>
    * Format is UN(4)
@@ -294,7 +310,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "NumFreqsPerHopset", required = false)
   private UN4 numFreqsPerHopset;
   /**
-   * NumHopsets - Number of Hopsets (Optional)    * <p>
+   * NumHopsets - Number of Hopsets (Optional)
+   * <p>
    * The number of frequency hopsets employed when a system uses frequency
    * hopping spread spectrum modulation techniques, including hybrid direct
    * sequence and frequency hopping.
@@ -308,7 +325,8 @@ public class SpreadSpectrum {
   @XmlElement(name = "NumHopsets", required = false)
   private UN4 numHopsets;
   /**
-   * FreqBlocking - Hopset Frequency Blocking Indicator (Optional)    * <p>
+   * FreqBlocking - Hopset Frequency Blocking Indicator (Optional)
+   * <p>
    * If the frequency hopping system is capable of blocking certain frequencies.
    * <p>
    * Format is L:CBO

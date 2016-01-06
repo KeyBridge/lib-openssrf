@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN2_1;
 
 /**
  * Complex Element VSWR stores the Voltage Standing Wave Ratio information for
@@ -47,7 +48,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class VSWR {
 
   /**
-   * Freq - Frequency (Optional)    * <p>
+   * Freq - Frequency (Optional)
+   * <p>
    * The specific frequency at which the VSWR measurement was taken. If multiple
    * points are described, Freq MUST be filled in.
    * <p>
@@ -58,7 +60,8 @@ public class VSWR {
   @XmlElement(name = "Freq", required = false)
   private FreqM freq;
   /**
-   * Ratio - Ratio (Required)    * <p>
+   * Ratio - Ratio (Required)
+   * <p>
    * The standing wave ratio referenced to the specific frequency, as a number
    * without unit (e.g., enter "2" to represent a ratio of 2:1).
    * <p>

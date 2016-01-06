@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_PPS;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_Percent3;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.microsecs;
 
 /**
  * ObservedPulseValues (US) contains data describing the distinct Pulse values
@@ -39,7 +44,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedPulseValues {
 
   /**
-   * ObservedPDValue - Observed PD Value (Optional)    * <p>
+   * ObservedPDValue - Observed PD Value (Optional)
+   * <p>
    * The observed PD data believed to be valid.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -49,7 +55,8 @@ public class ObservedPulseValues {
   @XmlElement(name = "ObservedPDValue", required = false)
   private microsecs observedPDValue;
   /**
-   * US:ObservedPRFValue - Observed PRF Value (Optional)    * <p>
+   * US:ObservedPRFValue - Observed PRF Value (Optional)
+   * <p>
    * The observed PRF data believed to be valid.
    * <p>
    * Format is UN(7,2) (pps)
@@ -59,7 +66,8 @@ public class ObservedPulseValues {
   @XmlElement(name = "ObservedPRFValue", required = false)
   private US_PPS observedPRFValue;
   /**
-   * US:ObservedPRIValue - Observed PRI Value (Optional)    * <p>
+   * US:ObservedPRIValue - Observed PRI Value (Optional)
+   * <p>
    * The observed PRI data believed to be valid.
    * <p>
    * Format is UN(12,6) (μsec)

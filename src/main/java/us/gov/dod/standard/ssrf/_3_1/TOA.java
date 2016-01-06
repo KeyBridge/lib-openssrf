@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
  *   &lt;/FreqBand&gt;
  * &lt;/TOA&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -69,7 +69,7 @@ public class TOA extends Common<TOA> {
    * The nation or regulatory body that administers this Table of Allocations.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Administration", required = true)
@@ -80,7 +80,7 @@ public class TOA extends Common<TOA> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = false)
@@ -92,7 +92,7 @@ public class TOA extends Common<TOA> {
    * less than five years from current date.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -103,7 +103,7 @@ public class TOA extends Common<TOA> {
    * An identifying name for this Table of Allocations.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Title", required = false)
@@ -114,7 +114,7 @@ public class TOA extends Common<TOA> {
    * Footnote contains the text and identifier of a Footnote, FCC Rule Part
    * Number, Band User (e.g., "Military", "Civil Support Team"). or Band
    * Application (e.g., "Wind Profiler").
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Footnote")
@@ -123,7 +123,7 @@ public class TOA extends Common<TOA> {
    * ChannelPlanRef (Optional)
    * <p>
    * ChannelPlanRef refers to a ChannelPlan.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ChannelPlanRef", nillable = true)
@@ -133,7 +133,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Country indicates the country or area for which this Table of Allocations
    * is in force.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Country", nillable = true)
@@ -144,7 +144,7 @@ public class TOA extends Common<TOA> {
    * FreqBand contains the allocation of a specific frequency band to
    * radiocommunication services. It may also provide additional information
    * such as the specification of the rights and responsibilities of a user.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqBand", required = true)
@@ -160,7 +160,7 @@ public class TOA extends Common<TOA> {
   /**
    * Get the nation or regulatory body that administers this Table of
    * Allocations..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -171,7 +171,7 @@ public class TOA extends Common<TOA> {
   /**
    * Set the nation or regulatory body that administers this Table of
    * Allocations..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -181,7 +181,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the Administration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAdministration() {
@@ -190,7 +190,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -200,7 +200,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -210,7 +210,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -220,7 +220,7 @@ public class TOA extends Common<TOA> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -231,7 +231,7 @@ public class TOA extends Common<TOA> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -241,7 +241,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -250,7 +250,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Get an identifying name for this Table of Allocations..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -260,7 +260,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Set an identifying name for this Table of Allocations..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -270,7 +270,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the Title is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTitle() {
@@ -283,7 +283,7 @@ public class TOA extends Common<TOA> {
    * Complex element Footnote contains the text and identifier of a Footnote,
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
    * or Band Application (e.g., "Wind Profiler")..
-   * <p>
+   *
    * @return a {@link Footnote} instance
    * @since 3.1.0
    */
@@ -296,7 +296,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the Footnote is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFootnote() {
@@ -314,7 +314,7 @@ public class TOA extends Common<TOA> {
    * Get the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -330,7 +330,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the ChannelPlanRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetChannelPlanRef() {
@@ -349,7 +349,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force..
-   * <p>
+   *
    * @return a {@link Country} instance
    * @since 3.1.0
    */
@@ -362,7 +362,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the Country is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCountry() {
@@ -383,7 +383,7 @@ public class TOA extends Common<TOA> {
    * band to radiocommunication services. It may also provide additional
    * information such as the specification of the rights and responsibilities of
    * a user..
-   * <p>
+   *
    * @return a {@link FreqBand} instance
    * @since 3.1.0
    */
@@ -396,7 +396,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the FreqBand is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqBand() {
@@ -413,7 +413,7 @@ public class TOA extends Common<TOA> {
   /**
    * Set the nation or regulatory body that administers this Table of
    * Allocations.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -425,7 +425,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -437,7 +437,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -450,7 +450,7 @@ public class TOA extends Common<TOA> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -463,7 +463,7 @@ public class TOA extends Common<TOA> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -475,7 +475,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Set an identifying name for this Table of Allocations.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -491,7 +491,7 @@ public class TOA extends Common<TOA> {
    * Complex element Footnote contains the text and identifier of a Footnote,
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
    * or Band Application (e.g., "Wind Profiler").
-   * <p>
+   *
    * @param values One or more instances of type {@link Footnote...}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -509,7 +509,7 @@ public class TOA extends Common<TOA> {
    * Complex element Footnote contains the text and identifier of a Footnote,
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
    * or Band Application (e.g., "Wind Profiler").
-   * <p>
+   *
    * @param values A collection of {@link Footnote} instances
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -525,7 +525,7 @@ public class TOA extends Common<TOA> {
    * Set the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
-   * <p>
+   *
    * @param values One or more instances of type {@link ChannelPlanRef...}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -544,7 +544,7 @@ public class TOA extends Common<TOA> {
    * Set the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -564,7 +564,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force.
-   * <p>
+   *
    * @param values One or more instances of type {@link Country...}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -581,7 +581,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force.
-   * <p>
+   *
    * @param values A collection of {@link Country} instances
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -600,7 +600,7 @@ public class TOA extends Common<TOA> {
    * band to radiocommunication services. It may also provide additional
    * information such as the specification of the rights and responsibilities of
    * a user.
-   * <p>
+   *
    * @param values One or more instances of type {@link FreqBand...}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -619,7 +619,7 @@ public class TOA extends Common<TOA> {
    * band to radiocommunication services. It may also provide additional
    * information such as the specification of the rights and responsibilities of
    * a user.
-   * <p>
+   *
    * @param values A collection of {@link FreqBand} instances
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -633,7 +633,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Get a string representation of this TOA instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -659,7 +659,7 @@ public class TOA extends Common<TOA> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -672,7 +672,7 @@ public class TOA extends Common<TOA> {
    * ChannelPlanRef (Optional)
    * <p>
    * ChannelPlanRef refers to a ChannelPlan.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -682,7 +682,7 @@ public class TOA extends Common<TOA> {
    * Get the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan..
-   * <p>
+   *
    * @return a {@link ChannelPlan} instance
    * @since 3.1.0
    */
@@ -695,7 +695,7 @@ public class TOA extends Common<TOA> {
 
   /**
    * Determine if the channelPlan field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetChannelPlan() {
@@ -706,7 +706,7 @@ public class TOA extends Common<TOA> {
    * Set the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
-   * <p>
+   *
    * @param values An instances of type {@link ChannelPlan}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -719,7 +719,7 @@ public class TOA extends Common<TOA> {
    * Set the ChannelPlanRef
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
-   * <p>
+   *
    * @param values An instances of type {@link ChannelPlan}.
    * @return The current TOA object instance.
    * @since 3.1.0
@@ -736,7 +736,7 @@ public class TOA extends Common<TOA> {
    * from the transient {@link #channelPlan} field. This method should typically
    * be called after the TOA is configured and (optionally) before exporting an
    * SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -755,7 +755,7 @@ public class TOA extends Common<TOA> {
    * This method builds the transient {@link #channelPlan} with values from the
    * imported {@link #channelPlanRef} field. This method should typically be
    * called after the TOA is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

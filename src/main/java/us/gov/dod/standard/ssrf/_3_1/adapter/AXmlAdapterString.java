@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * <p>
  * This abstract adapter converts between a {@link java.lang.String} and a
  * {@link String}.
- * <p>
+ *
  * @author Jesse Caulfield
  */
 public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
@@ -84,7 +84,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    * Convert a bound type to a value type.
    * <p>
    * This is called when converting an object to XML.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -100,7 +100,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
    * Convert a value type to a bound type.
    * <p>
    * This is called with converting XML to an object.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -114,7 +114,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
 
   /**
    * Internal method to perform the validation.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -144,7 +144,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
 
   /**
    * Get the maximum string length.
-   * <p>
+   *
    * @return the maximum string length.
    */
   public Integer getMaxLength() {
@@ -153,7 +153,7 @@ public abstract class AXmlAdapterString extends XmlAdapter<String, String> {
 
   /**
    * Get the minimum string length.
-   * <p>
+   *
    * @return the minimum string length.
    */
   public Integer getMinLength() {

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -133,7 +136,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScansHorzContinuous", required = false)
   private TString scansHorzContinuous;
   /**
-   * US:AzBoresightAngle - Azimuth Boresight Angle (Optional)    * <p>
+   * US:AzBoresightAngle - Azimuth Boresight Angle (Optional)
+   * <p>
    * The position of the emitter Mainbeam (aka, Mainlobe) boresight referenced
    * from true north for ground based fixed emitters, and the emitter defined
    * centerline for other platforms (e.g., mobile, airborne, shipborne).
@@ -145,7 +149,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzBoresightAngle", required = false)
   private US_Deg_Signed azBoresightAngle;
   /**
-   * US:AzScanChangeRate - Azimuth Scan Change Rate (Optional)    * <p>
+   * US:AzScanChangeRate - Azimuth Scan Change Rate (Optional)
+   * <p>
    * The rate of change for horizontal Scan Period variations expressed in Scan
    * Period change per unit of time
    * <p>
@@ -156,9 +161,11 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanChangeRate", required = false)
   private US_PRIChgRate azScanChangeRate;
   /**
-   * US:AzScanRateExtremeMax - Extreme Horizontal Scan Rate Max (Optional)    * <p>
+   * US:AzScanRateExtremeMax - Extreme Horizontal Scan Rate Max (Optional)
+   * <p>
    * The range of horizontal scan rate values that represent 100% of the signal
-   * observed Scan values obtained from a statistical study of a data set.    * <p>
+   * observed Scan values obtained from a statistical study of a data set.
+   * <p>
    * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
    * than US:AzScanRateExtremeMin.
    * <p>
@@ -169,9 +176,11 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanRateExtremeMax", required = false)
   private US_ScanRate azScanRateExtremeMax;
   /**
-   * US:AzScanRateExtremeMin - Extreme Horizontal Scan Rate Min (Optional)    * <p>
+   * US:AzScanRateExtremeMin - Extreme Horizontal Scan Rate Min (Optional)
+   * <p>
    * The range of horizontal scan rate values that represent 100% of the signal
-   * observed Scan values obtained from a statistical study of a data set.    * <p>
+   * observed Scan values obtained from a statistical study of a data set.
+   * <p>
    * Format is UN(7,2) (scans/min)
    * <p>
    * @since 3.1.0
@@ -179,7 +188,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanRateExtremeMin", required = false)
   private US_ScanRate azScanRateExtremeMin;
   /**
-   * US:AzScanRateMean - Mean Horizontal Scan Rate (Optional)    * <p>
+   * US:AzScanRateMean - Mean Horizontal Scan Rate (Optional)
+   * <p>
    * The average horizontal scan rate value for a signal that changes horizontal
    * scan rates on a non-patterned basis.
    * <p>
@@ -190,7 +200,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanRateMean", required = false)
   private US_ScanRate azScanRateMean;
   /**
-   * US:AzScanRateMedian - Most Probable Horizontal Scan Rate (Optional)    * <p>
+   * US:AzScanRateMedian - Most Probable Horizontal Scan Rate (Optional)
+   * <p>
    * The horizontal scan rate that the signal most often used, based on a
    * statistical study of a data set.
    * <p>
@@ -201,9 +212,11 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanRateMedian", required = false)
   private US_ScanRate azScanRateMedian;
   /**
-   * US:AzScanSector - Azimuth ScanSector (Optional)    * <p>
+   * US:AzScanSector - Azimuth ScanSector (Optional)
+   * <p>
    * The total angular width in the horizontal plane (aka, azimuth) the subject
-   * emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan.    * <p>
+   * emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan.
+   * <p>
    * Format is UN(5,2) (deg)
    * <p>
    * @since 3.1.0
@@ -211,7 +224,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanSector", required = false)
   private US_Degrees azScanSector;
   /**
-   * US:AzScanSectorMax - Azimuth ScanSectorMax (Optional)    * <p>
+   * US:AzScanSectorMax - Azimuth ScanSectorMax (Optional)
+   * <p>
    * The total angular width in the horizontal plane (aka, azimuth) the subject
    * emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
    * <p>
@@ -222,7 +236,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "AzScanSectorMax", required = false)
   private US_Degrees azScanSectorMax;
   /**
-   * US:AzScanVelocity - Azimuth ScanVelocity (Optional)    * <p>
+   * US:AzScanVelocity - Azimuth ScanVelocity (Optional)
+   * <p>
    * The horizontal angular speed (i.e., degrees per second) of the subject
    * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
    * <p>
@@ -244,7 +259,8 @@ public class ObservedScanAnalysis {
   /**
    * In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
    * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.    * <p>
+   * values obtained from a statistical study of a data set.
+   * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin.
    * <p>
@@ -262,7 +278,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ElevScanRateExtremeMin", required = false)
   private US_ScanRate elevScanRateExtremeMin;
   /**
-   * US:ElevScanRateMean - Mean Vertical Scan Rate (Optional)    * <p>
+   * US:ElevScanRateMean - Mean Vertical Scan Rate (Optional)
+   * <p>
    * The average vertical scan rate value for a signal that changes vertical
    * scan rates on a non-patterned basis.
    * <p>
@@ -273,7 +290,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ElevScanRateMean", required = false)
   private US_ScanRate elevScanRateMean;
   /**
-   * US:ElevScanRateMedian - Most Probable Vertical Scan Rate (Optional)    * <p>
+   * US:ElevScanRateMedian - Most Probable Vertical Scan Rate (Optional)
+   * <p>
    * The vertical scan rate that the signal most often used, based on a
    * statistical study of a data set.
    * <p>
@@ -284,9 +302,11 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ElevScanRateMedian", required = false)
   private US_ScanRate elevScanRateMedian;
   /**
-   * US:ElevScanSector - Vertical Scan Sector (Optional)    * <p>
+   * US:ElevScanSector - Vertical Scan Sector (Optional)
+   * <p>
    * The total angular width in the vertical plane (aka, elevation) the subject
-   * emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan.    * <p>
+   * emitter antenna mainbeam (aka, mainlobe) scans/covers in one complete scan.
+   * <p>
    * Format is UN(5,2) (deg)
    * <p>
    * @since 3.1.0
@@ -294,7 +314,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ElevScanSector", required = false)
   private US_Degrees elevScanSector;
   /**
-   * US:ElevScanSectorMax - Vertical Scan Sector Max (Optional)    * <p>
+   * US:ElevScanSectorMax - Vertical Scan Sector Max (Optional)
+   * <p>
    * The total angular width in the vertical plane (aka, elevation) the subject
    * emitter antenna mainbeam (aka, mainlobe) is capable of scanning.
    * <p>
@@ -305,7 +326,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ElevScanSectorMax", required = false)
   private US_Degrees elevScanSectorMax;
   /**
-   * US:ElevScanVelocity - Vertical Scan Velocity (Optional)    * <p>
+   * US:ElevScanVelocity - Vertical Scan Velocity (Optional)
+   * <p>
    * The vertical angular speed (i.e., degrees per second) of the subject
    * emitter Mainbeam (aka., mainlobe) scan referenced to a fixed point.
    * <p>
@@ -316,7 +338,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ElevScanVelocity", required = false)
   private US_ScanSpeed elevScanVelocity;
   /**
-   * US:NumBeamPositionsPerScan - Num Beam Positions Per Scan (Optional)    * <p>
+   * US:NumBeamPositionsPerScan - Num Beam Positions Per Scan (Optional)
+   * <p>
    * The number of beam positions (aka., dwells) per scan cycle
    * <p>
    * Format is UN(6)
@@ -326,7 +349,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "NumBeamPositionsPerScan", required = false)
   private UN6 numBeamPositionsPerScan;
   /**
-   * US:NumBeamPositionsTotal - Total Number of Beam Positions (Optional)    * <p>
+   * US:NumBeamPositionsTotal - Total Number of Beam Positions (Optional)
+   * <p>
    * The total number of unique array beam positions resulting from the
    * frequency steps of a frequency scanning, phase changes, in phase scanning,
    * or discrete time delays in time delay steering.
@@ -338,7 +362,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "NumBeamPositionsTotal", required = false)
   private UN6 numBeamPositionsTotal;
   /**
-   * US:NumBeamsPerRaster - Num Beams Per Raster (Optional)    * <p>
+   * US:NumBeamsPerRaster - Num Beams Per Raster (Optional)
+   * <p>
    * The number of beam positions necessary to complete one bar of the raster
    * scan.
    * <p>
@@ -349,7 +374,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "NumBeamsPerRaster", required = false)
   private UN6 numBeamsPerRaster;
   /**
-   * US:NumRastersPerCycle - Num Rasters Per Cycle (Optional)    * <p>
+   * US:NumRastersPerCycle - Num Rasters Per Cycle (Optional)
+   * <p>
    * The number of 360 degree scans (aka, turns) a component of a scan makes in
    * the time it takes the Primary Scan to complete one complete cycle/scan.
    * <p>
@@ -360,7 +386,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "NumRastersPerCycle", required = false)
   private UN6 numRastersPerCycle;
   /**
-   * US:NumScanPositions - Number of Scan Positions (Optional)    * <p>
+   * US:NumScanPositions - Number of Scan Positions (Optional)
+   * <p>
    * The number of discrete values observed in a single repeating scan period
    * sequence.
    * <p>
@@ -371,7 +398,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "NumScanPositions", required = false)
   private UN6 numScanPositions;
   /**
-   * US:NumScanValues - Number of Scan Values (Optional)    * <p>
+   * US:NumScanValues - Number of Scan Values (Optional)
+   * <p>
    * The number of discrete values observed in multiple repeating scan period
    * sequences.
    * <p>
@@ -382,7 +410,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "NumScanValues", required = false)
   private UN6 numScanValues;
   /**
-   * US:ScanAdaptiveDriverDesc - Scan Adaptive Driver Description (Optional)    * <p>
+   * US:ScanAdaptiveDriverDesc - Scan Adaptive Driver Description (Optional)
+   * <p>
    * The condition which controls or can be associated with the signal Scan
    * Period variations.
    * <p>
@@ -393,7 +422,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanAdaptiveDriverDesc", required = false)
   private S500 scanAdaptiveDriverDesc;
   /**
-   * US:ScanAdaptiveRuleDesc - Scan Adaptive Rule Description (Optional)    * <p>
+   * US:ScanAdaptiveRuleDesc - Scan Adaptive Rule Description (Optional)
+   * <p>
    * The rule which describes the signal Scan Period variations.
    * <p>
    * Format is S500
@@ -403,7 +433,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanAdaptiveRuleDesc", required = false)
   private S500 scanAdaptiveRuleDesc;
   /**
-   * US:ScanAngleAzStart - Scan Angle Azimuth Start (Optional)    * <p>
+   * US:ScanAngleAzStart - Scan Angle Azimuth Start (Optional)
+   * <p>
    * The maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
    * reaches in the horizontal plane (aka., azimuth).
    * <p>
@@ -414,7 +445,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanAngleAzStart", required = false)
   private US_Deg_Signed scanAngleAzStart;
   /**
-   * US:ScanAngleAzStop - Scan Angle Azimuth Stop (Optional)    * <p>
+   * US:ScanAngleAzStop - Scan Angle Azimuth Stop (Optional)
+   * <p>
    * The minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
    * reaches in the horizontal plane (aka., azimuth).
    * <p>
@@ -425,7 +457,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanAngleAzStop", required = false)
   private US_Deg_Signed scanAngleAzStop;
   /**
-   * US:ScanAngleElevStart - Scan Angle Elevation Start (Optional)    * <p>
+   * US:ScanAngleElevStart - Scan Angle Elevation Start (Optional)
+   * <p>
    * The maximum angle the subject emitter antenna mainbeam (aka., mainlobe)
    * reaches in the vertical plane (aka., elevation).
    * <p>
@@ -436,7 +469,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanAngleElevStart", required = false)
   private US_Deg_Signed scanAngleElevStart;
   /**
-   * US:ScanAngleElevStop - Scan Angle Elevation Stop (Optional)    * <p>
+   * US:ScanAngleElevStop - Scan Angle Elevation Stop (Optional)
+   * <p>
    * The minimum angle the subject emitter antenna mainbeam (aka., mainlobe)
    * reaches in the vertical plane (aka., azimuth).
    * <p>
@@ -447,7 +481,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanAngleElevStop", required = false)
   private US_Deg_Signed scanAngleElevStop;
   /**
-   * US:ScanDwell - Scan Dwell (Optional)    * <p>
+   * US:ScanDwell - Scan Dwell (Optional)
+   * <p>
    * The scan duration
    * <p>
    * Format is UN(12,6) (μsec)
@@ -457,7 +492,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanDwell", required = false)
   private microsecs scanDwell;
   /**
-   * US:ScanDwellSequence - Scan Dwell Sequence (Optional)    * <p>
+   * US:ScanDwellSequence - Scan Dwell Sequence (Optional)
+   * <p>
    * The Sequence of dwell durations, with elevation and azimuth. Example: 20
    * deg hor, 15 deg elev, 5 second dwell, etc.
    * <p>
@@ -468,7 +504,8 @@ public class ObservedScanAnalysis {
   @XmlElement(name = "ScanDwellSequence", required = false)
   private S500 scanDwellSequence;
   /**
-   * US:ScanDwellTime - Scan Dwell Time (Optional)    * <p>
+   * US:ScanDwellTime - Scan Dwell Time (Optional)
+   * <p>
    * The time duration for a complete dwell/group of scan cycles which all have
    * the same Scan Period Discrete value before changing to a different one.
    * <p>
@@ -615,7 +652,8 @@ public class ObservedScanAnalysis {
   /**
    * Get the range of horizontal scan rate values that represent 100% of the
    * signal observed Scan values obtained from a statistical study of a data
-   * set.    * <p>
+   * set.
+   * <p>
    * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
    * than US:AzScanRateExtremeMin..
    * <p>
@@ -629,7 +667,8 @@ public class ObservedScanAnalysis {
   /**
    * Set the range of horizontal scan rate values that represent 100% of the
    * signal observed Scan values obtained from a statistical study of a data
-   * set.    * <p>
+   * set.
+   * <p>
    * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
    * than US:AzScanRateExtremeMin..
    * <p>
@@ -875,7 +914,8 @@ public class ObservedScanAnalysis {
   /**
    * Get In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
    * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.    * <p>
+   * values obtained from a statistical study of a data set.
+   * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin..
    * <p>
@@ -889,7 +929,8 @@ public class ObservedScanAnalysis {
   /**
    * Set In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
    * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.    * <p>
+   * values obtained from a statistical study of a data set.
+   * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin..
    * <p>
@@ -1736,7 +1777,8 @@ public class ObservedScanAnalysis {
   /**
    * Set the range of horizontal scan rate values that represent 100% of the
    * signal observed Scan values obtained from a statistical study of a data
-   * set.    * <p>
+   * set.
+   * <p>
    * [XSL ERR MINMAX] If US:AzScanRateExtremeMax is used, it MUST be greater
    * than US:AzScanRateExtremeMin.
    * <p>
@@ -1752,7 +1794,8 @@ public class ObservedScanAnalysis {
   /**
    * Set the range of horizontal scan rate values that represent 100% of the
    * signal observed Scan values obtained from a statistical study of a data
-   * set.    * <p>
+   * set.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedScanAnalysis object instance.
    * @since 3.1.0
@@ -1791,7 +1834,8 @@ public class ObservedScanAnalysis {
   /**
    * Set the total angular width in the horizontal plane (aka, azimuth) the
    * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.    * <p>
+   * complete scan.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedScanAnalysis object instance.
    * @since 3.1.0
@@ -1844,7 +1888,8 @@ public class ObservedScanAnalysis {
   /**
    * Set In Data Item Extreme Vertical Scan Rate Max (US), enter the range of
    * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.    * <p>
+   * values obtained from a statistical study of a data set.
+   * <p>
    * [XSL ERR MINMAX] If US:ElevScanRateExtremeMax is used, it MUST be greater
    * than US:ElevScanRateExtremeMin.
    * <p>
@@ -1860,7 +1905,8 @@ public class ObservedScanAnalysis {
   /**
    * Set In Data Item Extreme Vertical Scan Rate Min (US), enter the range of
    * vertical scan rate values that represent 100% of the signal observed Scan
-   * values obtained from a statistical study of a data set.    * <p>
+   * values obtained from a statistical study of a data set.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedScanAnalysis object instance.
    * @since 3.1.0
@@ -1899,7 +1945,8 @@ public class ObservedScanAnalysis {
   /**
    * Set the total angular width in the vertical plane (aka, elevation) the
    * subject emitter antenna mainbeam (aka, mainlobe) scans/covers in one
-   * complete scan.    * <p>
+   * complete scan.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedScanAnalysis object instance.
    * @since 3.1.0

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,9 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.Satellite;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 
@@ -54,7 +56,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 public class StationLoc {
 
   /**
-   * US:LocationExcluded - Excluded Location Indicator (Optional)    * <p>
+   * US:LocationExcluded - Excluded Location Indicator (Optional)
+   * <p>
    * "Yes" to indicate that the LocSatRef is to be excluded from the location
    * set for the current station. If omitted, "No" is assumed, meaning that the
    * location is included.
@@ -66,7 +69,8 @@ public class StationLoc {
   @XmlElement(name = "LocationExcluded", required = false)
   private TString locationExcluded;
   /**
-   * US:LocSatRef - Location or Satellite Reference (Optional)    * <p>
+   * US:LocSatRef - Location or Satellite Reference (Optional)
+   * <p>
    * The serial of a Location or Satellite dataset. If this location is a
    * complex dataset (more than a single point), tthe assignment is mobile,
    * inside the Station location.
@@ -78,7 +82,8 @@ public class StationLoc {
   @XmlElement(name = "LocSatRef", required = false)
   private Serial locSatRef;
   /**
-   * US:LocationRadius - Location Radius (Optional)    * <p>
+   * US:LocationRadius - Location Radius (Optional)
+   * <p>
    * The radius associated with the Location to produce a circle. Radius
    * information only applies to points, and should be ignored in the case of
    * polygons and ellipses.
@@ -90,7 +95,8 @@ public class StationLoc {
   @XmlElement(name = "LocationRadius", required = false)
   private DistSpace locationRadius;
   /**
-   * US:ServiceVolumeLocRef - Service Volume Identifier (Optional)    * <p>
+   * US:ServiceVolumeLocRef - Service Volume Identifier (Optional)
+   * <p>
    * The reference to a Location for an aeronautical coverage area. The area can
    * be modified by the fields ServiceVolumeRadius and ServiceValumeHeight. For
    * example, ServiceVolumeLocRef can reference a point location that is
@@ -105,7 +111,8 @@ public class StationLoc {
   @XmlElement(name = "ServiceVolumeLocRef")
   private Serial serviceVolumeLocRef;
   /**
-   * US:ServiceVolumeRadius - Service Volume Radius (Optional)    * <p>
+   * US:ServiceVolumeRadius - Service Volume Radius (Optional)
+   * <p>
    * The radius associated with the Location to produce a circle. Radius
    * information only applies to points, and should be ignored in the case of
    * polygons and ellipses.
@@ -119,7 +126,8 @@ public class StationLoc {
   @XmlElement(name = "ServiceVolumeRadius", required = false)
   private DistEarth serviceVolumeRadius;
   /**
-   * US:ServiceVolumeHeight - Service Volume Height (Optional)    * <p>
+   * US:ServiceVolumeHeight - Service Volume Height (Optional)
+   * <p>
    * The altitude of aeronautical navigational aids, air traffic control
    * assignments for radio frequencies above 30 MHz, and low-frequency beacons.
    * The altitude is referenced to mean sea level (MSL).
@@ -459,7 +467,8 @@ public class StationLoc {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:LocSatRef - Location or Satellite Reference (Optional)    * <p>
+   * US:LocSatRef - Location or Satellite Reference (Optional)
+   * <p>
    * The serial of a Location or Satellite dataset. If this location is a
    * complex dataset (more than a single point), tthe assignment is mobile,
    * inside the Station location.

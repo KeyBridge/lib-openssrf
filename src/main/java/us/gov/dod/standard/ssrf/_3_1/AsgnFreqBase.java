@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,12 +18,13 @@ package us.gov.dod.standard.ssrf._3_1;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.assignment.Freq;
 import us.gov.dod.standard.ssrf._3_1.assignment.FreqOld;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
 
 /**
  * The SSRF AsgnFreqBase data type.
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -55,7 +56,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -65,7 +66,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -75,7 +76,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Determine if the FreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMin() {
@@ -84,7 +85,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -94,7 +95,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -104,7 +105,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Determine if the FreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMax() {
@@ -113,7 +114,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -123,7 +124,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -133,7 +134,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Determine if the RefFreq is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRefFreq() {
@@ -142,7 +143,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Get .
-   * <p>
+   *
    * @return the FreqUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -152,7 +153,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set .
-   * <p>
+   *
    * @param value the FreqUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -164,7 +165,7 @@ public abstract class AsgnFreqBase {
    * Determine if the FreqUse is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqUse() {
@@ -173,7 +174,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
@@ -185,7 +186,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
@@ -197,7 +198,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
@@ -209,7 +210,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Set
-   * <p>
+   *
    * @param value An instances of type {@link ListCAU}.
    * @return The current AsgnFreqBase object instance.
    * @since 3.1.0
@@ -221,7 +222,7 @@ public abstract class AsgnFreqBase {
 
   /**
    * Get a string representation of this AsgnFreqBase instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -241,7 +242,7 @@ public abstract class AsgnFreqBase {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

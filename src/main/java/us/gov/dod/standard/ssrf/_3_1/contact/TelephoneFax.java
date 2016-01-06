@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Contact;
 import us.gov.dod.standard.ssrf._3_1.Organisation;
 import us.gov.dod.standard.ssrf._3_1.Role;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -54,7 +56,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class TelephoneFax {
 
   /**
-   * Preferred - Preferred Number (Optional)    * <p>
+   * Preferred - Preferred Number (Optional)
+   * <p>
    * A code "Yes" for the preferred number(s) and a code "No" for the others.
    * <p>
    * Format is L:CBO
@@ -64,7 +67,8 @@ public class TelephoneFax {
   @XmlElement(name = "Preferred", required = false)
   private TString preferred;
   /**
-   * Type - System or Network (Optional)    * <p>
+   * Type - System or Network (Optional)
+   * <p>
    * The name of the network on which this number can be dialed (e.g., DSN,
    * IVSN, CORMORANT). Use "PUBLIC" for normal public telephone or GSM.
    * <p>
@@ -75,7 +79,8 @@ public class TelephoneFax {
   @XmlElement(name = "Type", required = false)
   private S20 type;
   /**
-   * Fax - Telefax Indicator (Optional)    * <p>
+   * Fax - Telefax Indicator (Optional)
+   * <p>
    * "Yes" if the number is for a telefax. If this item is empty, it SHOULD be
    * considered as "No".
    * <p>
@@ -86,7 +91,8 @@ public class TelephoneFax {
   @XmlElement(name = "Fax", required = false)
   private TString fax;
   /**
-   * MaxCls - System Maximum Classification (Optional)    * <p>
+   * MaxCls - System Maximum Classification (Optional)
+   * <p>
    * The highest classification that can be used on the network. Note for the
    * USA: The letter "R" MUST NOT be used in USA created datasets.
    * <p>
@@ -97,7 +103,8 @@ public class TelephoneFax {
   @XmlElement(name = "MaxCls", required = false)
   private TString maxCls;
   /**
-   * Number - Tel or Fax Number (Required)    * <p>
+   * Number - Tel or Fax Number (Required)
+   * <p>
    * The area code, telephone/telefax number (including the extension if
    * necessary) of individual or contact organisation.
    * <p>

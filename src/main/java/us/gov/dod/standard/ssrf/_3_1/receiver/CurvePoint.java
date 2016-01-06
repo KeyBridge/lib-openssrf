@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.CurvePointLevel;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqOffset;
 
 /**
  * CurvePoint contains the relative frequency to add to the curve origin to
@@ -40,7 +41,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class CurvePoint {
 
   /**
-   * Offset - Point Frequency Offset (Required)    * <p>
+   * Offset - Point Frequency Offset (Required)
+   * <p>
    * A frequency difference (refer to data element Curve for use instructions).
    * If the curve being defined is symmetric, then enter only positive offsets.
    * If the curve is not symmetric (such as a SSB or vestigial sideband
@@ -56,7 +58,8 @@ public class CurvePoint {
   @XmlElement(name = "Offset", required = true)
   private FreqOffset offset;
   /**
-   * Level - Level (Required)    * <p>
+   * Level - Level (Required)
+   * <p>
    * A dB value (refer to data element Curve for use instructions).
    * <p>
    * Format is SN(4,1) [-150..150] (dB)

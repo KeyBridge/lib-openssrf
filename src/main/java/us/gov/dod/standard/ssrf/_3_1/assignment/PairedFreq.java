@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,11 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US12;
 
 /**
  * PairedFreq (US) describes an associated frequency set for the repeater,
@@ -39,7 +42,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class PairedFreq {
 
   /**
-   * US:Freq - Frequency (Required)    * <p>
+   * US:Freq - Frequency (Required)
+   * <p>
    * The paired frequency for the repeater, duplex link or frequency diversity
    * capability.
    * <p>
@@ -50,7 +54,8 @@ public class PairedFreq {
   @XmlElement(name = "Freq", required = true)
   private FreqM freq;
   /**
-   * US:AssignmentRef - Assignment Reference (Optional)    * <p>
+   * US:AssignmentRef - Assignment Reference (Optional)
+   * <p>
    * A reference to an Assignment that is paired with this AsgnAllot in a
    * repeater, duplex link or frequency diversity capability.
    * <p>
@@ -61,7 +66,8 @@ public class PairedFreq {
   @XmlElement(name = "AssignmentRef", required = false)
   private Serial assignmentRef;
   /**
-   * US:PairedASN - Paired Agency Serial Number (Optional)    * <p>
+   * US:PairedASN - Paired Agency Serial Number (Optional)
+   * <p>
    * The agency serial number of the assignment that is paired with this
    * Assignment in a repeater, duplex link or frequency diversity capability.
    * <p>
@@ -72,7 +78,8 @@ public class PairedFreq {
   @XmlElement(name = "PairedASN", required = false)
   private US12 pairedASN;
   /**
-   * US:PairedType - Paired Type (Optional)    * <p>
+   * US:PairedType - Paired Type (Optional)
+   * <p>
    * If the paired frequency is a transmitting repeater frequency, a receiving
    * repeater frequency, a duplex pairing, frequency diversity or space
    * diversity.
@@ -303,7 +310,8 @@ public class PairedFreq {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:AssignmentRef - Assignment Reference (Optional)    * <p>
+   * US:AssignmentRef - Assignment Reference (Optional)
+   * <p>
    * A reference to an Assignment that is paired with this AsgnAllot in a
    * repeater, duplex link or frequency diversity capability.
    * <p>

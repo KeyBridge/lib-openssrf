@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,11 +16,17 @@
 package us.gov.dod.standard.ssrf._3_1.receiver;
 
 import java.math.BigInteger;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf._3_1.Receiver;
 import us.gov.dod.standard.ssrf._3_1.Transmitter;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqOffset;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN3_1;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCT;
 
@@ -79,7 +85,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCT;
 public class Curve {
 
   /**
-   * Type - Curve Type (Required)    * <p>
+   * Type - Curve Type (Required)
+   * <p>
    * A code defining the type of curve.
    * <p>
    * Format is L:CCT
@@ -89,7 +96,8 @@ public class Curve {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * Calculated - Calculated Data Indicator (Optional)    * <p>
+   * Calculated - Calculated Data Indicator (Optional)
+   * <p>
    * Yes to indicate that the data was calculated, or "No" if the data is issued
    * from measurement. Leave blank if the origin of the data is not known.
    * <p>
@@ -100,7 +108,8 @@ public class Curve {
   @XmlElement(name = "Calculated", required = false)
   private TString calculated;
   /**
-   * FreqFactor - Curve Frequency Factor (Required)    * <p>
+   * FreqFactor - Curve Frequency Factor (Required)
+   * <p>
    * A positive numeric multiplier of the carrier frequency. For example, enter
    * 0 to define a curve around the IF, or 1 to define a curve around the
    * carrier frequency.
@@ -112,7 +121,8 @@ public class Curve {
   @XmlElement(name = "FreqFactor", required = true)
   private UN3_1 freqFactor;
   /**
-   * FreqConst - Curve Frequency Constant (Required)    * <p>
+   * FreqConst - Curve Frequency Constant (Required)
+   * <p>
    * A frequency offset (positive or negative).
    * <p>
    * Format is SN(16,9) (MHz)
@@ -122,7 +132,8 @@ public class Curve {
   @XmlElement(name = "FreqConst", required = true)
   private FreqOffset freqConst;
   /**
-   * Bw - Curve Measurement Bandwidth (Optional)    * <p>
+   * Bw - Curve Measurement Bandwidth (Optional)
+   * <p>
    * The bandwidth measurement of the curve values.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -132,7 +143,8 @@ public class Curve {
   @XmlElement(name = "Bw", required = false)
   private FreqM bw;
   /**
-   * FreqMin - Lowest Frequency of the Curve (Optional)    * <p>
+   * FreqMin - Lowest Frequency of the Curve (Optional)
+   * <p>
    * The lowest value of the curve frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -142,7 +154,8 @@ public class Curve {
   @XmlElement(name = "FreqMin", required = false)
   private FreqM freqMin;
   /**
-   * FreqMax - Highest Frequency (Optional)    * <p>
+   * FreqMax - Highest Frequency (Optional)
+   * <p>
    * The highest value of the curve frequency range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
@@ -166,10 +179,12 @@ public class Curve {
   @XmlElement(name = "CurvePoint", required = true)
   private Set<CurvePoint> curvePoint;
   /**
-   * idx - Index (Required)    * <p>
+   * idx - Index (Required)
+   * <p>
    * A unique index for each Curve used by this Dataset. Once an idx is used it
    * SHOULD NOT be modified during the lifetime of the Dataset; e.g., an element
-   * with idx=2 will keep idx=2 even if the first occurrence (idx=1) is deleted.    * <p>
+   * with idx=2 will keep idx=2 even if the first occurrence (idx=1) is deleted.
+   * <p>
    * Format is UN(6)
    * <p>
    * @since 3.1.0
@@ -597,7 +612,8 @@ public class Curve {
    * Set a unique index for each Curve used by this Dataset. Once an idx is used
    * it SHOULD NOT be modified during the lifetime of the Dataset; e.g., an
    * element with idx=2 will keep idx=2 even if the first occurrence (idx=1) is
-   * deleted.    * <p>
+   * deleted.
+   * <p>
    * @param value An instances of type {@link BigInteger}.
    * @return The current Curve object instance.
    * @since 3.1.0

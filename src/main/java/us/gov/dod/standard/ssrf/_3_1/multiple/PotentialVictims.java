@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US20;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEN;
 
 /**
@@ -39,8 +44,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEN;
 public class PotentialVictims {
 
   /**
-   * US:Type - Victim Notation Type (Optional)    * <p>
-   * The type of Notation.    * <p>
+   * US:Type - Victim Notation Type (Optional)
+   * <p>
+   * The type of Notation.
+   * <p>
    * Format is L:CEN
    * <p>
    * @since 3.1.0
@@ -48,7 +55,8 @@ public class PotentialVictims {
   @XmlElement(name = "Type", required = false)
   private TString type;
   /**
-   * US:VictimName - US:VictimName (Optional)    * <p>
+   * US:VictimName - US:VictimName (Optional)
+   * <p>
    * The name or nomenclature of a system that may be negatively impacted by the
    * subject Notation/Signal.
    * <p>
@@ -59,7 +67,8 @@ public class PotentialVictims {
   @XmlElement(name = "VictimName", required = false)
   private S50 victimName;
   /**
-   * US:VictimNotation - Victim Notation (Optional)    * <p>
+   * US:VictimNotation - Victim Notation (Optional)
+   * <p>
    * The designator for a specific emitter that may be negatively impacted by
    * the subject Notation/Signal.
    * <p>
@@ -164,7 +173,8 @@ public class PotentialVictims {
   }
 
   /**
-   * Set the type of Notation.    * <p>
+   * Set the type of Notation.
+   * <p>
    * @param value An instances of type {@link ListCEN}.
    * @return The current PotentialVictims object instance.
    * @since 3.1.0

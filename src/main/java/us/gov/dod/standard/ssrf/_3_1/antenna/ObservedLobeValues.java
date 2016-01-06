@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,7 +51,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedLobeValues {
 
   /**
-   * US:HorzBwMax - Maximum Horizontal Beamwidth (Optional)    * <p>
+   * US:HorzBwMax - Maximum Horizontal Beamwidth (Optional)
+   * <p>
    * The maximum angle of the horizontal component of the antenna mainbeam
    * measured at the half-power (-3 dB) point of its maximum horizontal width.
    * <p>
@@ -65,7 +66,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "HorzBwMax", required = false)
   private US_Degrees horzBwMax;
   /**
-   * US:HorzBwMin - Minimum Horizontal Beamwidth (Optional)    * <p>
+   * US:HorzBwMin - Minimum Horizontal Beamwidth (Optional)
+   * <p>
    * The minimum angle of the horizontal component of the antenna mainbeam
    * measured at the half-power (-3 dB) point of its maximum horizontal width.
    * <p>
@@ -76,7 +78,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "HorzBwMin", required = false)
   private US_Degrees horzBwMin;
   /**
-   * US:LobeValueAngleAccuracy - Lobe Measurement Angle Accuracy (Optional)    * <p>
+   * US:LobeValueAngleAccuracy - Lobe Measurement Angle Accuracy (Optional)
+   * <p>
    * The measurement accuracy of the LobeValueAngle(s) in degrees. Expressed as
    * a (+/-) value.
    * <p>
@@ -87,7 +90,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueAngleAccuracy", required = false)
   private US_Degrees90 lobeValueAngleAccuracy;
   /**
-   * US:LobeValueAngleHorz - Lobe Measurement Horizontal Angle (Optional)    * <p>
+   * US:LobeValueAngleHorz - Lobe Measurement Horizontal Angle (Optional)
+   * <p>
    * The azimuth angle between the sidelobe LobeValueLevel and the mainbeam
    * maximum power level.
    * <p>
@@ -98,7 +102,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueAngleHorz", required = false)
   private Az180 lobeValueAngleHorz;
   /**
-   * US:LobeValueAngleVert - Lobe Measurement Vertical Angle (Optional)    * <p>
+   * US:LobeValueAngleVert - Lobe Measurement Vertical Angle (Optional)
+   * <p>
    * The vertical angle between the sidelobe LobeValueLevel and the mainbeam
    * maximum power level.
    * <p>
@@ -109,7 +114,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueAngleVert", required = false)
   private Az180 lobeValueAngleVert;
   /**
-   * US:LobeValueID - Lobe Measurement Identifier (Required)    * <p>
+   * US:LobeValueID - Lobe Measurement Identifier (Required)
+   * <p>
    * A unique (within the AntLobe) identifier for the Antenna lobe measurement.
    * <p>
    * Format is S10
@@ -119,7 +125,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueID", required = true)
   private S10 lobeValueID;
   /**
-   * US:LobeValueLevel - Lobe Measurement Power Level (Optional)    * <p>
+   * US:LobeValueLevel - Lobe Measurement Power Level (Optional)
+   * <p>
    * The ratio of the mainbeam power level to the sidelobe power level,
    * expressed as a positive value in dB.
    * <p>
@@ -130,7 +137,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueLevel", required = false)
   private US_DB150 lobeValueLevel;
   /**
-   * US:LobeValueLevelAccuracy - Lobe Measurement Level Accuracy (Optional)    * <p>
+   * US:LobeValueLevelAccuracy - Lobe Measurement Level Accuracy (Optional)
+   * <p>
    * The measurement accuracy of the LobeValueLevel value in dB. Expressed as a
    * (+/-) value.
    * <p>
@@ -141,7 +149,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueLevelAccuracy", required = false)
   private US_DB90 lobeValueLevelAccuracy;
   /**
-   * US:LobeValueName - Lobe Measurement Name (Optional)    * <p>
+   * US:LobeValueName - Lobe Measurement Name (Optional)
+   * <p>
    * A name for the Antenna lobe measurement.
    * <p>
    * Format is S25
@@ -151,7 +160,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "LobeValueName", required = false)
   private S25 lobeValueName;
   /**
-   * US:VertBwMax - Maximum Vertical Beamwidth (Optional)    * <p>
+   * US:VertBwMax - Maximum Vertical Beamwidth (Optional)
+   * <p>
    * The maximum angle of the vertical component of the antenna mainbeam
    * measured at the half-power (-3 dB) points of its maximum vertical width.
    * <p>
@@ -165,7 +175,8 @@ public class ObservedLobeValues {
   @XmlElement(name = "VertBwMax", required = false)
   private US_Degrees vertBwMax;
   /**
-   * US:VertBwMin - Minimum Vertical Beamwidth (Optional)    * <p>
+   * US:VertBwMin - Minimum Vertical Beamwidth (Optional)
+   * <p>
    * The minimum angle of the vertical component of the antenna mainbeam
    * measured at the half-power (-3 dB) points of its maximum vertical width.
    * <p>

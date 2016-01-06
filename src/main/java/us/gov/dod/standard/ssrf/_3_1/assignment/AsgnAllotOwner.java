@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,11 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.Organisation;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S18;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUOW;
 
 /**
@@ -43,7 +46,8 @@ public class AsgnAllotOwner {
   @XmlElement(name = "OwnerType", required = true)
   private TString ownerType;
   /**
-   * US:OwnerOrgRef - Owner Organisation Serial (Optional)    * <p>
+   * US:OwnerOrgRef - Owner Organisation Serial (Optional)
+   * <p>
    * The serial of the owning, or originating, organisation. This definitively
    * identifies the owning agency when there is a possibility that multiple
    * entities are listed in a text string name. This identifier can be
@@ -232,7 +236,8 @@ public class AsgnAllotOwner {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * US:OwnerOrgRef - Owner Organisation Serial (Optional)    * <p>
+   * US:OwnerOrgRef - Owner Organisation Serial (Optional)
+   * <p>
    * The serial of the owning, or originating, organisation. This definitively
    * identifies the owning agency when there is a possibility that multiple
    * entities are listed in a text string name. This identifier can be

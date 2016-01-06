@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,16 @@
  */
 package us.gov.dod.standard.ssrf._3_1.jrfl;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.Allotment;
+import us.gov.dod.standard.ssrf._3_1.Assignment;
+import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.JRFL;
 import us.gov.dod.standard.ssrf._3_1.allotment.POCInformation;
 import us.gov.dod.standard.ssrf._3_1.allotment.Project;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;

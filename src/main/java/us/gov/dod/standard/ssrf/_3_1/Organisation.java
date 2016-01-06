@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +45,7 @@ import us.gov.dod.standard.ssrf._3_1.organisation.RelatedOrganisation;
  *   &lt;/Address&gt;
  * &lt;/Organisation&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -72,7 +72,7 @@ public class Organisation extends Common<Organisation> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = false)
@@ -86,7 +86,7 @@ public class Organisation extends Common<Organisation> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -104,7 +104,7 @@ public class Organisation extends Common<Organisation> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -115,7 +115,7 @@ public class Organisation extends Common<Organisation> {
    * An alternate name or nickname for the organisation.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = false)
@@ -126,7 +126,7 @@ public class Organisation extends Common<Organisation> {
    * An alternate name or nickname for the organisation.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "AlternateName", required = false)
@@ -137,7 +137,7 @@ public class Organisation extends Common<Organisation> {
    * The type of relationship.
    * <p>
    * Format is L:CFT
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Type", required = false)
@@ -150,7 +150,7 @@ public class Organisation extends Common<Organisation> {
    * information systems.
    * <p>
    * Format is S20
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "UIC", required = false)
@@ -159,7 +159,7 @@ public class Organisation extends Common<Organisation> {
    * Address (Optional)
    * <p>
    * Address contains the address of a Contact, Organisation or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Address")
@@ -169,7 +169,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * TelephoneFax reflects the telephone and/or telefax number(s) of the
    * Contact, Organisation or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TelephoneFax")
@@ -180,7 +180,7 @@ public class Organisation extends Common<Organisation> {
    * Email contains the email address of a Contact or Role.
    * <p>
    * Notes: Will add Organisation to text in next release
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EMail")
@@ -189,7 +189,7 @@ public class Organisation extends Common<Organisation> {
    * RoleRef (Optional)
    * <p>
    * RoleRef contains the serial of a referenced Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RoleRef", nillable = true)
@@ -200,7 +200,7 @@ public class Organisation extends Common<Organisation> {
    * RelatedOrganisation identifies an Organisation linked to the current
    * Organisation, the type of relation (reporting, budget, etc) and the
    * relation (parent, child, sibling).
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RelatedOrganisation")
@@ -215,7 +215,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -225,7 +225,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -235,7 +235,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -245,7 +245,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -256,7 +256,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -266,7 +266,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -280,7 +280,7 @@ public class Organisation extends Common<Organisation> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -295,7 +295,7 @@ public class Organisation extends Common<Organisation> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -305,7 +305,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -314,7 +314,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Get an alternate name or nickname for the organisation..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -324,7 +324,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set an alternate name or nickname for the organisation..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -334,7 +334,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -343,7 +343,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Get an alternate name or nickname for the organisation..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -353,7 +353,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set an alternate name or nickname for the organisation..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -363,7 +363,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the AlternateName is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAlternateName() {
@@ -372,7 +372,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Get the type of relationship..
-   * <p>
+   *
    * @return the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -382,7 +382,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set the type of relationship..
-   * <p>
+   *
    * @param value the Type value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -394,7 +394,7 @@ public class Organisation extends Common<Organisation> {
    * Determine if the Type is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetType() {
@@ -405,7 +405,7 @@ public class Organisation extends Common<Organisation> {
    * Get an organisational identifier that may be used to uniquely identify an
    * organisation in operational planning systems and other non-spectrum
    * information systems..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -417,7 +417,7 @@ public class Organisation extends Common<Organisation> {
    * Set an organisational identifier that may be used to uniquely identify an
    * organisation in operational planning systems and other non-spectrum
    * information systems..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -427,7 +427,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the UIC is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetUIC() {
@@ -439,7 +439,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role..
-   * <p>
+   *
    * @return a {@link Address} instance
    * @since 3.1.0
    */
@@ -452,7 +452,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the Address is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAddress() {
@@ -471,7 +471,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role..
-   * <p>
+   *
    * @return a {@link TelephoneFax} instance
    * @since 3.1.0
    */
@@ -484,7 +484,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the TelephoneFax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTelephoneFax() {
@@ -502,7 +502,7 @@ public class Organisation extends Common<Organisation> {
    * Get the Email
    * <p>
    * Complex element Email contains the email address of a Contact or Role..
-   * <p>
+   *
    * @return a {@link EMail} instance
    * @since 3.1.0
    */
@@ -515,7 +515,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the EMail is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEMail() {
@@ -533,7 +533,7 @@ public class Organisation extends Common<Organisation> {
    * Get the RoleRef
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -549,7 +549,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the RoleRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRoleRef() {
@@ -569,7 +569,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element RelatedOrganisation identifies an Organisation linked to
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling)..
-   * <p>
+   *
    * @return a {@link RelatedOrganisation} instance
    * @since 3.1.0
    */
@@ -582,7 +582,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the RelatedOrganisation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRelatedOrganisation() {
@@ -598,7 +598,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -610,7 +610,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -623,7 +623,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -636,7 +636,7 @@ public class Organisation extends Common<Organisation> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -653,7 +653,7 @@ public class Organisation extends Common<Organisation> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -670,7 +670,7 @@ public class Organisation extends Common<Organisation> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -682,7 +682,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set an alternate name or nickname for the organisation.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -694,7 +694,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set an alternate name or nickname for the organisation.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -706,7 +706,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Set the type of relationship.
-   * <p>
+   *
    * @param value An instances of type {@link ListCTO}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -720,7 +720,7 @@ public class Organisation extends Common<Organisation> {
    * Set an organisational identifier that may be used to uniquely identify an
    * organisation in operational planning systems and other non-spectrum
    * information systems.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -735,7 +735,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link Address...}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -752,7 +752,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
-   * <p>
+   *
    * @param values A collection of {@link Address} instances
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -769,7 +769,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link TelephoneFax...}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -786,7 +786,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
-   * <p>
+   *
    * @param values A collection of {@link TelephoneFax} instances
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -802,7 +802,7 @@ public class Organisation extends Common<Organisation> {
    * Set the Email
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link EMail...}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -818,7 +818,7 @@ public class Organisation extends Common<Organisation> {
    * Set the Email
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
-   * <p>
+   *
    * @param values A collection of {@link EMail} instances
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -834,7 +834,7 @@ public class Organisation extends Common<Organisation> {
    * Set the RoleRef
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link RoleRef...}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -853,7 +853,7 @@ public class Organisation extends Common<Organisation> {
    * Set the RoleRef
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -874,7 +874,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element RelatedOrganisation identifies an Organisation linked to
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling).
-   * <p>
+   *
    * @param values One or more instances of type {@link RelatedOrganisation...}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -892,7 +892,7 @@ public class Organisation extends Common<Organisation> {
    * Complex element RelatedOrganisation identifies an Organisation linked to
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling).
-   * <p>
+   *
    * @param values A collection of {@link RelatedOrganisation} instances
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -906,7 +906,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Get a string representation of this Organisation instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -935,7 +935,7 @@ public class Organisation extends Common<Organisation> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -948,7 +948,7 @@ public class Organisation extends Common<Organisation> {
    * RoleRef (Optional)
    * <p>
    * RoleRef contains the serial of a referenced Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -958,7 +958,7 @@ public class Organisation extends Common<Organisation> {
    * Get the RoleRef
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role..
-   * <p>
+   *
    * @return a {@link Role} instance
    * @since 3.1.0
    */
@@ -971,7 +971,7 @@ public class Organisation extends Common<Organisation> {
 
   /**
    * Determine if the role field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRole() {
@@ -982,7 +982,7 @@ public class Organisation extends Common<Organisation> {
    * Set the RoleRef
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
+   *
    * @param values An instances of type {@link Role}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -995,7 +995,7 @@ public class Organisation extends Common<Organisation> {
    * Set the RoleRef
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
-   * <p>
+   *
    * @param values An instances of type {@link Role}.
    * @return The current Organisation object instance.
    * @since 3.1.0
@@ -1012,7 +1012,7 @@ public class Organisation extends Common<Organisation> {
    * transient {@link #role} field. This method should typically be called after
    * the Organisation is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1031,7 +1031,7 @@ public class Organisation extends Common<Organisation> {
    * This method builds the transient {@link #role} with values from the
    * imported {@link #roleRef} field. This method should typically be called
    * after the Organisation is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

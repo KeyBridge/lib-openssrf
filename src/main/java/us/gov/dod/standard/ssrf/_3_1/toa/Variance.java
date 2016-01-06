@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,15 @@
  */
 package us.gov.dod.standard.ssrf._3_1.toa;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAV;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCPS;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
@@ -56,7 +59,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
 public class Variance {
 
   /**
-   * Type - Type (Required)    * <p>
+   * Type - Type (Required)
+   * <p>
    * The type of variance.
    * <p>
    * Format is L:CAV
@@ -66,7 +70,8 @@ public class Variance {
   @XmlElement(name = "Type", required = true)
   private TString type;
   /**
-   * AllocatedService - Allocated Service (Required)    * <p>
+   * AllocatedService - Allocated Service (Required)
+   * <p>
    * A radiocommunication service recognized by an administration that is
    * allocated to this frequency band (e.g., "Fixed Service").
    * <p>
@@ -77,7 +82,8 @@ public class Variance {
   @XmlElement(name = "AllocatedService", required = true)
   private TString allocatedService;
   /**
-   * Priority - Priority (Required)    * <p>
+   * Priority - Priority (Required)
+   * <p>
    * If this service is a primary or secondary use of this band. ("Permitted"
    * SHOULD only be used if the priority is unknown.)
    * <p>

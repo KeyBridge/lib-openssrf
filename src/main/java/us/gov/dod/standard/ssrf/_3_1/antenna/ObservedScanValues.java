@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.antenna;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Percent;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.US_ScanSpeed;
 
 /**
  * ObservedScanValues (US) contains data describing the discrete scan rate
@@ -37,8 +41,10 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class ObservedScanValues {
 
   /**
-   * US:ScanValue - Observed Scan Values (Optional)    * <p>
-   * The observed scan rate values    * <p>
+   * US:ScanValue - Observed Scan Values (Optional)
+   * <p>
+   * The observed scan rate values
+   * <p>
    * Format is UN(6,2) (deg/sec)
    * <p>
    * @since 3.1.0
@@ -118,7 +124,8 @@ public class ObservedScanValues {
   }
 
   /**
-   * Set the observed scan rate values    * <p>
+   * Set the observed scan rate values
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedScanValues object instance.
    * @since 3.1.0

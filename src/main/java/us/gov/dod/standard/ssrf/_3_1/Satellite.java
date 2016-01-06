@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.satellite.ServiceArea;
  *   &lt;NetworkName cls="U"&gt;SKYNET 4&lt;/NetworkName&gt;
  * &lt;/Satellite&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -84,7 +84,7 @@ public class Satellite extends Common<Satellite> {
    * equipment.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -98,7 +98,7 @@ public class Satellite extends Common<Satellite> {
    * navigational aids, enter the NAVAIDS identifier.
    * <p>
    * Format is S20
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "CallSign", required = false)
@@ -109,7 +109,7 @@ public class Satellite extends Common<Satellite> {
    * The type of orbit.
    * <p>
    * Format is L:CSP
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "OrbitType", required = false)
@@ -120,7 +120,7 @@ public class Satellite extends Common<Satellite> {
    * The status of the satellite.
    * <p>
    * Format is L:CLS
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LaunchStatus", required = false)
@@ -131,7 +131,7 @@ public class Satellite extends Common<Satellite> {
    * A reference to a Location that identifies the satellite launch location.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LaunchLocRef", required = false)
@@ -142,7 +142,7 @@ public class Satellite extends Common<Satellite> {
    * The date of the satellite launch.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "LaunchDate", required = false)
@@ -154,7 +154,7 @@ public class Satellite extends Common<Satellite> {
    * dddmmss[.hh]H, where H represents "E" for East or "W" for West.
    * <p>
    * Format is pattern (S11) (deg)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "GeoNominalLon", required = false)
@@ -166,7 +166,7 @@ public class Satellite extends Common<Satellite> {
    * (MSL).
    * <p>
    * Format is UN(9,4) (km)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "GeoAltitude", required = false)
@@ -178,7 +178,7 @@ public class Satellite extends Common<Satellite> {
    * orbit around the earth.
    * <p>
    * Format is UN(10,4) (min)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NonGeoPeriod", required = false)
@@ -190,7 +190,7 @@ public class Satellite extends Common<Satellite> {
    * orbital characteristics.
    * <p>
    * Format is UN(4)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NonGeoNumSatellites", required = false)
@@ -202,7 +202,7 @@ public class Satellite extends Common<Satellite> {
    * Sea Level (MSL).
    * <p>
    * Format is UN(9,4) (km)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NonGeoApogee", required = false)
@@ -214,7 +214,7 @@ public class Satellite extends Common<Satellite> {
    * Sea Level (MSL).
    * <p>
    * Format is UN(9,4) (km)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NonGeoPerigee", required = false)
@@ -226,7 +226,7 @@ public class Satellite extends Common<Satellite> {
    * non-geostationary satellite and the equatorial plane of the earth.
    * <p>
    * Format is SN(4,2) [-90..90] (deg)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NonGeoInclination", required = false)
@@ -237,7 +237,7 @@ public class Satellite extends Common<Satellite> {
    * The externally-assigned International Designator for the satellite.
    * <p>
    * Format is S20
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "InternationalDesignator", required = false)
@@ -248,7 +248,7 @@ public class Satellite extends Common<Satellite> {
    * The USSPACECOM-assigned space object identification number.
    * <p>
    * Format is S20
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ObjectNum", required = false)
@@ -259,7 +259,7 @@ public class Satellite extends Common<Satellite> {
    * The country and/or administration which registered the satellite.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Administration", required = false)
@@ -270,7 +270,7 @@ public class Satellite extends Common<Satellite> {
    * The name of the network to which the satellite belongs.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "NetworkName", required = false)
@@ -279,7 +279,7 @@ public class Satellite extends Common<Satellite> {
    * RFSystemRef (Optional)
    * <p>
    * RFSystemRef contains a reference to a RF System used on the satellite.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "RFSystemRef", nillable = true)
@@ -289,7 +289,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * EarthStation contains the name and type of an earth station used in a
    * satellite network.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EarthStation")
@@ -298,7 +298,7 @@ public class Satellite extends Common<Satellite> {
    * ServiceArea (Optional)
    * <p>
    * ServiceArea contains the geographic area serviced by the satellite.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ServiceArea", nillable = true)
@@ -312,7 +312,7 @@ public class Satellite extends Common<Satellite> {
    * military nomenclature and a commercial model number.
    * <p>
    * Divergence from SMADEF: SMADEF requires (1..n) Nomenclatures
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Nomenclature")
@@ -332,7 +332,7 @@ public class Satellite extends Common<Satellite> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -347,7 +347,7 @@ public class Satellite extends Common<Satellite> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -357,7 +357,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -369,7 +369,7 @@ public class Satellite extends Common<Satellite> {
    * internationally allocated call sign or the tactical call sign assigned by
    * the operational authority when the Station is used within a Net. For
    * navigational aids, enter the NAVAIDS identifier..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -382,7 +382,7 @@ public class Satellite extends Common<Satellite> {
    * internationally allocated call sign or the tactical call sign assigned by
    * the operational authority when the Station is used within a Net. For
    * navigational aids, enter the NAVAIDS identifier..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -392,7 +392,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the CallSign is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCallSign() {
@@ -401,7 +401,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the type of orbit..
-   * <p>
+   *
    * @return the OrbitType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -411,7 +411,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the type of orbit..
-   * <p>
+   *
    * @param value the OrbitType value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -423,7 +423,7 @@ public class Satellite extends Common<Satellite> {
    * Determine if the OrbitType is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetOrbitType() {
@@ -432,7 +432,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the status of the satellite..
-   * <p>
+   *
    * @return the LaunchStatus value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -442,7 +442,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the status of the satellite..
-   * <p>
+   *
    * @param value the LaunchStatus value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -454,7 +454,7 @@ public class Satellite extends Common<Satellite> {
    * Determine if the LaunchStatus is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLaunchStatus() {
@@ -464,7 +464,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get a reference to a Location that identifies the satellite launch
    * location..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -478,7 +478,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set a reference to a Location that identifies the satellite launch
    * location..
-   * <p>
+   *
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -491,7 +491,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the LaunchLocRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLaunchLocRef() {
@@ -500,7 +500,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the date of the satellite launch..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -510,7 +510,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the date of the satellite launch..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -520,7 +520,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the LaunchDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLaunchDate() {
@@ -530,7 +530,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the longitude of the geostationary satellite in the following format:
    * dddmmss[.hh]H, where H represents "E" for East or "W" for West..
-   * <p>
+   *
    * @return a {@link Lon} instance
    * @since 3.1.0
    */
@@ -541,7 +541,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the longitude of the geostationary satellite in the following format:
    * dddmmss[.hh]H, where H represents "E" for East or "W" for West..
-   * <p>
+   *
    * @param value a {@link Lon} instance
    * @since 3.1.0
    */
@@ -551,7 +551,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the GeoNominalLon is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGeoNominalLon() {
@@ -561,7 +561,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the altitude of the geostationary satellite, relative to Mean Sea Level
    * (MSL)..
-   * <p>
+   *
    * @return a {@link DistSpace} instance
    * @since 3.1.0
    */
@@ -572,7 +572,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the altitude of the geostationary satellite, relative to Mean Sea Level
    * (MSL)..
-   * <p>
+   *
    * @param value a {@link DistSpace} instance
    * @since 3.1.0
    */
@@ -582,7 +582,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the GeoAltitude is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetGeoAltitude() {
@@ -592,7 +592,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the time required for the non-geostationary satellite to make one
    * complete orbit around the earth..
-   * <p>
+   *
    * @return a {@link minutes} instance
    * @since 3.1.0
    */
@@ -603,7 +603,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the time required for the non-geostationary satellite to make one
    * complete orbit around the earth..
-   * <p>
+   *
    * @param value a {@link minutes} instance
    * @since 3.1.0
    */
@@ -613,7 +613,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the NonGeoPeriod is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNonGeoPeriod() {
@@ -623,7 +623,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the number of non-geostationary satellites in a system having similar
    * orbital characteristics..
-   * <p>
+   *
    * @return a {@link UN4} instance
    * @since 3.1.0
    */
@@ -634,7 +634,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the number of non-geostationary satellites in a system having similar
    * orbital characteristics..
-   * <p>
+   *
    * @param value a {@link UN4} instance
    * @since 3.1.0
    */
@@ -644,7 +644,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the NonGeoNumSatellites is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNonGeoNumSatellites() {
@@ -654,7 +654,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the maximum altitude of the non-geostationary satellite relative to
    * Mean Sea Level (MSL)..
-   * <p>
+   *
    * @return a {@link DistSpace} instance
    * @since 3.1.0
    */
@@ -665,7 +665,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the maximum altitude of the non-geostationary satellite relative to
    * Mean Sea Level (MSL)..
-   * <p>
+   *
    * @param value a {@link DistSpace} instance
    * @since 3.1.0
    */
@@ -675,7 +675,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the NonGeoApogee is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNonGeoApogee() {
@@ -685,7 +685,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the minimum altitude of the non-geostationary satellite relative to
    * Mean Sea Level (MSL)..
-   * <p>
+   *
    * @return a {@link DistSpace} instance
    * @since 3.1.0
    */
@@ -696,7 +696,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the minimum altitude of the non-geostationary satellite relative to
    * Mean Sea Level (MSL)..
-   * <p>
+   *
    * @param value a {@link DistSpace} instance
    * @since 3.1.0
    */
@@ -706,7 +706,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the NonGeoPerigee is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNonGeoPerigee() {
@@ -716,7 +716,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get the angle determined by the plane containing the orbit of the
    * non-geostationary satellite and the equatorial plane of the earth..
-   * <p>
+   *
    * @return a {@link Elev} instance
    * @since 3.1.0
    */
@@ -727,7 +727,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the angle determined by the plane containing the orbit of the
    * non-geostationary satellite and the equatorial plane of the earth..
-   * <p>
+   *
    * @param value a {@link Elev} instance
    * @since 3.1.0
    */
@@ -737,7 +737,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the NonGeoInclination is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNonGeoInclination() {
@@ -746,7 +746,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the externally-assigned International Designator for the satellite..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -756,7 +756,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the externally-assigned International Designator for the satellite..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -766,7 +766,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the InternationalDesignator is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetInternationalDesignator() {
@@ -775,7 +775,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the USSPACECOM-assigned space object identification number..
-   * <p>
+   *
    * @return a {@link S20} instance
    * @since 3.1.0
    */
@@ -785,7 +785,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the USSPACECOM-assigned space object identification number..
-   * <p>
+   *
    * @param value a {@link S20} instance
    * @since 3.1.0
    */
@@ -795,7 +795,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the ObjectNum is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetObjectNum() {
@@ -804,7 +804,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the country and/or administration which registered the satellite..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -814,7 +814,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the country and/or administration which registered the satellite..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -824,7 +824,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the Administration is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAdministration() {
@@ -833,7 +833,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get the name of the network to which the satellite belongs..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -843,7 +843,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the name of the network to which the satellite belongs..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -853,7 +853,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the NetworkName is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNetworkName() {
@@ -865,7 +865,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    */
@@ -878,7 +878,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the RFSystemRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetRFSystemRef() {
@@ -897,7 +897,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network..
-   * <p>
+   *
    * @return a {@link EarthStation} instance
    * @since 3.1.0
    */
@@ -910,7 +910,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the EarthStation is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEarthStation() {
@@ -929,7 +929,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite..
-   * <p>
+   *
    * @return a {@link ServiceArea} instance
    * @since 3.1.0
    */
@@ -942,7 +942,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the ServiceArea is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetServiceArea() {
@@ -963,7 +963,7 @@ public class Satellite extends Common<Satellite> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number..
-   * <p>
+   *
    * @return a {@link Nomenclature} instance
    * @since 3.1.0
    */
@@ -976,7 +976,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the Nomenclature is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetNomenclature() {
@@ -997,7 +997,7 @@ public class Satellite extends Common<Satellite> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1014,7 +1014,7 @@ public class Satellite extends Common<Satellite> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1029,7 +1029,7 @@ public class Satellite extends Common<Satellite> {
    * internationally allocated call sign or the tactical call sign assigned by
    * the operational authority when the Station is used within a Net. For
    * navigational aids, enter the NAVAIDS identifier.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1041,7 +1041,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the type of orbit.
-   * <p>
+   *
    * @param value An instances of type {@link ListCSP}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1053,7 +1053,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the status of the satellite.
-   * <p>
+   *
    * @param value An instances of type {@link ListCLS}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1066,7 +1066,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set a reference to a Location that identifies the satellite launch
    * location.
-   * <p>
+   *
    * @param value An instances of type {@link Serial}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1081,7 +1081,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the date of the satellite launch.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1093,7 +1093,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the date of the satellite launch.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1106,7 +1106,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the longitude of the geostationary satellite in the following format:
    * dddmmss[.hh]H, where H represents "E" for East or "W" for West.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1118,7 +1118,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the longitude of the geostationary satellite in decimal degrees.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @throws Exception if the value fails to parse
@@ -1132,7 +1132,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the altitude of the geostationary satellite, relative to Mean Sea Level
    * (MSL).
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1145,7 +1145,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the time required for the non-geostationary satellite to make one
    * complete orbit around the earth.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1158,7 +1158,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the number of non-geostationary satellites in a system having similar
    * orbital characteristics.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1171,7 +1171,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the maximum altitude of the non-geostationary satellite relative to
    * Mean Sea Level (MSL).
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1184,7 +1184,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the minimum altitude of the non-geostationary satellite relative to
    * Mean Sea Level (MSL).
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1197,7 +1197,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set the angle determined by the plane containing the orbit of the
    * non-geostationary satellite and the equatorial plane of the earth.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1209,7 +1209,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the externally-assigned International Designator for the satellite.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1221,7 +1221,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the USSPACECOM-assigned space object identification number.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1233,7 +1233,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the country and/or administration which registered the satellite.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1245,7 +1245,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Set the name of the network to which the satellite belongs.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1260,7 +1260,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
-   * <p>
+   *
    * @param values One or more instances of type {@link RFSystemRef...}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1277,7 +1277,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1294,7 +1294,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
-   * <p>
+   *
    * @param values One or more instances of type {@link EarthStation...}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1311,7 +1311,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
-   * <p>
+   *
    * @param values A collection of {@link EarthStation} instances
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1328,7 +1328,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite.
-   * <p>
+   *
    * @param values One or more instances of type {@link ServiceArea...}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1345,7 +1345,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite.
-   * <p>
+   *
    * @param values A collection of {@link ServiceArea} instances
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1364,7 +1364,7 @@ public class Satellite extends Common<Satellite> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values One or more instances of type {@link Nomenclature...}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1383,7 +1383,7 @@ public class Satellite extends Common<Satellite> {
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
-   * <p>
+   *
    * @param values A collection of {@link Nomenclature} instances
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1397,7 +1397,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Get a string representation of this Satellite instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -1435,7 +1435,7 @@ public class Satellite extends Common<Satellite> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -1450,7 +1450,7 @@ public class Satellite extends Common<Satellite> {
    * A reference to a Location that identifies the satellite launch location.
    * <p>
    * Format is pattern (S29)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -1459,7 +1459,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Get a reference to a Location that identifies the satellite launch
    * location..
-   * <p>
+   *
    * @return a {@link Location} instance
    * @since 3.1.0
    */
@@ -1469,7 +1469,7 @@ public class Satellite extends Common<Satellite> {
 
   /**
    * Determine if the launchLoc field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetLaunchLoc() {
@@ -1479,7 +1479,7 @@ public class Satellite extends Common<Satellite> {
   /**
    * Set a reference to a Location that identifies the satellite launch
    * location.
-   * <p>
+   *
    * @param value An instances of type {@link Location}.
    * @return The current Satellite object instance.
    * @since 3.1.0
@@ -1496,7 +1496,7 @@ public class Satellite extends Common<Satellite> {
    * from the transient {@link #launchLoc} field. This method should typically
    * be called after the Satellite is configured and (optionally) before
    * exporting an SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -1513,7 +1513,7 @@ public class Satellite extends Common<Satellite> {
    * imported {@link #launchLocRef} field. This method should typically be
    * called after the Satellite is imported from XML. * @param root the SSRF
    * root instance.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override

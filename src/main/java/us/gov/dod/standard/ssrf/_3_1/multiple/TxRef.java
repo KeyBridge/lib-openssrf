@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,15 @@
  */
 package us.gov.dod.standard.ssrf._3_1.multiple;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
+import us.gov.dod.standard.ssrf._3_1.Transmitter;
 import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * TxRef contains the reference of a Transmitter, and optionnally some of its
@@ -42,7 +45,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class TxRef {
 
   /**
-   * Serial - Transmitter Serial (Required)    * <p>
+   * Serial - Transmitter Serial (Required)
+   * <p>
    * The serial of a Transmitter in this configuration. The same transmitter can
    * be referenced in different TxRef elements in order to properly group
    * transmitter modes with antenna modes.
@@ -296,7 +300,8 @@ public class TxRef {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Transmitter Serial (Required)    * <p>
+   * Serial - Transmitter Serial (Required)
+   * <p>
    * The serial of a Transmitter in this configuration. The same transmitter can
    * be referenced in different TxRef elements in order to properly group
    * transmitter modes with antenna modes.

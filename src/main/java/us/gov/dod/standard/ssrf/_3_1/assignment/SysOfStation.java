@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,13 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.Assignment;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S30;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN9;
 
 /**
  * SysOfStation defines the name of the system that this assignment belongs and
@@ -44,7 +48,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class SysOfStation {
 
   /**
-   * SysName - System Name (Optional)    * <p>
+   * SysName - System Name (Optional)
+   * <p>
    * The name of the system to which the frequency assignment belongs. A system
    * is considered two or more equipment having a common property, usually
    * geographic, administrative, functional, or operational in nature.
@@ -56,8 +61,10 @@ public class SysOfStation {
   @XmlElement(name = "SysName", required = false)
   private S30 sysName;
   /**
-   * NumStations - Number of Stations (Optional)    * <p>
-   * The total number of stations associated with the Assignment.    * <p>
+   * NumStations - Number of Stations (Optional)
+   * <p>
+   * The total number of stations associated with the Assignment.
+   * <p>
    * Format is UN(9)
    * <p>
    * @since 3.1.0
@@ -142,7 +149,8 @@ public class SysOfStation {
   }
 
   /**
-   * Set the total number of stations associated with the Assignment.    * <p>
+   * Set the total number of stations associated with the Assignment.
+   * <p>
    * @param value An instances of type {@link Integer}.
    * @return The current SysOfStation object instance.
    * @since 3.1.0

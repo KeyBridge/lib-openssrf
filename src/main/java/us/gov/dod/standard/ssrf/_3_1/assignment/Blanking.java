@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,12 @@
  */
 package us.gov.dod.standard.ssrf._3_1.assignment;
 
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Az;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Elev;
 
 /**
  * Blanking contains the start and stop angles of a horizontal and/or vertical
@@ -45,7 +49,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class Blanking {
 
   /**
-   * AzStart - Start Azimuth (Optional)    * <p>
+   * AzStart - Start Azimuth (Optional)
+   * <p>
    * The start azimuth angle for the blanked sector. Use "0" or "360" for true
    * north.
    * <p>
@@ -56,7 +61,8 @@ public class Blanking {
   @XmlElement(name = "AzStart", required = false)
   private Az azStart;
   /**
-   * AzStop - Stop Azimuth (Optional)    * <p>
+   * AzStop - Stop Azimuth (Optional)
+   * <p>
    * The stop azimuth angle for the blanked sector. Use "0" or "360" for true
    * north.
    * <p>
@@ -67,7 +73,8 @@ public class Blanking {
   @XmlElement(name = "AzStop", required = false)
   private Az azStop;
   /**
-   * ElevStart - Start Elevation (Optional)    * <p>
+   * ElevStart - Start Elevation (Optional)
+   * <p>
    * The start elevation angle for the blanked sector. Use "-90" for straight
    * down and "90" for directly overhead.
    * <p>
@@ -78,7 +85,8 @@ public class Blanking {
   @XmlElement(name = "ElevStart", required = false)
   private Elev elevStart;
   /**
-   * ElevStop - Stop Elevation (Optional)    * <p>
+   * ElevStop - Stop Elevation (Optional)
+   * <p>
    * The stop elevation angle for the blanked sector. Use "-90" for straight
    * down and "90" for directly overhead.
    * <p>

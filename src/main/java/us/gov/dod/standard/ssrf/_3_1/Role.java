@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,10 @@ import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.contact.Address;
 import us.gov.dod.standard.ssrf._3_1.contact.EMail;
 import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 
@@ -42,7 +45,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  *   &lt;ContactRef cls="U"&gt;USA:EU:CN:1&lt;/ContactRef&gt;
  * &lt;/Role&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -66,7 +69,7 @@ public class Role extends Common<Role> {
    * The date by which the dataset is to be operational or effective.
    * <p>
    * Format is Date
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EffectiveDate", required = false)
@@ -80,7 +83,7 @@ public class Role extends Common<Role> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDate", required = false)
@@ -98,7 +101,7 @@ public class Role extends Common<Role> {
    * Format is Date
    * <p>
    * Attribute group ExpireReview (Optional)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ReviewDate", required = false)
@@ -110,7 +113,7 @@ public class Role extends Common<Role> {
    * agency.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = true)
@@ -125,7 +128,7 @@ public class Role extends Common<Role> {
    * having a releasability caveat.
    * <p>
    * Format is L:CCY
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Country", required = false)
@@ -134,7 +137,7 @@ public class Role extends Common<Role> {
    * Address (Optional)
    * <p>
    * Address contains the address of a Contact, Organisation or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Address")
@@ -144,7 +147,7 @@ public class Role extends Common<Role> {
    * <p>
    * TelephoneFax reflects the telephone and/or telefax number(s) of the
    * Contact, Organisation or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "TelephoneFax")
@@ -153,7 +156,7 @@ public class Role extends Common<Role> {
    * Email (Optional)
    * <p>
    * Email contains the email address of the Contact or Role.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "EMail")
@@ -162,7 +165,7 @@ public class Role extends Common<Role> {
    * ContactRef (Optional)
    * <p>
    * ContactRef references a Contact.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ContactRef", nillable = true)
@@ -177,7 +180,7 @@ public class Role extends Common<Role> {
 
   /**
    * Get the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -187,7 +190,7 @@ public class Role extends Common<Role> {
 
   /**
    * Set the date by which the dataset is to be operational or effective..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -197,7 +200,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the EffectiveDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEffectiveDate() {
@@ -207,7 +210,7 @@ public class Role extends Common<Role> {
   /**
    * Get the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -218,7 +221,7 @@ public class Role extends Common<Role> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -228,7 +231,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the ExpirationDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetExpirationDate() {
@@ -242,7 +245,7 @@ public class Role extends Common<Role> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @return a {@link D} instance
    * @since 3.1.0
    */
@@ -257,7 +260,7 @@ public class Role extends Common<Role> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment..
-   * <p>
+   *
    * @param value a {@link D} instance
    * @since 3.1.0
    */
@@ -267,7 +270,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the ReviewDate is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetReviewDate() {
@@ -277,7 +280,7 @@ public class Role extends Common<Role> {
   /**
    * Get the name or function of the Role. The name SHOULD be unique within the
    * agency..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -288,7 +291,7 @@ public class Role extends Common<Role> {
   /**
    * Set the name or function of the Role. The name SHOULD be unique within the
    * agency..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -298,7 +301,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -311,7 +314,7 @@ public class Role extends Common<Role> {
    * in. The release of datasets to Roles is based upon matching nationalities;
    * therefore a Role without a Country will not be able to receive datasets
    * having a releasability caveat..
-   * <p>
+   *
    * @return the Country value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -325,7 +328,7 @@ public class Role extends Common<Role> {
    * in. The release of datasets to Roles is based upon matching nationalities;
    * therefore a Role without a Country will not be able to receive datasets
    * having a releasability caveat..
-   * <p>
+   *
    * @param value the Country value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -337,7 +340,7 @@ public class Role extends Common<Role> {
    * Determine if the Country is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetCountry() {
@@ -349,7 +352,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role..
-   * <p>
+   *
    * @return a {@link Address} instance
    * @since 3.1.0
    */
@@ -362,7 +365,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the Address is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetAddress() {
@@ -381,7 +384,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role..
-   * <p>
+   *
    * @return a {@link TelephoneFax} instance
    * @since 3.1.0
    */
@@ -394,7 +397,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the TelephoneFax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetTelephoneFax() {
@@ -412,7 +415,7 @@ public class Role extends Common<Role> {
    * Get the Email
    * <p>
    * Complex element Email contains the email address of the Contact or Role..
-   * <p>
+   *
    * @return a {@link EMail} instance
    * @since 3.1.0
    */
@@ -425,7 +428,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the EMail is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetEMail() {
@@ -443,7 +446,7 @@ public class Role extends Common<Role> {
    * Get the ContactRef
    * <p>
    * Complex element ContactRef references a Contact..
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -459,7 +462,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the ContactRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetContactRef() {
@@ -475,7 +478,7 @@ public class Role extends Common<Role> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -487,7 +490,7 @@ public class Role extends Common<Role> {
 
   /**
    * Set the date by which the dataset is to be operational or effective.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -500,7 +503,7 @@ public class Role extends Common<Role> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -513,7 +516,7 @@ public class Role extends Common<Role> {
   /**
    * Set the date at which the dataset will expire. The Expiration date should
    * be less than five years from current date.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -530,7 +533,7 @@ public class Role extends Common<Role> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Calendar}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -547,7 +550,7 @@ public class Role extends Common<Role> {
    * responsible for re-initiating host coordination plans to resubmit a
    * Spectrum Supportability request to the host nation for continued use of the
    * equipment.
-   * <p>
+   *
    * @param value An instances of type {@link Date}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -560,7 +563,7 @@ public class Role extends Common<Role> {
   /**
    * Set the name or function of the Role. The name SHOULD be unique within the
    * agency.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -576,7 +579,7 @@ public class Role extends Common<Role> {
    * in. The release of datasets to Roles is based upon matching nationalities;
    * therefore a Role without a Country will not be able to receive datasets
    * having a releasability caveat.
-   * <p>
+   *
    * @param value An instances of type {@link ListCCY}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -591,7 +594,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link Address...}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -608,7 +611,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
-   * <p>
+   *
    * @param values A collection of {@link Address} instances
    * @return The current Role object instance.
    * @since 3.1.0
@@ -625,7 +628,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link TelephoneFax...}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -642,7 +645,7 @@ public class Role extends Common<Role> {
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
-   * <p>
+   *
    * @param values A collection of {@link TelephoneFax} instances
    * @return The current Role object instance.
    * @since 3.1.0
@@ -658,7 +661,7 @@ public class Role extends Common<Role> {
    * Set the Email
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
-   * <p>
+   *
    * @param values One or more instances of type {@link EMail...}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -674,7 +677,7 @@ public class Role extends Common<Role> {
    * Set the Email
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
-   * <p>
+   *
    * @param values A collection of {@link EMail} instances
    * @return The current Role object instance.
    * @since 3.1.0
@@ -690,7 +693,7 @@ public class Role extends Common<Role> {
    * Set the ContactRef
    * <p>
    * Complex element ContactRef references a Contact.
-   * <p>
+   *
    * @param values One or more instances of type {@link ContactRef...}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -709,7 +712,7 @@ public class Role extends Common<Role> {
    * Set the ContactRef
    * <p>
    * Complex element ContactRef references a Contact.
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Role object instance.
    * @since 3.1.0
@@ -726,7 +729,7 @@ public class Role extends Common<Role> {
 
   /**
    * Get a string representation of this Role instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -753,7 +756,7 @@ public class Role extends Common<Role> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -766,7 +769,7 @@ public class Role extends Common<Role> {
    * ContactRef (Optional)
    * <p>
    * ContactRef references a Contact.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlTransient
@@ -776,7 +779,7 @@ public class Role extends Common<Role> {
    * Get the ContactRef
    * <p>
    * Complex element ContactRef references a Contact..
-   * <p>
+   *
    * @return a {@link Contact} instance
    * @since 3.1.0
    */
@@ -789,7 +792,7 @@ public class Role extends Common<Role> {
 
   /**
    * Determine if the contact field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetContact() {
@@ -800,7 +803,7 @@ public class Role extends Common<Role> {
    * Set the ContactRef
    * <p>
    * Complex element ContactRef references a Contact.
-   * <p>
+   *
    * @param values An instances of type {@link Contact}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -813,7 +816,7 @@ public class Role extends Common<Role> {
    * Set the ContactRef
    * <p>
    * Complex element ContactRef references a Contact.
-   * <p>
+   *
    * @param values An instances of type {@link Contact}.
    * @return The current Role object instance.
    * @since 3.1.0
@@ -830,7 +833,7 @@ public class Role extends Common<Role> {
    * the transient {@link #contact} field. This method should typically be
    * called after the Role is configured and (optionally) before exporting an
    * SSRF message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -849,7 +852,7 @@ public class Role extends Common<Role> {
    * This method builds the transient {@link #contact} with values from the
    * imported {@link #contactRef} field. This method should typically be called
    * after the Role is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

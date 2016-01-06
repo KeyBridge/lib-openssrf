@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@ package us.gov.dod.standard.ssrf._3_1.adapter;
 
 /**
  * SSRF DateTime type adapter.
- * <p>
+ *
  * @author Jesse Caulfield
  */
 public class XmlAdapterDATETIME extends AXmlAdapterCalendar {

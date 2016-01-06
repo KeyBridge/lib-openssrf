@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,12 @@ package us.gov.dod.standard.ssrf._3_1.assignment;
 
 import java.util.Calendar;
 import java.util.Date;
-import javax.xml.bind.annotation.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
 
 /**
  * NarrowBandPlanning (US) describes a reduced bandwidth assignment for a single
@@ -37,7 +41,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class NarrowBandPlanning {
 
   /**
-   * US:ChangeDate - Change Date (Optional)    * <p>
+   * US:ChangeDate - Change Date (Optional)
+   * <p>
    * The date this record is expected to be updated to comply with narrow band
    * transition plans.
    * <p>
@@ -48,7 +53,8 @@ public class NarrowBandPlanning {
   @XmlElement(name = "ChangeDate", required = false)
   private D changeDate;
   /**
-   * US:NBFreq - Narrow Band Frequency (Optional)    * <p>
+   * US:NBFreq - Narrow Band Frequency (Optional)
+   * <p>
    * The transition frequency to comply with narrow band transition plans.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)

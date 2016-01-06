@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1.transmitter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -128,7 +131,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSY;
 public class ObservedRFAnalysis {
 
   /**
-   * US:ChipRate - Chip Rate (Optional)    * <p>
+   * US:ChipRate - Chip Rate (Optional)
+   * <p>
    * The chip rate. Pertains mostly to spread spectrum.
    * <p>
    * Format is UN(16,9) (MChip/s)
@@ -138,7 +142,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "ChipRate", required = false)
   private MChips chipRate;
   /**
-   * US:DwellTime - Dwell Time (Optional)    * <p>
+   * US:DwellTime - Dwell Time (Optional)
+   * <p>
    * The dwell time at any RF when the RF dwells at particular values for more
    * than one pulse in a row.
    * <p>
@@ -149,7 +154,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "DwellTime", required = false)
   private microsecs dwellTime;
   /**
-   * US:FreqMax - Maximum Frequency (Optional)    * <p>
+   * US:FreqMax - Maximum Frequency (Optional)
+   * <p>
    * The upper end of the range of RF values that represent 100% of observed
    * signals.
    * <p>
@@ -162,7 +168,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "FreqMax", required = false)
   private FreqM freqMax;
   /**
-   * US:FreqMin - Minimum Frequency (Optional)    * <p>
+   * US:FreqMin - Minimum Frequency (Optional)
+   * <p>
    * The lower end of the range of RF values that represent 100% of observed
    * signals.
    * <p>
@@ -173,7 +180,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "FreqMin", required = false)
   private FreqM freqMin;
   /**
-   * US:GuardBand - Guard Band (Optional)    * <p>
+   * US:GuardBand - Guard Band (Optional)
+   * <p>
    * The RF band between carriers which is not used. Pertains mostly to spread
    * spectrum.
    * <p>
@@ -184,7 +192,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "GuardBand", required = false)
   private FreqM guardBand;
   /**
-   * US:InstantRFBW03 - Instant RF BW 03 (Optional)    * <p>
+   * US:InstantRFBW03 - Instant RF BW 03 (Optional)
+   * <p>
    * The transmitter pulse bandwidth (burst or instantaneous) measured at the 3
    * dB points (min)
    * <p>
@@ -195,7 +204,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "InstantRFBW03", required = false)
   private FreqM instantRFBW03;
   /**
-   * US:InstantRFBW06 - Instant RF BW 06 (Optional)    * <p>
+   * US:InstantRFBW06 - Instant RF BW 06 (Optional)
+   * <p>
    * The transmitter pulse bandwidth (burst or instantaneous) measured at the 6
    * dB points (min)
    * <p>
@@ -206,7 +216,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "InstantRFBW06", required = false)
   private FreqM instantRFBW06;
   /**
-   * US:InstantRFBW10 - Instant RF BW 10 (Optional)    * <p>
+   * US:InstantRFBW10 - Instant RF BW 10 (Optional)
+   * <p>
    * The transmitter pulse bandwidth (burst or instantaneous) measured at the 10
    * dB points (min)
    * <p>
@@ -217,7 +228,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "InstantRFBW10", required = false)
   private FreqM instantRFBW10;
   /**
-   * US:InstantRFBW20 - Instant RF BW 20 (Optional)    * <p>
+   * US:InstantRFBW20 - Instant RF BW 20 (Optional)
+   * <p>
    * The transmitter pulse bandwidth (burst or instantaneous) measured at the 20
    * dB points (min)
    * <p>
@@ -228,7 +240,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "InstantRFBW20", required = false)
   private FreqM instantRFBW20;
   /**
-   * US:NumRFChannels - Num RF Channels (Optional)    * <p>
+   * US:NumRFChannels - Num RF Channels (Optional)
+   * <p>
    * The number of channels into which the RF range of the emitter is divided.
    * <p>
    * Format is UN(6)
@@ -238,7 +251,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "NumRFChannels", required = false)
   private UN6 numRFChannels;
   /**
-   * US:NumRFElements - Num RF Elements (Optional)    * <p>
+   * US:NumRFElements - Num RF Elements (Optional)
+   * <p>
    * The number of discrete RFs (channels) a multiple RF signal contains.
    * <p>
    * Format is UN(6)
@@ -248,7 +262,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "NumRFElements", required = false)
   private UN6 numRFElements;
   /**
-   * US:NumRFPositions - Num RF Positions (Optional)    * <p>
+   * US:NumRFPositions - Num RF Positions (Optional)
+   * <p>
    * The number of RF values in a signal RF sequence before it repeats.
    * <p>
    * Format is UN(6)
@@ -258,7 +273,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "NumRFPositions", required = false)
   private UN6 numRFPositions;
   /**
-   * US:NumRFSimultaneous - Num RF Simultaneous (Optional)    * <p>
+   * US:NumRFSimultaneous - Num RF Simultaneous (Optional)
+   * <p>
    * The number of frequencies simultaneously used by the emitter.
    * <p>
    * Format is UN(6)
@@ -268,12 +284,14 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "NumRFSimultaneous", required = false)
   private UN6 numRFSimultaneous;
   /**
-   * US:OperationalRFBW - Operational RF Bandwidth (Optional)    * <p>
+   * US:OperationalRFBW - Operational RF Bandwidth (Optional)
+   * <p>
    * The delta (aka. separation) from the signals lowest-min RF value to its
    * highest-max RF value; only pertains to signals which have RF changes
    * between pulses or groups of pulses (aka. RF agile signals) or signals which
    * use a changing RF continuous waveform (CW); e.g., a CW signal with a
-   * sweeping RF.    * <p>
+   * sweeping RF.
+   * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * @since 3.1.0
@@ -281,7 +299,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "OperationalRFBW", required = false)
   private FreqM operationalRFBW;
   /**
-   * US:RFAdaptiveDriver - RF Adaptive Driver (Optional)    * <p>
+   * US:RFAdaptiveDriver - RF Adaptive Driver (Optional)
+   * <p>
    * The condition controlling the choice of RF for Adaptive RF variations
    * (e.g., least jammed frequency)
    * <p>
@@ -300,7 +319,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFAdaptiveRule", required = false)
   private S500 rfAdaptiveRule;
   /**
-   * US:RFBasicClockPeriod - RF Basic Clock Period (Optional)    * <p>
+   * US:RFBasicClockPeriod - RF Basic Clock Period (Optional)
+   * <p>
    * The frequency divisor common to all RF separations (not necessarily to all
    * RF) RF crystal is not always the same as the RF channelization (min).
    * <p>
@@ -311,7 +331,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFBasicClockPeriod", required = false)
   private FreqM rfBasicClockPeriod;
   /**
-   * US:RFChangeRate - RF Change Rate (Optional)    * <p>
+   * US:RFChangeRate - RF Change Rate (Optional)
+   * <p>
    * The RF change per unit of time, measured over a significant portion of the
    * waveform. Applies to Continuous RF variations.
    * <p>
@@ -322,7 +343,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFChangeRate", required = false)
   private RFChgRate rfChangeRate;
   /**
-   * US:RFChannelFreqMax - Maximum RF Channel Frequency (Optional)    * <p>
+   * US:RFChannelFreqMax - Maximum RF Channel Frequency (Optional)
+   * <p>
    * The maximum RF channel values.
    * <p>
    * [XSL ERR MINMAX] If US:RFChannelFreqMax is used, it MUST be greater than
@@ -335,7 +357,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFChannelFreqMax", required = false)
   private FreqM rfChannelFreqMax;
   /**
-   * US:RFChannelFreqMin - RF Channel Freq Min (Optional)    * <p>
+   * US:RFChannelFreqMin - RF Channel Freq Min (Optional)
+   * <p>
    * The minimum RF channel values.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -353,7 +376,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFCoherent", required = false)
   private TString rfCoherent;
   /**
-   * US:RFContinuous - Continuous RF Signal (Optional)    * <p>
+   * US:RFContinuous - Continuous RF Signal (Optional)
+   * <p>
    * Whether pulse-to-pulse RF variations are Discrete or Continuous. Discrete
    * uses a finite number of fixed values separated by ranges of unused values.
    * Continuous potentially uses an infinite number of values within one or more
@@ -366,7 +390,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFContinuous", required = false)
   private TString rfContinuous;
   /**
-   * US:RFFreqMax - Maximum RF Frequency (Optional)    * <p>
+   * US:RFFreqMax - Maximum RF Frequency (Optional)
+   * <p>
    * The typical highest RF value observed on a single intercept.
    * <p>
    * [XSL ERR MINMAX] If US:RFFreqMax is used, it MUST be greater than
@@ -379,7 +404,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFFreqMax", required = false)
   private FreqM rfFreqMax;
   /**
-   * US:RFFreqMin - Minimum RF Frequency (Optional)    * <p>
+   * US:RFFreqMin - Minimum RF Frequency (Optional)
+   * <p>
    * The typical lowest RF value observed on a single intercept.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -389,7 +415,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFFreqMin", required = false)
   private FreqM rfFreqMin;
   /**
-   * US:RFMean - RF Mean (Optional)    * <p>
+   * US:RFMean - RF Mean (Optional)
+   * <p>
    * The average RF of a signal which changes RFs on a non-patterned basis.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -399,7 +426,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFMean", required = false)
   private FreqM rfMean;
   /**
-   * US:RFMedian - RF Median (Optional)    * <p>
+   * US:RFMedian - RF Median (Optional)
+   * <p>
    * The most probable RF values.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -409,7 +437,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFMedian", required = false)
   private FreqM rfMedian;
   /**
-   * US:RFPatternPeriod - RF Pattern Period (Optional)    * <p>
+   * US:RFPatternPeriod - RF Pattern Period (Optional)
+   * <p>
    * The duration of one cycle of the pattern for patterned RF variations.
    * <p>
    * Format is UN(12,6) (μsec)
@@ -427,7 +456,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFPatternType", required = false)
   private TString rfPatternType;
   /**
-   * US:RFRestFreq - RF Rest Freq (Optional)    * <p>
+   * US:RFRestFreq - RF Rest Freq (Optional)
+   * <p>
    * The observed carrier or rest frequency when the modulation is off. Applies
    * mostly to Electronic Attack (EA) signals.
    * <p>
@@ -438,7 +468,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFRestFreq", required = false)
   private FreqM rfRestFreq;
   /**
-   * US:RFSequenceDesc - RF Sequence Description (Optional)    * <p>
+   * US:RFSequenceDesc - RF Sequence Description (Optional)
+   * <p>
    * A free text description of the RF Sequence.
    * <p>
    * Format is S500
@@ -448,7 +479,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFSequenceDesc", required = false)
   private S500 rfSequenceDesc;
   /**
-   * US:RFSlotDuration - RF Slot Duration (Optional)    * <p>
+   * US:RFSlotDuration - RF Slot Duration (Optional)
+   * <p>
    * The duration of a single time slot for the hop dwell. Applies mostly to
    * spread spectrum.
    * <p>
@@ -459,7 +491,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFSlotDuration", required = false)
   private microsecs rfSlotDuration;
   /**
-   * US:RFFreqTolerance - RF Frequency Tolerance (Optional)    * <p>
+   * US:RFFreqTolerance - RF Frequency Tolerance (Optional)
+   * <p>
    * The drift in Hz or in ppm using the formula: Frequency tolerance (ppm) =
    * Maximum drift (Hz) / Center frequency (MHz). Enter the units (Hz or ppm) in
    * FreqToleranceUnit.
@@ -471,7 +504,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFFreqTolerance", required = false)
   private UN18_6 rfFreqTolerance;
   /**
-   * US:RFFreqToleranceUnit - Frequency Tolerance Units (Optional)    * <p>
+   * US:RFFreqToleranceUnit - Frequency Tolerance Units (Optional)
+   * <p>
    * The units in which the Frequency Tolerance is expressed.
    * <p>
    * Format is L:CFO
@@ -489,7 +523,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFFreqToleranceInterval", required = false)
   private microsecs rfFreqToleranceInterval;
   /**
-   * US:RFStandardDeviation - RF Standard Deviation (Optional)    * <p>
+   * US:RFStandardDeviation - RF Standard Deviation (Optional)
+   * <p>
    * The standard deviation of the data set used to calculate RF Mean.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
@@ -499,7 +534,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFStandardDeviation", required = false)
   private FreqM rfStandardDeviation;
   /**
-   * US:RFTuningStep - RF Tuning Step (Optional)    * <p>
+   * US:RFTuningStep - RF Tuning Step (Optional)
+   * <p>
    * The separation between the mean RF values of adjacent RFs in signal with
    * discrete RF channels.
    * <p>
@@ -510,7 +546,8 @@ public class ObservedRFAnalysis {
   @XmlElement(name = "RFTuningStep", required = false)
   private FreqM rfTuningStep;
   /**
-   * US:RFTuningStep - RF Tuning Step (Optional)    * <p>
+   * US:RFTuningStep - RF Tuning Step (Optional)
+   * <p>
    * The separation between the mean RF values of adjacent RFs in signal with
    * discrete RF channels.
    * <p>
@@ -1891,7 +1928,8 @@ public class ObservedRFAnalysis {
    * highest-max RF value; only pertains to signals which have RF changes
    * between pulses or groups of pulses (aka. RF agile signals) or signals which
    * use a changing RF continuous waveform (CW); e.g., a CW signal with a
-   * sweeping RF.    * <p>
+   * sweeping RF.
+   * <p>
    * @param value An instances of type {@link Double}.
    * @return The current ObservedRFAnalysis object instance.
    * @since 3.1.0

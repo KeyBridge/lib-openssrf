@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,7 +51,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * constraint in the form [a .. b] meaning that the value is restricted to be
  * between a and b inclusive. They may also be followed by an additional unit in
  * parenthesis. Example: Sensitivity value: SN(5.2) [-140.00 .. -30.00] (dBm)
- * <p>
+ *
  * @author Jesse Caulfield
  */
 public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
@@ -88,7 +88,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
   /**
    * Construct a new Number adapter. The minimum and maximum inclusive values
    * are not set, supporting unsigned, unbound numbers within the digit count.
-   * <p>
+   *
    * @param totalDigits    The maximum number of total digits in the number,
    *                       inclusive of fraction digits. e.g. 123.456 contains 6
    *                       digits.
@@ -102,7 +102,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
 
   /**
    * Construct a new Number adapter.
-   * <p>
+   *
    * @param totalDigits    The maximum number of total digits in the number,
    *                       inclusive of fraction digits. e.g. 123.456 contains 6
    *                       digits.
@@ -123,7 +123,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * Internal method to build a Decimal Format based upon the total available
    * digits and the input value. Produces a decimal format pattern defined by
    * the total and fraction digit count.
-   * <p>
+   *
    * @param v the input value to marshal
    * @return a decimal format pattern
    */
@@ -155,7 +155,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * Convert a bound type to a value type.
    * <p>
    * This is called when converting an object to XML.
-   * <p>
+   *
    * @param v The value to be convereted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -175,7 +175,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * Convert a value type to a bound type.
    * <p>
    * This is called with converting XML to an object.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -191,7 +191,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
 
   /**
    * Internal method to perform the validation.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -240,7 +240,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
   /**
    * Internal helper method to get the number of digits from a BigInteger
    * instance.
-   * <p>
+   *
    * @param number a BigInteger number instance.
    * @return the total number of digits in the number.
    */
@@ -258,7 +258,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * <p>
    * If the inclusive maximum value is not specifically declared then it is
    * calculated from the total and fraction digits declaration (if present).
-   * <p>
+   *
    * @return the maximum allowed value. Integer.MAX_VALUE if not set.
    */
   public Number getMaxInclusive() {
@@ -283,7 +283,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * <p>
    * If the inclusive minimum value is not specifically declared then it is
    * calculated from the total and fraction digits declaration (if present).
-   * <p>
+   *
    * @return the minimum allowed value. Integer.MIN_VALUE if not set.
    */
   public Number getMinInclusive() {

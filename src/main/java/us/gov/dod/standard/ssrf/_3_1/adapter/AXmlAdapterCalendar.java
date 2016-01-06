@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 /**
  * Abstract Calendar type XmlAdapter. This supports Date and DataTime string
  * conversion via a simple data formatter.
- * <p>
+ *
  * @author Jesse Caulfield
  */
 public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
@@ -38,7 +38,7 @@ public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
 
   /**
    * Convert a bound type to a value type.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    */
@@ -54,7 +54,7 @@ public abstract class AXmlAdapterCalendar extends XmlAdapter<String, Calendar> {
 
   /**
    * Convert a value type to a bound type.
-   * <p>
+   *
    * @param v The value to be converted. Must be non-null.
    * @return the converted value
    */

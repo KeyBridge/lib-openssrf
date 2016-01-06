@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,9 @@ package us.gov.dod.standard.ssrf._3_1.jrfl;
 
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
-import us.gov.dod.standard.ssrf._3_1.*;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.Location;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Height_UN4;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
  * JRFLEntryLocation defines the location where the use of a specific frequency
@@ -37,7 +38,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
 public class JRFLEntryLocation {
 
   /**
-   * Serial - Location Reference (Required)    * <p>
+   * Serial - Location Reference (Required)
+   * <p>
    * The serial of the referenced Location.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be
@@ -51,7 +53,8 @@ public class JRFLEntryLocation {
   @XmlElement(name = "Serial", required = true)
   private Serial serial;
   /**
-   * AntFeedpointHeight - Antenna Feedpoint Height (Optional)    * <p>
+   * AntFeedpointHeight - Antenna Feedpoint Height (Optional)
+   * <p>
    * The antenna feed point height above the terrain, in metres. In the case
    * where the antenna is mounted pointing vertically to a reflector on the same
    * structure, enter the height of the reflector above ground. If the Station
@@ -210,7 +213,8 @@ public class JRFLEntryLocation {
 
   //<editor-fold defaultstate="collapsed" desc="SSRF Referenced Object Instances">
   /**
-   * Serial - Location Reference (Required)    * <p>
+   * Serial - Location Reference (Required)
+   * <p>
    * The serial of the referenced Location.
    * <p>
    * [XSL ERR DSTYPE] Part 3 of the serial reference (dataset type) MUST be

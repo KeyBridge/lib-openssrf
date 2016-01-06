@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
 
 /**
@@ -39,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
  *   &lt;Bandwidth cls="U"&gt;60&lt;/Bandwidth&gt;
  * &lt;/AntFreqs&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -53,27 +54,27 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAU;
 public class AntFreqs {
 
   /**
-   * FreqMin - Nominal or Minimum Frequency (Required)    * <p>
-   * The nominal frequency or minimum value of the frequency range.
+   * FreqMin - Nominal or Minimum Frequency (Required) * The nominal frequency
+   * or minimum value of the frequency range.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group FreqRangeGrp (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMin", required = true)
   private FreqM freqMin;
   /**
-   * FreqMax - Maximum Frequency (Optional)    * <p>
-   * The maximum value of the frequencies in the range.
+   * FreqMax - Maximum Frequency (Optional) * The maximum value of the
+   * frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
    * <p>
    * Format is UN(16,9) [0..1E9] (MHz)
    * <p>
    * Attribute group FreqRangeGrp (Required)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqMax", required = false)
@@ -81,18 +82,17 @@ public class AntFreqs {
   /**
    * In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
    * total operating bandwidth of the Antenna centered around FreqMin.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Bandwidth", required = false)
   private FreqM bandwidth;
   /**
-   * FreqUse - Frequency Use (Optional)    * <p>
-   * If the frequency range is used for transmit, receive, or both transmit and
-   * receive.
+   * FreqUse - Frequency Use (Optional) * If the frequency range is used for
+   * transmit, receive, or both transmit and receive.
    * <p>
    * Format is L:CAU
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "FreqUse", required = false)
@@ -100,7 +100,7 @@ public class AntFreqs {
 
   /**
    * Get the nominal frequency or minimum value of the frequency range..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -110,7 +110,7 @@ public class AntFreqs {
 
   /**
    * Set the nominal frequency or minimum value of the frequency range..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -120,7 +120,7 @@ public class AntFreqs {
 
   /**
    * Determine if the FreqMin is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMin() {
@@ -131,7 +131,7 @@ public class AntFreqs {
    * Get the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -143,7 +143,7 @@ public class AntFreqs {
    * Set the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -153,7 +153,7 @@ public class AntFreqs {
 
   /**
    * Determine if the FreqMax is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqMax() {
@@ -163,7 +163,7 @@ public class AntFreqs {
   /**
    * Get In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
    * total operating bandwidth of the Antenna centered around FreqMin..
-   * <p>
+   *
    * @return a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -174,7 +174,7 @@ public class AntFreqs {
   /**
    * Set In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
    * total operating bandwidth of the Antenna centered around FreqMin..
-   * <p>
+   *
    * @param value a {@link FreqM} instance
    * @since 3.1.0
    */
@@ -184,7 +184,7 @@ public class AntFreqs {
 
   /**
    * Determine if the Bandwidth is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetBandwidth() {
@@ -194,7 +194,7 @@ public class AntFreqs {
   /**
    * Get if the frequency range is used for transmit, receive, or both transmit
    * and receive..
-   * <p>
+   *
    * @return the FreqUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -205,7 +205,7 @@ public class AntFreqs {
   /**
    * Set if the frequency range is used for transmit, receive, or both transmit
    * and receive..
-   * <p>
+   *
    * @param value the FreqUse value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -217,7 +217,7 @@ public class AntFreqs {
    * Determine if the FreqUse is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetFreqUse() {
@@ -226,7 +226,7 @@ public class AntFreqs {
 
   /**
    * Set the nominal frequency or minimum value of the frequency range.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntFreqs object instance.
    * @since 3.1.0
@@ -240,7 +240,7 @@ public class AntFreqs {
    * Set the maximum value of the frequencies in the range.
    * <p>
    * [XSL ERR MINMAX] If FreqMax is used, it MUST be greater than FreqMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntFreqs object instance.
    * @since 3.1.0
@@ -253,7 +253,7 @@ public class AntFreqs {
   /**
    * Set In Data Item Bandwidth, as an alternative to FreqMin/FreqMax, enter the
    * total operating bandwidth of the Antenna centered around FreqMin.
-   * <p>
+   *
    * @param value An instances of type {@link Double}.
    * @return The current AntFreqs object instance.
    * @since 3.1.0
@@ -266,7 +266,7 @@ public class AntFreqs {
   /**
    * Set if the frequency range is used for transmit, receive, or both transmit
    * and receive.
-   * <p>
+   *
    * @param value An instances of type {@link ListCAU}.
    * @return The current AntFreqs object instance.
    * @since 3.1.0
@@ -278,7 +278,7 @@ public class AntFreqs {
 
   /**
    * Get a string representation of this AntFreqs instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -298,7 +298,7 @@ public class AntFreqs {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   public boolean isSet() {

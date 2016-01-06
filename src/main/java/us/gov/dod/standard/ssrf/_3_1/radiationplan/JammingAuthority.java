@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.RadiationPlan;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S10;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN2;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWC;
 
 /**
@@ -69,7 +72,8 @@ public class JammingAuthority {
   @XmlElement(name = "JCALevel", required = true)
   private UN2 jcaLevel;
   /**
-   * US:JCAState - Authorisation State (Required)    * <p>
+   * US:JCAState - Authorisation State (Required)
+   * <p>
    * An indication of the authorization condition for radiation of a jamming
    * plan.
    * <p>

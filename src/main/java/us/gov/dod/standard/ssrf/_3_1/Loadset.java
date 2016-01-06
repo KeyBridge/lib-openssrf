@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,10 @@
  */
 package us.gov.dod.standard.ssrf._3_1;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,7 +79,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *   &lt;/JammingChannelProfile&gt;
  * &lt;/Loadset&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -101,7 +104,7 @@ public class Loadset extends Common<Loadset> {
    * The sequence pattern for initializing the jamming equipment.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "KeyLoadProcedure", required = false)
@@ -113,7 +116,7 @@ public class Loadset extends Common<Loadset> {
    * equipment functionality) for a specific loadset.
    * <p>
    * Format is UN(6)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MaxActiveFrames", required = false)
@@ -125,7 +128,7 @@ public class Loadset extends Common<Loadset> {
    * equipment functionality in response to a stimulus) for a specific loadset.
    * <p>
    * Format is UN(6)
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "MaxReactiveFrames", required = false)
@@ -136,7 +139,7 @@ public class Loadset extends Common<Loadset> {
    * The task expected to be accomplished by the loadset.
    * <p>
    * Format is S100
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Mission", required = false)
@@ -147,7 +150,7 @@ public class Loadset extends Common<Loadset> {
    * The name of the loadset.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = true)
@@ -159,7 +162,7 @@ public class Loadset extends Common<Loadset> {
    * on the RF jamming hardware.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "PrimaryFirmware", required = false)
@@ -171,7 +174,7 @@ public class Loadset extends Common<Loadset> {
    * operating conditions.
    * <p>
    * Format is Memo
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "ResetProcedure", required = false)
@@ -183,7 +186,7 @@ public class Loadset extends Common<Loadset> {
    * resident on the RF jamming hardware.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SecondaryFirmware", required = false)
@@ -194,7 +197,7 @@ public class Loadset extends Common<Loadset> {
    * The mission-specific software that is loaded on the RF jamming hardware.
    * <p>
    * Format is S50
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Software", required = false)
@@ -206,7 +209,7 @@ public class Loadset extends Common<Loadset> {
    * jamming a discrete frequency or frequency range.
    * <p>
    * Divergence from SMADEF:
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "JammingChannelProfile", required = true)
@@ -221,7 +224,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Get the sequence pattern for initializing the jamming equipment..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -231,7 +234,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Set the sequence pattern for initializing the jamming equipment..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -241,7 +244,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the KeyLoadProcedure is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetKeyLoadProcedure() {
@@ -251,7 +254,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Get the maximum number of active frames (data blocks currently in use
    * directing equipment functionality) for a specific loadset..
-   * <p>
+   *
    * @return a {@link UN6} instance
    * @since 3.1.0
    */
@@ -262,7 +265,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the maximum number of active frames (data blocks currently in use
    * directing equipment functionality) for a specific loadset..
-   * <p>
+   *
    * @param value a {@link UN6} instance
    * @since 3.1.0
    */
@@ -272,7 +275,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the MaxActiveFrames is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMaxActiveFrames() {
@@ -282,7 +285,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Get the maximum number of reactive frames (data blocks planned to direct
    * equipment functionality in response to a stimulus) for a specific loadset..
-   * <p>
+   *
    * @return a {@link UN6} instance
    * @since 3.1.0
    */
@@ -293,7 +296,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the maximum number of reactive frames (data blocks planned to direct
    * equipment functionality in response to a stimulus) for a specific loadset..
-   * <p>
+   *
    * @param value a {@link UN6} instance
    * @since 3.1.0
    */
@@ -303,7 +306,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the MaxReactiveFrames is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMaxReactiveFrames() {
@@ -312,7 +315,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Get the task expected to be accomplished by the loadset..
-   * <p>
+   *
    * @return a {@link S100} instance
    * @since 3.1.0
    */
@@ -322,7 +325,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Set the task expected to be accomplished by the loadset..
-   * <p>
+   *
    * @param value a {@link S100} instance
    * @since 3.1.0
    */
@@ -332,7 +335,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the Mission is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetMission() {
@@ -341,7 +344,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Get the name of the loadset..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -351,7 +354,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Set the name of the loadset..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -361,7 +364,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -371,7 +374,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Get the mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -382,7 +385,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -392,7 +395,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the PrimaryFirmware is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetPrimaryFirmware() {
@@ -402,7 +405,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Get the instructions for zeroing/sanitizing the jamming equipment to
    * initial operating conditions..
-   * <p>
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -413,7 +416,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the instructions for zeroing/sanitizing the jamming equipment to
    * initial operating conditions..
-   * <p>
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -423,7 +426,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the ResetProcedure is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetResetProcedure() {
@@ -433,7 +436,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Get alternate mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -444,7 +447,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set alternate mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -454,7 +457,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the SecondaryFirmware is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSecondaryFirmware() {
@@ -464,7 +467,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Get the mission-specific software that is loaded on the RF jamming
    * hardware..
-   * <p>
+   *
    * @return a {@link S50} instance
    * @since 3.1.0
    */
@@ -475,7 +478,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the mission-specific software that is loaded on the RF jamming
    * hardware..
-   * <p>
+   *
    * @param value a {@link S50} instance
    * @since 3.1.0
    */
@@ -485,7 +488,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the Software is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSoftware() {
@@ -497,7 +500,7 @@ public class Loadset extends Common<Loadset> {
    * <p>
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range..
-   * <p>
+   *
    * @return a {@link JammingChannelProfile} instance
    * @since 3.1.0
    */
@@ -510,7 +513,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Determine if the JammingChannelProfile is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetJammingChannelProfile() {
@@ -526,7 +529,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Set the sequence pattern for initializing the jamming equipment.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -539,7 +542,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the maximum number of active frames (data blocks currently in use
    * directing equipment functionality) for a specific loadset.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -552,7 +555,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the maximum number of reactive frames (data blocks planned to direct
    * equipment functionality in response to a stimulus) for a specific loadset.
-   * <p>
+   *
    * @param value An instances of type {@link Integer}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -564,7 +567,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Set the task expected to be accomplished by the loadset.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -576,7 +579,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Set the name of the loadset.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -589,7 +592,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -602,7 +605,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the instructions for zeroing/sanitizing the jamming equipment to
    * initial operating conditions.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -615,7 +618,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set alternate mission-independent software that is "burned" and which stays
    * resident on the RF jamming hardware.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -628,7 +631,7 @@ public class Loadset extends Common<Loadset> {
   /**
    * Set the mission-specific software that is loaded on the RF jamming
    * hardware.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -643,7 +646,7 @@ public class Loadset extends Common<Loadset> {
    * <p>
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range.
-   * <p>
+   *
    * @param values One or more instances of type
    *               {@link JammingChannelProfile...}.
    * @return The current Loadset object instance.
@@ -661,7 +664,7 @@ public class Loadset extends Common<Loadset> {
    * <p>
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range.
-   * <p>
+   *
    * @param values A collection of {@link JammingChannelProfile} instances
    * @return The current Loadset object instance.
    * @since 3.1.0
@@ -675,7 +678,7 @@ public class Loadset extends Common<Loadset> {
 
   /**
    * Get a string representation of this Loadset instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -704,7 +707,7 @@ public class Loadset extends Common<Loadset> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override

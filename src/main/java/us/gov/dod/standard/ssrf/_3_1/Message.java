@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,11 +16,16 @@
 package us.gov.dod.standard.ssrf._3_1;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFUtility;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.S40;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
@@ -45,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *         &lt;DatasetRef cls="U"&gt;USA::RX:456&lt;DatasetRef&gt;
  *         &lt;/Message&gt;
  * </pre>
- * <p>
+ *
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
  */
@@ -63,7 +68,7 @@ public class Message extends Common<Message> {
    * A human-readable name for the message.
    * <p>
    * Format is S40
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "Name", required = false)
@@ -71,7 +76,7 @@ public class Message extends Common<Message> {
   /**
    * In Data Item SecondaryDatasets, indicate if datasets referenced by the
    * primary dataset are included.
-   * <p>
+   *
    * @since 3.1.0
    */
   @XmlElement(name = "SecondaryDatasets", required = false)
@@ -89,7 +94,7 @@ public class Message extends Common<Message> {
 
   /**
    * Get a human-readable name for the message..
-   * <p>
+   *
    * @return a {@link S40} instance
    * @since 3.1.0
    */
@@ -99,7 +104,7 @@ public class Message extends Common<Message> {
 
   /**
    * Set a human-readable name for the message..
-   * <p>
+   *
    * @param value a {@link S40} instance
    * @since 3.1.0
    */
@@ -109,7 +114,7 @@ public class Message extends Common<Message> {
 
   /**
    * Determine if the Name is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetName() {
@@ -119,7 +124,7 @@ public class Message extends Common<Message> {
   /**
    * Get In Data Item SecondaryDatasets, indicate if datasets referenced by the
    * primary dataset are included..
-   * <p>
+   *
    * @return the SecondaryDatasets value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -130,7 +135,7 @@ public class Message extends Common<Message> {
   /**
    * Set In Data Item SecondaryDatasets, indicate if datasets referenced by the
    * primary dataset are included..
-   * <p>
+   *
    * @param value the SecondaryDatasets value in a {@link TString} data type
    * @since 3.1.0
    */
@@ -142,7 +147,7 @@ public class Message extends Common<Message> {
    * Determine if the SecondaryDatasets is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetSecondaryDatasets() {
@@ -151,7 +156,7 @@ public class Message extends Common<Message> {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -167,7 +172,7 @@ public class Message extends Common<Message> {
 
   /**
    * Determine if the DatasetRef is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetDatasetRef() {
@@ -183,7 +188,7 @@ public class Message extends Common<Message> {
 
   /**
    * Set a human-readable name for the message.
-   * <p>
+   *
    * @param value An instances of type {@link String}.
    * @return The current Message object instance.
    * @since 3.1.0
@@ -196,7 +201,7 @@ public class Message extends Common<Message> {
   /**
    * Set In Data Item SecondaryDatasets, indicate if datasets referenced by the
    * primary dataset are included.
-   * <p>
+   *
    * @param value An instances of type {@link ListCBO}.
    * @return The current Message object instance.
    * @since 3.1.0
@@ -208,7 +213,7 @@ public class Message extends Common<Message> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values One or more instances of type {@link DatasetRef...}.
    * @return The current Message object instance.
    * @since 3.1.0
@@ -225,7 +230,7 @@ public class Message extends Common<Message> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values A collection of {@link Serial} instances
    * @return The current Message object instance.
    * @since 3.1.0
@@ -242,7 +247,7 @@ public class Message extends Common<Message> {
 
   /**
    * Get a string representation of this Message instance configuration.
-   * <p>
+   *
    * @return The current object instance configuration as a non-null String
    */
   @Override
@@ -262,7 +267,7 @@ public class Message extends Common<Message> {
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
-   * <p>
+   *
    * @return TRUE if required fields are set, otherwise FALSE
    */
   @Override
@@ -276,7 +281,7 @@ public class Message extends Common<Message> {
 
   /**
    * Get .
-   * <p>
+   *
    * @return a {@link Common} instance
    * @since 3.1.0
    */
@@ -289,7 +294,7 @@ public class Message extends Common<Message> {
 
   /**
    * Determine if the data field is configured.
-   * <p>
+   *
    * @return TRUE if the field is set, FALSE if the field is null
    */
   public boolean isSetData() {
@@ -298,7 +303,7 @@ public class Message extends Common<Message> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values An instances of type {@link Common<?>}.
    * @return The current Message object instance.
    * @since 3.1.0
@@ -309,7 +314,7 @@ public class Message extends Common<Message> {
 
   /**
    * Set
-   * <p>
+   *
    * @param values An instances of type {@link Common<?>}.
    * @return The current Message object instance.
    * @since 3.1.0
@@ -326,7 +331,7 @@ public class Message extends Common<Message> {
    * the transient {@link #data} field. This method should typically be called
    * after the Message is configured and (optionally) before exporting an SSRF
    * message.
-   * <p>
+   *
    * @since 3.1.0
    */
   @Override
@@ -345,7 +350,7 @@ public class Message extends Common<Message> {
    * This method builds the transient {@link #data} with values from the
    * imported {@link #datasetRef} field. This method should typically be called
    * after the Message is imported from XML.
-   * <p>
+   *
    * @param root the SSRF root instance.
    * @since 3.1.0
    */

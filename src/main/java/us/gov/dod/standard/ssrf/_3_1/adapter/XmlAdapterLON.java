@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2015 Key Bridge LLC.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 
 /**
  * XML data type adapter for the SSRF LON data type.
- * <p>
+ *
  * @author Jesse Caulfield
  * @version SSRF 3.1.0, 09/29/2014
  */
@@ -59,7 +59,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
    * Convert a bound type to a value type.
    * <p>
    * This is called when converting an object to XML.
-   * <p>
+   *
    * @param v The value to be convereted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -92,7 +92,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
    * Convert a value type to a bound type.
    * <p>
    * This is called with converting XML to an object.
-   * <p>
+   *
    * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
@@ -117,7 +117,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
 
   /**
    * Convert a coordinate Degree/Minute/Second/Dir values to decimal degrees.
-   * <p>
+   *
    * @param deg       the degree
    * @param min       the minute
    * @param sec       the second
@@ -135,7 +135,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
 
   /**
    * Calculate the degrees component from a decimal degree coordinate
-   * <p>
+   *
    * @return the degrees component
    */
   private int getDegrees(Number latitude) {
@@ -144,7 +144,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
 
   /**
    * Calculate the minutes component from a decimal degree coordinate
-   * <p>
+   *
    * @return the latitude minutes component
    */
   private int getMinutes(Number latitude) {
@@ -153,7 +153,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
 
   /**
    * Calculate the seconds component from a decimal degree coordinate
-   * <p>
+   *
    * @return the latitude seconds component
    */
   private double getSeconds(Number latitude) {
@@ -162,7 +162,7 @@ public class XmlAdapterLON extends AXmlAdapterNumber {
 
   /**
    * Get the longitude hemisphere from a latitude in decimal degrees.
-   * <p>
+   *
    * @return the longitude hemisphere: [E]ast or [W]est.
    */
   protected String getLonHemisphere(Number longitude) {
