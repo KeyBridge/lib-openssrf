@@ -645,6 +645,7 @@ public class Ellipse {
    * @since 3.1.0
    */
   public Ellipse withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 

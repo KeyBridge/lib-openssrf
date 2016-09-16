@@ -447,6 +447,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -459,6 +460,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -533,6 +535,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -546,6 +549,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -557,6 +561,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -573,6 +578,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -586,6 +592,7 @@ public class OffTheShelfEquipment {
    * @since 3.1.0
    */
   public OffTheShelfEquipment withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

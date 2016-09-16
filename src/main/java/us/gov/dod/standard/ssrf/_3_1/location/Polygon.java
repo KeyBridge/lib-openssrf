@@ -81,7 +81,7 @@ public class Polygon {
   /**
    * idx - Index (Required)
    * <p>
-   * A unique integer index for the current ellipse within the Location.
+   * A unique integer index for the current polygon within the Location.
    * <p>
    * Format is UN(6)
    * <p>
@@ -115,7 +115,7 @@ public class Polygon {
   }
 
   /**
-   * Determine if the Excluded is configured.
+   * Determine if the Excluded property is configured.
    * <p>
    * If configured this method also inspects the {@link TString} wrapped value.
    * <p>
@@ -126,8 +126,10 @@ public class Polygon {
   }
 
   /**
-   * Get .
+   * Get the minimum or nominal height of the point above the terrain.
    * <p>
+   * Note that this is height above ground level (AGL).
+   *
    * @return a {@link Altitude} instance
    * @since 3.1.0
    */
@@ -136,8 +138,10 @@ public class Polygon {
   }
 
   /**
-   * Set .
+   * Set the minimum or nominal height of the point above the terrain.
    * <p>
+   * Note that this is height above ground level (AGL).
+   *
    * @param value a {@link Altitude} instance
    * @since 3.1.0
    */
@@ -155,8 +159,10 @@ public class Polygon {
   }
 
   /**
-   * Get .
+   * Get the maximum or nominal height of the point above the terrain.
    * <p>
+   * Note that this is height above ground level (AGL).
+   *
    * @return a {@link Altitude} instance
    * @since 3.1.0
    */
@@ -165,8 +171,10 @@ public class Polygon {
   }
 
   /**
-   * Set .
+   * Set the maximum or nominal height of the point above the terrain.
    * <p>
+   * Note that this is height above ground level (AGL).
+   *
    * @param value a {@link Altitude} instance
    * @since 3.1.0
    */
@@ -190,7 +198,7 @@ public class Polygon {
    * that represent a vertex of the polygon. Polygon points are described in a
    * clockwise direction. If the last point is different from the first point,
    * it is assumed that they are connected to complete the boundary of the
-   * polygon..
+   * polygon.
    * <p>
    * @return a {@link PolygonPoint} instance
    * @since 3.1.0
@@ -219,7 +227,7 @@ public class Polygon {
   }
 
   /**
-   * Get a unique integer index for the current ellipse within the Location..
+   * Get a unique integer index for the current polygon within the Location.
    * <p>
    * @return a {@link BigInteger} instance
    * @since 3.1.0
@@ -229,7 +237,7 @@ public class Polygon {
   }
 
   /**
-   * Set a unique integer index for the current ellipse within the Location..
+   * Set a unique integer index for the current polygon within the Location.
    * <p>
    * @param value a {@link BigInteger} instance
    * @since 3.1.0
@@ -262,8 +270,10 @@ public class Polygon {
   }
 
   /**
-   * Set
+   * Set the minimum or nominal height of the point above the terrain.
    * <p>
+   * Note that this is height above ground level (AGL).
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Polygon object instance.
    * @since 3.1.0
@@ -274,8 +284,10 @@ public class Polygon {
   }
 
   /**
-   * Set
+   * Set the maximum or nominal height of the point above the terrain.
    * <p>
+   * Note that this is height above ground level (AGL).
+   *
    * @param value An instances of type {@link Double}.
    * @return The current Polygon object instance.
    * @since 3.1.0
@@ -286,7 +298,7 @@ public class Polygon {
   }
 
   /**
-   * Set the PolygonPoint
+   * Set the PolygonPoint.
    * <p>
    * Complex element PolygonPoint contains the coordinates (WGS 84) of point(s)
    * that represent a vertex of the polygon. Polygon points are described in a
@@ -306,7 +318,7 @@ public class Polygon {
   }
 
   /**
-   * Set the PolygonPoint
+   * Set the PolygonPoint.
    * <p>
    * Complex element PolygonPoint contains the coordinates (WGS 84) of point(s)
    * that represent a vertex of the polygon. Polygon points are described in a
@@ -326,13 +338,14 @@ public class Polygon {
   }
 
   /**
-   * Set a unique integer index for the current ellipse within the Location.
+   * Set a unique integer index for the current polygon within the Location.
    * <p>
    * @param value An instances of type {@link BigInteger}.
    * @return The current Polygon object instance.
    * @since 3.1.0
    */
   public Polygon withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 

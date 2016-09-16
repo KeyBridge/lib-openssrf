@@ -166,7 +166,7 @@ public class PolygonPoint {
 
   /**
    * Get a unique, sequenced, index for each point describing the current
-   * polygon..
+   * polygon.
    * <p>
    * @return a {@link BigInteger} instance
    * @since 3.1.0
@@ -177,7 +177,7 @@ public class PolygonPoint {
 
   /**
    * Set a unique, sequenced, index for each point describing the current
-   * polygon..
+   * polygon.
    * <p>
    * @param value a {@link BigInteger} instance
    * @since 3.1.0
@@ -262,6 +262,7 @@ public class PolygonPoint {
    * @since 3.1.0
    */
   public PolygonPoint withSequence(BigInteger value) {
+    setSequence(value);
     return this;
   }
 

@@ -444,6 +444,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -456,6 +457,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -530,6 +532,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -543,6 +546,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -554,6 +558,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -570,6 +575,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -583,6 +589,7 @@ public class Installation {
    * @since 3.1.0
    */
   public Installation withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

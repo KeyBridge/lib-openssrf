@@ -183,6 +183,7 @@ public class Remarks {
    * @since 3.1.0
    */
   public Remarks withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -195,6 +196,7 @@ public class Remarks {
    * @since 3.1.0
    */
   public Remarks withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -209,6 +211,7 @@ public class Remarks {
    * @since 3.1.0
    */
   public Remarks withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 

@@ -441,6 +441,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -453,6 +454,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -529,6 +531,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -542,6 +545,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -553,6 +557,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -569,6 +574,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -582,6 +588,7 @@ public class CircuitRemarks {
    * @since 3.1.0
    */
   public CircuitRemarks withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

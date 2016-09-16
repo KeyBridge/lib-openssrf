@@ -2592,6 +2592,7 @@ public class TxMode {
    * @since 3.1.0
    */
   public TxMode withSpreadSpectrum(SpreadSpectrum value) {
+    setSpreadSpectrum(value);
     return this;
   }
 

@@ -452,6 +452,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -464,6 +465,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -538,6 +540,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -551,6 +554,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -562,6 +566,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -578,6 +583,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -591,6 +597,7 @@ public class DCSTrunk {
    * @since 3.1.0
    */
   public DCSTrunk withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

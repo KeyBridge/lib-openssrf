@@ -488,6 +488,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -502,6 +503,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 
@@ -514,6 +516,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -588,6 +591,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -601,6 +605,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -612,6 +617,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -628,6 +634,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -641,6 +648,7 @@ public class Comment {
    * @since 3.1.0
    */
   public Comment withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

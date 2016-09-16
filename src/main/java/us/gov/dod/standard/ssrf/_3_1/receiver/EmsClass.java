@@ -595,6 +595,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -607,6 +608,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withExplainInformationTypeX(String value) {
+    setExplainInformationTypeX(value);
     return this;
   }
 
@@ -619,6 +621,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withExplainModulationTypeX(String value) {
+    setExplainModulationTypeX(value);
     return this;
   }
 
@@ -631,6 +634,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withExplainNatureOfSignalX(String value) {
+    setExplainNatureOfSignalX(value);
     return this;
   }
 
@@ -643,6 +647,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -717,6 +722,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -730,6 +736,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -741,6 +748,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -757,6 +765,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -770,6 +779,7 @@ public class EmsClass {
    * @since 3.1.0
    */
   public EmsClass withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

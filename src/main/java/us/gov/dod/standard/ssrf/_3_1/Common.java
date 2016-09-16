@@ -1628,6 +1628,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   public T withEntryDateTime(DT value) {
+    setEntryDateTime(value);
     return (T) this;
   }
 
@@ -1791,6 +1792,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   public T withSecurityClass(SecurityClass value) {
+    setSecurityClass(value);
     return (T) this;
   }
 
@@ -1901,6 +1903,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @since 3.1.0
    */
   public T withCls(ListCCL value) {
+    setCls(value);
     return (T) this;
   }
 

@@ -437,6 +437,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withValue(String value) {
+    setValue(value);
     return this;
   }
 
@@ -449,6 +450,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -523,6 +525,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -536,6 +539,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -547,6 +551,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -563,6 +568,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -576,6 +582,7 @@ public class DocketNum {
    * @since 3.1.0
    */
   public DocketNum withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

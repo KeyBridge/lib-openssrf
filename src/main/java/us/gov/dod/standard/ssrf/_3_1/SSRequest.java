@@ -2526,6 +2526,7 @@ public class SSRequest extends Common<SSRequest> {
    * @since 3.1.0
    */
   public SSRequest withTrunking(Trunking value) {
+    setTrunking(value);
     return this;
   }
 

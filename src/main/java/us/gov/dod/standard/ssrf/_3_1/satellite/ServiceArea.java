@@ -438,6 +438,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withValue(ListCAO value) {
+    setValue(value);
     return this;
   }
 
@@ -450,6 +451,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -524,6 +526,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -537,6 +540,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -548,6 +552,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -564,6 +569,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -577,6 +583,7 @@ public class ServiceArea {
    * @since 3.1.0
    */
   public ServiceArea withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 
