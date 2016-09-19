@@ -131,24 +131,14 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
     if (totalDigits == null || fractionDigits == null) {
       return new DecimalFormat("#");
     }
-    int digitCount = getDigitCount(new BigInteger(String.valueOf(v.intValue())));
-    int totalCount = digitCount + fractionDigits > totalDigits
-                     ? totalDigits
-                     : digitCount + fractionDigits;
-    int fractionCount = digitCount > (totalDigits - fractionDigits)
-                        ? totalDigits - digitCount
-                        : fractionDigits;
-    /**
-     * Require zeros on either side of the decimal point.
-     */
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < totalCount; i++) {
-      sb.append("#");
-      if (i == (totalCount - fractionCount - 1)) {
-        sb.append(".");
-      }
-    }
-    return new DecimalFormat(sb.toString().replace("#.#", "0.0"));
+    DecimalFormat decimalFormat = new DecimalFormat();
+    decimalFormat.setMaximumFractionDigits(fractionDigits);
+    decimalFormat.setMinimumFractionDigits(1);
+    decimalFormat.setMaximumIntegerDigits(totalDigits - fractionDigits - 1);
+    decimalFormat.setMinimumIntegerDigits(1);
+    decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+    decimalFormat.setGroupingUsed(false);
+    return decimalFormat;
   }
 
   /**
@@ -156,7 +146,7 @@ public class AXmlAdapterNumber extends XmlAdapter<String, Number> {
    * <p>
    * This is called when converting an object to XML.
    *
-   * @param v The value to be convereted. Can be null.
+   * @param v The value to be converted. Can be null.
    * @return the converted value
    * @throws Exception if there's an error during the conversion. The caller is
    *                   responsible for reporting the error to the user through
