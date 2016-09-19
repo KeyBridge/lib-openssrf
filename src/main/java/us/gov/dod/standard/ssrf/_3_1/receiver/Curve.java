@@ -619,6 +619,7 @@ public class Curve {
    * @since 3.1.0
    */
   public Curve withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 

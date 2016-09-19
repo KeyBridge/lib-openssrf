@@ -538,6 +538,7 @@ public class Point {
    * @since 3.1.0
    */
   public Point withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 

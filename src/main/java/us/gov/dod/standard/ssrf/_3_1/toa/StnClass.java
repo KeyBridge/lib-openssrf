@@ -437,6 +437,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withValue(ListUSC value) {
+    setValue(value);
     return this;
   }
 
@@ -449,6 +450,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withCls(ListCCL value) {
+    setCls(value);
     return this;
   }
 
@@ -523,6 +525,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withLegacyReleasability(String value) {
+    setLegacyReleasability(value);
     return this;
   }
 
@@ -536,6 +539,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withQuality(String value) {
+    setQuality(value);
     return this;
   }
 
@@ -547,6 +551,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withRecommendedValue(String value) {
+    setRecommendedValue(value);
     return this;
   }
 
@@ -563,6 +568,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withIdref(String value) {
+    setIdref(value);
     return this;
   }
 
@@ -576,6 +582,7 @@ public class StnClass {
    * @since 3.1.0
    */
   public StnClass withAvailability(String value) {
+    setAvailability(value);
     return this;
   }
 

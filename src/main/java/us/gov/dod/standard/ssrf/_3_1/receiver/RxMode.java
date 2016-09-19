@@ -2073,6 +2073,7 @@ public class RxMode {
    * @since 3.1.0
    */
   public RxMode withSpreadSpectrum(SpreadSpectrum value) {
+    setSpreadSpectrum(value);
     return this;
   }
 

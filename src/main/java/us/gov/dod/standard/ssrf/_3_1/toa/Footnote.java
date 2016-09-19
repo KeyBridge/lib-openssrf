@@ -293,6 +293,7 @@ public class Footnote {
    * @since 3.1.0
    */
   public Footnote withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 

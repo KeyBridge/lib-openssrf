@@ -604,6 +604,7 @@ public class ConfigFreq {
    * @since 3.1.0
    */
   public ConfigFreq withIdx(BigInteger value) {
+    setIdx(value);
     return this;
   }
 
