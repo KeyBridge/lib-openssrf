@@ -65,9 +65,11 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 public class JRFL extends Common<JRFL> {
 
   /**
-   * EffectiveDateTime - Effective Date/Time (Optional)
+   * EffectiveDateTime - Effective Date/Time (Optional).
    * <p>
-   * The width of the range (or band) of restricted frequency(s).
+   * Date and UTC time when the Assignment will be operational. To indicate a
+   * real effective time, use values 00:00:01Z to 24:00:00Z. The value
+   * 00:00:00Z is reserved to indicate that time is not an issue.
    * <p>
    * Format is DT
    *
@@ -76,22 +78,25 @@ public class JRFL extends Common<JRFL> {
   @XmlElement(name = "EffectiveDateTime", required = false)
   private DT effectiveDateTime;
   /**
-   * In Data Item ExpirationDateTime, In Data Item ExpirationDateTime, enter the
-   * date at which the dataset will expire, formatted as yyyy-mmddThh: mm:ssZ
-   * (year-month-day, "T" for time, hour:minute:seconds Zulu). To indicate a
-   * real effective time, use values 00:00:01Z to 24:00:00Z. The value 00:00:00Z
-   * is reserved to indicate that time is not an issue. The Expiration date
-   * should be less than five years from the effective date.
+   * The date at which the dataset will expire.
+   * 
+   * To indicate a real effective time, use values 00:00:01Z to 24:00:00Z. The
+   * value 00:00:00Z is reserved to indicate that time is not an issue. The
+   * Expiration date should be less than five years from the effective date.
    *
    * @since 3.1.0
    */
   @XmlElement(name = "ExpirationDateTime", required = false)
   private DT expirationDateTime;
   /**
-   * ReviewDate - Review Date (Optional)
+   * ReviewDate - Review Date (Optional).
    * <p>
-   * A description of the justification of why the JRFL entry is required, to
-   * support the spectrum manager.
+   * The date by which the dataset is to be reviewed. The Review date should be
+   * less than five years from the effective date. In Data Item Spectrum
+   * Supportability datasets, this date indicates when the organisation
+   * responsible for re-initiating host coordination plans to resubmit a
+   * Spectrum Supportability request to the host nation for continued use of the
+   * equipment.
    * <p>
    * Format is DT
    * <p>
