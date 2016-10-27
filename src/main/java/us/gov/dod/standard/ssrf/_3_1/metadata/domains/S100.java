@@ -25,7 +25,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS100;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 
 /**
- * The SSRF S100 data type.
+ * String of at most 100 characters.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
@@ -68,7 +68,7 @@ public class S100 extends AMetadata<S100> implements Comparable<S100> {
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value to set
    */
   public void setValue(String value) {
     this.value = value;

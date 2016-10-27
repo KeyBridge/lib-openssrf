@@ -2,7 +2,7 @@
 
 ## Reference Implementation Production Release
 OpenSSRF is an open source reference implementation of the Standard Spectrum Resource 
-Format (SSRF). The specification is defined in MCEB Pub 8. 
+Format (SSRF). The specification is defined in MC4EB Pub 8. 
 
 The goal of this project is to develop and publish a complete and certifiably 
 compliant reference implementation of the most recent Standard Spectrum Resource Format
@@ -31,7 +31,7 @@ Special attention and effort has been invested in the development of OpenSSRF to
  * Software packaging: SSRF data types are organized naturally according to their use and parent-child relationship with other data types.
  * Software abstraction and simplification: Metadata and other common elements and data attributes have been consolidated into several abstract classes and types.
  * Developer utilities: Methods supporting the fluent programming interface have been introduced throughout the new software library.
- * A sophisticated set of utilities for automated XML reading, writing, assmbly and validation 
+ * A sophisticated set of utilities for automated XML reading, writing, assembly and validation
  * Content validation: Required attributes and elements are validated.
  * Patterned fields: Formatted string patterned fields are programmatically generated. Direct user input is not required. 
  * Indexed cross-referencing: SSRF cross referencing between data element is fully automatic.

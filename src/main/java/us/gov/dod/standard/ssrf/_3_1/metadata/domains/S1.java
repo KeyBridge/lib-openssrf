@@ -25,7 +25,7 @@ import us.gov.dod.standard.ssrf._3_1.adapter.types.XmlAdapterS1;
 import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 
 /**
- * The SSRF S1 data type.
+ * String of at most 1 character.
  * <p>
  * @author Key Bridge LLC <developer@keybridge.ch>
  * @version 3.1.0, 03/30/2015
@@ -68,7 +68,7 @@ public class S1 extends AMetadata<S1> implements Comparable<S1> {
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value to set
    */
   public void setValue(String value) {
     this.value = value;
