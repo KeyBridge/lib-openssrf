@@ -125,7 +125,7 @@ public class RxMode {
   @XmlElement(name = "RxType", required = false)
   private TString rxType;
   /**
-   * NecessaryBw - Necessary Bandwidth (Optional)
+   * NecessaryBw - Necessary Bandwidth (Optional).
    * <p>
    * The necessary bandwidth which is defined as the minimum width of the
    * frequency band sufficient to ensure the transmission of information at the
@@ -152,7 +152,7 @@ public class RxMode {
   @XmlElement(name = "Tunability", required = false)
   private TString tunability;
   /**
-   * TuningMethod - Tuning Method (Optional)
+   * TuningMethod - Tuning Method (Optional).
    * <p>
    * The device or process used to tune the equipment through the RF spectrum.
    * <p>
@@ -171,7 +171,7 @@ public class RxMode {
   @XmlElement(name = "IntermodEffect", required = false)
   private MEMO intermodEffect;
   /**
-   * SensitivityLevel - Sensitivity Level (Optional)
+   * SensitivityLevel - Sensitivity Level (Optional).
    * <p>
    * The minimum RF signal power level as it relates to one of the four
    * Sensitivity Criteria Types: PWOP, SINAD, S/N or S+N/N indicated in item
@@ -187,7 +187,7 @@ public class RxMode {
   @XmlElement(name = "SensitivityLevel", required = false)
   private dBm sensitivityLevel;
   /**
-   * NoiseFigure - Noise Figure (Optional)
+   * NoiseFigure - Noise Figure (Optional).
    * <p>
    * The ratio of the output noise power to the portion of noise power
    * attributable to thermal noise in the input termination at 290 Kelvins.
@@ -203,7 +203,7 @@ public class RxMode {
   @XmlElement(name = "NoiseFigure", required = false)
   private dB noiseFigure;
   /**
-   * NoiseTemp - Noise Temperature (Optional)
+   * NoiseTemp - Noise Temperature (Optional).
    * <p>
    * The absolute temperature of a passive system having an available noise
    * power per unit bandwidth at a specified frequency equal to that of the
@@ -220,7 +220,7 @@ public class RxMode {
   @XmlElement(name = "NoiseTemp", required = false)
   private Kelvins noiseTemp;
   /**
-   * SensitivityCriteriaType - Type of Sensitivity Criteria (Optional)
+   * SensitivityCriteriaType - Type of Sensitivity Criteria (Optional).
    * <p>
    * The criteria used to determine the minimum RF signal power present at the
    * input terminals that ensures acceptable detection and demodulation of the
@@ -235,7 +235,7 @@ public class RxMode {
   @XmlElement(name = "SensitivityCriteriaType", required = false)
   private TString sensitivityCriteriaType;
   /**
-   * SensitivityCriteriaLevel - Sensitivity Criteria Level (Optional)
+   * SensitivityCriteriaLevel - Sensitivity Criteria Level (Optional).
    * <p>
    * The value of the criteria; the meaning and unit of this value depends on
    * the Sensitivity Criteria Type selected.
@@ -249,7 +249,7 @@ public class RxMode {
   @XmlElement(name = "SensitivityCriteriaLevel", required = false)
   private SCLevel sensitivityCriteriaLevel;
   /**
-   * SensitivityCriteriaText - Sensitivity Criteria Description (Optional)
+   * SensitivityCriteriaText - Sensitivity Criteria Description (Optional).
    * <p>
    * The value of the criteria when it cannot be expressed as a number.
    * <p>
@@ -262,7 +262,7 @@ public class RxMode {
   @XmlElement(name = "SensitivityCriteriaText", required = false)
   private S50 sensitivityCriteriaText;
   /**
-   * PostDetectionFreqMin - Minimum Post Detection Frequency (Optional)
+   * PostDetectionFreqMin - Minimum Post Detection Frequency (Optional).
    * <p>
    * The maximum post detection frequency at the baseband half-power point.
    * <p>
@@ -275,7 +275,7 @@ public class RxMode {
   @XmlElement(name = "PostDetectionFreqMin", required = false)
   private FreqM postDetectionFreqMin;
   /**
-   * PostDetectionFreqMax - Maximum Post Detection Frequency (Optional)
+   * PostDetectionFreqMax - Maximum Post Detection Frequency (Optional).
    * <p>
    * The maximum post detection frequency at the baseband half-power point.
    * <p>
@@ -293,7 +293,7 @@ public class RxMode {
   @XmlElement(name = "ProcessingGainMin", required = false)
   private dB processingGainMin;
   /**
-   * ProcessingGainMax - Maximum Processing Gain (Optional)
+   * ProcessingGainMax - Maximum Processing Gain (Optional).
    * <p>
    * The maximum ratio of the post processing signal-to-noise ratio to the
    * received signal-to-noise ratio.
@@ -308,7 +308,7 @@ public class RxMode {
   @XmlElement(name = "ProcessingGainMax", required = false)
   private dB processingGainMax;
   /**
-   * SpuriousRejection - Rejection of Spurious Emissions (Optional)
+   * SpuriousRejection - Rejection of Spurious Emissions (Optional).
    * <p>
    * The spurious receiver responses that arise when strong undesired signals
    * and the receiver local oscillator (LO) combine in the mixer to produce a
@@ -324,7 +324,7 @@ public class RxMode {
   @XmlElement(name = "SpuriousRejection", required = false)
   private Rejection_DB1 spuriousRejection;
   /**
-   * ImageRejection - Rejection on Image Frequency (Optional)
+   * ImageRejection - Rejection on Image Frequency (Optional).
    * <p>
    * The ratio of the image frequency signal level required to produce a
    * specified output, to the desired signal level required to produce the same
@@ -340,7 +340,7 @@ public class RxMode {
   @XmlElement(name = "ImageRejection", required = false)
   private Rejection_DB1 imageRejection;
   /**
-   * IntermodRejection - Rejection of Intermodulation (Optional)
+   * IntermodRejection - Rejection of Intermodulation (Optional).
    * <p>
    * The rejection of spurious emissions involving the mixing of two or more
    * signals. Spurious emissions are emissions on a frequency or frequencies
@@ -354,7 +354,7 @@ public class RxMode {
   @XmlElement(name = "IntermodRejection", required = false)
   private Rejection_DB2 intermodRejection;
   /**
-   * AdjacentChannelSelectivity - Adjacent Channel Selectivity (Optional)
+   * AdjacentChannelSelectivity - Adjacent Channel Selectivity (Optional).
    * <p>
    * The ratio in dB between the wanted signal and the maximum level of an
    * unwanted signal in the adjacent channel which still allows correct
@@ -367,7 +367,7 @@ public class RxMode {
   @XmlElement(name = "AdjacentChannelSelectivity", required = false)
   private dB adjacentChannelSelectivity;
   /**
-   * FreqTolerance - Frequency Tolerance (Required)
+   * FreqTolerance - Frequency Tolerance (Required).
    * <p>
    * The drift in Hz or in ppm using the formula: Frequency tolerance (ppm) =
    * Maximum drift (Hz) / Center frequency (MHz). enter the units (Hz or ppm) in
@@ -382,7 +382,7 @@ public class RxMode {
   @XmlElement(name = "FreqTolerance")
   private UN18_6 freqTolerance;
   /**
-   * FreqToleranceUnit - Frequency Tolerance Unit (Required)
+   * FreqToleranceUnit - Frequency Tolerance Unit (Required).
    * <p>
    * The units in which the Frequency Tolerance is expressed.
    * <p>
@@ -395,7 +395,7 @@ public class RxMode {
   @XmlElement(name = "FreqToleranceUnit")
   private TString freqToleranceUnit;
   /**
-   * US:ModeName - Mode Name (Optional)
+   * US:ModeName - Mode Name (Optional).
    * <p>
    * A short name for the mode.
    * <p>
@@ -406,7 +406,7 @@ public class RxMode {
   @XmlElement(name = "ModeName", required = false)
   private S40 modeName;
   /**
-   * EmsClass (Optional)
+   * EmsClass (Optional).
    * <p>
    * EmsClass identifies the emission classification symbols that define the
    * baseband modulating characteristics of the emission designator. The
@@ -418,7 +418,7 @@ public class RxMode {
   @XmlElement(name = "EmsClass", nillable = true)
   private Set<EmsClass> emsClass;
   /**
-   * RxSignalTuning (Optional)
+   * RxSignalTuning (Optional).
    * <p>
    * RxSignalTuning indicates the tuning capabilities, the specific frequency or
    * range of frequencies within which the equipment may tune, and the tuning
@@ -429,7 +429,7 @@ public class RxMode {
   @XmlElement(name = "RxSignalTuning")
   private Set<RxSignalTuning> rxSignalTuning;
   /**
-   * RxModulation (Optional)
+   * RxModulation (Optional).
    * <p>
    * RxModulation contains the detailed characteristics of the modulation on the
    * receiver side.
@@ -439,7 +439,7 @@ public class RxMode {
   @XmlElement(name = "RxModulation")
   private Set<RxModulation> rxModulation;
   /**
-   * Baseband (Optional)
+   * Baseband (Optional).
    * <p>
    * Baseband defines the parameters of the modulating or received signal.
    * <p>
@@ -448,7 +448,7 @@ public class RxMode {
   @XmlElement(name = "Baseband")
   private Set<Baseband> baseband;
   /**
-   * FreqConversion (Optional)
+   * FreqConversion (Optional).
    * <p>
    * FreqConversion contains the characteristics of a frequency conversion
    * stage: intermediate frequency (IF) and local oscillator (LO) parameters.
@@ -458,7 +458,7 @@ public class RxMode {
   @XmlElement(name = "FreqConversion")
   private Set<FreqConversion> freqConversion;
   /**
-   * Spread Spectrum (Optional)
+   * Spread Spectrum (Optional).
    * <p>
    * SpreadSpectrum contains characteristics of systems using spread spectrum
    * techniques.
@@ -468,7 +468,7 @@ public class RxMode {
   @XmlElement(name = "SpreadSpectrum")
   private SpreadSpectrum spreadSpectrum;
   /**
-   * curves - Links to Curves (Optional)
+   * curves - Links to Curves (Optional).
    * <p>
    * The list of indices referring to Curves applicable to the data item.
    * <p>
@@ -483,7 +483,7 @@ public class RxMode {
    * Get a short name for the mode; this name should be a meaningful
    * identification of the mode, but it can also be automatically generated. The
    * Name MUST be unique within the dataset and SHOULD NOT be modified during
-   * the lifetime of the Dataset..
+   * the lifetime of the Dataset.
    * <p>
    * @return a {@link S20} instance
    * @since 3.1.0
@@ -496,7 +496,7 @@ public class RxMode {
    * Set a short name for the mode; this name should be a meaningful
    * identification of the mode, but it can also be automatically generated. The
    * Name MUST be unique within the dataset and SHOULD NOT be modified during
-   * the lifetime of the Dataset..
+   * the lifetime of the Dataset.
    * <p>
    * @param value a {@link S20} instance
    * @since 3.1.0
@@ -516,7 +516,7 @@ public class RxMode {
 
   /**
    * Get a description of the operational mode; this description should be a
-   * meaningful explanation of the mode main characteristics..
+   * meaningful explanation of the mode main characteristics.
    * <p>
    * @return a {@link S100} instance
    * @since 3.1.0
@@ -527,7 +527,7 @@ public class RxMode {
 
   /**
    * Set a description of the operational mode; this description should be a
-   * meaningful explanation of the mode main characteristics..
+   * meaningful explanation of the mode main characteristics.
    * <p>
    * @param value a {@link S100} instance
    * @since 3.1.0
@@ -547,7 +547,7 @@ public class RxMode {
 
   /**
    * Get the type of receiver. If there is no suitable entry in the code list,
-   * use Other and indicate the type in a Remark..
+   * use Other and indicate the type in a Remark.
    * <p>
    * @return the RxType value in a {@link TString} data type
    * @since 3.1.0
@@ -558,7 +558,7 @@ public class RxMode {
 
   /**
    * Set the type of receiver. If there is no suitable entry in the code list,
-   * use Other and indicate the type in a Remark..
+   * use Other and indicate the type in a Remark.
    * <p>
    * @param value the RxType value in a {@link TString} data type
    * @since 3.1.0
@@ -582,7 +582,7 @@ public class RxMode {
    * Get the necessary bandwidth which is defined as the minimum width of the
    * frequency band sufficient to ensure the transmission of information at the
    * required rate and quality. This is approximately at the -20 dB level on an
-   * emission curve..
+   * emission curve.
    * <p>
    * @return a {@link FreqM} instance
    * @since 3.1.0
@@ -595,7 +595,7 @@ public class RxMode {
    * Set the necessary bandwidth which is defined as the minimum width of the
    * frequency band sufficient to ensure the transmission of information at the
    * required rate and quality. This is approximately at the -20 dB level on an
-   * emission curve..
+   * emission curve.
    * <p>
    * @param value a {@link FreqM} instance
    * @since 3.1.0
@@ -614,7 +614,7 @@ public class RxMode {
   }
 
   /**
-   * Get the tuning capability..
+   * Get the tuning capability.
    * <p>
    * @return the Tunability value in a {@link TString} data type
    * @since 3.1.0
@@ -624,7 +624,7 @@ public class RxMode {
   }
 
   /**
-   * Set the tuning capability..
+   * Set the tuning capability.
    * <p>
    * @param value the Tunability value in a {@link TString} data type
    * @since 3.1.0
@@ -646,7 +646,7 @@ public class RxMode {
 
   /**
    * Get the device or process used to tune the equipment through the RF
-   * spectrum..
+   * spectrum.
    * <p>
    * @return the TuningMethod value in a {@link TString} data type
    * @since 3.1.0
@@ -657,7 +657,7 @@ public class RxMode {
 
   /**
    * Set the device or process used to tune the equipment through the RF
-   * spectrum..
+   * spectrum.
    * <p>
    * @param value the TuningMethod value in a {@link TString} data type
    * @since 3.1.0
@@ -678,8 +678,11 @@ public class RxMode {
   }
 
   /**
-   * Get .
+   * Get Intermodulation Percentage.
    * <p>
+   * This is the percentage of the total signal either transmitted or receive
+   * affected by the distortion products.
+   *
    * @return a {@link Percent} instance
    * @since 3.1.0
    */
@@ -688,8 +691,11 @@ public class RxMode {
   }
 
   /**
-   * Set .
+   * Set Intermodulation Percentage.
    * <p>
+   * This is the percentage of the total signal either transmitted or received
+   * affected by the distortion products.
+   *
    * @param value a {@link Percent} instance
    * @since 3.1.0
    */
@@ -707,8 +713,11 @@ public class RxMode {
   }
 
   /**
-   * Get .
+   * Get Intermodulation Effect.
    * <p>
+   * This is the effect on circuit operation caused by the level of
+   * intermodulation distortion.
+   *
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -717,8 +726,11 @@ public class RxMode {
   }
 
   /**
-   * Set .
+   * Set Intermodulation Effect.
    * <p>
+   * This is the effect on circuit operation caused by the level of
+   * intermodulation distortion.
+   *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -739,7 +751,7 @@ public class RxMode {
    * Get the minimum RF signal power level as it relates to one of the four
    * Sensitivity Criteria Types: PWOP, SINAD, S/N or S+N/N indicated in item
    * SensitivityCriteriaType. Note, for MDS and MTR criteria, the RF signal
-   * power level is zero and this item may be left blank in those instances..
+   * power level is zero and this item may be left blank in those instances.
    * <p>
    * @return a {@link dBm} instance
    * @since 3.1.0
@@ -752,7 +764,7 @@ public class RxMode {
    * Set the minimum RF signal power level as it relates to one of the four
    * Sensitivity Criteria Types: PWOP, SINAD, S/N or S+N/N indicated in item
    * SensitivityCriteriaType. Note, for MDS and MTR criteria, the RF signal
-   * power level is zero and this item may be left blank in those instances..
+   * power level is zero and this item may be left blank in those instances.
    * <p>
    * @param value a {@link dBm} instance
    * @since 3.1.0
@@ -774,7 +786,7 @@ public class RxMode {
    * Get the ratio of the output noise power to the portion of noise power
    * attributable to thermal noise in the input termination at 290 Kelvins.
    * Noise Figure is related to Noise Temperature by the following formula:
-   * NoiseFigure [dB] = 10 x log10((NoiseTemp [K] / 290) + 1)..
+   * NoiseFigure [dB] = 10 x log10((NoiseTemp [K] / 290) + 1).
    * <p>
    * @return a {@link dB} instance
    * @since 3.1.0
@@ -787,7 +799,7 @@ public class RxMode {
    * Set the ratio of the output noise power to the portion of noise power
    * attributable to thermal noise in the input termination at 290 Kelvins.
    * Noise Figure is related to Noise Temperature by the following formula:
-   * NoiseFigure [dB] = 10 x log10((NoiseTemp [K] / 290) + 1)..
+   * NoiseFigure [dB] = 10 x log10((NoiseTemp [K] / 290) + 1).
    * <p>
    * @param value a {@link dB} instance
    * @since 3.1.0
@@ -810,7 +822,7 @@ public class RxMode {
    * power per unit bandwidth at a specified frequency equal to that of the
    * actual terminals of a network. Noise Figure is related to Noise Temperature
    * by the following formula: NoiseFigure [dB] = 10 x log10((NoiseTemp [K] /
-   * 290) + 1)..
+   * 290) + 1).
    * <p>
    * @return a {@link Kelvins} instance
    * @since 3.1.0
@@ -824,7 +836,7 @@ public class RxMode {
    * power per unit bandwidth at a specified frequency equal to that of the
    * actual terminals of a network. Noise Figure is related to Noise Temperature
    * by the following formula: NoiseFigure [dB] = 10 x log10((NoiseTemp [K] /
-   * 290) + 1)..
+   * 290) + 1).
    * <p>
    * @param value a {@link Kelvins} instance
    * @since 3.1.0
@@ -845,7 +857,7 @@ public class RxMode {
   /**
    * Get the criteria used to determine the minimum RF signal power present at
    * the input terminals that ensures acceptable detection and demodulation of
-   * the desired signal..
+   * the desired signal.
    * <p>
    * @return the SensitivityCriteriaType value in a {@link TString} data type
    * @since 3.1.0
@@ -857,7 +869,7 @@ public class RxMode {
   /**
    * Set the criteria used to determine the minimum RF signal power present at
    * the input terminals that ensures acceptable detection and demodulation of
-   * the desired signal..
+   * the desired signal.
    * <p>
    * @param value the SensitivityCriteriaType value in a {@link TString} data
    *              type
@@ -880,7 +892,7 @@ public class RxMode {
 
   /**
    * Get the value of the criteria; the meaning and unit of this value depends
-   * on the Sensitivity Criteria Type selected..
+   * on the Sensitivity Criteria Type selected.
    * <p>
    * @return a {@link SCLevel} instance
    * @since 3.1.0
@@ -891,7 +903,7 @@ public class RxMode {
 
   /**
    * Set the value of the criteria; the meaning and unit of this value depends
-   * on the Sensitivity Criteria Type selected..
+   * on the Sensitivity Criteria Type selected.
    * <p>
    * @param value a {@link SCLevel} instance
    * @since 3.1.0
@@ -910,7 +922,7 @@ public class RxMode {
   }
 
   /**
-   * Get the value of the criteria when it cannot be expressed as a number..
+   * Get the value of the criteria when it cannot be expressed as a number.
    * <p>
    * @return a {@link S50} instance
    * @since 3.1.0
@@ -920,7 +932,7 @@ public class RxMode {
   }
 
   /**
-   * Set the value of the criteria when it cannot be expressed as a number..
+   * Set the value of the criteria when it cannot be expressed as a number.
    * <p>
    * @param value a {@link S50} instance
    * @since 3.1.0
@@ -939,7 +951,7 @@ public class RxMode {
   }
 
   /**
-   * Get the maximum post detection frequency at the baseband half-power point..
+   * Get the maximum post detection frequency at the baseband half-power point.
    * <p>
    * @return a {@link FreqM} instance
    * @since 3.1.0
@@ -949,7 +961,7 @@ public class RxMode {
   }
 
   /**
-   * Set the maximum post detection frequency at the baseband half-power point..
+   * Set the maximum post detection frequency at the baseband half-power point.
    * <p>
    * @param value a {@link FreqM} instance
    * @since 3.1.0
@@ -984,7 +996,7 @@ public class RxMode {
    * Set the maximum post detection frequency at the baseband half-power point.
    * <p>
    * [XSL ERR MINMAX] If PostDetectionFreqMax is used, it MUST be greater than
-   * PostDetectionFreqMin..
+   * PostDetectionFreqMin.
    * <p>
    * @param value a {@link FreqM} instance
    * @since 3.1.0
@@ -1004,7 +1016,7 @@ public class RxMode {
 
   /**
    * Get the minimum ratio of the post processing signal-to-noise ratio to the
-   * received signal-to-noise ratio..
+   * received signal-to-noise ratio.
    * <p>
    * @return a {@link dB} instance
    * @since 3.1.0
@@ -1015,7 +1027,7 @@ public class RxMode {
 
   /**
    * Set the minimum ratio of the post processing signal-to-noise ratio to the
-   * received signal-to-noise ratio..
+   * received signal-to-noise ratio.
    * <p>
    * @param value a {@link dB} instance
    * @since 3.1.0
@@ -1038,7 +1050,7 @@ public class RxMode {
    * received signal-to-noise ratio.
    * <p>
    * [XSL ERR MINMAX] If ProcessingGainMax is used, it MUST be greater than
-   * ProcessingGainMin..
+   * ProcessingGainMin.
    * <p>
    * @return a {@link dB} instance
    * @since 3.1.0
@@ -1052,7 +1064,7 @@ public class RxMode {
    * received signal-to-noise ratio.
    * <p>
    * [XSL ERR MINMAX] If ProcessingGainMax is used, it MUST be greater than
-   * ProcessingGainMin..
+   * ProcessingGainMin.
    * <p>
    * @param value a {@link dB} instance
    * @since 3.1.0
@@ -1076,7 +1088,7 @@ public class RxMode {
    * produce a frequency on or near the intermediate frequency. The rejection is
    * the ratio in dB of a particular out-of-band frequency (outside the
    * fundamental IF bandwidth) signal level required to produce a specified
-   * output, to the signal level required to produce the same output..
+   * output, to the signal level required to produce the same output.
    * <p>
    * @return a {@link Rejection_DB1} instance
    * @since 3.1.0
@@ -1091,7 +1103,7 @@ public class RxMode {
    * produce a frequency on or near the intermediate frequency. The rejection is
    * the ratio in dB of a particular out-of-band frequency (outside the
    * fundamental IF bandwidth) signal level required to produce a specified
-   * output, to the signal level required to produce the same output..
+   * output, to the signal level required to produce the same output.
    * <p>
    * @param value a {@link Rejection_DB1} instance
    * @since 3.1.0
@@ -1115,7 +1127,7 @@ public class RxMode {
    * output. This applies to superheterodyne receivers. For example, if a
    * receiver has a sensitivity of -100 dBm and could receive an image signal
    * with a maximum power of -20 dBm without causing the standard response, then
-   * the receive image rejection would be 80 dB..
+   * the receive image rejection would be 80 dB.
    * <p>
    * @return a {@link Rejection_DB1} instance
    * @since 3.1.0
@@ -1130,7 +1142,7 @@ public class RxMode {
    * output. This applies to superheterodyne receivers. For example, if a
    * receiver has a sensitivity of -100 dBm and could receive an image signal
    * with a maximum power of -20 dBm without causing the standard response, then
-   * the receive image rejection would be 80 dB..
+   * the receive image rejection would be 80 dB.
    * <p>
    * @param value a {@link Rejection_DB1} instance
    * @since 3.1.0
@@ -1152,7 +1164,7 @@ public class RxMode {
    * Get the rejection of spurious emissions involving the mixing of two or more
    * signals. Spurious emissions are emissions on a frequency or frequencies
    * that are outside the necessary bandwidth and the level of which may be
-   * reduced without affecting the related transmission of information..
+   * reduced without affecting the related transmission of information.
    * <p>
    * @return a {@link Rejection_DB2} instance
    * @since 3.1.0
@@ -1165,7 +1177,7 @@ public class RxMode {
    * Set the rejection of spurious emissions involving the mixing of two or more
    * signals. Spurious emissions are emissions on a frequency or frequencies
    * that are outside the necessary bandwidth and the level of which may be
-   * reduced without affecting the related transmission of information..
+   * reduced without affecting the related transmission of information.
    * <p>
    * @param value a {@link Rejection_DB2} instance
    * @since 3.1.0
@@ -1186,7 +1198,7 @@ public class RxMode {
   /**
    * Get the ratio in dB between the wanted signal and the maximum level of an
    * unwanted signal in the adjacent channel which still allows correct
-   * reception of the wanted signal..
+   * reception of the wanted signal.
    * <p>
    * @return a {@link dB} instance
    * @since 3.1.0
@@ -1198,7 +1210,7 @@ public class RxMode {
   /**
    * Set the ratio in dB between the wanted signal and the maximum level of an
    * unwanted signal in the adjacent channel which still allows correct
-   * reception of the wanted signal..
+   * reception of the wanted signal.
    * <p>
    * @param value a {@link dB} instance
    * @since 3.1.0
@@ -1219,7 +1231,7 @@ public class RxMode {
   /**
    * Get the drift in Hz or in ppm using the formula: Frequency tolerance (ppm)
    * = Maximum drift (Hz) / Center frequency (MHz). enter the units (Hz or ppm)
-   * in FreqToleranceUnit..
+   * in FreqToleranceUnit.
    * <p>
    * @return a {@link UN18_6} instance
    * @since 3.1.0
@@ -1231,7 +1243,7 @@ public class RxMode {
   /**
    * Set the drift in Hz or in ppm using the formula: Frequency tolerance (ppm)
    * = Maximum drift (Hz) / Center frequency (MHz). enter the units (Hz or ppm)
-   * in FreqToleranceUnit..
+   * in FreqToleranceUnit.
    * <p>
    * @param value a {@link UN18_6} instance
    * @since 3.1.0
@@ -1250,7 +1262,7 @@ public class RxMode {
   }
 
   /**
-   * Get the units in which the Frequency Tolerance is expressed..
+   * Get the units in which the Frequency Tolerance is expressed.
    * <p>
    * @return the FreqToleranceUnit value in a {@link TString} data type
    * @since 3.1.0
@@ -1260,7 +1272,7 @@ public class RxMode {
   }
 
   /**
-   * Set the units in which the Frequency Tolerance is expressed..
+   * Set the units in which the Frequency Tolerance is expressed.
    * <p>
    * @param value the FreqToleranceUnit value in a {@link TString} data type
    * @since 3.1.0
@@ -1281,7 +1293,7 @@ public class RxMode {
   }
 
   /**
-   * Get a short name for the mode..
+   * Get a short name for the mode.
    * <p>
    * @return a {@link S40} instance
    * @since 3.1.0
@@ -1291,7 +1303,7 @@ public class RxMode {
   }
 
   /**
-   * Set a short name for the mode..
+   * Set a short name for the mode.
    * <p>
    * @param value a {@link S40} instance
    * @since 3.1.0
@@ -1310,12 +1322,12 @@ public class RxMode {
   }
 
   /**
-   * Get the EmsClass
+   * Get the EmsClass.
    * <p>
    * Complex element EmsClass identifies the emission classification symbols
    * that define the baseband modulating characteristics of the emission
    * designator. The emission classification consists of the three required
-   * symbols and the two optional symbols..
+   * symbols and the two optional symbols.
    * <p>
    * @return a {@link EmsClass} instance
    * @since 3.1.0
@@ -1337,7 +1349,9 @@ public class RxMode {
   }
 
   /**
-   * Clear the EmsClass field. This sets the field to null.
+   * Clear the EmsClass field.
+   *
+   * This sets the field to null.
    */
   public void unsetEmsClass() {
     this.emsClass = null;
@@ -1348,7 +1362,7 @@ public class RxMode {
    * <p>
    * Complex element RxSignalTuning indicates the tuning capabilities, the
    * specific frequency or range of frequencies within which the equipment may
-   * tune, and the tuning increments of the equipment..
+   * tune, and the tuning increments of the equipment.
    * <p>
    * @return a {@link RxSignalTuning} instance
    * @since 3.1.0
@@ -1380,7 +1394,7 @@ public class RxMode {
    * Get the RxModulation
    * <p>
    * Complex element RxModulation contains the detailed characteristics of the
-   * modulation on the receiver side..
+   * modulation on the receiver side.
    * <p>
    * @return a {@link RxModulation} instance
    * @since 3.1.0
@@ -1402,17 +1416,19 @@ public class RxMode {
   }
 
   /**
-   * Clear the RxModulation field. This sets the field to null.
+   * Clear the RxModulation field.
+   *
+   * This sets the field to null.
    */
   public void unsetRxModulation() {
     this.rxModulation = null;
   }
 
   /**
-   * Get the Baseband
+   * Get the Baseband.
    * <p>
    * Complex element Baseband defines the parameters of the modulating or
-   * received signal..
+   * received signal.
    * <p>
    * @return a {@link Baseband} instance
    * @since 3.1.0
@@ -1434,7 +1450,9 @@ public class RxMode {
   }
 
   /**
-   * Clear the Baseband field. This sets the field to null.
+   * Clear the Baseband field.
+   *
+   * This sets the field to null.
    */
   public void unsetBaseband() {
     this.baseband = null;
@@ -1445,7 +1463,7 @@ public class RxMode {
    * <p>
    * Complex element FreqConversion contains the characteristics of a frequency
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
-   * parameters..
+   * parameters.
    * <p>
    * @return a {@link FreqConversion} instance
    * @since 3.1.0
@@ -1474,7 +1492,7 @@ public class RxMode {
   }
 
   /**
-   * Get the Spread Spectrum
+   * Get the Spread Spectrum.
    * <p>
    * Complex element SpreadSpectrum contains characteristics of systems using
    * spread spectrum techniques..
@@ -1490,7 +1508,7 @@ public class RxMode {
    * Set the Spread Spectrum
    * <p>
    * Complex element SpreadSpectrum contains characteristics of systems using
-   * spread spectrum techniques..
+   * spread spectrum techniques.
    * <p>
    * @param value a {@link SpreadSpectrum} instance
    * @since 3.1.0
@@ -1509,7 +1527,7 @@ public class RxMode {
   }
 
   /**
-   * Get the list of indices referring to Curves applicable to the data item..
+   * Get the list of indices referring to Curves applicable to the data item.
    * <p>
    * @return a {@link BigInteger} instance
    * @since 3.1.0
@@ -1531,7 +1549,9 @@ public class RxMode {
   }
 
   /**
-   * Clear the Curves field. This sets the field to null.
+   * Clear the Curves field.
+   *
+   * This sets the field to null.
    */
   public void unsetCurves() {
     this.curves = null;
@@ -1619,8 +1639,11 @@ public class RxMode {
   }
 
   /**
-   * Set
+   * Set Intermodulation Percentage.
    * <p>
+   * This is the percentage of the total signal either transmitted or received
+   * affected by the distortion products.
+   *
    * @param value An instances of type {@link Double}.
    * @return The current RxMode object instance.
    * @since 3.1.0
@@ -1631,8 +1654,11 @@ public class RxMode {
   }
 
   /**
-   * Set
+   * Set Intermodulation Effect.
    * <p>
+   * This is the effect on circuit operation caused by the level of
+   * intermodulation distortion.
+   *
    * @param value An instances of type {@link String}.
    * @return The current RxMode object instance.
    * @since 3.1.0
@@ -1786,11 +1812,12 @@ public class RxMode {
   /**
    * Set the spurious receiver responses that arise when strong undesired
    * signals and the receiver local oscillator (LO) combine in the mixer to
-   * produce a frequency on or near the intermediate frequency. The rejection is
-   * the ratio in dB of a particular out-of-band frequency (outside the
-   * fundamental IF bandwidth) signal level required to produce a specified
-   * output, to the signal level required to produce the same output.
-   * <p>
+   * produce a frequency on or near the intermediate frequency.
+   * 
+   * The rejection is the ratio in dB of a particular out-of-band frequency
+   * (outside the fundamental IF bandwidth) signal level required to produce a
+   * specified output, to the signal level required to produce the same
+   * output.
    * @param value An instances of type {@link Double}.
    * @return The current RxMode object instance.
    * @since 3.1.0
@@ -1803,7 +1830,9 @@ public class RxMode {
   /**
    * Set the ratio of the image frequency signal level required to produce a
    * specified output, to the desired signal level required to produce the same
-   * output. This applies to superheterodyne receivers. For example, if a
+   * output.
+   *
+   * This applies to superheterodyne receivers. For example, if a
    * receiver has a sensitivity of -100 dBm and could receive an image signal
    * with a maximum power of -20 dBm without causing the standard response, then
    * the receive image rejection would be 80 dB.
@@ -1819,7 +1848,9 @@ public class RxMode {
 
   /**
    * Set the rejection of spurious emissions involving the mixing of two or more
-   * signals. Spurious emissions are emissions on a frequency or frequencies
+   * signals.
+   *
+   * Spurious emissions are emissions on a frequency or frequencies
    * that are outside the necessary bandwidth and the level of which may be
    * reduced without affecting the related transmission of information.
    * <p>
@@ -1993,7 +2024,7 @@ public class RxMode {
   }
 
   /**
-   * Set the Baseband
+   * Set the Baseband.
    * <p>
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
@@ -2010,7 +2041,7 @@ public class RxMode {
   }
 
   /**
-   * Set the Baseband
+   * Set the Baseband.
    * <p>
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
@@ -2027,7 +2058,7 @@ public class RxMode {
   }
 
   /**
-   * Set the FreqConversion
+   * Set the FreqConversion.
    * <p>
    * Complex element FreqConversion contains the characteristics of a frequency
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
@@ -2045,7 +2076,7 @@ public class RxMode {
   }
 
   /**
-   * Set the FreqConversion
+   * Set the FreqConversion.
    * <p>
    * Complex element FreqConversion contains the characteristics of a frequency
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
@@ -2063,7 +2094,7 @@ public class RxMode {
   }
 
   /**
-   * Set the Spread Spectrum
+   * Set the Spread Spectrum.
    * <p>
    * Complex element SpreadSpectrum contains characteristics of systems using
    * spread spectrum techniques.

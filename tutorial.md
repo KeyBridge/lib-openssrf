@@ -14,7 +14,7 @@ SSRF supports numerous business processes, but these can be considered in five g
 
 ### Reference Data
 
-SSRF includes a large set of pre-defined reference data and supports the query and distribution of other basic spectrum-related reference information. Two usefule examples are:
+SSRF includes a large set of pre-defined reference data and supports the query and distribution of other basic spectrum-related reference information. Two useful examples are:
 
  * Codes: SSRF includes a large set of enumerated codes and data types. These codes, typically implemented as text strings, are used to populate data fields in other SSRF objects.
  * TOA: The SSRF `TOA` data object supports the conveyance of international Table of Allocation and channel plan information. For more information about TOAs see [Frequency Allocation](http://en.wikipedia.org/wiki/Frequency_allocation) at Wikipedia.

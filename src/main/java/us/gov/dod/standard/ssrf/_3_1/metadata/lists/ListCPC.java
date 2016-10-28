@@ -32,10 +32,21 @@ import us.gov.dod.standard.ssrf._3_1.jrfl.JRFLEntry;
 @XmlEnum
 public enum ListCPC {
 
+  /**
+   *  Frequencies with interest to the Intelligence sections.
+   */
   @XmlEnumValue("Guarded")
   GUARDED("Guarded"),
+  /**
+   *  Frequencies that have importance to the operation, but may be jammed because of geographic or time separation.
+   */
   @XmlEnumValue("Protected")
   PROTECTED("Protected"),
+  /**
+   * Safety of life, stop buzzer, etc.
+   *
+   * If priorities are used, Taboo should always be A1.
+   */
   @XmlEnumValue("Taboo")
   TABOO("Taboo");
   private final String value;
