@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
  * &lt;/Comment Source&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -333,7 +333,7 @@ public class CommentSource {
    * Complex element Comment contains the comment provided by the Host Nation or
    * Administration regarding an equipment supportability.
    * <p>
-   * @param values One or more instances of type {@link Comment...}.
+   * @param values One or more instances of type {@link Comment}.
    * @return The current CommentSource object instance.
    * @since 3.1.0
    */

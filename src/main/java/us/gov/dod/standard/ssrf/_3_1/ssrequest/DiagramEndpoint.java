@@ -35,7 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCIC;
  * <p>
  * Sub-Element is {@link EndpointLocation}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -473,7 +473,7 @@ public class DiagramEndpoint {
    * Complex element EndpointLocation defines locations where the diagram
    * endpoint is allowed or forbidden from use.
    * <p>
-   * @param values One or more instances of type {@link EndpointLocation...}.
+   * @param values One or more instances of type {@link EndpointLocation}.
    * @return The current DiagramEndpoint object instance.
    * @since 3.1.0
    */

@@ -45,7 +45,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCO;
  * &lt;/StationConfig&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -968,7 +968,7 @@ public class StationConfig {
    * Complex element Blanking contains the start and stop angles of a horizontal
    * and/or vertical sector that is blanked.
    * <p>
-   * @param values One or more instances of type {@link Blanking...}.
+   * @param values One or more instances of type {@link Blanking}.
    * @return The current StationConfig object instance.
    * @since 3.1.0
    */

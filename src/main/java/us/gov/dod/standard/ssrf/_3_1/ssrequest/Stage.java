@@ -47,7 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.StageLocation;
  * &lt;/Stage&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -548,7 +548,7 @@ public class Stage {
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    * <p>
-   * @param values One or more instances of type {@link StageLocation...}.
+   * @param values One or more instances of type {@link StageLocation}.
    * @return The current Stage object instance.
    * @since 3.1.0
    */

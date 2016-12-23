@@ -70,7 +70,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS7;
  * &lt;/ObservedPolarisationAnalysis&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1506,7 +1506,7 @@ public class ObservedPolarisationAnalysis {
    * the parametric information for the polarization tilt angle specific values.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedPolarisationValues...}.
+   *               {@link ObservedPolarisationValues}.
    * @return The current ObservedPolarisationAnalysis object instance.
    * @since 3.1.0
    */

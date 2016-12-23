@@ -36,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * <p>
  * Example: See {@link ObservedMOPAnalysis}.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -602,7 +602,7 @@ public class ObservedMOPBits {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link ObservedMOPValues...}.
+   * @param values One or more instances of type {@link ObservedMOPValues}.
    * @return The current ObservedMOPBits object instance.
    * @since 3.1.0
    */

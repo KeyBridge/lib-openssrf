@@ -84,7 +84,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSY;
  * &lt;/ObservedRFAnalysis&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -2243,7 +2243,7 @@ public class ObservedRFAnalysis {
    * Complex element ObservedRFValues (US) contains details of actual RF
    * observations.
    * <p>
-   * @param values One or more instances of type {@link ObservedRFValues...}.
+   * @param values One or more instances of type {@link ObservedRFValues}.
    * @return The current ObservedRFAnalysis object instance.
    * @since 3.1.0
    */
