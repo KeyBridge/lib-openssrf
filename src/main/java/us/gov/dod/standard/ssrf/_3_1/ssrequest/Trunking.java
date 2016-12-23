@@ -52,7 +52,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  * &lt;/Trunking&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -937,7 +937,7 @@ public class Trunking {
    * of the existing assignment to be relinquished or used in the trunked land
    * mobile system.
    * <p>
-   * @param values One or more instances of type {@link TrunkingAssignment...}.
+   * @param values One or more instances of type {@link TrunkingAssignment}.
    * @return The current Trunking object instance.
    * @since 3.1.0
    */

@@ -48,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * &lt;/Deployment&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -219,7 +219,7 @@ public class Deployment {
    * equipment is installed, whether it is mounted at a fixed site atop a
    * mountain, in a shelter, in a vehicle, aboard a helicopter, etc.
    * <p>
-   * @param values One or more instances of type {@link Installation...}.
+   * @param values One or more instances of type {@link Installation}.
    * @return The current Deployment object instance.
    * @since 3.1.0
    */

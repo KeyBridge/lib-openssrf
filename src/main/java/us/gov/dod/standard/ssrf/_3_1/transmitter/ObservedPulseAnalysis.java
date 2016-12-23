@@ -108,7 +108,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS7;
  * &lt;/ObservedPulseAnalysis&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -3702,7 +3702,7 @@ public class ObservedPulseAnalysis {
    * Complex element ObservedPulseValues (US) contains data describing the
    * distinct Pulse values related to the Modulation Type.
    * <p>
-   * @param values One or more instances of type {@link ObservedPulseValues...}.
+   * @param values One or more instances of type {@link ObservedPulseValues}.
    * @return The current ObservedPulseAnalysis object instance.
    * @since 3.1.0
    */

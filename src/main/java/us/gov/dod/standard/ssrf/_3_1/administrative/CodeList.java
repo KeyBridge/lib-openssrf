@@ -49,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
  * &lt;/CodeList&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -388,7 +388,7 @@ public class CodeList {
    * Set the three-letter code of an existing Code List to be modified, or an
    * unused three-letter code in the case of the creation of a new Code List.
    *
-   * @param values One or more instances of type {@link Code...}.
+   * @param values One or more instances of type {@link Code}.
    * @return The current CodeList object instance.
    * @since 3.1.0
    */

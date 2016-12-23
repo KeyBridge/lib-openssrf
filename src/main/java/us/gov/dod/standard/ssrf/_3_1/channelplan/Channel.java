@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
  * <p>
  * Sub-Element is {@link ChannelFreq}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -194,7 +194,7 @@ public class Channel {
   /**
    * Set one frequency in the channel plan.
    * <p>
-   * @param values One or more instances of type {@link ChannelFreq...}.
+   * @param values One or more instances of type {@link ChannelFreq}.
    * @return The current Channel object instance.
    * @since 3.1.0
    */

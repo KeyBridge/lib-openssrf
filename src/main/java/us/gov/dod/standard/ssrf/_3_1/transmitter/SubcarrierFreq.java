@@ -32,7 +32,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.FreqM;
  * <p>
  * Sub-Element is {@link SubcarrierTone}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -244,7 +244,7 @@ public class SubcarrierFreq {
    * Complex element SubcarrierTone describes the sidetone frequency used to
    * modulate the subcarrier.
    * <p>
-   * @param values One or more instances of type {@link SubcarrierTone...}.
+   * @param values One or more instances of type {@link SubcarrierTone}.
    * @return The current SubcarrierFreq object instance.
    * @since 3.1.0
    */

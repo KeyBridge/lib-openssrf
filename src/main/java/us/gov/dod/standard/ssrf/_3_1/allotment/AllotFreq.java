@@ -37,7 +37,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
  * <p>
  * Example: See {@link Allotment}.
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -380,7 +380,7 @@ public class AllotFreq {
    * Complex element LocationRestriction indicates a Location where the
    * Allotment usage is forbidden.
    *
-   * @param values One or more instances of type {@link LocationRestriction...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current AllotFreq object instance.
    * @since 3.1.0
    */

@@ -82,7 +82,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS8;
  * &lt;/ObservedScanAnalysis&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -2221,7 +2221,7 @@ public class ObservedScanAnalysis {
    * Complex element ObservedScanValues (US) contains data describing the
    * discrete scan rate values and supporting statistical information.
    * <p>
-   * @param values One or more instances of type {@link ObservedScanValues...}.
+   * @param values One or more instances of type {@link ObservedScanValues}.
    * @return The current ObservedScanAnalysis object instance.
    * @since 3.1.0
    */
