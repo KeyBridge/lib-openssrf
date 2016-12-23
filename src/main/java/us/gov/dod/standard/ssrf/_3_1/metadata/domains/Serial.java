@@ -280,9 +280,9 @@ public class Serial extends AMetadata<Serial> implements Comparable<Serial> {
   }
 
   /**
-   * Set the serial number Organization code (OPTIONAL).
+   * Set the serial number Organisation code (OPTIONAL).
    * <p>
-   * @param organisation
+   * @param organisation the organisation to set
    */
   public void setOrganisation(String organisation) {
     if (organisation.length() > 4) {

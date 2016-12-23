@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 /**
  * The SSRF US_DB150 data type.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -78,7 +78,7 @@ public class US_DB150 extends AMetadata<US_DB150> implements Comparable<US_DB150
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value
    */
   public void setValue(BigDecimal value) {
     this.value = value;
