@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
  * Decimal degrees (instead of DMS-encoded string) and relying upon the
  * XmlJavaTypeAdapter for DMS translation.
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/04/2015
  */
 public class XmlAdapterLAT extends AXmlAdapterNumber {
@@ -176,6 +176,7 @@ public class XmlAdapterLAT extends AXmlAdapterNumber {
   /**
    * Get the latitude hemisphere from a latitude in decimal degrees.
    *
+   * @param latitude the latitude to get the hemisphere for.
    * @return the latitude hemisphere: [N]orth or [S]outh
    */
   protected String getLatHemisphere(Number latitude) {
