@@ -30,7 +30,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * @deprecated Releasability is an annotation field in the Common abstract
  * class. This class wrapper is NOT used but exists only as a relic from the XML
  * schema.
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -70,7 +70,7 @@ public class Releasability extends AMetadata<Releasability> {
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value
    */
   public void setValue(Set<ListCCY> value) {
     this.value = value;

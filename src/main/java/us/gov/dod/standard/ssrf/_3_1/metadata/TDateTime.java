@@ -88,7 +88,7 @@ public class TDateTime extends AMetadata<TDateTime> implements IMetadataType, Co
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value datetime to set.
    */
   public final void setValue(Calendar value) {
     this.value = (value != null ? (Calendar) value.clone() : null);
@@ -98,7 +98,7 @@ public class TDateTime extends AMetadata<TDateTime> implements IMetadataType, Co
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value datetime to set.
    */
   public final void setValue(Date value) {
     if (value != null) {

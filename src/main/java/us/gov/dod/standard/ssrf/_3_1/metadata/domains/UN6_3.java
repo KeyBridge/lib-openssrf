@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 /**
  * The SSRF UN6_3 data type.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -78,7 +78,7 @@ public class UN6_3 extends AMetadata<UN6_3> implements Comparable<UN6_3> {
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value
    */
   public void setValue(BigDecimal value) {
     this.value = value;
