@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 /**
  * The SSRF InfoDataRate data type.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -51,7 +51,7 @@ public class InfoDataRate extends AMetadata<InfoDataRate> implements Comparable<
   /**
    * Construct a new InfoDataRate instance with the given initial value.
    * <p>
-   * @param value The initial value.
+   * @param value The initial value in bits per second.
    */
   public InfoDataRate(BigDecimal value) {
     this.value = value;
@@ -60,7 +60,7 @@ public class InfoDataRate extends AMetadata<InfoDataRate> implements Comparable<
   /**
    * Construct a new InfoDataRate instance with the given initial value.
    * <p>
-   * @param value The initial value.
+   * @param value The initial value in bits per second.
    */
   public InfoDataRate(Double value) {
     this.value = BigDecimal.valueOf(value);
@@ -69,7 +69,7 @@ public class InfoDataRate extends AMetadata<InfoDataRate> implements Comparable<
   /**
    * Get the value of the value property.
    * <p>
-   * @return the value of the value property
+   * @return the value of the value property in bits per second.
    */
   public BigDecimal getValue() {
     return value;
@@ -78,7 +78,7 @@ public class InfoDataRate extends AMetadata<InfoDataRate> implements Comparable<
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value in bits per second.
    */
   public void setValue(BigDecimal value) {
     this.value = value;

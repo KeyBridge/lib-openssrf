@@ -26,7 +26,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.StnClass;
  * <p>
  * Used in {@link StnClass}, {@link Usage}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListUSC")
@@ -673,11 +673,11 @@ public enum ListUSC {
    */
   FC("FC"),
   /**
-   * MARINE SUPPORT - TESTING & TRAINING (FCC)
+   * MARINE SUPPORT - TESTING &amp; TRAINING (FCC)
    */
   FCA("FCA"),
   /**
-   * MARINE SUPPORT - TESTING & TRAINING (TEMPORARY) (FCC)
+   * MARINE SUPPORT - TESTING &amp; TRAINING (TEMPORARY) (FCC)
    */
   @XmlEnumValue("FCA2")
   FCA_2("FCA2"),
@@ -1137,7 +1137,7 @@ public enum ListUSC {
   @XmlEnumValue("MO3I")
   MO_3_I("MO3I"),
   /**
-   * MOBILE & TEMPORARY FIXED (FCC)
+   * MOBILE &amp; TEMPORARY FIXED (FCC)
    */
   @XmlEnumValue("MO5")
   MO_5("MO5"),

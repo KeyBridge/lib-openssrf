@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
 /**
  * The SSRF D data type.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -94,7 +94,7 @@ public class D extends AMetadata<D> implements Comparable<D> {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the value to set
    */
   public final void setValue(Calendar value) {
     this.value = (value != null ? (Calendar) value.clone() : null);
@@ -104,7 +104,7 @@ public class D extends AMetadata<D> implements Comparable<D> {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the value to set
    */
   public final void setValue(Date value) {
     if (value != null) {
