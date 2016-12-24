@@ -52,12 +52,12 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCRS;
  *     &lt;Name cls="U"&gt;XYZ&lt;/Name&gt;
  *   &lt;/Nomenclature&gt;
  *   &lt;AntMode&gt;
- *     &lt;All_AntMode_elements/&gt;
- *     &lt;/AntMode&gt;
- *   &lt;/Antenna&gt;
+ *     &lt;All_AntMode_elements.../&gt;
+ *   &lt;/AntMode&gt;
+ * &lt;/Antenna&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1287,7 +1287,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current Antenna object instance.
    * @since 3.1.0
    */
@@ -1323,7 +1323,7 @@ public class Antenna extends Common<Antenna> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    *
-   * @param values One or more instances of type {@link Nomenclature...}.
+   * @param values One or more instances of type {@link Nomenclature}.
    * @return The current Antenna object instance.
    * @since 3.1.0
    */
@@ -1359,7 +1359,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element AntHardware contains the physical parameters related to the
    * antenna feed and lead.
    *
-   * @param values One or more instances of type {@link AntHardware...}.
+   * @param values One or more instances of type {@link AntHardware}.
    * @return The current Antenna object instance.
    * @since 3.1.0
    */
@@ -1393,7 +1393,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element AntMode contains the technical characteristics of one
    * antenna mode.
    *
-   * @param values One or more instances of type {@link AntMode...}.
+   * @param values One or more instances of type {@link AntMode}.
    * @return The current Antenna object instance.
    * @since 3.1.0
    */
@@ -1427,7 +1427,7 @@ public class Antenna extends Common<Antenna> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Antenna.
    *
-   * @param values One or more instances of type {@link UsingCountries...}.
+   * @param values One or more instances of type {@link UsingCountries}.
    * @return The current Antenna object instance.
    * @since 3.1.0
    */
@@ -1492,7 +1492,7 @@ public class Antenna extends Common<Antenna> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Antenna} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link TString AntType}, {@link TString Generic}.
    * <p>
    * Note that this method only checks for the presence of required information;
