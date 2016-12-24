@@ -41,6 +41,37 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <netbeans.hint.license>apache20</netbeans.hint.license>
+    <compilerArgument>-Xlint:unchecked</compilerArgument>
+    <mavenjavadocplugin.version>2.9.1</mavenjavadocplugin.version>
   </properties>
+  
+  <build>
+      <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <testSource>1.8</testSource>
+                <testTarget>1.8</testTarget>
+                            <compilerArgument>
+                                -Xlint:deprecation
+                            </compilerArgument>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${mavenjavadocplugin.version}</version>
+                <configuration>
+                    <excludePackageNames>org.codice.imaging.nitf.core.schema</excludePackageNames>
+                </configuration>
+            </plugin>
+
+    </plugins>
+</build>
+
 
 </project>
