@@ -46,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *   &lt;/AntMode&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -2012,7 +2012,7 @@ public class AntMode {
    * reference to an isotropic source (dBi), in the direction of maximum
    * radiation.
    *
-   * @param values One or more instances of type {@link AntGain...}.
+   * @param values One or more instances of type {@link AntGain}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2047,7 +2047,7 @@ public class AntMode {
    * Complex element AntFreqs contains the antenna's designed tuning range, or
    * the discrete operating frequency.
    * <p>
-   * @param values One or more instances of type {@link AntFreqs...}.
+   * @param values One or more instances of type {@link AntFreqs}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2085,7 +2085,7 @@ public class AntMode {
    * be taken with theta as the dependent variable. These will be great circle
    * cuts through the main-beam peak.
    * <p>
-   * @param values One or more instances of type {@link AntPattern...}.
+   * @param values One or more instances of type {@link AntPattern}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2123,7 +2123,7 @@ public class AntMode {
    * Complex element AntEfficiency describes the antenna efficiency at various
    * frequencies within the frequency range of the antenna.
    * <p>
-   * @param values One or more instances of type {@link AntEfficiency...}.
+   * @param values One or more instances of type {@link AntEfficiency}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2158,7 +2158,7 @@ public class AntMode {
    * an Antenna Mode; it may be used to describe the VSWR curve as a function of
    * frequency.
    * <p>
-   * @param values One or more instances of type {@link VSWR...}.
+   * @param values One or more instances of type {@link VSWR}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2194,7 +2194,7 @@ public class AntMode {
    * with observed Antenna sidelobes and backlobes.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedLobeAnalysis...}.
+   *               {@link ObservedLobeAnalysis}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2229,7 +2229,7 @@ public class AntMode {
    * the parametric information for the polarization and tilt angle information.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedPolarisationAnalysis...}.
+   *               {@link ObservedPolarisationAnalysis}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */
@@ -2266,7 +2266,7 @@ public class AntMode {
    * Driver information.
    * <p>
    * @param values One or more instances of type
-   *               {@link ObservedScanAnalysis...}.
+   *               {@link ObservedScanAnalysis}.
    * @return The current AntMode object instance.
    * @since 3.1.0
    */

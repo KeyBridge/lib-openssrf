@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUS5;
  * <p>
  * Sub-Element is {@link Manufacturer}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -332,7 +332,7 @@ public class Nomenclature {
    * Nomenclature. Additionally the country in which the equipment is
    * manufactured may be included.
    * <p>
-   * @param values One or more instances of type {@link Manufacturer...}.
+   * @param values One or more instances of type {@link Manufacturer}.
    * @return The current Nomenclature object instance.
    * @since 3.1.0
    */
