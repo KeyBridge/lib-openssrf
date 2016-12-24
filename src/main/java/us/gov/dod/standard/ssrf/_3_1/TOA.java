@@ -47,7 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.FreqBand;
  * &lt;/TOA&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -486,13 +486,13 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the Footnote
+   * Set the Footnote.
    * <p>
    * Complex element Footnote contains the text and identifier of a Footnote,
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
    * or Band Application (e.g., "Wind Profiler").
    *
-   * @param values One or more instances of type {@link Footnote...}.
+   * @param values One or more instances of type {@link Footnote}.
    * @return The current TOA object instance.
    * @since 3.1.0
    */
@@ -504,7 +504,7 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the Footnote
+   * Set the Footnote.
    * <p>
    * Complex element Footnote contains the text and identifier of a Footnote,
    * FCC Rule Part Number, Band User (e.g., "Military", "Civil Support Team").
@@ -522,11 +522,11 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the ChannelPlanRef
+   * Set the ChannelPlanRef.
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    *
-   * @param values One or more instances of type {@link ChannelPlanRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current TOA object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -541,7 +541,7 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the ChannelPlanRef
+   * Set the ChannelPlanRef.
    * <p>
    * Complex element ChannelPlanRef refers to a ChannelPlan.
    *
@@ -560,12 +560,12 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the Country
+   * Set the Country.
    * <p>
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force.
    *
-   * @param values One or more instances of type {@link Country...}.
+   * @param values One or more instances of type {@link Country}.
    * @return The current TOA object instance.
    * @since 3.1.0
    */
@@ -577,7 +577,7 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the Country
+   * Set the Country.
    * <p>
    * Complex element Country indicates the country or area for which this Table
    * of Allocations is in force.
@@ -594,14 +594,14 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the FreqBand
+   * Set the FreqBand.
    * <p>
    * Complex element FreqBand contains the allocation of a specific frequency
    * band to radiocommunication services. It may also provide additional
    * information such as the specification of the rights and responsibilities of
    * a user.
    *
-   * @param values One or more instances of type {@link FreqBand...}.
+   * @param values One or more instances of type {@link FreqBand}.
    * @return The current TOA object instance.
    * @since 3.1.0
    */
@@ -613,7 +613,7 @@ public class TOA extends Common<TOA> {
   }
 
   /**
-   * Set the FreqBand
+   * Set the FreqBand.
    * <p>
    * Complex element FreqBand contains the allocation of a specific frequency
    * band to radiocommunication services. It may also provide additional
@@ -654,8 +654,8 @@ public class TOA extends Common<TOA> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link TOA} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link S50 Administration}, {@link Set<FreqBand> FreqBand}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
+   * and {@link S50 Administration}, Set of {@link FreqBand FreqBand}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
