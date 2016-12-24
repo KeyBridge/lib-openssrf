@@ -35,7 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSN;
  * <p>
  * Sub-Elements are {@link StnClass}, {@link Variance}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -542,7 +542,7 @@ public class Allocation {
    * upper level allocation (e.g. a national allocation not aligned with the ITU
    * RR).
    * <p>
-   * @param values One or more instances of type {@link Variance...}.
+   * @param values One or more instances of type {@link Variance}.
    * @return The current Allocation object instance.
    * @since 3.1.0
    */
@@ -577,7 +577,7 @@ public class Allocation {
    * Complex element StnClass contains the station class associated with the TOA
    * frequency usage.
    * <p>
-   * @param values One or more instances of type {@link StnClass...}.
+   * @param values One or more instances of type {@link StnClass}.
    * @return The current Allocation object instance.
    * @since 3.1.0
    */
@@ -606,11 +606,11 @@ public class Allocation {
   }
 
   /**
-   * Set the ChannelPlanRef
+   * Set the ChannelPlanRef.
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
-   * @param values One or more instances of type {@link ChannelPlanRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Allocation object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -625,7 +625,7 @@ public class Allocation {
   }
 
   /**
-   * Set the ChannelPlanRef
+   * Set the ChannelPlanRef.
    * <p>
    * Complex element ChannelPlanRef references the ChannelPlan.
    * <p>
@@ -648,7 +648,7 @@ public class Allocation {
    * band Allocation. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}.
+   * @param values One or more instances of type {@link BigInteger}.
    * @return The current Allocation object instance.
    * @since 3.1.0
    */
@@ -664,7 +664,7 @@ public class Allocation {
    * band Allocation. Each entry in the list should be separated by a blank
    * space.
    * <p>
-   * @param values A collection of {@link Footnotes} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current Allocation object instance.
    * @since 3.1.0
    */
