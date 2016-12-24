@@ -33,7 +33,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * <p>
  * Example: See {@link RadiationPlan}.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -441,7 +441,7 @@ public class JammingPlan {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setStartLocation(Location)} instead.
+   * {@link #withStartLocation(Location)} instead.
    */
   @Deprecated
   public void setStartLocationRef(Serial value) {
@@ -932,7 +932,7 @@ public class JammingPlan {
    * Complex element JammingTarget (US) describes the target location and
    * identifies the jamming loadset to be used.
    * <p>
-   * @param values One or more instances of type {@link JammingTarget...}.
+   * @param values One or more instances of type {@link JammingTarget}.
    * @return The current JammingPlan object instance.
    * @since 3.1.0
    */
@@ -989,7 +989,7 @@ public class JammingPlan {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link JammingPlan} requires {@link Set<JammingTarget> JammingTarget},
+   * {@link JammingPlan} requires {@link JammingTarget},
    * {@link TString Level3Auth}, {@link TString Priority}, {@link TString StartTrigger}, {@link TString StopTrigger}.
    * <p>
    * Note that this method only checks for the presence of required information;
@@ -1115,8 +1115,9 @@ public class JammingPlan {
    * <p>
    * This method builds the transient {@link #startLocation} with values from
    * the imported {@link #startLocationRef} field. This method should typically
-   * be called after the JammingPlan is imported from XML. * @param root the
-   * SSRF root instance.
+   * be called after the JammingPlan is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */
