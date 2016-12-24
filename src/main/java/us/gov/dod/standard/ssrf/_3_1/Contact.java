@@ -24,15 +24,16 @@ import us.gov.dod.standard.ssrf._3_1.contact.Address;
 import us.gov.dod.standard.ssrf._3_1.contact.EMail;
 import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S10;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S30;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
  * Contact is the XML root for all parameters of a Contact.
  * <p>
- * Sub-Elements are {@link Address}, {@link Email}, {@link TelephoneFax}
+ * Sub-Elements are {@link Address}, {@link EMail}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -47,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;/Contact&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -583,7 +584,7 @@ public class Contact extends Common<Contact> {
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    *
-   * @param values One or more instances of type {@link Address...}.
+   * @param values One or more instances of type {@link Address}.
    * @return The current Contact object instance.
    * @since 3.1.0
    */
@@ -617,7 +618,7 @@ public class Contact extends Common<Contact> {
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    *
-   * @param values One or more instances of type {@link TelephoneFax...}.
+   * @param values One or more instances of type {@link TelephoneFax}.
    * @return The current Contact object instance.
    * @since 3.1.0
    */
@@ -650,7 +651,7 @@ public class Contact extends Common<Contact> {
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    *
-   * @param values One or more instances of type {@link EMail...}.
+   * @param values One or more instances of type {@link EMail}.
    * @return The current Contact object instance.
    * @since 3.1.0
    */
@@ -701,7 +702,7 @@ public class Contact extends Common<Contact> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Contact} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

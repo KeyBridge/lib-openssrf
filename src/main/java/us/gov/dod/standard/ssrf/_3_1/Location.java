@@ -83,7 +83,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;/Location&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -898,7 +898,7 @@ public class Location extends Common<Location> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current Location object instance.
    * @since 3.1.0
    */
@@ -933,7 +933,7 @@ public class Location extends Common<Location> {
    * is a flying object, this data represents the maximum altitude of the object
    * above ground.
    *
-   * @param values One or more instances of type {@link Point...}.
+   * @param values One or more instances of type {@link Point}.
    * @return The current Location object instance.
    * @since 3.1.0
    */
@@ -969,7 +969,7 @@ public class Location extends Common<Location> {
    * Earth, defined by at least three points, used to describe an operational
    * area or an excluded area.
    *
-   * @param values One or more instances of type {@link Polygon...}.
+   * @param values One or more instances of type {@link Polygon}.
    * @return The current Location object instance.
    * @since 3.1.0
    */
@@ -1005,7 +1005,7 @@ public class Location extends Common<Location> {
    * and semi-minor axis, and by the orientation (azimuth) of the semi-major
    * axis. This element SHALL NOT be used to describe a satellite orbit.
    *
-   * @param values One or more instances of type {@link Ellipse...}.
+   * @param values One or more instances of type {@link Ellipse}.
    * @return The current Location object instance.
    * @since 3.1.0
    */
@@ -1037,7 +1037,7 @@ public class Location extends Common<Location> {
   /**
    * Set the serial of the referenced Location.
    *
-   * @param values One or more instances of type {@link LocationRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Location object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -1097,7 +1097,7 @@ public class Location extends Common<Location> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Location} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link S100 Name}.
    * <p>
    * Note that this method only checks for the presence of required information;
