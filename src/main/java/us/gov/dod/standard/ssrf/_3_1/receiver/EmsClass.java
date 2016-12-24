@@ -42,7 +42,7 @@ import us.gov.dod.standard.ssrf._3_1.transmitter.TxMode;
  * Within an interference Report:* &lt;SourceEmsClass&gt;A3E&lt;/SourceEmsClass&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -132,7 +132,7 @@ public class EmsClass {
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
+   * A list of  Common/ExternalReferenceRef index values applicable to the current data
    * item.
    * <p>
    * Format is List of UN6
@@ -389,7 +389,7 @@ public class EmsClass {
   }
 
   /**
-   * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Get a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item..
    * <p>
    * @return a {@link BigInteger} instance
@@ -655,7 +655,7 @@ public class EmsClass {
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}.
+   * @param values One or more instances of type {@link BigInteger}.
    * @return The current EmsClass object instance.
    * @since 3.1.0
    */
@@ -682,10 +682,10 @@ public class EmsClass {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}.
+   * @param values One or more instances of type {@link BigInteger}.
    * @return The current EmsClass object instance.
    * @since 3.1.0
    */
@@ -697,10 +697,10 @@ public class EmsClass {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item.
    * <p>
-   * @param values A collection of {@link ExtReferences} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current EmsClass object instance.
    * @since 3.1.0
    */
