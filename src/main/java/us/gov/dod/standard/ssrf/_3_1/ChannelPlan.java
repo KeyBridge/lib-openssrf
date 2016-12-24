@@ -24,8 +24,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.channelplan.Channel;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
-import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 
 /**
@@ -49,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;/ChannelPlan&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -166,7 +167,7 @@ public class ChannelPlan extends Common<ChannelPlan> {
   /**
    * Set the serial of the referenced ChannelPlan.
    *
-   * @param values One or more instances of type {@link Channel...}.
+   * @param values One or more instances of type {@link Channel}.
    * @return The current ChannelPlan object instance.
    * @since 3.1.0
    */
@@ -208,8 +209,8 @@ public class ChannelPlan extends Common<ChannelPlan> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link ChannelPlan} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link Set<Channel> Channel}, {@link S100 Name}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
+   * Set of {@link Channel Channel} and {@link S100 Name}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
