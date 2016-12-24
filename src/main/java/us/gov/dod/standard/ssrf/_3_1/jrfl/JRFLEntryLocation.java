@@ -27,7 +27,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
  * <p>
  * Element of {@link JRFLEntry}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -95,7 +95,7 @@ public class JRFLEntryLocation {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLocation(Location)} instead.
+   * {@link #withLocation(Location)} instead.
    */
   @Deprecated
   public void setSerial(Serial value) {
@@ -287,8 +287,9 @@ public class JRFLEntryLocation {
    * <p>
    * This method builds the transient {@link #location} with values from the
    * imported {@link #serial} field. This method should typically be called
-   * after the JRFLEntryLocation is imported from XML. * @param root the SSRF
-   * root instance.
+   * after the JRFLEntryLocation is imported from XML.
+   *
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */
