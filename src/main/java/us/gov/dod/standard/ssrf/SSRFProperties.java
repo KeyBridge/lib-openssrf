@@ -183,8 +183,8 @@ public class SSRFProperties extends Properties {
    * Furthermore, the document must satisfy the properties DTD described above.
    *
    * @param inFile a properties file
-   * @throws IOException
-   * @throws InvalidPropertiesFormatException
+   * @throws IOException if the underlying stream throws (e.g. file not found or not readable).
+   * @throws InvalidPropertiesFormatException if the XML could not be parsed.
    */
   public synchronized void loadFromXML(File inFile) throws IOException, InvalidPropertiesFormatException {
     super.loadFromXML(new FileInputStream(inFile));
