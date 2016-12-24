@@ -142,7 +142,7 @@ public abstract class SchemaRoot<T> {
   protected Set<RadiationPlan> radiationPlan;
 
   /**
-   * Get
+   * Get Contacts.
    *
    * @return a {@link Contact} instance
    * @since 3.1.0
@@ -171,7 +171,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get roles.
    *
    * @return a {@link Role} instance
    * @since 3.1.0
@@ -200,7 +200,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get Organisation.
    *
    * @return a non-null but possibly empty list of {@link Organisation}
    *         instances
@@ -229,7 +229,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get external references.
    *
    * @return a {@link ExternalReference} instance
    * @since 3.1.0
@@ -258,7 +258,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get administrative entries.
    *
    * @return a non-null but possibly empty list of {@link Administrative}
    *         instances
@@ -287,7 +287,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get locations.
    *
    * @return a non-null but possibly empty list of {@link Location} instances
    */
@@ -315,7 +315,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get channel plan.
    *
    * @return a non-null but possibly empty list of {@link ChannelPlan} instances
    */
@@ -343,7 +343,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get TOA.
    *
    * @return a non-null but possibly empty list of {@link TOA} instances
    */
@@ -371,7 +371,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get transmitters.
    *
    * @return a non-null but possibly empty list of {@link Transmitter} instances
    */
@@ -399,7 +399,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get receivers.
    *
    * @return a non-null but possibly empty list of {@link Receiver} instances
    */
@@ -427,7 +427,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get antennas.
    *
    * @return a non-null but possibly empty list of {@link Antenna} instances
    */
@@ -455,7 +455,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get RF systems.
    *
    * @return a non-null but possibly empty list of {@link RFSystem} instances
    */
@@ -483,7 +483,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get spectrum supportability requests.
    *
    * @return a non-null but possibly empty list of {@link SSRequest} instances
    */
@@ -511,7 +511,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get spectrum supportability replies.
    *
    * @return a non-null but possibly empty list of {@link SSReply} instances
    */
@@ -539,7 +539,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get allotments.
    *
    * @return a non-null but possibly empty list of {@link Allotment} instances
    */
@@ -567,7 +567,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get assignments.
    *
    * @return a non-null but possibly empty list of {@link Assignment} instances
    */
@@ -595,7 +595,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get satellites.
    *
    * @return a non-null but possibly empty list of {@link Satellite} instances
    */
@@ -623,7 +623,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get interference reports.
    *
    * @return a non-null but possibly empty list of {@link IntfReport} instances
    */
@@ -651,7 +651,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get JRFLs.
    *
    * @return a non-null but possibly empty list of {@link JRFL} instances
    */
@@ -679,7 +679,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get force elements.
    *
    * @return a non-null but possibly empty list of {@link ForceElement}
    *         instances
@@ -708,7 +708,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get force element deployments.
    *
    * @return a non-null but possibly empty list of {@link FEDeployment}
    *         instances
@@ -737,7 +737,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get messages.
    *
    * @return a non-null but possibly empty list of {@link Message} instances
    */
@@ -765,7 +765,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get notes.
    *
    * @return a non-null but possibly empty list of {@link Note} instances
    */
@@ -793,7 +793,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get loadsets.
    *
    * @return a non-null but possibly empty list of {@link Loadset} instances
    */
@@ -821,7 +821,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Get
+   * Get radiation plans.
    *
    * @return a non-null but possibly empty list of {@link RadiationPlan}
    *         instances
@@ -850,9 +850,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set contacts.
    *
-   * @param values One or more instances of type {@link Contact...}
+   * @param values One or more instances of type {@link Contact}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -864,7 +864,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set contacts.
    *
    * @param values A collection of {@link Contact} instances
    * @return The current SchemaRoot object instance
@@ -878,9 +878,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set role(s).
    *
-   * @param values One or more instances of type {@link Role...}
+   * @param values One or more instances of type {@link Role}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -892,7 +892,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set role(s) using Collection.
    *
    * @param values A collection of {@link Role} instances
    * @return The current SchemaRoot object instance
@@ -906,9 +906,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set organisation(s).
    *
-   * @param values One or more instances of type {@link Organisation...}
+   * @param values One or more instances of type {@link Organisation}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -920,7 +920,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set organisation(s) using Colllection.
    *
    * @param values A collection of {@link Organisation} instances
    * @return The current SchemaRoot object instance
@@ -934,9 +934,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set external references.
    *
-   * @param values One or more instances of type {@link ExternalReference...}
+   * @param values One or more instances of type {@link ExternalReference}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -948,7 +948,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set external references.
    *
    * @param values A collection of {@link ExternalReference} instances
    * @return The current SchemaRoot object instance
@@ -962,9 +962,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set administrative.
    *
-   * @param values One or more instances of type {@link Administrative...}
+   * @param values One or more instances of type {@link Administrative}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -976,7 +976,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set administrative.
    *
    * @param values A collection of {@link Administrative} instances
    * @return The current SchemaRoot object instance
@@ -990,9 +990,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set locations.
    *
-   * @param values One or more instances of type {@link Location...}
+   * @param values One or more instances of type {@link Location}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1004,7 +1004,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set locations.
    *
    * @param values A collection of {@link Location} instances
    * @return The current SchemaRoot object instance
@@ -1018,9 +1018,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set channel plans.
    *
-   * @param values One or more instances of type {@link ChannelPlan...}
+   * @param values One or more instances of type {@link ChannelPlan}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1032,7 +1032,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set channel plans.
    *
    * @param values A collection of {@link ChannelPlan} instances
    * @return The current SchemaRoot object instance
@@ -1045,10 +1045,10 @@ public abstract class SchemaRoot<T> {
     return (T) this;
   }
 
-  /**
-   * Set
+  /** 
+   * Set TOAs.
    *
-   * @param values One or more instances of type {@link TOA...}
+   * @param values One or more instances of type {@link TOA}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1060,7 +1060,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set TOAs.
    *
    * @param values A collection of {@link TOA} instances
    * @return The current SchemaRoot object instance
@@ -1074,9 +1074,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set transmitters.
    *
-   * @param values One or more instances of type {@link Transmitter...}
+   * @param values One or more instances of type {@link Transmitter}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1088,7 +1088,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set transmitters.
    *
    * @param values A collection of {@link Transmitter} instances
    * @return The current SchemaRoot object instance
@@ -1102,9 +1102,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set receivers.
    *
-   * @param values One or more instances of type {@link Receiver...}
+   * @param values One or more instances of type {@link Receiver}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1116,7 +1116,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set receivers.
    *
    * @param values A collection of {@link Receiver} instances
    * @return The current SchemaRoot object instance
@@ -1130,9 +1130,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set antennas.
    *
-   * @param values One or more instances of type {@link Antenna...}
+   * @param values One or more instances of type {@link Antenna}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1144,7 +1144,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set antennas.
    *
    * @param values A collection of {@link Antenna} instances
    * @return The current SchemaRoot object instance
@@ -1158,9 +1158,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set RF systems.
    *
-   * @param values One or more instances of type {@link RFSystem...}
+   * @param values One or more instances of type {@link RFSystem}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1172,7 +1172,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set RF systems.
    *
    * @param values A collection of {@link RFSystem} instances
    * @return The current SchemaRoot object instance
@@ -1186,9 +1186,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set spectrum supportability requests.
    *
-   * @param values One or more instances of type {@link SSRequest...}
+   * @param values One or more instances of type {@link SSRequest}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1200,7 +1200,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set spectrum supportability requests.
    *
    * @param values A collection of {@link SSRequest} instances
    * @return The current SchemaRoot object instance
@@ -1214,9 +1214,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set spectrum supportability replies.
    *
-   * @param values One or more instances of type {@link SSReply...}
+   * @param values One or more instances of type {@link SSReply}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1228,7 +1228,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set spectrum supportability replies.
    *
    * @param values A collection of {@link SSReply} instances
    * @return The current SchemaRoot object instance
@@ -1242,9 +1242,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set allotments.
    *
-   * @param values One or more instances of type {@link Allotment...}
+   * @param values One or more instances of type {@link Allotment}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1256,7 +1256,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set allotments.
    *
    * @param values A collection of {@link Allotment} instances
    * @return The current SchemaRoot object instance
@@ -1270,9 +1270,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set assignments.
    *
-   * @param values One or more instances of type {@link Assignment...}
+   * @param values One or more instances of type {@link Assignment}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1284,7 +1284,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set assignments.
    *
    * @param values A collection of {@link Assignment} instances
    * @return The current SchemaRoot object instance
@@ -1298,9 +1298,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set satellites.
    *
-   * @param values One or more instances of type {@link Satellite...}
+   * @param values One or more instances of type {@link Satellite}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1312,7 +1312,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set satellites.
    *
    * @param values A collection of {@link Satellite} instances
    * @return The current SchemaRoot object instance
@@ -1326,9 +1326,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set interference reports.
    *
-   * @param values One or more instances of type {@link IntfReport...}
+   * @param values One or more instances of type {@link IntfReport}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1340,7 +1340,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set interference reports.
    *
    * @param values A collection of {@link IntfReport} instances
    * @return The current SchemaRoot object instance
@@ -1354,9 +1354,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set JRFLs.
    *
-   * @param values One or more instances of type {@link JRFL...}
+   * @param values One or more instances of type {@link JRFL}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1368,7 +1368,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set JRFLs.
    *
    * @param values A collection of {@link JRFL} instances
    * @return The current SchemaRoot object instance
@@ -1382,9 +1382,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set force elements.
    *
-   * @param values One or more instances of type {@link ForceElement...}
+   * @param values One or more instances of type {@link ForceElement}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1396,7 +1396,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set force elements.
    *
    * @param values A collection of {@link ForceElement} instances
    * @return The current SchemaRoot object instance
@@ -1410,9 +1410,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set force element deployments.
    *
-   * @param values One or more instances of type {@link FEDeployment...}
+   * @param values One or more instances of type {@link FEDeployment}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1424,7 +1424,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set force element deployments.
    *
    * @param values A collection of {@link FEDeployment} instances
    * @return The current SchemaRoot object instance
@@ -1438,9 +1438,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set messages.
    *
-   * @param values One or more instances of type {@link Message...}
+   * @param values One or more instances of type {@link Message}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1452,7 +1452,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set messages.
    *
    * @param values A collection of {@link Message} instances
    * @return The current SchemaRoot object instance
@@ -1466,9 +1466,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set notes.
    *
-   * @param values One or more instances of type {@link Note...}
+   * @param values One or more instances of type {@link Note}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1480,7 +1480,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set notes.
    *
    * @param values A collection of {@link Note} instances
    * @return The current SchemaRoot object instance
@@ -1494,9 +1494,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set loadsets.
    *
-   * @param values One or more instances of type {@link Loadset...}
+   * @param values One or more instances of type {@link Loadset}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1508,7 +1508,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set loadsets.
    *
    * @param values A collection of {@link Loadset} instances
    * @return The current SchemaRoot object instance
@@ -1522,9 +1522,9 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set radiation plans.
    *
-   * @param values One or more instances of type {@link RadiationPlan...}
+   * @param values One or more instances of type {@link RadiationPlan}
    * @return The current SchemaRoot object instance
    * @since 3.1.0
    */
@@ -1536,7 +1536,7 @@ public abstract class SchemaRoot<T> {
   }
 
   /**
-   * Set
+   * Set radiation plans.
    *
    * @param values A collection of {@link RadiationPlan} instances
    * @return The current SchemaRoot object instance
