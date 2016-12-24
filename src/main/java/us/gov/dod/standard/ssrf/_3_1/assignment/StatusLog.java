@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * <p>
  * Element of {@link Assignment}, {@link SSRequest}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -386,7 +386,7 @@ public class StatusLog {
    * Set the reference to a Contact, Organisation, or Role responsible for this
    * status log entry or the recipient of the action.
    * <p>
-   * @param value An instances of type {@link Common<?>}.
+   * @param value An instances of type {@link Common}.
    * @return The current StatusLog object instance.
    * @since 3.1.0
    */
@@ -415,7 +415,9 @@ public class StatusLog {
    * <p>
    * This method builds the transient {@link #poc} with values from the imported
    * {@link #pocRef} field. This method should typically be called after the
-   * StatusLog is imported from XML. * @param root the SSRF root instance.
+   * StatusLog is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

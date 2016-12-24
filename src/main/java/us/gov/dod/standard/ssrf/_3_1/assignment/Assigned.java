@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCIR;
  * &lt;/Assigned&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -732,7 +732,7 @@ public class Assigned {
    * Complex element Freq indicates a single assigned frequency or an assigned
    * range of frequencies.
    * <p>
-   * @param values One or more instances of type {@link Freq...}.
+   * @param values One or more instances of type {@link Freq}.
    * @return The current Assigned object instance.
    * @since 3.1.0
    */
@@ -766,7 +766,7 @@ public class Assigned {
    * Complex element FreqOld indicates a previously assigned single frequency or
    * range of frequencies.
    * <p>
-   * @param values One or more instances of type {@link FreqOld...}.
+   * @param values One or more instances of type {@link FreqOld}.
    * @return The current Assigned object instance.
    * @since 3.1.0
    */

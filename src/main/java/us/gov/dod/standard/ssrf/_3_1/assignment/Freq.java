@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.US5;
  * &lt;/Freq&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -263,7 +263,7 @@ public class Freq extends AsgnFreqBase {
    * paired frequency or frequency range when the allotment is for a duplex
    * system.
    * <p>
-   * @param values One or more instances of type {@link PairedFreq...}.
+   * @param values One or more instances of type {@link PairedFreq}.
    * @return The current Freq object instance.
    * @since 3.1.0
    */
@@ -296,7 +296,7 @@ public class Freq extends AsgnFreqBase {
    * Complex element NarrowBandPlanning (US) describes a reduced bandwidth
    * assignment for a single frequency or a range of frequencies.
    * <p>
-   * @param values One or more instances of type {@link NarrowBandPlanning...}.
+   * @param values One or more instances of type {@link NarrowBandPlanning}.
    * @return The current Freq object instance.
    * @since 3.1.0
    */

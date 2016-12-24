@@ -29,7 +29,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.US12;
  * <p>
  * Element of {@link Freq}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -138,12 +138,12 @@ public class PairedFreq {
 
   /**
    * Set a reference to an Assignment that is paired with this AsgnAllot in a
-   * repeater, duplex link or frequency diversity capability..
+   * repeater, duplex link or frequency diversity capability.
    * <p>
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setAssignment(Assignment)} instead.
+   * {@link #withAssignment(Assignment)} instead.
    */
   @Deprecated
   public void setAssignmentRef(Serial value) {
@@ -161,7 +161,7 @@ public class PairedFreq {
 
   /**
    * Get the agency serial number of the assignment that is paired with this
-   * Assignment in a repeater, duplex link or frequency diversity capability..
+   * Assignment in a repeater, duplex link or frequency diversity capability.
    * <p>
    * @return a {@link US12} instance
    * @since 3.1.0
@@ -172,7 +172,7 @@ public class PairedFreq {
 
   /**
    * Set the agency serial number of the assignment that is paired with this
-   * Assignment in a repeater, duplex link or frequency diversity capability..
+   * Assignment in a repeater, duplex link or frequency diversity capability.
    * <p>
    * @param value a {@link US12} instance
    * @since 3.1.0
@@ -193,7 +193,7 @@ public class PairedFreq {
   /**
    * Get if the paired frequency is a transmitting repeater frequency, a
    * receiving repeater frequency, a duplex pairing, frequency diversity or
-   * space diversity..
+   * space diversity.
    * <p>
    * @return a {@link S20} instance
    * @since 3.1.0
@@ -205,7 +205,7 @@ public class PairedFreq {
   /**
    * Set if the paired frequency is a transmitting repeater frequency, a
    * receiving repeater frequency, a duplex pairing, frequency diversity or
-   * space diversity..
+   * space diversity.
    * <p>
    * @param value a {@link S20} instance
    * @since 3.1.0
@@ -375,8 +375,9 @@ public class PairedFreq {
    * <p>
    * This method builds the transient {@link #assignment} with values from the
    * imported {@link #assignmentRef} field. This method should typically be
-   * called after the PairedFreq is imported from XML. * @param root the SSRF
-   * root instance.
+   * called after the PairedFreq is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

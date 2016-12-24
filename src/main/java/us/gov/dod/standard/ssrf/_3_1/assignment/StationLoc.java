@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  * &lt;/StationLoc&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -192,14 +192,16 @@ public class StationLoc {
   }
 
   /**
-   * Set the serial of a Location or Satellite dataset. If this location is a
-   * complex dataset (more than a single point), tthe assignment is mobile,
-   * inside the Station location..
+   * Set the serial of a Location or Satellite dataset.
+   * <p>
+   * If this location is a
+   * complex dataset (more than a single point), the assignment is mobile,
+   * inside the Station location.
    * <p>
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLocSat(Common)} instead.
+   * {@link #withLocSat(Common)} instead.
    */
   @Deprecated
   public void setLocSatRef(Serial value) {
@@ -218,7 +220,7 @@ public class StationLoc {
   /**
    * Get the radius associated with the Location to produce a circle. Radius
    * information only applies to points, and should be ignored in the case of
-   * polygons and ellipses..
+   * polygons and ellipses.
    * <p>
    * @return a {@link DistSpace} instance
    * @since 3.1.0
@@ -502,11 +504,13 @@ public class StationLoc {
   }
 
   /**
-   * Set the serial of a Location or Satellite dataset. If this location is a
-   * complex dataset (more than a single point), tthe assignment is mobile,
+   * Set the serial of a Location or Satellite dataset.
+   *
+   * If this location is a
+   * complex dataset (more than a single point), the assignment is mobile,
    * inside the Station location.
    * <p>
-   * @param value An instances of type {@link Common<?>}.
+   * @param value An instance of type {@link Common}.
    * @return The current StationLoc object instance.
    * @since 3.1.0
    */
@@ -535,8 +539,9 @@ public class StationLoc {
    * <p>
    * This method builds the transient {@link #locSat} with values from the
    * imported {@link #locSatRef} field. This method should typically be called
-   * after the StationLoc is imported from XML. * @param root the SSRF root
-   * instance.
+   * after the StationLoc is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

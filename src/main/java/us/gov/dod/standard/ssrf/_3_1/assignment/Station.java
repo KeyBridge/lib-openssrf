@@ -45,7 +45,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  *   &lt;/Station&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1011,7 +1011,7 @@ public class Station {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current Station object instance.
    * @since 3.1.0
    */
@@ -1047,7 +1047,7 @@ public class Station {
    * equipment necessary at one location for carrying on a radiocommunication,
    * radiolocation, or other spectrum dependent function.
    * <p>
-   * @param values One or more instances of type {@link StationLoc...}.
+   * @param values One or more instances of type {@link StationLoc}.
    * @return The current Station object instance.
    * @since 3.1.0
    */
@@ -1106,8 +1106,7 @@ public class Station {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link Station} requires {@link S100 StationID}, {@link Set<StationLoc>
-   * StationLoc}.
+   * {@link Station} requires {@link S100 StationID}, {@link StationLoc}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
