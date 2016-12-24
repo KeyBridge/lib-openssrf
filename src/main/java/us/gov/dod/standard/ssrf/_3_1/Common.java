@@ -36,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSU;
  * Sub-Elements are
  * {@link CaseNum}, {@link ExtReferenceRef}, {@link Remarks}, {@link SecurityClass}
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/27/2015
  * @param <T> The inheriting class type
  */
@@ -416,7 +416,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of Conmmon/ExtReferenceRef idx values applicable to the current data
+   * A list of  Common/ExternalReferenceRef index values applicable to the current data
    * item.
    * <p>
    * Format is List of UN6
@@ -485,7 +485,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Abstract constructor for the Common class type.
    * <p>
    * This constructor sets the minimum mandatory fields {@link #serial} with a
-   * programmatically generated {@link TSerial} instance and
+   * programmatically generated {@link Serial} instance and
    * {@link #entryDateTime} with the current DATETIME.
    */
   @SuppressWarnings("unchecked")
@@ -498,7 +498,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get the identifier of the person or entity who last observed this Dataset.
    *
-   * @return the LastObservedBy value in a {@link TS50} data type
+   * @return the LastObservedBy value in a {@link S50} data type
    * @since 3.1.0
    */
   public S50 getLastObservedBy() {
@@ -508,7 +508,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set the identifier of the person or entity who last observed this Dataset.
    *
-   * @param value the LastObservedBy value in a {@link TS50} data type
+   * @param value the LastObservedBy value in a {@link S50} data type
    * @since 3.1.0
    */
   public void setLastObservedBy(S50 value) {
@@ -590,7 +590,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Get the identifier of the designated expert who last approved or accepted
    * the dataset.
    *
-   * @return the ApprovedBy value in a {@link TS50} data type
+   * @return the ApprovedBy value in a {@link S50} data type
    * @since 3.1.0
    */
   public S50 getApprovedBy() {
@@ -601,7 +601,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set the identifier of the designated expert who last approved or accepted
    * the dataset.
    *
-   * @param value the ApprovedBy value in a {@link TS50} data type
+   * @param value the ApprovedBy value in a {@link S50} data type
    * @since 3.1.0
    */
   public void setApprovedBy(S50 value) {
@@ -802,7 +802,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param value the EntryBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setEntryByRole(Role)} instead.
+   * {@link #withEntryByRole(Role)} instead.
    */
   @Deprecated
   public void setEntryBy(Serial value) {
@@ -839,7 +839,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param value the Owner value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setOwnerRole(Role)} instead.
+   * {@link #withOwnerRole(Role)} instead.
    */
   @Deprecated
   public void setOwner(Serial value) {
@@ -903,7 +903,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param value the LastChangeBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLastChangeByRole(Role)} instead.
+   * {@link #withLastChangeByRole(Role)} instead.
    */
   @Deprecated
   public void setLastChangeBy(Serial value) {
@@ -967,7 +967,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param value the LastReviewBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLastReviewByRole(Role)} instead.
+   * {@link #withLastReviewByRole(Role)} instead.
    */
   @Deprecated
   public void setLastReviewBy(Serial value) {
@@ -1004,7 +1004,7 @@ public abstract class Common<T> implements Comparable<T> {
    * @param value the ModAllowedBy value in a {@link Serial} data type
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setModAllowedByRole(Role)} instead.
+   * {@link #withModAllowedByRole(Role)} instead.
    */
   @Deprecated
   public void setModAllowedBy(Serial value) {
@@ -1054,7 +1054,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Get a general description of the Dataset that is inheriting Common.
    *
-   * @return the Description value in a {@link TS500} data type
+   * @return the Description value in a {@link S500} data type
    * @since 3.1.0
    */
   public S500 getDescription() {
@@ -1064,7 +1064,7 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * Set a general description of the Dataset that is inheriting Common.
    *
-   * @param value the Description value in a {@link TS500} data type
+   * @param value the Description value in a {@link S500} data type
    * @since 3.1.0
    */
   public void setDescription(S500 value) {
@@ -1305,7 +1305,7 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Get a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item.
    *
    * @return a {@link BigInteger} instance
@@ -1802,7 +1802,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Complex element CaseNum provides the capability to store multiple
    * identifiers for a Dataset.
    *
-   * @param values One or more instances of type {@link CaseNum...}
+   * @param values One or more instances of type {@link CaseNum}
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1836,7 +1836,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Complex element ExtReferenceRef refers to an external reference defined in
    * a dataset ExternalReference.
    *
-   * @param values One or more instances of type {@link ExtReferenceRef...}
+   * @param values One or more instances of type {@link ExtReferenceRef}
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1868,7 +1868,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Set a list of Common/Remarks idx values applicable to the current data
    * item.
    *
-   * @param values One or more instances of type {@link Remarks...}
+   * @param values One or more instances of type {@link Remarks}
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1914,7 +1914,7 @@ public abstract class Common<T> implements Comparable<T> {
    * Releasability are both blank, there is no releasability restriction for the
    * data item.
    *
-   * @param values One or more instances of type {@link ListCCY...}
+   * @param values One or more instances of type {@link ListCCY}
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1948,7 +1948,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    *
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1964,7 +1964,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    *
-   * @param values A collection of {@link RemarkRef} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1980,7 +1980,7 @@ public abstract class Common<T> implements Comparable<T> {
    * <p>
    * A list of Common/Remarks idx values applicable to the current data item.
    *
-   * @param remark A collection of {@link RemarkRef} instances
+   * @param remark A collection of {@link Remarks} instances
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -1989,10 +1989,10 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item.
    *
-   * @param values One or more instances of type {@link BigInteger...}
+   * @param values One or more instances of type {@link BigInteger}
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -2004,10 +2004,10 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item.
    *
-   * @param values A collection of {@link ExtReferences} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -2019,10 +2019,10 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of Conmmon/ExtReferenceRef idx values applicable to the current
+   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
    * data item.
    *
-   * @param extReference A collection of {@link ExtReferences} instances
+   * @param extReference A collection of {@link ExtReferenceRef} instances
    * @return The current Common object instance
    * @since 3.1.0
    */
@@ -2374,18 +2374,18 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Update the SSRF data type references in this Common record.
-   * <p>
-   * This method builds Common exported fields with values from their respective
-   * transient object instance fields.:<br/> {@link #entryBy} from
-   * {@link #entryByRole} <br/> {@link #owner} from {@link #ownerRole} <br/>
-   * {@link #lastChangeBy} from {@link #lastChangeByRole} <br/>
-   * {@link #lastReviewBy} from {@link #lastReviewByRole} <br/>
-   * {@link #modAllowedBy} from {@link #modAllowedByRole}
-   * <p>
-   * This method should typically be called after the Common is configured and
-   * (optionally) before exporting an SSRF message.
-   */
+    * Update the SSRF data type references in this Common record.
+    * <p>
+    * This method builds Common exported fields with values from their respective transient object instance fields.:
+    * <br> {@link #entryBy} from {@link #entryByRole}
+    * <br> {@link #owner} from {@link #ownerRole}
+    * <br> {@link #lastChangeBy} from {@link #lastChangeByRole}
+    * <br> {@link #lastReviewBy} from {@link #lastReviewByRole}
+    * <br> * {@link #modAllowedBy} from {@link #modAllowedByRole}
+    * <p>
+    * This method should typically be called after the Common is configured and (optionally) before exporting an SSRF
+    * message.
+    */
   public void prepare() {
     this.entryBy = entryByRole != null ? entryByRole.getSerial() : this.entryBy;
     this.owner = ownerRole != null ? ownerRole.getSerial() : this.owner;
