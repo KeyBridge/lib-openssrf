@@ -32,7 +32,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFD;
  * deployment has a period of time for which the deployment is valid described
  * by the start and end date/time.
  * <p>
- * Sub-Elements are {@link AtWayPoint}, {@link Project}
+ * Sub-Elements are {@link AtWaypoint}, {@link Project}
  * <p>
  * Example:
  * <pre>
@@ -47,7 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFD;
  * &lt;/FEDeployment&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -208,18 +208,18 @@ public class FEDeployment extends Common<FEDeployment> {
    * between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
    * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
-   * for the year 2007: %lt;Minutes%gt;star/10%lt;/Minutes%gt;
-   * %lt;Hours%gt;9-17%lt;/Hours%gt; %lt;DaysofWeek%gt;0-4%lt;/DaysofWeek%gt;
-   * %lt;Years%gt;2007%lt;/Years%gt; %lt;Duration%gt;2%lt;/Duration%gt;
+   * for the year 2007: &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt; &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt; &lt;Duration&gt;2&lt;/Duration&gt;
    * <p>
    * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * %lt;Minutes%gt;5%lt;/Minutes%gt; %lt;Hours%gt;star/3%lt;/Hours%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * &lt;Minutes&gt;5&lt;/Minutes&gt; &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
    * <p>
    * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday %lt;Minutes%gt;20,50%lt;/Minutes%gt;
-   * %lt;Months%gt;1-5,7-12%lt;/Months%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * Monday-Friday &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
    * <p>
    * Format is UN(4) (min)
    * <p>
@@ -583,23 +583,27 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
-   * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
-   * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
-   *
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
    */
@@ -616,22 +620,27 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
-   * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
-   * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    *
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -878,22 +887,27 @@ public class FEDeployment extends Common<FEDeployment> {
    * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
-   * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
-   * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    *
    * @param value An instances of type {@link Integer}.
    * @return The current FEDeployment object instance.
@@ -922,7 +936,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    *
-   * @param values One or more instances of type {@link Project...}.
+   * @param values One or more instances of type {@link Project}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
    */
@@ -956,7 +970,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Complex element AtWayPoint defines a point in time at which a Force Element
    * is at a given waypoint along a route.
    *
-   * @param values One or more instances of type {@link AtWaypoint...}.
+   * @param values One or more instances of type {@link AtWaypoint}.
    * @return The current FEDeployment object instance.
    * @since 3.1.0
    */
@@ -1013,7 +1027,7 @@ public class FEDeployment extends Common<FEDeployment> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link FEDeployment} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link Serial FERef}, {@link TString Type}.
    * <p>
    * Note that this method only checks for the presence of required information;

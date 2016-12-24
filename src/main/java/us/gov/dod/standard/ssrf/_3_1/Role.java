@@ -22,6 +22,7 @@ import us.gov.dod.standard.ssrf._3_1.contact.Address;
 import us.gov.dod.standard.ssrf._3_1.contact.EMail;
 import us.gov.dod.standard.ssrf._3_1.contact.TelephoneFax;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
@@ -33,7 +34,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * representing an organisational user of the system; also known as Job Account
  * in the USA).
  * <p>
- * Sub-Elements are {@link Address}, {@link Email}, {@link TelephoneFax}
+ * Sub-Elements are {@link Address}, {@link EMail}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -46,7 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
  * &lt;/Role&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -574,7 +575,9 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the country to which the Role belongs. IMPORTANT NOTE: The Country is
+   * Set the country to which the Role belongs.
+   *
+   * IMPORTANT NOTE: The Country is
    * Optional in order to accommodate legacy data; however it SHOULD be filled
    * in. The release of datasets to Roles is based upon matching nationalities;
    * therefore a Role without a Country will not be able to receive datasets
@@ -590,12 +593,12 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the Address
+   * Set the Address.
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    *
-   * @param values One or more instances of type {@link Address...}.
+   * @param values One or more instances of type {@link Address}.
    * @return The current Role object instance.
    * @since 3.1.0
    */
@@ -607,7 +610,7 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the Address
+   * Set the Address.
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
@@ -624,12 +627,12 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the TelephoneFax
+   * Set the TelephoneFax.
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    *
-   * @param values One or more instances of type {@link TelephoneFax...}.
+   * @param values One or more instances of type {@link TelephoneFax}.
    * @return The current Role object instance.
    * @since 3.1.0
    */
@@ -641,7 +644,7 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the TelephoneFax
+   * Set the TelephoneFax.
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
@@ -658,11 +661,11 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the Email
+   * Set the Email.
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    *
-   * @param values One or more instances of type {@link EMail...}.
+   * @param values One or more instances of type {@link EMail}.
    * @return The current Role object instance.
    * @since 3.1.0
    */
@@ -674,7 +677,7 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the Email
+   * Set the Email.
    * <p>
    * Complex element Email contains the email address of the Contact or Role.
    *
@@ -690,11 +693,11 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the ContactRef
+   * Set the ContactRef.
    * <p>
    * Complex element ContactRef references a Contact.
    *
-   * @param values One or more instances of type {@link ContactRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Role object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -709,7 +712,7 @@ public class Role extends Common<Role> {
   }
 
   /**
-   * Set the ContactRef
+   * Set the ContactRef.
    * <p>
    * Complex element ContactRef references a Contact.
    *
@@ -751,8 +754,8 @@ public class Role extends Common<Role> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Role} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link S50 Name}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
+   * and {@link S50 name}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
