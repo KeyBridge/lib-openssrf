@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.receiver.RxModulation;
  * &lt;/TxModulation&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -89,9 +89,9 @@ public class TxModulation extends RxModulation {
    * <p>
    * The amplitude modulation index, which is a unitless value for an amplitude
    * modulation signal derived by dividing the peak modulating voltage by the
-   * peak carrier voltage. The modulation index should always be %gt; 0 and %lt;
+   * peak carrier voltage. The modulation index should always be &gt; 0 and &lt;
    * 1. If = 0, the resultant modulated waveform is a constant keyed carrier
-   * without a modulating signal. If %gt; 1, the envelope is over modulated and
+   * without a modulating signal. If &gt; 1, the envelope is over modulated and
    * distorted. A typical value is 0.6
    * <p>
    * Format is UN(5,3)
@@ -320,8 +320,9 @@ public class TxModulation extends RxModulation {
   /**
    * Get the amplitude modulation index, which is a unitless value for an
    * amplitude modulation signal derived by dividing the peak modulating voltage
-   * by the peak carrier voltage. The modulation index should always be > 0 and < 1. If = 0, the resultant modulated waveform is a constant keyed carrier without a modulating signal. If
-   * > 1, the envelope is over modulated and distorted. A typical value is 0.6.
+   * by the peak carrier voltage. The modulation index should always be &gt; 0 and &lt; 1.
+   * If = 0, the resultant modulated waveform is a constant keyed carrier without a modulating signal. If
+   * &gt; 1, the envelope is over modulated and distorted. A typical value is 0.6.
    * <p>
    * @return a {@link UN5_3} instance
    * @since 3.1.0
@@ -333,8 +334,9 @@ public class TxModulation extends RxModulation {
   /**
    * Set the amplitude modulation index, which is a unitless value for an
    * amplitude modulation signal derived by dividing the peak modulating voltage
-   * by the peak carrier voltage. The modulation index should always be > 0 and < 1. If = 0, the resultant modulated waveform is a constant keyed carrier without a modulating signal. If
-   * > 1, the envelope is over modulated and distorted. A typical value is 0.6.
+   * by the peak carrier voltage. The modulation index should always be &gt; 0 and &lt; 1.
+   * If = 0, the resultant modulated waveform is a constant keyed carrier without a modulating signal. If
+   * &gt; 1, the envelope is over modulated and distorted. A typical value is 0.6.
    * <p>
    * @param value a {@link UN5_3} instance
    * @since 3.1.0
@@ -791,8 +793,8 @@ public class TxModulation extends RxModulation {
   /**
    * Set the amplitude modulation index, which is a unitless value for an
    * amplitude modulation signal derived by dividing the peak modulating voltage
-   * by the peak carrier voltage. The modulation index should always be > 0 and < 1. If = 0, the resultant modulated waveform is a constant keyed carrier without a modulating signal. If
-   * > 1, the envelope is over modulated and distorted. A typical value is 0.6
+   * by the peak carrier voltage. The modulation index should always be &gt; 0 and &lt; 1. If = 0, the resultant modulated waveform is a constant keyed carrier without a modulating signal. If
+   * &gt; 1, the envelope is over modulated and distorted. A typical value is 0.6
    * <p>
    * @param value An instances of type {@link Double}.
    * @return The current TxModulation object instance.
