@@ -56,7 +56,7 @@ import us.gov.dod.standard.ssrf._3_1.receiver.RxMode;
  * &lt;/Receiver&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -760,12 +760,12 @@ public class Receiver extends Common<Receiver> {
   }
 
   /**
-   * Set the POCInformation
+   * Set the POCInformation.
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current Receiver object instance.
    * @since 3.1.0
    */
@@ -777,7 +777,7 @@ public class Receiver extends Common<Receiver> {
   }
 
   /**
-   * Set the POCInformation
+   * Set the POCInformation.
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
@@ -801,7 +801,7 @@ public class Receiver extends Common<Receiver> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    *
-   * @param values One or more instances of type {@link Nomenclature...}.
+   * @param values One or more instances of type {@link Nomenclature}.
    * @return The current Receiver object instance.
    * @since 3.1.0
    */
@@ -841,7 +841,7 @@ public class Receiver extends Common<Receiver> {
    * equipment may be deployed on an airborne platform, a ship or fixed land
    * installation.
    *
-   * @param values One or more instances of type {@link Deployment...}.
+   * @param values One or more instances of type {@link Deployment}.
    * @return The current Receiver object instance.
    * @since 3.1.0
    */
@@ -882,7 +882,7 @@ public class Receiver extends Common<Receiver> {
    * frequency to be added to the carrier frequency to obtain the origin of the
    * curve, and the measurement bandwidth.
    *
-   * @param values One or more instances of type {@link Curve...}.
+   * @param values One or more instances of type {@link Curve}.
    * @return The current Receiver object instance.
    * @since 3.1.0
    */
@@ -919,7 +919,7 @@ public class Receiver extends Common<Receiver> {
    * Complex element RxMode and sub-elements define all the technical parameters
    * for a mode of operation of the Receiver.
    *
-   * @param values One or more instances of type {@link RxMode...}.
+   * @param values One or more instances of type {@link RxMode}.
    * @return The current Receiver object instance.
    * @since 3.1.0
    */
@@ -953,7 +953,7 @@ public class Receiver extends Common<Receiver> {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Receiver.
    *
-   * @param values One or more instances of type {@link UsingCountries...}.
+   * @param values One or more instances of type {@link UsingCountries}.
    * @return The current Receiver object instance.
    * @since 3.1.0
    */
@@ -1009,7 +1009,7 @@ public class Receiver extends Common<Receiver> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Receiver} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link TString Generic}.
    * <p>
    * Note that this method only checks for the presence of required information;
