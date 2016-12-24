@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCEA;
  * &lt;/EarthStation&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -162,7 +162,7 @@ public class EarthStation {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLocation(Location)} instead.
+   * {@link #withLocation(Location)} instead.
    */
   @Deprecated
   public void setLocationRef(Serial value) {
@@ -306,7 +306,9 @@ public class EarthStation {
    * <p>
    * This method builds the transient {@link #location} with values from the
    * imported {@link #locationRef} field. This method should typically be called
-   * after the EarthStation is imported from XML. * @param root the SSRF root
+   * after the EarthStation is imported from XML.
+   * <p>
+   * @param root the SSRF root
    * instance.
    * <p>
    * @since 3.1.0
