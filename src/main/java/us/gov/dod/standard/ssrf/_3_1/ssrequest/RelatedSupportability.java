@@ -37,7 +37,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDD;
  * &lt;/RelatedSupportability&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -308,8 +308,9 @@ public class RelatedSupportability {
    * <p>
    * This method builds the transient {@link #ssRequest} with values from the
    * imported {@link #ssRequestRef} field. This method should typically be
-   * called after the RelatedSupportability is imported from XML. * @param root
-   * the SSRF root instance.
+   * called after the RelatedSupportability is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */
