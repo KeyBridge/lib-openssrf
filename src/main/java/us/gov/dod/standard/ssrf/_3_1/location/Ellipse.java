@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  * &lt;/Ellipse&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -521,6 +521,7 @@ public class Ellipse {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current Ellipse object instance.
+   * @throws Exception if the longitude fails to parse.
    * @since 3.1.0
    */
   public Ellipse withLon(String value) throws Exception {
@@ -548,6 +549,7 @@ public class Ellipse {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current Ellipse object instance.
+   * @throws Exception if the latitude fails to parse.
    * @since 3.1.0
    */
   public Ellipse withLat(String value) throws Exception {

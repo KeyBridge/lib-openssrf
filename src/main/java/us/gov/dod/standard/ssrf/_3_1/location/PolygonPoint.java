@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Lon;
  * <p>
  * Element of {@link Polygon}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -207,6 +207,7 @@ public class PolygonPoint {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current PolygonPoint object instance.
+   * @throws Exception if the longitude fails to parse.
    * @since 3.1.0
    */
   public PolygonPoint withLon(String value) throws Exception {
@@ -234,6 +235,7 @@ public class PolygonPoint {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current PolygonPoint object instance.
+   * @throws Exception if the latitude fails to parse.
    * @since 3.1.0
    */
   public PolygonPoint withLat(String value) throws Exception {
@@ -283,8 +285,7 @@ public class PolygonPoint {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link PolygonPoint} requires
-   * {@link Lat Lat}, {@link Lon Lon}, {@link BigInteger sequence}.
+   * {@link PolygonPoint} requires {@link Lat}, {@link Lon} and {@link BigInteger}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
