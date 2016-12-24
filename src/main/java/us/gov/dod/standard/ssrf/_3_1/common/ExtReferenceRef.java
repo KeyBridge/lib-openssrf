@@ -35,7 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;ExtReferenceRef idx="1" cls="U"&gt;USA::EX:12&lt;/ExtReferenceRef&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -91,7 +91,7 @@ public class ExtReferenceRef {
    * @param value a {@link String} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setExternalReference(ExternalReference)} instead.
+   * {@link #withExternalReference(ExternalReference)} instead.
    */
   @Deprecated
   public void setValue(String value) {
@@ -259,7 +259,7 @@ public class ExtReferenceRef {
   private ExternalReference externalReference;
 
   /**
-   * Get a value that is most probably correct..
+   * Get a value that is most probably correct.
    * <p>
    * @return a {@link ExternalReference} instance
    * @since 3.1.0
@@ -309,8 +309,9 @@ public class ExtReferenceRef {
    * <p>
    * This method builds the transient {@link #externalReference} with values
    * from the imported {@link #value} field. This method should typically be
-   * called after the ExtReferenceRef is imported from XML. * @param root the
-   * SSRF root instance.
+   * called after the ExtReferenceRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

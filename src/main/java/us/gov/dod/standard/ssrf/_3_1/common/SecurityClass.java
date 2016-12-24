@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.*;
  * &lt;/Security Class&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -86,7 +86,7 @@ public class SecurityClass {
   @XmlElement(name = "SourceClsDate", required = false)
   private D sourceClsDate;
   /**
-   * US:ClsOrg - Original Classification Authority Organizatio (Optional)
+   * US:ClsOrg - Original Classification Authority Organization (Optional)
    * <p>
    * The organization of the original classification authority.
    * <p>
@@ -604,12 +604,12 @@ public class SecurityClass {
   }
 
   /**
-   * Set the US:Downgrade
+   * Set the US:Downgrade.
    * <p>
    * Complex element Downgrade (US) contains the downgrade security
    * classification from one or more data information sources.
    * <p>
-   * @param values One or more instances of type {@link Downgrade...}.
+   * @param values One or more instances of type {@link Downgrade}.
    * @return The current SecurityClass object instance.
    * @since 3.1.0
    */
@@ -621,7 +621,7 @@ public class SecurityClass {
   }
 
   /**
-   * Set the US:Downgrade
+   * Set the US:Downgrade.
    * <p>
    * Complex element Downgrade (US) contains the downgrade security
    * classification from one or more data information sources.
@@ -638,12 +638,12 @@ public class SecurityClass {
   }
 
   /**
-   * Set the US:ClsDerived
+   * Set the US:ClsDerived.
    * <p>
    * Complex element ClsDerived (US) contains the derived security
    * classification from one or more data information sources.
    * <p>
-   * @param values One or more instances of type {@link ClsDerived...}.
+   * @param values One or more instances of type {@link ClsDerived}.
    * @return The current SecurityClass object instance.
    * @since 3.1.0
    */
@@ -655,7 +655,7 @@ public class SecurityClass {
   }
 
   /**
-   * Set the US:ClsDerived
+   * Set the US:ClsDerived.
    * <p>
    * Complex element ClsDerived (US) contains the derived security
    * classification from one or more data information sources.
