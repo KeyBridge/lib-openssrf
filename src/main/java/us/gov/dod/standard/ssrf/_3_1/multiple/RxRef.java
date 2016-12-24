@@ -26,14 +26,14 @@ import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
- * RxRef contains the reference of a Receiver, and optionnally some of its
+ * RxRef contains the reference of a Receiver, and optionally some of its
  * RxModes and the associated Antennas and AntMode.
  * <p>
  * Element of {@link Configuration}
  * <p>
  * Sub-Elements are {@link RxAntModeRef}, {@link RxModeRef}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -101,7 +101,7 @@ public class RxRef {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setReceiver(Receiver)} instead.
+   * {@link #withReceiver(Receiver)} instead.
    */
   @Deprecated
   public void setSerial(Serial value) {
@@ -204,7 +204,7 @@ public class RxRef {
    * Complex element RxModeRef references a RxMode of the receiver used in a
    * specific configuration.
    * <p>
-   * @param values One or more instances of type {@link RxModeRef...}.
+   * @param values One or more instances of type {@link RxModeRef}.
    * @return The current RxRef object instance.
    * @since 3.1.0
    */
@@ -238,7 +238,7 @@ public class RxRef {
    * Complex element RxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Receiver Configuration.
    * <p>
-   * @param values One or more instances of type {@link RxAntModeRef...}.
+   * @param values One or more instances of type {@link RxAntModeRef}.
    * @return The current RxRef object instance.
    * @since 3.1.0
    */
@@ -364,7 +364,9 @@ public class RxRef {
    * <p>
    * This method builds the transient {@link #receiver} with values from the
    * imported {@link #serial} field. This method should typically be called
-   * after the RxRef is imported from XML. * @param root the SSRF root instance.
+   * after the RxRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */
