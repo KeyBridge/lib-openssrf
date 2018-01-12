@@ -23,6 +23,7 @@ import us.gov.dod.standard.ssrf._3_1.antenna.Nomenclature;
 import us.gov.dod.standard.ssrf._3_1.forceelement.Assets;
 import us.gov.dod.standard.ssrf._3_1.forceelement.StockNum;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S20;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
@@ -49,7 +50,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *   &lt;/ForceElement&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -804,7 +805,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
    */
@@ -839,7 +840,7 @@ public class ForceElement extends Common<ForceElement> {
    * the equipment, RF systems, or other Force Elements used or owned by the
    * Force Element.
    *
-   * @param values One or more instances of type {@link Assets...}.
+   * @param values One or more instances of type {@link Assets}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
    */
@@ -876,7 +877,7 @@ public class ForceElement extends Common<ForceElement> {
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    *
-   * @param values One or more instances of type {@link Nomenclature...}.
+   * @param values One or more instances of type {@link Nomenclature}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
    */
@@ -912,7 +913,7 @@ public class ForceElement extends Common<ForceElement> {
    * Complex element StockNum (US) provides the equipment stock number and
    * indicates the type of stock number.
    *
-   * @param values One or more instances of type {@link StockNum...}.
+   * @param values One or more instances of type {@link StockNum}.
    * @return The current ForceElement object instance.
    * @since 3.1.0
    */
@@ -968,8 +969,8 @@ public class ForceElement extends Common<ForceElement> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link ForceElement} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link Set<Nomenclature> Nomenclature}, {@link TString Type}.
+   * {@link cls}, {@link Serial}, {@link DT entryDateTime}
+   * and {@link Set Nomenclature}, {@link TString Type}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

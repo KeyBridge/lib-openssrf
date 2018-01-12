@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
  * <p>
  * Element of {@link Assignment}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -85,7 +85,7 @@ public class RecordNote {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setNote(Note)} instead.
+   * {@link #withNote(Note)} instead.
    */
   @Deprecated
   public void setNoteRef(Serial value) {
@@ -258,8 +258,9 @@ public class RecordNote {
    * <p>
    * This method builds the transient {@link #note} with values from the
    * imported {@link #noteRef} field. This method should typically be called
-   * after the RecordNote is imported from XML. * @param root the SSRF root
-   * instance.
+   * after the RecordNote is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

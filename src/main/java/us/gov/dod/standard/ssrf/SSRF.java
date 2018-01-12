@@ -68,9 +68,9 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * This method creates a local copy of the input SSRFProperties values. To
    * edit this SSRF instance properties use
-   * {@link #setProperty(String, String, String)}
+   * {@link #setProperty(String, String)}
    * <p>
-   * Use {@link #setProperty(String, String, String)} to set and update
+   * Use {@link #setProperty(String, String)} to set and update
    * additional properties.
    *
    * @param ssrfProperties a SSRFProperties instance
@@ -113,9 +113,9 @@ public class SSRF extends SchemaRoot<SSRF> {
    * <p>
    * This method creates a local copy of the input SSRFProperties values. To
    * edit this SSRF instance properties use
-   * {@link #setProperty(String, String, String)}
+   * {@link #setProperty(String, String)}
    * <p>
-   * Use {@link #setProperty(String, String, String)} to set and update
+   * Use {@link #setProperty(String, String)} to set and update
    * additional properties.
    *
    * @param ssrfProperties a SSRFProperties instance
@@ -192,7 +192,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * objects into their proper location, preparing the SSRF destination instance
    * for export, then marshals the data type into an XML document.
    * <p>
-   * If the object instance is NOT valid then call {@link #evaluate(Object)} to
+   * If the object instance is NOT valid then call {@link #evaluate()} to
    * re-inspect the SSRF object instance and retrieve a list of specific
    * validation errors.
    *
@@ -221,7 +221,7 @@ public class SSRF extends SchemaRoot<SSRF> {
    * It is expected that this method will only be called on the top-level SSRF
    * class. However it will just as easily validate any SSRF data type.
    * <p>
-   * If the object instance is NOT valid then call {@link #evaluate(Object)} to
+   * If the object instance is NOT valid then call {@link #evaluate()} to
    * re-inspect the SSRF object instance and retrieve a list of specific
    * validation errors.
    *

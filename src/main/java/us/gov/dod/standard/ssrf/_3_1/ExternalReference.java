@@ -22,8 +22,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S255;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S50;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -47,7 +49,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCSG;
  * &lt;/ExternalReference&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -825,7 +827,7 @@ public class ExternalReference extends Common<ExternalReference> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link ExternalReference} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link TString IsAttached}.
    * <p>
    * Note that this method only checks for the presence of required information;

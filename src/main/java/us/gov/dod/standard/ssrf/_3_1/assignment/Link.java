@@ -40,7 +40,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
  * Element of {@link Assignment}
  * <p>
  * Sub-Elements are
- * {@link Assigned}, {@link DCSTrunk}, {@link DetailedFunctionID}, {@link StationConfig}, {@link Tuning}
+ * {@link Assigned}, {@link DCSTrunk}, {@link StationConfig} and {@link Tuning}.
  * <p>
  * Example:
  * <pre>
@@ -59,7 +59,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUFN;
  * &lt;/Link&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -607,7 +607,7 @@ public class Link {
    * frequencies, tuning increment, and number of frequencies, required for an
    * assignment.
    * <p>
-   * @param values One or more instances of type {@link Tuning...}.
+   * @param values One or more instances of type {@link Tuning}.
    * @return The current Link object instance.
    * @since 3.1.0
    */
@@ -643,7 +643,7 @@ public class Link {
    * used for transmitting and/or receiving in the current Link. It may also
    * contain additional antenna pointing/blanking parameters.
    * <p>
-   * @param values One or more instances of type {@link StationConfig...}.
+   * @param values One or more instances of type {@link StationConfig}.
    * @return The current Link object instance.
    * @since 3.1.0
    */
@@ -678,7 +678,7 @@ public class Link {
    * Complex element Assigned contains the assigned frequency(ies), channel or
    * net number; it can also contain the old frequency.
    * <p>
-   * @param values One or more instances of type {@link Assigned...}.
+   * @param values One or more instances of type {@link Assigned}.
    * @return The current Link object instance.
    * @since 3.1.0
    */
@@ -713,7 +713,7 @@ public class Link {
    * trunk identifier for a specific "trunked" system. The identifier is
    * assigned by the Defense Information Systems Agency (DISA).
    * <p>
-   * @param values One or more instances of type {@link DCSTrunk...}.
+   * @param values One or more instances of type {@link DCSTrunk}.
    * @return The current Link object instance.
    * @since 3.1.0
    */
@@ -745,7 +745,7 @@ public class Link {
   /**
    * Set
    * <p>
-   * @param values One or more instances of type {@link DetailedFunction...}.
+   * @param values One or more instances of type {@link DetailedFunction}.
    * @return The current Link object instance.
    * @since 3.1.0
    */
@@ -794,8 +794,7 @@ public class Link {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link Link} requires {@link S100 LinkID}, {@link Set<StationConfig>
-   * StationConfig}.
+   * {@link Link} requires {@link S100 linkID} and {@link StationConfig}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

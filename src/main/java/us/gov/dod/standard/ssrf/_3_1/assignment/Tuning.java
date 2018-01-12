@@ -37,9 +37,9 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDS;
  * <p>
  * Element of {@link Link}
  * <p>
- * Sub-Element is {@link RequestedFreq}
+ * Sub-Element is {@link requestedFreq}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -439,7 +439,7 @@ public class Tuning {
   /**
    * Set the Requested Freq: a single frequency or a range of frequencies.
    * <p>
-   * @param values One or more instances of type {@link AsgnFreqBase...}.
+   * @param values One or more instances of type {@link AsgnFreqBase}.
    * @return The current Tuning object instance.
    * @since 3.1.0
    */

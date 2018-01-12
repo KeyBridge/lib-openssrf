@@ -87,7 +87,7 @@ import us.gov.dod.standard.ssrf._3_1.radiationplan.JammingPlan;
  * &lt;/RadiationPlan&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -335,7 +335,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLocation(Location)} instead.
+   * {@link #withLocation(Location)} instead.
    */
   @Deprecated
   public void setLocationRef(Serial value) {
@@ -662,13 +662,13 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Set the US:JammingAuthority
+   * Set the US:JammingAuthority.
    * <p>
    * Complex element JammingAuthority (US) describes the Jamming Control
    * Authority (JCA) authorisation information for the jamming plan and the
    * controls affecting the level of authorisation.
    *
-   * @param values One or more instances of type {@link JammingAuthority...}.
+   * @param values One or more instances of type {@link JammingAuthority}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
    */
@@ -680,7 +680,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Set the US:JammingAuthority
+   * Set the US:JammingAuthority.
    * <p>
    * Complex element JammingAuthority (US) describes the Jamming Control
    * Authority (JCA) authorisation information for the jamming plan and the
@@ -698,12 +698,12 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Set the US:JammingPlan
+   * Set the US:JammingPlan.
    * <p>
    * Complex element JammingPlan (US) describes the start and stop conditions,
    * priorities, desired effect, and desired effectiveness.
    *
-   * @param values One or more instances of type {@link JammingPlan...}.
+   * @param values One or more instances of type {@link JammingPlan}.
    * @return The current RadiationPlan object instance.
    * @since 3.1.0
    */
@@ -715,7 +715,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
   }
 
   /**
-   * Set the US:JammingPlan
+   * Set the US:JammingPlan.
    * <p>
    * Complex element JammingPlan (US) describes the start and stop conditions,
    * priorities, desired effect, and desired effectiveness.
@@ -756,7 +756,7 @@ public class RadiationPlan extends Common<RadiationPlan> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link RadiationPlan} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link FreqM FreqMin}.
    * <p>
    * Note that this method only checks for the presence of required information;

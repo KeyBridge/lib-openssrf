@@ -62,7 +62,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCUT;
  * &lt;/Allotment&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -773,7 +773,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    *
-   * @param values One or more instances of type {@link Project...}.
+   * @param values One or more instances of type {@link Project}.
    * @return The current Allotment object instance.
    * @since 3.1.0
    */
@@ -807,7 +807,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current Allotment object instance.
    * @since 3.1.0
    */
@@ -840,8 +840,8 @@ public class Allotment extends Common<Allotment> {
    * <p>
    * Complex element LocationRef references a Location dataset.
    *
-   * @param values One or more instances of type {@link LocationRef...}.
-   * @return The current Allotment object instance.
+   * @param values One or more instances of type {@link Serial}.
+     * @return The current Allotment object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
    * {@link #withLocation(Location...)} instead.
@@ -879,7 +879,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element Emission defines the limits of the authorized bandwidth and
    * power within the allotment.
    *
-   * @param values One or more instances of type {@link Emission...}.
+   * @param values One or more instances of type {@link Emission}.
    * @return The current Allotment object instance.
    * @since 3.1.0
    */
@@ -913,7 +913,7 @@ public class Allotment extends Common<Allotment> {
    * Complex element AllotFreq defines a frequency or range of frequencies
    * belonging to the Allotment.
    *
-   * @param values One or more instances of type {@link AllotFreq...}.
+   * @param values One or more instances of type {@link AllotFreq}.
    * @return The current Allotment object instance.
    * @since 3.1.0
    */
@@ -968,8 +968,8 @@ public class Allotment extends Common<Allotment> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Allotment} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link Set<AllotFreq> AllotFreq}, {@link D EffectiveDate}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime},
+   * Set of {@link AllotFreq AllotFreq} and {@link D EffectiveDate}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf._3_1.administrative.CodeList;
 import us.gov.dod.standard.ssrf._3_1.administrative.Dataset;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -53,7 +54,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCDR;
  * &lt;/Administrative&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -170,7 +171,7 @@ public class Administrative extends Common<Administrative> {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setMessage(Message)} instead.
+   * {@link #withMessage(Message)} instead.
    */
   @Deprecated
   public void setMessageRef(Serial value) {
@@ -284,7 +285,7 @@ public class Administrative extends Common<Administrative> {
    * Complex element Dataset is used within an Administrative transaction to
    * specify the identifier of the datasets on which the action must apply.
    *
-   * @param values One or more instances of type {@link Dataset...}.
+   * @param values One or more instances of type {@link Dataset}.
    * @return The current Administrative object instance.
    * @since 3.1.0
    */
@@ -313,12 +314,12 @@ public class Administrative extends Common<Administrative> {
   }
 
   /**
-   * Set the CodeList
+   * Set the CodeList.
    * <p>
    * Complex element CodeList contains the actions necessary to create or delete
    * a code entry in a given Code List.
    *
-   * @param values One or more instances of type {@link CodeList...}.
+   * @param values One or more instances of type {@link CodeList}.
    * @return The current Administrative object instance.
    * @since 3.1.0
    */
@@ -365,7 +366,7 @@ public class Administrative extends Common<Administrative> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Administrative} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link TString Action}.
    * <p>
    * Note that this method only checks for the presence of required information;
@@ -413,7 +414,7 @@ public class Administrative extends Common<Administrative> {
   /**
    * Set the serial of the Message Dataset that is causing this response.
    *
-   * @param value An instances of type {@link Message}.
+   * @param value An instance of type {@link Message}.
    * @return The current Administrative object instance.
    * @since 3.1.0
    */

@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * <p>
  * Sub-Element is {@link POCInformation}
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1295,7 +1295,7 @@ public class IntfReport extends Common<IntfReport> {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setVictimAssignment(Assignment)} instead.
+   * {@link #withVictimAssignment(Assignment)} instead.
    */
   @Deprecated
   public void setVictimAsgnRef(Serial value) {
@@ -2294,6 +2294,7 @@ public class IntfReport extends Common<IntfReport> {
    *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
+   * @throws Exception if the longitude fails to parse
    * @since 3.1.0
    */
   public IntfReport withSourceLon(String value) throws Exception {
@@ -2324,6 +2325,7 @@ public class IntfReport extends Common<IntfReport> {
    *
    * @param value An instances of type {@link String}.
    * @return The current IntfReport object instance.
+   * @throws Exception if the latitude fails to parse
    * @since 3.1.0
    */
   public IntfReport withSourceLat(String value) throws Exception {
@@ -2822,7 +2824,7 @@ public class IntfReport extends Common<IntfReport> {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current IntfReport object instance.
    * @since 3.1.0
    */
@@ -2908,7 +2910,7 @@ public class IntfReport extends Common<IntfReport> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link IntfReport} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link DT IntfStartDateTime}, {@link FreqM VictimFreqMin}.
    * <p>
    * Note that this method only checks for the presence of required information;

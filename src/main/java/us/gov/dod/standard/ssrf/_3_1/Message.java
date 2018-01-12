@@ -23,6 +23,7 @@ import java.util.Set;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.SSRF;
 import us.gov.dod.standard.ssrf.SSRFUtility;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S40;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
@@ -35,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * were received. If a dataset fails validation, a separate Administrative
  * dataset SHOULD be returned to the sender informing them of the error.
  * <p>
- * Sub-Element is {@link DatasetRefs}
+ * Sub-Element is DatasetRef.
  * <p>
  * Example:
  * <pre>
@@ -51,7 +52,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  *         &lt;/Message&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -214,7 +215,7 @@ public class Message extends Common<Message> {
   /**
    * Set
    *
-   * @param values One or more instances of type {@link DatasetRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Message object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -263,7 +264,7 @@ public class Message extends Common<Message> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Message} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
@@ -304,7 +305,7 @@ public class Message extends Common<Message> {
   /**
    * Set
    *
-   * @param values An instances of type {@link Common<?>}.
+   * @param values One or more instances of type {@link Common}.
    * @return The current Message object instance.
    * @since 3.1.0
    */
@@ -315,7 +316,7 @@ public class Message extends Common<Message> {
   /**
    * Set
    *
-   * @param values An instances of type {@link Common<?>}.
+   * @param values A Collection of type {@link Common}.
    * @return The current Message object instance.
    * @since 3.1.0
    */
