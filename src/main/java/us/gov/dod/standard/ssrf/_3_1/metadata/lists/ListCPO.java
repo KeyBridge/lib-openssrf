@@ -29,7 +29,7 @@ import us.gov.dod.standard.ssrf._3_1.radiationplan.JammingTarget;
  * Used in
  * {@link AntMode}, {@link IntfReport}, {@link JammingTarget}, {@link ObservedPolarisationAnalysis}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCPO")

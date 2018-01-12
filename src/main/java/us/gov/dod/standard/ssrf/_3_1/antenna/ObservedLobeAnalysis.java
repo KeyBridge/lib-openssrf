@@ -60,7 +60,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  *   &lt;/ObservedLobeAnalysis&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -362,7 +362,7 @@ public class ObservedLobeAnalysis {
    * sidelobes or backlobes. Used to its full potential, a precise 3D picture of
    * an Antenna sidelobe can be represented.
    * <p>
-   * @param values One or more instances of type {@link ObservedLobeValues...}.
+   * @param values One or more instances of type {@link ObservedLobeValues}.
    * @return The current ObservedLobeAnalysis object instance.
    * @since 3.1.0
    */

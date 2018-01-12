@@ -46,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * Decimal degrees (instead of DMS-encoded string) and relying upon the
  * XmlJavaTypeAdapter for DMS translation.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/04/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -118,7 +118,7 @@ public class Lon extends AMetadata<Lon> implements Comparable<Lon> {
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value in decimal degrees.
+   * @param value the value in decimal degrees.
    */
   public void setValue(BigDecimal value) {
     this.value = value;

@@ -25,7 +25,7 @@ import us.gov.dod.standard.ssrf._3_1.satellite.EarthStation;
  * <p>
  * Used in {@link EarthStation}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCEA")

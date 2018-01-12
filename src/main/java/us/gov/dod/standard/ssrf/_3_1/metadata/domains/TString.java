@@ -75,7 +75,7 @@ public class TString extends AMetadata<TString> implements Comparable<TString> {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the value to set
    */
   public void setValue(String value) {
     this.value = value;

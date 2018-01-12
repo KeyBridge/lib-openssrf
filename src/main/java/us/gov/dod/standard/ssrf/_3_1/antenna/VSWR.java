@@ -37,7 +37,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN2_1;
  * &lt;/VSWR&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)

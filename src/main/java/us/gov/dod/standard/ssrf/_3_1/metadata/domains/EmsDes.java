@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.AMetadata;
  * signal(s) modulating the main carrier; The seventh character identifies the
  * type of information to be transmitted.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -79,7 +79,7 @@ public class EmsDes extends AMetadata<EmsDes> implements Comparable<EmsDes> {
   /**
    * Set the value of the value property.
    * <p>
-   * @param the value
+   * @param value the value
    */
   public void setValue(String value) {
     this.value = value;

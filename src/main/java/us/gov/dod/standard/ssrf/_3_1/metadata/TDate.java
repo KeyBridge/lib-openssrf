@@ -86,7 +86,7 @@ public class TDate extends AMetadata<TDate> implements IMetadataType, Comparable
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the date to set.
    */
   public final void setValue(Calendar value) {
     this.value = (value != null ? (Calendar) value.clone() : null);
@@ -96,7 +96,7 @@ public class TDate extends AMetadata<TDate> implements IMetadataType, Comparable
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the date to set.
    */
   public final void setValue(Date value) {
     if (value != null) {
