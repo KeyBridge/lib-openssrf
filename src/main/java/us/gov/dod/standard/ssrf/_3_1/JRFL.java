@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;/JRFL&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -198,18 +198,31 @@ public class JRFL extends Common<JRFL> {
    * values for the Hours item: 8 one value: 08h00Z 5,6,9 multiple values:
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
-   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007: %lt;Minutes%gt;star/10%lt;/Minutes%gt;
-   * %lt;Hours%gt;9-17%lt;/Hours%gt; %lt;DaysofWeek%gt;0-4%lt;/DaysofWeek%gt;
-   * %lt;Years%gt;2007%lt;/Years%gt; %lt;Duration%gt;2%lt;/Duration%gt; On the
-   * 5-minute mark, every third hour, only on days of the work week (Mon-Fri)
-   * %lt;Minutes%gt;5%lt;/Minutes%gt; %lt;Hours%gt;star/3%lt;/Hours%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt; On the 20 and 50-minute marks
-   * every hour, every month except June, only on days of the work week
-   * (Mon-Fri) %lt;Minutes%gt;20,50%lt;/Minutes%gt;
-   * %lt;Months%gt;1-5,7-12%lt;/Months%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
    * Format is UN(4) (min)
    * <p>
@@ -548,24 +561,31 @@ public class JRFL extends Common<JRFL> {
    * values for the Hours item: 8 one value: 08h00Z 5,6,9 multiple values:
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
-   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
-   * On the 5-minute mark, every third hour, only on days of the work week
-   * (Mon-Fri)
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
-   * On the 20 and 50-minute marks every hour, every month except June, only on
-   * days of the work week (Mon-Fri)
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    *
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -580,23 +600,30 @@ public class JRFL extends Common<JRFL> {
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
    * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
-   * On the 5-minute mark, every third hour, only on days of the work week
-   * (Mon-Fri)
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
-   * On the 20 and 50-minute marks every hour, every month except June, only on
-   * days of the work week (Mon-Fri)
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    *
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -825,25 +852,31 @@ public class JRFL extends Common<JRFL> {
    * values for the Hours item: 8 one value: 08h00Z 5,6,9 multiple values:
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
-   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
-   * On the 5-minute mark, every third hour, only on days of the work week
-   * (Mon-Fri)
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
-   * On the 20 and 50-minute marks every hour, every month except June, only on
-   * days of the work week (Mon-Fri)
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>
-   *
+   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * @param value An instances of type {@link Integer}.
    * @return The current JRFL object instance.
    * @since 3.1.0
@@ -865,7 +898,7 @@ public class JRFL extends Common<JRFL> {
    * organisations are listed they will all use the same set of frequencies; if
    * it is not the case, split the JRFL entry into several entries.
    *
-   * @param values One or more instances of type {@link JRFLEntry...}.
+   * @param values One or more instances of type {@link JRFLEntry}.
    * @return The current JRFL object instance.
    * @since 3.1.0
    */
@@ -926,8 +959,7 @@ public class JRFL extends Common<JRFL> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link JRFL} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link Set<JRFLEntry> JRFLEntry}.
+   * {@link cls}, {@link Serial}, {@link DT} and {@link JRFLEntry}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

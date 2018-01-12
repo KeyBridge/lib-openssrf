@@ -31,7 +31,7 @@ import us.gov.dod.standard.ssrf._3_1.organisation.RelatedOrganisation;
  * agency, manufacturer, etc).
  * <p>
  * Sub-Elements are
- * {@link Address}, {@link Email}, {@link RelatedOrganisation}, {@link TelephoneFax}
+ * {@link Address}, {@link EMail}, {@link RelatedOrganisation}, {@link TelephoneFax}
  * <p>
  * Example:
  * <pre>
@@ -46,7 +46,7 @@ import us.gov.dod.standard.ssrf._3_1.organisation.RelatedOrganisation;
  * &lt;/Organisation&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -731,12 +731,12 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the Address
+   * Set the Address.
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
    *
-   * @param values One or more instances of type {@link Address...}.
+   * @param values One or more instances of type {@link Address}.
    * @return The current Organisation object instance.
    * @since 3.1.0
    */
@@ -748,7 +748,7 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the Address
+   * Set the Address.
    * <p>
    * Complex element Address contains the address of a Contact, Organisation or
    * Role.
@@ -765,12 +765,12 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the TelephoneFax
+   * Set the TelephoneFax.
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
    *
-   * @param values One or more instances of type {@link TelephoneFax...}.
+   * @param values One or more instances of type {@link TelephoneFax}.
    * @return The current Organisation object instance.
    * @since 3.1.0
    */
@@ -782,7 +782,7 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the TelephoneFax
+   * Set the TelephoneFax.
    * <p>
    * Complex element TelephoneFax reflects the telephone and/or telefax
    * number(s) of the Contact, Organisation or Role.
@@ -799,11 +799,11 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the Email
+   * Set the Email.
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
    *
-   * @param values One or more instances of type {@link EMail...}.
+   * @param values One or more instances of type {@link EMail}.
    * @return The current Organisation object instance.
    * @since 3.1.0
    */
@@ -815,7 +815,7 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the Email
+   * Set the Email.
    * <p>
    * Complex element Email contains the email address of a Contact or Role.
    *
@@ -831,11 +831,11 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the RoleRef
+   * Set the RoleRef.
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    *
-   * @param values One or more instances of type {@link RoleRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Organisation object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -850,7 +850,7 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the RoleRef
+   * Set the RoleRef.
    * <p>
    * Complex element RoleRef contains the serial of a referenced Role.
    *
@@ -869,13 +869,13 @@ public class Organisation extends Common<Organisation> {
   }
 
   /**
-   * Set the RelatedOrganisation
+   * Set the RelatedOrganisation.
    * <p>
    * Complex element RelatedOrganisation identifies an Organisation linked to
    * the current Organisation, the type of relation (reporting, budget, etc) and
    * the relation (parent, child, sibling).
    *
-   * @param values One or more instances of type {@link RelatedOrganisation...}.
+   * @param values One or more instances of type {@link RelatedOrganisation}.
    * @return The current Organisation object instance.
    * @since 3.1.0
    */
@@ -931,7 +931,7 @@ public class Organisation extends Common<Organisation> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Organisation} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

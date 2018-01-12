@@ -44,7 +44,7 @@ import us.gov.dod.standard.ssrf._3_1.satellite.ServiceArea;
  * &lt;/Satellite&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -482,7 +482,7 @@ public class Satellite extends Common<Satellite> {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLaunchLoc(Location)} instead.
+   * {@link #withLaunchLoc(Location)} instead.
    */
   @Deprecated
   public void setLaunchLocRef(Serial value) {
@@ -1109,6 +1109,7 @@ public class Satellite extends Common<Satellite> {
    *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
+   * @throws Exception if the value fails to parse
    * @since 3.1.0
    */
   public Satellite withGeoNominalLon(String value) throws Exception {
@@ -1121,7 +1122,6 @@ public class Satellite extends Common<Satellite> {
    *
    * @param value An instances of type {@link String}.
    * @return The current Satellite object instance.
-   * @throws Exception if the value fails to parse
    * @since 3.1.0
    */
   public Satellite withGeoNominalLon(Double value) {
@@ -1256,12 +1256,12 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the RFSystemRef
+   * Set the RFSystemRef.
    * <p>
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
    *
-   * @param values One or more instances of type {@link RFSystemRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Satellite object instance.
    * @since 3.1.0
    */
@@ -1273,7 +1273,7 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the RFSystemRef
+   * Set the RFSystemRef.
    * <p>
    * Complex element RFSystemRef contains a reference to a RF System used on the
    * satellite.
@@ -1290,12 +1290,12 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the EarthStation
+   * Set the EarthStation.
    * <p>
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
    *
-   * @param values One or more instances of type {@link EarthStation...}.
+   * @param values One or more instances of type {@link EarthStation}.
    * @return The current Satellite object instance.
    * @since 3.1.0
    */
@@ -1307,7 +1307,7 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the EarthStation
+   * Set the EarthStation.
    * <p>
    * Complex element EarthStation contains the name and type of an earth station
    * used in a satellite network.
@@ -1324,12 +1324,12 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the ServiceArea
+   * Set the ServiceArea.
    * <p>
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite.
    *
-   * @param values One or more instances of type {@link ServiceArea...}.
+   * @param values One or more instances of type {@link ServiceArea}.
    * @return The current Satellite object instance.
    * @since 3.1.0
    */
@@ -1341,7 +1341,7 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the ServiceArea
+   * Set the ServiceArea.
    * <p>
    * Complex element ServiceArea contains the geographic area serviced by the
    * satellite.
@@ -1358,14 +1358,14 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the Nomenclature
+   * Set the Nomenclature.
    * <p>
    * Complex element Nomenclature identifies either the standard military,
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    *
-   * @param values One or more instances of type {@link Nomenclature...}.
+   * @param values One or more instances of type {@link Nomenclature}.
    * @return The current Satellite object instance.
    * @since 3.1.0
    */
@@ -1377,7 +1377,7 @@ public class Satellite extends Common<Satellite> {
   }
 
   /**
-   * Set the Nomenclature
+   * Set the Nomenclature.
    * <p>
    * Complex element Nomenclature identifies either the standard military,
    * government, nomenclature or the commercial model number of an equipment.
@@ -1431,7 +1431,7 @@ public class Satellite extends Common<Satellite> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Satellite} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

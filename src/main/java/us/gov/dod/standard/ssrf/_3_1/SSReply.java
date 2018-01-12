@@ -51,7 +51,7 @@ import us.gov.dod.standard.ssrf._3_1.ssreply.StageLocation;
  * &lt;/SSReply&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1109,12 +1109,12 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set the CommentSource
+   * Set the CommentSource.
    * <p>
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability.
    *
-   * @param values One or more instances of type {@link CommentSource...}.
+   * @param values One or more instances of type {@link CommentSource}.
    * @return The current SSReply object instance.
    * @since 3.1.0
    */
@@ -1126,7 +1126,7 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set the CommentSource
+   * Set the CommentSource.
    * <p>
    * Complex element CommentSource is used to provide comments to a SSRequest.
    * It can also be used to certify supportability.
@@ -1143,12 +1143,12 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set the StageLocation
+   * Set the StageLocation.
    * <p>
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
    *
-   * @param values One or more instances of type {@link StageLocation...}.
+   * @param values One or more instances of type {@link StageLocation}.
    * @return The current SSReply object instance.
    * @since 3.1.0
    */
@@ -1160,7 +1160,7 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set the StageLocation
+   * Set the StageLocation.
    * <p>
    * Complex element StageLocation defines locations where the equipment or
    * system is allowed or forbidden from use.
@@ -1177,7 +1177,7 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set the Configuration
+   * Set the Configuration.
    * <p>
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
@@ -1188,7 +1188,7 @@ public class SSReply extends Common<SSReply> {
    * receiver and the station's transmitter allows the incoming signal to be
    * retransmitted exactly as received.
    *
-   * @param values One or more instances of type {@link Configuration...}.
+   * @param values One or more instances of type {@link Configuration}.
    * @return The current SSReply object instance.
    * @since 3.1.0
    */
@@ -1200,7 +1200,7 @@ public class SSReply extends Common<SSReply> {
   }
 
   /**
-   * Set the Configuration
+   * Set the Configuration.
    * <p>
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
@@ -1254,7 +1254,7 @@ public class SSReply extends Common<SSReply> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link SSReply} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and
    * {@link D EffectiveDate}, {@link TString ReplyingCountry}, {@link TString SupportabilityCode}.
    * <p>

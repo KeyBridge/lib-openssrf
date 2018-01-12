@@ -53,7 +53,7 @@ import us.gov.dod.standard.ssrf._3_1.ssrequest.*;
  * &lt;/SSRequest&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -122,15 +122,14 @@ public class SSRequest extends Common<SSRequest> {
   @XmlElement(name = "CurrentStage", required = false)
   private TString currentStage;
   /**
-   * Requirement - Requirement Description (Optional)
+   * Requirement - Requirement Description (Optional).
    * <p>
-   * A description of the types and forms of information to be transmitted or
-   * received. The requirement should describe: - The general purpose of the
-   * system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft
-   * system to protect fixed facilities); - Each significant capability of the
-   * system (e.g., in the PATRIOT system: search, acquisition and tracking
-   * radar, TT&C, C2 links, etc); - Any related supportability documents should
-   * be listed in the ExtReferenceRef element.
+   * The requirement should describe:
+   * <ul>
+   * <li>The general purpose of the system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft system to protect fixed facilities).</li>
+   * <li>Each significant capability of the system (e.g., in the PATRIOT system: search, acquisition and tracking radar, TT&amp;C, C2 links, etc).</li>
+   * <li>Any related supportability documents should be listed in the ExtReferenceRef element.</li>
+   * </ul>
    * <p>
    * Format is Memo
    *
@@ -611,14 +610,14 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Get a description of the types and forms of information to be transmitted
-   * or received. The requirement should describe: - The general purpose of the
-   * system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft
-   * system to protect fixed facilities); - Each significant capability of the
-   * system (e.g., in the PATRIOT system: search, acquisition and tracking
-   * radar, TT&C, C2 links, etc); - Any related supportability documents should
-   * be listed in the ExtReferenceRef element..
+   * Get a description of the types and forms of information to be transmitted or received.
    *
+   * <ul>
+   *  <li>The general purpose of the system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft system to protect fixed facilities).</li>
+   *  <li>Each significant capability of the system (e.g., in the PATRIOT system: search, acquisition and tracking radar, TT&amp;C, C2 links, etc).</li>
+   *  <li>Any related supportability documents should be listed in the ExtReferenceRef element.</li>
+   * </ul>
+   
    * @return a {@link MEMO} instance
    * @since 3.1.0
    */
@@ -627,13 +626,13 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set a description of the types and forms of information to be transmitted
-   * or received. The requirement should describe: - The general purpose of the
-   * system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft
-   * system to protect fixed facilities); - Each significant capability of the
-   * system (e.g., in the PATRIOT system: search, acquisition and tracking
-   * radar, TT&C, C2 links, etc); - Any related supportability documents should
-   * be listed in the ExtReferenceRef element..
+   * Set a description of the types and forms of information to be transmitted or received.
+   *
+   * <ul>
+   *  <li>The general purpose of the system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft system to protect fixed facilities).</li>
+   *  <li>Each significant capability of the system (e.g., in the PATRIOT system: search, acquisition and tracking radar, TT&amp;C, C2 links, etc).</li>
+   *  <li>Any related supportability documents should be listed in the ExtReferenceRef element.</li>
+   * </ul>
    *
    * @param value a {@link MEMO} instance
    * @since 3.1.0
@@ -652,7 +651,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Get "Yes" if the system may be used in a case of emergency..
+   * Get "Yes" if the system may be used in a case of emergency.
    *
    * @return the Emergency value in a {@link TString} data type
    * @since 3.1.0
@@ -683,8 +682,9 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Get the number of mobile units. These units do not necessarily operate
-   * simultaneously in the same electromagnetic environment..
+   * Get the number of mobile units.
+   *
+   * These units do not necessarily operate simultaneously in the same electromagnetic environment.
    *
    * @return a {@link UN9} instance
    * @since 3.1.0
@@ -694,8 +694,9 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the number of mobile units. These units do not necessarily operate
-   * simultaneously in the same electromagnetic environment..
+   * Set the number of mobile units.
+   *
+   * These units do not necessarily operate simultaneously in the same electromagnetic environment.
    *
    * @param value a {@link UN9} instance
    * @since 3.1.0
@@ -1792,13 +1793,13 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set a description of the types and forms of information to be transmitted
-   * or received. The requirement should describe: - The general purpose of the
-   * system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft
-   * system to protect fixed facilities); - Each significant capability of the
-   * system (e.g., in the PATRIOT system: search, acquisition and tracking
-   * radar, TT&C, C2 links, etc); - Any related supportability documents should
-   * be listed in the ExtReferenceRef element.
+   * Set a description of the types and forms of information to be transmitted or received.
+   *
+   * <ul>
+   *  <li>The general purpose of the system (e.g., in the PATRIOT system: this is an anti-missile, anti-aircraft system to protect fixed facilities).</li>
+   *  <li>Each significant capability of the system (e.g., in the PATRIOT system: search, acquisition and tracking radar, TT&amp;C, C2 links, etc).</li>
+   *  <li>Any related supportability documents should be listed in the ExtReferenceRef element.</li>
+   * </ul>
    *
    * @param value An instances of type {@link String}.
    * @return The current SSRequest object instance.
@@ -2138,12 +2139,12 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the Project
+   * Set the Project.
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    *
-   * @param values One or more instances of type {@link Project...}.
+   * @param values One or more instances of type {@link Project}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2155,7 +2156,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the Project
+   * Set the Project.
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
@@ -2174,7 +2175,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set the current stage of the system.
    *
-   * @param values One or more instances of type {@link Stage...}.
+   * @param values One or more instances of type {@link Stage}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2200,14 +2201,14 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the Nomenclature
+   * Set the Nomenclature.
    * <p>
    * Complex element Nomenclature identifies either the standard military,
    * government, nomenclature or the commercial model number of an equipment.
    * Each device or group of devices may have several types of nomenclatures,
    * e.g. both a military nomenclature and a commercial model number.
    *
-   * @param values One or more instances of type {@link Nomenclature...}.
+   * @param values One or more instances of type {@link Nomenclature}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2219,7 +2220,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the Nomenclature
+   * Set the Nomenclature.
    * <p>
    * Complex element Nomenclature identifies either the standard military,
    * government, nomenclature or the commercial model number of an equipment.
@@ -2238,12 +2239,12 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the POCInformation
+   * Set the POCInformation.
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2255,7 +2256,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the POCInformation
+   * Set the POCInformation.
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
@@ -2272,13 +2273,13 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the RelatedSupportability
+   * Set the RelatedSupportability.
    * <p>
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
    *
    * @param values One or more instances of type
-   *               {@link RelatedSupportability...}.
+   *               {@link RelatedSupportability}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2290,7 +2291,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the RelatedSupportability
+   * Set the RelatedSupportability.
    * <p>
    * Complex element RelatedSupportability refers to a SSRequest with which the
    * current dataset has a dependency.
@@ -2307,14 +2308,14 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the HostNation
+   * Set the HostNation.
    * <p>
    * Complex element HostNation indicates the host nations from which
    * supportability is requested. If a SSRequest received by NATO has no
    * HostNation entry, it will be assumed that this SSRequest is for all NATO
    * Nations plus AUS and NZL (in accordance with the FMSC agreement).
    *
-   * @param values One or more instances of type {@link HostNation...}.
+   * @param values One or more instances of type {@link HostNation}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2326,7 +2327,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the HostNation
+   * Set the HostNation.
    * <p>
    * Complex element HostNation indicates the host nations from which
    * supportability is requested. If a SSRequest received by NATO has no
@@ -2347,7 +2348,7 @@ public class SSRequest extends Common<SSRequest> {
   /**
    * Set if the system is used in a wartime environment.
    *
-   * @param values One or more instances of type {@link Time...}.
+   * @param values One or more instances of type {@link Time}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2373,12 +2374,12 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the DiagramEndpoint
+   * Set the DiagramEndpoint.
    * <p>
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
    *
-   * @param values One or more instances of type {@link DiagramEndpoint...}.
+   * @param values One or more instances of type {@link DiagramEndpoint}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2390,7 +2391,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the DiagramEndpoint
+   * Set the DiagramEndpoint.
    * <p>
    * Complex element DiagramEndpoint defines an instance of an icon on the
    * diagram.
@@ -2407,12 +2408,12 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the DiagramLine
+   * Set the DiagramLine.
    * <p>
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram.
    *
-   * @param values One or more instances of type {@link DiagramLine...}.
+   * @param values One or more instances of type {@link DiagramLine}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2424,7 +2425,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the DiagramLine
+   * Set the DiagramLine.
    * <p>
    * Complex element DiagramLine defines a line between two endpoints on the
    * diagram.
@@ -2441,7 +2442,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the Configuration
+   * Set the Configuration.
    * <p>
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
@@ -2449,7 +2450,7 @@ public class SSRequest extends Common<SSRequest> {
    * identifies the functional use of the assigned frequency at a particular
    * transmitting station.
    *
-   * @param values One or more instances of type {@link Configuration...}.
+   * @param values One or more instances of type {@link Configuration}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2461,7 +2462,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the Configuration
+   * Set the Configuration.
    * <p>
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
@@ -2481,12 +2482,12 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the US:StatusLog
+   * Set the US:StatusLog.
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests.
    *
-   * @param values One or more instances of type {@link StatusLog...}.
+   * @param values One or more instances of type {@link StatusLog}.
    * @return The current SSRequest object instance.
    * @since 3.1.0
    */
@@ -2498,7 +2499,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the US:StatusLog
+   * Set the US:StatusLog.
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to spectrum supportability requests.
@@ -2515,7 +2516,7 @@ public class SSRequest extends Common<SSRequest> {
   }
 
   /**
-   * Set the US:Trunking
+   * Set the US:Trunking.
    * <p>
    * Complex element Trunking (US) defines Radiotelephony using standard land
    * mobile principles where multiple baseband signals are bounded within one
@@ -2582,7 +2583,7 @@ public class SSRequest extends Common<SSRequest> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link SSRequest} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}
    * and {@link S100 Title}.
    * <p>
    * Note that this method only checks for the presence of required information;

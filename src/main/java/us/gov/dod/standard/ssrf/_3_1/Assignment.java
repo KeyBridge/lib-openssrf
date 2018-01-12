@@ -28,7 +28,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * Assignment is the XML root for all parameters of a system of assignments.
  * <p>
  * Sub-Elements are
- * {@link AsgnAllotOwner}, {@link CircuitRemarks}, {@link Configuration}, {@link CoordinationData}, {@link DocketNum}, {@link HostDocketNum}, {@link Link}, {@link OffTheShelfEquipment}, {@link POCInformation}, {@link PreviousAuthorization}, {@link Project}, {@link RecordNote}, {@link Station}, {@link StatusLog}, {@link SysofStation}
+ * {@link AsgnAllotOwner}, {@link CircuitRemarks}, {@link Configuration}, {@link CoordinationData}, {@link DocketNum}, {@link HostDocketNum}, {@link Link}, {@link OffTheShelfEquipment}, {@link POCInformation}, {@link PreviousAuthorization}, {@link Project}, {@link RecordNote}, {@link Station}, {@link StatusLog}, {@link SysOfStation}
  * <p>
  * Example:
  * <pre>
@@ -65,7 +65,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  * &lt;/Assignment&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -328,18 +328,28 @@ public class Assignment extends Common<Assignment> {
    * between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
    * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
-   * for the year 2007: %lt;Minutes%gt;star/10%lt;/Minutes%gt;
-   * %lt;Hours%gt;9-17%lt;/Hours%gt; %lt;DaysofWeek%gt;0-4%lt;/DaysofWeek%gt;
-   * %lt;Years%gt;2007%lt;/Years%gt; %lt;Duration%gt;2%lt;/Duration%gt;
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
-   * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * %lt;Minutes%gt;5%lt;/Minutes%gt; %lt;Hours%gt;star/3%lt;/Hours%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
-   * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday %lt;Minutes%gt;20,50%lt;/Minutes%gt;
-   * %lt;Months%gt;1-5,7-12%lt;/Months%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
    * Format is UN(4) (min)
    * <p>
@@ -1298,30 +1308,34 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Get the number of minutes for which an event will live. Examples: Hours
-   * data item: 8 = one value: 08h00Z 5,6,9 = multiple values: 05h00Z, 06h00Z,
-   * 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd
-   * hour, starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd
-   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
+   * Get the number of minutes for which an event will live. Examples: Hours data item: 8 = one value: 08h00Z 5,6,9 =
+   * multiple values: 05h00Z, 06h00Z, 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd hour,
+   * starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd hour between 0300 and 1200, inclusive:
+   * 03h00Z, 06h00Z, 09h00Z, and 12h00Z
    * <p>
-   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
-   * for the year 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday for the year 2007:
+   * <pre>
+   * &lt;
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
-   * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
-   * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;.
+   * </pre>
    *
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -1339,22 +1353,28 @@ public class Assignment extends Common<Assignment> {
    * <p>
    * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
    * for the year 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
    * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
    * On the 20 and 50-minute marks, every hour, every month except June,
    * Monday-Friday
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;.
+   * </pre>
    *
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -3037,30 +3057,33 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the number of minutes for which an event will live. Examples: Hours
-   * data item: 8 = one value: 08h00Z 5,6,9 = multiple values: 05h00Z, 06h00Z,
-   * 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd
-   * hour, starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd
-   * hour between 0300 and 1200, inclusive: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
+   * Set the number of minutes for which an event will live. Examples: Hours data item: 8 = one value: 08h00Z 5,6,9 =
+   * multiple values: 05h00Z, 06h00Z, 09h00Z 5-8 = range between 05h00Z and 08h00Z, inclusive star/2 = every 2nd hour,
+   * starting at midnight: 00h00Z, 02h00Z, 04h00Z, etc. 3-12/3 = every 3rd hour between 0300 and 1200, inclusive:
+   * 03h00Z, 06h00Z, 09h00Z, and 12h00Z
    * <p>
-   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
-   * for the year 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
    * <p>
    * On the 5-minute mark, every 3rd hour, Monday-Friday
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
-   * On the 20 and 50-minute marks, every hour, every month except June,
-   * Monday-Friday
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    *
    * @param value An instances of type {@link Integer}.
    * @return The current Assignment object instance.
@@ -3467,12 +3490,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Project
+   * Set the Project.
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    *
-   * @param values One or more instances of type {@link Project...}.
+   * @param values One or more instances of type {@link Project}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3484,7 +3507,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Project
+   * Set the Project.
    * <p>
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
@@ -3501,12 +3524,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the POCInformation
+   * Set the POCInformation.
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    *
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3518,7 +3541,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the POCInformation
+   * Set the POCInformation.
    * <p>
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
@@ -3535,14 +3558,14 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the SysofStation
+   * Set the SysOfStation.
    * <p>
    * Complex element SysOfStation defines the name of the system that this
    * assignment belongs and whether or not the assignment provides assets to or
    * uses another assignment resources. It also describes linkages to or from
    * other datasets.
    *
-   * @param values One or more instances of type {@link SysOfStation...}.
+   * @param values One or more instances of type {@link SysOfStation}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3554,7 +3577,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the SysofStation
+   * Set the SysOfStation.
    * <p>
    * Complex element SysOfStation defines the name of the system that this
    * assignment belongs and whether or not the assignment provides assets to or
@@ -3573,12 +3596,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the RelatedRef
+   * Set the RelatedRef.
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    *
-   * @param values One or more instances of type {@link RelatedRef...}.
+   * @param values One or more instances of type {@link Serial}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
@@ -3593,7 +3616,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the RelatedRef
+   * Set the RelatedRef.
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
@@ -3613,13 +3636,13 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Configuration
+   * Set the Configuration.
    * <p>
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
    * authorised in a frequency Assignment or Allotment dataset.
    *
-   * @param values One or more instances of type {@link Configuration...}.
+   * @param values One or more instances of type {@link Configuration}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3631,7 +3654,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Configuration
+   * Set the Configuration.
    * <p>
    * Complex element Configuration identifies each operational configuration
    * that is required in a SSRequest, granted by a Host Nation in a SSReply, or
@@ -3649,12 +3672,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Station
+   * Set the Station.
    * <p>
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset.
    *
-   * @param values One or more instances of type {@link Station...}.
+   * @param values One or more instances of type {@link Station}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3666,7 +3689,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Station
+   * Set the Station.
    * <p>
    * Complex element Station defines the station, or one of the stations, within
    * the current Assignment dataset.
@@ -3683,7 +3706,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Link
+   * Set the Link.
    * <p>
    * Complex element Link identifies each link in a system of assignments. This
    * is the top element of each Link. The exact definition of a link is very
@@ -3692,7 +3715,7 @@ public class Assignment extends Common<Assignment> {
    * volume with non-defined mobiles) to very accurate (such as one link for
    * each radio-relay hop).
    *
-   * @param values One or more instances of type {@link Link...}.
+   * @param values One or more instances of type {@link Link}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3704,7 +3727,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the Link
+   * Set the Link.
    * <p>
    * Complex element Link identifies each link in a system of assignments. This
    * is the top element of each Link. The exact definition of a link is very
@@ -3725,12 +3748,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:StatusLog
+   * Set the US:StatusLog.
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments.
    *
-   * @param values One or more instances of type {@link StatusLog...}.
+   * @param values One or more instances of type {@link StatusLog}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3742,7 +3765,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:StatusLog
+   * Set the US:StatusLog.
    * <p>
    * Complex element StatusLog (US) contains the transactional processing
    * information related to frequency assignments.
@@ -3759,12 +3782,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:AsgnAllotOwner
+   * Set the US:AsgnAllotOwner.
    * <p>
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
    *
-   * @param values One or more instances of type {@link AsgnAllotOwner...}.
+   * @param values One or more instances of type {@link AsgnAllotOwner}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3776,7 +3799,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:AsgnAllotOwner
+   * Set the US:AsgnAllotOwner.
    * <p>
    * Complex element AsgnAllotOwner (US) contains the serial of the owning, or
    * originating, organisation.
@@ -3793,13 +3816,13 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:CircuitRemarks
+   * Set the US:CircuitRemarks.
    * <p>
    * Complex element CircuitRemarks (US) contains general information about the
    * network and equipment used to support a specific frequency assignment or
    * assignments.
    *
-   * @param values One or more instances of type {@link CircuitRemarks...}.
+   * @param values One or more instances of type {@link CircuitRemarks}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3811,7 +3834,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:CircuitRemarks
+   * Set the US:CircuitRemarks.
    * <p>
    * Complex element CircuitRemarks (US) contains general information about the
    * network and equipment used to support a specific frequency assignment or
@@ -3829,12 +3852,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:CoordinationData
+   * Set the US:CoordinationData.
    * <p>
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
    *
-   * @param values One or more instances of type {@link CoordinationData...}.
+   * @param values One or more instances of type {@link CoordinationData}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3846,7 +3869,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:CoordinationData
+   * Set the US:CoordinationData.
    * <p>
    * Complex element CoordinationData (US) contains Host Nation coordination
    * information.
@@ -3863,12 +3886,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:DocketNum
+   * Set the US:DocketNum.
    * <p>
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository.
    *
-   * @param values One or more instances of type {@link DocketNum...}.
+   * @param values One or more instances of type {@link DocketNum}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3880,7 +3903,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:DocketNum
+   * Set the US:DocketNum.
    * <p>
    * Complex element DocketNum (US) contains the docket number from a prior data
    * repository.
@@ -3897,12 +3920,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:HostDocketNum
+   * Set the US:HostDocketNum.
    * <p>
    * Complex element HostDocketNum (US) contains the Host Nation docket number
    * from a prior data repository.
    *
-   * @param values One or more instances of type {@link HostDocketNum...}.
+   * @param values One or more instances of type {@link HostDocketNum}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3931,14 +3954,13 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:OffTheShelfEquipment
+   * Set the US:OffTheShelfEquipment.
    * <p>
    * Complex element OffTheShelfEquipment (US) defines the function of readily
    * available equipment. It is often commercial equipment that provides a
    * compatible function to DoD or government equipment.
    *
-   * @param values One or more instances of type
-   *               {@link OffTheShelfEquipment...}.
+   * @param values One or more instances of type {@link OffTheShelfEquipment}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -3950,7 +3972,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:OffTheShelfEquipment
+   * Set the US:OffTheShelfEquipment.
    * <p>
    * Complex element OffTheShelfEquipment (US) defines the function of readily
    * available equipment. It is often commercial equipment that provides a
@@ -3974,8 +3996,7 @@ public class Assignment extends Common<Assignment> {
    * assignment's previous Government Master File (GMF) authorization agency
    * serial number.
    *
-   * @param values One or more instances of type
-   *               {@link PreviousAuthorization...}.
+   * @param values One or more instances of type {@link PreviousAuthorization}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -4005,12 +4026,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:RecordNote
+   * Set the US:RecordNote.
    * <p>
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments.
    *
-   * @param values One or more instances of type {@link RecordNote...}.
+   * @param values One or more instances of type {@link RecordNote}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -4022,7 +4043,7 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the US:RecordNote
+   * Set the US:RecordNote.
    * <p>
    * Complex element RecordNote (US) contains a reference to a formal host
    * nation "note" and specific comments.
@@ -4112,10 +4133,10 @@ public class Assignment extends Common<Assignment> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Assignment} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link Set<Configuration> Configuration},
-   * {@link DT EffectiveDateTime}, {@link Set<Link> Link}, {@link Set<Station>
-   * Station}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime},
+   * Set of {@link Configuration Configuration},
+   * {@link DT EffectiveDateTime}, Set of {@link Link Link} and
+   * Set of {@link Station Station}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
@@ -4165,12 +4186,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the RelatedRef
+   * Set the RelatedRef.
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    *
-   * @param values An instances of type {@link Common<?>}.
+   * @param values An instances of type {@link Common}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
@@ -4179,12 +4200,12 @@ public class Assignment extends Common<Assignment> {
   }
 
   /**
-   * Set the RelatedRef
+   * Set the RelatedRef.
    * <p>
    * Complex element RelatedRef contains the serial of a referenced Assignment,
    * Allotment, SSReply, ForceElement or FEDeployment.
    *
-   * @param values An instances of type {@link Common<?>}.
+   * @param values An instances of type {@link Common}.
    * @return The current Assignment object instance.
    * @since 3.1.0
    */
