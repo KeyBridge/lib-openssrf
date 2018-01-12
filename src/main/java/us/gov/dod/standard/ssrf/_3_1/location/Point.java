@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCBO;
  * &lt;/Point&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -438,6 +438,7 @@ public class Point {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current Point object instance.
+   * @throws Exception if the longitude fails to parse.
    * @since 3.1.0
    */
   public Point withLon(String value) throws Exception {
@@ -465,6 +466,7 @@ public class Point {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current Point object instance.
+   * @throws Exception if the latitude fails to parse.
    * @since 3.1.0
    */
   public Point withLat(String value) throws Exception {

@@ -38,7 +38,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUWG;
  * <p>
  * Example: See {@link RadiationPlan}.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -393,12 +393,12 @@ public class JammingTarget {
 
   /**
    * Set In Data Item LoadsetRef (US), the serial of a Loadset dataset that
-   * contains the details to be used for this jamming instance..
+   * contains the details to be used for this jamming instance.
    * <p>
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLoadset(Loadset)} instead.
+   * {@link #withLoadset(Loadset)} instead.
    */
   @Deprecated
   public void setLoadsetRef(Serial value) {
@@ -416,7 +416,7 @@ public class JammingTarget {
 
   /**
    * Get the unique reference of an existing Location dataset that describes the
-   * target location. .
+   * target location.
    * <p>
    * @return a {@link Serial} instance
    * @since 3.1.0
@@ -427,7 +427,7 @@ public class JammingTarget {
 
   /**
    * Set the unique reference of an existing Location dataset that describes the
-   * target location. .
+   * target location.
    * <p>
    * @param value a {@link Serial} instance
    * @since 3.1.0
@@ -452,7 +452,7 @@ public class JammingTarget {
    * known, use 00, except in the case of navigation aid systems, geostationary
    * satellites, and microwave facilities, where seconds MUST be entered.
    * Degrees longitude requires three digits and should not exceed 180 degrees;
-   * enter E or W immediately following the seconds. Use leading zeros..
+   * enter E or W immediately following the seconds. Use leading zeros.
    * <p>
    * @return a {@link Lon} instance
    * @since 3.1.0
@@ -675,6 +675,7 @@ public class JammingTarget {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current JammingTarget object instance.
+   * @throws Exception if the latitude value fails to parse.
    * @since 3.1.0
    */
   public JammingTarget withLat(String value) throws Exception {
@@ -734,6 +735,7 @@ public class JammingTarget {
    * <p>
    * @param value An instances of type {@link String}.
    * @return The current JammingTarget object instance.
+   * @throws Exception if the longitude value fails to parse.
    * @since 3.1.0
    */
   public JammingTarget withLon(String value) throws Exception {
@@ -798,7 +800,7 @@ public class JammingTarget {
    * to be impacted and/or how well it actually was impacted, for a specific
    * jamming mission.
    * <p>
-   * @param values One or more instances of type {@link JammingPerformance...}.
+   * @param values One or more instances of type {@link JammingPerformance}.
    * @return The current JammingTarget object instance.
    * @since 3.1.0
    */
@@ -972,8 +974,9 @@ public class JammingTarget {
    * <p>
    * This method builds the transient {@link #loadset} with values from the
    * imported {@link #loadsetRef} field. This method should typically be called
-   * after the JammingTarget is imported from XML. * @param root the SSRF root
-   * instance.
+   * after the JammingTarget is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */
