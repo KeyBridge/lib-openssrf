@@ -80,7 +80,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;/Loadset&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -647,8 +647,7 @@ public class Loadset extends Common<Loadset> {
    * Complex element JammingChannelProfile (US) describes the specific Loadset
    * parameters for jamming a discrete frequency or frequency range.
    *
-   * @param values One or more instances of type
-   *               {@link JammingChannelProfile...}.
+   * @param values One or more instances of type {@link JammingChannelProfile}.
    * @return The current Loadset object instance.
    * @since 3.1.0
    */
@@ -701,8 +700,8 @@ public class Loadset extends Common<Loadset> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Loadset} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}
-   * and {@link Set<JammingChannelProfile> JammingChannelProfile},
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime},
+   * Set of {@link JammingChannelProfile JammingChannelProfile} and
    * {@link S50 Name}.
    * <p>
    * Note that this method only checks for the presence of required information;

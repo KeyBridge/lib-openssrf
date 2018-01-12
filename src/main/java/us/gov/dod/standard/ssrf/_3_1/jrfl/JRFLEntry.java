@@ -47,7 +47,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTS;
  * Sub-Elements are
  * {@link JRFLEntryLocation}, {@link POCInformation}, {@link Project}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -205,24 +205,37 @@ public class JRFLEntry {
   @XmlElement(name = "Years", required = false)
   private Years years;
   /**
-   * Duration - Duration (Optional)
+   * Duration - Duration (Optional).
    * <p>
    * The number of minutes for which an event will live. Examples: possible
    * values for the Hours item: 8 one value: 08h00Z 5,6,9 multiple values:
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
-   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007: %lt;Minutes%gt;star/10%lt;/Minutes%gt;
-   * %lt;Hours%gt;9-17%lt;/Hours%gt; %lt;DaysofWeek%gt;0-4%lt;/DaysofWeek%gt;
-   * %lt;Years%gt;2007%lt;/Years%gt; %lt;Duration%gt;2%lt;/Duration%gt; On the
-   * 5-minute mark, every third hour, only on days of the work week (Mon-Fri)
-   * %lt;Minutes%gt;5%lt;/Minutes%gt; %lt;Hours%gt;star/3%lt;/Hours%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt; On the 20 and 50-minute marks
-   * every hour, every month except June, only on days of the work week
-   * (Mon-Fri) %lt;Minutes%gt;20,50%lt;/Minutes%gt;
-   * %lt;Months%gt;1-5,7-12%lt;/Months%gt;
-   * %lt;DaysofWeek%gt;1-5%lt;/DaysofWeek%gt;
+   * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
    * Format is UN(4) (min)
    * <p>
@@ -665,23 +678,30 @@ public class JRFLEntry {
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
    * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
-   * On the 5-minute mark, every third hour, only on days of the work week
-   * (Mon-Fri)
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
-   * On the 20 and 50-minute marks every hour, every month except June, only on
-   * days of the work week (Mon-Fri)
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
    * @return a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -696,23 +716,30 @@ public class JRFLEntry {
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
    * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
-   * On the 5-minute mark, every third hour, only on days of the work week
-   * (Mon-Fri)
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
-   * On the 20 and 50-minute marks every hour, every month except June, only on
-   * days of the work week (Mon-Fri)
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>.
+   * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * <p>
    * @param value a {@link Duration_UN4} instance
    * @since 3.1.0
@@ -757,7 +784,7 @@ public class JRFLEntry {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setAssignmentAllotment(Common)} instead.
+   * {@link #withAssignmentAllotment(Common)} instead.
    */
   @Deprecated
   public void setAsgnAllotRef(Serial value) {
@@ -1133,24 +1160,30 @@ public class JRFLEntry {
    * 05h00Z, 06h00Z, 09h00Z 5-8 range between 05h00Z and 08h00Z inclusive star/2
    * stepped, every other hour. 00h00Z (midnight), 02h00Z, 04h00Z, etc 3-12/3
    * stepped range, every third hour: 03h00Z, 06h00Z, 09h00Z, and 12h00Z
-   * Transmission for 2 minutes every 10 minutes from 9am to 5pm every weekday
-   * for 2007:
-   * <Minutes>star/10</Minutes>
-   * <Hours>9-17</Hours>
-   * <DaysofWeek>0-4</DaysofWeek>
-   * <Years>2007</Years>
-   * <Duration>2</Duration>
-   * On the 5-minute mark, every third hour, only on days of the work week
-   * (Mon-Fri)
-   * <Minutes>5</Minutes>
-   * <Hours>star/3</Hours>
-   * <DaysofWeek>1-5</DaysofWeek>
-   * On the 20 and 50-minute marks every hour, every month except June, only on
-   * days of the work week (Mon-Fri)
-   * <Minutes>20,50</Minutes>
-   * <Months>1-5,7-12</Months>
-   * <DaysofWeek>1-5</DaysofWeek>
    * <p>
+   * Transmission for 2 minutes every 10 minutes from 0900 to 1700 every weekday
+   * for the year 2007:
+   * <pre>
+   * &lt;Minutes&gt;star/10&lt;/Minutes&gt;
+   * &lt;Hours&gt;9-17&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;0-4&lt;/DaysofWeek&gt;
+   * &lt;Years&gt;2007&lt;/Years&gt;
+   * &lt;Duration&gt;2&lt;/Duration&gt;
+   * </pre>
+   * <p>
+   * On the 5-minute mark, every 3rd hour, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;5&lt;/Minutes&gt;
+   * &lt;Hours&gt;star/3&lt;/Hours&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
+   * <p>
+   * On the 20 and 50-minute marks, every hour, every month except June, Monday-Friday:
+   * <pre>
+   * &lt;Minutes&gt;20,50&lt;/Minutes&gt;
+   * &lt;Months&gt;1-5,7-12&lt;/Months&gt;
+   * &lt;DaysofWeek&gt;1-5&lt;/DaysofWeek&gt;
+   * </pre>
    * @param value An instances of type {@link Integer}.
    * @return The current JRFLEntry object instance.
    * @since 3.1.0
@@ -1235,7 +1268,7 @@ public class JRFLEntry {
    * Complex element Project provides the Project, OPLAN, COMPLAN or Exercise
    * name, or any other project name associated to the dataset.
    * <p>
-   * @param values One or more instances of type {@link Project...}.
+   * @param values One or more instances of type {@link Project}.
    * @return The current JRFLEntry object instance.
    * @since 3.1.0
    */
@@ -1269,7 +1302,7 @@ public class JRFLEntry {
    * Complex element POCInformation contains a reference to a Contact,
    * Organisation or Role dataset.
    * <p>
-   * @param values One or more instances of type {@link POCInformation...}.
+   * @param values One or more instances of type {@link POCInformation}.
    * @return The current JRFLEntry object instance.
    * @since 3.1.0
    */
@@ -1303,7 +1336,7 @@ public class JRFLEntry {
    * Complex element JRFLEntryLocation defines the location where the use of a
    * specific frequency or frequency range(s) is restricted in use.
    * <p>
-   * @param values One or more instances of type {@link JRFLEntryLocation...}.
+   * @param values One or more instances of type {@link JRFLEntryLocation}.
    * @return The current JRFLEntry object instance.
    * @since 3.1.0
    */
@@ -1424,7 +1457,7 @@ public class JRFLEntry {
    * or AL". [XSD ERR REGEX] This data item MUST comply to the regular
    * expression: "[A-Z0-9-]{1,5}:w{0,4}:[A-Z]{2}:S{1,15}"
    * <p>
-   * @param value An instances of type {@link Common<?>}.
+   * @param value An instances of type {@link Common}.
    * @return The current JRFLEntry object instance.
    * @since 3.1.0
    */
@@ -1453,8 +1486,9 @@ public class JRFLEntry {
    * <p>
    * This method builds the transient {@link #assignmentAllotment} with values
    * from the imported {@link #asgnAllotRef} field. This method should typically
-   * be called after the JRFLEntry is imported from XML. * @param root the SSRF
-   * root instance.
+   * be called after the JRFLEntry is imported from XML.
+   *
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

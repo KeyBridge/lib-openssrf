@@ -32,7 +32,7 @@ import us.gov.dod.standard.ssrf._3_1.ssrequest.Stage;
  * <p>
  * Element of {@link SSReply}, {@link Stage}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -81,12 +81,12 @@ public class StageLocation {
   }
 
   /**
-   * Set the serial of a Location or satellite..
+   * Set the serial of a Location or satellite.
    * <p>
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setLocSat(Common)} instead.
+   * {@link #withLocSat(Common)} instead.
    */
   @Deprecated
   public void setLocSatRef(Serial value) {
@@ -228,7 +228,7 @@ public class StageLocation {
   /**
    * Set the serial of a Location or satellite.
    * <p>
-   * @param value An instances of type {@link Common<?>}.
+   * @param value An instance of type {@link Common}.
    * @return The current StageLocation object instance.
    * @since 3.1.0
    */
@@ -257,8 +257,9 @@ public class StageLocation {
    * <p>
    * This method builds the transient {@link #locSat} with values from the
    * imported {@link #locSatRef} field. This method should typically be called
-   * after the StageLocation is imported from XML. * @param root the SSRF root
-   * instance.
+   * after the StageLocation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

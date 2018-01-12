@@ -41,7 +41,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCI;
  * &lt;/POCInformation&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -136,7 +136,7 @@ public class POCInformation {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setPoc(Common)} instead.
+   * {@link #withPoc(Common)} instead.
    */
   @Deprecated
   public void setSerial(Serial value) {
@@ -155,7 +155,7 @@ public class POCInformation {
   /**
    * Get free text Contact information for legacy applications. When building
    * new records, enter the contact information in the structured Contact, Role,
-   * or Organisation dataset..
+   * or Organisation dataset.
    *
    * @return a {@link MEMO} instance
    * @since 3.1.0
@@ -289,7 +289,7 @@ public class POCInformation {
   /**
    * Set the dataset identifier of the Contact, Organisation, or Role.
    *
-   * @param value An instances of type {@link Common<?>}.
+   * @param value An instance of type {@link Common}.
    * @return The current POCInformation object instance.
    * @since 3.1.0
    */
@@ -318,7 +318,9 @@ public class POCInformation {
    * <p>
    * This method builds the transient {@link #poc} with values from the imported
    * {@link #serial} field. This method should typically be called after the
-   * POCInformation is imported from XML. * @param root the SSRF root instance.
+   * POCInformation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    *
    * @since 3.1.0
    */

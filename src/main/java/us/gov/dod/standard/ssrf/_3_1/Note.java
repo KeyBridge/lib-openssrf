@@ -22,7 +22,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.D;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.DT;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.S100;
+import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.TString;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCAO;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
@@ -41,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
  * &lt;/Note&gt;
  * </pre>
  *
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -368,7 +370,7 @@ public class Note extends Common<Note> {
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
    * {@link Note} requires
-   * {@link ListCCL cls}, {@link TString Serial}, {@link TCalendar EntryDateTime}.
+   * {@link ListCCL cls}, {@link Serial serial}, {@link DT entryDateTime}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

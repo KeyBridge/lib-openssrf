@@ -39,7 +39,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCFT;
  * &lt;/RelatedOrganisation&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -168,7 +168,7 @@ public class RelatedOrganisation {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setOrganisation(Organisation)} instead.
+   * {@link #withOrganisation(Organisation)} instead.
    */
   @Deprecated
   public void setSerial(Serial value) {
@@ -321,8 +321,9 @@ public class RelatedOrganisation {
    * <p>
    * This method builds the transient {@link #organisation} with values from the
    * imported {@link #serial} field. This method should typically be called
-   * after the RelatedOrganisation is imported from XML. * @param root the SSRF
-   * root instance.
+   * after the RelatedOrganisation is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

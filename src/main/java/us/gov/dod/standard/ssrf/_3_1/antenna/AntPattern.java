@@ -54,7 +54,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCTP;
  *   &lt;/AntPattern&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -363,7 +363,7 @@ public class AntPattern {
    * Complex element AntPatternPoint contains a single point of the antenna
    * radiation pattern, defined by a direction and gain.
    * <p>
-   * @param values One or more instances of type {@link AntPatternPoint...}.
+   * @param values One or more instances of type {@link AntPatternPoint}.
    * @return The current AntPattern object instance.
    * @since 3.1.0
    */
@@ -410,7 +410,7 @@ public class AntPattern {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link AntPattern} requires {@link Set<AntPatternPoint> AntPatternPoint}.
+   * {@link AntPattern} requires {@link AntPatternPoint}.
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.
