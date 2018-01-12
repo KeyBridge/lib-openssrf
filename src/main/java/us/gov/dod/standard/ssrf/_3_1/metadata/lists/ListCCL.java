@@ -47,9 +47,9 @@ import us.gov.dod.standard.ssrf._3_1.toa.StnClass;
  * classification.
  * <p>
  * Used in
- * {@link Administration}, {@link Administrative}, {@link Allotment}, {@link Antenna}, {@link Assignment}, {@link ChannelFreq}, {@link ChannelPlan}, {@link ChannelPlanRef}, {@link CircuitRemarks}, {@link Comment}, {@link Common}, {@link Contact}, {@link ContactRef}, {@link Country}, {@link DCSTrunk}, {@link DatasetRef}, {@link DetailedFunction}, {@link DocketNum}, {@link Downgrade}, {@link EMail}, {@link EmsClass}, {@link ExtReferenceRef}, {@link ExternalReference}, {@link FEDeployment}, {@link ForceElement}, {@link HostDocketNum}, {@link HostNation}, {@link Installation}, {@link IntfReport}, {@link JRFL}, {@link Loadset}, {@link LoadsetRef}, {@link Location}, {@link LocationRef}, {@link LocationRestriction}, {@link Message}, {@link MissingRef}, {@link Note}, {@link OffTheShelfEquipment}, {@link Organisation}, {@link RFSystem}, {@link RFSystemRef}, {@link RadiationPlan}, {@link Receiver}, {@link RelatedRef}, {@link Remarks}, {@link Role}, {@link RoleRef}, {@link RxModeRef}, {@link SSReply}, {@link SSRequest}, {@link Satellite}, {@link ServiceArea}, {@link StnClass}, {@link TOA}, {@link TelephoneFax}, {@link Transmitter}
+ * {@link Administration}, {@link Administrative}, {@link Allotment}, {@link Antenna}, {@link Assignment}, {@link ChannelFreq}, {@link ChannelPlan}, {@link CircuitRemarks}, {@link Comment}, {@link Common}, {@link Contact}, {@link Country}, {@link DCSTrunk}, {@link DetailedFunction}, {@link DocketNum}, {@link Downgrade}, {@link EMail}, {@link EmsClass}, {@link ExtReferenceRef}, {@link ExternalReference}, {@link FEDeployment}, {@link ForceElement}, {@link HostDocketNum}, {@link HostNation}, {@link Installation}, {@link IntfReport}, {@link JRFL}, {@link Loadset}, {@link Location}, {@link Message}, {@link Note}, {@link OffTheShelfEquipment}, {@link Organisation}, {@link RFSystem}, {@link RadiationPlan}, {@link Receiver}, {@link Remarks}, {@link Role}, {@link RxModeRef}, {@link SSReply}, {@link SSRequest}, {@link Satellite}, {@link ServiceArea}, {@link StnClass}, {@link TOA}, {@link TelephoneFax}, {@link Transmitter}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCCL")

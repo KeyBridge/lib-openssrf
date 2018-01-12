@@ -36,7 +36,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN9;
  * &lt;/Assets&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -48,7 +48,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.domains.UN9;
 public class Assets {
 
   /**
-   * Serial - Equipment/FE Reference (Required)
+   * Serial - Equipment/FE Reference (Required).
    * <p>
    * A reference to a Transmitter, Receiver, Antenna, RFSystem used by this
    * ForceElement, or to a ForceElement carried by or belonging to this
@@ -61,7 +61,7 @@ public class Assets {
   @XmlElement(name = "Serial", required = true)
   private Serial serial;
   /**
-   * Authorised - Authorised Quantity (Optional)
+   * Authorised - Authorised Quantity (Optional).
    * <p>
    * The authorised quantity of the referenced equipment or system.
    * <p>
@@ -72,7 +72,7 @@ public class Assets {
   @XmlElement(name = "Authorised", required = false)
   private UN9 authorised;
   /**
-   * Available - Available Quantity (Optional)
+   * Available - Available Quantity (Optional).
    * <p>
    * The available quantity of the referenced equipment or system.
    * <p>
@@ -86,7 +86,7 @@ public class Assets {
   /**
    * Get a reference to a Transmitter, Receiver, Antenna, RFSystem used by this
    * ForceElement, or to a ForceElement carried by or belonging to this
-   * ForceElement..
+   * ForceElement.
    * <p>
    * @return a {@link Serial} instance
    * @since 3.1.0
@@ -101,12 +101,12 @@ public class Assets {
   /**
    * Set a reference to a Transmitter, Receiver, Antenna, RFSystem used by this
    * ForceElement, or to a ForceElement carried by or belonging to this
-   * ForceElement..
+   * ForceElement.
    * <p>
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setAsset(Common)} instead.
+   * {@link #withAsset(Common)} instead.
    */
   @Deprecated
   public void setSerial(Serial value) {
@@ -290,7 +290,7 @@ public class Assets {
    * ForceElement, or to a ForceElement carried by or belonging to this
    * ForceElement.
    * <p>
-   * @param value An instances of type {@link Common<?>}.
+   * @param value An instance of type {@link Common}.
    * @return The current Assets object instance.
    * @since 3.1.0
    */
@@ -319,8 +319,9 @@ public class Assets {
    * <p>
    * This method builds the transient {@link #asset} with values from the
    * imported {@link #serial} field. This method should typically be called
-   * after the Assets is imported from XML. * @param root the SSRF root
-   * instance.
+   * after the Assets is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

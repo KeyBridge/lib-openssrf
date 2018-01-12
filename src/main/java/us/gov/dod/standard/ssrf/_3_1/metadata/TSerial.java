@@ -24,6 +24,7 @@ import java.util.regex.Pattern;
 import javax.xml.bind.annotation.*;
 import us.gov.dod.standard.ssrf.EDatasetType;
 import us.gov.dod.standard.ssrf._3_1.Common;
+import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCY;
 
 /**
@@ -273,7 +274,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
   /**
    * Set the serial number Organization code (OPTIONAL).
    * <p>
-   * @param organisation
+   * @param organisation the organisation serial value to set
    */
   public void setOrganisation(String organisation) {
     if (organisation.length() > 4) {
@@ -506,7 +507,7 @@ public class TSerial extends AMetadata<TSerial> implements IMetadataType, Compar
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link String} requires {@link ListCCL cls} and {@link String value}
+   * {@link TSerial} requires {@link ListCCL cls} and {@link String value}
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

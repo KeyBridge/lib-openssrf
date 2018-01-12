@@ -43,7 +43,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.*;
  *  &lt;SensitivityCriteriaText&gt;10 dB at 30 kHz BW&lt;/SensitivityCriteriaText&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1923,7 +1923,7 @@ public class RxMode {
    * designator. The emission classification consists of the three required
    * symbols and the two optional symbols.
    * <p>
-   * @param values One or more instances of type {@link EmsClass...}.
+   * @param values One or more instances of type {@link EmsClass}.
    * @return The current RxMode object instance.
    * @since 3.1.0
    */
@@ -1960,7 +1960,7 @@ public class RxMode {
    * specific frequency or range of frequencies within which the equipment may
    * tune, and the tuning increments of the equipment.
    * <p>
-   * @param values One or more instances of type {@link RxSignalTuning...}.
+   * @param values One or more instances of type {@link RxSignalTuning}.
    * @return The current RxMode object instance.
    * @since 3.1.0
    */
@@ -1995,7 +1995,7 @@ public class RxMode {
    * Complex element RxModulation contains the detailed characteristics of the
    * modulation on the receiver side.
    * <p>
-   * @param values One or more instances of type {@link RxModulation...}.
+   * @param values One or more instances of type {@link RxModulation}.
    * @return The current RxMode object instance.
    * @since 3.1.0
    */
@@ -2029,7 +2029,7 @@ public class RxMode {
    * Complex element Baseband defines the parameters of the modulating or
    * received signal.
    * <p>
-   * @param values One or more instances of type {@link Baseband...}.
+   * @param values One or more instances of type {@link Baseband}.
    * @return The current RxMode object instance.
    * @since 3.1.0
    */
@@ -2064,7 +2064,7 @@ public class RxMode {
    * conversion stage: intermediate frequency (IF) and local oscillator (LO)
    * parameters.
    * <p>
-   * @param values One or more instances of type {@link FreqConversion...}.
+   * @param values One or more instances of type {@link FreqConversion}.
    * @return The current RxMode object instance.
    * @since 3.1.0
    */
@@ -2111,7 +2111,7 @@ public class RxMode {
   /**
    * Set the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @param values One or more instances of type {@link BigInteger...}.
+   * @param values One or more instances of type {@link BigInteger}.
    * @return The current RxMode object instance.
    * @since 3.1.0
    */
@@ -2125,7 +2125,7 @@ public class RxMode {
   /**
    * Set the list of indices referring to Curves applicable to the data item.
    * <p>
-   * @param values A collection of {@link Curves} instances
+   * @param values A collection of {@link BigInteger} instances
    * @return The current RxMode object instance.
    * @since 3.1.0
    */

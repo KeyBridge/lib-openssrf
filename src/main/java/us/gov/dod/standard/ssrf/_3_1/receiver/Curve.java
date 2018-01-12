@@ -68,7 +68,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCT;
  * &lt;/Curve&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -578,7 +578,7 @@ public class Curve {
    * value in dB (relative to the carrier for a Tx characteristic, or relative
    * to sensitivity for a Rx characteristic).
    * <p>
-   * @param values One or more instances of type {@link CurvePoint...}.
+   * @param values One or more instances of type {@link CurvePoint}.
    * @return The current Curve object instance.
    * @since 3.1.0
    */
@@ -646,7 +646,7 @@ public class Curve {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link Curve} requires {@link Set<CurvePoint> CurvePoint},
+   * {@link Curve} requires {@link CurvePoint},
    * {@link FreqOffset FreqConst}, {@link UN3_1 FreqFactor}, {@link TString Type}, {@link BigInteger idx}.
    * <p>
    * Note that this method only checks for the presence of required information;

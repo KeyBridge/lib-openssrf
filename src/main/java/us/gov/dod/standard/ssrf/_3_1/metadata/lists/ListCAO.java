@@ -35,7 +35,7 @@ import us.gov.dod.standard.ssrf._3_1.toa.Country;
  * Used in
  * {@link Address}, {@link Administration}, {@link CaseNum}, {@link CodeList}, {@link Country}, {@link ForceElement}, {@link HostNation}, {@link IntfReport}, {@link Location}, {@link Manufacturer}, {@link Note}, {@link SSReply}, {@link ServiceArea}, {@link UsingCountries}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 04/02/2015
  */
 @XmlType(name = "ListCAO")
@@ -1283,7 +1283,7 @@ public enum ListCAO {
   @XmlEnumValue("NAM")
   NAM("NAM", "Namibia"),
   /**
-   * NATO AEW&C Force Command
+   * NATO AEW&amp;C Force Command
    */
   @XmlEnumValue("NT-AEW")
   NT_AEW("NT-AEW", "NATO AEW&C Force Command"),
@@ -1328,7 +1328,7 @@ public enum ListCAO {
   @XmlEnumValue("NT-CISG")
   NT_CISG("NT-CISG", "NATO CIS Group (Belgium)"),
   /**
-   * NATO Communications & Information Agency
+   * NATO Communications &amp; Information Agency
    */
   @XmlEnumValue("NT-CIA")
   NT_CIA("NT-CIA", "NATO Communications & Information Agency"),

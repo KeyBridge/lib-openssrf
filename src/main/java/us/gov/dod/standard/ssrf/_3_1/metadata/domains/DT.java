@@ -32,7 +32,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListCCL;
 /**
  * The SSRF DT data type.
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -97,7 +97,7 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the value to set
    */
   public final void setValue(Calendar value) {
     this.value = (value != null ? (Calendar) value.clone() : null);
@@ -107,7 +107,7 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
   /**
    * Sets the value of the value property.
    * <p>
-   * @param value
+   * @param value the value to set
    */
   public final void setValue(Date value) {
     if (value != null) {
@@ -130,7 +130,7 @@ public class DT extends AMetadata<DT> implements Comparable<DT> {
   /**
    * Determine if the required fields in this SSRF data type instance are set.
    * <p>
-   * {@link TCalendar} requires {@link ListCCL cls} and {@link Calendar value}
+   * {@link DT} requires {@link ListCCL cls} and {@link Calendar value}
    * <p>
    * Note that this method only checks for the presence of required information;
    * this method does not validate the information format.

@@ -26,14 +26,14 @@ import us.gov.dod.standard.ssrf._3_1.assignment.Configuration;
 import us.gov.dod.standard.ssrf._3_1.metadata.domains.Serial;
 
 /**
- * TxRef contains the reference of a Transmitter, and optionnally some of its
+ * TxRef contains the reference of a Transmitter, and optionally some of its
  * TxModes and the associated Antennas and AntMode.
  * <p>
  * Element of {@link Configuration}
  * <p>
  * Sub-Elements are {@link TxAntModeRef}, {@link TxModeRef}
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -105,7 +105,7 @@ public class TxRef {
    * @param value a {@link Serial} instance
    * @since 3.1.0
    * @deprecated SSRF references are managed automatically. Use
-   * {@link #setTransmitter(Transmitter)} instead.
+   * {@link #withTransmitter(Transmitter)} instead.
    */
   @Deprecated
   public void setSerial(Serial value) {
@@ -208,7 +208,7 @@ public class TxRef {
    * Complex element TxModeRef contains references to the Transmitter and its
    * modes, used to construct a Configuration.
    * <p>
-   * @param values One or more instances of type {@link TxModeRef...}.
+   * @param values One or more instances of type {@link TxModeRef}.
    * @return The current TxRef object instance.
    * @since 3.1.0
    */
@@ -242,7 +242,7 @@ public class TxRef {
    * Complex element TxAntModeRef contains references to the Antenna and its
    * AntMode, used to construct a Transmitter Configuration.
    * <p>
-   * @param values One or more instances of type {@link TxAntModeRef...}.
+   * @param values One or more instances of type {@link TxAntModeRef}.
    * @return The current TxRef object instance.
    * @since 3.1.0
    */
@@ -368,7 +368,9 @@ public class TxRef {
    * <p>
    * This method builds the transient {@link #transmitter} with values from the
    * imported {@link #serial} field. This method should typically be called
-   * after the TxRef is imported from XML. * @param root the SSRF root instance.
+   * after the TxRef is imported from XML.
+   * <p>
+   * @param root the SSRF root instance.
    * <p>
    * @since 3.1.0
    */

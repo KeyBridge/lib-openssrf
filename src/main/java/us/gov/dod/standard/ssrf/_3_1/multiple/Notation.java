@@ -64,7 +64,7 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUNT;
  * &lt;/Notation&gt;
  * </pre>
  * <p>
- * @author Key Bridge LLC <developer@keybridge.ch>
+ * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
  * @version 3.1.0, 03/30/2015
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -376,7 +376,7 @@ public class Notation {
    * Complex element NotationTimeline (US) provides history information for a
    * specific notation or signal.
    * <p>
-   * @param values One or more instances of type {@link NotationTimeline...}.
+   * @param values One or more instances of type {@link NotationTimeline}.
    * @return The current Notation object instance.
    * @since 3.1.0
    */
@@ -410,7 +410,7 @@ public class Notation {
    * Complex element PotentialVictims (US) contains the names of systems, or the
    * Notations of signals, which may be affected by the subject Notation/Signal.
    * <p>
-   * @param values One or more instances of type {@link PotentialVictims...}.
+   * @param values One or more instances of type {@link PotentialVictims}.
    * @return The current Notation object instance.
    * @since 3.1.0
    */
@@ -444,7 +444,7 @@ public class Notation {
    * Complex element UsingCountries (US) describes the countries that
    * manufacture (Producing), supply (Source), and use (Using) the Notation.
    * <p>
-   * @param values One or more instances of type {@link UsingCountries...}.
+   * @param values One or more instances of type {@link UsingCountries}.
    * @return The current Notation object instance.
    * @since 3.1.0
    */
