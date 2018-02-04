@@ -112,24 +112,29 @@ public abstract class Common<T> implements Comparable<T> {
    * A unique Dataset identifier.
    * <p>
    * Serial is composed of four parts separated by colons (":"). The maximum
-   * total length is 29 characters (5+1+4+1+2+1+15). . Part 1 is the Country and
-   * is always REQUIRED. It contains one to five alphabetic uppercase characters
-   * representing either the ITU country code or the NATO Command code
-   * identifying the originator or organisation responsible for maintaining the
-   * dataset, as listed in Code List CCY. . Part 2 is the orgCode and is
-   * OPTIONAL. It may contain one to four alphanumeric characters (no spaces nor
-   * special characters) representing a code for an Organisation within the
-   * country or command. It will normally indicate the organisation responsible
-   * for maintaining the dataset. Domain naming is left at the discretion of
-   * each country, but should be managed by a central authority in the country
-   * to allow deconfliction and uniqueness. It should enable the location in the
-   * data repository where this dataset information is stored. . Part 3 is the
-   * Dataset Type and MUST contain a two-character code from the table in the
-   * Introduction section identifying the type of dataset (LO for a Location,
-   * etc). . Part 4 is a Serial Identifier and is always REQUIRED. It contains
-   * one to fifteen alphanumeric characters (including spaces and special
-   * characters), whose meaning is left at the discretion of each domain
-   * manager.
+   * total length is 29 characters (5+1+4+1+2+1+15).
+   * <p>
+   * Part 1 is the Country and is always REQUIRED. It contains one to five
+   * alphabetic uppercase characters representing either the ITU country code or
+   * the NATO Command code identifying the originator or organisation
+   * responsible for maintaining the dataset, as listed in Code List CCY.
+   * <p>
+   * Part 2 is the orgCode and is OPTIONAL. It may contain one to four
+   * alphanumeric characters (no spaces nor special characters) representing a
+   * code for an Organisation within the country or command. It will normally
+   * indicate the organisation responsible for maintaining the dataset. Domain
+   * naming is left at the discretion of each country, but should be managed by
+   * a central authority in the country to allow deconfliction and uniqueness.
+   * It should enable the location in the data repository where this dataset
+   * information is stored.
+   * <p>
+   * Part 3 is the Dataset Type and MUST contain a two-character code from the
+   * table in the Introduction section identifying the type of dataset (LO for a
+   * Location, etc).
+   * <p>
+   * Part 4 is a Serial Identifier and is always REQUIRED. It contains one to
+   * fifteen alphanumeric characters (including spaces and special characters),
+   * whose meaning is left at the discretion of each domain manager.
    * <p>
    * Format is pattern (S29)
    * <p>
@@ -416,8 +421,8 @@ public abstract class Common<T> implements Comparable<T> {
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of  Common/ExternalReferenceRef index values applicable to the current data
-   * item.
+   * A list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    * <p>
    * Format is List of UN6
    *
@@ -1305,8 +1310,8 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Get a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item.
+   * Get a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    *
    * @return a {@link BigInteger} instance
    * @since 3.1.0
@@ -1989,8 +1994,8 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item.
+   * Set a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    *
    * @param values One or more instances of type {@link BigInteger}
    * @return The current Common object instance
@@ -2004,8 +2009,8 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item.
+   * Set a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    *
    * @param values A collection of {@link BigInteger} instances
    * @return The current Common object instance
@@ -2019,8 +2024,8 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item.
+   * Set a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    *
    * @param extReference A collection of {@link ExtReferenceRef} instances
    * @return The current Common object instance
@@ -2096,38 +2101,38 @@ public abstract class Common<T> implements Comparable<T> {
   @Override
   public String toString() {
     return "\n    Common {"
-           // attributes
-           + (cls != null ? " cls [" + cls + "]" : "") // required
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
-           + (releasability != null ? " releasability [" + releasability + "]" : "")
-           + (idref != null ? " idref [" + idref + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           // elements
-           + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
-           + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
-           + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
-           + (description != null ? " description [" + description + "]" : "")
-           + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
-           + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
-           + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
-           + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
-           + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
-           + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
-           + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
-           + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
-           + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
-           + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
-           + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
-           + (owner != null ? " owner [" + owner + "]" : "")
-           + (redacted != null ? " redacted [" + redacted + "]" : "")
-           + (remarks != null ? " remarks [" + remarks + "]" : "")
-           + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
-           + (serial != null ? " serial [" + serial + "]" : "")
-           + (state != null ? " state [" + state + "]" : "")
-           + "}";
+      // attributes
+      + (cls != null ? " cls [" + cls + "]" : "") // required
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (remarkRef != null ? " remarkRef [" + remarkRef + "]" : "")
+      + (releasability != null ? " releasability [" + releasability + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      // elements
+      + (approvedBy != null ? " approvedBy [" + approvedBy + "]" : "")
+      + (approvedDateTime != null ? " approvedDateTime [" + approvedDateTime + "]" : "")
+      + (caseNum != null ? " caseNum [" + caseNum + "]" : "")
+      + (description != null ? " description [" + description + "]" : "")
+      + (entryBy != null ? " entryBy [" + entryBy + "]" : "")
+      + (entryDateTime != null ? " entryDateTime [" + entryDateTime + "]" : "")
+      + (extReferenceRef != null ? " extReferenceRef [" + extReferenceRef + "]" : "")
+      + (lastChangeBy != null ? " lastChangeBy [" + lastChangeBy + "]" : "")
+      + (lastChangeDateTime != null ? " lastChangeDateTime [" + lastChangeDateTime + "]" : "")
+      + (lastObservedBy != null ? " lastObservedBy [" + lastObservedBy + "]" : "")
+      + (lastReviewBy != null ? " lastReviewBy [" + lastReviewBy + "]" : "")
+      + (lastReviewDate != null ? " lastReviewDate [" + lastReviewDate + "]" : "")
+      + (modAllowedBy != null ? " modAllowedBy [" + modAllowedBy + "]" : "")
+      + (observedFirstDateTime != null ? " observedFirstDateTime [" + observedFirstDateTime + "]" : "")
+      + (observedLastDateTime != null ? " observedLastDateTime [" + observedLastDateTime + "]" : "")
+      + (owner != null ? " owner [" + owner + "]" : "")
+      + (redacted != null ? " redacted [" + redacted + "]" : "")
+      + (remarks != null ? " remarks [" + remarks + "]" : "")
+      + (securityClass != null ? " securityClass [" + securityClass + "]" : "")
+      + (serial != null ? " serial [" + serial + "]" : "")
+      + (state != null ? " state [" + state + "]" : "")
+      + "}";
   }
 
   /**
@@ -2374,18 +2379,19 @@ public abstract class Common<T> implements Comparable<T> {
   }
 
   /**
-    * Update the SSRF data type references in this Common record.
-    * <p>
-    * This method builds Common exported fields with values from their respective transient object instance fields.:
-    * <br> {@link #entryBy} from {@link #entryByRole}
-    * <br> {@link #owner} from {@link #ownerRole}
-    * <br> {@link #lastChangeBy} from {@link #lastChangeByRole}
-    * <br> {@link #lastReviewBy} from {@link #lastReviewByRole}
-    * <br> * {@link #modAllowedBy} from {@link #modAllowedByRole}
-    * <p>
-    * This method should typically be called after the Common is configured and (optionally) before exporting an SSRF
-    * message.
-    */
+   * Update the SSRF data type references in this Common record.
+   * <p>
+   * This method builds Common exported fields with values from their respective
+   * transient object instance fields.:
+   * <br> {@link #entryBy} from {@link #entryByRole}
+   * <br> {@link #owner} from {@link #ownerRole}
+   * <br> {@link #lastChangeBy} from {@link #lastChangeByRole}
+   * <br> {@link #lastReviewBy} from {@link #lastReviewByRole}
+   * <br> * {@link #modAllowedBy} from {@link #modAllowedByRole}
+   * <p>
+   * This method should typically be called after the Common is configured and
+   * (optionally) before exporting an SSRF message.
+   */
   public void prepare() {
     this.entryBy = entryByRole != null ? entryByRole.getSerial() : this.entryBy;
     this.owner = ownerRole != null ? ownerRole.getSerial() : this.owner;
