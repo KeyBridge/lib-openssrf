@@ -28,6 +28,8 @@ import us.gov.dod.standard.ssrf._3_1.metadata.lists.ListUSC;
 /**
  * StnClass contains the station class associated with the TOA frequency usage.
  * <p>
+ * This data item MUST use one of the codes from Code List USC.
+ * <p>
  * Element of {@link Allocation}
  * <p>
  * @author Key Bridge LLC &lt;developer@keybridge.ch&gt;
@@ -67,8 +69,8 @@ public class StnClass {
   /**
    * extReferences - Links to External References (Optional)
    * <p>
-   * A list of  Common/ExternalReferenceRef index values applicable to the current data
-   * item.
+   * A list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    * <p>
    * Format is List of UN6
    * <p>
@@ -231,8 +233,8 @@ public class StnClass {
   }
 
   /**
-   * Get a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item..
+   * Get a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item..
    * <p>
    * @return a {@link BigInteger} instance
    * @since 3.1.0
@@ -485,8 +487,8 @@ public class StnClass {
   }
 
   /**
-   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item.
+   * Set a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    * <p>
    * @param values One or more instances of type {@link BigInteger}.
    * @return The current StnClass object instance.
@@ -500,8 +502,8 @@ public class StnClass {
   }
 
   /**
-   * Set a list of  Common/ExternalReferenceRef index values applicable to the current
-   * data item.
+   * Set a list of Common/ExternalReferenceRef index values applicable to the
+   * current data item.
    * <p>
    * @param values A collection of {@link BigInteger} instances
    * @return The current StnClass object instance.
@@ -594,16 +596,16 @@ public class StnClass {
   @Override
   public String toString() {
     return "\n  StnClass {"
-           + (availability != null ? " availability [" + availability + "]" : "")
-           + (cls != null ? " cls [" + cls + "]" : "")
-           + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
-           + (idref != null ? " idref [" + idref + "]" : "")
-           + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
-           + (quality != null ? " quality [" + quality + "]" : "")
-           + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
-           + (remarks != null ? " remarks [" + remarks + "]" : "")
-           + (value != null ? " value [" + value + "]" : "")
-           + "}";
+      + (availability != null ? " availability [" + availability + "]" : "")
+      + (cls != null ? " cls [" + cls + "]" : "")
+      + (extReferences != null ? " extReferences [" + extReferences + "]" : "")
+      + (idref != null ? " idref [" + idref + "]" : "")
+      + (legacyReleasability != null ? " legacyReleasability [" + legacyReleasability + "]" : "")
+      + (quality != null ? " quality [" + quality + "]" : "")
+      + (recommendedValue != null ? " recommendedValue [" + recommendedValue + "]" : "")
+      + (remarks != null ? " remarks [" + remarks + "]" : "")
+      + (value != null ? " value [" + value + "]" : "")
+      + "}";
   }
 
   /**
