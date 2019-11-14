@@ -6,6 +6,7 @@ build/
 nbbuild/
 dist/
 nbdist/
+nbproject/
 nbactions.xml
 nb-configuration.xml
 
@@ -25,3 +26,14 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 nbactions.xml
+
+# OSX junk
+._*
+
+# IntelliJ IDE files
+.idea/
+*.iml
+
+# JRebel stuff
+.rebel.*
+rebel.xml
